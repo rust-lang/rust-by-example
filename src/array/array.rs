@@ -15,7 +15,7 @@ fn main() {
     println!("second element of the array: {}", xs[1]);
 
     // len() returns the size of the array
-    println!("array size: {}", xs.last());
+    println!("array size: {}", xs.len());
 
     // arrays are stack allocated
     println!("array occupies {} bytes", size_of_val(&xs));
