@@ -46,25 +46,25 @@ fn main() {
     borrow_book(&mutable_geb);
 
     // when an object is mutably borrowed, the original can't be used
-    // until its mutable reference goes out of scope. 
+    // until its mutable reference goes out of scope.
     if true {
         let borrowed_geb = &mut mutable_geb;
 
         // Error: mutable_geb has been mutably borrowed.
         //println!("Can no longer access {}", mutable_geb.title);
 
-        println!("The mutable reference of {} is available", 
+        println!("The mutable reference of {} is available",
                  borrowed_geb.title);
         // now borrowed_geb goes out of scope
     }
     println!("Once again, I can access {}", mutable_geb.title);
-    
+
     // immutable borrows place no restrictions on the original owner
     if true {
         let borrowed_geb = &mutable_geb;
-        println!("The original is still accessible: {}", 
+        println!("The original is still accessible: {}",
                  mutable_geb.title);
-        println!("and so is the mutable reference: {}", 
+        println!("and so is the immutable reference: {}",
                  borrowed_geb.title);
     }
 
