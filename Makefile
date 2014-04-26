@@ -14,6 +14,7 @@ all:
 
 book:
 	cd output && $(GITBOOK) build
+	./fix-edit-button.sh
 
 clean:
 	rm -rf output/examples
