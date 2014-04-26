@@ -20,16 +20,16 @@ for Vec2<T> {
     }
 }
 
-// The Sub<T, U> trait overloads the + operator: (Self - T = U)
+// The Sub<T, U> trait overloads the - operator: (Self - T = U)
 impl<
-    // bound: T implements the Add trait
+    // bound: T implements the Sub trait
     T: Sub<T, T>
 > Sub<Vec2<T>, Vec2<T>>
 for Vec2<T> {
-    // add() is a required method of the Add trait
+    // sub() is a required method of the Sub trait
     fn sub(&self, rhs: &Vec2<T>) -> Vec2<T> {
         Vec2 {
-            // x and y are of type T, and implement the add() method
+            // x and y are of type T, and implement the sub() method
             x: self.x.sub(&rhs.x),
             y: self.x.sub(&rhs.y),
         }
