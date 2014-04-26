@@ -1,8 +1,9 @@
 Since Rust moves data by default, this means that passing an object to a
 function will transfer ownership of the object to the function. Furthermore,
-Rust enforces the `RAII` discipline, meaning that the object will be destroyed
-when it goes out of scope, following the previous example the object sent to
-the function will be destroyed over there.
+Rust enforces the `RAII` ("Resource Acquisition Is Initialization")
+discipline, meaning that the object will be destroyed when it goes out of 
+scope, following the previous example the object sent to the function will 
+be destroyed over there.
 
 {raii.rs}
 
