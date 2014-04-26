@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="23" data-basepath="../.." data-revision="1398378516140">
+    <div class="book" data-github="japaric/rust-by-example" data-level="23" data-basepath="../.." data-revision="1398520909133">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -667,7 +667,7 @@ and the second word is the length of the slice.</p>
 <span class="hljs-keyword">use</span> std::mem::size_of_val;
 
 <span class="hljs-comment">// This function borrows a slice</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">analize_slice</span>(</span>slice: &amp;[<span class="hljs-keyword">int</span>]) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">analyze_slice</span>(</span>slice: &amp;[<span class="hljs-keyword">int</span>]) {
     println!(<span class="hljs-string">"first element of the slice: {}"</span>, slice[<span class="hljs-number">0</span>]);
     println!(<span class="hljs-string">"the slice has {} elements"</span>, slice.len());
 }
@@ -681,7 +681,7 @@ and the second word is the length of the slice.</p>
     println!(<span class="hljs-string">"second element of the array: {}"</span>, xs[<span class="hljs-number">1</span>]);
 
     <span class="hljs-comment">// len() returns the size of the array</span>
-    println!(<span class="hljs-string">"array size: {}"</span>, xs.last());
+    println!(<span class="hljs-string">"array size: {}"</span>, xs.len());
 
     <span class="hljs-comment">// arrays are stack allocated</span>
     println!(<span class="hljs-string">"array occupies {} bytes"</span>, size_of_val(&amp;xs));
@@ -691,11 +691,11 @@ and the second word is the length of the slice.</p>
 
     <span class="hljs-comment">// arrays can be automatically converted to slices</span>
     println!(<span class="hljs-string">"borrow the whole array as an slice"</span>);
-    analize_slice(xs);
+    analyze_slice(xs);
 
     <span class="hljs-comment">// slices can point to a section of an array</span>
     println!(<span class="hljs-string">"borrow a section of the array as an slice"</span>);
-    analize_slice(xs.slice(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>));
+    analyze_slice(xs.slice(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>));
 }
 </code></pre>
 

@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="26" data-basepath="../.." data-revision="1398378516140">
+    <div class="book" data-github="japaric/rust-by-example" data-level="26" data-basepath="../.." data-revision="1398520909133">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -684,16 +684,16 @@ implementations.</p>
     }
 }
 
-<span class="hljs-comment">// The Sub&lt;T, U&gt; trait overloads the + operator: (Self - T = U)</span>
+<span class="hljs-comment">// The Sub&lt;T, U&gt; trait overloads the - operator: (Self - T = U)</span>
 <span class="hljs-keyword">impl</span>&lt;
-    <span class="hljs-comment">// bound: T implements the Add trait</span>
+    <span class="hljs-comment">// bound: T implements the Sub trait</span>
     T: Sub&lt;T, T&gt;
 &gt; Sub&lt;Vec2&lt;T&gt;, Vec2&lt;T&gt;&gt;
 <span class="hljs-keyword">for</span> Vec2&lt;T&gt; {
-    <span class="hljs-comment">// add() is a required method of the Add trait</span>
+    <span class="hljs-comment">// sub() is a required method of the Sub trait</span>
     <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">sub</span>(</span>&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Vec2&lt;T&gt;) -&gt; Vec2&lt;T&gt; {
         Vec2 {
-            <span class="hljs-comment">// x and y are of type T, and implement the add() method</span>
+            <span class="hljs-comment">// x and y are of type T, and implement the sub() method</span>
             x: <span class="hljs-keyword">self</span>.x.sub(&amp;rhs.x),
             y: <span class="hljs-keyword">self</span>.x.sub(&amp;rhs.y),
         }
