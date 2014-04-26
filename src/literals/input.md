@@ -1,4 +1,4 @@
-This is an summary of the primitive types in Rust:
+This is a summary of the primitive types in Rust:
 
 * signed integers: `i8`, `i16`, `i32`, `i64` and `int` (machine word size)
 * unsigned integers: `u8`, `u16`, `u32`, `u64` and `uint` (machine word size)
