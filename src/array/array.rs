@@ -1,7 +1,7 @@
 use std::mem::size_of_val;
 
 // This function borrows a slice
-fn analize_slice(slice: &[int]) {
+fn analyze_slice(slice: &[int]) {
     println!("first element of the slice: {}", slice[0]);
     println!("the slice has {} elements", slice.len());
 }
@@ -25,9 +25,9 @@ fn main() {
 
     // arrays can be automatically converted to slices
     println!("borrow the whole array as an slice");
-    analize_slice(xs);
+    analyze_slice(xs);
 
     // slices can point to a section of an array
     println!("borrow a section of the array as an slice");
-    analize_slice(xs.slice(1, 4));
+    analyze_slice(xs.slice(1, 4));
 }
