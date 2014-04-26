@@ -39,10 +39,13 @@ fn main() {
     let (x, y) = pair;
     println!("x is {}, and y is {}", x, y);
 
+    // but you can also print a tuple directly
+    println!("pair is {}", pair);
+
     // a tuple of tuples
     let tuple_of_tuples = ((1u8, 2u16, 2u32), (4u64, -1i8), -2i16);
 
-    println!("Animal inventory")
+    println!("Animal inventory");
     show(chimpanzees());
     show(elephants());
     show(penguins());
