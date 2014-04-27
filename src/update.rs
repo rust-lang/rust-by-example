@@ -84,11 +84,24 @@ fn main() {
         }
     };
 
+    let mut indent = false;
     let summary = examples.move_iter().map(|example| {
-        if update(&example) {
+        if example.id.as_slice() == "staging" {
+            indent = true;
+        }
+
+        let chapter = if update(&example) {
             format!("* [{}](examples/{}/README.md)", example.title, example.id)
         } else {
             format!("* {}", example.title)
+        };
+
+        if indent &&
+            example.id.as_slice() != "staging" &&
+            example.id.as_slice() != "todo" {
+            format!("  {}", chapter)
+        } else {
+            chapter
         }
     }).collect::<Vec<~str>>().connect("\n");
 
