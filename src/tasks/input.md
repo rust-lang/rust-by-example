@@ -20,6 +20,6 @@ this is task number 9
 this is task number 7
 ```
 
-(By default, Rust uses it's *native* runtime, which maps each rust task to a
+(By default, Rust uses its *native* runtime, which maps each Rust task to a
 native thread. Rust also provides a *green* runtime that provides green threads
-and maps M Rust tasks to N native threads)
+and maps M Rust tasks to N native threads.)
