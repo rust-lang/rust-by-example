@@ -2,7 +2,8 @@
 
 ## What's this?
 
-This is the source code of the Rust by example website!
+This is the source code of the
+[Rust by example](http://rustbyexample.github.io/) website!
 
 ## How to contribute
 
@@ -13,13 +14,14 @@ example.
 
 ### I like to see an example about ${topic}
 
-Leave a comment in [issue #1](https://github.com/japaric/rust-by-example/issues/1).
+Leave a comment in
+[issue #1](https://github.com/japaric/rust-by-example/issues/1).
 
 ### I want to add/modify an example
 
 You'll need these tools:
 
-* Rust (\o/)
+* [Rust](http://www.rust-lang.org/) (\o/)
 * [gitbook](http://www.gitbook.io)
 
 Each example has:
