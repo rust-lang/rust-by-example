@@ -38,11 +38,6 @@ fn update(example: &Example) -> bool {
         }).collect(),
     };
 
-    if sources.is_empty() {
-        println!("couldn't find source files");
-        return false
-    }
-
     let mut template = match read(&src_dir.join("input.md")) {
         Err(_) => {
             println!("couldn't read input.md");
