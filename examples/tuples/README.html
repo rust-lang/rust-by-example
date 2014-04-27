@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="../.." data-revision="1398542135085">
+    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="../.." data-revision="1398565336582">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -703,10 +703,13 @@ using parentheses <code>()</code>, and each tuple belongs to a type of the form
     <span class="hljs-keyword">let</span> (x, y) = pair;
     println!(<span class="hljs-string">"x is {}, and y is {}"</span>, x, y);
 
+    <span class="hljs-comment">// but you can also print a tuple directly</span>
+    println!(<span class="hljs-string">"pair is {}"</span>, pair);
+
     <span class="hljs-comment">// a tuple of tuples</span>
     <span class="hljs-keyword">let</span> tuple_of_tuples = ((<span class="hljs-number">1u8</span>, <span class="hljs-number">2u16</span>, <span class="hljs-number">2u32</span>), (<span class="hljs-number">4u64</span>, -<span class="hljs-number">1i8</span>), -<span class="hljs-number">2i16</span>);
 
-    println!(<span class="hljs-string">"Animal inventory"</span>)
+    println!(<span class="hljs-string">"Animal inventory"</span>);
     show(chimpanzees());
     show(elephants());
     show(penguins());

@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="15" data-basepath="../.." data-revision="1398542135085">
+    <div class="book" data-github="japaric/rust-by-example" data-level="15" data-basepath="../.." data-revision="1398565336582">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -704,6 +704,9 @@ removed from the heap and brought into the stack.</p>
 
     println!(<span class="hljs-string">"Point occupies {} bytes in the stack"</span>,
              size_of_val(&amp;point));
+    <span class="hljs-comment">// The `&amp;` means that we are passing to the function, a reference to</span>
+    <span class="hljs-comment">// the object rather than a copy of it. In Rust, this is known as</span>
+    <span class="hljs-comment">// *borrowing* and will be covered in detail in its own section.</span>
     println!(<span class="hljs-string">"Rectangle occupies {} bytes in the stack"</span>,
              size_of_val(&amp;rectangle));
 

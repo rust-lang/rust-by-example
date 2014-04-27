@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="17" data-basepath="../.." data-revision="1398542135085">
+    <div class="book" data-github="japaric/rust-by-example" data-level="17" data-basepath="../.." data-revision="1398565336582">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -660,9 +660,10 @@ type safety, memory safety, concurrency and performance.">
                         <h1 id="raii-and-borrow">RAII and borrow</h1>
 <p>Since Rust moves data by default, this means that passing an object to a
 function will transfer ownership of the object to the function. Furthermore,
-Rust enforces the <code>RAII</code> discipline, meaning that the object will be destroyed
-when it goes out of scope, following the previous example the object sent to
-the function will be destroyed over there.</p>
+Rust enforces the <code>RAII</code> (&quot;Resource Acquisition Is Initialization&quot;)
+discipline, meaning that the object will be destroyed when it goes out of 
+scope, following the previous example the object sent to the function will 
+be destroyed over there.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// raii.rs</span>
 <span class="hljs-keyword">struct</span> Homework;
 
@@ -745,6 +746,29 @@ to the compiler, valid borrowing can be enforced.</p>
 
     <span class="hljs-comment">// Ok: mutable objects can be immutably borrowed</span>
     borrow_book(&amp;mutable_geb);
+
+    <span class="hljs-comment">// when an object is mutably borrowed, the original can't be used</span>
+    <span class="hljs-comment">// until its mutable reference goes out of scope.</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
+        <span class="hljs-keyword">let</span> borrowed_geb = &amp;<span class="hljs-keyword">mut</span> mutable_geb;
+
+        <span class="hljs-comment">// Error: mutable_geb has been mutably borrowed.</span>
+        <span class="hljs-comment">//println!("Can no longer access {}", mutable_geb.title);</span>
+
+        println!(<span class="hljs-string">"The mutable reference of {} is available"</span>,
+                 borrowed_geb.title);
+        <span class="hljs-comment">// now borrowed_geb goes out of scope</span>
+    }
+    println!(<span class="hljs-string">"Once again, I can access {}"</span>, mutable_geb.title);
+
+    <span class="hljs-comment">// immutable borrows place no restrictions on the original owner</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
+        <span class="hljs-keyword">let</span> borrowed_geb = &amp;mutable_geb;
+        println!(<span class="hljs-string">"The original is still accessible: {}"</span>,
+                 mutable_geb.title);
+        println!(<span class="hljs-string">"and so is the immutable reference: {}"</span>,
+                 borrowed_geb.title);
+    }
 
     <span class="hljs-comment">// ref can be used to take references when destructuring</span>
     <span class="hljs-comment">// Here geb_title and geb_author are references to ~str, i.e. &amp;~str</span>
