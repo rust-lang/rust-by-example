@@ -3,7 +3,7 @@
 ## What's this?
 
 This is the source code of the
-[Rust by example](http://rustbyexample.github.io/) website!
+[Rust by example](http://rustbyexample.com) website!
 
 ## How to contribute
 
