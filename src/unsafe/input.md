@@ -7,7 +7,7 @@ Unsafe blocks in Rust are used to bypass protections put in place by the compile
 * inline assembly
 
 ### Raw Pointers
-Raw pointers `*` and references `&T` function similarly, but references are always safe because they are guaranteed to point to valid data.  Dereferencing a raw pointer can only be done through an unsafe block.
+Raw pointers `*` and references `&T` function similarly, but references are always safe because they are guaranteed to point to valid data due to the borrow checker.  Dereferencing a raw pointer can only be done through an unsafe block.
 
 {pointer.rs}
 
@@ -18,5 +18,7 @@ Allows simple conversion from one type to another, however both types must have 
 
 ### Inline Assembly
 Inline assembly functions very similarly to the inline assembly of c, which makes sense considering its implementation is not handled by rust, rather by the LLVM.  It allows for direct access to assembly manipulation, which can massively increase speed, but it can also decrease portability and stability.  In most cases the compiler will optimize your rust code to better assembly than you could write, so in most instances it is not worth it.  The first parameter of asm!() is the format of the assembly, the parameter following the colon is the output variable, and the parameter(s) following that are the input variables.
+
+**Note**: `#![feature(asm)]` is currently required to use inline assembly.
 
 {asm.rs}
