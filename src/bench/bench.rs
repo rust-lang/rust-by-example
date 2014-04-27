@@ -1,6 +1,7 @@
 extern crate test;
 
 use std::mem::replace;
+#[cfg(test)]
 use test::Bencher;
 
 // bench: find the `BENCH_SIZE` first terms of the fibonacci sequence
@@ -49,4 +50,9 @@ fn iterative_fibonacci(b: &mut Bencher) {
     b.iter(|| {
         fibonacci_sequence().take(BENCH_SIZE).collect::<Vec<uint>>()
     })
+}
+
+#[cfg(not(test))]
+fn main() {
+	println!("This program must be build and run with --test");
 }
