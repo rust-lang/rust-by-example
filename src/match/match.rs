@@ -34,6 +34,7 @@ fn main() {
             let y = x * x;
             let z = x * x * x;
             x + y + z
-        } x => x,
+        },
+        x => x,
     };
 }
