@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Types and casting | Rust by Example</title>
+        <title>Unsafe operations | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@ type safety, memory safety, concurrency and performance.">
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../examples/if-else/README.html" />
+        <link rel="next" href="../../examples/todo/README.html" />
         
         
-        <link rel="prev" href="../../examples/variables/README.html" />
+        <link rel="prev" href="../../examples/bench/README.html" />
         
 
-        <meta property="og:title" content="Types and casting | Rust by Example">
+        <meta property="og:title" content="Unsafe operations | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="5" data-basepath="../.." data-revision="1398625563185">
+    <div class="book" data-github="japaric/rust-by-example" data-level="36.2" data-basepath="../.." data-revision="1398625563185">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -106,7 +106,7 @@ type safety, memory safety, concurrency and performance.">
             <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/type/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/unsafe/README.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -575,7 +575,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 89.74358974358974%;min-width: 87.17948717948718%;"></div>
+        <div class="inner" style="width: 82.05128205128206%;min-width: 79.48717948717949%;"></div>
     </div>
     <div class="chapters">
     
@@ -645,11 +645,11 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/unsafe/README.html" title="Unsafe operations" class="chapter done " data-progress="36.2" style="left: 82.05128205128206%;"></a>
     
-        <a href="../../examples/todo/README.html" title="TODO" class="chapter done " data-progress="37" style="left: 84.61538461538461%;"></a>
+        <a href="../../examples/todo/README.html" title="TODO" class="chapter  " data-progress="37" style="left: 84.61538461538461%;"></a>
     
-        <a href="../../examples/variables/README.html" title="Variables" class="chapter done new-chapter" data-progress="4" style="left: 87.17948717948718%;"></a>
+        <a href="../../examples/variables/README.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 87.17948717948718%;"></a>
     
-        <a href="../../examples/type/README.html" title="Types and casting" class="chapter done new-chapter" data-progress="5" style="left: 89.74358974358974%;"></a>
+        <a href="../../examples/type/README.html" title="Types and casting" class="chapter  new-chapter" data-progress="5" style="left: 89.74358974358974%;"></a>
     
         <a href="../../examples/if-else/README.html" title="if/else" class="chapter  new-chapter" data-progress="6" style="left: 92.3076923076923%;"></a>
     
@@ -664,23 +664,51 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_37">
+                    <section class="normal" id="section-gitbook_38">
                     
-                        <h1 id="types-and-casting">Types and casting</h1>
-<p>Rust provides type safety via its static type-checker. Variables can be type
-annotated using a colon <code>:</code> after the variable name in the <code>let</code> statement,
-however in most cases the compiler will be able to infer the type of a value
-from the context, heavily reducing the annotation burden.</p>
-<p>Type conversion (a.k.a. casting) must be explicitly stated using the <code>as</code>
-keyword.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// type.rs</span>
+                        <h1 id="unsafe-operations">Unsafe operations</h1>
+<p>As an introduction to this section, to borrow from <a href="http://static.rust-lang.org/doc/0.10/guide-unsafe.html" target="_blank">the official docs</a>, &quot;one should try to minimize the amount of unsafe code in a code base.&quot;  With that in mind, let&#39;s get started!
+Unsafe blocks in Rust are used to bypass protections put in place by the compiler; specifically, there are four primary things that unsafe blocks are used for:</p>
+<ul>
+<li>dereferencing raw pointers</li>
+<li>calling a function over FFI (but this is covered in a different part of the book)</li>
+<li>changing types through <code>std::cast::transmute</code></li>
+<li>inline assembly</li>
+</ul>
+<h3 id="raw-pointers">Raw Pointers</h3>
+<p>Raw pointers <code>*</code> and references <code>&amp;T</code> function similarly, but references are always safe because they are guaranteed to point to valid data due to the borrow checker.  Dereferencing a raw pointer can only be done through an unsafe block.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// pointer.rs</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-comment">// All the type annotations are superfluous</span>
-    <span class="hljs-keyword">let</span> decimal: <span class="hljs-keyword">f32</span> = <span class="hljs-number">65.4321</span>;
-    <span class="hljs-keyword">let</span> integer: <span class="hljs-keyword">u8</span> = decimal as <span class="hljs-keyword">u8</span>;
-    <span class="hljs-keyword">let</span> character: <span class="hljs-keyword">char</span> = integer as <span class="hljs-keyword">char</span>;
+    <span class="hljs-keyword">let</span> raw_p: *<span class="hljs-keyword">u32</span> = &amp;<span class="hljs-number">10</span>;
 
-    println!(<span class="hljs-string">"Casting: {} -&gt; {} -&gt; {}"</span>, decimal, integer, character);
+    <span class="hljs-keyword">unsafe</span> {
+        <span class="hljs-keyword">assert</span>!(*raw_p == <span class="hljs-number">10</span>);
+    }
+}
+</code></pre>
+<h3 id="transmute">Transmute</h3>
+<p>Allows simple conversion from one type to another, however both types must have the same size and alignment</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// transmute.rs</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+    <span class="hljs-keyword">let</span> u: &amp;[<span class="hljs-keyword">u8</span>] = [<span class="hljs-number">49</span>,<span class="hljs-number">50</span>,<span class="hljs-number">51</span>];
+
+    <span class="hljs-keyword">unsafe</span> {
+        <span class="hljs-keyword">assert</span>!(u == std::cast::transmute(<span class="hljs-string">"123"</span>));
+    }
+}
+</code></pre>
+<h3 id="inline-assembly">Inline Assembly</h3>
+<p>Inline assembly functions very similarly to the inline assembly of c, which makes sense considering its implementation is not handled by rust, rather by the LLVM.  It allows for direct access to assembly manipulation, which can massively increase speed, but it can also decrease portability and stability.  In most cases the compiler will optimize your rust code to better assembly than you could write, so in most instances it is not worth it.  The first parameter of asm!() is the format of the assembly, the parameter following the colon is the output variable, and the parameter(s) following that are the input variables.</p>
+<p><strong>Note</strong>: <code>#![feature(asm)]</code> is currently required to use inline assembly.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// asm.rs</span>
+#![feature(asm)]
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span>(</span>a: <span class="hljs-keyword">i32</span>, b: <span class="hljs-keyword">i32</span>) -&gt; <span class="hljs-keyword">i32</span> {
+    <span class="hljs-keyword">let</span> sum: <span class="hljs-keyword">i32</span>;
+    <span class="hljs-keyword">unsafe</span> {
+        asm!(<span class="hljs-string">"add $2, $1; mov $1, $0"</span> : <span class="hljs-string">"=r"</span>(sum) : <span class="hljs-string">"r"</span>(a), <span class="hljs-string">"r"</span>(b));
+    }
+    sum
 }
 </code></pre>
 
@@ -692,10 +720,10 @@ keyword.</p>
         </div>
 
         
-        <a href="../../examples/variables/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/bench/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/if-else/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/todo/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

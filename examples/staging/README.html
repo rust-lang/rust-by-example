@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Types and casting | Rust by Example</title>
+        <title>Staging Area | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@ type safety, memory safety, concurrency and performance.">
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../examples/if-else/README.html" />
+        <link rel="next" href="../../examples/bench/README.html" />
         
         
-        <link rel="prev" href="../../examples/variables/README.html" />
+        <link rel="prev" href="../../examples/sockets/README.html" />
         
 
-        <meta property="og:title" content="Types and casting | Rust by Example">
+        <meta property="og:title" content="Staging Area | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="5" data-basepath="../.." data-revision="1398625563185">
+    <div class="book" data-github="japaric/rust-by-example" data-level="36" data-basepath="../.." data-revision="1398625563185">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -106,7 +106,7 @@ type safety, memory safety, concurrency and performance.">
             <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/type/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/staging/README.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -575,7 +575,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 89.74358974358974%;min-width: 87.17948717948718%;"></div>
+        <div class="inner" style="width: 76.92307692307692%;min-width: 74.35897435897436%;"></div>
     </div>
     <div class="chapters">
     
@@ -641,15 +641,15 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/staging/README.html" title="Staging Area" class="chapter done " data-progress="36" style="left: 76.92307692307692%;"></a>
     
-        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter done " data-progress="36.1" style="left: 79.48717948717949%;"></a>
+        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter  " data-progress="36.1" style="left: 79.48717948717949%;"></a>
     
-        <a href="../../examples/unsafe/README.html" title="Unsafe operations" class="chapter done " data-progress="36.2" style="left: 82.05128205128206%;"></a>
+        <a href="../../examples/unsafe/README.html" title="Unsafe operations" class="chapter  " data-progress="36.2" style="left: 82.05128205128206%;"></a>
     
-        <a href="../../examples/todo/README.html" title="TODO" class="chapter done " data-progress="37" style="left: 84.61538461538461%;"></a>
+        <a href="../../examples/todo/README.html" title="TODO" class="chapter  " data-progress="37" style="left: 84.61538461538461%;"></a>
     
-        <a href="../../examples/variables/README.html" title="Variables" class="chapter done new-chapter" data-progress="4" style="left: 87.17948717948718%;"></a>
+        <a href="../../examples/variables/README.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 87.17948717948718%;"></a>
     
-        <a href="../../examples/type/README.html" title="Types and casting" class="chapter done new-chapter" data-progress="5" style="left: 89.74358974358974%;"></a>
+        <a href="../../examples/type/README.html" title="Types and casting" class="chapter  new-chapter" data-progress="5" style="left: 89.74358974358974%;"></a>
     
         <a href="../../examples/if-else/README.html" title="if/else" class="chapter  new-chapter" data-progress="6" style="left: 92.3076923076923%;"></a>
     
@@ -664,25 +664,12 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_37">
+                    <section class="normal" id="section-gitbook_29">
                     
-                        <h1 id="types-and-casting">Types and casting</h1>
-<p>Rust provides type safety via its static type-checker. Variables can be type
-annotated using a colon <code>:</code> after the variable name in the <code>let</code> statement,
-however in most cases the compiler will be able to infer the type of a value
-from the context, heavily reducing the annotation burden.</p>
-<p>Type conversion (a.k.a. casting) must be explicitly stated using the <code>as</code>
-keyword.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// type.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-comment">// All the type annotations are superfluous</span>
-    <span class="hljs-keyword">let</span> decimal: <span class="hljs-keyword">f32</span> = <span class="hljs-number">65.4321</span>;
-    <span class="hljs-keyword">let</span> integer: <span class="hljs-keyword">u8</span> = decimal as <span class="hljs-keyword">u8</span>;
-    <span class="hljs-keyword">let</span> character: <span class="hljs-keyword">char</span> = integer as <span class="hljs-keyword">char</span>;
-
-    println!(<span class="hljs-string">"Casting: {} -&gt; {} -&gt; {}"</span>, decimal, integer, character);
-}
-</code></pre>
+                        <h1 id="staging-area">Staging Area</h1>
+<p>The chapters in this section are being worked on. These chapters are likely to
+contain valid information, but may be unsorted or some of the concepts used
+in them may have not been explained yet.</p>
 
                     
                     </section>
@@ -692,10 +679,10 @@ keyword.</p>
         </div>
 
         
-        <a href="../../examples/variables/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/sockets/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/if-else/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/bench/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
