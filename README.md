@@ -13,7 +13,7 @@ example.
 
 ### I like to see an example about ${topic}
 
-Leave a comment in issue #1
+Leave a comment in [issue #1](https://github.com/japaric/rust-by-example/issues/1).
 
 ### I want to add/modify an example
 
