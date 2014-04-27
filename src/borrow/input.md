@@ -12,7 +12,7 @@ Using this mechanism references to the object can be passed to functions
 without giving up the ownership of the object.
 
 Since the creation and destruction, i.e. the *lifetime*, of an object are known
-to the compiler, valid borrowing can be enforced.
+to the compiler, it can enforce valid borrowing via its *borrow checker*.
 
 {borrow.rs}
 
