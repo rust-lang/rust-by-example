@@ -24,6 +24,7 @@
   { "id": "array", "title": "Arrays and Slices" },
   { "id": "trait", "title": "Traits" },
   { "id": "clone", "title": "Copy and Clone" },
+  { "id": "operator", "title": "Operator Overloading" },
   { "id": "bounds", "title": "Bounds" },
   { "id": "iter", "title": "Iterators" },
   { "id": "closures", "title": "Closures" },
