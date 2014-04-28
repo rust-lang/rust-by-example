@@ -4,13 +4,11 @@ struct Vec2<T> {
     y: T,
 }
 
-// The Add<T, U> trait overloads the + operator: (Self + T = U)
 impl<
     // bound: T implements the Add trait
     T: Add<T, T>
 > Add<Vec2<T>, Vec2<T>>
 for Vec2<T> {
-    // add() is a required method of the Add trait
     fn add(&self, rhs: &Vec2<T>) -> Vec2<T> {
         Vec2 {
             // x and y are of type T, and implement the add() method
@@ -20,13 +18,11 @@ for Vec2<T> {
     }
 }
 
-// The Sub<T, U> trait overloads the - operator: (Self - T = U)
 impl<
     // bound: T implements the Sub trait
     T: Sub<T, T>
 > Sub<Vec2<T>, Vec2<T>>
 for Vec2<T> {
-    // sub() is a required method of the Sub trait
     fn sub(&self, rhs: &Vec2<T>) -> Vec2<T> {
         Vec2 {
             // x and y are of type T, and implement the sub() method
@@ -37,11 +33,12 @@ for Vec2<T> {
 }
 
 impl<
-    // bound: T implements the Add trait and the Mul trait
+    // bound: T implements *both* the Add trait and the Mul trait
     T: Add<T, T> + Mul<T, T>
 > Vec2<T> {
     fn dot(&self, rhs: &Vec2<T>) -> T {
-        self.x.mul(&rhs.x).add(&self.y.mul(&rhs.y))
+        // the sugary versions of mul() and add() can be used as well
+        (self.x * rhs.x) + (self.y * rhs.y)
     }
 }
 
