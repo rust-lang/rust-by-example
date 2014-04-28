@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="36.2" data-basepath="../.." data-revision="1398625563185">
+    <div class="book" data-github="japaric/rust-by-example" data-level="36.2" data-basepath="../.." data-revision="1398644954959">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -90,7 +90,10 @@ type safety, memory safety, concurrency and performance.">
     
 
     <!-- Title -->
-    <h1><a href="../../" >Rust by Example</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../" >Rust by Example</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -106,7 +109,7 @@ type safety, memory safety, concurrency and performance.">
             <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/unsafe/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/unsafe/input.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -690,7 +693,7 @@ Unsafe blocks in Rust are used to bypass protections put in place by the compile
 <p>Allows simple conversion from one type to another, however both types must have the same size and alignment</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// transmute.rs</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-keyword">let</span> u: &amp;[<span class="hljs-keyword">u8</span>] = [<span class="hljs-number">49</span>,<span class="hljs-number">50</span>,<span class="hljs-number">51</span>];
+    <span class="hljs-keyword">let</span> u: &amp;[<span class="hljs-keyword">u8</span>] = [<span class="hljs-number">49</span>, <span class="hljs-number">50</span>, <span class="hljs-number">51</span>];
 
     <span class="hljs-keyword">unsafe</span> {
         <span class="hljs-keyword">assert</span>!(u == std::cast::transmute(<span class="hljs-string">"123"</span>));

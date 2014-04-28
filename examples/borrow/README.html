@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="17" data-basepath="../.." data-revision="1398625563185">
+    <div class="book" data-github="japaric/rust-by-example" data-level="17" data-basepath="../.." data-revision="1398644954959">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -90,7 +90,10 @@ type safety, memory safety, concurrency and performance.">
     
 
     <!-- Title -->
-    <h1><a href="../../" >Rust by Example</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../" >Rust by Example</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -106,7 +109,7 @@ type safety, memory safety, concurrency and performance.">
             <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/borrow/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/borrow/input.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -756,8 +759,8 @@ to the compiler, it can enforce valid borrowing via its <em>borrow checker</em>.
     <span class="hljs-comment">// Ok: mutable objects can be immutably borrowed</span>
     borrow_book(&amp;mutable_geb);
 
-    <span class="hljs-comment">// when an object is mutably borrowed, the original can't be used</span>
-    <span class="hljs-comment">// until its mutable reference goes out of scope.</span>
+    <span class="hljs-comment">// when an object is mutably borrowed, the original can't be used until</span>
+    <span class="hljs-comment">// its mutable reference goes out of scope.</span>
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
         <span class="hljs-keyword">let</span> borrowed_geb = &amp;<span class="hljs-keyword">mut</span> mutable_geb;
 

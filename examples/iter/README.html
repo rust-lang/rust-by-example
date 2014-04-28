@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="27" data-basepath="../.." data-revision="1398625563185">
+    <div class="book" data-github="japaric/rust-by-example" data-level="27" data-basepath="../.." data-revision="1398644954959">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -90,7 +90,10 @@ type safety, memory safety, concurrency and performance.">
     
 
     <!-- Title -->
-    <h1><a href="../../" >Rust by Example</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../" >Rust by Example</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -106,7 +109,7 @@ type safety, memory safety, concurrency and performance.">
             <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/iter/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/iter/input.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -679,9 +682,9 @@ arrays) and lazy value generators.</p>
 
 <span class="hljs-comment">// implement Iterator for Fibonacci</span>
 <span class="hljs-keyword">impl</span> Iterator&lt;<span class="hljs-keyword">uint</span>&gt; <span class="hljs-keyword">for</span> Fibonacci {
-    <span class="hljs-comment">// the Iterator trait only requires the next() method to be defined</span>
-    <span class="hljs-comment">// the return value is Option&lt;T&gt;, None is returned when the Iterator</span>
-    <span class="hljs-comment">// is over, otherwise the next value is returned wrapped in Some</span>
+    <span class="hljs-comment">// the Iterator trait only requires the next() method to be defined the</span>
+    <span class="hljs-comment">// return value is Option&lt;T&gt;, None is returned when the Iterator is</span>
+    <span class="hljs-comment">// over, otherwise the next value is returned wrapped in Some</span>
     <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">next</span>(</span>&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>) -&gt; Option&lt;<span class="hljs-keyword">uint</span>&gt; {
         <span class="hljs-keyword">let</span> new_next = <span class="hljs-keyword">self</span>.curr + <span class="hljs-keyword">self</span>.next;
         <span class="hljs-keyword">let</span> new_curr = replace(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>.next, new_next);

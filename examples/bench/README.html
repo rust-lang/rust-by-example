@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="36.1" data-basepath="../.." data-revision="1398625563185">
+    <div class="book" data-github="japaric/rust-by-example" data-level="36.1" data-basepath="../.." data-revision="1398644954959">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -90,7 +90,10 @@ type safety, memory safety, concurrency and performance.">
     
 
     <!-- Title -->
-    <h1><a href="../../" >Rust by Example</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../../" >Rust by Example</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -106,7 +109,7 @@ type safety, memory safety, concurrency and performance.">
             <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/bench/README.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/bench/input.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -664,7 +667,7 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_22">
+                    <section class="normal" id="section-gitbook_21">
                     
                         <h1 id="benchmarking">Benchmarking</h1>
 <p>Rust provides infrastructure for benchmarking via the <code>Bencher</code> struct and
@@ -709,8 +712,8 @@ the <code>#[bench]</code> annotation. Details in the source code below.</p>
 <span class="hljs-comment">// function to benchmark must be annotated with `#[bench]`</span>
 <span class="hljs-preprocessor">#[bench]</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">recursive_fibonacci</span>(</span>b: &amp;<span class="hljs-keyword">mut</span> Bencher) {
-    <span class="hljs-comment">// exact code to benchmark must be passed as a closure to the</span>
-    <span class="hljs-comment">// iter method of Bencher</span>
+    <span class="hljs-comment">// exact code to benchmark must be passed as a closure to the iter</span>
+    <span class="hljs-comment">// method of Bencher</span>
     b.iter(|| {
         range(<span class="hljs-number">0</span>, BENCH_SIZE).map(fibonacci).collect::&lt;Vec&lt;<span class="hljs-keyword">uint</span>&gt;&gt;()
     })
