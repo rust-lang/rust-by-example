@@ -1,0 +1,21 @@
+language: node_js
+
+before_install:
+  - yes | sudo add-apt-repository ppa:hansjorg/rust
+  - sudo apt-get update
+
+install:
+    - npm install gitbook -g
+    - sudo apt-get install rust-nightly
+
+script:
+    - make
+
+after_success:
+    - make test
+
+notifications:
+    email: false
+
+branches:
+    only: master
