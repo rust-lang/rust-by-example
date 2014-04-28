@@ -37,6 +37,7 @@
   { "id": "sockets", "title": "Unix sockets" },
   { "id": "staging", "title": "Staging Area" },
     { "id": "bench", "title": "Benchmarking" },
+    { "id": "test", "title": "Testing" },
     { "id": "unsafe", "title": "Unsafe operations" },
   { "id": "todo", "title": "TODO" },
     { "id": "crates", "title": "Crates" },
@@ -53,6 +54,5 @@
     { "id": "result", "title": "Result" },
     { "id": "select", "title": "select!" },
     { "id": "stdio", "title": "Standard I/O" },
-    { "id": "test", "title": "Testing" },
     { "id": "try", "title": "try!" }
 ]
