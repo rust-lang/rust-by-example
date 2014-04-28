@@ -24,10 +24,10 @@ fn main() {
     //println!("{}", xs[5]);
 
     // arrays can be automatically converted to slices
-    println!("borrow the whole array as an slice");
+    println!("borrow the whole array as a slice");
     analyze_slice(xs);
 
     // slices can point to a section of an array
-    println!("borrow a section of the array as an slice");
+    println!("borrow a section of the array as a slice");
     analyze_slice(xs.slice(1, 4));
 }
