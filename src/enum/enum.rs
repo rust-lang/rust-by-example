@@ -33,7 +33,6 @@ impl Node {
     }
 }
 
-
 fn main() {
     // linked list: 1 -> 2 -> 3 -> Nil
     let mut list = Cons(1, ~Cons(2, ~Cons(3, ~Nil)));

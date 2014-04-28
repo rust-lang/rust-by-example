@@ -7,9 +7,9 @@ struct Fibonacci {
 
 // implement Iterator for Fibonacci
 impl Iterator<uint> for Fibonacci {
-    // the Iterator trait only requires the next() method to be defined
-    // the return value is Option<T>, None is returned when the Iterator
-    // is over, otherwise the next value is returned wrapped in Some
+    // the Iterator trait only requires the next() method to be defined the
+    // return value is Option<T>, None is returned when the Iterator is
+    // over, otherwise the next value is returned wrapped in Some
     fn next(&mut self) -> Option<uint> {
         let new_next = self.curr + self.next;
         let new_curr = replace(&mut self.next, new_next);

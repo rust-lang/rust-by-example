@@ -45,8 +45,8 @@ fn main() {
     // Ok: mutable objects can be immutably borrowed
     borrow_book(&mutable_geb);
 
-    // when an object is mutably borrowed, the original can't be used
-    // until its mutable reference goes out of scope.
+    // when an object is mutably borrowed, the original can't be used until
+    // its mutable reference goes out of scope.
     if true {
         let borrowed_geb = &mut mutable_geb;
 

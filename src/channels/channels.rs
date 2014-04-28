@@ -3,7 +3,7 @@ use std::comm::channel;
 static NTASKS: int = 5;
 
 fn main() {
-    // channels have two endpoints: the Sender<T> and the Receiver<T>
+    // channels have two endpoints: the Sender<T> and the Receiver<T>,
     // where T is the type of the message to be transfer
     // (type annotation is superfluous)
     let (tx, rx): (Sender<_>, Receiver<_>) = channel();
@@ -31,8 +31,8 @@ fn main() {
         println!("task number {} reported", id);
     }
 
-    // receiving blocks the task if there is no message available, until
-    // a new message arrives
+    // receiving blocks the task if there is no message available, until a
+    // new message arrives
     rx.recv();
 
     println!("this point will never be reached!");

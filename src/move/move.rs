@@ -25,8 +25,8 @@ fn main() {
 
     let pair = Pair(1, ~2);
 
-    // The following two statements *cannot* be swapped because of
-    // the move semantics
+    // The following two statements *cannot* be swapped because of the move
+    // semantics
     // Copy the int value into x
     let Pair(x, _) = pair;
 
