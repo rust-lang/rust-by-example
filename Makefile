@@ -23,6 +23,7 @@ clean:
 
 test:
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
+	./check-line-length.sh
 
 serve:
 	cd output && $(GITBOOK) serve
