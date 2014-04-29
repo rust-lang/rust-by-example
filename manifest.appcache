@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1398740829285
+# Revision 1398746087936
 
 CACHE:
 index.html
@@ -11,8 +11,8 @@ examples/box/README.html
 examples/channels/README.html
 examples/clone/README.html
 examples/closures/README.html
-examples/enum/README.html
 examples/constants/README.html
+examples/enum/README.html
 examples/expression/README.html
 examples/for/README.html
 examples/functions/README.html

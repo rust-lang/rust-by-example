@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="27" data-basepath="../.." data-revision="1398740829285">
+    <div class="book" data-github="japaric/rust-by-example" data-level="27" data-basepath="../.." data-revision="1398746087936">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -704,7 +704,7 @@ implementations.</p>
         Vec2 {
             <span class="hljs-comment">// x and y are of type T, and implement the add() method</span>
             x: <span class="hljs-keyword">self</span>.x.add(&amp;rhs.x),
-            y: <span class="hljs-keyword">self</span>.x.add(&amp;rhs.y),
+            y: <span class="hljs-keyword">self</span>.y.add(&amp;rhs.y),
         }
     }
 }
@@ -718,7 +718,7 @@ implementations.</p>
         Vec2 {
             <span class="hljs-comment">// x and y are of type T, and implement the sub() method</span>
             x: <span class="hljs-keyword">self</span>.x.sub(&amp;rhs.x),
-            y: <span class="hljs-keyword">self</span>.x.sub(&amp;rhs.y),
+            y: <span class="hljs-keyword">self</span>.y.sub(&amp;rhs.y),
         }
     }
 }
@@ -743,8 +743,8 @@ implementations.</p>
 }
 </code></pre>
 <pre><code>$ rustc bounds.rs &amp;&amp; ./bounds
-Vec2 { x: 1, y: 2 } + Vec2 { x: 2, y: 1 } = Vec2 { x: 3, y: 2 }
-Vec2 { x: 1, y: 2 } - Vec2 { x: 2, y: 1 } = Vec2 { x: -1, y: 0 }
+Vec2 { x: 1, y: 2 } + Vec2 { x: 2, y: 1 } = Vec2 { x: 3, y: 3 }
+Vec2 { x: 1, y: 2 } - Vec2 { x: 2, y: 1 } = Vec2 { x: -1, y: 1 }
 Vec2 { x: 1, y: 2 } . Vec2 { x: 2, y: 1 } = 4
 </code></pre>
                     
