@@ -1,8 +1,11 @@
 extern crate serialize;
 
-use std::io::{fs,IoResult,Truncate,UserRWX,Write};
-use std::io::fs::File;
 use serialize::{Decodable,json};
+use std::io::Process;
+use std::io::fs::File;
+use std::io::process::ProcessOutput;
+use std::io::{fs,IoResult,Truncate,UserRWX,Write};
+use std::str;
 
 #[deriving(Decodable,Show)]
 struct Example {
@@ -45,14 +48,39 @@ fn update(example: &Example) -> bool {
         } Ok(contents) => format!("\\# {}\n\n{}", example.title, contents),
     };
 
+    // insert source code in markdown
     for source in sources.iter() {
         let filename = source.filename_str().unwrap();
         let code = match read(source) {
-            Err(_) => { println!("couldn't read {}", filename); break },
-            Ok(contents) => format!("``` rust\n// {}\n{}```", filename, contents),
+            Err(_) => {
+                println!("couldn't read {}", filename);
+                return false;
+            }, Ok(contents) => format!("``` rust\n// {}\n{}```", filename, contents),
         };
 
         template = template.replace(format!("\\{{}\\}", filename), code);
+    }
+
+    // insert program output in markdown
+    for source in sources.iter() {
+        let filename = source.filename_str().unwrap();
+        let token = format!("\\{{}\\}", source.with_extension("out").filename_str().unwrap());
+
+        if template.contains(token) {
+            match compile_run(source) {
+                Err(action) => {
+                    println!("couldn't {} {}", action, filename);
+                    return false;
+                }, Ok(output) => {
+                    let output = format!("```\n$ rustc {} && ./{}\n{}```",
+                                         filename,
+                                         filename.split('.').nth(0).unwrap(),
+                                         output);
+
+                    template = template.replace(token, output);
+                }
+            }
+        }
     }
 
     if !out_dir.exists() {
@@ -66,6 +94,29 @@ fn update(example: &Example) -> bool {
         } Ok(_) => {
             println!("DONE");
             true
+        }
+    }
+}
+
+fn compile_run(path: &Path) -> Result<~str, &'static str> {
+    match Process::output("rustc", [path.as_str().unwrap().to_owned(), ~"-o", ~"executable"]) {
+        Err(_) => return Err("compile"),
+        Ok(out) => {
+            if !out.status.success() {
+                return Ok(str::from_utf8_owned(out.error.move_iter().collect::<~[u8]>()).unwrap());
+            }
+        }
+    }
+
+    match Process::output("./executable", []) {
+        Err(_) => Err("run"),
+        Ok(out) => {
+            fs::unlink(&Path::new("./executable")).unwrap();
+            let ProcessOutput { status: _, output: out, error: err } = out;
+            let stdout = str::from_utf8_owned(out.move_iter().collect::<~[u8]>()).unwrap();
+            let stderr = str::from_utf8_owned(err.move_iter().collect::<~[u8]>()).unwrap();
+
+            Ok(vec!(stdout, stderr).concat())
         }
     }
 }
