@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Tuples | Rust by Example</title>
+        <title>Testing | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@ type safety, memory safety, concurrency and performance.">
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../examples/match/README.html" />
+        <link rel="next" href="../../examples/unsafe/README.html" />
         
         
-        <link rel="prev" href="../../examples/expression/README.html" />
+        <link rel="prev" href="../../examples/bench/README.html" />
         
 
-        <meta property="og:title" content="Tuples | Rust by Example">
+        <meta property="og:title" content="Testing | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="../.." data-revision="1398740829285">
+    <div class="book" data-github="japaric/rust-by-example" data-level="37.2" data-basepath="../.." data-revision="1398740829285">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -109,7 +109,7 @@ type safety, memory safety, concurrency and performance.">
             <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/src/tuples/input.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/test/input.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -589,7 +589,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 7.317073170731708%;min-width: 4.878048780487805%;"></div>
+        <div class="inner" style="width: 80.48780487804878%;min-width: 78.04878048780488%;"></div>
     </div>
     <div class="chapters">
     
@@ -601,65 +601,65 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/tuples/README.html" title="Tuples" class="chapter done " data-progress="11" style="left: 7.317073170731708%;"></a>
     
-        <a href="../../examples/match/README.html" title="Pattern matching" class="chapter  " data-progress="12" style="left: 9.75609756097561%;"></a>
+        <a href="../../examples/match/README.html" title="Pattern matching" class="chapter done " data-progress="12" style="left: 9.75609756097561%;"></a>
     
-        <a href="../../examples/structs/README.html" title="Structs" class="chapter  " data-progress="13" style="left: 12.195121951219512%;"></a>
+        <a href="../../examples/structs/README.html" title="Structs" class="chapter done " data-progress="13" style="left: 12.195121951219512%;"></a>
     
-        <a href="../../examples/generics/README.html" title="Generics" class="chapter  " data-progress="14" style="left: 14.634146341463415%;"></a>
+        <a href="../../examples/generics/README.html" title="Generics" class="chapter done " data-progress="14" style="left: 14.634146341463415%;"></a>
     
-        <a href="../../examples/box/README.html" title="Box, stack and heap" class="chapter  " data-progress="15" style="left: 17.073170731707318%;"></a>
+        <a href="../../examples/box/README.html" title="Box, stack and heap" class="chapter done " data-progress="15" style="left: 17.073170731707318%;"></a>
     
-        <a href="../../examples/move/README.html" title="Ownership and moves" class="chapter  " data-progress="16" style="left: 19.51219512195122%;"></a>
+        <a href="../../examples/move/README.html" title="Ownership and moves" class="chapter done " data-progress="16" style="left: 19.51219512195122%;"></a>
     
-        <a href="../../examples/borrow/README.html" title="RAII and borrow" class="chapter  " data-progress="17" style="left: 21.951219512195124%;"></a>
+        <a href="../../examples/borrow/README.html" title="RAII and borrow" class="chapter done " data-progress="17" style="left: 21.951219512195124%;"></a>
     
-        <a href="../../examples/methods/README.html" title="Methods" class="chapter  " data-progress="18" style="left: 24.390243902439025%;"></a>
+        <a href="../../examples/methods/README.html" title="Methods" class="chapter done " data-progress="18" style="left: 24.390243902439025%;"></a>
     
-        <a href="../../examples/lifetime/README.html" title="Lifetimes" class="chapter  " data-progress="19" style="left: 26.829268292682926%;"></a>
+        <a href="../../examples/lifetime/README.html" title="Lifetimes" class="chapter done " data-progress="19" style="left: 26.829268292682926%;"></a>
     
-        <a href="../../examples/print/README.html" title="Formatted print" class="chapter  new-chapter" data-progress="2" style="left: 29.26829268292683%;"></a>
+        <a href="../../examples/print/README.html" title="Formatted print" class="chapter done new-chapter" data-progress="2" style="left: 29.26829268292683%;"></a>
     
-        <a href="../../examples/constants/README.html" title="Global constants" class="chapter  " data-progress="20" style="left: 31.70731707317073%;"></a>
+        <a href="../../examples/constants/README.html" title="Global constants" class="chapter done " data-progress="20" style="left: 31.70731707317073%;"></a>
     
-        <a href="../../examples/option/README.html" title="fail! and Option" class="chapter  " data-progress="21" style="left: 34.146341463414636%;"></a>
+        <a href="../../examples/option/README.html" title="fail! and Option" class="chapter done " data-progress="21" style="left: 34.146341463414636%;"></a>
     
-        <a href="../../examples/enum/README.html" title="Enums" class="chapter  " data-progress="22" style="left: 36.58536585365854%;"></a>
+        <a href="../../examples/enum/README.html" title="Enums" class="chapter done " data-progress="22" style="left: 36.58536585365854%;"></a>
     
-        <a href="../../examples/array/README.html" title="Arrays and Slices" class="chapter  " data-progress="23" style="left: 39.02439024390244%;"></a>
+        <a href="../../examples/array/README.html" title="Arrays and Slices" class="chapter done " data-progress="23" style="left: 39.02439024390244%;"></a>
     
-        <a href="../../examples/trait/README.html" title="Traits" class="chapter  " data-progress="24" style="left: 41.46341463414634%;"></a>
+        <a href="../../examples/trait/README.html" title="Traits" class="chapter done " data-progress="24" style="left: 41.46341463414634%;"></a>
     
-        <a href="../../examples/clone/README.html" title="Copy and Clone" class="chapter  " data-progress="25" style="left: 43.90243902439025%;"></a>
+        <a href="../../examples/clone/README.html" title="Copy and Clone" class="chapter done " data-progress="25" style="left: 43.90243902439025%;"></a>
     
-        <a href="../../examples/operator/README.html" title="Operator Overloading" class="chapter  " data-progress="26" style="left: 46.34146341463415%;"></a>
+        <a href="../../examples/operator/README.html" title="Operator Overloading" class="chapter done " data-progress="26" style="left: 46.34146341463415%;"></a>
     
-        <a href="../../examples/bounds/README.html" title="Bounds" class="chapter  " data-progress="27" style="left: 48.78048780487805%;"></a>
+        <a href="../../examples/bounds/README.html" title="Bounds" class="chapter done " data-progress="27" style="left: 48.78048780487805%;"></a>
     
-        <a href="../../examples/iter/README.html" title="Iterators" class="chapter  " data-progress="28" style="left: 51.21951219512195%;"></a>
+        <a href="../../examples/iter/README.html" title="Iterators" class="chapter done " data-progress="28" style="left: 51.21951219512195%;"></a>
     
-        <a href="../../examples/closures/README.html" title="Closures" class="chapter  " data-progress="29" style="left: 53.65853658536585%;"></a>
+        <a href="../../examples/closures/README.html" title="Closures" class="chapter done " data-progress="29" style="left: 53.65853658536585%;"></a>
     
-        <a href="../../examples/literals/README.html" title="Literals" class="chapter  new-chapter" data-progress="3" style="left: 56.09756097560975%;"></a>
+        <a href="../../examples/literals/README.html" title="Literals" class="chapter done new-chapter" data-progress="3" style="left: 56.09756097560975%;"></a>
     
-        <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter  " data-progress="30" style="left: 58.53658536585366%;"></a>
+        <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter done " data-progress="30" style="left: 58.53658536585366%;"></a>
     
-        <a href="../../examples/vec/README.html" title="Vectors" class="chapter  " data-progress="31" style="left: 60.97560975609756%;"></a>
+        <a href="../../examples/vec/README.html" title="Vectors" class="chapter done " data-progress="31" style="left: 60.97560975609756%;"></a>
     
-        <a href="../../examples/str/README.html" title="Strings" class="chapter  " data-progress="32" style="left: 63.41463414634146%;"></a>
+        <a href="../../examples/str/README.html" title="Strings" class="chapter done " data-progress="32" style="left: 63.41463414634146%;"></a>
     
-        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter  " data-progress="33" style="left: 65.85365853658537%;"></a>
+        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter done " data-progress="33" style="left: 65.85365853658537%;"></a>
     
-        <a href="../../examples/channels/README.html" title="Channels" class="chapter  " data-progress="34" style="left: 68.29268292682927%;"></a>
+        <a href="../../examples/channels/README.html" title="Channels" class="chapter done " data-progress="34" style="left: 68.29268292682927%;"></a>
     
-        <a href="../../examples/timers/README.html" title="Timers" class="chapter  " data-progress="35" style="left: 70.73170731707317%;"></a>
+        <a href="../../examples/timers/README.html" title="Timers" class="chapter done " data-progress="35" style="left: 70.73170731707317%;"></a>
     
-        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter  " data-progress="36" style="left: 73.17073170731707%;"></a>
+        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter done " data-progress="36" style="left: 73.17073170731707%;"></a>
     
-        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter  " data-progress="37" style="left: 75.60975609756098%;"></a>
+        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter done " data-progress="37" style="left: 75.60975609756098%;"></a>
     
-        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter  " data-progress="37.1" style="left: 78.04878048780488%;"></a>
+        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter done " data-progress="37.1" style="left: 78.04878048780488%;"></a>
     
-        <a href="../../examples/test/README.html" title="Testing" class="chapter  " data-progress="37.2" style="left: 80.48780487804878%;"></a>
+        <a href="../../examples/test/README.html" title="Testing" class="chapter done " data-progress="37.2" style="left: 80.48780487804878%;"></a>
     
         <a href="../../examples/unsafe/README.html" title="Unsafe operations" class="chapter  " data-progress="37.3" style="left: 82.92682926829268%;"></a>
     
@@ -682,77 +682,55 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_38">
+                    <section class="normal" id="section-gitbook_34">
                     
-                        <h1 id="tuples">Tuples</h1>
-<p>A tuple is a collection of values of different types. Tuples are declared
-using parentheses <code>()</code>, and each tuple belongs to a type of the form
-<code>(T1, T2, ...)</code>. Function can use tuples to return multiple values.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// tuples.rs</span>
-<span class="hljs-comment">// function that returns two values</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">chimpanzees</span>(</span>) -&gt; (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>) {
-    (<span class="hljs-number">6</span>, <span class="hljs-string">"Pan troglodytes"</span>)
-}
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">elephants</span>(</span>) -&gt; (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>) {
-    (<span class="hljs-number">9</span>, <span class="hljs-string">"Elephas maximus"</span>)
-}
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">penguins</span>(</span>) -&gt; (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>) {
-    (<span class="hljs-number">4</span>, <span class="hljs-string">"Spheniscus demersus"</span>)
-}
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">wolves</span>(</span>) -&gt; (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>) {
-    (<span class="hljs-number">6</span>, <span class="hljs-string">"Canis lupus"</span>)
-}
-
-<span class="hljs-comment">// tuples can be function arguments</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">show</span>(</span>pair: (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>)) {
-    <span class="hljs-comment">// destructuring a tuple</span>
-    <span class="hljs-keyword">let</span> (amount, species) = pair;
-
-    println!(<span class="hljs-string">"There are {} {}"</span>, amount, species);
+                        <h1 id="testing">Testing</h1>
+<p>To mark a function as a unit test, place <code>#[test]</code> (equivalent
+to <code>#[cfg(test)]</code>) above any function.  The function must take
+no parameters and return nothing.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// unit-test.rs</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance</span>(</span>a: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>), b: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>)) -&gt; <span class="hljs-keyword">f32</span> {
+    (
+        (b.val0().powi(<span class="hljs-number">2</span>) - a.val0().powi(<span class="hljs-number">2</span>)) +
+        (b.val1().powi(<span class="hljs-number">2</span>) - a.val1().powi(<span class="hljs-number">2</span>))
+    ).sqrt()
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-comment">// a tuple with a bunch of different types</span>
-    <span class="hljs-keyword">let</span> long_tuple = (<span class="hljs-number">1u8</span>, <span class="hljs-number">2u16</span>, <span class="hljs-number">3u32</span>, <span class="hljs-number">4u64</span>,
-                      -<span class="hljs-number">1i8</span>, -<span class="hljs-number">2i16</span>, -<span class="hljs-number">3i32</span>, -<span class="hljs-number">4i64</span>,
-                      <span class="hljs-number">0.1f32</span>, <span class="hljs-number">0.2f64</span>,
-                      <span class="hljs-string">'a'</span>, <span class="hljs-string">"abc"</span>);
+    println!(<span class="hljs-string">"If you see this, the tests were not compiled nor ran!"</span>);
+}
 
-    <span class="hljs-comment">// values can be extracted from the tuple using the valN methods</span>
-    println!(<span class="hljs-string">"long tuple first value: {}"</span>, long_tuple.val0());
-    println!(<span class="hljs-string">"long tuple second value: {}"</span>, long_tuple.val1());
-
-    <span class="hljs-comment">// `let` can be used to bind a tuple members to variables</span>
-    <span class="hljs-keyword">let</span> pair = (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
-    <span class="hljs-keyword">let</span> (x, y) = pair;
-    println!(<span class="hljs-string">"x is {}, and y is {}"</span>, x, y);
-
-    <span class="hljs-comment">// but you can also print a tuple directly</span>
-    println!(<span class="hljs-string">"pair is {}"</span>, pair);
-
-    <span class="hljs-comment">// a tuple of tuples</span>
-    <span class="hljs-keyword">let</span> tuple_of_tuples = ((<span class="hljs-number">1u8</span>, <span class="hljs-number">2u16</span>, <span class="hljs-number">2u32</span>), (<span class="hljs-number">4u64</span>, -<span class="hljs-number">1i8</span>), -<span class="hljs-number">2i16</span>);
-
-    println!(<span class="hljs-string">"Animal inventory"</span>);
-    show(chimpanzees());
-    show(elephants());
-    show(penguins());
-    show(wolves());
+<span class="hljs-preprocessor">#[test]</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance_test</span>(</span>) {
+    <span class="hljs-keyword">assert</span>!(distance((<span class="hljs-number">0.0</span>, <span class="hljs-number">0.0</span>), (<span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>)) == (<span class="hljs-number">2</span> as <span class="hljs-keyword">f32</span>).sqrt());
 }
 </code></pre>
-<pre><code>$ rustc tuples.rs &amp;&amp; ./tuples
-long tuple first value: 1
-long tuple second value: 2
-x is 3, and y is 4
-pair is (3, 4)
-Animal inventory
-There are 6 Pan troglodytes
-There are 9 Elephas maximus
-There are 4 Spheniscus demersus
-There are 6 Canis lupus
+<p>If you want the test to fail, just put <code>#[should_fail]</code> under <code>#[test]</code>.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// fail.rs</span>
+<span class="hljs-preprocessor">#[test]</span>
+<span class="hljs-preprocessor">#[should_fail]</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">failing_test</span>(</span>) {
+    <span class="hljs-keyword">assert</span>!(<span class="hljs-number">1</span> == <span class="hljs-number">2</span>);
+}
+</code></pre>
+<p>To run unit tests, add either the <code>--test</code> or <code>--cfg test</code> flag to the
+command.  When using either flag, you do not need a <code>main()</code> function
+as the executable will only include and run the functions flagged with
+<code>#[test]</code> or <code>#[cfg(test)]</code>.  If you don&#39;t pass the <code>--test</code> flag, <code>rustc</code> will
+ignore any functions flagged with <code>#[test]</code>.  That means calling any function
+flagged with <code>#[test]</code> will result in <code>rustc: unresolved name</code> if it is not
+compiled with <code>--test</code>.</p>
+<p><strong>note</strong>: programs compiled with <code>--test</code> <em>ignore</em> information passed to stdout</p>
+<pre><code>$ rustc --test unit-test.rs
+$ ./unit-test
+running 1 test
+test distance_test ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+</code></pre><p>If <code>--test</code> were not included, then this would happen</p>
+<pre><code>$ rustc unit-test.rs
+$ ./unit-test
+If you see this, the tests were not compiled nor ran!
 </code></pre>
                     
                     </section>
@@ -762,10 +740,10 @@ There are 6 Canis lupus
         </div>
 
         
-        <a href="../../examples/expression/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/bench/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/match/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/unsafe/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

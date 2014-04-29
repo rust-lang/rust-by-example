@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Tuples | Rust by Example</title>
+        <title>Operator Overloading | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@ type safety, memory safety, concurrency and performance.">
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../examples/match/README.html" />
+        <link rel="next" href="../../examples/bounds/README.html" />
         
         
-        <link rel="prev" href="../../examples/expression/README.html" />
+        <link rel="prev" href="../../examples/clone/README.html" />
         
 
-        <meta property="og:title" content="Tuples | Rust by Example">
+        <meta property="og:title" content="Operator Overloading | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="../.." data-revision="1398740829285">
+    <div class="book" data-github="japaric/rust-by-example" data-level="26" data-basepath="../.." data-revision="1398740829285">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -109,7 +109,7 @@ type safety, memory safety, concurrency and performance.">
             <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
         </li>
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/src/tuples/input.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/operator/input.md" target="blank">Edit and Contribute</a>
         </li>
         <li class="divider"></li>
         
@@ -589,7 +589,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 7.317073170731708%;min-width: 4.878048780487805%;"></div>
+        <div class="inner" style="width: 46.34146341463415%;min-width: 43.90243902439025%;"></div>
     </div>
     <div class="chapters">
     
@@ -601,37 +601,37 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/tuples/README.html" title="Tuples" class="chapter done " data-progress="11" style="left: 7.317073170731708%;"></a>
     
-        <a href="../../examples/match/README.html" title="Pattern matching" class="chapter  " data-progress="12" style="left: 9.75609756097561%;"></a>
+        <a href="../../examples/match/README.html" title="Pattern matching" class="chapter done " data-progress="12" style="left: 9.75609756097561%;"></a>
     
-        <a href="../../examples/structs/README.html" title="Structs" class="chapter  " data-progress="13" style="left: 12.195121951219512%;"></a>
+        <a href="../../examples/structs/README.html" title="Structs" class="chapter done " data-progress="13" style="left: 12.195121951219512%;"></a>
     
-        <a href="../../examples/generics/README.html" title="Generics" class="chapter  " data-progress="14" style="left: 14.634146341463415%;"></a>
+        <a href="../../examples/generics/README.html" title="Generics" class="chapter done " data-progress="14" style="left: 14.634146341463415%;"></a>
     
-        <a href="../../examples/box/README.html" title="Box, stack and heap" class="chapter  " data-progress="15" style="left: 17.073170731707318%;"></a>
+        <a href="../../examples/box/README.html" title="Box, stack and heap" class="chapter done " data-progress="15" style="left: 17.073170731707318%;"></a>
     
-        <a href="../../examples/move/README.html" title="Ownership and moves" class="chapter  " data-progress="16" style="left: 19.51219512195122%;"></a>
+        <a href="../../examples/move/README.html" title="Ownership and moves" class="chapter done " data-progress="16" style="left: 19.51219512195122%;"></a>
     
-        <a href="../../examples/borrow/README.html" title="RAII and borrow" class="chapter  " data-progress="17" style="left: 21.951219512195124%;"></a>
+        <a href="../../examples/borrow/README.html" title="RAII and borrow" class="chapter done " data-progress="17" style="left: 21.951219512195124%;"></a>
     
-        <a href="../../examples/methods/README.html" title="Methods" class="chapter  " data-progress="18" style="left: 24.390243902439025%;"></a>
+        <a href="../../examples/methods/README.html" title="Methods" class="chapter done " data-progress="18" style="left: 24.390243902439025%;"></a>
     
-        <a href="../../examples/lifetime/README.html" title="Lifetimes" class="chapter  " data-progress="19" style="left: 26.829268292682926%;"></a>
+        <a href="../../examples/lifetime/README.html" title="Lifetimes" class="chapter done " data-progress="19" style="left: 26.829268292682926%;"></a>
     
-        <a href="../../examples/print/README.html" title="Formatted print" class="chapter  new-chapter" data-progress="2" style="left: 29.26829268292683%;"></a>
+        <a href="../../examples/print/README.html" title="Formatted print" class="chapter done new-chapter" data-progress="2" style="left: 29.26829268292683%;"></a>
     
-        <a href="../../examples/constants/README.html" title="Global constants" class="chapter  " data-progress="20" style="left: 31.70731707317073%;"></a>
+        <a href="../../examples/constants/README.html" title="Global constants" class="chapter done " data-progress="20" style="left: 31.70731707317073%;"></a>
     
-        <a href="../../examples/option/README.html" title="fail! and Option" class="chapter  " data-progress="21" style="left: 34.146341463414636%;"></a>
+        <a href="../../examples/option/README.html" title="fail! and Option" class="chapter done " data-progress="21" style="left: 34.146341463414636%;"></a>
     
-        <a href="../../examples/enum/README.html" title="Enums" class="chapter  " data-progress="22" style="left: 36.58536585365854%;"></a>
+        <a href="../../examples/enum/README.html" title="Enums" class="chapter done " data-progress="22" style="left: 36.58536585365854%;"></a>
     
-        <a href="../../examples/array/README.html" title="Arrays and Slices" class="chapter  " data-progress="23" style="left: 39.02439024390244%;"></a>
+        <a href="../../examples/array/README.html" title="Arrays and Slices" class="chapter done " data-progress="23" style="left: 39.02439024390244%;"></a>
     
-        <a href="../../examples/trait/README.html" title="Traits" class="chapter  " data-progress="24" style="left: 41.46341463414634%;"></a>
+        <a href="../../examples/trait/README.html" title="Traits" class="chapter done " data-progress="24" style="left: 41.46341463414634%;"></a>
     
-        <a href="../../examples/clone/README.html" title="Copy and Clone" class="chapter  " data-progress="25" style="left: 43.90243902439025%;"></a>
+        <a href="../../examples/clone/README.html" title="Copy and Clone" class="chapter done " data-progress="25" style="left: 43.90243902439025%;"></a>
     
-        <a href="../../examples/operator/README.html" title="Operator Overloading" class="chapter  " data-progress="26" style="left: 46.34146341463415%;"></a>
+        <a href="../../examples/operator/README.html" title="Operator Overloading" class="chapter done " data-progress="26" style="left: 46.34146341463415%;"></a>
     
         <a href="../../examples/bounds/README.html" title="Bounds" class="chapter  " data-progress="27" style="left: 48.78048780487805%;"></a>
     
@@ -682,78 +682,58 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_38">
+                    <section class="normal" id="section-gitbook_26">
                     
-                        <h1 id="tuples">Tuples</h1>
-<p>A tuple is a collection of values of different types. Tuples are declared
-using parentheses <code>()</code>, and each tuple belongs to a type of the form
-<code>(T1, T2, ...)</code>. Function can use tuples to return multiple values.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// tuples.rs</span>
-<span class="hljs-comment">// function that returns two values</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">chimpanzees</span>(</span>) -&gt; (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>) {
-    (<span class="hljs-number">6</span>, <span class="hljs-string">"Pan troglodytes"</span>)
+                        <h1 id="operator-overloading">Operator Overloading</h1>
+<p>In Rust, many of the operators can be overloaded via traits. This is possible
+because operators are just sugar for method calls. For example, <code>a + b</code>
+desugars to <code>a.add(&amp;b)</code>. This <code>add()</code> method is part of the <code>Add</code> trait, hence
+any implementor of the <code>Add</code> trait will be able to use the <code>+</code> operator.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// operator.rs</span>
+<span class="hljs-keyword">struct</span> Foo;
+<span class="hljs-keyword">struct</span> Bar;
+
+<span class="hljs-preprocessor">#[deriving(Show)]</span>
+<span class="hljs-keyword">struct</span> FooBar;
+
+<span class="hljs-preprocessor">#[deriving(Show)]</span>
+<span class="hljs-keyword">struct</span> BarFoo;
+
+<span class="hljs-comment">// the Add&lt;T, U&gt; trait needs two generic parameters:</span>
+<span class="hljs-comment">// T is the type of the RHS summand, and</span>
+<span class="hljs-comment">// U is the type of the sum</span>
+<span class="hljs-comment">// This block implements the operation: Foo + Bar = FooBar</span>
+<span class="hljs-keyword">impl</span> Add&lt;Bar, FooBar&gt; <span class="hljs-keyword">for</span> Foo {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span>(</span>&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Bar) -&gt; FooBar {
+        println!(<span class="hljs-string">"&gt; Foo.add(&amp;Bar) was called"</span>);
+
+        FooBar
+    }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">elephants</span>(</span>) -&gt; (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>) {
-    (<span class="hljs-number">9</span>, <span class="hljs-string">"Elephas maximus"</span>)
-}
+<span class="hljs-comment">// Addition can be implemented in a non-commutative way</span>
+<span class="hljs-comment">// This block implements the operation: Bar + Foo = BarFoo</span>
+<span class="hljs-keyword">impl</span> Add&lt;Foo, BarFoo&gt; <span class="hljs-keyword">for</span> Bar {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span>(</span>&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Foo) -&gt; BarFoo {
+        println!(<span class="hljs-string">"&gt; Bar.add(&amp;Foo) was called"</span>);
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">penguins</span>(</span>) -&gt; (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>) {
-    (<span class="hljs-number">4</span>, <span class="hljs-string">"Spheniscus demersus"</span>)
-}
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">wolves</span>(</span>) -&gt; (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>) {
-    (<span class="hljs-number">6</span>, <span class="hljs-string">"Canis lupus"</span>)
-}
-
-<span class="hljs-comment">// tuples can be function arguments</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">show</span>(</span>pair: (<span class="hljs-keyword">int</span>, &amp;<span class="hljs-keyword">str</span>)) {
-    <span class="hljs-comment">// destructuring a tuple</span>
-    <span class="hljs-keyword">let</span> (amount, species) = pair;
-
-    println!(<span class="hljs-string">"There are {} {}"</span>, amount, species);
+        BarFoo
+    }
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-comment">// a tuple with a bunch of different types</span>
-    <span class="hljs-keyword">let</span> long_tuple = (<span class="hljs-number">1u8</span>, <span class="hljs-number">2u16</span>, <span class="hljs-number">3u32</span>, <span class="hljs-number">4u64</span>,
-                      -<span class="hljs-number">1i8</span>, -<span class="hljs-number">2i16</span>, -<span class="hljs-number">3i32</span>, -<span class="hljs-number">4i64</span>,
-                      <span class="hljs-number">0.1f32</span>, <span class="hljs-number">0.2f64</span>,
-                      <span class="hljs-string">'a'</span>, <span class="hljs-string">"abc"</span>);
-
-    <span class="hljs-comment">// values can be extracted from the tuple using the valN methods</span>
-    println!(<span class="hljs-string">"long tuple first value: {}"</span>, long_tuple.val0());
-    println!(<span class="hljs-string">"long tuple second value: {}"</span>, long_tuple.val1());
-
-    <span class="hljs-comment">// `let` can be used to bind a tuple members to variables</span>
-    <span class="hljs-keyword">let</span> pair = (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
-    <span class="hljs-keyword">let</span> (x, y) = pair;
-    println!(<span class="hljs-string">"x is {}, and y is {}"</span>, x, y);
-
-    <span class="hljs-comment">// but you can also print a tuple directly</span>
-    println!(<span class="hljs-string">"pair is {}"</span>, pair);
-
-    <span class="hljs-comment">// a tuple of tuples</span>
-    <span class="hljs-keyword">let</span> tuple_of_tuples = ((<span class="hljs-number">1u8</span>, <span class="hljs-number">2u16</span>, <span class="hljs-number">2u32</span>), (<span class="hljs-number">4u64</span>, -<span class="hljs-number">1i8</span>), -<span class="hljs-number">2i16</span>);
-
-    println!(<span class="hljs-string">"Animal inventory"</span>);
-    show(chimpanzees());
-    show(elephants());
-    show(penguins());
-    show(wolves());
+    println!(<span class="hljs-string">"Foo + Bar = {}"</span>, Foo + Bar);
+    println!(<span class="hljs-string">"Bar + Foo = {}"</span>, Bar + Foo);
 }
 </code></pre>
-<pre><code>$ rustc tuples.rs &amp;&amp; ./tuples
-long tuple first value: 1
-long tuple second value: 2
-x is 3, and y is 4
-pair is (3, 4)
-Animal inventory
-There are 6 Pan troglodytes
-There are 9 Elephas maximus
-There are 4 Spheniscus demersus
-There are 6 Canis lupus
-</code></pre>
+<pre><code>$ rustc operator.rs &amp;&amp; ./operator
+&gt; Foo.add(&amp;Bar) was called
+Foo + Bar = FooBar
+&gt; Bar.add(&amp;Foo) was called
+Bar + Foo = BarFoo
+</code></pre><p>Here is a <a href="http://static.rust-lang.org/doc/master/std/ops/index.html" target="_blank">list</a> of
+the traits that overload operators.</p>
+
                     
                     </section>
                 
@@ -762,10 +742,10 @@ There are 6 Canis lupus
         </div>
 
         
-        <a href="../../examples/expression/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/clone/README.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/match/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/bounds/README.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
