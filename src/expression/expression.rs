@@ -1,9 +1,9 @@
-fn is_divisible_by(this: uint, that: uint) -> bool {
+fn is_divisible_by(lhs: uint, rhs: uint) -> bool {
     // if-else is an expression!
-    if that == 0 {
+    if rhs == 0 {
         false
     } else {
-        this % that == 0
+        lhs % rhs == 0
     }
 }
 

@@ -1,12 +1,12 @@
 // function that returns a bool value
-fn is_divisible_by(this: uint, that: uint) -> bool {
+fn is_divisible_by(lhs: uint, rhs: uint) -> bool {
     // corner case, early return
-    if that == 0 {
+    if rhs == 0 {
         return false
     }
 
     // this is an expression, the `return` keyword is not necessary here
-    this % that == 0
+    lhs % rhs == 0
 }
 
 // function that doesn't return a value
