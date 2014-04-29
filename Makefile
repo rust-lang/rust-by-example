@@ -1,4 +1,4 @@
-GITBOOK = gitbook -t 'Rust by Example'
+GITBOOK = gitbook
 RUSTC = rustc
 QUIET = -A unused-variable -A dead-code -A dead-assignment
 RUSTC_NT = rustc --no-trans --test $(QUIET)
