@@ -6,3 +6,5 @@ Boxed values can be dereferenced using the `*` operator, this means the data is
 removed from the heap and brought into the stack.
 
 {box.rs}
+
+{box.out}

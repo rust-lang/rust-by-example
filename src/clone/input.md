@@ -4,3 +4,5 @@ the other data structures can be copied explicitly by calling the `clone()`
 method, if they implement the `Clone` trait.
 
 {clone.rs}
+
+{clone.out}

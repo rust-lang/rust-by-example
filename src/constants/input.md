@@ -7,3 +7,5 @@ Strings, which are normally heap allocated, can be constants too, but they
 require the `'static` lifetime in their type annotation.
 
 {constants.rs}
+
+{constants.out}

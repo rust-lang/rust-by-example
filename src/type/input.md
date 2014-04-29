@@ -7,3 +7,5 @@ Type conversion (a.k.a. casting) must be explicitly stated using the `as`
 keyword.
 
 {type.rs}
+
+{type.out}

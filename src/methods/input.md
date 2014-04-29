@@ -3,3 +3,5 @@ field of a struct and its methods via the `self` keyword. These methods are
 defined under a `impl` block.
 
 {methods.rs}
+
+{methods.out}

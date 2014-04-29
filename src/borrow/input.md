@@ -16,6 +16,8 @@ to the compiler, it can enforce valid borrowing via its *borrow checker*.
 
 {borrow.rs}
 
+{borrow.out}
+
 (`&` and `&mut` are the const correctness of Rust, but you will never forget to
  add a const to the function signature, since immutable is the default and the
  compiler will ~~yell at you~~ tell you if you forgot a `mut` somewhere)

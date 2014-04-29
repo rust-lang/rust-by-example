@@ -6,7 +6,7 @@ the `Sender` and the `Receiver`.
 
 This is a sample output, order may vary because of task scheduling.
 
-``` bash
+```
 $ rustc channels.rs && ./channels
 task number 1 finished
 task number 3 finished
@@ -18,6 +18,7 @@ task number 2 reported
 task number 0 reported
 task number 3 reported
 task number 4 reported
+
 ```
 
 Albeit non obvious from the output above, channels are actually FIFO.
@@ -26,11 +27,4 @@ Albeit non obvious from the output above, channels are actually FIFO.
 
 The order is maintained, after removing the scheduler non-determinism.
 
-``` bash
-$ rustc fifo.rs && ./fifo
-0
-1
-2
-3
-4
-```
+{fifo.out}

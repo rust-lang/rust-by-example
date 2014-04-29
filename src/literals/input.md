@@ -16,3 +16,5 @@ languages
 ](https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages)
 
 {literals.rs}
+
+{literals.out}

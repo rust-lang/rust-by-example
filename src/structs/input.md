@@ -9,3 +9,5 @@ keyword:
 The syntax is shown below.
 
 {structs.rs}
+
+{structs.out}

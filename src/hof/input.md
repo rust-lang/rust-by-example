@@ -4,6 +4,8 @@ give Rust its functional flavor.
 
 {hof.rs}
 
+{hof.out}
+
 [Option](http://static.rust-lang.org/doc/master/std/option/enum.Option.html)
 and [Iterator
 ](http://static.rust-lang.org/doc/master/std/iter/trait.Iterator.html)

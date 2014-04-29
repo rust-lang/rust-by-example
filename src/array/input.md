@@ -6,3 +6,5 @@ instead a slice is two word object, the first word is a pointer to the data
 and the second word is the length of the slice.
 
 {array.rs}
+
+{array.out}

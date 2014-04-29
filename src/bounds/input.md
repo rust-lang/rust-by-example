@@ -3,3 +3,5 @@ conform to some traits. This allows using the trait methods in these bounded
 implementations.
 
 {bounds.rs}
+
+{bounds.out}

@@ -4,5 +4,7 @@ be checked at compile time.
 
 {print.rs}
 
+{print.out}
+
 For more information about formatting, take a look at
 [std::format](http://static.rust-lang.org/doc/master/std/fmt/index.html).

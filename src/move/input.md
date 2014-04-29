@@ -7,3 +7,5 @@ The exception to these move semantics are the primitives types like `int`,
 size.
 
 {move.rs}
+
+{move.out}

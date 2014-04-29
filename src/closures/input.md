@@ -8,3 +8,5 @@ surrounding scope. Closures consist of three parts:
 * a block, the last expression is the return value
 
 {closures.rs}
+
+{closures.out}

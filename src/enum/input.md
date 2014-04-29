@@ -3,6 +3,10 @@ algebraic data types.
 
 {enum.rs}
 
+{enum.out}
+
 `enum` can also be used to represent C-like enums.
 
 {c-like.rs}
+
+{c-like.out}
