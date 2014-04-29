@@ -58,13 +58,13 @@ impl Bomb {
     // this method consumes the caller object
     fn boom(self) {
         println!("{} goes boom!", self.name);
-        // self goes out of scope and its destroyed
+        // self goes out of scope and it's destroyed
     }
 }
 
 fn main() {
     let rectangle = Rectangle {
-        // static methods are called using double semicolons
+        // static methods are called using double colons
         p1: Point::origin(),
         p2: Point::new(3.0, 4.0),
     };
