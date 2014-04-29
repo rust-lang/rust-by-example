@@ -3,7 +3,7 @@
   { "id": "print", "title": "Formatted print" },
   { "id": "literals", "title": "Literals" },
   { "id": "variables", "title": "Variables" },
-  { "id": "type", "title": "Types and casting" },
+  { "id": "type", "title": "Types, casting and inference" },
   { "id": "if-else", "title": "if/else" },
   { "id": "loops", "title": "loop and while" },
   { "id": "for", "title": "for and range" },
