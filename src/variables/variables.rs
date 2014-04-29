@@ -5,7 +5,7 @@ fn main() {
     // mutable variable
     let mut mutable_variable = 2;
 
-    // Error!
+    // Error: attempted to modify an immutable variable
     a_variable += 1;
 
     // Ok
