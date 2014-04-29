@@ -13,7 +13,7 @@ for Vec2<T> {
         Vec2 {
             // x and y are of type T, and implement the add() method
             x: self.x.add(&rhs.x),
-            y: self.x.add(&rhs.y),
+            y: self.y.add(&rhs.y),
         }
     }
 }
@@ -27,7 +27,7 @@ for Vec2<T> {
         Vec2 {
             // x and y are of type T, and implement the sub() method
             x: self.x.sub(&rhs.x),
-            y: self.x.sub(&rhs.y),
+            y: self.y.sub(&rhs.y),
         }
     }
 }
