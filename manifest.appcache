@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1398746087936
+# Revision 1398873312458
 
 CACHE:
 index.html
@@ -10,8 +10,8 @@ examples/bounds/README.html
 examples/box/README.html
 examples/channels/README.html
 examples/clone/README.html
-examples/closures/README.html
 examples/constants/README.html
+examples/closures/README.html
 examples/enum/README.html
 examples/expression/README.html
 examples/for/README.html
@@ -40,8 +40,8 @@ examples/timers/README.html
 examples/todo/README.html
 examples/trait/README.html
 examples/tuples/README.html
-examples/type/README.html
 examples/unsafe/README.html
+examples/type/README.html
 examples/variables/README.html
 examples/vec/README.html
 gitbook/app.js

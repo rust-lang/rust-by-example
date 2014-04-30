@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="33" data-basepath="../.." data-revision="1398746087936">
+    <div class="book" data-github="japaric/rust-by-example" data-level="33" data-basepath="../.." data-revision="1398873312458">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -156,7 +156,7 @@ type safety, memory safety, concurrency and performance.">
             <li  data-level="5" data-path="examples/type/README.html">
                 
                 <a href="../../examples/type/README.html">
-                    <i class="fa fa-check"></i> <b>5.</b> Types and casting
+                    <i class="fa fa-check"></i> <b>5.</b> Types, casting and inference
                 </a>
                 
                 
@@ -667,7 +667,7 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/variables/README.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 87.8048780487805%;"></a>
     
-        <a href="../../examples/type/README.html" title="Types and casting" class="chapter  new-chapter" data-progress="5" style="left: 90.2439024390244%;"></a>
+        <a href="../../examples/type/README.html" title="Types, casting and inference" class="chapter  new-chapter" data-progress="5" style="left: 90.2439024390244%;"></a>
     
         <a href="../../examples/if-else/README.html" title="if/else" class="chapter  new-chapter" data-progress="6" style="left: 92.6829268292683%;"></a>
     
@@ -702,10 +702,10 @@ function, the argument of this function is a owned closure named <code>proc</cod
 <p>These tasks will be scheduled by the Rust runtime and the order of execution of
 these tasks will be non-deterministic.</p>
 <pre><code>$ rustc tasks.rs &amp;&amp; ./tasks
-this is task number 1
+this is task number 3
 this is task number 4
 this is task number 2
-this is task number 3
+this is task number 1
 this is task number 0
 this is task number 6
 this is task number 5
