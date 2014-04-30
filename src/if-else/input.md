@@ -1,4 +1,6 @@
-Branching with if-else is similar to C. Unlike C, the boolean condition doesn't need to be surrounded by parentheses, but braces must be used around the following statements.
+Branching with if-else is similar to C. Unlike C, the boolean condition doesn't
+need to be surrounded by parentheses, but braces must be used around the
+following statements.
 
 {if-else.rs}
 
