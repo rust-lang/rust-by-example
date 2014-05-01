@@ -29,7 +29,7 @@ fn main() {
 
     // functional approach
     let sum_of_squared_odd_numbers =
-        // all integers
+        // all natural numbers
         count(0, 1).
         // squared
         map(|n| n * n).
