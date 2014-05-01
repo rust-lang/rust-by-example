@@ -13,7 +13,8 @@ for Vec2<T> {
         Vec2 {
             // x and y are of type T, and implement the add() method
             x: self.x.add(&rhs.x),
-            y: self.y.add(&rhs.y),
+            // the sugary + operator can also be used
+            y: self.y + rhs.y,
         }
     }
 }
@@ -25,9 +26,8 @@ impl<
 for Vec2<T> {
     fn sub(&self, rhs: &Vec2<T>) -> Vec2<T> {
         Vec2 {
-            // x and y are of type T, and implement the sub() method
-            x: self.x.sub(&rhs.x),
-            y: self.y.sub(&rhs.y),
+            x: self.x - rhs.x,
+            y: self.y - rhs.y,
         }
     }
 }
@@ -37,7 +37,6 @@ impl<
     T: Add<T, T> + Mul<T, T>
 > Vec2<T> {
     fn dot(&self, rhs: &Vec2<T>) -> T {
-        // the sugary versions of mul() and add() can be used as well
         (self.x * rhs.x) + (self.y * rhs.y)
     }
 }
