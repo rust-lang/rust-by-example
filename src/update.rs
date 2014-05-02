@@ -99,7 +99,9 @@ fn update(example: &Example) -> bool {
 }
 
 fn compile_run(path: &Path) -> Result<~str, &'static str> {
-    match Process::output("rustc", [path.as_str().unwrap().to_owned(), ~"-o", ~"executable"]) {
+    match Process::output("rustc", [path.as_str().unwrap().to_owned(),
+                                    "-o".to_owned(),
+                                    "executable".to_owned()]) {
         Err(_) => return Err("compile"),
         Ok(out) => {
             if !out.status.success() {
