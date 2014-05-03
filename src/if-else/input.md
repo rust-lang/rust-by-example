@@ -6,7 +6,7 @@ following statements.
 
 {if-else.out}
 
-If-else conditionals are expressions and can be used as rvalues in assignments.
+If-else conditionals are [expressions](expression/README.md) and can be used as rvalues in assignments.
 Each branch can contain severals statements, and the last expression will be
 used for the assignment.
 
