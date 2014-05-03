@@ -5,5 +5,5 @@ arrays) and lazy value generators.
 
 {iter.out}
 
-The `Iterator` trait gives access to [several methods
-](http://static.rust-lang.org/doc/master/std/iter/trait.Iterator.html).
+The `Iterator` trait gives access to
+[several methods](http://static.rust-lang.org/doc/master/std/iter/trait.Iterator.html).
