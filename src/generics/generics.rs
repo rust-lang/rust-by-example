@@ -15,15 +15,19 @@ fn swap<T>(pair: Pair<T>) -> Pair<T> {
 struct Tuple2<T, U>(T, U);
 
 fn main() {
-    // specialize Pair (type annotation is superfluous)
+    // explicitly specialize Pair
     let pair_of_chars: Pair<char> = Pair { first: 'a', second: 'b' };
+
+    // implicitly specialize Pair
     let pair_of_ints = Pair { first: 1, second: 2 };
 
-    // specialize Tuple2
-    let tuple = Tuple2("one", 2.0);
+    // explicitly specialize Tuple2
+    let tuple: Tuple2<char, int> = Tuple2('R', 2);
 
-    // call generic function
-    let swapped_pair_of_chars = swap(pair_of_chars);
+    // explicitly specialize swap
+    let swapped_pair_of_chars = swap::<char>(pair_of_chars);
+
+    // implicitly specialize swap
     let swapped_pair_of_ints = swap(pair_of_ints);
 }
 
