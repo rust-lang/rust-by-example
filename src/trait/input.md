@@ -1,6 +1,6 @@
-A `trait` is a collection of method defined for an unknown type, these traits
-can then be implemented for any `struct`. The implementors of a same trait can
-be grouped in an array since they provide the same interface.
+A `trait` is a collection of methods defined for an unknown type. A trait
+can be implemented for any `struct`. When some instances implement the same
+trait, they can be grouped in an array since they provide the same interface.
 
 {trait.rs}
 
