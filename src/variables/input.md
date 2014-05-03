@@ -1,5 +1,5 @@
 Variables in Rust are declared using the `let` keyword. Variables are immutable
-by default and mutability can be specified using the `mut` modifier.
+by default, but this can be overridden using the `mut` qualifier.
 
 {variables.rs}
 
