@@ -12,4 +12,7 @@ fn main() {
 
     // bitwise operations
     println!("100 XOR 001 is {:t}", 0b100 ^ 0b001);
+
+    // use underscores to improve readability!
+    println!("One million is written as {}", 1_000_000)
 }

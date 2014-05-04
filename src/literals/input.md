@@ -14,6 +14,9 @@ suffix.
 Integers can alternatively be expressed using hexadecimal, octal or binary
 notation using either of these prefixes: `0x`, `0o` or `0b`.
 
+You can also insert underscores in your literals for improved readability, e.g.
+`1_000_000` is the same as `1000000`.
+
 The operators available and operator precedence are similar to other [C-like
 languages
 ](https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages)
