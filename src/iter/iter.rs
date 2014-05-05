@@ -33,7 +33,7 @@ fn main() {
     println!("next in range(0, 3): {}", sequence.next());
     println!("next in range(0, 3): {}", sequence.next());
 
-    // the for construct will iterate an Iterator until in returns None,
+    // the for construct will iterate an Iterator until it returns None,
     // all the Some values are unwrapped and bind to a variable
     println!("iterate over range(0, 3) using for");
     for i in range(0, 3) {
@@ -42,15 +42,15 @@ fn main() {
 
     // the take(n) method will reduce an iterator to its first n terms,
     // pretty useful for infinite value generators
-    println!("The first ten terms of the fibonacci sequence are: ");
-    for i in fibonacci().take(10) {
+    println!("The first five terms of the fibonacci sequence are: ");
+    for i in fibonacci().take(5) {
         println!("{}", i);
     }
 
     // the skip(n) method will shorten an iterator by dropping its first n
     // terms
-    println!("The next ten terms of the fibonacci sequence are: ");
-    for i in fibonacci().skip(10).take(10) {
+    println!("The next five terms of the fibonacci sequence are: ");
+    for i in fibonacci().skip(5).take(5) {
         println!("{}", i);
     }
 
