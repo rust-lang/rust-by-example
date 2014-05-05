@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Variables | Rust by Example</title>
+        <title>RAII | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@ type safety, memory safety, concurrency and performance.">
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../examples/type/README.html" />
+        <link rel="next" href="../../examples/move/README.html" />
         
         
-        <link rel="prev" href="../../examples/literals/README.html" />
+        <link rel="prev" href="../../examples/box/README.html" />
         
 
-        <meta property="og:title" content="Variables | Rust by Example">
+        <meta property="og:title" content="RAII | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="4" data-basepath="../.." data-revision="1399327578967">
+    <div class="book" data-github="japaric/rust-by-example" data-level="16" data-basepath="../.." data-revision="1399327578967">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -121,7 +121,7 @@ type safety, memory safety, concurrency and performance.">
 
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/src/variables/input.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/raii/input.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -675,7 +675,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 88.0952380952381%;min-width: 85.71428571428571%;"></div>
+        <div class="inner" style="width: 19.047619047619047%;min-width: 16.666666666666668%;"></div>
     </div>
     <div class="chapters">
     
@@ -697,63 +697,63 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/raii/README.html" title="RAII" class="chapter done " data-progress="16" style="left: 19.047619047619047%;"></a>
     
-        <a href="../../examples/move/README.html" title="Ownership and moves" class="chapter done " data-progress="17" style="left: 21.428571428571427%;"></a>
+        <a href="../../examples/move/README.html" title="Ownership and moves" class="chapter  " data-progress="17" style="left: 21.428571428571427%;"></a>
     
-        <a href="../../examples/borrow/README.html" title="Borrowing" class="chapter done " data-progress="18" style="left: 23.80952380952381%;"></a>
+        <a href="../../examples/borrow/README.html" title="Borrowing" class="chapter  " data-progress="18" style="left: 23.80952380952381%;"></a>
     
-        <a href="../../examples/lifetime/README.html" title="Lifetimes" class="chapter done " data-progress="19" style="left: 26.19047619047619%;"></a>
+        <a href="../../examples/lifetime/README.html" title="Lifetimes" class="chapter  " data-progress="19" style="left: 26.19047619047619%;"></a>
     
-        <a href="../../examples/print/README.html" title="Formatted print" class="chapter done new-chapter" data-progress="2" style="left: 28.571428571428573%;"></a>
+        <a href="../../examples/print/README.html" title="Formatted print" class="chapter  new-chapter" data-progress="2" style="left: 28.571428571428573%;"></a>
     
-        <a href="../../examples/methods/README.html" title="Methods" class="chapter done " data-progress="20" style="left: 30.952380952380953%;"></a>
+        <a href="../../examples/methods/README.html" title="Methods" class="chapter  " data-progress="20" style="left: 30.952380952380953%;"></a>
     
-        <a href="../../examples/constants/README.html" title="Global constants" class="chapter done " data-progress="21" style="left: 33.333333333333336%;"></a>
+        <a href="../../examples/constants/README.html" title="Global constants" class="chapter  " data-progress="21" style="left: 33.333333333333336%;"></a>
     
-        <a href="../../examples/option/README.html" title="fail! and Option" class="chapter done " data-progress="22" style="left: 35.714285714285715%;"></a>
+        <a href="../../examples/option/README.html" title="fail! and Option" class="chapter  " data-progress="22" style="left: 35.714285714285715%;"></a>
     
-        <a href="../../examples/enum/README.html" title="Enums" class="chapter done " data-progress="23" style="left: 38.095238095238095%;"></a>
+        <a href="../../examples/enum/README.html" title="Enums" class="chapter  " data-progress="23" style="left: 38.095238095238095%;"></a>
     
-        <a href="../../examples/array/README.html" title="Arrays and Slices" class="chapter done " data-progress="24" style="left: 40.476190476190474%;"></a>
+        <a href="../../examples/array/README.html" title="Arrays and Slices" class="chapter  " data-progress="24" style="left: 40.476190476190474%;"></a>
     
-        <a href="../../examples/trait/README.html" title="Traits" class="chapter done " data-progress="25" style="left: 42.857142857142854%;"></a>
+        <a href="../../examples/trait/README.html" title="Traits" class="chapter  " data-progress="25" style="left: 42.857142857142854%;"></a>
     
-        <a href="../../examples/clone/README.html" title="Clone" class="chapter done " data-progress="26" style="left: 45.23809523809524%;"></a>
+        <a href="../../examples/clone/README.html" title="Clone" class="chapter  " data-progress="26" style="left: 45.23809523809524%;"></a>
     
-        <a href="../../examples/operator/README.html" title="Operator Overloading" class="chapter done " data-progress="27" style="left: 47.61904761904762%;"></a>
+        <a href="../../examples/operator/README.html" title="Operator Overloading" class="chapter  " data-progress="27" style="left: 47.61904761904762%;"></a>
     
-        <a href="../../examples/bounds/README.html" title="Bounds" class="chapter done " data-progress="28" style="left: 50%;"></a>
+        <a href="../../examples/bounds/README.html" title="Bounds" class="chapter  " data-progress="28" style="left: 50%;"></a>
     
-        <a href="../../examples/iter/README.html" title="Iterators" class="chapter done " data-progress="29" style="left: 52.38095238095238%;"></a>
+        <a href="../../examples/iter/README.html" title="Iterators" class="chapter  " data-progress="29" style="left: 52.38095238095238%;"></a>
     
-        <a href="../../examples/literals/README.html" title="Literals" class="chapter done new-chapter" data-progress="3" style="left: 54.76190476190476%;"></a>
+        <a href="../../examples/literals/README.html" title="Literals" class="chapter  new-chapter" data-progress="3" style="left: 54.76190476190476%;"></a>
     
-        <a href="../../examples/closures/README.html" title="Closures" class="chapter done " data-progress="30" style="left: 57.142857142857146%;"></a>
+        <a href="../../examples/closures/README.html" title="Closures" class="chapter  " data-progress="30" style="left: 57.142857142857146%;"></a>
     
-        <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter done " data-progress="31" style="left: 59.523809523809526%;"></a>
+        <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter  " data-progress="31" style="left: 59.523809523809526%;"></a>
     
-        <a href="../../examples/vec/README.html" title="Vectors" class="chapter done " data-progress="32" style="left: 61.904761904761905%;"></a>
+        <a href="../../examples/vec/README.html" title="Vectors" class="chapter  " data-progress="32" style="left: 61.904761904761905%;"></a>
     
-        <a href="../../examples/str/README.html" title="Strings" class="chapter done " data-progress="33" style="left: 64.28571428571429%;"></a>
+        <a href="../../examples/str/README.html" title="Strings" class="chapter  " data-progress="33" style="left: 64.28571428571429%;"></a>
     
-        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter done " data-progress="34" style="left: 66.66666666666667%;"></a>
+        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter  " data-progress="34" style="left: 66.66666666666667%;"></a>
     
-        <a href="../../examples/channels/README.html" title="Channels" class="chapter done " data-progress="35" style="left: 69.04761904761905%;"></a>
+        <a href="../../examples/channels/README.html" title="Channels" class="chapter  " data-progress="35" style="left: 69.04761904761905%;"></a>
     
-        <a href="../../examples/timers/README.html" title="Timers" class="chapter done " data-progress="36" style="left: 71.42857142857143%;"></a>
+        <a href="../../examples/timers/README.html" title="Timers" class="chapter  " data-progress="36" style="left: 71.42857142857143%;"></a>
     
-        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter done " data-progress="37" style="left: 73.80952380952381%;"></a>
+        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter  " data-progress="37" style="left: 73.80952380952381%;"></a>
     
-        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter done " data-progress="38" style="left: 76.19047619047619%;"></a>
+        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter  " data-progress="38" style="left: 76.19047619047619%;"></a>
     
-        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter done " data-progress="38.1" style="left: 78.57142857142857%;"></a>
+        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter  " data-progress="38.1" style="left: 78.57142857142857%;"></a>
     
-        <a href="../../examples/test/README.html" title="Testing" class="chapter done " data-progress="38.2" style="left: 80.95238095238095%;"></a>
+        <a href="../../examples/test/README.html" title="Testing" class="chapter  " data-progress="38.2" style="left: 80.95238095238095%;"></a>
     
-        <a href="../../examples/unsafe/README.html" title="Unsafe operations" class="chapter done " data-progress="38.3" style="left: 83.33333333333333%;"></a>
+        <a href="../../examples/unsafe/README.html" title="Unsafe operations" class="chapter  " data-progress="38.3" style="left: 83.33333333333333%;"></a>
     
-        <a href="../../examples/todo/README.html" title="TODO" class="chapter done " data-progress="39" style="left: 85.71428571428571%;"></a>
+        <a href="../../examples/todo/README.html" title="TODO" class="chapter  " data-progress="39" style="left: 85.71428571428571%;"></a>
     
-        <a href="../../examples/variables/README.html" title="Variables" class="chapter done new-chapter" data-progress="4" style="left: 88.0952380952381%;"></a>
+        <a href="../../examples/variables/README.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 88.0952380952381%;"></a>
     
         <a href="../../examples/type/README.html" title="Types, casting and inference" class="chapter  new-chapter" data-progress="5" style="left: 90.47619047619048%;"></a>
     
@@ -770,61 +770,60 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_42">
+                    <section class="normal" id="section-gitbook_29">
                     
-                        <h1 id="variables">Variables</h1>
-<p>Variables in Rust are declared using the <code>let</code> keyword. Variables are immutable
-by default, but this can be overridden using the <code>mut</code> qualifier.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// variables.rs</span>
+                        <h1 id="raii">RAII</h1>
+<p>Variables in Rust do more that just hold data in the stack, they can also <em>own</em>
+resources, e.g. <code>Box&lt;T&gt;</code> owns memory in the heap. Because Rust enforces the
+RAII discipline, whenever an object goes out of scope, its destructor is called
+and the resources <em>owned</em> by it are freed. This behavior shields against
+<em>resource leak</em> bugs.</p>
+<p>Don&#39;t take my word for it, let&#39;s check using <code>valgrind</code></p>
+<pre><code class="lang-rust"><span class="hljs-comment">// raii.rs</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create_box</span>(</span>) {
+    <span class="hljs-keyword">let</span> function_box = box <span class="hljs-number">3</span>;
+
+    <span class="hljs-comment">// function_box gets destroyed here, memory gets freed</span>
+}
+
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-comment">// immutable variable</span>
-    <span class="hljs-keyword">let</span> a_variable = <span class="hljs-number">1</span>;
+    <span class="hljs-comment">// allocate integer in the heap</span>
+    <span class="hljs-keyword">let</span> boxed_int = box <span class="hljs-number">5</span>;
 
-    <span class="hljs-comment">// mutable variable</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> mutable_variable = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
+        <span class="hljs-comment">// new (smaller) block scope</span>
 
-    <span class="hljs-comment">// Error: attempted to modify an immutable variable</span>
-    a_variable += <span class="hljs-number">1</span>;
+        <span class="hljs-comment">// another heap allocated integer</span>
+        <span class="hljs-keyword">let</span> short_lived_box = box <span class="hljs-number">4</span>;
 
-    <span class="hljs-comment">// Ok</span>
-    mutable_variable += <span class="hljs-number">1</span>;
+        <span class="hljs-comment">// short_lived_box gets destroyed here, memory gets freed</span>
+    }
+
+    <span class="hljs-comment">// create lots of boxes</span>
+    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> in range(<span class="hljs-number">0</span>, <span class="hljs-number">1_000</span>) {
+        create_box();
+    }
+
+    <span class="hljs-comment">// boxed_int gets destroyed here, memory gets freed</span>
 }
 </code></pre>
-<p>The compiler will throw a detailed diagnostic about mutability errors.</p>
-<pre><code>$ rustc variables.rs &amp;&amp; ./variables
-src/variables/variables.rs:9:5: 9:15 error: re-assignment of immutable variable `a_variable`
-src/variables/variables.rs:9     a_variable += 1;
-                                 ^~~~~~~~~~
-src/variables/variables.rs:3:9: 3:19 note: prior assignment occurs here
-src/variables/variables.rs:3     let a_variable = 1;
-                                     ^~~~~~~~~~
-error: aborting due to previous error
-</code></pre><p>It&#39;s possible to declare variables first, and initialize them later, but this
-form is seldom used. Also, the compiler forbids usage of uninitialized
-variables, as this would lead to undefined behavior.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// declare.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-comment">// variable declaration</span>
-    <span class="hljs-keyword">let</span> declared_variable;
+<pre><code>$ rustc raii.rs &amp;&amp; valgrind ./raii
+==7619== Memcheck, a memory error detector
+==7619== Copyright (C) 2002-2013, and GNU GPL&#39;d, by Julian Seward et al.
+==7619== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
+==7619== Command: ./raii
+==7619==
+==7619==
+==7619== HEAP SUMMARY:
+==7619==     in use at exit: 0 bytes in 0 blocks
+==7619==   total heap usage: 1,032 allocs, 1,032 frees, 8,888 bytes allocated
+==7619==
+==7619== All heap blocks were freed -- no leaks are possible
+==7619==
+==7619== For counts of detected and suppressed errors, rerun with: -v
+==7619== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+</code></pre><p>You&#39;ll never have to manually free memory again or worry about memory leaks!</p>
 
-    <span class="hljs-comment">// initialize variable</span>
-    declared_variable = <span class="hljs-number">3</span>;
-
-    <span class="hljs-comment">// usage of uninitialized variable is forbidden</span>
-    <span class="hljs-keyword">let</span> unitialized_variable: <span class="hljs-keyword">int</span>;
-    println!(<span class="hljs-string">"{}"</span>, unitialized_variable);
-}
-</code></pre>
-<pre><code>$ rustc declare.rs &amp;&amp; ./declare
-src/variables/declare.rs:10:20: 10:40 error: use of possibly uninitialized variable: `unitialized_variable`
-src/variables/declare.rs:10     println!(&quot;{}&quot;, unitialized_variable);
-                                               ^~~~~~~~~~~~~~~~~~~~
-note: in expansion of format_args!
-&lt;std macros&gt;:2:23: 2:77 note: expansion site
-&lt;std macros&gt;:1:1: 3:2 note: in expansion of println!
-src/variables/declare.rs:10:5: 10:42 note: expansion site
-error: aborting due to previous error
-</code></pre>
                     
                     </section>
                 
@@ -833,10 +832,10 @@ error: aborting due to previous error
         </div>
 
         
-        <a href="../../examples/literals/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/box/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/type/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/move/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

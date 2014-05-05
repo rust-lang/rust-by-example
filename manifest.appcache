@@ -1,17 +1,17 @@
 CACHE MANIFEST
-# Revision 1398873312458
+# Revision 1399327578967
 
 CACHE:
 index.html
-examples/loops/README.html
+examples/match/README.html
 examples/array/README.html
 examples/borrow/README.html
 examples/bounds/README.html
 examples/box/README.html
 examples/channels/README.html
 examples/clone/README.html
-examples/constants/README.html
 examples/closures/README.html
+examples/constants/README.html
 examples/enum/README.html
 examples/expression/README.html
 examples/for/README.html
@@ -23,13 +23,14 @@ examples/if-else/README.html
 examples/iter/README.html
 examples/lifetime/README.html
 examples/literals/README.html
+examples/loops/README.html
 examples/bench/README.html
-examples/match/README.html
 examples/methods/README.html
 examples/move/README.html
 examples/operator/README.html
 examples/option/README.html
 examples/print/README.html
+examples/raii/README.html
 examples/sockets/README.html
 examples/staging/README.html
 examples/str/README.html
@@ -40,8 +41,8 @@ examples/timers/README.html
 examples/todo/README.html
 examples/trait/README.html
 examples/tuples/README.html
-examples/unsafe/README.html
 examples/type/README.html
+examples/unsafe/README.html
 examples/variables/README.html
 examples/vec/README.html
 gitbook/app.js
