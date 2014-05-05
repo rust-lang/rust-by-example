@@ -1,29 +1,22 @@
-fn is_divisible_by(lhs: uint, rhs: uint) -> bool {
-    // if-else is an expression!
-    if rhs == 0 {
-        false
-    } else {
-        lhs % rhs == 0
-    }
-}
-
-fn fizzbuzz(n: uint) {
-    // expressions can be used as function/macro arguments
-    println!("{}", if is_divisible_by(n, 15) {
-        // ~ indicates this is a heap allocated string
-        "fizzbuzz".to_owned()
-    } else if is_divisible_by(n, 3) {
-        "fizz".to_owned()
-    } else if is_divisible_by(n, 5) {
-        "buzz".to_owned()
-    } else {
-        // format! is like print!, but returns the formatted string
-        format!("{}", n)
-    })
-}
-
 fn main() {
-    for n in range(1u, 101) {
-        fizzbuzz(n);
-    }
+    // all the type annotations are superfluous
+    let x: int = 5;
+
+    let y: int = {
+        // assignment statements are allowed inside blocks
+        let x_squared = x * x;
+        let x_cube = x_squared * x;
+
+        // this expression will be assigned to y
+        x_cube + x_squared + x
+    };
+
+    let z: () = {
+        // the semicolon suppresses this expression, and `()` is assigned to z
+        2 * x;
+    };
+
+    println!("x is {}", x);
+    println!("y is {}", y);
+    println!("z is {}", z);
 }
