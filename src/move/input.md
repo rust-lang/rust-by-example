@@ -1,11 +1,24 @@
-One of the core concepts of Rust is *ownership*, this means that variables
-*own* the data they refer to. And data is **not** copied by default, instead
-the ownership is transferred, this is called *moving* the data in rust-speak.
+Because variables are in charge of freeing their resources (if any), resources
+can only have *one* owner, otherwise resources would get freed more than once.
 
-The exception to these move semantics are the primitives types like `int`,
-`uint`, `f64`, etc, which are copied instead of moved since they are small in
-size.
+When doing assignments, `let x = y`, or passing function arguments by value
+`foo(x)`, the data is copied, but the *ownership* of the resources is
+transferred, this is know as *moving* in Rust-speak.
 
-{move.rs}
+{assignment.rs}
 
-{move.out}
+{assignment.out}
+
+After moving resources, the previous owner loses access to the resource. This
+avoids *dereferencing freed memory*.
+
+{pass-by-value.rs}
+
+{pass-by-value.out}
+
+Mutability of data depends on its owner. Mutability of data can change when
+ownership is transferred.
+
+{mut.rs}
+
+{mut.out}
