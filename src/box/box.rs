@@ -43,9 +43,9 @@ fn main() {
 
     println!("Point occupies {} bytes in the stack",
              size_of_val(&point));
-    // The `&` means that we are passing the object by reference, rather than
-    // by value. In Rust, this is known as *borrowing* and will be covered in
-    // detail in its own section.
+    // The `&` means that we are passing the object by reference, rather
+    // than by value. In Rust, this is known as *borrowing* and will be
+    // covered in detail in its own section.
     println!("Rectangle occupies {} bytes in the stack",
              size_of_val(&rectangle));
 
