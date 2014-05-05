@@ -25,4 +25,9 @@ fn main() {
     println!("pair is {}", pair);
 
     println!("the reversed pair is {}", reverse(pair));
+
+    // to create one element tuples, the comma is required to tell them
+    // apart from a literal surrounded by parentheses
+    println!("one element tuple: {}", (5,))
+    println!("just an integer: {}", (5))
 }
