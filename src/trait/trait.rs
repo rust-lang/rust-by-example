@@ -39,6 +39,7 @@ impl Animal for Dog {
     }
 }
 
+// exclusive methods for Dogs
 impl Dog {
     fn wag_tail(&self) {
         // struct methods can access trait methods
@@ -65,6 +66,7 @@ impl Animal for Sheep {
     }
 }
 
+// exclusive methods for Sheeps
 impl Sheep {
     fn is_naked(&self) -> bool {
         self.naked
@@ -82,8 +84,8 @@ impl Sheep {
 }
 
 fn main() {
-    let mut dolly: Sheep = Animal::new(~"Dolly");
-    let spike: Dog = Animal::new(~"Spike");
+    let mut dolly: Sheep = Animal::new("Dolly".to_owned());
+    let spike: Dog = Animal::new("Spike".to_owned());
 
     spike.wag_tail();
     dolly.shear();
