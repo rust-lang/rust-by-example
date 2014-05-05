@@ -1,23 +1,41 @@
-Since Rust moves data by default, this means that passing an object to a
-function will transfer ownership of the object to the function. Furthermore,
-Rust enforces the `RAII` ("Resource Acquisition Is Initialization")
-discipline, meaning that the object will be destroyed when it goes out of 
-scope, following the previous example the object sent to the function will 
-be destroyed over there.
-
-{raii.rs}
-
-This may not always be desirable, hence Rust provides a *borrow* mechanism.
-Using this mechanism references to the object can be passed to functions
-without giving up the ownership of the object.
-
-Since the creation and destruction, i.e. the *lifetime*, of an object are known
-to the compiler, it can enforce valid borrowing via its *borrow checker*.
+Most of times, we'll like to access some data, without taking ownership over
+it. To accomplish this, Rust provides a *borrowing* mechanism. Instead of
+passing objects by-value (`T`), objects can be passed by reference (`&T`). The
+compiler statically guarantees that references *always* point to valid objects,
+via its borrow checker.
 
 {borrow.rs}
 
 {borrow.out}
 
-(`&` and `&mut` are the const correctness of Rust, but you will never forget to
- add a const to the function signature, since immutable is the default and the
- compiler will ~~yell at you~~ tell you if you forgot a `mut` somewhere)
+`&T` borrows the data via an immutable reference, and the borrower can read the
+data but not modify it. Mutable data can be immutably borrowed, but can also be
+mutably borrowed via a mutable reference `&mut T`, giving read/write access to
+the borrower.
+
+{mut.rs}
+
+{mut.out}
+
+When data is borrowed, it also *freezes*. "Frozen" data can't be modified via
+the original object, until all the references to it go out of scope.
+
+{freeze.rs}
+
+{freeze.out}
+
+Data can be immutably borrowed any number of times, but once immutably
+borrowed, the original data can't be mutably borrowed. On the other side, data
+can be mutably borrowed *once*, and until the mutable reference goes out of
+scope, the original data can't be borrowed again.
+
+{re-borrow.rs}
+
+{re-borrow.out}
+
+When doing pattern matching or destructuring via the `let` binding, the `ref`
+keyword can be used to take references to the fields of a struct.
+
+{ref.rs}
+
+{ref.out}
