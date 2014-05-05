@@ -1,5 +1,3 @@
-use std::num::abs;
-
 struct Point {
     x: f64,
     y: f64,
@@ -7,7 +5,9 @@ struct Point {
 
 // implementation block, all Point methods go in here
 impl Point {
-    // static method, generally used for constructors
+    // this is an static method
+    // static methods don't need to be called by an instance
+    // these methods are generally used for constructors
     fn origin() -> Point {
         Point { x: 0.0, y: 0.0 }
     }
@@ -24,23 +24,27 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    // instance method, self refers to the caller object
+    // instance method, `&self` is sugar for `self: &Self`
+    // where Self is the type of the caller object
+    // in this case Self = Rectangle
     fn area(&self) -> f64 {
         // `self` gives access to the struct fields via the dot operator
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
 
-        abs((x1 - x2) * (y1 - y2))
+        // abs() is a method of f64 types
+        ((x1 - x2) * (y1 - y2)).abs()
     }
 
     fn perimeter(&self) -> f64 {
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
 
-        2.0 * abs(x1 - x2) + 2.0 * abs(y1 - y2)
+        2.0 * (x1 - x2).abs() + 2.0 * (y1 - y2).abs()
     }
 
     // this method requires the caller object to be mutable
+    // `&mut self` desugars to `self: &mut Self`
     fn move(&mut self, x: f64, y: f64) {
         self.p1.x += x;
         self.p2.x += x;
@@ -50,12 +54,14 @@ impl Rectangle {
     }
 }
 
+// Bomb owns resources: one heap allocated string
 struct Bomb {
     name: ~str,
 }
 
 impl Bomb {
     // this method consumes the caller object
+    // `self` desugars to `self: Self`
     fn boom(self) {
         println!("{} goes boom!", self.name);
         // self goes out of scope and it's destroyed
@@ -70,7 +76,7 @@ fn main() {
     };
 
     // instance method are called using the dot operator
-    // note that the first argument &self is implicitly passed
+    // note that the first argument `&self` is implicitly passed
     println!("Rectangle perimeter: {}", rectangle.perimeter());
     println!("Rectangle area: {}", rectangle.area());
 
@@ -85,10 +91,10 @@ fn main() {
     // Ok: mutable object can call mutable methods
     square.move(1.0, 1.0);
 
-    let bomb = Bomb { name: ~"C4" };
+    let bomb = Bomb { name: "C4".to_owned() };
 
     bomb.boom();
 
-    // Error: previous boom() call moved the bomb out of scope
+    // Error: previous boom() call destroyed the bomb
     //bomb.boom();
 }

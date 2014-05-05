@@ -1,6 +1,6 @@
-Methods are functions attached to structs, these methods have access to the
-field of a struct and its methods via the `self` keyword. These methods are
-defined under a `impl` block.
+Methods are functions attached to objects, these methods have access to the
+data of the object and its other methods via the `self` keyword. These methods
+are grouped under a `impl` block.
 
 {methods.rs}
 
