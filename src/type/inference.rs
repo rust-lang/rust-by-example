@@ -4,8 +4,8 @@ fn main() {
 
     // Create an empty vector (a growable array)
     let mut v = Vec::new();
-    // At this point the compiler doesn't know the exact type of `v`, it just
-    // knows that it's a vector of something
+    // At this point the compiler doesn't know the exact type of `v`, it
+    // just knows that it's a vector of something
 
     // Insert `e` in the vector
     v.push(e);
