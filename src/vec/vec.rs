@@ -22,7 +22,7 @@ fn main() {
     // indexing is done using the `get` method (indexing starts at 0)
     println!("second element: {}", xs.get(1));
 
-    // remove last element from the vector
+    // remove last element from the vector and return it
     println!("pop last element: {}", xs.pop());
 
     // out of bounds indexing yields a runtime failure
