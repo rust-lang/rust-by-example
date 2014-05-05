@@ -1,7 +1,7 @@
-Primitive types like `int`, `f64`, etc. and references `&'a T` are copied by
-default instead of moved, because these types implement the `Copy` trait. All
-the other data structures can be copied explicitly by calling the `clone()`
-method, if they implement the `Clone` trait.
+When dealing with resources, the default behavior is to transfer them during
+assignments or function calls. Sometimes the intention is to make a copy of the
+resource, this can be accomplish by calling the `clone()` method, defined in
+the `Clone` trait.
 
 {clone.rs}
 
