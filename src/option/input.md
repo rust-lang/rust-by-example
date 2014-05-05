@@ -11,3 +11,5 @@ instead of unwinding the whole program, this can be accomplished using the
 part of the type signature of option `Option<T>`.
 
 {option.rs}
+
+{option.out}
