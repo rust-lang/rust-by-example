@@ -9,6 +9,7 @@ install:
     - sudo apt-get install rust-nightly
 
 script:
+    - rustc --version
     - make
     - make test
 
