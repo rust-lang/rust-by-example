@@ -12,7 +12,8 @@ fn main() {
     };
 
     let z: () = {
-        // the semicolon suppresses this expression, and `()` is assigned to z
+        // the semicolon suppresses this expression,
+        // and `()` is assigned to z
         2 * x;
     };
 
