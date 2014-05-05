@@ -11,9 +11,9 @@ enum Day {
 
 impl Day {
     fn mood(&self) {
-        println!("{}", match self {
-            &Friday => "it's friday!",
-            &Saturday | &Sunday => "weekend :-)",
+        println!("{}", match *self {
+            Friday => "it's friday!",
+            Saturday | Sunday => "weekend :-)",
             _ => "weekday...",
         })
     }
