@@ -13,7 +13,7 @@ fn main() {
     chars.sort();
     chars.dedup();
 
-    // StrBuf is a growable array
+    // StrBuf is a growable string
     let mut strbuf = StrBuf::new();
     for c in chars.move_iter() {
         // insert a char at the end of strbuf
@@ -28,7 +28,7 @@ fn main() {
     println!("used characters: {}", trimmed_string);
 
     // heap allocate a string
-    let alice = ~"I like dogs";
+    let alice = "I like dogs".to_owned();
     // replaced string gets heap allocated (superfluous type annotation)
     let bob: ~str = alice.replace("dog", "cat");
 

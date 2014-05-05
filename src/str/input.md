@@ -1,10 +1,11 @@
-Strings in Rust are:
-* valid UTF-8 sequences
-* not null terminated
-* always heap allocated
+Strings in Rust (`str`) are stored as a collection of bytes (`Vec<u8>`), but
+are guaranteed to always be valid UTF-8 sequences. `str` are not null
+terminated, their size can't be modified, and by extension their content can't
+be modified. There are two types of `str`: a heap allocated version `~str`, and
+`&str` that can reference a string or a section of a string.
 
-Strings are represented using two words like slices. And `StrBuf` is a growable
-string, which internal representation is a `Vec<u8>`.
+`StrBuf` is a growable string, that provides methods to push characters or
+strings into it.
 
 {str.rs}
 
