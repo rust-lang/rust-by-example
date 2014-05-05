@@ -2,8 +2,13 @@ GITBOOK = gitbook
 RUSTC = rustc
 QUIET = -A unused-variable -A dead-code -A dead-assignment
 RUSTC_NT = rustc --no-trans --test $(QUIET)
-WHITELIST = src/variables/variables.rs \
-						src/variables/declare.rs
+WHITELIST = src/borrow/freeze.rs \
+						src/lifetime/lifetime.rs \
+						src/lifetime/reference-bad.rs \
+						src/move/assignment.rs \
+						src/move/pass-by-value.rs \
+						src/variables/declare.rs \
+            src/variables/variables.rs
 srcs = $(filter-out $(WHITELIST),$(wildcard */*/*.rs))
 
 .PHONY: all book clean test serve
