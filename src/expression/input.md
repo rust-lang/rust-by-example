@@ -1,3 +1,6 @@
+**Note** in maintenance, the chapter feels a little weak after introducing that
+if-else is an expression in its own chapter.
+
 Several statements (like if-else) in Rust are actually expressions, i.e. they
 return a value. Since Rust is strongly typed, this means each branch of an
 expression must return the same type.

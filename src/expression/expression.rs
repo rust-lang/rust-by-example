@@ -11,11 +11,11 @@ fn fizzbuzz(n: uint) {
     // expressions can be used as function/macro arguments
     println!("{}", if is_divisible_by(n, 15) {
         // ~ indicates this is a heap allocated string
-        ~"fizzbuzz"
+        "fizzbuzz".to_owned()
     } else if is_divisible_by(n, 3) {
-        ~"fizz"
+        "fizz".to_owned()
     } else if is_divisible_by(n, 5) {
-        ~"buzz"
+        "buzz".to_owned()
     } else {
         // format! is like print!, but returns the formatted string
         format!("{}", n)
