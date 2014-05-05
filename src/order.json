@@ -15,6 +15,7 @@
   { "id": "generics", "title": "Generics" },
   { "id": "box", "title": "Box, stack and heap" },
   { "id": "move", "title": "Ownership and moves" },
+  { "id": "raii", "title": "RAII" },
   { "id": "borrow", "title": "RAII and borrow" },
   { "id": "methods", "title": "Methods" },
   { "id": "lifetime", "title": "Lifetimes" },
