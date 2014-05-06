@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="19" data-basepath="../.." data-revision="1399327578967">
+    <div class="book" data-github="japaric/rust-by-example" data-level="19" data-basepath="../.." data-revision="1399401814794">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -813,6 +813,11 @@ be amended soon.</p>
 &quot;<code>another_boxed_integer</code> does not live long enough&quot;. Let&#39;s analyze why this
 happens:</p>
 <ul>
+<li><code>stack_integer</code> has lifetime <code>&#39;a</code></li>
+<li><code>boxed_integer</code> has lifetime <code>&#39;b</code></li>
+<li><code>ref_to_box</code> has lifetime <code>&#39;c</code></li>
+<li><code>ref_to_another_box</code> has lifetime <code>&#39;d</code></li>
+<li><code>another_boxed_integer</code> has lifetime <code>&#39;e</code></li>
 <li><code>&#39;main</code> and <code>&#39;let</code> are the lifetimes of the block scopes</li>
 <li>When a block scope ends, all the objects declared in it get destroyed<ul>
 <li><code>&#39;let</code> ends, and so does <code>&#39;e</code></li>
