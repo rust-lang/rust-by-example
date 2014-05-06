@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="34" data-basepath="../.." data-revision="1399401814794">
+    <div class="book" data-github="japaric/rust-by-example" data-level="34" data-basepath="../.." data-revision="1399413350360">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -790,14 +790,14 @@ function, the argument of this function is a owned closure named <code>proc</cod
 <p>These tasks will be scheduled by the Rust runtime and the order of execution of
 these tasks will be non-deterministic.</p>
 <pre><code>$ rustc tasks.rs &amp;&amp; ./tasks
+this is task number 0
+this is task number 1
+this is task number 2
 this is task number 3
 this is task number 4
-this is task number 2
-this is task number 1
-this is task number 0
 this is task number 5
-this is task number 6
 this is task number 7
+this is task number 6
 this is task number 8
 this is task number 9
 </code></pre><p>(By default, Rust uses its <em>native</em> runtime, which maps each Rust task to a

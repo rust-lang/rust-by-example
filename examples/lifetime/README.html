@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="19" data-basepath="../.." data-revision="1399401814794">
+    <div class="book" data-github="japaric/rust-by-example" data-level="19" data-basepath="../.." data-revision="1399413350360">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -779,13 +779,15 @@ lifetime of an object starts when the object is created and ends when its
 destructor is called.</p>
 <p>The compiler annotates lifetimes with this notation: <code>&#39;a</code>, <code>&#39;b</code>, <code>&#39;static</code>,
 etc. All references have a type signature of the form <code>&amp;&#39;a T</code>, where <code>&#39;a</code> is
-the lifetime of the referenced object. The compiler takes care of inserting the
-lifetime part <code>&#39;a</code>, so we can simply type annotate references with <code>&amp;T</code>.</p>
-<p>If we could see the lifetimes annotations the compiler keeps track of, source
-code would look like this.</p>
+the lifetime of the <em>referenced</em> object. The compiler takes care of inserting
+the lifetime part <code>&#39;a</code>, so we can simply type annotate references with <code>&amp;T</code>.</p>
+<p>Let&#39;s see how the compiler prevents the creation of dangling pointers via its
+borrow checker. To simplify the analysis and explanation, lifetimes has been
+explicitly annotated in the source code. Explicit annotation is not allowed by
+the compiler in this case, so remove the lifetimes to see the &quot;real&quot; compiler
+error.</p>
 <pre><code class="lang-rust">// lifetime.rs
-// this source code is not valid, change `&amp;'b` and `&amp;'e` to `&amp;` to make it
-// valid
+// To see the "real" compiler error, change both `&amp;'b` and `&amp;'e` into `&amp;`
 use std::owned::Box;
 
 fn main() { // 'main starts ──────────────────────────────────────────────┐
@@ -795,7 +797,8 @@ fn main() { // 'main starts ─────────────────�
     // This is a valid operation                                      │ │ │
     let ref_to_box: &amp;'b Box&lt;int&gt; = &amp;boxed_integer; // 'c starts ────┐ │ │ │
     //                                                              │ │ │ │
-    // The compiler forbids this operation                          │ │ │ │
+    // The compiler forbids this operation, because                 │ │ │ │
+    // `ref_to_another_box` would become a dangling pointer         │ │ │ │
     let ref_to_another_box: &amp;'e Box&lt;int&gt; = { // 'let 'd start ──┬─┐ │ │ │ │
         let another_boxed_integer = box 3; // 'e starts ──────┐ │ │ │ │ │ │
         //                                                    │ │ │ │ │ │ │
@@ -809,9 +812,8 @@ fn main() { // 'main starts ─────────────────�
 get highlighted. This problem has already been
 <a href="https://github.com/isagalaev/highlight.js/pull/465" target="_blank">fixed upstream</a>, and will
 be amended soon.</p>
-<p>If you make this source code valid, it would fail to compile with:
-&quot;<code>another_boxed_integer</code> does not live long enough&quot;. Let&#39;s analyze why this
-happens:</p>
+<p>The &quot;real&quot; compiler error is: &quot;<code>another_boxed_integer</code> does not live long
+enough&quot;. Let&#39;s analyze why this happens:</p>
 <ul>
 <li><code>stack_integer</code> has lifetime <code>&#39;a</code></li>
 <li><code>boxed_integer</code> has lifetime <code>&#39;b</code></li>
