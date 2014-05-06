@@ -22,6 +22,11 @@ If you make this source code valid, it would fail to compile with:
 "`another_boxed_integer` does not live long enough". Let's analyze why this
 happens:
 
+* `stack_integer` has lifetime `'a`
+* `boxed_integer` has lifetime `'b`
+* `ref_to_box` has lifetime `'c`
+* `ref_to_another_box` has lifetime `'d`
+* `another_boxed_integer` has lifetime `'e`
 * `'main` and `'let` are the lifetimes of the block scopes
 * When a block scope ends, all the objects declared in it get destroyed
   * `'let` ends, and so does `'e`
