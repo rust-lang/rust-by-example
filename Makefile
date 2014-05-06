@@ -21,16 +21,17 @@ all:
 	rm update
 
 book:
+	mkdir -p output
 	cd output && $(GITBOOK) build
 	./fix-edit-button.sh
 
 clean:
-	rm -rf output/examples
-	rm output/{README,SUMMARY}.md
+	rm -rf output
 
 test:
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
 
 serve:
+	mkdir -p output
 	cd output && $(GITBOOK) serve
