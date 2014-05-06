@@ -1,5 +1,4 @@
-// this source code is not valid, change `&'b` and `&'e` to `&` to make it
-// valid
+// To see the "real" compiler error, change both `&'b` and `&'e` into `&`
 use std::owned::Box;
 
 fn main() { // 'main starts ──────────────────────────────────────────────┐
@@ -9,7 +8,8 @@ fn main() { // 'main starts ─────────────────�
     // This is a valid operation                                      │ │ │
     let ref_to_box: &'b Box<int> = &boxed_integer; // 'c starts ────┐ │ │ │
     //                                                              │ │ │ │
-    // The compiler forbids this operation                          │ │ │ │
+    // The compiler forbids this operation, because                 │ │ │ │
+    // `ref_to_another_box` would become a dangling pointer         │ │ │ │
     let ref_to_another_box: &'e Box<int> = { // 'let 'd start ──┬─┐ │ │ │ │
         let another_boxed_integer = box 3; // 'e starts ──────┐ │ │ │ │ │ │
         //                                                    │ │ │ │ │ │ │

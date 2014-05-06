@@ -5,11 +5,14 @@ destructor is called.
 
 The compiler annotates lifetimes with this notation: `'a`, `'b`, `'static`,
 etc. All references have a type signature of the form `&'a T`, where `'a` is
-the lifetime of the referenced object. The compiler takes care of inserting the
-lifetime part `'a`, so we can simply type annotate references with `&T`.
+the lifetime of the *referenced* object. The compiler takes care of inserting
+the lifetime part `'a`, so we can simply type annotate references with `&T`.
 
-If we could see the lifetimes annotations the compiler keeps track of, source
-code would look like this.
+Let's see how the compiler prevents the creation of dangling pointers via its
+borrow checker. To simplify the analysis and explanation, lifetimes has been
+explicitly annotated in the source code. Explicit annotation is not allowed by
+the compiler in this case, so remove the lifetimes to see the "real" compiler
+error.
 
 {lifetime.rs}
 
@@ -18,9 +21,8 @@ get highlighted. This problem has already been
 [fixed upstream](https://github.com/isagalaev/highlight.js/pull/465), and will
 be amended soon.
 
-If you make this source code valid, it would fail to compile with:
-"`another_boxed_integer` does not live long enough". Let's analyze why this
-happens:
+The "real" compiler error is: "`another_boxed_integer` does not live long
+enough". Let's analyze why this happens:
 
 * `stack_integer` has lifetime `'a`
 * `boxed_integer` has lifetime `'b`
