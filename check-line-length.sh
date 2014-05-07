@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export LANG="en_US.UTF-8"
+
 echo "Checking if any rust file has a line longer than 75 characters"
 
 offenders=$(grep -Pl ".{76}" src/*/*.rs)
