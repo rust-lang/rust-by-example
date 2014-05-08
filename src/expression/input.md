@@ -1,4 +1,4 @@
-In Rust, almost every statement is an expression, this mean that the statement
+In Rust, almost every statement is an expression, this means that the statement
 returns a value. This may not always be desired, so the output can be
 suppressed by ending the expression with a semicolon `;`.
 
