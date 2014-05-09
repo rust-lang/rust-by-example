@@ -105,7 +105,7 @@ fn compile_run(path: &Path) -> Result<~str, &'static str> {
         Err(_) => return Err("compile"),
         Ok(out) => {
             if !out.status.success() {
-                return Ok(str::from_utf8_owned(out.error.move_iter().collect::<~[u8]>()).unwrap());
+                return Ok(str::from_utf8_owned(out.error.as_slice().to_owned()).unwrap());
             }
         }
     }
@@ -115,8 +115,8 @@ fn compile_run(path: &Path) -> Result<~str, &'static str> {
         Ok(out) => {
             fs::unlink(&Path::new("./executable")).unwrap();
             let ProcessOutput { status: _, output: out, error: err } = out;
-            let stdout = str::from_utf8_owned(out.move_iter().collect::<~[u8]>()).unwrap();
-            let stderr = str::from_utf8_owned(err.move_iter().collect::<~[u8]>()).unwrap();
+            let stdout = str::from_utf8_owned(out.as_slice().to_owned()).unwrap();
+            let stderr = str::from_utf8_owned(err.as_slice().to_owned()).unwrap();
 
             Ok(vec!(stdout, stderr).concat())
         }
