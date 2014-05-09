@@ -13,8 +13,5 @@ script:
   - make
   - make test
 
-notifications:
-  email: false
-
 branches:
   only: master
