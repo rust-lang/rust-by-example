@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/japaric/rust-by-example.svg?branch=master)](https://travis-ci.org/japaric/rust-by-example)
 # Rust by Example
 
 ## What's this?
