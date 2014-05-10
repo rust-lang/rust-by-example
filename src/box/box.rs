@@ -63,5 +63,5 @@ fn main() {
     // unboxing via deconstruction
     let box another_unboxed_point = boxed_point;
     println!("Another unboxed point occupies {} bytes in the stack",
-             size_of_val(&unboxed_point));
+             size_of_val(&another_unboxed_point));
 }
