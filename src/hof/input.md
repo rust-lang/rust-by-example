@@ -6,7 +6,7 @@ give Rust its functional flavor.
 
 {hof.out}
 
-[Option](http://static.rust-lang.org/doc/master/std/option/enum.Option.html)
+[Option](http://static.rust-lang.org/doc/master/core/option/type.Option.html)
 and [Iterator
-](http://static.rust-lang.org/doc/master/std/iter/trait.Iterator.html)
+](http://static.rust-lang.org/doc/master/core/iter/trait.Iterator.html)
 implement their fair share of HOFs.
