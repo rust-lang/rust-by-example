@@ -12,7 +12,7 @@ fn main() {
             break 'outer;
         }
 
-        println!("This point will never be reach");
+        println!("This point will never be reached");
     }
 
     println!("Exited the outer loop");
