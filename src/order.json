@@ -38,6 +38,7 @@
   { "id": "sockets", "title": "Unix sockets" },
   { "id": "staging", "title": "Staging Area" },
     { "id": "bench", "title": "Benchmarking" },
+    { "id": "simd", "title": "SIMD" },
     { "id": "test", "title": "Testing" },
     { "id": "unsafe", "title": "Unsafe operations" },
   { "id": "todo", "title": "TODO" },
