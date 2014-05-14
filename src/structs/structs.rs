@@ -18,10 +18,10 @@ struct Rectangle {
 
 fn main() {
     // instantiate a Point
-    let point: Point = Point { x: 3.0, y: 4.0 };
+    let point: Point = Point { x: 0.3, y: 0.4 };
 
     // access fields
-    println!("Point coordinates: ({}, {})", point.x, point.y);
+    println!("point coordinates: ({}, {})", point.x, point.y);
 
     // destructuring using let
     let Point { x: my_x, y: my_y } = point;
@@ -36,8 +36,10 @@ fn main() {
     let nil = Nil;
 
     // instantiate a tuple struct
-    let pair = Pair(1, 0.0);
+    let pair = Pair(1, 0.1);
 
     // destructure a tuple struct
     let Pair(integer, decimal) = pair;
+
+    println!("pair contains {} and {}", integer, decimal);
 }
