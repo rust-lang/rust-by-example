@@ -21,7 +21,7 @@ fn main() {
         // string literals are placed in read-only memory
         let static_string: &'static str = "In read-only memory";
 
-        // when static_string goes out of scope, we can't no longer refer
+        // when static_string goes out of scope, we can no longer refer
         // to it, but the string remains in the read-only memory
     }
 }
