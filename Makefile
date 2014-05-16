@@ -3,8 +3,11 @@ RUSTC = rustc
 QUIET = -A unused-variable -A dead-code -A dead-assignment
 RUSTC_NT = rustc --no-trans --test $(QUIET)
 WHITELIST = src/borrow/freeze.rs \
+						src/attribute/custom.rs \
+						src/crates/executable.rs \
 						src/lifetime/lifetime.rs \
 						src/lifetime/reference-bad.rs \
+						src/mod/nested.rs \
 						src/move/assignment.rs \
 						src/move/pass-by-value.rs \
 						src/variables/declare.rs \
