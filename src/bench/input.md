@@ -1,5 +1,5 @@
 Rust provides infrastructure for benchmarking via the `Bencher` struct and
-the `#[bench]` annotation. Details in the source code below.
+the `#[bench]` attribute. Details in the source code below.
 
 {bench.rs}
 
