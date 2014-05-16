@@ -4,9 +4,9 @@ WHITELIST=(
   src/lifetime/lifetime.rs
 )
 
-echo "Checking if any rust file has a line longer than 75 characters"
+echo "Checking if any rust file has a line longer than 79 characters"
 
-suspects=$(grep -Pl ".{76}" src/*/*.rs)
+suspects=$(grep -Pl ".{80}" src/*/*.rs)
 status=$?
 
 any_offender=false
@@ -16,8 +16,8 @@ if [[ $status == 0 ]]; then
       continue
     fi
     any_offender=true
-    echo "> $suspect exceeds 75 chars"
-    awk 'length($0) > 75' $suspect
+    echo "> $suspect exceeds 79 chars"
+    awk 'length($0) > 79' $suspect
   done
 
 fi
