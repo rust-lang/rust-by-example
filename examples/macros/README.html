@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Higher Order Functions | Rust by Example</title>
+        <title>macro_rules! | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@ type safety, memory safety, concurrency and performance.">
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../examples/vec/README.html" />
+        <link rel="next" href="../../examples/simd/README.html" />
         
         
-        <link rel="prev" href="../../examples/closures/README.html" />
+        <link rel="prev" href="../../examples/ffi/README.html" />
         
 
-        <meta property="og:title" content="Higher Order Functions | Rust by Example">
+        <meta property="og:title" content="macro_rules! | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="../.." data-revision="1400208835993">
+    <div class="book" data-github="japaric/rust-by-example" data-level="41.3" data-basepath="../.." data-revision="1400208835993">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -121,7 +121,7 @@ type safety, memory safety, concurrency and performance.">
 
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/src/hof/input.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/macros/input.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -696,7 +696,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 52.083333333333336%;min-width: 50%;"></div>
+        <div class="inner" style="width: 81.25%;min-width: 79.16666666666667%;"></div>
     </div>
     <div class="chapters">
     
@@ -752,33 +752,33 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter done " data-progress="31" style="left: 52.083333333333336%;"></a>
     
-        <a href="../../examples/vec/README.html" title="Vectors" class="chapter  " data-progress="32" style="left: 54.166666666666664%;"></a>
+        <a href="../../examples/vec/README.html" title="Vectors" class="chapter done " data-progress="32" style="left: 54.166666666666664%;"></a>
     
-        <a href="../../examples/str/README.html" title="Strings" class="chapter  " data-progress="33" style="left: 56.25%;"></a>
+        <a href="../../examples/str/README.html" title="Strings" class="chapter done " data-progress="33" style="left: 56.25%;"></a>
     
-        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter  " data-progress="34" style="left: 58.333333333333336%;"></a>
+        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter done " data-progress="34" style="left: 58.333333333333336%;"></a>
     
-        <a href="../../examples/channels/README.html" title="Channels" class="chapter  " data-progress="35" style="left: 60.416666666666664%;"></a>
+        <a href="../../examples/channels/README.html" title="Channels" class="chapter done " data-progress="35" style="left: 60.416666666666664%;"></a>
     
-        <a href="../../examples/timers/README.html" title="Timers" class="chapter  " data-progress="36" style="left: 62.5%;"></a>
+        <a href="../../examples/timers/README.html" title="Timers" class="chapter done " data-progress="36" style="left: 62.5%;"></a>
     
-        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter  " data-progress="37" style="left: 64.58333333333333%;"></a>
+        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter done " data-progress="37" style="left: 64.58333333333333%;"></a>
     
-        <a href="../../examples/mod/README.html" title="Modules" class="chapter  " data-progress="38" style="left: 66.66666666666667%;"></a>
+        <a href="../../examples/mod/README.html" title="Modules" class="chapter done " data-progress="38" style="left: 66.66666666666667%;"></a>
     
-        <a href="../../examples/crates/README.html" title="Crates" class="chapter  " data-progress="39" style="left: 68.75%;"></a>
+        <a href="../../examples/crates/README.html" title="Crates" class="chapter done " data-progress="39" style="left: 68.75%;"></a>
     
-        <a href="../../examples/variables/README.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 70.83333333333333%;"></a>
+        <a href="../../examples/variables/README.html" title="Variables" class="chapter done new-chapter" data-progress="4" style="left: 70.83333333333333%;"></a>
     
-        <a href="../../examples/attribute/README.html" title="Attributes" class="chapter  " data-progress="40" style="left: 72.91666666666667%;"></a>
+        <a href="../../examples/attribute/README.html" title="Attributes" class="chapter done " data-progress="40" style="left: 72.91666666666667%;"></a>
     
-        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter  " data-progress="41" style="left: 75%;"></a>
+        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter done " data-progress="41" style="left: 75%;"></a>
     
-        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter  " data-progress="41.1" style="left: 77.08333333333333%;"></a>
+        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter done " data-progress="41.1" style="left: 77.08333333333333%;"></a>
     
-        <a href="../../examples/ffi/README.html" title="Foreign Function Interface" class="chapter  " data-progress="41.2" style="left: 79.16666666666667%;"></a>
+        <a href="../../examples/ffi/README.html" title="Foreign Function Interface" class="chapter done " data-progress="41.2" style="left: 79.16666666666667%;"></a>
     
-        <a href="../../examples/macros/README.html" title="macro_rules!" class="chapter  " data-progress="41.3" style="left: 81.25%;"></a>
+        <a href="../../examples/macros/README.html" title="macro_rules!" class="chapter done " data-progress="41.3" style="left: 81.25%;"></a>
     
         <a href="../../examples/simd/README.html" title="SIMD" class="chapter  " data-progress="41.4" style="left: 83.33333333333333%;"></a>
     
@@ -803,66 +803,220 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_20">
+                    <section class="normal" id="section-gitbook_2">
                     
-                        <h1 id="higher-order-functions">Higher Order Functions</h1>
-<p>Rust provides Higher Order Functions (HOF), these are functions that take a
-closure as argument to produce a more useful function. HOFs and lazy iterators
-give Rust its functional flavor.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// hof.rs</span>
-<span class="hljs-keyword">extern</span> crate num;
+                        <h1 id="macro_rules-">macro_rules!</h1>
+<p>Rust provides a powerful macro system that allows metaprogramming. As you&#39;ve
+seen in previous chapters, macros look like functions, except that their name
+ends with a bang <code>!</code>, but instead of generating a function call, macros are
+expanded into source code that gets compiled with the rest of the program.</p>
+<p>Macros are created using the <code>macro_rules!</code> macro.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// simple.rs</span>
+<span class="hljs-comment">// macros are behind a feature gate</span>
+#![feature(macro_rules)]
 
-<span class="hljs-comment">// the AdditiveIterator trait adds the sum() method to iterators</span>
-<span class="hljs-keyword">use</span> std::iter::{AdditiveIterator,count};
-<span class="hljs-comment">// the Integer trait adds the is_odd() method to integer primitives</span>
-<span class="hljs-keyword">use</span> num::Integer;
+<span class="hljs-comment">// This is the simplest macro, `say_hello` is the name of the macro</span>
+macro_rules! say_hello {
+    <span class="hljs-comment">// `()` indicates that the macro takes no argument</span>
+    () =&gt; {
+        <span class="hljs-comment">// the macro will expand into the contents of this block</span>
+        println!(<span class="hljs-string">"Hello!"</span>);
+    }
+}
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    println!(<span class="hljs-string">"Find the sum of all the squared odd numbers under 1000"</span>);
-    <span class="hljs-keyword">let</span> upper: <span class="hljs-keyword">int</span> = <span class="hljs-number">1000</span>;
-
-    <span class="hljs-comment">// imperative approach</span>
-    <span class="hljs-comment">// declare accumulator variable</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> acc = <span class="hljs-number">0</span>;
-    <span class="hljs-comment">// iterate 0, 1, 2, ... to infinity</span>
-    <span class="hljs-keyword">for</span> n in count(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>) {
-        <span class="hljs-comment">// square the number</span>
-        <span class="hljs-keyword">let</span> n_squared = n * n;
-
-        <span class="hljs-keyword">if</span> n_squared &gt;= upper {
-            <span class="hljs-comment">// break loop if exceeded the upper limit</span>
-            <span class="hljs-keyword">break</span>;
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> n_squared.is_odd() {
-            <span class="hljs-comment">// accumulate value, if it's odd</span>
-            acc += n_squared;
-        }
-    }
-    println!(<span class="hljs-string">"imperative style: {}"</span>, acc);
-
-    <span class="hljs-comment">// functional approach</span>
-    <span class="hljs-keyword">let</span> sum_of_squared_odd_numbers =
-        <span class="hljs-comment">// all natural numbers</span>
-        count(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>).
-        <span class="hljs-comment">// squared</span>
-        map(|n| n * n).
-        <span class="hljs-comment">// below upper limit</span>
-        take_while(|&amp;n| n &lt; upper).
-        <span class="hljs-comment">// that are odd</span>
-        filter(|n| n.is_odd()).
-        <span class="hljs-comment">// sum them</span>
-        sum();
-    println!(<span class="hljs-string">"functional style: {}"</span>, sum_of_squared_odd_numbers);
+    <span class="hljs-comment">// this call will expand into `println!("Hello");`</span>
+    say_hello!()
 }
 </code></pre>
-<pre><code>$ rustc hof.rs &amp;&amp; ./hof
-Find the sum of all the squared odd numbers under 1000
-imperative style: 5456
-functional style: 5456
-</code></pre><p><a href="http://static.rust-lang.org/doc/master/core/option/type.Option.html" target="_blank">Option</a>
-and <a href="http://static.rust-lang.org/doc/master/core/iter/trait.Iterator.html" target="_blank">Iterator
-</a>
-implement their fair share of HOFs.</p>
+<pre><code>$ rustc simple.rs &amp;&amp; ./simple
+Hello!
+</code></pre><p>The arguments of a macro are prefixed by a dollar sign <code>$</code> and type annotated
+with a <em>designator</em>.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// designators.rs</span>
+#![feature(macro_rules)]
 
+macro_rules! create_function {
+    <span class="hljs-comment">// this macro takes an argument of "type" `ident`</span>
+    <span class="hljs-comment">// the `ident` designator is used for variable/function names</span>
+    ($func_name:ident) =&gt; {
+        <span class="hljs-comment">// this macro creates a function with name `$func_name`</span>
+        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func_name</span>(</span>) {
+            <span class="hljs-comment">// the stringify! macro converts an `ident` into a string</span>
+            println!(<span class="hljs-string">"You called {}()"</span>,
+                     stringify!($func_name))
+        }
+    }
+}
+
+create_function!(foo)
+create_function!(bar)
+
+macro_rules! print_result {
+    <span class="hljs-comment">// the `expr` designator is used for expressions</span>
+    ($expression:expr) =&gt; {
+        <span class="hljs-comment">// stringify! will convert the expression *as it is* into a string</span>
+        println!(<span class="hljs-string">"{} = {}"</span>,
+                 stringify!($expression),
+                 $expression)
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+    foo();
+    bar();
+
+    print_result!(<span class="hljs-number">1</span> + <span class="hljs-number">1</span>);
+
+    <span class="hljs-comment">// remember that blocks are expressions</span>
+    print_result!({
+        <span class="hljs-keyword">let</span> x = <span class="hljs-number">1</span>;
+
+        x * x + <span class="hljs-number">2</span> * x - <span class="hljs-number">1</span>
+    });
+}
+</code></pre>
+<pre><code>$ rustc designators.rs &amp;&amp; ./designators
+You called foo()
+You called bar()
+1 + 1 = 2
+{ let x = 1; x * x + 2 * x - 1 } = 2
+</code></pre><p>Macros can be overloaded to accept different combinations of arguments.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// overload.rs</span>
+#![feature(macro_rules)]
+
+<span class="hljs-comment">// macro_rules! is similar to a match block</span>
+macro_rules! test {
+    <span class="hljs-comment">// the arguments don't need to be separated by a comma</span>
+    <span class="hljs-comment">// any template can be used</span>
+    ($left:expr and $right:expr) =&gt; {
+        println!(<span class="hljs-string">"{} and {} is {}"</span>,
+                 stringify!($left),
+                 stringify!($right),
+                 $left &amp;&amp; $right)
+    };
+    <span class="hljs-comment">// ^ each arm must be ended with a semicolon</span>
+    ($left:expr or $right:expr) =&gt; {
+        println!(<span class="hljs-string">"{} or {} is {}"</span>,
+                 stringify!($left),
+                 stringify!($right),
+                 $left || $right)
+    };
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+    test!(<span class="hljs-number">1</span> + <span class="hljs-number">1</span> == <span class="hljs-number">2</span> and <span class="hljs-number">2</span> * <span class="hljs-number">2</span> == <span class="hljs-number">4</span>);
+    test!(<span class="hljs-keyword">true</span> or <span class="hljs-keyword">false</span>);
+}
+</code></pre>
+<pre><code>$ rustc overload.rs &amp;&amp; ./overload
+1 + 1 == 2 and 2 * 2 == 4 is true
+true or false is true
+</code></pre><p>Macros can use <code>+</code> in the argument list, to indicate that an argument may
+repeat at least once, or <code>*</code>, to indicate that the argument may repeat zero or
+more times.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// repeat.rs</span>
+#![feature(macro_rules)]
+
+<span class="hljs-comment">// min! will calculate the minimum of any number of arguments</span>
+macro_rules! min {
+    <span class="hljs-comment">// base case</span>
+    ($x:expr) =&gt; {
+        $x
+    };
+    <span class="hljs-comment">// `$x` followed by at least one `$y,`</span>
+    ($x:expr, $($y:expr),+) =&gt; {
+        <span class="hljs-comment">// call min! on the tail `$y`</span>
+        std::cmp::min($x, min!($($y),+))
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+    println!(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">1</span>));
+    println!(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">1</span> + <span class="hljs-number">2</span> , <span class="hljs-number">2</span>));
+    println!(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">5</span>, <span class="hljs-number">2</span> * <span class="hljs-number">3</span>, <span class="hljs-number">4</span>));
+}
+</code></pre>
+<pre><code>$ rustc repeat.rs &amp;&amp; ./repeat
+1
+2
+4
+</code></pre><p>Macros allow writing DRY code, by factoring out the common parts of functions
+and/or test suites. Here is an example that implements and tests the <code>+=</code>, <code>*=</code>
+and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// dry.rs</span>
+#![feature(macro_rules)]
+
+macro_rules! assert_len {
+    ($func:ident, $op:tt) =&gt; {
+        <span class="hljs-keyword">assert</span>!(xs.len() == ys.len(),
+                <span class="hljs-string">"{}: dimension mismatch: {} {} {}"</span>,
+                stringify!($func),
+                (xs.len(),),
+                stringify!($op),
+                (ys.len(),));
+    }
+}
+
+macro_rules! op {
+    ($func:ident, $bound:ident, $op:tt, $method:ident) =&gt; {
+        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span>&lt;</span>T: $bound&lt;T, T&gt;&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
+            assert_len!($func, $op);
+
+            <span class="hljs-keyword">for</span> (x, y) in xs.mut_iter().zip(ys.iter()) {
+                *x = x.$method(y);
+            }
+        }
+    }
+}
+
+<span class="hljs-comment">// implement add_assign, mul_assign, and sub_assign functions</span>
+op!(add_assign, Add, +=, add)
+op!(mul_assign, Mul, *=, mul)
+op!(sub_assign, Sub, -=, sub)
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> xs = Vec::from_elem(<span class="hljs-number">5</span>, <span class="hljs-number">0.0</span>);
+    <span class="hljs-keyword">let</span> ys = Vec::from_elem(<span class="hljs-number">6</span>, <span class="hljs-number">1.0</span>);
+
+    <span class="hljs-comment">// this operation will fail at runtime</span>
+    add_assign(&amp;<span class="hljs-keyword">mut</span> xs, &amp;ys);
+}
+
+<span class="hljs-keyword">mod</span> test {
+    macro_rules! test {
+        ($func: ident, $x:expr, $y:expr, $z:expr) =&gt; {
+            <span class="hljs-preprocessor">#[test]</span>
+            <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span>(</span>) {
+                <span class="hljs-keyword">for</span> size in range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
+                    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x = Vec::from_elem(size, $x);
+                    <span class="hljs-keyword">let</span> y = Vec::from_elem(size, $y);
+                    <span class="hljs-keyword">let</span> z = Vec::from_elem(size, $z);
+
+                    super::$func(&amp;<span class="hljs-keyword">mut</span> x, &amp;y);
+
+                    assert_eq!(x, z);
+                }
+            }
+        }
+    }
+
+    <span class="hljs-comment">// test add_assign, mul_assign and sub_assign</span>
+    test!(add_assign, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+    test!(mul_assign, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>)
+    test!(sub_assign, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>)
+}
+</code></pre>
+<pre><code>$ rustc dry.rs &amp;&amp; ./dry
+task &#39;&lt;main&gt;&#39; failed at &#39;add_assign: dimension mismatch: (5,) += (6,)&#39;, src/macros/dry.rs:27
+</code></pre><pre><code>$ rustc --test dry.rs &amp;&amp; ./dry
+running 3 tests
+test test::mul_assign ... ok
+test test::add_assign ... ok
+test test::sub_assign ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
+</code></pre>
                     
                     </section>
                 
@@ -871,10 +1025,10 @@ implement their fair share of HOFs.</p>
         </div>
 
         
-        <a href="../../examples/closures/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/ffi/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/vec/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/simd/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

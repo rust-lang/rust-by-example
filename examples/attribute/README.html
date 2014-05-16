@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Higher Order Functions | Rust by Example</title>
+        <title>Attributes | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@ type safety, memory safety, concurrency and performance.">
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../examples/vec/README.html" />
+        <link rel="next" href="../../examples/staging/README.html" />
         
         
-        <link rel="prev" href="../../examples/closures/README.html" />
+        <link rel="prev" href="../../examples/crates/README.html" />
         
 
-        <meta property="og:title" content="Higher Order Functions | Rust by Example">
+        <meta property="og:title" content="Attributes | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="../.." data-revision="1400208835993">
+    <div class="book" data-github="japaric/rust-by-example" data-level="40" data-basepath="../.." data-revision="1400208835993">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -121,7 +121,7 @@ type safety, memory safety, concurrency and performance.">
 
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/src/hof/input.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/attribute/input.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -696,7 +696,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 52.083333333333336%;min-width: 50%;"></div>
+        <div class="inner" style="width: 72.91666666666667%;min-width: 70.83333333333333%;"></div>
     </div>
     <div class="chapters">
     
@@ -752,25 +752,25 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter done " data-progress="31" style="left: 52.083333333333336%;"></a>
     
-        <a href="../../examples/vec/README.html" title="Vectors" class="chapter  " data-progress="32" style="left: 54.166666666666664%;"></a>
+        <a href="../../examples/vec/README.html" title="Vectors" class="chapter done " data-progress="32" style="left: 54.166666666666664%;"></a>
     
-        <a href="../../examples/str/README.html" title="Strings" class="chapter  " data-progress="33" style="left: 56.25%;"></a>
+        <a href="../../examples/str/README.html" title="Strings" class="chapter done " data-progress="33" style="left: 56.25%;"></a>
     
-        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter  " data-progress="34" style="left: 58.333333333333336%;"></a>
+        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter done " data-progress="34" style="left: 58.333333333333336%;"></a>
     
-        <a href="../../examples/channels/README.html" title="Channels" class="chapter  " data-progress="35" style="left: 60.416666666666664%;"></a>
+        <a href="../../examples/channels/README.html" title="Channels" class="chapter done " data-progress="35" style="left: 60.416666666666664%;"></a>
     
-        <a href="../../examples/timers/README.html" title="Timers" class="chapter  " data-progress="36" style="left: 62.5%;"></a>
+        <a href="../../examples/timers/README.html" title="Timers" class="chapter done " data-progress="36" style="left: 62.5%;"></a>
     
-        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter  " data-progress="37" style="left: 64.58333333333333%;"></a>
+        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter done " data-progress="37" style="left: 64.58333333333333%;"></a>
     
-        <a href="../../examples/mod/README.html" title="Modules" class="chapter  " data-progress="38" style="left: 66.66666666666667%;"></a>
+        <a href="../../examples/mod/README.html" title="Modules" class="chapter done " data-progress="38" style="left: 66.66666666666667%;"></a>
     
-        <a href="../../examples/crates/README.html" title="Crates" class="chapter  " data-progress="39" style="left: 68.75%;"></a>
+        <a href="../../examples/crates/README.html" title="Crates" class="chapter done " data-progress="39" style="left: 68.75%;"></a>
     
-        <a href="../../examples/variables/README.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 70.83333333333333%;"></a>
+        <a href="../../examples/variables/README.html" title="Variables" class="chapter done new-chapter" data-progress="4" style="left: 70.83333333333333%;"></a>
     
-        <a href="../../examples/attribute/README.html" title="Attributes" class="chapter  " data-progress="40" style="left: 72.91666666666667%;"></a>
+        <a href="../../examples/attribute/README.html" title="Attributes" class="chapter done " data-progress="40" style="left: 72.91666666666667%;"></a>
     
         <a href="../../examples/staging/README.html" title="Staging Area" class="chapter  " data-progress="41" style="left: 75%;"></a>
     
@@ -803,65 +803,91 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_20">
+                    <section class="normal" id="section-gitbook_26">
                     
-                        <h1 id="higher-order-functions">Higher Order Functions</h1>
-<p>Rust provides Higher Order Functions (HOF), these are functions that take a
-closure as argument to produce a more useful function. HOFs and lazy iterators
-give Rust its functional flavor.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// hof.rs</span>
-<span class="hljs-keyword">extern</span> crate num;
+                        <h1 id="attributes">Attributes</h1>
+<p>An attribute is metadata applied to some module, crate or item. This metadata
+can be used to/for:</p>
+<ul>
+<li>conditional compilation of code</li>
+<li>disable lints (warnings)</li>
+<li>enable compiler features (macros, glob imports, etc.)</li>
+<li>link to a foreign library</li>
+<li>mark functions as unit tests</li>
+<li>mark functions that will be part of a benchmark</li>
+<li>select crate type</li>
+<li>set library name and version</li>
+</ul>
+<p>When attributes apply to a whole crate, their syntax is <code>#![crate_attribute]</code>,
+and when they apply to a module or item, the syntax is <code>#[item_attribute]</code>
+(notice the missing bang <code>!</code>). Some attributes can take key-value arguments
+like <code>#[attribute(key = &quot;value&quot;)]</code>, or string arguments like
+<code>#[attribute = &quot;value&quot;]</code>.</p>
+<p>Let&#39;s add metadata to the library we created in the previous chapter.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// lib.rs</span>
+<span class="hljs-comment">// this crate is a library</span>
+#![crate_type = <span class="hljs-string">"lib"</span>]
+<span class="hljs-comment">// the library is named "erty", and its version is 0.1</span>
+#![crate_id = <span class="hljs-string">"erty#0.1"</span>]
 
-<span class="hljs-comment">// the AdditiveIterator trait adds the sum() method to iterators</span>
-<span class="hljs-keyword">use</span> std::iter::{AdditiveIterator,count};
-<span class="hljs-comment">// the Integer trait adds the is_odd() method to integer primitives</span>
-<span class="hljs-keyword">use</span> num::Integer;
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span>(</span>) {
+    println!(<span class="hljs-string">"called erty's public_function()"</span>);
+}
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    println!(<span class="hljs-string">"Find the sum of all the squared odd numbers under 1000"</span>);
-    <span class="hljs-keyword">let</span> upper: <span class="hljs-keyword">int</span> = <span class="hljs-number">1000</span>;
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span>(</span>) {
+    println!(<span class="hljs-string">"called erty's private_function()"</span>);
+}
 
-    <span class="hljs-comment">// imperative approach</span>
-    <span class="hljs-comment">// declare accumulator variable</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> acc = <span class="hljs-number">0</span>;
-    <span class="hljs-comment">// iterate 0, 1, 2, ... to infinity</span>
-    <span class="hljs-keyword">for</span> n in count(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>) {
-        <span class="hljs-comment">// square the number</span>
-        <span class="hljs-keyword">let</span> n_squared = n * n;
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span>(</span>) {
+    print!(<span class="hljs-string">"called erty's indirect_access(), that\n&gt; "</span>);
 
-        <span class="hljs-keyword">if</span> n_squared &gt;= upper {
-            <span class="hljs-comment">// break loop if exceeded the upper limit</span>
-            <span class="hljs-keyword">break</span>;
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> n_squared.is_odd() {
-            <span class="hljs-comment">// accumulate value, if it's odd</span>
-            acc += n_squared;
-        }
-    }
-    println!(<span class="hljs-string">"imperative style: {}"</span>, acc);
-
-    <span class="hljs-comment">// functional approach</span>
-    <span class="hljs-keyword">let</span> sum_of_squared_odd_numbers =
-        <span class="hljs-comment">// all natural numbers</span>
-        count(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>).
-        <span class="hljs-comment">// squared</span>
-        map(|n| n * n).
-        <span class="hljs-comment">// below upper limit</span>
-        take_while(|&amp;n| n &lt; upper).
-        <span class="hljs-comment">// that are odd</span>
-        filter(|n| n.is_odd()).
-        <span class="hljs-comment">// sum them</span>
-        sum();
-    println!(<span class="hljs-string">"functional style: {}"</span>, sum_of_squared_odd_numbers);
+    private_function();
 }
 </code></pre>
-<pre><code>$ rustc hof.rs &amp;&amp; ./hof
-Find the sum of all the squared odd numbers under 1000
-imperative style: 5456
-functional style: 5456
-</code></pre><p><a href="http://static.rust-lang.org/doc/master/core/option/type.Option.html" target="_blank">Option</a>
-and <a href="http://static.rust-lang.org/doc/master/core/iter/trait.Iterator.html" target="_blank">Iterator
-</a>
-implement their fair share of HOFs.</p>
+<pre><code># we don&#39;t need the --crate-type flag this time
+$ rustc lib.rs
+$ ls lib*
+liberty-a1e7dc98-0.1.rlib
+</code></pre><p>Here&#39;s an example of conditional compilation.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// conditional.rs</span>
+<span class="hljs-comment">// this function only gets compiled if the target OS is linux</span>
+<span class="hljs-preprocessor">#[cfg(target_os = "linux")]</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">are_you_on_linux</span>(</span>) {
+    println!(<span class="hljs-string">"You are running linux!"</span>)
+}
+
+<span class="hljs-comment">// this function only gets compiled if the target OS is *not* linux</span>
+<span class="hljs-preprocessor">#[cfg(not(target_os = "linux"))]</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">are_you_on_linux</span>(</span>) {
+    println!(<span class="hljs-string">"You are *not* running linux!"</span>)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+    are_you_on_linux();
+}
+</code></pre>
+<pre><code>$ rustc conditional.rs &amp;&amp; ./conditional
+You are running linux!
+</code></pre><p>Some conditionals like <code>target_os</code> are implicitly provided by <code>rustc</code>, but
+custom conditionals must be passed to <code>rustc</code> using the <code>--cfg</code> flag.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// custom.rs</span>
+<span class="hljs-preprocessor">#[cfg(some_condition)]</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">conditional_function</span>(</span>) {
+    println!(<span class="hljs-string">"condition met!"</span>)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+    conditional_function();
+}
+</code></pre>
+<pre><code>$ rustc custom.rs &amp;&amp; ./custom
+src/attribute/custom.rs:7:5: 7:25 error: unresolved name `conditional_function`.
+src/attribute/custom.rs:7     conditional_function();
+                              ^~~~~~~~~~~~~~~~~~~~
+error: aborting due to previous error
+</code></pre><pre><code>$ rustc --cfg some_condition custom.rs &amp;&amp; ./custom
+condition met!
+</code></pre><p>More usages of attributes will be covered in other chapters.</p>
 
                     
                     </section>
@@ -871,10 +897,10 @@ implement their fair share of HOFs.</p>
         </div>
 
         
-        <a href="../../examples/closures/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/crates/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/vec/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/staging/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

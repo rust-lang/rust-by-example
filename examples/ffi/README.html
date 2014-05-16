@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Higher Order Functions | Rust by Example</title>
+        <title>Foreign Function Interface | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -14,13 +14,13 @@ type safety, memory safety, concurrency and performance.">
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../../examples/vec/README.html" />
+        <link rel="next" href="../../examples/macros/README.html" />
         
         
-        <link rel="prev" href="../../examples/closures/README.html" />
+        <link rel="prev" href="../../examples/bench/README.html" />
         
 
-        <meta property="og:title" content="Higher Order Functions | Rust by Example">
+        <meta property="og:title" content="Foreign Function Interface | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -43,7 +43,7 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="../.." data-revision="1400208835993">
+    <div class="book" data-github="japaric/rust-by-example" data-level="41.2" data-basepath="../.." data-revision="1400208835993">
     <div class="book-header">
     <!-- Actions Left -->
     
@@ -121,7 +121,7 @@ type safety, memory safety, concurrency and performance.">
 
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/src/hof/input.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/ffi/input.md" target="blank">Edit and Contribute</a>
         </li>
         
 
@@ -696,7 +696,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 52.083333333333336%;min-width: 50%;"></div>
+        <div class="inner" style="width: 79.16666666666667%;min-width: 77.08333333333333%;"></div>
     </div>
     <div class="chapters">
     
@@ -752,31 +752,31 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter done " data-progress="31" style="left: 52.083333333333336%;"></a>
     
-        <a href="../../examples/vec/README.html" title="Vectors" class="chapter  " data-progress="32" style="left: 54.166666666666664%;"></a>
+        <a href="../../examples/vec/README.html" title="Vectors" class="chapter done " data-progress="32" style="left: 54.166666666666664%;"></a>
     
-        <a href="../../examples/str/README.html" title="Strings" class="chapter  " data-progress="33" style="left: 56.25%;"></a>
+        <a href="../../examples/str/README.html" title="Strings" class="chapter done " data-progress="33" style="left: 56.25%;"></a>
     
-        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter  " data-progress="34" style="left: 58.333333333333336%;"></a>
+        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter done " data-progress="34" style="left: 58.333333333333336%;"></a>
     
-        <a href="../../examples/channels/README.html" title="Channels" class="chapter  " data-progress="35" style="left: 60.416666666666664%;"></a>
+        <a href="../../examples/channels/README.html" title="Channels" class="chapter done " data-progress="35" style="left: 60.416666666666664%;"></a>
     
-        <a href="../../examples/timers/README.html" title="Timers" class="chapter  " data-progress="36" style="left: 62.5%;"></a>
+        <a href="../../examples/timers/README.html" title="Timers" class="chapter done " data-progress="36" style="left: 62.5%;"></a>
     
-        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter  " data-progress="37" style="left: 64.58333333333333%;"></a>
+        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter done " data-progress="37" style="left: 64.58333333333333%;"></a>
     
-        <a href="../../examples/mod/README.html" title="Modules" class="chapter  " data-progress="38" style="left: 66.66666666666667%;"></a>
+        <a href="../../examples/mod/README.html" title="Modules" class="chapter done " data-progress="38" style="left: 66.66666666666667%;"></a>
     
-        <a href="../../examples/crates/README.html" title="Crates" class="chapter  " data-progress="39" style="left: 68.75%;"></a>
+        <a href="../../examples/crates/README.html" title="Crates" class="chapter done " data-progress="39" style="left: 68.75%;"></a>
     
-        <a href="../../examples/variables/README.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 70.83333333333333%;"></a>
+        <a href="../../examples/variables/README.html" title="Variables" class="chapter done new-chapter" data-progress="4" style="left: 70.83333333333333%;"></a>
     
-        <a href="../../examples/attribute/README.html" title="Attributes" class="chapter  " data-progress="40" style="left: 72.91666666666667%;"></a>
+        <a href="../../examples/attribute/README.html" title="Attributes" class="chapter done " data-progress="40" style="left: 72.91666666666667%;"></a>
     
-        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter  " data-progress="41" style="left: 75%;"></a>
+        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter done " data-progress="41" style="left: 75%;"></a>
     
-        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter  " data-progress="41.1" style="left: 77.08333333333333%;"></a>
+        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter done " data-progress="41.1" style="left: 77.08333333333333%;"></a>
     
-        <a href="../../examples/ffi/README.html" title="Foreign Function Interface" class="chapter  " data-progress="41.2" style="left: 79.16666666666667%;"></a>
+        <a href="../../examples/ffi/README.html" title="Foreign Function Interface" class="chapter done " data-progress="41.2" style="left: 79.16666666666667%;"></a>
     
         <a href="../../examples/macros/README.html" title="macro_rules!" class="chapter  " data-progress="41.3" style="left: 81.25%;"></a>
     
@@ -803,66 +803,66 @@ type safety, memory safety, concurrency and performance.">
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_20">
+                    <section class="normal" id="section-gitbook_15">
                     
-                        <h1 id="higher-order-functions">Higher Order Functions</h1>
-<p>Rust provides Higher Order Functions (HOF), these are functions that take a
-closure as argument to produce a more useful function. HOFs and lazy iterators
-give Rust its functional flavor.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// hof.rs</span>
+                        <h1 id="foreign-function-interface">Foreign Function Interface</h1>
+<p>Rust provides a Foreign Function Interface (FFI) to C libraries. Foreign
+functions must be declared inside an <code>extern</code> block annotated with a <code>#[link]</code>
+attribute containing the name of the foreign library.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// ffi.rs</span>
 <span class="hljs-keyword">extern</span> crate num;
 
-<span class="hljs-comment">// the AdditiveIterator trait adds the sum() method to iterators</span>
-<span class="hljs-keyword">use</span> std::iter::{AdditiveIterator,count};
-<span class="hljs-comment">// the Integer trait adds the is_odd() method to integer primitives</span>
-<span class="hljs-keyword">use</span> num::Integer;
+<span class="hljs-keyword">use</span> num::complex::{Complex,Complex32};
+
+<span class="hljs-comment">// this extern block links to the libm library</span>
+<span class="hljs-preprocessor">#[link(name = "m")]</span>
+<span class="hljs-keyword">extern</span> {
+    <span class="hljs-comment">// this is a foreign function</span>
+    <span class="hljs-comment">// that computes the square root of a single precision complex number</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">csqrtf</span>(</span>z: Complex32) -&gt; Complex32;
+}
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    println!(<span class="hljs-string">"Find the sum of all the squared odd numbers under 1000"</span>);
-    <span class="hljs-keyword">let</span> upper: <span class="hljs-keyword">int</span> = <span class="hljs-number">1000</span>;
+    <span class="hljs-comment">// z = -1 + 0i</span>
+    <span class="hljs-keyword">let</span> z = Complex::new(-<span class="hljs-number">1.0f32</span>, <span class="hljs-number">0.0</span>);
 
-    <span class="hljs-comment">// imperative approach</span>
-    <span class="hljs-comment">// declare accumulator variable</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> acc = <span class="hljs-number">0</span>;
-    <span class="hljs-comment">// iterate 0, 1, 2, ... to infinity</span>
-    <span class="hljs-keyword">for</span> n in count(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>) {
-        <span class="hljs-comment">// square the number</span>
-        <span class="hljs-keyword">let</span> n_squared = n * n;
+    <span class="hljs-comment">// calling a foreign function is an unsafe operation</span>
+    <span class="hljs-keyword">let</span> z_sqrt = <span class="hljs-keyword">unsafe</span> {
+        csqrtf(z)
+    };
 
-        <span class="hljs-keyword">if</span> n_squared &gt;= upper {
-            <span class="hljs-comment">// break loop if exceeded the upper limit</span>
-            <span class="hljs-keyword">break</span>;
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> n_squared.is_odd() {
-            <span class="hljs-comment">// accumulate value, if it's odd</span>
-            acc += n_squared;
-        }
-    }
-    println!(<span class="hljs-string">"imperative style: {}"</span>, acc);
-
-    <span class="hljs-comment">// functional approach</span>
-    <span class="hljs-keyword">let</span> sum_of_squared_odd_numbers =
-        <span class="hljs-comment">// all natural numbers</span>
-        count(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>).
-        <span class="hljs-comment">// squared</span>
-        map(|n| n * n).
-        <span class="hljs-comment">// below upper limit</span>
-        take_while(|&amp;n| n &lt; upper).
-        <span class="hljs-comment">// that are odd</span>
-        filter(|n| n.is_odd()).
-        <span class="hljs-comment">// sum them</span>
-        sum();
-    println!(<span class="hljs-string">"functional style: {}"</span>, sum_of_squared_odd_numbers);
+    println!(<span class="hljs-string">"the square root of {} is {}"</span>, z, z_sqrt);
 }
 </code></pre>
-<pre><code>$ rustc hof.rs &amp;&amp; ./hof
-Find the sum of all the squared odd numbers under 1000
-imperative style: 5456
-functional style: 5456
-</code></pre><p><a href="http://static.rust-lang.org/doc/master/core/option/type.Option.html" target="_blank">Option</a>
-and <a href="http://static.rust-lang.org/doc/master/core/iter/trait.Iterator.html" target="_blank">Iterator
-</a>
-implement their fair share of HOFs.</p>
+<pre><code>$ rustc ffi.rs &amp;&amp; ./ffi
+the square root of -1+0i is 0+1i
+</code></pre><p>Since calling foreign functions is considered unsafe, it&#39;s common to write safe
+wrappers around them.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// safe.rs</span>
+<span class="hljs-keyword">extern</span> crate num;
 
+<span class="hljs-keyword">use</span> num::complex::{Complex,Complex32};
+
+<span class="hljs-preprocessor">#[link(name = "m")]</span>
+<span class="hljs-keyword">extern</span> {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ccosf</span>(</span>z: Complex&lt;<span class="hljs-keyword">f32</span>&gt;) -&gt; Complex&lt;<span class="hljs-keyword">f32</span>&gt;;
+}
+
+<span class="hljs-comment">// safe wrapper</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">cos</span>(</span>z: Complex32) -&gt; Complex32 {
+    <span class="hljs-keyword">unsafe</span> { ccosf(z) }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+    <span class="hljs-comment">// z = -1 + 0i</span>
+    <span class="hljs-keyword">let</span> z = Complex::new(<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0f32</span>);
+
+    println!(<span class="hljs-string">"cos({}) = {}"</span>, z, cos(z));
+}
+</code></pre>
+<pre><code>$ rustc safe.rs &amp;&amp; ./safe
+cos(0+1i) = 1.543081+0i
+</code></pre>
                     
                     </section>
                 
@@ -871,10 +871,10 @@ implement their fair share of HOFs.</p>
         </div>
 
         
-        <a href="../../examples/closures/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/bench/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/vec/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/macros/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

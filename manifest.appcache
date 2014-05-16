@@ -1,10 +1,11 @@
 CACHE MANIFEST
-# Revision 1399413350361
+# Revision 1400208835994
 
 CACHE:
 index.html
-examples/match/README.html
+examples/macros/README.html
 examples/array/README.html
+examples/bench/README.html
 examples/borrow/README.html
 examples/bounds/README.html
 examples/box/README.html
@@ -12,8 +13,10 @@ examples/channels/README.html
 examples/clone/README.html
 examples/closures/README.html
 examples/constants/README.html
+examples/crates/README.html
 examples/enum/README.html
 examples/expression/README.html
+examples/ffi/README.html
 examples/for/README.html
 examples/functions/README.html
 examples/generics/README.html
@@ -24,14 +27,17 @@ examples/iter/README.html
 examples/lifetime/README.html
 examples/literals/README.html
 examples/loops/README.html
-examples/bench/README.html
+examples/attribute/README.html
+examples/match/README.html
 examples/methods/README.html
+examples/mod/README.html
 examples/move/README.html
 examples/operator/README.html
 examples/option/README.html
 examples/print/README.html
-examples/sockets/README.html
 examples/raii/README.html
+examples/simd/README.html
+examples/sockets/README.html
 examples/staging/README.html
 examples/str/README.html
 examples/structs/README.html
