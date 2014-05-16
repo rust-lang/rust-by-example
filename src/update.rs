@@ -1,9 +1,8 @@
 extern crate serialize;
 
 use serialize::{Decodable,json};
-use std::io::Process;
 use std::io::fs::File;
-use std::io::process::ProcessOutput;
+use std::io::process::{Command,ProcessOutput};
 use std::io::{fs,IoResult,Truncate,UserRWX,Write};
 use std::str;
 
@@ -31,11 +30,11 @@ fn update(example: &Example) -> bool {
     let src_dir = Path::new(format!("src/{}", example.id));
     let out_dir = Path::new(format!("output/examples/{}", example.id));
 
-    let sources: Vec<Path> = match fs::readdir(&src_dir) {
+    let sources: Vec<Path> = match fs::walk_dir(&src_dir) {
         Err(_) => {
             println!("couldn't read {}", src_dir.display());
             return false
-        } Ok(contents) => contents.move_iter().filter(|path| match path.extension_str() {
+        } Ok(contents) => contents.filter(|path| match path.extension_str() {
             None => false,
             Some(extension) => extension == "rs",
         }).collect(),
@@ -50,15 +49,15 @@ fn update(example: &Example) -> bool {
 
     // insert source code in markdown
     for source in sources.iter() {
-        let filename = source.filename_str().unwrap();
+        let path = source.as_str().unwrap().split('/').skip(2).collect::<Vec<&str>>().connect("/");
         let code = match read(source) {
             Err(_) => {
-                println!("couldn't read {}", filename);
+                println!("couldn't read {}", path);
                 return false;
-            }, Ok(contents) => format!("``` rust\n// {}\n{}```", filename, contents),
+            }, Ok(contents) => format!("``` rust\n// {}\n{}```", path, contents),
         };
 
-        template = template.replace(format!("\\{{}\\}", filename), code);
+        template = template.replace(format!("\\{{}\\}", path), code);
     }
 
     // insert program output in markdown
@@ -99,9 +98,7 @@ fn update(example: &Example) -> bool {
 }
 
 fn compile_run(path: &Path) -> Result<~str, &'static str> {
-    match Process::output("rustc", [path.as_str().unwrap().to_owned(),
-                                    "-o".to_owned(),
-                                    "executable".to_owned()]) {
+    match Command::new("rustc").args([path.as_str().unwrap(), "-o", "executable"]).output() {
         Err(_) => return Err("compile"),
         Ok(out) => {
             if !out.status.success() {
@@ -110,7 +107,7 @@ fn compile_run(path: &Path) -> Result<~str, &'static str> {
         }
     }
 
-    match Process::output("./executable", []) {
+    match Command::new("./executable").output() {
         Err(_) => Err("run"),
         Ok(out) => {
             fs::unlink(&Path::new("./executable")).unwrap();
