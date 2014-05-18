@@ -8,8 +8,8 @@ use std::str;
 
 #[deriving(Decodable,Show)]
 struct Example {
-    id: ~str,
-    title: ~str,
+    id: StrBuf,
+    title: StrBuf,
 }
 
 fn read(file: &Path) -> IoResult<~str> {
