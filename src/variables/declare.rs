@@ -6,6 +6,6 @@ fn main() {
     declared_variable = 3;
 
     // usage of uninitialized variable is forbidden
-    let unitialized_variable: int;
-    println!("{}", unitialized_variable);
+    let uninitialized_variable: int;
+    println!("{}", uninitialized_variable);
 }
