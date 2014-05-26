@@ -8,11 +8,11 @@ use std::str;
 
 #[deriving(Decodable,Show)]
 struct Example {
-    id: StrBuf,
-    title: StrBuf,
+    id: String,
+    title: String,
 }
 
-fn read(file: &Path) -> IoResult<~str> {
+fn read(file: &Path) -> IoResult<String> {
     let mut file = try!(File::open(file));
 
     Ok(try!(file.read_to_str()))
@@ -57,7 +57,8 @@ fn update(example: &Example) -> bool {
             }, Ok(contents) => format!("``` rust\n// {}\n{}```", path, contents),
         };
 
-        template = template.replace(format!("\\{{}\\}", path), code);
+        template = template.replace(format!("\\{{}\\}", path).as_slice(),
+                                    code.as_slice());
     }
 
     // insert program output in markdown
@@ -65,7 +66,7 @@ fn update(example: &Example) -> bool {
         let filename = source.filename_str().unwrap();
         let token = format!("\\{{}\\}", source.with_extension("out").filename_str().unwrap());
 
-        if template.contains(token) {
+        if template.as_slice().contains(token.as_slice()) {
             match compile_run(source) {
                 Err(action) => {
                     println!("couldn't {} {}", action, filename);
@@ -76,7 +77,8 @@ fn update(example: &Example) -> bool {
                                          filename.split('.').nth(0).unwrap(),
                                          output);
 
-                    template = template.replace(token, output);
+                    template = template.replace(token.as_slice(),
+                                                output.as_slice());
                 }
             }
         }
@@ -86,7 +88,7 @@ fn update(example: &Example) -> bool {
         fs::mkdir(&out_dir, UserRWX).unwrap();
     }
 
-    match write(&out_dir.join("README.md"), template) {
+    match write(&out_dir.join("README.md"), template.as_slice()) {
         Err(_) => {
             println!("couldn't write README.md");
             false
@@ -97,12 +99,12 @@ fn update(example: &Example) -> bool {
     }
 }
 
-fn compile_run(path: &Path) -> Result<~str, &'static str> {
+fn compile_run(path: &Path) -> Result<String, &'static str> {
     match Command::new("rustc").args([path.as_str().unwrap(), "-o", "executable"]).output() {
         Err(_) => return Err("compile"),
         Ok(out) => {
             if !out.status.success() {
-                return Ok(str::from_utf8_owned(out.error.as_slice().to_owned()).unwrap());
+                return Ok(str::from_utf8_owned(out.error).unwrap());
             }
         }
     }
@@ -112,8 +114,8 @@ fn compile_run(path: &Path) -> Result<~str, &'static str> {
         Ok(out) => {
             fs::unlink(&Path::new("./executable")).unwrap();
             let ProcessOutput { status: _, output: out, error: err } = out;
-            let stdout = str::from_utf8_owned(out.as_slice().to_owned()).unwrap();
-            let stderr = str::from_utf8_owned(err.as_slice().to_owned()).unwrap();
+            let stdout = str::from_utf8_owned(out).unwrap();
+            let stderr = str::from_utf8_owned(err).unwrap();
 
             Ok(vec!(stdout, stderr).concat())
         }
@@ -125,7 +127,7 @@ fn main() {
 
     let examples: Vec<Example> = match read(&src_dir.join("order.json")) {
         Err(err) => fail!("couldn't read order.json: {}", err),
-        Ok(string) => match json::from_str(string) {
+        Ok(string) => match json::from_str(string.as_slice()) {
             Err(err) => fail!("order.json is invalid json: {}", err),
             Ok(json) => match Decodable::decode(&mut json::Decoder::new(json)) {
                 Err(err) => fail!("error decoding order.json: {}", err),
@@ -153,9 +155,9 @@ fn main() {
         } else {
             chapter
         }
-    }).collect::<Vec<~str>>().connect("\n");
+    }).collect::<Vec<String>>().connect("\n");
 
-    if write(&Path::new("output/SUMMARY.md"), summary).is_err() {
+    if write(&Path::new("output/SUMMARY.md"), summary.as_slice()).is_err() {
         fail!("failed to write SUMMARY.md");
     }
 }
