@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en-US" manifest="../../manifest.appcache">
+    
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
         
         <meta charset="UTF-8">
         <title>Higher Order Functions | Rust by Example</title>
@@ -8,8 +10,7 @@
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
         <meta name="author" content="japaric">
-        <meta name="description" content="[Rust](http://www.rust-lang.org/) is a programming language with a focus on
-type safety, memory safety, concurrency and performance.">
+        <meta name="description" content="Rust is a programming language with a focus ontype safety, memory safety, concurrency and performance.">
         <meta name="keywords" content="gitbook,github" >
         <meta name="generator" content="www.gitbook.io">
 
@@ -34,8 +35,10 @@ type safety, memory safety, concurrency and performance.">
 
         <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
         
+        
     </head>
     <body>
+        
         
 
         <link rel="stylesheet" href="../../gitbook/style.css">
@@ -43,51 +46,51 @@ type safety, memory safety, concurrency and performance.">
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="../.." data-revision="1400208835993">
+    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="../.." data-revision="1401155075179">
     <div class="book-header">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/japaric/rust-by-example" target="_blank" class="btn pull-left"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/japaric/rust-by-example" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
-    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
-        <a href="#" class="btn pull-left toggle-font-settings"><i class="fa fa-font"></i>
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
         </a>
         <div class="dropdown-menu font-settings">
-	<div class="dropdown-caret">
-  <span class="caret-outer"></span>
-  <span class="caret-inner"></span>
-</div>
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
 
-	<div class="btn-group btn-block">
-		<button id="reduce-font-size" class="btn btn-default">A</button>
-		<button id="enlarge-font-size" class="btn btn-default">A</button>
-	</div>
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
 
-	<ul class="list-group font-family-list">
-		<li class="list-group-item" data-font="0">Serif</li>
-		<li class="list-group-item" data-font="1">Sans</li>
-	</ul>
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
 
-	<div class="btn-group btn-group-xs btn-block color-theme-list">
-	  <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
-	  <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
-	  <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
-	</div>
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
 </div>
 
     </span>
 
     <!-- Actions Right -->
     
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
     
     
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
     
     
-    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
 
     
@@ -102,26 +105,32 @@ type safety, memory safety, concurrency and performance.">
     </h1>
 </div>
 
-    <div class="book-summary">
+    
+
+<div class="book-summary">
     <div class="book-search">
         <input type="text" placeholder="Search" class="form-control" />
     </div>
     <ul class="summary">
         
+        
+        
         <li>
-            <a href="https://github.com/japaric" target="blank">About the author</a>
+            <a href="https://github.com/japaric" target="blank" class="author-link">About the author</a>
         </li>
         
 
         
+        
         <li>
-            <a href="https://github.com/japaric/rust-by-example/issues" target="blank">Questions and Issues</a>
+            <a href="https://github.com/japaric/rust-by-example/issues" target="blank"class="issues-link">Questions and Issues</a>
         </li>
         
 
         
+        
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/src/hof/input.md" target="blank">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/src/hof/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -133,559 +142,590 @@ type safety, memory safety, concurrency and performance.">
             <a href="../../"><i class="fa fa-check"></i> Introduction</a>
         </li>
         
-            <li  data-level="1" data-path="examples/hello/README.html">
-                
-                <a href="../../examples/hello/README.html">
-                    <i class="fa fa-check"></i> <b>1.</b> Hello World
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="2" data-path="examples/print/README.html">
-                
-                <a href="../../examples/print/README.html">
-                    <i class="fa fa-check"></i> <b>2.</b> Formatted print
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="3" data-path="examples/literals/README.html">
-                
-                <a href="../../examples/literals/README.html">
-                    <i class="fa fa-check"></i> <b>3.</b> Literals
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="4" data-path="examples/variables/README.html">
-                
-                <a href="../../examples/variables/README.html">
-                    <i class="fa fa-check"></i> <b>4.</b> Variables
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="5" data-path="examples/type/README.html">
-                
-                <a href="../../examples/type/README.html">
-                    <i class="fa fa-check"></i> <b>5.</b> Types, casting and inference
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="6" data-path="examples/expression/README.html">
-                
-                <a href="../../examples/expression/README.html">
-                    <i class="fa fa-check"></i> <b>6.</b> Blocks and expressions
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="7" data-path="examples/if-else/README.html">
-                
-                <a href="../../examples/if-else/README.html">
-                    <i class="fa fa-check"></i> <b>7.</b> if/else
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="8" data-path="examples/loops/README.html">
-                
-                <a href="../../examples/loops/README.html">
-                    <i class="fa fa-check"></i> <b>8.</b> loop and while
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="9" data-path="examples/for/README.html">
-                
-                <a href="../../examples/for/README.html">
-                    <i class="fa fa-check"></i> <b>9.</b> for and range
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="10" data-path="examples/functions/README.html">
-                
-                <a href="../../examples/functions/README.html">
-                    <i class="fa fa-check"></i> <b>10.</b> Functions
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="11" data-path="examples/tuples/README.html">
-                
-                <a href="../../examples/tuples/README.html">
-                    <i class="fa fa-check"></i> <b>11.</b> Tuples
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="12" data-path="examples/match/README.html">
-                
-                <a href="../../examples/match/README.html">
-                    <i class="fa fa-check"></i> <b>12.</b> Pattern matching
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="13" data-path="examples/structs/README.html">
-                
-                <a href="../../examples/structs/README.html">
-                    <i class="fa fa-check"></i> <b>13.</b> Structs
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="14" data-path="examples/generics/README.html">
-                
-                <a href="../../examples/generics/README.html">
-                    <i class="fa fa-check"></i> <b>14.</b> Generics
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="15" data-path="examples/box/README.html">
-                
-                <a href="../../examples/box/README.html">
-                    <i class="fa fa-check"></i> <b>15.</b> Box, stack and heap
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="16" data-path="examples/raii/README.html">
-                
-                <a href="../../examples/raii/README.html">
-                    <i class="fa fa-check"></i> <b>16.</b> RAII
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="17" data-path="examples/move/README.html">
-                
-                <a href="../../examples/move/README.html">
-                    <i class="fa fa-check"></i> <b>17.</b> Ownership and moves
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="18" data-path="examples/borrow/README.html">
-                
-                <a href="../../examples/borrow/README.html">
-                    <i class="fa fa-check"></i> <b>18.</b> Borrowing
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="19" data-path="examples/lifetime/README.html">
-                
-                <a href="../../examples/lifetime/README.html">
-                    <i class="fa fa-check"></i> <b>19.</b> Lifetimes
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="20" data-path="examples/methods/README.html">
-                
-                <a href="../../examples/methods/README.html">
-                    <i class="fa fa-check"></i> <b>20.</b> Methods
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="21" data-path="examples/constants/README.html">
-                
-                <a href="../../examples/constants/README.html">
-                    <i class="fa fa-check"></i> <b>21.</b> Global constants
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="22" data-path="examples/option/README.html">
-                
-                <a href="../../examples/option/README.html">
-                    <i class="fa fa-check"></i> <b>22.</b> fail! and Option
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="23" data-path="examples/enum/README.html">
-                
-                <a href="../../examples/enum/README.html">
-                    <i class="fa fa-check"></i> <b>23.</b> Enums
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="24" data-path="examples/array/README.html">
-                
-                <a href="../../examples/array/README.html">
-                    <i class="fa fa-check"></i> <b>24.</b> Arrays and Slices
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="25" data-path="examples/trait/README.html">
-                
-                <a href="../../examples/trait/README.html">
-                    <i class="fa fa-check"></i> <b>25.</b> Traits
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="26" data-path="examples/clone/README.html">
-                
-                <a href="../../examples/clone/README.html">
-                    <i class="fa fa-check"></i> <b>26.</b> Clone
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="27" data-path="examples/operator/README.html">
-                
-                <a href="../../examples/operator/README.html">
-                    <i class="fa fa-check"></i> <b>27.</b> Operator Overloading
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="28" data-path="examples/bounds/README.html">
-                
-                <a href="../../examples/bounds/README.html">
-                    <i class="fa fa-check"></i> <b>28.</b> Bounds
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="29" data-path="examples/iter/README.html">
-                
-                <a href="../../examples/iter/README.html">
-                    <i class="fa fa-check"></i> <b>29.</b> Iterators
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="30" data-path="examples/closures/README.html">
-                
-                <a href="../../examples/closures/README.html">
-                    <i class="fa fa-check"></i> <b>30.</b> Closures
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="31" data-path="examples/hof/README.html">
-                
-                <a href="../../examples/hof/README.html">
-                    <i class="fa fa-check"></i> <b>31.</b> Higher Order Functions
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="32" data-path="examples/vec/README.html">
-                
-                <a href="../../examples/vec/README.html">
-                    <i class="fa fa-check"></i> <b>32.</b> Vectors
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="33" data-path="examples/str/README.html">
-                
-                <a href="../../examples/str/README.html">
-                    <i class="fa fa-check"></i> <b>33.</b> Strings
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="34" data-path="examples/tasks/README.html">
-                
-                <a href="../../examples/tasks/README.html">
-                    <i class="fa fa-check"></i> <b>34.</b> Tasks
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="35" data-path="examples/channels/README.html">
-                
-                <a href="../../examples/channels/README.html">
-                    <i class="fa fa-check"></i> <b>35.</b> Channels
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="36" data-path="examples/timers/README.html">
-                
-                <a href="../../examples/timers/README.html">
-                    <i class="fa fa-check"></i> <b>36.</b> Timers
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="37" data-path="examples/sockets/README.html">
-                
-                <a href="../../examples/sockets/README.html">
-                    <i class="fa fa-check"></i> <b>37.</b> Unix sockets
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="38" data-path="examples/mod/README.html">
-                
-                <a href="../../examples/mod/README.html">
-                    <i class="fa fa-check"></i> <b>38.</b> Modules
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="39" data-path="examples/crates/README.html">
-                
-                <a href="../../examples/crates/README.html">
-                    <i class="fa fa-check"></i> <b>39.</b> Crates
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="40" data-path="examples/attribute/README.html">
-                
-                <a href="../../examples/attribute/README.html">
-                    <i class="fa fa-check"></i> <b>40.</b> Attributes
-                </a>
-                
-                
-            </li>
-        
-            <li  data-level="41" data-path="examples/staging/README.html">
-                
-                <a href="../../examples/staging/README.html">
-                    <i class="fa fa-check"></i> <b>41.</b> Staging Area
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="41.1" data-path="examples/bench/README.html">
-                            
-                            <a href="../../examples/bench/README.html">
-                                <i class="fa fa-check"></i> <b>41.1.</b> Benchmarking
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="41.2" data-path="examples/ffi/README.html">
-                            
-                            <a href="../../examples/ffi/README.html">
-                                <i class="fa fa-check"></i> <b>41.2.</b> Foreign Function Interface
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="41.3" data-path="examples/macros/README.html">
-                            
-                            <a href="../../examples/macros/README.html">
-                                <i class="fa fa-check"></i> <b>41.3.</b> macro_rules!
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="41.4" data-path="examples/simd/README.html">
-                            
-                            <a href="../../examples/simd/README.html">
-                                <i class="fa fa-check"></i> <b>41.4.</b> SIMD
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="41.5" data-path="examples/test/README.html">
-                            
-                            <a href="../../examples/test/README.html">
-                                <i class="fa fa-check"></i> <b>41.5.</b> Testing
-                            </a>
-                            
-                        </li>
-                    
-                        <li  data-level="41.6" data-path="examples/unsafe/README.html">
-                            
-                            <a href="../../examples/unsafe/README.html">
-                                <i class="fa fa-check"></i> <b>41.6.</b> Unsafe operations
-                            </a>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
-            <li  data-level="42" data-path="examples/todo/README.html">
-                
-                <a href="../../examples/todo/README.html">
-                    <i class="fa fa-check"></i> <b>42.</b> TODO
-                </a>
-                
-                
-                <ul class="articles">
-                    
-                        <li  data-level="42.1" >
-                            
-                            <span><b>42.1.</b> Program arguments</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.2" >
-                            
-                            <span><b>42.2.</b> assert! and debug_assert!</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.3" >
-                            
-                            <span><b>42.3.</b> Comments</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.4" >
-                            
-                            <span><b>42.4.</b> Drop</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.5" >
-                            
-                            <span><b>42.5.</b> File I/O</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.6" >
-                            
-                            <span><b>42.6.</b> Filesystem Operations</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.7" >
-                            
-                            <span><b>42.7.</b> Green threads</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.8" >
-                            
-                            <span><b>42.8.</b> Hasher and Hashmap</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.9" >
-                            
-                            <span><b>42.9.</b> JSON parsing</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.10" >
-                            
-                            <span><b>42.10.</b> Logging</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.11" >
-                            
-                            <span><b>42.11.</b> Child processes</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.12" >
-                            
-                            <span><b>42.12.</b> Random</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.13" >
-                            
-                            <span><b>42.13.</b> Reference counting</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.14" >
-                            
-                            <span><b>42.14.</b> Regex</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.15" >
-                            
-                            <span><b>42.15.</b> Result</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.16" >
-                            
-                            <span><b>42.16.</b> rustdoc</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.17" >
-                            
-                            <span><b>42.17.</b> select!</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.18" >
-                            
-                            <span><b>42.18.</b> Standard I/O</span>
-                            
-                        </li>
-                    
-                        <li  data-level="42.19" >
-                            
-                            <span><b>42.19.</b> try!</span>
-                            
-                        </li>
-                    
-                </ul>
-                
-            </li>
-        
+    
+        <li class="chapter " data-level="1" data-path="examples/hello/README.html">
+            
+            <a href="../../examples/hello/README.html">
+                <i class="fa fa-check"></i> <b>1.</b> Hello World
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="examples/print/README.html">
+            
+            <a href="../../examples/print/README.html">
+                <i class="fa fa-check"></i> <b>2.</b> Formatted print
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="examples/literals/README.html">
+            
+            <a href="../../examples/literals/README.html">
+                <i class="fa fa-check"></i> <b>3.</b> Literals
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="examples/variables/README.html">
+            
+            <a href="../../examples/variables/README.html">
+                <i class="fa fa-check"></i> <b>4.</b> Variables
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="examples/type/README.html">
+            
+            <a href="../../examples/type/README.html">
+                <i class="fa fa-check"></i> <b>5.</b> Types, casting and inference
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="examples/expression/README.html">
+            
+            <a href="../../examples/expression/README.html">
+                <i class="fa fa-check"></i> <b>6.</b> Blocks and expressions
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="examples/if-else/README.html">
+            
+            <a href="../../examples/if-else/README.html">
+                <i class="fa fa-check"></i> <b>7.</b> if/else
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="examples/loops/README.html">
+            
+            <a href="../../examples/loops/README.html">
+                <i class="fa fa-check"></i> <b>8.</b> loop and while
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="examples/for/README.html">
+            
+            <a href="../../examples/for/README.html">
+                <i class="fa fa-check"></i> <b>9.</b> for and range
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="examples/functions/README.html">
+            
+            <a href="../../examples/functions/README.html">
+                <i class="fa fa-check"></i> <b>10.</b> Functions
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="examples/tuples/README.html">
+            
+            <a href="../../examples/tuples/README.html">
+                <i class="fa fa-check"></i> <b>11.</b> Tuples
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="examples/match/README.html">
+            
+            <a href="../../examples/match/README.html">
+                <i class="fa fa-check"></i> <b>12.</b> Pattern matching
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="examples/structs/README.html">
+            
+            <a href="../../examples/structs/README.html">
+                <i class="fa fa-check"></i> <b>13.</b> Structs
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="examples/generics/README.html">
+            
+            <a href="../../examples/generics/README.html">
+                <i class="fa fa-check"></i> <b>14.</b> Generics
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="examples/box/README.html">
+            
+            <a href="../../examples/box/README.html">
+                <i class="fa fa-check"></i> <b>15.</b> Box, stack and heap
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="16" data-path="examples/raii/README.html">
+            
+            <a href="../../examples/raii/README.html">
+                <i class="fa fa-check"></i> <b>16.</b> RAII
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="17" data-path="examples/move/README.html">
+            
+            <a href="../../examples/move/README.html">
+                <i class="fa fa-check"></i> <b>17.</b> Ownership and moves
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="18" data-path="examples/borrow/README.html">
+            
+            <a href="../../examples/borrow/README.html">
+                <i class="fa fa-check"></i> <b>18.</b> Borrowing
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="19" data-path="examples/lifetime/README.html">
+            
+            <a href="../../examples/lifetime/README.html">
+                <i class="fa fa-check"></i> <b>19.</b> Lifetimes
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="20" data-path="examples/methods/README.html">
+            
+            <a href="../../examples/methods/README.html">
+                <i class="fa fa-check"></i> <b>20.</b> Methods
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="21" data-path="examples/constants/README.html">
+            
+            <a href="../../examples/constants/README.html">
+                <i class="fa fa-check"></i> <b>21.</b> Global constants
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="22" data-path="examples/option/README.html">
+            
+            <a href="../../examples/option/README.html">
+                <i class="fa fa-check"></i> <b>22.</b> fail! and Option
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="23" data-path="examples/enum/README.html">
+            
+            <a href="../../examples/enum/README.html">
+                <i class="fa fa-check"></i> <b>23.</b> Enums
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="24" data-path="examples/array/README.html">
+            
+            <a href="../../examples/array/README.html">
+                <i class="fa fa-check"></i> <b>24.</b> Arrays and Slices
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="25" data-path="examples/trait/README.html">
+            
+            <a href="../../examples/trait/README.html">
+                <i class="fa fa-check"></i> <b>25.</b> Traits
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="26" data-path="examples/clone/README.html">
+            
+            <a href="../../examples/clone/README.html">
+                <i class="fa fa-check"></i> <b>26.</b> Clone
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="27" data-path="examples/operator/README.html">
+            
+            <a href="../../examples/operator/README.html">
+                <i class="fa fa-check"></i> <b>27.</b> Operator Overloading
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="28" data-path="examples/bounds/README.html">
+            
+            <a href="../../examples/bounds/README.html">
+                <i class="fa fa-check"></i> <b>28.</b> Bounds
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="29" data-path="examples/iter/README.html">
+            
+            <a href="../../examples/iter/README.html">
+                <i class="fa fa-check"></i> <b>29.</b> Iterators
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="30" data-path="examples/closures/README.html">
+            
+            <a href="../../examples/closures/README.html">
+                <i class="fa fa-check"></i> <b>30.</b> Closures
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="31" data-path="examples/hof/README.html">
+            
+            <a href="../../examples/hof/README.html">
+                <i class="fa fa-check"></i> <b>31.</b> Higher Order Functions
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="32" data-path="examples/vec/README.html">
+            
+            <a href="../../examples/vec/README.html">
+                <i class="fa fa-check"></i> <b>32.</b> Vectors
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="33" data-path="examples/str/README.html">
+            
+            <a href="../../examples/str/README.html">
+                <i class="fa fa-check"></i> <b>33.</b> Strings
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="34" data-path="examples/tasks/README.html">
+            
+            <a href="../../examples/tasks/README.html">
+                <i class="fa fa-check"></i> <b>34.</b> Tasks
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="35" data-path="examples/channels/README.html">
+            
+            <a href="../../examples/channels/README.html">
+                <i class="fa fa-check"></i> <b>35.</b> Channels
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="36" data-path="examples/timers/README.html">
+            
+            <a href="../../examples/timers/README.html">
+                <i class="fa fa-check"></i> <b>36.</b> Timers
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="37" data-path="examples/sockets/README.html">
+            
+            <a href="../../examples/sockets/README.html">
+                <i class="fa fa-check"></i> <b>37.</b> Unix sockets
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="38" data-path="examples/mod/README.html">
+            
+            <a href="../../examples/mod/README.html">
+                <i class="fa fa-check"></i> <b>38.</b> Modules
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="39" data-path="examples/crates/README.html">
+            
+            <a href="../../examples/crates/README.html">
+                <i class="fa fa-check"></i> <b>39.</b> Crates
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="40" data-path="examples/attribute/README.html">
+            
+            <a href="../../examples/attribute/README.html">
+                <i class="fa fa-check"></i> <b>40.</b> Attributes
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="41" data-path="examples/staging/README.html">
+            
+            <a href="../../examples/staging/README.html">
+                <i class="fa fa-check"></i> <b>41.</b> Staging Area
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="41.1" data-path="examples/bench/README.html">
+            
+            <a href="../../examples/bench/README.html">
+                <i class="fa fa-check"></i> <b>41.1.</b> Benchmarking
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="41.2" data-path="examples/ffi/README.html">
+            
+            <a href="../../examples/ffi/README.html">
+                <i class="fa fa-check"></i> <b>41.2.</b> Foreign Function Interface
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="41.3" data-path="examples/macros/README.html">
+            
+            <a href="../../examples/macros/README.html">
+                <i class="fa fa-check"></i> <b>41.3.</b> macro_rules!
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="41.4" data-path="examples/simd/README.html">
+            
+            <a href="../../examples/simd/README.html">
+                <i class="fa fa-check"></i> <b>41.4.</b> SIMD
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="41.5" data-path="examples/test/README.html">
+            
+            <a href="../../examples/test/README.html">
+                <i class="fa fa-check"></i> <b>41.5.</b> Testing
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="41.6" data-path="examples/unsafe/README.html">
+            
+            <a href="../../examples/unsafe/README.html">
+                <i class="fa fa-check"></i> <b>41.6.</b> Unsafe operations
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="42" data-path="examples/todo/README.html">
+            
+            <a href="../../examples/todo/README.html">
+                <i class="fa fa-check"></i> <b>42.</b> TODO
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="42.1" >
+            
+            <span><b>42.1.</b> Program arguments</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.2" >
+            
+            <span><b>42.2.</b> assert! and debug_assert!</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.3" >
+            
+            <span><b>42.3.</b> Comments</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.4" >
+            
+            <span><b>42.4.</b> Drop</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.5" >
+            
+            <span><b>42.5.</b> File I/O</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.6" >
+            
+            <span><b>42.6.</b> Filesystem Operations</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.7" >
+            
+            <span><b>42.7.</b> Green threads</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.8" >
+            
+            <span><b>42.8.</b> Hasher and Hashmap</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.9" >
+            
+            <span><b>42.9.</b> JSON parsing</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.10" >
+            
+            <span><b>42.10.</b> Logging</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.11" >
+            
+            <span><b>42.11.</b> Child processes</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.12" >
+            
+            <span><b>42.12.</b> Random</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.13" >
+            
+            <span><b>42.13.</b> Reference counting</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.14" >
+            
+            <span><b>42.14.</b> Regex</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.15" >
+            
+            <span><b>42.15.</b> Result</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.16" >
+            
+            <span><b>42.16.</b> rustdoc</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.17" >
+            
+            <span><b>42.17.</b> select!</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.18" >
+            
+            <span><b>42.18.</b> Standard I/O</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="42.19" >
+            
+            <span><b>42.19.</b> try!</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
 
         
         <li class="divider"></li>
         <li>
-            <a href="http://www.gitbook.io/" target="blank">Generated using GitBook</a>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
         </li>
         
     </ul>
@@ -696,7 +736,7 @@ type safety, memory safety, concurrency and performance.">
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 52.083333333333336%;min-width: 50%;"></div>
+        <div class="inner" style="width: 64.58333333333333%;min-width: 62.5%;"></div>
     </div>
     <div class="chapters">
     
@@ -704,99 +744,99 @@ type safety, memory safety, concurrency and performance.">
     
         <a href="../../examples/hello/README.html" title="Hello World" class="chapter done new-chapter" data-progress="1" style="left: 2.0833333333333335%;"></a>
     
-        <a href="../../examples/functions/README.html" title="Functions" class="chapter done " data-progress="10" style="left: 4.166666666666667%;"></a>
+        <a href="../../examples/print/README.html" title="Formatted print" class="chapter done new-chapter" data-progress="2" style="left: 4.166666666666667%;"></a>
     
-        <a href="../../examples/tuples/README.html" title="Tuples" class="chapter done " data-progress="11" style="left: 6.25%;"></a>
+        <a href="../../examples/literals/README.html" title="Literals" class="chapter done new-chapter" data-progress="3" style="left: 6.25%;"></a>
     
-        <a href="../../examples/match/README.html" title="Pattern matching" class="chapter done " data-progress="12" style="left: 8.333333333333334%;"></a>
+        <a href="../../examples/variables/README.html" title="Variables" class="chapter done new-chapter" data-progress="4" style="left: 8.333333333333334%;"></a>
     
-        <a href="../../examples/structs/README.html" title="Structs" class="chapter done " data-progress="13" style="left: 10.416666666666666%;"></a>
+        <a href="../../examples/type/README.html" title="Types, casting and inference" class="chapter done new-chapter" data-progress="5" style="left: 10.416666666666666%;"></a>
     
-        <a href="../../examples/generics/README.html" title="Generics" class="chapter done " data-progress="14" style="left: 12.5%;"></a>
+        <a href="../../examples/expression/README.html" title="Blocks and expressions" class="chapter done new-chapter" data-progress="6" style="left: 12.5%;"></a>
     
-        <a href="../../examples/box/README.html" title="Box, stack and heap" class="chapter done " data-progress="15" style="left: 14.583333333333334%;"></a>
+        <a href="../../examples/if-else/README.html" title="if/else" class="chapter done new-chapter" data-progress="7" style="left: 14.583333333333334%;"></a>
     
-        <a href="../../examples/raii/README.html" title="RAII" class="chapter done " data-progress="16" style="left: 16.666666666666668%;"></a>
+        <a href="../../examples/loops/README.html" title="loop and while" class="chapter done new-chapter" data-progress="8" style="left: 16.666666666666668%;"></a>
     
-        <a href="../../examples/move/README.html" title="Ownership and moves" class="chapter done " data-progress="17" style="left: 18.75%;"></a>
+        <a href="../../examples/for/README.html" title="for and range" class="chapter done new-chapter" data-progress="9" style="left: 18.75%;"></a>
     
-        <a href="../../examples/borrow/README.html" title="Borrowing" class="chapter done " data-progress="18" style="left: 20.833333333333332%;"></a>
+        <a href="../../examples/functions/README.html" title="Functions" class="chapter done " data-progress="10" style="left: 20.833333333333332%;"></a>
     
-        <a href="../../examples/lifetime/README.html" title="Lifetimes" class="chapter done " data-progress="19" style="left: 22.916666666666668%;"></a>
+        <a href="../../examples/tuples/README.html" title="Tuples" class="chapter done " data-progress="11" style="left: 22.916666666666668%;"></a>
     
-        <a href="../../examples/print/README.html" title="Formatted print" class="chapter done new-chapter" data-progress="2" style="left: 25%;"></a>
+        <a href="../../examples/match/README.html" title="Pattern matching" class="chapter done " data-progress="12" style="left: 25%;"></a>
     
-        <a href="../../examples/methods/README.html" title="Methods" class="chapter done " data-progress="20" style="left: 27.083333333333332%;"></a>
+        <a href="../../examples/structs/README.html" title="Structs" class="chapter done " data-progress="13" style="left: 27.083333333333332%;"></a>
     
-        <a href="../../examples/constants/README.html" title="Global constants" class="chapter done " data-progress="21" style="left: 29.166666666666668%;"></a>
+        <a href="../../examples/generics/README.html" title="Generics" class="chapter done " data-progress="14" style="left: 29.166666666666668%;"></a>
     
-        <a href="../../examples/option/README.html" title="fail! and Option" class="chapter done " data-progress="22" style="left: 31.25%;"></a>
+        <a href="../../examples/box/README.html" title="Box, stack and heap" class="chapter done " data-progress="15" style="left: 31.25%;"></a>
     
-        <a href="../../examples/enum/README.html" title="Enums" class="chapter done " data-progress="23" style="left: 33.333333333333336%;"></a>
+        <a href="../../examples/raii/README.html" title="RAII" class="chapter done " data-progress="16" style="left: 33.333333333333336%;"></a>
     
-        <a href="../../examples/array/README.html" title="Arrays and Slices" class="chapter done " data-progress="24" style="left: 35.416666666666664%;"></a>
+        <a href="../../examples/move/README.html" title="Ownership and moves" class="chapter done " data-progress="17" style="left: 35.416666666666664%;"></a>
     
-        <a href="../../examples/trait/README.html" title="Traits" class="chapter done " data-progress="25" style="left: 37.5%;"></a>
+        <a href="../../examples/borrow/README.html" title="Borrowing" class="chapter done " data-progress="18" style="left: 37.5%;"></a>
     
-        <a href="../../examples/clone/README.html" title="Clone" class="chapter done " data-progress="26" style="left: 39.583333333333336%;"></a>
+        <a href="../../examples/lifetime/README.html" title="Lifetimes" class="chapter done " data-progress="19" style="left: 39.583333333333336%;"></a>
     
-        <a href="../../examples/operator/README.html" title="Operator Overloading" class="chapter done " data-progress="27" style="left: 41.666666666666664%;"></a>
+        <a href="../../examples/methods/README.html" title="Methods" class="chapter done " data-progress="20" style="left: 41.666666666666664%;"></a>
     
-        <a href="../../examples/bounds/README.html" title="Bounds" class="chapter done " data-progress="28" style="left: 43.75%;"></a>
+        <a href="../../examples/constants/README.html" title="Global constants" class="chapter done " data-progress="21" style="left: 43.75%;"></a>
     
-        <a href="../../examples/iter/README.html" title="Iterators" class="chapter done " data-progress="29" style="left: 45.833333333333336%;"></a>
+        <a href="../../examples/option/README.html" title="fail! and Option" class="chapter done " data-progress="22" style="left: 45.833333333333336%;"></a>
     
-        <a href="../../examples/literals/README.html" title="Literals" class="chapter done new-chapter" data-progress="3" style="left: 47.916666666666664%;"></a>
+        <a href="../../examples/enum/README.html" title="Enums" class="chapter done " data-progress="23" style="left: 47.916666666666664%;"></a>
     
-        <a href="../../examples/closures/README.html" title="Closures" class="chapter done " data-progress="30" style="left: 50%;"></a>
+        <a href="../../examples/array/README.html" title="Arrays and Slices" class="chapter done " data-progress="24" style="left: 50%;"></a>
     
-        <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter done " data-progress="31" style="left: 52.083333333333336%;"></a>
+        <a href="../../examples/trait/README.html" title="Traits" class="chapter done " data-progress="25" style="left: 52.083333333333336%;"></a>
     
-        <a href="../../examples/vec/README.html" title="Vectors" class="chapter  " data-progress="32" style="left: 54.166666666666664%;"></a>
+        <a href="../../examples/clone/README.html" title="Clone" class="chapter done " data-progress="26" style="left: 54.166666666666664%;"></a>
     
-        <a href="../../examples/str/README.html" title="Strings" class="chapter  " data-progress="33" style="left: 56.25%;"></a>
+        <a href="../../examples/operator/README.html" title="Operator Overloading" class="chapter done " data-progress="27" style="left: 56.25%;"></a>
     
-        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter  " data-progress="34" style="left: 58.333333333333336%;"></a>
+        <a href="../../examples/bounds/README.html" title="Bounds" class="chapter done " data-progress="28" style="left: 58.333333333333336%;"></a>
     
-        <a href="../../examples/channels/README.html" title="Channels" class="chapter  " data-progress="35" style="left: 60.416666666666664%;"></a>
+        <a href="../../examples/iter/README.html" title="Iterators" class="chapter done " data-progress="29" style="left: 60.416666666666664%;"></a>
     
-        <a href="../../examples/timers/README.html" title="Timers" class="chapter  " data-progress="36" style="left: 62.5%;"></a>
+        <a href="../../examples/closures/README.html" title="Closures" class="chapter done " data-progress="30" style="left: 62.5%;"></a>
     
-        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter  " data-progress="37" style="left: 64.58333333333333%;"></a>
+        <a href="../../examples/hof/README.html" title="Higher Order Functions" class="chapter done " data-progress="31" style="left: 64.58333333333333%;"></a>
     
-        <a href="../../examples/mod/README.html" title="Modules" class="chapter  " data-progress="38" style="left: 66.66666666666667%;"></a>
+        <a href="../../examples/vec/README.html" title="Vectors" class="chapter  " data-progress="32" style="left: 66.66666666666667%;"></a>
     
-        <a href="../../examples/crates/README.html" title="Crates" class="chapter  " data-progress="39" style="left: 68.75%;"></a>
+        <a href="../../examples/str/README.html" title="Strings" class="chapter  " data-progress="33" style="left: 68.75%;"></a>
     
-        <a href="../../examples/variables/README.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 70.83333333333333%;"></a>
+        <a href="../../examples/tasks/README.html" title="Tasks" class="chapter  " data-progress="34" style="left: 70.83333333333333%;"></a>
     
-        <a href="../../examples/attribute/README.html" title="Attributes" class="chapter  " data-progress="40" style="left: 72.91666666666667%;"></a>
+        <a href="../../examples/channels/README.html" title="Channels" class="chapter  " data-progress="35" style="left: 72.91666666666667%;"></a>
     
-        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter  " data-progress="41" style="left: 75%;"></a>
+        <a href="../../examples/timers/README.html" title="Timers" class="chapter  " data-progress="36" style="left: 75%;"></a>
     
-        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter  " data-progress="41.1" style="left: 77.08333333333333%;"></a>
+        <a href="../../examples/sockets/README.html" title="Unix sockets" class="chapter  " data-progress="37" style="left: 77.08333333333333%;"></a>
     
-        <a href="../../examples/ffi/README.html" title="Foreign Function Interface" class="chapter  " data-progress="41.2" style="left: 79.16666666666667%;"></a>
+        <a href="../../examples/mod/README.html" title="Modules" class="chapter  " data-progress="38" style="left: 79.16666666666667%;"></a>
     
-        <a href="../../examples/macros/README.html" title="macro_rules!" class="chapter  " data-progress="41.3" style="left: 81.25%;"></a>
+        <a href="../../examples/crates/README.html" title="Crates" class="chapter  " data-progress="39" style="left: 81.25%;"></a>
     
-        <a href="../../examples/simd/README.html" title="SIMD" class="chapter  " data-progress="41.4" style="left: 83.33333333333333%;"></a>
+        <a href="../../examples/attribute/README.html" title="Attributes" class="chapter  " data-progress="40" style="left: 83.33333333333333%;"></a>
     
-        <a href="../../examples/test/README.html" title="Testing" class="chapter  " data-progress="41.5" style="left: 85.41666666666667%;"></a>
+        <a href="../../examples/staging/README.html" title="Staging Area" class="chapter  " data-progress="41" style="left: 85.41666666666667%;"></a>
     
-        <a href="../../examples/unsafe/README.html" title="Unsafe operations" class="chapter  " data-progress="41.6" style="left: 87.5%;"></a>
+        <a href="../../examples/bench/README.html" title="Benchmarking" class="chapter  " data-progress="41.1" style="left: 87.5%;"></a>
     
-        <a href="../../examples/todo/README.html" title="TODO" class="chapter  " data-progress="42" style="left: 89.58333333333333%;"></a>
+        <a href="../../examples/ffi/README.html" title="Foreign Function Interface" class="chapter  " data-progress="41.2" style="left: 89.58333333333333%;"></a>
     
-        <a href="../../examples/type/README.html" title="Types, casting and inference" class="chapter  new-chapter" data-progress="5" style="left: 91.66666666666667%;"></a>
+        <a href="../../examples/macros/README.html" title="macro_rules!" class="chapter  " data-progress="41.3" style="left: 91.66666666666667%;"></a>
     
-        <a href="../../examples/expression/README.html" title="Blocks and expressions" class="chapter  new-chapter" data-progress="6" style="left: 93.75%;"></a>
+        <a href="../../examples/simd/README.html" title="SIMD" class="chapter  " data-progress="41.4" style="left: 93.75%;"></a>
     
-        <a href="../../examples/if-else/README.html" title="if/else" class="chapter  new-chapter" data-progress="7" style="left: 95.83333333333333%;"></a>
+        <a href="../../examples/test/README.html" title="Testing" class="chapter  " data-progress="41.5" style="left: 95.83333333333333%;"></a>
     
-        <a href="../../examples/loops/README.html" title="loop and while" class="chapter  new-chapter" data-progress="8" style="left: 97.91666666666667%;"></a>
+        <a href="../../examples/unsafe/README.html" title="Unsafe operations" class="chapter  " data-progress="41.6" style="left: 97.91666666666667%;"></a>
     
-        <a href="../../examples/for/README.html" title="for and range" class="chapter  new-chapter" data-progress="9" style="left: 100%;"></a>
+        <a href="../../examples/todo/README.html" title="TODO" class="chapter  " data-progress="42" style="left: 100%;"></a>
     
     </div>
 </div>
@@ -871,10 +911,10 @@ implement their fair share of HOFs.</p>
         </div>
 
         
-        <a href="../../examples/closures/README.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
+        <a href="../../examples/closures/README.html" class="navigation navigation-prev " aria-label="Previous page: Closures"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../examples/vec/README.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
+        <a href="../../examples/vec/README.html" class="navigation navigation-next " aria-label="Next page: Vectors"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
@@ -906,5 +946,7 @@ require(["gitbook"], function(gitbook) {
 });
 </script>
 
+        
     </body>
+    
 </html>
