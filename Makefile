@@ -1,40 +1,39 @@
 GITBOOK = gitbook
 RUSTC = rustc
 QUIET = -A unused-variable -A dead-code -A dead-assignment
-RUSTC_NT = rustc --no-trans --test $(QUIET)
-WHITELIST = src/borrow/freeze.rs \
-						src/attribute/custom.rs \
-						src/crates/executable.rs \
-						src/lifetime/lifetime.rs \
-						src/lifetime/reference-bad.rs \
-						src/mod/nested.rs \
-						src/move/assignment.rs \
-						src/move/pass-by-value.rs \
-						src/variables/declare.rs \
-            src/variables/variables.rs
-srcs = $(filter-out $(WHITELIST),$(wildcard */*/*.rs))
+RUSTC_NT = $(RUSTC) --no-trans --test $(QUIET)
+WHITELIST = examples/borrow/freeze.rs \
+						examples/attribute/custom.rs \
+						examples/crates/executable.rs \
+						examples/lifetime/lifetime.rs \
+						examples/lifetime/reference-bad.rs \
+						examples/mod/nested.rs \
+						examples/move/assignment.rs \
+						examples/move/pass-by-value.rs \
+						examples/variables/declare.rs \
+            examples/variables/variables.rs
+srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
 .PHONY: all book clean test serve
 
 all:
-	mkdir -p output/examples
-	ln -sf ../src/README.md output/README.md
+	mkdir -p stage
+	ln -sf ../examples/README.md stage/README.md
 	$(RUSTC) src/update.rs
 	./update
 	rm update
 
 book:
-	mkdir -p output
-	cd output && $(GITBOOK) build
+	cd stage && $(GITBOOK) build
 	./fix-edit-button.sh
+	./add-relinks.sh
 
 clean:
-	rm -rf output
+	rm -rf stage
 
 test:
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
 
 serve:
-	mkdir -p output
-	cd output && $(GITBOOK) serve
+	cd stage && $(GITBOOK) serve

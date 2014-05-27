@@ -6,7 +6,7 @@ WHITELIST=(
 
 echo "Checking if any rust file has a line longer than 79 characters"
 
-suspects=$(grep -Pl ".{80}" src/*/*.rs)
+suspects=$(find -name '*.rs' | xargs grep -Pl ".{80}")
 status=$?
 
 any_offender=false

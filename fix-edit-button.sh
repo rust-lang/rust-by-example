@@ -1,7 +1,9 @@
 #!/bin/bash
 
-for example in $(ls output/examples); do
-  html=output/_book/examples/${example}/README.html
+for example in $(ls examples); do
+  if [[ -d examples/${example} ]]; then
+    html=stage/_book/${example}.html
 
-  sed -i s:examples/${example}/README.md:src/${example}/input.md: ${html}
+    sed -i s:${example}.md:examples/${example}/input.md: ${html}
+  fi
 done
