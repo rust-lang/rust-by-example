@@ -3,10 +3,11 @@ type annotation is obligatory in this case. These constants are placed in a
 read-only section of the memory and can be accessed in any other part of the
 program.
 
-Strings can be constants too, their definitions use `'static str` as type
-signature. `'static` is an special lifetime that outlives all the other
-lifetimes, it indicates that the referenced data is available in all the
-scopes.
+String literals like `"string"` can also be assigned to static variables. These
+variables have type signature `&'static str`, and are references to strings
+allocated in read-only memory. `'static` is an special lifetime that outlives
+all the other lifetimes, and indicates that the referenced data is available in
+all the scopes.
 
 {constants.rs}
 

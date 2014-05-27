@@ -1,5 +1,5 @@
-// bind Text to std::strbuf::StrBuf
-use Text = std::strbuf::StrBuf;
+// bind Text to std::string::String
+use Text = std::string::String;
 
 mod deeply {
     pub mod nested {

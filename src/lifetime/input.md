@@ -49,8 +49,8 @@ annotated. These functions are generic and must tell the relationship between
 the lifetimes of the objects in the arguments and the output.
 
 Let's illustrate with an example: we want a function that returns a reference
-to the title field of a book. The most generic function that we could write
-would look like this:
+to the title field of a Book struct. The most generic function that we could
+write would look like this:
 
 {reference-bad.rs}
 

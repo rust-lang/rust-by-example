@@ -1,7 +1,7 @@
 struct Book {
-    // ~str is a heap allocated string
-    author: ~str,
-    title: ~str,
+    // `&'static str` is a reference to a string allocated in read only memory
+    author: &'static str,
+    title: &'static str,
     year: uint,
 }
 
@@ -19,9 +19,9 @@ fn new_edition(book: &mut Book) {
 fn main() {
     // an immutable Book
     let geb = Book {
-        // to_owned() will place the string in the heap
-        author: "Douglas Hofstadter".to_owned(),
-        title: "Gödel, Escher, Bach".to_owned(),
+        // string literals have type `&'static str`
+        author: "Douglas Hofstadter",
+        title: "Gödel, Escher, Bach",
         year: 1979,
     };
 

@@ -1,16 +1,16 @@
 struct Dog {
-    name: ~str,
+    name: String,
 }
 
 struct Sheep {
     naked: bool,
-    name: ~str,
+    name: String,
 }
 
 // traits are collections of methods
 trait Animal {
     // static method, Self refers to the implementor type
-    fn new(name: ~str) -> Self;
+    fn new(name: String) -> Self;
 
     // instance methods, only signatures
     fn name<'a>(&'a self) -> &'a str;
@@ -26,7 +26,7 @@ trait Animal {
 // implement the Animal trait for the Dog struct
 impl Animal for Dog {
     // replace Self with implementor type (i.e. Dog)
-    fn new(name: ~str) -> Dog {
+    fn new(name: String) -> Dog {
         Dog { name: name }
     }
 
@@ -48,7 +48,7 @@ impl Dog {
 }
 
 impl Animal for Sheep {
-    fn new(name: ~str) -> Sheep {
+    fn new(name: String) -> Sheep {
         Sheep { name: name, naked: false }
     }
 
@@ -84,8 +84,8 @@ impl Sheep {
 }
 
 fn main() {
-    let mut dolly: Sheep = Animal::new("Dolly".to_owned());
-    let spike: Dog = Animal::new("Spike".to_owned());
+    let mut dolly: Sheep = Animal::new(String::from_str("Dolly"));
+    let spike: Dog = Animal::new(String::from_str("Spike"));
 
     spike.wag_tail();
     dolly.shear();

@@ -1,5 +1,7 @@
 fn main() {
-    let pangram = "the quick brow fox jumps over the lazy dog";
+    // (all the type annotations are superfluous)
+    // a reference to a string allocated in read only memory
+    let pangram: &'static str = "the quick brow fox jumps over the lazy dog";
     println!("pangram: {}", pangram);
 
     // iterate over words in reverse, no new string is allocated
@@ -13,24 +15,25 @@ fn main() {
     chars.sort();
     chars.dedup();
 
-    // StrBuf is a growable string
-    let mut strbuf = StrBuf::new();
+    // a growable `String`
+    let mut string: String = String::new();
     for c in chars.move_iter() {
-        // insert a char at the end of strbuf
-        strbuf.push_char(c);
-        // insert a string at the end of strbuf
-        strbuf.push_str(", ");
+        // insert a char at the end of string
+        string.push_char(c);
+        // insert a string at the end of string
+        string.push_str(", ");
     }
 
     // the trimmed string is a slice to the original string, hence
     // no new allocation is performed
-    let trimmed_string = strbuf.as_slice().trim_chars(&[',', ' ']);
-    println!("used characters: {}", trimmed_string);
+    let trimmed_str: &str = string.as_slice().trim_chars(&[',', ' ']);
+    println!("used characters: {}", trimmed_str);
 
     // heap allocate a string
-    let alice = "I like dogs".to_owned();
-    // replaced string gets heap allocated (superfluous type annotation)
-    let bob: ~str = alice.replace("dog", "cat");
+    let alice = String::from_str("I like dogs");
+    // allocate new memory and store the modified string there
+    let bob: String = alice.replace("dog", "cat");
 
+    println!("Alice says: {}", alice);
     println!("Bob says: {}", bob);
 }

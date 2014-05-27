@@ -5,7 +5,7 @@ struct Foo;
 #[deriving(Clone)]
 struct Dolly;
 
-fn destroy_string(string: ~str) {
+fn destroy_string(string: String) {
     // string gets destroyed in this scope
 }
 
@@ -21,7 +21,7 @@ fn main() {
     println!("{} and {}", string, another_string);
 
     // a heap allocated string
-    let boxed_string = "Hello World".to_owned();
+    let boxed_string = String::from_str("Hello World");
 
     // this moves the ownership
     let new_boxed_string = boxed_string;

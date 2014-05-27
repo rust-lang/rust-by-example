@@ -18,10 +18,10 @@ fn main() {
     //THRESHOLD = 5;
 
     if true {
-        // string literals are placed in read-only memory
+        // string literals are references to read-only memory
         let static_string: &'static str = "In read-only memory";
 
-        // when static_string goes out of scope, we can no longer refer
-        // to it, but the string remains in the read-only memory
+        // when static_string goes out of scope, we can no longer refer to the
+        // underlying data, but the string remains in the read-only memory
     }
 }

@@ -56,7 +56,7 @@ impl Rectangle {
 
 // Bomb owns resources: one heap allocated string
 struct Bomb {
-    name: ~str,
+    name: String,
 }
 
 impl Bomb {
@@ -91,7 +91,7 @@ fn main() {
     // Ok: mutable object can call mutable methods
     square.move(1.0, 1.0);
 
-    let bomb = Bomb { name: "C4".to_owned() };
+    let bomb = Bomb { name: String::from_str("C4") };
 
     bomb.boom();
 
