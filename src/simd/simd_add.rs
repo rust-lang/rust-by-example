@@ -1,6 +1,6 @@
 #![feature(macro_rules)]
 
-use std::unstable::simd::f32x4;
+use std::simd::f32x4;
 
 macro_rules! assert_len {
     () => {

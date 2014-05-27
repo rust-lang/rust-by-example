@@ -1,4 +1,4 @@
-use std::unstable::simd::{f32x4};
+use std::simd::f32x4;
 
 fn main() {
     // create simd vectors
