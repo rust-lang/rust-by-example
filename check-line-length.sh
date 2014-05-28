@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WHITELIST=(
-  examples/lifetime/lifetime.rs
+  ./examples/lifetime/lifetime.rs
 )
 
 echo "Checking if any rust file has a line longer than 79 characters"
