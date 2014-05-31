@@ -1,5 +1,5 @@
 // a tuple struct that can be compared
-#[deriving(Eq, Ord)]
+#[deriving(PartialEq, PartialOrd)]
 struct Centimeters(f64);
 
 // a tuple struct that can be printed
