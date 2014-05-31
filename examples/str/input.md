@@ -11,5 +11,5 @@ can be used to view into a `String`, just like `&[T]` is a view into `Vec<T>`.
 
 More `str`/`String` methods can be found under the
 [std::str](http://static.rust-lang.org/doc/master/std/str/index.html) and
-[std::strbuf](http://static.rust-lang.org/doc/master/std/string/struct.String.html)
+[std::string](http://static.rust-lang.org/doc/master/std/string/index.html)
 modules
