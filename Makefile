@@ -1,6 +1,6 @@
 GITBOOK = gitbook
 RUSTC = rustc
-QUIET = -A unused-variable -A dead-code -A dead-assignment
+QUIET = -A unused-variable -A dead-code -A dead-assignment -A experimental
 RUSTC_NT = $(RUSTC) --no-trans --test $(QUIET)
 WHITELIST = examples/borrow/freeze.rs \
 						examples/attribute/custom.rs \
