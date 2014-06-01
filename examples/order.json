@@ -48,7 +48,7 @@
     { "id": "macros", "title": "macro_rules!" },
     { "id": "path", "title": "Path" },
     { "id": "process", "title": "Child processes" },
-    { "id": "result", "title": "Result" },
+    { "id": "result", "title": "Result and try!" },
     { "id": "simd", "title": "SIMD" },
     { "id": "test", "title": "Testing" },
     { "id": "unsafe", "title": "Unsafe operations" },
@@ -65,6 +65,5 @@
     { "id": "regex", "title": "Regex" },
     { "id": "rustdoc", "title": "rustdoc" },
     { "id": "select", "title": "select!" },
-    { "id": "stdio", "title": "Standard I/O" },
-    { "id": "try", "title": "try!" }
+    { "id": "stdio", "title": "Standard I/O" }
 ]
