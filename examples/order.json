@@ -43,6 +43,7 @@
     { "id": "bench", "title": "Benchmarking" },
     { "id": "ffi", "title": "Foreign Function Interface" },
     { "id": "macros", "title": "macro_rules!" },
+    { "id": "path", "title": "Path" },
     { "id": "result", "title": "Result" },
     { "id": "simd", "title": "SIMD" },
     { "id": "test", "title": "Testing" },
