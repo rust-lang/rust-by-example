@@ -1,8 +1,8 @@
 CACHE MANIFEST
-# Revision 1401234229167
+# Revision 1401674151501
 
 CACHE:
-literals.html
+loops.html
 index.html
 array.html
 attribute.html
@@ -15,27 +15,34 @@ clone.html
 closures.html
 constants.html
 crates.html
+drop.html
 enum.html
 expression.html
 ffi.html
+file.html
 for.html
-functions.html
+fs.html
 generics.html
+functions.html
 hello.html
 hof.html
 if-else.html
 iter.html
 lifetime.html
-loops.html
+literals.html
 macros.html
 match.html
 methods.html
 mod.html
 move.html
 operator.html
+path.html
 option.html
 print.html
+process.html
 raii.html
+result.html
+rand.html
 simd.html
 sockets.html
 staging.html
