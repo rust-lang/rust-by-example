@@ -16,11 +16,6 @@ error.
 
 {lifetime.rs}
 
-**Note** The vertical bars don't look straight because the source code doesn't
-get highlighted. This problem has already been
-[fixed upstream](https://github.com/isagalaev/highlight.js/pull/465), and will
-be amended soon.
-
 The "real" compiler error is: "`another_boxed_integer` does not live long
 enough". Let's analyze why this happens:
 
