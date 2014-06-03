@@ -6,11 +6,14 @@ extern crate regex_macros;
 extern crate serialize;
 
 use example::Example;
-use file::write;
 
 mod example;
 mod file;
 mod markdown;
+mod playpen;
+
+#[cfg(test)]
+mod test;
 
 fn main() {
     let examples = Example::get_list();
@@ -48,7 +51,7 @@ fn main() {
         }
     }
 
-    match write(&Path::new("stage/SUMMARY.md"), summary.as_slice()) {
+    match file::write(&Path::new("stage/SUMMARY.md"), summary.as_slice()) {
         Err(why) => fail!("{}", why),
         Ok(_) => {},
     }
