@@ -23,7 +23,7 @@ fn main() {
                 // error also has type `Vec<u8>`
                 let s = String::from_utf8(error).unwrap();
 
-                print!("rustc succeeded and stderr was:\n{}", s);
+                print!("rustc failed and stderr was:\n{}", s);
             }
         },
     }
