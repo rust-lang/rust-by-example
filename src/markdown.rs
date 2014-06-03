@@ -39,10 +39,10 @@ impl<'a> Markdown<'a> {
                 Some(captures) => {
                     let src = captures.at(1);
                     let input = format!("\\{{}\\}", src);
-                    let path = format!("examples/{}/{}", self.id, src);
-                    let output = match file::read(&Path::new(path.as_slice())) {
+                    let p = format!("examples/{}/{}", self.id, src);
+                    let output = match file::read(&Path::new(p.as_slice())) {
                         Err(_) => {
-                            return Err(format!("{} not found", path));
+                            return Err(format!("{} not found", p));
                         },
                         Ok(string) => {
                             format!("``` rust\n// {}\n{}```",
@@ -110,10 +110,10 @@ impl<'a> Markdown<'a> {
                 Some(captures) => {
                     let input = format!("\\{{}.play\\}", captures.at(1));
                     let src = format!("{}.rs", captures.at(1));
-                    let path = format!("examples/{}/{}", self.id, src);
-                    let output = match file::read(&Path::new(path.as_slice())) {
+                    let p = format!("examples/{}/{}", self.id, src);
+                    let output = match file::read(&Path::new(p.as_slice())) {
                         Err(_) => {
-                            return Err(format!("{} not found", path));
+                            return Err(format!("{} not found", p));
                         },
                         Ok(source) => {
                             format!("([Try `{}` in the playpen!]({}))",
