@@ -32,6 +32,7 @@ clean:
 	rm -rf stage
 
 test:
+	$(RUSTC) --test src/update.rs
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
 
