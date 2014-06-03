@@ -9,3 +9,5 @@ return a value earlier from the function, even from inside loops or ifs.
 Let's rewrite fizzbuzz using functions!
 
 {functions.rs}
+
+{functions.play}

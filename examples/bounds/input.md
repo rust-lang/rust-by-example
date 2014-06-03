@@ -4,4 +4,6 @@ implementations.
 
 {bounds.rs}
 
+{bounds.play}
+
 {bounds.out}

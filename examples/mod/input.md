@@ -7,6 +7,8 @@ and even other modules.
 
 {nested.rs}
 
+{nested.play}
+
 {nested.out}
 
 By default, the items in a module have private visibility, but this can be
@@ -15,12 +17,16 @@ accessed from outside the module scope.
 
 {visibility.rs}
 
+{visibility.play}
+
 {visibility.out}
 
 The `use` declaration can be used to bind a full path to a new name, for easier
 access.
 
 {use.rs}
+
+{use.play}
 
 {use.out}
 
@@ -29,12 +35,16 @@ when accessing items.
 
 {super.rs}
 
+{super.play}
+
 {super.out}
 
 Structs have an extra level of visibility, their fields can be public or
 private. This allows encapsulation.
 
 {structs.rs}
+
+{structs.play}
 
 {structs.out}
 

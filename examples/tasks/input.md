@@ -3,6 +3,8 @@ function, the argument of this function is a owned closure named `proc`.
 
 {tasks.rs}
 
+{tasks.play}
+
 These tasks will be scheduled by the Rust runtime and the order of execution of
 these tasks will be non-deterministic.
 

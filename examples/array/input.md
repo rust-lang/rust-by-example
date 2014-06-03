@@ -9,4 +9,6 @@ section of an array, and have `&[T]` as type signature.
 
 {array.rs}
 
+{array.play}
+
 {array.out}

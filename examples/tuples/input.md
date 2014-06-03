@@ -5,4 +5,6 @@ use tuples to return multiple values, as tuples can hold any number of values.
 
 {tuples.rs}
 
+{tuples.play}
+
 {tuples.out}

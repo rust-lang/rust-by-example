@@ -4,4 +4,6 @@ are grouped under a `impl` block.
 
 {methods.rs}
 
+{methods.play}
+
 {methods.out}

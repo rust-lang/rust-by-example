@@ -3,6 +3,8 @@ The `Process` struct represents a running or finished child process. And the
 
 {process.rs}
 
+{process.play}
+
 {process.out}
 
 (You are encouraged to try the previous example with an incorrect flag)
@@ -11,6 +13,8 @@ The `Process` struct represents a running or finished child process. And the
 with the child process via pipes.
 
 {pipe.rs}
+
+{pipe.play}
 
 {pipe.out}
 

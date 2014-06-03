@@ -10,4 +10,6 @@ one layer of indirection. Alternatively, `let box x = y` can be used to unbox
 
 {box.rs}
 
+{box.play}
+
 {box.out}

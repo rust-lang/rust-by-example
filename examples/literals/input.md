@@ -23,4 +23,6 @@ languages
 
 {literals.rs}
 
+{literals.play}
+
 {literals.out}

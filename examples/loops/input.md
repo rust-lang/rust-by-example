@@ -5,6 +5,8 @@ The `break` keyword can be used to exit a loop at anytime, whereas the
 
 {loop.rs}
 
+{loop.play}
+
 {loop.out}
 
 It's possible to `break` or `continue` outer loops when dealing with nested
@@ -13,6 +15,8 @@ label must be passed to the `break`/`continue` statement.
 
 {nested.rs}
 
+{nested.play}
+
 {nested.out}
 
 The `while` keyword can be used for looping until a condition is met.
@@ -20,3 +24,5 @@ The `while` keyword can be used for looping until a condition is met.
 Let's write the infamous fizzbuzz using a `while` loop.
 
 {while.rs}
+
+{while.play}

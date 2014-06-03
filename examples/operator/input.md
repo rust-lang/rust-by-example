@@ -5,6 +5,8 @@ any implementor of the `Add` trait will be able to use the `+` operator.
 
 {operator.rs}
 
+{operator.play}
+
 {operator.out}
 
 Here is a [list](http://static.rust-lang.org/doc/master/core/ops/index.html) of

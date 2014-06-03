@@ -4,6 +4,8 @@ trait, they can be grouped in an array since they provide the same interface.
 
 {trait.rs}
 
+{trait.play}
+
 {trait.out}
 
 The compiler is capable of providing basic implementations for some traits via
@@ -11,6 +13,8 @@ the `#[deriving]` attribute. These traits can still be manually implemented if
 a more complex behavior is required.
 
 {deriving.rs}
+
+{deriving.play}
 
 {deriving.out}
 

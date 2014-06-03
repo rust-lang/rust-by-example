@@ -54,6 +54,8 @@ write would look like this:
 
 {reference-bad.rs}
 
+{reference-bad.play}
+
 {reference-bad.out}
 
 The compiler can't tell how `'a` and `'b` are related, so we must supply this
@@ -62,5 +64,7 @@ field will be destroyed when the book gets destroyed (same way with the
 creation time), therefore the title field has the same lifetime as the book.
 
 {reference-good.rs}
+
+{reference-good.play}
 
 {reference-good.out}

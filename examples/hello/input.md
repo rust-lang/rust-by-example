@@ -2,6 +2,8 @@ This is the source code of the traditional Hello World program.
 
 {hello.rs}
 
+{hello.play}
+
 `println!` is a *macro* (we'll cover them later) that prints text to the
 console.
 

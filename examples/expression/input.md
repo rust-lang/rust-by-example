@@ -9,4 +9,6 @@ expression of the block ends with a semicolon, the return value will be `()`.
 
 {expression.rs}
 
+{expression.play}
+
 {expression.out}

@@ -8,6 +8,8 @@ Don't take my word for it, let's check using `valgrind`
 
 {raii.rs}
 
+{raii.play}
+
 ```
 $ rustc raii.rs && valgrind ./raii
 ==7619== Memcheck, a memory error detector

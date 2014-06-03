@@ -6,6 +6,8 @@ via its borrow checker.
 
 {borrow.rs}
 
+{borrow.play}
+
 {borrow.out}
 
 `&T` borrows the data via an immutable reference, and the borrower can read the
@@ -15,12 +17,16 @@ the borrower.
 
 {mut.rs}
 
+{mut.play}
+
 {mut.out}
 
 When data is borrowed, it also *freezes*. "Frozen" data can't be modified via
 the original object, until all the references to it go out of scope.
 
 {freeze.rs}
+
+{freeze.play}
 
 {freeze.out}
 
@@ -31,11 +37,15 @@ scope, the original data can't be borrowed again.
 
 {re-borrow.rs}
 
+{re-borrow.play}
+
 {re-borrow.out}
 
 When doing pattern matching or destructuring via the `let` binding, the `ref`
 keyword can be used to take references to the fields of a struct.
 
 {ref.rs}
+
+{ref.play}
 
 {ref.out}

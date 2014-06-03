@@ -12,4 +12,6 @@ part of the type signature of option `Option<T>`.
 
 {option.rs}
 
+{option.play}
+
 {option.out}

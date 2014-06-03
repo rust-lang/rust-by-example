@@ -7,3 +7,5 @@ specialized via type annotation, and functions can be specialized passing the
 generic arguments using this syntax `::<T, U, ..>`.
 
 {generics.rs}
+
+{generics.play}

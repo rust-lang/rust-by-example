@@ -11,4 +11,6 @@ all the scopes.
 
 {constants.rs}
 
+{constants.play}
+
 {constants.out}

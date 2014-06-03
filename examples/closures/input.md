@@ -9,4 +9,6 @@ surrounding scope. Closures consist of three parts:
 
 {closures.rs}
 
+{closures.play}
+
 {closures.out}

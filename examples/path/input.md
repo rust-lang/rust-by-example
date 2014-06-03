@@ -13,7 +13,6 @@ instead is stored as a vector of bytes (`Vec<u8>`). Therefore, converting a
 
 {path.rs}
 
-<!-- This should be handled by {path.out} :-( -->
 ```
 $ rustc path.rs && ./path
 path.rs exists

@@ -3,6 +3,8 @@ arrays) and lazy value generators.
 
 {iter.rs}
 
+{iter.play}
+
 {iter.out}
 
 The `Iterator` trait gives access to

@@ -7,6 +7,8 @@ transferred, this is know as *moving* in Rust-speak.
 
 {assignment.rs}
 
+{assignment.play}
+
 {assignment.out}
 
 After moving resources, the previous owner loses access to the resource. This
@@ -14,11 +16,15 @@ avoids *dereferencing freed memory*.
 
 {pass-by-value.rs}
 
+{pass-by-value.play}
+
 {pass-by-value.out}
 
 Mutability of data depends on its owner. Mutability of data can change when
 ownership is transferred.
 
 {mut.rs}
+
+{mut.play}
 
 {mut.out}

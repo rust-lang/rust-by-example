@@ -4,6 +4,8 @@ be checked at compile time.
 
 {print.rs}
 
+{print.play}
+
 {print.out}
 
 For more information about formatting, take a look at

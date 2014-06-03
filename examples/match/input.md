@@ -3,4 +3,6 @@ covered in the code below.
 
 {match.rs}
 
+{match.play}
+
 {match.out}

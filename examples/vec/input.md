@@ -7,6 +7,8 @@ be surpassed, the vector gets reallocated with a bigger capacity.
 
 {vec.rs}
 
+{vec.play}
+
 {vec.out}
 
 More `Vec` methods can be found under the

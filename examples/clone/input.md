@@ -5,4 +5,6 @@ the `Clone` trait.
 
 {clone.rs}
 
+{clone.play}
+
 {clone.out}
