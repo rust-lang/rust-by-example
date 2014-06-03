@@ -21,7 +21,7 @@ fn main() {
     let geb = Book {
         // string literals have type `&'static str`
         author: "Douglas Hofstadter",
-        title: "Gödel, Escher, Bach",
+        title: "Godel, Escher, Bach",
         year: 1979,
     };
 

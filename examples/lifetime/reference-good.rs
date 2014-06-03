@@ -13,7 +13,7 @@ fn main() {
         // construct a `String` (heap allocated string) from a reference to a
         // string (&'static str) by doing a copy of the data
         author: String::from_str("Douglas Hofstadter"),
-        title: String::from_str("Gödel, Escher, Bach"),
+        title: String::from_str("Godel, Escher, Bach"),
         year: 1979,
     };
 
