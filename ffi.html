@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="47.2" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="47.2" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,14 +871,14 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_17">
+                    <section class="normal" id="section-gitbook_18">
                     
                         <h1 id="foreign-function-interface">Foreign Function Interface</h1>
 <p>Rust provides a Foreign Function Interface (FFI) to C libraries. Foreign
 functions must be declared inside an <code>extern</code> block annotated with a <code>#[link]</code>
 attribute containing the name of the foreign library.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// ffi.rs</span>
-<span class="hljs-keyword">extern</span> crate num;
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> num;
 
 <span class="hljs-keyword">use</span> num::complex::{Complex,Complex32};
 
@@ -887,10 +887,10 @@ attribute containing the name of the foreign library.</p>
 <span class="hljs-keyword">extern</span> {
     <span class="hljs-comment">// this is a foreign function</span>
     <span class="hljs-comment">// that computes the square root of a single precision complex number</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">csqrtf</span>(</span>z: Complex32) -&gt; Complex32;
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">csqrtf</span></span>(z: Complex32) -&gt; Complex32;
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// z = -1 + 0i</span>
     <span class="hljs-keyword">let</span> z = Complex::new(-<span class="hljs-number">1.0f32</span>, <span class="hljs-number">0.0</span>);
 
@@ -907,21 +907,21 @@ the square root of -1+0i is 0+1i
 </code></pre><p>Since calling foreign functions is considered unsafe, it&#39;s common to write safe
 wrappers around them.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// safe.rs</span>
-<span class="hljs-keyword">extern</span> crate num;
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> num;
 
 <span class="hljs-keyword">use</span> num::complex::{Complex,Complex32};
 
 <span class="hljs-preprocessor">#[link(name = "m")]</span>
 <span class="hljs-keyword">extern</span> {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ccosf</span>(</span>z: Complex&lt;<span class="hljs-keyword">f32</span>&gt;) -&gt; Complex&lt;<span class="hljs-keyword">f32</span>&gt;;
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ccosf</span></span>(z: Complex&lt;<span class="hljs-keyword">f32</span>&gt;) -&gt; Complex&lt;<span class="hljs-keyword">f32</span>&gt;;
 }
 
 <span class="hljs-comment">// safe wrapper</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">cos</span>(</span>z: Complex32) -&gt; Complex32 {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">cos</span></span>(z: Complex32) -&gt; Complex32 {
     <span class="hljs-keyword">unsafe</span> { ccosf(z) }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// z = -1 + 0i</span>
     <span class="hljs-keyword">let</span> z = Complex::new(<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0f32</span>);
 

@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="35" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="35" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -878,22 +878,22 @@
 Channels allow an unidirectional flow of information between two end-points:
 the <code>Sender</code> and the <code>Receiver</code>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// channels.rs</span>
-<span class="hljs-keyword">use</span> std::<span class="hljs-keyword">comm</span>::channel;
+<span class="hljs-keyword">use</span> std::comm::channel;
 
 <span class="hljs-keyword">static</span> NTASKS: <span class="hljs-keyword">int</span> = <span class="hljs-number">5</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// channels have two endpoints: the Sender&lt;T&gt; and the Receiver&lt;T&gt;,</span>
     <span class="hljs-comment">// where T is the type of the message to be transfer</span>
     <span class="hljs-comment">// (type annotation is superfluous)</span>
     <span class="hljs-keyword">let</span> (tx, rx): (Sender&lt;<span class="hljs-number">_</span>&gt;, Receiver&lt;<span class="hljs-number">_</span>&gt;) = channel();
 
-    <span class="hljs-keyword">for</span> id in range(<span class="hljs-number">0</span>, NTASKS) {
+    <span class="hljs-keyword">for</span> id <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, NTASKS) {
         <span class="hljs-comment">// the sender endpoint can be copied</span>
         <span class="hljs-keyword">let</span> tx = tx.clone();
 
         <span class="hljs-comment">// each task will send its id via the channel</span>
-        spawn(proc() {
+        spawn(<span class="hljs-keyword">proc</span>() {
             <span class="hljs-comment">// queue message in the channel</span>
             tx.send(id);
 
@@ -904,7 +904,7 @@ the <code>Sender</code> and the <code>Receiver</code>.</p>
     }
 
     <span class="hljs-comment">// here, all the messages are collected</span>
-    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> in range(<span class="hljs-number">0</span>, NTASKS) {
+    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, NTASKS) {
         <span class="hljs-comment">// the recv() methods picks a message from the channel</span>
         <span class="hljs-keyword">let</span> id = rx.recv();
 
@@ -932,18 +932,18 @@ task number 3 reported
 task number 4 reported
 </code></pre><p>Albeit non obvious from the output above, channels are actually FIFO.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// fifo.rs</span>
-<span class="hljs-keyword">use</span> std::<span class="hljs-keyword">comm</span>::channel;
+<span class="hljs-keyword">use</span> std::comm::channel;
 
 <span class="hljs-keyword">static</span> NMESSAGES: <span class="hljs-keyword">int</span> = <span class="hljs-number">5</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> (tx, rx) = channel();
 
-    <span class="hljs-keyword">for</span> i in range(<span class="hljs-number">0</span>, NMESSAGES) {
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, NMESSAGES) {
         tx.send(i);
     }
 
-    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> in range(<span class="hljs-number">0</span>, NMESSAGES) {
+    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, NMESSAGES) {
         println!(<span class="hljs-string">"{}"</span>, rx.recv());
     }
 }

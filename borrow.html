@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="18" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="18" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -883,18 +883,18 @@ via its borrow checker.</p>
 <span class="hljs-keyword">use</span> std::owned::Box;
 
 <span class="hljs-comment">// this function takes ownership of the box</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">eat_box</span>(</span>boxed_int: Box&lt;<span class="hljs-keyword">int</span>&gt;) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">eat_box</span></span>(boxed_int: Box&lt;<span class="hljs-keyword">int</span>&gt;) {
     <span class="hljs-comment">// the box gets destroyed in this scope</span>
 }
 
 <span class="hljs-comment">// this function borrows the box</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">peep_inside_box</span>(</span>borrowed_box: &amp;Box&lt;<span class="hljs-keyword">int</span>&gt;) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">peep_inside_box</span></span>(borrowed_box: &amp;Box&lt;<span class="hljs-keyword">int</span>&gt;) {
     println!(<span class="hljs-string">"This box contains {}"</span>, borrowed_box);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// boxed integer</span>
-    <span class="hljs-keyword">let</span> boxed_int = box <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">let</span> boxed_int = <span class="hljs-keyword">box</span> <span class="hljs-number">5</span>;
 
     <span class="hljs-comment">// borrow the box, ownership is not taken</span>
     peep_inside_box(&amp;boxed_int);
@@ -910,50 +910,50 @@ This box contains 5
 data but not modify it. Mutable data can be immutably borrowed, but can also be
 mutably borrowed via a mutable reference <code>&amp;mut T</code>, giving read/write access to
 the borrower.</p>
-<pre><code class="lang-rust">// mut.rs
-struct Book {
-    // `&amp;'static str` is a reference to a string allocated in read only memory
-    author: &amp;'static str,
-    title: &amp;'static str,
-    year: uint,
+<pre><code class="lang-rust"><span class="hljs-comment">// mut.rs</span>
+<span class="hljs-keyword">struct</span> Book {
+    <span class="hljs-comment">// `&amp;'static str` is a reference to a string allocated in read only memory</span>
+    author: &amp;'static <span class="hljs-keyword">str</span>,
+    title: &amp;'static <span class="hljs-keyword">str</span>,
+    year: <span class="hljs-keyword">uint</span>,
 }
 
-// this function takes a reference to a book
-fn borrow_book(book: &amp;Book) {
-    println!("I borrowed {} {} edition", book.title, book.year);
+<span class="hljs-comment">// this function takes a reference to a book</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">borrow_book</span></span>(book: &amp;Book) {
+    println!(<span class="hljs-string">"I borrowed {} {} edition"</span>, book.title, book.year);
 }
 
-// this function, takes a reference to a mutable book
-fn new_edition(book: &amp;mut Book) {
-    // the fields of the book can be modified
-    book.year = 2014;
+<span class="hljs-comment">// this function, takes a reference to a mutable book</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new_edition</span></span>(book: &amp;<span class="hljs-keyword">mut</span> Book) {
+    <span class="hljs-comment">// the fields of the book can be modified</span>
+    book.year = <span class="hljs-number">2014</span>;
 }
 
-fn main() {
-    // an immutable Book
-    let geb = Book {
-        // string literals have type `&amp;'static str`
-        author: "Douglas Hofstadter",
-        title: "Godel, Escher, Bach",
-        year: 1979,
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-comment">// an immutable Book</span>
+    <span class="hljs-keyword">let</span> geb = Book {
+        <span class="hljs-comment">// string literals have type `&amp;'static str`</span>
+        author: <span class="hljs-string">"Douglas Hofstadter"</span>,
+        title: <span class="hljs-string">"Godel, Escher, Bach"</span>,
+        year: <span class="hljs-number">1979</span>,
     };
 
-    // borrow geb, geb can still be used afterwards
+    <span class="hljs-comment">// borrow geb, geb can still be used afterwards</span>
     borrow_book(&amp;geb);
 
-    // geb can be borrowed again, and again, and again ...
+    <span class="hljs-comment">// geb can be borrowed again, and again, and again ...</span>
     borrow_book(&amp;geb);
 
-    // Error: can't borrow immutable object as mutable
-    //new_edition(&amp;mut geb);
+    <span class="hljs-comment">// Error: can't borrow immutable object as mutable</span>
+    <span class="hljs-comment">//new_edition(&amp;mut geb);</span>
 
-    // pass ownership of geb to mutable_geb, changing mutability
-    let mut mutable_geb = geb;
+    <span class="hljs-comment">// pass ownership of geb to mutable_geb, changing mutability</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> mutable_geb = geb;
 
-    // Ok: borrow a mutable object as mutable
-    new_edition(&amp;mut mutable_geb);
+    <span class="hljs-comment">// Ok: borrow a mutable object as mutable</span>
+    new_edition(&amp;<span class="hljs-keyword">mut</span> mutable_geb);
 
-    // Ok: mutable objects can be immutably borrowed
+    <span class="hljs-comment">// Ok: mutable objects can be immutably borrowed</span>
     borrow_book(&amp;mutable_geb);
 }
 </code></pre>
@@ -965,7 +965,7 @@ I borrowed Godel, Escher, Bach 2014 edition
 </code></pre><p>When data is borrowed, it also <em>freezes</em>. &quot;Frozen&quot; data can&#39;t be modified via
 the original object, until all the references to it go out of scope.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// freeze.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> integer = <span class="hljs-number">5</span>;
 
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
@@ -1002,7 +1002,7 @@ scope, the original data can&#39;t be borrowed again.</p>
     z: <span class="hljs-keyword">int</span>,
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> point = Point { x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span>, z: <span class="hljs-number">0</span> };
 
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
@@ -1059,7 +1059,7 @@ keyword can be used to take references to the fields of a struct.</p>
     y: <span class="hljs-keyword">int</span>,
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> point = Point { x: <span class="hljs-number">0</span>, y: <span class="hljs-number">0</span> };
 
     <span class="hljs-comment">// superfluous type annotation</span>

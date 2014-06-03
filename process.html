@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="44" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="44" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_38">
+                    <section class="normal" id="section-gitbook_39">
                     
                         <h1 id="child-processes">Child processes</h1>
 <p>The <code>Process</code> struct represents a running or finished child process. And the
@@ -879,7 +879,7 @@
 <pre><code class="lang-rust"><span class="hljs-comment">// process.rs</span>
 <span class="hljs-keyword">use</span> std::io::process::{Command,ProcessOutput};
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// initial command "rustc"</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> cmd = Command::new(<span class="hljs-string">"rustc"</span>);
     <span class="hljs-comment">// append the "--version" flag to the command</span>
@@ -888,7 +888,7 @@
     <span class="hljs-comment">// the `output` method will spawn `rustc --version`, wait until the process</span>
     <span class="hljs-comment">// finishes and return the output of the process</span>
     <span class="hljs-keyword">match</span> cmd.output() {
-        Err(why) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"couldn't spawn rustc: {}"</span>, why.desc),
+        Err(why) =&gt; fail!(<span class="hljs-string">"couldn't spawn rustc: {}"</span>, why.desc),
         <span class="hljs-comment">// destructure the ProcessOutput struct</span>
         Ok(ProcessOutput { error: error, output: output, status: status }) =&gt; {
             <span class="hljs-comment">// check if process succeeded, i.e. the exit code was 0</span>
@@ -911,45 +911,45 @@
 <p>(<a href="http://playtest.rust-lang.org/?code=use%20std%3A%3Aio%3A%3Aprocess%3A%3A%7BCommand%2CProcessOutput%7D%3B%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20initial%20command%20%22rustc%22%0A%20%20%20%20let%20mut%20cmd%20%3D%20Command%3A%3Anew%28%22rustc%22%29%3B%0A%20%20%20%20%2F%2F%20append%20the%20%22%2D%2Dversion%22%20flag%20to%20the%20command%0A%20%20%20%20cmd.arg%28%22%2D%2Dversion%22%29%3B%0A%0A%20%20%20%20%2F%2F%20the%20%60output%60%20method%20will%20spawn%20%60rustc%20%2D%2Dversion%60%2C%20wait%20until%20the%20process%0A%20%20%20%20%2F%2F%20finishes%20and%20return%20the%20output%20of%20the%20process%0A%20%20%20%20match%20cmd.output%28%29%20%7B%0A%20%20%20%20%20%20%20%20Err%28why%29%20%3D%3E%20fail!%28%22couldn%27t%20spawn%20rustc%3A%20%7B%7D%22%2C%20why.desc%29%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20destructure%20the%20ProcessOutput%20struct%0A%20%20%20%20%20%20%20%20Ok%28ProcessOutput%20%7B%20error%3A%20error%2C%20output%3A%20output%2C%20status%3A%20status%20%7D%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20check%20if%20process%20succeeded%2C%20i.e.%20the%20exit%20code%20was%200%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20status.success%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20output%20has%20type%20%60Vec%3Cu8%3E%60%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20convert%20to%20UTF%2D8%20String%20%28this%20operation%20could%20fail%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20s%20%3D%20String%3A%3Afrom%5Futf8%28output%29.unwrap%28%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20print!%28%22rustc%20succeeded%20and%20stdout%20was%3A%5Cn%7B%7D%22%2C%20s%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20error%20also%20has%20type%20%60Vec%3Cu8%3E%60%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20s%20%3D%20String%3A%3Afrom%5Futf8%28error%29.unwrap%28%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20print!%28%22rustc%20failed%20and%20stderr%20was%3A%5Cn%7B%7D%22%2C%20s%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>process.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc process.rs &amp;&amp; ./process
 rustc succeeded and stdout was:
-rustc 0.11.0-pre (1527dab 2014-06-01 10:36:39 -0700)
+rustc 0.11.0-pre (918dbfe 2014-06-02 20:51:30 -0700)
 host: x86_64-unknown-linux-gnu
 </code></pre><p>(You are encouraged to try the previous example with an incorrect flag)</p>
 <p><code>Process</code> exposes the <code>stdin</code>, <code>stdout</code> and <code>stderr</code> handles for interaction
 with the child process via pipes.</p>
-<pre><code class="lang-rust">// pipe.rs
-use std::io::process::Command;
+<pre><code class="lang-rust"><span class="hljs-comment">// pipe.rs</span>
+<span class="hljs-keyword">use</span> std::io::process::Command;
 
-static PANGRAM: &amp;'static str = "the quick brown fox jumped over the lazy dog";
+<span class="hljs-keyword">static</span> PANGRAM: &amp;'static <span class="hljs-keyword">str</span> = <span class="hljs-string">"the quick brown fox jumped over the lazy dog"</span>;
 
-fn main() {
-    // spawn the `wc` command
-    let mut process = match Command::new("wc").spawn() {
-        Err(why) =&gt; fail!("couldn't spawn wc: {}", why.desc),
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-comment">// spawn the `wc` command</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> process = <span class="hljs-keyword">match</span> Command::new(<span class="hljs-string">"wc"</span>).spawn() {
+        Err(why) =&gt; fail!(<span class="hljs-string">"couldn't spawn wc: {}"</span>, why.desc),
         Ok(process) =&gt; process,
     };
 
-    if true {
-        // the `stdin` field has type Option&lt;PipeStream&gt;
-        // `take_unwrap` will take the value wrapped in a Some variant
-        // note that we take ownership of stdin here
-        let mut stdin = process.stdin.take_unwrap();
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
+        <span class="hljs-comment">// the `stdin` field has type Option&lt;PipeStream&gt;</span>
+        <span class="hljs-comment">// `take_unwrap` will take the value wrapped in a Some variant</span>
+        <span class="hljs-comment">// note that we take ownership of stdin here</span>
+        <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> stdin = process.stdin.take_unwrap();
 
-        // write a string to the stdin of wc
-        match stdin.write_str(PANGRAM) {
-            Err(why) =&gt; fail!("couldn't write to wc stdin: {}", why.desc),
-            Ok(_) =&gt; println!("sent pangram to wc"),
+        <span class="hljs-comment">// write a string to the stdin of wc</span>
+        <span class="hljs-keyword">match</span> stdin.write_str(PANGRAM) {
+            Err(why) =&gt; fail!(<span class="hljs-string">"couldn't write to wc stdin: {}"</span>, why.desc),
+            Ok(<span class="hljs-number">_</span>) =&gt; println!(<span class="hljs-string">"sent pangram to wc"</span>),
         }
 
-        // stdin goes out of scope here, and the pipe is closed
-        // this is very important, otherwise wc wouldn't start processing the
-        // input we just sent
+        <span class="hljs-comment">// stdin goes out of scope here, and the pipe is closed</span>
+        <span class="hljs-comment">// this is very important, otherwise wc wouldn't start processing the</span>
+        <span class="hljs-comment">// input we just sent</span>
     }
 
-    // the `stdout` field also has type Option&lt;PipeStream&gt;
-    // the `get_mut_ref` method will return a mutable reference to the pipe
-    match process.stdout.get_mut_ref().read_to_str() {
-        Err(why) =&gt; fail!("couldn't read wc stdout: {}", why.desc),
-        Ok(string) =&gt; print!("wc responded with:\n{}", string),
+    <span class="hljs-comment">// the `stdout` field also has type Option&lt;PipeStream&gt;</span>
+    <span class="hljs-comment">// the `get_mut_ref` method will return a mutable reference to the pipe</span>
+    <span class="hljs-keyword">match</span> process.stdout.get_mut_ref().read_to_str() {
+        Err(why) =&gt; fail!(<span class="hljs-string">"couldn't read wc stdout: {}"</span>, why.desc),
+        Ok(string) =&gt; print!(<span class="hljs-string">"wc responded with:\n{}"</span>, string),
     }
 }
 </code></pre>
@@ -964,7 +964,7 @@ the resource.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// wait.rs</span>
 <span class="hljs-keyword">use</span> std::io::process::Command;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> process = Command::new(<span class="hljs-string">"sleep"</span>).arg(<span class="hljs-string">"5"</span>).spawn();
 
     println!(<span class="hljs-string">"reached end of main"</span>);

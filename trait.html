@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="25" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="25" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,115 +871,115 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_50">
+                    <section class="normal" id="section-gitbook_51">
                     
                         <h1 id="traits">Traits</h1>
 <p>A <code>trait</code> is a collection of methods defined for an unknown type. A trait
 can be implemented for any data type. When some instances implement the same
 trait, they can be grouped in an array since they provide the same interface.</p>
-<pre><code class="lang-rust">// trait.rs
-struct Dog {
+<pre><code class="lang-rust"><span class="hljs-comment">// trait.rs</span>
+<span class="hljs-keyword">struct</span> Dog {
     name: String,
 }
 
-struct Sheep {
-    naked: bool,
+<span class="hljs-keyword">struct</span> Sheep {
+    naked: <span class="hljs-keyword">bool</span>,
     name: String,
 }
 
-// traits are collections of methods
-trait Animal {
-    // static method, Self refers to the implementor type
-    fn new(name: String) -&gt; Self;
+<span class="hljs-comment">// traits are collections of methods</span>
+<span class="hljs-keyword">trait</span> <span class="hljs-title">Animal</span> {
+    <span class="hljs-comment">// static method, Self refers to the implementor type</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>(name: String) -&gt; Self;
 
-    // instance methods, only signatures
-    fn name&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a str;
-    fn noise(&amp;self) -&gt; &amp;'static str;
+    <span class="hljs-comment">// instance methods, only signatures</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">name</span></span>&lt;'a&gt;(&amp;'a <span class="hljs-keyword">self</span>) -&gt; &amp;'a <span class="hljs-keyword">str</span>;
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">noise</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; &amp;'static <span class="hljs-keyword">str</span>;
 
-    // trait can provide method definitions
-    fn talk(&amp;self) {
-        // trait method can access methods available in the same trait
-        println!("{} says {}", self.name(), self.noise());
+    <span class="hljs-comment">// trait can provide method definitions</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">talk</span></span>(&amp;<span class="hljs-keyword">self</span>) {
+        <span class="hljs-comment">// trait method can access methods available in the same trait</span>
+        println!(<span class="hljs-string">"{} says {}"</span>, <span class="hljs-keyword">self</span>.name(), <span class="hljs-keyword">self</span>.noise());
     }
 }
 
-// implement the Animal trait for the Dog struct
-impl Animal for Dog {
-    // replace Self with implementor type (i.e. Dog)
-    fn new(name: String) -&gt; Dog {
+<span class="hljs-comment">// implement the Animal trait for the Dog struct</span>
+<span class="hljs-keyword">impl</span> Animal <span class="hljs-keyword">for</span> Dog {
+    <span class="hljs-comment">// replace Self with implementor type (i.e. Dog)</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>(name: String) -&gt; Dog {
         Dog { name: name }
     }
 
-    fn name&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a str {
-        self.name.as_slice()
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">name</span></span>&lt;'a&gt;(&amp;'a <span class="hljs-keyword">self</span>) -&gt; &amp;'a <span class="hljs-keyword">str</span> {
+        <span class="hljs-keyword">self</span>.name.as_slice()
     }
 
-    fn noise(&amp;self) -&gt; &amp;'static str {
-        "woof"
-    }
-}
-
-// exclusive methods for Dogs
-impl Dog {
-    fn wag_tail(&amp;self) {
-        // struct methods can access trait methods
-        println!("{} wags tail", self.name());
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">noise</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; &amp;'static <span class="hljs-keyword">str</span> {
+        <span class="hljs-string">"woof"</span>
     }
 }
 
-impl Animal for Sheep {
-    fn new(name: String) -&gt; Sheep {
-        Sheep { name: name, naked: false }
+<span class="hljs-comment">// exclusive methods for Dogs</span>
+<span class="hljs-keyword">impl</span> Dog {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">wag_tail</span></span>(&amp;<span class="hljs-keyword">self</span>) {
+        <span class="hljs-comment">// struct methods can access trait methods</span>
+        println!(<span class="hljs-string">"{} wags tail"</span>, <span class="hljs-keyword">self</span>.name());
+    }
+}
+
+<span class="hljs-keyword">impl</span> Animal <span class="hljs-keyword">for</span> Sheep {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>(name: String) -&gt; Sheep {
+        Sheep { name: name, naked: <span class="hljs-keyword">false</span> }
     }
 
-    fn name&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a str {
-        self.name.as_slice()
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">name</span></span>&lt;'a&gt;(&amp;'a <span class="hljs-keyword">self</span>) -&gt; &amp;'a <span class="hljs-keyword">str</span> {
+        <span class="hljs-keyword">self</span>.name.as_slice()
     }
 
-    fn noise(&amp;self) -&gt; &amp;'static str {
-        // implemented traits methods can access struct methods
-        if self.is_naked() {
-            "baaah!"
-        } else {
-            "baaaaaaaaaaaah!"
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">noise</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; &amp;'static <span class="hljs-keyword">str</span> {
+        <span class="hljs-comment">// implemented traits methods can access struct methods</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.is_naked() {
+            <span class="hljs-string">"baaah!"</span>
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-string">"baaaaaaaaaaaah!"</span>
         }
     }
 }
 
-// exclusive methods for Sheeps
-impl Sheep {
-    fn is_naked(&amp;self) -&gt; bool {
-        self.naked
+<span class="hljs-comment">// exclusive methods for Sheeps</span>
+<span class="hljs-keyword">impl</span> Sheep {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">is_naked</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-keyword">bool</span> {
+        <span class="hljs-keyword">self</span>.naked
     }
 
-    fn shear(&amp;mut self) {
-        if self.is_naked() {
-            println!("{} is already naked!", self.name());
-        } else {
-            println!("{} gets a haircut", self.name());
-            self.talk();
-            self.naked = true;
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">shear</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>) {
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.is_naked() {
+            println!(<span class="hljs-string">"{} is already naked!"</span>, <span class="hljs-keyword">self</span>.name());
+        } <span class="hljs-keyword">else</span> {
+            println!(<span class="hljs-string">"{} gets a haircut"</span>, <span class="hljs-keyword">self</span>.name());
+            <span class="hljs-keyword">self</span>.talk();
+            <span class="hljs-keyword">self</span>.naked = <span class="hljs-keyword">true</span>;
         }
     }
 }
 
-fn main() {
-    let mut dolly: Sheep = Animal::new(String::from_str("Dolly"));
-    let spike: Dog = Animal::new(String::from_str("Spike"));
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> dolly: Sheep = Animal::new(String::from_str(<span class="hljs-string">"Dolly"</span>));
+    <span class="hljs-keyword">let</span> spike: Dog = Animal::new(String::from_str(<span class="hljs-string">"Spike"</span>));
 
     spike.wag_tail();
     dolly.shear();
 
-    // dolly and spike can be borrowed as &amp;Animal
-    let animals: [&amp;Animal, ..2] = [&amp;spike as &amp;Animal, &amp;dolly as &amp;Animal];
+    <span class="hljs-comment">// dolly and spike can be borrowed as &amp;Animal</span>
+    <span class="hljs-keyword">let</span> animals: [&amp;Animal, ..<span class="hljs-number">2</span>] = [&amp;spike <span class="hljs-keyword">as</span> &amp;Animal, &amp;dolly <span class="hljs-keyword">as</span> &amp;Animal];
 
-    // Ok: Animal methods can be called on the array members
-    animals[0].talk();
-    animals[1].talk();
+    <span class="hljs-comment">// Ok: Animal methods can be called on the array members</span>
+    animals[<span class="hljs-number">0</span>].talk();
+    animals[<span class="hljs-number">1</span>].talk();
 
-    // Error: Dog and Sheep methods can't be accessed via the Animal trait
-    //animals[0].wag_tail();
-    //animals[1].shear();
+    <span class="hljs-comment">// Error: Dog and Sheep methods can't be accessed via the Animal trait</span>
+    <span class="hljs-comment">//animals[0].wag_tail();</span>
+    <span class="hljs-comment">//animals[1].shear();</span>
 }
 </code></pre>
 <p>(<a href="http://playtest.rust-lang.org/?code=struct%20Dog%20%7B%0A%20%20%20%20name%3A%20String%2C%0A%7D%0A%0Astruct%20Sheep%20%7B%0A%20%20%20%20naked%3A%20bool%2C%0A%20%20%20%20name%3A%20String%2C%0A%7D%0A%0A%2F%2F%20traits%20are%20collections%20of%20methods%0Atrait%20Animal%20%7B%0A%20%20%20%20%2F%2F%20static%20method%2C%20Self%20refers%20to%20the%20implementor%20type%0A%20%20%20%20fn%20new%28name%3A%20String%29%20%2D%3E%20Self%3B%0A%0A%20%20%20%20%2F%2F%20instance%20methods%2C%20only%20signatures%0A%20%20%20%20fn%20name%3C%27a%3E%28%26%27a%20self%29%20%2D%3E%20%26%27a%20str%3B%0A%20%20%20%20fn%20noise%28%26self%29%20%2D%3E%20%26%27static%20str%3B%0A%0A%20%20%20%20%2F%2F%20trait%20can%20provide%20method%20definitions%0A%20%20%20%20fn%20talk%28%26self%29%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20trait%20method%20can%20access%20methods%20available%20in%20the%20same%20trait%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%20says%20%7B%7D%22%2C%20self.name%28%29%2C%20self.noise%28%29%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0A%2F%2F%20implement%20the%20Animal%20trait%20for%20the%20Dog%20struct%0Aimpl%20Animal%20for%20Dog%20%7B%0A%20%20%20%20%2F%2F%20replace%20Self%20with%20implementor%20type%20%28i.e.%20Dog%29%0A%20%20%20%20fn%20new%28name%3A%20String%29%20%2D%3E%20Dog%20%7B%0A%20%20%20%20%20%20%20%20Dog%20%7B%20name%3A%20name%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20fn%20name%3C%27a%3E%28%26%27a%20self%29%20%2D%3E%20%26%27a%20str%20%7B%0A%20%20%20%20%20%20%20%20self.name.as%5Fslice%28%29%0A%20%20%20%20%7D%0A%0A%20%20%20%20fn%20noise%28%26self%29%20%2D%3E%20%26%27static%20str%20%7B%0A%20%20%20%20%20%20%20%20%22woof%22%0A%20%20%20%20%7D%0A%7D%0A%0A%2F%2F%20exclusive%20methods%20for%20Dogs%0Aimpl%20Dog%20%7B%0A%20%20%20%20fn%20wag%5Ftail%28%26self%29%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20struct%20methods%20can%20access%20trait%20methods%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%20wags%20tail%22%2C%20self.name%28%29%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Aimpl%20Animal%20for%20Sheep%20%7B%0A%20%20%20%20fn%20new%28name%3A%20String%29%20%2D%3E%20Sheep%20%7B%0A%20%20%20%20%20%20%20%20Sheep%20%7B%20name%3A%20name%2C%20naked%3A%20false%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20fn%20name%3C%27a%3E%28%26%27a%20self%29%20%2D%3E%20%26%27a%20str%20%7B%0A%20%20%20%20%20%20%20%20self.name.as%5Fslice%28%29%0A%20%20%20%20%7D%0A%0A%20%20%20%20fn%20noise%28%26self%29%20%2D%3E%20%26%27static%20str%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20implemented%20traits%20methods%20can%20access%20struct%20methods%0A%20%20%20%20%20%20%20%20if%20self.is%5Fnaked%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22baaah!%22%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22baaaaaaaaaaaah!%22%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%0A%0A%2F%2F%20exclusive%20methods%20for%20Sheeps%0Aimpl%20Sheep%20%7B%0A%20%20%20%20fn%20is%5Fnaked%28%26self%29%20%2D%3E%20bool%20%7B%0A%20%20%20%20%20%20%20%20self.naked%0A%20%20%20%20%7D%0A%0A%20%20%20%20fn%20shear%28%26mut%20self%29%20%7B%0A%20%20%20%20%20%20%20%20if%20self.is%5Fnaked%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20println!%28%22%7B%7D%20is%20already%20naked!%22%2C%20self.name%28%29%29%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20println!%28%22%7B%7D%20gets%20a%20haircut%22%2C%20self.name%28%29%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20self.talk%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20self.naked%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20let%20mut%20dolly%3A%20Sheep%20%3D%20Animal%3A%3Anew%28String%3A%3Afrom%5Fstr%28%22Dolly%22%29%29%3B%0A%20%20%20%20let%20spike%3A%20Dog%20%3D%20Animal%3A%3Anew%28String%3A%3Afrom%5Fstr%28%22Spike%22%29%29%3B%0A%0A%20%20%20%20spike.wag%5Ftail%28%29%3B%0A%20%20%20%20dolly.shear%28%29%3B%0A%0A%20%20%20%20%2F%2F%20dolly%20and%20spike%20can%20be%20borrowed%20as%20%26Animal%0A%20%20%20%20let%20animals%3A%20%5B%26Animal%2C%20..2%5D%20%3D%20%5B%26spike%20as%20%26Animal%2C%20%26dolly%20as%20%26Animal%5D%3B%0A%0A%20%20%20%20%2F%2F%20Ok%3A%20Animal%20methods%20can%20be%20called%20on%20the%20array%20members%0A%20%20%20%20animals%5B0%5D.talk%28%29%3B%0A%20%20%20%20animals%5B1%5D.talk%28%29%3B%0A%0A%20%20%20%20%2F%2F%20Error%3A%20Dog%20and%20Sheep%20methods%20can%27t%20be%20accessed%20via%20the%20Animal%20trait%0A%20%20%20%20%2F%2Fanimals%5B0%5D.wag%5Ftail%28%29%3B%0A%20%20%20%20%2F%2Fanimals%5B1%5D.shear%28%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>trait.rs</code> in the playpen!</a>)</p>
@@ -1002,17 +1002,17 @@ a more complex behavior is required.</p>
 <span class="hljs-keyword">struct</span> Inches(<span class="hljs-keyword">int</span>);
 
 <span class="hljs-keyword">impl</span> Inches {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">to_centimeters</span>(</span>&amp;<span class="hljs-keyword">self</span>) -&gt; Centimeters {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">to_centimeters</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; Centimeters {
         <span class="hljs-keyword">let</span> &amp;Inches(inches) = <span class="hljs-keyword">self</span>;
 
-        Centimeters(inches as <span class="hljs-keyword">f64</span> * <span class="hljs-number">2.54</span>)
+        Centimeters(inches <span class="hljs-keyword">as</span> <span class="hljs-keyword">f64</span> * <span class="hljs-number">2.54</span>)
     }
 }
 
 <span class="hljs-comment">// a vanilla tuple struct</span>
 <span class="hljs-keyword">struct</span> Seconds(<span class="hljs-keyword">int</span>);
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> one_second = Seconds(<span class="hljs-number">1</span>);
     <span class="hljs-keyword">let</span> another_second = Seconds(<span class="hljs-number">1</span>);
 

@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="39" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="39" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_13">
+                    <section class="normal" id="section-gitbook_12">
                     
                         <h1 id="crates">Crates</h1>
 <p>A crate is a compilation unit in Rust. Whenever <code>rustc some_file.rs</code> is called,
@@ -884,15 +884,15 @@ will produce a binary from a crate. This behavior can be overridden passing the
 <code>--crate-type</code> flag to <code>rustc</code>.</p>
 <p>Let&#39;s create a library, and then see how to link it to another crate.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// erty.rs</span>
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span></span>() {
     println!(<span class="hljs-string">"called erty's public_function()"</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
     println!(<span class="hljs-string">"called erty's private_function()"</span>);
 }
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span></span>() {
     print!(<span class="hljs-string">"called erty's indirect_access(), that\n&gt; "</span>);
 
     private_function();
@@ -910,9 +910,9 @@ under a module named the same as the library. The visibility rules that apply
 to modules also apply to libraries.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// executable.rs</span>
 <span class="hljs-comment">// link to liberty, import items under the "erty" module</span>
-<span class="hljs-keyword">extern</span> crate erty;
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> erty;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     erty::public_function();
 
     <span class="hljs-comment">// Error: private function is private</span>

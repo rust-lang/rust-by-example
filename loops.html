@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="8" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="8" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -878,7 +878,7 @@
 <p>The <code>break</code> keyword can be used to exit a loop at anytime, whereas the
 <code>continue</code> can be used to skip the rest of the iteration and start a new one.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// loop.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> count = <span class="hljs-number">0</span>;
 
     println!(<span class="hljs-string">"Let's count until infinity!"</span>);
@@ -889,7 +889,7 @@
 
         <span class="hljs-keyword">if</span> count == <span class="hljs-number">3</span> {
             <span class="hljs-comment">// skip this iteration</span>
-            continue
+            <span class="hljs-keyword">continue</span>
         }
 
         println!(<span class="hljs-string">"{}"</span>, count);
@@ -913,25 +913,25 @@ OK, that&#39;s enough
 </code></pre><p>It&#39;s possible to <code>break</code> or <code>continue</code> outer loops when dealing with nested
 loops. In these cases, the loops must be annotated with some <code>&#39;label</code> and the
 label must be passed to the <code>break</code>/<code>continue</code> statement.</p>
-<pre><code class="lang-rust">// nested.rs
-fn main() {
-    &#39;outer: loop {
-        println!(&quot;Entered the outer loop&quot;);
+<pre><code class="lang-rust"><span class="hljs-comment">// nested.rs</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    'outer: <span class="hljs-keyword">loop</span> {
+        println!(<span class="hljs-string">"Entered the outer loop"</span>);
 
-        &#39;inner: loop {
-            println!(&quot;Entered the inner loop&quot;);
+        'inner: <span class="hljs-keyword">loop</span> {
+            println!(<span class="hljs-string">"Entered the inner loop"</span>);
 
-            // this would break the inner loop
-            //break;
+            <span class="hljs-comment">// this would break the inner loop</span>
+            <span class="hljs-comment">//break;</span>
 
-            // this breaks the outer loop
-            break &#39;outer;
+            <span class="hljs-comment">// this breaks the outer loop</span>
+            <span class="hljs-keyword">break</span> 'outer;
         }
 
-        println!(&quot;This point will never be reached&quot;);
+        println!(<span class="hljs-string">"This point will never be reached"</span>);
     }
 
-    println!(&quot;Exited the outer loop&quot;);
+    println!(<span class="hljs-string">"Exited the outer loop"</span>);
 }
 </code></pre>
 <p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%27outer%3A%20loop%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22Entered%20the%20outer%20loop%22%29%3B%0A%0A%20%20%20%20%20%20%20%20%27inner%3A%20loop%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20println!%28%22Entered%20the%20inner%20loop%22%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20this%20would%20break%20the%20inner%20loop%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2Fbreak%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20this%20breaks%20the%20outer%20loop%0A%20%20%20%20%20%20%20%20%20%20%20%20break%20%27outer%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20println!%28%22This%20point%20will%20never%20be%20reached%22%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20println!%28%22Exited%20the%20outer%20loop%22%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>nested.rs</code> in the playpen!</a>)</p>
@@ -942,7 +942,7 @@ Exited the outer loop
 </code></pre><p>The <code>while</code> keyword can be used for looping until a condition is met.</p>
 <p>Let&#39;s write the infamous fizzbuzz using a <code>while</code> loop.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// while.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// a counter variable</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> n = <span class="hljs-number">1</span>;
 

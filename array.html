@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="24" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="24" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -885,12 +885,12 @@ section of an array, and have <code>&amp;[T]</code> as type signature.</p>
 <span class="hljs-keyword">use</span> std::mem::size_of_val;
 
 <span class="hljs-comment">// This function borrows a slice</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">analyze_slice</span>(</span>slice: &amp;[<span class="hljs-keyword">int</span>]) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">analyze_slice</span></span>(slice: &amp;[<span class="hljs-keyword">int</span>]) {
     println!(<span class="hljs-string">"first element of the slice: {}"</span>, slice[<span class="hljs-number">0</span>]);
     println!(<span class="hljs-string">"the slice has {} elements"</span>, slice.len());
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// fixed-size array (type signature is superfluous)</span>
     <span class="hljs-keyword">let</span> xs: [<span class="hljs-keyword">int</span>, ..<span class="hljs-number">5</span>] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
 

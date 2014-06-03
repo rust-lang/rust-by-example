@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="28" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="28" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -889,7 +889,7 @@ implementations.</p>
     T: Add&lt;T, T&gt;
 &gt; Add&lt;Vec2&lt;T&gt;, Vec2&lt;T&gt;&gt;
 <span class="hljs-keyword">for</span> Vec2&lt;T&gt; {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span>(</span>&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Vec2&lt;T&gt;) -&gt; Vec2&lt;T&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span></span>(&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Vec2&lt;T&gt;) -&gt; Vec2&lt;T&gt; {
         Vec2 {
             <span class="hljs-comment">// x and y are of type T, and implement the add() method</span>
             x: <span class="hljs-keyword">self</span>.x.add(&amp;rhs.x),
@@ -904,7 +904,7 @@ implementations.</p>
     T: Sub&lt;T, T&gt;
 &gt; Sub&lt;Vec2&lt;T&gt;, Vec2&lt;T&gt;&gt;
 <span class="hljs-keyword">for</span> Vec2&lt;T&gt; {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">sub</span>(</span>&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Vec2&lt;T&gt;) -&gt; Vec2&lt;T&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">sub</span></span>(&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Vec2&lt;T&gt;) -&gt; Vec2&lt;T&gt; {
         Vec2 {
             x: <span class="hljs-keyword">self</span>.x - rhs.x,
             y: <span class="hljs-keyword">self</span>.y - rhs.y,
@@ -916,12 +916,12 @@ implementations.</p>
     <span class="hljs-comment">// bound: T implements *both* the Add trait and the Mul trait</span>
     T: Add&lt;T, T&gt; + Mul&lt;T, T&gt;
 &gt; Vec2&lt;T&gt; {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">dot</span>(</span>&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Vec2&lt;T&gt;) -&gt; T {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">dot</span></span>(&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Vec2&lt;T&gt;) -&gt; T {
         (<span class="hljs-keyword">self</span>.x * rhs.x) + (<span class="hljs-keyword">self</span>.y * rhs.y)
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> v1 = Vec2 { x: <span class="hljs-number">1.0</span>, y: <span class="hljs-number">2.0</span> };
     <span class="hljs-keyword">let</span> v2 = Vec2 { x: <span class="hljs-number">2.0</span>, y: <span class="hljs-number">1.0</span> };
 

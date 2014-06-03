@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="47.7" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="47.7" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_54">
+                    <section class="normal" id="section-gitbook_53">
                     
                         <h1 id="unsafe-operations">Unsafe operations</h1>
 <p>As an introduction to this section, to borrow from <a href="http://static.rust-lang.org/doc/0.10/guide-unsafe.html" target="_blank">the official docs</a>, &quot;one should try to
@@ -893,11 +893,11 @@ always safe because they are guaranteed to point to valid data due to the
 borrow checker.  Dereferencing a raw pointer can only be done through an unsafe
 block.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// pointer.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> raw_p: *<span class="hljs-keyword">u32</span> = &amp;<span class="hljs-number">10</span>;
 
     <span class="hljs-keyword">unsafe</span> {
-        <span class="hljs-keyword">assert</span>!(*raw_p == <span class="hljs-number">10</span>);
+        assert!(*raw_p == <span class="hljs-number">10</span>);
     }
 }
 </code></pre>
@@ -905,11 +905,11 @@ block.</p>
 <p>Allows simple conversion from one type to another, however both types must have
 the same size and alignment</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// transmute.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> u: &amp;[<span class="hljs-keyword">u8</span>] = [<span class="hljs-number">49</span>, <span class="hljs-number">50</span>, <span class="hljs-number">51</span>];
 
     <span class="hljs-keyword">unsafe</span> {
-        <span class="hljs-keyword">assert</span>!(u == std::mem::transmute(<span class="hljs-string">"123"</span>));
+        assert!(u == std::mem::transmute(<span class="hljs-string">"123"</span>));
     }
 }
 </code></pre>
@@ -927,7 +927,7 @@ variables.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// asm.rs</span>
 #![feature(asm)]
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span>(</span>a: <span class="hljs-keyword">i32</span>, b: <span class="hljs-keyword">i32</span>) -&gt; <span class="hljs-keyword">i32</span> {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span></span>(a: <span class="hljs-keyword">i32</span>, b: <span class="hljs-keyword">i32</span>) -&gt; <span class="hljs-keyword">i32</span> {
     <span class="hljs-keyword">let</span> sum: <span class="hljs-keyword">i32</span>;
     <span class="hljs-keyword">unsafe</span> {
         asm!(<span class="hljs-string">"add $2, $1; mov $1, $0"</span> : <span class="hljs-string">"=r"</span>(sum) : <span class="hljs-string">"r"</span>(a), <span class="hljs-string">"r"</span>(b));

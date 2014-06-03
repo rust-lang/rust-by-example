@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="41" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="41" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -899,7 +899,7 @@ use in the Rust standard library, especially when dealing with I/O.</p>
 <span class="hljs-comment">// type is used to alias the LHS to the RHS, usually to reduce typing/verbosity</span>
 <span class="hljs-keyword">pub</span> <span class="hljs-keyword">type</span> <span class="hljs-title">MathResult</span> = Result&lt;<span class="hljs-keyword">f64</span>, MathError&gt;;
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">div</span>(</span>x: <span class="hljs-keyword">f64</span>, y: <span class="hljs-keyword">f64</span>) -&gt; MathResult {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">div</span></span>(x: <span class="hljs-keyword">f64</span>, y: <span class="hljs-keyword">f64</span>) -&gt; MathResult {
     <span class="hljs-keyword">if</span> y == <span class="hljs-number">0.0</span> {
         <span class="hljs-comment">// this operation would "fail", let's return the reason wrapped in Err</span>
         Err(DivisionByZero)
@@ -909,7 +909,7 @@ use in the Rust standard library, especially when dealing with I/O.</p>
     }
 }
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">sqrt</span>(</span>x: <span class="hljs-keyword">f64</span>) -&gt; MathResult {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">sqrt</span></span>(x: <span class="hljs-keyword">f64</span>) -&gt; MathResult {
     <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0.0</span> {
         Err(NegativeSquareRoot)
     } <span class="hljs-keyword">else</span> {
@@ -917,7 +917,7 @@ use in the Rust standard library, especially when dealing with I/O.</p>
     }
 }
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ln</span>(</span>x: <span class="hljs-keyword">f64</span>) -&gt; MathResult {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">ln</span></span>(x: <span class="hljs-keyword">f64</span>) -&gt; MathResult {
     <span class="hljs-keyword">if</span> x &lt; <span class="hljs-number">0.0</span> {
         Err(NegativeLogarithm)
     } <span class="hljs-keyword">else</span> {
@@ -929,22 +929,22 @@ use in the Rust standard library, especially when dealing with I/O.</p>
 <span class="hljs-keyword">mod</span> checked;
 
 <span class="hljs-comment">// op(x, y) = sqrt(ln(x / y))</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">op</span>(</span>x: <span class="hljs-keyword">f64</span>, y: <span class="hljs-keyword">f64</span>) -&gt; <span class="hljs-keyword">f64</span> {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">op</span></span>(x: <span class="hljs-keyword">f64</span>, y: <span class="hljs-keyword">f64</span>) -&gt; <span class="hljs-keyword">f64</span> {
     <span class="hljs-comment">// Results can be matched, just like Options</span>
     <span class="hljs-comment">// This is a three level match pyramid!</span>
     <span class="hljs-keyword">match</span> checked::div(x, y) {
-        Err(why) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"{}"</span>, why),
+        Err(why) =&gt; fail!(<span class="hljs-string">"{}"</span>, why),
         Ok(ratio) =&gt; <span class="hljs-keyword">match</span> checked::ln(ratio) {
-            Err(why) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"{}"</span>, why),
+            Err(why) =&gt; fail!(<span class="hljs-string">"{}"</span>, why),
             Ok(ln) =&gt; <span class="hljs-keyword">match</span> checked::sqrt(ln) {
-                Err(why) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"{}"</span>, why),
+                Err(why) =&gt; fail!(<span class="hljs-string">"{}"</span>, why),
                 Ok(sqrt) =&gt; sqrt,
             },
         },
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// will this fail?</span>
     println!(<span class="hljs-string">"{}"</span>, op(<span class="hljs-number">1.0</span>, <span class="hljs-number">10.0</span>));
 }
@@ -961,7 +961,7 @@ the <code>Ok(ok)</code> branch expands to the <code>ok</code> expression.</p>
 <span class="hljs-keyword">mod</span> checked;
 
 <span class="hljs-comment">// checked_op(x, y) = sqrt(ln(x / y))?</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">checked_op</span>(</span>x: <span class="hljs-keyword">f64</span>, y: <span class="hljs-keyword">f64</span>) -&gt; MathResult {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">checked_op</span></span>(x: <span class="hljs-keyword">f64</span>, y: <span class="hljs-keyword">f64</span>) -&gt; MathResult {
     <span class="hljs-comment">// if `checked_div` "fails", then DivisionByZero will be `return`ed</span>
     <span class="hljs-keyword">let</span> ratio = try!(checked::div(x, y));
 
@@ -971,9 +971,9 @@ the <code>Ok(ok)</code> branch expands to the <code>ok</code> expression.</p>
     checked::sqrt(ln)
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">match</span> checked_op(<span class="hljs-number">1.0</span>, <span class="hljs-number">10.0</span>) {
-        Err(why) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-keyword">match</span> why {
+        Err(why) =&gt; fail!(<span class="hljs-keyword">match</span> why {
             NegativeLogarithm =&gt; <span class="hljs-string">"logarithm of negative number"</span>,
             DivisionByZero =&gt; <span class="hljs-string">"division by zero"</span>,
             NegativeSquareRoot =&gt; <span class="hljs-string">"square root of negative number"</span>,

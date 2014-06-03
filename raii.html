@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="16" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="16" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_39">
+                    <section class="normal" id="section-gitbook_38">
                     
                         <h1 id="raii">RAII</h1>
 <p>Variables in Rust do more that just hold data in the stack, they can also <em>own</em>
@@ -881,27 +881,27 @@ and the resources <em>owned</em> by it are freed. This behavior shields against
 <em>resource leak</em> bugs.</p>
 <p>Don&#39;t take my word for it, let&#39;s check using <code>valgrind</code></p>
 <pre><code class="lang-rust"><span class="hljs-comment">// raii.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create_box</span>(</span>) {
-    <span class="hljs-keyword">let</span> function_box = box <span class="hljs-number">3</span>;
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">create_box</span></span>() {
+    <span class="hljs-keyword">let</span> function_box = <span class="hljs-keyword">box</span> <span class="hljs-number">3</span>;
 
     <span class="hljs-comment">// function_box gets destroyed here, memory gets freed</span>
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// allocate integer in the heap</span>
-    <span class="hljs-keyword">let</span> boxed_int = box <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">let</span> boxed_int = <span class="hljs-keyword">box</span> <span class="hljs-number">5</span>;
 
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
         <span class="hljs-comment">// new (smaller) block scope</span>
 
         <span class="hljs-comment">// another heap allocated integer</span>
-        <span class="hljs-keyword">let</span> short_lived_box = box <span class="hljs-number">4</span>;
+        <span class="hljs-keyword">let</span> short_lived_box = <span class="hljs-keyword">box</span> <span class="hljs-number">4</span>;
 
         <span class="hljs-comment">// short_lived_box gets destroyed here, memory gets freed</span>
     }
 
     <span class="hljs-comment">// create lots of boxes</span>
-    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> in range(<span class="hljs-number">0</span>, <span class="hljs-number">1_000</span>) {
+    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, <span class="hljs-number">1_000</span>) {
         create_box();
     }
 

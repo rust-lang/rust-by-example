@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -878,14 +878,14 @@
 closure as argument to produce a more useful function. HOFs and lazy iterators
 give Rust its functional flavor.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// hof.rs</span>
-<span class="hljs-keyword">extern</span> crate num;
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> num;
 
 <span class="hljs-comment">// the AdditiveIterator trait adds the sum() method to iterators</span>
 <span class="hljs-keyword">use</span> std::iter::{AdditiveIterator,count};
 <span class="hljs-comment">// the Integer trait adds the is_odd() method to integer primitives</span>
 <span class="hljs-keyword">use</span> num::Integer;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     println!(<span class="hljs-string">"Find the sum of all the squared odd numbers under 1000"</span>);
     <span class="hljs-keyword">let</span> upper: <span class="hljs-keyword">int</span> = <span class="hljs-number">1000</span>;
 
@@ -893,7 +893,7 @@ give Rust its functional flavor.</p>
     <span class="hljs-comment">// declare accumulator variable</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> acc = <span class="hljs-number">0</span>;
     <span class="hljs-comment">// iterate 0, 1, 2, ... to infinity</span>
-    <span class="hljs-keyword">for</span> n in count(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> count(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>) {
         <span class="hljs-comment">// square the number</span>
         <span class="hljs-keyword">let</span> n_squared = n * n;
 

@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="17" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="17" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_33">
+                    <section class="normal" id="section-gitbook_34">
                     
                         <h1 id="ownership-and-moves">Ownership and moves</h1>
 <p>Because variables are in charge of freeing their resources (if any), resources
@@ -882,7 +882,7 @@ transferred, this is know as <em>moving</em> in Rust-speak.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// assignment.rs</span>
 <span class="hljs-keyword">use</span> std::owned::Box;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// stack allocated integer</span>
     <span class="hljs-keyword">let</span> x = <span class="hljs-number">5</span>;
 
@@ -893,7 +893,7 @@ transferred, this is know as <em>moving</em> in Rust-speak.</p>
     println!(<span class="hljs-string">"x is {}, and y is {}"</span>, x, y);
 
     <span class="hljs-comment">// `a` is a pointer to a heap allocated integer</span>
-    <span class="hljs-keyword">let</span> a = box <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">let</span> a = <span class="hljs-keyword">box</span> <span class="hljs-number">5</span>;
 
     <span class="hljs-comment">// copy `b` into `a`, now both point to the same heap allocated data</span>
     <span class="hljs-comment">// *but*, now b *owns* the heap allocated data</span>
@@ -927,14 +927,14 @@ avoids <em>dereferencing freed memory</em>.</p>
 <span class="hljs-keyword">use</span> std::owned::Box;
 
 <span class="hljs-comment">// this function takes ownership of the heap allocated memory</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">destroy_box</span>(</span>boxed_int: Box&lt;<span class="hljs-keyword">int</span>&gt;) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">destroy_box</span></span>(boxed_int: Box&lt;<span class="hljs-keyword">int</span>&gt;) {
     <span class="hljs-comment">// boxed_int will be destroyed in this scope, and the memory will be</span>
     <span class="hljs-comment">// freed</span>
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// heap allocated integer</span>
-    <span class="hljs-keyword">let</span> boxed_int = box <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">let</span> boxed_int = <span class="hljs-keyword">box</span> <span class="hljs-number">5</span>;
 
     <span class="hljs-comment">// boxed_int loses ownership of the heap allocated integer</span>
     destroy_box(boxed_int);
@@ -956,8 +956,8 @@ error: aborting due to previous error
 </code></pre><p>Mutability of data depends on its owner. Mutability of data can change when
 ownership is transferred.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// mut.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-keyword">let</span> immutable_box = box <span class="hljs-number">5</span>;
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> immutable_box = <span class="hljs-keyword">box</span> <span class="hljs-number">5</span>;
 
     println!(<span class="hljs-string">"immutable_box contains {}"</span>, immutable_box);
 

@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="34" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="34" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -879,10 +879,10 @@ function, the argument of this function is a owned closure named <code>proc</cod
 <pre><code class="lang-rust"><span class="hljs-comment">// tasks.rs</span>
 <span class="hljs-keyword">static</span> NTASKS: <span class="hljs-keyword">int</span> = <span class="hljs-number">10</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-keyword">for</span> i in range(<span class="hljs-number">0</span>, NTASKS) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, NTASKS) {
         <span class="hljs-comment">// spin up a task</span>
-        spawn(proc() {
+        spawn(<span class="hljs-keyword">proc</span>() {
             println!(<span class="hljs-string">"this is task number {}"</span>, i)
         });
     }
@@ -892,16 +892,16 @@ function, the argument of this function is a owned closure named <code>proc</cod
 <p>These tasks will be scheduled by the Rust runtime and the order of execution of
 these tasks will be non-deterministic.</p>
 <pre><code>$ rustc tasks.rs &amp;&amp; ./tasks
+this is task number 7
 this is task number 6
 this is task number 8
+this is task number 4
+this is task number 0
+this is task number 2
 this is task number 3
 this is task number 5
 this is task number 9
-this is task number 4
-this is task number 0
-this is task number 7
 this is task number 1
-this is task number 2
 </code></pre><p>(By default, Rust uses its <em>native</em> runtime, which maps each Rust task to a
 native thread. Rust also provides a <em>green</em> runtime that provides green threads
 and maps M Rust tasks to N native threads.)</p>

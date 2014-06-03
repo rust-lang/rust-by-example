@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="19" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="19" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_27">
+                    <section class="normal" id="section-gitbook_26">
                     
                         <h1 id="lifetimes">Lifetimes</h1>
 <p>The compiler enforces valid borrowing using its borrow checker. To accomplish
@@ -887,32 +887,28 @@ borrow checker. To simplify the analysis and explanation, lifetimes has been
 explicitly annotated in the source code. Explicit annotation is not allowed by
 the compiler in this case, so remove the lifetimes to see the &quot;real&quot; compiler
 error.</p>
-<pre><code class="lang-rust">// lifetime.rs
-// To see the "real" compiler error, change both `&amp;'b` and `&amp;'e` into `&amp;`
-use std::owned::Box;
+<pre><code class="lang-rust"><span class="hljs-comment">// lifetime.rs</span>
+<span class="hljs-comment">// To see the "real" compiler error, change both `&amp;'b` and `&amp;'e` into `&amp;`</span>
+<span class="hljs-keyword">use</span> std::owned::Box;
 
-fn main() { // 'main starts ──────────────────────────────────────────────┐
-    let stack_integer = 5; // 'a starts ────────────────────────────────┐ │
-    let boxed_integer = box 4; // 'b starts ──────────────────────────┐ │ │
-    //                                                                │ │ │
-    // This is a valid operation                                      │ │ │
-    let ref_to_box: &amp;'b Box&lt;int&gt; = &amp;boxed_integer; // 'c starts ────┐ │ │ │
-    //                                                              │ │ │ │
-    // The compiler forbids this operation, because                 │ │ │ │
-    // `ref_to_another_box` would become a dangling pointer         │ │ │ │
-    let ref_to_another_box: &amp;'e Box&lt;int&gt; = { // 'let 'd start ──┬─┐ │ │ │ │
-        let another_boxed_integer = box 3; // 'e starts ──────┐ │ │ │ │ │ │
-        //                                                    │ │ │ │ │ │ │
-        &amp;another_boxed_integer //                             │ │ │ │ │ │ │
-    }; // 'e 'let end ────────────────────────────────────────┴─┘ │ │ │ │ │
-    //                                                            │ │ │ │ │
-    let box invalid_dereference = *ref_to_another_box; //         │ │ │ │ │
-} // 'd 'c 'b 'a 'main end ───────────────────────────────────────┴─┴─┴─┴─┘
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() { <span class="hljs-comment">// 'main starts ──────────────────────────────────────────────┐</span>
+    <span class="hljs-keyword">let</span> stack_integer = <span class="hljs-number">5</span>; <span class="hljs-comment">// 'a starts ────────────────────────────────┐ │</span>
+    <span class="hljs-keyword">let</span> boxed_integer = <span class="hljs-keyword">box</span> <span class="hljs-number">4</span>; <span class="hljs-comment">// 'b starts ──────────────────────────┐ │ │</span>
+    <span class="hljs-comment">//                                                                │ │ │</span>
+    <span class="hljs-comment">// This is a valid operation                                      │ │ │</span>
+    <span class="hljs-keyword">let</span> ref_to_box: &amp;'b Box&lt;<span class="hljs-keyword">int</span>&gt; = &amp;boxed_integer; <span class="hljs-comment">// 'c starts ────┐ │ │ │</span>
+    <span class="hljs-comment">//                                                              │ │ │ │</span>
+    <span class="hljs-comment">// The compiler forbids this operation, because                 │ │ │ │</span>
+    <span class="hljs-comment">// `ref_to_another_box` would become a dangling pointer         │ │ │ │</span>
+    <span class="hljs-keyword">let</span> ref_to_another_box: &amp;'e Box&lt;<span class="hljs-keyword">int</span>&gt; = { <span class="hljs-comment">// 'let 'd start ──┬─┐ │ │ │ │</span>
+        <span class="hljs-keyword">let</span> another_boxed_integer = <span class="hljs-keyword">box</span> <span class="hljs-number">3</span>; <span class="hljs-comment">// 'e starts ──────┐ │ │ │ │ │ │</span>
+        <span class="hljs-comment">//                                                    │ │ │ │ │ │ │</span>
+        &amp;another_boxed_integer <span class="hljs-comment">//                             │ │ │ │ │ │ │</span>
+    }; <span class="hljs-comment">// 'e 'let end ────────────────────────────────────────┴─┘ │ │ │ │ │</span>
+    <span class="hljs-comment">//                                                            │ │ │ │ │</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">box</span> invalid_dereference = *ref_to_another_box; <span class="hljs-comment">//         │ │ │ │ │</span>
+} <span class="hljs-comment">// 'd 'c 'b 'a 'main end ───────────────────────────────────────┴─┴─┴─┴─┘</span>
 </code></pre>
-<p><strong>Note</strong> The vertical bars don&#39;t look straight because the source code doesn&#39;t
-get highlighted. This problem has already been
-<a href="https://github.com/isagalaev/highlight.js/pull/465" target="_blank">fixed upstream</a>, and will
-be amended soon.</p>
 <p>The &quot;real&quot; compiler error is: &quot;<code>another_boxed_integer</code> does not live long
 enough&quot;. Let&#39;s analyze why this happens:</p>
 <ul>
@@ -956,12 +952,12 @@ write would look like this:</p>
     year: <span class="hljs-keyword">uint</span>,
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">get_title</span>&lt;</span><span class="hljs-string">'a, '</span>b&gt;(book: &amp;<span class="hljs-string">'a Book) -&gt; &amp;'</span>b <span class="hljs-keyword">str</span> {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">get_title</span></span>&lt;'a, 'b&gt;(book: &amp;'a Book) -&gt; &amp;'b <span class="hljs-keyword">str</span> {
     <span class="hljs-comment">// as_slice() will return a reference to the string (&amp;str)</span>
     book.title.as_slice()
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
 
 }
 </code></pre>
@@ -980,29 +976,29 @@ error: aborting due to previous error
 information. The answer here is that <code>&#39;a = &#39;b</code>, the reason is that the title
 field will be destroyed when the book gets destroyed (same way with the
 creation time), therefore the title field has the same lifetime as the book.</p>
-<pre><code class="lang-rust">// reference-good.rs
-struct Book {
+<pre><code class="lang-rust"><span class="hljs-comment">// reference-good.rs</span>
+<span class="hljs-keyword">struct</span> Book {
     title: String,
     author: String,
-    year: uint,
+    year: <span class="hljs-keyword">uint</span>,
 }
 
-fn get_title&lt;'a&gt;(book: &amp;'a Book) -&gt; &amp;'a str {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">get_title</span></span>&lt;'a&gt;(book: &amp;'a Book) -&gt; &amp;'a <span class="hljs-keyword">str</span> {
     book.title.as_slice()
 }
 
-fn main() {
-    let geb = Book {
-        // construct a `String` (heap allocated string) from a reference to a
-        // string (&amp;'static str) by doing a copy of the data
-        author: String::from_str("Douglas Hofstadter"),
-        title: String::from_str("Godel, Escher, Bach"),
-        year: 1979,
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> geb = Book {
+        <span class="hljs-comment">// construct a `String` (heap allocated string) from a reference to a</span>
+        <span class="hljs-comment">// string (&amp;'static str) by doing a copy of the data</span>
+        author: String::from_str(<span class="hljs-string">"Douglas Hofstadter"</span>),
+        title: String::from_str(<span class="hljs-string">"Godel, Escher, Bach"</span>),
+        year: <span class="hljs-number">1979</span>,
     };
 
-    let title: &amp;str = get_title(&amp;geb);
+    <span class="hljs-keyword">let</span> title: &amp;<span class="hljs-keyword">str</span> = get_title(&amp;geb);
 
-    println!("I just read {}", title);
+    println!(<span class="hljs-string">"I just read {}"</span>, title);
 }
 </code></pre>
 <p>(<a href="http://playtest.rust-lang.org/?code=struct%20Book%20%7B%0A%20%20%20%20title%3A%20String%2C%0A%20%20%20%20author%3A%20String%2C%0A%20%20%20%20year%3A%20uint%2C%0A%7D%0A%0Afn%20get%5Ftitle%3C%27a%3E%28book%3A%20%26%27a%20Book%29%20%2D%3E%20%26%27a%20str%20%7B%0A%20%20%20%20book.title.as%5Fslice%28%29%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20let%20geb%20%3D%20Book%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20construct%20a%20%60String%60%20%28heap%20allocated%20string%29%20from%20a%20reference%20to%20a%0A%20%20%20%20%20%20%20%20%2F%2F%20string%20%28%26%27static%20str%29%20by%20doing%20a%20copy%20of%20the%20data%0A%20%20%20%20%20%20%20%20author%3A%20String%3A%3Afrom%5Fstr%28%22Douglas%20Hofstadter%22%29%2C%0A%20%20%20%20%20%20%20%20title%3A%20String%3A%3Afrom%5Fstr%28%22Godel%2C%20Escher%2C%20Bach%22%29%2C%0A%20%20%20%20%20%20%20%20year%3A%201979%2C%0A%20%20%20%20%7D%3B%0A%0A%20%20%20%20let%20title%3A%20%26str%20%3D%20get%5Ftitle%28%26geb%29%3B%0A%0A%20%20%20%20println!%28%22I%20just%20read%20%7B%7D%22%2C%20title%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>reference-good.rs</code> in the playpen!</a>)</p>

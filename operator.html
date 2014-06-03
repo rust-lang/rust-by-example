@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="27" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="27" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_34">
+                    <section class="normal" id="section-gitbook_33">
                     
                         <h1 id="operator-overloading">Operator Overloading</h1>
 <p>In Rust, many of the operators can be overloaded via traits. This is possible
@@ -893,7 +893,7 @@ any implementor of the <code>Add</code> trait will be able to use the <code>+</c
 <span class="hljs-comment">// U is the type of the sum</span>
 <span class="hljs-comment">// This block implements the operation: Foo + Bar = FooBar</span>
 <span class="hljs-keyword">impl</span> Add&lt;Bar, FooBar&gt; <span class="hljs-keyword">for</span> Foo {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span>(</span>&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Bar) -&gt; FooBar {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span></span>(&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Bar) -&gt; FooBar {
         println!(<span class="hljs-string">"&gt; Foo.add(&amp;Bar) was called"</span>);
 
         FooBar
@@ -903,14 +903,14 @@ any implementor of the <code>Add</code> trait will be able to use the <code>+</c
 <span class="hljs-comment">// Addition can be implemented in a non-commutative way</span>
 <span class="hljs-comment">// This block implements the operation: Bar + Foo = BarFoo</span>
 <span class="hljs-keyword">impl</span> Add&lt;Foo, BarFoo&gt; <span class="hljs-keyword">for</span> Bar {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span>(</span>&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Foo) -&gt; BarFoo {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span></span>(&amp;<span class="hljs-keyword">self</span>, rhs: &amp;Foo) -&gt; BarFoo {
         println!(<span class="hljs-string">"&gt; Bar.add(&amp;Foo) was called"</span>);
 
         BarFoo
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     println!(<span class="hljs-string">"Foo + Bar = {}"</span>, Foo + Bar);
     println!(<span class="hljs-string">"Bar + Foo = {}"</span>, Bar + Foo);
 }

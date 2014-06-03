@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="40" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="40" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_4">
+                    <section class="normal" id="section-gitbook_5">
                     
                         <h1 id="attributes">Attributes</h1>
 <p>An attribute is metadata applied to some module, crate or item. This metadata
@@ -898,15 +898,15 @@ like <code>#[attribute(key = &quot;value&quot;)]</code>, or string arguments lik
 <span class="hljs-comment">// the library is named "erty", and its version is 0.1</span>
 #![crate_id = <span class="hljs-string">"erty#0.1"</span>]
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span></span>() {
     println!(<span class="hljs-string">"called erty's public_function()"</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
     println!(<span class="hljs-string">"called erty's private_function()"</span>);
 }
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span></span>() {
     print!(<span class="hljs-string">"called erty's indirect_access(), that\n&gt; "</span>);
 
     private_function();
@@ -920,17 +920,17 @@ liberty-a1e7dc98-0.1.rlib
 <pre><code class="lang-rust"><span class="hljs-comment">// conditional.rs</span>
 <span class="hljs-comment">// this function only gets compiled if the target OS is linux</span>
 <span class="hljs-preprocessor">#[cfg(target_os = "linux")]</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">are_you_on_linux</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">are_you_on_linux</span></span>() {
     println!(<span class="hljs-string">"You are running linux!"</span>)
 }
 
 <span class="hljs-comment">// this function only gets compiled if the target OS is *not* linux</span>
 <span class="hljs-preprocessor">#[cfg(not(target_os = "linux"))]</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">are_you_on_linux</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">are_you_on_linux</span></span>() {
     println!(<span class="hljs-string">"You are *not* running linux!"</span>)
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     are_you_on_linux();
 }
 </code></pre>
@@ -941,11 +941,11 @@ You are running linux!
 custom conditionals must be passed to <code>rustc</code> using the <code>--cfg</code> flag.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// custom.rs</span>
 <span class="hljs-preprocessor">#[cfg(some_condition)]</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">conditional_function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">conditional_function</span></span>() {
     println!(<span class="hljs-string">"condition met!"</span>)
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     conditional_function();
 }
 </code></pre>

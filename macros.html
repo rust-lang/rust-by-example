@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="47.3" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="47.3" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -892,7 +892,7 @@ macro_rules! say_hello {
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// this call will expand into `println!("Hello");`</span>
     say_hello!()
 }
@@ -909,7 +909,7 @@ macro_rules! create_function {
     <span class="hljs-comment">// the `ident` designator is used for variable/function names</span>
     ($func_name:ident) =&gt; {
         <span class="hljs-comment">// this macro creates a function with name `$func_name`</span>
-        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func_name</span>(</span>) {
+        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func_name</span></span>() {
             <span class="hljs-comment">// the stringify! macro converts an `ident` into a string</span>
             println!(<span class="hljs-string">"You called {}()"</span>,
                      stringify!($func_name))
@@ -930,7 +930,7 @@ macro_rules! print_result {
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     foo();
     bar();
 
@@ -972,7 +972,7 @@ macro_rules! test {
     };
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     test!(<span class="hljs-number">1</span> + <span class="hljs-number">1</span> == <span class="hljs-number">2</span> and <span class="hljs-number">2</span> * <span class="hljs-number">2</span> == <span class="hljs-number">4</span>);
     test!(<span class="hljs-keyword">true</span> or <span class="hljs-keyword">false</span>);
 }
@@ -999,7 +999,7 @@ macro_rules! min {
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     println!(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">1</span>));
     println!(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">1</span> + <span class="hljs-number">2</span> , <span class="hljs-number">2</span>));
     println!(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">5</span>, <span class="hljs-number">2</span> * <span class="hljs-number">3</span>, <span class="hljs-number">4</span>));
@@ -1017,7 +1017,7 @@ and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>.</p>
 
 macro_rules! assert_len {
     ($func:ident, $op:tt) =&gt; {
-        <span class="hljs-keyword">assert</span>!(xs.len() == ys.len(),
+        assert!(xs.len() == ys.len(),
                 <span class="hljs-string">"{}: dimension mismatch: {} {} {}"</span>,
                 stringify!($func),
                 (xs.len(),),
@@ -1028,10 +1028,10 @@ macro_rules! assert_len {
 
 macro_rules! op {
     ($func:ident, $bound:ident, $op:tt, $method:ident) =&gt; {
-        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span>&lt;</span>T: $bound&lt;T, T&gt;&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
+        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span></span>&lt;T: $bound&lt;T, T&gt;&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
             assert_len!($func, $op);
 
-            <span class="hljs-keyword">for</span> (x, y) in xs.mut_iter().zip(ys.iter()) {
+            <span class="hljs-keyword">for</span> (x, y) <span class="hljs-keyword">in</span> xs.mut_iter().zip(ys.iter()) {
                 *x = x.$method(y);
             }
         }
@@ -1043,7 +1043,7 @@ op!(add_assign, Add, +=, add)
 op!(mul_assign, Mul, *=, mul)
 op!(sub_assign, Sub, -=, sub)
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> xs = Vec::from_elem(<span class="hljs-number">5</span>, <span class="hljs-number">0.0</span>);
     <span class="hljs-keyword">let</span> ys = Vec::from_elem(<span class="hljs-number">6</span>, <span class="hljs-number">1.0</span>);
 
@@ -1055,8 +1055,8 @@ op!(sub_assign, Sub, -=, sub)
     macro_rules! test {
         ($func: ident, $x:expr, $y:expr, $z:expr) =&gt; {
             <span class="hljs-preprocessor">#[test]</span>
-            <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span>(</span>) {
-                <span class="hljs-keyword">for</span> size in range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
+            <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span></span>() {
+                <span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
                     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x = Vec::from_elem(size, $x);
                     <span class="hljs-keyword">let</span> y = Vec::from_elem(size, $y);
                     <span class="hljs-keyword">let</span> z = Vec::from_elem(size, $z);

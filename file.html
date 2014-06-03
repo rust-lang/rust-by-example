@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="43" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="43" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_18">
+                    <section class="normal" id="section-gitbook_17">
                     
                         <h1 id="file-i-o">File I/O</h1>
 <p>File I/O in Rust is handled with the <code>File</code> struct. Several methods are
@@ -886,20 +886,20 @@ when the <code>File</code> value goes out of scope.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// open.rs</span>
 <span class="hljs-keyword">use</span> std::io::File;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// create a path</span>
     <span class="hljs-keyword">let</span> path = Path::new(<span class="hljs-string">"hello.txt"</span>);
 
     <span class="hljs-comment">// open the path in read-only mode, returns IoResult&lt;File&gt;</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> file = <span class="hljs-keyword">match</span> File::open(&amp;path) {
         <span class="hljs-comment">// the desc field of IoError is a string that describes the problem</span>
-        Err(why) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"couldn't open {}: {}"</span>, path.display(), why.desc),
+        Err(why) =&gt; fail!(<span class="hljs-string">"couldn't open {}: {}"</span>, path.display(), why.desc),
         Ok(file) =&gt; file,
     };
 
     <span class="hljs-comment">// read the file contents into a string, returns IoResult&lt;String&gt;</span>
     <span class="hljs-keyword">match</span> file.read_to_str() {
-        Err(why) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"couldn't read {}: {}"</span>, path.display(), why.desc),
+        Err(why) =&gt; fail!(<span class="hljs-string">"couldn't read {}: {}"</span>, path.display(), why.desc),
         Ok(string) =&gt; print!(<span class="hljs-string">"{} contains:\n{}"</span>, path.display(), string),
     }
 
@@ -914,34 +914,34 @@ Hello World!
 without the hello.txt file, or a hello.txt file without the right permissions,
 etc.)</p>
 <p>Now let&#39;s see how to write to a file.</p>
-<pre><code class="lang-rust">// create.rs
-use std::io::File;
+<pre><code class="lang-rust"><span class="hljs-comment">// create.rs</span>
+<span class="hljs-keyword">use</span> std::io::File;
 
-static LOREM_IPSUM: &amp;'static str =
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+<span class="hljs-keyword">static</span> LOREM_IPSUM: &amp;'static <span class="hljs-keyword">str</span> =
+<span class="hljs-string">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-";
+"</span>;
 
-fn main() {
-    let path = Path::new("out/lorem_ipsum.txt");
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> path = Path::new(<span class="hljs-string">"out/lorem_ipsum.txt"</span>);
 
-    // create a file and open it in write mode, if the file exists then it'll
-    // get overwritten from the start, returns IoResult&lt;File&gt;
-    let mut file = match File::create(&amp;path) {
-        Err(why) =&gt; fail!("couldn't create {}: {}", path.display(), why.desc),
+    <span class="hljs-comment">// create a file and open it in write mode, if the file exists then it'll</span>
+    <span class="hljs-comment">// get overwritten from the start, returns IoResult&lt;File&gt;</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> file = <span class="hljs-keyword">match</span> File::create(&amp;path) {
+        Err(why) =&gt; fail!(<span class="hljs-string">"couldn't create {}: {}"</span>, path.display(), why.desc),
         Ok(file) =&gt; file,
     };
 
-    // write LOREM_IPSUM to file, returns IoResult&lt;()&gt;
-    match file.write_str(LOREM_IPSUM) {
+    <span class="hljs-comment">// write LOREM_IPSUM to file, returns IoResult&lt;()&gt;</span>
+    <span class="hljs-keyword">match</span> file.write_str(LOREM_IPSUM) {
         Err(why) =&gt; {
-            fail!("couldn't write to {}: {}", path.display(), why.desc)
+            fail!(<span class="hljs-string">"couldn't write to {}: {}"</span>, path.display(), why.desc)
         },
-        Ok(_) =&gt; println!("successfully wrote to {}", path.display()),
+        Ok(<span class="hljs-number">_</span>) =&gt; println!(<span class="hljs-string">"successfully wrote to {}"</span>, path.display()),
     }
 }
 </code></pre>

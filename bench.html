@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="47.1" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="47.1" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,13 +871,13 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_5">
+                    <section class="normal" id="section-gitbook_4">
                     
                         <h1 id="benchmarking">Benchmarking</h1>
 <p>Rust provides infrastructure for benchmarking via the <code>Bencher</code> struct and
 the <code>#[bench]</code> attribute. Details in the source code below.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// bench.rs</span>
-<span class="hljs-keyword">extern</span> crate test;
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> test;
 
 <span class="hljs-keyword">use</span> std::mem::replace;
 <span class="hljs-keyword">use</span> test::Bencher;
@@ -886,7 +886,7 @@ the <code>#[bench]</code> attribute. Details in the source code below.</p>
 <span class="hljs-keyword">static</span> BENCH_SIZE: <span class="hljs-keyword">uint</span> = <span class="hljs-number">20</span>;
 
 <span class="hljs-comment">// recursive fibonacci</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fibonacci</span>(</span>n: <span class="hljs-keyword">uint</span>) -&gt; <span class="hljs-keyword">uint</span> {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fibonacci</span></span>(n: <span class="hljs-keyword">uint</span>) -&gt; <span class="hljs-keyword">uint</span> {
     <span class="hljs-keyword">if</span> n &lt; <span class="hljs-number">2</span> {
         <span class="hljs-number">1</span>
     } <span class="hljs-keyword">else</span> {
@@ -901,7 +901,7 @@ the <code>#[bench]</code> attribute. Details in the source code below.</p>
 }
 
 <span class="hljs-keyword">impl</span> Iterator&lt;<span class="hljs-keyword">uint</span>&gt; <span class="hljs-keyword">for</span> Fibonacci {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">next</span>(</span>&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>) -&gt; Option&lt;<span class="hljs-keyword">uint</span>&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">next</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>) -&gt; Option&lt;<span class="hljs-keyword">uint</span>&gt; {
         <span class="hljs-keyword">let</span> new_next = <span class="hljs-keyword">self</span>.curr + <span class="hljs-keyword">self</span>.next;
         <span class="hljs-keyword">let</span> new_curr = replace(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>.next, new_next);
 
@@ -909,13 +909,13 @@ the <code>#[bench]</code> attribute. Details in the source code below.</p>
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fibonacci_sequence</span>(</span>) -&gt; Fibonacci {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fibonacci_sequence</span></span>() -&gt; Fibonacci {
     Fibonacci { curr: <span class="hljs-number">1</span>, next: <span class="hljs-number">1</span> }
 }
 
 <span class="hljs-comment">// function to benchmark must be annotated with `#[bench]`</span>
 <span class="hljs-preprocessor">#[bench]</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">recursive_fibonacci</span>(</span>b: &amp;<span class="hljs-keyword">mut</span> Bencher) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">recursive_fibonacci</span></span>(b: &amp;<span class="hljs-keyword">mut</span> Bencher) {
     <span class="hljs-comment">// exact code to benchmark must be passed as a closure to the iter</span>
     <span class="hljs-comment">// method of Bencher</span>
     b.iter(|| {
@@ -924,7 +924,7 @@ the <code>#[bench]</code> attribute. Details in the source code below.</p>
 }
 
 <span class="hljs-preprocessor">#[bench]</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">iterative_fibonacci</span>(</span>b: &amp;<span class="hljs-keyword">mut</span> Bencher) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">iterative_fibonacci</span></span>(b: &amp;<span class="hljs-keyword">mut</span> Bencher) {
     b.iter(|| {
         fibonacci_sequence().take(BENCH_SIZE).collect::&lt;Vec&lt;<span class="hljs-keyword">uint</span>&gt;&gt;()
     })

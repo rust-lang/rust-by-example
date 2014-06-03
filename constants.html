@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="21" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="21" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_12">
+                    <section class="normal" id="section-gitbook_13">
                     
                         <h1 id="global-constants">Global constants</h1>
 <p>Constants can be declared in the global scope using the <code>static</code> keyword, the
@@ -883,32 +883,32 @@ variables have type signature <code>&amp;&#39;static str</code>, and are referen
 allocated in read-only memory. <code>&#39;static</code> is an special lifetime that outlives
 all the other lifetimes, and indicates that the referenced data is available in
 all the scopes.</p>
-<pre><code class="lang-rust">// constants.rs
-static LANGUAGE: &amp;'static str = "Rust";
-static THRESHOLD: int = 10;
+<pre><code class="lang-rust"><span class="hljs-comment">// constants.rs</span>
+<span class="hljs-keyword">static</span> LANGUAGE: &amp;'static <span class="hljs-keyword">str</span> = <span class="hljs-string">"Rust"</span>;
+<span class="hljs-keyword">static</span> THRESHOLD: <span class="hljs-keyword">int</span> = <span class="hljs-number">10</span>;
 
-fn is_big(n: int) -&gt; bool {
-    // access constant in some function
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">is_big</span></span>(n: <span class="hljs-keyword">int</span>) -&gt; <span class="hljs-keyword">bool</span> {
+    <span class="hljs-comment">// access constant in some function</span>
     n &gt; THRESHOLD
 }
 
-fn main() {
-    let n = 16;
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> n = <span class="hljs-number">16</span>;
 
-    // access constant in the main loop
-    println!("This is {}", LANGUAGE);
-    println!("The threshold is {}", THRESHOLD);
-    println!("{} is {}", n, if is_big(n) { "big" } else { "small" });
+    <span class="hljs-comment">// access constant in the main loop</span>
+    println!(<span class="hljs-string">"This is {}"</span>, LANGUAGE);
+    println!(<span class="hljs-string">"The threshold is {}"</span>, THRESHOLD);
+    println!(<span class="hljs-string">"{} is {}"</span>, n, <span class="hljs-keyword">if</span> is_big(n) { <span class="hljs-string">"big"</span> } <span class="hljs-keyword">else</span> { <span class="hljs-string">"small"</span> });
 
-    // Error: cannot modify static item
-    //THRESHOLD = 5;
+    <span class="hljs-comment">// Error: cannot modify static item</span>
+    <span class="hljs-comment">//THRESHOLD = 5;</span>
 
-    if true {
-        // string literals are references to read-only memory
-        let static_string: &amp;'static str = "In read-only memory";
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
+        <span class="hljs-comment">// string literals are references to read-only memory</span>
+        <span class="hljs-keyword">let</span> static_string: &amp;'static <span class="hljs-keyword">str</span> = <span class="hljs-string">"In read-only memory"</span>;
 
-        // when static_string goes out of scope, we can no longer refer to the
-        // underlying data, but the string remains in the read-only memory
+        <span class="hljs-comment">// when static_string goes out of scope, we can no longer refer to the</span>
+        <span class="hljs-comment">// underlying data, but the string remains in the read-only memory</span>
     }
 }
 </code></pre>

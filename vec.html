@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="32" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="32" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -881,14 +881,14 @@ indicates how much memory is reserved for the vector, the vector can grow as
 long as the length is smaller than the capacity, when this threshold needs to
 be surpassed, the vector gets reallocated with a bigger capacity.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// vec.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// iterators can be collected into vectors</span>
     <span class="hljs-keyword">let</span> collected_iterator: Vec&lt;<span class="hljs-keyword">int</span>&gt; = range(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>).collect();
     println!(<span class="hljs-string">"collected range(0, 10) into: {}"</span>,
              collected_iterator.as_slice());
 
     <span class="hljs-comment">// vec! can be used to initialize a vector</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> xs = <span class="hljs-keyword">vec</span>![<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> xs = vec![<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>];
     println!(<span class="hljs-string">"vector: {}"</span>, xs.as_slice());
 
     <span class="hljs-comment">// insert new element at the end of the vector</span>

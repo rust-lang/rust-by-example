@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -880,14 +880,14 @@ using parentheses <code>()</code>, and each tuple itself is a value with type si
 use tuples to return multiple values, as tuples can hold any number of values.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// tuples.rs</span>
 <span class="hljs-comment">// tuples can be used as function arguments and as return values</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">reverse</span>(</span>pair: (<span class="hljs-keyword">int</span>, <span class="hljs-keyword">bool</span>)) -&gt; (<span class="hljs-keyword">bool</span>, <span class="hljs-keyword">int</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">reverse</span></span>(pair: (<span class="hljs-keyword">int</span>, <span class="hljs-keyword">bool</span>)) -&gt; (<span class="hljs-keyword">bool</span>, <span class="hljs-keyword">int</span>) {
     <span class="hljs-comment">// `let` can be used to bind the members of a tuple to variables</span>
     <span class="hljs-keyword">let</span> (integer, boolean) = pair;
 
     (boolean, integer)
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// a tuple with a bunch of different types</span>
     <span class="hljs-keyword">let</span> long_tuple = (<span class="hljs-number">1u8</span>, <span class="hljs-number">2u16</span>, <span class="hljs-number">3u32</span>, <span class="hljs-number">4u64</span>,
                       -<span class="hljs-number">1i8</span>, -<span class="hljs-number">2i16</span>, -<span class="hljs-number">3i32</span>, -<span class="hljs-number">4i64</span>,

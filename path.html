@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="42" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="42" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -885,7 +885,7 @@ information from the file/directory the path points to.</p>
 instead is stored as a vector of bytes (<code>Vec&lt;u8&gt;</code>). Therefore, converting a
 <code>Path</code> to a <code>&amp;str</code> is <em>not</em> free and may fail (an <code>Option</code> is returned).</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// path.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// create a Path from an &amp;'static str</span>
     <span class="hljs-keyword">let</span> path = Path::new(<span class="hljs-string">"path.rs"</span>);
 
@@ -907,20 +907,20 @@ instead is stored as a vector of bytes (<code>Vec&lt;u8&gt;</code>). Therefore, 
 
     <span class="hljs-comment">// `stat` returns an IoResult&lt;FileStat&gt; === Result&lt;FileStat, IoError&gt;</span>
     <span class="hljs-keyword">let</span> stat = <span class="hljs-keyword">match</span> path.stat() {
-        Err(why) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"{}"</span>, why.desc),
+        Err(why) =&gt; fail!(<span class="hljs-string">"{}"</span>, why.desc),
         Ok(stat) =&gt; stat,
     };
 
     println!(<span class="hljs-string">"{} size is {} bytes"</span>, path.display(), stat.size);
 
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">dir</span> = Path::new(<span class="hljs-string">"a"</span>);
+    <span class="hljs-keyword">let</span> dir = Path::new(<span class="hljs-string">"a"</span>);
 
     <span class="hljs-comment">// `join` merges a path with a byte container using the OS specific</span>
     <span class="hljs-comment">// separator</span>
-    <span class="hljs-keyword">let</span> new_path = <span class="hljs-keyword">dir</span>.join(path);
+    <span class="hljs-keyword">let</span> new_path = dir.join(path);
 
     <span class="hljs-keyword">match</span> new_path.as_str() {
-        None =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"new path is not a valid UTF-8 sequence"</span>),
+        None =&gt; fail!(<span class="hljs-string">"new path is not a valid UTF-8 sequence"</span>),
         Some(string_slice) =&gt; println!(<span class="hljs-string">"new path is {}"</span>, string_slice),
     }
 }

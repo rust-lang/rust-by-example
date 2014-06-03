@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="45" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="45" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -882,17 +882,17 @@ module contains all the functions you would expect to deal with the filesystem.<
 <span class="hljs-keyword">use</span> std::io::{File,IoResult,UserRWX};
 
 <span class="hljs-comment">// a simple implementation of `$ cat path`</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">cat</span>(</span>path: &amp;Path) -&gt; IoResult&lt;String&gt; {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">cat</span></span>(path: &amp;Path) -&gt; IoResult&lt;String&gt; {
     File::open(path).and_then(|<span class="hljs-keyword">mut</span> f| f.read_to_str())
 }
 
 <span class="hljs-comment">// a simple implementation of `$ echo s &gt; path`</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">echo</span>(</span>s: &amp;<span class="hljs-keyword">str</span>, path: &amp;Path) -&gt; IoResult&lt;()&gt; {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">echo</span></span>(s: &amp;<span class="hljs-keyword">str</span>, path: &amp;Path) -&gt; IoResult&lt;()&gt; {
     File::create(path).and_then(|<span class="hljs-keyword">mut</span> f| f.write_str(s))
 }
 
 <span class="hljs-comment">// a simple implementation of `$ touch path`</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">touch</span>(</span>path: &amp;Path) -&gt; IoResult&lt;()&gt; {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">touch</span></span>(path: &amp;Path) -&gt; IoResult&lt;()&gt; {
     <span class="hljs-keyword">if</span> !path.exists() {
         File::create(path).and_then(|<span class="hljs-number">_</span>| Ok(()))
     } <span class="hljs-keyword">else</span> {
@@ -900,7 +900,7 @@ module contains all the functions you would expect to deal with the filesystem.<
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     println!(<span class="hljs-string">"`mkdir a`"</span>);
     <span class="hljs-comment">// create a directory, returns IoResult&lt;()&gt;</span>
     <span class="hljs-keyword">match</span> fs::mkdir(&amp;Path::new(<span class="hljs-string">"a"</span>), UserRWX) {
@@ -942,7 +942,7 @@ module contains all the functions you would expect to deal with the filesystem.<
     <span class="hljs-comment">// read the contents of a directory, returns Vec&lt;Path&gt;</span>
     <span class="hljs-keyword">match</span> fs::readdir(&amp;Path::new(<span class="hljs-string">"a"</span>)) {
         Err(why) =&gt; println!(<span class="hljs-string">"! {}"</span>, why.kind),
-        Ok(paths) =&gt; <span class="hljs-keyword">for</span> path in paths.iter() {
+        Ok(paths) =&gt; <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> paths.iter() {
             println!(<span class="hljs-string">"&gt; {}"</span>, path.display());
         },
     }
@@ -952,7 +952,7 @@ module contains all the functions you would expect to deal with the filesystem.<
     <span class="hljs-comment">// which implements Iterator&lt;Path&gt;</span>
     <span class="hljs-keyword">match</span> fs::walk_dir(&amp;Path::new(<span class="hljs-string">"a"</span>)) {
         Err(why) =&gt; println!(<span class="hljs-string">"! {}"</span>, why.kind),
-        Ok(<span class="hljs-keyword">mut</span> paths) =&gt; <span class="hljs-keyword">for</span> path in paths {
+        Ok(<span class="hljs-keyword">mut</span> paths) =&gt; <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> paths {
             println!(<span class="hljs-string">"&gt; {}"</span>, path.display());
         },
     }

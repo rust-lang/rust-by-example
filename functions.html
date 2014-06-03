@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="10" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="10" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -883,7 +883,7 @@ return a value earlier from the function, even from inside loops or ifs.</p>
 <p>Let&#39;s rewrite fizzbuzz using functions!</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// functions.rs</span>
 <span class="hljs-comment">// function that returns a bool value</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">is_divisible_by</span>(</span>lhs: <span class="hljs-keyword">uint</span>, rhs: <span class="hljs-keyword">uint</span>) -&gt; <span class="hljs-keyword">bool</span> {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">is_divisible_by</span></span>(lhs: <span class="hljs-keyword">uint</span>, rhs: <span class="hljs-keyword">uint</span>) -&gt; <span class="hljs-keyword">bool</span> {
     <span class="hljs-comment">// corner case, early return</span>
     <span class="hljs-keyword">if</span> rhs == <span class="hljs-number">0</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>
@@ -894,7 +894,7 @@ return a value earlier from the function, even from inside loops or ifs.</p>
 }
 
 <span class="hljs-comment">// function that doesn't return a value</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fizzbuzz</span>(</span>n: <span class="hljs-keyword">uint</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fizzbuzz</span></span>(n: <span class="hljs-keyword">uint</span>) {
     <span class="hljs-keyword">if</span> is_divisible_by(n, <span class="hljs-number">15</span>) {
         println!(<span class="hljs-string">"fizzbuzz"</span>);
     } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> is_divisible_by(n, <span class="hljs-number">3</span>) {
@@ -906,8 +906,8 @@ return a value earlier from the function, even from inside loops or ifs.</p>
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-keyword">for</span> n in range(<span class="hljs-number">1u</span>, <span class="hljs-number">101</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> range(<span class="hljs-number">1u</span>, <span class="hljs-number">101</span>) {
         fizzbuzz(n);
     }
 }

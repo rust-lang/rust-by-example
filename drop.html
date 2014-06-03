@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="46" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="46" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -890,7 +890,7 @@ custom data types.</p>
 
 <span class="hljs-keyword">impl</span> Executable {
     <span class="hljs-comment">// compile source and return the executable created</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span>(</span>source: &amp;Path) -&gt; Option&lt;Executable&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>(source: &amp;Path) -&gt; Option&lt;Executable&gt; {
         <span class="hljs-keyword">let</span> display = source.display();
 
         println!(<span class="hljs-string">"compiling {}..."</span>, display);
@@ -921,7 +921,7 @@ custom data types.</p>
     }
 
     <span class="hljs-comment">// run executable</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">run</span>(</span>&amp;<span class="hljs-keyword">self</span>) {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">run</span></span>(&amp;<span class="hljs-keyword">self</span>) {
         <span class="hljs-keyword">let</span> display = <span class="hljs-keyword">self</span>.path.display();
 
         <span class="hljs-keyword">match</span> Command::new(format!(<span class="hljs-string">"./{}"</span>, display)).output() {
@@ -944,7 +944,7 @@ custom data types.</p>
 
 <span class="hljs-comment">// this Drop implementation will take care of removing the executable file</span>
 <span class="hljs-keyword">impl</span> Drop <span class="hljs-keyword">for</span> Executable {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">drop</span>(</span>&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>) {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">drop</span></span>(&amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span>) {
         <span class="hljs-keyword">let</span> display = <span class="hljs-keyword">self</span>.path.display();
 
         <span class="hljs-keyword">match</span> fs::unlink(&amp;<span class="hljs-keyword">self</span>.path) {
@@ -954,7 +954,7 @@ custom data types.</p>
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
         <span class="hljs-keyword">match</span> Executable::new(&amp;Path::new(<span class="hljs-string">"hello.rs"</span>)) {
             None =&gt; {},
@@ -986,7 +986,7 @@ end of the if block
 hello no longer exists
 </code></pre><p>Where:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// hello.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     println!(<span class="hljs-string">"Hello World!"</span>);
 }
 </code></pre>

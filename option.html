@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="22" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="22" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -885,16 +885,16 @@ instead of unwinding the whole program, this can be accomplished using the
 part of the type signature of option <code>Option&lt;T&gt;</code>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// option.rs</span>
 <span class="hljs-comment">// re-implementation of division (/)</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">division</span>(</span>dividend: <span class="hljs-keyword">int</span>, divisor: <span class="hljs-keyword">int</span>) -&gt; <span class="hljs-keyword">int</span> {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">division</span></span>(dividend: <span class="hljs-keyword">int</span>, divisor: <span class="hljs-keyword">int</span>) -&gt; <span class="hljs-keyword">int</span> {
     <span class="hljs-keyword">if</span> divisor == <span class="hljs-number">0</span> {
-        <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"division by zero"</span>);
+        fail!(<span class="hljs-string">"division by zero"</span>);
     } <span class="hljs-keyword">else</span> {
         dividend / divisor
     }
 }
 
 <span class="hljs-comment">// checked division</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">checked_division</span>(</span>dividend: <span class="hljs-keyword">int</span>, divisor: <span class="hljs-keyword">int</span>) -&gt; Option&lt;<span class="hljs-keyword">int</span>&gt; {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">checked_division</span></span>(dividend: <span class="hljs-keyword">int</span>, divisor: <span class="hljs-keyword">int</span>) -&gt; Option&lt;<span class="hljs-keyword">int</span>&gt; {
     <span class="hljs-keyword">if</span> divisor == <span class="hljs-number">0</span> {
         <span class="hljs-comment">// failure represented as None</span>
         None
@@ -904,7 +904,7 @@ part of the type signature of option <code>Option&lt;T&gt;</code>.</p>
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">try_division</span>(</span>dividend: <span class="hljs-keyword">int</span>, divisor: <span class="hljs-keyword">int</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">try_division</span></span>(dividend: <span class="hljs-keyword">int</span>, divisor: <span class="hljs-keyword">int</span>) {
     <span class="hljs-comment">// Option values can be pattern matched</span>
     <span class="hljs-keyword">match</span> checked_division(dividend, divisor) {
         None =&gt; println!(<span class="hljs-string">"{} / {} failed!"</span>, dividend, divisor),
@@ -913,7 +913,7 @@ part of the type signature of option <code>Option&lt;T&gt;</code>.</p>
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     try_division(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>);
     try_division(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>);
 

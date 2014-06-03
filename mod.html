@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="38" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="38" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -880,26 +880,26 @@ between them.</p>
 <p>A module is collection of items like: functions, structs, traits, impl blocks,
 and even other modules.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// nested.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
     println!(<span class="hljs-string">"called function()"</span>);
 }
 
 <span class="hljs-comment">// a module named `my`</span>
 <span class="hljs-keyword">mod</span> my {
     <span class="hljs-comment">// a module can contain items like functions</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
         println!(<span class="hljs-string">"called my::function()"</span>);
     }
 
     <span class="hljs-comment">// modules can be nested</span>
     <span class="hljs-keyword">mod</span> nested {
-        <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+        <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
             println!(<span class="hljs-string">"called my::nested::function()"</span>);
         }
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     function();
 
     <span class="hljs-comment">// items inside a module can be called using the full path</span>
@@ -916,23 +916,23 @@ error: aborting due to previous error
 overridden using the <code>pub</code> modifier. Only the public items of a module can be
 accessed from outside the module scope.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// visibility.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
     println!(<span class="hljs-string">"called function()"</span>);
 }
 
 <span class="hljs-keyword">mod</span> my {
     <span class="hljs-comment">// a public function</span>
-    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
         println!(<span class="hljs-string">"called my::function()"</span>);
     }
 
     <span class="hljs-comment">// a private function</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span>(</span>) {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
         println!(<span class="hljs-string">"called my::private_function()"</span>);
     }
 
     <span class="hljs-comment">// items can access other items in the same module</span>
-    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span>(</span>) {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span></span>() {
         print!(<span class="hljs-string">"called my::indirect_access(), that\n&gt; "</span>);
 
         <span class="hljs-comment">// regardless of their visibility</span>
@@ -941,24 +941,24 @@ accessed from outside the module scope.</p>
 
     <span class="hljs-comment">// a public module</span>
     <span class="hljs-keyword">pub</span> <span class="hljs-keyword">mod</span> nested {
-        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
             println!(<span class="hljs-string">"called my::nested::function()"</span>);
         }
 
-        <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span>(</span>) {
+        <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
             println!(<span class="hljs-string">"called my::nested::private_function()"</span>);
         }
     }
 
     <span class="hljs-comment">// a private module</span>
     <span class="hljs-keyword">mod</span> inaccessible {
-        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span>(</span>) {
+        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span></span>() {
             println!(<span class="hljs-string">"called my::inaccessible::public_function()"</span>);
         }
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// the public items of a module can be accessed</span>
     my::function();
 
@@ -1000,13 +1000,13 @@ access.</p>
 
 <span class="hljs-keyword">mod</span> deeply {
     <span class="hljs-keyword">pub</span> <span class="hljs-keyword">mod</span> nested {
-        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
             println!(<span class="hljs-string">"called deeply::nested::function"</span>)
         }
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// Text can be used instead of StrBuf</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> text = Text::new();
     text.push_str(<span class="hljs-string">"Hello"</span>);
@@ -1036,12 +1036,12 @@ called deeply::nested::function
 </code></pre><p>The <code>super</code> and <code>self</code> keywords can be used in the path, to remove ambiguity
 when accessing items.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// super.rs</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
     println!(<span class="hljs-string">"called function()"</span>);
 }
 
 <span class="hljs-keyword">mod</span> my {
-    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_call</span>(</span>) {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_call</span></span>() {
         <span class="hljs-comment">// let's see how to access all the functions named `function` from this</span>
         <span class="hljs-comment">// scope</span>
         print!(<span class="hljs-string">"called my::indirect_call(), that\n&gt; "</span>);
@@ -1061,7 +1061,7 @@ when accessing items.</p>
 
         <span class="hljs-keyword">if</span> <span class="hljs-keyword">true</span> {
             <span class="hljs-comment">// `self` refers to the current module scope, in this case: `my`</span>
-            <span class="hljs-keyword">use</span> my_cool_function = <span class="hljs-keyword">self</span>::cool::function;
+            <span class="hljs-keyword">use</span> my_cool_function = self::cool::function;
 
             print!(<span class="hljs-string">"&gt; "</span>)
             my_cool_function();
@@ -1077,24 +1077,24 @@ when accessing items.</p>
         }
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
         println!(<span class="hljs-string">"called my::function()"</span>);
     }
 
     <span class="hljs-keyword">mod</span> cool {
-        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
             println!(<span class="hljs-string">"called my::cool::function()"</span>);
         }
     }
 }
 
 <span class="hljs-keyword">mod</span> cool {
-    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+    <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
         println!(<span class="hljs-string">"called cool::function()"</span>);
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     my::indirect_call();
 }
 </code></pre>
@@ -1121,7 +1121,7 @@ private. This allows encapsulation.</p>
 
     <span class="hljs-keyword">impl</span>&lt;T&gt; BlackBox&lt;T&gt; {
         <span class="hljs-comment">// a public constructor</span>
-        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span>(</span>contents: T) -&gt; BlackBox&lt;T&gt; {
+        <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>(contents: T) -&gt; BlackBox&lt;T&gt; {
             BlackBox {
                 contents: contents,
             }
@@ -1129,7 +1129,7 @@ private. This allows encapsulation.</p>
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// public structs with public fields can be constructed as usual</span>
     <span class="hljs-keyword">let</span> white_box = my::WhiteBox { contents: <span class="hljs-string">"public information"</span> };
 
@@ -1166,11 +1166,11 @@ second example in files:</p>
 <span class="hljs-comment">// insert its contents inside a module named `my` under this scope</span>
 <span class="hljs-keyword">mod</span> my;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
     println!(<span class="hljs-string">"called function()"</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     my::function();
 
     function();
@@ -1187,31 +1187,31 @@ second example in files:</p>
 <span class="hljs-keyword">mod</span> inaccessible;
 <span class="hljs-keyword">pub</span> <span class="hljs-keyword">mod</span> nested;
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
     println!(<span class="hljs-string">"called my::function()"</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
     println!(<span class="hljs-string">"called my::private_function()"</span>);
 }
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span></span>() {
     print!(<span class="hljs-string">"called my::indirect_access(), that\n&gt; "</span>);
 
     private_function();
 }
 </code></pre>
 <pre><code class="lang-rust"><span class="hljs-comment">// my/nested.rs</span>
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">function</span></span>() {
     println!(<span class="hljs-string">"called my::nested::function()"</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
     println!(<span class="hljs-string">"called my::nested::private_function()"</span>);
 }
 </code></pre>
 <pre><code class="lang-rust"><span class="hljs-comment">// my/inaccessible.rs</span>
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span></span>() {
     println!(<span class="hljs-string">"called my::inaccessible::public_function()"</span>);
 }
 </code></pre>

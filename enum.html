@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="23" data-basepath="." data-revision="1401760088481">
+    <div class="book" data-github="japaric/rust-by-example" data-level="23" data-basepath="." data-revision="1401822328547">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -889,17 +889,17 @@ algebraic data types.</p>
 
 <span class="hljs-keyword">impl</span> Node {
     <span class="hljs-comment">// create an empty list</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span>(</span>) -&gt; Node {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">new</span></span>() -&gt; Node {
         Nil
     }
 
     <span class="hljs-comment">// consume list, and return the same list with a new element appended</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">append</span>(</span><span class="hljs-keyword">self</span>, elem: <span class="hljs-keyword">uint</span>) -&gt; Node {
-        Cons(elem, box <span class="hljs-keyword">self</span>)
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">append</span></span>(<span class="hljs-keyword">self</span>, elem: <span class="hljs-keyword">uint</span>) -&gt; Node {
+        Cons(elem, <span class="hljs-keyword">box</span> <span class="hljs-keyword">self</span>)
     }
 
     <span class="hljs-comment">// return the head of the list</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">head</span>(</span>&amp;<span class="hljs-keyword">self</span>) -&gt; Option&lt;<span class="hljs-keyword">uint</span>&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">head</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; Option&lt;<span class="hljs-keyword">uint</span>&gt; {
         <span class="hljs-keyword">match</span> *<span class="hljs-keyword">self</span> {
             <span class="hljs-comment">// head gets copied, copy is returned wrapped in Some</span>
             Cons(head, <span class="hljs-number">_</span>) =&gt; Some(head),
@@ -909,7 +909,7 @@ algebraic data types.</p>
     }
 
     <span class="hljs-comment">// return the length of the list</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">len</span>(</span>&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-keyword">uint</span> {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">len</span></span>(&amp;<span class="hljs-keyword">self</span>) -&gt; <span class="hljs-keyword">uint</span> {
         <span class="hljs-keyword">match</span> *<span class="hljs-keyword">self</span> {
             <span class="hljs-comment">// can't take ownership of the tail, because self is borrowed</span>
             <span class="hljs-comment">// instead take a reference to the tail</span>
@@ -920,17 +920,17 @@ algebraic data types.</p>
     }
 
     <span class="hljs-comment">// this method consumes the list and returns the tail</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">tail</span>(</span><span class="hljs-keyword">self</span>) -&gt; Option&lt;Node&gt; {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">tail</span></span>(<span class="hljs-keyword">self</span>) -&gt; Option&lt;Node&gt; {
         <span class="hljs-keyword">match</span> <span class="hljs-keyword">self</span> {
             <span class="hljs-comment">// if the list is empty, return None</span>
             Nil =&gt; None,
             <span class="hljs-comment">// unbox the tail, return it wrapped in Some</span>
-            Cons(<span class="hljs-number">_</span>, box tail) =&gt; Some(tail),
+            Cons(<span class="hljs-number">_</span>, <span class="hljs-keyword">box</span> tail) =&gt; Some(tail),
         }
     }
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// linked list: 3, [ ] -&gt; 2, [ ] -&gt; 1, [ ] -&gt; Nil</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> list = Node::new();
     list = list.append(<span class="hljs-number">1</span>);
@@ -980,7 +980,7 @@ list head: 1
 }
 
 <span class="hljs-keyword">impl</span> Day {
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">mood</span>(</span>&amp;<span class="hljs-keyword">self</span>) {
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">mood</span></span>(&amp;<span class="hljs-keyword">self</span>) {
         println!(<span class="hljs-string">"{}"</span>, <span class="hljs-keyword">match</span> *<span class="hljs-keyword">self</span> {
             Friday =&gt; <span class="hljs-string">"it's friday!"</span>,
             Saturday | Sunday =&gt; <span class="hljs-string">"weekend :-)"</span>,
@@ -996,14 +996,14 @@ list head: 1
     Blue = <span class="hljs-number">0x0000ff</span>,
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> today = Monday;
 
     today.mood();
 
     <span class="hljs-comment">// enums can be casted into integers</span>
-    println!(<span class="hljs-string">"roses are \\#{:06x}"</span>, Red as <span class="hljs-keyword">int</span>);
-    println!(<span class="hljs-string">"violets are \\#{:06x}"</span>, Blue as <span class="hljs-keyword">int</span>);
+    println!(<span class="hljs-string">"roses are \\#{:06x}"</span>, Red <span class="hljs-keyword">as</span> <span class="hljs-keyword">int</span>);
+    println!(<span class="hljs-string">"violets are \\#{:06x}"</span>, Blue <span class="hljs-keyword">as</span> <span class="hljs-keyword">int</span>);
 }
 </code></pre>
 <p>(<a href="http://playtest.rust-lang.org/?code=%2F%2F%20enum%20with%20implicit%20discriminator%20%28starts%20at%200%29%0Aenum%20Day%20%7B%0A%20%20%20%20Monday%2C%0A%20%20%20%20Tuesday%2C%0A%20%20%20%20Wednesday%2C%0A%20%20%20%20Thursday%2C%0A%20%20%20%20Friday%2C%0A%20%20%20%20Saturday%2C%0A%20%20%20%20Sunday%2C%0A%7D%0A%0Aimpl%20Day%20%7B%0A%20%20%20%20fn%20mood%28%26self%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%22%2C%20match%20%2Aself%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20Friday%20%3D%3E%20%22it%27s%20friday!%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20Saturday%20%7C%20Sunday%20%3D%3E%20%22weekend%20%3A%2D%29%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%5F%20%3D%3E%20%22weekday...%22%2C%0A%20%20%20%20%20%20%20%20%7D%29%0A%20%20%20%20%7D%0A%7D%0A%0A%2F%2F%20enum%20with%20explicit%20discriminator%0Aenum%20Color%20%7B%0A%20%20%20%20Red%20%3D%200xff0000%2C%0A%20%20%20%20Green%20%3D%200x00ff00%2C%0A%20%20%20%20Blue%20%3D%200x0000ff%2C%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20let%20today%20%3D%20Monday%3B%0A%0A%20%20%20%20today.mood%28%29%3B%0A%0A%20%20%20%20%2F%2F%20enums%20can%20be%20casted%20into%20integers%0A%20%20%20%20println!%28%22roses%20are%20%5C%5C%23%7B%3A06x%7D%22%2C%20Red%20as%20int%29%3B%0A%20%20%20%20println!%28%22violets%20are%20%5C%5C%23%7B%3A06x%7D%22%2C%20Blue%20as%20int%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>c-like.rs</code> in the playpen!</a>)</p>
