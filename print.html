@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="2" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="2" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -901,6 +901,7 @@ be checked at compile time.</p>
     <span class="hljs-comment">//println!("My name is {0}, {1} {0}", "Bond");</span>
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20print!%20is%20like%20println!%20but%20without%20adding%20a%20newline%20at%20the%20end%0A%20%20%20%20print!%28%22January%20has%20%22%29%3B%0A%0A%20%20%20%20%2F%2F%20%7B%7D%20are%20placeholders%20for%20arguments%20that%20will%20be%20stringified%0A%20%20%20%20println!%28%22%7B%7D%20days%22%2C%2031%29%3B%0A%0A%20%20%20%20%2F%2F%20the%20positional%20arguments%20can%20be%20reused%20along%20the%20template%0A%20%20%20%20println!%28%22%7B0%7D%2C%20this%20is%20%7B1%7D.%20%7B1%7D%2C%20this%20is%20%7B0%7D%22%2C%20%22Alice%22%2C%20%22Bob%22%29%3B%0A%0A%20%20%20%20%2F%2F%20named%20arguments%20can%20also%20be%20used%0A%20%20%20%20println!%28%22%7Bsubject%7D%20%7Bverb%7D%20%7Bpredicate%7D%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20predicate%3D%22over%20the%20lazy%20dog%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20subject%3D%22the%20quick%20brown%20fox%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20verb%3D%22jumps%22%29%3B%0A%0A%20%20%20%20%2F%2F%20special%20formatting%20can%20be%20specified%20in%20the%20placeholder%20after%20a%20%60%3A%60%0A%20%20%20%20println!%28%22%7B%7D%20of%20%7B%3At%7D%20people%20know%20binary%2C%20the%20other%20half%20don%27t%22%2C%201%2C%202%29%3B%0A%0A%20%20%20%20%2F%2F%20Error%3A%20you%20are%20missing%20an%20argument%0A%20%20%20%20%2F%2Fprintln!%28%22My%20name%20is%20%7B0%7D%2C%20%7B1%7D%20%7B0%7D%22%2C%20%22Bond%22%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>print.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc print.rs &amp;&amp; ./print
 January has 31 days
 Alice, this is Bob. Bob, this is Alice

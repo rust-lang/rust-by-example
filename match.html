@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="12" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="12" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -918,6 +918,7 @@ covered in the code below.</p>
     };
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20let%20number%20%3D%2023%3B%0A%0A%20%20%20%20match%20number%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20match%20single%20value%0A%20%20%20%20%20%20%20%201%20%3D%3E%20println!%28%22One!%22%29%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20match%20several%20values%0A%20%20%20%20%20%20%20%202%20%7C%203%20%7C%205%20%7C%207%20%7C%2011%20%3D%3E%20println!%28%22This%20is%20a%20prime%22%29%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20match%20a%20range%0A%20%20%20%20%20%20%20%2013..19%20%3D%3E%20println!%28%22A%20teen%22%29%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20bind%20the%20rest%20of%20values%20to%20x%0A%20%20%20%20%20%20%20%20%2F%2F%20and%20use%20a%20%60guard%60%20to%20pick%20odd%20numbers%0A%20%20%20%20%20%20%20%20x%20if%20x%20%25%202%20%3D%3D%201%20%3D%3E%20println!%28%22An%20odd%20one%22%29%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20the%20rest%20of%20cases%0A%20%20%20%20%20%20%20%20x%20%3D%3E%20println!%28%22%7B%7D%20ain%27t%20special%22%2C%20x%29%2C%0A%20%20%20%20%7D%0A%0A%20%20%20%20let%20pair%20%3D%20%282%2C%203%29%3B%0A%20%20%20%20%2F%2F%20match%20can%20be%20used%20to%20destructure%20a%20tuple%0A%20%20%20%20match%20pair%20%7B%0A%20%20%20%20%20%20%20%20%28x%2C%20y%29%20if%20x%20%3D%3D%20y%20%3D%3E%20println!%28%22These%20are%20twins%22%29%2C%0A%20%20%20%20%20%20%20%20%28x%2C%20y%29%20if%20x%20%2B%20y%20%3D%3D%200%20%3D%3E%20println!%28%22Antimatter%2C%20kaboom%22%29%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20%5F%20means%20don%27t%20bind%20the%20value%20to%20a%20variable%0A%20%20%20%20%20%20%20%20%28x%2C%20%5F%29%20if%20x%20%25%202%20%3D%3D%201%20%3D%3E%20println!%28%22The%20first%20is%20odd%22%29%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20%5F%20can%20be%20used%20to%20match%20the%20rest%20of%20cases%0A%20%20%20%20%20%20%20%20%5F%20%3D%3E%20println!%28%22No%20correlation...%22%29%2C%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20match%20is%20an%20expression%0A%20%20%20%20let%20big%5Fnumber%20%3D%20match%20number%20%7B%0A%20%20%20%20%20%20%20%200%20%3D%3E%209000%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20blocks%20are%20also%20valid%20branches%0A%20%20%20%20%20%20%20%20x%20if%20x%20%3C%2010%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20let%20y%20%3D%20x%20%2A%20x%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20let%20z%20%3D%20x%20%2A%20x%20%2A%20x%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20x%20%2B%20y%20%2B%20z%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20x%20%3D%3E%20x%2C%0A%20%20%20%20%7D%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>match.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc match.rs &amp;&amp; ./match
 An odd one
 No correlation...

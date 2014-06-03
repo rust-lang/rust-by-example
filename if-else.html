@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="7" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="7" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -889,6 +889,7 @@ need to be surrounded by parentheses. Each condition is followed by a block.</p>
     }
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20let%20n%20%3D%205%3B%0A%0A%20%20%20%20if%20n%20%3C%200%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%20is%20negative%22%2C%20n%29%3B%0A%20%20%20%20%7D%20else%20if%20n%20%3E%200%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%20is%20positive%22%2C%20n%29%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%20is%20zero%22%2C%20n%29%3B%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>if-else.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc if-else.rs &amp;&amp; ./if-else
 5 is positive
 </code></pre><p>If-else conditionals are expressions too. Because of Rust type safety, all the
@@ -914,6 +915,7 @@ branches must return the same type.</p>
     println!(<span class="hljs-string">"{} -&gt; {}"</span>, n, big_n);
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20all%20type%20annotations%20are%20superfluous%0A%20%20%20%20let%20n%3A%20int%20%3D%205%3B%0A%0A%20%20%20%20let%20big%5Fn%3A%20int%20%3D%0A%20%20%20%20%20%20%20%20if%20n%20%3C%2010%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20println!%28%22small%20number%2C%20increase%20ten%2Dfold%22%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20this%20expression%20returns%20an%20int%0A%20%20%20%20%20%20%20%20%20%20%20%2010%20%2A%20n%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20println!%28%22big%20number%2C%20reduce%20by%20two%22%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20this%20expression%20must%20return%20an%20int%20as%20well%0A%20%20%20%20%20%20%20%20%20%20%20%20n%20%2F%202%0A%20%20%20%20%20%20%20%20%7D%3B%0A%0A%20%20%20%20println!%28%22%7B%7D%20%2D%3E%20%7B%7D%22%2C%20n%2C%20big%5Fn%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>if-else-expr.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc if-else-expr.rs &amp;&amp; ./if-else-expr
 small number, increase ten-fold
 5 -&gt; 50

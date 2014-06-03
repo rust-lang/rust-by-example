@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -913,6 +913,7 @@ use tuples to return multiple values, as tuples can hold any number of values.</
     println!(<span class="hljs-string">"just an integer: {}"</span>, (<span class="hljs-number">5</span>))
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=%2F%2F%20tuples%20can%20be%20used%20as%20function%20arguments%20and%20as%20return%20values%0Afn%20reverse%28pair%3A%20%28int%2C%20bool%29%29%20%2D%3E%20%28bool%2C%20int%29%20%7B%0A%20%20%20%20%2F%2F%20%60let%60%20can%20be%20used%20to%20bind%20the%20members%20of%20a%20tuple%20to%20variables%0A%20%20%20%20let%20%28integer%2C%20boolean%29%20%3D%20pair%3B%0A%0A%20%20%20%20%28boolean%2C%20integer%29%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20a%20tuple%20with%20a%20bunch%20of%20different%20types%0A%20%20%20%20let%20long%5Ftuple%20%3D%20%281u8%2C%202u16%2C%203u32%2C%204u64%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2D1i8%2C%20%2D2i16%2C%20%2D3i32%2C%20%2D4i64%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200.1f32%2C%200.2f64%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27a%27%2C%20true%29%3B%0A%0A%20%20%20%20%2F%2F%20values%20can%20be%20extracted%20from%20the%20tuple%20using%20the%20valN%20methods%0A%20%20%20%20println!%28%22long%20tuple%20first%20value%3A%20%7B%7D%22%2C%20long%5Ftuple.val0%28%29%29%3B%0A%20%20%20%20println!%28%22long%20tuple%20second%20value%3A%20%7B%7D%22%2C%20long%5Ftuple.val1%28%29%29%3B%0A%0A%20%20%20%20%2F%2F%20tuples%20can%20be%20tuple%20members%0A%20%20%20%20let%20tuple%5Fof%5Ftuples%20%3D%20%28%281u8%2C%202u16%2C%202u32%29%2C%20%284u64%2C%20%2D1i8%29%2C%20%2D2i16%29%3B%0A%0A%20%20%20%20%2F%2F%20tuples%20are%20printable%0A%20%20%20%20let%20pair%20%3D%20%281%2C%20true%29%3B%0A%20%20%20%20println!%28%22pair%20is%20%7B%7D%22%2C%20pair%29%3B%0A%0A%20%20%20%20println!%28%22the%20reversed%20pair%20is%20%7B%7D%22%2C%20reverse%28pair%29%29%3B%0A%0A%20%20%20%20%2F%2F%20to%20create%20one%20element%20tuples%2C%20the%20comma%20is%20required%20to%20tell%20them%0A%20%20%20%20%2F%2F%20apart%20from%20a%20literal%20surrounded%20by%20parentheses%0A%20%20%20%20println!%28%22one%20element%20tuple%3A%20%7B%7D%22%2C%20%285%2C%29%29%0A%20%20%20%20println!%28%22just%20an%20integer%3A%20%7B%7D%22%2C%20%285%29%29%0A%7D%0A&amp;run=1" target="_blank">Try <code>tuples.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc tuples.rs &amp;&amp; ./tuples
 long tuple first value: 1
 long tuple second value: 2

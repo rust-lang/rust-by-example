@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="28" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="28" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -930,6 +930,7 @@ implementations.</p>
     println!(<span class="hljs-string">"{} . {} = {}"</span>, v1, v2, v1.dot(&amp;v2));
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=%23%5Bderiving%28Show%29%5D%0Astruct%20Vec2%3CT%3E%20%7B%0A%20%20%20%20x%3A%20T%2C%0A%20%20%20%20y%3A%20T%2C%0A%7D%0A%0Aimpl%3C%0A%20%20%20%20%2F%2F%20bound%3A%20T%20implements%20the%20Add%20trait%0A%20%20%20%20T%3A%20Add%3CT%2C%20T%3E%0A%3E%20Add%3CVec2%3CT%3E%2C%20Vec2%3CT%3E%3E%0Afor%20Vec2%3CT%3E%20%7B%0A%20%20%20%20fn%20add%28%26self%2C%20rhs%3A%20%26Vec2%3CT%3E%29%20%2D%3E%20Vec2%3CT%3E%20%7B%0A%20%20%20%20%20%20%20%20Vec2%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20x%20and%20y%20are%20of%20type%20T%2C%20and%20implement%20the%20add%28%29%20method%0A%20%20%20%20%20%20%20%20%20%20%20%20x%3A%20self.x.add%28%26rhs.x%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20the%20sugary%20%2B%20operator%20can%20also%20be%20used%0A%20%20%20%20%20%20%20%20%20%20%20%20y%3A%20self.y%20%2B%20rhs.y%2C%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%0A%0Aimpl%3C%0A%20%20%20%20%2F%2F%20bound%3A%20T%20implements%20the%20Sub%20trait%0A%20%20%20%20T%3A%20Sub%3CT%2C%20T%3E%0A%3E%20Sub%3CVec2%3CT%3E%2C%20Vec2%3CT%3E%3E%0Afor%20Vec2%3CT%3E%20%7B%0A%20%20%20%20fn%20sub%28%26self%2C%20rhs%3A%20%26Vec2%3CT%3E%29%20%2D%3E%20Vec2%3CT%3E%20%7B%0A%20%20%20%20%20%20%20%20Vec2%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20x%3A%20self.x%20%2D%20rhs.x%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20y%3A%20self.y%20%2D%20rhs.y%2C%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%7D%0A%0Aimpl%3C%0A%20%20%20%20%2F%2F%20bound%3A%20T%20implements%20%2Aboth%2A%20the%20Add%20trait%20and%20the%20Mul%20trait%0A%20%20%20%20T%3A%20Add%3CT%2C%20T%3E%20%2B%20Mul%3CT%2C%20T%3E%0A%3E%20Vec2%3CT%3E%20%7B%0A%20%20%20%20fn%20dot%28%26self%2C%20rhs%3A%20%26Vec2%3CT%3E%29%20%2D%3E%20T%20%7B%0A%20%20%20%20%20%20%20%20%28self.x%20%2A%20rhs.x%29%20%2B%20%28self.y%20%2A%20rhs.y%29%0A%20%20%20%20%7D%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20let%20v1%20%3D%20Vec2%20%7B%20x%3A%201.0%2C%20y%3A%202.0%20%7D%3B%0A%20%20%20%20let%20v2%20%3D%20Vec2%20%7B%20x%3A%202.0%2C%20y%3A%201.0%20%7D%3B%0A%0A%20%20%20%20println!%28%22%7B%7D%20%2B%20%7B%7D%20%3D%20%7B%7D%22%2C%20v1%2C%20v2%2C%20v1%20%2B%20v2%29%3B%0A%20%20%20%20println!%28%22%7B%7D%20%2D%20%7B%7D%20%3D%20%7B%7D%22%2C%20v1%2C%20v2%2C%20v1%20%2D%20v2%29%3B%0A%20%20%20%20println!%28%22%7B%7D%20.%20%7B%7D%20%3D%20%7B%7D%22%2C%20v1%2C%20v2%2C%20v1.dot%28%26v2%29%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>bounds.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc bounds.rs &amp;&amp; ./bounds
 Vec2 { x: 1, y: 2 } + Vec2 { x: 2, y: 1 } = Vec2 { x: 3, y: 3 }
 Vec2 { x: 1, y: 2 } - Vec2 { x: 2, y: 1 } = Vec2 { x: -1, y: 1 }

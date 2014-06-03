@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1401674151501
+# Revision 1401760088482
 
 CACHE:
 loops.html
@@ -22,8 +22,8 @@ ffi.html
 file.html
 for.html
 fs.html
-generics.html
 functions.html
+generics.html
 hello.html
 hof.html
 if-else.html
@@ -36,13 +36,13 @@ methods.html
 mod.html
 move.html
 operator.html
-path.html
 option.html
+path.html
 print.html
 process.html
 raii.html
-result.html
 rand.html
+result.html
 simd.html
 sockets.html
 staging.html
@@ -51,8 +51,8 @@ structs.html
 tasks.html
 test.html
 timers.html
-todo.html
 trait.html
+todo.html
 tuples.html
 type.html
 unsafe.html

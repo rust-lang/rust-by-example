@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="14" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="14" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_21">
+                    <section class="normal" id="section-gitbook_22">
                     
                         <h1 id="generics">Generics</h1>
 <p>Generic structs can be declared to hold generics types, and generic functions
@@ -914,6 +914,7 @@ generic arguments using this syntax <code>::&lt;T, U, ..&gt;</code>.</p>
     <span class="hljs-keyword">let</span> swapped_pair_of_ints = swap(pair_of_ints);
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=%2F%2F%20generic%20struct%0Astruct%20Pair%3CT%3E%20%7B%0A%20%20%20%20first%3A%20T%2C%0A%20%20%20%20second%3A%20T%2C%0A%7D%0A%0A%2F%2F%20generic%20function%0Afn%20swap%3CT%3E%28pair%3A%20Pair%3CT%3E%29%20%2D%3E%20Pair%3CT%3E%20%7B%0A%20%20%20%20let%20Pair%20%7B%20first%3A%20first%2C%20second%3A%20second%20%7D%20%3D%20pair%3B%0A%0A%20%20%20%20Pair%20%7B%20first%3A%20second%2C%20second%3A%20first%20%7D%0A%7D%0A%0A%2F%2F%20reimplementation%20of%20a%202%2Delement%20Tuple%0Astruct%20Tuple2%3CT%2C%20U%3E%28T%2C%20U%29%3B%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20explicitly%20specialize%20Pair%0A%20%20%20%20let%20pair%5Fof%5Fchars%3A%20Pair%3Cchar%3E%20%3D%20Pair%20%7B%20first%3A%20%27a%27%2C%20second%3A%20%27b%27%20%7D%3B%0A%0A%20%20%20%20%2F%2F%20implicitly%20specialize%20Pair%0A%20%20%20%20let%20pair%5Fof%5Fints%20%3D%20Pair%20%7B%20first%3A%201%2C%20second%3A%202%20%7D%3B%0A%0A%20%20%20%20%2F%2F%20explicitly%20specialize%20Tuple2%0A%20%20%20%20let%20tuple%3A%20Tuple2%3Cchar%2C%20int%3E%20%3D%20Tuple2%28%27R%27%2C%202%29%3B%0A%0A%20%20%20%20%2F%2F%20explicitly%20specialize%20swap%0A%20%20%20%20let%20swapped%5Fpair%5Fof%5Fchars%20%3D%20swap%3A%3A%3Cchar%3E%28pair%5Fof%5Fchars%29%3B%0A%0A%20%20%20%20%2F%2F%20implicitly%20specialize%20swap%0A%20%20%20%20let%20swapped%5Fpair%5Fof%5Fints%20%3D%20swap%28pair%5Fof%5Fints%29%3B%0A%7D%0A%0A&amp;run=1" target="_blank">Try <code>generics.rs</code> in the playpen!</a>)</p>
 
                     
                     </section>

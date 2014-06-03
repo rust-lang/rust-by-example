@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="4" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="4" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -891,6 +891,7 @@ by default, but this can be overridden using the <code>mut</code> qualifier.</p>
     mutable_variable += <span class="hljs-number">1</span>;
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20immutable%20variable%0A%20%20%20%20let%20a%5Fvariable%20%3D%201%3B%0A%0A%20%20%20%20%2F%2F%20mutable%20variable%0A%20%20%20%20let%20mut%20mutable%5Fvariable%20%3D%202%3B%0A%0A%20%20%20%20%2F%2F%20Error%3A%20attempted%20to%20modify%20an%20immutable%20variable%0A%20%20%20%20a%5Fvariable%20%2B%3D%201%3B%0A%0A%20%20%20%20%2F%2F%20Ok%0A%20%20%20%20mutable%5Fvariable%20%2B%3D%201%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>variables.rs</code> in the playpen!</a>)</p>
 <p>The compiler will throw a detailed diagnostic about mutability errors.</p>
 <pre><code>$ rustc variables.rs &amp;&amp; ./variables
 variables.rs:9:5: 9:15 error: re-assignment of immutable variable `a_variable`
@@ -916,6 +917,7 @@ variables, as this would lead to undefined behavior.</p>
     println!(<span class="hljs-string">"{}"</span>, uninitialized_variable);
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20variable%20declaration%0A%20%20%20%20let%20declared%5Fvariable%3B%0A%0A%20%20%20%20%2F%2F%20initialize%20variable%0A%20%20%20%20declared%5Fvariable%20%3D%203%3B%0A%0A%20%20%20%20%2F%2F%20usage%20of%20uninitialized%20variable%20is%20forbidden%0A%20%20%20%20let%20uninitialized%5Fvariable%3A%20int%3B%0A%20%20%20%20println!%28%22%7B%7D%22%2C%20uninitialized%5Fvariable%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>declare.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc declare.rs &amp;&amp; ./declare
 declare.rs:10:20: 10:42 error: use of possibly uninitialized variable: `uninitialized_variable`
 declare.rs:10     println!(&quot;{}&quot;, uninitialized_variable);

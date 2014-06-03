@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="44" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="44" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -902,15 +902,16 @@
                 <span class="hljs-comment">// error also has type `Vec&lt;u8&gt;`</span>
                 <span class="hljs-keyword">let</span> s = String::from_utf8(error).unwrap();
 
-                print!(<span class="hljs-string">"rustc succeeded and stderr was:\n{}"</span>, s);
+                print!(<span class="hljs-string">"rustc failed and stderr was:\n{}"</span>, s);
             }
         },
     }
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=use%20std%3A%3Aio%3A%3Aprocess%3A%3A%7BCommand%2CProcessOutput%7D%3B%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20initial%20command%20%22rustc%22%0A%20%20%20%20let%20mut%20cmd%20%3D%20Command%3A%3Anew%28%22rustc%22%29%3B%0A%20%20%20%20%2F%2F%20append%20the%20%22%2D%2Dversion%22%20flag%20to%20the%20command%0A%20%20%20%20cmd.arg%28%22%2D%2Dversion%22%29%3B%0A%0A%20%20%20%20%2F%2F%20the%20%60output%60%20method%20will%20spawn%20%60rustc%20%2D%2Dversion%60%2C%20wait%20until%20the%20process%0A%20%20%20%20%2F%2F%20finishes%20and%20return%20the%20output%20of%20the%20process%0A%20%20%20%20match%20cmd.output%28%29%20%7B%0A%20%20%20%20%20%20%20%20Err%28why%29%20%3D%3E%20fail!%28%22couldn%27t%20spawn%20rustc%3A%20%7B%7D%22%2C%20why.desc%29%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20destructure%20the%20ProcessOutput%20struct%0A%20%20%20%20%20%20%20%20Ok%28ProcessOutput%20%7B%20error%3A%20error%2C%20output%3A%20output%2C%20status%3A%20status%20%7D%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20check%20if%20process%20succeeded%2C%20i.e.%20the%20exit%20code%20was%200%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20status.success%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20output%20has%20type%20%60Vec%3Cu8%3E%60%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20convert%20to%20UTF%2D8%20String%20%28this%20operation%20could%20fail%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20s%20%3D%20String%3A%3Afrom%5Futf8%28output%29.unwrap%28%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20print!%28%22rustc%20succeeded%20and%20stdout%20was%3A%5Cn%7B%7D%22%2C%20s%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20error%20also%20has%20type%20%60Vec%3Cu8%3E%60%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20s%20%3D%20String%3A%3Afrom%5Futf8%28error%29.unwrap%28%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20print!%28%22rustc%20failed%20and%20stderr%20was%3A%5Cn%7B%7D%22%2C%20s%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>process.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc process.rs &amp;&amp; ./process
 rustc succeeded and stdout was:
-rustc 0.11.0-pre (2f221c7 2014-05-31 07:56:39 -0700)
+rustc 0.11.0-pre (1527dab 2014-06-01 10:36:39 -0700)
 host: x86_64-unknown-linux-gnu
 </code></pre><p>(You are encouraged to try the previous example with an incorrect flag)</p>
 <p><code>Process</code> exposes the <code>stdin</code>, <code>stdout</code> and <code>stderr</code> handles for interaction
@@ -952,6 +953,7 @@ fn main() {
     }
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=use%20std%3A%3Aio%3A%3Aprocess%3A%3ACommand%3B%0A%0Astatic%20PANGRAM%3A%20%26%27static%20str%20%3D%20%22the%20quick%20brown%20fox%20jumped%20over%20the%20lazy%20dog%22%3B%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20spawn%20the%20%60wc%60%20command%0A%20%20%20%20let%20mut%20process%20%3D%20match%20Command%3A%3Anew%28%22wc%22%29.spawn%28%29%20%7B%0A%20%20%20%20%20%20%20%20Err%28why%29%20%3D%3E%20fail!%28%22couldn%27t%20spawn%20wc%3A%20%7B%7D%22%2C%20why.desc%29%2C%0A%20%20%20%20%20%20%20%20Ok%28process%29%20%3D%3E%20process%2C%0A%20%20%20%20%7D%3B%0A%0A%20%20%20%20if%20true%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20the%20%60stdin%60%20field%20has%20type%20Option%3CPipeStream%3E%0A%20%20%20%20%20%20%20%20%2F%2F%20%60take%5Funwrap%60%20will%20take%20the%20value%20wrapped%20in%20a%20Some%20variant%0A%20%20%20%20%20%20%20%20%2F%2F%20note%20that%20we%20take%20ownership%20of%20stdin%20here%0A%20%20%20%20%20%20%20%20let%20mut%20stdin%20%3D%20process.stdin.take%5Funwrap%28%29%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20write%20a%20string%20to%20the%20stdin%20of%20wc%0A%20%20%20%20%20%20%20%20match%20stdin.write%5Fstr%28PANGRAM%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20Err%28why%29%20%3D%3E%20fail!%28%22couldn%27t%20write%20to%20wc%20stdin%3A%20%7B%7D%22%2C%20why.desc%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20Ok%28%5F%29%20%3D%3E%20println!%28%22sent%20pangram%20to%20wc%22%29%2C%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20stdin%20goes%20out%20of%20scope%20here%2C%20and%20the%20pipe%20is%20closed%0A%20%20%20%20%20%20%20%20%2F%2F%20this%20is%20very%20important%2C%20otherwise%20wc%20wouldn%27t%20start%20processing%20the%0A%20%20%20%20%20%20%20%20%2F%2F%20input%20we%20just%20sent%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20the%20%60stdout%60%20field%20also%20has%20type%20Option%3CPipeStream%3E%0A%20%20%20%20%2F%2F%20the%20%60get%5Fmut%5Fref%60%20method%20will%20return%20a%20mutable%20reference%20to%20the%20pipe%0A%20%20%20%20match%20process.stdout.get%5Fmut%5Fref%28%29.read%5Fto%5Fstr%28%29%20%7B%0A%20%20%20%20%20%20%20%20Err%28why%29%20%3D%3E%20fail!%28%22couldn%27t%20read%20wc%20stdout%3A%20%7B%7D%22%2C%20why.desc%29%2C%0A%20%20%20%20%20%20%20%20Ok%28string%29%20%3D%3E%20print!%28%22wc%20responded%20with%3A%5Cn%7B%7D%22%2C%20string%29%2C%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>pipe.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc pipe.rs &amp;&amp; ./pipe
 sent pangram to wc
 wc responded with:

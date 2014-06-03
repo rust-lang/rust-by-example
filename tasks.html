@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="34" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="34" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -888,19 +888,20 @@ function, the argument of this function is a owned closure named <code>proc</cod
     }
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=static%20NTASKS%3A%20int%20%3D%2010%3B%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20for%20i%20in%20range%280%2C%20NTASKS%29%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20spin%20up%20a%20task%0A%20%20%20%20%20%20%20%20spawn%28proc%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20println!%28%22this%20is%20task%20number%20%7B%7D%22%2C%20i%29%0A%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>tasks.rs</code> in the playpen!</a>)</p>
 <p>These tasks will be scheduled by the Rust runtime and the order of execution of
 these tasks will be non-deterministic.</p>
 <pre><code>$ rustc tasks.rs &amp;&amp; ./tasks
-this is task number 2
-this is task number 5
-this is task number 8
-this is task number 7
-this is task number 0
 this is task number 6
-this is task number 9
-this is task number 1
-this is task number 4
+this is task number 8
 this is task number 3
+this is task number 5
+this is task number 9
+this is task number 4
+this is task number 0
+this is task number 7
+this is task number 1
+this is task number 2
 </code></pre><p>(By default, Rust uses its <em>native</em> runtime, which maps each Rust task to a
 native thread. Rust also provides a <em>green</em> runtime that provides green threads
 and maps M Rust tasks to N native threads.)</p>

@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="32" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="32" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -912,6 +912,7 @@ be surpassed, the vector gets reallocated with a bigger capacity.</p>
     println!(<span class="hljs-string">"fourth element: {}"</span>, xs.get(<span class="hljs-number">3</span>));
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20iterators%20can%20be%20collected%20into%20vectors%0A%20%20%20%20let%20collected%5Fiterator%3A%20Vec%3Cint%3E%20%3D%20range%280%2C%2010%29.collect%28%29%3B%0A%20%20%20%20println!%28%22collected%20range%280%2C%2010%29%20into%3A%20%7B%7D%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20collected%5Fiterator.as%5Fslice%28%29%29%3B%0A%0A%20%20%20%20%2F%2F%20vec!%20can%20be%20used%20to%20initialize%20a%20vector%0A%20%20%20%20let%20mut%20xs%20%3D%20vec!%5B1%2C%202%2C%203%5D%3B%0A%20%20%20%20println!%28%22vector%3A%20%7B%7D%22%2C%20xs.as%5Fslice%28%29%29%3B%0A%0A%20%20%20%20%2F%2F%20insert%20new%20element%20at%20the%20end%20of%20the%20vector%0A%20%20%20%20println!%28%22push%204%20into%20the%20vector%22%29%0A%20%20%20%20xs.push%284%29%3B%0A%20%20%20%20println!%28%22vector%3A%20%7B%7D%22%2C%20xs.as%5Fslice%28%29%29%3B%0A%0A%20%20%20%20%2F%2F%20Error%3A%20immutable%20vectors%20can%27t%20be%20grow%20or%20shrink%0A%20%20%20%20%2F%2Fcollected%5Fiterator.push%280%29%3B%0A%0A%20%20%20%20%2F%2F%20the%20len%20method%20yields%20the%20current%20size%20of%20the%20vector%0A%20%20%20%20println!%28%22vector%20size%3A%20%7B%7D%22%2C%20xs.len%28%29%29%3B%0A%0A%20%20%20%20%2F%2F%20indexing%20is%20done%20using%20the%20%60get%60%20method%20%28indexing%20starts%20at%200%29%0A%20%20%20%20println!%28%22second%20element%3A%20%7B%7D%22%2C%20xs.get%281%29%29%3B%0A%0A%20%20%20%20%2F%2F%20remove%20last%20element%20from%20the%20vector%20and%20return%20it%0A%20%20%20%20println!%28%22pop%20last%20element%3A%20%7B%7D%22%2C%20xs.pop%28%29%29%3B%0A%0A%20%20%20%20%2F%2F%20out%20of%20bounds%20indexing%20yields%20a%20runtime%20failure%0A%20%20%20%20println!%28%22fourth%20element%3A%20%7B%7D%22%2C%20xs.get%283%29%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>vec.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc vec.rs &amp;&amp; ./vec
 collected range(0, 10) into: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 vector: [1, 2, 3]

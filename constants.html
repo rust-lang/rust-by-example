@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="21" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="21" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -912,6 +912,7 @@ fn main() {
     }
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=static%20LANGUAGE%3A%20%26%27static%20str%20%3D%20%22Rust%22%3B%0Astatic%20THRESHOLD%3A%20int%20%3D%2010%3B%0A%0Afn%20is%5Fbig%28n%3A%20int%29%20%2D%3E%20bool%20%7B%0A%20%20%20%20%2F%2F%20access%20constant%20in%20some%20function%0A%20%20%20%20n%20%3E%20THRESHOLD%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20let%20n%20%3D%2016%3B%0A%0A%20%20%20%20%2F%2F%20access%20constant%20in%20the%20main%20loop%0A%20%20%20%20println!%28%22This%20is%20%7B%7D%22%2C%20LANGUAGE%29%3B%0A%20%20%20%20println!%28%22The%20threshold%20is%20%7B%7D%22%2C%20THRESHOLD%29%3B%0A%20%20%20%20println!%28%22%7B%7D%20is%20%7B%7D%22%2C%20n%2C%20if%20is%5Fbig%28n%29%20%7B%20%22big%22%20%7D%20else%20%7B%20%22small%22%20%7D%29%3B%0A%0A%20%20%20%20%2F%2F%20Error%3A%20cannot%20modify%20static%20item%0A%20%20%20%20%2F%2FTHRESHOLD%20%3D%205%3B%0A%0A%20%20%20%20if%20true%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20string%20literals%20are%20references%20to%20read%2Donly%20memory%0A%20%20%20%20%20%20%20%20let%20static%5Fstring%3A%20%26%27static%20str%20%3D%20%22In%20read%2Donly%20memory%22%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20when%20static%5Fstring%20goes%20out%20of%20scope%2C%20we%20can%20no%20longer%20refer%20to%20the%0A%20%20%20%20%20%20%20%20%2F%2F%20underlying%20data%2C%20but%20the%20string%20remains%20in%20the%20read%2Donly%20memory%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>constants.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc constants.rs &amp;&amp; ./constants
 This is Rust
 The threshold is 10

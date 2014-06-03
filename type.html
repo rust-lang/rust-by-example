@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="5" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="5" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -890,6 +890,7 @@ keyword.</p>
     println!(<span class="hljs-string">"Casting: {} -&gt; {} -&gt; {}"</span>, decimal, integer, character);
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20All%20the%20type%20annotations%20are%20superfluous%0A%20%20%20%20let%20decimal%3A%20f32%20%3D%2065.4321%3B%0A%20%20%20%20let%20integer%3A%20u8%20%3D%20decimal%20as%20u8%3B%0A%20%20%20%20let%20character%3A%20char%20%3D%20integer%20as%20char%3B%0A%0A%20%20%20%20println!%28%22Casting%3A%20%7B%7D%20%2D%3E%20%7B%7D%20%2D%3E%20%7B%7D%22%2C%20decimal%2C%20integer%2C%20character%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>type.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc type.rs &amp;&amp; ./type
 Casting: 65.432098 -&gt; 65 -&gt; A
 </code></pre><p>The type inference engine is pretty smart, it does more than looking at the
@@ -910,6 +911,9 @@ afterwards to infer its type. Here&#39;s an advanced example of type inference:<
     <span class="hljs-comment">// Aha! Now the compiler knows that `v` is a vector of uints.</span>
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20By%20local%20inference%2C%20the%20compiler%20knows%20that%20the%20type%20of%20%60e%60%20is%20uint%0A%20%20%20%20let%20e%20%3D%205u%3B%0A%0A%20%20%20%20%2F%2F%20Create%20an%20empty%20vector%20%28a%20growable%20array%29%0A%20%20%20%20let%20mut%20v%20%3D%20Vec%3A%3Anew%28%29%3B%0A%20%20%20%20%2F%2F%20At%20this%20point%20the%20compiler%20doesn%27t%20know%20the%20exact%20type%20of%20%60v%60%2C%20it%0A%20%20%20%20%2F%2F%20just%20knows%20that%20it%27s%20a%20vector%20of%20something%0A%0A%20%20%20%20%2F%2F%20Insert%20%60e%60%20in%20the%20vector%0A%20%20%20%20v.push%28e%29%3B%0A%20%20%20%20%2F%2F%20Aha!%20Now%20the%20compiler%20knows%20that%20%60v%60%20is%20a%20vector%20of%20uints.%0A%7D%0A&amp;run=1" target="_blank">Try <code>inference.rs</code> in the playpen!</a>)</p>
+<p>(You are encouraged to try the previous code with the <code>v.push</code> line commented
+out)</p>
 <p>No type annotation of variables was needed, the compiler is happy and so is the
 programmer!</p>
 

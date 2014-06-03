@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="35" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="35" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -948,6 +948,7 @@ task number 4 reported
     }
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=use%20std%3A%3Acomm%3A%3Achannel%3B%0A%0Astatic%20NMESSAGES%3A%20int%20%3D%205%3B%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20let%20%28tx%2C%20rx%29%20%3D%20channel%28%29%3B%0A%0A%20%20%20%20for%20i%20in%20range%280%2C%20NMESSAGES%29%20%7B%0A%20%20%20%20%20%20%20%20tx.send%28i%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20for%20%5F%20in%20range%280%2C%20NMESSAGES%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%22%2C%20rx.recv%28%29%29%3B%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>fifo.rs</code> in the playpen!</a>)</p>
 <p>The order is maintained, after removing the scheduler non-determinism.</p>
 <pre><code>$ rustc fifo.rs &amp;&amp; ./fifo
 0

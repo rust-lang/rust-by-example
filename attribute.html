@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="40" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="40" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -934,6 +934,7 @@ liberty-a1e7dc98-0.1.rlib
     are_you_on_linux();
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=%2F%2F%20this%20function%20only%20gets%20compiled%20if%20the%20target%20OS%20is%20linux%0A%23%5Bcfg%28target%5Fos%20%3D%20%22linux%22%29%5D%0Afn%20are%5Fyou%5Fon%5Flinux%28%29%20%7B%0A%20%20%20%20println!%28%22You%20are%20running%20linux!%22%29%0A%7D%0A%0A%2F%2F%20this%20function%20only%20gets%20compiled%20if%20the%20target%20OS%20is%20%2Anot%2A%20linux%0A%23%5Bcfg%28not%28target%5Fos%20%3D%20%22linux%22%29%29%5D%0Afn%20are%5Fyou%5Fon%5Flinux%28%29%20%7B%0A%20%20%20%20println!%28%22You%20are%20%2Anot%2A%20running%20linux!%22%29%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20are%5Fyou%5Fon%5Flinux%28%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>conditional.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc conditional.rs &amp;&amp; ./conditional
 You are running linux!
 </code></pre><p>Some conditionals like <code>target_os</code> are implicitly provided by <code>rustc</code>, but

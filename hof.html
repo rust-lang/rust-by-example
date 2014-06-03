@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="31" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -922,13 +922,14 @@ give Rust its functional flavor.</p>
     println!(<span class="hljs-string">"functional style: {}"</span>, sum_of_squared_odd_numbers);
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=extern%20crate%20num%3B%0A%0A%2F%2F%20the%20AdditiveIterator%20trait%20adds%20the%20sum%28%29%20method%20to%20iterators%0Ause%20std%3A%3Aiter%3A%3A%7BAdditiveIterator%2Ccount%7D%3B%0A%2F%2F%20the%20Integer%20trait%20adds%20the%20is%5Fodd%28%29%20method%20to%20integer%20primitives%0Ause%20num%3A%3AInteger%3B%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20println!%28%22Find%20the%20sum%20of%20all%20the%20squared%20odd%20numbers%20under%201000%22%29%3B%0A%20%20%20%20let%20upper%3A%20int%20%3D%201000%3B%0A%0A%20%20%20%20%2F%2F%20imperative%20approach%0A%20%20%20%20%2F%2F%20declare%20accumulator%20variable%0A%20%20%20%20let%20mut%20acc%20%3D%200%3B%0A%20%20%20%20%2F%2F%20iterate%200%2C%201%2C%202%2C%20...%20to%20infinity%0A%20%20%20%20for%20n%20in%20count%280%2C%201%29%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20square%20the%20number%0A%20%20%20%20%20%20%20%20let%20n%5Fsquared%20%3D%20n%20%2A%20n%3B%0A%0A%20%20%20%20%20%20%20%20if%20n%5Fsquared%20%3E%3D%20upper%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20break%20loop%20if%20exceeded%20the%20upper%20limit%0A%20%20%20%20%20%20%20%20%20%20%20%20break%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20if%20n%5Fsquared.is%5Fodd%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20accumulate%20value%2C%20if%20it%27s%20odd%0A%20%20%20%20%20%20%20%20%20%20%20%20acc%20%2B%3D%20n%5Fsquared%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20println!%28%22imperative%20style%3A%20%7B%7D%22%2C%20acc%29%3B%0A%0A%20%20%20%20%2F%2F%20functional%20approach%0A%20%20%20%20let%20sum%5Fof%5Fsquared%5Fodd%5Fnumbers%20%3D%0A%20%20%20%20%20%20%20%20%2F%2F%20all%20natural%20numbers%0A%20%20%20%20%20%20%20%20count%280%2C%201%29.%0A%20%20%20%20%20%20%20%20%2F%2F%20squared%0A%20%20%20%20%20%20%20%20map%28%7Cn%7C%20n%20%2A%20n%29.%0A%20%20%20%20%20%20%20%20%2F%2F%20below%20upper%20limit%0A%20%20%20%20%20%20%20%20take%5Fwhile%28%7C%26n%7C%20n%20%3C%20upper%29.%0A%20%20%20%20%20%20%20%20%2F%2F%20that%20are%20odd%0A%20%20%20%20%20%20%20%20filter%28%7Cn%7C%20n.is%5Fodd%28%29%29.%0A%20%20%20%20%20%20%20%20%2F%2F%20sum%20them%0A%20%20%20%20%20%20%20%20sum%28%29%3B%0A%20%20%20%20println!%28%22functional%20style%3A%20%7B%7D%22%2C%20sum%5Fof%5Fsquared%5Fodd%5Fnumbers%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>hof.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc hof.rs &amp;&amp; ./hof
 Find the sum of all the squared odd numbers under 1000
 imperative style: 5456
 functional style: 5456
 </code></pre><p><a href="http://static.rust-lang.org/doc/master/core/option/type.Option.html" target="_blank">Option</a>
-and <a href="http://static.rust-lang.org/doc/master/core/iter/trait.Iterator.html" target="_blank">Iterator
-</a>
+and
+<a href="http://static.rust-lang.org/doc/master/core/iter/trait.Iterator.html" target="_blank">Iterator</a>
 implement their fair share of HOFs.</p>
 
                     

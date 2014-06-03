@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="24" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="24" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -916,6 +916,7 @@ section of an array, and have <code>&amp;[T]</code> as type signature.</p>
     println!(<span class="hljs-string">"{}"</span>, xs[<span class="hljs-number">5</span>]);
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=use%20std%3A%3Amem%3A%3Asize%5Fof%5Fval%3B%0A%0A%2F%2F%20This%20function%20borrows%20a%20slice%0Afn%20analyze%5Fslice%28slice%3A%20%26%5Bint%5D%29%20%7B%0A%20%20%20%20println!%28%22first%20element%20of%20the%20slice%3A%20%7B%7D%22%2C%20slice%5B0%5D%29%3B%0A%20%20%20%20println!%28%22the%20slice%20has%20%7B%7D%20elements%22%2C%20slice.len%28%29%29%3B%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20fixed%2Dsize%20array%20%28type%20signature%20is%20superfluous%29%0A%20%20%20%20let%20xs%3A%20%5Bint%2C%20..5%5D%20%3D%20%5B1%2C%202%2C%203%2C%204%2C%205%5D%3B%0A%0A%20%20%20%20%2F%2F%20indexing%20starts%20at%200%0A%20%20%20%20println!%28%22first%20element%20of%20the%20array%3A%20%7B%7D%22%2C%20xs%5B0%5D%29%3B%0A%20%20%20%20println!%28%22second%20element%20of%20the%20array%3A%20%7B%7D%22%2C%20xs%5B1%5D%29%3B%0A%0A%20%20%20%20%2F%2F%20len%28%29%20returns%20the%20size%20of%20the%20array%0A%20%20%20%20println!%28%22array%20size%3A%20%7B%7D%22%2C%20xs.len%28%29%29%3B%0A%0A%20%20%20%20%2F%2F%20arrays%20are%20stack%20allocated%0A%20%20%20%20println!%28%22array%20occupies%20%7B%7D%20bytes%22%2C%20size%5Fof%5Fval%28%26xs%29%29%3B%0A%0A%20%20%20%20%2F%2F%20arrays%20can%20be%20automatically%20borrowed%20as%20slices%0A%20%20%20%20println!%28%22borrow%20the%20whole%20array%20as%20a%20slice%22%29%3B%0A%20%20%20%20analyze%5Fslice%28xs%29%3B%0A%0A%20%20%20%20%2F%2F%20slices%20can%20point%20to%20a%20section%20of%20an%20array%0A%20%20%20%20println!%28%22borrow%20a%20section%20of%20the%20array%20as%20a%20slice%22%29%3B%0A%20%20%20%20analyze%5Fslice%28xs.slice%281%2C%204%29%29%3B%0A%0A%20%20%20%20%2F%2F%20out%20of%20bound%20indexing%20yields%20a%20runtime%20failure%0A%20%20%20%20println!%28%22%7B%7D%22%2C%20xs%5B5%5D%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>array.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc array.rs &amp;&amp; ./array
 first element of the array: 1
 second element of the array: 2

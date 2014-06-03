@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="33" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="33" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -921,7 +921,23 @@ fn main() {
     println!("Bob says: {}", bob);
 }
 </code></pre>
-<p>More <code>str</code>/<code>String</code> methods can be found under the
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20%28all%20the%20type%20annotations%20are%20superfluous%29%0A%20%20%20%20%2F%2F%20a%20reference%20to%20a%20string%20allocated%20in%20read%20only%20memory%0A%20%20%20%20let%20pangram%3A%20%26%27static%20str%20%3D%20%22the%20quick%20brow%20fox%20jumps%20over%20the%20lazy%20dog%22%3B%0A%20%20%20%20println!%28%22pangram%3A%20%7B%7D%22%2C%20pangram%29%3B%0A%0A%20%20%20%20%2F%2F%20iterate%20over%20words%20in%20reverse%2C%20no%20new%20string%20is%20allocated%0A%20%20%20%20println!%28%22words%20in%20reverse%22%29%3B%0A%20%20%20%20for%20word%20in%20pangram.words%28%29.rev%28%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%22%2C%20word%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20copy%20chars%20into%20a%20vector%2C%20sort%20and%20remove%20duplicates%0A%20%20%20%20let%20mut%20chars%3A%20Vec%3Cchar%3E%20%3D%20pangram.chars%28%29.collect%28%29%3B%0A%20%20%20%20chars.sort%28%29%3B%0A%20%20%20%20chars.dedup%28%29%3B%0A%0A%20%20%20%20%2F%2F%20a%20growable%20%60String%60%0A%20%20%20%20let%20mut%20string%3A%20String%20%3D%20String%3A%3Anew%28%29%3B%0A%20%20%20%20for%20c%20in%20chars.move%5Fiter%28%29%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20insert%20a%20char%20at%20the%20end%20of%20string%0A%20%20%20%20%20%20%20%20string.push%5Fchar%28c%29%3B%0A%20%20%20%20%20%20%20%20%2F%2F%20insert%20a%20string%20at%20the%20end%20of%20string%0A%20%20%20%20%20%20%20%20string.push%5Fstr%28%22%2C%20%22%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20the%20trimmed%20string%20is%20a%20slice%20to%20the%20original%20string%2C%20hence%0A%20%20%20%20%2F%2F%20no%20new%20allocation%20is%20performed%0A%20%20%20%20let%20trimmed%5Fstr%3A%20%26str%20%3D%20string.as%5Fslice%28%29.trim%5Fchars%28%26%5B%27%2C%27%2C%20%27%20%27%5D%29%3B%0A%20%20%20%20println!%28%22used%20characters%3A%20%7B%7D%22%2C%20trimmed%5Fstr%29%3B%0A%0A%20%20%20%20%2F%2F%20heap%20allocate%20a%20string%0A%20%20%20%20let%20alice%20%3D%20String%3A%3Afrom%5Fstr%28%22I%20like%20dogs%22%29%3B%0A%20%20%20%20%2F%2F%20allocate%20new%20memory%20and%20store%20the%20modified%20string%20there%0A%20%20%20%20let%20bob%3A%20String%20%3D%20alice.replace%28%22dog%22%2C%20%22cat%22%29%3B%0A%0A%20%20%20%20println!%28%22Alice%20says%3A%20%7B%7D%22%2C%20alice%29%3B%0A%20%20%20%20println!%28%22Bob%20says%3A%20%7B%7D%22%2C%20bob%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>str.rs</code> in the playpen!</a>)</p>
+<pre><code>$ rustc str.rs &amp;&amp; ./str
+pangram: the quick brow fox jumps over the lazy dog
+words in reverse
+dog
+lazy
+the
+over
+jumps
+fox
+brow
+quick
+the
+used characters: a, b, c, d, e, f, g, h, i, j, k, l, m, o, p, q, r, s, t, u, v, w, x, y, z
+Alice says: I like dogs
+Bob says: I like cats
+</code></pre><p>More <code>str</code>/<code>String</code> methods can be found under the
 <a href="http://static.rust-lang.org/doc/master/std/str/index.html" target="_blank">std::str</a> and
 <a href="http://static.rust-lang.org/doc/master/std/string/index.html" target="_blank">std::string</a>
 modules</p>

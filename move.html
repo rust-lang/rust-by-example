@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="17" data-basepath="." data-revision="1401674151500">
+    <div class="book" data-github="japaric/rust-by-example" data-level="17" data-basepath="." data-revision="1401760088481">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -908,6 +908,7 @@ transferred, this is know as <em>moving</em> in Rust-speak.</p>
     <span class="hljs-comment">// b goes out of scope, and the memory is freed</span>
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=use%20std%3A%3Aowned%3A%3ABox%3B%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20stack%20allocated%20integer%0A%20%20%20%20let%20x%20%3D%205%3B%0A%0A%20%20%20%20%2F%2F%20copy%20%60x%60%20into%20%60y%60%2C%20there%20are%20no%20resources%20to%20move%0A%20%20%20%20let%20y%20%3D%20x%3B%0A%0A%20%20%20%20%2F%2F%20both%20values%20can%20be%20used%2C%20because%20they%20are%20independent%0A%20%20%20%20println!%28%22x%20is%20%7B%7D%2C%20and%20y%20is%20%7B%7D%22%2C%20x%2C%20y%29%3B%0A%0A%20%20%20%20%2F%2F%20%60a%60%20is%20a%20pointer%20to%20a%20heap%20allocated%20integer%0A%20%20%20%20let%20a%20%3D%20box%205%3B%0A%0A%20%20%20%20%2F%2F%20copy%20%60b%60%20into%20%60a%60%2C%20now%20both%20point%20to%20the%20same%20heap%20allocated%20data%0A%20%20%20%20%2F%2F%20%2Abut%2A%2C%20now%20b%20%2Aowns%2A%20the%20heap%20allocated%20data%0A%20%20%20%20%2F%2F%20%60b%60%20is%20now%20in%20charge%20of%20freeing%20the%20memory%20in%20the%20heap%0A%20%20%20%20let%20b%20%3D%20a%3B%0A%0A%20%20%20%20%2F%2F%20Error%3A%20%60a%60%20can%20no%20longer%20access%20the%20data%0A%20%20%20%20%2F%2F%20because%20the%20resource%20has%20been%20%2Amoved%2A%0A%20%20%20%20println!%28%22%7B%7D%20can%20not%20be%20used%22%2C%20a%29%3B%0A%0A%20%20%20%20%2F%2F%20a%20goes%20out%20of%20scope%0A%20%20%20%20%2F%2F%20b%20goes%20out%20of%20scope%2C%20and%20the%20memory%20is%20freed%0A%7D%0A&amp;run=1" target="_blank">Try <code>assignment.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc assignment.rs &amp;&amp; ./assignment
 assignment.rs:23:36: 23:37 error: use of moved value: `a`
 assignment.rs:23     println!(&quot;{} can not be used&quot;, a);
@@ -943,6 +944,7 @@ avoids <em>dereferencing freed memory</em>.</p>
     <span class="hljs-keyword">let</span> invalid_dereference = *boxed_int;
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=use%20std%3A%3Aowned%3A%3ABox%3B%0A%0A%2F%2F%20this%20function%20takes%20ownership%20of%20the%20heap%20allocated%20memory%0Afn%20destroy%5Fbox%28boxed%5Fint%3A%20Box%3Cint%3E%29%20%7B%0A%20%20%20%20%2F%2F%20boxed%5Fint%20will%20be%20destroyed%20in%20this%20scope%2C%20and%20the%20memory%20will%20be%0A%20%20%20%20%2F%2F%20freed%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20heap%20allocated%20integer%0A%20%20%20%20let%20boxed%5Fint%20%3D%20box%205%3B%0A%0A%20%20%20%20%2F%2F%20boxed%5Fint%20loses%20ownership%20of%20the%20heap%20allocated%20integer%0A%20%20%20%20destroy%5Fbox%28boxed%5Fint%29%3B%0A%0A%20%20%20%20%2F%2F%20Error%3A%20this%20would%20dereference%20freed%20memory%0A%20%20%20%20%2F%2F%20the%20compiler%20forbids%20it%2C%20because%20the%20resource%20has%20been%20moved%0A%20%20%20%20let%20invalid%5Fdereference%20%3D%20%2Aboxed%5Fint%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>pass-by-value.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc pass-by-value.rs &amp;&amp; ./pass-by-value
 pass-by-value.rs:18:32: 18:41 error: use of moved value: `boxed_int`
 pass-by-value.rs:18     let invalid_dereference = *boxed_int;
@@ -973,6 +975,7 @@ ownership is transferred.</p>
     println!(<span class="hljs-string">"mutable_box now contains {}"</span>, mutable_box);
 }
 </code></pre>
+<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20let%20immutable%5Fbox%20%3D%20box%205%3B%0A%0A%20%20%20%20println!%28%22immutable%5Fbox%20contains%20%7B%7D%22%2C%20immutable%5Fbox%29%3B%0A%0A%20%20%20%20%2F%2F%20Mutability%20error%0A%20%20%20%20%2F%2F%2Aimmutable%5Fbox%20%3D%204%3B%0A%0A%20%20%20%20%2F%2F%20hand%20over%20box%2C%20change%20mutability%0A%20%20%20%20let%20mut%20mutable%5Fbox%20%3D%20immutable%5Fbox%3B%0A%0A%20%20%20%20println!%28%22mutable%5Fbox%20contains%20%7B%7D%22%2C%20mutable%5Fbox%29%3B%0A%0A%20%20%20%20%2F%2F%20modify%20contents%20of%20the%20box%0A%20%20%20%20%2Amutable%5Fbox%20%3D%204%3B%0A%0A%20%20%20%20println!%28%22mutable%5Fbox%20now%20contains%20%7B%7D%22%2C%20mutable%5Fbox%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>mut.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc mut.rs &amp;&amp; ./mut
 immutable_box contains 5
 mutable_box contains 5
