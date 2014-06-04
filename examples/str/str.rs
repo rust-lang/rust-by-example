@@ -1,7 +1,7 @@
 fn main() {
     // (all the type annotations are superfluous)
     // a reference to a string allocated in read only memory
-    let pangram: &'static str = "the quick brow fox jumps over the lazy dog";
+    let pangram: &'static str = "the quick brown fox jumps over the lazy dog";
     println!("pangram: {}", pangram);
 
     // iterate over words in reverse, no new string is allocated
