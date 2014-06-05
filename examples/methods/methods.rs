@@ -5,7 +5,7 @@ struct Point {
 
 // implementation block, all Point methods go in here
 impl Point {
-    // this is an static method
+    // this is a static method
     // static methods don't need to be called by an instance
     // these methods are generally used for constructors
     fn origin() -> Point {
