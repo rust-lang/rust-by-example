@@ -16,5 +16,5 @@ pub fn escape(code: &str) -> String {
 }
 
 pub fn link(source: &str) -> String {
-    format!("http://playtest.rust-lang.org/?code={}&run=1", escape(source))
+    format!("http://play.rust-lang.org/?code={}&run=1", escape(source))
 }
