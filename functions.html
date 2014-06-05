@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="10" data-basepath="." data-revision="1401822328547">
+    <div class="book" data-github="japaric/rust-by-example" data-level="10" data-basepath="." data-revision="1401992092811">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -912,7 +912,7 @@ return a value earlier from the function, even from inside loops or ifs.</p>
     }
 }
 </code></pre>
-<p>(<a href="http://playtest.rust-lang.org/?code=%2F%2F%20function%20that%20returns%20a%20bool%20value%0Afn%20is%5Fdivisible%5Fby%28lhs%3A%20uint%2C%20rhs%3A%20uint%29%20%2D%3E%20bool%20%7B%0A%20%20%20%20%2F%2F%20corner%20case%2C%20early%20return%0A%20%20%20%20if%20rhs%20%3D%3D%200%20%7B%0A%20%20%20%20%20%20%20%20return%20false%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20this%20is%20an%20expression%2C%20the%20%60return%60%20keyword%20is%20not%20necessary%20here%0A%20%20%20%20lhs%20%25%20rhs%20%3D%3D%200%0A%7D%0A%0A%2F%2F%20function%20that%20doesn%27t%20return%20a%20value%0Afn%20fizzbuzz%28n%3A%20uint%29%20%7B%0A%20%20%20%20if%20is%5Fdivisible%5Fby%28n%2C%2015%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22fizzbuzz%22%29%3B%0A%20%20%20%20%7D%20else%20if%20is%5Fdivisible%5Fby%28n%2C%203%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22fizz%22%29%3B%0A%20%20%20%20%7D%20else%20if%20is%5Fdivisible%5Fby%28n%2C%205%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22buzz%22%29%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%22%2C%20n%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20for%20n%20in%20range%281u%2C%20101%29%20%7B%0A%20%20%20%20%20%20%20%20fizzbuzz%28n%29%3B%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>functions.rs</code> in the playpen!</a>)</p>
+<p>(<a href="http://play.rust-lang.org/?code=%2F%2F%20function%20that%20returns%20a%20bool%20value%0Afn%20is%5Fdivisible%5Fby%28lhs%3A%20uint%2C%20rhs%3A%20uint%29%20%2D%3E%20bool%20%7B%0A%20%20%20%20%2F%2F%20corner%20case%2C%20early%20return%0A%20%20%20%20if%20rhs%20%3D%3D%200%20%7B%0A%20%20%20%20%20%20%20%20return%20false%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20this%20is%20an%20expression%2C%20the%20%60return%60%20keyword%20is%20not%20necessary%20here%0A%20%20%20%20lhs%20%25%20rhs%20%3D%3D%200%0A%7D%0A%0A%2F%2F%20function%20that%20doesn%27t%20return%20a%20value%0Afn%20fizzbuzz%28n%3A%20uint%29%20%7B%0A%20%20%20%20if%20is%5Fdivisible%5Fby%28n%2C%2015%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22fizzbuzz%22%29%3B%0A%20%20%20%20%7D%20else%20if%20is%5Fdivisible%5Fby%28n%2C%203%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22fizz%22%29%3B%0A%20%20%20%20%7D%20else%20if%20is%5Fdivisible%5Fby%28n%2C%205%29%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22buzz%22%29%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%7B%7D%22%2C%20n%29%3B%0A%20%20%20%20%7D%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20for%20n%20in%20range%281u%2C%20101%29%20%7B%0A%20%20%20%20%20%20%20%20fizzbuzz%28n%29%3B%0A%20%20%20%20%7D%0A%7D%0A&amp;run=1" target="_blank">Try <code>functions.rs</code> in the playpen!</a>)</p>
 
                     
                     </section>

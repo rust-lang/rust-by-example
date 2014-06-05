@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="27" data-basepath="." data-revision="1401822328547">
+    <div class="book" data-github="japaric/rust-by-example" data-level="27" data-basepath="." data-revision="1401992092811">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_33">
+                    <section class="normal" id="section-gitbook_34">
                     
                         <h1 id="operator-overloading">Operator Overloading</h1>
 <p>In Rust, many of the operators can be overloaded via traits. This is possible
@@ -915,7 +915,7 @@ any implementor of the <code>Add</code> trait will be able to use the <code>+</c
     println!(<span class="hljs-string">"Bar + Foo = {}"</span>, Bar + Foo);
 }
 </code></pre>
-<p>(<a href="http://playtest.rust-lang.org/?code=struct%20Foo%3B%0Astruct%20Bar%3B%0A%0A%23%5Bderiving%28Show%29%5D%0Astruct%20FooBar%3B%0A%0A%23%5Bderiving%28Show%29%5D%0Astruct%20BarFoo%3B%0A%0A%2F%2F%20the%20Add%3CT%2C%20U%3E%20trait%20needs%20two%20generic%20parameters%3A%0A%2F%2F%20T%20is%20the%20type%20of%20the%20RHS%20summand%2C%20and%0A%2F%2F%20U%20is%20the%20type%20of%20the%20sum%0A%2F%2F%20This%20block%20implements%20the%20operation%3A%20Foo%20%2B%20Bar%20%3D%20FooBar%0Aimpl%20Add%3CBar%2C%20FooBar%3E%20for%20Foo%20%7B%0A%20%20%20%20fn%20add%28%26self%2C%20rhs%3A%20%26Bar%29%20%2D%3E%20FooBar%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%3E%20Foo.add%28%26Bar%29%20was%20called%22%29%3B%0A%0A%20%20%20%20%20%20%20%20FooBar%0A%20%20%20%20%7D%0A%7D%0A%0A%2F%2F%20Addition%20can%20be%20implemented%20in%20a%20non%2Dcommutative%20way%0A%2F%2F%20This%20block%20implements%20the%20operation%3A%20Bar%20%2B%20Foo%20%3D%20BarFoo%0Aimpl%20Add%3CFoo%2C%20BarFoo%3E%20for%20Bar%20%7B%0A%20%20%20%20fn%20add%28%26self%2C%20rhs%3A%20%26Foo%29%20%2D%3E%20BarFoo%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%3E%20Bar.add%28%26Foo%29%20was%20called%22%29%3B%0A%0A%20%20%20%20%20%20%20%20BarFoo%0A%20%20%20%20%7D%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20println!%28%22Foo%20%2B%20Bar%20%3D%20%7B%7D%22%2C%20Foo%20%2B%20Bar%29%3B%0A%20%20%20%20println!%28%22Bar%20%2B%20Foo%20%3D%20%7B%7D%22%2C%20Bar%20%2B%20Foo%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>operator.rs</code> in the playpen!</a>)</p>
+<p>(<a href="http://play.rust-lang.org/?code=struct%20Foo%3B%0Astruct%20Bar%3B%0A%0A%23%5Bderiving%28Show%29%5D%0Astruct%20FooBar%3B%0A%0A%23%5Bderiving%28Show%29%5D%0Astruct%20BarFoo%3B%0A%0A%2F%2F%20the%20Add%3CT%2C%20U%3E%20trait%20needs%20two%20generic%20parameters%3A%0A%2F%2F%20T%20is%20the%20type%20of%20the%20RHS%20summand%2C%20and%0A%2F%2F%20U%20is%20the%20type%20of%20the%20sum%0A%2F%2F%20This%20block%20implements%20the%20operation%3A%20Foo%20%2B%20Bar%20%3D%20FooBar%0Aimpl%20Add%3CBar%2C%20FooBar%3E%20for%20Foo%20%7B%0A%20%20%20%20fn%20add%28%26self%2C%20rhs%3A%20%26Bar%29%20%2D%3E%20FooBar%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%3E%20Foo.add%28%26Bar%29%20was%20called%22%29%3B%0A%0A%20%20%20%20%20%20%20%20FooBar%0A%20%20%20%20%7D%0A%7D%0A%0A%2F%2F%20Addition%20can%20be%20implemented%20in%20a%20non%2Dcommutative%20way%0A%2F%2F%20This%20block%20implements%20the%20operation%3A%20Bar%20%2B%20Foo%20%3D%20BarFoo%0Aimpl%20Add%3CFoo%2C%20BarFoo%3E%20for%20Bar%20%7B%0A%20%20%20%20fn%20add%28%26self%2C%20rhs%3A%20%26Foo%29%20%2D%3E%20BarFoo%20%7B%0A%20%20%20%20%20%20%20%20println!%28%22%3E%20Bar.add%28%26Foo%29%20was%20called%22%29%3B%0A%0A%20%20%20%20%20%20%20%20BarFoo%0A%20%20%20%20%7D%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20println!%28%22Foo%20%2B%20Bar%20%3D%20%7B%7D%22%2C%20Foo%20%2B%20Bar%29%3B%0A%20%20%20%20println!%28%22Bar%20%2B%20Foo%20%3D%20%7B%7D%22%2C%20Bar%20%2B%20Foo%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>operator.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc operator.rs &amp;&amp; ./operator
 &gt; Foo.add(&amp;Bar) was called
 Foo + Bar = FooBar

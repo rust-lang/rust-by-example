@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="6" data-basepath="." data-revision="1401822328547">
+    <div class="book" data-github="japaric/rust-by-example" data-level="6" data-basepath="." data-revision="1401992092811">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -906,7 +906,7 @@ expression of the block ends with a semicolon, the return value will be <code>()
     println!(<span class="hljs-string">"z is {}"</span>, z);
 }
 </code></pre>
-<p>(<a href="http://playtest.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20all%20the%20type%20annotations%20are%20superfluous%0A%20%20%20%20let%20x%3A%20int%20%3D%205%3B%0A%0A%20%20%20%20let%20y%3A%20int%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20assignment%20statements%20are%20allowed%20inside%20blocks%0A%20%20%20%20%20%20%20%20let%20x%5Fsquared%20%3D%20x%20%2A%20x%3B%0A%20%20%20%20%20%20%20%20let%20x%5Fcube%20%3D%20x%5Fsquared%20%2A%20x%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20this%20expression%20will%20be%20assigned%20to%20y%0A%20%20%20%20%20%20%20%20x%5Fcube%20%2B%20x%5Fsquared%20%2B%20x%0A%20%20%20%20%7D%3B%0A%0A%20%20%20%20let%20z%3A%20%28%29%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20the%20semicolon%20suppresses%20this%20expression%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20and%20%60%28%29%60%20is%20assigned%20to%20z%0A%20%20%20%20%20%20%20%202%20%2A%20x%3B%0A%20%20%20%20%7D%3B%0A%0A%20%20%20%20println!%28%22x%20is%20%7B%7D%22%2C%20x%29%3B%0A%20%20%20%20println!%28%22y%20is%20%7B%7D%22%2C%20y%29%3B%0A%20%20%20%20println!%28%22z%20is%20%7B%7D%22%2C%20z%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>expression.rs</code> in the playpen!</a>)</p>
+<p>(<a href="http://play.rust-lang.org/?code=fn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20all%20the%20type%20annotations%20are%20superfluous%0A%20%20%20%20let%20x%3A%20int%20%3D%205%3B%0A%0A%20%20%20%20let%20y%3A%20int%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20assignment%20statements%20are%20allowed%20inside%20blocks%0A%20%20%20%20%20%20%20%20let%20x%5Fsquared%20%3D%20x%20%2A%20x%3B%0A%20%20%20%20%20%20%20%20let%20x%5Fcube%20%3D%20x%5Fsquared%20%2A%20x%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20this%20expression%20will%20be%20assigned%20to%20y%0A%20%20%20%20%20%20%20%20x%5Fcube%20%2B%20x%5Fsquared%20%2B%20x%0A%20%20%20%20%7D%3B%0A%0A%20%20%20%20let%20z%3A%20%28%29%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20the%20semicolon%20suppresses%20this%20expression%2C%0A%20%20%20%20%20%20%20%20%2F%2F%20and%20%60%28%29%60%20is%20assigned%20to%20z%0A%20%20%20%20%20%20%20%202%20%2A%20x%3B%0A%20%20%20%20%7D%3B%0A%0A%20%20%20%20println!%28%22x%20is%20%7B%7D%22%2C%20x%29%3B%0A%20%20%20%20println!%28%22y%20is%20%7B%7D%22%2C%20y%29%3B%0A%20%20%20%20println!%28%22z%20is%20%7B%7D%22%2C%20z%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>expression.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc expression.rs &amp;&amp; ./expression
 x is 5
 y is 155

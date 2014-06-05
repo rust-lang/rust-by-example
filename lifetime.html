@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="19" data-basepath="." data-revision="1401822328547">
+    <div class="book" data-github="japaric/rust-by-example" data-level="19" data-basepath="." data-revision="1401992092811">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -961,7 +961,7 @@ write would look like this:</p>
 
 }
 </code></pre>
-<p>(<a href="http://playtest.rust-lang.org/?code=struct%20Book%20%7B%0A%20%20%20%20%2F%2F%20%60String%60%20is%20a%20heap%20allocated%20string%0A%20%20%20%20title%3A%20String%2C%0A%20%20%20%20author%3A%20String%2C%0A%20%20%20%20year%3A%20uint%2C%0A%7D%0A%0Afn%20get%5Ftitle%3C%27a%2C%20%27b%3E%28book%3A%20%26%27a%20Book%29%20%2D%3E%20%26%27b%20str%20%7B%0A%20%20%20%20%2F%2F%20as%5Fslice%28%29%20will%20return%20a%20reference%20to%20the%20string%20%28%26str%29%0A%20%20%20%20book.title.as%5Fslice%28%29%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%0A%7D%0A&amp;run=1" target="_blank">Try <code>reference-bad.rs</code> in the playpen!</a>)</p>
+<p>(<a href="http://play.rust-lang.org/?code=struct%20Book%20%7B%0A%20%20%20%20%2F%2F%20%60String%60%20is%20a%20heap%20allocated%20string%0A%20%20%20%20title%3A%20String%2C%0A%20%20%20%20author%3A%20String%2C%0A%20%20%20%20year%3A%20uint%2C%0A%7D%0A%0Afn%20get%5Ftitle%3C%27a%2C%20%27b%3E%28book%3A%20%26%27a%20Book%29%20%2D%3E%20%26%27b%20str%20%7B%0A%20%20%20%20%2F%2F%20as%5Fslice%28%29%20will%20return%20a%20reference%20to%20the%20string%20%28%26str%29%0A%20%20%20%20book.title.as%5Fslice%28%29%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%0A%7D%0A&amp;run=1" target="_blank">Try <code>reference-bad.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc reference-bad.rs &amp;&amp; ./reference-bad
 reference-bad.rs:8:1: 11:2 note: consider using an explicit lifetime parameter as shown: fn get_title&lt;&#39;a&gt;(book: &amp;&#39;a Book) -&gt; &amp;&#39;a str
 reference-bad.rs:8 fn get_title&lt;&#39;a, &#39;b&gt;(book: &amp;&#39;a Book) -&gt; &amp;&#39;b str {
@@ -1001,7 +1001,7 @@ creation time), therefore the title field has the same lifetime as the book.</p>
     println!(<span class="hljs-string">"I just read {}"</span>, title);
 }
 </code></pre>
-<p>(<a href="http://playtest.rust-lang.org/?code=struct%20Book%20%7B%0A%20%20%20%20title%3A%20String%2C%0A%20%20%20%20author%3A%20String%2C%0A%20%20%20%20year%3A%20uint%2C%0A%7D%0A%0Afn%20get%5Ftitle%3C%27a%3E%28book%3A%20%26%27a%20Book%29%20%2D%3E%20%26%27a%20str%20%7B%0A%20%20%20%20book.title.as%5Fslice%28%29%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20let%20geb%20%3D%20Book%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20construct%20a%20%60String%60%20%28heap%20allocated%20string%29%20from%20a%20reference%20to%20a%0A%20%20%20%20%20%20%20%20%2F%2F%20string%20%28%26%27static%20str%29%20by%20doing%20a%20copy%20of%20the%20data%0A%20%20%20%20%20%20%20%20author%3A%20String%3A%3Afrom%5Fstr%28%22Douglas%20Hofstadter%22%29%2C%0A%20%20%20%20%20%20%20%20title%3A%20String%3A%3Afrom%5Fstr%28%22Godel%2C%20Escher%2C%20Bach%22%29%2C%0A%20%20%20%20%20%20%20%20year%3A%201979%2C%0A%20%20%20%20%7D%3B%0A%0A%20%20%20%20let%20title%3A%20%26str%20%3D%20get%5Ftitle%28%26geb%29%3B%0A%0A%20%20%20%20println!%28%22I%20just%20read%20%7B%7D%22%2C%20title%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>reference-good.rs</code> in the playpen!</a>)</p>
+<p>(<a href="http://play.rust-lang.org/?code=struct%20Book%20%7B%0A%20%20%20%20title%3A%20String%2C%0A%20%20%20%20author%3A%20String%2C%0A%20%20%20%20year%3A%20uint%2C%0A%7D%0A%0Afn%20get%5Ftitle%3C%27a%3E%28book%3A%20%26%27a%20Book%29%20%2D%3E%20%26%27a%20str%20%7B%0A%20%20%20%20book.title.as%5Fslice%28%29%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20let%20geb%20%3D%20Book%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20construct%20a%20%60String%60%20%28heap%20allocated%20string%29%20from%20a%20reference%20to%20a%0A%20%20%20%20%20%20%20%20%2F%2F%20string%20%28%26%27static%20str%29%20by%20doing%20a%20copy%20of%20the%20data%0A%20%20%20%20%20%20%20%20author%3A%20String%3A%3Afrom%5Fstr%28%22Douglas%20Hofstadter%22%29%2C%0A%20%20%20%20%20%20%20%20title%3A%20String%3A%3Afrom%5Fstr%28%22Godel%2C%20Escher%2C%20Bach%22%29%2C%0A%20%20%20%20%20%20%20%20year%3A%201979%2C%0A%20%20%20%20%7D%3B%0A%0A%20%20%20%20let%20title%3A%20%26str%20%3D%20get%5Ftitle%28%26geb%29%3B%0A%0A%20%20%20%20println!%28%22I%20just%20read%20%7B%7D%22%2C%20title%29%3B%0A%7D%0A&amp;run=1" target="_blank">Try <code>reference-good.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc reference-good.rs &amp;&amp; ./reference-good
 I just read Godel, Escher, Bach
 </code></pre>

@@ -46,7 +46,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="16" data-basepath="." data-revision="1401822328547">
+    <div class="book" data-github="japaric/rust-by-example" data-level="16" data-basepath="." data-revision="1401992092811">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -871,7 +871,7 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_38">
+                    <section class="normal" id="section-gitbook_39">
                     
                         <h1 id="raii">RAII</h1>
 <p>Variables in Rust do more that just hold data in the stack, they can also <em>own</em>
@@ -908,7 +908,7 @@ and the resources <em>owned</em> by it are freed. This behavior shields against
     <span class="hljs-comment">// boxed_int gets destroyed here, memory gets freed</span>
 }
 </code></pre>
-<p>(<a href="http://playtest.rust-lang.org/?code=fn%20create%5Fbox%28%29%20%7B%0A%20%20%20%20let%20function%5Fbox%20%3D%20box%203%3B%0A%0A%20%20%20%20%2F%2F%20function%5Fbox%20gets%20destroyed%20here%2C%20memory%20gets%20freed%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20allocate%20integer%20in%20the%20heap%0A%20%20%20%20let%20boxed%5Fint%20%3D%20box%205%3B%0A%0A%20%20%20%20if%20true%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20new%20%28smaller%29%20block%20scope%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20another%20heap%20allocated%20integer%0A%20%20%20%20%20%20%20%20let%20short%5Flived%5Fbox%20%3D%20box%204%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20short%5Flived%5Fbox%20gets%20destroyed%20here%2C%20memory%20gets%20freed%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20create%20lots%20of%20boxes%0A%20%20%20%20for%20%5F%20in%20range%280%2C%201%5F000%29%20%7B%0A%20%20%20%20%20%20%20%20create%5Fbox%28%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20boxed%5Fint%20gets%20destroyed%20here%2C%20memory%20gets%20freed%0A%7D%0A&amp;run=1" target="_blank">Try <code>raii.rs</code> in the playpen!</a>)</p>
+<p>(<a href="http://play.rust-lang.org/?code=fn%20create%5Fbox%28%29%20%7B%0A%20%20%20%20let%20function%5Fbox%20%3D%20box%203%3B%0A%0A%20%20%20%20%2F%2F%20function%5Fbox%20gets%20destroyed%20here%2C%20memory%20gets%20freed%0A%7D%0A%0Afn%20main%28%29%20%7B%0A%20%20%20%20%2F%2F%20allocate%20integer%20in%20the%20heap%0A%20%20%20%20let%20boxed%5Fint%20%3D%20box%205%3B%0A%0A%20%20%20%20if%20true%20%7B%0A%20%20%20%20%20%20%20%20%2F%2F%20new%20%28smaller%29%20block%20scope%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20another%20heap%20allocated%20integer%0A%20%20%20%20%20%20%20%20let%20short%5Flived%5Fbox%20%3D%20box%204%3B%0A%0A%20%20%20%20%20%20%20%20%2F%2F%20short%5Flived%5Fbox%20gets%20destroyed%20here%2C%20memory%20gets%20freed%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20create%20lots%20of%20boxes%0A%20%20%20%20for%20%5F%20in%20range%280%2C%201%5F000%29%20%7B%0A%20%20%20%20%20%20%20%20create%5Fbox%28%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%2F%2F%20boxed%5Fint%20gets%20destroyed%20here%2C%20memory%20gets%20freed%0A%7D%0A&amp;run=1" target="_blank">Try <code>raii.rs</code> in the playpen!</a>)</p>
 <pre><code>$ rustc raii.rs &amp;&amp; valgrind ./raii
 ==7619== Memcheck, a memory error detector
 ==7619== Copyright (C) 2002-2013, and GNU GPL&#39;d, by Julian Seward et al.

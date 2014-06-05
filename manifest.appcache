@@ -1,25 +1,25 @@
 CACHE MANIFEST
-# Revision 1401822328550
+# Revision 1401992092811
 
 CACHE:
 loops.html
 index.html
 array.html
-bench.html
 attribute.html
+bench.html
 borrow.html
-bounds.html
 box.html
+bounds.html
 channels.html
 clone.html
 closures.html
-crates.html
 constants.html
+crates.html
 drop.html
 enum.html
 expression.html
-file.html
 ffi.html
+file.html
 for.html
 fs.html
 functions.html
@@ -34,19 +34,19 @@ macros.html
 match.html
 methods.html
 mod.html
-operator.html
 move.html
+operator.html
 option.html
 path.html
 print.html
-raii.html
 process.html
+raii.html
 rand.html
 result.html
 simd.html
 sockets.html
-str.html
 staging.html
+str.html
 structs.html
 tasks.html
 test.html
@@ -54,8 +54,8 @@ timers.html
 todo.html
 trait.html
 tuples.html
-unsafe.html
 type.html
+unsafe.html
 variables.html
 vec.html
 gitbook/app.js
