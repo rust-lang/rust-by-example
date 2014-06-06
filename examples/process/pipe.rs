@@ -9,7 +9,7 @@ fn main() {
         Ok(process) => process,
     };
 
-    if true {
+    {
         // the `stdin` field has type Option<PipeStream>
         // `take_unwrap` will take the value wrapped in a Some variant
         // note that we take ownership of stdin here
