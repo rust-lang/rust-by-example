@@ -9,8 +9,4 @@ allocated in read-only memory. `'static` is an special lifetime that outlives
 all the other lifetimes, and indicates that the referenced data is available in
 all the scopes.
 
-{constants.rs}
-
 {constants.play}
-
-{constants.out}

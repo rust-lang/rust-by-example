@@ -1,20 +1,24 @@
-pub fn escape(code: &str) -> String {
+pub fn editor(source: &str) -> String {
+    format!("<div id=\"active-code\">
+<button class=\"btn btn-primary\" type=\"button\" id=\"run-code\">Run</button>
+<button class=\"btn btn-primary\" type=\"button\" id=\"reset-code\">Reset</button>
+<div id=\"editor\">{}</div>
+<div id=\"result\"></div>
+</div>", escape(source))
+}
+
+fn escape(source: &str) -> String {
     let mut s = String::new();
 
-    for c in code.chars() {
-        match c {
-            c@'!' => s.push_char(c),
-            c@'.' => s.push_char(c),
-            c@'0'..'9' => s.push_char(c),
-            c@'A'..'Z' => s.push_char(c),
-            c@'a'..'z' => s.push_char(c),
-            c => s.push_str(format!("%{:02X}", c as u32).as_slice()),
+    for chr in source.trim().chars() {
+        match chr {
+            '*' => s.push_str("&#42;"),
+            '<' => s.push_str("&lt;"),
+            '>' => s.push_str("&gt;"),
+            '_' => s.push_str("&#95;"),
+            chr => s.push_char(chr),
         }
     }
 
     s
-}
-
-pub fn link(source: &str) -> String {
-    format!("http://play.rust-lang.org/?code={}&run=1", escape(source))
 }

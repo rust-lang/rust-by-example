@@ -21,8 +21,4 @@ The operators available and operator precedence are similar to other [C-like
 languages
 ](https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages)
 
-{literals.rs}
-
 {literals.play}
-
-{literals.out}

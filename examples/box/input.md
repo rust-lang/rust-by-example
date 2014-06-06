@@ -8,8 +8,4 @@ Boxed values can be dereferenced (unboxed) using the `*` operator, this removes
 one layer of indirection. Alternatively, `let box x = y` can be used to unbox
 `y` into `x`.
 
-{box.rs}
-
 {box.play}
-
-{box.out}

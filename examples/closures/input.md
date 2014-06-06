@@ -7,8 +7,4 @@ surrounding scope. Closures consist of three parts:
   inferred
 * a block, the last expression is the return value
 
-{closures.rs}
-
 {closures.play}
-
-{closures.out}

@@ -31,8 +31,6 @@ Here's an example of conditional compilation.
 
 {conditional.rs}
 
-{conditional.play}
-
 {conditional.out}
 
 Some conditionals like `target_os` are implicitly provided by `rustc`, but

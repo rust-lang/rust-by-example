@@ -6,8 +6,6 @@ and the resources *owned* by it are freed. This behavior shields against
 
 Don't take my word for it, let's check using `valgrind`
 
-{raii.rs}
-
 {raii.play}
 
 ```

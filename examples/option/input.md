@@ -10,8 +10,4 @@ instead of unwinding the whole program, this can be accomplished using the
 `Some`, a tuple struct that wraps a value. The type `T` of the wrapped value is
 part of the type signature of option `Option<T>`.
 
-{option.rs}
-
 {option.play}
-
-{option.out}

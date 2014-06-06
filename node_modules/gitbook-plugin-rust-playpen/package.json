@@ -1,0 +1,8 @@
+{
+    "description": "Integrate Rust playpen with gitbook",
+    "engines": {
+        "gitbook": "*"
+    },
+    "main": "index.js",
+    "name": "gitbook-plugin-rust-playpen"
+}

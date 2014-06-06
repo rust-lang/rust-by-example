@@ -1,14 +1,10 @@
 Rust provides a mechanism for spawning lightweight tasks via the `spawn`
 function, the argument of this function is a owned closure named `proc`.
 
-{tasks.rs}
-
 {tasks.play}
 
 These tasks will be scheduled by the Rust runtime and the order of execution of
 these tasks will be non-deterministic.
-
-{tasks.out}
 
 (By default, Rust uses its *native* runtime, which maps each Rust task to a
 native thread. Rust also provides a *green* runtime that provides green threads

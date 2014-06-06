@@ -5,6 +5,4 @@ function. `range(a, b)` will yield values from `a` (inclusive) to `b`
 
 Let's write fizzbuzz using `for` instead of `while`.
 
-{for.rs}
-
 {for.play}

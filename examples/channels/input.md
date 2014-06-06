@@ -23,10 +23,6 @@ task number 4 reported
 
 Albeit non obvious from the output above, channels are actually FIFO.
 
-{fifo.rs}
-
 {fifo.play}
 
 The order is maintained, after removing the scheduler non-determinism.
-
-{fifo.out}
