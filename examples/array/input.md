@@ -7,8 +7,4 @@ Instead, a slice is two-word object, the first word is a pointer to the data,
 and the second word is the length of the slice. Slices can be used to borrow a
 section of an array, and have `&[T]` as type signature.
 
-{array.rs}
-
 {array.play}
-
-{array.out}

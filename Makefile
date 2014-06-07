@@ -17,8 +17,7 @@ srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 .PHONY: all book clean test serve
 
 all:
-	mkdir -p stage
-	ln -sf ../examples/README.md stage/README.md
+	./setup-stage.sh
 	$(RUSTC) src/update.rs
 	./update
 	rm update
@@ -32,7 +31,6 @@ clean:
 	rm -rf stage
 
 test:
-	$(RUSTC) --test src/update.rs
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
 

@@ -103,11 +103,18 @@ impl<'a> Markdown<'a> {
     fn insert_playpen_links(&mut self) -> Result<(), String> {
         let re = regex!(r"\{(.*)\.play\}");
 
+        let mut once_ = false;
         let mut table = Vec::new();
         for line in self.content.as_slice().lines() {
             match re.captures(line) {
                 None => {},
                 Some(captures) => {
+                    if once_ {
+                        return Err(format!("more than one editor!"))
+                    } else {
+                        once_ = true;
+                    }
+
                     let input = format!("\\{{}.play\\}", captures.at(1));
                     let src = format!("{}.rs", captures.at(1));
                     let p = format!("examples/{}/{}", self.id, src);
@@ -116,9 +123,7 @@ impl<'a> Markdown<'a> {
                             return Err(format!("{} not found", p));
                         },
                         Ok(source) => {
-                            format!("([Try `{}` in the playpen!]({}))",
-                                    src,
-                                    playpen::link(source.as_slice()))
+                            playpen::editor(source.as_slice())
                         }
                     };
 

@@ -5,19 +5,13 @@ between them.
 A module is collection of items like: functions, structs, traits, impl blocks,
 and even other modules.
 
-{nested.rs}
-
 {nested.play}
-
-{nested.out}
 
 By default, the items in a module have private visibility, but this can be
 overridden using the `pub` modifier. Only the public items of a module can be
 accessed from outside the module scope.
 
 {visibility.rs}
-
-{visibility.play}
 
 {visibility.out}
 
@@ -26,8 +20,6 @@ access.
 
 {use.rs}
 
-{use.play}
-
 {use.out}
 
 The `super` and `self` keywords can be used in the path, to remove ambiguity
@@ -35,16 +27,12 @@ when accessing items.
 
 {super.rs}
 
-{super.play}
-
 {super.out}
 
 Structs have an extra level of visibility, their fields can be public or
 private. This allows encapsulation.
 
 {structs.rs}
-
-{structs.play}
 
 {structs.out}
 
