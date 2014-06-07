@@ -12,9 +12,6 @@ mod file;
 mod markdown;
 mod playpen;
 
-#[cfg(test)]
-mod test;
-
 fn main() {
     let examples = Example::get_list();
     let (tx, rx) = channel();
