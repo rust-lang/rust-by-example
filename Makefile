@@ -18,9 +18,8 @@ srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
 all:
 	./setup-stage.sh
-	$(RUSTC) src/update.rs
-	./update
-	rm update
+	$(RUSTC) src/update.rs --out-dir bin
+	bin/update
 
 book:
 	cd stage && $(GITBOOK) build
@@ -28,7 +27,7 @@ book:
 	./add-relinks.sh
 
 clean:
-	rm -rf stage
+	rm -rf {bin,stage}
 
 test:
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)

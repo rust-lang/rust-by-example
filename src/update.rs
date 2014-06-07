@@ -15,38 +15,29 @@ mod playpen;
 fn main() {
     let examples = Example::get_list();
     let (tx, rx) = channel();
-    let nexamples = examples.len();
 
-    for (i, example) in examples.move_iter().enumerate() {
+    let mut nexamples = 0;
+    for example in examples.move_iter() {
         let tx = tx.clone();
+        let count = example.count();
 
         spawn(proc() {
-            tx.send((i, example.copy_id(), example.process()));
-        })
+            example.process(nexamples, tx, 0, String::new());
+        });
+
+        nexamples += count;
     }
 
-    let mut chapters = range(0, nexamples).map(|_| {
+    let mut entries = range(0, nexamples).map(|_| {
         rx.recv()
-    }).collect::<Vec<(uint, String, String)>>();
+    }).collect::<Vec<(uint, String)>>();
 
-    chapters.sort_by(|&(i, _, _), &(j, _, _)| i.cmp(&j));
+    entries.sort_by(|&(i, _), &(j, _)| i.cmp(&j));
 
-    let mut summary = String::new();
-    let mut indent = false;
-    for (_, id, chapter) in chapters.move_iter() {
-        let id = id.as_slice();
-
-        if indent && id != "todo" && id != "staging" {
-            summary.push_str(format!("  {}", chapter).as_slice());
-        } else {
-            summary.push_str(chapter.as_slice());
-        }
-        summary.push_char('\n');
-
-        if id == "staging" {
-            indent = true;
-        }
-    }
+    let summary = entries.move_iter()
+                         .map(|(_, s)| s)
+                         .collect::<Vec<String>>()
+                         .connect("\n");
 
     match file::write(&Path::new("stage/SUMMARY.md"), summary.as_slice()) {
         Err(why) => fail!("{}", why),

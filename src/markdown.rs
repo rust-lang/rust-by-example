@@ -1,35 +1,42 @@
 use file;
 use playpen;
-use std::io::{UserRWX,fs};
 
-pub struct Markdown<'a> {
-    id: &'a str,
+pub struct Markdown<'a, 'b> {
     content: String,
+    id: &'a str,
+    prefix: &'b str,
 }
 
-impl<'a> Markdown<'a> {
-    pub fn process(id: &'a str, title: &str) -> Result<Markdown<'a>, String> {
-        let mut mkd = try!(Markdown::new(id, title));
+impl<'a, 'b> Markdown<'a, 'b> {
+    pub fn process(id: &'a str, title: &str, prefix: &'b str)
+        -> Result<(), String>
+    {
+        let mut mkd = try!(Markdown::new(id, title, prefix));
 
         try!(mkd.insert_sources());
         try!(mkd.insert_outputs());
         try!(mkd.insert_playpen_links());
         try!(mkd.save());
 
-        Ok(mkd)
+        Ok(())
     }
 
-    fn new(id: &'a str, title: &str) -> Result<Markdown<'a>, String> {
-        let p = Path::new(format!("examples/{}/input.md", id));
+    fn new(id: &'a str, title: &str, prefix: &'b str)
+        -> Result<Markdown<'a, 'b>, String>
+    {
+        let p = Path::new(format!("examples/{}/{}/input.md", prefix, id));
         let s = try!(file::read(&p));
 
         Ok(Markdown {
-            id: id,
             content: format!("\\# {}\n\n{}", title, s),
+            id: id,
+            prefix: prefix,
         })
     }
 
     fn insert_sources(&mut self) -> Result<(), String> {
+        let id = self.id;
+        let prefix = self.prefix;
         let re = regex!(r"\{(.*\.rs)\}");
 
         let mut table = Vec::new();
@@ -39,7 +46,7 @@ impl<'a> Markdown<'a> {
                 Some(captures) => {
                     let src = captures.at(1);
                     let input = format!("\\{{}\\}", src);
-                    let p = format!("examples/{}/{}", self.id, src);
+                    let p = format!("examples/{}/{}/{}", prefix, id, src);
                     let output = match file::read(&Path::new(p.as_slice())) {
                         Err(_) => {
                             return Err(format!("{} not found", p));
@@ -64,14 +71,13 @@ impl<'a> Markdown<'a> {
     }
 
     fn insert_outputs(&mut self) -> Result<(), String> {
+        let id = self.id;
+        let prefix = self.prefix;
         let r = regex!(r"\{(.*)\.out\}");
 
-        let dir = Path::new(format!("stage/{}", self.id));
+        let dir = Path::new(format!("bin/{}/{}", prefix, id));
 
-        match fs::mkdir(&dir, UserRWX) {
-            Err(_) => {},
-            Ok(_) => {},
-        }
+        file::mkdir(&dir);
 
         let mut table = Vec::new();
         for line in self.content.as_slice().lines() {
@@ -80,7 +86,7 @@ impl<'a> Markdown<'a> {
                 Some(captures) => {
                     let src = captures.at(1);
                     let input = format!("\\{{}.out\\}", src);
-                    let s = try!(file::run(self.id, src));
+                    let s = try!(file::run(prefix, id, src));
                     let s = format!("```\n$ rustc {0}.rs && ./{0}\n{1}```",
                                     src, s);
 
@@ -94,13 +100,12 @@ impl<'a> Markdown<'a> {
                                                 output.as_slice());
         }
 
-        match fs::rmdir(&dir) {
-            Err(_) => Err(format!("couldn't remove {}", dir.display())),
-            Ok(_) => Ok(()),
-        }
+        Ok(())
     }
 
     fn insert_playpen_links(&mut self) -> Result<(), String> {
+        let id = self.id;
+        let prefix = self.prefix;
         let re = regex!(r"\{(.*)\.play\}");
 
         let mut once_ = false;
@@ -117,7 +122,7 @@ impl<'a> Markdown<'a> {
 
                     let input = format!("\\{{}.play\\}", captures.at(1));
                     let src = format!("{}.rs", captures.at(1));
-                    let p = format!("examples/{}/{}", self.id, src);
+                    let p = format!("examples/{}/{}/{}", prefix, id, src);
                     let output = match file::read(&Path::new(p.as_slice())) {
                         Err(_) => {
                             return Err(format!("{} not found", p));
@@ -141,7 +146,7 @@ impl<'a> Markdown<'a> {
     }
 
     fn save(&self) -> Result<(), String> {
-        let path = Path::new(format!("stage/{}.md", self.id));
+        let path = Path::new(format!("stage/{}/{}.md", self.prefix, self.id));
 
         file::write(&path, self.content.as_slice())
     }
