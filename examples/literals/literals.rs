@@ -11,7 +11,11 @@ fn main() {
     println!("NOT true is {}", !true);
 
     // bitwise operations
-    println!("100 XOR 001 is {:t}", 0b100 ^ 0b001);
+    println!("0011 AND 0101 is {:04t}", 0b0011 & 0b0101);
+    println!("0011 OR 0101 is {:04t}", 0b0011 | 0b0101);
+    println!("0011 XOR 0101 is {:04t}", 0b0011 ^ 0b0101);
+    println!("1 << 5 is {}", 1 << 5);
+    println!("100 >> 2 is {}", 100 >> 2);
 
     // use underscores to improve readability!
     println!("One million is written as {}", 1_000_000);
