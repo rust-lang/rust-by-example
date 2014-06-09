@@ -15,7 +15,9 @@ fn escape(source: &str) -> String {
             '*' => s.push_str("&#42;"),
             '<' => s.push_str("&lt;"),
             '>' => s.push_str("&gt;"),
+            '\\' => s.push_str("&#92;"),
             '_' => s.push_str("&#95;"),
+            '`' => s.push_str("&#96;"),
             chr => s.push_char(chr),
         }
     }
