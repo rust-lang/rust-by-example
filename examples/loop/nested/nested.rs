@@ -5,10 +5,10 @@ fn main() {
         'inner: loop {
             println!("Entered the inner loop");
 
-            // this would break the inner loop
+            // This would break only the inner loop
             //break;
 
-            // this breaks the outer loop
+            // This breaks the outer loop
             break 'outer;
         }
 

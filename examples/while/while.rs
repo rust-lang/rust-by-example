@@ -1,8 +1,8 @@
 fn main() {
-    // a counter variable
+    // A counter variable
     let mut n = 1;
 
-    // loop while n is less than 101
+    // Loop while `n` is less than 101
     while n < 101 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -14,7 +14,7 @@ fn main() {
             println!("{}", n);
         }
 
-        // increment counter
+        // Increment counter
         n += 1;
     }
 }

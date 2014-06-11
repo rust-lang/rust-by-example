@@ -3,21 +3,24 @@ fn main() {
 
     println!("Let's count until infinity!");
 
-    // infinite loop
+    // Infinite loop
     loop {
         count += 1;
 
         if count == 3 {
-            // skip this iteration
-            continue
+            println!("three");
+
+            // Skip the rest of this iteration
+            continue;
         }
 
         println!("{}", count);
 
         if count == 5 {
             println!("OK, that's enough");
-            // exit this loop
-            break
+
+            // Exit this loop
+            break;
         }
     }
 }
