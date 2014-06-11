@@ -6,12 +6,12 @@ fn main() {
     // Mutability error
     //*immutable_box = 4;
 
-    // hand over box, change mutability
+    // Hand over the box, changing the mutability
     let mut mutable_box = immutable_box;
 
-    println!("mutable_box contains {}", mutable_box);
+    println!("mutable_box contained {}", mutable_box);
 
-    // modify contents of the box
+    // Modify the contents of the box
     *mutable_box = 4;
 
     println!("mutable_box now contains {}", mutable_box);
