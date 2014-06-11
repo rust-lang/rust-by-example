@@ -1,11 +1,8 @@
-Rust allows the declaration of three types of structs using the `struct`
-keyword:
+There are three types of structures ("structs") that can be created using the
+`struct` keyword:
 
-* tuple structs, basically named tuples
-* structs, like tuple structs but the internal values are named and called
-  fields
-* unit structs, a struct without fields
-
-The syntax is shown below.
+* Tuple structs, which are, basically, named tuples.
+* The classic [C structs](http://en.wikipedia.org/wiki/Struct_(C_programming_language)
+* Unit structs, which are field-less structs.
 
 {structs.play}
