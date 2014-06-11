@@ -1,21 +1,15 @@
 Rust provides type safety via its static type-checker. Variables can be type
-annotated using a colon `:` after the variable name in the `let` statement,
-however in most cases the compiler will be able to infer the type of the
-variable from the context, heavily reducing the annotation burden.
-
-Type conversion (a.k.a. casting) must be explicitly stated using the `as`
-keyword.
+annotated when declared. However, in most cases, the compiler will be able to
+infer the type of the variable from the context, heavily reducing the
+annotation burden.
 
 {type.play}
 
-The type inference engine is pretty smart, it does more than looking at the
-type of the rvalue of an initialization; it also looks how the variable is used
-afterwards to infer its type. Here's an advanced example of type inference:
+This is a summary of the primitive types in Rust:
 
-{inference.rs}
-
-(You are encouraged to try the previous code with the `v.push` line commented
-out)
-
-No type annotation of variables was needed, the compiler is happy and so is the
-programmer!
+* signed integers: `i8`, `i16`, `i32`, `i64` and `int` (machine word size)
+* unsigned integers: `u8`, `u16`, `u32`, `u64` and `uint` (machine word size)
+* floating point: `f32`, `f64`
+* `char` Unicode scalar values like `'a'`, `'α'` and `'∞'` (4 bytes each)
+* `bool` either `true` or `false`
+* and the unit type `()`, whose only value is also `()`
