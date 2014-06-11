@@ -1,4 +1,4 @@
-The `println!` macro not only prints to the console, but also is capable of
+The `println!` macro not only prints to the console, but is also capable of
 formatting text and stringifying values. Plus, the formatting correctness will
 be checked at compile time.
 
