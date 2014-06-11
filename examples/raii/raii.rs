@@ -1,26 +1,26 @@
 fn create_box() {
-    let function_box = box 3;
+    // Allocate an integer in the heap
+    let _function_box = box 3;
 
-    // function_box gets destroyed here, memory gets freed
+    // `_function_box` gets destroyed here, memory gets freed
 }
 
 fn main() {
-    // allocate integer in the heap
-    let boxed_int = box 5;
+    // Allocate an integer in the heap
+    let _boxed_int = box 5;
 
-    if true {
-        // new (smaller) block scope
+    // new (smaller) scope
+    {
+        // Another heap allocated integer
+        let _short_lived_box = box 4;
 
-        // another heap allocated integer
-        let short_lived_box = box 4;
-
-        // short_lived_box gets destroyed here, memory gets freed
+        // `_short_lived_box` gets destroyed here, memory gets freed
     }
 
-    // create lots of boxes
+    // Create lots of boxes
     for _ in range(0, 1_000) {
         create_box();
     }
 
-    // boxed_int gets destroyed here, memory gets freed
+    // `_boxed_int` gets destroyed here, memory gets freed
 }
