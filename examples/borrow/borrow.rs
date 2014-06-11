@@ -1,22 +1,35 @@
-use std::owned::Box;
-
-// this function takes ownership of the box
+// This function takes ownership of the box
 fn eat_box(boxed_int: Box<int>) {
-    // the box gets destroyed in this scope
+    println!("destroying box that contains {}", boxed_int);
 }
 
-// this function borrows the box
+// This function borrows the box
 fn peep_inside_box(borrowed_box: &Box<int>) {
     println!("This box contains {}", borrowed_box);
 }
 
 fn main() {
-    // boxed integer
+    // A boxed integer
     let boxed_int = box 5;
 
-    // borrow the box, ownership is not taken
+    // Borrow the box, ownership is not taken
     peep_inside_box(&boxed_int);
 
-    // give up ownership of the box
+    // The box can be borrowed again
+    peep_inside_box(&boxed_int);
+
+    {
+        // Take a reference to the data contained inside the box
+        let _ref_to_int: &int = &*boxed_int;
+
+        // Error! Can't destroy boxed_int, while the inner value has been
+        // borrowed
+        eat_box(boxed_int);
+        // FIXME ^ Comment out this line
+
+        // `_ref_to_int` goes out of scope
+    }
+
+    // Give up ownership of the box
     eat_box(boxed_int);
 }
