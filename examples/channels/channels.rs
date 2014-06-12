@@ -1,39 +1,37 @@
-use std::comm::channel;
+use std::comm;
 
-static NTASKS: int = 5;
+static NTASKS: uint = 3;
 
 fn main() {
-    // channels have two endpoints: the Sender<T> and the Receiver<T>,
-    // where T is the type of the message to be transfer
+    // Channels have two endpoints: the `Sender<T>` and the `Receiver<T>`,
+    // where `T` is the type of the message to be transfer
     // (type annotation is superfluous)
-    let (tx, rx): (Sender<_>, Receiver<_>) = channel();
+    let (tx, rx): (Sender<uint>, Receiver<uint>) = comm::channel();
 
     for id in range(0, NTASKS) {
-        // the sender endpoint can be copied
-        let tx = tx.clone();
+        // The sender endpoint can be copied
+        let task_tx = tx.clone();
 
-        // each task will send its id via the channel
+        // Each task will send its id via the channel
         spawn(proc() {
-            // queue message in the channel
-            tx.send(id);
+            // The task takes ownership over `task_tx`
+            // Each task queues a message in the channel
+            task_tx.send(id);
 
-            // sending is a non-blocking operation, the task will continue
+            // Sending is a non-blocking operation, the task will continue
             // immediately after sending its message
-            println!("task number {} finished", id);
+            println!("task {} finished", id);
         });
     }
 
-    // here, all the messages are collected
+    // Here, all the messages are collected
+    let mut ids = Vec::with_capacity(NTASKS);
     for _ in range(0, NTASKS) {
-        // the recv() methods picks a message from the channel
-        let id = rx.recv();
-
-        println!("task number {} reported", id);
+        // The `recv` method picks a message from the channel
+        // `recv` will block the current task if there no messages available
+        ids.push(rx.recv());
     }
 
-    // receiving blocks the task if there is no message available, until a
-    // new message arrives
-    rx.recv();
-
-    println!("this point will never be reached!");
+    // Show the order in which the messages were sent
+    println!("{}", ids);
 }
