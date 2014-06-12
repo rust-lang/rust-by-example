@@ -1,43 +1,43 @@
 extern crate num;
 
-// the AdditiveIterator trait adds the sum() method to iterators
+// The `AdditiveIterator` trait adds the `sum` method to iterators
 use std::iter::{AdditiveIterator,count};
-// the Integer trait adds the is_odd() method to integer primitives
+// The `Integer` trait adds the `is_odd` method to integer primitives
 use num::Integer;
 
 fn main() {
     println!("Find the sum of all the squared odd numbers under 1000");
     let upper: int = 1000;
 
-    // imperative approach
-    // declare accumulator variable
+    // Imperative approach
+    // Declare accumulator variable
     let mut acc = 0;
-    // iterate 0, 1, 2, ... to infinity
+    // Iterate: 0, 1, 2, ... to infinity
     for n in count(0, 1) {
-        // square the number
+        // Square the number
         let n_squared = n * n;
 
         if n_squared >= upper {
-            // break loop if exceeded the upper limit
+            // Break loop if exceeded the upper limit
             break;
         } else if n_squared.is_odd() {
-            // accumulate value, if it's odd
+            // Accumulate value, if it's odd
             acc += n_squared;
         }
     }
     println!("imperative style: {}", acc);
 
-    // functional approach
+    // Functional approach
     let sum_of_squared_odd_numbers =
-        // all natural numbers
+        // All natural numbers
         count(0, 1).
-        // squared
+        // Squared
         map(|n| n * n).
-        // below upper limit
+        // Below upper limit
         take_while(|&n| n < upper).
-        // that are odd
+        // That are odd
         filter(|n| n.is_odd()).
-        // sum them
+        // Sum them
         sum();
     println!("functional style: {}", sum_of_squared_odd_numbers);
 }
