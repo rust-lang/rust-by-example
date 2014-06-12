@@ -1,7 +1,8 @@
 extern crate num;
 
 // The `AdditiveIterator` trait adds the `sum` method to iterators
-use std::iter::{AdditiveIterator,count};
+use std::iter::AdditiveIterator;
+use std::iter;
 // The `Integer` trait adds the `is_odd` method to integer primitives
 use num::Integer;
 
@@ -13,7 +14,7 @@ fn main() {
     // Declare accumulator variable
     let mut acc = 0;
     // Iterate: 0, 1, 2, ... to infinity
-    for n in count(0, 1) {
+    for n in iter::count(0, 1) {
         // Square the number
         let n_squared = n * n;
 
@@ -30,7 +31,7 @@ fn main() {
     // Functional approach
     let sum_of_squared_odd_numbers =
         // All natural numbers
-        count(0, 1).
+        iter::count(0, 1).
         // Squared
         map(|n| n * n).
         // Below upper limit
