@@ -1,30 +1,30 @@
 fn main() {
-    // iterators can be collected into vectors
+    // Iterators can be collected into vectors
     let collected_iterator: Vec<int> = range(0, 10).collect();
-    println!("collected range(0, 10) into: {}",
-             collected_iterator.as_slice());
+    println!("Collected range(0, 10) into: {}", collected_iterator);
 
-    // vec! can be used to initialize a vector
+    // The `vec!` macro can be used to initialize a vector
     let mut xs = vec![1, 2, 3];
-    println!("vector: {}", xs.as_slice());
+    println!("Initial vector: {}", xs);
 
-    // insert new element at the end of the vector
-    println!("push 4 into the vector")
+    // Insert new element at the end of the vector
+    println!("Push 4 into the vector")
     xs.push(4);
-    println!("vector: {}", xs.as_slice());
+    println!("Vector: {}", xs);
 
-    // Error: immutable vectors can't be grow or shrink
-    //collected_iterator.push(0);
+    // Error! Immutable vectors can't grow
+    collected_iterator.push(0);
+    // FIXME ^ Comment out this line
 
-    // the len method yields the current size of the vector
-    println!("vector size: {}", xs.len());
+    // The `len` method yields the current size of the vector
+    println!("Vector size: {}", xs.len());
 
-    // indexing is done using the `get` method (indexing starts at 0)
-    println!("second element: {}", xs.get(1));
+    // Indexing is done using the `get` method (indexing starts at 0)
+    println!("Second element: {}", xs.get(1));
 
-    // remove last element from the vector and return it
-    println!("pop last element: {}", xs.pop());
+    // `pop` removes the last element from the vector and returns it
+    println!("Pop last element: {}", xs.pop());
 
-    // out of bounds indexing yields a runtime failure
-    println!("fourth element: {}", xs.get(3));
+    // Out of bounds indexing yields a task failure
+    println!("Fourth element: {}", xs.get(3));
 }
