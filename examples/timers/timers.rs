@@ -1,27 +1,42 @@
-use std::io::timer::Timer;
+use std::io::Timer;
+use std::io::timer;
+use std::iter;
+
+static INTERVAL: u64 = 1000;
 
 fn main() {
-    // create a timer object
+    // Create a timer object
     let mut timer = Timer::new().unwrap();
 
-    // create a one shot notification (type annotation is superfluous)
-    let oneshot: Receiver<()> = timer.oneshot(3000);
+    // Create a one-shot notification
+    // (superfluous type annotation)
+    let oneshot: Receiver<()> = timer.oneshot(INTERVAL);
 
-    println!("hold on...");
+    println!("Wait {} ms...", INTERVAL);
 
-    // block the task until timeout
+    // Block the task until notification arrives
     oneshot.recv();
 
-    // the same timer can be used to generate periodic notifications
-    let metronome = timer.periodic(1000);
+    println!("Done");
 
-    let mut count = 0;
-    println!("Start counting");
-    loop {
-        // loop will run once every second
+    println!("Sleep for {} ms...", INTERVAL);
+
+    // This is equivalent to `timer.oneshot(INTERVAL).recv()`
+    timer::sleep(INTERVAL);
+
+    println!("Done");
+
+    // The same timer can be used to generate periodic notifications
+    // (superfluous type annotation)
+    let metronome: Receiver<()> = timer.periodic(INTERVAL);
+
+    println!("Countdown");
+    for i in iter::range_step(5, 0, -1) {
+        // This loop will run once every second
         metronome.recv();
 
-        count += 1;
-        println!("{}", count);
+        println!("{}", i);
     }
+    metronome.recv();
+    println!("Ignition!");
 }
