@@ -1,3 +1,5 @@
+use std::mem;
+
 // This function borrows a slice
 fn analyze_slice(slice: &[int]) {
     println!("first element of the slice: {}", slice[0]);
@@ -16,7 +18,7 @@ fn main() {
     println!("array size: {}", xs.len());
 
     // Arrays are stack allocated
-    println!("array occupies {} bytes", std::mem::size_of_val(&xs));
+    println!("array occupies {} bytes", mem::size_of_val(&xs));
 
     // Arrays can be automatically borrowed as slices
     println!("borrow the whole array as a slice");
