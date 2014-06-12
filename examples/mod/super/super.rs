@@ -1,27 +1,25 @@
 fn function() {
-    println!("called function()");
+    println!("called `function()`");
 }
 
 mod my {
     pub fn indirect_call() {
-        // let's see how to access all the functions named `function` from this
-        // scope
-        print!("called my::indirect_call(), that\n> ");
+        // Let's access all the functions named `function` from this scope
+        print!("called `my::indirect_call()`, that\n> ");
 
-        // my::function() can be called directly
+        // `my::function` can be called directly
         function();
 
-        if true {
-            // this will bind to the cool::function in the *root* scope
-            // (it's actually the crate scope, but we haven't talk about crates
-            // yet)
+        {
+            // This will bind to the `cool::function` in the *crate* scope
+            // In this case the crate scope is the outermost scope
             use root_cool_function = cool::function;
 
             print!("> ");
             root_cool_function();
         }
 
-        if true {
+        {
             // `self` refers to the current module scope, in this case: `my`
             use my_cool_function = self::cool::function;
 
@@ -29,7 +27,7 @@ mod my {
             my_cool_function();
         }
 
-        if true {
+        {
             // `super` refers to the parent scope, i.e. outside of the `my`
             // module
             use root_function = super::function;
@@ -40,19 +38,19 @@ mod my {
     }
 
     fn function() {
-        println!("called my::function()");
+        println!("called `my::function()`");
     }
 
     mod cool {
         pub fn function() {
-            println!("called my::cool::function()");
+            println!("called `my::cool::function()`");
         }
     }
 }
 
 mod cool {
     pub fn function() {
-        println!("called cool::function()");
+        println!("called `cool::function()`");
     }
 }
 
