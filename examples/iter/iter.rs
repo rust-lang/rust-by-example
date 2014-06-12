@@ -1,3 +1,5 @@
+use std::mem;
+
 struct Fibonacci {
     curr: uint,
     next: uint,
@@ -10,10 +12,10 @@ impl Iterator<uint> for Fibonacci {
     // over, otherwise the next value is returned wrapped in 'Some'
     fn next(&mut self) -> Option<uint> {
         let new_next = self.curr + self.next;
-        let new_curr = std::mem::replace(&mut self.next, new_next);
+        let new_curr = mem::replace(&mut self.next, new_next);
 
         // 'Some' is always returned, this is an infinite value generator
-        Some(std::mem::replace(&mut self.curr, new_curr))
+        Some(mem::replace(&mut self.curr, new_curr))
     }
 }
 
