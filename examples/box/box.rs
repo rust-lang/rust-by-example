@@ -1,3 +1,5 @@
+use std::mem;
+
 struct Point {
     x: f64,
     y: f64,
@@ -39,25 +41,25 @@ fn main() {
     let box_in_a_box: Box<Box<Point>> = box boxed_origin();
 
     println!("Point occupies {} bytes in the stack",
-             std::mem::size_of_val(&point));
+             mem::size_of_val(&point));
     println!("Rectangle occupies {} bytes in the stack",
-             std::mem::size_of_val(&rectangle));
+             mem::size_of_val(&rectangle));
 
     // box size = pointer size
     println!("Boxed point occupies {} bytes in the stack",
-             std::mem::size_of_val(&boxed_point));
+             mem::size_of_val(&boxed_point));
     println!("Boxed rectangle occupies {} bytes in the stack",
-             std::mem::size_of_val(&boxed_rectangle));
+             mem::size_of_val(&boxed_rectangle));
     println!("Boxed box occupies {} bytes in the stack",
-             std::mem::size_of_val(&box_in_a_box));
+             mem::size_of_val(&box_in_a_box));
 
     // Copy the data contained in `boxed_point` into `unboxed_point`
     let unboxed_point: Point = *boxed_point;
     println!("Unboxed point occupies {} bytes in the stack",
-             std::mem::size_of_val(&unboxed_point));
+             mem::size_of_val(&unboxed_point));
 
     // Unboxing via a destructuring pattern
     let box another_unboxed_point = boxed_point;
     println!("Another unboxed point occupies {} bytes in the stack",
-             std::mem::size_of_val(&another_unboxed_point));
+             mem::size_of_val(&another_unboxed_point));
 }
