@@ -11,19 +11,19 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 fn main() {
     let path = Path::new("out/lorem_ipsum.txt");
+    let display = path.display();
 
-    // create a file and open it in write mode, if the file exists then it'll
-    // get overwritten from the start, returns IoResult<File>
+    // Open a file in write-only mode, returns `IoResult<File>`
     let mut file = match File::create(&path) {
-        Err(why) => fail!("couldn't create {}: {}", path.display(), why.desc),
+        Err(why) => fail!("couldn't create {}: {}", display, why.desc),
         Ok(file) => file,
     };
 
-    // write LOREM_IPSUM to file, returns IoResult<()>
+    // Write the `LOREM_IPSUM` string to `file`, returns `IoResult<()>`
     match file.write_str(LOREM_IPSUM) {
         Err(why) => {
-            fail!("couldn't write to {}: {}", path.display(), why.desc)
+            fail!("couldn't write to {}: {}", display, why.desc)
         },
-        Ok(_) => println!("successfully wrote to {}", path.display()),
+        Ok(_) => println!("successfully wrote to {}", display),
     }
 }
