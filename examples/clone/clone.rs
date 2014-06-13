@@ -1,49 +1,43 @@
-// a vanilla unit struct
-struct Foo;
+// A unit struct without resources
+#[deriving(Show)]
+struct Nil;
 
-// a unit struct that implements the Clone trait
-#[deriving(Clone)]
-struct Dolly;
-
-fn destroy_string(string: String) {
-    // string gets destroyed in this scope
-}
+// A tuple struct with resources that implements the `Clone` trait
+#[deriving(Clone,Show)]
+struct Pair(Box<int>, Box<int>);
 
 fn main() {
-    // string is a reference to a global constant string
-    let string: &'static str = "Hello World";
+    // Instantiate `Nil`
+    let nil = Nil;
+    // Copy `Nil`, there are no resources to move
+    let copied_nil = nil;
 
-    // another_string is a copy of string, i.e. another reference to the
-    // same global constant
-    let another_string = string;
+    // Both `Nil`s can be used independently
+    println!("original: {}", nil);
+    println!("copy: {}", copied_nil);
 
-    // both can be used at the same time, there is no resource ownership
-    println!("{} and {}", string, another_string);
+    // Instantiate a `Pair`
+    let pair = Pair(box 1, box 2);
+    println!("original: {}", pair);
 
-    // a heap allocated string
-    let boxed_string = String::from_str("Hello World");
+    // Copy `pair` into `moved_pair`, moves resources
+    let moved_pair = pair;
+    println!("copy: {}", moved_pair);
 
-    // this moves the ownership
-    let new_boxed_string = boxed_string;
+    // Error! `pair` has lost it resources
+    //println!("original: {}", pair);
+    // TODO ^ Try uncommenting this line
 
-    // Error: the original boxed_string can't be used anymore
-    //println!("{}", boxed_string);
+    // "Clone" `moved_pair` into `cloned_pair` (resources included)
+    let cloned_pair = moved_pair.clone();
 
-    // this allocates memory and copies the string into it
-    let copied_boxed_string = new_boxed_string.clone();
+    // `Drop` the original pair
+    drop(moved_pair);
 
-    // destroy the original string
-    destroy_string(new_boxed_string);
+    // Error! `moved_pair` has been `drop`ed
+    //println!("copy: {}", moved_pair);
+    // TODO ^ Try uncommenting this line
 
-    // copy can still be used
-    println!("{}", copied_boxed_string);
-
-    // instantiate unit structs
-    let (foo, dolly) = (Foo, Dolly);
-
-    // Error: Foo is not cloneable
-    //let cloned_foo = Foo.clone();
-
-    // Ok: bar implements the Clone trait
-    let cloned_dolly = dolly.clone();
+    // Clone can still be used
+    println!("clone: {}", cloned_pair);
 }
