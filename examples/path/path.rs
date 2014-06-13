@@ -1,21 +1,23 @@
 fn main() {
-    // create a Path from an &'static str
-    let path = Path::new("path.rs");
+    // Create a `Path` from an `&'static str`
+    let path = Path::new(".");
 
-    // check if the path exists
+    // The `display` method returns a `Show`able structure
+    let display = path.display();
+
+    // Check if the path exists
     if path.exists() {
-        // the `display` method makes the path showable
-        println!("{} exists", path.display());
+        println!("{} exists", display);
     }
 
-    // check if the path is a file
+    // Check if the path is a file
     if path.is_file() {
-        println!("{} is a file", path.display());
+        println!("{} is a file", display);
     }
 
-    // check if the path is a dir
+    // Check if the path is a directory
     if path.is_dir() {
-        println!("{} is a directory", path.display());
+        println!("{} is a directory", display);
     }
 
     // `stat` returns an IoResult<FileStat> === Result<FileStat, IoError>
@@ -24,16 +26,15 @@ fn main() {
         Ok(stat) => stat,
     };
 
-    println!("{} size is {} bytes", path.display(), stat.size);
-
-    let dir = Path::new("a");
+    println!("{} size is {} bytes", display, stat.size);
 
     // `join` merges a path with a byte container using the OS specific
-    // separator
-    let new_path = dir.join(path);
+    // separator, and returns the new path
+    let new_path = path.join("a").join("b");
 
+    // Convert the path into a string slice
     match new_path.as_str() {
         None => fail!("new path is not a valid UTF-8 sequence"),
-        Some(string_slice) => println!("new path is {}", string_slice),
+        Some(s) => println!("new path is {}", s),
     }
 }
