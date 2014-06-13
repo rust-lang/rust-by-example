@@ -1,5 +1,6 @@
 Inter-Process Communication (IPC) for client-server applications can be
-accomplished using UNIX sockets.
+accomplished using
+[UNIX sockets](http://en.wikipedia.org/wiki/Unix_domain_socket).
 
 Both client and server need to use the same path for the socket.
 
