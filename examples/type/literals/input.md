@@ -7,3 +7,14 @@ constraint exists, integer literals will default to `int`, and floating point
 literals will default to `f64` .
 
 {literals.play}
+
+There are some concepts used in the previous code that haven't been explained
+yet, here's a brief explanation for the impatient readers:
+
+* `fun(&foo)` is used to pass an argument to a function *by reference*, rather
+  than by value (`fun(foo)`). For more details see [borrowing](/borrow.html).
+* `std::mem::size_of_val` is a function, but called with its *full path*. Code
+  can be splitted in logical units called *modules*. In this case the
+  `size_of_val` function is defined in the `mem` module, and the `mem` module
+  is defined in the `std` *crate*. For more details see
+  [modules](/modules.html) and [crates](/crates.html).
