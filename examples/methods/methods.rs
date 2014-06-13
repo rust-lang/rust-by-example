@@ -3,16 +3,16 @@ struct Point {
     y: f64,
 }
 
-// implementation block, all Point methods go in here
+// Implementation block, all `Point` methods go in here
 impl Point {
-    // this is a static method
-    // static methods don't need to be called by an instance
-    // these methods are generally used for constructors
+    // This is a static method
+    // Static methods don't need to be called by an instance
+    // These methods are generally used as constructors
     fn origin() -> Point {
         Point { x: 0.0, y: 0.0 }
     }
 
-    // another static method, that takes two arguments
+    // Another static method, that takes two arguments
     fn new(x: f64, y: f64) -> Point {
         Point { x: x, y: y }
     }
@@ -24,15 +24,16 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    // instance method, `&self` is sugar for `self: &Self`
-    // where Self is the type of the caller object
-    // in this case Self = Rectangle
+    // This is an instance method
+    // `&self` is sugar for `self: &Self`, where `Self` is the type of the
+    // caller object. In this case `Self` = `Rectangle`
     fn area(&self) -> f64 {
         // `self` gives access to the struct fields via the dot operator
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
 
-        // abs() is a method of f64 types
+        // `abs` is a `f64` method that returns the absolute value of the
+        // caller
         ((x1 - x2) * (y1 - y2)).abs()
     }
 
@@ -43,7 +44,7 @@ impl Rectangle {
         2.0 * (x1 - x2).abs() + 2.0 * (y1 - y2).abs()
     }
 
-    // this method requires the caller object to be mutable
+    // This method requires the caller object to be mutable
     // `&mut self` desugars to `self: &mut Self`
     fn move(&mut self, x: f64, y: f64) {
         self.p1.x += x;
@@ -54,29 +55,32 @@ impl Rectangle {
     }
 }
 
-// Bomb owns resources: one heap allocated string
-struct Bomb {
-    name: String,
-}
+// `Pair` owns resources: two heap allocated integers
+struct Pair(Box<int>, Box<int>);
 
-impl Bomb {
-    // this method consumes the caller object
+impl Pair {
+    // This method "consumes" the resources of the caller object
     // `self` desugars to `self: Self`
-    fn boom(self) {
-        println!("{} goes boom!", self.name);
-        // self goes out of scope and it's destroyed
+    fn destroy(self) {
+        // Destructure `self`
+        let Pair(first, second) = self;
+
+        println!("Destroying Pair({}, {})", first, second);
+
+        // `first` and `second` go out of scope and get freed
     }
 }
 
 fn main() {
     let rectangle = Rectangle {
-        // static methods are called using double colons
+        // Static methods are called using double colons
         p1: Point::origin(),
         p2: Point::new(3.0, 4.0),
     };
 
-    // instance method are called using the dot operator
-    // note that the first argument `&self` is implicitly passed
+    // Instance method are called using the dot operator
+    // Note that the first argument `&self` is implicitly passed, i.e.
+    // `rectangle.perimeter()` === `perimeter(&rectangle)`
     println!("Rectangle perimeter: {}", rectangle.perimeter());
     println!("Rectangle area: {}", rectangle.area());
 
@@ -85,16 +89,19 @@ fn main() {
         p2: Point::new(1.0, 1.0),
     };
 
-    // Error: object is immutable, but method requires a mutable object
+    // Error! `rectangle` is immutable, but this method requires a mutable
+    // object
     //rectangle.move(1.0, 0.0);
+    // TODO ^ Try uncommenting this line
 
-    // Ok: mutable object can call mutable methods
+    // Ok, mutable object can call mutable methods
     square.move(1.0, 1.0);
 
-    let bomb = Bomb { name: String::from_str("C4") };
+    let pair = Pair(box 1, box 2);
 
-    bomb.boom();
+    pair.destroy();
 
-    // Error: previous boom() call destroyed the bomb
-    //bomb.boom();
+    // Error! Previous `destroy` call "consumed" `pair`
+    //pair.destroyed();
+    // TODO ^ Try uncommenting this line
 }
