@@ -1,10 +1,12 @@
 use std::mem;
 
+#[allow(dead_code)]
 struct Point {
     x: f64,
     y: f64,
 }
 
+#[allow(dead_code)]
 struct Rectangle {
     p1: Point,
     p2: Point,
