@@ -30,5 +30,12 @@ fn main() {
     }
     println!("Just exited block A");
 
+    // Variable can be manually dropped using the `drop` function
+    drop(_a);
+    // TODO ^ Try uncommenting this line
+
     println!("end of the main function");
+
+    // `_a` *won't* be `drop`ed again here, because it already has been
+    // (manually) `drop`ed
 }
