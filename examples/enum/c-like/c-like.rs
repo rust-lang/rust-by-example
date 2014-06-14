@@ -32,6 +32,6 @@ fn main() {
     today.mood();
 
     // enums can be casted into integers
-    println!("roses are \\#{:06x}", Red as int);
-    println!("violets are \\#{:06x}", Blue as int);
+    println!("roses are #{:06x}", Red as int);
+    println!("violets are #{:06x}", Blue as int);
 }
