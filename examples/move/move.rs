@@ -27,8 +27,8 @@ fn main() {
 
     // Error! `a` can no longer access the data, because it no longer owns the
     // heap memory
-    println!("a contains: {}", a);
-    // FIXME ^ Comment out this line
+    //println!("a contains: {}", a);
+    // TODO ^ Try uncommenting this line
 
     // Pass a copy of `b` to the function, and give up ownership
     destroy_box(b);
@@ -36,6 +36,6 @@ fn main() {
     // Error! For the same reason as the previous Error
     // Since the heap memory has been freed at this point, this action would
     // result in dereferencing freed memory
-    println!("b contains: {}", b);
-    // FIXME ^ Comment out this line
+    //println!("b contains: {}", b);
+    // TODO ^ Try uncommenting this line
 }
