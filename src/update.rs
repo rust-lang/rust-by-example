@@ -1,7 +1,7 @@
 #![feature(phase)]
 
 extern crate regex;
-#[phase(syntax)]
+#[phase(plugin)]
 extern crate regex_macros;
 extern crate serialize;
 

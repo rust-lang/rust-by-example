@@ -28,7 +28,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
         let s = try!(file::read(&p));
 
         Ok(Markdown {
-            content: format!("\\# {}\n\n{}", title, s),
+            content: format!("# {}\n\n{}", title, s),
             id: id,
             prefix: prefix,
         })
@@ -45,7 +45,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
                 None => {},
                 Some(captures) => {
                     let src = captures.at(1);
-                    let input = format!("\\{{}\\}", src);
+                    let input = format!("{{{}}}", src);
                     let p = format!("examples/{}/{}/{}", prefix, id, src);
                     let output = match file::read(&Path::new(p.as_slice())) {
                         Err(_) => {
@@ -85,7 +85,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
                 None => {},
                 Some(captures) => {
                     let src = captures.at(1);
-                    let input = format!("\\{{}.out\\}", src);
+                    let input = format!("{{{}.out}}", src);
                     let s = try!(file::run(prefix, id, src));
                     let s = format!("```\n$ rustc {0}.rs && ./{0}\n{1}```",
                                     src, s);
@@ -120,7 +120,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
                         once_ = true;
                     }
 
-                    let input = format!("\\{{}.play\\}", captures.at(1));
+                    let input = format!("{{{}.play}}", captures.at(1));
                     let src = format!("{}.rs", captures.at(1));
                     let p = format!("examples/{}/{}/{}", prefix, id, src);
                     let output = match file::read(&Path::new(p.as_slice())) {
