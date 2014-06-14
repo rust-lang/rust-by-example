@@ -2,16 +2,25 @@ GITBOOK = gitbook
 RUSTC = rustc
 QUIET = -A unused-variable -A dead-code -A dead-assignment -A experimental
 RUSTC_NT = $(RUSTC) --no-trans --test $(QUIET)
-WHITELIST = examples/borrow/freeze.rs \
-						examples/attribute/custom.rs \
-						examples/crates/executable.rs \
-						examples/lifetime/lifetime.rs \
-						examples/lifetime/reference-bad.rs \
-						examples/mod/nested.rs \
-						examples/move/assignment.rs \
-						examples/move/pass-by-value.rs \
-						examples/variables/declare.rs \
-            examples/variables/variables.rs
+WHITELIST = examples/attribute/cfg/custom/custom.rs \
+						examples/borrow/borrow.rs \
+	 					examples/borrow/freeze/freeze.rs \
+	 					examples/borrow/mut/mut.rs \
+	 					examples/bounds/bounds.rs \
+	 					examples/constants/constants.rs \
+	 					examples/crates/link/executable.rs \
+	 					examples/lifetime/lifetime.rs \
+	 					examples/mod/mod.rs \
+	 					examples/print/print.rs \
+	 					examples/type/cast/cast.rs \
+	 					examples/type/type.rs \
+	 					examples/variables/declare/declare.rs \
+	 					examples/variables/mut/mut.rs \
+	 					examples/variables/scope/scope.rs \
+	 					examples/vec/vec.rs \
+						temporary-whitelist-below-this-point-remove-later \
+						examples/lifetime/reference-bad.rs
+
 srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
 .PHONY: all book clean test serve
