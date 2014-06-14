@@ -28,7 +28,7 @@ fn main() {
     // And the `io` module lives in the `std` crate
     std::io::stdio::println("Hello World!");
 
-    // Error! The `my` module is private
+    // Error! `my::function` is private
     my::function();
     // TODO ^ Comment out this line
 }
