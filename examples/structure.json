@@ -107,7 +107,12 @@
     { "id": "rand", "title": "Random", "children": null  },
     { "id": "simd", "title": "SIMD", "children": null  },
     { "id": "test", "title": "Testing", "children": null  },
-    { "id": "unsafe", "title": "Unsafe operations", "children": null  }
+    { "id": "unsafe", "title": "Unsafe operations", "children": null  },
+    { "id": "json", "title": "JSON parsing", "children": [
+        { "id": "json-enum", "title": "`Json`", "children": null },
+        { "id": "decodable", "title": "`Decodable`", "children": null },
+        { "id": "encodable", "title": "`Encodable`", "children": null }
+    ] }
   ] },
   { "id": "todo", "title": "TODO", "children": [
     { "id": "arg", "title": "Program arguments", "children": null },
@@ -115,7 +120,6 @@
     { "id": "comment", "title": "Comments", "children": null },
     { "id": "green", "title": "Green threads", "children": null },
     { "id": "hash", "title": "Hasher and Hashmap", "children": null },
-    { "id": "json", "title": "JSON parsing", "children": null },
     { "id": "log", "title": "Logging", "children": null },
     { "id": "rc", "title": "Reference counting", "children": null },
     { "id": "regex", "title": "Regex", "children": null },
