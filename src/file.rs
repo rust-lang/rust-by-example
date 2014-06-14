@@ -1,7 +1,15 @@
+use std::io::UserRWX;
 use std::io::fs;
 use std::io::process::{Command,ProcessOutput};
 use std::io::{File,Truncate,Write};
 use std::os;
+
+pub fn mkdir(path: &Path)  {
+    match fs::mkdir_recursive(path, UserRWX) {
+        Err(_) => {},
+        Ok(_) => {},
+    }
+}
 
 pub fn read(path: &Path) -> Result<String, String> {
     match File::open(path) {
@@ -13,13 +21,13 @@ pub fn read(path: &Path) -> Result<String, String> {
     }
 }
 
-pub fn run(id: &str, filename: &str) -> Result<String, String> {
+pub fn run(prefix: &str, id: &str, src: &str) -> Result<String, String> {
     let cwd = os::getcwd();
-    let out_dir = cwd.join(format!("stage/{}", id));
+    let out_dir = cwd.join(format!("bin/{}/{}", prefix, id));
 
     let mut cmd = Command::new("rustc");
-    cmd.cwd(&Path::new(format!("examples/{}", id)));
-    cmd.arg(format!("{}.rs", filename));
+    cmd.cwd(&Path::new(format!("examples/{}/{}", prefix, id)));
+    cmd.arg(format!("{}.rs", src));
     cmd.arg("--out-dir");
     cmd.arg(out_dir);
 
@@ -30,16 +38,11 @@ pub fn run(id: &str, filename: &str) -> Result<String, String> {
         },
     }
 
-    let executable = Path::new(format!("./stage/{}/{}", id, filename));
+    let executable = Path::new(format!("./bin/{}/{}/{}", prefix, id, src));
 
     match Command::new(&executable).output() {
-        Err(_) => Err(format!("couldn't find {}", id)),
+        Err(_) => Err(format!("couldn't find {}", executable.display())),
         Ok(ProcessOutput { error: error, output: output, status: status }) => {
-            match fs::unlink(&executable) {
-                Err(_) => return Err(format!("couldn't remove {}", id)),
-                Ok(_) => {},
-            }
-
             let mut s = String::from_utf8(output).unwrap();
             if !status.success() {
                 s.push_str(String::from_utf8(error).unwrap().as_slice());

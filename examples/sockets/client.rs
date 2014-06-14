@@ -5,7 +5,7 @@ use std::os;
 mod common;
 
 fn main() {
-    // args: is an array of the arguments passed to the program
+    // `args` returns the arguments passed to the program
     let args = os::args();
     let socket = Path::new(SOCKET_PATH);
 

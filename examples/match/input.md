@@ -1,4 +1,4 @@
-Rust provides pattern matching via the `match` keyword, the syntax will be
-covered in the code below.
+Rust provides pattern matching via the `match` keyword, which can be used like
+a C `switch`.
 
 {match.play}

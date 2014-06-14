@@ -1,3 +1,5 @@
-mkdir -p stage/node_modules
+mkdir bin
+mkdir stage
+mkdir stage/node_modules
 ln -sf ../book.json stage
-ln -sf ../examples/README.md stage/README.md
+ln -sf ../examples/README.md stage

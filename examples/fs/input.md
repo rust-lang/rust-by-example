@@ -1,8 +1,10 @@
-The
-[`std::io::fs`](http://static.rust-lang.org/doc/master/std/io/fs/index.html)
-module contains all the functions you would expect to deal with the filesystem.
+The [`std::io::fs`](http://static.rust-lang.org/doc/master/std/io/fs/index.html)
+module contains several functions that deal with the filesystem.
 
-{fs.rs}
+{fs.play}
+
+You won't be able to run the previous code, because the playpen doesn't allow
+file operations. Here's the expected successful output:
 
 ```
 $ rustc fs.rs && ./fs
@@ -26,7 +28,7 @@ $ rustc fs.rs && ./fs
 `rmdir a/c/d`
 ```
 
-The final state of the `a` directory is:
+And the final state of the `a` directory is:
 
 ```
 $ tree a

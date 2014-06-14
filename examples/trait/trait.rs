@@ -1,72 +1,53 @@
-struct Dog {
-    name: String,
-}
-
-struct Sheep {
-    naked: bool,
-    name: String,
-}
-
-// traits are collections of methods
 trait Animal {
-    // static method, Self refers to the implementor type
-    fn new(name: String) -> Self;
+    // Static method signature; `Self` refers to the implementor type
+    fn new(name: &'static str) -> Self;
 
-    // instance methods, only signatures
-    fn name<'a>(&'a self) -> &'a str;
+    // Instance methods, only signatures
+    fn name(&self) -> &'static str;
     fn noise(&self) -> &'static str;
 
-    // trait can provide method definitions
+    // A trait can provide default method definitions
     fn talk(&self) {
-        // trait method can access methods available in the same trait
+        // These definitions can access other methods declared in the same
+        // trait
         println!("{} says {}", self.name(), self.noise());
     }
 }
 
-// implement the Animal trait for the Dog struct
+struct Dog { name: &'static str }
+
+impl Dog {
+    fn wag_tail(&self) {
+        println!("{} wags tail", self.name);
+    }
+}
+
+// Implement the `Animal` trait for `Dog`
 impl Animal for Dog {
-    // replace Self with implementor type (i.e. Dog)
-    fn new(name: String) -> Dog {
+    // Replace `Self` with the implementor type: `Dog`
+    fn new(name: &'static str) -> Dog {
         Dog { name: name }
     }
 
-    fn name<'a>(&'a self) -> &'a str {
-        self.name.as_slice()
+    fn name(&self) -> &'static str {
+        self.name
     }
 
     fn noise(&self) -> &'static str {
-        "woof"
+        "woof!"
+    }
+
+    // Default trait methods can be overridden
+    fn talk(&self) {
+        // Traits methods can access the implementor methods
+        self.wag_tail();
+
+        println!("{} says {}", self.name, self.noise());
     }
 }
 
-// exclusive methods for Dogs
-impl Dog {
-    fn wag_tail(&self) {
-        // struct methods can access trait methods
-        println!("{} wags tail", self.name());
-    }
-}
+struct Sheep { naked: bool, name: &'static str }
 
-impl Animal for Sheep {
-    fn new(name: String) -> Sheep {
-        Sheep { name: name, naked: false }
-    }
-
-    fn name<'a>(&'a self) -> &'a str {
-        self.name.as_slice()
-    }
-
-    fn noise(&self) -> &'static str {
-        // implemented traits methods can access struct methods
-        if self.is_naked() {
-            "baaah!"
-        } else {
-            "baaaaaaaaaaaah!"
-        }
-    }
-}
-
-// exclusive methods for Sheeps
 impl Sheep {
     fn is_naked(&self) -> bool {
         self.naked
@@ -74,30 +55,43 @@ impl Sheep {
 
     fn shear(&mut self) {
         if self.is_naked() {
+            // Implementor methods can use the implementor's trait methods
             println!("{} is already naked!", self.name());
         } else {
-            println!("{} gets a haircut", self.name());
+            println!("{} gets a haircut", self.name);
+
             self.talk();
             self.naked = true;
         }
     }
 }
 
-fn main() {
-    let mut dolly: Sheep = Animal::new(String::from_str("Dolly"));
-    let spike: Dog = Animal::new(String::from_str("Spike"));
+impl Animal for Sheep {
+    fn new(name: &'static str) -> Sheep {
+        Sheep { name: name, naked: false }
+    }
 
-    spike.wag_tail();
+    fn name(&self) -> &'static str {
+        self.name
+    }
+
+    fn noise(&self) -> &'static str {
+        if self.is_naked() {
+            "baaah"
+        } else {
+            "baaaaaaaaaaaah"
+        }
+    }
+}
+
+fn main() {
+    // Type annotation is necessary in this case
+    let mut dolly: Sheep = Animal::new("Dolly");
+    let spike: Dog = Animal::new("Spike");
+    // TODO ^ Try removing the type annotations
+
     dolly.shear();
 
-    // dolly and spike can be borrowed as &Animal
-    let animals: [&Animal, ..2] = [&spike as &Animal, &dolly as &Animal];
-
-    // Ok: Animal methods can be called on the array members
-    animals[0].talk();
-    animals[1].talk();
-
-    // Error: Dog and Sheep methods can't be accessed via the Animal trait
-    //animals[0].wag_tail();
-    //animals[1].shear();
+    spike.talk();
+    dolly.talk();
 }

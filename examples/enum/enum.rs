@@ -1,82 +1,66 @@
-use std::owned::Box;
-
-// linked list node, can take on any of these two values
+// A linked list node, which can take on any of these two variants
 enum Node {
-    // data, [ ] -> next_node
+    // Cons: Tuple struct that wraps an element and a pointer to the next node
+    // element, [ ] -> next_node
     Cons(uint, Box<Node>),
-    // terminal node
+    // Nil: A node that signifies the end of the linked list
     Nil,
 }
 
+// Methods can be attached to an enum
 impl Node {
-    // create an empty list
+    // Create an empty list
     fn new() -> Node {
+        // `Nil` has type `Node`
         Nil
     }
 
-    // consume list, and return the same list with a new element appended
+    // Consume a list, and return the same list with a new element at its front
     fn append(self, elem: uint) -> Node {
+        // `Cons` also has type Node
         Cons(elem, box self)
     }
 
-    // return the head of the list
-    fn head(&self) -> Option<uint> {
-        match *self {
-            // head gets copied, copy is returned wrapped in Some
-            Cons(head, _) => Some(head),
-            // if the list is empty, return None
-            Nil => None,
-        }
-    }
-
-    // return the length of the list
+    // Return the length of the list
     fn len(&self) -> uint {
+        // `self` has to be matched, because the behavior of this method
+        // depends on the variant of `self`
+        // `self` has type `&Node`, and `*self` has type `Node`, matching on a
+        // concrete type `T` is preferred over a match on a reference `&T`
         match *self {
-            // can't take ownership of the tail, because self is borrowed
+            // Can't take ownership of the tail, because `self` is borrowed;
             // instead take a reference to the tail
             Cons(_, ref tail) => 1 + tail.len(),
-            // empty list has zero length
+            // An empty list has zero length
             Nil => 0
         }
     }
 
-    // this method consumes the list and returns the tail
-    fn tail(self) -> Option<Node> {
-        match self {
-            // if the list is empty, return None
-            Nil => None,
-            // unbox the tail, return it wrapped in Some
-            Cons(_, box tail) => Some(tail),
+    // Return representation of the list as a (heap allocated) string
+    fn stringify(&self) -> String {
+        match *self {
+            Cons(head, ref tail) => {
+                // `format!` is similar to `print!`, but returns a heap
+                // allocated string instead of printing to the console
+                format!("{}, [ ] -> {}", head, tail.stringify())
+            },
+            Nil => {
+                format!("Nil")
+            },
         }
     }
 }
 
 fn main() {
-    // linked list: 3, [ ] -> 2, [ ] -> 1, [ ] -> Nil
+    // Create an empty linked list
     let mut list = Node::new();
+
+    // Append some elements
     list = list.append(1);
     list = list.append(2);
     list = list.append(3);
 
-    println!("list size: {}", list.len());
-
-    // continuously behead list until it's empty
-    loop {
-        // look at the list head
-        let head = list.head();
-
-        list = match list.tail() {
-            // if list is empty, break this loop
-            None => break,
-            // unwrap tail
-            Some(tail) => {
-                // show the list head
-                println!("list head: {}", head.unwrap());
-
-                // tail is the new list
-                tail
-            },
-        };
-
-    }
+    // Show the final state of the list
+    println!("linked list has length: {}", list.len());
+    println!("{}", list.stringify());
 }

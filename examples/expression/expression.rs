@@ -1,19 +1,16 @@
 fn main() {
-    // all the type annotations are superfluous
-    let x: int = 5;
+    let x = 5;
 
-    let y: int = {
-        // assignment statements are allowed inside blocks
+    let y = {
         let x_squared = x * x;
         let x_cube = x_squared * x;
 
-        // this expression will be assigned to y
+        // This expression will be assigned to `y`
         x_cube + x_squared + x
     };
 
-    let z: () = {
-        // the semicolon suppresses this expression,
-        // and `()` is assigned to z
+    let z = {
+        // The semicolon suppresses this expression and `()` is assigned to `z`
         2 * x;
     };
 

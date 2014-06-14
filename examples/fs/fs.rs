@@ -1,17 +1,17 @@
 use std::io::fs;
 use std::io::{File,IoResult,UserRWX};
 
-// a simple implementation of `$ cat path`
+// A simple implementation of `$ cat path`
 fn cat(path: &Path) -> IoResult<String> {
     File::open(path).and_then(|mut f| f.read_to_str())
 }
 
-// a simple implementation of `$ echo s > path`
+// A simple implementation of `$ echo s > path`
 fn echo(s: &str, path: &Path) -> IoResult<()> {
     File::create(path).and_then(|mut f| f.write_str(s))
 }
 
-// a simple implementation of `$ touch path`
+// A simple implementation of `$ touch path` (ignores existing files)
 fn touch(path: &Path) -> IoResult<()> {
     if !path.exists() {
         File::create(path).and_then(|_| Ok(()))
@@ -22,20 +22,20 @@ fn touch(path: &Path) -> IoResult<()> {
 
 fn main() {
     println!("`mkdir a`");
-    // create a directory, returns IoResult<()>
+    // Create a directory, returns `IoResult<()>`
     match fs::mkdir(&Path::new("a"), UserRWX) {
         Err(why) => println!("! {}", why.kind),
         Ok(_) => {},
     }
 
     println!("`echo hello > a/b.txt`");
-    // the previous match can be simplified using `unwrap_or_else`, like this
+    // The previous match can be simplified using the `unwrap_or_else` method
     echo("hello", &Path::new("a/b.txt")).unwrap_or_else(|why| {
         println!("! {}", why.kind);
     });
 
     println!("`mkdir -p a/c/d`");
-    // recursively create a directory, returns IoResult<()>
+    // Recursively create a directory, returns `IoResult<()>`
     fs::mkdir_recursive(&Path::new("a/c/d"), UserRWX).unwrap_or_else(|why| {
         println!("! {}", why.kind);
     });
@@ -46,7 +46,7 @@ fn main() {
     });
 
     println!("`ln -s ../b.txt a/c/b.txt`");
-    // create a symbolic link, returns IoResult<()>
+    // Create a symbolic link, returns `IoResult<()>`
     fs::symlink(&Path::new("../b.txt"),
                 &Path::new("a/c/b.txt")).unwrap_or_else(|why| {
         println!("! {}", why.kind);
@@ -59,7 +59,7 @@ fn main() {
     }
 
     println!("`ls a`");
-    // read the contents of a directory, returns Vec<Path>
+    // Read the contents of a directory, returns `IoResult<Vec<Path>>`
     match fs::readdir(&Path::new("a")) {
         Err(why) => println!("! {}", why.kind),
         Ok(paths) => for path in paths.iter() {
@@ -68,8 +68,8 @@ fn main() {
     }
 
     println!("`walk a`");
-    // recursively walk over the contents of a directory, returns Directories,
-    // which implements Iterator<Path>
+    // Recursively walk over the contents of a directory, returns
+    // `Directories`, which implements the `Iterator<Path> trait
     match fs::walk_dir(&Path::new("a")) {
         Err(why) => println!("! {}", why.kind),
         Ok(mut paths) => for path in paths {
@@ -78,13 +78,13 @@ fn main() {
     }
 
     println!("`rm a/c/e.txt`");
-    // remove a file, returns IoResult<()>
+    // Remove a file, returns `IoResult<()>`
     fs::unlink(&Path::new("a/c/e.txt")).unwrap_or_else(|why| {
         println!("! {}", why.kind);
     });
 
     println!("`rmdir a/c/d`");
-    // remove a directory, returns IoResult<()>
+    // Remove an empty directory, returns `IoResult<()>`
     fs::rmdir(&Path::new("a/c/d")).unwrap_or_else(|why| {
         println!("! {}", why.kind);
     });

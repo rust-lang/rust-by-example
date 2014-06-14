@@ -1,40 +1,27 @@
 fn main() {
-    let number = 23;
+    let number = 13;
+    // TODO ^ Try different values for `number`
 
+    println!("Tell me about {}", number);
     match number {
-        // match single value
+        // Match a single value
         1 => println!("One!"),
-        // match several values
+        // Match several values
         2 | 3 | 5 | 7 | 11 => println!("This is a prime"),
-        // match a range
+        // Match an inclusive range
         13..19 => println!("A teen"),
-        // bind the rest of values to x
-        // and use a `guard` to pick odd numbers
-        x if x % 2 == 1 => println!("An odd one"),
-        // the rest of cases
-        x => println!("{} ain't special", x),
+        // Handle the rest of cases
+        _ => println!("Ain't special"),
     }
 
-    let pair = (2, 3);
-    // match can be used to destructure a tuple
-    match pair {
-        (x, y) if x == y => println!("These are twins"),
-        (x, y) if x + y == 0 => println!("Antimatter, kaboom"),
-        // _ means don't bind the value to a variable
-        (x, _) if x % 2 == 1 => println!("The first is odd"),
-        // _ can be used to match the rest of cases
-        _ => println!("No correlation..."),
-    }
-
-    // match is an expression
-    let big_number = match number {
-        0 => 9000,
-        // blocks are also valid branches
-        x if x < 10 => {
-            let y = x * x;
-            let z = x * x * x;
-            x + y + z
-        },
-        x => x,
+    let boolean = true;
+    // Match is an expression too
+    let binary = match boolean {
+        // The arms of a match must cover all the possible values
+        false => 0,
+        true => 1,
+        // TODO ^ Try commenting out one of these arms
     };
+
+    println!("{} -> {}", boolean, binary);
 }

@@ -1,8 +1,10 @@
 fn main() {
-    // All the type annotations are superfluous
-    let decimal: f32 = 65.4321;
-    let integer: u8 = decimal as u8;
-    let character: char = integer as char;
+    // Type annotated variable
+    let a_float: f64 = 1.0;
 
-    println!("Casting: {} -> {} -> {}", decimal, integer, character);
+    // This variable is an `int`, the compiler can infer the type for us
+    let mut an_integer = 5;
+
+    // Error! The type of a variable can't be changed
+    an_integer = true;
 }
