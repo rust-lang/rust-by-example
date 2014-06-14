@@ -13,8 +13,8 @@ fn main() {
 
         // Error! Can't borrow point as mutable because it's also borrowed as
         // immutable
-        let mutable_borrow = &mut point;
-        // FIXME ^ Comment out this line
+        //let mutable_borrow = &mut point;
+        // TODO ^ Try uncommenting this line
 
         // Immutable references go out of scope
     }
@@ -30,12 +30,12 @@ fn main() {
 
         // Error! Can't borrow `point` as immutable because it's also borrowed
         // as mutable
-        let y = &point.y;
-        // FIXME ^ Comment out this line
+        //let y = &point.y;
+        // TODO ^ Try uncommenting this line
 
         // Error! Can't print, because println! takes an immutable reference
-        println!("Point Z coordinate is {}", point.z);
-        // FIXME ^ Comment out this line
+        //println!("Point Z coordinate is {}", point.z);
+        // TODO ^ Try uncommenting this line
 
         // Mutable reference goes out of scope
     }
