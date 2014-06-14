@@ -25,9 +25,6 @@ fn main() {
         // Change data via mutable reference
         mutable_borrow.x = 5;
 
-        // Copies of the mutably borrowed structs are allowed
-        let _copied_point = point;
-
         // Error! Can't borrow `point` as immutable because it's also borrowed
         // as mutable
         //let y = &point.y;
