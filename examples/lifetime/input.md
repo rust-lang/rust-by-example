@@ -1,59 +1,35 @@
 The compiler enforces valid borrowing using its borrow checker. To accomplish
-this, it keeps track of the *lifetimes* of objects and block scopes. The
-lifetime of an object starts when the object is created and ends when its
-destructor is called.
+this, it keeps track of two things:
+* The *lifetime* of objects, and
+* The scope of blocks
 
-The compiler annotates lifetimes with this notation: `'a`, `'b`, `'static`,
-etc. All references have a type signature of the form `&'a T`, where `'a` is
-the lifetime of the *referenced* object. The compiler takes care of inserting
-the lifetime part `'a`, so we can simply type annotate references with `&T`.
+The lifetime of an object starts when the object is created and ends when it
+goes out of scope (i.e. it gets destroyed, because of the RAII discipline).
 
-Let's see how the compiler prevents the creation of dangling pointers via its
-borrow checker. To simplify the analysis and explanation, lifetimes has been
-explicitly annotated in the source code. Explicit annotation is not allowed by
-the compiler in this case, so remove the lifetimes to see the "real" compiler
-error.
+A lifetime looks like this: `'burrito`, which reads as: "lifetime burrito".
 
-{lifetime.rs}
+All references actually have a type signature of the form `&'a T`, where
+`'a` is the lifetime of the *referenced* object. The compiler takes care of
+inserting the lifetime part `'a` so we can simply type annotate references with
+`&T`.
 
-The "real" compiler error is: "`another_boxed_integer` does not live long
-enough". Let's analyze why this happens:
+For example:
 
-* `stack_integer` has lifetime `'a`
-* `boxed_integer` has lifetime `'b`
-* `ref_to_box` has lifetime `'c`
-* `ref_to_another_box` has lifetime `'d`
-* `another_boxed_integer` has lifetime `'e`
-* `'main` and `'let` are the lifetimes of the block scopes
-* When a block scope ends, all the objects declared in it get destroyed
-  * `'let` ends, and so does `'e`
-  * `'main` ends, and so does `'a` `'b` `'c` and `'d`
-* `ref_to_box` is a valid borrow
-  * `ref_to_box` has lifetime `'c`
-  * `ref_to_box` points to an object with lifetime `'b`
-  * because `'c` will never *outlive* `'b` (this is expressed as `'c < 'b`)
-  * then `ref_to_box` will always point to valid data
-* `ref_to_another_box` is an *invalid* borrow
-  * `ref_to_another_box` has lifetime `'e`
-  * `ref_to_another_box` points to an object with lifetime `'d`
-  * because `'e` outlives `'d`
-  * then `ref_to_another_box` can point to destroyed data (this is forbidden)
+``` rust
+let integer: int = 5
+let ref_to_int: &int = &integer;
+```
 
-When writing functions that return references, lifetimes must be explicitly
-annotated. These functions are generic and must tell the relationship between
-the lifetimes of the objects in the arguments and the output.
+* `integer` has lifetime `'i` (it could be any other name, like `'foo`)
+* `ref_to_int` has lifetime `'r` (references also have lifetimes!)
+* `ref_to_int` type signature actually is `&'i int` (the compiler inserts the
+  `'i` for us)
+* The type signature `&'i int` reads as:
+  * `&`: reference to an
+  * `int`: integer with
+  * `'i`: lifetime `i` (`i` is the lifetime of `integer`!)
 
-Let's illustrate with an example: we want a function that returns a reference
-to the title field of a Book struct. The most generic function that we could
-write would look like this:
+Because the compiler keeps track of the lifetime of referenced objects in the
+type system, it can avoid several memory bugs.
 
-{reference-bad.play}
-
-The compiler can't tell how `'a` and `'b` are related, so we must supply this
-information. The answer here is that `'a = 'b`, the reason is that the title
-field will be destroyed when the book gets destroyed (same way with the
-creation time), therefore the title field has the same lifetime as the book.
-
-{reference-good.rs}
-
-{reference-good.out}
+Haven't grok what is a lifetime yet? Don't dismay! See the next page

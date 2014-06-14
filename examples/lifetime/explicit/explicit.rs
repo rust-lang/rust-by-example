@@ -1,4 +1,5 @@
 struct Book {
+    // `String` is a heap allocated string
     title: String,
     author: String,
     year: uint,
@@ -10,8 +11,8 @@ fn get_title<'a>(book: &'a Book) -> &'a str {
 
 fn main() {
     let geb = Book {
-        // construct a `String` (heap allocated string) from a reference to a
-        // string (&'static str) by doing a copy of the data
+        // construct a `String` from a reference to a string (`&'static str`)
+        // by copying of the data
         author: String::from_str("Douglas Hofstadter"),
         title: String::from_str("Godel, Escher, Bach"),
         year: 1979,

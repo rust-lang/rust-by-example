@@ -58,7 +58,11 @@
       { "id": "alias", "title": "Aliasing", "children": null },
       { "id": "ref", "title": "The ref pattern", "children": null }
   ] },
-  { "id": "lifetime", "title": "Lifetimes", "children": null },
+  { "id": "lifetime", "title": "Lifetimes", "children": [
+      { "id": "borrow", "title": "The borrow checker", "children": null },
+      { "id": "fn", "title": "Functions", "children": null },
+      { "id": "struct", "title": "Structs", "children": null }
+  ] },
   { "id": "constants", "title": "Global constants", "children": null },
   { "id": "methods", "title": "Methods", "children": null },
   { "id": "enum", "title": "Enums", "children": [

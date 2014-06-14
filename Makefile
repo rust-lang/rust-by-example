@@ -9,7 +9,7 @@ WHITELIST = examples/attribute/cfg/custom/custom.rs \
 	 					examples/bounds/bounds.rs \
 	 					examples/constants/constants.rs \
 	 					examples/crates/link/executable.rs \
-	 					examples/lifetime/lifetime.rs \
+	 					examples/lifetime/borrow/borrow.rs \
 	 					examples/mod/mod.rs \
 	 					examples/print/print.rs \
 	 					examples/type/cast/cast.rs \
@@ -18,8 +18,6 @@ WHITELIST = examples/attribute/cfg/custom/custom.rs \
 	 					examples/variables/mut/mut.rs \
 	 					examples/variables/scope/scope.rs \
 	 					examples/vec/vec.rs \
-						temporary-whitelist-below-this-point-remove-later \
-						examples/lifetime/reference-bad.rs
 
 srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
