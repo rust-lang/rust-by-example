@@ -22,13 +22,13 @@ fn main() {
 
     // Error! `Seconds` can't be printed, because it doesn't implement the
     // `Show` trait
-    println!("One second looks like: {}", _one_second);
-    // FIXME ^ Add `#[deriving(Show)]` to `Seconds`
+    //println!("One second looks like: {}", _one_second);
+    // TODO ^ Try uncommenting this line
 
     // Error: `Seconds` can't be compared, because it doesn't implement the
     // `PartialEq` trait
-    let _this_is_true = _one_second == _one_second;
-    // FIXME ^ Add `#[deriving(PartialEq)]` to `Seconds`
+    //let _this_is_true = _one_second == _one_second;
+    // TODO ^ Try uncommenting this line
 
     let foot = Inches(12);
 
