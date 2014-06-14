@@ -37,4 +37,6 @@ fn main() {
         },
         x => x,
     };
+
+    println!("{}", big_number)
 }
