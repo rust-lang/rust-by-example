@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WHITELIST=(
-  ./examples/lifetime/lifetime.rs
+  ./examples/lifetime/borrow/borrow.rs
   ./src/playpen.rs
 )
 
