@@ -11,6 +11,7 @@ struct Point {
 }
 
 // Structs can be reused as fields of another struct
+#[allow(dead_code)]
 struct Rectangle {
     p1: Point,
     p2: Point,
