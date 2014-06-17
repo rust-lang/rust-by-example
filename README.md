@@ -35,7 +35,7 @@ Each example has:
 * some source code, e.g. `src/hello/hello.rs`
 * an input markdown file, e.g. `src/hello/input.md`
 
-Take a look at the source code of the [Hello World example](src/hello) as a
+Take a look at the source code of the [Hello World example](examples/hello/hello.rs) as a
 reference.
 
 Note that the markdown doesn't need to copy the rust code, instead it just has
