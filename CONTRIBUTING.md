@@ -71,4 +71,4 @@ See the [README](README.md) for details about how the static site is generated.
 
 * Lines should contain a maximum of 79 characters.
 * In comments, types, methods, macros and variables should be wrapped in
-  backticks, e.g. ````println!````
+  backticks, e.g. ``` `println!` ```
