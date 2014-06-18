@@ -11,7 +11,7 @@ fn swap<T>(pair: Pair<T>) -> Pair<T> {
     Pair { first: second, second: first }
 }
 
-// Reimplementation of a 2-element tuple
+// Reimplementing a 2-element tuple as a tuple struct
 struct Tuple2<T, U>(T, U);
 
 fn main() {
