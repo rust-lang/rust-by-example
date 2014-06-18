@@ -5,4 +5,4 @@ be checked at compile time.
 {print.play}
 
 For more information about formatting, take a look at
-[std::fmt](http://static.rust-lang.org/doc/master/std/fmt/index.html).
+[std::fmt](http://doc.rust-lang.org/std/fmt/).

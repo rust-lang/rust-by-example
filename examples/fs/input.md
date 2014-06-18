@@ -1,4 +1,4 @@
-The [`std::io::fs`](http://static.rust-lang.org/doc/master/std/io/fs/index.html)
+The [`std::io::fs`](http://doc.rust-lang.org/std/io/fs/)
 module contains several functions that deal with the filesystem.
 
 {fs.play}

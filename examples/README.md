@@ -7,7 +7,7 @@ This book is a collection of bitesize examples that illustrate various rustic
 concepts and the Rust distribution libraries.
 
 Be sure to have rust [installed](http://www.rust-lang.org/install.html) and the
-[docs](http://static.rust-lang.org/doc/master/std/index.html) at hand, let's
+[docs](http://doc.rust-lang.org/std/) at hand, let's
 start!
 
 *Note*: This book will follow the nightly version of Rust until we reach
