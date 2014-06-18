@@ -9,7 +9,6 @@ can be used to/for:
 * link to a foreign library
 * mark functions as unit tests
 * mark functions that will be part of a benchmark
-* set name and version of a crate
 
 When attributes apply to a whole crate, their syntax is `#![crate_attribute]`,
 and when they apply to a module or item, the syntax is `#[item_attribute]`
