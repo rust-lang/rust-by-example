@@ -5,5 +5,5 @@ the `Ok(ok)` branch expands to an `ok` expression.
 
 {try.play}
 
-Be sure to check the [documentation](http://static.rust-lang.org/doc/master/std/result/type.Result.html),
+Be sure to check the [documentation](http://doc.rust-lang.org/std/result/type.Result.html),
 as there are many methods to map/compose `Result`.
