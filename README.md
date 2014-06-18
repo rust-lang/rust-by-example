@@ -8,53 +8,65 @@ This is the source code of the
 
 ## How to contribute
 
-### An example has a typo, it's outdated, not clear or the information is wrong
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Please open an issue explaining the problem, or see below how to modify an
-example.
+## How to generate the static site
 
-### I like to see an example about ${topic}
+We use these tools to generate the static site:
 
-Leave a comment in
-[issue #1](https://github.com/japaric/rust-by-example/issues/1).
-
-### I want to add/modify an example
-
-You'll need these tools:
-
-* [Rust](http://www.rust-lang.org/) (\o/)
+* [Rust](http://www.rust-lang.org/) \o/
 * [gitbook](http://www.gitbook.io)
+
+`gitbook` will generate the site from markdown files (see details about how it
+works [here](https://github.com/GitbookIO/gitbook#book-format)).
+
+Before running `gitbook`, we do a preprocessing step using
+[src/update.rs](src/update.rs).
+
+This preprocessing has two steps:
+
+### Generating the `SUMMARY.md`
+
+`SUMMARY.md` is generated from the
+[examples/structure.json](examples/structure.json) file. This JSON file
+contains a tree-like structure of "examples".
 
 Each example has:
 
 * an id, e.g. `hello`
 * a title, e.g. `Hello World`
-* a directory under `src`, e.g. `src/hello`
-* an entry in [`src/order.json`](src/order.json), e.g.
-  `{ "id": "hello", "title": "Hello World" }`
-* some source code, e.g. `src/hello/hello.rs`
-* an input markdown file, e.g. `src/hello/input.md`
+* optionally, children, which is a vector of sub-examples, e.g. `null`
+* a directory under `examples`, e.g. [examples/hello](examples/hello)
+* an entry in examples/structure.json, e.g.
+  `{ "id": "hello", "title": "Hello World", "children": null }`
+* some source file(s), e.g. [examples/hello/hello.rs](examples/hello/hello.rs)
+* an input markdown file, e.g.
+  [examples/hello/input.md](examples/hello/input.md)
 
-Take a look at the source code of the [Hello World example](examples/hello/hello.rs) as a
-reference.
+When dealing with a child example, the path will have to include the id of its
+ancestors; e.g. `examples/variable/mut/input.md`, implies that a `mut` example
+lives under the `variable` example.
 
-Note that the markdown doesn't need to copy the rust code, instead it just has
-to reference the filename of the rust code, as in `{hello.rs}`.
+### Processing `input.md`
 
-`make` will merge `input.md` and the rust code into a `README.md` file
-located under `output/examples/${id}`, AND generate the `SUMMARY.md` of the
-book, which lists the examples in the same order they appear in `order.json`.
+Instead of including the rust code directly in `input.md`, the code lives in
+separate source files; and the preprocessing step will insert the source code
+in the markdown file.
 
-`make serve` will publish the book under `localhost:4000`, there you can check
-that the example looks correct.
+For example, to insert the source code of the `hello.rs` file, the following
+syntax is used in the markdown file:
 
-`make test` will compile all the examples and point out compiler errors if any.
+* `{hello.play}` expands the source code embedded in a live code editor
+* `{hello.rs}` expands to static/plain source code.
+* `{hello.out}` expands to the output of executing the source code.
 
-After checking that the changes look correct, you can send a pull request.
+The Makefile provides the following recipes:
 
-**Note**: If you're working in a new example, it would be extreme helpful to
-open an issue mentioning on which topic you are working on, to let other people
-know which topics are being worked on.
+* `make`: builds `update.rs` and does the preprocessing step
+* `make book`: runs `gitbook` to generate the book
+* `make serve`: runs `gitbook --serve` to generate the book and publishes it
+  under `localhost:4000`
+* `make test`: will check all the rust source files for compilation errors
 
 ## License
 

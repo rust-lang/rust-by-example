@@ -1,38 +1,74 @@
 # Opening an issue
 
-## I would like to see a new chapter about $TOPIC
+## I would like to see an example about $TOPIC
 
 Please check if such topic is already part of our
 [TODO list](https://github.com/japaric/rust-by-example/issues/1). If that's
-not the case, leave the request as a comment on that issue.
+not the case, leave your request as a comment on that issue.
 
-## There's a problem with chapter X
+## There's a typo/error in example $X
+## Example $X is not clear
+## I have an idea for example $X
 
-Please include the chapter id in the issue title, e.g. "lifetime: concept not
-clear". You can find all the chapters ids
-[here](https://github.com/japaric/rust-by-example/blob/master/src/order.json).
+Please include the example id in the issue title, e.g. "variables/mut: concept
+not clear". The example id is the relative path in the URL without the html
+extension, e.g. URL: `http://rustbyexample.com/variables/scope.html` -> id:
+`variables/scope`
 
-# Sending a PR
+If its something simple like a typo, you can send a PR directly.
 
-## Commit message
+# Sending a PR for a small fix
 
-* If you are submitting a correction/modification to an existing chapter,
-  please start the commit message with the chapter id, e.g. "hello: fix typo",
-  you can find all the chapters ids
-  [here](https://github.com/japaric/rust-by-example/blob/master/src/order.json).
+If you are submitting a correction/modification to an existing chapter, please
+start the commit message with the example id, e.g. "type/literals: fix typo".
 
-* If you are submitting a new chapter, don't forget to register the chapter in
-  the `src/order.json` file, place the entry in the staging area section. Also,
-  include the chapter name in the commit message, e.g. "add chapter on Unsafe
-  operations".
+# I want to contribute an example about $TOPIC
 
-## Code Style
+## Check if there is an action plan for that topic
 
-### Markdown (.md)
+Look for
+[issues](https://github.com/japaric/rust-by-example/issues?labels=&page=1&state=open)
+that have a C-* label:
+
+* C-new: A new chapter, there probably a lot to do here.
+
+* C-expand: Expand an existing chapter, new examples are needed.
+
+* C-split: The current chapter is too long, we want to split it into smaller
+  chunks.
+
+* C-taken: Someone is already working in this issue, but if there is a lot of
+  work to do, probably you can still help.
+
+## Let us know what are you working on
+
+If an issue about the topic already exists, leave a comment there to let us
+know that you'll help. Otherwise, open a new issue mentioning what topic you
+plan to work on.
+
+## Hack away
+
+See the [README](README.md) for details about how the static site is generated.
+
+## Finally, send a PR
+
+* Don't forget to register the example in the `examples/structure.json` file.
+
+* Include the example id in the commit message header, e.g. for
+  `literals/string` use the message "literals: add example about strings"
+
+* Add a `Close #123` to the commit message, to close the issue that's been used
+  to track your work.
+
+# Code Style
+
+## Markdown (.md)
 
 * Lines should contain a maximum of 79 characters.
   * This can be waived in the case of long URLs.
 
-### Rust code (.rs)
+## Rust code (.rs)
 
 * Lines should contain a maximum of 79 characters.
+* In comments, types, methods, macros and variables should be wrapped in
+  backticks, e.g. ````println!````
