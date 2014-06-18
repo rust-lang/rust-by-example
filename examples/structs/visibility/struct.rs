@@ -38,6 +38,6 @@ fn main() {
 
     // The private fields of a struct can't be accessed
     // Error! The `contents` field is private
-    //println!("The black box contains: {}", black_box.contents);
+    //println!("The black box contains: {}", _black_box.contents);
     // TODO ^ Try uncommenting this line
 }
