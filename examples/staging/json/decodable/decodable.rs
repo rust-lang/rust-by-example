@@ -1,4 +1,5 @@
 extern crate serialize;
+
 use serialize::{json, Decodable};
 
 #[deriving(Decodable)]
@@ -11,7 +12,7 @@ struct City {
 }
 
 fn main() {
-    for json_str in [
+    for &json_str in [
         r#"{"name": "Cape Town", "lat": -33.925, "lon": 18.424}"#,
 
         // Any extra fields will be ignored:
@@ -20,9 +21,9 @@ fn main() {
 
         // However, a missing field will cause an error:
         r#"{"lat": -33.86, "lon": 151.209}"#,
-        // FIXME: ^ fill in the missing field: "name": "Sydney",
+        // FIXME ^ fill in the missing field: "name": "Sydney"
     ].iter() {
-        let json_object = match json::from_str(*json_str) {
+        let json_object = match json::from_str(json_str) {
             Ok(json) => json,
             Err(err) => {
                 println!("json::from_str: {}", err);
