@@ -107,7 +107,8 @@
     { "id": "rand", "title": "Random", "children": null  },
     { "id": "simd", "title": "SIMD", "children": null  },
     { "id": "test", "title": "Testing", "children": null  },
-    { "id": "unsafe", "title": "Unsafe operations", "children": null  }
+    { "id": "unsafe", "title": "Unsafe operations", "children": null  },
+    { "id": "custom-fmt", "title": "Custom formatters", "children": null }
   ] },
   { "id": "todo", "title": "TODO", "children": [
     { "id": "arg", "title": "Program arguments", "children": null },
