@@ -11,7 +11,7 @@ fn decrease(number: int) {
 fn help() {
     println!("usage:
 match_args <integer>
-match_args \\{increase|decrease\\} <integer>");
+match_args {{increase|decrease}} <integer>");
 }
 
 fn main() {
