@@ -100,6 +100,7 @@
       { "id": "wait", "title": "Wait", "children": null }
   ] },
   { "id": "fs", "title": "Filesystem Operations", "children": null },
+  { "id": "arg", "title": "Program arguments", "children": null },
   { "id": "staging", "title": "Staging Area", "children": [
     { "id": "bench", "title": "Benchmarking", "children": null  },
     { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
@@ -115,7 +116,6 @@
     ] }
   ] },
   { "id": "todo", "title": "TODO", "children": [
-    { "id": "arg", "title": "Program arguments", "children": null },
     { "id": "assert", "title": "assert! and debug_assert!", "children": null },
     { "id": "comment", "title": "Comments", "children": null },
     { "id": "green", "title": "Green threads", "children": null },
