@@ -1,5 +1,5 @@
 fn main() {
-    let mut _integer = 5;
+    let mut _integer = 5i;
 
     {
         // Borrow `integer`

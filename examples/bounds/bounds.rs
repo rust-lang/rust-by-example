@@ -43,8 +43,8 @@ impl<
 
 fn main() {
     // Floats implement the `Add`, `Mul` and `Sub` traits
-    let v1 = Vec2 { x: 1.2, y: 3.4 };
-    let v2 = Vec2 { x: 5.6, y: 7.8 };
+    let v1 = Vec2 { x: 1.2_f32, y: 3.4 };
+    let v2 = Vec2 { x: 5.6_f32, y: 7.8 };
 
     println!("{} + {} = {}", v1, v2, v1 + v2);
     println!("{} - {} = {}", v1, v2, v1 - v2);
