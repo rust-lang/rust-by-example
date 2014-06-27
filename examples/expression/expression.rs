@@ -1,5 +1,5 @@
 fn main() {
-    let x = 5;
+    let x = 5u;
 
     let y = {
         let x_squared = x * x;

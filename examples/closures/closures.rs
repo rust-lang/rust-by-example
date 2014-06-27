@@ -1,5 +1,5 @@
 fn main() {
-    let captured_value = 7;
+    let captured_value = 7u;
 
     let closure = |argument| {
         println!("I captured this: {}", captured_value);

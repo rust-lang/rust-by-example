@@ -1,5 +1,5 @@
 fn main() {
-    let mut count = 0;
+    let mut count = 0u;
 
     println!("Let's count until infinity!");
 

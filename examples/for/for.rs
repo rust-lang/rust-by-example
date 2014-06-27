@@ -1,6 +1,6 @@
 fn main() {
     // `n` will take the values: 1, 2, ..., 100 in each iteration
-    for n in range(1, 101) {
+    for n in range(1u, 101) {
         if n % 15 == 0 {
             println!("fizzbuzz");
         } else if n % 3 == 0 {

@@ -25,7 +25,7 @@ fn main() {
     println!("point is ({}, {})", point.x, point.y);
     println!("mutable_point is ({}, {})", mutable_point.x, mutable_point.y);
 
-    let mut tuple = (box 5, 3);
+    let mut tuple = (box 5u, 3u);
 
     {
         // `ref` can also be paired with `box` to take a mutable reference to

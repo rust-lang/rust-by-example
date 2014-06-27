@@ -18,7 +18,7 @@ fn main() {
     }
 
     // Create lots of boxes
-    for _ in range(0, 1_000) {
+    for _ in range(0u, 1_000) {
         create_box();
     }
 

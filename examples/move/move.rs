@@ -7,7 +7,7 @@ fn destroy_box(c: Box<int>) {
 
 fn main() {
     // Stack allocated integer
-    let x = 5;
+    let x = 5u;
 
     // Copy `x` into `y`, there are no resources to move
     let y = x;

@@ -1,5 +1,5 @@
 fn main() {
-    let immutable_box = box 5;
+    let immutable_box = box 5u;
 
     println!("immutable_box contains {}", immutable_box);
 

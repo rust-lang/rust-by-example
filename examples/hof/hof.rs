@@ -8,13 +8,13 @@ use num::Integer;
 
 fn main() {
     println!("Find the sum of all the squared odd numbers under 1000");
-    let upper: int = 1000;
+    let upper = 1000u;
 
     // Imperative approach
     // Declare accumulator variable
     let mut acc = 0;
     // Iterate: 0, 1, 2, ... to infinity
-    for n in iter::count(0, 1) {
+    for n in iter::count(0u, 1) {
         // Square the number
         let n_squared = n * n;
 
@@ -31,7 +31,7 @@ fn main() {
     // Functional approach
     let sum_of_squared_odd_numbers =
         // All natural numbers
-        iter::count(0, 1).
+        iter::count(0u, 1).
         // Squared
         map(|n| n * n).
         // Below upper limit

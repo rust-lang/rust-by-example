@@ -28,7 +28,7 @@ fn main() {
     let none: Option<int> = None;
     let _equivalent_none = None::<int>;
 
-    let optional_float = Some(0.0);
+    let optional_float = Some(0f32);
 
     // The `unwrap` method will extract the value wrapped in a `Some` variant,
     // or will `fail!` if called on a `None` variant

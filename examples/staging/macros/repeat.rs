@@ -14,7 +14,7 @@ macro_rules! min {
 }
 
 fn main() {
-    println!("{}", min!(1));
-    println!("{}", min!(1 + 2 , 2));
-    println!("{}", min!(5, 2 * 3, 4));
+    println!("{}", min!(1u));
+    println!("{}", min!(1u + 2 , 2u));
+    println!("{}", min!(5u, 2u * 3, 4u));
 }
