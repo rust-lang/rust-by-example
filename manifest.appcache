@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1402780016999
+# Revision 1403843339471
 
 CACHE:
 loop.html
@@ -24,10 +24,10 @@ crates/lib.html
 crates/link.html
 crates.html
 drop.html
-enum.html
 enum/c-like.html
-fail.html
+enum.html
 expression.html
+fail.html
 file/create.html
 file/open.html
 file.html
@@ -69,6 +69,10 @@ result.html
 sockets.html
 staging/bench.html
 staging/ffi.html
+staging/json/decodable.html
+staging/json/encodable.html
+staging/json/json-enum.html
+staging/json.html
 staging/macros.html
 staging/rand.html
 staging/simd.html

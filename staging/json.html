@@ -5,7 +5,7 @@
         
         
         <meta charset="UTF-8">
-        <title>Structs | Rust by Example</title>
+        <title>JSON parsing | Rust by Example</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -15,13 +15,13 @@
         <meta name="generator" content="www.gitbook.io">
 
         
-        <link rel="next" href="../constants.html" />
+        <link rel="next" href="../staging/json/json-enum.html" />
         
         
-        <link rel="prev" href="../lifetime/fn.html" />
+        <link rel="prev" href="../staging/unsafe.html" />
         
 
-        <meta property="og:title" content="Structs | Rust by Example">
+        <meta property="og:title" content="JSON parsing | Rust by Example">
         <meta property="og:site_name" content="Rust by Example">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="23.3" data-basepath=".." data-revision="1403843339471">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.8" data-basepath=".." data-revision="1403843339471">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -134,7 +134,7 @@
         
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/lifetime/struct.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/staging/json.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -1230,7 +1230,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 53.125%;min-width: 52.083333333333336%;"></div>
+        <div class="inner" style="width: 95.83333333333333%;min-width: 94.79166666666667%;"></div>
     </div>
     <div class="chapters">
     
@@ -1338,87 +1338,87 @@
     
         <a href="../lifetime/struct.html" title="Structs" class="chapter done " data-progress="23.3" style="left: 53.125%;"></a>
     
-        <a href="../constants.html" title="Global constants" class="chapter  " data-progress="24" style="left: 54.166666666666664%;"></a>
+        <a href="../constants.html" title="Global constants" class="chapter done " data-progress="24" style="left: 54.166666666666664%;"></a>
     
-        <a href="../methods.html" title="Methods" class="chapter  " data-progress="25" style="left: 55.208333333333336%;"></a>
+        <a href="../methods.html" title="Methods" class="chapter done " data-progress="25" style="left: 55.208333333333336%;"></a>
     
-        <a href="../enum.html" title="Enums" class="chapter  " data-progress="26" style="left: 56.25%;"></a>
+        <a href="../enum.html" title="Enums" class="chapter done " data-progress="26" style="left: 56.25%;"></a>
     
-        <a href="../enum/c-like.html" title="C-like" class="chapter  " data-progress="26.1" style="left: 57.291666666666664%;"></a>
+        <a href="../enum/c-like.html" title="C-like" class="chapter done " data-progress="26.1" style="left: 57.291666666666664%;"></a>
     
-        <a href="../fail.html" title="`fail!`" class="chapter  " data-progress="27" style="left: 58.333333333333336%;"></a>
+        <a href="../fail.html" title="`fail!`" class="chapter done " data-progress="27" style="left: 58.333333333333336%;"></a>
     
-        <a href="../option.html" title="`Option`" class="chapter  " data-progress="28" style="left: 59.375%;"></a>
+        <a href="../option.html" title="`Option`" class="chapter done " data-progress="28" style="left: 59.375%;"></a>
     
-        <a href="../array.html" title="Arrays and Slices" class="chapter  " data-progress="29" style="left: 60.416666666666664%;"></a>
+        <a href="../array.html" title="Arrays and Slices" class="chapter done " data-progress="29" style="left: 60.416666666666664%;"></a>
     
-        <a href="../trait.html" title="Traits" class="chapter  " data-progress="30" style="left: 61.458333333333336%;"></a>
+        <a href="../trait.html" title="Traits" class="chapter done " data-progress="30" style="left: 61.458333333333336%;"></a>
     
-        <a href="../trait/deriving.html" title="Deriving" class="chapter  " data-progress="30.1" style="left: 62.5%;"></a>
+        <a href="../trait/deriving.html" title="Deriving" class="chapter done " data-progress="30.1" style="left: 62.5%;"></a>
     
-        <a href="../ops.html" title="Operator Overloading" class="chapter  " data-progress="31" style="left: 63.541666666666664%;"></a>
+        <a href="../ops.html" title="Operator Overloading" class="chapter done " data-progress="31" style="left: 63.541666666666664%;"></a>
     
-        <a href="../bounds.html" title="Bounds" class="chapter  " data-progress="32" style="left: 64.58333333333333%;"></a>
+        <a href="../bounds.html" title="Bounds" class="chapter done " data-progress="32" style="left: 64.58333333333333%;"></a>
     
-        <a href="../drop.html" title="Drop" class="chapter  " data-progress="33" style="left: 65.625%;"></a>
+        <a href="../drop.html" title="Drop" class="chapter done " data-progress="33" style="left: 65.625%;"></a>
     
-        <a href="../iter.html" title="Iterators" class="chapter  " data-progress="34" style="left: 66.66666666666667%;"></a>
+        <a href="../iter.html" title="Iterators" class="chapter done " data-progress="34" style="left: 66.66666666666667%;"></a>
     
-        <a href="../closures.html" title="Closures" class="chapter  " data-progress="35" style="left: 67.70833333333333%;"></a>
+        <a href="../closures.html" title="Closures" class="chapter done " data-progress="35" style="left: 67.70833333333333%;"></a>
     
-        <a href="../hof.html" title="Higher Order Functions" class="chapter  " data-progress="36" style="left: 68.75%;"></a>
+        <a href="../hof.html" title="Higher Order Functions" class="chapter done " data-progress="36" style="left: 68.75%;"></a>
     
-        <a href="../vec.html" title="Vectors" class="chapter  " data-progress="37" style="left: 69.79166666666667%;"></a>
+        <a href="../vec.html" title="Vectors" class="chapter done " data-progress="37" style="left: 69.79166666666667%;"></a>
     
-        <a href="../str.html" title="Strings" class="chapter  " data-progress="38" style="left: 70.83333333333333%;"></a>
+        <a href="../str.html" title="Strings" class="chapter done " data-progress="38" style="left: 70.83333333333333%;"></a>
     
-        <a href="../clone.html" title="Clone" class="chapter  " data-progress="39" style="left: 71.875%;"></a>
+        <a href="../clone.html" title="Clone" class="chapter done " data-progress="39" style="left: 71.875%;"></a>
     
-        <a href="../tasks.html" title="Tasks" class="chapter  " data-progress="40" style="left: 72.91666666666667%;"></a>
+        <a href="../tasks.html" title="Tasks" class="chapter done " data-progress="40" style="left: 72.91666666666667%;"></a>
     
-        <a href="../channels.html" title="Channels" class="chapter  " data-progress="41" style="left: 73.95833333333333%;"></a>
+        <a href="../channels.html" title="Channels" class="chapter done " data-progress="41" style="left: 73.95833333333333%;"></a>
     
-        <a href="../timers.html" title="Timers" class="chapter  " data-progress="42" style="left: 75%;"></a>
+        <a href="../timers.html" title="Timers" class="chapter done " data-progress="42" style="left: 75%;"></a>
     
-        <a href="../sockets.html" title="Unix sockets" class="chapter  " data-progress="43" style="left: 76.04166666666667%;"></a>
+        <a href="../sockets.html" title="Unix sockets" class="chapter done " data-progress="43" style="left: 76.04166666666667%;"></a>
     
-        <a href="../result.html" title="`Result`" class="chapter  " data-progress="44" style="left: 77.08333333333333%;"></a>
+        <a href="../result.html" title="`Result`" class="chapter done " data-progress="44" style="left: 77.08333333333333%;"></a>
     
-        <a href="../result/try.html" title="`try!`" class="chapter  " data-progress="44.1" style="left: 78.125%;"></a>
+        <a href="../result/try.html" title="`try!`" class="chapter done " data-progress="44.1" style="left: 78.125%;"></a>
     
-        <a href="../path.html" title="Path" class="chapter  " data-progress="45" style="left: 79.16666666666667%;"></a>
+        <a href="../path.html" title="Path" class="chapter done " data-progress="45" style="left: 79.16666666666667%;"></a>
     
-        <a href="../file.html" title="File I/O" class="chapter  " data-progress="46" style="left: 80.20833333333333%;"></a>
+        <a href="../file.html" title="File I/O" class="chapter done " data-progress="46" style="left: 80.20833333333333%;"></a>
     
-        <a href="../file/open.html" title="`open`" class="chapter  " data-progress="46.1" style="left: 81.25%;"></a>
+        <a href="../file/open.html" title="`open`" class="chapter done " data-progress="46.1" style="left: 81.25%;"></a>
     
-        <a href="../file/create.html" title="`create`" class="chapter  " data-progress="46.2" style="left: 82.29166666666667%;"></a>
+        <a href="../file/create.html" title="`create`" class="chapter done " data-progress="46.2" style="left: 82.29166666666667%;"></a>
     
-        <a href="../process.html" title="Child processes" class="chapter  " data-progress="47" style="left: 83.33333333333333%;"></a>
+        <a href="../process.html" title="Child processes" class="chapter done " data-progress="47" style="left: 83.33333333333333%;"></a>
     
-        <a href="../process/pipe.html" title="Pipes" class="chapter  " data-progress="47.1" style="left: 84.375%;"></a>
+        <a href="../process/pipe.html" title="Pipes" class="chapter done " data-progress="47.1" style="left: 84.375%;"></a>
     
-        <a href="../process/wait.html" title="Wait" class="chapter  " data-progress="47.2" style="left: 85.41666666666667%;"></a>
+        <a href="../process/wait.html" title="Wait" class="chapter done " data-progress="47.2" style="left: 85.41666666666667%;"></a>
     
-        <a href="../fs.html" title="Filesystem Operations" class="chapter  " data-progress="48" style="left: 86.45833333333333%;"></a>
+        <a href="../fs.html" title="Filesystem Operations" class="chapter done " data-progress="48" style="left: 86.45833333333333%;"></a>
     
-        <a href="../staging.html" title="Staging Area" class="chapter  " data-progress="49" style="left: 87.5%;"></a>
+        <a href="../staging.html" title="Staging Area" class="chapter done " data-progress="49" style="left: 87.5%;"></a>
     
-        <a href="../staging/bench.html" title="Benchmarking" class="chapter  " data-progress="49.1" style="left: 88.54166666666667%;"></a>
+        <a href="../staging/bench.html" title="Benchmarking" class="chapter done " data-progress="49.1" style="left: 88.54166666666667%;"></a>
     
-        <a href="../staging/ffi.html" title="Foreign Function Interface" class="chapter  " data-progress="49.2" style="left: 89.58333333333333%;"></a>
+        <a href="../staging/ffi.html" title="Foreign Function Interface" class="chapter done " data-progress="49.2" style="left: 89.58333333333333%;"></a>
     
-        <a href="../staging/macros.html" title="macro_rules!" class="chapter  " data-progress="49.3" style="left: 90.625%;"></a>
+        <a href="../staging/macros.html" title="macro_rules!" class="chapter done " data-progress="49.3" style="left: 90.625%;"></a>
     
-        <a href="../staging/rand.html" title="Random" class="chapter  " data-progress="49.4" style="left: 91.66666666666667%;"></a>
+        <a href="../staging/rand.html" title="Random" class="chapter done " data-progress="49.4" style="left: 91.66666666666667%;"></a>
     
-        <a href="../staging/simd.html" title="SIMD" class="chapter  " data-progress="49.5" style="left: 92.70833333333333%;"></a>
+        <a href="../staging/simd.html" title="SIMD" class="chapter done " data-progress="49.5" style="left: 92.70833333333333%;"></a>
     
-        <a href="../staging/test.html" title="Testing" class="chapter  " data-progress="49.6" style="left: 93.75%;"></a>
+        <a href="../staging/test.html" title="Testing" class="chapter done " data-progress="49.6" style="left: 93.75%;"></a>
     
-        <a href="../staging/unsafe.html" title="Unsafe operations" class="chapter  " data-progress="49.7" style="left: 94.79166666666667%;"></a>
+        <a href="../staging/unsafe.html" title="Unsafe operations" class="chapter done " data-progress="49.7" style="left: 94.79166666666667%;"></a>
     
-        <a href="../staging/json.html" title="JSON parsing" class="chapter  " data-progress="49.8" style="left: 95.83333333333333%;"></a>
+        <a href="../staging/json.html" title="JSON parsing" class="chapter done " data-progress="49.8" style="left: 95.83333333333333%;"></a>
     
         <a href="../staging/json/json-enum.html" title="`Json`" class="chapter  " data-progress="49.8.1" style="left: 96.875%;"></a>
     
@@ -1433,48 +1433,9 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_41">
+                    <section class="normal" id="section-gitbook_71">
                     
-                        <h1 id="structs">Structs</h1>
-<p>Explicit lifetimes are also required in structs that hold references.</p>
-<div id="active-code">
-<button class="btn btn-primary" type="button" id="run-code">Run</button>
-<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// First attempt: No explicit lifetimes
-// Error! Compiler needs explicit lifetime
-//struct Singleton {
-    //one: &amp;mut int,
-//}
-// TODO ^ Try uncommenting this struct
-
-// Second attempt: Add lifetimes to all the references
-struct Pair&lt;&#39;a, &#39;b&gt; {
-    one: &amp;&#39;a mut int,
-    two: &amp;&#39;b mut int,
-}
-
-fn main() {
-    // Let&#39;s say that &#96;one&#96; has lifetime &#96;o&#96;
-    let mut one = 1;
-
-    {
-        // And that &#96;two&#96; has lifetime &#96;t&#96;
-        // &#96;two&#96; has a shorter (and different) lifetime that &#96;one&#96; (&#96;&#39;t &lt; &#39;o&#96;)
-        let mut two = 2;
-
-        println!(&quot;Before: ({}, {})&quot;, one, two);
-
-        // &#96;Pair&#96; gets specialized for &#96;&#39;a = &#39;o&#96; and &#96;&#39;b = &#39;t&#96;
-        let pair = Pair { one: &amp;mut one, two: &amp;mut two };
-
-        &#42;pair.one = 2;
-        &#42;pair.two = 1;
-
-        println!(&quot;After: ({}, {})&quot;, pair.one, pair.two);
-    }
-}</div>
-<div id="result"></div>
-</div>
+                        <h1 id="json-parsing">JSON parsing</h1>
 
                     
                     </section>
@@ -1484,10 +1445,10 @@ fn main() {
         </div>
 
         
-        <a href="../lifetime/fn.html" class="navigation navigation-prev " aria-label="Previous page: Functions"><i class="fa fa-angle-left"></i></a>
+        <a href="../staging/unsafe.html" class="navigation navigation-prev " aria-label="Previous page: Unsafe operations"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../constants.html" class="navigation navigation-next " aria-label="Next page: Global constants"><i class="fa fa-angle-right"></i></a>
+        <a href="../staging/json/json-enum.html" class="navigation navigation-next " aria-label="Next page: `Json`"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
