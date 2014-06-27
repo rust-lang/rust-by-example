@@ -2,8 +2,9 @@ fn main() {
     // Integer addition
     println!("1 + 2 = {}", 1u + 2);
 
-    // Float division
-    println!("1.0 / 2.0 = {}", 1f32 / 2.0);
+    // Integer subtraction
+    println!("1 - 2 = {}", 1i - 2);
+    // TODO ^ Try changing `1i` to `1u` to see why the type is important
 
     // Short-circuiting boolean logic
     println!("true AND false is {}", true && false);
