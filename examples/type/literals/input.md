@@ -3,8 +3,7 @@ exception of `uint` that uses the `u` suffix and `int` that uses the `i`
 suffix.
 
 The type of unsuffixed literals will depend on how they are used. If no
-constraint exists, integer literals will default to `int`, and floating point
-literals will default to `f64` .
+constraint exists, the compiler will raise an error.
 
 {literals.play}
 
