@@ -9,7 +9,7 @@ fn main() {
 
         println!("inner short: {}", short_lived_variable);
 
-        // This variable shadows the outer one
+        // This variable *shadows* the outer one
         let long_lived_variable = 5_f32;
 
         println!("inner long: {}", long_lived_variable);
