@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.5" data-basepath=".." data-revision="1403843339471">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.5" data-basepath=".." data-revision="1404079589851">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1492,7 +1492,7 @@ macro_rules! assert_len {
 
     <span class="hljs-comment">// pointer to the start of the vector data</span>
     <span class="hljs-keyword">let</span> p_x: *<span class="hljs-keyword">mut</span> <span class="hljs-keyword">f32</span> = xs.as_mut_ptr();
-    <span class="hljs-keyword">let</span> p_y: *<span class="hljs-keyword">f32</span> = ys.as_ptr();
+    <span class="hljs-keyword">let</span> p_y: *<span class="hljs-keyword">const</span> <span class="hljs-keyword">f32</span> = ys.as_ptr();
 
     <span class="hljs-comment">// sum excess elements that don't fit in the simd vector</span>
     <span class="hljs-keyword">for</span> i in range(<span class="hljs-number">4</span> * chunks, size) {
@@ -1505,7 +1505,7 @@ macro_rules! assert_len {
 
     <span class="hljs-comment">// treat f32 vector as an simd f32x4 vector</span>
     <span class="hljs-keyword">let</span> simd_p_x = p_x as *<span class="hljs-keyword">mut</span> f32x4;
-    <span class="hljs-keyword">let</span> simd_p_y = p_y as *f32x4;
+    <span class="hljs-keyword">let</span> simd_p_y = p_y as *<span class="hljs-keyword">const</span> f32x4;
 
     <span class="hljs-comment">// sum "simd vector"</span>
     <span class="hljs-keyword">for</span> i in range(<span class="hljs-number">0</span>, chunks) {

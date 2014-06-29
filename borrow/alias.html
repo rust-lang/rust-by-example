@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="22.3" data-basepath=".." data-revision="1403843339471">
+    <div class="book" data-github="japaric/rust-by-example" data-level="22.3" data-basepath=".." data-revision="1404079589851">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1436,10 +1436,10 @@
                     <section class="normal" id="section-gitbook_8">
                     
                         <h1 id="aliasing">Aliasing</h1>
-<p>Data can be immutably borrowed any number of times, but once immutably
-borrowed, the original data can&#39;t be mutably borrowed. On the other side, data
-can be mutably borrowed <em>once</em>, and until the mutable reference goes out of
-scope, the original data can&#39;t be borrowed again.</p>
+<p>Data can be immutably borrowed any number of times, but while immutably
+borrowed, the original data can&#39;t be mutably borrowed. On the other side,
+only <em>one</em> mutable borrow is allowed at a time. The original data can be
+borrowed again after the mutable reference goes out of scope.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -1456,8 +1456,8 @@ fn main() {
         println!(&quot;Point has coordinates: ({}, {}, {})&quot;,
                  borrowed&#95;point.x, another&#95;borrow.y, point.z);
 
-        // Error! Can&#39;t borrow point as mutable because it&#39;s also borrowed as
-        // immutable
+        // Error! Can&#39;t borrow point as mutable because it&#39;s currently
+        // borrowed as immutable
         //let mutable&#95;borrow = &amp;mut point;
         // TODO ^ Try uncommenting this line
 
@@ -1470,8 +1470,8 @@ fn main() {
         // Change data via mutable reference
         mutable&#95;borrow.x = 5;
 
-        // Error! Can&#39;t borrow &#96;point&#96; as immutable because it&#39;s also borrowed
-        // as mutable
+        // Error! Can&#39;t borrow &#96;point&#96; as immutable because it&#39;s currently
+        // borrowed as mutable
         //let y = &amp;point.y;
         // TODO ^ Try uncommenting this line
 

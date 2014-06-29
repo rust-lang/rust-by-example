@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1403843339471
+# Revision 1404079589851
 
 CACHE:
 loop.html
@@ -28,8 +28,8 @@ enum/c-like.html
 enum.html
 expression.html
 fail.html
-file/create.html
 file/open.html
+file/create.html
 file.html
 fn/unused.html
 fn.html
@@ -57,8 +57,8 @@ mod.html
 move/mut.html
 move.html
 ops.html
-option.html
 path.html
+option.html
 print.html
 process/pipe.html
 process/wait.html

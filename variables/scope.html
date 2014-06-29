@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="4.2" data-basepath=".." data-revision="1403843339471">
+    <div class="book" data-github="japaric/rust-by-example" data-level="4.2" data-basepath=".." data-revision="1404079589851">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1437,24 +1437,25 @@
                     
                         <h1 id="scope-and-shadowing">Scope and shadowing</h1>
 <p>Variables have local scope, and are constrained to live in a <em>block</em> (a block
-is a collection of statements enclosed by braces <code>{}</code>). This allows shadowing
-of variables in inner blocks.</p>
+is a collection of statements enclosed by braces <code>{}</code>). Also,
+<a href="https://en.wikipedia.org/wiki/Variable_shadowing" target="_blank">variable shadowing</a> is
+allowed.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
     // This variable lives in the main function
-    let long&#95;lived&#95;variable = 1;
+    let long&#95;lived&#95;variable = 1i;
 
     // This is a block, and has a smaller scope than the main function
     {
         // This variable only exists in this block
-        let short&#95;lived&#95;variable = 2;
+        let short&#95;lived&#95;variable = 2i;
 
         println!(&quot;inner short: {}&quot;, short&#95;lived&#95;variable);
 
-        // This variable shadows the outer one
-        let long&#95;lived&#95;variable = 5;
+        // This variable &#42;shadows&#42; the outer one
+        let long&#95;lived&#95;variable = 5&#95;f32;
 
         println!(&quot;inner long: {}&quot;, long&#95;lived&#95;variable);
     }

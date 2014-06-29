@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.7" data-basepath=".." data-revision="1403843339471">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.7" data-basepath=".." data-revision="1404079589851">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1456,7 +1456,7 @@ borrow checker.  Dereferencing a raw pointer can only be done through an unsafe
 block.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// pointer.rs</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
-    <span class="hljs-keyword">let</span> raw_p: *<span class="hljs-keyword">u32</span> = &amp;<span class="hljs-number">10</span>;
+    <span class="hljs-keyword">let</span> raw_p: *<span class="hljs-keyword">const</span> <span class="hljs-keyword">u32</span> = &amp;<span class="hljs-number">10</span>;
 
     <span class="hljs-keyword">unsafe</span> {
         <span class="hljs-keyword">assert</span>!(*raw_p == <span class="hljs-number">10</span>);

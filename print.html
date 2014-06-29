@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="2" data-basepath="." data-revision="1403843339471">
+    <div class="book" data-github="japaric/rust-by-example" data-level="2" data-basepath="." data-revision="1404079589851">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1447,7 +1447,9 @@ be checked at compile time.</p>
     print!(&quot;January has &quot;);
 
     // &#96;{}&#96; are placeholders for arguments that will be stringified
-    println!(&quot;{} days&quot;, 31);
+    println!(&quot;{} days&quot;, 31i);
+    // The &#96;i&#96; suffix indicates the compiler that this literal has type: signed
+    // pointer size integer, see next chapter for more details
 
     // The positional arguments can be reused along the template
     println!(&quot;{0}, this is {1}. {1}, this is {0}&quot;, &quot;Alice&quot;, &quot;Bob&quot;);
@@ -1459,7 +1461,7 @@ be checked at compile time.</p>
              verb=&quot;jumps&quot;);
 
     // Special formatting can be specified in the placeholder after a &#96;:&#96;
-    println!(&quot;{} of {:t} people know binary, the other half don&#39;t&quot;, 1, 2);
+    println!(&quot;{} of {:t} people know binary, the other half don&#39;t&quot;, 1i, 2i);
 
     // Error! You are missing an argument
     println!(&quot;My name is {0}, {1} {0}&quot;, &quot;Bond&quot;);
