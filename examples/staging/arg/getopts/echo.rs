@@ -42,6 +42,7 @@ fn main() {
     };
 
     if matches.opt_present("help") {
+        //^ We could as well have used the short name.
         println!("echo {:s} - display a line of text", VERSION);
         println!("");
         println!("Usage:");
@@ -59,6 +60,7 @@ fn main() {
     }
 
     if !matches.free.is_empty() {
+        //^ `matches.free` contains all arguments that are not options.
         let string = matches.free.connect(" ");
         print(string.as_slice());
     } 

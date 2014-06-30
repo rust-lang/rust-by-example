@@ -3,5 +3,3 @@ a [vector](http://static.rust-lang.org/doc/master/std/vec/index.html) of strings
 
 {args.play}
 
-{args.out}
-
