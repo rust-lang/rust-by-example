@@ -23,7 +23,7 @@ fn main() {
             println!("My name is '{}'. Try passing some arguments!", name);
         },
         // one argument passed
-        [ref _name, ref num] => {
+        [_, ref num] => {
             if num.as_slice() == "42" {
                 println!("This is the answer!");
             } else {
@@ -31,7 +31,7 @@ fn main() {
             }
         },
         // one command and one argument passed
-        [ref _name, ref cmd, ref num] => {
+        [_, ref cmd, ref num] => {
             // parse the number
             let number: int = match from_str(num.as_slice()) {
                 Some(n) => {
