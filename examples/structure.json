@@ -100,14 +100,14 @@
       { "id": "wait", "title": "Wait", "children": null }
   ] },
   { "id": "fs", "title": "Filesystem Operations", "children": null },
-  { "id": "arg", "title": "Program arguments", "children": [
-      { "id": "matching", "title": "Argument parsing", "children": null },
-      { "id": "getopts", "title": "`getopts`", "children": null }
- ] },
   { "id": "staging", "title": "Staging Area", "children": [
     { "id": "bench", "title": "Benchmarking", "children": null  },
     { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
     { "id": "macros", "title": "macro_rules!", "children": null  },
+    { "id": "arg", "title": "Program arguments", "children": [
+        { "id": "matching", "title": "Argument parsing", "children": null },
+        { "id": "getopts", "title": "`getopts`", "children": null }
+    ] },
     { "id": "rand", "title": "Random", "children": null  },
     { "id": "simd", "title": "SIMD", "children": null  },
     { "id": "test", "title": "Testing", "children": null  },
