@@ -8,6 +8,7 @@ extern crate libc;
 
 use std::os;
 use std::io::{print, println};
+use std::io::stdio::flush;
 
 static VERSION: &'static str = "1.0.0";
 
@@ -67,6 +68,8 @@ fn main() {
 
     if !matches.opt_present("n") {
         println!("")
+    } else {
+        flush();
     }
 
     exit(0);
