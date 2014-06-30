@@ -74,3 +74,6 @@ Rust by example is dual licensed under the Apache 2.0 license and the MIT
 license.
 
 See LICENSE-APACHE and LICENSE-MIT for more details.
+
+For `examples/staging/arg/getopts/echo.rs` see LICENSE-ECHO.
+
