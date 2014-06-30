@@ -7,13 +7,6 @@ use std::io::stdio::flush;
 
 static VERSION: &'static str = "1.0.0";
 
-/// Exit the program with given exitcode.
-fn exit(exitcode: i32) {
-    unsafe {
-        libc::exit(exitcode);
-    };
-}
-
 fn main() {
     let args = os::args();
     let program = args.get(0).clone();
@@ -32,8 +25,10 @@ fn main() {
         Ok(m) => m,
         Err(f) => {
             println!("{}", f);
-            exit(1);
+            os::set_exit_status(1);
             return;
+            // The exit code is 0 (success) by default.
+            // Any exit code other than 0 indicates failure.
         }
     };
 
@@ -47,12 +42,12 @@ fn main() {
         println!("");
         println(getopts::usage("Echo the STRING(s) to standard output.", opts)
                 .as_slice());
-        exit(0);
+        return;
     }
 
     if matches.opt_present("version") {
         println!("echo version: {:s}", VERSION);
-        exit(0);
+        return;
     }
 
     if !matches.free.is_empty() {
@@ -66,6 +61,4 @@ fn main() {
     } else {
         flush();
     }
-
-    exit(0);
 }
