@@ -10,8 +10,10 @@ fn decrease(number: int) {
 
 fn help() {
     println!("usage:
-match_args <integer>
-match_args {{increase|decrease}} <integer>");
+match_args <string>
+    Check whether given string is the answer.
+match_args {{increase|decrease}} <integer>
+    Increase or decrease given integer by one.");
 }
 
 fn main() {
@@ -23,8 +25,8 @@ fn main() {
             println!("My name is '{}'. Try passing some arguments!", name);
         },
         // one argument passed
-        [_, ref num] => {
-            if num.as_slice() == "42" {
+        [_, ref string] => {
+            if string.as_slice() == "42" {
                 println!("This is the answer!");
             } else {
                 println!("This is not the answer.");
