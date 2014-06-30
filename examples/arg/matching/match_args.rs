@@ -32,25 +32,24 @@ fn main() {
         },
         // one command and one argument passed
         [ref _name, ref cmd, ref num] => {
-            let mut number: int;
             // parse the number
-            match from_str(num.as_slice()) {
+            let number: int = match from_str(num.as_slice()) {
                 Some(n) => {
-                    number = n;
+                    n
                 },
                 None => {
                     println!("error: second argument not an integer");
                     help();
                     return;
                 },
-            }
+            };
             // parse the command
             match cmd.as_slice() {
                 "increase" => increase(number),
                 "decrease" => decrease(number),
                 _ => {
                     println!("error: invalid command");
-                    help()
+                    help();
                 },
             }
         },
