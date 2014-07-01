@@ -19,7 +19,7 @@ fn main() {
     let pair_of_chars: Pair<char> = Pair { first: 'a', second: 'b' };
 
     // Implicitly specialize `Pair`
-    let pair_of_ints = Pair { first: 1, second: 2 };
+    let pair_of_ints = Pair { first: 1i, second: 2 };
 
     // Explicitly specialize `Tuple2`
     let _tuple: Tuple2<char, int> = Tuple2('R', 2);

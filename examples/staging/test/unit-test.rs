@@ -11,5 +11,5 @@ fn main() {
 
 #[test]
 fn distance_test() {
-    assert!(distance((0.0, 0.0), (1.0, 1.0)) == (2 as f32).sqrt());
+    assert!(distance((0f32, 0f32), (1f32, 1f32)) == (2f32).sqrt());
 }

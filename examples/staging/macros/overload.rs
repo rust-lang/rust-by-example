@@ -20,6 +20,6 @@ macro_rules! test {
 }
 
 fn main() {
-    test!(1 + 1 == 2 and 2 * 2 == 4);
+    test!(1i + 1 == 2i and 2i * 2 == 4i);
     test!(true or false);
 }
