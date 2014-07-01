@@ -1,7 +1,8 @@
 The type inference engine is pretty smart. It does more than looking at the
-type of the r-value during an initialization. It also looks how the variable is
-used afterwards to infer its type. Here's an advanced example of type
-inference:
+type of the
+[r-value](https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue)
+during an initialization. It also looks how the variable is used afterwards to
+infer its type. Here's an advanced example of type inference:
 
 {inference.play}
 
