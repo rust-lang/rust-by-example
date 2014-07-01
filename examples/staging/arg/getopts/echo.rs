@@ -45,7 +45,7 @@ fn main() {
     }
 
     if matches.opt_present("version") {
-        println!("echo version: {:s}", VERSION);
+        println!("echo version: {}", VERSION);
         return;
     }
 
