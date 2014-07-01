@@ -1,7 +1,7 @@
 // FIXME To see the "real" compiler error, change both `&'b` and `&'e` into `&`
 
 fn main() { // `'main` starts ────────────────────────────────────────────┐
-    let stack_integer = 5; // `'a` starts ──────────────────────────────┐ │
+    let stack_integer: int = 5; // `'a` starts ─────────────────────────┐ │
     let boxed_integer = box 4; // `'b` starts ────────────────────────┐ │ │
     //                                                                │ │ │
     // This is a valid operation                                      │ │ │
