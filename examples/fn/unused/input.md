@@ -1,5 +1,6 @@
-The compiler provides a `dead_code` *lint* that will warn about unused
-functions. An *attribute* can be used to disable the lint.
+The compiler provides a `dead_code`
+[*lint*](https://en.wikipedia.org/wiki/Lint_%28software%29) that will warn
+about unused functions. An *attribute* can be used to disable the lint.
 
 {unused.play}
 
