@@ -9,7 +9,7 @@ fn main() {
     // Stack allocated integer
     let x = 5u;
 
-    // Copy `x` into `y`, there are no resources to move
+    // "Copy" `x` into `y`, there are no resources to move
     let y = x;
 
     // Both values can be independently used
@@ -20,22 +20,25 @@ fn main() {
 
     println!("a contains: {}", a);
 
-    // Copy `a` into `b`, now both are pointers to the same heap allocated
-    // data, but now, `b` owns the heap allocated data
-    // `b` is now in charge of freeing the memory in the heap
+    // "Move" `a` into `b`
+    // Here's what happens under the hood: the pointer `a` gets copied (*not*
+    // the data on the heap, just its address) into `b`. Now both are pointers
+    // to the *same* heap allocated data. But now, `b` *owns* the heap
+    // allocated data; `b` is now in charge of freeing the memory in the heap.
     let b = a;
 
+    // After the previous move, `a` can no longer be used
     // Error! `a` can no longer access the data, because it no longer owns the
     // heap memory
     //println!("a contains: {}", a);
     // TODO ^ Try uncommenting this line
 
-    // Pass a copy of `b` to the function, and give up ownership
+    // "Move" `b` into the function; `b` gives up ownership of the heap data
     destroy_box(b);
 
-    // Error! For the same reason as the previous Error
     // Since the heap memory has been freed at this point, this action would
-    // result in dereferencing freed memory
+    // result in dereferencing freed memory, but it's forbidden by the compiler
+    // Error! Same reason as the previous Error
     //println!("b contains: {}", b);
     // TODO ^ Try uncommenting this line
 }
