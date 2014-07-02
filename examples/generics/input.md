@@ -1,4 +1,4 @@
-Generic structs can be declared to hold generics types, and generic functions
+Generic structs can be declared to hold generic types, and generic functions
 can be declared to take generic types as arguments.
 
 Generics must be specialized when used; but, because of type inference,
