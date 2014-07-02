@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.4" data-basepath=".." data-revision="1404079589851">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.4" data-basepath=".." data-revision="1404259889467">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1443,7 +1443,7 @@ type that implements the <code>Rand</code> trait (which includes all the primiti
 <span class="hljs-keyword">use</span> std::rand::Rng;
 <span class="hljs-keyword">use</span> std::rand;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// create a task-local Random Number Generator</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> rng = rand::task_rng();
 
@@ -1452,7 +1452,7 @@ type that implements the <code>Rand</code> trait (which includes all the primiti
     println!(<span class="hljs-string">"randomly generate some values for different primitive types"</span>);
     println!(<span class="hljs-string">"u8: {}"</span>, rng.gen::&lt;<span class="hljs-keyword">u8</span>&gt;());
     println!(<span class="hljs-string">"i8: {}"</span>, rng.gen::&lt;<span class="hljs-keyword">i8</span>&gt;());
-    println!(<span class="hljs-string">"u16: {}"</span>, rng.gen::&lt;<span class="hljs-keyword">u16</span>&gt;());
+    println!(<span class="hljs-string">"u16: {}"</span>, rng.gen::&lt;u16&gt;());
     println!(<span class="hljs-string">"i16: {}"</span>, rng.gen::&lt;<span class="hljs-keyword">i16</span>&gt;());
     <span class="hljs-comment">// except for floats which get generated in the range [0, 1&gt;</span>
     println!(<span class="hljs-string">"f32: {}"</span>, rng.gen::&lt;<span class="hljs-keyword">f32</span>&gt;());
@@ -1473,9 +1473,9 @@ type that implements the <code>Rand</code> trait (which includes all the primiti
     <span class="hljs-comment">// `choose` will sample an slice *with* replacement</span>
     <span class="hljs-comment">// i.e. the same element can be chosen more than one time</span>
     println!(<span class="hljs-string">"sample previous slice *with* replacement 10 times"</span>);
-    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> in range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
         <span class="hljs-keyword">match</span> rng.choose(v.as_slice()) {
-            None =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"slice was empty"</span>),
+            None =&gt; fail!(<span class="hljs-string">"slice was empty"</span>),
             Some(x) =&gt; println!(<span class="hljs-string">"{}"</span>, x),
         }
     }
@@ -1483,27 +1483,27 @@ type that implements the <code>Rand</code> trait (which includes all the primiti
 </code></pre>
 <pre><code>$ rustc gen.rs &amp;&amp; ./gen
 randomly generate some values for different primitive types
-u8: 154
-i8: -71
-u16: 44873
-i16: -7358
-f32: 0.979167
-f64: 0.943711
+u8: 254
+i8: -124
+u16: 27469
+i16: 29231
+f32: 0.819144
+f64: 0.484946
 10 randomly generated u8 values
-[207, 23, 134, 165, 28, 93, 36, 210, 143, 90]
+[214, 166, 26, 244, 180, 179, 45, 191, 70, 166]
 shuffle previous slice
-[143, 207, 23, 28, 90, 36, 165, 210, 93, 134]
+[70, 166, 191, 244, 166, 45, 180, 214, 26, 179]
 sample previous slice *with* replacement 10 times
-143
-23
-207
-36
-36
-23
-93
-90
-28
-210
+26
+191
+180
+214
+214
+180
+214
+214
+214
+70
 </code></pre><p>Several structs are available under the <code>std::rand::distributions</code> module, that
 can be used to generate values using different probability distributions like:
 normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
@@ -1511,45 +1511,45 @@ normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
 <span class="hljs-keyword">use</span> std::rand::distributions::{IndependentSample,Normal,StudentT};
 <span class="hljs-keyword">use</span> std::rand;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> rng = rand::task_rng();
 
     <span class="hljs-keyword">let</span> normal = Normal::new(<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>);
     println!(<span class="hljs-string">"10 samples from a normal distribution with mean 0.0 and SD 1.0"</span>);
-    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> in range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
         println!(<span class="hljs-string">"{}"</span>, normal.ind_sample(&amp;<span class="hljs-keyword">mut</span> rng));
     }
 
     <span class="hljs-keyword">let</span> student = StudentT::new(<span class="hljs-number">5.0</span>);
     println!(<span class="hljs-string">"10 samples from a T distribution with 5 degrees of freedom"</span>);
-    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> in range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
+    <span class="hljs-keyword">for</span> <span class="hljs-number">_</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">0u</span>, <span class="hljs-number">10</span>) {
         println!(<span class="hljs-string">"{}"</span>, student.ind_sample(&amp;<span class="hljs-keyword">mut</span> rng));
     }
 }
 </code></pre>
 <pre><code>$ rustc distributions.rs &amp;&amp; ./distributions
 10 samples from a normal distribution with mean 0.0 and SD 1.0
--0.905625
-0.212467
--0.103318
-0.416126
-0.129251
-0.949884
-0.251437
--0.587149
--1.036827
-1.946058
+-0.308311
+-0.1212
+-0.494543
+0.458649
+0.783911
+-0.087248
+-0.885086
+-0.111773
+-1.161294
+-0.125304
 10 samples from a T distribution with 5 degrees of freedom
-1.160389
--1.04517
--0.687364
-0.283432
-0.104766
--1.03185
-0.443776
-1.66464
-0.036223
--0.295008
+-2.234364
+0.715399
+0.519001
+-1.487434
+0.499881
+-1.042815
+2.262022
+-1.388117
+0.651596
+-0.711968
 </code></pre><p>The <code>deriving</code> attribute can be used to implement the <code>Rand</code> trait for custom
 types, this allows generation of random values of custom types.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// deriving.rs</span>
@@ -1568,7 +1568,7 @@ types, this allows generation of random values of custom types.</p>
     p2: Point,
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> rng = rand::task_rng();
 
     println!(<span class="hljs-string">"random point\n{}"</span>, rng.gen::&lt;Point&gt;());
@@ -1577,9 +1577,9 @@ types, this allows generation of random values of custom types.</p>
 </code></pre>
 <pre><code>$ rustc deriving.rs &amp;&amp; ./deriving
 random point
-Point { x: 0.085413, y: 0.266886 }
+Point { x: 0.631275, y: 0.540054 }
 random rectangle
-Rectangle { p1: Point { x: 0.834964, y: 0.130178 }, p2: Point { x: 0.751343, y: 0.17213 } }
+Rectangle { p1: Point { x: 0.874498, y: 0.463994 }, p2: Point { x: 0.89017, y: 0.975563 } }
 </code></pre>
                     
                     </section>

@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="14.1" data-basepath=".." data-revision="1404079589851">
+    <div class="book" data-github="japaric/rust-by-example" data-level="14.1" data-basepath=".." data-revision="1404259889467">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1445,15 +1445,15 @@ attribute can be used to set the name and the version of the crate.</p>
 <span class="hljs-comment">// The library is named "erty", and its version is 0.1</span>
 #![crate_id = <span class="hljs-string">"erty#0.1"</span>]
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span></span>() {
     println!(<span class="hljs-string">"called erty's `public_function()`"</span>);
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
     println!(<span class="hljs-string">"called erty's `private_function()`"</span>);
 }
 
-<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span>(</span>) {
+<span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span></span>() {
     print!(<span class="hljs-string">"called erty's `indirect_access()`, that\n&gt; "</span>);
 
     private_function();

@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="21" data-basepath="." data-revision="1404079589851">
+    <div class="book" data-github="japaric/rust-by-example" data-level="21" data-basepath="." data-revision="1404259889467">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1439,8 +1439,10 @@
 <p>Because variables are in charge of freeing their resources (if any), resources
 can only have <em>one</em> owner, otherwise resources would get freed more than once.</p>
 <p>When doing assignments <code>let x = y</code>, or passing function arguments by value
-<code>foo(x)</code>, the data is copied, but the <em>ownership</em> of the resources is
-transferred, this is know as a <em>move</em> in Rust-speak.</p>
+<code>foo(x)</code>, the <em>ownership</em> of the resources, if any, is transferred; this is
+known as a &quot;move&quot; in Rust-speak.</p>
+<p>After moving resources, the previous owner can no longer be used. This avoids
+the creation of <em>dangling pointers</em>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -1455,7 +1457,7 @@ fn main() {
     // Stack allocated integer
     let x = 5u;
 
-    // Copy &#96;x&#96; into &#96;y&#96;, there are no resources to move
+    // &quot;Copy&quot; &#96;x&#96; into &#96;y&#96;, there are no resources to move
     let y = x;
 
     // Both values can be independently used
@@ -1466,30 +1468,30 @@ fn main() {
 
     println!(&quot;a contains: {}&quot;, a);
 
-    // Copy &#96;a&#96; into &#96;b&#96;, now both are pointers to the same heap allocated
-    // data, but now, &#96;b&#96; owns the heap allocated data
-    // &#96;b&#96; is now in charge of freeing the memory in the heap
+    // &quot;Move&quot; &#96;a&#96; into &#96;b&#96;
+    // Here&#39;s what happens under the hood: the pointer &#96;a&#96; gets copied (&#42;not&#42;
+    // the data on the heap, just its address) into &#96;b&#96;. Now both are pointers
+    // to the &#42;same&#42; heap allocated data. But now, &#96;b&#96; &#42;owns&#42; the heap
+    // allocated data; &#96;b&#96; is now in charge of freeing the memory in the heap.
     let b = a;
 
+    // After the previous move, &#96;a&#96; can no longer be used
     // Error! &#96;a&#96; can no longer access the data, because it no longer owns the
     // heap memory
     //println!(&quot;a contains: {}&quot;, a);
     // TODO ^ Try uncommenting this line
 
-    // Pass a copy of &#96;b&#96; to the function, and give up ownership
+    // &quot;Move&quot; &#96;b&#96; into the function; &#96;b&#96; gives up ownership of the heap data
     destroy&#95;box(b);
 
-    // Error! For the same reason as the previous Error
     // Since the heap memory has been freed at this point, this action would
-    // result in dereferencing freed memory
+    // result in dereferencing freed memory, but it&#39;s forbidden by the compiler
+    // Error! Same reason as the previous Error
     //println!(&quot;b contains: {}&quot;, b);
     // TODO ^ Try uncommenting this line
 }</div>
 <div id="result"></div>
 </div>
-
-<p>After moving resources, the previous owner loses access to the resource. This
-avoids the creation of <em>dangling pointers</em>.</p>
 
                     
                     </section>

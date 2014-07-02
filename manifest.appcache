@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1404079589851
+# Revision 1404259889467
 
 CACHE:
 loop.html
@@ -14,8 +14,8 @@ borrow/freeze.html
 borrow/mut.html
 borrow/ref.html
 borrow.html
-bounds.html
 box.html
+bounds.html
 channels.html
 clone.html
 closures.html
@@ -28,8 +28,8 @@ enum/c-like.html
 enum.html
 expression.html
 fail.html
-file/open.html
 file/create.html
+file/open.html
 file.html
 fn/unused.html
 fn.html
@@ -37,9 +37,9 @@ for.html
 fs.html
 generics.html
 hello.html
-hof.html
 if-else.html
 iter.html
+hof.html
 lifetime/borrow.html
 lifetime/fn.html
 lifetime/struct.html
@@ -57,8 +57,8 @@ mod.html
 move/mut.html
 move.html
 ops.html
-path.html
 option.html
+path.html
 print.html
 process/pipe.html
 process/wait.html

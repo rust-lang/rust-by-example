@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.5" data-basepath=".." data-revision="1404079589851">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.5" data-basepath=".." data-revision="1404259889467">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1442,7 +1442,7 @@ exposed as structs (<code>f32x4</code>, <code>u8x16</code>, etc.), that implemen
 <pre><code class="lang-rust"><span class="hljs-comment">// simd.rs</span>
 <span class="hljs-keyword">use</span> std::simd::f32x4;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// create simd vectors</span>
     <span class="hljs-keyword">let</span> x = f32x4(<span class="hljs-number">1.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">4.0</span>);
     <span class="hljs-keyword">let</span> y = f32x4(<span class="hljs-number">4.0</span>, <span class="hljs-number">3.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">1.0</span>);
@@ -1467,7 +1467,7 @@ to operate on 4-element chunks at a time.</p>
 
 macro_rules! assert_len {
     () =&gt; {
-        <span class="hljs-keyword">assert</span>!(xs.len() == ys.len(),
+        assert!(xs.len() == ys.len(),
                 <span class="hljs-string">"add_assign: dimension mismatch: {} += {}"</span>,
                 (xs.len(),),
                 (ys.len(),));
@@ -1475,19 +1475,19 @@ macro_rules! assert_len {
 }
 
 <span class="hljs-comment">// element-wise addition</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add_assign</span>(</span>xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;<span class="hljs-keyword">f32</span>&gt;, ys: &amp;Vec&lt;<span class="hljs-keyword">f32</span>&gt;) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add_assign</span></span>(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;<span class="hljs-keyword">f32</span>&gt;, ys: &amp;Vec&lt;<span class="hljs-keyword">f32</span>&gt;) {
     assert_len!();
 
-    <span class="hljs-keyword">for</span> (x, y) in xs.mut_iter().zip(ys.iter()) {
+    <span class="hljs-keyword">for</span> (x, y) <span class="hljs-keyword">in</span> xs.mut_iter().zip(ys.iter()) {
         *x += *y;
     }
 }
 
 <span class="hljs-comment">// simd accelerated addition</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">simd_add_assign</span>(</span>xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;<span class="hljs-keyword">f32</span>&gt;, ys: &amp;Vec&lt;<span class="hljs-keyword">f32</span>&gt;) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">simd_add_assign</span></span>(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;<span class="hljs-keyword">f32</span>&gt;, ys: &amp;Vec&lt;<span class="hljs-keyword">f32</span>&gt;) {
     assert_len!();
 
-    <span class="hljs-keyword">let</span> size = xs.len() as <span class="hljs-keyword">int</span>;
+    <span class="hljs-keyword">let</span> size = xs.len() <span class="hljs-keyword">as</span> <span class="hljs-keyword">int</span>;
     <span class="hljs-keyword">let</span> chunks = size / <span class="hljs-number">4</span>;
 
     <span class="hljs-comment">// pointer to the start of the vector data</span>
@@ -1495,7 +1495,7 @@ macro_rules! assert_len {
     <span class="hljs-keyword">let</span> p_y: *<span class="hljs-keyword">const</span> <span class="hljs-keyword">f32</span> = ys.as_ptr();
 
     <span class="hljs-comment">// sum excess elements that don't fit in the simd vector</span>
-    <span class="hljs-keyword">for</span> i in range(<span class="hljs-number">4</span> * chunks, size) {
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span> * chunks, size) {
         <span class="hljs-comment">// dereferencing a raw pointer requires an unsafe block</span>
         <span class="hljs-keyword">unsafe</span> {
             <span class="hljs-comment">// offset by i elements</span>
@@ -1504,11 +1504,11 @@ macro_rules! assert_len {
     }
 
     <span class="hljs-comment">// treat f32 vector as an simd f32x4 vector</span>
-    <span class="hljs-keyword">let</span> simd_p_x = p_x as *<span class="hljs-keyword">mut</span> f32x4;
-    <span class="hljs-keyword">let</span> simd_p_y = p_y as *<span class="hljs-keyword">const</span> f32x4;
+    <span class="hljs-keyword">let</span> simd_p_x = p_x <span class="hljs-keyword">as</span> *<span class="hljs-keyword">mut</span> f32x4;
+    <span class="hljs-keyword">let</span> simd_p_y = p_y <span class="hljs-keyword">as</span> *<span class="hljs-keyword">const</span> f32x4;
 
     <span class="hljs-comment">// sum "simd vector"</span>
-    <span class="hljs-keyword">for</span> i in range(<span class="hljs-number">0</span>, chunks) {
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, chunks) {
         <span class="hljs-keyword">unsafe</span> {
             *simd_p_x.offset(i) += *simd_p_y.offset(i);
         }
@@ -1516,14 +1516,14 @@ macro_rules! assert_len {
 }
 
 <span class="hljs-keyword">mod</span> bench {
-    <span class="hljs-keyword">extern</span> crate test;
-    <span class="hljs-keyword">use</span> <span class="hljs-keyword">self</span>::test::Bencher;
+    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> test;
+    <span class="hljs-keyword">use</span> self::test::Bencher;
     <span class="hljs-keyword">static</span> BENCH_SIZE: <span class="hljs-keyword">uint</span> = <span class="hljs-number">10_000</span>;
 
     macro_rules! bench {
         ($name:ident, $func:ident) =&gt; {
             <span class="hljs-preprocessor">#[bench]</span>
-            <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">name</span>(</span>b: &amp;<span class="hljs-keyword">mut</span> Bencher) {
+            <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">name</span></span>(b: &amp;<span class="hljs-keyword">mut</span> Bencher) {
                 <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x = Vec::from_elem(BENCH_SIZE, <span class="hljs-number">1.0f32</span>);
                 <span class="hljs-keyword">let</span> y = Vec::from_elem(BENCH_SIZE, <span class="hljs-number">0.1f32</span>);
 

@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="20" data-basepath="." data-revision="1404079589851">
+    <div class="book" data-github="japaric/rust-by-example" data-level="20" data-basepath="." data-revision="1404259889467">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1446,19 +1446,19 @@ and the resources <em>owned</em> by it are freed. This behavior shields against
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn create&#95;box() {
     // Allocate an integer in the heap
-    let &#95;function&#95;box = box 3;
+    let &#95;function&#95;box = box 3i;
 
     // &#96;&#95;function&#95;box&#96; gets destroyed here, memory gets freed
 }
 
 fn main() {
     // Allocate an integer in the heap
-    let &#95;boxed&#95;int = box 5;
+    let &#95;boxed&#95;int = box 5i;
 
     // new (smaller) scope
     {
         // Another heap allocated integer
-        let &#95;short&#95;lived&#95;box = box 4;
+        let &#95;short&#95;lived&#95;box = box 4i;
 
         // &#96;&#95;short&#95;lived&#95;box&#96; gets destroyed here, memory gets freed
     }

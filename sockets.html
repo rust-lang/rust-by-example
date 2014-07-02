@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="43" data-basepath="." data-revision="1404079589851">
+    <div class="book" data-github="japaric/rust-by-example" data-level="43" data-basepath="." data-revision="1404259889467">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1441,7 +1441,7 @@ accomplished using
 <a href="http://en.wikipedia.org/wiki/Unix_domain_socket" target="_blank">UNIX sockets</a>.</p>
 <p>Both client and server need to use the same path for the socket.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// common.rs</span>
-<span class="hljs-keyword">pub</span> <span class="hljs-keyword">static</span> SOCKET_PATH: &amp;<span class="hljs-string">'static str = "loopback-socket";</span>
+<span class="hljs-keyword">pub</span> <span class="hljs-keyword">static</span> SOCKET_PATH: &amp;'static <span class="hljs-keyword">str</span> = <span class="hljs-string">"loopback-socket"</span>;
 </code></pre>
 <p>The client program:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// client.rs</span>
@@ -1451,7 +1451,7 @@ accomplished using
 
 <span class="hljs-keyword">mod</span> common;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-comment">// `args` returns the arguments passed to the program</span>
     <span class="hljs-keyword">let</span> args = os::args();
     <span class="hljs-keyword">let</span> socket = Path::new(SOCKET_PATH);
@@ -1459,18 +1459,18 @@ accomplished using
     <span class="hljs-comment">// First argument is the message to be sent</span>
     <span class="hljs-keyword">let</span> message = <span class="hljs-keyword">match</span> args.as_slice() {
         [<span class="hljs-number">_</span>, <span class="hljs-keyword">ref</span> message] =&gt; message.as_slice(),
-        <span class="hljs-number">_</span> =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"wrong number of arguments"</span>),
+        <span class="hljs-number">_</span> =&gt; fail!(<span class="hljs-string">"wrong number of arguments"</span>),
     };
 
     <span class="hljs-comment">// Connect to socket</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> stream = <span class="hljs-keyword">match</span> UnixStream::connect(&amp;socket) {
-        Err(<span class="hljs-number">_</span>) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"server is not running"</span>),
+        Err(<span class="hljs-number">_</span>) =&gt; fail!(<span class="hljs-string">"server is not running"</span>),
         Ok(stream) =&gt; stream,
     };
 
     <span class="hljs-comment">// Send message</span>
     <span class="hljs-keyword">match</span> stream.write_str(message) {
-        Err(<span class="hljs-number">_</span>) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"couldn't send message"</span>),
+        Err(<span class="hljs-number">_</span>) =&gt; fail!(<span class="hljs-string">"couldn't send message"</span>),
         Ok(<span class="hljs-number">_</span>) =&gt; {}
     }
 }
@@ -1484,7 +1484,7 @@ accomplished using
 
 <span class="hljs-keyword">mod</span> common;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> socket = Path::new(SOCKET_PATH);
 
     <span class="hljs-comment">// Delete old socket if necessary</span>
@@ -1494,14 +1494,14 @@ accomplished using
 
     <span class="hljs-comment">// Bind to socket</span>
     <span class="hljs-keyword">let</span> stream = <span class="hljs-keyword">match</span> UnixListener::bind(&amp;socket) {
-        Err(<span class="hljs-number">_</span>) =&gt; <span class="hljs-keyword">fail</span>!(<span class="hljs-string">"failed to bind socket"</span>),
+        Err(<span class="hljs-number">_</span>) =&gt; fail!(<span class="hljs-string">"failed to bind socket"</span>),
         Ok(stream) =&gt; stream,
     };
 
     println!(<span class="hljs-string">"Server started, waiting for clients"</span>);
 
     <span class="hljs-comment">// Iterate over clients, blocks if no client available</span>
-    <span class="hljs-keyword">for</span> <span class="hljs-keyword">mut</span> client in stream.listen().incoming() {
+    <span class="hljs-keyword">for</span> <span class="hljs-keyword">mut</span> client <span class="hljs-keyword">in</span> stream.listen().incoming() {
         println!(<span class="hljs-string">"Client said: {}"</span>, client.read_to_str().unwrap());
     }
 }

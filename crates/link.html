@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="13.2" data-basepath=".." data-revision="1404079589851">
+    <div class="book" data-github="japaric/rust-by-example" data-level="13.2" data-basepath=".." data-revision="1404259889467">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1442,9 +1442,9 @@ under a module named the same as the library. The visibility rules that apply
 to modules also apply to libraries.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// executable.rs</span>
 <span class="hljs-comment">// Link to `liberty`, import items under the `erty` module</span>
-<span class="hljs-keyword">extern</span> crate erty;
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> erty;
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     erty::public_function();
 
     <span class="hljs-comment">// Error! `private_function` is private</span>
