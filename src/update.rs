@@ -17,12 +17,12 @@ fn main() {
     let (tx, rx) = channel();
 
     let mut nexamples = 0;
-    for example in examples.move_iter() {
+    for (i, example) in examples.move_iter().enumerate() {
         let tx = tx.clone();
         let count = example.count();
 
         spawn(proc() {
-            example.process(nexamples, tx, 0, String::new());
+            example.process(vec!(i + 1), tx, 0, String::new());
         });
 
         nexamples += count;
@@ -30,9 +30,9 @@ fn main() {
 
     let mut entries = range(0, nexamples).map(|_| {
         rx.recv()
-    }).collect::<Vec<(uint, String)>>();
+    }).collect::<Vec<(Vec<uint>, String)>>();
 
-    entries.sort_by(|&(i, _), &(j, _)| i.cmp(&j));
+    entries.sort_by(|&(ref i, _), &(ref j, _)| i.cmp(j));
 
     let summary = entries.move_iter()
                          .map(|(_, s)| s)

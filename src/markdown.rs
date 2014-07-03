@@ -8,10 +8,10 @@ pub struct Markdown<'a, 'b> {
 }
 
 impl<'a, 'b> Markdown<'a, 'b> {
-    pub fn process(id: &'a str, title: &str, prefix: &'b str)
+    pub fn process(number: &[uint], id: &'a str, title: &str, prefix: &'b str)
         -> Result<(), String>
     {
-        let mut mkd = try!(Markdown::new(id, title, prefix));
+        let mut mkd = try!(Markdown::new(number, id, title, prefix));
 
         try!(mkd.insert_sources());
         try!(mkd.insert_outputs());
@@ -21,14 +21,23 @@ impl<'a, 'b> Markdown<'a, 'b> {
         Ok(())
     }
 
-    fn new(id: &'a str, title: &str, prefix: &'b str)
+    fn new(number: &[uint], id: &'a str, title: &str, prefix: &'b str)
         -> Result<Markdown<'a, 'b>, String>
     {
-        let p = Path::new(format!("examples/{}/{}/input.md", prefix, id));
-        let s = try!(file::read(&p));
+        let path = Path::new(format!("examples/{}/{}/input.md", prefix, id));
+        let body = try!(file::read(&path));
+        let version = number.iter().map(|x| {
+            format!("{}", x)
+        }).collect::<Vec<String>>().connect(".");
+
+        let content = format!("{} {} {}\n\n{}",
+                              "#".repeat(number.len()),
+                              version,
+                              title,
+                              body);
 
         Ok(Markdown {
-            content: format!("# {}\n\n{}", title, s),
+            content: content,
             id: id,
             prefix: prefix,
         })

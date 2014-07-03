@@ -34,8 +34,8 @@ impl Example {
     }
 
     pub fn process(&self,
-                   pos: uint,
-                   tx: Sender<(uint, String)>,
+                   number: Vec<uint>,
+                   tx: Sender<(Vec<uint>, String)>,
                    indent: uint,
                    prefix: String)
     {
@@ -43,26 +43,27 @@ impl Example {
         let prefix = prefix.as_slice();
         let title = self.title.as_slice();
 
-        let entry = match Markdown::process(id, title, prefix) {
-            Ok(_) => {
-                let md = if prefix.as_slice().is_whitespace() {
-                    format!("{}.md", id)
-                } else {
-                    format!("{}/{}.md", prefix, id)
-                };
+        let entry =
+            match Markdown::process(number.as_slice(), id, title, prefix) {
+                Ok(_) => {
+                    let md = if prefix.as_slice().is_whitespace() {
+                        format!("{}.md", id)
+                    } else {
+                        format!("{}/{}.md", prefix, id)
+                    };
 
-                format!("{}* [{}]({})",
-                        "  ".repeat(indent),
-                        title,
-                        md)
-            },
-            Err(why) => {
-                print!("{}: {}\n", id, why);
-                format!("{}* {}", "  ".repeat(indent), title)
-            },
-        };
+                    format!("{}* [{}]({})",
+                            "  ".repeat(indent),
+                            title,
+                            md)
+                },
+                Err(why) => {
+                    print!("{}: {}\n", id, why);
+                    format!("{}* {}", "  ".repeat(indent), title)
+                },
+            };
 
-        tx.send((pos, entry));
+        tx.send((number.clone(), entry));
 
         match self.children {
             None => {},
@@ -79,7 +80,9 @@ impl Example {
                         format!("{}/{}", prefix, id)
                     };
 
-                    example.process(pos + i + 1,
+                    let mut number = number.clone();
+                    number.push(i + 1);
+                    example.process(number,
                                     tx,
                                     indent + 1,
                                     prefix);
