@@ -1,9 +1,10 @@
 #!/bin/bash
 
-for example in $(ls examples); do
-  if [[ -d examples/${example} ]]; then
-    html=stage/_book/${example}.html
+for example in $(find examples -type d -name "*"); do
+  html=stage/_book/${example#examples/}.html
+  if [[ -f ${html} ]]; then
+    echo ${html}
 
-    sed -i s:${example}.md:examples/${example}/input.md: ${html}
+    sed -i s:${example#examples/}.md:${example}/input.md: ${html}
   fi
 done
