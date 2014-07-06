@@ -1,12 +1,12 @@
 language: node_js
 
 before_install:
-  - sudo apt-get update
-  - wget -O - http://static.rust-lang.org/dist/rust-nightly-x86_64-unknown-linux-gnu.tar.gz | tar -xvzf -
+  - sudo add-apt-repository --yes ppa:hansjorg/rust
+  - sudo apt-get update -qq
 
 install:
   - npm install gitbook -g
-  - sudo ./rust-nightly-x86_64-unknown-linux-gnu/install.sh --prefix=/usr
+  - sudo apt-get install -qq rust-nightly
 
 script:
   - rustc --version
