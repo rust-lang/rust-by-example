@@ -1,20 +1,20 @@
 #![feature(macro_rules)]
 
-macro_rules! assert_len {
-    ($func:ident, $op:tt) => {
-        assert!(xs.len() == ys.len(),
+macro_rules! assert_equal_len {
+    ($a:ident, $b: ident, $func:ident, $op:tt) => {
+        assert!($a.len() == $b.len(),
                 "{}: dimension mismatch: {} {} {}",
                 stringify!($func),
-                (xs.len(),),
+                ($a.len(),),
                 stringify!($op),
-                (ys.len(),));
+                ($b.len(),));
     }
 }
 
 macro_rules! op {
     ($func:ident, $bound:ident, $op:tt, $method:ident) => {
         fn $func<T: $bound<T, T>>(xs: &mut Vec<T>, ys: &Vec<T>) {
-            assert_len!($func, $op);
+            assert_equal_len!(xs, ys, $func, $op);
 
             for (x, y) in xs.mut_iter().zip(ys.iter()) {
                 *x = x.$method(y);

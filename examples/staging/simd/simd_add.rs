@@ -2,18 +2,18 @@
 
 use std::simd::f32x4;
 
-macro_rules! assert_len {
-    () => {
-        assert!(xs.len() == ys.len(),
+macro_rules! assert_equal_len {
+    ($a:ident, $b: ident) => {
+        assert!($a.len() == $b.len(),
                 "add_assign: dimension mismatch: {} += {}",
-                (xs.len(),),
-                (ys.len(),));
+                ($a.len(),),
+                ($b.len(),));
     }
 }
 
 // element-wise addition
 fn add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
-    assert_len!();
+    assert_equal_len!(xs, ys);
 
     for (x, y) in xs.mut_iter().zip(ys.iter()) {
         *x += *y;
@@ -22,7 +22,7 @@ fn add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
 
 // simd accelerated addition
 fn simd_add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
-    assert_len!();
+    assert_equal_len!(xs, ys);
 
     let size = xs.len() as int;
     let chunks = size / 4;
