@@ -3,7 +3,7 @@ use std::io::{File,IoResult,UserRWX};
 
 // A simple implementation of `$ cat path`
 fn cat(path: &Path) -> IoResult<String> {
-    File::open(path).and_then(|mut f| f.read_to_str())
+    File::open(path).and_then(|mut f| f.read_to_string())
 }
 
 // A simple implementation of `$ echo s > path`

@@ -23,6 +23,6 @@ fn main() {
 
     // Iterate over clients, blocks if no client available
     for mut client in stream.listen().incoming() {
-        println!("Client said: {}", client.read_to_str().unwrap());
+        println!("Client said: {}", client.read_to_string().unwrap());
     }
 }

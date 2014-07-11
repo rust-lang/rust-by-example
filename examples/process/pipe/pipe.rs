@@ -30,7 +30,7 @@ fn main() {
     // The `stdout` field also has type `Option<PipeStream>`
     // the `get_mut_ref` method will return a mutable reference to the value
     // wrapped in a `Some` variant
-    match process.stdout.get_mut_ref().read_to_str() {
+    match process.stdout.get_mut_ref().read_to_string() {
         Err(why) => fail!("couldn't read wc stdout: {}", why.desc),
         Ok(string) => print!("wc responded with:\n{}", string),
     }
