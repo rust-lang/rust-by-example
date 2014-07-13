@@ -17,7 +17,7 @@ fn main() {
         City { name: "Lima",      lat: -12.043333, lon: -77.028333 },
         City { name: "Santiago",  lat: -33.45,     lon: -70.666667 },
     ].iter() {
-        // `str_encode` encodes an `Encodable` implementor into a `String`
-        println!("{}", json::Encoder::str_encode(city));
+        // `encode` encodes an `Encodable` implementor into a `String`
+        println!("{}", json::encode(city));
     }
 }
