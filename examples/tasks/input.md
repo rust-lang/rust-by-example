@@ -1,5 +1,5 @@
 Rust provides a mechanism for spawning lightweight tasks via the `spawn`
-function, the argument of this function is a owned closure named `proc`.
+function, the argument of this function is an owned closure named `proc`.
 
 {tasks.play}
 
