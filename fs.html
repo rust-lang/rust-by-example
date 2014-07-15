@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="48" data-basepath="." data-revision="1404259889467">
+    <div class="book" data-github="japaric/rust-by-example" data-level="48" data-basepath="." data-revision="1405446439911">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1435,7 +1435,7 @@
                 
                     <section class="normal" id="section-gitbook_33">
                     
-                        <h1 id="filesystem-operations">Filesystem Operations</h1>
+                        <h1 id="48-filesystem-operations">48 Filesystem Operations</h1>
 <p>The <a href="http://doc.rust-lang.org/std/io/fs/" target="_blank"><code>std::io::fs</code></a>
 module contains several functions that deal with the filesystem.</p>
 <div id="active-code">
@@ -1446,7 +1446,7 @@ use std::io::{File,IoResult,UserRWX};
 
 // A simple implementation of &#96;$ cat path&#96;
 fn cat(path: &amp;Path) -&gt; IoResult&lt;String&gt; {
-    File::open(path).and&#95;then(|mut f| f.read&#95;to&#95;str())
+    File::open(path).and&#95;then(|mut f| f.read&#95;to&#95;string())
 }
 
 // A simple implementation of &#96;$ echo s &gt; path&#96;

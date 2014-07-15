@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.3" data-basepath=".." data-revision="1404259889467">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.3" data-basepath=".." data-revision="1405446439911">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -134,7 +134,7 @@
         
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/staging/macros.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/staging/macros/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -1435,7 +1435,7 @@
                 
                     <section class="normal" id="section-gitbook_72">
                     
-                        <h1 id="macro_rules-">macro_rules!</h1>
+                        <h2 id="49-3-macro_rules-">49.3 macro_rules!</h2>
 <p>Rust provides a powerful macro system that allows metaprogramming. As you&#39;ve
 seen in previous chapters, macros look like functions, except that their name
 ends with a bang <code>!</code>, but instead of generating a function call, macros are
@@ -1577,21 +1577,21 @@ and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// dry.rs</span>
 #![feature(macro_rules)]
 
-macro_rules! assert_len {
-    ($func:ident, $op:tt) =&gt; {
-        assert!(xs.len() == ys.len(),
+macro_rules! assert_equal_len {
+    ($a:ident, $b: ident, $func:ident, $op:tt) =&gt; {
+        assert!($a.len() == $b.len(),
                 <span class="hljs-string">"{}: dimension mismatch: {} {} {}"</span>,
                 stringify!($func),
-                (xs.len(),),
+                ($a.len(),),
                 stringify!($op),
-                (ys.len(),));
+                ($b.len(),));
     }
 }
 
 macro_rules! op {
     ($func:ident, $bound:ident, $op:tt, $method:ident) =&gt; {
         <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span></span>&lt;T: $bound&lt;T, T&gt;&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
-            assert_len!($func, $op);
+            assert_equal_len!(xs, ys, $func, $op);
 
             <span class="hljs-keyword">for</span> (x, y) <span class="hljs-keyword">in</span> xs.mut_iter().zip(ys.iter()) {
                 *x = x.$method(y);

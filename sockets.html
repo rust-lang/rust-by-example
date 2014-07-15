@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="43" data-basepath="." data-revision="1404259889467">
+    <div class="book" data-github="japaric/rust-by-example" data-level="43" data-basepath="." data-revision="1405446439911">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -1435,7 +1435,7 @@
                 
                     <section class="normal" id="section-gitbook_65">
                     
-                        <h1 id="unix-sockets">Unix sockets</h1>
+                        <h1 id="43-unix-sockets">43 Unix sockets</h1>
 <p>Inter-Process Communication (IPC) for client-server applications can be
 accomplished using
 <a href="http://en.wikipedia.org/wiki/Unix_domain_socket" target="_blank">UNIX sockets</a>.</p>
@@ -1502,7 +1502,7 @@ accomplished using
 
     <span class="hljs-comment">// Iterate over clients, blocks if no client available</span>
     <span class="hljs-keyword">for</span> <span class="hljs-keyword">mut</span> client <span class="hljs-keyword">in</span> stream.listen().incoming() {
-        println!(<span class="hljs-string">"Client said: {}"</span>, client.read_to_str().unwrap());
+        println!(<span class="hljs-string">"Client said: {}"</span>, client.read_to_string().unwrap());
     }
 }
 </code></pre>

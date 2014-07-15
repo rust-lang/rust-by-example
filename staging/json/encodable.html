@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.8.3" data-basepath="../.." data-revision="1404259889467">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.8.3" data-basepath="../.." data-revision="1405446439911">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -134,7 +134,7 @@
         
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/staging/json/encodable.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/staging/json/encodable/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -1435,11 +1435,10 @@
                 
                     <section class="normal" id="section-gitbook_69">
                     
-                        <h1 id="-encodable-"><code>Encodable</code></h1>
+                        <h3 id="49-8-3-encodable-">49.8.3 <code>Encodable</code></h3>
 <p><code>serialize::Encodable</code> is a trait implemented for types to make them encodable
 by the <code>serialize</code> module.</p>
-<p><code>Encodable</code> types can be serialized into JSON using
-<code>json::Encoder::str_encode</code>.</p>
+<p><code>Encodable</code> types can be serialized into JSON using <code>json::encode</code>.</p>
 <p>Just like <code>Decodable</code>, <code>Encodable</code> can be automatically derived for a struct
 using <code>#[deriving(Encodable)]</code>.</p>
 <div id="active-code">
@@ -1464,8 +1463,8 @@ fn main() {
         City { name: &quot;Lima&quot;,      lat: -12.043333, lon: -77.028333 },
         City { name: &quot;Santiago&quot;,  lat: -33.45,     lon: -70.666667 },
     ].iter() {
-        // &#96;str&#95;encode&#96; encodes an &#96;Encodable&#96; implementor into a &#96;String&#96;
-        println!(&quot;{}&quot;, json::Encoder::str&#95;encode(city));
+        // &#96;encode&#96; encodes an &#96;Encodable&#96; implementor into a &#96;String&#96;
+        println!(&quot;{}&quot;, json::encode(city));
     }
 }</div>
 <div id="result"></div>

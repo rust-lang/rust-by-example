@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.5" data-basepath=".." data-revision="1404259889467">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.5" data-basepath=".." data-revision="1405446439911">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -134,7 +134,7 @@
         
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/staging/simd.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/staging/simd/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -1435,7 +1435,7 @@
                 
                     <section class="normal" id="section-gitbook_74">
                     
-                        <h1 id="simd">SIMD</h1>
+                        <h2 id="49-5-simd">49.5 SIMD</h2>
 <p>Rust provides experimental support for SIMD vectors. These SIMD vectors are
 exposed as structs (<code>f32x4</code>, <code>u8x16</code>, etc.), that implement basic operations
 (<code>+</code>, <code>-</code>, <code>*</code>, etc) using SIMD instructions under the hood.</p>
@@ -1465,18 +1465,18 @@ to operate on 4-element chunks at a time.</p>
 
 <span class="hljs-keyword">use</span> std::simd::f32x4;
 
-macro_rules! assert_len {
-    () =&gt; {
-        assert!(xs.len() == ys.len(),
+macro_rules! assert_equal_len {
+    ($a:ident, $b: ident) =&gt; {
+        assert!($a.len() == $b.len(),
                 <span class="hljs-string">"add_assign: dimension mismatch: {} += {}"</span>,
-                (xs.len(),),
-                (ys.len(),));
+                ($a.len(),),
+                ($b.len(),));
     }
 }
 
 <span class="hljs-comment">// element-wise addition</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add_assign</span></span>(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;<span class="hljs-keyword">f32</span>&gt;, ys: &amp;Vec&lt;<span class="hljs-keyword">f32</span>&gt;) {
-    assert_len!();
+    assert_equal_len!(xs, ys);
 
     <span class="hljs-keyword">for</span> (x, y) <span class="hljs-keyword">in</span> xs.mut_iter().zip(ys.iter()) {
         *x += *y;
@@ -1485,7 +1485,7 @@ macro_rules! assert_len {
 
 <span class="hljs-comment">// simd accelerated addition</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">simd_add_assign</span></span>(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;<span class="hljs-keyword">f32</span>&gt;, ys: &amp;Vec&lt;<span class="hljs-keyword">f32</span>&gt;) {
-    assert_len!();
+    assert_equal_len!(xs, ys);
 
     <span class="hljs-keyword">let</span> size = xs.len() <span class="hljs-keyword">as</span> <span class="hljs-keyword">int</span>;
     <span class="hljs-keyword">let</span> chunks = size / <span class="hljs-number">4</span>;

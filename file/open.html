@@ -50,7 +50,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="46.1" data-basepath=".." data-revision="1404259889467">
+    <div class="book" data-github="japaric/rust-by-example" data-level="46.1" data-basepath=".." data-revision="1405446439911">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -134,7 +134,7 @@
         
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/file/open.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/file/open/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -1435,7 +1435,7 @@
                 
                     <section class="normal" id="section-gitbook_28">
                     
-                        <h1 id="-open-"><code>open</code></h1>
+                        <h2 id="46-1-open-">46.1 <code>open</code></h2>
 <p>The <code>open</code> static method can be used to open a file in read-only mode.</p>
 <p>A <code>File</code> owns a resource, the file descriptor, and take cares of closing the
 file when its <code>drop</code>ed.</p>
@@ -1457,7 +1457,7 @@ fn main() {
     };
 
     // Read the file contents into a string, returns &#96;IoResult&lt;String&gt;&#96;
-    match file.read&#95;to&#95;str() {
+    match file.read&#95;to&#95;string() {
         Err(why) =&gt; fail!(&quot;couldn&#39;t read {}: {}&quot;, display, why.desc),
         Ok(string) =&gt; print!(&quot;{} contains:&#92;n{}&quot;, display, string),
     }
