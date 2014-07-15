@@ -14,7 +14,7 @@ pub fn mkdir(path: &Path)  {
 pub fn read(path: &Path) -> Result<String, String> {
     match File::open(path) {
         Err(_) => Err(format!("couldn't open {}", path.display())),
-        Ok(mut file) => match file.read_to_str() {
+        Ok(mut file) => match file.read_to_string() {
             Err(_) => Err(format!("couldn't read {}", path.display())),
             Ok(string) => Ok(string),
         }
