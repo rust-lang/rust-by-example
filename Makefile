@@ -1,7 +1,8 @@
 GITBOOK = gitbook
 RUSTC = rustc
+STRICT = -D deprecated
 QUIET = -A unused-variable -A dead-code -A dead-assignment -A experimental
-RUSTC_NT = $(RUSTC) --no-trans --test $(QUIET)
+RUSTC_NT = $(RUSTC) --no-trans --test $(QUIET) ${STRICT}
 WHITELIST = examples/attribute/cfg/custom/custom.rs \
 						examples/borrow/borrow.rs \
 	 					examples/borrow/freeze/freeze.rs \
