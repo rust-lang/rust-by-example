@@ -1,5 +1,4 @@
 use std::io::process::{Command,ProcessOutput};
-use std::str;
 
 fn main() {
     // Initial command `rustc`
@@ -16,12 +15,12 @@ fn main() {
             // Check if the process succeeded, i.e. the exit code was 0
             if exit.success() {
                 // `out` has type `Vec<u8>`, convert it to a UTF-8 `$str`
-                let s = str::from_utf8_lossy(out.as_slice());
+                let s = String::from_utf8_lossy(out.as_slice());
 
                 print!("rustc succeeded and stdout was:\n{}", s);
             } else {
                 // `err` also has type `Vec<u8>`
-                let s = str::from_utf8_lossy(err.as_slice());
+                let s = String::from_utf8_lossy(err.as_slice());
 
                 print!("rustc failed and stderr was:\n{}", s);
             }
