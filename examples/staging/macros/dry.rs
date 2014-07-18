@@ -1,6 +1,8 @@
 #![feature(macro_rules)]
 
 macro_rules! assert_equal_len {
+    // The `tt` (token tree) designator is used for
+    // operators and tokens
     ($a:ident, $b: ident, $func:ident, $op:tt) => {
         assert!($a.len() == $b.len(),
                 "{}: dimension mismatch: {} {} {}",
