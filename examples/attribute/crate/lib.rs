@@ -1,7 +1,7 @@
 // This crate is a library
 #![crate_type = "lib"]
 // The library is named "erty"
-#![crate_name = "erty"]
+#![crate_id = "erty"]
 
 pub fn public_function() {
     println!("called erty's `public_function()`");
