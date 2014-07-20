@@ -4,7 +4,7 @@ use std::io::process::{Command,ProcessOutput};
 use std::io::{File,Truncate,Write};
 use std::os;
 
-pub fn mkdir(path: &Path)  {
+pub fn mkdir(path: &Path) {
     match fs::mkdir_recursive(path, UserRWX) {
         Err(_) => {},
         Ok(_) => {},
