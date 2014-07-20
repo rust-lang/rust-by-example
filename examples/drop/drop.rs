@@ -32,7 +32,7 @@ fn main() {
 
     // Variable can be manually dropped using the `drop` function
     drop(_a);
-    // TODO ^ Try uncommenting this line
+    // TODO ^ Try commenting this line
 
     println!("end of the main function");
 
