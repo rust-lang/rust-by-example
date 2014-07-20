@@ -33,7 +33,7 @@ fn main() {
     new_edition(&mut geb);
     // FIXME ^ Comment out this line
 
-    //  `mutable_geb` is a mutable copy of `geb`
+    // `mutable_geb` is a mutable copy of `geb`
     let mut mutable_geb = geb;
 
     // Borrow a mutable object as mutable
