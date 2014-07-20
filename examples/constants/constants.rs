@@ -14,7 +14,7 @@ fn main() {
     println!("The threshold is {}", THRESHOLD);
     println!("{} is {}", n, if is_big(n) { "big" } else { "small" });
 
-    // Error! Cannot modify an static item
+    // Error! Cannot modify a static item
     THRESHOLD = 5;
     // FIXME ^ Comment out this line
 
