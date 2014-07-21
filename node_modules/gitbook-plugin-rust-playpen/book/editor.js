@@ -58,7 +58,7 @@ function initEditor() {
     resultDiv.style.display = "block";
     resultDiv.innerHTML = "Running...";
 
-    // clear previous markers, if any
+    // Clear previous markers, if any
     markers.map(function(id) { editor.getSession().removeMarker(id); });
 
     // Get the code, run the program
@@ -90,6 +90,9 @@ function initEditor() {
 
   // Registering handler for reset button click
   resetButton.addEventListener("click", function(ev) {
+    // Clear previous markers, if any
+    markers.map(function(id) { editor.getSession().removeMarker(id); });
+
     editor.getSession().setValue(originalCode);
     resultDiv.style.display = "none";
   });
