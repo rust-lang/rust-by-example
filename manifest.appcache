@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1405919506978
+# Revision 1405922343343
 
 CACHE:
 loop/nested.html
@@ -22,8 +22,8 @@ closures.html
 constants.html
 crates/lib.html
 crates/link.html
-crates.html
 drop.html
+crates.html
 enum/c-like.html
 enum.html
 expression.html
