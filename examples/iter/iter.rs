@@ -34,8 +34,8 @@ fn main() {
     println!("> {}", sequence.next());
     println!("> {}", sequence.next());
 
-    // The for construct will iterate an 'Iterator' until it returns 'None',
-    // all the 'Some' values are unwrapped and bind to a variable
+    // The for construct will iterate an 'Iterator' until it returns 'None'.
+    // Every 'Some' value is unwrapped and bound to a variable.
     println!("Iterate over range(0, 3) using for");
     for i in range(0u, 3) {
         println!("> {}", i);
