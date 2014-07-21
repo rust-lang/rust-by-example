@@ -30,6 +30,6 @@ fn main() {
 
     // To create one element tuples, the comma is required to tell them apart
     // from a literal surrounded by parentheses
-    println!("one element tuple: {}", (5u,))
-    println!("just an integer: {}", (5u))
+    println!("one element tuple: {}", (5u,));
+    println!("just an integer: {}", (5u));
 }
