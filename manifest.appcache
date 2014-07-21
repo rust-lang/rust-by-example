@@ -1,8 +1,8 @@
 CACHE MANIFEST
-# Revision 1405446439911
+# Revision 1405919506978
 
 CACHE:
-loop.html
+loop/nested.html
 index.html
 array.html
 attribute/cfg/custom.html
@@ -45,7 +45,7 @@ lifetime/fn.html
 lifetime/struct.html
 lifetime.html
 literals.html
-loop/nested.html
+loop.html
 match/guard.html
 match.html
 methods.html
@@ -132,6 +132,7 @@ gitbook/style.css
 gitbook/plugins/gitbook-plugin-mathjax/plugin.js
 gitbook/plugins/gitbook-plugin-rust-playpen/editor.css
 gitbook/plugins/gitbook-plugin-rust-playpen/editor.js
+gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js
 
 NETWORK:
 *
