@@ -54,19 +54,7 @@ function initEditor() {
   editor = ace.edit("editor");
   Range = ace.require('ace/range').Range;
 
-  editor.setTheme("ace/theme/tomorrow");
-  editor.getSession().setMode("ace/mode/rust");
-  editor.setShowPrintMargin(false);
-  editor.renderer.setShowGutter(false);
-  editor.setHighlightActiveLine(false);
-
-  originalCode = editor.getSession().getValue();
-
-  // Set initial size to match initial content
-  updateEditorHeight();
-
-  // Registering handler for run button click
-  runButton.addEventListener("click", function(ev) {
+  var executeCode = function(ev) {
     resultDiv.style.display = "block";
     resultDiv.innerHTML = "Running...";
 
@@ -76,7 +64,29 @@ function initEditor() {
     // Get the code, run the program
     var program = editor.getValue();
     runProgram(program, handleResult);
-  });
+  };
+
+  editor.setTheme("ace/theme/tomorrow");
+  editor.getSession().setMode("ace/mode/rust");
+  editor.setShowPrintMargin(false);
+  editor.renderer.setShowGutter(false);
+  editor.setHighlightActiveLine(false);
+  editor.commands.addCommand({
+      name: "run",
+      bindKey: {
+          win: "Ctrl-Enter",
+          mac: "Ctrl-Enter"
+      },
+      exec: executeCode
+  })
+
+  originalCode = editor.getSession().getValue();
+
+  // Set initial size to match initial content
+  updateEditorHeight();
+
+  // Registering handler for run button click
+  runButton.addEventListener("click", executeCode);
 
   // Registering handler for reset button click
   resetButton.addEventListener("click", function(ev) {
