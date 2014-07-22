@@ -1,51 +1,32 @@
-Macros can also match and return repeated patterns. This is similar but
-different from a regex. `$($x:expr),+` is a matching example. It uses the
-`$()` grouping operator to mark `x` as repeatable. `+` or `*` denotes
-repetition amount; one or more and zero or more respectively. `,`
-is the only separator token available.
+Macros can be defined to handle indefinite arity (any number of arguments).
+This can be accomplished using the *repetition* syntax and the `+`
+and `*` operators. This is what the syntax looks like:
 
-```rust
-// The separator only checks separation; this is
-// not a regex.
-$($x:expr),+ // matches `1, 2, 3` but not `1, 2,`
-```
+On the pattern side:
 
-When returned, it uses a similar notation: `$($x:expr),+` => `$($x),+`
-however, a returned list will not be re-expanded whereas, matching
-will find the whole thing.
+* `($($x:expr),+)`: matches a list (with at least one element) of `expr`s
+  separated by commas. Examples: `('a', 'b')` and `(1 + 2, 3 * 4, 5 - 6)`
 
-```rust
-#![feature(macro_rules)]
+* `($($y:ident),*)`: matches a list of `ident`s separated by commas, but also
+  handles the zero arity case. Examples: `()` and `(foo, bar)`
 
-macro_rules! echo_broken {
-    // Attempt to match and return with one compact expression
-    ($($x:expr),+) => { $($x),+ };
-}
+* Neither of these two patterns will match a list that has a trailing comma. To
+  allow trailing commas, you can use this pattern: `($($z:expr),+,)`
 
-macro_rules! echo_works {
-    ($x:expr) => { $x }; // one element list
-    // $x is the first element. `$($y:expr),+` is the tail
-    ($x:expr, $($y:expr),+) => {
-        // pass the tail to `echo_works` so it can be expanded
-        ($x, echo_works!($($y),+))
-    };
-}
+On the expansion side:
 
-fn main() {
-    println!("{}", echo_broken!(1u)); // Works for single elements
+* `[$($x),+]`: will expand the input arguments (the `$x`s) into an array.
+  Following the previous example: `['a', 'b']` and `[1 + 2, 3 * 4, 5 - 6]`
 
-    // Errors: `,` ignored. A list is never re-expanded so when
-    // the `,` is reached, the rest of the line is ignored.
-    // Rust does not allow incomplete expansion, so it errors. To
-    // handle this, recursion is needed.
-    //println!("{}", echo_broken!(1u, 2u));
+For our example, we'll make a `min!` macro that can take any number of
+arguments and will return the smallest one. Under the hood it will use the
+`min` function that compares *two* arguments.
 
-    println!("{}", echo_works!(1u));
-    // Would like it flat but it nests the results...
-    println!("{}", echo_works!(1u, 2u, 3u, 4u, 5u, 6u));
-}
-```
-
-Another example making a min macro:
 {repeat.play}
 
+If you check the expansion you'll see this expression in the place of the last
+macro:
+
+``` rust
+std::cmp::min(5u, std::cmp::min(2u * 3, 4u))
+```

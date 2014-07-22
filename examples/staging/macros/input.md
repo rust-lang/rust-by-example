@@ -3,7 +3,7 @@ seen in previous chapters, macros look like functions, except that their name
 ends with a bang `!`, but instead of generating a function call, macros are
 expanded into source code that gets compiled with the rest of the program.
 
-Macros are created using the `macro_rules!` macro.
+Macros are defined using the `macro_rules!` macro.
 
 {simple.play}
 

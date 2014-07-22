@@ -2,18 +2,22 @@
 
 use std::iter::range_step;
 
-// range! will take up to 3 inputs and call range
-// function depending on inputs
+// `macro_rules` behaves like a `match` expression
 macro_rules! range (
+    // The left side of the fat arrow is the `pattern` side, and the right side
+    // is the `expansion` side
     ($end:expr) => {
         range(0, $end)
     };
+    // The macro can have a different expansion for each arity
     ($start:expr, $end:expr) => {
         range($start, $end)
     };
+    // ^ Each pattern-match arm must be terminated by a semicolon
     ($start:expr, $end:expr, $step:expr) => {
         range_step($start, $end, $step)
     };
+    // The semicolon on the last arm is optional (is a trailing semicolon)
 )
 
 fn main() {

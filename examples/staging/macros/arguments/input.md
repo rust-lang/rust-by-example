@@ -9,10 +9,10 @@ This is a list of all the designators:
 * `expr` is used for expressions
 * `ident` is used for variable/function names
 * `item`
-* `matchers` (lhs of the => in macro rules)
+* `matchers`
 * `pat`
 * `path`
 * `stmt`
-* `tt` (*token tree*) is used for operators and tokens
+* `tt` (*token tree*) is used for operators (`+`, `-`, etc)
 * `ty` (*type*)
 
