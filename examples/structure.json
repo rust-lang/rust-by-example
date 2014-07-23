@@ -113,7 +113,7 @@
         { "id": "decodable", "title": "`Decodable`", "children": null },
         { "id": "encodable", "title": "`Encodable`", "children": null }
     ] },
-    { "id": "custom-fmt", "title": "Custom formatters", "children": null }
+    { "id": "fmt", "title": "Formatting", "children": null }
   ] },
   { "id": "todo", "title": "TODO", "children": [
     { "id": "arg", "title": "Program arguments", "children": null },
