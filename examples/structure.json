@@ -112,7 +112,8 @@
         { "id": "json-enum", "title": "`Json`", "children": null },
         { "id": "decodable", "title": "`Decodable`", "children": null },
         { "id": "encodable", "title": "`Encodable`", "children": null }
-    ] }
+    ] },
+    { "id": "fmt", "title": "Formatting", "children": null }
   ] },
   { "id": "todo", "title": "TODO", "children": [
     { "id": "arg", "title": "Program arguments", "children": null },
