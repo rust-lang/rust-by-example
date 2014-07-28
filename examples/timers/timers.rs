@@ -31,7 +31,7 @@ fn main() {
     let metronome: Receiver<()> = timer.periodic(INTERVAL);
 
     println!("Countdown");
-    for i in iter::range_step(5u, 0, -1) {
+    for i in iter::range_step(5i, 0, -1) {
         // This loop will run once every second
         metronome.recv();
 
