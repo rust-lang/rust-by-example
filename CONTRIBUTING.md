@@ -65,7 +65,18 @@ See the [README](README.md) for details about how the static site is generated.
 ## Markdown (.md)
 
 * Lines should contain a maximum of 79 characters.
-  * This can be waived in the case of long URLs.
+* Use reference style hyperlinks, for example:
+
+Instead of:
+
+    [Goto my URL](http://www.myurl.com)
+
+Use:
+
+    [Goto my URL][1]
+
+    (Bottom of page)
+    [1]: http://www.myurl.com
 
 ## Rust code (.rs)
 
