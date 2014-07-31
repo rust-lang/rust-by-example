@@ -113,14 +113,18 @@
         { "id": "decodable", "title": "`Decodable`", "children": null },
         { "id": "encodable", "title": "`Encodable`", "children": null }
     ] },
-    { "id": "fmt", "title": "Formatting", "children": null }
+    { "id": "fmt", "title": "Formatting", "children": null },
+    { "id": "hash", "title": "HashMap", "children": [
+        { "id": "alt-key-types", "title": "Alternate/custom key types", "children": null},
+        { "id": "hashset", "title": "HashSet", "children": null },
+        { "id": "smallintmap", "title": "SmallIntMap", "children": null }
+    ] }
   ] },
   { "id": "todo", "title": "TODO", "children": [
     { "id": "arg", "title": "Program arguments", "children": null },
     { "id": "assert", "title": "assert! and debug_assert!", "children": null },
     { "id": "comment", "title": "Comments", "children": null },
     { "id": "green", "title": "Green threads", "children": null },
-    { "id": "hash", "title": "Hasher and Hashmap", "children": null },
     { "id": "log", "title": "Logging", "children": null },
     { "id": "rc", "title": "Reference counting", "children": null },
     { "id": "regex", "title": "Regex", "children": null },
