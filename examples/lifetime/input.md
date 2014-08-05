@@ -16,7 +16,7 @@ inserting the lifetime part `'a` so we can simply type annotate references with
 For example:
 
 ``` rust
-let integer: int = 5
+let integer: int = 5;
 let ref_to_int: &int = &integer;
 ```
 
