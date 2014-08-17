@@ -1,8 +1,9 @@
 use std::io::Timer;
 use std::io::timer;
 use std::iter;
+use std::time::Duration;
 
-static INTERVAL: u64 = 1000;
+static INTERVAL: i32 = 1000;
 
 fn main() {
     // Create a timer object
@@ -10,7 +11,7 @@ fn main() {
 
     // Create a one-shot notification
     // (superfluous type annotation)
-    let oneshot: Receiver<()> = timer.oneshot(INTERVAL);
+    let oneshot: Receiver<()> = timer.oneshot(Duration::milliseconds(INTERVAL));
 
     println!("Wait {} ms...", INTERVAL);
 
@@ -22,13 +23,13 @@ fn main() {
     println!("Sleep for {} ms...", INTERVAL);
 
     // This is equivalent to `timer.oneshot(INTERVAL).recv()`
-    timer::sleep(INTERVAL);
+    timer::sleep(Duration::milliseconds(INTERVAL));
 
     println!("Done");
 
     // The same timer can be used to generate periodic notifications
     // (superfluous type annotation)
-    let metronome: Receiver<()> = timer.periodic(INTERVAL);
+    let metronome: Receiver<()> = timer.periodic(Duration::milliseconds(INTERVAL));
 
     println!("Countdown");
     for i in iter::range_step(5i, 0, -1) {
