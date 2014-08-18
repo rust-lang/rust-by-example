@@ -11,7 +11,8 @@ fn main() {
 
     // Create a one-shot notification
     // (superfluous type annotation)
-    let oneshot: Receiver<()> = timer.oneshot(Duration::milliseconds(INTERVAL));
+    let oneshot: Receiver<()> = 
+	timer.oneshot(Duration::milliseconds(INTERVAL));
 
     println!("Wait {} ms...", INTERVAL);
 
@@ -29,7 +30,8 @@ fn main() {
 
     // The same timer can be used to generate periodic notifications
     // (superfluous type annotation)
-    let metronome: Receiver<()> = timer.periodic(Duration::milliseconds(INTERVAL));
+    let metronome: Receiver<()> = 
+	timer.periodic(Duration::milliseconds(INTERVAL));
 
     println!("Countdown");
     for i in iter::range_step(5i, 0, -1) {
