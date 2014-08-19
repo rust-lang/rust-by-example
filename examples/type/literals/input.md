@@ -16,4 +16,4 @@ yet, here's a brief explanation for the impatient readers:
   can be split in logical units called *modules*. In this case the
   `size_of_val` function is defined in the `mem` module, and the `mem` module
   is defined in the `std` *crate*. For more details see
-  [modules](/modules.html) and [crates](/crates.html).
+  [modules](/mod.html) and [crates](/crates.html).
