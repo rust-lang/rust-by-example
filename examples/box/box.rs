@@ -62,6 +62,6 @@ fn main() {
 
     // Unboxing via a destructuring pattern
     let box another_unboxed_point = boxed_point;
-    println!("Another unboxed point occupies {} bytes in the stack",
+    println!("Another unboxed point occupies {} bytes in the heap",
              mem::size_of_val(&another_unboxed_point));
 }
