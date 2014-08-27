@@ -48,11 +48,11 @@ fn main() {
              mem::size_of_val(&rectangle));
 
     // box size = pointer size
-    println!("Boxed point occupies {} bytes in the stack",
+    println!("Boxed point occupies {} bytes in the heap",
              mem::size_of_val(&boxed_point));
-    println!("Boxed rectangle occupies {} bytes in the stack",
+    println!("Boxed rectangle occupies {} bytes in the heap",
              mem::size_of_val(&boxed_rectangle));
-    println!("Boxed box occupies {} bytes in the stack",
+    println!("Boxed box occupies {} bytes in the heap",
              mem::size_of_val(&box_in_a_box));
 
     // Copy the data contained in `boxed_point` into `unboxed_point`
