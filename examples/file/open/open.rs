@@ -13,7 +13,7 @@ fn main() {
     };
 
     // Read the file contents into a string, returns `IoResult<String>`
-    match file.read_to_string() {
+    match file.read_to_str() {
         Err(why) => fail!("couldn't read {}: {}", display, why.desc),
         Ok(string) => print!("{} contains:\n{}", display, string),
     }
