@@ -21,7 +21,7 @@ fn main() {
             // This expression must return an `int` as well
             n / 2
             // TODO ^ Try suppressing this expression with a semicolon
-        };
+        }; // don't forget to put a semicolon here;  `let` requires it
 
     println!("{} -> {}", n, big_n);
 }
