@@ -1,3 +1,8 @@
+// Unlike C/C++, no restriction on the order of definitions
+fn main() {
+    fizzbuzz_to(100);
+}
+
 // Function that returns a boolean value
 fn is_divisible_by(lhs: uint, rhs: uint) -> bool {
     // Corner case, early return
@@ -28,8 +33,4 @@ fn fizzbuzz_to(n: uint) {
     for n in range(1, n + 1) {
         fizzbuzz(n);
     }
-}
-
-fn main() {
-    fizzbuzz_to(100);
 }
