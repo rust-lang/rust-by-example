@@ -13,7 +13,7 @@ mod my {
         {
             // This will bind to the `cool::function` in the *crate* scope
             // In this case the crate scope is the outermost scope
-            use root_cool_function = cool::function;
+            use cool::function as root_cool_function;
 
             print!("> ");
             root_cool_function();
@@ -21,7 +21,7 @@ mod my {
 
         {
             // `self` refers to the current module scope, in this case: `my`
-            use my_cool_function = self::cool::function;
+            use self::cool::function as my_cool_function;
 
             print!("> ")
             my_cool_function();
@@ -30,7 +30,7 @@ mod my {
         {
             // `super` refers to the parent scope, i.e. outside of the `my`
             // module
-            use root_function = super::function;
+            use super::function as root_function;
 
             print!("> ");
             root_function();
