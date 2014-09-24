@@ -15,7 +15,7 @@ macro_rules! assert_equal_len {
 fn add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
     assert_equal_len!(xs, ys);
 
-    for (x, y) in xs.mut_iter().zip(ys.iter()) {
+    for (x, y) in xs.iter_mut().zip(ys.iter()) {
         *x += *y;
     }
 }

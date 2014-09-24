@@ -1,6 +1,7 @@
 use common::SOCKET_PATH;
 use std::io::fs;
-use std::io::net::unix::UnixListener;
+use std::io::fs::PathExtensions;
+use std::io::net::pipe::UnixListener;
 use std::io::{Acceptor,Listener};
 
 mod common;

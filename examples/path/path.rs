@@ -1,3 +1,5 @@
+use std::io::fs::PathExtensions;
+
 fn main() {
     // Create a `Path` from an `&'static str`
     let path = Path::new(".");

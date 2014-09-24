@@ -14,7 +14,7 @@ fn main() {
         // The `stdin` field has type `Option<PipeStream>`
         // `take_unwrap` will take the value wrapped in a `Some` variant
         // Note that we take ownership of `stdin` here
-        let mut stdin = process.stdin.take_unwrap();
+        let mut stdin = process.stdin.take().unwrap();
 
         // Write a string to the stdin of `wc`
         match stdin.write_str(PANGRAM) {
@@ -30,7 +30,7 @@ fn main() {
     // The `stdout` field also has type `Option<PipeStream>`
     // the `get_mut_ref` method will return a mutable reference to the value
     // wrapped in a `Some` variant
-    match process.stdout.get_mut_ref().read_to_string() {
+    match process.stdout.as_mut().unwrap().read_to_string() {
         Err(why) => fail!("couldn't read wc stdout: {}", why.desc),
         Ok(string) => print!("wc responded with:\n{}", string),
     }

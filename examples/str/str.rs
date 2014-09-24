@@ -17,7 +17,7 @@ fn main() {
 
     // Create an empty and growable `String`
     let mut string = String::new();
-    for c in chars.move_iter() {
+    for c in chars.into_iter() {
         // Insert a char at the end of string
         string.push_char(c);
         // Insert a string at the end of string
@@ -26,7 +26,9 @@ fn main() {
 
     // The trimmed string is a slice to the original string, hence no new
     // allocation is performed
-    let trimmed_str: &str = string.as_slice().trim_chars(&[',', ' ']);
+    let trimmed_str: &str = string.as_slice()
+                                  .trim_chars([' ', ',']
+                                              .as_slice());
     println!("Used characters: {}", trimmed_str);
 
     // Heap allocate a string

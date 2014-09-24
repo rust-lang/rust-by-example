@@ -1,8 +1,8 @@
 use std::collections::HashSet;
 
 fn main() {
-    let mut a: HashSet<int> = vec!(1i, 2, 3).move_iter().collect();
-    let mut b: HashSet<int> = vec!(2i, 3, 4).move_iter().collect();
+    let mut a: HashSet<int> = vec!(1i, 2, 3).into_iter().collect();
+    let mut b: HashSet<int> = vec!(2i, 3, 4).into_iter().collect();
 
     assert!(a.insert(4));
     assert!(a.contains(&4));
