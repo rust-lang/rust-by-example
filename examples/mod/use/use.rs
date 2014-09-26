@@ -19,7 +19,7 @@ fn main() {
 
     println!("Entering block");
     {
-        // This is equivalent to `use function = deeply::nested::function`
+        // This is equivalent to `use deeply::nested::function as function`
         // This `function` will shadow the outer one
         use deeply::nested::function;
 
