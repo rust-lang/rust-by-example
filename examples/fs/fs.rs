@@ -1,4 +1,5 @@
 use std::io::fs;
+use std::io::fs::PathExtensions;
 use std::io::{File,IoResult,UserRWX};
 
 // A simple implementation of `$ cat path`

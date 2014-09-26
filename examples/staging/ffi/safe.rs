@@ -1,10 +1,9 @@
-extern crate num;
-
-use num::complex::{Complex,Complex32};
+use complex::Complex32;
+mod complex;
 
 #[link(name = "m")]
 extern {
-    fn ccosf(z: Complex<f32>) -> Complex<f32>;
+    fn ccosf(z: Complex32) -> Complex32;
 }
 
 // safe wrapper
@@ -13,8 +12,8 @@ fn cos(z: Complex32) -> Complex32 {
 }
 
 fn main() {
-    // z = -1 + 0i
-    let z = Complex::new(0.0, 1.0f32);
+    // z = 0 + 1i
+    let z = Complex32{re: 0.0, im: 1.0f32};
 
     println!("cos({}) = {}", z, cos(z));
 }

@@ -1,6 +1,5 @@
-extern crate num;
-
-use num::complex::{Complex,Complex32};
+use complex::Complex32;
+mod complex;
 
 // this extern block links to the libm library
 #[link(name = "m")]
@@ -12,7 +11,7 @@ extern {
 
 fn main() {
     // z = -1 + 0i
-    let z = Complex::new(-1.0f32, 0.0);
+    let z = Complex32{re: -1.0f32, im: 0.0};
 
     // calling a foreign function is an unsafe operation
     let z_sqrt = unsafe {

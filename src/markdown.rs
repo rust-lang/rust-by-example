@@ -71,7 +71,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
             }
         }
 
-        for (input, output) in table.move_iter() {
+        for (input, output) in table.into_iter() {
             self.content = self.content.replace(input.as_slice(),
                                                 output.as_slice());
         }
@@ -104,7 +104,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
             }
         }
 
-        for (input, output) in table.move_iter() {
+        for (input, output) in table.into_iter() {
             self.content = self.content.replace(input.as_slice(),
                                                 output.as_slice());
         }
@@ -146,7 +146,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
             }
         }
 
-        for (input, output) in table.move_iter() {
+        for (input, output) in table.into_iter() {
             self.content = self.content.replace(input.as_slice(),
                                                 output.as_slice());
         }

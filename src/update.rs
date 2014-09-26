@@ -17,7 +17,7 @@ fn main() {
     let (tx, rx) = channel();
 
     let mut nexamples = 0;
-    for (i, example) in examples.move_iter().enumerate() {
+    for (i, example) in examples.into_iter().enumerate() {
         let tx = tx.clone();
         let count = example.count();
 
@@ -34,7 +34,7 @@ fn main() {
 
     entries.sort_by(|&(ref i, _), &(ref j, _)| i.cmp(j));
 
-    let summary = entries.move_iter()
+    let summary = entries.into_iter()
                          .map(|(_, s)| s)
                          .collect::<Vec<String>>()
                          .connect("\n");
