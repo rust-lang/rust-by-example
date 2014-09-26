@@ -1,3 +1,4 @@
+use complex::Complex32;
 mod complex;
 
 // this extern block links to the libm library
@@ -5,12 +6,12 @@ mod complex;
 extern {
     // this is a foreign function
     // that computes the square root of a single precision complex number
-    fn csqrtf(z: complex::Complex32) -> complex::Complex32;
+    fn csqrtf(z: Complex32) -> Complex32;
 }
 
 fn main() {
     // z = -1 + 0i
-    let z = complex::Complex32{re: -1.0f32, im: 0.0};
+    let z = Complex32{re: -1.0f32, im: 0.0};
 
     // calling a foreign function is an unsafe operation
     let z_sqrt = unsafe {
