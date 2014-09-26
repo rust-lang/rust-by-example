@@ -24,10 +24,9 @@ fn main() {
 #[repr(C)]
 struct Complex {
     re: f32,
-    im: f32
+    im: f32,
 }
 
-/* string conversions */
 impl fmt::Show for Complex {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         if self.im < 0. {
