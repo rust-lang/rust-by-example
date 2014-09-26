@@ -19,7 +19,7 @@ fn main() {
     let mut string = String::new();
     for c in chars.into_iter() {
         // Insert a char at the end of string
-        string.push_char(c);
+        string.push(c);
         // Insert a string at the end of string
         string.push_str(", ");
     }
