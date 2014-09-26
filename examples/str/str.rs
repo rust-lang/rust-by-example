@@ -26,8 +26,8 @@ fn main() {
 
     // The trimmed string is a slice to the original string, hence no new
     // allocation is performed
-    let trimmed_chars: &[char] = [' ', ','];
-    let trimmed_str: &str = string.as_slice().trim_chars(trimmed_chars);
+    let chars_to_trim: &[char] = [' ', ','];
+    let trimmed_str: &str = string.as_slice().trim_chars(chars_to_trim);
     println!("Used characters: {}", trimmed_str);
 
     // Heap allocate a string
