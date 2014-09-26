@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>The ref pattern | Rust by Example</title>
+        <title>HashMap | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.7.1">
@@ -19,10 +19,10 @@
     <meta name="author" content="japaric">
     
     
-    <link rel="next" href="../lifetime.html" />
+    <link rel="next" href="../staging/hash/alt-key-types.html" />
     
     
-    <link rel="prev" href="../borrow/alias.html" />
+    <link rel="prev" href="../staging/fmt.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="22.4" data-basepath=".." data-revision="1411702417651">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.10" data-basepath=".." data-revision="1411702417651">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -118,7 +118,7 @@
         
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/borrow/ref/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
+            <a href="https://github.com/japaric/rust-by-example/edit/master/examples/staging/hash/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
         </li>
         
 
@@ -948,7 +948,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="22.4" data-path="borrow/ref.html">
+        <li class="chapter " data-level="22.4" data-path="borrow/ref.html">
             
                 
                     <a href="../borrow/ref.html">
@@ -1796,7 +1796,7 @@
         </li>
     
         
-        <li class="chapter " data-level="49.10" data-path="staging/hash.html">
+        <li class="chapter active" data-level="49.10" data-path="staging/hash.html">
             
                 
                     <a href="../staging/hash.html">
@@ -1988,7 +1988,7 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 46.53465346534654%;min-width: 45.54455445544554%;"></div>
+        <div class="inner" style="width: 96.03960396039604%;min-width: 95.04950495049505%;"></div>
     </div>
     <div class="chapters">
     
@@ -2088,105 +2088,105 @@
     
         <a href="../borrow/ref.html" title="The ref pattern" class="chapter done " data-progress="22.4" style="left: 46.53465346534654%;"></a>
     
-        <a href="../lifetime.html" title="Lifetimes" class="chapter  " data-progress="23" style="left: 47.524752475247524%;"></a>
+        <a href="../lifetime.html" title="Lifetimes" class="chapter done " data-progress="23" style="left: 47.524752475247524%;"></a>
     
-        <a href="../lifetime/borrow.html" title="The borrow checker" class="chapter  " data-progress="23.1" style="left: 48.51485148514851%;"></a>
+        <a href="../lifetime/borrow.html" title="The borrow checker" class="chapter done " data-progress="23.1" style="left: 48.51485148514851%;"></a>
     
-        <a href="../lifetime/fn.html" title="Functions" class="chapter  " data-progress="23.2" style="left: 49.504950495049506%;"></a>
+        <a href="../lifetime/fn.html" title="Functions" class="chapter done " data-progress="23.2" style="left: 49.504950495049506%;"></a>
     
-        <a href="../lifetime/struct.html" title="Structs" class="chapter  " data-progress="23.3" style="left: 50.495049504950494%;"></a>
+        <a href="../lifetime/struct.html" title="Structs" class="chapter done " data-progress="23.3" style="left: 50.495049504950494%;"></a>
     
-        <a href="../constants.html" title="Global constants" class="chapter  " data-progress="24" style="left: 51.48514851485149%;"></a>
+        <a href="../constants.html" title="Global constants" class="chapter done " data-progress="24" style="left: 51.48514851485149%;"></a>
     
-        <a href="../methods.html" title="Methods" class="chapter  " data-progress="25" style="left: 52.475247524752476%;"></a>
+        <a href="../methods.html" title="Methods" class="chapter done " data-progress="25" style="left: 52.475247524752476%;"></a>
     
-        <a href="../enum.html" title="Enums" class="chapter  " data-progress="26" style="left: 53.46534653465346%;"></a>
+        <a href="../enum.html" title="Enums" class="chapter done " data-progress="26" style="left: 53.46534653465346%;"></a>
     
-        <a href="../enum/c-like.html" title="C-like" class="chapter  " data-progress="26.1" style="left: 54.45544554455446%;"></a>
+        <a href="../enum/c-like.html" title="C-like" class="chapter done " data-progress="26.1" style="left: 54.45544554455446%;"></a>
     
-        <a href="../fail.html" title="`fail!`" class="chapter  " data-progress="27" style="left: 55.445544554455445%;"></a>
+        <a href="../fail.html" title="`fail!`" class="chapter done " data-progress="27" style="left: 55.445544554455445%;"></a>
     
-        <a href="../option.html" title="`Option`" class="chapter  " data-progress="28" style="left: 56.43564356435643%;"></a>
+        <a href="../option.html" title="`Option`" class="chapter done " data-progress="28" style="left: 56.43564356435643%;"></a>
     
-        <a href="../array.html" title="Arrays and Slices" class="chapter  " data-progress="29" style="left: 57.42574257425743%;"></a>
+        <a href="../array.html" title="Arrays and Slices" class="chapter done " data-progress="29" style="left: 57.42574257425743%;"></a>
     
-        <a href="../trait.html" title="Traits" class="chapter  " data-progress="30" style="left: 58.415841584158414%;"></a>
+        <a href="../trait.html" title="Traits" class="chapter done " data-progress="30" style="left: 58.415841584158414%;"></a>
     
-        <a href="../trait/deriving.html" title="Deriving" class="chapter  " data-progress="30.1" style="left: 59.40594059405941%;"></a>
+        <a href="../trait/deriving.html" title="Deriving" class="chapter done " data-progress="30.1" style="left: 59.40594059405941%;"></a>
     
-        <a href="../ops.html" title="Operator Overloading" class="chapter  " data-progress="31" style="left: 60.396039603960396%;"></a>
+        <a href="../ops.html" title="Operator Overloading" class="chapter done " data-progress="31" style="left: 60.396039603960396%;"></a>
     
-        <a href="../bounds.html" title="Bounds" class="chapter  " data-progress="32" style="left: 61.386138613861384%;"></a>
+        <a href="../bounds.html" title="Bounds" class="chapter done " data-progress="32" style="left: 61.386138613861384%;"></a>
     
-        <a href="../drop.html" title="Drop" class="chapter  " data-progress="33" style="left: 62.37623762376238%;"></a>
+        <a href="../drop.html" title="Drop" class="chapter done " data-progress="33" style="left: 62.37623762376238%;"></a>
     
-        <a href="../iter.html" title="Iterators" class="chapter  " data-progress="34" style="left: 63.366336633663366%;"></a>
+        <a href="../iter.html" title="Iterators" class="chapter done " data-progress="34" style="left: 63.366336633663366%;"></a>
     
-        <a href="../closures.html" title="Closures" class="chapter  " data-progress="35" style="left: 64.35643564356435%;"></a>
+        <a href="../closures.html" title="Closures" class="chapter done " data-progress="35" style="left: 64.35643564356435%;"></a>
     
-        <a href="../hof.html" title="Higher Order Functions" class="chapter  " data-progress="36" style="left: 65.34653465346534%;"></a>
+        <a href="../hof.html" title="Higher Order Functions" class="chapter done " data-progress="36" style="left: 65.34653465346534%;"></a>
     
-        <a href="../vec.html" title="Vectors" class="chapter  " data-progress="37" style="left: 66.33663366336634%;"></a>
+        <a href="../vec.html" title="Vectors" class="chapter done " data-progress="37" style="left: 66.33663366336634%;"></a>
     
-        <a href="../str.html" title="Strings" class="chapter  " data-progress="38" style="left: 67.32673267326733%;"></a>
+        <a href="../str.html" title="Strings" class="chapter done " data-progress="38" style="left: 67.32673267326733%;"></a>
     
-        <a href="../clone.html" title="Clone" class="chapter  " data-progress="39" style="left: 68.31683168316832%;"></a>
+        <a href="../clone.html" title="Clone" class="chapter done " data-progress="39" style="left: 68.31683168316832%;"></a>
     
-        <a href="../tasks.html" title="Tasks" class="chapter  " data-progress="40" style="left: 69.3069306930693%;"></a>
+        <a href="../tasks.html" title="Tasks" class="chapter done " data-progress="40" style="left: 69.3069306930693%;"></a>
     
-        <a href="../channels.html" title="Channels" class="chapter  " data-progress="41" style="left: 70.29702970297029%;"></a>
+        <a href="../channels.html" title="Channels" class="chapter done " data-progress="41" style="left: 70.29702970297029%;"></a>
     
-        <a href="../timers.html" title="Timers" class="chapter  " data-progress="42" style="left: 71.2871287128713%;"></a>
+        <a href="../timers.html" title="Timers" class="chapter done " data-progress="42" style="left: 71.2871287128713%;"></a>
     
-        <a href="../sockets.html" title="Unix sockets" class="chapter  " data-progress="43" style="left: 72.27722772277228%;"></a>
+        <a href="../sockets.html" title="Unix sockets" class="chapter done " data-progress="43" style="left: 72.27722772277228%;"></a>
     
-        <a href="../result.html" title="`Result`" class="chapter  " data-progress="44" style="left: 73.26732673267327%;"></a>
+        <a href="../result.html" title="`Result`" class="chapter done " data-progress="44" style="left: 73.26732673267327%;"></a>
     
-        <a href="../result/try.html" title="`try!`" class="chapter  " data-progress="44.1" style="left: 74.25742574257426%;"></a>
+        <a href="../result/try.html" title="`try!`" class="chapter done " data-progress="44.1" style="left: 74.25742574257426%;"></a>
     
-        <a href="../path.html" title="Path" class="chapter  " data-progress="45" style="left: 75.24752475247524%;"></a>
+        <a href="../path.html" title="Path" class="chapter done " data-progress="45" style="left: 75.24752475247524%;"></a>
     
-        <a href="../file.html" title="File I/O" class="chapter  " data-progress="46" style="left: 76.23762376237623%;"></a>
+        <a href="../file.html" title="File I/O" class="chapter done " data-progress="46" style="left: 76.23762376237623%;"></a>
     
-        <a href="../file/open.html" title="`open`" class="chapter  " data-progress="46.1" style="left: 77.22772277227723%;"></a>
+        <a href="../file/open.html" title="`open`" class="chapter done " data-progress="46.1" style="left: 77.22772277227723%;"></a>
     
-        <a href="../file/create.html" title="`create`" class="chapter  " data-progress="46.2" style="left: 78.21782178217822%;"></a>
+        <a href="../file/create.html" title="`create`" class="chapter done " data-progress="46.2" style="left: 78.21782178217822%;"></a>
     
-        <a href="../process.html" title="Child processes" class="chapter  " data-progress="47" style="left: 79.20792079207921%;"></a>
+        <a href="../process.html" title="Child processes" class="chapter done " data-progress="47" style="left: 79.20792079207921%;"></a>
     
-        <a href="../process/pipe.html" title="Pipes" class="chapter  " data-progress="47.1" style="left: 80.1980198019802%;"></a>
+        <a href="../process/pipe.html" title="Pipes" class="chapter done " data-progress="47.1" style="left: 80.1980198019802%;"></a>
     
-        <a href="../process/wait.html" title="Wait" class="chapter  " data-progress="47.2" style="left: 81.18811881188118%;"></a>
+        <a href="../process/wait.html" title="Wait" class="chapter done " data-progress="47.2" style="left: 81.18811881188118%;"></a>
     
-        <a href="../fs.html" title="Filesystem Operations" class="chapter  " data-progress="48" style="left: 82.17821782178218%;"></a>
+        <a href="../fs.html" title="Filesystem Operations" class="chapter done " data-progress="48" style="left: 82.17821782178218%;"></a>
     
-        <a href="../staging.html" title="Staging Area" class="chapter  " data-progress="49" style="left: 83.16831683168317%;"></a>
+        <a href="../staging.html" title="Staging Area" class="chapter done " data-progress="49" style="left: 83.16831683168317%;"></a>
     
-        <a href="../staging/bench.html" title="Benchmarking" class="chapter  " data-progress="49.1" style="left: 84.15841584158416%;"></a>
+        <a href="../staging/bench.html" title="Benchmarking" class="chapter done " data-progress="49.1" style="left: 84.15841584158416%;"></a>
     
-        <a href="../staging/ffi.html" title="Foreign Function Interface" class="chapter  " data-progress="49.2" style="left: 85.14851485148515%;"></a>
+        <a href="../staging/ffi.html" title="Foreign Function Interface" class="chapter done " data-progress="49.2" style="left: 85.14851485148515%;"></a>
     
-        <a href="../staging/macros.html" title="macro_rules!" class="chapter  " data-progress="49.3" style="left: 86.13861386138613%;"></a>
+        <a href="../staging/macros.html" title="macro_rules!" class="chapter done " data-progress="49.3" style="left: 86.13861386138613%;"></a>
     
-        <a href="../staging/rand.html" title="Random" class="chapter  " data-progress="49.4" style="left: 87.12871287128714%;"></a>
+        <a href="../staging/rand.html" title="Random" class="chapter done " data-progress="49.4" style="left: 87.12871287128714%;"></a>
     
-        <a href="../staging/simd.html" title="SIMD" class="chapter  " data-progress="49.5" style="left: 88.11881188118812%;"></a>
+        <a href="../staging/simd.html" title="SIMD" class="chapter done " data-progress="49.5" style="left: 88.11881188118812%;"></a>
     
-        <a href="../staging/test.html" title="Testing" class="chapter  " data-progress="49.6" style="left: 89.10891089108911%;"></a>
+        <a href="../staging/test.html" title="Testing" class="chapter done " data-progress="49.6" style="left: 89.10891089108911%;"></a>
     
-        <a href="../staging/unsafe.html" title="Unsafe operations" class="chapter  " data-progress="49.7" style="left: 90.0990099009901%;"></a>
+        <a href="../staging/unsafe.html" title="Unsafe operations" class="chapter done " data-progress="49.7" style="left: 90.0990099009901%;"></a>
     
-        <a href="../staging/json.html" title="JSON parsing" class="chapter  " data-progress="49.8" style="left: 91.08910891089108%;"></a>
+        <a href="../staging/json.html" title="JSON parsing" class="chapter done " data-progress="49.8" style="left: 91.08910891089108%;"></a>
     
-        <a href="../staging/json/json-enum.html" title="`Json`" class="chapter  " data-progress="49.8.1" style="left: 92.07920792079207%;"></a>
+        <a href="../staging/json/json-enum.html" title="`Json`" class="chapter done " data-progress="49.8.1" style="left: 92.07920792079207%;"></a>
     
-        <a href="../staging/json/decodable.html" title="`Decodable`" class="chapter  " data-progress="49.8.2" style="left: 93.06930693069307%;"></a>
+        <a href="../staging/json/decodable.html" title="`Decodable`" class="chapter done " data-progress="49.8.2" style="left: 93.06930693069307%;"></a>
     
-        <a href="../staging/json/encodable.html" title="`Encodable`" class="chapter  " data-progress="49.8.3" style="left: 94.05940594059406%;"></a>
+        <a href="../staging/json/encodable.html" title="`Encodable`" class="chapter done " data-progress="49.8.3" style="left: 94.05940594059406%;"></a>
     
-        <a href="../staging/fmt.html" title="Formatting" class="chapter  " data-progress="49.9" style="left: 95.04950495049505%;"></a>
+        <a href="../staging/fmt.html" title="Formatting" class="chapter done " data-progress="49.9" style="left: 95.04950495049505%;"></a>
     
-        <a href="../staging/hash.html" title="HashMap" class="chapter  " data-progress="49.10" style="left: 96.03960396039604%;"></a>
+        <a href="../staging/hash.html" title="HashMap" class="chapter done " data-progress="49.10" style="left: 96.03960396039604%;"></a>
     
         <a href="../staging/hash/alt-key-types.html" title="Alternate/custom key types" class="chapter  " data-progress="49.10.1" style="left: 97.02970297029702%;"></a>
     
@@ -2201,55 +2201,70 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_11">
+                    <section class="normal" id="section-gitbook_72">
                     
-                        <h2 id="224-the-ref-pattern">22.4 The ref pattern</h2>
-<p>When doing pattern matching or destructuring via the <code>let</code> binding, the <code>ref</code>
-keyword can be used to take references to the fields of a struct/tuple.</p>
+                        <h2 id="4910-hashmap">49.10 HashMap</h2>
+<p>Where vectors store values by an integer index, <code>HashMap</code>s store values by key. 
+<code>HashMap</code> keys can be booleans, integers, strings, 
+or any other type that implements the <code>Eq</code> and <code>Hash</code> traits. 
+More on this in the next section.</p>
+<p>Like vectors, <code>HashMap</code>s are growable, but HashMaps can also shrink themselves 
+when they have excess space. 
+You can create a HashMap with a certain starting capacity using 
+<code>HashMap::with_capacity(uint)</code>, or use <code>HashMap::new()</code> to get a HashMap 
+with a default initial capacity (recommended).</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">struct Point { x: int, y: int }
+<div id="editor">use std::collections::HashMap;
 
-fn main() {
-    let point = Point { x: 0, y: 0 };
+fn call(number: &amp;str) -&gt; &amp;str {
+    match number {
+        &quot;798-1364&quot; =&gt; &quot;We&#39;re sorry, the call cannot be completed as dialed. 
+            Please hang up and try again.&quot;,
+        &quot;645-7689&quot; =&gt; &quot;Hello, this is Mr. Awesome&#39;s Pizza. My name is Fred.
+            What can I get for you today?&quot;,
+        &#95; =&gt; &quot;Hi! Who is this again?&quot;
+    }
+}
 
-    let &#95;copy&#95;of&#95;x = {
-        // &#96;ref&#95;to&#95;x&#96; is a reference to the &#96;x&#96; field of &#96;point&#96;
-        let Point { x: ref ref&#95;to&#95;x, y: &#95; } = point;
+fn main() { 
+    let mut contacts = HashMap::new();
 
-        // Return a copy of the &#96;x&#96; field of &#96;point&#96;
-        &#42;ref&#95;to&#95;x
-    };
+    contacts.insert(&quot;Daniel&quot;, &quot;798-1364&quot;);
+    contacts.insert(&quot;Ashley&quot;, &quot;645-7689&quot;);
+    contacts.insert(&quot;Katie&quot;, &quot;435-8291&quot;);
+    contacts.insert(&quot;Robert&quot;, &quot;956-1745&quot;);
 
-    // A mutable copy of &#96;point&#96;
-    let mut mutable&#95;point = point;
-
-    {
-        // &#96;ref&#96; can be paired with &#96;mut&#96; to take mutable references
-        let Point { x: &#95;, y: ref mut mut&#95;ref&#95;to&#95;y } = mutable&#95;point;
-
-        // Mutate the &#96;y&#96; field of &#96;mutable&#95;point&#96;, via a mutable reference
-        &#42;mut&#95;ref&#95;to&#95;y = 1;
+    // Takes a reference and returns Option&lt;&amp;V&gt;
+    match contacts.find(&amp;(&quot;Daniel&quot;)) {
+        Some(&amp;number) =&gt; println!(&quot;Calling Daniel: {}&quot;, call(number)),
+        &#95; =&gt; println!(&quot;Don&#39;t have Daniel&#39;s number.&quot;),
     }
 
-    println!(&quot;point is ({}, {})&quot;, point.x, point.y);
-    println!(&quot;mutable&#95;point is ({}, {})&quot;, mutable&#95;point.x, mutable&#95;point.y);
+    // &#96;HashMap::insert()&#96; returns true 
+    // if the inserted value is new, false otherwise
+    contacts.insert(&quot;Daniel&quot;, &quot;164-6743&quot;);
 
-    let mut tuple = (box 5u, 3u);
-
-    {
-        // &#96;ref&#96; can also be paired with &#96;box&#96; to take a mutable reference to
-        // the data contained in the box
-        let (box ref mut i, &#95;) = tuple;
-
-        &#42;i = 3;
+    match contacts.find(&amp;(&quot;Ashley&quot;)) {
+        Some(&amp;number) =&gt; println!(&quot;Calling Ashley: {}&quot;, call(number)),
+        &#95; =&gt; println!(&quot;Don&#39;t have Ashley&#39;s number.&quot;),
     }
 
-    println!(&quot;tuple is {}&quot;, tuple);
+    contacts.remove(&amp;(&quot;Ashley&quot;)); 
+
+    // &#96;HashMap::iter()&#96; returns an iterator that yields 
+    // (&amp;&#39;a key, &amp;&#39;a value) pairs in arbitrary order.
+    for (contact, &amp;number) in contacts.iter() {
+        println!(&quot;Calling {}: {}&quot;, contact, call(number)); 
+    }
 }</div>
 <div id="result"></div>
 </div>
+
+<p>For more information on how hashing and hash maps 
+(sometimes called hash tables) work, have a look at 
+<a href="(http://en.wikipedia.org/wiki/Hash_table)">Wikipedia</a></p>
 
                     
                     </section>
@@ -2259,10 +2274,10 @@ fn main() {
         </div>
 
         
-        <a href="../borrow/alias.html" class="navigation navigation-prev " aria-label="Previous page: Aliasing"><i class="fa fa-angle-left"></i></a>
+        <a href="../staging/fmt.html" class="navigation navigation-prev " aria-label="Previous page: Formatting"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../lifetime.html" class="navigation navigation-next " aria-label="Next page: Lifetimes"><i class="fa fa-angle-right"></i></a>
+        <a href="../staging/hash/alt-key-types.html" class="navigation navigation-next " aria-label="Next page: Alternate/custom key types"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -1,8 +1,8 @@
 CACHE MANIFEST
-# Revision 1405922343343
+# Revision 1411702417652
 
 CACHE:
-loop/nested.html
+loop.html
 index.html
 array.html
 attribute/cfg/custom.html
@@ -20,10 +20,10 @@ channels.html
 clone.html
 closures.html
 constants.html
-crates/lib.html
 crates/link.html
-drop.html
+crates/lib.html
 crates.html
+drop.html
 enum/c-like.html
 enum.html
 expression.html
@@ -45,7 +45,7 @@ lifetime/fn.html
 lifetime/struct.html
 lifetime.html
 literals.html
-loop.html
+loop/nested.html
 match/guard.html
 match.html
 methods.html
@@ -67,12 +67,17 @@ raii.html
 result/try.html
 result.html
 sockets.html
+staging/json.html
 staging/bench.html
-staging/ffi.html
+staging/fmt.html
+staging/hash/alt-key-types.html
+staging/hash/hashset.html
+staging/hash/smallintmap.html
+staging/hash.html
 staging/json/decodable.html
 staging/json/encodable.html
 staging/json/json-enum.html
-staging/json.html
+staging/ffi.html
 staging/macros.html
 staging/rand.html
 staging/simd.html

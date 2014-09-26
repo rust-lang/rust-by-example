@@ -7,7 +7,7 @@
         <title>Formatted print | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 0.6.0">
+        <meta name="generator" content="GitBook 0.7.1">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="2" data-basepath="." data-revision="1405922343343">
+    <div class="book" data-github="japaric/rust-by-example" data-level="2" data-basepath="." data-revision="1411702417651">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -84,10 +84,6 @@
     
     <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
     
-
-    
-    <a href="https://github.com/japaric/rust-by-example/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/japaric/rust-by-example/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
     
 
     <!-- Title -->
@@ -115,7 +111,7 @@
         
         
         <li>
-            <a href="https://github.com/japaric/rust-by-example/issues" target="blank"class="issues-link">Questions and Issues</a>
+            <a href="https://github.com/japaric/rust-by-example/issues" target="blank" class="issues-link">Questions and Issues</a>
         </li>
         
 
@@ -1783,6 +1779,92 @@
             
         </li>
     
+        
+        <li class="chapter " data-level="49.9" data-path="staging/fmt.html">
+            
+                
+                    <a href="./staging/fmt.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.9.</b>
+                        
+                         Formatting
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.10" data-path="staging/hash.html">
+            
+                
+                    <a href="./staging/hash.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.10.</b>
+                        
+                         HashMap
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.10.1" data-path="staging/hash/alt-key-types.html">
+            
+                
+                    <a href="./staging/hash/alt-key-types.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.10.1.</b>
+                        
+                         Alternate/custom key types
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.10.2" data-path="staging/hash/hashset.html">
+            
+                
+                    <a href="./staging/hash/hashset.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.10.2.</b>
+                        
+                         HashSet
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.10.3" data-path="staging/hash/smallintmap.html">
+            
+                
+                    <a href="./staging/hash/smallintmap.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.10.3.</b>
+                        
+                         SmallIntMap
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -1840,7 +1922,7 @@
         
         <li class="chapter " data-level="50.5" >
             
-            <span><b>50.5.</b> Hasher and Hashmap</span>
+            <span><b>50.5.</b> Logging</span>
             
             
         </li>
@@ -1848,7 +1930,7 @@
         
         <li class="chapter " data-level="50.6" >
             
-            <span><b>50.6.</b> Logging</span>
+            <span><b>50.6.</b> Reference counting</span>
             
             
         </li>
@@ -1856,7 +1938,7 @@
         
         <li class="chapter " data-level="50.7" >
             
-            <span><b>50.7.</b> Reference counting</span>
+            <span><b>50.7.</b> Regex</span>
             
             
         </li>
@@ -1864,7 +1946,7 @@
         
         <li class="chapter " data-level="50.8" >
             
-            <span><b>50.8.</b> Regex</span>
+            <span><b>50.8.</b> rustdoc</span>
             
             
         </li>
@@ -1872,7 +1954,7 @@
         
         <li class="chapter " data-level="50.9" >
             
-            <span><b>50.9.</b> rustdoc</span>
+            <span><b>50.9.</b> select!</span>
             
             
         </li>
@@ -1880,15 +1962,7 @@
         
         <li class="chapter " data-level="50.10" >
             
-            <span><b>50.10.</b> select!</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="50.11" >
-            
-            <span><b>50.11.</b> Standard I/O</span>
+            <span><b>50.10.</b> Standard I/O</span>
             
             
         </li>
@@ -1914,201 +1988,211 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
-        <div class="inner" style="width: 2.0833333333333335%;min-width: 1.0416666666666667%;"></div>
+        <div class="inner" style="width: 1.9801980198019802%;min-width: 0.9900990099009901%;"></div>
     </div>
     <div class="chapters">
     
         <a href="./index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
     
-        <a href="./hello.html" title="Hello World" class="chapter done new-chapter" data-progress="1" style="left: 1.0416666666666667%;"></a>
+        <a href="./hello.html" title="Hello World" class="chapter done new-chapter" data-progress="1" style="left: 0.9900990099009901%;"></a>
     
-        <a href="./print.html" title="Formatted print" class="chapter done new-chapter" data-progress="2" style="left: 2.0833333333333335%;"></a>
+        <a href="./print.html" title="Formatted print" class="chapter done new-chapter" data-progress="2" style="left: 1.9801980198019802%;"></a>
     
-        <a href="./literals.html" title="Literals and operators" class="chapter  new-chapter" data-progress="3" style="left: 3.125%;"></a>
+        <a href="./literals.html" title="Literals and operators" class="chapter  new-chapter" data-progress="3" style="left: 2.9702970297029703%;"></a>
     
-        <a href="./variables.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 4.166666666666667%;"></a>
+        <a href="./variables.html" title="Variables" class="chapter  new-chapter" data-progress="4" style="left: 3.9603960396039604%;"></a>
     
-        <a href="./variables/mut.html" title="Mutability" class="chapter  " data-progress="4.1" style="left: 5.208333333333333%;"></a>
+        <a href="./variables/mut.html" title="Mutability" class="chapter  " data-progress="4.1" style="left: 4.9504950495049505%;"></a>
     
-        <a href="./variables/scope.html" title="Scope and shadowing" class="chapter  " data-progress="4.2" style="left: 6.25%;"></a>
+        <a href="./variables/scope.html" title="Scope and shadowing" class="chapter  " data-progress="4.2" style="left: 5.9405940594059405%;"></a>
     
-        <a href="./variables/declare.html" title="Declare first" class="chapter  " data-progress="4.3" style="left: 7.291666666666667%;"></a>
+        <a href="./variables/declare.html" title="Declare first" class="chapter  " data-progress="4.3" style="left: 6.930693069306931%;"></a>
     
-        <a href="./type.html" title="Types" class="chapter  new-chapter" data-progress="5" style="left: 8.333333333333334%;"></a>
+        <a href="./type.html" title="Types" class="chapter  new-chapter" data-progress="5" style="left: 7.920792079207921%;"></a>
     
-        <a href="./type/cast.html" title="Casting" class="chapter  " data-progress="5.1" style="left: 9.375%;"></a>
+        <a href="./type/cast.html" title="Casting" class="chapter  " data-progress="5.1" style="left: 8.910891089108912%;"></a>
     
-        <a href="./type/literals.html" title="Literals" class="chapter  " data-progress="5.2" style="left: 10.416666666666666%;"></a>
+        <a href="./type/literals.html" title="Literals" class="chapter  " data-progress="5.2" style="left: 9.900990099009901%;"></a>
     
-        <a href="./type/inference.html" title="Inference" class="chapter  " data-progress="5.3" style="left: 11.458333333333334%;"></a>
+        <a href="./type/inference.html" title="Inference" class="chapter  " data-progress="5.3" style="left: 10.891089108910892%;"></a>
     
-        <a href="./type/alias.html" title="Alias" class="chapter  " data-progress="5.4" style="left: 12.5%;"></a>
+        <a href="./type/alias.html" title="Alias" class="chapter  " data-progress="5.4" style="left: 11.881188118811881%;"></a>
     
-        <a href="./expression.html" title="Expressions" class="chapter  new-chapter" data-progress="6" style="left: 13.541666666666666%;"></a>
+        <a href="./expression.html" title="Expressions" class="chapter  new-chapter" data-progress="6" style="left: 12.871287128712872%;"></a>
     
-        <a href="./if-else.html" title="If/else" class="chapter  new-chapter" data-progress="7" style="left: 14.583333333333334%;"></a>
+        <a href="./if-else.html" title="If/else" class="chapter  new-chapter" data-progress="7" style="left: 13.861386138613861%;"></a>
     
-        <a href="./loop.html" title="Loop" class="chapter  new-chapter" data-progress="8" style="left: 15.625%;"></a>
+        <a href="./loop.html" title="Loop" class="chapter  new-chapter" data-progress="8" style="left: 14.851485148514852%;"></a>
     
-        <a href="./loop/nested.html" title="Nesting and labels" class="chapter  " data-progress="8.1" style="left: 16.666666666666668%;"></a>
+        <a href="./loop/nested.html" title="Nesting and labels" class="chapter  " data-progress="8.1" style="left: 15.841584158415841%;"></a>
     
-        <a href="./while.html" title="While" class="chapter  new-chapter" data-progress="9" style="left: 17.708333333333332%;"></a>
+        <a href="./while.html" title="While" class="chapter  new-chapter" data-progress="9" style="left: 16.831683168316832%;"></a>
     
-        <a href="./for.html" title="For and range" class="chapter  " data-progress="10" style="left: 18.75%;"></a>
+        <a href="./for.html" title="For and range" class="chapter  " data-progress="10" style="left: 17.821782178217823%;"></a>
     
-        <a href="./fn.html" title="Functions" class="chapter  " data-progress="11" style="left: 19.791666666666668%;"></a>
+        <a href="./fn.html" title="Functions" class="chapter  " data-progress="11" style="left: 18.81188118811881%;"></a>
     
-        <a href="./fn/unused.html" title="Unused" class="chapter  " data-progress="11.1" style="left: 20.833333333333332%;"></a>
+        <a href="./fn/unused.html" title="Unused" class="chapter  " data-progress="11.1" style="left: 19.801980198019802%;"></a>
     
-        <a href="./mod.html" title="Modules" class="chapter  " data-progress="12" style="left: 21.875%;"></a>
+        <a href="./mod.html" title="Modules" class="chapter  " data-progress="12" style="left: 20.792079207920793%;"></a>
     
-        <a href="./mod/visibility.html" title="Visibility" class="chapter  " data-progress="12.1" style="left: 22.916666666666668%;"></a>
+        <a href="./mod/visibility.html" title="Visibility" class="chapter  " data-progress="12.1" style="left: 21.782178217821784%;"></a>
     
-        <a href="./mod/use.html" title="The `use` import" class="chapter  " data-progress="12.2" style="left: 23.958333333333332%;"></a>
+        <a href="./mod/use.html" title="The `use` import" class="chapter  " data-progress="12.2" style="left: 22.77227722772277%;"></a>
     
-        <a href="./mod/super.html" title="`super` and `self`" class="chapter  " data-progress="12.3" style="left: 25%;"></a>
+        <a href="./mod/super.html" title="`super` and `self`" class="chapter  " data-progress="12.3" style="left: 23.762376237623762%;"></a>
     
-        <a href="./mod/split.html" title="File hierarchy" class="chapter  " data-progress="12.4" style="left: 26.041666666666668%;"></a>
+        <a href="./mod/split.html" title="File hierarchy" class="chapter  " data-progress="12.4" style="left: 24.752475247524753%;"></a>
     
-        <a href="./crates.html" title="Crates" class="chapter  " data-progress="13" style="left: 27.083333333333332%;"></a>
+        <a href="./crates.html" title="Crates" class="chapter  " data-progress="13" style="left: 25.742574257425744%;"></a>
     
-        <a href="./crates/lib.html" title="Library" class="chapter  " data-progress="13.1" style="left: 28.125%;"></a>
+        <a href="./crates/lib.html" title="Library" class="chapter  " data-progress="13.1" style="left: 26.73267326732673%;"></a>
     
-        <a href="./crates/link.html" title="`extern crate`" class="chapter  " data-progress="13.2" style="left: 29.166666666666668%;"></a>
+        <a href="./crates/link.html" title="`extern crate`" class="chapter  " data-progress="13.2" style="left: 27.722772277227723%;"></a>
     
-        <a href="./attribute.html" title="Attributes" class="chapter  " data-progress="14" style="left: 30.208333333333332%;"></a>
+        <a href="./attribute.html" title="Attributes" class="chapter  " data-progress="14" style="left: 28.712871287128714%;"></a>
     
-        <a href="./attribute/crate.html" title="Crates" class="chapter  " data-progress="14.1" style="left: 31.25%;"></a>
+        <a href="./attribute/crate.html" title="Crates" class="chapter  " data-progress="14.1" style="left: 29.702970297029704%;"></a>
     
-        <a href="./attribute/cfg.html" title="`cfg`" class="chapter  " data-progress="14.2" style="left: 32.291666666666664%;"></a>
+        <a href="./attribute/cfg.html" title="`cfg`" class="chapter  " data-progress="14.2" style="left: 30.693069306930692%;"></a>
     
-        <a href="./attribute/cfg/custom.html" title="Custom" class="chapter  " data-progress="14.2.1" style="left: 33.333333333333336%;"></a>
+        <a href="./attribute/cfg/custom.html" title="Custom" class="chapter  " data-progress="14.2.1" style="left: 31.683168316831683%;"></a>
     
-        <a href="./tuples.html" title="Tuples" class="chapter  " data-progress="15" style="left: 34.375%;"></a>
+        <a href="./tuples.html" title="Tuples" class="chapter  " data-progress="15" style="left: 32.67326732673267%;"></a>
     
-        <a href="./match.html" title="Pattern matching" class="chapter  " data-progress="16" style="left: 35.416666666666664%;"></a>
+        <a href="./match.html" title="Pattern matching" class="chapter  " data-progress="16" style="left: 33.663366336633665%;"></a>
     
-        <a href="./match/guard.html" title="Destructuring and guards" class="chapter  " data-progress="16.1" style="left: 36.458333333333336%;"></a>
+        <a href="./match/guard.html" title="Destructuring and guards" class="chapter  " data-progress="16.1" style="left: 34.65346534653465%;"></a>
     
-        <a href="./structs.html" title="Structures" class="chapter  " data-progress="17" style="left: 37.5%;"></a>
+        <a href="./structs.html" title="Structures" class="chapter  " data-progress="17" style="left: 35.64356435643565%;"></a>
     
-        <a href="./structs/visibility.html" title="Visibility" class="chapter  " data-progress="17.1" style="left: 38.541666666666664%;"></a>
+        <a href="./structs/visibility.html" title="Visibility" class="chapter  " data-progress="17.1" style="left: 36.633663366336634%;"></a>
     
-        <a href="./generics.html" title="Generics" class="chapter  " data-progress="18" style="left: 39.583333333333336%;"></a>
+        <a href="./generics.html" title="Generics" class="chapter  " data-progress="18" style="left: 37.62376237623762%;"></a>
     
-        <a href="./box.html" title="Box, stack and heap" class="chapter  " data-progress="19" style="left: 40.625%;"></a>
+        <a href="./box.html" title="Box, stack and heap" class="chapter  " data-progress="19" style="left: 38.613861386138616%;"></a>
     
-        <a href="./raii.html" title="RAII" class="chapter  " data-progress="20" style="left: 41.666666666666664%;"></a>
+        <a href="./raii.html" title="RAII" class="chapter  " data-progress="20" style="left: 39.603960396039604%;"></a>
     
-        <a href="./move.html" title="Ownership and moves" class="chapter  " data-progress="21" style="left: 42.708333333333336%;"></a>
+        <a href="./move.html" title="Ownership and moves" class="chapter  " data-progress="21" style="left: 40.59405940594059%;"></a>
     
-        <a href="./move/mut.html" title="Mutability" class="chapter  " data-progress="21.1" style="left: 43.75%;"></a>
+        <a href="./move/mut.html" title="Mutability" class="chapter  " data-progress="21.1" style="left: 41.584158415841586%;"></a>
     
-        <a href="./borrow.html" title="Borrowing" class="chapter  " data-progress="22" style="left: 44.791666666666664%;"></a>
+        <a href="./borrow.html" title="Borrowing" class="chapter  " data-progress="22" style="left: 42.57425742574257%;"></a>
     
-        <a href="./borrow/mut.html" title="Mutability" class="chapter  " data-progress="22.1" style="left: 45.833333333333336%;"></a>
+        <a href="./borrow/mut.html" title="Mutability" class="chapter  " data-progress="22.1" style="left: 43.56435643564357%;"></a>
     
-        <a href="./borrow/freeze.html" title="Freezing" class="chapter  " data-progress="22.2" style="left: 46.875%;"></a>
+        <a href="./borrow/freeze.html" title="Freezing" class="chapter  " data-progress="22.2" style="left: 44.554455445544555%;"></a>
     
-        <a href="./borrow/alias.html" title="Aliasing" class="chapter  " data-progress="22.3" style="left: 47.916666666666664%;"></a>
+        <a href="./borrow/alias.html" title="Aliasing" class="chapter  " data-progress="22.3" style="left: 45.54455445544554%;"></a>
     
-        <a href="./borrow/ref.html" title="The ref pattern" class="chapter  " data-progress="22.4" style="left: 48.958333333333336%;"></a>
+        <a href="./borrow/ref.html" title="The ref pattern" class="chapter  " data-progress="22.4" style="left: 46.53465346534654%;"></a>
     
-        <a href="./lifetime.html" title="Lifetimes" class="chapter  " data-progress="23" style="left: 50%;"></a>
+        <a href="./lifetime.html" title="Lifetimes" class="chapter  " data-progress="23" style="left: 47.524752475247524%;"></a>
     
-        <a href="./lifetime/borrow.html" title="The borrow checker" class="chapter  " data-progress="23.1" style="left: 51.041666666666664%;"></a>
+        <a href="./lifetime/borrow.html" title="The borrow checker" class="chapter  " data-progress="23.1" style="left: 48.51485148514851%;"></a>
     
-        <a href="./lifetime/fn.html" title="Functions" class="chapter  " data-progress="23.2" style="left: 52.083333333333336%;"></a>
+        <a href="./lifetime/fn.html" title="Functions" class="chapter  " data-progress="23.2" style="left: 49.504950495049506%;"></a>
     
-        <a href="./lifetime/struct.html" title="Structs" class="chapter  " data-progress="23.3" style="left: 53.125%;"></a>
+        <a href="./lifetime/struct.html" title="Structs" class="chapter  " data-progress="23.3" style="left: 50.495049504950494%;"></a>
     
-        <a href="./constants.html" title="Global constants" class="chapter  " data-progress="24" style="left: 54.166666666666664%;"></a>
+        <a href="./constants.html" title="Global constants" class="chapter  " data-progress="24" style="left: 51.48514851485149%;"></a>
     
-        <a href="./methods.html" title="Methods" class="chapter  " data-progress="25" style="left: 55.208333333333336%;"></a>
+        <a href="./methods.html" title="Methods" class="chapter  " data-progress="25" style="left: 52.475247524752476%;"></a>
     
-        <a href="./enum.html" title="Enums" class="chapter  " data-progress="26" style="left: 56.25%;"></a>
+        <a href="./enum.html" title="Enums" class="chapter  " data-progress="26" style="left: 53.46534653465346%;"></a>
     
-        <a href="./enum/c-like.html" title="C-like" class="chapter  " data-progress="26.1" style="left: 57.291666666666664%;"></a>
+        <a href="./enum/c-like.html" title="C-like" class="chapter  " data-progress="26.1" style="left: 54.45544554455446%;"></a>
     
-        <a href="./fail.html" title="`fail!`" class="chapter  " data-progress="27" style="left: 58.333333333333336%;"></a>
+        <a href="./fail.html" title="`fail!`" class="chapter  " data-progress="27" style="left: 55.445544554455445%;"></a>
     
-        <a href="./option.html" title="`Option`" class="chapter  " data-progress="28" style="left: 59.375%;"></a>
+        <a href="./option.html" title="`Option`" class="chapter  " data-progress="28" style="left: 56.43564356435643%;"></a>
     
-        <a href="./array.html" title="Arrays and Slices" class="chapter  " data-progress="29" style="left: 60.416666666666664%;"></a>
+        <a href="./array.html" title="Arrays and Slices" class="chapter  " data-progress="29" style="left: 57.42574257425743%;"></a>
     
-        <a href="./trait.html" title="Traits" class="chapter  " data-progress="30" style="left: 61.458333333333336%;"></a>
+        <a href="./trait.html" title="Traits" class="chapter  " data-progress="30" style="left: 58.415841584158414%;"></a>
     
-        <a href="./trait/deriving.html" title="Deriving" class="chapter  " data-progress="30.1" style="left: 62.5%;"></a>
+        <a href="./trait/deriving.html" title="Deriving" class="chapter  " data-progress="30.1" style="left: 59.40594059405941%;"></a>
     
-        <a href="./ops.html" title="Operator Overloading" class="chapter  " data-progress="31" style="left: 63.541666666666664%;"></a>
+        <a href="./ops.html" title="Operator Overloading" class="chapter  " data-progress="31" style="left: 60.396039603960396%;"></a>
     
-        <a href="./bounds.html" title="Bounds" class="chapter  " data-progress="32" style="left: 64.58333333333333%;"></a>
+        <a href="./bounds.html" title="Bounds" class="chapter  " data-progress="32" style="left: 61.386138613861384%;"></a>
     
-        <a href="./drop.html" title="Drop" class="chapter  " data-progress="33" style="left: 65.625%;"></a>
+        <a href="./drop.html" title="Drop" class="chapter  " data-progress="33" style="left: 62.37623762376238%;"></a>
     
-        <a href="./iter.html" title="Iterators" class="chapter  " data-progress="34" style="left: 66.66666666666667%;"></a>
+        <a href="./iter.html" title="Iterators" class="chapter  " data-progress="34" style="left: 63.366336633663366%;"></a>
     
-        <a href="./closures.html" title="Closures" class="chapter  " data-progress="35" style="left: 67.70833333333333%;"></a>
+        <a href="./closures.html" title="Closures" class="chapter  " data-progress="35" style="left: 64.35643564356435%;"></a>
     
-        <a href="./hof.html" title="Higher Order Functions" class="chapter  " data-progress="36" style="left: 68.75%;"></a>
+        <a href="./hof.html" title="Higher Order Functions" class="chapter  " data-progress="36" style="left: 65.34653465346534%;"></a>
     
-        <a href="./vec.html" title="Vectors" class="chapter  " data-progress="37" style="left: 69.79166666666667%;"></a>
+        <a href="./vec.html" title="Vectors" class="chapter  " data-progress="37" style="left: 66.33663366336634%;"></a>
     
-        <a href="./str.html" title="Strings" class="chapter  " data-progress="38" style="left: 70.83333333333333%;"></a>
+        <a href="./str.html" title="Strings" class="chapter  " data-progress="38" style="left: 67.32673267326733%;"></a>
     
-        <a href="./clone.html" title="Clone" class="chapter  " data-progress="39" style="left: 71.875%;"></a>
+        <a href="./clone.html" title="Clone" class="chapter  " data-progress="39" style="left: 68.31683168316832%;"></a>
     
-        <a href="./tasks.html" title="Tasks" class="chapter  " data-progress="40" style="left: 72.91666666666667%;"></a>
+        <a href="./tasks.html" title="Tasks" class="chapter  " data-progress="40" style="left: 69.3069306930693%;"></a>
     
-        <a href="./channels.html" title="Channels" class="chapter  " data-progress="41" style="left: 73.95833333333333%;"></a>
+        <a href="./channels.html" title="Channels" class="chapter  " data-progress="41" style="left: 70.29702970297029%;"></a>
     
-        <a href="./timers.html" title="Timers" class="chapter  " data-progress="42" style="left: 75%;"></a>
+        <a href="./timers.html" title="Timers" class="chapter  " data-progress="42" style="left: 71.2871287128713%;"></a>
     
-        <a href="./sockets.html" title="Unix sockets" class="chapter  " data-progress="43" style="left: 76.04166666666667%;"></a>
+        <a href="./sockets.html" title="Unix sockets" class="chapter  " data-progress="43" style="left: 72.27722772277228%;"></a>
     
-        <a href="./result.html" title="`Result`" class="chapter  " data-progress="44" style="left: 77.08333333333333%;"></a>
+        <a href="./result.html" title="`Result`" class="chapter  " data-progress="44" style="left: 73.26732673267327%;"></a>
     
-        <a href="./result/try.html" title="`try!`" class="chapter  " data-progress="44.1" style="left: 78.125%;"></a>
+        <a href="./result/try.html" title="`try!`" class="chapter  " data-progress="44.1" style="left: 74.25742574257426%;"></a>
     
-        <a href="./path.html" title="Path" class="chapter  " data-progress="45" style="left: 79.16666666666667%;"></a>
+        <a href="./path.html" title="Path" class="chapter  " data-progress="45" style="left: 75.24752475247524%;"></a>
     
-        <a href="./file.html" title="File I/O" class="chapter  " data-progress="46" style="left: 80.20833333333333%;"></a>
+        <a href="./file.html" title="File I/O" class="chapter  " data-progress="46" style="left: 76.23762376237623%;"></a>
     
-        <a href="./file/open.html" title="`open`" class="chapter  " data-progress="46.1" style="left: 81.25%;"></a>
+        <a href="./file/open.html" title="`open`" class="chapter  " data-progress="46.1" style="left: 77.22772277227723%;"></a>
     
-        <a href="./file/create.html" title="`create`" class="chapter  " data-progress="46.2" style="left: 82.29166666666667%;"></a>
+        <a href="./file/create.html" title="`create`" class="chapter  " data-progress="46.2" style="left: 78.21782178217822%;"></a>
     
-        <a href="./process.html" title="Child processes" class="chapter  " data-progress="47" style="left: 83.33333333333333%;"></a>
+        <a href="./process.html" title="Child processes" class="chapter  " data-progress="47" style="left: 79.20792079207921%;"></a>
     
-        <a href="./process/pipe.html" title="Pipes" class="chapter  " data-progress="47.1" style="left: 84.375%;"></a>
+        <a href="./process/pipe.html" title="Pipes" class="chapter  " data-progress="47.1" style="left: 80.1980198019802%;"></a>
     
-        <a href="./process/wait.html" title="Wait" class="chapter  " data-progress="47.2" style="left: 85.41666666666667%;"></a>
+        <a href="./process/wait.html" title="Wait" class="chapter  " data-progress="47.2" style="left: 81.18811881188118%;"></a>
     
-        <a href="./fs.html" title="Filesystem Operations" class="chapter  " data-progress="48" style="left: 86.45833333333333%;"></a>
+        <a href="./fs.html" title="Filesystem Operations" class="chapter  " data-progress="48" style="left: 82.17821782178218%;"></a>
     
-        <a href="./staging.html" title="Staging Area" class="chapter  " data-progress="49" style="left: 87.5%;"></a>
+        <a href="./staging.html" title="Staging Area" class="chapter  " data-progress="49" style="left: 83.16831683168317%;"></a>
     
-        <a href="./staging/bench.html" title="Benchmarking" class="chapter  " data-progress="49.1" style="left: 88.54166666666667%;"></a>
+        <a href="./staging/bench.html" title="Benchmarking" class="chapter  " data-progress="49.1" style="left: 84.15841584158416%;"></a>
     
-        <a href="./staging/ffi.html" title="Foreign Function Interface" class="chapter  " data-progress="49.2" style="left: 89.58333333333333%;"></a>
+        <a href="./staging/ffi.html" title="Foreign Function Interface" class="chapter  " data-progress="49.2" style="left: 85.14851485148515%;"></a>
     
-        <a href="./staging/macros.html" title="macro_rules!" class="chapter  " data-progress="49.3" style="left: 90.625%;"></a>
+        <a href="./staging/macros.html" title="macro_rules!" class="chapter  " data-progress="49.3" style="left: 86.13861386138613%;"></a>
     
-        <a href="./staging/rand.html" title="Random" class="chapter  " data-progress="49.4" style="left: 91.66666666666667%;"></a>
+        <a href="./staging/rand.html" title="Random" class="chapter  " data-progress="49.4" style="left: 87.12871287128714%;"></a>
     
-        <a href="./staging/simd.html" title="SIMD" class="chapter  " data-progress="49.5" style="left: 92.70833333333333%;"></a>
+        <a href="./staging/simd.html" title="SIMD" class="chapter  " data-progress="49.5" style="left: 88.11881188118812%;"></a>
     
-        <a href="./staging/test.html" title="Testing" class="chapter  " data-progress="49.6" style="left: 93.75%;"></a>
+        <a href="./staging/test.html" title="Testing" class="chapter  " data-progress="49.6" style="left: 89.10891089108911%;"></a>
     
-        <a href="./staging/unsafe.html" title="Unsafe operations" class="chapter  " data-progress="49.7" style="left: 94.79166666666667%;"></a>
+        <a href="./staging/unsafe.html" title="Unsafe operations" class="chapter  " data-progress="49.7" style="left: 90.0990099009901%;"></a>
     
-        <a href="./staging/json.html" title="JSON parsing" class="chapter  " data-progress="49.8" style="left: 95.83333333333333%;"></a>
+        <a href="./staging/json.html" title="JSON parsing" class="chapter  " data-progress="49.8" style="left: 91.08910891089108%;"></a>
     
-        <a href="./staging/json/json-enum.html" title="`Json`" class="chapter  " data-progress="49.8.1" style="left: 96.875%;"></a>
+        <a href="./staging/json/json-enum.html" title="`Json`" class="chapter  " data-progress="49.8.1" style="left: 92.07920792079207%;"></a>
     
-        <a href="./staging/json/decodable.html" title="`Decodable`" class="chapter  " data-progress="49.8.2" style="left: 97.91666666666667%;"></a>
+        <a href="./staging/json/decodable.html" title="`Decodable`" class="chapter  " data-progress="49.8.2" style="left: 93.06930693069307%;"></a>
     
-        <a href="./staging/json/encodable.html" title="`Encodable`" class="chapter  " data-progress="49.8.3" style="left: 98.95833333333333%;"></a>
+        <a href="./staging/json/encodable.html" title="`Encodable`" class="chapter  " data-progress="49.8.3" style="left: 94.05940594059406%;"></a>
+    
+        <a href="./staging/fmt.html" title="Formatting" class="chapter  " data-progress="49.9" style="left: 95.04950495049505%;"></a>
+    
+        <a href="./staging/hash.html" title="HashMap" class="chapter  " data-progress="49.10" style="left: 96.03960396039604%;"></a>
+    
+        <a href="./staging/hash/alt-key-types.html" title="Alternate/custom key types" class="chapter  " data-progress="49.10.1" style="left: 97.02970297029702%;"></a>
+    
+        <a href="./staging/hash/hashset.html" title="HashSet" class="chapter  " data-progress="49.10.2" style="left: 98.01980198019803%;"></a>
+    
+        <a href="./staging/hash/smallintmap.html" title="SmallIntMap" class="chapter  " data-progress="49.10.3" style="left: 99.00990099009901%;"></a>
     
         <a href="./todo.html" title="TODO" class="chapter  " data-progress="50" style="left: 100%;"></a>
     
@@ -2186,7 +2270,7 @@ be checked at compile time.</p>
     
 
     
-    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     
