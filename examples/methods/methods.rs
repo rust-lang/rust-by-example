@@ -46,7 +46,7 @@ impl Rectangle {
 
     // This method requires the caller object to be mutable
     // `&mut self` desugars to `self: &mut Self`
-    fn move(&mut self, x: f64, y: f64) {
+    fn translate(&mut self, x: f64, y: f64) {
         self.p1.x += x;
         self.p2.x += x;
 
@@ -91,11 +91,11 @@ fn main() {
 
     // Error! `rectangle` is immutable, but this method requires a mutable
     // object
-    //rectangle.move(1.0, 0.0);
+    //rectangle.translate(1.0, 0.0);
     // TODO ^ Try uncommenting this line
 
     // Ok, mutable object can call mutable methods
-    square.move(1.0, 1.0);
+    square.translate(1.0, 1.0);
 
     let pair = Pair(box 1, box 2);
 
