@@ -1,11 +1,11 @@
-use std::io::UserRWX;
+use std::io::USER_RWX;
 use std::io::fs;
 use std::io::process::{Command,ProcessOutput};
 use std::io::{File,Truncate,Write};
 use std::os;
 
 pub fn mkdir(path: &Path) {
-    match fs::mkdir_recursive(path, UserRWX) {
+    match fs::mkdir_recursive(path, USER_RWX) {
         Err(_) => {},
         Ok(_) => {},
     }
