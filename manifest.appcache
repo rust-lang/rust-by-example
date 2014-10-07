@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1411702417652
+# Revision 1412694805857
 
 CACHE:
 loop.html
@@ -9,9 +9,9 @@ attribute/cfg/custom.html
 attribute/cfg.html
 attribute/crate.html
 attribute.html
-borrow/alias.html
 borrow/freeze.html
 borrow/mut.html
+borrow/alias.html
 borrow/ref.html
 borrow.html
 bounds.html
@@ -20,8 +20,8 @@ channels.html
 clone.html
 closures.html
 constants.html
-crates/link.html
 crates/lib.html
+crates/link.html
 crates.html
 drop.html
 enum/c-like.html

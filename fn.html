@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="." data-revision="1411702417651">
+    <div class="book" data-github="japaric/rust-by-example" data-level="11" data-basepath="." data-revision="1412694805857">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2214,7 +2214,13 @@ from within the function, even from inside loops or ifs.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// Function that returns a boolean value
+<div id="editor">// Unlike C/C++, there&#39;s no restriction on the order of function definitions
+fn main() {
+    // We can use this function here, and define it somewhere later
+    fizzbuzz&#95;to(100);
+}
+
+// Function that returns a boolean value
 fn is&#95;divisible&#95;by(lhs: uint, rhs: uint) -&gt; bool {
     // Corner case, early return
     if rhs == 0 {
@@ -2244,10 +2250,6 @@ fn fizzbuzz&#95;to(n: uint) {
     for n in range(1, n + 1) {
         fizzbuzz(n);
     }
-}
-
-fn main() {
-    fizzbuzz&#95;to(100);
 }</div>
 <div id="result"></div>
 </div>

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="25" data-basepath="." data-revision="1411702417651">
+    <div class="book" data-github="japaric/rust-by-example" data-level="25" data-basepath="." data-revision="1412694805857">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2258,7 +2258,7 @@ impl Rectangle {
 
     // This method requires the caller object to be mutable
     // &#96;&amp;mut self&#96; desugars to &#96;self: &amp;mut Self&#96;
-    fn move(&amp;mut self, x: f64, y: f64) {
+    fn translate(&amp;mut self, x: f64, y: f64) {
         self.p1.x += x;
         self.p2.x += x;
 
@@ -2303,11 +2303,11 @@ fn main() {
 
     // Error! &#96;rectangle&#96; is immutable, but this method requires a mutable
     // object
-    //rectangle.move(1.0, 0.0);
+    //rectangle.translate(1.0, 0.0);
     // TODO ^ Try uncommenting this line
 
     // Ok, mutable object can call mutable methods
-    square.move(1.0, 1.0);
+    square.translate(1.0, 1.0);
 
     let pair = Pair(box 1, box 2);
 

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="48" data-basepath="." data-revision="1411702417651">
+    <div class="book" data-github="japaric/rust-by-example" data-level="48" data-basepath="." data-revision="1412694805857">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2211,7 +2211,7 @@ module contains several functions that deal with the filesystem.</p>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">use std::io::fs;
 use std::io::fs::PathExtensions;
-use std::io::{File,IoResult,UserRWX};
+use std::io::{File, IoResult, USER&#95;RWX};
 
 // A simple implementation of &#96;<script type="math/tex">cat path&#96;
 fn cat(path: &Path) -&gt; IoResult&lt;String&gt; {
@@ -2235,7 +2235,7 @@ fn touch(path: &amp;Path) -&gt; IoResult&lt;()&gt; {
 fn main() {
     println!(&quot;&#96;mkdir a&#96;&quot;);
     // Create a directory, returns &#96;IoResult&lt;()&gt;&#96;
-    match fs::mkdir(&amp;Path::new(&quot;a&quot;), UserRWX) {
+    match fs::mkdir(&amp;Path::new(&quot;a&quot;), USER&#95;RWX) {
         Err(why) =&gt; println!(&quot;! {}&quot;, why.kind),
         Ok(&#95;) =&gt; {},
     }
@@ -2248,7 +2248,7 @@ fn main() {
 
     println!(&quot;&#96;mkdir -p a/c/d&#96;&quot;);
     // Recursively create a directory, returns &#96;IoResult&lt;()&gt;&#96;
-    fs::mkdir&#95;recursive(&amp;Path::new(&quot;a/c/d&quot;), UserRWX).unwrap&#95;or&#95;else(|why| {
+    fs::mkdir&#95;recursive(&amp;Path::new(&quot;a/c/d&quot;), USER&#95;RWX).unwrap&#95;or&#95;else(|why| {
         println!(&quot;! {}&quot;, why.kind);
     });
 

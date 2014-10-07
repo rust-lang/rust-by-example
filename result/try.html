@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="44.1" data-basepath=".." data-revision="1411702417651">
+    <div class="book" data-github="japaric/rust-by-example" data-level="44.1" data-basepath=".." data-revision="1412694805857">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2206,8 +2206,8 @@
                         <h2 id="441-try">44.1 <code>try!</code></h2>
 <p>Chaining results using match can get pretty untidy; luckily, the <code>try!</code> macro
 can be used to make things pretty again. The <code>try!</code> macro expands to a match
-expression, where the <code>Err(err)</code> branch expands to an early <code>return err</code>, and
-the <code>Ok(ok)</code> branch expands to an <code>ok</code> expression.</p>
+expression, where the <code>Err(err)</code> branch expands to an early <code>return Err(err)</code>,
+and the <code>Ok(ok)</code> branch expands to an <code>ok</code> expression.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
