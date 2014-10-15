@@ -1,16 +1,16 @@
 #![feature(macro_rules)]
 
-// min! will calculate the minimum of any number of arguments
+// It's common to use recursion to handle indefinite arity
 macro_rules! min {
     // base case
     ($x:expr) => {
         $x
     };
-    // `$x` followed by at least one `$y,`
+    // `$x` followed by at least another `expr`
     ($x:expr, $($y:expr),+) => {
-        // call min! on the tail `$y`
+        // Recursion! Call `min!` on the tail
         std::cmp::min($x, min!($($y),+))
-    }
+    };
 }
 
 fn main() {

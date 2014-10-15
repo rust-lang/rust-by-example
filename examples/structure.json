@@ -103,7 +103,15 @@
   { "id": "staging", "title": "Staging Area", "children": [
     { "id": "bench", "title": "Benchmarking", "children": null  },
     { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
-    { "id": "macros", "title": "macro_rules!", "children": null  },
+    { "id": "macros", "title": "macro_rules!", "children": [
+      { "id": "expand", "title": "Expansion", "children": null },
+      { "id": "arguments", "title": "Designators", "children": null },
+      { "id": "arity", "title": "Arity", "children": null },
+      { "id": "repetition", "title": "Repetition", "children": null },
+      { "id": "separators", "title": "Separators", "children": null },
+      { "id": "dry", "title": "DRY", "children": null },
+      { "id": "export", "title": "Export", "children": null }
+  ] },
     { "id": "rand", "title": "Random", "children": null  },
     { "id": "simd", "title": "SIMD", "children": null  },
     { "id": "test", "title": "Testing", "children": null  },
