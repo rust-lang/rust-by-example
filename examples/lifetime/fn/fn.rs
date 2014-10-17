@@ -40,6 +40,9 @@ fn main() {
 
     println!("Before: {}", triplet);
 
+    *triplet.mut_one() = 0;
+    println!("After: {}", triplet);
+
     // Use mutable reference to modify the original struct
     *triplet.mut_three() = 0;
 
