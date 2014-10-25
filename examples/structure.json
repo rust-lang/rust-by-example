@@ -103,7 +103,13 @@
   { "id": "staging", "title": "Staging Area", "children": [
     { "id": "bench", "title": "Benchmarking", "children": null  },
     { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
-    { "id": "macros", "title": "macro_rules!", "children": null  },
+    { "id": "macros", "title": "macro_rules!", "children": [
+      { "id": "arguments", "title": "Arguments and designators", "children": null },
+      { "id": "variable_args", "title": "Variadic macros", "children": null },
+      { "id": "separators", "title": "Variable separator options", "children": null },
+      { "id": "repetition", "title": "Repetition and expansion", "children": null },
+      { "id": "test_suite", "title": "Generating generic test suite implementations", "children": null }
+  ] },
     { "id": "rand", "title": "Random", "children": null  },
     { "id": "simd", "title": "SIMD", "children": null  },
     { "id": "test", "title": "Testing", "children": null  },
