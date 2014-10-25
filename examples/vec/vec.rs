@@ -20,11 +20,11 @@ fn main() {
     println!("Vector size: {}", xs.len());
 
     // Indexing is done using the `get` method (indexing starts at 0)
-    println!("Second element: {}", xs.get(1));
+    println!("Second element: {}", xs[1]);
 
     // `pop` removes the last element from the vector and returns it
     println!("Pop last element: {}", xs.pop());
 
     // Out of bounds indexing yields a task failure
-    println!("Fourth element: {}", xs.get(3));
+    println!("Fourth element: {}", xs[3]);
 }
