@@ -16,7 +16,7 @@ macro_rules! op {
         fn $func<T: $bound<T, T>>(xs: &mut Vec<T>, ys: &Vec<T>) {
             assert_equal_len!(xs, ys, $func, $op);
 
-            for (x, y) in xs.mut_iter().zip(ys.iter()) {
+            for (x, y) in xs.iter_mut().zip(ys.iter()) {
                 *x = x.$method(y);
             }
         }
