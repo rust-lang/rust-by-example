@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="37" data-basepath="." data-revision="1412694805857">
+    <div class="book" data-github="japaric/rust-by-example" data-level="37" data-basepath="." data-revision="1414286571181">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2234,14 +2234,14 @@ be surpassed, the vector gets reallocated with a bigger capacity.</p>
     // The &#96;len&#96; method yields the current size of the vector
     println!(&quot;Vector size: {}&quot;, xs.len());
 
-    // Indexing is done using the &#96;get&#96; method (indexing starts at 0)
-    println!(&quot;Second element: {}&quot;, xs.get(1));
+    // Indexing is done using the square brackets (indexing starts at 0)
+    println!(&quot;Second element: {}&quot;, xs[1]);
 
     // &#96;pop&#96; removes the last element from the vector and returns it
     println!(&quot;Pop last element: {}&quot;, xs.pop());
 
     // Out of bounds indexing yields a task failure
-    println!(&quot;Fourth element: {}&quot;, xs.get(3));
+    println!(&quot;Fourth element: {}&quot;, xs[3]);
 }</div>
 <div id="result"></div>
 </div>
