@@ -6,7 +6,7 @@ struct Pair<T> {
 
 // A generic function
 fn swap<T>(pair: Pair<T>) -> Pair<T> {
-    let Pair { first: first, second: second } = pair;
+    let Pair { first, second } = pair;
 
     Pair { first: second, second: first }
 }
