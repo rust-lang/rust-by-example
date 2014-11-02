@@ -28,6 +28,6 @@ fn main() {
     println!("borrow a section of the array as a slice");
     analyze_slice(xs.slice(1, 4));
 
-    // Out of bound indexing yields a task failure
+    // Out of bound indexing yields a task panic
     println!("{}", xs[5]);
 }
