@@ -32,4 +32,4 @@ let ref_to_int: &int = &integer;
 Because the compiler keeps track of the lifetime of referenced objects in the
 type system, it can avoid several memory bugs.
 
-Haven't grok what is a lifetime yet? Don't dismay! See the next page
+Haven't grokked what a lifetime is yet? Don't dismay! See the next page.
