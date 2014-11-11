@@ -41,11 +41,11 @@ mod checked {
 fn op(x: f64, y: f64) -> f64 {
     // This is a three level match pyramid!
     match checked::div(x, y) {
-        Err(why) => fail!("{}", why),
+        Err(why) => panic!("{}", why),
         Ok(ratio) => match checked::ln(ratio) {
-            Err(why) => fail!("{}", why),
+            Err(why) => panic!("{}", why),
             Ok(ln) => match checked::sqrt(ln) {
-                Err(why) => fail!("{}", why),
+                Err(why) => panic!("{}", why),
                 Ok(sqrt) => sqrt,
             },
         },
