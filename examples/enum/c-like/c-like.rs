@@ -1,4 +1,5 @@
 // enum with implicit discriminator (starts at 0)
+#[allow(dead_code)]
 enum Day {
     Monday,
     Tuesday,
@@ -20,6 +21,7 @@ impl Day {
 }
 
 // enum with explicit discriminator
+#[allow(dead_code)]
 enum Color {
     Red = 0xff0000,
     Green = 0x00ff00,
