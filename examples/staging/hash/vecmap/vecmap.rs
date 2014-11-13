@@ -1,4 +1,4 @@
-use std::collections::SmallIntMap;
+use std::collections::VecMap;
 
 struct Tenant<'a> {
     name: &'a str,
@@ -7,7 +7,7 @@ struct Tenant<'a> {
 
 fn main() {
     // Start with 5 apartments
-    let mut apartments = SmallIntMap::with_capacity(5);
+    let mut apartments = VecMap::with_capacity(5);
 
     // The compiler infers 1 as uint
     apartments.insert(1, Tenant {
@@ -25,8 +25,8 @@ fn main() {
         phone: "555-5467",
     });
 
-    apartments.pop(&1);
-    match apartments.find_mut(&3) {
+    apartments.remove(&1);
+    match apartments.get_mut(&3) {
         Some(henrietta) => henrietta.name = "David and Henrietta Smith",
         _ => println!("Oh no! Where did David and Henrietta go?"),
     }

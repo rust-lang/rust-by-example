@@ -13,12 +13,12 @@ pub struct Example {
 impl Example {
     pub fn get_list() -> Vec<Example> {
         match file::read(&Path::new("examples/structure.json")) {
-            Err(why) => fail!("{}", why),
+            Err(why) => panic!("{}", why),
             Ok(string) => match json::from_str(string.as_slice()) {
-                Err(_) => fail!("structure.json is not valid json"),
+                Err(_) => panic!("structure.json is not valid json"),
                 Ok(json) => {
                     match Decodable::decode(&mut json::Decoder::new(json)) {
-                        Err(_) => fail!("error decoding structure.json"),
+                        Err(_) => panic!("error decoding structure.json"),
                         Ok(examples) => examples,
                     }
                 }

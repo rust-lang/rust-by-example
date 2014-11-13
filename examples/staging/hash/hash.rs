@@ -19,7 +19,7 @@ fn main() {
     contacts.insert("Robert", "956-1745");
 
     // Takes a reference and returns Option<&V>
-    match contacts.find(&("Daniel")) {
+    match contacts.get(&("Daniel")) {
         Some(&number) => println!("Calling Daniel: {}", call(number)),
         _ => println!("Don't have Daniel's number."),
     }
@@ -28,7 +28,7 @@ fn main() {
     // if the inserted value is new, false otherwise
     contacts.insert("Daniel", "164-6743");
 
-    match contacts.find(&("Ashley")) {
+    match contacts.get(&("Ashley")) {
         Some(&number) => println!("Calling Ashley: {}", call(number)),
         _ => println!("Don't have Ashley's number."),
     }

@@ -68,7 +68,7 @@
   { "id": "enum", "title": "Enums", "children": [
       { "id": "c-like", "title": "C-like", "children": null }
   ] },
-  { "id": "fail", "title": "`fail!`", "children": null },
+  { "id": "fail", "title": "`panic!`", "children": null },
   { "id": "option", "title": "`Option`", "children": null },
   { "id": "array", "title": "Arrays and Slices", "children": null },
   { "id": "trait", "title": "Traits", "children": [
