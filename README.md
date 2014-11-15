@@ -3,7 +3,7 @@
 
 ## 中文版译者注意
 
-请直接翻译修改 examples 目录及其子目录内的 input_zh-CN.md 文件。尽量不要改其他文件，以方便合并来自 upstream 的更新。
+请直接翻译修改 examples 目录及其子目录内的 input_zh-CN.md 文件。尽量不要改其他文件，以方便合并来自 upstream 的更新。今后我们对 src 目录内的代码稍加修改就能生成中文版文档（代码已经初步完成，稍后提交到此仓库的非master分支）。—— Liigo。
 
 ## What's this?
 
