@@ -1,8 +1,5 @@
-The `println!` macro not only prints to the console, but is also capable of
-formatting text and stringifying values. Plus, the formatting correctness will
-be checked at compile time.
+宏 `println!` 不仅仅是向控制台输出，还负责格式化文本和把其他非文本值转换为文本，并在编译期间执行格式检查。
 
 {print.play}
 
-For more information about formatting, take a look at
-[std::fmt](http://doc.rust-lang.org/std/fmt/).
+在 [std::fmt](http://doc.rust-lang.org/std/fmt/) 文档中能找到有关格式化文本的更多信息。
