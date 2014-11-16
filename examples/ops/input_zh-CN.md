@@ -1,6 +1,6 @@
-ÔÚ Rust ÓïÑÔÖÐ£¬Ðí¶àÔËËã·û£¨Operators£©¶¼ÄÜÍ¨¹ý½Ó¿Ú£¨Traits£©ÖØÔØ¡£ÕâÊÇÒòÎªÔËËã·ûÖ»ÊÇ·½·¨µ÷ÓÃµÄÓï·¨ÌÇ¡£
-ÀýÈç£¬`a + b` ±»µ±×÷ `a.add(&b)` ´¦Àí¡£ÕâÀïµÄ `add` ·½·¨ÊÇ½Ó¿Ú `Add` µÄÒ»²¿·Ö£¬ËùÓÐ `Add` ½Ó¿ÚµÄÊµÏÖÕß¶¼ÄÜÊ¹ÓÃ `+` ÔËËã·û¡£
+åœ¨ Rust è¯­è¨€ä¸­ï¼Œè®¸å¤šè¿ç®—ç¬¦ï¼ˆOperatorsï¼‰éƒ½èƒ½é€šè¿‡æŽ¥å£ï¼ˆTraitsï¼‰é‡è½½ã€‚è¿™æ˜¯å› ä¸ºè¿ç®—ç¬¦åªæ˜¯æ–¹æ³•è°ƒç”¨çš„è¯­æ³•ç³–ã€‚
+ä¾‹å¦‚ï¼Œ`a + b` è¢«å½“ä½œ `a.add(&b)` å¤„ç†ã€‚è¿™é‡Œçš„ `add` æ–¹æ³•æ˜¯æŽ¥å£ `Add` çš„ä¸€éƒ¨åˆ†ï¼Œæ‰€æœ‰ `Add` æŽ¥å£çš„å®žçŽ°è€…éƒ½èƒ½ä½¿ç”¨ `+` è¿ç®—ç¬¦ã€‚
 
 {operator.play}
 
-ÍêÕûµÄ¿ÉÖØÔØÔËËã·û½Ó¿ÚÁÐ±í¿É²Î¼û£º[ops](http://doc.rust-lang.org/core/ops/)¡£
+å®Œæ•´çš„å¯é‡è½½è¿ç®—ç¬¦æŽ¥å£åˆ—è¡¨å¯å‚è§ï¼š[ops](http://doc.rust-lang.org/core/ops/)ã€‚

@@ -1,4 +1,4 @@
-±äÁ¿¾ßÓĞ¾Ö²¿×÷ÓÃÓò£¬±»ÏŞÖÆÔÚÆäËùÊôµÄ´úÂë¿é£¨block£©ÄÚ¡££¨´úÂë¿éÖ¸±»»¨À¨ºÅ{}Î§×¡µÄÓï¾ä×éºÏ¡££©
-RustÔÊĞí[±äÁ¿ÆÁ±Î£¨variable shadowing£©](https://en.wikipedia.org/wiki/Variable_shadowing)¡£
+å˜é‡å…·æœ‰å±€éƒ¨ä½œç”¨åŸŸï¼Œè¢«é™åˆ¶åœ¨å…¶æ‰€å±çš„ä»£ç å—ï¼ˆblockï¼‰å†…ã€‚ï¼ˆä»£ç å—æŒ‡è¢«èŠ±æ‹¬å·{}å›´ä½çš„è¯­å¥ç»„åˆã€‚ï¼‰
+Rustå…è®¸[å˜é‡å±è”½ï¼ˆvariable shadowingï¼‰](https://en.wikipedia.org/wiki/Variable_shadowing)ã€‚
 
 {scope.play}

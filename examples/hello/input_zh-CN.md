@@ -1,16 +1,16 @@
-ÕâÊÇÒ»¸ö´«Í³µÄ Hello World ³ÌÐòµÄÔ´´úÂë£º
+è¿™æ˜¯ä¸€ä¸ªä¼ ç»Ÿçš„ Hello World ç¨‹åºçš„æºä»£ç ï¼š
 
 {hello.play}
 
-`println!` ÊÇÒ»¸ö *ºê£¨Macro£©* £¨ºóÃæ»áÏêÏ¸½âÊÍ£©£¬ÓÃÓÚÊä³öÎÄ±¾µ½¿ØÖÆÌ¨£¨Console£©¡£
+`println!` æ˜¯ä¸€ä¸ª *å®ï¼ˆMacroï¼‰* ï¼ˆåŽé¢ä¼šè¯¦ç»†è§£é‡Šï¼‰ï¼Œç”¨äºŽè¾“å‡ºæ–‡æœ¬åˆ°æŽ§åˆ¶å°ï¼ˆConsoleï¼‰ã€‚
 
-Ê¹ÓÃ Rust ±àÒëÆ÷ `rust` ±àÒë¸ÃÔ´´úÂëÉú³É¿ÉÖ´ÐÐÎÄ¼þ£º
+ä½¿ç”¨ Rust ç¼–è¯‘å™¨ `rust` ç¼–è¯‘è¯¥æºä»£ç ç”Ÿæˆå¯æ‰§è¡Œæ–‡ä»¶ï¼š
 
 ```
 $ rustc hello.rs
 ```
 
-ÉÏÊöÃüÁî½«Éú³É¿ÉÖ´ÐÐÎÄ¼þ `hello`¡£
+ä¸Šè¿°å‘½ä»¤å°†ç”Ÿæˆå¯æ‰§è¡Œæ–‡ä»¶ `hello`ã€‚
 
 ```
 $ ./hello
