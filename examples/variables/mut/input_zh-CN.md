@@ -1,6 +1,5 @@
-Variables are immutable by default, but this can be overridden using the `mut`
-modifier.
+变量默认是不可变（immutable）的。添加 `mut` 关键字可将变量定义为可变的（mutable）。
 
 {mut.play}
 
-The compiler will throw a detailed diagnostic about mutability errors.
+编译器将对变量的可变性给出详细的诊断。

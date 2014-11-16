@@ -1,7 +1,5 @@
-It's possible to declare variables first, and initialize them later. But, this
-form is seldom used, as it may lead to the use of uninitialized variables.
+可以先声明变量，然后再初始化。但是不常见，因为这样会导致用到未初始化的变量。
 
 {declare.play}
 
-The compiler forbids use of uninitialized variables, as this would lead to
-undefined behavior.
+Rust编译器禁止使用未初始化的变量，因为未初始化变量将导致未定义行为。
