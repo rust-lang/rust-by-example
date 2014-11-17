@@ -1,4 +1,3 @@
-Rust provides no implicit type conversion (coercion) between primitive types.
-But, explicit type conversion (casting) can be achieved using the `as` keyword.
+Rust不提供基础类型之间的隐式类型转换，只能使用 `as` 关键字显式转换类型。
 
 {cast.play}

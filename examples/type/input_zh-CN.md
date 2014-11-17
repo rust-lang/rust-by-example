@@ -1,15 +1,12 @@
-Rust provides type safety via its static type-checker. Variables can be type
-annotated when declared. However, in most cases, the compiler will be able to
-infer the type of the variable from the context, heavily reducing the
-annotation burden.
+Rust通过静态类型检查实现了类型安全。变量可以在声明时指定类型，然而多数情况下可以省略类型，编译器能够通过上下文自动推导出变量类型，大幅简化了程序员的负担。
 
 {type.play}
 
-This is a summary of the primitive types in Rust:
+Rust语言的内置类型（primitive types）总结：
 
-* signed integers: `i8`, `i16`, `i32`, `i64` and `int` (machine word size)
-* unsigned integers: `u8`, `u16`, `u32`, `u64` and `uint` (machine word size)
-* floating point: `f32`, `f64`
-* `char` Unicode scalar values like `'a'`, `'α'` and `'∞'` (4 bytes each)
-* `bool` either `true` or `false`
-* and the unit type `()`, whose only value is also `()`
+* 有符号正数：`i8`, `i16`, `i32`, `i64` 和 `int` (机器字长)
+* 无符号正数: `u8`, `u16`, `u32`, `u64` 和 `uint` (机器字长)
+* 浮点数: `f32`, `f64`
+* `char` Unicode字符（Scalars）例如 `'a'`, `'α'` and `'∞'` (4字节长)
+* `bool` 逻辑类型，取值可为 `true` 和 `false` 二者之一
+* 空元组类型 `()`, 其唯一的值也是 `()` （译者注：因 unit type 可能会合并至元组类型(Tuples)，故未直译）
