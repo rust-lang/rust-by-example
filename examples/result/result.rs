@@ -11,7 +11,7 @@ mod checked {
 
     pub fn div(x: f64, y: f64) -> MathResult {
         if y == 0.0 {
-            // This operation would `fail`, instead let's return the reason of
+            // This operation would `panic`, instead let's return the reason of
             // the failure wrapped in `Err`
             Err(DivisionByZero)
         } else {
@@ -41,11 +41,11 @@ mod checked {
 fn op(x: f64, y: f64) -> f64 {
     // This is a three level match pyramid!
     match checked::div(x, y) {
-        Err(why) => fail!("{}", why),
+        Err(why) => panic!("{}", why),
         Ok(ratio) => match checked::ln(ratio) {
-            Err(why) => fail!("{}", why),
+            Err(why) => panic!("{}", why),
             Ok(ln) => match checked::sqrt(ln) {
-                Err(why) => fail!("{}", why),
+                Err(why) => panic!("{}", why),
                 Ok(sqrt) => sqrt,
             },
         },
@@ -53,6 +53,6 @@ fn op(x: f64, y: f64) -> f64 {
 }
 
 fn main() {
-    // Will this fail?
+    // Will this panic?
     println!("{}", op(1.0, 10.0));
 }

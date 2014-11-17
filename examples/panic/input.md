@@ -1,22 +1,22 @@
-The `fail!` macro can be used to generate a *task* failure and start unwinding
+The `panic!` macro can be used to generate a *task* panic and start unwinding
 its stack. While unwinding, the runtime will take care of freeing all the
 resources *owned* by the task by calling the destructor of all its objects.
 
-Since we are dealing with programs with only one task, `fail!` will cause the
+Since we are dealing with programs with only one task, `panic!` will cause the
 program to report the failure message and exit.
 
-{fail.play}
+{panic.play}
 
-Let's check that `fail!` doesn't leak memory.
+Let's check that `panic!` doesn't leak memory.
 
 ```
-$ rustc fail.rs && valgrind ./fail
+$ rustc panic.rs && valgrind ./panic
 ==2614== Memcheck, a memory error detector
 ==2614== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
 ==2614== Using Valgrind-3.9.0 and LibVEX; rerun with -h for copyright info
-==2614== Command: ./fail
+==2614== Command: ./panic
 ==2614==
-task '<main>' failed at 'division by zero', fail.rs:5
+task '<main>' panicked at 'division by zero', panic.rs:5
 ==2614==
 ==2614== HEAP SUMMARY:
 ==2614==     in use at exit: 0 bytes in 0 blocks

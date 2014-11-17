@@ -32,7 +32,7 @@ fn main() {
     let mut xs = Vec::from_elem(5, 0f64);
     let ys = Vec::from_elem(6, 1f64);
 
-    // this operation will fail at runtime
+    // this operation will panic at runtime
     add_assign(&mut xs, &ys);
 }
 
