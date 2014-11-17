@@ -4,7 +4,7 @@ no parameters and return nothing.
 
 {unit-test.rs}
 
-If you want the test to fail, just put `#[should_fail]` under `#[test]`.
+If you want the test to panic, just put `#[should_fail]` under `#[test]`.
 
 {fail.rs}
 
