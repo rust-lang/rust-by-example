@@ -1,13 +1,13 @@
-The `fail!` macro can be used to generate a *task* failure and start unwinding
+The `panic!` macro can be used to generate a *task* failure and start unwinding
 its stack. While unwinding, the runtime will take care of freeing all the
 resources *owned* by the task by calling the destructor of all its objects.
 
-Since we are dealing with programs with only one task, `fail!` will cause the
+Since we are dealing with programs with only one task, `panic!` will cause the
 program to report the failure message and exit.
 
 {fail.play}
 
-Let's check that `fail!` doesn't leak memory.
+Let's check that `panic!` doesn't leak memory.
 
 ```
 $ rustc fail.rs && valgrind ./fail

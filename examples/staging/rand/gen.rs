@@ -33,7 +33,7 @@ fn main() {
     println!("sample previous slice *with* replacement 10 times");
     for _ in range(0u, 10) {
         match rng.choose(v.as_slice()) {
-            None => fail!("slice was empty"),
+            None => panic!("slice was empty"),
             Some(x) => println!("{}", x),
         }
     }

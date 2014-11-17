@@ -16,7 +16,7 @@ fn main() {
 
     // Bind to socket
     let stream = match UnixListener::bind(&socket) {
-        Err(_) => fail!("failed to bind socket"),
+        Err(_) => panic!("failed to bind socket"),
         Ok(stream) => stream,
     };
 

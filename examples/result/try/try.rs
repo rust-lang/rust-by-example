@@ -45,7 +45,7 @@ mod checked {
 
     pub fn op(x: f64, y: f64) {
         match op_(x, y) {
-            Err(why) => fail!(match why {
+            Err(why) => panic!(match why {
                 NegativeLogarithm => "logarithm of negative number",
                 DivisionByZero => "division by zero",
                 NegativeSquareRoot => "square root of negative number",
