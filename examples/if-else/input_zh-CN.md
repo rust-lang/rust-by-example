@@ -1,6 +1,4 @@
-Branching with if-else is similar to C. Unlike C, the boolean condition doesn't
-need to be surrounded by parentheses, and each condition is followed by a
-block. If-else conditionals are expressions too; and, because of Rust type
-safety, all the branches must return the same type.
+Rust的if-else分支判断语句类似于C语言。但跟C不同的是，逻辑型条件不需要用小括号括起来，条件后面必须跟一个代码块。
+if-else语句也是表达式，每个分支必须返回相同的类型，以保证类型安全。
 
 {if-else.play}
