@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.4" data-basepath=".." data-revision="1414286571181">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.4" data-basepath=".." data-revision="1416453036428">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2201,9 +2201,14 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_78">
+                    <section class="normal" id="section-gitbook_154">
                     
                         <h2 id="494-random">49.4 Random</h2>
+<p><strong>WARNING!</strong> This site is currently unmaintained, and has been like in that state for
+<a href="https://github.com/japaric/rust-by-example/graphs/contributors" target="_blank">several weeks/months</a> now. The
+content is likely to be outdated and misleading, proceed at your own risk! I highly encourage you
+to read the <a href="http://doc.rust-lang.org/guide.html" target="_blank"><strong>official</strong> guide</a> instead. - The Author</p>
+<hr>
 <p>The <code>std::rand</code> module provides access to the Random Number Generators (RNG)
 provided by the OS, which can then be used to generate random values of any
 type that implements the <code>Rand</code> trait (which includes all the primitive types).</p>
@@ -2250,28 +2255,10 @@ type that implements the <code>Rand</code> trait (which includes all the primiti
 }
 </code></pre>
 <pre><code>$ rustc gen.rs &amp;&amp; ./gen
-randomly generate some values for different primitive types
-u8: 111
-i8: 76
-u16: 5876
-i16: -7705
-f32: 0.379516
-f64: 0.795853
-10 randomly generated u8 values
-[98, 184, 192, 114, 67, 110, 247, 13, 18, 73]
-shuffle previous slice
-[67, 192, 247, 13, 110, 114, 184, 73, 18, 98]
-sample previous slice *with* replacement 10 times
-98
-114
-184
-98
-18
-114
-110
-98
-247
-98
+gen.rs:36:21: 36:25 error: macro undefined: &#39;fail!&#39;
+gen.rs:36             None =&gt; fail!(&quot;slice was empty&quot;),
+                              ^~~~
+error: aborting due to previous error
 </code></pre><p>Several structs are available under the <code>std::rand::distributions</code> module, that
 can be used to generate values using different probability distributions like:
 normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
@@ -2297,27 +2284,27 @@ normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
 </code></pre>
 <pre><code>$ rustc distributions.rs &amp;&amp; ./distributions
 10 samples from a normal distribution with mean 0.0 and SD 1.0
--0.497668
-0.061416
-0.053964
-0.885772
--0.08918
--0.086332
-1.097509
-0.42157
-1.129595
-0.205364
+1.138982
+-1.171891
+-0.450942
+0.580879
+-0.76314
+-0.581172
+-0.516438
+-1.238144
+0.117731
+-1.627563
 10 samples from a T distribution with 5 degrees of freedom
-1.160454
-0.164831
-0.763777
-0.949599
--0.95291
-1.07187
-0.923305
-2.634696
--1.171977
--0.578329
+1.788932
+-2.253477
+-0.546763
+0.359816
+0.787812
+0.026877
+0.018513
+-0.260909
+-1.28793
+0.205839
 </code></pre><p>The <code>deriving</code> attribute can be used to implement the <code>Rand</code> trait for custom
 types, this allows generation of random values of custom types.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// deriving.rs</span>
@@ -2345,9 +2332,9 @@ types, this allows generation of random values of custom types.</p>
 </code></pre>
 <pre><code>$ rustc deriving.rs &amp;&amp; ./deriving
 random point
-Point { x: 0.806816, y: 0.693436 }
+Point { x: 0.523378, y: 0.772444 }
 random rectangle
-Rectangle { p1: Point { x: 0.435998, y: 0.673917 }, p2: Point { x: 0.770193, y: 0.890925 } }
+Rectangle { p1: Point { x: 0.705823, y: 0.004432 }, p2: Point { x: 0.076337, y: 0.392423 } }
 </code></pre>
                     
                     </section>
