@@ -12,13 +12,13 @@ impl Node {
     // Create an empty list
     fn new() -> Node {
         // `Nil` has type `Node`
-        Nil
+        Node::Nil
     }
 
     // Consume a list, and return the same list with a new element at its front
     fn append(self, elem: uint) -> Node {
         // `Cons` also has type Node
-        Cons(elem, box self)
+        Node::Cons(elem, box self)
     }
 
     // Return the length of the list
@@ -30,21 +30,21 @@ impl Node {
         match *self {
             // Can't take ownership of the tail, because `self` is borrowed;
             // instead take a reference to the tail
-            Cons(_, ref tail) => 1 + tail.len(),
+            Node::Cons(_, ref tail) => 1 + tail.len(),
             // An empty list has zero length
-            Nil => 0
+            Node::Nil => 0
         }
     }
 
     // Return representation of the list as a (heap allocated) string
     fn stringify(&self) -> String {
         match *self {
-            Cons(head, ref tail) => {
+            Node::Cons(head, ref tail) => {
                 // `format!` is similar to `print!`, but returns a heap
                 // allocated string instead of printing to the console
                 format!("{}, [ ] -> {}", head, tail.stringify())
             },
-            Nil => {
+            Node::Nil => {
                 format!("Nil")
             },
         }
