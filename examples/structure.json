@@ -106,7 +106,11 @@
     { "id": "macros", "title": "macro_rules!", "children": null  },
     { "id": "rand", "title": "Random", "children": null  },
     { "id": "simd", "title": "SIMD", "children": null  },
-    { "id": "test", "title": "Testing", "children": null  },
+    { "id": "test", "title": "Testing", "children": [
+        { "id": "shouldfail", "title": "should_fail", "children": null },
+        { "id": "cfgtest", "title": "Conditional compilation", "children": null },
+        { "id": "nocapture", "title": "Printing within tests", "children": null }
+    ] },
     { "id": "unsafe", "title": "Unsafe operations", "children": null  },
     { "id": "json", "title": "JSON parsing", "children": [
         { "id": "json-enum", "title": "`Json`", "children": null },

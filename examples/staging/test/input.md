@@ -1,36 +1,27 @@
-To mark a function as a unit test, place `#[test]` (equivalent
-to `#[cfg(test)]`) above any function.  The function must take
-no parameters and return nothing.
+To mark a function as a unit test, place `#[test]` above it. A test function
+must take no parameters and does not return a value. Tests in Rust are
+considered failed tests if they encounter a task failure.
 
 {unit-test.rs}
 
-If you want the test to fail, just put `#[should_fail]` under `#[test]`.
-
-{fail.rs}
-
-To run unit tests, add either the `--test` or `--cfg test` flag to the
-command.  When using either flag, you do not need a `main()` function
-as the executable will only include and run the functions flagged with
-`#[test]` or `#[cfg(test)]`.  If you don't pass the `--test` flag, `rustc` will
-ignore any functions flagged with `#[test]`.  That means calling any function
-flagged with `#[test]` will result in `rustc: unresolved name` if it is not
-compiled with `--test`.
-
-**note**: programs compiled with `--test` *ignore* information passed to stdout
+To run unit tests, you must first build a test runner. Do this by adding the
+`--test` flag to the Rust compiler. Afterwards, running the resulting executable
+will print out the results.
 
 ```
 $ rustc --test unit-test.rs
 $ ./unit-test
-running 1 test
+running 2 tests
 test distance_test ... ok
+test translate_test ... FAILED
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
-```
+failures:
 
-If `--test` were not included, then this would happen
+---- translate_test stdout ----
+    task 'translate_test' failed at 'assertion failed: new_x == 6.0', unit-test.rs:30
 
-```
-$ rustc unit-test.rs
-$ ./unit-test
-If you see this, the tests were not compiled nor ran!
+failures:
+    translate_test
+
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured
 ```
