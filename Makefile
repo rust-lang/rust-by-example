@@ -35,7 +35,7 @@ book:
 	./add-relinks.sh
 
 clean:
-	rm -rf {bin,stage}
+	rm -rf bin stage
 
 test:
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)

@@ -41,7 +41,7 @@ fn main() {
                          .connect("\n");
 
     match file::write(&Path::new("stage/SUMMARY.md"), summary.as_slice()) {
-        Err(why) => fail!("{}", why),
+        Err(why) => panic!("{}", why),
         Ok(_) => {},
     }
 }
