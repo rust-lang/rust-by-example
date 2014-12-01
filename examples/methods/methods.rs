@@ -1,3 +1,6 @@
+use std::num::Float;
+// To be able to use .abs(), you must include this
+
 struct Point {
     x: f64,
     y: f64,

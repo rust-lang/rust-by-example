@@ -68,7 +68,7 @@
   { "id": "enum", "title": "Enums", "children": [
       { "id": "c-like", "title": "C-like", "children": null }
   ] },
-  { "id": "fail", "title": "`fail!`", "children": null },
+  { "id": "panic", "title": "`panic!`", "children": null },
   { "id": "option", "title": "`Option`", "children": null },
   { "id": "array", "title": "Arrays and Slices", "children": null },
   { "id": "trait", "title": "Traits", "children": [
@@ -116,8 +116,7 @@
     { "id": "fmt", "title": "Formatting", "children": null },
     { "id": "hash", "title": "HashMap", "children": [
         { "id": "alt-key-types", "title": "Alternate/custom key types", "children": null},
-        { "id": "hashset", "title": "HashSet", "children": null },
-        { "id": "smallintmap", "title": "SmallIntMap", "children": null }
+        { "id": "hashset", "title": "HashSet", "children": null }
     ] }
   ] },
   { "id": "todo", "title": "TODO", "children": [

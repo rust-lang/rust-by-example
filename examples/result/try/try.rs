@@ -1,4 +1,7 @@
 mod checked {
+    // For .sqrt() and .ln()
+    use std::num::Float;
+
     #[deriving(Show)]
     enum MathError {
         DivisionByZero,
@@ -10,7 +13,7 @@ mod checked {
 
     fn div(x: f64, y: f64) -> MathResult {
         if y == 0.0 {
-            Err(DivisionByZero)
+            Err(MathError::DivisionByZero)
         } else {
             Ok(x / y)
         }
@@ -18,7 +21,7 @@ mod checked {
 
     fn sqrt(x: f64) -> MathResult {
         if x < 0.0 {
-            Err(NegativeSquareRoot)
+            Err(MathError::NegativeSquareRoot)
         } else {
             Ok(x.sqrt())
         }
@@ -26,7 +29,7 @@ mod checked {
 
     fn ln(x: f64) -> MathResult {
         if x < 0.0 {
-            Err(NegativeLogarithm)
+            Err(MathError::NegativeLogarithm)
         } else {
             Ok(x.ln())
         }
@@ -45,10 +48,13 @@ mod checked {
 
     pub fn op(x: f64, y: f64) {
         match op_(x, y) {
-            Err(why) => fail!(match why {
-                NegativeLogarithm => "logarithm of negative number",
-                DivisionByZero => "division by zero",
-                NegativeSquareRoot => "square root of negative number",
+            Err(why) => panic!(match why {
+                MathError::NegativeLogarithm
+                    => "logarithm of negative number",
+                MathError::DivisionByZero
+                    => "division by zero",
+                MathError::NegativeSquareRoot
+                    => "square root of negative number",
             }),
             Ok(value) => println!("{}", value),
         }

@@ -1,5 +1,6 @@
 use std::fmt::{mod,Formatter,Show};
-use std::num::abs;
+// For .abs()
+use std::num::Float;
 
 struct City {
     name: &'static str,
@@ -17,8 +18,8 @@ impl Show for City {
 
         // `write!` is like `format!`, but it will write the formatted string
         // into a buffer (the first argument)
-        write!(f, "{}: {:.3f}°{} {:.3f}°{}",
-               self.name, abs(self.lat), lat_c, abs(self.lon), lon_c)
+        write!(f, "{}: {:.3}°{} {:.3}°{}",
+               self.name, self.lat.abs(), lat_c, self.lon.abs(), lon_c)
     }
 }
 

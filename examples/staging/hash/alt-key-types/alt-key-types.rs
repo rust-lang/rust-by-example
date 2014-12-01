@@ -25,7 +25,7 @@ fn try_logon<'a>(accounts: &Accounts<'a>,
         password: password,
     };
 
-    match accounts.find(&logon) {
+    match accounts.get(&logon) {
         Some(account_info) => {
             println!("Successful logon!");
             println!("Name: {}", account_info.name);

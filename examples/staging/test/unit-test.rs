@@ -1,3 +1,7 @@
+// For .powi()
+use std::num::Float;
+
+
 fn distance(a: (f32, f32), b: (f32, f32)) -> f32 {
     (
         (b.val0().powi(2) - a.val0().powi(2)) +

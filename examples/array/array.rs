@@ -22,7 +22,7 @@ fn main() {
 
     // Arrays can be automatically borrowed as slices
     println!("borrow the whole array as a slice");
-    analyze_slice(xs);
+    analyze_slice(&xs);
 
     // Slices can point to a section of an array
     println!("borrow a section of the array as a slice");
