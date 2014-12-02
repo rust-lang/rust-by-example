@@ -42,7 +42,7 @@ fn main() {
             },
         };
 
-        println!("City: {} ({:.2f}° N, {:.2f}° E)",
+        println!("City: {} ({:.2}° N, {:.2}° E)",
                  city.name, city.lat, city.lon);
     }
 }

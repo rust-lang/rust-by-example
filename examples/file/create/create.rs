@@ -15,14 +15,14 @@ fn main() {
 
     // Open a file in write-only mode, returns `IoResult<File>`
     let mut file = match File::create(&path) {
-        Err(why) => fail!("couldn't create {}: {}", display, why.desc),
+        Err(why) => panic!("couldn't create {}: {}", display, why.desc),
         Ok(file) => file,
     };
 
     // Write the `LOREM_IPSUM` string to `file`, returns `IoResult<()>`
     match file.write_str(LOREM_IPSUM) {
         Err(why) => {
-            fail!("couldn't write to {}: {}", display, why.desc)
+            panic!("couldn't write to {}: {}", display, why.desc)
         },
         Ok(_) => println!("successfully wrote to {}", display),
     }

@@ -1,7 +1,7 @@
 GITBOOK = gitbook
 RUSTC = rustc
 STRICT = -D deprecated
-QUIET = -A unused-variable -A dead-code -A dead-assignment -A experimental
+QUIET = -A unused-variables -A dead-code -A unused-assignments -A experimental
 RUSTC_NT = $(RUSTC) --no-trans --test $(QUIET) ${STRICT}
 WHITELIST = examples/attribute/cfg/custom/custom.rs \
 						examples/borrow/borrow.rs \
@@ -35,7 +35,7 @@ book:
 	./add-relinks.sh
 
 clean:
-	rm -rf {bin,stage}
+	rm -rf bin stage
 
 test:
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)

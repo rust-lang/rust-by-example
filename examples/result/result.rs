@@ -1,4 +1,6 @@
 mod checked {
+    // For .ln() and .sqrt()
+    use std::num::Float;
     // Mathematical "errors" we want to catch
     #[deriving(Show)]
     pub enum MathError {
@@ -13,7 +15,7 @@ mod checked {
         if y == 0.0 {
             // This operation would `fail`, instead let's return the reason of
             // the failure wrapped in `Err`
-            Err(DivisionByZero)
+            Err(MathError::DivisionByZero)
         } else {
             // This operation is valid, return the result wrapped in `Ok`
             Ok(x / y)
@@ -22,7 +24,7 @@ mod checked {
 
     pub fn sqrt(x: f64) -> MathResult {
         if x < 0.0 {
-            Err(NegativeSquareRoot)
+            Err(MathError::NegativeSquareRoot)
         } else {
             Ok(x.sqrt())
         }
@@ -30,7 +32,7 @@ mod checked {
 
     pub fn ln(x: f64) -> MathResult {
         if x < 0.0 {
-            Err(NegativeLogarithm)
+            Err(MathError::NegativeLogarithm)
         } else {
             Ok(x.ln())
         }
@@ -41,11 +43,11 @@ mod checked {
 fn op(x: f64, y: f64) -> f64 {
     // This is a three level match pyramid!
     match checked::div(x, y) {
-        Err(why) => fail!("{}", why),
+        Err(why) => panic!("{}", why),
         Ok(ratio) => match checked::ln(ratio) {
-            Err(why) => fail!("{}", why),
+            Err(why) => panic!("{}", why),
             Ok(ln) => match checked::sqrt(ln) {
-                Err(why) => fail!("{}", why),
+                Err(why) => panic!("{}", why),
                 Ok(sqrt) => sqrt,
             },
         },

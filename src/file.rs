@@ -22,7 +22,8 @@ pub fn read(path: &Path) -> Result<String, String> {
 }
 
 pub fn run(prefix: &str, id: &str, src: &str) -> Result<String, String> {
-    let cwd = os::getcwd();
+    let cwd = os::getcwd().unwrap();
+    // Assume that the current working directory actually exists
     let out_dir = cwd.join(format!("bin/{}/{}", prefix, id));
 
     let mut cmd = Command::new("rustc");
