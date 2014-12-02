@@ -1,4 +1,4 @@
-GITBOOK = gitbook
+GITBOOK = rustbook
 RUSTC = rustc
 STRICT = -D deprecated
 QUIET = -A unused-variables -A dead-code -A unused-assignments -A experimental
