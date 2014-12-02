@@ -7,12 +7,11 @@ struct Triplet {
 
 impl Triplet {
     // First attempt: No explicit lifetimes
-    // Error! The compiler needs information about the lifetimes
-    //fn mut_one(&mut self) -> &mut int {
-        //&mut self.one
-    //}
-    // TODO ^ Try uncommenting this method
-
+    // The compiler infers that the field and the struct have the same lifetime
+    fn mut_one(&mut self) -> &mut int {
+        &mut self.one
+    }
+    
     // Second attempt: We explicitly annotate the lifetimes on all the
     // references
     // Error! The compiler doesn't know what is the relationship between the
@@ -40,6 +39,9 @@ fn main() {
     let mut triplet = Triplet { one: 1, two: 2, three: 3 };
 
     println!("Before: {}", triplet);
+
+    *triplet.mut_one() = 0;
+    println!("After: {}", triplet);
 
     // Use mutable reference to modify the original struct
     *triplet.mut_three() = 0;
