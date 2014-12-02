@@ -12,6 +12,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## How to generate the static site
 
+```
+npm install gitbook@0.7.1
+make all && book && test
+```
+
+View the results with `make serve`.
+
+### Details
+
 We use these tools to generate the static site:
 
 * [Rust](http://www.rust-lang.org/) \o/
