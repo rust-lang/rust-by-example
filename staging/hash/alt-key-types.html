@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.10.1" data-basepath="../.." data-revision="1417572458804">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.10.1" data-basepath="../.." data-revision="1417638204278">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2181,24 +2181,21 @@ This includes:</p>
 <ul>
 <li><code>bool</code> (though not very useful since there is only two possible keys)</li>
 <li><code>int</code>, <code>uint</code>, and all variations thereof 
-(see <code>SmallIntMap</code> for a more streamlined map implementation keyed by <code>uint</code>)</li>
+(see <a href="http://doc.rust-lang.org/std/collections/struct.VecMap.html" target="_blank"><code>VecMap</code></a> for a more streamlined map implementation keyed by <code>uint</code>)</li>
+<li><code>String</code> and <code>&amp;str</code> (protip: you can have a <code>HashMap</code> keyed by <code>String</code> 
+and call <code>.get()</code> with an <code>&amp;str</code>)</li>
 </ul>
 <p>Note that <code>f32</code> and <code>f64</code> do <em>not</em> implement <code>Hash</code>, 
-likely because floating-point precision errors 
-would make using them as hash map keys very frustrating.</p>
-<p>All collection classes implement <code>Eq</code>, and implicitly implement <code>Hash</code> 
-if their contained type also implements <code>Hash</code>. 
-E.g. <code>Vec&lt;T&gt;</code> will implement <code>Hash</code> if <code>T</code> implements <code>Hash</code>.</p>
+likely because <a href="http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems" target="_blank">floating-point precision errors</a>
+would make using them as hashmap keys horribly error-prone.</p>
+<p>All collection classes implement <code>Eq</code> and <code>Hash</code> 
+if their contained type also respectively implements <code>Eq</code> and <code>Hash</code>. 
+For example, <code>Vec&lt;T&gt;</code> will implement <code>Hash</code> if <code>T</code> implements <code>Hash</code>.</p>
 <p>You can easily implement <code>Eq</code> and <code>Hash</code> for a custom type with just one line: 
-<code>#[deriving(Eq,Hash)]</code></p>
+<code>#[deriving(PartialEq, Eq, Hash)]</code></p>
 <p>The compiler will do the rest. If you want more control over the details, 
-you can implement <code>Eq</code> and <code>Hash</code> yourself. 
+you can implement <code>Eq</code> and/or <code>Hash</code> yourself. 
 This guide will not cover the specifics of implementing <code>Hash</code>. </p>
-<p>Note that two instances of a type that are equal 
-(such that <code>a == b</code> returns <code>true</code>) should hash to the same value, 
-but two instances with the same hash don&#39;t necessarily have to be equal. 
-Read up on <a href="http://en.wikipedia.org/wiki/Hash_function" target="_blank">hashes</a> and <a href="http://en.wikipedia.org/wiki/Hash_collision" target="_blank">hash collisions</a> 
-for more information.</p>
 <p>To play around with using a <code>struct</code> in <code>HashMap</code>, 
 let&#39;s try making a very simple user logon system:</p>
 <div id="active-code">

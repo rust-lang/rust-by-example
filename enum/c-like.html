@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="26.1" data-basepath=".." data-revision="1417572458804">
+    <div class="book" data-github="japaric/rust-by-example" data-level="26.1" data-basepath=".." data-revision="1417638204278">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2193,6 +2193,7 @@
 // And you can refer to enum variants just like in C
 
 // enum with implicit discriminator (starts at 0)
+#[allow(dead&#95;code)]
 enum Day {
     Monday,
     Tuesday,
@@ -2214,6 +2215,7 @@ impl Day {
 }
 
 // enum with explicit discriminator
+#[allow(dead&#95;code)]
 enum Color {
     Red = 0xff0000,
     Green = 0x00ff00,

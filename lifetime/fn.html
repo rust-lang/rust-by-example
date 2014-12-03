@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="23.2" data-basepath=".." data-revision="1417572458804">
+    <div class="book" data-github="japaric/rust-by-example" data-level="23.2" data-basepath=".." data-revision="1417638204278">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2190,11 +2190,10 @@ struct Triplet {
 
 impl Triplet {
     // First attempt: No explicit lifetimes
-    // Error! The compiler needs information about the lifetimes
-    //fn mut&#95;one(&amp;mut self) -&gt; &amp;mut int {
-        //&amp;mut self.one
-    //}
-    // TODO ^ Try uncommenting this method
+    // The compiler infers that the field and the struct have the same lifetime
+    fn mut&#95;one(&amp;mut self) -&gt; &amp;mut int {
+        &amp;mut self.one
+    }
 
     // Second attempt: We explicitly annotate the lifetimes on all the
     // references
@@ -2223,6 +2222,9 @@ fn main() {
     let mut triplet = Triplet { one: 1, two: 2, three: 3 };
 
     println!(&quot;Before: {}&quot;, triplet);
+
+    &#42;triplet.mut&#95;one() = 0;
+    println!(&quot;After: {}&quot;, triplet);
 
     // Use mutable reference to modify the original struct
     &#42;triplet.mut&#95;three() = 0;

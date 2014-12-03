@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="32" data-basepath="." data-revision="1417572458804">
+    <div class="book" data-github="japaric/rust-by-example" data-level="32" data-basepath="." data-revision="1417638204278">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2225,8 +2225,9 @@ for Vec2&lt;T&gt; {
 impl&lt;
     // Bound: &#96;T&#96; must implement &#42;both&#42; the &#96;Add&#96; trait and the &#96;Mul&#96; trait
     T: Add&lt;T, T&gt; + Mul&lt;T, T&gt;
-&gt; Vec2&lt;T&gt; {
-    fn dot(&amp;self, rhs: &amp;Vec2&lt;T&gt;) -&gt; T {
+&gt; Mul&lt;Vec2&lt;T&gt;, T&gt;
+for Vec2&lt;T&gt; {
+    fn mul(&amp;self, rhs: &amp;Vec2&lt;T&gt;) -&gt; T {
         (self.x &#42; rhs.x) + (self.y &#42; rhs.y)
     }
 }

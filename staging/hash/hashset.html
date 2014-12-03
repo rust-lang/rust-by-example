@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-github="japaric/rust-by-example" data-level="49.10.2" data-basepath="../.." data-revision="1417572458804">
+    <div class="book" data-github="japaric/rust-by-example" data-level="49.10.2" data-basepath="../.." data-revision="1417638204278">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2176,24 +2176,22 @@
                     <section class="normal" id="section-gitbook_69">
                     
                         <h3 id="49102-hashset">49.10.2 HashSet</h3>
-<p>Consider a <code>HashSet</code> as a <code>HashMap</code> where the key and value are the same. 
-Or, to be more precise, a <code>HashMap</code> where we just care about the keys.</p>
+<p>Consider a <code>HashSet</code> as a <code>HashMap</code> where we just care about the keys (
+<code>HashSet&lt;T&gt;</code> is, in actuality, just a wrapper around <code>HashMap&lt;T, ()&gt;</code>).</p>
 <p>&quot;What&#39;s the point of that?&quot; you ask. &quot;I could just store the keys in a <code>Vec</code>.&quot;</p>
 <p>A <code>HashSet</code>&#39;s unique feature is that 
 it is guaranteed to not have duplicate elements. 
-That&#39;s the contract that any <a href="http://doc.rust-lang.org/std/collections/trait.Set.html" target="_blank"><code>Set</code></a> implementation fulfills. 
-<code>HashSet</code> is just one implementation. (see also: <a href="http://doc.rust-lang.org/std/collections/trait.MutableSet.html" target="_blank"><code>MutableSet</code></a>)</p>
+That&#39;s the contract that any set collection fulfills. 
+<code>HashSet</code> is just one implementation. (see also: <a href="http://doc.rust-lang.org/std/collections/struct.TreeSet.html" target="_blank"><code>TreeSet</code></a>)</p>
 <p>If you insert a value that is already present in the <code>HashSet</code>, 
 (i.e. the new value is equal to the existing and they both have the same hash), 
 then the new value will replace the old.</p>
 <p>This is great for when you never want more than one of something, 
 or when you want to know if you&#39;ve already got something.</p>
-<p>But sets can do more than that. 
-If they weren&#39;t important, then why would there be a 
-<a href="http://en.wikipedia.org/wiki/Set_theory" target="_blank">branch of mathematics</a> dedicated to them? </p>
+<p>But sets can do more than that. </p>
 <p>Sets have 4 primary operations (all of the following calls return an iterator):</p>
 <ul>
-<li><p><code>union</code>: get all the elements in one set or the other.</p>
+<li><p><code>union</code>: get all the unique elements in both sets.</p>
 </li>
 <li><p><code>difference</code>: get all the elements that are in the first set but not the second.</p>
 </li>
@@ -2245,7 +2243,6 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>Sets don&#39;t seem so pointless now, do they? </p>
 <p>(Examples adapted from the <a href="http://doc.rust-lang.org/std/collections/hashmap/struct.HashSet.html#method.difference" target="_blank">documentation.</a>)</p>
 
                     
