@@ -12,6 +12,19 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## How to generate the static site
 
+```
+npm install gitbook@0.7.1
+make all
+make book GITBOOK=`pwd`/node_modules/.bin/gitbook
+make test GITBOOK=`pwd`/node_modules/.bin/gitbook
+```
+
+View the results with `make serve GITBOOK=node_modules/.bin/gitbook`.
+
+Note: on Ubuntu `node` may be called `nodejs`. I had to edit `.bin/gitbook` accordingly.
+
+### Details
+
 We use these tools to generate the static site:
 
 * [Rust](http://www.rust-lang.org/) \o/

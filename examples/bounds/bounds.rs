@@ -35,8 +35,9 @@ for Vec2<T> {
 impl<
     // Bound: `T` must implement *both* the `Add` trait and the `Mul` trait
     T: Add<T, T> + Mul<T, T>
-> Vec2<T> {
-    fn dot(&self, rhs: &Vec2<T>) -> T {
+> Mul<Vec2<T>, T>
+for Vec2<T> {
+    fn mul(&self, rhs: &Vec2<T>) -> T {
         (self.x * rhs.x) + (self.y * rhs.y)
     }
 }
