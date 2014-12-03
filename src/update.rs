@@ -1,4 +1,3 @@
-#![deny(warnings)]
 #![feature(phase)]
 
 extern crate regex;
