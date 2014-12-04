@@ -1,12 +1,8 @@
 language: node_js
 
-before_install:
-  - sudo add-apt-repository --yes ppa:hansjorg/rust
-  - sudo apt-get update -qq
-
 install:
   - npm install gitbook -g
-  - sudo apt-get install -qq rust-nightly
+  - curl -s https://static.rust-lang.org/rustup.sh | sudo sh
 
 script:
   - rustc --version
