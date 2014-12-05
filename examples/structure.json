@@ -103,6 +103,9 @@
   { "id": "fs", "title": "Filesystem Operations", "children": null },
   { "id": "staging", "title": "Staging Area", "children": [
     { "id": "bench", "title": "Benchmarking", "children": null  },
+    { "id": "comment", "title": "Comments", "children": [
+        { "id": "doc-comment", "title": "Doc Comments", "children": null }
+    ] },
     { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
     { "id": "macros", "title": "macro_rules!", "children": null  },
     { "id": "rand", "title": "Random", "children": null  },
@@ -123,7 +126,6 @@
   { "id": "todo", "title": "TODO", "children": [
     { "id": "arg", "title": "Program arguments", "children": null },
     { "id": "assert", "title": "assert! and debug_assert!", "children": null },
-    { "id": "comment", "title": "Comments", "children": null },
     { "id": "green", "title": "Green threads", "children": null },
     { "id": "log", "title": "Logging", "children": null },
     { "id": "rc", "title": "Reference counting", "children": null },
