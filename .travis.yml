@@ -8,8 +8,10 @@ script:
   - rustc --version
   - make
   - make test
+  - make book
 
-after_success: bash deploy.sh
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
 
 branches:
   only: master
