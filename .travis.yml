@@ -16,4 +16,6 @@ after_success:
 branches:
   only: master
 
-secure: "oFD/tic8JAwpMXuMDBZXV4ot6w1NLWvHQTrDKmUHSMQJC1cbbrR1p5q8XayfjtmdqQdFQmIfM6YHEKeHw//ypgObWjYS8q00OaaMDXPTdmgr1Ee4nhgkkDihT+kVij0rn96W/QvyAVoaV5hJoyUr3Nhk+mnHEYm3M+Q3LAQglRg="
+env:
+  global:
+    - secure: "oFD/tic8JAwpMXuMDBZXV4ot6w1NLWvHQTrDKmUHSMQJC1cbbrR1p5q8XayfjtmdqQdFQmIfM6YHEKeHw//ypgObWjYS8q00OaaMDXPTdmgr1Ee4nhgkkDihT+kVij0rn96W/QvyAVoaV5hJoyUr3Nhk+mnHEYm3M+Q3LAQglRg="
