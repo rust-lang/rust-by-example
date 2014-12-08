@@ -1,4 +1,4 @@
-// An integer division that doesn't `fail!`
+// An integer division that doesn't `panic!`
 fn checked_division(dividend: int, divisor: int) -> Option<int> {
     if divisor == 0 {
         // Failure is represented as the `None` variant
@@ -31,7 +31,7 @@ fn main() {
     let optional_float = Some(0f32);
 
     // The `unwrap` method will extract the value wrapped in a `Some` variant,
-    // or will `fail!` if called on a `None` variant
+    // or will `panic!` if called on a `None` variant
     println!("{} unwraps to {}", optional_float, optional_float.unwrap());
     println!("{} unwraps to {}", none, none.unwrap());
 }
