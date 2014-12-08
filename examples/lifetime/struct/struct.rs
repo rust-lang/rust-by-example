@@ -17,7 +17,7 @@ fn main() {
 
     {
         // And that `two` has lifetime `t`
-        // `two` has a shorter (and different) lifetime that `one` (`'t < 'o`)
+        // `two` has a shorter (and different) lifetime than `one` (`'t < 'o`)
         let mut two = 2;
 
         println!("Before: ({}, {})", one, two);
