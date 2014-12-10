@@ -108,6 +108,10 @@
     ] },
     { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
     { "id": "macros", "title": "macro_rules!", "children": null  },
+    { "id": "arg", "title": "Program arguments", "children": [
+        { "id": "matching", "title": "Argument parsing", "children": null },
+        { "id": "getopts", "title": "`getopts`", "children": null }
+    ] },
     { "id": "rand", "title": "Random", "children": null  },
     { "id": "simd", "title": "SIMD", "children": null  },
     { "id": "test", "title": "Testing", "children": null  },
@@ -124,7 +128,6 @@
     ] }
   ] },
   { "id": "todo", "title": "TODO", "children": [
-    { "id": "arg", "title": "Program arguments", "children": null },
     { "id": "assert", "title": "assert! and debug_assert!", "children": null },
     { "id": "green", "title": "Green threads", "children": null },
     { "id": "log", "title": "Logging", "children": null },
