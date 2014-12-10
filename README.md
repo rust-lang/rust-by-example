@@ -19,7 +19,7 @@ make book GITBOOK=`pwd`/node_modules/.bin/gitbook
 make test GITBOOK=`pwd`/node_modules/.bin/gitbook
 ```
 
-View the results with `make serve GITBOOK=node_modules/.bin/gitbook`.
+View the results with `make serve GITBOOK=`pwd`/node_modules/.bin/gitbook`.
 
 Note: on Ubuntu `node` may be called `nodejs`. I had to edit `.bin/gitbook` accordingly.
 
