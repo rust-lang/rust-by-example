@@ -1,6 +1,6 @@
 Variables in Rust do more than just hold data in the stack, they can also *own*
 resources, e.g. `Box<T>` owns memory in the heap. Because Rust enforces the
-[RAII](http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization)
+[RAII][raii]
 discipline, whenever an object goes out of scope, its destructor is called
 and the resources *owned* by it are freed. This behavior shields against
 *resource leak* bugs.
@@ -28,3 +28,5 @@ $ rustc raii.rs && valgrind ./raii
 ```
 
 You'll never have to manually free memory again or worry about memory leaks!
+
+[raii]: http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization

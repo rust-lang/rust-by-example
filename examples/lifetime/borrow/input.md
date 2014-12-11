@@ -46,5 +46,8 @@ The programmer doesn't need to explicitly annotate lifetimes (nor understand
 what are lifetimes), for the borrow checker to do its job in most cases. These
 are the cases where explicit lifetimes are required:
 
-* [Functions that return references](/lifetime/fn.html)
-* [Structs that hold references](/lifetime/struct.html)
+* [Functions that return references][lifetime]
+* [Structs that hold references][structs]
+
+[lifetime]: /lifetime/fn.html
+[structs]: /lifetime/struct.html

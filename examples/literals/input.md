@@ -10,10 +10,14 @@ Underscores can be inserted in numeric literals to improve readability, e.g.
 We need to tell the compiler what is the type of the literals we use. For now,
 we'll use the `u` suffix to indicate that the literal is an unsigned integer,
 and the `i` suffix to indicate that it's a signed integer. We'll cover the type
-system in [another chapter](/type.html), and give more details about type
-annotating literals in [their own section](/type/literals.html).
+system in [another chapter][type], and give more details about type
+annotating literals in [their own section][type-literal].
 
 The operators available and their precedence are similar to other
-[C-like languages](https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages).
+[C-like languages][op-prec].
 
 {literals.play}
+
+[op-prec]: https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages
+[type]: /type.html
+[type-literal]: /type/literals.html

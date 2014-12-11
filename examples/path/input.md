@@ -14,8 +14,12 @@ instead is stored as a vector of bytes (`Vec<u8>`). Therefore, converting a
 {path.play}
 
 Be sure to check at other `Path` methods
-([`posix::Path`](http://doc.rust-lang.org/std/path/posix/struct.Path.html)
-or [`windows::Path`](http://doc.rust-lang.org/std/path/windows/struct.Path.html))
+([`posix::Path`][posix-path]
+or [`windows::Path`][windows-path])
 and the
-[`FileStat`](http://doc.rust-lang.org/std/io/struct.FileStat.html)
+[`FileStat`][file-stat]
 struct.
+
+[posix-path]: http://doc.rust-lang.org/std/path/posix/struct.Path.html
+[windows-path]: http://doc.rust-lang.org/std/path/windows/struct.Path.html
+[file-stat]: http://doc.rust-lang.org/std/io/struct.FileStat.html

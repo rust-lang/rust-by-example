@@ -5,5 +5,7 @@ any implementor of the `Add` trait will be able to use the `+` operator.
 
 {operator.play}
 
-Here is a [list](http://doc.rust-lang.org/core/ops/) of
+Here is a [list][ops] of
 the traits that overload operators.
+
+[ops]: http://doc.rust-lang.org/core/ops/
