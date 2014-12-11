@@ -2,7 +2,7 @@ We've seen that formatting is specified via a *format string*:
 
 * `format!("{}", foo)` -> `"3735928559"`
 * `format!("0x{:X}", foo)` ->
-  [`"0xDEADBEEF"`](https://en.wikipedia.org/wiki/Deadbeef#Magic_debug_values)
+  [`"0xDEADBEEF"`][deadbeef]
 * `format!("0o{:o}", foo)` -> `"0o33653337357"`
 
 The same variable (`foo`) can be formatted differently depending on which
@@ -32,3 +32,4 @@ Here's the full list of formatting traits and their respective argument types:
 * `E` -> `UpperExp`
 * `?` -> `Poly`
 
+[deadbeef]: https://en.wikipedia.org/wiki/Deadbeef#Magic_debug_values

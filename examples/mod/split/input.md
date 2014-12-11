@@ -1,5 +1,5 @@
 Modules can be mapped to a file/directory hierarchy. Let's break down the
-[visibility example](/mod/visibility.html) in files:
+[visibility example][visibility] in files:
 
 ```
 $ tree .
@@ -29,3 +29,5 @@ called `my::indirect_access()`, that
 > called `my::private_function()`
 called `my::nested::function()`
 ```
+
+[visibility]: /mod/visibility.html

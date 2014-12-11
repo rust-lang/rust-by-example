@@ -2,9 +2,9 @@ An attribute is metadata applied to some module, crate or item. This metadata
 can be used to/for:
 
 <!-- TODO: Link these to their respective examples -->
-* [conditional compilation of code](/attribute/cfg.html)
-* [set crate name, version and type (binary or library)](/attribute/crate.html)
-* disable [lints](https://en.wikipedia.org/wiki/Lint_%28software%29) (warnings)
+* [conditional compilation of code][cfg]
+* [set crate name, version and type (binary or library)][config]
+* disable [lints][lint] (warnings)
 * enable compiler features (macros, glob imports, etc.)
 * link to a foreign library
 * mark functions as unit tests
@@ -19,3 +19,7 @@ Attributes can take arguments with different syntaxes:
 * `#[attribute = "value"]`
 * `#[attribute(key = "value")]`
 * `#[attribute(value)]`
+
+[cfg]: /attribute/cfg.html
+[crate]: /attribute/crate.html
+[lint]: https://en.wikipedia.org/wiki/Lint_%28software%29

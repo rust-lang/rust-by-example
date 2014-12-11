@@ -10,4 +10,6 @@ liberty.rlib
 
 Libraries get prefixed with "lib", and by default they get named after their
 crate file, but this default name can be overridden using the
-[`crate_name` attribute](/attribute/crate.html).
+[`crate_name` attribute][crate-name].
+
+[crate-name]: /attribute/crate.html
