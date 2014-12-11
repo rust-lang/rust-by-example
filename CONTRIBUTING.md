@@ -3,7 +3,7 @@
 ## I would like to see an example about $TOPIC
 
 Please check if such topic is already part of our
-[TODO list](https://github.com/rust-lang/rust-by-example/issues/1). If that's
+[TODO list][issues-all]. If that's
 not the case, leave your request as a comment on that issue.
 
 ## There's a typo/error in example $X
@@ -27,7 +27,7 @@ start the commit message with the example id, e.g. "type/literals: fix typo".
 ## Check if there is an action plan for that topic
 
 Look for
-[issues](https://github.com/rust-lang/rust-by-example/issues?labels=&page=1&state=open)
+[issues][issues-open]
 that have a C-* label:
 
 * C-new: A new chapter, there probably a lot to do here.
@@ -48,7 +48,7 @@ plan to work on.
 
 ## Hack away
 
-See the [README](README.md) for details about how the static site is generated.
+See the [README][readme] for details about how the static site is generated.
 
 ## Finally, send a PR
 
@@ -83,3 +83,7 @@ Use:
 * Lines should contain a maximum of 79 characters.
 * In comments, types, methods, macros and variables should be wrapped in
   backticks, e.g. ``` `println!` ```
+
+[issues-all]: https://github.com/rust-lang/rust-by-example/issues/
+[issues-open]: https://github.com/rust-lang/rust-by-example/issues?labels=&page=1&state=open
+[readme]: README.md

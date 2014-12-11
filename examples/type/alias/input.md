@@ -5,5 +5,7 @@ exception to this rule are the primitive types: `uint`, `f32`, etc.
 {alias.play}
 
 The main use of aliases is to reduce typing, for example the
-[`IoResult<T>`](http://doc.rust-lang.org/std/io/type.IoResult.html)
+[`IoResult<T>`][io-result]
 type is an alias for the `Result<T, IoError>` type.
+
+[io-result]: http://doc.rust-lang.org/std/io/type.IoResult.html

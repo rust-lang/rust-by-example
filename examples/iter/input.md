@@ -4,4 +4,6 @@ arrays) and lazy value generators.
 {iter.play}
 
 The `Iterator` trait gives access to
-[several methods](http://doc.rust-lang.org/core/iter/trait.Iterator.html).
+[several methods][iter].
+
+[iter]: http://doc.rust-lang.org/core/iter/trait.Iterator.html

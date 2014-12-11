@@ -4,7 +4,10 @@ give Rust its functional flavor.
 
 {hof.play}
 
-[Option](http://doc.rust-lang.org/core/option/type.Option.html)
+[Option][option]
 and
-[Iterator](http://doc.rust-lang.org/core/iter/trait.Iterator.html)
+[Iterator][iter]
 implement their fair share of HOFs.
+
+[option]: http://doc.rust-lang.org/core/option/type.Option.html
+[iter]: http://doc.rust-lang.org/core/iter/trait.Iterator.html
