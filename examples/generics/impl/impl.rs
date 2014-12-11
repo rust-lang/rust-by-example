@@ -3,8 +3,7 @@ struct GenTup<T>(T,);
 
 // impl of Tup
 impl Tup {
-    // Borrowing a ref (val) requires lifelines
-    fn value<'a>(&'a self) -> &'a f64 {
+    fn value(&self) -> &f64 {
         let &Tup ( ref val ) = self;
 
         val
@@ -13,7 +12,7 @@ impl Tup {
 
 // impl of GenTup for a generic type `T`
 impl <T> GenTup<T> {
-    fn value<'a>(&'a self) -> &'a T {
+    fn value(&self) -> &T {
         let &GenTup (ref val) = self;
         
         val
