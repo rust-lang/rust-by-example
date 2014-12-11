@@ -47,7 +47,12 @@
   { "id": "structs", "title": "Structures", "children": [
       { "id": "visibility", "title": "Visibility", "children": null }
   ] },
-  { "id": "generics", "title": "Generics", "children": null },
+  { "id": "generics", "title": "Generics", "children": [
+      { "id": "impl", "title": "Implementation", "children": null },
+      { "id": "phantom", "title": "Phantom types", "children": [
+          { "id": "units", "title": "Unit conversions", "children": null }
+      ] }
+  ] },
   { "id": "box", "title": "Box, stack and heap", "children": null },
   { "id": "raii", "title": "RAII", "children": null },
   { "id": "move", "title": "Ownership and moves", "children": [
