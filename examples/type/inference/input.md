@@ -1,6 +1,6 @@
 The type inference engine is pretty smart. It does more than looking at the
 type of the
-[r-value](https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue)
+[r-value][rvalue]
 during an initialization. It also looks how the variable is used afterwards to
 infer its type. Here's an advanced example of type inference:
 
@@ -8,3 +8,5 @@ infer its type. Here's an advanced example of type inference:
 
 No type annotation of variables was needed, the compiler is happy and so is the
 programmer!
+
+[rvalue]: https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue

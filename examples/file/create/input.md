@@ -23,5 +23,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 failure conditions)
 
 There is also a more generic
-[`open_mode`](http://doc.rust-lang.org/std/io/fs/struct.File.html#method.open_mode)
+[`open_mode`][open-mode]
 method that can open files in other modes like: read+write, append, etc.
+
+[open-mode]: http://doc.rust-lang.org/std/io/fs/struct.File.html#method.open_mode

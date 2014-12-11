@@ -10,6 +10,9 @@ can be used to view into a `String`, just like `&[T]` is a view into `Vec<T>`.
 {str.play}
 
 More `str`/`String` methods can be found under the
-[std::str](http://doc.rust-lang.org/std/str/) and
-[std::string](http://doc.rust-lang.org/std/string/)
+[std::str][str] and
+[std::string][string]
 modules
+
+[str]: http://doc.rust-lang.org/std/str/
+[string]: http://doc.rust-lang.org/std/string/

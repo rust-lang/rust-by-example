@@ -1,6 +1,6 @@
 Inter-Process Communication (IPC) for client-server applications can be
 accomplished using
-[UNIX sockets](http://en.wikipedia.org/wiki/Unix_domain_socket).
+[UNIX sockets][unix-sockets].
 
 Both client and server need to use the same path for the socket.
 
@@ -30,3 +30,5 @@ $ ./client hello
 Server started, waiting for clients
 Client said: hello
 ```
+
+[unix-sockets]: http://en.wikipedia.org/wiki/Unix_domain_socket
