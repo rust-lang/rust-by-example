@@ -8,4 +8,6 @@ be surpassed, the vector gets reallocated with a bigger capacity.
 {vec.play}
 
 More `Vec` methods can be found under the
-[std::vec](http://doc.rust-lang.org/std/vec/) module
+[std::vec][vec] module
+
+[vec]: http://doc.rust-lang.org/std/vec/
