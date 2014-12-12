@@ -12,7 +12,7 @@ start!
 
 *Note*: This book will follow the nightly version of Rust until we reach
 version 1.0, it's highly possible that some examples won't work with snapshot
-version like 0.10, be sure to use a nightly version!
+versions like 0.10, be sure to use a nightly version!
 
 [rust]: http://www.rust-lang.org/
 [install]: http://www.rust-lang.org/install.html
