@@ -1,5 +1,5 @@
 // A unit struct without resources
-#[deriving(Show)]
+#[deriving(Show, Copy)]
 struct Nil;
 
 // A tuple struct with resources that implements the `Clone` trait
