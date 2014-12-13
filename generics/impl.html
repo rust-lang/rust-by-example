@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.1" data-basepath=".." data-revision="1418322310271">
+    <div class="book" data-level="18.1" data-basepath=".." data-revision="1418477811920">
     
 
 <div class="book-summary">
@@ -2145,8 +2145,7 @@ struct GenTup&lt;T&gt;(T,);
 
 // impl of Tup
 impl Tup {
-    // Borrowing a ref (val) requires lifelines
-    fn value&lt;&#39;a&gt;(&amp;&#39;a self) -&gt; &amp;&#39;a f64 {
+    fn value(&amp;self) -&gt; &amp;f64 {
         let &amp;Tup ( ref val ) = self;
 
         val
@@ -2155,7 +2154,7 @@ impl Tup {
 
 // impl of GenTup for a generic type &#96;T&#96;
 impl &lt;T&gt; GenTup&lt;T&gt; {
-    fn value&lt;&#39;a&gt;(&amp;&#39;a self) -&gt; &amp;&#39;a T {
+    fn value(&amp;self) -&gt; &amp;T {
         let &amp;GenTup (ref val) = self;
 
         val
