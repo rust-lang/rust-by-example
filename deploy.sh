@@ -11,6 +11,7 @@ git remote add upstream "https://$GH_TOKEN@github.com/rust-lang/rust-by-example.
 git fetch upstream && git reset upstream/gh-pages
 
 echo "rustbyexample.com" > CNAME
+cp -r ../../vendor/gitbook/* gitbook/
 
 touch .
 
