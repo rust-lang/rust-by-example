@@ -1,4 +1,4 @@
-GITBOOK = gitbook
+GITBOOK = ../node_modules/.bin/gitbook
 RUSTC = rustc
 STRICT = -D deprecated
 QUIET = -A unused-variables -A dead-code -A unused-assignments -A experimental
@@ -29,7 +29,7 @@ all:
 	$(RUSTC) src/update.rs --out-dir bin
 	bin/update
 
-book:
+book: node_modules/gitbook
 	cd stage && $(GITBOOK) build
 	./fix-edit-button.sh
 	./add-relinks.sh
@@ -41,5 +41,8 @@ test:
 	$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
 
-serve:
+serve: node_modules/gitbook
 	cd stage && $(GITBOOK) serve
+
+node_modules/gitbook:
+	npm install gitbook@0.7.1
