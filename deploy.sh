@@ -15,7 +15,7 @@ cp -r ../../vendor/gitbook/* gitbook/
 
 touch .
 
-git add -A .
+git add .
 
 git commit -m "rebuild pages at ${rev}"
 git push -q upstream HEAD:gh-pages
