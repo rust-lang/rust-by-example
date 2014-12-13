@@ -28,7 +28,7 @@ fn main() {
     // Iterator that generates: 0, 1 and 2
     let mut sequence = range(0u, 3);
 
-    println!("Four consecutive `next` calls on range(0, 3)")
+    println!("Four consecutive `next` calls on range(0, 3)");
     println!("> {}", sequence.next());
     println!("> {}", sequence.next());
     println!("> {}", sequence.next());
