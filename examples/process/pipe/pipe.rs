@@ -12,7 +12,7 @@ fn main() {
 
     {
         // The `stdin` field has type `Option<PipeStream>`
-        // `take_unwrap` will take the value wrapped in a `Some` variant
+        // `take` will take the value out of an `Option`, leaving `None` in its place
         // Note that we take ownership of `stdin` here
         let mut stdin = process.stdin.take().unwrap();
 
@@ -22,13 +22,13 @@ fn main() {
             Ok(_) => println!("sent pangram to wc"),
         }
 
-        // `stdin` gets `drop`ed her, and the pipe is closed
+        // `stdin` gets `drop`ed here, and the pipe is closed
         // This is very important, otherwise `wc` wouldn't start processing the
         // input we just sent
     }
 
     // The `stdout` field also has type `Option<PipeStream>`
-    // the `get_mut_ref` method will return a mutable reference to the value
+    // the `as_mut` method will return a mutable reference to the value
     // wrapped in a `Some` variant
     match process.stdout.as_mut().unwrap().read_to_string() {
         Err(why) => panic!("couldn't read wc stdout: {}", why.desc),
