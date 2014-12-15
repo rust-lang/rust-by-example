@@ -4,8 +4,8 @@ use std::num::Float;
 
 fn distance(a: (f32, f32), b: (f32, f32)) -> f32 {
     (
-        (b.val0().powi(2) - a.val0().powi(2)) +
-        (b.val1().powi(2) - a.val1().powi(2))
+        (b.0.powi(2) - a.0.powi(2)) +
+        (b.1.powi(2) - a.1.powi(2))
     ).sqrt()
 }
 

@@ -4,7 +4,7 @@ static NTASKS: int = 10;
 fn main() {
     for i in range(0, NTASKS) {
         // Spin up another task
-        spawn(proc() {
+        spawn(move || {
             println!("this is task number {}", i)
         });
     }

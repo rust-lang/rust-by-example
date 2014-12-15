@@ -12,7 +12,9 @@ fn main() {
 
     {
         // The `stdin` field has type `Option<PipeStream>`
-        // `take` will take the value out of an `Option`, leaving `None` in its place
+        // `take` will take the value out of an `Option`, leaving `None` in
+        // its place.
+        //
         // Note that we take ownership of `stdin` here
         let mut stdin = process.stdin.take().unwrap();
 
