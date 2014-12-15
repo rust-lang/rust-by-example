@@ -13,13 +13,12 @@ See [CONTRIBUTING.md][how-to-contribute].
 ## How to generate the static site
 
 ```
-npm install gitbook@0.7.1
 make all
-make book GITBOOK=`pwd`/node_modules/.bin/gitbook
-make test GITBOOK=`pwd`/node_modules/.bin/gitbook
+make book
+make test
 ```
 
-View the results with ```make serve GITBOOK=`pwd`/node_modules/.bin/gitbook```.
+View the results with `make serve`.
 
 Note: on Ubuntu `node` may be called `nodejs`. I had to edit `.bin/gitbook` accordingly.
 
