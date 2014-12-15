@@ -13,7 +13,7 @@ fn main() {
         let task_tx = tx.clone();
 
         // Each task will send its id via the channel
-        spawn(proc() {
+        spawn(move || {
             // The task takes ownership over `task_tx`
             // Each task queues a message in the channel
             task_tx.send(id);

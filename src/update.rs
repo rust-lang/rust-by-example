@@ -22,7 +22,7 @@ fn main() {
         let tx = tx.clone();
         let count = example.count();
 
-        spawn(proc() {
+        spawn(move || {
             example.process(vec!(i + 1), tx, 0, String::new());
         });
 
