@@ -36,7 +36,7 @@
 
 
         
-    <div class="book"  data-level="49.8" data-basepath=".." data-revision="1418623424940">
+    <div class="book"  data-level="49.8" data-basepath=".." data-revision="1418668288621">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2347,8 +2347,8 @@ no parameters and return nothing.</p>
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance</span>(</span>a: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>), b: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>)) -&gt; <span class="hljs-keyword">f32</span> {
     (
-        (b.val0().powi(<span class="hljs-number">2</span>) - a.val0().powi(<span class="hljs-number">2</span>)) +
-        (b.val1().powi(<span class="hljs-number">2</span>) - a.val1().powi(<span class="hljs-number">2</span>))
+        (b.<span class="hljs-number">0</span>.powi(<span class="hljs-number">2</span>) - a.<span class="hljs-number">0</span>.powi(<span class="hljs-number">2</span>)) +
+        (b.<span class="hljs-number">1</span>.powi(<span class="hljs-number">2</span>) - a.<span class="hljs-number">1</span>.powi(<span class="hljs-number">2</span>))
     ).sqrt()
 }
 

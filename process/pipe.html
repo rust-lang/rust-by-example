@@ -36,7 +36,7 @@
 
 
         
-    <div class="book"  data-level="47.1" data-basepath=".." data-revision="1418623424940">
+    <div class="book"  data-level="47.1" data-basepath=".." data-revision="1418668288621">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2357,7 +2357,9 @@ fn main() {
 
     {
         // The &#96;stdin&#96; field has type &#96;Option&lt;PipeStream&gt;&#96;
-        // &#96;take&#95;unwrap&#96; will take the value wrapped in a &#96;Some&#96; variant
+        // &#96;take&#96; will take the value out of an &#96;Option&#96;, leaving &#96;None&#96; in
+        // its place.
+        //
         // Note that we take ownership of &#96;stdin&#96; here
         let mut stdin = process.stdin.take().unwrap();
 
@@ -2367,13 +2369,13 @@ fn main() {
             Ok(&#95;) =&gt; println!(&quot;sent pangram to wc&quot;),
         }
 
-        // &#96;stdin&#96; gets &#96;drop&#96;ed her, and the pipe is closed
+        // &#96;stdin&#96; gets &#96;drop&#96;ed here, and the pipe is closed
         // This is very important, otherwise &#96;wc&#96; wouldn&#39;t start processing the
         // input we just sent
     }
 
     // The &#96;stdout&#96; field also has type &#96;Option&lt;PipeStream&gt;&#96;
-    // the &#96;get&#95;mut&#95;ref&#96; method will return a mutable reference to the value
+    // the &#96;as&#95;mut&#96; method will return a mutable reference to the value
     // wrapped in a &#96;Some&#96; variant
     match process.stdout.as&#95;mut().unwrap().read&#95;to&#95;string() {
         Err(why) =&gt; panic!(&quot;couldn&#39;t read wc stdout: {}&quot;, why.desc),
