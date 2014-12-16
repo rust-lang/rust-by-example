@@ -1,11 +1,11 @@
 // Null enumerations to define unit types
-#[deriving(Show)]
+#[deriving(Show, Copy)]
 enum Inch {}
-#[deriving(Show)]
+#[deriving(Show, Copy)]
 enum Mm {}
 
 // Length is phantom type with hidden parameter `Unit`
-#[deriving(Show)]
+#[deriving(Show, Copy)]
 struct Length<Unit, T>(T,);
 
 // `impl X for Y {}` reads "implement `X` Trait for Type `Y`"
@@ -17,12 +17,12 @@ struct Length<Unit, T>(T,);
 // This means that this `impl` defines `Add` only for `T` when
 // two `T's` can be added together and the result is of
 // Type `T`: (`T: Add<T,T>`)
-impl <Unit,T: Add<T,T>> Add<Length<Unit, T>,
-                            Length<Unit, T>> for Length<Unit, T> {
-    fn add(&self, r: &Length<Unit, T>) -> Length<Unit, T> {
-        let &Length(ref left)  = self;
-        let &Length(ref right) = r;
-        
+impl <Unit,T: Add<T,T> + Copy> Add<Length<Unit, T>,
+                               Length<Unit, T>> for Length<Unit, T> {
+    fn add(self, r: Length<Unit, T>) -> Length<Unit, T> {
+        let Length(ref left)  = self;
+        let Length(ref right) = r;
+
         Length(*left + *right)
     }
 }
@@ -32,10 +32,13 @@ fn main() {
     let one_foot:  Length<Inch, f32> = Length(12.0);
     // one_meter has hidden parameter `Mm`
     let one_meter: Length<Mm, f32>   = Length(1000.0);
-    
+
+    let two_feet = one_foot + one_foot;
+    let two_meters = one_meter + one_meter;
+
     // Addition works
-    println!("one foot + one_foot = {}", one_foot + one_foot);
-    println!("one meter + one_meter = {}", one_meter + one_meter);
+    println!("one foot + one_foot = {}", two_feet);
+    println!("one meter + one_meter = {}", two_meters);
 
     // Nonsensical operations fail as they should
     // Error: type mismatch
