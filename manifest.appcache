@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1418668288622
+# Revision 1418709847128
 
 CACHE:
 loop.html
@@ -33,8 +33,8 @@ file.html
 fn/unused.html
 fn.html
 for.html
-fs.html
 generics/impl.html
+fs.html
 generics/phantom/units.html
 generics/phantom.html
 generics.html
