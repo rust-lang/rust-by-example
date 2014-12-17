@@ -12,7 +12,7 @@ struct BarFoo;
 // * U is the type of the sum
 // This block implements the operation: Foo + Bar = FooBar
 impl Add<Bar, FooBar> for Foo {
-    fn add(&self, _rhs: &Bar) -> FooBar {
+    fn add(self, _rhs: Bar) -> FooBar {
         println!("> Foo.add(&Bar) was called");
 
         FooBar
@@ -22,7 +22,7 @@ impl Add<Bar, FooBar> for Foo {
 // Addition can be implemented in a non-commutative way
 // This block implements the operation: Bar + Foo = BarFoo
 impl Add<Foo, BarFoo> for Bar {
-    fn add(&self, _rhs: &Foo) -> BarFoo {
+    fn add(self, _rhs: Foo) -> BarFoo {
         println!("> Bar.add(&Foo) was called");
 
         BarFoo
