@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1418776873888
+# Revision 1418796293708
 
 CACHE:
 loop.html
@@ -11,8 +11,8 @@ attribute/crate.html
 attribute.html
 borrow/alias.html
 borrow/freeze.html
-borrow/ref.html
 borrow/mut.html
+borrow/ref.html
 borrow.html
 bounds.html
 box.html
@@ -88,8 +88,8 @@ staging/json/json-enum.html
 staging/json.html
 staging/macros.html
 staging/rand.html
-staging/test.html
 staging/simd.html
+staging/test.html
 staging/unsafe.html
 staging.html
 str.html
