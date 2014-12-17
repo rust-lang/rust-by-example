@@ -36,7 +36,7 @@
 
 
         
-    <div class="book"  data-level="31" data-basepath="." data-revision="1418709847127">
+    <div class="book"  data-level="31" data-basepath="." data-revision="1418776873887">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2358,7 +2358,7 @@ struct BarFoo;
 // &#42; U is the type of the sum
 // This block implements the operation: Foo + Bar = FooBar
 impl Add&lt;Bar, FooBar&gt; for Foo {
-    fn add(&amp;self, &#95;rhs: &amp;Bar) -&gt; FooBar {
+    fn add(self, &#95;rhs: Bar) -&gt; FooBar {
         println!(&quot;&gt; Foo.add(&amp;Bar) was called&quot;);
 
         FooBar
@@ -2368,7 +2368,7 @@ impl Add&lt;Bar, FooBar&gt; for Foo {
 // Addition can be implemented in a non-commutative way
 // This block implements the operation: Bar + Foo = BarFoo
 impl Add&lt;Foo, BarFoo&gt; for Bar {
-    fn add(&amp;self, &#95;rhs: &amp;Foo) -&gt; BarFoo {
+    fn add(self, &#95;rhs: Foo) -&gt; BarFoo {
         println!(&quot;&gt; Bar.add(&amp;Foo) was called&quot;);
 
         BarFoo

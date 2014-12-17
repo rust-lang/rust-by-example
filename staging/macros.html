@@ -36,7 +36,7 @@
 
 
         
-    <div class="book"  data-level="49.4" data-basepath=".." data-revision="1418709847127">
+    <div class="book"  data-level="49.4" data-basepath=".." data-revision="1418776873887">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2491,11 +2491,12 @@ macro_rules! assert_equal_len {
 
 macro_rules! op {
     ($func:ident, $bound:ident, $op:tt, $method:ident) =&gt; {
-        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span>&lt;</span>T: $bound&lt;T, T&gt;&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
+        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span>&lt;</span>T: $bound&lt;T, T&gt; + Copy&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
             assert_equal_len!(xs, ys, $func, $op);
 
             <span class="hljs-keyword">for</span> (x, y) in xs.iter_mut().zip(ys.iter()) {
-                *x = x.$method(y);
+                *x = $bound::$method(*x, *y);
+                <span class="hljs-comment">// *x = x.$method(*y);</span>
             }
         }
     }
@@ -2539,7 +2540,7 @@ op!(sub_assign, Sub, -=, sub)
 }
 </code></pre>
 <pre><code>$ rustc dry.rs &amp;&amp; ./dry
-task &#39;&lt;main&gt;&#39; panicked at &#39;add_assign: dimension mismatch: (5,) += (6,)&#39;, dry.rs:27
+task &#39;&lt;main&gt;&#39; panicked at &#39;add_assign: dimension mismatch: (5,) += (6,)&#39;, dry.rs:28
 </code></pre><pre><code>$ rustc --test dry.rs &amp;&amp; ./dry
 running 3 tests
 test test::mul_assign ... ok

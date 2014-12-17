@@ -36,7 +36,7 @@
 
 
         
-    <div class="book"  data-level="18.2.1" data-basepath="../.." data-revision="1418709847127">
+    <div class="book"  data-level="18.2.1" data-basepath="../.." data-revision="1418776873887">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2342,13 +2342,13 @@
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">// Null enumerations to define unit types
-#[deriving(Show)]
+#[deriving(Show, Copy)]
 enum Inch {}
-#[deriving(Show)]
+#[deriving(Show, Copy)]
 enum Mm {}
 
 // Length is phantom type with hidden parameter &#96;Unit&#96;
-#[deriving(Show)]
+#[deriving(Show, Copy)]
 struct Length&lt;Unit, T&gt;(T,);
 
 // &#96;impl X for Y {}&#96; reads &quot;implement &#96;X&#96; Trait for Type &#96;Y&#96;&quot;
@@ -2360,11 +2360,11 @@ struct Length&lt;Unit, T&gt;(T,);
 // This means that this &#96;impl&#96; defines &#96;Add&#96; only for &#96;T&#96; when
 // two &#96;T&#39;s&#96; can be added together and the result is of
 // Type &#96;T&#96;: (&#96;T: Add&lt;T,T&gt;&#96;)
-impl &lt;Unit,T: Add&lt;T,T&gt;&gt; Add&lt;Length&lt;Unit, T&gt;,
-                            Length&lt;Unit, T&gt;&gt; for Length&lt;Unit, T&gt; {
-    fn add(&amp;self, r: &amp;Length&lt;Unit, T&gt;) -&gt; Length&lt;Unit, T&gt; {
-        let &amp;Length(ref left)  = self;
-        let &amp;Length(ref right) = r;
+impl &lt;Unit,T: Add&lt;T,T&gt; + Copy&gt; Add&lt;Length&lt;Unit, T&gt;,
+                               Length&lt;Unit, T&gt;&gt; for Length&lt;Unit, T&gt; {
+    fn add(self, r: Length&lt;Unit, T&gt;) -&gt; Length&lt;Unit, T&gt; {
+        let Length(ref left)  = self;
+        let Length(ref right) = r;
 
         Length(&#42;left + &#42;right)
     }
@@ -2376,9 +2376,12 @@ fn main() {
     // one&#95;meter has hidden parameter &#96;Mm&#96;
     let one&#95;meter: Length&lt;Mm, f32&gt;   = Length(1000.0);
 
+    let two&#95;feet = one&#95;foot + one&#95;foot;
+    let two&#95;meters = one&#95;meter + one&#95;meter;
+
     // Addition works
-    println!(&quot;one foot + one&#95;foot = {}&quot;, one&#95;foot + one&#95;foot);
-    println!(&quot;one meter + one&#95;meter = {}&quot;, one&#95;meter + one&#95;meter);
+    println!(&quot;one foot + one&#95;foot = {}&quot;, two&#95;feet);
+    println!(&quot;one meter + one&#95;meter = {}&quot;, two&#95;meters);
 
     // Nonsensical operations fail as they should
     // Error: type mismatch
