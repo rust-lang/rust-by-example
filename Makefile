@@ -45,4 +45,4 @@ serve: node_modules/gitbook
 	$(GITBOOK) serve stage
 
 node_modules/gitbook:
-	npm install gitbook@0.7.1
+	npm install gitbook
