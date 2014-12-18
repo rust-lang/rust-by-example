@@ -1,6 +1,6 @@
 fn main() {
     // Iterators can be collected into vectors
-    let collected_iterator: Vec<int> = range(0i, 10).collect();
+    let mut collected_iterator: Vec<int> = range(0i, 10).collect();
     println!("Collected range(0, 10) into: {}", collected_iterator);
 
     // The `vec!` macro can be used to initialize a vector
