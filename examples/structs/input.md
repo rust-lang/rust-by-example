@@ -7,4 +7,4 @@ There are three types of structures ("structs") that can be created using the
 
 {structs.play}
 
-[1]:http://en.wikipedia.org/wiki/Struct_(C_programming_language)
+[1]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
