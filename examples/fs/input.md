@@ -1,5 +1,5 @@
-The [`std::io::fs`][std-fs]
-module contains several functions that deal with the filesystem.
+The `std::io::fs` module contains several functions that deal with the
+filesystem.
 
 {fs.play}
 
@@ -39,5 +39,3 @@ a
 
 1 directory, 2 files
 ```
-
-[std-fs]: http://doc.rust-lang.org/std/io/fs/

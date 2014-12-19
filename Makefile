@@ -39,6 +39,7 @@ clean:
 test:
 	@$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
+	./check-links.sh
 
 serve: node_modules/gitbook
 	$(GITBOOK) serve stage

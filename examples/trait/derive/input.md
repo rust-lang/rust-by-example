@@ -17,11 +17,11 @@ This is a list of the "derivable" traits:
   to create `T` from `&T` via a copy.
 * [`Hash`][hash], to
   compute a hash from `&T`.
-* [`Rand`][rand], to
+* `Rand`, to
   create a random instance of a data type.
 * [`Default`][default],
   to create an empty instance of a data type.
-* [`Zero`][zero], to
+* `Zero`, to
   create a zero instance of a numeric data type.
 * [`FromPrimitive`][from-primitive],
   to create an instance from a numeric primitive.
@@ -37,8 +37,6 @@ This is a list of the "derivable" traits:
 [decodable]: http://doc.rust-lang.org/serialize/trait.Decodable.html
 [clone]: http://doc.rust-lang.org/std/clone/trait.Clone.html
 [hash]: http://doc.rust-lang.org/std/hash/trait.Hash.html
-[rand]: http://doc.rust-lang.org/rand/trait.Rand.html
 [default]: http://doc.rust-lang.org/std/default/trait.Default.html
-[zero]: http://doc.rust-lang.org/std/num/trait.Zero.html
 [from-primitive]: http://doc.rust-lang.org/std/num/trait.FromPrimitive.html
 [debug]: http://doc.rust-lang.org/std/fmt/trait.Debug.html

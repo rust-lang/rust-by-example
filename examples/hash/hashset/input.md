@@ -6,7 +6,7 @@ Consider a `HashSet` as a `HashMap` where we just care about the keys (
 A `HashSet`'s unique feature is that 
 it is guaranteed to not have duplicate elements. 
 That's the contract that any set collection fulfills. 
-`HashSet` is just one implementation. (see also: [`TreeSet`][treeset])
+`HashSet` is just one implementation. (see also: [`BTreeSet`][treeset])
 
 If you insert a value that is already present in the `HashSet`, 
 (i.e. the new value is equal to the existing and they both have the same hash), 
@@ -34,5 +34,5 @@ Try all of these in the following example.
 
 (Examples adapted from the [documentation.][hash-set])
 
-[treeset]: http://doc.rust-lang.org/std/collections/struct.TreeSet.html
+[treeset]: http://doc.rust-lang.org/std/collections/struct.BTreeSet.html
 [hash-set]: http://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference
