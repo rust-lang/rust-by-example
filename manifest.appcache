@@ -1,10 +1,10 @@
 CACHE MANIFEST
-# Revision 1418920692035
+# Revision 1418969032666
 
 CACHE:
 loop.html
-index.html
 array.html
+index.html
 attribute/cfg/custom.html
 attribute/cfg.html
 attribute/crate.html
@@ -22,8 +22,8 @@ closures.html
 constants.html
 crates/lib.html
 crates/link.html
-crates.html
 drop.html
+crates.html
 enum/c-like.html
 enum.html
 expression.html
@@ -40,8 +40,8 @@ generics/phantom.html
 generics.html
 hello.html
 hof.html
-iter.html
 if-else.html
+iter.html
 lifetime/borrow.html
 lifetime/fn.html
 lifetime/struct.html
@@ -62,8 +62,8 @@ move.html
 ops.html
 option.html
 panic.html
-path.html
 print.html
+path.html
 process/pipe.html
 process/wait.html
 process.html
