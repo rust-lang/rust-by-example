@@ -23,7 +23,7 @@ mod my {
             // `self` refers to the current module scope, in this case: `my`
             use self::cool::function as my_cool_function;
 
-            print!("> ")
+            print!("> ");
             my_cool_function();
         }
 
