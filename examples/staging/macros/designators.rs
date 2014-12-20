@@ -13,8 +13,8 @@ macro_rules! create_function {
     }
 }
 
-create_function!(foo)
-create_function!(bar)
+create_function!(foo);
+create_function!(bar);
 
 macro_rules! print_result {
     // the `expr` designator is used for expressions

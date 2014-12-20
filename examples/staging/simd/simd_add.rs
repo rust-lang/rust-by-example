@@ -71,6 +71,6 @@ mod bench {
         }
     }
 
-    bench!(vanilla, add_assign)
-    bench!(simd, simd_add_assign)
+    bench!(vanilla, add_assign);
+    bench!(simd, simd_add_assign);
 }
