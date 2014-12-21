@@ -1,0 +1,2446 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="./manifest.appcache">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Structures | Rust by Example</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 0.7.1">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="./structs/visibility.html" />
+    
+    
+    <link rel="prev" href="./match/struct.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-rust-playpen/editor.css">
+    
+
+
+        
+    <div class="book"  data-level="17" data-basepath="." data-revision="1419195972061">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    
+    <a href="https://github.com/null" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="./" >Rust by Example</a>
+    </h1>
+</div>
+
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="hello.html">
+            
+                
+                    <a href="./hello.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Hello World
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="print.html">
+            
+                
+                    <a href="./print.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Formatted print
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="literals.html">
+            
+                
+                    <a href="./literals.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Literals and operators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Variables
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="variables/mut.html">
+            
+                
+                    <a href="./variables/mut.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Mutability
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="variables/scope.html">
+            
+                
+                    <a href="./variables/scope.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         Scope and shadowing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="variables/declare.html">
+            
+                
+                    <a href="./variables/declare.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         Declare first
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="type.html">
+            
+                
+                    <a href="./type.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Types
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="type/cast.html">
+            
+                
+                    <a href="./type/cast.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         Casting
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="type/literals.html">
+            
+                
+                    <a href="./type/literals.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         Literals
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.3" data-path="type/inference.html">
+            
+                
+                    <a href="./type/inference.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                         Inference
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.4" data-path="type/alias.html">
+            
+                
+                    <a href="./type/alias.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                         Alias
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="expression.html">
+            
+                
+                    <a href="./expression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         Expressions
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="if-else.html">
+            
+                
+                    <a href="./if-else.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         If/else
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="loop.html">
+            
+                
+                    <a href="./loop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         Loop
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="loop/nested.html">
+            
+                
+                    <a href="./loop/nested.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="while.html">
+            
+                
+                    <a href="./while.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         While
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" data-path="for.html">
+            
+                
+                    <a href="./for.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                         For and range
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" data-path="fn.html">
+            
+                
+                    <a href="./fn.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                         Functions
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.1" data-path="fn/unused.html">
+            
+                
+                    <a href="./fn/unused.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                         Unused
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" data-path="mod.html">
+            
+                
+                    <a href="./mod.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                         Modules
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="12.1" data-path="mod/visibility.html">
+            
+                
+                    <a href="./mod/visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                         Visibility
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.2" data-path="mod/use.html">
+            
+                
+                    <a href="./mod/use.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                         The `use` import
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.3" data-path="mod/super.html">
+            
+                
+                    <a href="./mod/super.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                         `super` and `self`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12.4" data-path="mod/split.html">
+            
+                
+                    <a href="./mod/split.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                         File hierarchy
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" data-path="crates.html">
+            
+                
+                    <a href="./crates.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                         Crates
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="13.1" data-path="crates/lib.html">
+            
+                
+                    <a href="./crates/lib.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                         Library
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13.2" data-path="crates/link.html">
+            
+                
+                    <a href="./crates/link.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.</b>
+                        
+                         `extern crate`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" data-path="attribute.html">
+            
+                
+                    <a href="./attribute.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                         Attributes
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="14.1" data-path="attribute/crate.html">
+            
+                
+                    <a href="./attribute/crate.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.1.</b>
+                        
+                         Crates
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.2" data-path="attribute/cfg.html">
+            
+                
+                    <a href="./attribute/cfg.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.2.</b>
+                        
+                         `cfg`
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="14.2.1" data-path="attribute/cfg/custom.html">
+            
+                
+                    <a href="./attribute/cfg/custom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.2.1.</b>
+                        
+                         Custom
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" data-path="tuples.html">
+            
+                
+                    <a href="./tuples.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                         Tuples
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16" data-path="match.html">
+            
+                
+                    <a href="./match.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                         Pattern matching
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="16.1" data-path="match/guard.html">
+            
+                
+                    <a href="./match/guard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.1.</b>
+                        
+                         Destructuring and guards
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16.2" data-path="match/struct.html">
+            
+                
+                    <a href="./match/struct.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.2.</b>
+                        
+                         Destructuring structs
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="17" data-path="structs.html">
+            
+                
+                    <a href="./structs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                         Structures
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="17.1" data-path="structs/visibility.html">
+            
+                
+                    <a href="./structs/visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.1.</b>
+                        
+                         Visibility
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18" data-path="generics.html">
+            
+                
+                    <a href="./generics.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                         Generics
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1" data-path="generics/impl.html">
+            
+                
+                    <a href="./generics/impl.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.</b>
+                        
+                         Implementation
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18.2" data-path="generics/phantom.html">
+            
+                
+                    <a href="./generics/phantom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.2.</b>
+                        
+                         Phantom types
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.2.1" data-path="generics/phantom/units.html">
+            
+                
+                    <a href="./generics/phantom/units.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.2.1.</b>
+                        
+                         Unit conversions
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="19" data-path="box.html">
+            
+                
+                    <a href="./box.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                         Box, stack and heap
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="20" data-path="raii.html">
+            
+                
+                    <a href="./raii.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>20.</b>
+                        
+                         RAII
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="21" data-path="move.html">
+            
+                
+                    <a href="./move.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>21.</b>
+                        
+                         Ownership and moves
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="21.1" data-path="move/mut.html">
+            
+                
+                    <a href="./move/mut.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>21.1.</b>
+                        
+                         Mutability
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="22" data-path="borrow.html">
+            
+                
+                    <a href="./borrow.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.</b>
+                        
+                         Borrowing
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="22.1" data-path="borrow/mut.html">
+            
+                
+                    <a href="./borrow/mut.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.1.</b>
+                        
+                         Mutability
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="22.2" data-path="borrow/freeze.html">
+            
+                
+                    <a href="./borrow/freeze.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.2.</b>
+                        
+                         Freezing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="22.3" data-path="borrow/alias.html">
+            
+                
+                    <a href="./borrow/alias.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.3.</b>
+                        
+                         Aliasing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="22.4" data-path="borrow/ref.html">
+            
+                
+                    <a href="./borrow/ref.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.4.</b>
+                        
+                         The ref pattern
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="23" data-path="lifetime.html">
+            
+                
+                    <a href="./lifetime.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.</b>
+                        
+                         Lifetimes
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="23.1" data-path="lifetime/borrow.html">
+            
+                
+                    <a href="./lifetime/borrow.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.1.</b>
+                        
+                         The borrow checker
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="23.2" data-path="lifetime/fn.html">
+            
+                
+                    <a href="./lifetime/fn.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.2.</b>
+                        
+                         Functions
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="23.3" data-path="lifetime/struct.html">
+            
+                
+                    <a href="./lifetime/struct.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.3.</b>
+                        
+                         Structs
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="24" data-path="constants.html">
+            
+                
+                    <a href="./constants.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>24.</b>
+                        
+                         Global constants
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="25" data-path="methods.html">
+            
+                
+                    <a href="./methods.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>25.</b>
+                        
+                         Methods
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="26" data-path="enum.html">
+            
+                
+                    <a href="./enum.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>26.</b>
+                        
+                         Enums
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="26.1" data-path="enum/c-like.html">
+            
+                
+                    <a href="./enum/c-like.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>26.1.</b>
+                        
+                         C-like
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="27" data-path="panic.html">
+            
+                
+                    <a href="./panic.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>27.</b>
+                        
+                         `panic!`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="28" data-path="option.html">
+            
+                
+                    <a href="./option.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>28.</b>
+                        
+                         `Option`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="29" data-path="array.html">
+            
+                
+                    <a href="./array.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>29.</b>
+                        
+                         Arrays and Slices
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="30" data-path="trait.html">
+            
+                
+                    <a href="./trait.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>30.</b>
+                        
+                         Traits
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="30.1" data-path="trait/deriving.html">
+            
+                
+                    <a href="./trait/deriving.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>30.1.</b>
+                        
+                         Deriving
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="31" data-path="ops.html">
+            
+                
+                    <a href="./ops.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>31.</b>
+                        
+                         Operator Overloading
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="32" data-path="bounds.html">
+            
+                
+                    <a href="./bounds.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>32.</b>
+                        
+                         Bounds
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="33" data-path="drop.html">
+            
+                
+                    <a href="./drop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>33.</b>
+                        
+                         Drop
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="34" data-path="iter.html">
+            
+                
+                    <a href="./iter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>34.</b>
+                        
+                         Iterators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="35" data-path="closures.html">
+            
+                
+                    <a href="./closures.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>35.</b>
+                        
+                         Closures
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="36" data-path="hof.html">
+            
+                
+                    <a href="./hof.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>36.</b>
+                        
+                         Higher Order Functions
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="37" data-path="vec.html">
+            
+                
+                    <a href="./vec.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>37.</b>
+                        
+                         Vectors
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="38" data-path="str.html">
+            
+                
+                    <a href="./str.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>38.</b>
+                        
+                         Strings
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="39" data-path="clone.html">
+            
+                
+                    <a href="./clone.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>39.</b>
+                        
+                         Clone
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="40" data-path="tasks.html">
+            
+                
+                    <a href="./tasks.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>40.</b>
+                        
+                         Tasks
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="41" data-path="channels.html">
+            
+                
+                    <a href="./channels.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>41.</b>
+                        
+                         Channels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="42" data-path="timers.html">
+            
+                
+                    <a href="./timers.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>42.</b>
+                        
+                         Timers
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="43" data-path="sockets.html">
+            
+                
+                    <a href="./sockets.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>43.</b>
+                        
+                         Unix sockets
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="44" data-path="result.html">
+            
+                
+                    <a href="./result.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>44.</b>
+                        
+                         `Result`
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="44.1" data-path="result/try.html">
+            
+                
+                    <a href="./result/try.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>44.1.</b>
+                        
+                         `try!`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="45" data-path="path.html">
+            
+                
+                    <a href="./path.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>45.</b>
+                        
+                         Path
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="46" data-path="file.html">
+            
+                
+                    <a href="./file.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>46.</b>
+                        
+                         File I/O
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="46.1" data-path="file/open.html">
+            
+                
+                    <a href="./file/open.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>46.1.</b>
+                        
+                         `open`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="46.2" data-path="file/create.html">
+            
+                
+                    <a href="./file/create.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>46.2.</b>
+                        
+                         `create`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="47" data-path="process.html">
+            
+                
+                    <a href="./process.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>47.</b>
+                        
+                         Child processes
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="47.1" data-path="process/pipe.html">
+            
+                
+                    <a href="./process/pipe.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>47.1.</b>
+                        
+                         Pipes
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="47.2" data-path="process/wait.html">
+            
+                
+                    <a href="./process/wait.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>47.2.</b>
+                        
+                         Wait
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="48" data-path="fs.html">
+            
+                
+                    <a href="./fs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>48.</b>
+                        
+                         Filesystem Operations
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49" data-path="staging.html">
+            
+                
+                    <a href="./staging.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.</b>
+                        
+                         Staging Area
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.1" data-path="staging/bench.html">
+            
+                
+                    <a href="./staging/bench.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.1.</b>
+                        
+                         Benchmarking
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.2" data-path="staging/comment.html">
+            
+                
+                    <a href="./staging/comment.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.2.</b>
+                        
+                         Comments
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.2.1" data-path="staging/comment/doc-comment.html">
+            
+                
+                    <a href="./staging/comment/doc-comment.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.2.1.</b>
+                        
+                         Doc Comments
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.3" data-path="staging/ffi.html">
+            
+                
+                    <a href="./staging/ffi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.3.</b>
+                        
+                         Foreign Function Interface
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4" data-path="staging/macros.html">
+            
+                
+                    <a href="./staging/macros.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.</b>
+                        
+                         macro_rules!
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.5" data-path="staging/arg.html">
+            
+                
+                    <a href="./staging/arg.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.5.</b>
+                        
+                         Program arguments
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.5.1" data-path="staging/arg/matching.html">
+            
+                
+                    <a href="./staging/arg/matching.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.5.1.</b>
+                        
+                         Argument parsing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.5.2" data-path="staging/arg/getopts.html">
+            
+                
+                    <a href="./staging/arg/getopts.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.5.2.</b>
+                        
+                         `getopts`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.6" data-path="staging/rand.html">
+            
+                
+                    <a href="./staging/rand.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.6.</b>
+                        
+                         Random
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.7" data-path="staging/simd.html">
+            
+                
+                    <a href="./staging/simd.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.7.</b>
+                        
+                         SIMD
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.8" data-path="staging/test.html">
+            
+                
+                    <a href="./staging/test.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.8.</b>
+                        
+                         Testing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.9" data-path="staging/unsafe.html">
+            
+                
+                    <a href="./staging/unsafe.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.9.</b>
+                        
+                         Unsafe operations
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.10" data-path="staging/json.html">
+            
+                
+                    <a href="./staging/json.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.10.</b>
+                        
+                         JSON parsing
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.10.1" data-path="staging/json/json-enum.html">
+            
+                
+                    <a href="./staging/json/json-enum.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.10.1.</b>
+                        
+                         `Json`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.10.2" data-path="staging/json/decodable.html">
+            
+                
+                    <a href="./staging/json/decodable.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.10.2.</b>
+                        
+                         `Decodable`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.10.3" data-path="staging/json/encodable.html">
+            
+                
+                    <a href="./staging/json/encodable.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.10.3.</b>
+                        
+                         `Encodable`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.11" data-path="staging/fmt.html">
+            
+                
+                    <a href="./staging/fmt.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.11.</b>
+                        
+                         Formatting
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.12" data-path="staging/hash.html">
+            
+                
+                    <a href="./staging/hash.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.12.</b>
+                        
+                         HashMap
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.12.1" data-path="staging/hash/alt-key-types.html">
+            
+                
+                    <a href="./staging/hash/alt-key-types.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.12.1.</b>
+                        
+                         Alternate/custom key types
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.12.2" data-path="staging/hash/hashset.html">
+            
+                
+                    <a href="./staging/hash/hashset.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.12.2.</b>
+                        
+                         HashSet
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50" data-path="todo.html">
+            
+                
+                    <a href="./todo.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>50.</b>
+                        
+                         TODO
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="50.1" >
+            
+            <span><b>50.1.</b> assert! and debug_assert!</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50.2" >
+            
+            <span><b>50.2.</b> Green threads</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50.3" >
+            
+            <span><b>50.3.</b> Logging</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50.4" >
+            
+            <span><b>50.4.</b> Reference counting</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50.5" >
+            
+            <span><b>50.5.</b> Regex</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50.6" >
+            
+            <span><b>50.6.</b> rustdoc</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50.7" >
+            
+            <span><b>50.7.</b> select!</span>
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50.8" >
+            
+            <span><b>50.8.</b> Standard I/O</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 33.944954128440365%;min-width: 33.027522935779814%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="./index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="./hello.html" title="Hello World" class="chapter done new-chapter" data-progress="1" style="left: 0.9174311926605505%;"></a>
+    
+        <a href="./print.html" title="Formatted print" class="chapter done new-chapter" data-progress="2" style="left: 1.834862385321101%;"></a>
+    
+        <a href="./literals.html" title="Literals and operators" class="chapter done new-chapter" data-progress="3" style="left: 2.7522935779816513%;"></a>
+    
+        <a href="./variables.html" title="Variables" class="chapter done new-chapter" data-progress="4" style="left: 3.669724770642202%;"></a>
+    
+        <a href="./variables/mut.html" title="Mutability" class="chapter done " data-progress="4.1" style="left: 4.587155963302752%;"></a>
+    
+        <a href="./variables/scope.html" title="Scope and shadowing" class="chapter done " data-progress="4.2" style="left: 5.504587155963303%;"></a>
+    
+        <a href="./variables/declare.html" title="Declare first" class="chapter done " data-progress="4.3" style="left: 6.422018348623853%;"></a>
+    
+        <a href="./type.html" title="Types" class="chapter done new-chapter" data-progress="5" style="left: 7.339449541284404%;"></a>
+    
+        <a href="./type/cast.html" title="Casting" class="chapter done " data-progress="5.1" style="left: 8.256880733944953%;"></a>
+    
+        <a href="./type/literals.html" title="Literals" class="chapter done " data-progress="5.2" style="left: 9.174311926605505%;"></a>
+    
+        <a href="./type/inference.html" title="Inference" class="chapter done " data-progress="5.3" style="left: 10.091743119266056%;"></a>
+    
+        <a href="./type/alias.html" title="Alias" class="chapter done " data-progress="5.4" style="left: 11.009174311926605%;"></a>
+    
+        <a href="./expression.html" title="Expressions" class="chapter done new-chapter" data-progress="6" style="left: 11.926605504587156%;"></a>
+    
+        <a href="./if-else.html" title="If/else" class="chapter done new-chapter" data-progress="7" style="left: 12.844036697247706%;"></a>
+    
+        <a href="./loop.html" title="Loop" class="chapter done new-chapter" data-progress="8" style="left: 13.761467889908257%;"></a>
+    
+        <a href="./loop/nested.html" title="Nesting and labels" class="chapter done " data-progress="8.1" style="left: 14.678899082568808%;"></a>
+    
+        <a href="./while.html" title="While" class="chapter done new-chapter" data-progress="9" style="left: 15.596330275229358%;"></a>
+    
+        <a href="./for.html" title="For and range" class="chapter done " data-progress="10" style="left: 16.513761467889907%;"></a>
+    
+        <a href="./fn.html" title="Functions" class="chapter done " data-progress="11" style="left: 17.431192660550458%;"></a>
+    
+        <a href="./fn/unused.html" title="Unused" class="chapter done " data-progress="11.1" style="left: 18.34862385321101%;"></a>
+    
+        <a href="./mod.html" title="Modules" class="chapter done " data-progress="12" style="left: 19.26605504587156%;"></a>
+    
+        <a href="./mod/visibility.html" title="Visibility" class="chapter done " data-progress="12.1" style="left: 20.18348623853211%;"></a>
+    
+        <a href="./mod/use.html" title="The `use` import" class="chapter done " data-progress="12.2" style="left: 21.10091743119266%;"></a>
+    
+        <a href="./mod/super.html" title="`super` and `self`" class="chapter done " data-progress="12.3" style="left: 22.01834862385321%;"></a>
+    
+        <a href="./mod/split.html" title="File hierarchy" class="chapter done " data-progress="12.4" style="left: 22.93577981651376%;"></a>
+    
+        <a href="./crates.html" title="Crates" class="chapter done " data-progress="13" style="left: 23.853211009174313%;"></a>
+    
+        <a href="./crates/lib.html" title="Library" class="chapter done " data-progress="13.1" style="left: 24.770642201834864%;"></a>
+    
+        <a href="./crates/link.html" title="`extern crate`" class="chapter done " data-progress="13.2" style="left: 25.68807339449541%;"></a>
+    
+        <a href="./attribute.html" title="Attributes" class="chapter done " data-progress="14" style="left: 26.605504587155963%;"></a>
+    
+        <a href="./attribute/crate.html" title="Crates" class="chapter done " data-progress="14.1" style="left: 27.522935779816514%;"></a>
+    
+        <a href="./attribute/cfg.html" title="`cfg`" class="chapter done " data-progress="14.2" style="left: 28.440366972477065%;"></a>
+    
+        <a href="./attribute/cfg/custom.html" title="Custom" class="chapter done " data-progress="14.2.1" style="left: 29.357798165137616%;"></a>
+    
+        <a href="./tuples.html" title="Tuples" class="chapter done " data-progress="15" style="left: 30.275229357798164%;"></a>
+    
+        <a href="./match.html" title="Pattern matching" class="chapter done " data-progress="16" style="left: 31.192660550458715%;"></a>
+    
+        <a href="./match/guard.html" title="Destructuring and guards" class="chapter done " data-progress="16.1" style="left: 32.11009174311926%;"></a>
+    
+        <a href="./match/struct.html" title="Destructuring structs" class="chapter done " data-progress="16.2" style="left: 33.027522935779814%;"></a>
+    
+        <a href="./structs.html" title="Structures" class="chapter done " data-progress="17" style="left: 33.944954128440365%;"></a>
+    
+        <a href="./structs/visibility.html" title="Visibility" class="chapter  " data-progress="17.1" style="left: 34.862385321100916%;"></a>
+    
+        <a href="./generics.html" title="Generics" class="chapter  " data-progress="18" style="left: 35.77981651376147%;"></a>
+    
+        <a href="./generics/impl.html" title="Implementation" class="chapter  " data-progress="18.1" style="left: 36.69724770642202%;"></a>
+    
+        <a href="./generics/phantom.html" title="Phantom types" class="chapter  " data-progress="18.2" style="left: 37.61467889908257%;"></a>
+    
+        <a href="./generics/phantom/units.html" title="Unit conversions" class="chapter  " data-progress="18.2.1" style="left: 38.53211009174312%;"></a>
+    
+        <a href="./box.html" title="Box, stack and heap" class="chapter  " data-progress="19" style="left: 39.44954128440367%;"></a>
+    
+        <a href="./raii.html" title="RAII" class="chapter  " data-progress="20" style="left: 40.36697247706422%;"></a>
+    
+        <a href="./move.html" title="Ownership and moves" class="chapter  " data-progress="21" style="left: 41.28440366972477%;"></a>
+    
+        <a href="./move/mut.html" title="Mutability" class="chapter  " data-progress="21.1" style="left: 42.20183486238532%;"></a>
+    
+        <a href="./borrow.html" title="Borrowing" class="chapter  " data-progress="22" style="left: 43.11926605504587%;"></a>
+    
+        <a href="./borrow/mut.html" title="Mutability" class="chapter  " data-progress="22.1" style="left: 44.03669724770642%;"></a>
+    
+        <a href="./borrow/freeze.html" title="Freezing" class="chapter  " data-progress="22.2" style="left: 44.95412844036697%;"></a>
+    
+        <a href="./borrow/alias.html" title="Aliasing" class="chapter  " data-progress="22.3" style="left: 45.87155963302752%;"></a>
+    
+        <a href="./borrow/ref.html" title="The ref pattern" class="chapter  " data-progress="22.4" style="left: 46.788990825688074%;"></a>
+    
+        <a href="./lifetime.html" title="Lifetimes" class="chapter  " data-progress="23" style="left: 47.706422018348626%;"></a>
+    
+        <a href="./lifetime/borrow.html" title="The borrow checker" class="chapter  " data-progress="23.1" style="left: 48.62385321100918%;"></a>
+    
+        <a href="./lifetime/fn.html" title="Functions" class="chapter  " data-progress="23.2" style="left: 49.54128440366973%;"></a>
+    
+        <a href="./lifetime/struct.html" title="Structs" class="chapter  " data-progress="23.3" style="left: 50.45871559633027%;"></a>
+    
+        <a href="./constants.html" title="Global constants" class="chapter  " data-progress="24" style="left: 51.37614678899082%;"></a>
+    
+        <a href="./methods.html" title="Methods" class="chapter  " data-progress="25" style="left: 52.293577981651374%;"></a>
+    
+        <a href="./enum.html" title="Enums" class="chapter  " data-progress="26" style="left: 53.211009174311926%;"></a>
+    
+        <a href="./enum/c-like.html" title="C-like" class="chapter  " data-progress="26.1" style="left: 54.12844036697248%;"></a>
+    
+        <a href="./panic.html" title="`panic!`" class="chapter  " data-progress="27" style="left: 55.04587155963303%;"></a>
+    
+        <a href="./option.html" title="`Option`" class="chapter  " data-progress="28" style="left: 55.96330275229358%;"></a>
+    
+        <a href="./array.html" title="Arrays and Slices" class="chapter  " data-progress="29" style="left: 56.88073394495413%;"></a>
+    
+        <a href="./trait.html" title="Traits" class="chapter  " data-progress="30" style="left: 57.79816513761468%;"></a>
+    
+        <a href="./trait/deriving.html" title="Deriving" class="chapter  " data-progress="30.1" style="left: 58.71559633027523%;"></a>
+    
+        <a href="./ops.html" title="Operator Overloading" class="chapter  " data-progress="31" style="left: 59.63302752293578%;"></a>
+    
+        <a href="./bounds.html" title="Bounds" class="chapter  " data-progress="32" style="left: 60.55045871559633%;"></a>
+    
+        <a href="./drop.html" title="Drop" class="chapter  " data-progress="33" style="left: 61.46788990825688%;"></a>
+    
+        <a href="./iter.html" title="Iterators" class="chapter  " data-progress="34" style="left: 62.38532110091743%;"></a>
+    
+        <a href="./closures.html" title="Closures" class="chapter  " data-progress="35" style="left: 63.30275229357798%;"></a>
+    
+        <a href="./hof.html" title="Higher Order Functions" class="chapter  " data-progress="36" style="left: 64.22018348623853%;"></a>
+    
+        <a href="./vec.html" title="Vectors" class="chapter  " data-progress="37" style="left: 65.13761467889908%;"></a>
+    
+        <a href="./str.html" title="Strings" class="chapter  " data-progress="38" style="left: 66.05504587155963%;"></a>
+    
+        <a href="./clone.html" title="Clone" class="chapter  " data-progress="39" style="left: 66.97247706422019%;"></a>
+    
+        <a href="./tasks.html" title="Tasks" class="chapter  " data-progress="40" style="left: 67.88990825688073%;"></a>
+    
+        <a href="./channels.html" title="Channels" class="chapter  " data-progress="41" style="left: 68.80733944954129%;"></a>
+    
+        <a href="./timers.html" title="Timers" class="chapter  " data-progress="42" style="left: 69.72477064220183%;"></a>
+    
+        <a href="./sockets.html" title="Unix sockets" class="chapter  " data-progress="43" style="left: 70.64220183486239%;"></a>
+    
+        <a href="./result.html" title="`Result`" class="chapter  " data-progress="44" style="left: 71.55963302752293%;"></a>
+    
+        <a href="./result/try.html" title="`try!`" class="chapter  " data-progress="44.1" style="left: 72.4770642201835%;"></a>
+    
+        <a href="./path.html" title="Path" class="chapter  " data-progress="45" style="left: 73.39449541284404%;"></a>
+    
+        <a href="./file.html" title="File I/O" class="chapter  " data-progress="46" style="left: 74.31192660550458%;"></a>
+    
+        <a href="./file/open.html" title="`open`" class="chapter  " data-progress="46.1" style="left: 75.22935779816514%;"></a>
+    
+        <a href="./file/create.html" title="`create`" class="chapter  " data-progress="46.2" style="left: 76.14678899082568%;"></a>
+    
+        <a href="./process.html" title="Child processes" class="chapter  " data-progress="47" style="left: 77.06422018348624%;"></a>
+    
+        <a href="./process/pipe.html" title="Pipes" class="chapter  " data-progress="47.1" style="left: 77.98165137614679%;"></a>
+    
+        <a href="./process/wait.html" title="Wait" class="chapter  " data-progress="47.2" style="left: 78.89908256880734%;"></a>
+    
+        <a href="./fs.html" title="Filesystem Operations" class="chapter  " data-progress="48" style="left: 79.81651376146789%;"></a>
+    
+        <a href="./staging.html" title="Staging Area" class="chapter  " data-progress="49" style="left: 80.73394495412845%;"></a>
+    
+        <a href="./staging/bench.html" title="Benchmarking" class="chapter  " data-progress="49.1" style="left: 81.65137614678899%;"></a>
+    
+        <a href="./staging/comment.html" title="Comments" class="chapter  " data-progress="49.2" style="left: 82.56880733944953%;"></a>
+    
+        <a href="./staging/comment/doc-comment.html" title="Doc Comments" class="chapter  " data-progress="49.2.1" style="left: 83.4862385321101%;"></a>
+    
+        <a href="./staging/ffi.html" title="Foreign Function Interface" class="chapter  " data-progress="49.3" style="left: 84.40366972477064%;"></a>
+    
+        <a href="./staging/macros.html" title="macro_rules!" class="chapter  " data-progress="49.4" style="left: 85.3211009174312%;"></a>
+    
+        <a href="./staging/arg.html" title="Program arguments" class="chapter  " data-progress="49.5" style="left: 86.23853211009174%;"></a>
+    
+        <a href="./staging/arg/matching.html" title="Argument parsing" class="chapter  " data-progress="49.5.1" style="left: 87.1559633027523%;"></a>
+    
+        <a href="./staging/arg/getopts.html" title="`getopts`" class="chapter  " data-progress="49.5.2" style="left: 88.07339449541284%;"></a>
+    
+        <a href="./staging/rand.html" title="Random" class="chapter  " data-progress="49.6" style="left: 88.9908256880734%;"></a>
+    
+        <a href="./staging/simd.html" title="SIMD" class="chapter  " data-progress="49.7" style="left: 89.90825688073394%;"></a>
+    
+        <a href="./staging/test.html" title="Testing" class="chapter  " data-progress="49.8" style="left: 90.8256880733945%;"></a>
+    
+        <a href="./staging/unsafe.html" title="Unsafe operations" class="chapter  " data-progress="49.9" style="left: 91.74311926605505%;"></a>
+    
+        <a href="./staging/json.html" title="JSON parsing" class="chapter  " data-progress="49.10" style="left: 92.66055045871559%;"></a>
+    
+        <a href="./staging/json/json-enum.html" title="`Json`" class="chapter  " data-progress="49.10.1" style="left: 93.57798165137615%;"></a>
+    
+        <a href="./staging/json/decodable.html" title="`Decodable`" class="chapter  " data-progress="49.10.2" style="left: 94.4954128440367%;"></a>
+    
+        <a href="./staging/json/encodable.html" title="`Encodable`" class="chapter  " data-progress="49.10.3" style="left: 95.41284403669725%;"></a>
+    
+        <a href="./staging/fmt.html" title="Formatting" class="chapter  " data-progress="49.11" style="left: 96.3302752293578%;"></a>
+    
+        <a href="./staging/hash.html" title="HashMap" class="chapter  " data-progress="49.12" style="left: 97.24770642201835%;"></a>
+    
+        <a href="./staging/hash/alt-key-types.html" title="Alternate/custom key types" class="chapter  " data-progress="49.12.1" style="left: 98.1651376146789%;"></a>
+    
+        <a href="./staging/hash/hashset.html" title="HashSet" class="chapter  " data-progress="49.12.2" style="left: 99.08256880733946%;"></a>
+    
+        <a href="./todo.html" title="TODO" class="chapter  " data-progress="50" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_93">
+                    
+                        <h1 id="17-structures">17 Structures</h1>
+<p>There are three types of structures (&quot;structs&quot;) that can be created using the
+<code>struct</code> keyword:</p>
+<ul>
+<li>Tuple structs, which are, basically, named tuples.</li>
+<li>The classic <a href="http://en.wikipedia.org/wiki/Struct_(C_programming_language)" target="_blank">C structs</a></li>
+<li>Unit structs, which are field-less structs.</li>
+</ul>
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">// A unit struct
+struct Nil;
+
+// A tuple struct
+struct Pair(int, f64);
+
+// A struct with two fields
+struct Point {
+    x: f64,
+    y: f64,
+}
+
+// Structs can be reused as fields of another struct
+#[allow(dead&#95;code)]
+struct Rectangle {
+    p1: Point,
+    p2: Point,
+}
+
+fn main() {
+    // Instantiate a &#96;Point&#96;
+    let point: Point = Point { x: 0.3, y: 0.4 };
+
+    // Access the fields of the point
+    println!(&quot;point coordinates: ({}, {})&quot;, point.x, point.y);
+
+    // Destructure the point using a &#96;let&#96; binding
+    let Point { x: my&#95;x, y: my&#95;y } = point;
+
+    let &#95;rectangle = Rectangle {
+        // struct instantiation is an expression too
+        p1: Point { x: my&#95;y, y: my&#95;x },
+        p2: point,
+    };
+
+    // Instantiate a unit struct
+    let &#95;nil = Nil;
+
+    // Instantiate a tuple struct
+    let pair = Pair(1, 0.1);
+
+    // Destructure a tuple struct
+    let Pair(integer, decimal) = pair;
+
+    println!(&quot;pair contains {} and {}&quot;, integer, decimal);
+}</div>
+<div id="result"></div>
+</div>
+
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./match/struct.html" class="navigation navigation-prev " aria-label="Previous page: Destructuring structs"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./structs/visibility.html" class="navigation navigation-next " aria-label="Next page: Visibility"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js"></script>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"rust-playpen":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
