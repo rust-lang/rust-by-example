@@ -7,6 +7,7 @@ extern crate regex_macros;
 extern crate serialize;
 
 use example::Example;
+use std::thread::Thread;
 
 mod example;
 mod file;
@@ -22,9 +23,9 @@ fn main() {
         let tx = tx.clone();
         let count = example.count();
 
-        spawn(move || {
+        Thread::spawn(move || {
             example.process(vec!(i + 1), tx, 0, String::new());
-        });
+        }).detach();
 
         nexamples += count;
     }
