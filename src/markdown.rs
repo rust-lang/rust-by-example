@@ -53,7 +53,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
             match re.captures(line) {
                 None => {},
                 Some(captures) => {
-                    let src = captures.at(1);
+                    let src = captures.at(1).unwrap();
                     let input = format!("{{{}}}", src);
                     let p = format!("examples/{}/{}/{}", prefix, id, src);
                     let output = match file::read(&Path::new(p.as_slice())) {
@@ -62,7 +62,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
                         },
                         Ok(string) => {
                             format!("``` rust\n// {}\n{}```",
-                                    captures.at(1), string)
+                                    src, string)
                         }
                     };
 
@@ -129,8 +129,9 @@ impl<'a, 'b> Markdown<'a, 'b> {
                         once_ = true;
                     }
 
-                    let input = format!("{{{}.play}}", captures.at(1));
-                    let src = format!("{}.rs", captures.at(1));
+                    let srcbase = captures.at(1).unwrap();
+                    let input = format!("{{{}.play}}", srcbase);
+                    let src = format!("{}.rs", srcbase);
                     let p = format!("examples/{}/{}/{}", prefix, id, src);
                     let output = match file::read(&Path::new(p.as_slice())) {
                         Err(_) => {

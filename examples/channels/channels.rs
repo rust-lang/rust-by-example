@@ -1,4 +1,5 @@
 use std::comm;
+use std::thread::Thread;
 
 static NTASKS: uint = 3;
 
@@ -13,7 +14,7 @@ fn main() {
         let task_tx = tx.clone();
 
         // Each task will send its id via the channel
-        spawn(move || {
+        Thread::spawn(move || {
             // The task takes ownership over `task_tx`
             // Each task queues a message in the channel
             task_tx.send(id);
@@ -21,7 +22,7 @@ fn main() {
             // Sending is a non-blocking operation, the task will continue
             // immediately after sending its message
             println!("task {} finished", id);
-        });
+        }).detach();
     }
 
     // Here, all the messages are collected
