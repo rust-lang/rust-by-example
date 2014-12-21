@@ -1,4 +1,5 @@
 use std::comm;
+use std::thread::Thread;
 
 static NTASKS: uint = 3;
 
@@ -13,7 +14,9 @@ fn main() {
         let task_tx = tx.clone();
 
         // Each task will send its id via the channel
-        spawn(move || {
+        // We need to explicity ignore the return value of Thread::spawn
+        // Read more at http://doc.rust-lang.org/std/thread/index.html
+        let _ = Thread::spawn(move || {
             // The task takes ownership over `task_tx`
             // Each task queues a message in the channel
             task_tx.send(id);
