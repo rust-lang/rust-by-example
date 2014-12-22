@@ -7,4 +7,9 @@ When working with generics, the type parameters (e.g. `Ty`) may use traits
 * The generic can only be specialized for type parameters that conform to the
   bounds.
 
+Bounds are typically applied in one of two ways:
+
+* At the first instance of the type
+* In a `where` clause which directly precedes the `{` in the `impl`
+
 {bounds.play}
