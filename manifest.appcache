@@ -1,9 +1,9 @@
 CACHE MANIFEST
-# Revision 1419228264348
+# Revision 1419247322856
 
 CACHE:
-loop.html
 index.html
+loop.html
 array.html
 attribute/cfg/custom.html
 attribute/cfg.html
@@ -72,8 +72,8 @@ result/try.html
 result.html
 sockets.html
 staging/hash.html
-staging/arg/matching.html
 staging/arg/getopts.html
+staging/arg/matching.html
 staging/bench.html
 staging/comment/doc-comment.html
 staging/comment.html
