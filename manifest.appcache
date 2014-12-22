@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Revision 1419195972061
+# Revision 1419228264348
 
 CACHE:
 loop.html
@@ -22,8 +22,8 @@ closures.html
 constants.html
 crates/lib.html
 crates/link.html
-drop.html
 crates.html
+drop.html
 enum/c-like.html
 enum.html
 expression.html
@@ -72,8 +72,8 @@ result/try.html
 result.html
 sockets.html
 staging/hash.html
-staging/arg/getopts.html
 staging/arg/matching.html
+staging/arg/getopts.html
 staging/bench.html
 staging/comment/doc-comment.html
 staging/comment.html
