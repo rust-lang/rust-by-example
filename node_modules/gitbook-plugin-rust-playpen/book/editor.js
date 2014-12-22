@@ -134,14 +134,26 @@ function updateEditorHeight() {
   editor.resize();
 };
 
+// 
+// escapeHTML() borrowed from mustache.js:
+// https://github.com/janl/mustache.js/blob/master/mustache.js#L43
+// 
+// via:
+// http://stackoverflow.com/questions/24816/escaping-html-strings-with-jquery/12034334#12034334
+// 
+var entityMap = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': '&quot;',
+  "'": '&#39;',
+  "/": '&#x2F;'
+};
+
 function escapeHTML(unsafe) {
-  return unsafe
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;")
-    .replace(newLineRegex, '<br />');
+  return String(unsafe).replace(/[&<>"'\/]/g, function(s) {
+    return entityMap[s];
+  });
 }
 
 // Dispatches a XMLHttpRequest to the Rust playpen, running the program, and
