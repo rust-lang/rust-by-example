@@ -1,6 +1,6 @@
 fn main() {
     // Iterators can be collected into vectors
-    let mut collected_iterator: Vec<int> = range(0i, 10).collect();
+    let collected_iterator: Vec<int> = range(0i, 10).collect();
     println!("Collected range(0, 10) into: {}", collected_iterator);
 
     // The `vec!` macro can be used to initialize a vector
@@ -8,7 +8,7 @@ fn main() {
     println!("Initial vector: {}", xs);
 
     // Insert new element at the end of the vector
-    println!("Push 4 into the vector")
+    println!("Push 4 into the vector");
     xs.push(4);
     println!("Vector: {}", xs);
 
