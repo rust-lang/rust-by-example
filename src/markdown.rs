@@ -1,5 +1,6 @@
 use file;
 use playpen;
+use std::iter::repeat;
 
 pub struct Markdown<'a, 'b> {
     content: String,
@@ -30,8 +31,9 @@ impl<'a, 'b> Markdown<'a, 'b> {
             format!("{}", x)
         }).collect::<Vec<String>>().connect(".");
 
+        let len = number.len();
         let content = format!("{} {} {}\n\n{}",
-                              "#".repeat(number.len()),
+                              repeat("#").take(len).collect::<String>(),
                               version,
                               title,
                               body);
