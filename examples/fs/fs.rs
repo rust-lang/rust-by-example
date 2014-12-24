@@ -2,17 +2,17 @@ use std::io::fs;
 use std::io::fs::PathExtensions;
 use std::io::{File, IoResult, USER_RWX};
 
-// A simple implementation of `$ cat path`
+// A simple implementation of `% cat path`
 fn cat(path: &Path) -> IoResult<String> {
     File::open(path).and_then(|mut f| f.read_to_string())
 }
 
-// A simple implementation of `$ echo s > path`
+// A simple implementation of `% echo s > path`
 fn echo(s: &str, path: &Path) -> IoResult<()> {
     File::create(path).and_then(|mut f| f.write_str(s))
 }
 
-// A simple implementation of `$ touch path` (ignores existing files)
+// A simple implementation of `% touch path` (ignores existing files)
 fn touch(path: &Path) -> IoResult<()> {
     if !path.exists() {
         File::create(path).and_then(|_| Ok(()))
