@@ -36,7 +36,7 @@
 
 
         
-    <div class="book"  data-level="48" data-basepath="." data-revision="1419314637227">
+    <div class="book"  data-level="48" data-basepath="." data-revision="1419454088440">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2346,17 +2346,17 @@ module contains several functions that deal with the filesystem.</p>
 use std::io::fs::PathExtensions;
 use std::io::{File, IoResult, USER&#95;RWX};
 
-// A simple implementation of &#96;<script type="math/tex">cat path&#96;
-fn cat(path: &Path) -&gt; IoResult&lt;String&gt; {
+// A simple implementation of &#96;% cat path&#96;
+fn cat(path: &amp;Path) -&gt; IoResult&lt;String&gt; {
     File::open(path).and&#95;then(|mut f| f.read&#95;to&#95;string())
 }
 
-// A simple implementation of &#96;</script> echo s &gt; path&#96;
+// A simple implementation of &#96;% echo s &gt; path&#96;
 fn echo(s: &amp;str, path: &amp;Path) -&gt; IoResult&lt;()&gt; {
     File::create(path).and&#95;then(|mut f| f.write&#95;str(s))
 }
 
-// A simple implementation of &#96;$ touch path&#96; (ignores existing files)
+// A simple implementation of &#96;% touch path&#96; (ignores existing files)
 fn touch(path: &amp;Path) -&gt; IoResult&lt;()&gt; {
     if !path.exists() {
         File::create(path).and&#95;then(|&#95;| Ok(()))
