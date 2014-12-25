@@ -1,0 +1,8 @@
+[package]
+
+name = "update"
+version = "0.0.1"
+authors = ["Nicholas Mazzuca <npmazzuca@gmail.com>"]
+
+[dependencies]
+rustc-serialize = "0.1.5"

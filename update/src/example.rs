@@ -1,10 +1,10 @@
 use file;
 use markdown::Markdown;
-use serialize::{Decodable,json};
 use std::iter::AdditiveIterator;
 use std::iter::repeat;
+use rustc_serialize::{Decodable, json};
 
-#[deriving(Decodable)]
+#[deriving(RustcDecodable)]
 pub struct Example {
     children: Option<Vec<Example>>,
     id: String,

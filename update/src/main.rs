@@ -4,7 +4,7 @@
 extern crate regex;
 #[phase(plugin)]
 extern crate regex_macros;
-extern crate serialize;
+extern crate "rustc-serialize" as rustc_serialize;
 
 use example::Example;
 use std::thread::Thread;
