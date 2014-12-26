@@ -36,7 +36,7 @@
 
 
         
-    <div class="book"  data-level="26" data-basepath="." data-revision="1419487480321">
+    <div class="book"  data-level="26" data-basepath="." data-revision="1419557388863">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
@@ -2365,7 +2365,7 @@ impl List {
 
     // Consume a list, and return the same list with a new element at its front
     fn prepend(self, elem: uint) -&gt; List {
-        // &#96;Cons&#96; also has type Node
+        // &#96;Cons&#96; also has type List
         Cons(elem, box self)
     }
 
@@ -2373,7 +2373,7 @@ impl List {
     fn len(&amp;self) -&gt; uint {
         // &#96;self&#96; has to be matched, because the behavior of this method
         // depends on the variant of &#96;self&#96;
-        // &#96;self&#96; has type &#96;&amp;Node&#96;, and &#96;&#42;self&#96; has type &#96;Node&#96;, matching on a
+        // &#96;self&#96; has type &#96;&amp;List&#96;, and &#96;&#42;self&#96; has type &#96;List&#96;, matching on a
         // concrete type &#96;T&#96; is preferred over a match on a reference &#96;&amp;T&#96;
         match &#42;self {
             // Can&#39;t take ownership of the tail, because &#96;self&#96; is borrowed;
