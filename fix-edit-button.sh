@@ -5,6 +5,6 @@ for example in $(find examples -type d -name "*"); do
   if [[ -f ${html} ]]; then
     echo ${html}
 
-    sed -i s:${example#examples/}.md:${example}/input.md: ${html}
+    sed -i -e s:${example#examples/}.md:${example}/input.md: ${html}
   fi
 done
