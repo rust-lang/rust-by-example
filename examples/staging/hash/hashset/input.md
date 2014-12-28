@@ -35,4 +35,4 @@ Try all of these in the following example.
 (Examples adapted from the [documentation.][hash-set])
 
 [treeset]: http://doc.rust-lang.org/std/collections/struct.TreeSet.html
-[hash-set]: http://doc.rust-lang.org/std/collections/hashmap/struct.HashSet.html#method.difference
+[hash-set]: http://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference

@@ -13,7 +13,7 @@ fn main() {
                       0.1f32, 0.2f64,
                       'a', true);
 
-    // Values can be extracted from the tuple using the `valN` methods
+    // Values can be extracted from the tuple using the `.N` syntax
     println!("long tuple first value: {}", long_tuple.0);
     println!("long tuple second value: {}", long_tuple.1);
 

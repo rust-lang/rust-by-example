@@ -19,7 +19,7 @@ impl List {
 
     // Consume a list, and return the same list with a new element at its front
     fn prepend(self, elem: uint) -> List {
-        // `Cons` also has type Node
+        // `Cons` also has type List
         Cons(elem, box self)
     }
 
@@ -27,7 +27,7 @@ impl List {
     fn len(&self) -> uint {
         // `self` has to be matched, because the behavior of this method
         // depends on the variant of `self`
-        // `self` has type `&Node`, and `*self` has type `Node`, matching on a
+        // `self` has type `&List`, and `*self` has type `List`, matching on a
         // concrete type `T` is preferred over a match on a reference `&T`
         match *self {
             // Can't take ownership of the tail, because `self` is borrowed;

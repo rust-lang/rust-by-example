@@ -2,6 +2,7 @@ use file;
 use markdown::Markdown;
 use serialize::{Decodable,json};
 use std::iter::AdditiveIterator;
+use std::iter::repeat;
 
 #[deriving(Decodable)]
 pub struct Example {
@@ -46,20 +47,22 @@ impl Example {
         let entry =
             match Markdown::process(number.as_slice(), id, title, prefix) {
                 Ok(_) => {
-                    let md = if prefix.as_slice().is_whitespace() {
+                    let md = if prefix.chars().all(|c| c.is_whitespace()) {
                         format!("{}.md", id)
                     } else {
                         format!("{}/{}.md", prefix, id)
                     };
 
                     format!("{}* [{}]({})",
-                            "  ".repeat(indent),
+                            repeat("  ").take(indent).collect::<String>(),
                             title,
                             md)
                 },
                 Err(why) => {
                     print!("{}: {}\n", id, why);
-                    format!("{}* {}", "  ".repeat(indent), title)
+                    format!("{}* {}",
+                            repeat("  ").take(indent).collect::<String>(),
+                            title)
                 },
             };
 
@@ -74,7 +77,7 @@ impl Example {
 
                 for (i, example) in children.iter().enumerate() {
                     let tx = tx.clone();
-                    let prefix = if prefix.as_slice().is_whitespace() {
+                    let prefix = if prefix.chars().all(|c| c.is_whitespace()) {
                         format!("{}", id)
                     } else {
                         format!("{}/{}", prefix, id)

@@ -35,7 +35,7 @@ fn main() {
         // one command and one argument passed
         [_, ref cmd, ref num] => {
             // parse the number
-            let number: int = match from_str(num.as_slice()) {
+            let number: int = match num.parse() {
                 Some(n) => {
                     n
                 },
