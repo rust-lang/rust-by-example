@@ -1,4 +1,3 @@
-#![feature(macro_rules, slicing_syntax)]
 use rustc_serialize::{json, Decodable};
 mod rustc_serialize;
 

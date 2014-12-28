@@ -20,10 +20,11 @@ pub trait Encoder<E> {
     fn emit_f64(&mut self, v: f64) -> Result<(), E>;
     fn emit_str(&mut self, v: &str) -> Result<(), E>;
 
-    fn emit_struct<F>(&mut self, name: &str, len: uint, f: F) -> Result<(), E> where
-        F: FnOnce(&mut Self) -> Result<(), E>;
-    fn emit_struct_field<F>(&mut self, f_name: &str, f_idx: uint, f: F) -> Result<(), E> where
-        F: FnOnce(&mut Self) -> Result<(), E>;
+    fn emit_struct<F>(&mut self, name: &str, len: uint, f: F) -> Result<(), E>
+            where F: FnOnce(&mut Self) -> Result<(), E>;
+    fn emit_struct_field<F>(&mut self, f_name: &str, f_idx: uint, f: F)
+            -> Result<(), E>
+            where F: FnOnce(&mut Self) -> Result<(), E>;
 
     fn emit_seq<F>(&mut self, len: uint, f: F) -> Result<(), E> where
         F: FnOnce(&mut Self) -> Result<(), E>;
@@ -37,19 +38,17 @@ pub trait Decoder<E> {
     fn read_f64(&mut self) -> Result<f64, E>;
     fn read_str(&mut self) -> Result<String, E>;
 
-    fn read_struct<T, F>(&mut self, s_name: &str, len: uint, f: F) -> Result<T, E> where
-        F: FnOnce(&mut Self) -> Result<T, E>;
-    fn read_struct_field<T, F>(&mut self,
-                               f_name: &str,
-                               f_idx: uint,
-                               f: F)
-                               -> Result<T, E> where
-        F: FnOnce(&mut Self) -> Result<T, E>;
+    fn read_struct<T, F>(&mut self, s_name: &str, len: uint, f: F)
+            -> Result<T, E>
+            where F: FnOnce(&mut Self) -> Result<T, E>;
+    fn read_struct_field<T, F>(&mut self, f_name: &str, f_idx: uint, f: F)
+            -> Result<T, E>
+            where F: FnOnce(&mut Self) -> Result<T, E>;
 
-    fn read_seq<T, F>(&mut self, f: F) -> Result<T, E> where
-        F: FnOnce(&mut Self, uint) -> Result<T, E>;
-    fn read_seq_elt<T, F>(&mut self, idx: uint, f: F) -> Result<T, E> where
-        F: FnOnce(&mut Self) -> Result<T, E>;
+    fn read_seq<T, F>(&mut self, f: F) -> Result<T, E>
+            where F: FnOnce(&mut Self, uint) -> Result<T, E>;
+    fn read_seq_elt<T, F>(&mut self, idx: uint, f: F) -> Result<T, E>
+            where F: FnOnce(&mut Self) -> Result<T, E>;
 
     // Failure
     fn error(&mut self, err: &str) -> E;
@@ -71,7 +70,7 @@ impl<E, S:Encoder<E>> Encodable<S, E> for str {
 
 impl<E, S:Encoder<E>> Encodable<S, E> for String {
     fn encode(&self, s: &mut S) -> Result<(), E> {
-        s.emit_str(self[])
+        s.emit_str(self.as_slice())
     }
 }
 
@@ -93,7 +92,8 @@ impl<E, D:Decoder<E>> Decodable<D, E> for f32 {
     }
 }
 
-impl<'a, E, S: Encoder<E>, Sized? T: Encodable<S, E>> Encodable<S, E> for &'a T {
+impl<'a, E, S: Encoder<E>, Sized? T: Encodable<S, E>> Encodable<S, E>
+        for &'a T {
     fn encode(&self, s: &mut S) -> Result<(), E> {
         (**self).encode(s)
     }
@@ -103,14 +103,13 @@ impl<'a, E, S: Encoder<E>, Sized? T: Encodable<S, E>> Encodable<S, E> for &'a T 
 // Helper routines
 
 pub trait EncoderHelpers<E> {
-    fn emit_from_vec<T, F>(&mut self, v: &[T], f: F) -> Result<(), E> where
-        F: FnMut(&mut Self, &T) -> Result<(), E>;
+    fn emit_from_vec<T, F>(&mut self, v: &[T], f: F) -> Result<(), E>
+        where F: FnMut(&mut Self, &T) -> Result<(), E>;
 }
 
 impl<E, S:Encoder<E>> EncoderHelpers<E> for S {
-    fn emit_from_vec<T, F>(&mut self, v: &[T], mut f: F) -> Result<(), E> where
-        F: FnMut(&mut S, &T) -> Result<(), E>,
-    {
+    fn emit_from_vec<T, F>(&mut self, v: &[T], mut f: F) -> Result<(), E>
+            where F: FnMut(&mut S, &T) -> Result<(), E> {
         self.emit_seq(v.len(), |this| {
             for (i, e) in v.iter().enumerate() {
                 try!(this.emit_seq_elt(i, |this| {
@@ -123,14 +122,13 @@ impl<E, S:Encoder<E>> EncoderHelpers<E> for S {
 }
 
 pub trait DecoderHelpers<E> {
-    fn read_to_vec<T, F>(&mut self, f: F) -> Result<Vec<T>, E> where
-        F: FnMut(&mut Self) -> Result<T, E>;
+    fn read_to_vec<T, F>(&mut self, f: F) -> Result<Vec<T>, E>
+            where F: FnMut(&mut Self) -> Result<T, E>;
 }
 
 impl<E, D:Decoder<E>> DecoderHelpers<E> for D {
-    fn read_to_vec<T, F>(&mut self, mut f: F) -> Result<Vec<T>, E> where F:
-        FnMut(&mut D) -> Result<T, E>,
-    {
+    fn read_to_vec<T, F>(&mut self, mut f: F) -> Result<Vec<T>, E>
+            where F: FnMut(&mut D) -> Result<T, E> {
         self.read_seq(|this, len| {
             let mut v = Vec::with_capacity(len);
             for i in range(0, len) {
@@ -151,9 +149,9 @@ pub mod json {
 
     use super::Encodable;
 
-    type Array = Vec<Json>;
-    type Object = BTreeMap<string::String, Json>;
-    type EncodeResult = io::IoResult<()>;
+    pub type Array = Vec<Json>;
+    pub type Object = BTreeMap<string::String, Json>;
+    pub type EncodeResult = io::IoResult<()>;
 
     /// The errors that can arise while parsing a JSON stream.
     #[deriving(Clone, Copy, PartialEq, Show)]
@@ -199,7 +197,8 @@ pub mod json {
         Null,
     }
 
-    pub fn encode<'a, T: Encodable<Encoder<'a>, io::IoError>>(object: &T) -> string::String {
+    pub fn encode<'a, T: Encodable<Encoder<'a>, io::IoError>>(object: &T)
+            -> string::String {
         let buff = Encoder::buffer_encode(object);
         string::String::from_utf8(buff).unwrap()
     }
@@ -209,14 +208,16 @@ pub mod json {
     }
 
     impl<'a> Encoder<'a> {
-        /// Creates a new JSON encoder whose output will be written to the writer
-        /// specified.
+        /// Creates a new JSON encoder whose output will be written to the
+        /// writer specified.
         pub fn new(writer: &'a mut io::Writer) -> Encoder<'a> {
             Encoder { writer: writer }
         }
 
         /// Encode the specified struct into a json [u8]
-        pub fn buffer_encode<T: Encodable<Encoder<'a>, io::IoError>>(object: &T) -> Vec<u8>  {
+        pub fn buffer_encode<T>(object: &T)
+                -> Vec<u8>
+                where T: Encodable<Encoder<'a>, io::IoError> {
             //Serialize the object in a string using a writer
             let mut m = Vec::new();
             unsafe {
@@ -239,34 +240,31 @@ pub mod json {
             escape_str(self.writer, v)
         }
 
-        fn emit_struct<F>(&mut self, _: &str, _: uint, f: F) -> EncodeResult where
-            F: FnOnce(&mut Encoder<'a>) -> EncodeResult,
-        {
+        fn emit_struct<F>(&mut self, _: &str, _: uint, f: F) -> EncodeResult
+                where F: FnOnce(&mut Encoder<'a>) -> EncodeResult {
             try!(write!(self.writer, "{{"));
             try!(f(self));
             write!(self.writer, "}}")
         }
 
-        fn emit_struct_field<F>(&mut self, name: &str, idx: uint, f: F) -> EncodeResult where
-            F: FnOnce(&mut Encoder<'a>) -> EncodeResult,
-        {
+        fn emit_struct_field<F>(&mut self, name: &str, idx: uint, f: F)
+                -> EncodeResult
+                where F: FnOnce(&mut Encoder<'a>) -> EncodeResult {
             if idx != 0 { try!(write!(self.writer, ",")); }
             try!(escape_str(self.writer, name));
             try!(write!(self.writer, ":"));
             f(self)
         }
 
-        fn emit_seq<F>(&mut self, _len: uint, f: F) -> EncodeResult where
-            F: FnOnce(&mut Encoder<'a>) -> EncodeResult,
-        {
+        fn emit_seq<F>(&mut self, _len: uint, f: F) -> EncodeResult
+                where F: FnOnce(&mut Encoder<'a>) -> EncodeResult {
             try!(write!(self.writer, "["));
             try!(f(self));
             write!(self.writer, "]")
         }
 
-        fn emit_seq_elt<F>(&mut self, idx: uint, f: F) -> EncodeResult where
-            F: FnOnce(&mut Encoder<'a>) -> EncodeResult,
-        {
+        fn emit_seq_elt<F>(&mut self, idx: uint, f: F) -> EncodeResult
+                where F: FnOnce(&mut Encoder<'a>) -> EncodeResult {
             if idx != 0 {
                 try!(write!(self.writer, ","));
             }
@@ -274,7 +272,8 @@ pub mod json {
         }
     }
 
-    fn escape_bytes(wr: &mut io::Writer, bytes: &[u8]) -> Result<(), io::IoError> {
+    fn escape_bytes(wr: &mut io::Writer, bytes: &[u8])
+            -> Result<(), io::IoError> {
         try!(wr.write_str("\""));
 
         let mut start = 0;
@@ -335,7 +334,8 @@ pub mod json {
         wr.write_str("\"")
     }
 
-    fn escape_str(writer: &mut io::Writer, v: &str) -> Result<(), io::IoError> {
+    fn escape_str(writer: &mut io::Writer, v: &str)
+            -> Result<(), io::IoError> {
         escape_bytes(writer, v.as_bytes())
     }
 

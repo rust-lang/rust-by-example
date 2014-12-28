@@ -1,5 +1,3 @@
-#![feature(macro_rules, slicing_syntax)]
-
 use rustc_serialize::json;
 mod rustc_serialize;
 

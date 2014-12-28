@@ -20,15 +20,16 @@ pub trait Encoder<E> {
     fn emit_f64(&mut self, v: f64) -> Result<(), E>;
     fn emit_str(&mut self, v: &str) -> Result<(), E>;
 
-    fn emit_struct<F>(&mut self, name: &str, len: uint, f: F) -> Result<(), E> where
-        F: FnOnce(&mut Self) -> Result<(), E>;
-    fn emit_struct_field<F>(&mut self, f_name: &str, f_idx: uint, f: F) -> Result<(), E> where
-        F: FnOnce(&mut Self) -> Result<(), E>;
+    fn emit_struct<F>(&mut self, name: &str, len: uint, f: F) -> Result<(), E>
+            where F: FnOnce(&mut Self) -> Result<(), E>;
+    fn emit_struct_field<F>(&mut self, f_name: &str, f_idx: uint, f: F)
+            -> Result<(), E>
+            where F: FnOnce(&mut Self) -> Result<(), E>;
 
-    fn emit_seq<F>(&mut self, len: uint, f: F) -> Result<(), E> where
-        F: FnOnce(&mut Self) -> Result<(), E>;
-    fn emit_seq_elt<F>(&mut self, idx: uint, f: F) -> Result<(), E> where
-        F: FnOnce(&mut Self) -> Result<(), E>;
+    fn emit_seq<F>(&mut self, len: uint, f: F) -> Result<(), E>
+            where F: FnOnce(&mut Self) -> Result<(), E>;
+    fn emit_seq_elt<F>(&mut self, idx: uint, f: F) -> Result<(), E>
+            where F: FnOnce(&mut Self) -> Result<(), E>;
 }
 
 pub trait Decoder<E> {
@@ -37,19 +38,17 @@ pub trait Decoder<E> {
     fn read_f64(&mut self) -> Result<f64, E>;
     fn read_str(&mut self) -> Result<String, E>;
 
-    fn read_struct<T, F>(&mut self, s_name: &str, len: uint, f: F) -> Result<T, E> where
-        F: FnOnce(&mut Self) -> Result<T, E>;
-    fn read_struct_field<T, F>(&mut self,
-                               f_name: &str,
-                               f_idx: uint,
-                               f: F)
-                               -> Result<T, E> where
-        F: FnOnce(&mut Self) -> Result<T, E>;
+    fn read_struct<T, F>(&mut self, s_name: &str, len: uint, f: F)
+            -> Result<T, E>
+            where F: FnOnce(&mut Self) -> Result<T, E>;
+    fn read_struct_field<T, F>(&mut self, f_name: &str, f_idx: uint, f: F)
+            -> Result<T, E>
+            where F: FnOnce(&mut Self) -> Result<T, E>;
 
-    fn read_seq<T, F>(&mut self, f: F) -> Result<T, E> where
-        F: FnOnce(&mut Self, uint) -> Result<T, E>;
-    fn read_seq_elt<T, F>(&mut self, idx: uint, f: F) -> Result<T, E> where
-        F: FnOnce(&mut Self) -> Result<T, E>;
+    fn read_seq<T, F>(&mut self, f: F) -> Result<T, E>
+            where F: FnOnce(&mut Self, uint) -> Result<T, E>;
+    fn read_seq_elt<T, F>(&mut self, idx: uint, f: F) -> Result<T, E>
+            where F: FnOnce(&mut Self) -> Result<T, E>;
 
     // Failure
     fn error(&mut self, err: &str) -> E;
@@ -71,7 +70,7 @@ impl<E, S:Encoder<E>> Encodable<S, E> for str {
 
 impl<E, S:Encoder<E>> Encodable<S, E> for String {
     fn encode(&self, s: &mut S) -> Result<(), E> {
-        s.emit_str(self[])
+        s.emit_str(self.as_slice())
     }
 }
 
@@ -93,7 +92,8 @@ impl<E, D:Decoder<E>> Decodable<D, E> for f32 {
     }
 }
 
-impl<'a, E, S: Encoder<E>, Sized? T: Encodable<S, E>> Encodable<S, E> for &'a T {
+impl<'a, E, S: Encoder<E>, Sized? T: Encodable<S, E>> Encodable<S, E>
+        for &'a T {
     fn encode(&self, s: &mut S) -> Result<(), E> {
         (**self).encode(s)
     }
@@ -108,9 +108,8 @@ pub trait EncoderHelpers<E> {
 }
 
 impl<E, S:Encoder<E>> EncoderHelpers<E> for S {
-    fn emit_from_vec<T, F>(&mut self, v: &[T], mut f: F) -> Result<(), E> where
-        F: FnMut(&mut S, &T) -> Result<(), E>,
-    {
+    fn emit_from_vec<T, F>(&mut self, v: &[T], mut f: F) -> Result<(), E>
+            where F: FnMut(&mut S, &T) -> Result<(), E> {
         self.emit_seq(v.len(), |this| {
             for (i, e) in v.iter().enumerate() {
                 try!(this.emit_seq_elt(i, |this| {
@@ -123,14 +122,13 @@ impl<E, S:Encoder<E>> EncoderHelpers<E> for S {
 }
 
 pub trait DecoderHelpers<E> {
-    fn read_to_vec<T, F>(&mut self, f: F) -> Result<Vec<T>, E> where
-        F: FnMut(&mut Self) -> Result<T, E>;
+    fn read_to_vec<T, F>(&mut self, f: F) -> Result<Vec<T>, E>
+            where F: FnMut(&mut Self) -> Result<T, E>;
 }
 
 impl<E, D:Decoder<E>> DecoderHelpers<E> for D {
-    fn read_to_vec<T, F>(&mut self, mut f: F) -> Result<Vec<T>, E> where F:
-        FnMut(&mut D) -> Result<T, E>,
-    {
+    fn read_to_vec<T, F>(&mut self, mut f: F) -> Result<Vec<T>, E>
+            where F: FnMut(&mut D) -> Result<T, E> {
         self.read_seq(|this, len| {
             let mut v = Vec::with_capacity(len);
             for i in range(0, len) {
@@ -152,10 +150,10 @@ pub mod json {
     use self::unicode::str as unicode_str;
     use self::unicode::str::Utf16Item;
 
-    type Array = Vec<Json>;
-    type Object = BTreeMap<string::String, Json>;
-    type EncodeResult = io::IoResult<()>;
-    type DecodeResult<T> = Result<T, DecoderError>;
+    pub type Array = Vec<Json>;
+    pub type Object = BTreeMap<string::String, Json>;
+    pub type EncodeResult = io::IoResult<()>;
+    pub type DecodeResult<T> = Result<T, DecoderError>;
 
     /// The errors that can arise while parsing a JSON stream.
     #[deriving(Clone, Copy, PartialEq, Show)]
@@ -213,7 +211,8 @@ pub mod json {
     }
 
     impl Decoder {
-        /// Creates a new decoder instance for decoding the specified JSON value.
+        /// Creates a new decoder instance for decoding
+        /// the specified JSON value.
         pub fn new(json: Json) -> Decoder {
             Decoder { stack: vec![json] }
         }
@@ -223,27 +222,10 @@ pub mod json {
         }
     }
 
-    macro_rules! expect {
-        ($e:expr, Null) => ({
-            match $e {
-                Json::Null => Ok(()),
-                other => Err(ExpectedError("Null".to_string(),
-                                           format!("{}", other)))
-            }
-        });
-        ($e:expr, $t:ident) => ({
-            match $e {
-                Json::$t(v) => Ok(v),
-                other => {
-                    Err(DecoderError::ExpectedError(stringify!($t).to_string(),
-                                      format!("{}", other)))
-                }
-            }
-        })
-    }
-
     impl super::Decoder<DecoderError> for Decoder {
-        fn read_f32(&mut self) -> DecodeResult<f32> { self.read_f64().map(|x| x as f32) }
+        fn read_f32(&mut self) -> DecodeResult<f32> {
+            self.read_f64().map(|x| x as f32)
+        }
 
         fn read_f64(&mut self) -> DecodeResult<f64> {
             match self.pop() {
@@ -251,38 +233,57 @@ pub mod json {
                 Json::U64(f) => Ok(f as f64),
                 Json::F64(f) => Ok(f),
                 Json::String(s) => {
-                    // re: #12967.. a type w/ numeric keys (ie HashMap<uint, V> etc)
+                    // re: #12967.. a type w/ numeric keys
+                    // (ie HashMap<uint, V> etc)
                     // is going to have a string here, as per JSON spec.
                     match s.parse() {
                         Some(f) => Ok(f),
-                        None => Err(DecoderError::ExpectedError("Number".to_string(), s)),
+                        None => {
+                            Err(DecoderError::ExpectedError(
+                                "Number".to_string(), s
+                            ))
+                        },
                     }
                 },
                 Json::Null => Ok(f64::NAN),
-                value => Err(DecoderError::ExpectedError("Number".to_string(), format!("{}", value)))
+                value => {
+                    Err(DecoderError::ExpectedError(
+                        "Number".to_string(), format!("{}", value)
+                    ))
+                }
             }
         }
 
         fn read_str(&mut self) -> DecodeResult<string::String> {
-            expect!(self.pop(), String)
+            match self.pop() {
+                Json::String(v) => Ok(v),
+                other => {
+                    Err(DecoderError::ExpectedError("String".to_string(),
+                                      format!("{}", other)))
+                }
+            }
         }
 
-        fn read_struct<T, F>(&mut self, _name: &str, _len: uint, f: F) -> DecodeResult<T> where
-            F: FnOnce(&mut Decoder) -> DecodeResult<T>,
-        {
+        fn read_struct<T, F>(&mut self, _name: &str, _len: uint, f: F)
+                -> DecodeResult<T>
+                where F: FnOnce(&mut Decoder) -> DecodeResult<T> {
             let value = try!(f(self));
             self.pop();
             Ok(value)
         }
 
-        fn read_struct_field<T, F>(&mut self,
-                                   name: &str,
-                                   _idx: uint,
-                                   f: F)
-                                   -> DecodeResult<T> where
-            F: FnOnce(&mut Decoder) -> DecodeResult<T>,
-        {
-            let mut obj = try!(expect!(self.pop(), Object));
+        fn read_struct_field<T, F>(&mut self, name: &str, _idx: uint, f: F)
+                -> DecodeResult<T>
+                where F: FnOnce(&mut Decoder) -> DecodeResult<T> {
+            let mut obj = try!(
+                match self.pop() {
+                    Json::Object(v) => Ok(v),
+                    other => {
+                        Err(DecoderError::ExpectedError("Object".to_string(),
+                                          format!("{}", other)))
+                    }
+                }
+            );
 
             let value = match obj.remove(&name.to_string()) {
                 None => {
@@ -291,7 +292,11 @@ pub mod json {
                     self.stack.push(Json::Null);
                     match f(self) {
                         Ok(x) => x,
-                        Err(_) => return Err(DecoderError::MissingFieldError(name.to_string())),
+                        Err(_) => {
+                            return Err(DecoderError::MissingFieldError(
+                                name.to_string()
+                            ));
+                        }
                     }
                 },
                 Some(json) => {
@@ -303,10 +308,17 @@ pub mod json {
             Ok(value)
         }
 
-        fn read_seq<T, F>(&mut self, f: F) -> DecodeResult<T> where
-            F: FnOnce(&mut Decoder, uint) -> DecodeResult<T>,
-        {
-            let array = try!(expect!(self.pop(), Array));
+        fn read_seq<T, F>(&mut self, f: F) -> DecodeResult<T>
+                where F: FnOnce(&mut Decoder, uint) -> DecodeResult<T> {
+            let array = try!(
+                match self.pop() {
+                    Json::Array(v) => Ok(v),
+                    other => {
+                        Err(DecoderError::ExpectedError("Array".to_string(),
+                                          format!("{}", other)))
+                    }
+                }
+            );
             let len = array.len();
             for v in array.into_iter().rev() {
                 self.stack.push(v);
@@ -314,9 +326,8 @@ pub mod json {
             f(self, len)
         }
 
-        fn read_seq_elt<T, F>(&mut self, _idx: uint, f: F) -> DecodeResult<T> where
-            F: FnOnce(&mut Decoder) -> DecodeResult<T>,
-        {
+        fn read_seq_elt<T, F>(&mut self, _idx: uint, f: F) -> DecodeResult<T>
+                where F: FnOnce(&mut Decoder) -> DecodeResult<T> {
             f(self)
         }
 
@@ -395,18 +406,23 @@ pub mod json {
         pub fn top<'l>(&'l self) -> Option<StackElement<'l>> {
             return match self.stack.last() {
                 None => None,
-                Some(&InternalStackElement::Index(i)) => Some(StackElement::Index(i)),
+                Some(&InternalStackElement::Index(i)) =>
+                    Some(StackElement::Index(i)),
                 Some(&InternalStackElement::Key(start, size)) => {
                     Some(StackElement::Key(str::from_utf8(
-                        self.str_buffer[start as uint .. (start+size) as uint]
-                    ).unwrap()))
+                        self.str_buffer.slice_or_fail(
+                            &(start as uint), &((start+size) as uint)
+                        )).unwrap())
+                    )
                 }
             }
         }
 
         // Used by Parser to insert Key elements at the top of the stack.
         fn push_key(&mut self, key: string::String) {
-            self.stack.push(InternalStackElement::Key(self.str_buffer.len() as u16, key.len() as u16));
+            self.stack.push(InternalStackElement::Key(
+                self.str_buffer.len() as u16, key.len() as u16)
+            );
             for c in key.as_bytes().iter() {
                 self.str_buffer.push(*c);
             }
@@ -456,10 +472,11 @@ pub mod json {
         ch: Option<char>,
         line: uint,
         col: uint,
-        // We maintain a stack representing where we are in the logical structure
-        // of the JSON stream.
+        // We maintain a stack representing where we are in the logical 
+        // structure of the JSON stream.
         stack: Stack,
-        // A state machine is kept to make it possible to interrupt and resume parsing.
+        // A state machine is kept to make it possible to
+        // interrupt and resume parsing.
         state: ParserState,
     }
 
@@ -476,7 +493,9 @@ pub mod json {
                     self.state = ParserState::Finished;
                     return None;
                 } else {
-                    return Some(self.error_event(ErrorCode::TrailingCharacters));
+                    return Some(self.error_event(
+                        ErrorCode::TrailingCharacters)
+                    );
                 }
             }
 
@@ -499,8 +518,8 @@ pub mod json {
             return p;
         }
 
-        /// Provides access to the current position in the logical structure of the
-        /// JSON stream.
+        /// Provides access to the current position in the logical 
+        /// structure of the JSON stream.
         pub fn stack<'l>(&'l self) -> &'l Stack {
             return &self.stack;
         }
@@ -597,9 +616,11 @@ pub mod json {
                 '0' => {
                     self.bump();
 
-                    // A leading '0' must be the only digit before the decimal point.
+                    // A leading '0' must be the only digit 
+                    // before the decimal point.
                     match self.ch_or_null() {
-                        '0' ... '9' => return self.error(ErrorCode::InvalidNumber),
+                        '0' ... '9' =>
+                            return self.error(ErrorCode::InvalidNumber),
                         _ => ()
                     }
                 },
@@ -610,8 +631,13 @@ pub mod json {
                                 accum *= 10;
                                 accum += (c as u64) - ('0' as u64);
 
-                                // Detect overflow by comparing to the last value.
-                                if accum <= last_accum { return self.error(ErrorCode::InvalidNumber); }
+                                // Detect overflow by comparing
+                                // to the last value.
+                                if accum <= last_accum {
+                                    return self.error(
+                                        ErrorCode::InvalidNumber
+                                    );
+                                }
 
                                 self.bump();
                             }
@@ -649,7 +675,8 @@ pub mod json {
             Ok(res)
         }
 
-        fn parse_exponent(&mut self, mut res: f64) -> Result<f64, ParserError> {
+        fn parse_exponent(&mut self, mut res: f64)
+                -> Result<f64, ParserError> {
             self.bump();
 
             let mut exp = 0u;
@@ -738,7 +765,9 @@ pub mod json {
                         't' => res.push('\t'),
                         'u' => match try!(self.decode_hex_escape()) {
                             0xDC00 ... 0xDFFF => {
-                                return self.error(ErrorCode::LoneLeadingSurrogateInHexEscape)
+                                return self.error(
+                                    ErrorCode::LoneLeadingSurrogateInHexEscape
+                                )
                             }
 
                             // Non-BMP characters are encoded as a sequence of
@@ -746,19 +775,29 @@ pub mod json {
                             n1 @ 0xD800 ... 0xDBFF => {
                                 match (self.next_char(), self.next_char()) {
                                     (Some('\\'), Some('u')) => (),
-                                    _ => return self.error(ErrorCode::UnexpectedEndOfHexEscape),
+                                    _ => {
+                                        return self.error(
+                                            ErrorCode::UnexpectedEndOfHexEscape
+                                        )
+                                    },
                                 }
 
                                 let buf = [n1, try!(self.decode_hex_escape())];
                                 match unicode_str::utf16_items(&buf).next() {
-                                    Some(Utf16Item::ScalarValue(c)) => res.push(c),
-                                    _ => return self.error(ErrorCode::LoneLeadingSurrogateInHexEscape),
+                                    Some(Utf16Item::ScalarValue(c)) =>
+                                        res.push(c),
+                                    _ => return self.error(
+                                ErrorCode::LoneLeadingSurrogateInHexEscape
+                                        ),
                                 }
                             }
 
                             n => match char::from_u32(n as u32) {
                                 Some(c) => res.push(c),
-                                None => return self.error(ErrorCode::InvalidUnicodeCodePoint),
+                                None => 
+                                    return self.error(
+                                        ErrorCode::InvalidUnicodeCodePoint
+                                    ),
                             },
                         },
                         _ => return self.error(ErrorCode::InvalidEscape),
@@ -781,18 +820,19 @@ pub mod json {
 
         // Invoked at each iteration, consumes the stream until it has enough
         // information to return a JsonEvent.
-        // Manages an internal state so that parsing can be interrupted and resumed.
-        // Also keeps track of the position in the logical structure of the json
-        // stream int the form of a stack that can be queried by the user using the
-        // stack() method.
+        // Manages an internal state so that parsing can be interrupted and 
+        // resumed. Also keeps track of the position in the logical structure
+        // of the json stream in the form of a stack that can be queried 
+        // by the user using the stack() method.
         fn parse(&mut self) -> JsonEvent {
             loop {
                 // The only paths where the loop can spin a new iteration
                 // are in the cases ParseArrayComma and ParseObjectComma if ','
                 // is parsed. In these cases the state is set to (respectively)
-                // ParseArray(false) and ParseObject(false), which always return,
-                // so there is no risk of getting stuck in an infinite loop.
-                // All other paths return before the end of the loop's iteration.
+                // ParseArray(false) and ParseObject(false), which always
+                // return, so there is no risk of getting stuck in an infinite
+                // loop. All other paths return before the end of the loop's
+                // iteration.
                 self.parse_whitespace();
 
                 match self.state {
@@ -964,11 +1004,14 @@ pub mod json {
         }
 
         fn parse_value(&mut self) -> JsonEvent {
-            if self.eof() { return self.error_event(ErrorCode::EOFWhileParsingValue); }
+            if self.eof() { 
+                return self.error_event(ErrorCode::EOFWhileParsingValue);
+            }
             match self.ch_or_null() {
-                'n' => { self.parse_ident("ull", JsonEvent::NullValue) }
-                't' => { self.parse_ident("rue", JsonEvent::BooleanValue(true)) }
-                'f' => { self.parse_ident("alse", JsonEvent::BooleanValue(false)) }
+                'n' => self.parse_ident("ull", JsonEvent::NullValue),
+                't' => self.parse_ident("rue", JsonEvent::BooleanValue(true)),
+                'f' => 
+                    self.parse_ident("alse", JsonEvent::BooleanValue(false)),
                 '0' ... '9' | '-' => self.parse_number(),
                 '"' => match self.parse_str() {
                     Ok(s) => JsonEvent::StringValue(s),
@@ -982,7 +1025,7 @@ pub mod json {
                     self.bump();
                     JsonEvent::ObjectStart
                 }
-                _ => { self.error_event(ErrorCode::InvalidSyntax) }
+                _ => self.error_event(ErrorCode::InvalidSyntax)
             }
         }
 
@@ -991,13 +1034,21 @@ pub mod json {
                 self.bump();
                 value
             } else {
-                JsonEvent::Error(ParserError::SyntaxError(ErrorCode::InvalidSyntax, self.line, self.col))
+                JsonEvent::Error(
+                    ParserError::SyntaxError(
+                        ErrorCode::InvalidSyntax, self.line, self.col
+                    )
+                )
             }
         }
 
         fn error_event(&mut self, reason: ErrorCode) -> JsonEvent {
             self.state = ParserState::Finished;
-            JsonEvent::Error(ParserError::SyntaxError(reason, self.line, self.col))
+            JsonEvent::Error(
+                ParserError::SyntaxError(
+                    reason, self.line, self.col
+                )
+            )
         }
     }
 
@@ -1044,8 +1095,10 @@ pub mod json {
                 Some(JsonEvent::Error(e)) => Err(e),
                 Some(JsonEvent::ArrayStart) => self.build_array(),
                 Some(JsonEvent::ObjectStart) => self.build_object(),
-                Some(JsonEvent::ObjectEnd) => self.parser.error(ErrorCode::InvalidSyntax),
-                Some(JsonEvent::ArrayEnd) => self.parser.error(ErrorCode::InvalidSyntax),
+                Some(JsonEvent::ObjectEnd) => 
+                    self.parser.error(ErrorCode::InvalidSyntax),
+                Some(JsonEvent::ArrayEnd) => 
+                    self.parser.error(ErrorCode::InvalidSyntax),
                 None => self.parser.error(ErrorCode::EOFWhileParsingValue),
             }
         }
@@ -1073,7 +1126,9 @@ pub mod json {
 
             loop {
                 match self.token {
-                    Some(JsonEvent::ObjectEnd) => { return Ok(Json::Object(values)); }
+                    Some(JsonEvent::ObjectEnd) => { 
+                        return Ok(Json::Object(values));
+                    }
                     Some(JsonEvent::Error(e)) => { return Err(e); }
                     None => { break; }
                     _ => {}
