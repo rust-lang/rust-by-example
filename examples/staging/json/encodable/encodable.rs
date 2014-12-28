@@ -1,8 +1,9 @@
-extern crate serialize;
+#![feature(macro_rules, slicing_syntax)]
 
-use serialize::{json, Encodable};
+use rustc_serialize::json;
+mod rustc_serialize;
 
-#[deriving(Encodable)]
+#[deriving(RustcEncodable)]
 struct City {
     name: &'static str,
     // Latitude
