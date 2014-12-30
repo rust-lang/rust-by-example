@@ -1,12 +1,12 @@
 CACHE MANIFEST
-# Revision 1419833126543
+# Revision 1419919425942
 
 CACHE:
-array.html
 loop.html
 index.html
-attribute/cfg/custom.html
+array.html
 attribute/cfg.html
+attribute/cfg/custom.html
 attribute/crate.html
 attribute.html
 borrow/alias.html
@@ -29,19 +29,19 @@ enum.html
 expression.html
 file/create.html
 file/open.html
+file.html
 fn/unused.html
 fn.html
-file.html
 for.html
-generics/impl.html
 fs.html
+generics/impl.html
 generics/phantom/units.html
 generics/phantom.html
 generics.html
 hello.html
 hof.html
-iter.html
 if-else.html
+iter.html
 lifetime/borrow.html
 lifetime/fn.html
 lifetime/struct.html
@@ -100,8 +100,8 @@ timers.html
 todo.html
 trait/deriving.html
 trait.html
-type/alias.html
 tuples.html
+type/alias.html
 type/cast.html
 type/inference.html
 type/literals.html
