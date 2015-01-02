@@ -3,7 +3,7 @@ can be used to/for:
 
 <!-- TODO: Link these to their respective examples -->
 * [conditional compilation of code][cfg]
-* [set crate name, version and type (binary or library)][config]
+* [set crate name, version and type (binary or library)][crate]
 * disable [lints][lint] (warnings)
 * enable compiler features (macros, glob imports, etc.)
 * link to a foreign library
