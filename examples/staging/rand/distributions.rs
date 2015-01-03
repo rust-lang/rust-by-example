@@ -2,7 +2,7 @@ use std::rand::distributions::{IndependentSample,Normal,StudentT};
 use std::rand;
 
 fn main() {
-    let mut rng = rand::task_rng();
+    let mut rng = rand::thread_rng();
 
     let normal = Normal::new(0.0, 1.0);
     println!("10 samples from a normal distribution with mean 0.0 and SD 1.0");
