@@ -14,7 +14,7 @@ struct Rectangle {
 }
 
 fn main() {
-    let mut rng = rand::task_rng();
+    let mut rng = rand::thread_rng();
 
     println!("random point\n{}", rng.gen::<Point>());
     println!("random rectangle\n{}", rng.gen::<Rectangle>());
