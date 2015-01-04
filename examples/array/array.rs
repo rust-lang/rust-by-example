@@ -8,10 +8,10 @@ fn analyze_slice(slice: &[int]) {
 
 fn main() {
     // Fixed-size array (type signature is superfluous)
-    let xs: [int, ..5] = [1, 2, 3, 4, 5];
+    let xs: [int; 5] = [1, 2, 3, 4, 5];
     
     // All elements can be initialized to the same value
-    let ys: [int, ..500] = [0, ..500];
+    let ys: [int; 500] = [0; 500];
 
     // Indexing starts at 0
     println!("first element of the array: {}", xs[0]);
