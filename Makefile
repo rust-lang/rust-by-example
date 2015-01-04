@@ -26,7 +26,7 @@ srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
 all:
 	./setup-stage.sh
-	cd update; cargo build
+	cd update; cargo update; cargo build
 	update/target/update
 
 book: node_modules/gitbook
