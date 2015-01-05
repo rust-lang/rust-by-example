@@ -1,5 +1,6 @@
 #![feature(macro_rules)]
 use std::iter;
+use std::ops::{Add, Sub, Mul};
 
 macro_rules! assert_equal_len {
     ($a:ident, $b: ident, $func:ident, $op:tt) => {
@@ -14,7 +15,7 @@ macro_rules! assert_equal_len {
 
 macro_rules! op {
     ($func:ident, $bound:ident, $op:tt, $method:ident) => {
-        fn $func<T: $bound<T, T> + Copy>(xs: &mut Vec<T>, ys: &Vec<T>) {
+        fn $func<T: $bound<Output=T> + Copy>(xs: &mut Vec<T>, ys: &Vec<T>) {
             assert_equal_len!(xs, ys, $func, $op);
 
             for (x, y) in xs.iter_mut().zip(ys.iter()) {

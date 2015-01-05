@@ -1,3 +1,5 @@
+#![feature(associated_types)]
+
 extern crate test;
 
 use std::mem::replace;
@@ -21,7 +23,9 @@ struct Fibonacci {
     next: uint,
 }
 
-impl Iterator<uint> for Fibonacci {
+impl Iterator for Fibonacci {
+    type Item = uint;
+
     fn next(&mut self) -> Option<uint> {
         let new_next = self.curr + self.next;
         let new_curr = replace(&mut self.next, new_next);

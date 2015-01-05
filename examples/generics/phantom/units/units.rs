@@ -1,3 +1,7 @@
+#![feature(associated_types)]
+
+use std::ops::Add;
+
 // Null enumerations to define unit types
 #[deriving(Show, Copy)]
 enum Inch {}
@@ -16,9 +20,12 @@ struct Length<Unit, T>(T,);
 // to `X` if `X` implements the Trait `Y`.
 // This means that this `impl` defines `Add` only for `T` when
 // two `T's` can be added together and the result is of
-// Type `T`: (`T: Add<T,T>`)
-impl <Unit,T: Add<T,T> + Copy> Add<Length<Unit, T>,
-                               Length<Unit, T>> for Length<Unit, T> {
+// Type `T`: (`T: Add`)
+impl <Unit, T: Add + Copy> Add for Length<Unit, T>
+    where T: Add<Output=T>
+{
+    type Output = Length<Unit, T>;
+
     fn add(self, r: Length<Unit, T>) -> Length<Unit, T> {
         let Length(ref left)  = self;
         let Length(ref right) = r;

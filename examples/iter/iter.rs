@@ -1,3 +1,5 @@
+#![feature(associated_types)]
+
 use std::mem;
 
 struct Fibonacci {
@@ -6,7 +8,9 @@ struct Fibonacci {
 }
 
 // Implement 'Iterator' for 'Fibonacci'
-impl Iterator<uint> for Fibonacci {
+impl Iterator for Fibonacci {
+    type Item = uint;
+
     // The 'Iterator' trait only requires the 'next' method to be defined. The
     // return type is 'Option<T>', 'None' is returned when the 'Iterator' is
     // over, otherwise the next value is returned wrapped in 'Some'
