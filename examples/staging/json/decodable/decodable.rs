@@ -1,3 +1,5 @@
+#![feature(old_orphan_check)]
+
 extern crate serialize;
 
 use serialize::{json, Decodable};
