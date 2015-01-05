@@ -2,6 +2,7 @@ use std::io::Timer;
 use std::io::timer;
 use std::time::duration::Duration;
 use std::iter;
+use std::sync::mpsc::{Receiver};
 
 fn main() {
     let interval = Duration::milliseconds(1000);
