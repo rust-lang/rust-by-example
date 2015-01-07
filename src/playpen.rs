@@ -12,6 +12,7 @@ fn escape(source: &str) -> String {
 
     for chr in source.trim().chars() {
         match chr {
+            '$' => s.push_str("&#36;"),
             '*' => s.push_str("&#42;"),
             '<' => s.push_str("&lt;"),
             '>' => s.push_str("&gt;"),
