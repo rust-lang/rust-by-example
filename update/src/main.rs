@@ -1,10 +1,8 @@
-#![feature(old_orphan_check)]
-
 #![deny(warnings)]
-#![feature(phase)]
+#![feature(plugin)]
 
 extern crate regex;
-#[phase(plugin)]
+#[plugin]
 extern crate regex_macros;
 extern crate "rustc-serialize" as rustc_serialize;
 
