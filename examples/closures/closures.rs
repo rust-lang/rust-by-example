@@ -1,7 +1,7 @@
 fn main() {
     let captured_value = 7u;
 
-    let closure = |argument| {
+    let closure = |&: argument| {
         println!("I captured this: {}", captured_value);
         println!("Argument passed was: {}", argument);
 

@@ -1,4 +1,4 @@
-#[deriving(Show)]
+#[derive(Show)]
 struct Triplet {
     one: int,
     two: int,

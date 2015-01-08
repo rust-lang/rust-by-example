@@ -2,7 +2,7 @@ GITBOOK = node_modules/.bin/gitbook
 RUSTC = rustc
 STRICT = -D deprecated
 QUIET = -A unused-variables -A dead-code -A unused-assignments -A experimental
-RUSTC_NT = $(RUSTC) --no-trans --test $(QUIET) ${STRICT}
+RUSTC_NT = $(RUSTC) -Z no-trans --test $(QUIET) ${STRICT}
 WHITELIST = examples/attribute/cfg/custom/custom.rs \
 						examples/borrow/borrow.rs \
 	 					examples/borrow/freeze/freeze.rs \
@@ -19,6 +19,8 @@ WHITELIST = examples/attribute/cfg/custom/custom.rs \
 	 					examples/variables/mut/mut.rs \
 	 					examples/variables/scope/scope.rs \
 	 					examples/vec/vec.rs \
+						examples/generics/phantom/units/units.rs \
+						examples/staging/macros/dry/dry.rs
 
 srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
@@ -26,8 +28,8 @@ srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
 all:
 	./setup-stage.sh
-	$(RUSTC) src/update.rs --out-dir bin
-	bin/update
+	cd update; cargo update; cargo build
+	update/target/update
 
 book: node_modules/gitbook
 	$(GITBOOK) build stage

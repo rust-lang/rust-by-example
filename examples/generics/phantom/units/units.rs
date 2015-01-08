@@ -1,3 +1,5 @@
+// Developer FIXME: Issue with associated types
+
 // Null enumerations to define unit types
 #[deriving(Show, Copy)]
 enum Inch {}

@@ -1,5 +1,3 @@
-#![feature(macro_rules)]
-
 // macro_rules! is similar to a match block
 macro_rules! test {
     // the arguments don't need to be separated by a comma

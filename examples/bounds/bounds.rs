@@ -1,4 +1,6 @@
-#[deriving(Show, Copy)]
+// Developer FIXME: issues with associated types
+
+#[derive(Show, Copy)]
 struct Vec2<T> {
     x: T,
     y: T,
@@ -30,7 +32,7 @@ impl<T> Sub<Vec2<T>, Vec2<T>> for Vec2<T>
 }
 
 // Bound: `T` must implement *both* the `Add` trait and the `Mul` trait
-impl<T> Vec2<T> 
+impl<T> Vec2<T>
         where T: Add<T, T> + Mul<T, T> {
     fn dot(self, rhs: Vec2<T>) -> T {
         (self.x * rhs.x) + (self.y * rhs.y)

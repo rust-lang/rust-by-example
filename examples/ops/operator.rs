@@ -15,7 +15,7 @@ struct BarFoo;
 // This block implements the operation: Foo + Bar = FooBar
 impl Add<Bar> for Foo {
     type Output = FooBar;
-    
+
     fn add(self, _rhs: Bar) -> FooBar {
         println!("> Foo.add(Bar) was called");
 
@@ -27,7 +27,7 @@ impl Add<Bar> for Foo {
 // This block implements the operation: Bar + Foo = BarFoo
 impl Add<Foo> for Bar {
     type Output = BarFoo;
-    
+
     fn add(self, _rhs: Foo) -> BarFoo {
         println!("> Bar.add(Foo) was called");
 

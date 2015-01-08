@@ -2,7 +2,7 @@ extern crate serialize;
 
 use serialize::{json, Encodable};
 
-#[deriving(Encodable)]
+#[derive(Encodable)]
 struct City {
     name: &'static str,
     // Latitude
