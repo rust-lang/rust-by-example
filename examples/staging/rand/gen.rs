@@ -3,7 +3,7 @@ use std::rand;
 
 fn main() {
     // create a task-local Random Number Generator
-    let mut rng = rand::task_rng();
+    let mut rng = rand::thread_rng();
 
     // the `gen` methods generates values in the full range of each type using
     // a uniform distribution

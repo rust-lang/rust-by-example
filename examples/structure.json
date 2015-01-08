@@ -89,7 +89,7 @@
   { "id": "vec", "title": "Vectors", "children": null },
   { "id": "str", "title": "Strings", "children": null },
   { "id": "clone", "title": "Clone", "children": null },
-  { "id": "tasks", "title": "Tasks", "children": null },
+  { "id": "threads", "title": "Threads", "children": null },
   { "id": "channels", "title": "Channels", "children": null },
   { "id": "timers", "title": "Timers", "children": null },
   { "id": "sockets", "title": "Unix sockets", "children": null },

@@ -1,4 +1,5 @@
 #![feature(macro_rules)]
+use std::iter;
 
 macro_rules! assert_equal_len {
     ($a:ident, $b: ident, $func:ident, $op:tt) => {
@@ -30,8 +31,8 @@ op!(mul_assign, Mul, *=, mul);
 op!(sub_assign, Sub, -=, sub);
 
 fn main() {
-    let mut xs = Vec::from_elem(5, 0f64);
-    let ys = Vec::from_elem(6, 1f64);
+    let mut xs = iter::repeat(0f64).take(5).collect();
+    let ys = iter::repeat(1f64).take(6).collect();
 
     // this operation will fail at runtime
     add_assign(&mut xs, &ys);

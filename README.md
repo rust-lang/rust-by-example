@@ -12,6 +12,14 @@ See [CONTRIBUTING.md][how-to-contribute].
 
 ## How to generate the static site
 
+First, make certain you install `nodejs` on Debian based distributions, or
+`node` on non-Debian distros. After installation, if you use a Debian based
+distro (i.e. Ubuntu), run
+
+    sudo ln -s /usr/bin/nodejs /usr/bin/node
+
+Then run
+
 ```
 make all
 make book
@@ -19,8 +27,6 @@ make test
 ```
 
 View the results with `make serve`.
-
-Note: on Ubuntu `node` may be called `nodejs`. I had to edit `.bin/gitbook` accordingly.
 
 ### Details
 
