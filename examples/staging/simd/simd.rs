@@ -11,5 +11,5 @@ fn main() {
     // like any struct, the simd vector can be destructured using `let`
     let f32x4(a, b, c, d) = z;
 
-    println!("{}", (a, b, c, d));
+    println!("{:?}", (a, b, c, d));
 }

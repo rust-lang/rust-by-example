@@ -11,7 +11,7 @@ fn main() {
     // the order is not important
 
     let Foo { y: i, x: j } = foo;
-    println!("i = {}, j = {}", i, j);
+    println!("i = {:?}, j = {:?}", i, j);
 
     // and you can also ignore some variables:
     let Foo { y, .. } = foo;

@@ -6,7 +6,8 @@ struct Fibonacci {
 }
 
 // Implement 'Iterator' for 'Fibonacci'
-impl Iterator<uint> for Fibonacci {
+impl Iterator for Fibonacci {
+    type Item = uint;
     // The 'Iterator' trait only requires the 'next' method to be defined. The
     // return type is 'Option<T>', 'None' is returned when the 'Iterator' is
     // over, otherwise the next value is returned wrapped in 'Some'
@@ -29,10 +30,10 @@ fn main() {
     let mut sequence = range(0u, 3);
 
     println!("Four consecutive `next` calls on range(0, 3)");
-    println!("> {}", sequence.next());
-    println!("> {}", sequence.next());
-    println!("> {}", sequence.next());
-    println!("> {}", sequence.next());
+    println!("> {:?}", sequence.next());
+    println!("> {:?}", sequence.next());
+    println!("> {:?}", sequence.next());
+    println!("> {:?}", sequence.next());
 
     // The for construct will iterate an 'Iterator' until it returns 'None'.
     // Every 'Some' value is unwrapped and bound to a variable.

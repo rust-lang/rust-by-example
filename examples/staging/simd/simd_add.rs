@@ -1,11 +1,9 @@
-#![feature(macro_rules)]
-
 use std::simd::f32x4;
 
 macro_rules! assert_equal_len {
     ($a:ident, $b: ident) => {
         assert!($a.len() == $b.len(),
-                "add_assign: dimension mismatch: {} += {}",
+                "add_assign: dimension mismatch: {:?} += {:?}",
                 ($a.len(),),
                 ($b.len(),));
     }
@@ -55,14 +53,19 @@ fn simd_add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
 mod bench {
     extern crate test;
     use self::test::Bencher;
+    use std::iter;
     static BENCH_SIZE: uint = 10_000;
 
     macro_rules! bench {
         ($name:ident, $func:ident) => {
             #[bench]
             fn $name(b: &mut Bencher) {
-                let mut x = Vec::from_elem(BENCH_SIZE, 1.0f32);
-                let y = Vec::from_elem(BENCH_SIZE, 0.1f32);
+                let mut x: Vec<_> = iter::repeat(1.0f32)
+                                        .take(BENCH_SIZE)
+                                        .collect();
+                let y: Vec<_> = iter::repeat(1.0f32)
+                                        .take(BENCH_SIZE)
+                                        .collect();
 
                 b.iter(|| {
                     super::$func(&mut x, &y);

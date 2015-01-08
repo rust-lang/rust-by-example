@@ -15,10 +15,10 @@ fn main() {
     b.insert(5);
 
     // If a collection's element type implements `Show`,
-    // then the collection implements `Show`. 
+    // then the collection implements `Show`.
     // It usually prints its elements in the format `[elem1, elem2, ...]`
-    println!("A: {}", a);
-    println!("B: {}", b);
+    println!("A: {:?}", a);
+    println!("B: {:?}", b);
 
     // Print [1, 2, 3, 4, 5] in arbitrary order
     println!("Union: {}", a.union(&b).collect::<Vec<&int>>());
@@ -30,7 +30,7 @@ fn main() {
     println!("Intersection: {}", a.intersection(&b).collect::<Vec<&int>>());
 
     // Print [1, 5]
-    println!("Symmetric Difference: {}", 
+    println!("Symmetric Difference: {}",
              a.symmetric_difference(&b).collect::<Vec<&int>>());
 }
 

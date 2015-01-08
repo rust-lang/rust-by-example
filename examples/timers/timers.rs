@@ -2,6 +2,7 @@ use std::io::Timer;
 use std::io::timer;
 use std::time::duration::Duration;
 use std::iter;
+use std::sync::mpsc;
 
 fn main() {
     let interval = Duration::milliseconds(1000);
@@ -10,12 +11,12 @@ fn main() {
 
     // Create a one-shot notification
     // (superfluous type annotation)
-    let oneshot: Receiver<()> = timer.oneshot(interval);
+    let oneshot: mpsc::Receiver<()> = timer.oneshot(interval);
 
     println!("Wait {} ms...", interval.num_milliseconds());
 
     // Block the task until notification arrives
-    oneshot.recv();
+    let _ = oneshot.recv();
 
     println!("Done");
 
@@ -28,15 +29,15 @@ fn main() {
 
     // The same timer can be used to generate periodic notifications
     // (superfluous type annotation)
-    let metronome: Receiver<()> = timer.periodic(interval);
+    let metronome: mpsc::Receiver<()> = timer.periodic(interval);
 
     println!("Countdown");
     for i in iter::range_step(5i, 0, -1) {
         // This loop will run once every second
-        metronome.recv();
+        let _ = metronome.recv();
 
         println!("{}", i);
     }
-    metronome.recv();
+    let _ = metronome.recv();
     println!("Ignition!");
 }

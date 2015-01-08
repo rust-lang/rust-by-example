@@ -5,12 +5,12 @@ struct Tuple<A>(A,);
 // This tuple is a phantom type. B is a hidden
 // parameter. Storage is allocated for generic type A
 // yet not for B. Therefore, B cannot be used in computations.
-#[deriving(PartialEq)] // Allow equality test for this type
+#[derive(PartialEq)] // Allow equality test for this type
 struct PhantomTuple<A, B>(A,);
 
 // Similarly, a phantom type struct which is generic over A
 // with hidden parameter B
-#[deriving(PartialEq)] // Allow equality test for this type
+#[derive(PartialEq)] // Allow equality test for this type
 struct PhantomStruct<A, B> { first: A }
 
 fn main() {

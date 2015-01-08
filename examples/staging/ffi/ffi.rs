@@ -17,12 +17,12 @@ fn main() {
         csqrtf(z)
     };
 
-    println!("the square root of {} is {}", z, z_sqrt);
+    println!("the square root of {:?} is {:?}", z, z_sqrt);
 }
 
 // Minimal implementation of single precision complex numbers
 #[repr(C)]
-#[deriving(Copy)]
+#[derive(Copy)]
 struct Complex {
     re: f32,
     im: f32,

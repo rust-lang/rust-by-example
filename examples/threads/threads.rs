@@ -6,8 +6,8 @@ static NTHREADS: int = 10;
 fn main() {
     for i in range(0, NTHREADS) {
         // Spin up another thread
-        let _ = Thread::spawn(move || {
+        let _ = Thread::scoped(move || {
             println!("this is thread number {}", i)
-        }).join();
+        });
     }
 }
