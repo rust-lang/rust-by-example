@@ -16,11 +16,13 @@
         
     
     
+    <meta name="author" content="steveklabnik">
+    
     
     <link rel="next" href="./timers.html" />
     
     
-    <link rel="prev" href="./threads.html" />
+    <link rel="prev" href="./tasks.html" />
     
 
         
@@ -36,12 +38,12 @@
 
 
         
-    <div class="book"  data-level="41" data-basepath="." data-revision="1420005763362">
+    <div class="book" data-github="steveklabnik/rust-by-example" data-level="41" data-basepath="." data-revision="1420748280353">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/null" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/steveklabnik/rust-by-example" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
     <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
@@ -100,13 +102,30 @@
     <ul class="summary">
         
         
-
+        
+        <li>
+            <a href="https://github.com/steveklabnik" target="blank" class="author-link">About the author</a>
+        </li>
         
 
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/issues" target="blank" class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/edit/master/examples/channels/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
         
 
 	
 
+        
+        <li class="divider"></li>
         
 
         
@@ -1396,15 +1415,15 @@
         </li>
     
         
-        <li class="chapter " data-level="40" data-path="threads.html">
+        <li class="chapter " data-level="40" data-path="tasks.html">
             
                 
-                    <a href="./threads.html">
+                    <a href="./tasks.html">
                         <i class="fa fa-check"></i>
                         
                             <b>40.</b>
                         
-                         Threads
+                         Tasks
                     </a>
                 
             
@@ -2257,7 +2276,7 @@
     
         <a href="./clone.html" title="Clone" class="chapter done " data-progress="39" style="left: 66.97247706422019%;"></a>
     
-        <a href="./threads.html" title="Threads" class="chapter done " data-progress="40" style="left: 67.88990825688073%;"></a>
+        <a href="./tasks.html" title="Tasks" class="chapter done " data-progress="40" style="left: 67.88990825688073%;"></a>
     
         <a href="./channels.html" title="Channels" class="chapter done " data-progress="41" style="left: 68.80733944954129%;"></a>
     
@@ -2337,16 +2356,15 @@
                     <section class="normal" id="section-gitbook_15">
                     
                         <h1 id="41-channels">41 Channels</h1>
-<p>Rust provides asynchronous <code>channels</code> for communication between threads. Channels
+<p>Rust provides asynchronous <code>channels</code> for communication between tasks. Channels
 allow an unidirectional flow of information between two end-points: the
 <code>Sender</code> and the <code>Receiver</code>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">use std::comm;
-use std::thread::Thread;
 
-static NTHREADS: uint = 3;
+static NTASKS: uint = 3;
 
 fn main() {
     // Channels have two endpoints: the &#96;Sender&lt;T&gt;&#96; and the &#96;Receiver&lt;T&gt;&#96;,
@@ -2354,27 +2372,27 @@ fn main() {
     // (type annotation is superfluous)
     let (tx, rx): (Sender&lt;uint&gt;, Receiver&lt;uint&gt;) = comm::channel();
 
-    for id in range(0, NTHREADS) {
+    for id in range(0, NTASKS) {
         // The sender endpoint can be copied
-        let thread&#95;tx = tx.clone();
+        let task&#95;tx = tx.clone();
 
-        // Each thread will send its id via the channel
-        Thread::spawn(move || {
-            // The thread takes ownership over &#96;thread&#95;tx&#96;
-            // Each thread queues a message in the channel
-            thread&#95;tx.send(id);
+        // Each task will send its id via the channel
+        spawn(proc() {
+            // The task takes ownership over &#96;task&#95;tx&#96;
+            // Each task queues a message in the channel
+            task&#95;tx.send(id);
 
-            // Sending is a non-blocking operation, the thread will continue
+            // Sending is a non-blocking operation, the task will continue
             // immediately after sending its message
-            println!(&quot;thread {} finished&quot;, id);
-        }).detach();
+            println!(&quot;task {} finished&quot;, id);
+        });
     }
 
     // Here, all the messages are collected
-    let mut ids = Vec::with&#95;capacity(NTHREADS);
-    for &#95; in range(0, NTHREADS) {
+    let mut ids = Vec::with&#95;capacity(NTASKS);
+    for &#95; in range(0, NTASKS) {
         // The &#96;recv&#96; method picks a message from the channel
-        // &#96;recv&#96; will block the current thread if there no messages available
+        // &#96;recv&#96; will block the current task if there no messages available
         ids.push(rx.recv());
     }
 
@@ -2392,7 +2410,7 @@ fn main() {
         </div>
 
         
-        <a href="./threads.html" class="navigation navigation-prev " aria-label="Previous page: Threads"><i class="fa fa-angle-left"></i></a>
+        <a href="./tasks.html" class="navigation navigation-prev " aria-label="Previous page: Tasks"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="./timers.html" class="navigation navigation-next " aria-label="Next page: Timers"><i class="fa fa-angle-right"></i></a>
@@ -2403,6 +2421,10 @@ fn main() {
         
 <script src="gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
 <script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-rust-playpen/ace/ace.js"></script>
+    
 
     
     <script src="gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>

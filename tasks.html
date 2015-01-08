@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="UTF-8">
-        <title>Threads | Rust by Example</title>
+        <title>Tasks | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 0.7.1">
@@ -15,6 +15,8 @@
         <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
     
+    
+    <meta name="author" content="steveklabnik">
     
     
     <link rel="next" href="./channels.html" />
@@ -36,12 +38,12 @@
 
 
         
-    <div class="book"  data-level="40" data-basepath="." data-revision="1420005763362">
+    <div class="book" data-github="steveklabnik/rust-by-example" data-level="40" data-basepath="." data-revision="1420748280353">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/null" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/steveklabnik/rust-by-example" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
     <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
@@ -100,13 +102,30 @@
     <ul class="summary">
         
         
-
+        
+        <li>
+            <a href="https://github.com/steveklabnik" target="blank" class="author-link">About the author</a>
+        </li>
         
 
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/issues" target="blank" class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/edit/master/tasks.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
         
 
 	
 
+        
+        <li class="divider"></li>
         
 
         
@@ -1396,15 +1415,15 @@
         </li>
     
         
-        <li class="chapter active" data-level="40" data-path="threads.html">
+        <li class="chapter active" data-level="40" data-path="tasks.html">
             
                 
-                    <a href="./threads.html">
+                    <a href="./tasks.html">
                         <i class="fa fa-check"></i>
                         
                             <b>40.</b>
                         
-                         Threads
+                         Tasks
                     </a>
                 
             
@@ -2257,7 +2276,7 @@
     
         <a href="./clone.html" title="Clone" class="chapter done " data-progress="39" style="left: 66.97247706422019%;"></a>
     
-        <a href="./threads.html" title="Threads" class="chapter done " data-progress="40" style="left: 67.88990825688073%;"></a>
+        <a href="./tasks.html" title="Tasks" class="chapter done " data-progress="40" style="left: 67.88990825688073%;"></a>
     
         <a href="./channels.html" title="Channels" class="chapter  " data-progress="41" style="left: 68.80733944954129%;"></a>
     
@@ -2336,32 +2355,31 @@
                 
                     <section class="normal" id="section-gitbook_94">
                     
-                        <h1 id="40-threads">40 Threads</h1>
-<p>Rust provides a mechanism for spawning native OS threads via the <code>spawn</code>
-function, the argument of this function is a moving closure.</p>
+                        <h1 id="40-tasks">40 Tasks</h1>
+<p>Rust provides a mechanism for spawning lightweight tasks via the <code>spawn</code>
+function, the argument of this function is an owned closure named <code>proc</code>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::thread::Thread;
+<div id="editor">static NTASKS: int = 10;
 
-static NTHREADS: int = 10;
-
-// This is the &#96;main&#96; thread
+// This is the &#96;main&#96; task
 fn main() {
-    for i in range(0, NTHREADS) {
-        // Spin up another thread
-        let &#95; = Thread::spawn(move || {
-            println!(&quot;this is thread number {}&quot;, i)
-        }).join();
+    for i in range(0, NTASKS) {
+        // Spin up another task
+        spawn(proc() {
+            println!(&quot;this is task number {}&quot;, i)
+        });
     }
 }</div>
 <div id="result"></div>
 </div>
 
-<p>These threads will be scheduled by the OS and the order of execution of
+<p>These tasks will be scheduled by the Rust runtime and the order of execution of
 these tasks will be non-deterministic.</p>
-<p>(Currently Rust uses <em>native</em> runtime, which maps each Rust task to a
-native thread.)</p>
+<p>(By default, Rust uses its <em>native</em> runtime, which maps each Rust task to a
+native thread. Rust also provides a <em>green</em> runtime that provides green threads
+and maps M Rust tasks to N native threads.)</p>
 
                     
                     </section>
@@ -2382,6 +2400,10 @@ native thread.)</p>
         
 <script src="gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
 <script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-rust-playpen/ace/ace.js"></script>
+    
 
     
     <script src="gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>

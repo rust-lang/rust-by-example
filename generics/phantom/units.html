@@ -16,6 +16,8 @@
         
     
     
+    <meta name="author" content="steveklabnik">
+    
     
     <link rel="next" href="../../box.html" />
     
@@ -36,12 +38,12 @@
 
 
         
-    <div class="book"  data-level="18.2.1" data-basepath="../.." data-revision="1420005763362">
+    <div class="book" data-github="steveklabnik/rust-by-example" data-level="18.2.1" data-basepath="../.." data-revision="1420748280353">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/null" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/steveklabnik/rust-by-example" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
     <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
@@ -100,13 +102,30 @@
     <ul class="summary">
         
         
-
+        
+        <li>
+            <a href="https://github.com/steveklabnik" target="blank" class="author-link">About the author</a>
+        </li>
         
 
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/issues" target="blank" class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/edit/master/examples/generics/phantom/units/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
         
 
 	
 
+        
+        <li class="divider"></li>
         
 
         
@@ -1396,15 +1415,15 @@
         </li>
     
         
-        <li class="chapter " data-level="40" data-path="threads.html">
+        <li class="chapter " data-level="40" data-path="tasks.html">
             
                 
-                    <a href="../../threads.html">
+                    <a href="../../tasks.html">
                         <i class="fa fa-check"></i>
                         
                             <b>40.</b>
                         
-                         Threads
+                         Tasks
                     </a>
                 
             
@@ -2257,7 +2276,7 @@
     
         <a href="../../clone.html" title="Clone" class="chapter  " data-progress="39" style="left: 66.97247706422019%;"></a>
     
-        <a href="../../threads.html" title="Threads" class="chapter  " data-progress="40" style="left: 67.88990825688073%;"></a>
+        <a href="../../tasks.html" title="Tasks" class="chapter  " data-progress="40" style="left: 67.88990825688073%;"></a>
     
         <a href="../../channels.html" title="Channels" class="chapter  " data-progress="41" style="left: 68.80733944954129%;"></a>
     
@@ -2342,13 +2361,13 @@
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">// Null enumerations to define unit types
-#[deriving(Show, Copy)]
+#[deriving(Show)]
 enum Inch {}
-#[deriving(Show, Copy)]
+#[deriving(Show)]
 enum Mm {}
 
 // Length is phantom type with hidden parameter &#96;Unit&#96;
-#[deriving(Show, Copy)]
+#[deriving(Show)]
 struct Length&lt;Unit, T&gt;(T,);
 
 // &#96;impl X for Y {}&#96; reads &quot;implement &#96;X&#96; Trait for Type &#96;Y&#96;&quot;
@@ -2360,11 +2379,11 @@ struct Length&lt;Unit, T&gt;(T,);
 // This means that this &#96;impl&#96; defines &#96;Add&#96; only for &#96;T&#96; when
 // two &#96;T&#39;s&#96; can be added together and the result is of
 // Type &#96;T&#96;: (&#96;T: Add&lt;T,T&gt;&#96;)
-impl &lt;Unit,T: Add&lt;T,T&gt; + Copy&gt; Add&lt;Length&lt;Unit, T&gt;,
-                               Length&lt;Unit, T&gt;&gt; for Length&lt;Unit, T&gt; {
-    fn add(self, r: Length&lt;Unit, T&gt;) -&gt; Length&lt;Unit, T&gt; {
-        let Length(ref left)  = self;
-        let Length(ref right) = r;
+impl &lt;Unit,T: Add&lt;T,T&gt;&gt; Add&lt;Length&lt;Unit, T&gt;,
+                            Length&lt;Unit, T&gt;&gt; for Length&lt;Unit, T&gt; {
+    fn add(&amp;self, r: &amp;Length&lt;Unit, T&gt;) -&gt; Length&lt;Unit, T&gt; {
+        let &amp;Length(ref left)  = self;
+        let &amp;Length(ref right) = r;
 
         Length(&#42;left + &#42;right)
     }
@@ -2376,12 +2395,9 @@ fn main() {
     // one&#95;meter has hidden parameter &#96;Mm&#96;
     let one&#95;meter: Length&lt;Mm, f32&gt;   = Length(1000.0);
 
-    let two&#95;feet = one&#95;foot + one&#95;foot;
-    let two&#95;meters = one&#95;meter + one&#95;meter;
-
     // Addition works
-    println!(&quot;one foot + one&#95;foot = {}&quot;, two&#95;feet);
-    println!(&quot;one meter + one&#95;meter = {}&quot;, two&#95;meters);
+    println!(&quot;one foot + one&#95;foot = {}&quot;, one&#95;foot + one&#95;foot);
+    println!(&quot;one meter + one&#95;meter = {}&quot;, one&#95;meter + one&#95;meter);
 
     // Nonsensical operations fail as they should
     // Error: type mismatch
@@ -2419,6 +2435,10 @@ fn main() {
         
 <script src="../../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-rust-playpen/ace/ace.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>

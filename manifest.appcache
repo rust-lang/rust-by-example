@@ -1,14 +1,14 @@
 CACHE MANIFEST
-# Revision 1420005763362
+# Revision 1420748280353
 
 CACHE:
 loop.html
 index.html
 array.html
 attribute/cfg/custom.html
-attribute/cfg.html
 attribute/crate.html
 attribute.html
+attribute/cfg.html
 borrow/alias.html
 borrow/freeze.html
 borrow/mut.html
@@ -95,7 +95,7 @@ staging.html
 str.html
 structs/visibility.html
 structs.html
-threads.html
+tasks.html
 timers.html
 todo.html
 trait/deriving.html

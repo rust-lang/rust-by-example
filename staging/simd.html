@@ -16,6 +16,8 @@
         
     
     
+    <meta name="author" content="steveklabnik">
+    
     
     <link rel="next" href="../staging/test.html" />
     
@@ -36,12 +38,12 @@
 
 
         
-    <div class="book"  data-level="49.7" data-basepath=".." data-revision="1420005763362">
+    <div class="book" data-github="steveklabnik/rust-by-example" data-level="49.7" data-basepath=".." data-revision="1420748280353">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/null" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/steveklabnik/rust-by-example" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
     <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
@@ -100,13 +102,30 @@
     <ul class="summary">
         
         
-
+        
+        <li>
+            <a href="https://github.com/steveklabnik" target="blank" class="author-link">About the author</a>
+        </li>
         
 
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/issues" target="blank" class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/edit/master/examples/staging/simd/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
         
 
 	
 
+        
+        <li class="divider"></li>
         
 
         
@@ -1396,15 +1415,15 @@
         </li>
     
         
-        <li class="chapter " data-level="40" data-path="threads.html">
+        <li class="chapter " data-level="40" data-path="tasks.html">
             
                 
-                    <a href="../threads.html">
+                    <a href="../tasks.html">
                         <i class="fa fa-check"></i>
                         
                             <b>40.</b>
                         
-                         Threads
+                         Tasks
                     </a>
                 
             
@@ -2257,7 +2276,7 @@
     
         <a href="../clone.html" title="Clone" class="chapter done " data-progress="39" style="left: 66.97247706422019%;"></a>
     
-        <a href="../threads.html" title="Threads" class="chapter done " data-progress="40" style="left: 67.88990825688073%;"></a>
+        <a href="../tasks.html" title="Tasks" class="chapter done " data-progress="40" style="left: 67.88990825688073%;"></a>
     
         <a href="../channels.html" title="Channels" class="chapter done " data-progress="41" style="left: 68.80733944954129%;"></a>
     
@@ -2357,8 +2376,9 @@ exposed as structs (<code>f32x4</code>, <code>u8x16</code>, etc.), that implemen
     println!(<span class="hljs-string">"{}"</span>, (a, b, c, d));
 }
 </code></pre>
-<p>{simd.out}</p>
-<p>Here&#39;s a more complex example that sums two <code>Vec&lt;f32&gt;</code>, using the <code>f32x4</code> type
+<pre><code>$ rustc simd.rs &amp;&amp; ./simd
+(4, 6, 6, 4)
+</code></pre><p>Here&#39;s a more complex example that sums two <code>Vec&lt;f32&gt;</code>, using the <code>f32x4</code> type
 to operate on 4-element chunks at a time.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// simd_add.rs</span>
 #![feature(macro_rules)]
@@ -2434,8 +2454,8 @@ macro_rules! assert_equal_len {
         }
     }
 
-    bench!(vanilla, add_assign);
-    bench!(simd, simd_add_assign);
+    bench!(vanilla, add_assign)
+    bench!(simd, simd_add_assign)
 }
 </code></pre>
 <p>And here&#39;s the result of the benchmark:</p>
@@ -2467,6 +2487,10 @@ test result: ok. 0 passed; 0 failed; 2 ignored; 2 measured
         
 <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
 <script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-rust-playpen/ace/ace.js"></script>
+    
 
     
     <script src="../gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>

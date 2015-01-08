@@ -16,6 +16,8 @@
         
     
     
+    <meta name="author" content="steveklabnik">
+    
     
     <link rel="next" href="../staging/arg.html" />
     
@@ -36,12 +38,12 @@
 
 
         
-    <div class="book"  data-level="49.4" data-basepath=".." data-revision="1420005763362">
+    <div class="book" data-github="steveklabnik/rust-by-example" data-level="49.4" data-basepath=".." data-revision="1420748280353">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
     
-    <a href="https://github.com/null" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    <a href="https://github.com/steveklabnik/rust-by-example" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
     
     <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
     <span id="font-settings-wrapper">
@@ -100,13 +102,30 @@
     <ul class="summary">
         
         
-
+        
+        <li>
+            <a href="https://github.com/steveklabnik" target="blank" class="author-link">About the author</a>
+        </li>
         
 
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/issues" target="blank" class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/steveklabnik/rust-by-example/edit/master/examples/staging/macros/input.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
         
 
 	
 
+        
+        <li class="divider"></li>
         
 
         
@@ -1396,15 +1415,15 @@
         </li>
     
         
-        <li class="chapter " data-level="40" data-path="threads.html">
+        <li class="chapter " data-level="40" data-path="tasks.html">
             
                 
-                    <a href="../threads.html">
+                    <a href="../tasks.html">
                         <i class="fa fa-check"></i>
                         
                             <b>40.</b>
                         
-                         Threads
+                         Tasks
                     </a>
                 
             
@@ -2257,7 +2276,7 @@
     
         <a href="../clone.html" title="Clone" class="chapter done " data-progress="39" style="left: 66.97247706422019%;"></a>
     
-        <a href="../threads.html" title="Threads" class="chapter done " data-progress="40" style="left: 67.88990825688073%;"></a>
+        <a href="../tasks.html" title="Tasks" class="chapter done " data-progress="40" style="left: 67.88990825688073%;"></a>
     
         <a href="../channels.html" title="Channels" class="chapter done " data-progress="41" style="left: 68.80733944954129%;"></a>
     
@@ -2360,8 +2379,9 @@ macro_rules! say_hello {
     say_hello!()
 }
 </code></pre>
-<p>{simple.out}</p>
-<p>The arguments of a macro are prefixed by a dollar sign <code>$</code> and type annotated
+<pre><code>$ rustc simple.rs &amp;&amp; ./simple
+Hello!
+</code></pre><p>The arguments of a macro are prefixed by a dollar sign <code>$</code> and type annotated
 with a <em>designator</em>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// designators.rs</span>
 #![feature(macro_rules)]
@@ -2379,8 +2399,8 @@ macro_rules! create_function {
     }
 }
 
-create_function!(foo);
-create_function!(bar);
+create_function!(foo)
+create_function!(bar)
 
 macro_rules! print_result {
     <span class="hljs-comment">// the `expr` designator is used for expressions</span>
@@ -2406,8 +2426,12 @@ macro_rules! print_result {
     });
 }
 </code></pre>
-<p>{designators.out}</p>
-<p>Macros can be overloaded to accept different combinations of arguments.</p>
+<pre><code>$ rustc designators.rs &amp;&amp; ./designators
+You called foo()
+You called bar()
+1u + 1 = 2
+{ let x = 1u; x * x + 2 * x - 1 } = 2
+</code></pre><p>Macros can be overloaded to accept different combinations of arguments.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// overload.rs</span>
 #![feature(macro_rules)]
 
@@ -2435,8 +2459,10 @@ macro_rules! test {
     test!(<span class="hljs-keyword">true</span> or <span class="hljs-keyword">false</span>);
 }
 </code></pre>
-<p>{overload.out}</p>
-<p>Macros can use <code>+</code> in the argument list, to indicate that an argument may
+<pre><code>$ rustc overload.rs &amp;&amp; ./overload
+1i + 1 == 2i and 2i * 2 == 4i is true
+true or false is true
+</code></pre><p>Macros can use <code>+</code> in the argument list, to indicate that an argument may
 repeat at least once, or <code>*</code>, to indicate that the argument may repeat zero or
 more times.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// repeat.rs</span>
@@ -2461,8 +2487,11 @@ macro_rules! min {
     println!(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">5u</span>, <span class="hljs-number">2u</span> * <span class="hljs-number">3</span>, <span class="hljs-number">4u</span>));
 }
 </code></pre>
-<p>{repeat.out}</p>
-<p>Macros allow writing DRY code, by factoring out the common parts of functions
+<pre><code>$ rustc repeat.rs &amp;&amp; ./repeat
+1
+2
+4
+</code></pre><p>Macros allow writing DRY code, by factoring out the common parts of functions
 and/or test suites. Here is an example that implements and tests the <code>+=</code>, <code>*=</code>
 and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// dry.rs</span>
@@ -2481,21 +2510,20 @@ macro_rules! assert_equal_len {
 
 macro_rules! op {
     ($func:ident, $bound:ident, $op:tt, $method:ident) =&gt; {
-        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span>&lt;</span>T: $bound&lt;T, T&gt; + Copy&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
+        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span>&lt;</span>T: $bound&lt;T, T&gt;&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
             assert_equal_len!(xs, ys, $func, $op);
 
             <span class="hljs-keyword">for</span> (x, y) in xs.iter_mut().zip(ys.iter()) {
-                *x = $bound::$method(*x, *y);
-                <span class="hljs-comment">// *x = x.$method(*y);</span>
+                *x = x.$method(y);
             }
         }
     }
 }
 
 <span class="hljs-comment">// implement add_assign, mul_assign, and sub_assign functions</span>
-op!(add_assign, Add, +=, add);
-op!(mul_assign, Mul, *=, mul);
-op!(sub_assign, Sub, -=, sub);
+op!(add_assign, Add, +=, add)
+op!(mul_assign, Mul, *=, mul)
+op!(sub_assign, Sub, -=, sub)
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(</span>) {
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> xs = Vec::from_elem(<span class="hljs-number">5</span>, <span class="hljs-number">0f64</span>);
@@ -2524,13 +2552,14 @@ op!(sub_assign, Sub, -=, sub);
     }
 
     <span class="hljs-comment">// test add_assign, mul_assign and sub_assign</span>
-    test!(add_assign, <span class="hljs-number">1u</span>, <span class="hljs-number">2u</span>, <span class="hljs-number">3u</span>);
-    test!(mul_assign, <span class="hljs-number">2u</span>, <span class="hljs-number">3u</span>, <span class="hljs-number">6u</span>);
-    test!(sub_assign, <span class="hljs-number">3u</span>, <span class="hljs-number">2u</span>, <span class="hljs-number">1u</span>);
+    test!(add_assign, <span class="hljs-number">1u</span>, <span class="hljs-number">2u</span>, <span class="hljs-number">3u</span>)
+    test!(mul_assign, <span class="hljs-number">2u</span>, <span class="hljs-number">3u</span>, <span class="hljs-number">6u</span>)
+    test!(sub_assign, <span class="hljs-number">3u</span>, <span class="hljs-number">2u</span>, <span class="hljs-number">1u</span>)
 }
 </code></pre>
-<p>{dry.out}</p>
-<pre><code>$ rustc --test dry.rs &amp;&amp; ./dry
+<pre><code>$ rustc dry.rs &amp;&amp; ./dry
+task &#39;&lt;main&gt;&#39; panicked at &#39;add_assign: dimension mismatch: (5,) += (6,)&#39;, dry.rs:27
+</code></pre><pre><code>$ rustc --test dry.rs &amp;&amp; ./dry
 running 3 tests
 test test::mul_assign ... ok
 test test::add_assign ... ok
@@ -2557,6 +2586,10 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
         
 <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
 <script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-rust-playpen/ace/ace.js"></script>
+    
 
     
     <script src="../gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>
