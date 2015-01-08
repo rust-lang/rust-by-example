@@ -116,7 +116,7 @@
         { "id": "overload", "title": "Overloading Macros", "children": null },
         { "id": "repeat", "title": "Repeat Arguments", "children": null },
         { "id": "dry", "title": "Don't Repeat Yourself", "children": null }
-    },
+    ] },
     { "id": "arg", "title": "Program arguments", "children": [
         { "id": "matching", "title": "Argument parsing", "children": null },
         { "id": "getopts", "title": "`getopts`", "children": null }
