@@ -1,4 +1,4 @@
-#[deriving(Show)]
+#[derive(Show)]
 struct Triplet {
     one: int,
     two: int,
@@ -11,7 +11,7 @@ impl Triplet {
     fn mut_one(&mut self) -> &mut int {
         &mut self.one
     }
-    
+
     // Second attempt: We explicitly annotate the lifetimes on all the
     // references
     // Error! The compiler doesn't know what is the relationship between the
@@ -38,13 +38,13 @@ impl Triplet {
 fn main() {
     let mut triplet = Triplet { one: 1, two: 2, three: 3 };
 
-    println!("Before: {}", triplet);
+    println!("Before: {:?}", triplet);
 
     *triplet.mut_one() = 0;
-    println!("After: {}", triplet);
+    println!("After: {:?}", triplet);
 
     // Use mutable reference to modify the original struct
     *triplet.mut_three() = 0;
 
-    println!("After: {}", triplet);
+    println!("After: {:?}", triplet);
 }

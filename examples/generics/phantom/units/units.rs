@@ -1,11 +1,13 @@
+use std::ops::Add;
+
 // Null enumerations to define unit types
-#[deriving(Show, Copy)]
+#[derive(Show, Copy)]
 enum Inch {}
-#[deriving(Show, Copy)]
+#[derive(Show, Copy)]
 enum Mm {}
 
 // Length is phantom type with hidden parameter `Unit`
-#[deriving(Show, Copy)]
+#[derive(Show, Copy)]
 struct Length<Unit, T>(T,);
 
 // `impl X for Y {}` reads "implement `X` Trait for Type `Y`"
@@ -17,8 +19,10 @@ struct Length<Unit, T>(T,);
 // This means that this `impl` defines `Add` only for `T` when
 // two `T's` can be added together and the result is of
 // Type `T`: (`T: Add<T,T>`)
-impl <Unit,T: Add<T,T> + Copy> Add<Length<Unit, T>,
-                               Length<Unit, T>> for Length<Unit, T> {
+impl<Unit, T: Add<T, Output=T> + Copy> Add<Length<Unit, T>>
+        for Length<Unit, T> {
+    type Output = Length<Unit, T>;
+
     fn add(self, r: Length<Unit, T>) -> Length<Unit, T> {
         let Length(ref left)  = self;
         let Length(ref right) = r;
@@ -37,8 +41,8 @@ fn main() {
     let two_meters = one_meter + one_meter;
 
     // Addition works
-    println!("one foot + one_foot = {}", two_feet);
-    println!("one meter + one_meter = {}", two_meters);
+    println!("one foot + one_foot = {:?}", two_feet);
+    println!("one meter + one_meter = {:?}", two_meters);
 
     // Nonsensical operations fail as they should
     // Error: type mismatch

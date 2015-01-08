@@ -23,7 +23,7 @@ fn main() {
             // Sending is a non-blocking operation, the thread will continue
             // immediately after sending its message
             println!("thread {} finished", id);
-        }).detach();
+        });
     }
 
     // Here, all the messages are collected
@@ -35,5 +35,5 @@ fn main() {
     }
 
     // Show the order in which the messages were sent
-    println!("{}", ids);
+    println!("{:?}", ids);
 }

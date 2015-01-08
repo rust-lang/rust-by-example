@@ -1,4 +1,4 @@
-use std::fmt::{mod,Formatter,Show};
+use std::fmt::{self, Formatter, Show};
 // For .abs()
 use std::num::Float;
 
@@ -29,7 +29,7 @@ fn main() {
         City { name: "Oslo", lat: 59.95, lon: 10.75 },
         City { name: "Vancouver", lat: 49.25, lon: -123.1 },
     ].iter() {
-        println!("{}", city);
+        println!("{:?}", city);
     }
 }
 

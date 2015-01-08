@@ -2,7 +2,7 @@ mod checked {
     // For .ln() and .sqrt()
     use std::num::Float;
     // Mathematical "errors" we want to catch
-    #[deriving(Show)]
+    #[derive(Show)]
     pub enum MathError {
         DivisionByZero,
         NegativeLogarithm,
@@ -43,11 +43,11 @@ mod checked {
 fn op(x: f64, y: f64) -> f64 {
     // This is a three level match pyramid!
     match checked::div(x, y) {
-        Err(why) => panic!("{}", why),
+        Err(why) => panic!("{:?}", why),
         Ok(ratio) => match checked::ln(ratio) {
-            Err(why) => panic!("{}", why),
+            Err(why) => panic!("{:?}", why),
             Ok(ln) => match checked::sqrt(ln) {
-                Err(why) => panic!("{}", why),
+                Err(why) => panic!("{:?}", why),
                 Ok(sqrt) => sqrt,
             },
         },

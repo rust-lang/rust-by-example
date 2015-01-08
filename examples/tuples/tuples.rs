@@ -21,15 +21,15 @@ fn main() {
     let tuple_of_tuples = ((1u8, 2u16, 2u32), (4u64, -1i8), -2i16);
 
     // Tuples are printable
-    println!("tuple of tuples: {}", tuple_of_tuples);
+    println!("tuple of tuples: {:?}", tuple_of_tuples);
 
     let pair = (1, true);
-    println!("pair is {}", pair);
+    println!("pair is {:?}", pair);
 
-    println!("the reversed pair is {}", reverse(pair));
+    println!("the reversed pair is {:?}", reverse(pair));
 
     // To create one element tuples, the comma is required to tell them apart
     // from a literal surrounded by parentheses
-    println!("one element tuple: {}", (5u,));
-    println!("just an integer: {}", (5u));
+    println!("one element tuple: {:?}", (5u,));
+    println!("just an integer: {:?}", (5u));
 }

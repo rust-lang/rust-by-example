@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 // Eq requires that you derive PartialEq on the type.
-#[deriving(PartialEq, Eq, Hash)]
+#[derive(PartialEq, Eq, Hash)]
 struct Account<'a>{
     username: &'a str,
     password: &'a str,
@@ -14,7 +14,7 @@ struct AccountInfo<'a>{
 
 type Accounts<'a> = HashMap<Account<'a>, AccountInfo<'a>>;
 
-fn try_logon<'a>(accounts: &Accounts<'a>, 
+fn try_logon<'a>(accounts: &Accounts<'a>,
         username: &'a str, password: &'a str){
     println!("Username: {}", username);
     println!("Password: {}", password);
@@ -39,18 +39,18 @@ fn main(){
     let mut accounts: Accounts = HashMap::new();
 
     let account = Account {
-        username: "j.everyman", 
-        password: "password123", 
+        username: "j.everyman",
+        password: "password123",
     };
 
     let account_info = AccountInfo {
         name: "John Everyman",
         email: "j.everyman@email.com",
     };
- 
+
     accounts.insert(account, account_info);
 
     try_logon(&accounts, "j.everyman", "psasword123");
-    
+
     try_logon(&accounts, "j.everyman", "password123");
 }

@@ -1,5 +1,3 @@
-#![feature(macro_rules)]
-
 // min! will calculate the minimum of any number of arguments
 macro_rules! min {
     // base case

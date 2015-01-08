@@ -1,4 +1,4 @@
-#[deriving(Copy)]
+#[derive(Copy)]
 struct Point { x: int, y: int }
 
 fn main() {
@@ -36,5 +36,5 @@ fn main() {
         *i = 3;
     }
 
-    println!("tuple is {}", tuple);
+    println!("tuple is {:?}", tuple);
 }

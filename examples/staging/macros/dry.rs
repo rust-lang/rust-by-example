@@ -1,10 +1,10 @@
-#![feature(macro_rules)]
 use std::iter;
+use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
     ($a:ident, $b: ident, $func:ident, $op:tt) => {
         assert!($a.len() == $b.len(),
-                "{}: dimension mismatch: {} {} {}",
+                "{}: dimension mismatch: {:?} {} {:?}",
                 stringify!($func),
                 ($a.len(),),
                 stringify!($op),
@@ -14,7 +14,7 @@ macro_rules! assert_equal_len {
 
 macro_rules! op {
     ($func:ident, $bound:ident, $op:tt, $method:ident) => {
-        fn $func<T: $bound<T, T> + Copy>(xs: &mut Vec<T>, ys: &Vec<T>) {
+        fn $func<T: $bound<T, Output=T> + Copy>(xs: &mut Vec<T>, ys: &Vec<T>) {
             assert_equal_len!(xs, ys, $func, $op);
 
             for (x, y) in xs.iter_mut().zip(ys.iter()) {
@@ -39,14 +39,15 @@ fn main() {
 }
 
 mod test {
+    use std::iter;
     macro_rules! test {
         ($func: ident, $x:expr, $y:expr, $z:expr) => {
             #[test]
             fn $func() {
                 for size in range(0u, 10) {
-                    let mut x = Vec::from_elem(size, $x);
-                    let y = Vec::from_elem(size, $y);
-                    let z = Vec::from_elem(size, $z);
+                    let mut x: Vec<_> = iter::repeat(size).take($x).collect();
+                    let y: Vec<_> = iter::repeat(size).take($y).collect();
+                    let z: Vec<_> = iter::repeat(size).take($z).collect();
 
                     super::$func(&mut x, &y);
 
