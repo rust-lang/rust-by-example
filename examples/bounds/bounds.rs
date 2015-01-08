@@ -1,4 +1,6 @@
-#[deriving(Show, Copy)]
+use std::ops::{Add, Sub, Mul};
+
+#[derive(Show, Copy)]
 struct Vec2<T> {
     x: T,
     y: T,
@@ -6,8 +8,10 @@ struct Vec2<T> {
 
 // Apply bound to `T` at first instance of `T`. `T`
 // must implement the `Add` trait.
-impl<T: Add<T, T>> Add<Vec2<T>, Vec2<T>>
+impl<T: Add<T, Output = T>> Add<Vec2<T>>
         for Vec2<T> {
+    type Output = Vec2<T>;
+
     fn add(self, rhs: Vec2<T>) -> Vec2<T> {
         Vec2 {
             // `x` and `y` are of type `T`, and implement the `add` method
@@ -19,8 +23,10 @@ impl<T: Add<T, T>> Add<Vec2<T>, Vec2<T>>
 }
 
 // Bound: `T` must implement the `Sub` trait
-impl<T> Sub<Vec2<T>, Vec2<T>> for Vec2<T>
-        where T: Sub<T, T> {
+impl<T> Sub<Vec2<T>> for Vec2<T>
+        where T: Sub<T, Output = T> {
+    type Output = Vec2<T>;
+
     fn sub(self, rhs: Vec2<T>) -> Vec2<T> {
         Vec2 {
             x: self.x - rhs.x,
@@ -30,8 +36,8 @@ impl<T> Sub<Vec2<T>, Vec2<T>> for Vec2<T>
 }
 
 // Bound: `T` must implement *both* the `Add` trait and the `Mul` trait
-impl<T> Vec2<T> 
-        where T: Add<T, T> + Mul<T, T> {
+impl<T> Vec2<T>
+        where T: Add<T, Output = T> + Mul<T, Output = T> {
     fn dot(self, rhs: Vec2<T>) -> T {
         (self.x * rhs.x) + (self.y * rhs.y)
     }
