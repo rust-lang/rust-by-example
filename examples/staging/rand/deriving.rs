@@ -1,13 +1,13 @@
 use std::rand;
 use std::rand::Rng;
 
-#[deriving(Rand,Show)]
+#[derive(Rand,Show)]
 struct Point {
     x: f64,
     y: f64,
 }
 
-#[deriving(Rand,Show)]
+#[derive(Rand,Show)]
 struct Rectangle {
     p1: Point,
     p2: Point,

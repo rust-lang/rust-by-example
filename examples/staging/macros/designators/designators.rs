@@ -1,5 +1,3 @@
-#![feature(macro_rules)]
-
 macro_rules! create_function {
     // this macro takes an argument of "type" `ident`
     // the `ident` designator is used for variable/function names

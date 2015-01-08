@@ -1,7 +1,7 @@
-use std::io::Timer;
-use std::io::timer;
+use std::io::{Timer, timer};
 use std::time::duration::Duration;
 use std::iter;
+use std::sync::mpsc::Receiver;
 
 fn main() {
     let interval = Duration::milliseconds(1000);
@@ -15,7 +15,7 @@ fn main() {
     println!("Wait {} ms...", interval.num_milliseconds());
 
     // Block the task until notification arrives
-    oneshot.recv();
+    let _ = oneshot.recv();
 
     println!("Done");
 
@@ -33,10 +33,10 @@ fn main() {
     println!("Countdown");
     for i in iter::range_step(5i, 0, -1) {
         // This loop will run once every second
-        metronome.recv();
+        let _ = metronome.recv();
 
         println!("{}", i);
     }
-    metronome.recv();
+    let _ = metronome.recv();
     println!("Ignition!");
 }

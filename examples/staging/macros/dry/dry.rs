@@ -1,5 +1,7 @@
-#![feature(macro_rules)]
+use std::ops::{Add, Mul, Sub};
 use std::iter;
+
+// Developer FIXME: Issue with associated types
 
 macro_rules! assert_equal_len {
     ($a:ident, $b: ident, $func:ident, $op:tt) => {
@@ -14,7 +16,7 @@ macro_rules! assert_equal_len {
 
 macro_rules! op {
     ($func:ident, $bound:ident, $op:tt, $method:ident) => {
-        fn $func<T: $bound<T, T> + Copy>(xs: &mut Vec<T>, ys: &Vec<T>) {
+        fn $func<T: $bound + Copy>(xs: &mut Vec<T>, ys: &Vec<T>) {
             assert_equal_len!(xs, ys, $func, $op);
 
             for (x, y) in xs.iter_mut().zip(ys.iter()) {
@@ -39,14 +41,16 @@ fn main() {
 }
 
 mod test {
+    use std::iter;
+
     macro_rules! test {
         ($func: ident, $x:expr, $y:expr, $z:expr) => {
             #[test]
             fn $func() {
                 for size in range(0u, 10) {
-                    let mut x = Vec::from_elem(size, $x);
-                    let y = Vec::from_elem(size, $y);
-                    let z = Vec::from_elem(size, $z);
+                    let mut x = iter::repeat($x).take(size).collect();
+                    let y = iter::repeat($y).take(size).collect();
+                    let z = iter::repeat($z).take(size).collect();
 
                     super::$func(&mut x, &y);
 

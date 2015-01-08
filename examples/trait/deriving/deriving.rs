@@ -1,9 +1,9 @@
 // A tuple struct that can be compared
-#[deriving(PartialEq, PartialOrd)]
+#[derive(PartialEq, PartialOrd)]
 struct Centimeters(f64);
 
 // A tuple struct that can be printed
-#[deriving(Show)]
+#[derive(Show)]
 struct Inches(int);
 
 impl Inches {

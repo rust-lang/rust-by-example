@@ -3,3 +3,4 @@ stage/*
 node_modules/*
 update/target
 !node_modules/gitbook-plugin-rust-playpen
+node_modules/gitbook-plugin-rust-playpen/book/ace

@@ -1,4 +1,4 @@
-use std::fmt::{mod,Formatter,Show};
+use std::fmt::{self,Formatter,Show};
 // For .abs()
 use std::num::Float;
 
