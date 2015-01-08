@@ -1,8 +1,7 @@
-extern crate serialize;
+use rustc_serialize::{json, Decodable};
+mod rustc_serialize;
 
-use serialize::{json, Decodable};
-
-#[deriving(Decodable)]
+#[deriving(RustcDecodable)]
 struct City {
     name: String,
     // Latitude
