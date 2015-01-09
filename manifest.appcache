@@ -1,14 +1,15 @@
 CACHE MANIFEST
-# Revision 1420748280353
+# Revision 1420766798103
 
 CACHE:
-loop.html
+match/guard.html
+match/struct.html
 index.html
 array.html
 attribute/cfg/custom.html
+attribute/cfg.html
 attribute/crate.html
 attribute.html
-attribute/cfg.html
 borrow/alias.html
 borrow/freeze.html
 borrow/mut.html
@@ -48,8 +49,7 @@ lifetime/struct.html
 lifetime.html
 literals.html
 loop/nested.html
-match/guard.html
-match/struct.html
+loop.html
 match.html
 methods.html
 mod/split.html
@@ -82,10 +82,6 @@ staging/fmt.html
 staging/hash/alt-key-types.html
 staging/hash/hashset.html
 staging/arg.html
-staging/json/decodable.html
-staging/json/encodable.html
-staging/json/json-enum.html
-staging/json.html
 staging/macros.html
 staging/rand.html
 staging/simd.html
@@ -95,7 +91,7 @@ staging.html
 str.html
 structs/visibility.html
 structs.html
-tasks.html
+threads.html
 timers.html
 todo.html
 trait/deriving.html
