@@ -1,6 +1,6 @@
 An array is a collection of objects of the same type `T`, stored in contiguous
 memory. Arrays are created using brackets `[]`, and their size, which is known
-at compile time, is part of their type signature `[T, ..size]`.
+at compile time, is part of their type signature `[T; size]`.
 
 Slices are similar to arrays, but their size is not known at compile time.
 Instead, a slice is two-word object, the first word is a pointer to the data,
