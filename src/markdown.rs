@@ -1,6 +1,7 @@
 use file;
 use playpen;
 use std::iter::repeat;
+use regex::Regex;
 
 pub struct Markdown<'a, 'b> {
     content: String,
@@ -48,7 +49,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
     fn insert_sources(&mut self) -> Result<(), String> {
         let id = self.id;
         let prefix = self.prefix;
-        let re = regex!(r"\{(.*\.rs)\}");
+        let re = Regex::new(r"\{(.*\.rs)\}").unwrap();
 
         let mut table = Vec::new();
         for line in self.content.as_slice().lines() {
@@ -84,7 +85,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
     fn insert_outputs(&mut self) -> Result<(), String> {
         let id = self.id;
         let prefix = self.prefix;
-        let r = regex!(r"\{(.*)\.out\}");
+        let r = Regex::new(r"\{(.*)\.out\}").unwrap();
 
         let dir = Path::new(format!("bin/{}/{}", prefix, id));
 
@@ -96,9 +97,9 @@ impl<'a, 'b> Markdown<'a, 'b> {
                 None => {},
                 Some(captures) => {
                     let src = captures.at(1);
-                    let input = format!("{{{}.out}}", src);
+                    let input = format!("{{{:?}.out}}", src);
                     let s = try!(file::run(prefix, id, src.unwrap()));
-                    let s = format!("```\n$ rustc {0}.rs && ./{0}\n{1}```",
+                    let s = format!("```\n$ rustc {0:?}.rs && ./{0:?}\n{1:?}```",
                                     src, s);
 
                     table.push((input, s));
@@ -117,7 +118,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
     fn insert_playpen_links(&mut self) -> Result<(), String> {
         let id = self.id;
         let prefix = self.prefix;
-        let re = regex!(r"\{(.*)\.play\}");
+        let re = Regex::new(r"\{(.*)\.play\}").unwrap();
 
         let mut once_ = false;
         let mut table = Vec::new();

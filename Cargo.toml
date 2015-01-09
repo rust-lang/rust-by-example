@@ -1,0 +1,12 @@
+[package]
+
+name = "foo"
+version = "0.0.1"
+authors = ["Jorge Aparicio <japaricious@gmail.com>",
+           "Steve Klabnik <steve@steveklabnik.com>"]
+
+[dependencies]
+
+rustc-serialize = "*"
+regex = "*"
+regex_macros = "*"
