@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 use std::num::Float;
 // To be able to use .abs(), you must include this
 

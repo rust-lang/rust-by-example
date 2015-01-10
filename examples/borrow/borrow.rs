@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 // This function takes ownership of the box
 fn eat_box(boxed_int: Box<isize>) {
     println!("destroying box that contains {}", boxed_int);

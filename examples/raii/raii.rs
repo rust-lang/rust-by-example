@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 fn create_box() {
     // Allocate an integer in the heap
     let _function_box = box 3is;

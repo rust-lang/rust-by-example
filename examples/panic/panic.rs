@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 // Re-implementation of integer division (/)
 fn division(dividend: isize, divisor: isize) -> isize {
     if divisor == 0 {

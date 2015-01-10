@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 // Allow Cons and Nil to be referred to without namespacing
 use List::{Cons, Nil};
 

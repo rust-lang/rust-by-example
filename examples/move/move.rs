@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 // This function takes ownership of the heap allocated memory
 fn destroy_box(c: Box<isize>) {
     println!("destroying a box that contains {}", c);

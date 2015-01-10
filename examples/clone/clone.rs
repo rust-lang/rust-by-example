@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 // A unit struct without resources
 #[derive(Show, Copy)]
 struct Nil;

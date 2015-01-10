@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 #[derive(Copy)]
 struct Point { x: isize, y: isize }
 
