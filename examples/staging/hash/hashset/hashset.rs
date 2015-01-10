@@ -21,16 +21,15 @@ fn main() {
     println!("B: {:?}", b);
 
     // Print [1, 2, 3, 4, 5] in arbitrary order
-    println!("Union: {}", a.union(&b).collect::<Vec<&isize>>());
+    println!("Union: {:?}", a.union(&b).collect::<Vec<&isize>>());
 
     // This should print [1]
-    println!("Difference: {}", a.difference(&b).collect::<Vec<&isize>>());
+    println!("Difference: {:?}", a.difference(&b).collect::<Vec<&isize>>());
 
     // Print [2, 3, 4] in arbitrary order.
-    println!("Intersection: {}", a.intersection(&b).collect::<Vec<&isize>>());
+    println!("Intersection: {:?}", a.intersection(&b).collect::<Vec<&isize>>());
 
     // Print [1, 5]
-    println!("Symmetric Difference: {}",
+    println!("Symmetric Difference: {:?}",
              a.symmetric_difference(&b).collect::<Vec<&isize>>());
 }
-

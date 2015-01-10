@@ -8,7 +8,7 @@ fn main() {
 
     println!("An integer: {}", copied_integer);
     println!("A boolean: {}", a_boolean);
-    println!("Meet the unit value: {}", unit);
+    println!("Meet the unit value: {:?}", unit);
 
     // The compiler warns about unused variables; these warnings can be
     // silenced by prefixing the variable name with an underscore

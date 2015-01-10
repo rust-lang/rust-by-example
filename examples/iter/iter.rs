@@ -59,7 +59,7 @@ fn main() {
     let array = [1us, 3, 3, 7];
 
     // The 'iter' method produces an 'Iterator' over an array/slice
-    println!("Iterate the following array {}", array.as_slice());
+    println!("Iterate the following array {:?}", array.as_slice());
     for i in array.iter() {
         println!("> {}", i);
     }

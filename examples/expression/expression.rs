@@ -16,5 +16,5 @@ fn main() {
 
     println!("x is {}", x);
     println!("y is {}", y);
-    println!("z is {}", z);
+    println!("z is {:?}", z);
 }

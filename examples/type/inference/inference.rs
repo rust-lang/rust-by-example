@@ -12,5 +12,5 @@ fn main() {
     // Aha! Now the compiler knows that `vec` is a vector of `u8`s (`Vec<u8>`)
     // TODO ^ Try commenting out the `vec.push(elem)` line
 
-    println!("{}", vec);
+    println!("{:?}", vec);
 }
