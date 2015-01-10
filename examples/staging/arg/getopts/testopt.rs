@@ -33,6 +33,6 @@ fn main() {
 
     println!("a={}, b={}, c=\"{}\"", a, b, c);
     if !matches.free.is_empty() {
-        println!("free arguments: {}", matches.free);
+        println!("free arguments: {:?}", matches.free);
     }
 }

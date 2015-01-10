@@ -1,5 +1,7 @@
+#![feature(box_syntax)]
+
 fn main() {
-    let immutable_box = box 5u;
+    let immutable_box = box 5u32;
 
     println!("immutable_box contains {}", immutable_box);
 

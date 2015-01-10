@@ -4,13 +4,13 @@ use std::iter;
 
 fn main() {
     println!("Find the sum of all the squared odd numbers under 1000");
-    let upper = 1000u;
+    let upper = 1000u32;
 
     // Imperative approach
     // Declare accumulator variable
     let mut acc = 0;
     // Iterate: 0, 1, 2, ... to infinity
-    for n in iter::count(0u, 1) {
+    for n in iter::count(0u32, 1) {
         // Square the number
         let n_squared = n * n;
 
@@ -27,7 +27,7 @@ fn main() {
     // Functional approach
     let sum_of_squared_odd_numbers =
         // All natural numbers
-        iter::count(0u, 1).
+        iter::count(0u32, 1).
         // Squared
         map(|n| n * n).
         // Below upper limit
@@ -39,6 +39,6 @@ fn main() {
     println!("functional style: {}", sum_of_squared_odd_numbers);
 }
 
-fn is_odd(n: uint) -> bool {
+fn is_odd(n: u32) -> bool {
     n % 2 == 1
 }

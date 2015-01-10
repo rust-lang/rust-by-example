@@ -7,8 +7,8 @@
 
 // Second attempt: Add lifetimes to all the references
 struct Pair<'a, 'b> {
-    one: &'a mut int,
-    two: &'b mut int,
+    one: &'a mut i32,
+    two: &'b mut i32,
 }
 
 fn main() {

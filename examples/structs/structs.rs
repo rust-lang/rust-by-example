@@ -2,7 +2,7 @@
 struct Nil;
 
 // A tuple struct
-struct Pair(int, f64);
+struct Pair(i32, f64);
 
 // A struct with two fields
 struct Point {
@@ -42,5 +42,5 @@ fn main() {
     // Destructure a tuple struct
     let Pair(integer, decimal) = pair;
 
-    println!("pair contains {} and {}", integer, decimal);
+    println!("pair contains {:?} and {:?}", integer, decimal);
 }

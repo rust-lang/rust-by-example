@@ -21,20 +21,20 @@ fn main() {
     let mut v: Vec<u8> = rng.gen_iter::<u8>().take(10).collect();
 
     println!("10 randomly generated u8 values");
-    println!("{}", v.as_slice());
+    println!("{:?}", v.as_slice());
 
     // `shuffle` shuffles a mutable slice in place
     rng.shuffle(v.as_mut_slice());
     println!("shuffle previous slice");
-    println!("{}", v.as_slice());
+    println!("{:?}", v.as_slice());
 
     // `choose` will sample an slice *with* replacement
     // i.e. the same element can be chosen more than one time
     println!("sample previous slice *with* replacement 10 times");
-    for _ in range(0u, 10) {
+    for _ in range(0u32, 10) {
         match rng.choose(v.as_slice()) {
             None => panic!("slice was empty"),
-            Some(x) => println!("{}", x),
+            Some(x) => println!("{:?}", x),
         }
     }
 }

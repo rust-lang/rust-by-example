@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 use std::mem;
 
 #[allow(dead_code)]

@@ -19,10 +19,10 @@ fn main() {
     let pair_of_chars: Pair<char> = Pair { first: 'a', second: 'b' };
 
     // Implicitly specialize `Pair`
-    let pair_of_ints = Pair { first: 1i, second: 2 };
+    let pair_of_ints = Pair { first: 1i32, second: 2 };
 
     // Explicitly specialize `Tuple2`
-    let _tuple: Tuple2<char, int> = Tuple2('R', 2);
+    let _tuple: Tuple2<char, i32> = Tuple2('R', 2);
 
     // Explicitly specialize `swap`
     let _swapped_pair_of_chars = swap::<char>(pair_of_chars);

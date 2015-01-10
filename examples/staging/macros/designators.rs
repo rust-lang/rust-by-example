@@ -28,11 +28,11 @@ fn main() {
     foo();
     bar();
 
-    print_result!(1u + 1);
+    print_result!(1u32 + 1);
 
     // remember that blocks are expressions
     print_result!({
-        let x = 1u;
+        let x = 1u32;
 
         x * x + 2 * x - 1
     });

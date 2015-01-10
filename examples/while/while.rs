@@ -1,6 +1,6 @@
 fn main() {
     // A counter variable
-    let mut n = 1u;
+    let mut n = 1u32;
 
     // Loop while `n` is less than 101
     while n < 101 {

@@ -2,13 +2,13 @@ use std::sync::mpsc::{Sender, Receiver};
 use std::sync::mpsc;
 use std::thread::Thread;
 
-static NTHREADS: uint = 3;
+static NTHREADS: usize = 3;
 
 fn main() {
     // Channels have two endpoints: the `Sender<T>` and the `Receiver<T>`,
     // where `T` is the type of the message to be transfer
     // (type annotation is superfluous)
-    let (tx, rx): (Sender<uint>, Receiver<uint>) = mpsc::channel();
+    let (tx, rx): (Sender<usize>, Receiver<usize>) = mpsc::channel();
 
     for id in range(0, NTHREADS) {
         // The sender endpoint can be copied
