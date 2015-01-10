@@ -4,8 +4,8 @@ fn main() {
 
     // `{}` are placeholders for arguments that will be stringified
     println!("{} days", 31is);
-    // The `is` suffix indicates the compiler that this literal has type: signed
-    // pointer size integer, see next chapter for more details
+    // The `is` suffix indicates the compiler that this literal has type:
+    // signed pointer size integer, see next chapter for more details
 
     // The positional arguments can be reused along the template
     println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");

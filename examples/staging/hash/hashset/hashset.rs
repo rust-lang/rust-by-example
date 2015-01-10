@@ -27,7 +27,8 @@ fn main() {
     println!("Difference: {:?}", a.difference(&b).collect::<Vec<&isize>>());
 
     // Print [2, 3, 4] in arbitrary order.
-    println!("Intersection: {:?}", a.intersection(&b).collect::<Vec<&isize>>());
+    println!("Intersection: {:?}",
+             a.intersection(&b).collect::<Vec<&isize>>());
 
     // Print [1, 5]
     println!("Symmetric Difference: {:?}",

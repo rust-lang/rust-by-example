@@ -8,7 +8,8 @@ struct Triplet {
 impl Triplet {
     // First attempt: No explicit lifetimes
     // The compiler infers that the field and the struct have the same lifetime
-    fn mut_one(&mut self) -> &mut isize {
+    fn mut_one(&mut self) -> &mut isize
+    {
         &mut self.one
     }
 
@@ -16,7 +17,8 @@ impl Triplet {
     // references
     // Error! The compiler doesn't know what is the relationship between the
     // lifetime `structure` and the lifetime `field`
-    //fn mut_two<'structure, 'field>(&'structure mut self) -> &'field mut isize {
+    //fn mut_two<'structure, 'field>(&'structure mut self) -> &'field mut isize
+    //{
         //&mut self.two
     //}
     // TODO ^ Try uncommenting this method
