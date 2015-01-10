@@ -1,6 +1,6 @@
 use std::thread::Thread;
 
-static NTHREADS: int = 10;
+static NTHREADS: isize = 10;
 
 // This is the `main` thread
 fn main() {

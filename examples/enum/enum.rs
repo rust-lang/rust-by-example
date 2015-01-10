@@ -4,7 +4,7 @@ use List::{Cons, Nil};
 // A linked list node, which can take on any of these two variants
 enum List {
     // Cons: Tuple struct that wraps an element and a pointer to the next node
-    Cons(uint, Box<List>),
+    Cons(usize, Box<List>),
     // Nil: A node that signifies the end of the linked list
     Nil,
 }
@@ -18,13 +18,13 @@ impl List {
     }
 
     // Consume a list, and return the same list with a new element at its front
-    fn prepend(self, elem: uint) -> List {
+    fn prepend(self, elem: usize) -> List {
         // `Cons` also has type List
         Cons(elem, box self)
     }
 
     // Return the length of the list
-    fn len(&self) -> uint {
+    fn len(&self) -> usize {
         // `self` has to be matched, because the behavior of this method
         // depends on the variant of `self`
         // `self` has type `&List`, and `*self` has type `List`, matching on a

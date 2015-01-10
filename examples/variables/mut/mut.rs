@@ -1,6 +1,6 @@
 fn main() {
-    let _immutable_variable = 1i;
-    let mut mutable_variable = 1i;
+    let _immutable_variable = 1is;
+    let mut mutable_variable = 1is;
 
     println!("Before mutation: {}", mutable_variable);
 

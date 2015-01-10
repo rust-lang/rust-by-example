@@ -31,7 +31,7 @@ fn main() {
     // `choose` will sample an slice *with* replacement
     // i.e. the same element can be chosen more than one time
     println!("sample previous slice *with* replacement 10 times");
-    for _ in range(0u, 10) {
+    for _ in range(0us, 10) {
         match rng.choose(v.as_slice()) {
             None => panic!("slice was empty"),
             Some(x) => println!("{}", x),

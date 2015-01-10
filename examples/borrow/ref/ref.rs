@@ -1,5 +1,5 @@
 #[derive(Copy)]
-struct Point { x: int, y: int }
+struct Point { x: isize, y: isize }
 
 fn main() {
     let point = Point { x: 0, y: 0 };
@@ -26,7 +26,7 @@ fn main() {
     println!("point is ({}, {})", point.x, point.y);
     println!("mutable_point is ({}, {})", mutable_point.x, mutable_point.y);
 
-    let mut tuple = (box 5u, 3u);
+    let mut tuple = (box 5us, 3us);
 
     {
         // `ref` can also be paired with `box` to take a mutable reference to

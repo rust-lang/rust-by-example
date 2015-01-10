@@ -1,17 +1,17 @@
 use std::mem;
 
 struct Fibonacci {
-    curr: uint,
-    next: uint,
+    curr: usize,
+    next: usize,
 }
 
 // Implement 'Iterator' for 'Fibonacci'
 impl Iterator for Fibonacci {
-    type Item = uint;
+    type Item = usize;
     // The 'Iterator' trait only requires the 'next' method to be defined. The
     // return type is 'Option<T>', 'None' is returned when the 'Iterator' is
     // over, otherwise the next value is returned wrapped in 'Some'
-    fn next(&mut self) -> Option<uint> {
+    fn next(&mut self) -> Option<usize> {
         let new_next = self.curr + self.next;
         let new_curr = mem::replace(&mut self.next, new_next);
 
@@ -27,7 +27,7 @@ fn fibonacci() -> Fibonacci {
 
 fn main() {
     // Iterator that generates: 0, 1 and 2
-    let mut sequence = range(0u, 3);
+    let mut sequence = range(0us, 3);
 
     println!("Four consecutive `next` calls on range(0, 3)");
     println!("> {:?}", sequence.next());
@@ -38,7 +38,7 @@ fn main() {
     // The for construct will iterate an 'Iterator' until it returns 'None'.
     // Every 'Some' value is unwrapped and bound to a variable.
     println!("Iterate over range(0, 3) using for");
-    for i in range(0u, 3) {
+    for i in range(0us, 3) {
         println!("> {}", i);
     }
 
@@ -56,7 +56,7 @@ fn main() {
         println!("> {}", i);
     }
 
-    let array = [1u, 3, 3, 7];
+    let array = [1us, 3, 3, 7];
 
     // The 'iter' method produces an 'Iterator' over an array/slice
     println!("Iterate the following array {}", array.as_slice());

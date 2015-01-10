@@ -3,10 +3,10 @@ Where vectors store values by an integer index, `HashMap`s store values by key.
 or any other type that implements the `Eq` and `Hash` traits. 
 More on this in the next section.
 
-Like vectors, `HashMap`s are growable, but HashMaps can also shrink themselves 
-when they have excess space. 
-You can create a HashMap with a certain starting capacity using 
-`HashMap::with_capacity(uint)`, or use `HashMap::new()` to get a HashMap 
+Like vectors, `HashMap`s are growable, but HashMaps can also shrink themselves
+when they have excess space.
+You can create a HashMap with a certain starting capacity using
+`HashMap::with_capacity(usize)`, or use `HashMap::new()` to get a HashMap
 with a default initial capacity (recommended).
 
 {hash.play}

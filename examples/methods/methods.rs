@@ -59,7 +59,7 @@ impl Rectangle {
 }
 
 // `Pair` owns resources: two heap allocated integers
-struct Pair(Box<int>, Box<int>);
+struct Pair(Box<isize>, Box<isize>);
 
 impl Pair {
     // This method "consumes" the resources of the caller object

@@ -1,5 +1,5 @@
 fn main() {
-    struct Foo { x: (uint, uint), y: uint }
+    struct Foo { x: (usize, usize), y: usize }
 
     // destructure members of the struct
     let foo = Foo { x: (1, 2), y: 3 };

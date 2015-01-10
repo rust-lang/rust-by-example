@@ -1,14 +1,14 @@
 // First attempt: No explicit lifetimes
 // Error! Compiler needs explicit lifetime
 //struct Singleton {
-    //one: &mut int,
+    //one: &mut isize,
 //}
 // TODO ^ Try uncommenting this struct
 
 // Second attempt: Add lifetimes to all the references
 struct Pair<'a, 'b> {
-    one: &'a mut int,
-    two: &'b mut int,
+    one: &'a mut isize,
+    two: &'b mut isize,
 }
 
 fn main() {

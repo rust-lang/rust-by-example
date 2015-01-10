@@ -1,5 +1,5 @@
 fn main() {
-    let an_integer = 1u;
+    let an_integer = 1us;
     let a_boolean = true;
     let unit = ();
 
@@ -12,7 +12,7 @@ fn main() {
 
     // The compiler warns about unused variables; these warnings can be
     // silenced by prefixing the variable name with an underscore
-    let _unused_variable = 3u;
-    let noisy_unused_variable = 2u;
+    let _unused_variable = 3us;
+    let noisy_unused_variable = 2us;
     // FIXME ^ Prefix with an underscore to suppress the warning
 }
