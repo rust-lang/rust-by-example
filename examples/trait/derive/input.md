@@ -1,8 +1,8 @@
 The compiler is capable of providing basic implementations for some traits via
-the `#[deriving]` [attribute][attribute]. These traits can still be
+the `#[derive]` [attribute][attribute]. These traits can still be
 manually implemented if a more complex behavior is required.
 
-{deriving.play}
+{derive.play}
 
 This is a list of the "derivable" traits:
 * Comparison traits:

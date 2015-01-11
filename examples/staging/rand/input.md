@@ -14,9 +14,9 @@ normal, uniform, Student's T, Chi squared, Gamma, etc.
 
 {distributions.out}
 
-The `deriving` attribute can be used to implement the `Rand` trait for custom
+The `derive` attribute can be used to implement the `Rand` trait for custom
 types, this allows generation of random values of custom types.
 
-{deriving.rs}
+{derive.rs}
 
-{deriving.out}
+{derive.out}

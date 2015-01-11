@@ -4,7 +4,7 @@ use serialize::{Decodable,json};
 use std::iter::AdditiveIterator;
 use std::iter::repeat;
 
-#[deriving(Decodable)]
+#[derive(Decodable)]
 pub struct Example {
     children: Option<Vec<Example>>,
     id: String,
