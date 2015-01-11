@@ -32,7 +32,7 @@ fn main() {
 
     let mut entries = range(0, nexamples).map(|_| {
         rx.recv()
-    }).collect::<Vec<(Vec<uint>, String)>>();
+    }).collect::<Vec<(Vec<usize>, String)>>();
 
     entries.sort_by(|&(ref i, _), &(ref j, _)| i.cmp(j));
 

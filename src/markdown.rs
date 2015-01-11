@@ -9,7 +9,7 @@ pub struct Markdown<'a, 'b> {
 }
 
 impl<'a, 'b> Markdown<'a, 'b> {
-    pub fn process(number: &[uint], id: &'a str, title: &str, prefix: &'b str)
+    pub fn process(number: &[usize], id: &'a str, title: &str, prefix: &'b str)
         -> Result<(), String>
     {
         let mut mkd = try!(Markdown::new(number, id, title, prefix));
@@ -22,7 +22,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
         Ok(())
     }
 
-    fn new(number: &[uint], id: &'a str, title: &str, prefix: &'b str)
+    fn new(number: &[usize], id: &'a str, title: &str, prefix: &'b str)
         -> Result<Markdown<'a, 'b>, String>
     {
         let path = Path::new(format!("examples/{}/{}/input.md", prefix, id));

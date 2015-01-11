@@ -44,7 +44,7 @@ mod test {
         ($func: ident, $x:expr, $y:expr, $z:expr) => {
             #[test]
             fn $func() {
-                for size in range(0u, 10) {
+                for size in range(0us, 10) {
                     let mut x: Vec<_> = iter::repeat(size).take($x).collect();
                     let y: Vec<_> = iter::repeat(size).take($y).collect();
                     let z: Vec<_> = iter::repeat(size).take($z).collect();
@@ -58,7 +58,7 @@ mod test {
     }
 
     // test add_assign, mul_assign and sub_assign
-    test!(add_assign, 1u, 2u, 3u);
-    test!(mul_assign, 2u, 3u, 6u);
-    test!(sub_assign, 3u, 2u, 1u);
+    test!(add_assign, 1us, 2us, 3us);
+    test!(mul_assign, 2us, 3us, 6us);
+    test!(sub_assign, 3us, 2us, 1us);
 }

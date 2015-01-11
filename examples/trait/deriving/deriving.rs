@@ -4,7 +4,7 @@ struct Centimeters(f64);
 
 // A tuple struct that can be printed
 #[derive(Show)]
-struct Inches(int);
+struct Inches(isize);
 
 impl Inches {
     fn to_centimeters(&self) -> Centimeters {
@@ -15,7 +15,7 @@ impl Inches {
 }
 
 // A vanilla tuple struct
-struct Seconds(int);
+struct Seconds(isize);
 
 fn main() {
     let _one_second = Seconds(1);

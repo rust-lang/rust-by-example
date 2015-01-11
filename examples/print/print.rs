@@ -3,9 +3,9 @@ fn main() {
     print!("January has ");
 
     // `{}` are placeholders for arguments that will be stringified
-    println!("{} days", 31i);
-    // The `i` suffix indicates the compiler that this literal has type: signed
-    // pointer size integer, see next chapter for more details
+    println!("{} days", 31is);
+    // The `is` suffix indicates the compiler that this literal has type:
+    // signed pointer size integer, see next chapter for more details
 
     // The positional arguments can be reused along the template
     println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");
@@ -17,7 +17,7 @@ fn main() {
              verb="jumps");
 
     // Special formatting can be specified in the placeholder after a `:`
-    println!("{} of {:b} people know binary, the other half don't", 1i, 2i);
+    println!("{} of {:b} people know binary, the other half don't", 1is, 2is);
 
     // Error! You are missing an argument
     println!("My name is {0}, {1} {0}", "Bond");

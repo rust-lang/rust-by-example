@@ -22,7 +22,7 @@ fn add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
 fn simd_add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
     assert_equal_len!(xs, ys);
 
-    let size = xs.len() as int;
+    let size = xs.len() as isize;
     let chunks = size / 4;
 
     // pointer to the start of the vector data
@@ -54,7 +54,7 @@ mod bench {
     extern crate test;
     use self::test::Bencher;
     use std::iter;
-    static BENCH_SIZE: uint = 10_000;
+    static BENCH_SIZE: usize = 10_000;
 
     macro_rules! bench {
         ($name:ident, $func:ident) => {

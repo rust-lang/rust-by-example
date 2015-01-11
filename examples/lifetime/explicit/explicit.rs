@@ -2,7 +2,7 @@ struct Book {
     // `String` is a heap allocated string
     title: String,
     author: String,
-    year: uint,
+    year: usize,
 }
 
 fn get_title<'a>(book: &'a Book) -> &'a str {

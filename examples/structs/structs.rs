@@ -2,7 +2,7 @@
 struct Nil;
 
 // A tuple struct
-struct Pair(int, f64);
+struct Pair(isize, f64);
 
 // A struct with two fields
 struct Point {

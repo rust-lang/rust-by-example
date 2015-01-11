@@ -1,5 +1,7 @@
+#![feature(box_syntax)]
+
 // This function takes ownership of the heap allocated memory
-fn destroy_box(c: Box<int>) {
+fn destroy_box(c: Box<isize>) {
     println!("destroying a box that contains {}", c);
 
     // `c` will be destroyed in this scope, and the memory will be freed
@@ -7,7 +9,7 @@ fn destroy_box(c: Box<int>) {
 
 fn main() {
     // Stack allocated integer
-    let x = 5u;
+    let x = 5us;
 
     // "Copy" `x` into `y`, there are no resources to move
     let y = x;

@@ -16,17 +16,17 @@ inserting the lifetime part `'a` so we can simply type annotate references with
 For example:
 
 ``` rust
-let integer: int = 5;
-let ref_to_int: &int = &integer;
+let integer: isize = 5;
+let ref_to_int: &isize = &integer;
 ```
 
 * `integer` has lifetime `'i` (it could be any other name, like `'foo`)
 * `ref_to_int` has lifetime `'r` (references also have lifetimes!)
-* `ref_to_int` type signature actually is `&'i int` (the compiler inserts the
+* `ref_to_int` type signature actually is `&'i isize` (the compiler inserts the
   `'i` for us)
-* The type signature `&'i int` reads as:
+* The type signature `&'i isize` reads as:
   * `&`: reference to an
-  * `int`: integer with
+  * `isize`: integer with
   * `'i`: lifetime `i` (`i` is the lifetime of `integer`!)
 
 Because the compiler keeps track of the lifetime of referenced objects in the

@@ -1,10 +1,10 @@
 use std::os;
 
-fn increase(number: int) {
+fn increase(number: isize) {
     println!("{}", number + 1);
 }
 
-fn decrease(number: int) {
+fn decrease(number: isize) {
     println!("{}", number - 1);
 }
 
@@ -35,7 +35,7 @@ fn main() {
         // one command and one argument passed
         [_, ref cmd, ref num] => {
             // parse the number
-            let number: int = match num.parse() {
+            let number: isize = match num.parse() {
                 Some(n) => {
                     n
                 },

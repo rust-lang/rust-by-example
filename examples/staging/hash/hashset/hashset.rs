@@ -1,8 +1,8 @@
 use std::collections::HashSet;
 
 fn main() {
-    let mut a: HashSet<int> = vec!(1i, 2, 3).into_iter().collect();
-    let mut b: HashSet<int> = vec!(2i, 3, 4).into_iter().collect();
+    let mut a: HashSet<isize> = vec!(1is, 2, 3).into_iter().collect();
+    let mut b: HashSet<isize> = vec!(2is, 3, 4).into_iter().collect();
 
     assert!(a.insert(4));
     assert!(a.contains(&4));
@@ -21,16 +21,16 @@ fn main() {
     println!("B: {:?}", b);
 
     // Print [1, 2, 3, 4, 5] in arbitrary order
-    println!("Union: {}", a.union(&b).collect::<Vec<&int>>());
+    println!("Union: {:?}", a.union(&b).collect::<Vec<&isize>>());
 
     // This should print [1]
-    println!("Difference: {}", a.difference(&b).collect::<Vec<&int>>());
+    println!("Difference: {:?}", a.difference(&b).collect::<Vec<&isize>>());
 
     // Print [2, 3, 4] in arbitrary order.
-    println!("Intersection: {}", a.intersection(&b).collect::<Vec<&int>>());
+    println!("Intersection: {:?}",
+             a.intersection(&b).collect::<Vec<&isize>>());
 
     // Print [1, 5]
-    println!("Symmetric Difference: {}",
-             a.symmetric_difference(&b).collect::<Vec<&int>>());
+    println!("Symmetric Difference: {:?}",
+             a.symmetric_difference(&b).collect::<Vec<&isize>>());
 }
-

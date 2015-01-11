@@ -27,7 +27,7 @@ impl Example {
         }
     }
 
-    pub fn count(&self) -> uint {
+    pub fn count(&self) -> usize {
         match self.children {
             None => 1,
             Some(ref children) => 1 + children.iter().map(|c| c.count()).sum(),
@@ -35,9 +35,9 @@ impl Example {
     }
 
     pub fn process(&self,
-                   number: Vec<uint>,
-                   tx: Sender<(Vec<uint>, String)>,
-                   indent: uint,
+                   number: Vec<usize>,
+                   tx: Sender<(Vec<usize>, String)>,
+                   indent: usize,
                    prefix: String)
     {
         let id = self.id.as_slice();

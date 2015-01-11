@@ -4,7 +4,7 @@ struct Book {
     // `&'static str` is a reference to a string allocated in read only memory
     author: &'static str,
     title: &'static str,
-    year: uint,
+    year: usize,
 }
 
 // This function takes a reference to a book
