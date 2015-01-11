@@ -78,7 +78,7 @@
   { "id": "option", "title": "`Option`", "children": null },
   { "id": "array", "title": "Arrays and Slices", "children": null },
   { "id": "trait", "title": "Traits", "children": [
-      { "id": "deriving", "title": "Deriving", "children": null }
+      { "id": "derive", "title": "Derive", "children": null }
   ] },
   { "id": "ops", "title": "Operator Overloading", "children": null },
   { "id": "bounds", "title": "Bounds", "children": null },
