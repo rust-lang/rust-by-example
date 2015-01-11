@@ -26,7 +26,7 @@ This is a list of the "derivable" traits:
 * [`FromPrimitive`][from-primitive],
   to create an instance from a numeric primitive.
 * [`Show`][show], to
-  format a value using the `{}` formatter.
+  format a value using the `{:?}` formatter.
 
 [attribute]: /attribute.html
 [eq]: http://doc.rust-lang.org/std/cmp/trait.Eq.html
