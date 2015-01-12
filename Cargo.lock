@@ -1,5 +1,5 @@
 [root]
-name = "foo"
+name = "update"
 version = "0.0.1"
 dependencies = [
  "regex 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)",
