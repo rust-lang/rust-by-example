@@ -26,8 +26,7 @@ srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
 all:
 	./setup-stage.sh
-	$(RUSTC) src/update.rs --out-dir bin
-	bin/update
+	cargo run
 
 book: node_modules/gitbook
 	$(GITBOOK) build stage
