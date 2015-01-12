@@ -1,3 +1,5 @@
+#![feature(box_syntax)]
+
 use std::num::Float;
 // To be able to use .abs(), you must include this
 
@@ -59,7 +61,7 @@ impl Rectangle {
 }
 
 // `Pair` owns resources: two heap allocated integers
-struct Pair(Box<int>, Box<int>);
+struct Pair(Box<i32>, Box<i32>);
 
 impl Pair {
     // This method "consumes" the resources of the caller object

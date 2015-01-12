@@ -1,5 +1,5 @@
 fn main() {
-    let n = 5i;
+    let n = 5i32;
 
     if n < 0 {
         print!("{} is negative", n);

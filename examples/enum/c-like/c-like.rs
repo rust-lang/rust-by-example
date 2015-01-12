@@ -48,6 +48,6 @@ fn main() {
     today.mood();
 
     // enums can be casted into integers
-    println!("roses are #{:06x}", Color::Red as int);
-    println!("violets are #{:06x}", Color::Blue as int);
+    println!("roses are #{:06x}", Color::Red as i32);
+    println!("violets are #{:06x}", Color::Blue as i32);
 }

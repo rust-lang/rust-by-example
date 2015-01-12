@@ -1,4 +1,4 @@
-struct Point { x: int, y: int, z: int }
+struct Point { x: i32, y: i32, z: i32 }
 
 fn main() {
     let mut point = Point { x: 0, y: 0, z: 0 };

@@ -1,7 +1,7 @@
 fn main() {
     // Suffixed literals, their types are known at initialization
     let x = 1u8;
-    let y = 2u;
+    let y = 2u32;
     let z = 3f32;
 
     // Unsuffixed literal, their types depend on how they are used

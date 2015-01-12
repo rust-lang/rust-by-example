@@ -1,5 +1,5 @@
 fn main() {
-    let number: int = 13;
+    let number: i32 = 13;
     // TODO ^ Try different values for `number`
 
     println!("Tell me about {}", number);
@@ -16,7 +16,7 @@ fn main() {
 
     let boolean = true;
     // Match is an expression too
-    let binary: int = match boolean {
+    let binary: i32 = match boolean {
         // The arms of a match must cover all the possible values
         false => 0,
         true => 1,

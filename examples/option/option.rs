@@ -1,5 +1,5 @@
 // An integer division that doesn't `panic!`
-fn checked_division(dividend: int, divisor: int) -> Option<int> {
+fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
     if divisor == 0 {
         // Failure is represented as the `None` variant
         None
@@ -10,7 +10,7 @@ fn checked_division(dividend: int, divisor: int) -> Option<int> {
 }
 
 // This function handles a division that may not succeed
-fn try_division(dividend: int, divisor: int) {
+fn try_division(dividend: i32, divisor: i32) {
     // `Option` values can be pattern matched, just like other enums
     match checked_division(dividend, divisor) {
         None => println!("{} / {} failed!", dividend, divisor),
@@ -25,8 +25,8 @@ fn main() {
     try_division(1, 0);
 
     // Binding `None` to a variable needs to be type annotated
-    let none: Option<int> = None;
-    let _equivalent_none = None::<int>;
+    let none: Option<i32> = None;
+    let _equivalent_none = None::<i32>;
 
     let optional_float = Some(0f32);
 
