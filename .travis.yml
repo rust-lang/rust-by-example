@@ -1,7 +1,6 @@
 language: node_js
 
 install:
-  - npm install gitbook@0.7.1 -g
   - curl -s https://static.rust-lang.org/rustup.sh | sudo sh > /dev/null
 
 script:
