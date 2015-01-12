@@ -6,9 +6,6 @@
 
 extern crate regex;
 
-#[plugin]
-extern crate regex_macros;
-
 extern crate "rustc-serialize" as rustc_serialize;
 
 use example::Example;

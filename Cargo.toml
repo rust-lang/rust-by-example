@@ -9,4 +9,3 @@ authors = ["Jorge Aparicio <japaricious@gmail.com>",
 
 rustc-serialize = "*"
 regex = "*"
-regex_macros = "*"
