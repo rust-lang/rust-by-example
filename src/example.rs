@@ -1,10 +1,11 @@
 use file;
 use markdown::Markdown;
-use serialize::{Decodable,json};
+use rustc_serialize::{Decodable,json};
 use std::iter::AdditiveIterator;
 use std::iter::repeat;
+use std::sync::mpsc;
 
-#[derive(Decodable)]
+#[derive(RustcDecodable)]
 pub struct Example {
     children: Option<Vec<Example>>,
     id: String,
@@ -15,7 +16,7 @@ impl Example {
     pub fn get_list() -> Vec<Example> {
         match file::read(&Path::new("examples/structure.json")) {
             Err(why) => panic!("{}", why),
-            Ok(string) => match json::from_str(string.as_slice()) {
+            Ok(string) => match json::Json::from_str(string.as_slice()) {
                 Err(_) => panic!("structure.json is not valid json"),
                 Ok(json) => {
                     match Decodable::decode(&mut json::Decoder::new(json)) {
@@ -36,7 +37,7 @@ impl Example {
 
     pub fn process(&self,
                    number: Vec<uint>,
-                   tx: Sender<(Vec<uint>, String)>,
+                   tx: mpsc::Sender<(Vec<uint>, String)>,
                    indent: uint,
                    prefix: String)
     {
@@ -66,7 +67,7 @@ impl Example {
                 },
             };
 
-        tx.send((number.clone(), entry));
+        let _ = tx.send((number.clone(), entry));
 
         match self.children {
             None => {},
