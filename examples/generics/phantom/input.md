@@ -6,6 +6,6 @@ at compile time; they have no run-time behavior.
 {phantom.play}
 
 ###See also:
-[Deriving](http://rustbyexample.com/trait/deriving.html),
+[Derive](http://rustbyexample.com/trait/derive.html),
 [struct](http://rustbyexample.com/structs.html), and
 [TupleStructs](http://rustbyexample.com/structs.html)

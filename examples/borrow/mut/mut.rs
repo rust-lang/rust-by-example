@@ -1,4 +1,5 @@
 #[allow(dead_code)]
+#[derive(Copy)]
 struct Book {
     // `&'static str` is a reference to a string allocated in read only memory
     author: &'static str,
