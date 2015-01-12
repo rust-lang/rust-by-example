@@ -48,11 +48,11 @@ fn main() {
     let v1 = Vec2 { x: 1.2_f32, y: 3.4 };
     let v2 = Vec2 { x: 5.6_f32, y: 7.8 };
 
-    println!("{} + {} = {}", v1, v2, v1 + v2);
-    println!("{} - {} = {}", v1, v2, v1 - v2);
-    println!("{} ⋅ {} = {}", v1, v2, v1.dot(v2));
+    println!("{:?} + {:?} = {:?}", v1, v2, v1 + v2);
+    println!("{:?} - {:?} = {:?}", v1, v2, v1 - v2);
+    println!("{:?} ⋅ {:?} = {:?}", v1, v2, v1.dot(v2));
 
     // Error! `char` doesn't implement the `Add` trait
-    println!("{}", Vec2 { x: ' ', y: 'b' } + Vec2 { x: 'c', y: 'd' });
+    println!("{:?}", Vec2 { x: ' ', y: 'b' } + Vec2 { x: 'c', y: 'd' });
     // FIXME ^ Comment out this line
 }
