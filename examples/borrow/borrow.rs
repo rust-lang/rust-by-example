@@ -1,10 +1,11 @@
+#![feature(box_syntax)]
 // This function takes ownership of the box
-fn eat_box(boxed_int: Box<int>) {
+fn eat_box(boxed_int: Box<isize>) {
     println!("destroying box that contains {}", boxed_int);
 }
 
 // This function borrows the box
-fn peep_inside_box(borrowed_box: &Box<int>) {
+fn peep_inside_box(borrowed_box: &Box<isize>) {
     println!("This box contains {}", borrowed_box);
 }
 
@@ -20,7 +21,7 @@ fn main() {
 
     {
         // Take a reference to the data contained inside the box
-        let _ref_to_int: &int = &*boxed_int;
+        let _ref_to_int: &isize = &*boxed_int;
 
         // Error! Can't destroy boxed_int, while the inner value has been
         // borrowed
