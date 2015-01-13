@@ -13,10 +13,12 @@ impl Iterator for Fibonacci {
     // over, otherwise the next value is returned wrapped in 'Some'
     fn next(&mut self) -> Option<u32> {
         let new_next = self.curr + self.next;
-        let new_curr = mem::replace(&mut self.next, new_next);
+
+        self.curr = self.next;
+        self.next = new_next;
 
         // 'Some' is always returned, this is an infinite value generator
-        Some(mem::replace(&mut self.curr, new_curr))
+        Some(self.curr)
     }
 }
 
