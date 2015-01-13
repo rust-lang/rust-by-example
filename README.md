@@ -39,7 +39,7 @@ We use these tools to generate the static site:
 works [here][gitbook-format]).
 
 Before running `gitbook`, we do a preprocessing step using
-[src/update.rs][update-rs].
+[src/main.rs][main-rs].
 
 This preprocessing has two steps:
 
