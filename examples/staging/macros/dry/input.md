@@ -2,7 +2,7 @@ Macros allow writing DRY code, by factoring out the common parts of functions
 and/or test suites. Here is an example that implements and tests the `+=`, `*=`
 and `-=` operators on `Vec<T>`.
 
-{dry.play}
+{dry.rs}
 
 ```
 $ rustc --test dry.rs && ./dry
