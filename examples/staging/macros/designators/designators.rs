@@ -5,7 +5,7 @@ macro_rules! create_function {
         // this macro creates a function with name `$func_name`
         fn $func_name() {
             // the stringify! macro converts an `ident` into a string
-            println!("You called {}()",
+            println!("You called {:?}()",
                      stringify!($func_name))
         }
     )
@@ -18,7 +18,7 @@ macro_rules! print_result {
     // the `expr` designator is used for expressions
     ($expression:expr) => (
         // stringify! will convert the expression *as it is* into a string
-        println!("{} = {}",
+        println!("{:?} = {:?}",
                  stringify!($expression),
                  $expression)
     )

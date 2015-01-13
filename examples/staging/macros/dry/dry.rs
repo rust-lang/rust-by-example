@@ -6,7 +6,7 @@ macro_rules! assert_equal_len {
     // operators and tokens
     ($a:ident, $b: ident, $func:ident, $op:tt) => (
         assert!($a.len() == $b.len(),
-                "{}: dimension mismatch: {:?} {} {:?}",
+                "{:?}: dimension mismatch: {:?} {:?} {:?}",
                 stringify!($func),
                 ($a.len(),),
                 stringify!($op),

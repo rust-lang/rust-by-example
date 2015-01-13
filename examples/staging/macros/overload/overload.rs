@@ -2,15 +2,15 @@
 macro_rules! test {
     // the arguments don't need to be separated by a comma
     // any template can be used
-        println!("{} and {} is {}",
     ($left:expr; and $right:expr) => (
+        println!("{:?} and {:?} is {:?}",
                  stringify!($left),
                  stringify!($right),
                  $left && $right)
     );
     // ^ each arm must be ended with a semicolon
-        println!("{} or {} is {}",
     ($left:expr; or $right:expr) => (
+        println!("{:?} or {:?} is {:?}",
                  stringify!($left),
                  stringify!($right),
                  $left || $right)
