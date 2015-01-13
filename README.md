@@ -39,7 +39,7 @@ We use these tools to generate the static site:
 works [here][gitbook-format]).
 
 Before running `gitbook`, we do a preprocessing step using
-[src/update.rs][update-rs].
+[src/main.rs][main-rs].
 
 This preprocessing has two steps:
 
@@ -100,7 +100,7 @@ See LICENSE-APACHE and LICENSE-MIT for more details.
 [rust-lang]: http://www.rust-lang.org/
 [gitbook]: http://www.gitbook.io
 [gitbook-dir]: https://github.com/GitbookIO/gitbook#book-format
-[update-rs]: src/update.rs
+[main-rs]: src/main.rs
 [structure]: examples/structure.json
 [hello-folder]: examples/hello
 [hello-rs]: examples/hello/hello.rs
