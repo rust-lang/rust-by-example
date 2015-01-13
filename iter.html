@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="34" data-basepath="." data-revision="1421154272964">
+    <div class="book" data-level="34" data-basepath="." data-revision="1421182703642">
     
 
 <div class="book-summary">
@@ -2113,10 +2113,12 @@ impl Iterator for Fibonacci {
     // over, otherwise the next value is returned wrapped in &#39;Some&#39;
     fn next(&amp;mut self) -&gt; Option&lt;u32&gt; {
         let new&#95;next = self.curr + self.next;
-        let new&#95;curr = mem::replace(&amp;mut self.next, new&#95;next);
+
+        self.curr = self.next;
+        self.next = new&#95;next;
 
         // &#39;Some&#39; is always returned, this is an infinite value generator
-        Some(mem::replace(&amp;mut self.curr, new&#95;curr))
+        Some(self.curr)
     }
 }
 
