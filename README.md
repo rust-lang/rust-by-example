@@ -100,7 +100,7 @@ See LICENSE-APACHE and LICENSE-MIT for more details.
 [rust-lang]: http://www.rust-lang.org/
 [gitbook]: http://www.gitbook.io
 [gitbook-dir]: https://github.com/GitbookIO/gitbook#book-format
-[update-rs]: src/update.rs
+[main-rs]: src/main.rs
 [structure]: examples/structure.json
 [hello-folder]: examples/hello
 [hello-rs]: examples/hello/hello.rs
