@@ -3,7 +3,7 @@ There are three types of structures ("structs") that can be created using the
 
 * Tuple structs, which are, basically, named tuples.
 * The classic [C structs][c_struct]
-* Unit structs, which are field-less structs, useful for generics
+* Unit structs, which are field-less, are useful for generics.
 
 {structs.play}
 
