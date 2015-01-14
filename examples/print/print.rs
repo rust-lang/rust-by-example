@@ -3,7 +3,7 @@ fn main() {
     print!("January has ");
 
     // `{}` are placeholders for arguments that will be stringified
-    println!("{} days", 31is);
+    println!("{} days", 31);
     // The `i` suffix indicates the compiler that this literal has type: signed
     // pointer size integer, see next chapter for more details
 
