@@ -2,12 +2,12 @@ Implementations can also be made generic. Generally `impl` is followed by
 the type `<Type>` although it is not a strict requirement.
 
 ```rust
-struct T; // A null struct
+struct S; // A null struct
 struct GenericTup<T>(T,);
 
 // impl of GenericTup we specifically specialize:
 impl GenericTup<f32> {} // Specialize to `f32`
-impl GenericTup<T> {} // Specialize to `T` defined above
+impl GenericTup<S> {} // Specialize to `S` defined above
 
 // `<T>` Must precede the type to remain generic
 impl <T> GenericTup<T> {}
