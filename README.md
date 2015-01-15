@@ -3,8 +3,7 @@
 
 ## What's this?
 
-This is the source code of the
-[Rust by example][website] website!
+This is the source code of the [Rust by Example][website] website!
 
 ## How to contribute
 
@@ -14,11 +13,11 @@ See [CONTRIBUTING.md][how-to-contribute].
 
 First, make certain you install `nodejs` on Debian based distributions, or
 `node` on non-Debian distros. After installation, if you use a Debian based
-distro (i.e. Ubuntu), run
+distro (i.e. Ubuntu), run:
 
     sudo ln -s /usr/bin/nodejs /usr/bin/node
 
-Then run
+Then run:
 
 ```
 make all
@@ -33,9 +32,9 @@ View the results with `make serve`.
 We use these tools to generate the static site:
 
 * [Rust][rust-lang] \o/
-* [gitbook][gitbook]
+* [GitBook][gitbook]
 
-`gitbook` will generate the site from markdown files (see details about how it
+`gitbook` will generate the site from Markdown files (see details about how it
 works [here][gitbook-format]).
 
 Before running `gitbook`, we do a preprocessing step using
@@ -67,12 +66,12 @@ lives under the `variable` example.
 
 ### Processing `input.md`
 
-Instead of including the rust code directly in `input.md`, the code lives in
-separate source files; and the preprocessing step will insert the source code
-in the markdown file.
+Instead of including the Rust code directly in `input.md`, the code lives in
+separate source files; the preprocessing step will insert the source code
+into the Markdown file.
 
 For example, to insert the source code of the `hello.rs` file, the following
-syntax is used in the markdown file:
+syntax is used in the Markdown file:
 
 * `{hello.play}` expands the source code embedded in a live code editor
 * `{hello.rs}` expands to static/plain source code.
@@ -88,7 +87,7 @@ The Makefile provides the following recipes:
 
 ## License
 
-Rust by example is dual licensed under the Apache 2.0 license and the MIT
+Rust by Example is dual-licensed under the Apache 2.0 license and the MIT
 license.
 
 See LICENSE-APACHE and LICENSE-MIT for more details.
@@ -99,7 +98,7 @@ See LICENSE-APACHE and LICENSE-MIT for more details.
 [how-to-contribute]: CONTRIBUTING.md
 [rust-lang]: http://www.rust-lang.org/
 [gitbook]: http://www.gitbook.io
-[gitbook-dir]: https://github.com/GitbookIO/gitbook#book-format
+[gitbook-format]: https://github.com/GitbookIO/gitbook#book-format
 [main-rs]: src/main.rs
 [structure]: examples/structure.json
 [hello-folder]: examples/hello
