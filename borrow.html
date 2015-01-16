@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="22" data-basepath="." data-revision="1421413408765">
+    <div class="book" data-level="22" data-basepath="." data-revision="1421421721662">
     
 
 <div class="book-summary">
@@ -2100,18 +2100,18 @@ passing objects by-value (<code>T</code>), objects can be passed by reference (<
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">// This function takes ownership of the box
-fn eat&#95;box(boxed&#95;int: Box&lt;int&gt;) {
+fn eat&#95;box(boxed&#95;int: Box&lt;i32&gt;) {
     println!(&quot;destroying box that contains {}&quot;, boxed&#95;int);
 }
 
 // This function borrows the box
-fn peep&#95;inside&#95;box(borrowed&#95;box: &amp;Box&lt;int&gt;) {
+fn peep&#95;inside&#95;box(borrowed&#95;box: &amp;Box&lt;i32&gt;) {
     println!(&quot;This box contains {}&quot;, borrowed&#95;box);
 }
 
 fn main() {
     // A boxed integer
-    let boxed&#95;int = box 5;
+    let boxed&#95;int = Box::new(5);
 
     // Borrow the box, ownership is not taken
     peep&#95;inside&#95;box(&amp;boxed&#95;int);
@@ -2121,7 +2121,7 @@ fn main() {
 
     {
         // Take a reference to the data contained inside the box
-        let &#95;ref&#95;to&#95;int: &amp;int = &amp;&#42;boxed&#95;int;
+        let &#95;ref&#95;to&#95;int: &amp;i32 = &amp;&#42;boxed&#95;int;
 
         // Error! Can&#39;t destroy boxed&#95;int, while the inner value has been
         // borrowed
