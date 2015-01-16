@@ -1,7 +1,7 @@
 The `Path` struct represents file paths in the underlying filesystem. There are
 two flavors of `Path`: `posix::Path`, for UNIX-like systems, and
-`windows::Path`, for Windows. The prelude exports the appropriate
-platform-specific `Path` variant.
+`windows::Path`, for Windows. You don't need to import them.
+The global `Path` is appropriate for the current platform.
 
 A `Path` can be created from almost any type that implements the
 `BytesContainer` trait, like a string, and provides several methods to get
