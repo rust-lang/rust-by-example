@@ -2,18 +2,20 @@ use std::iter;
 use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
-    ($a:ident, $b: ident, $func:ident, $op:tt) => {
+    // The `tt` (token tree) designator is used for
+    // operators and tokens
+    ($a:ident, $b: ident, $func:ident, $op:tt) => (
         assert!($a.len() == $b.len(),
-                "{}: dimension mismatch: {:?} {} {:?}",
+                "{:?}: dimension mismatch: {:?} {:?} {:?}",
                 stringify!($func),
                 ($a.len(),),
                 stringify!($op),
                 ($b.len(),));
-    }
+    )
 }
 
 macro_rules! op {
-    ($func:ident, $bound:ident, $op:tt, $method:ident) => {
+    ($func:ident, $bound:ident, $op:tt, $method:ident) => (
         fn $func<T: $bound<T, Output=T> + Copy>(xs: &mut Vec<T>, ys: &Vec<T>) {
             assert_equal_len!(xs, ys, $func, $op);
 
@@ -22,7 +24,7 @@ macro_rules! op {
                 // *x = x.$method(*y);
             }
         }
-    }
+    )
 }
 
 // implement add_assign, mul_assign, and sub_assign functions
@@ -62,3 +64,4 @@ mod test {
     test!(mul_assign, 2us, 3us, 6us);
     test!(sub_assign, 3us, 2us, 1us);
 }
+

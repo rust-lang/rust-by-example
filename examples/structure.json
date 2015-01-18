@@ -112,7 +112,12 @@
         { "id": "doc-comment", "title": "Doc Comments", "children": null }
     ] },
     { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
-    { "id": "macros", "title": "macro_rules!", "children": null  },
+    { "id": "macros", "title": "macro_rules!", "children": [
+        { "id": "designators", "title": "Designators", "children": null },
+        { "id": "overload", "title": "Overload", "children": null },
+        { "id": "repeat", "title": "Repeat", "children": null },
+        { "id": "dry", "title": "DRY", "children": null }
+    ] },
     { "id": "arg", "title": "Program arguments", "children": [
         { "id": "matching", "title": "Argument parsing", "children": null },
         { "id": "getopts", "title": "`getopts`", "children": null }
