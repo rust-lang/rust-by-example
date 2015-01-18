@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.1" data-basepath=".." data-revision="1421597114254">
+    <div class="book" data-level="18.1" data-basepath=".." data-revision="1421597131842">
     
 
 <div class="book-summary">
@@ -2165,12 +2165,12 @@
                         <h2 id="181-implementation">18.1 Implementation</h2>
 <p>Implementations can also be made generic. Generally <code>impl</code> is followed by
 the type <code>&lt;Type&gt;</code> although it is not a strict requirement.</p>
-<pre><code class="lang-rust"><span class="hljs-keyword">struct</span> T; <span class="hljs-comment">// A null struct</span>
+<pre><code class="lang-rust"><span class="hljs-keyword">struct</span> S; <span class="hljs-comment">// A null struct</span>
 <span class="hljs-keyword">struct</span> GenericTup&lt;T&gt;(T,);
 
 <span class="hljs-comment">// impl of GenericTup we specifically specialize:</span>
 <span class="hljs-keyword">impl</span> GenericTup&lt;<span class="hljs-keyword">f32</span>&gt; {} <span class="hljs-comment">// Specialize to `f32`</span>
-<span class="hljs-keyword">impl</span> GenericTup&lt;T&gt; {} <span class="hljs-comment">// Specialize to `T` defined above</span>
+<span class="hljs-keyword">impl</span> GenericTup&lt;S&gt; {} <span class="hljs-comment">// Specialize to `S` defined above</span>
 
 <span class="hljs-comment">// `&lt;T&gt;` Must precede the type to remain generic</span>
 <span class="hljs-keyword">impl</span> &lt;T&gt; GenericTup&lt;T&gt; {}
