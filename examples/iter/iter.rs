@@ -1,5 +1,3 @@
-use std::mem;
-
 struct Fibonacci {
     curr: u32,
     next: u32,
