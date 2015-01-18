@@ -1,5 +1,5 @@
 Numeric literals can be type annotated by adding the type as a suffix, with the
-exception of `uint` that uses the `u` suffix and `int` that uses the `i`
+exception of `usize` that uses the `us` suffix and `isize` that uses the `is`
 suffix.
 
 The type of unsuffixed literals will depend on how they are used. If no
