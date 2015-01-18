@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="5.4" data-basepath=".." data-revision="1421586329273">
+    <div class="book" data-level="5.4" data-basepath=".." data-revision="1421595641104">
     
 
 <div class="book-summary">
@@ -2095,7 +2095,7 @@
                         <h2 id="54-alias">5.4 Alias</h2>
 <p>The <code>type</code> statement can be used to give a new name to an existing type. Types
 must have <code>CamelCase</code> names, or the compiler will raise a warning. The
-exception to this rule are the primitive types: <code>uint</code>, <code>f32</code>, etc.</p>
+exception to this rule are the primitive types: <code>usize</code>, <code>f32</code>, etc.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2105,13 +2105,13 @@ type Inch = u64;
 
 // Use an attribute to silence warning
 #[allow(non&#95;camel&#95;case&#95;types)]
-type uint64&#95;t = u64;
+type u64&#95;t = u64;
 // TODO ^ Try removing the attribute
 
 fn main() {
-    // &#96;NanoSecond&#96; = &#96;Inch&#96; = &#96;uint64&#95;t&#96; = &#96;u64&#96;
-    let nanoseconds: NanoSecond = 5 as uint64&#95;t;
-    let inches: Inch = 2 as uint64&#95;t;
+    // &#96;NanoSecond&#96; = &#96;Inch&#96; = &#96;u64&#95;t&#96; = &#96;u64&#96;
+    let nanoseconds: NanoSecond = 5 as u64&#95;t;
+    let inches: Inch = 2 as u64&#95;t;
 
     // Note that type aliases &#42;don&#39;t&#42; provide any extra type safety, because
     // aliases are &#42;not&#42; new types
