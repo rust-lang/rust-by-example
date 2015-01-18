@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.6" data-basepath=".." data-revision="1421595641104">
+    <div class="book" data-level="49.6" data-basepath=".." data-revision="1421597092277">
     
 
 <div class="book-summary">
@@ -1682,6 +1682,76 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.4.1" data-path="staging/macros/designators.html">
+            
+                
+                    <a href="../staging/macros/designators.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.1.</b>
+                        
+                         Designators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.2" data-path="staging/macros/overload.html">
+            
+                
+                    <a href="../staging/macros/overload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.2.</b>
+                        
+                         Overload
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.3" data-path="staging/macros/repeat.html">
+            
+                
+                    <a href="../staging/macros/repeat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.3.</b>
+                        
+                         Repeat
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.4" data-path="staging/macros/dry.html">
+            
+                
+                    <a href="../staging/macros/dry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.4.</b>
+                        
+                         DRY
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2090,7 +2160,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_82">
+                    <section class="normal" id="section-gitbook_86">
                     
                         <h2 id="496-random">49.6 Random</h2>
 <p>The <code>std::rand</code> module provides access to the Random Number Generators (RNG)
@@ -2138,8 +2208,30 @@ type that implements the <code>Rand</code> trait (which includes all the primiti
     }
 }
 </code></pre>
-<p>{gen.out}</p>
-<p>Several structs are available under the <code>std::rand::distributions</code> module, that
+<pre><code>$ rustc gen.rs &amp;&amp; ./gen
+randomly generate some values for different primitive types
+u8: 223
+i8: -9
+u16: 16981
+i16: -11506
+f32: 0.910749
+f64: 0.785096
+10 randomly generated u8 values
+[122u8, 63u8, 15u8, 86u8, 116u8, 156u8, 10u8, 30u8, 37u8, 168u8]
+shuffle previous slice
+[30u8, 37u8, 122u8, 156u8, 63u8, 15u8, 86u8, 10u8, 168u8, 116u8]
+sample previous slice *with* replacement 10 times
+15u8
+122u8
+30u8
+63u8
+122u8
+116u8
+156u8
+10u8
+37u8
+15u8
+</code></pre><p>Several structs are available under the <code>std::rand::distributions</code> module, that
 can be used to generate values using different probability distributions like:
 normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// distributions.rs</span>
@@ -2162,8 +2254,30 @@ normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
     }
 }
 </code></pre>
-<p>{distributions.out}</p>
-<p>The <code>derive</code> attribute can be used to implement the <code>Rand</code> trait for custom
+<pre><code>$ rustc distributions.rs &amp;&amp; ./distributions
+10 samples from a normal distribution with mean 0.0 and SD 1.0
+-0.310199
+1.096694
+2.445504
+-2.122597
+-0.807003
+0.780224
+-0.262489
+-0.225326
+0.360029
+-0.03611
+10 samples from a T distribution with 5 degrees of freedom
+0.063535
+-0.538944
+-0.188556
+0.455691
+-0.116094
+-0.772253
+-0.673437
+0.883423
+1.249413
+-0.451897
+</code></pre><p>The <code>derive</code> attribute can be used to implement the <code>Rand</code> trait for custom
 types, this allows generation of random values of custom types.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// derive.rs</span>
 <span class="hljs-keyword">use</span> std::rand;
@@ -2188,8 +2302,12 @@ types, this allows generation of random values of custom types.</p>
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">"random rectangle\n{:?}"</span>, rng.gen::&lt;Rectangle&gt;());
 }
 </code></pre>
-<p>{derive.out}</p>
-
+<pre><code>$ rustc derive.rs &amp;&amp; ./derive
+random point
+Point { x: 0.683216f64, y: 0.210585f64 }
+random rectangle
+Rectangle { p1: Point { x: 0.636669f64, y: 0.265359f64 }, p2: Point { x: 0.942279f64, y: 0.266112f64 } }
+</code></pre>
                     
                     </section>
                 

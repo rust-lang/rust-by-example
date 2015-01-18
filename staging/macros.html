@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="../staging/arg.html" />
+    <link rel="next" href="../staging/macros/designators.html" />
     
     
     <link rel="prev" href="../staging/ffi.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.4" data-basepath=".." data-revision="1421595641104">
+    <div class="book" data-level="49.4" data-basepath=".." data-revision="1421597092277">
     
 
 <div class="book-summary">
@@ -1682,6 +1682,76 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.4.1" data-path="staging/macros/designators.html">
+            
+                
+                    <a href="../staging/macros/designators.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.1.</b>
+                        
+                         Designators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.2" data-path="staging/macros/overload.html">
+            
+                
+                    <a href="../staging/macros/overload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.2.</b>
+                        
+                         Overload
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.3" data-path="staging/macros/repeat.html">
+            
+                
+                    <a href="../staging/macros/repeat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.3.</b>
+                        
+                         Repeat
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.4" data-path="staging/macros/dry.html">
+            
+                
+                    <a href="../staging/macros/dry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.4.</b>
+                        
+                         DRY
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2090,7 +2160,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_81">
+                    <section class="normal" id="section-gitbook_85">
                     
                         <h2 id="494-macro_rules">49.4 macro_rules!</h2>
 <p>Rust provides a powerful macro system that allows metaprogramming. As you&#39;ve
@@ -2098,195 +2168,25 @@ seen in previous chapters, macros look like functions, except that their name
 ends with a bang <code>!</code>, but instead of generating a function call, macros are
 expanded into source code that gets compiled with the rest of the program.</p>
 <p>Macros are created using the <code>macro_rules!</code> macro.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// simple.rs</span>
-<span class="hljs-comment">// This is the simplest macro, `say_hello` is the name of the macro</span>
-macro_rules! say_hello {
-    <span class="hljs-comment">// `()` indicates that the macro takes no argument</span>
-    () =&gt; {
-        <span class="hljs-comment">// the macro will expand into the contents of this block</span>
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"Hello!"</span>);
-    }
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">// This is the simplest macro, &#96;say&#95;hello&#96; is the name of the macro
+macro&#95;rules! say&#95;hello {
+    // &#96;()&#96; indicates that the macro takes no argument
+    () =&gt; (
+        // the macro will expand into the contents of this block
+        println!(&quot;Hello!&quot;);
+    )
 }
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-comment">// this call will expand into `println!("Hello");`</span>
-    say_hello!()
-}
-</code></pre>
-<p>{simple.out}</p>
-<p>The arguments of a macro are prefixed by a dollar sign <code>$</code> and type annotated
-with a <em>designator</em>.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// designators.rs</span>
-macro_rules! create_function {
-    <span class="hljs-comment">// this macro takes an argument of "type" `ident`</span>
-    <span class="hljs-comment">// the `ident` designator is used for variable/function names</span>
-    ($func_name:ident) =&gt; {
-        <span class="hljs-comment">// this macro creates a function with name `$func_name`</span>
-        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func_name</span></span>() {
-            <span class="hljs-comment">// the stringify! macro converts an `ident` into a string</span>
-            <span class="hljs-built_in">println!</span>(<span class="hljs-string">"You called {}()"</span>,
-                     <span class="hljs-built_in">stringify!</span>($func_name))
-        }
-    }
-}
+fn main() {
+    // this call will expand into &#96;println!(&quot;Hello&quot;);&#96;
+    say&#95;hello!()
+}</div>
+<div id="result"></div>
+</div>
 
-create_function!(foo);
-create_function!(bar);
-
-macro_rules! print_result {
-    <span class="hljs-comment">// the `expr` designator is used for expressions</span>
-    ($expression:expr) =&gt; {
-        <span class="hljs-comment">// stringify! will convert the expression *as it is* into a string</span>
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{} = {}"</span>,
-                 <span class="hljs-built_in">stringify!</span>($expression),
-                 $expression)
-    }
-}
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    foo();
-    bar();
-
-    print_result!(<span class="hljs-number">1u32</span> + <span class="hljs-number">1</span>);
-
-    <span class="hljs-comment">// remember that blocks are expressions</span>
-    print_result!({
-        <span class="hljs-keyword">let</span> x = <span class="hljs-number">1u32</span>;
-
-        x * x + <span class="hljs-number">2</span> * x - <span class="hljs-number">1</span>
-    });
-}
-</code></pre>
-<p>{designators.out}</p>
-<p>Macros can be overloaded to accept different combinations of arguments.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// overload.rs</span>
-<span class="hljs-comment">// macro_rules! is similar to a match block</span>
-macro_rules! test {
-    <span class="hljs-comment">// the arguments don't need to be separated by a comma</span>
-    <span class="hljs-comment">// any template can be used</span>
-    ($left:expr; and $right:expr) =&gt; {
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{} and {} is {}"</span>,
-                 <span class="hljs-built_in">stringify!</span>($left),
-                 <span class="hljs-built_in">stringify!</span>($right),
-                 $left &amp;&amp; $right)
-    };
-    <span class="hljs-comment">// ^ each arm must be ended with a semicolon</span>
-    ($left:expr; or $right:expr) =&gt; {
-        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{} or {} is {}"</span>,
-                 <span class="hljs-built_in">stringify!</span>($left),
-                 <span class="hljs-built_in">stringify!</span>($right),
-                 $left || $right)
-    };
-}
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    test!(<span class="hljs-number">1i32</span> + <span class="hljs-number">1</span> == <span class="hljs-number">2i32</span>; and <span class="hljs-number">2i32</span> * <span class="hljs-number">2</span> == <span class="hljs-number">4i32</span>);
-    test!(<span class="hljs-keyword">true</span>; or <span class="hljs-keyword">false</span>);
-}
-</code></pre>
-<p>{overload.out}</p>
-<p>Macros can use <code>+</code> in the argument list, to indicate that an argument may
-repeat at least once, or <code>*</code>, to indicate that the argument may repeat zero or
-more times.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// repeat.rs</span>
-<span class="hljs-comment">// min! will calculate the minimum of any number of arguments</span>
-macro_rules! min {
-    <span class="hljs-comment">// base case</span>
-    ($x:expr) =&gt; {
-        $x
-    };
-    <span class="hljs-comment">// `$x` followed by at least one `$y,`</span>
-    ($x:expr, $($y:expr),+) =&gt; {
-        <span class="hljs-comment">// call min! on the tail `$y`</span>
-        std::cmp::min($x, min!($($y),+))
-    }
-}
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">1u32</span>));
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">1u32</span> + <span class="hljs-number">2</span> , <span class="hljs-number">2u32</span>));
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{}"</span>, min!(<span class="hljs-number">5u32</span>, <span class="hljs-number">2u32</span> * <span class="hljs-number">3</span>, <span class="hljs-number">4u32</span>));
-}
-</code></pre>
-<p>{repeat.out}</p>
-<p>Macros allow writing DRY code, by factoring out the common parts of functions
-and/or test suites. Here is an example that implements and tests the <code>+=</code>, <code>*=</code>
-and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// dry.rs</span>
-<span class="hljs-keyword">use</span> std::iter;
-<span class="hljs-keyword">use</span> std::ops::{Add, Mul, Sub};
-
-macro_rules! assert_equal_len {
-    ($a:ident, $b: ident, $func:ident, $op:tt) =&gt; {
-        <span class="hljs-built_in">assert!</span>($a.len() == $b.len(),
-                <span class="hljs-string">"{}: dimension mismatch: {:?} {} {:?}"</span>,
-                <span class="hljs-built_in">stringify!</span>($func),
-                ($a.len(),),
-                <span class="hljs-built_in">stringify!</span>($op),
-                ($b.len(),));
-    }
-}
-
-macro_rules! op {
-    ($func:ident, $bound:ident, $op:tt, $method:ident) =&gt; {
-        <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span></span>&lt;T: $bound&lt;T, Output=T&gt; + Copy&gt;(xs: &amp;<span class="hljs-keyword">mut</span> Vec&lt;T&gt;, ys: &amp;Vec&lt;T&gt;) {
-            assert_equal_len!(xs, ys, $func, $op);
-
-            <span class="hljs-keyword">for</span> (x, y) <span class="hljs-keyword">in</span> xs.iter_mut().zip(ys.iter()) {
-                *x = $bound::$method(*x, *y);
-                <span class="hljs-comment">// *x = x.$method(*y);</span>
-            }
-        }
-    }
-}
-
-<span class="hljs-comment">// implement add_assign, mul_assign, and sub_assign functions</span>
-op!(add_assign, Add, +=, add);
-op!(mul_assign, Mul, *=, mul);
-op!(sub_assign, Sub, -=, sub);
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> xs = iter::repeat(<span class="hljs-number">0f64</span>).take(<span class="hljs-number">5</span>).collect();
-    <span class="hljs-keyword">let</span> ys = iter::repeat(<span class="hljs-number">1f64</span>).take(<span class="hljs-number">6</span>).collect();
-
-    <span class="hljs-comment">// this operation will fail at runtime</span>
-    add_assign(&amp;<span class="hljs-keyword">mut</span> xs, &amp;ys);
-}
-
-<span class="hljs-keyword">mod</span> test {
-    <span class="hljs-keyword">use</span> std::iter;
-    macro_rules! test {
-        ($func: ident, $x:expr, $y:expr, $z:expr) =&gt; {
-            <span class="hljs-preprocessor">#[test]</span>
-            <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span></span>() {
-                <span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> range(<span class="hljs-number">0u32</span>, <span class="hljs-number">10</span>) {
-                    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($x).collect();
-                    <span class="hljs-keyword">let</span> y: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($y).collect();
-                    <span class="hljs-keyword">let</span> z: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($z).collect();
-
-                    super::$func(&amp;<span class="hljs-keyword">mut</span> x, &amp;y);
-
-                    <span class="hljs-built_in">assert_eq!</span>(x, z);
-                }
-            }
-        }
-    }
-
-    <span class="hljs-comment">// test add_assign, mul_assign and sub_assign</span>
-    test!(add_assign, <span class="hljs-number">1u</span>s, <span class="hljs-number">2u</span>s, <span class="hljs-number">3u</span>s);
-    test!(mul_assign, <span class="hljs-number">2u</span>s, <span class="hljs-number">3u</span>s, <span class="hljs-number">6u</span>s);
-    test!(sub_assign, <span class="hljs-number">3u</span>s, <span class="hljs-number">2u</span>s, <span class="hljs-number">1u</span>s);
-}
-</code></pre>
-<p>{dry.out}</p>
-<pre><code>$ rustc --test dry.rs &amp;&amp; ./dry
-running 3 tests
-test test::mul_assign ... ok
-test test::add_assign ... ok
-test test::sub_assign ... ok
-
-test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
-</code></pre>
                     
                     </section>
                 
@@ -2299,7 +2199,7 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
         <a href="../staging/ffi.html" class="navigation navigation-prev " aria-label="Previous page: Foreign Function Interface"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../staging/arg.html" class="navigation navigation-next " aria-label="Next page: Program arguments"><i class="fa fa-angle-right"></i></a>
+        <a href="../staging/macros/designators.html" class="navigation navigation-next " aria-label="Next page: Designators"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

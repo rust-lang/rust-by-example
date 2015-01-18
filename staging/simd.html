@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.7" data-basepath=".." data-revision="1421595641104">
+    <div class="book" data-level="49.7" data-basepath=".." data-revision="1421597092277">
     
 
 <div class="book-summary">
@@ -1682,6 +1682,76 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.4.1" data-path="staging/macros/designators.html">
+            
+                
+                    <a href="../staging/macros/designators.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.1.</b>
+                        
+                         Designators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.2" data-path="staging/macros/overload.html">
+            
+                
+                    <a href="../staging/macros/overload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.2.</b>
+                        
+                         Overload
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.3" data-path="staging/macros/repeat.html">
+            
+                
+                    <a href="../staging/macros/repeat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.3.</b>
+                        
+                         Repeat
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.4" data-path="staging/macros/dry.html">
+            
+                
+                    <a href="../staging/macros/dry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.4.</b>
+                        
+                         DRY
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2090,7 +2160,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_83">
+                    <section class="normal" id="section-gitbook_87">
                     
                         <h2 id="497-simd">49.7 SIMD</h2>
 <p>Rust provides experimental support for SIMD vectors. These SIMD vectors are
@@ -2113,8 +2183,9 @@ exposed as structs (<code>f32x4</code>, <code>u8x16</code>, etc.), that implemen
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{:?}"</span>, (a, b, c, d));
 }
 </code></pre>
-<p>{simd.out}</p>
-<p>Here&#39;s a more complex example that sums two <code>Vec&lt;f32&gt;</code>, using the <code>f32x4</code> type
+<pre><code>$ rustc simd.rs &amp;&amp; ./simd
+(4f32, 6f32, 6f32, 4f32)
+</code></pre><p>Here&#39;s a more complex example that sums two <code>Vec&lt;f32&gt;</code>, using the <code>f32x4</code> type
 to operate on 4-element chunks at a time.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// simd_add.rs</span>
 <span class="hljs-keyword">use</span> std::simd::f32x4;

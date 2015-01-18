@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.3" data-basepath=".." data-revision="1421595641104">
+    <div class="book" data-level="49.3" data-basepath=".." data-revision="1421597092277">
     
 
 <div class="book-summary">
@@ -1682,6 +1682,76 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.4.1" data-path="staging/macros/designators.html">
+            
+                
+                    <a href="../staging/macros/designators.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.1.</b>
+                        
+                         Designators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.2" data-path="staging/macros/overload.html">
+            
+                
+                    <a href="../staging/macros/overload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.2.</b>
+                        
+                         Overload
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.3" data-path="staging/macros/repeat.html">
+            
+                
+                    <a href="../staging/macros/repeat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.3.</b>
+                        
+                         Repeat
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.4.4" data-path="staging/macros/dry.html">
+            
+                
+                    <a href="../staging/macros/dry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.4.4.</b>
+                        
+                         DRY
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2090,7 +2160,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_77">
+                    <section class="normal" id="section-gitbook_76">
                     
                         <h2 id="493-foreign-function-interface">49.3 Foreign Function Interface</h2>
 <p>Rust provides a Foreign Function Interface (FFI) to C libraries. Foreign
@@ -2137,8 +2207,9 @@ attribute containing the name of the foreign library.</p>
     }
 }
 </code></pre>
-<p>{ffi.out}</p>
-<p>Since calling foreign functions is considered unsafe, it&#39;s common to write safe
+<pre><code>$ rustc ffi.rs &amp;&amp; ./ffi
+the square root of -1+0i is 0+1i
+</code></pre><p>Since calling foreign functions is considered unsafe, it&#39;s common to write safe
 wrappers around them.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// safe.rs</span>
 <span class="hljs-keyword">use</span> std::fmt;
@@ -2178,8 +2249,9 @@ wrappers around them.</p>
     }
 }
 </code></pre>
-<p>{safe.out}</p>
-
+<pre><code>$ rustc safe.rs &amp;&amp; ./safe
+cos(0+1i) = 1.543081+0i
+</code></pre>
                     
                     </section>
                 
