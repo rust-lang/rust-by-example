@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.6" data-basepath=".." data-revision="1421759119768">
+    <div class="book" data-level="49.6" data-basepath=".." data-revision="1421770694642">
     
 
 <div class="book-summary">
@@ -1873,51 +1873,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.10" >
-            
-            <span><b>49.10.</b> JSON parsing</span>
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="49.10.1" >
-            
-            <span><b>49.10.1.</b> `Json`</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="49.10.2" >
-            
-            <span><b>49.10.2.</b> `Decodable`</span>
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="49.10.3" >
-            
-            <span><b>49.10.3.</b> `Encodable`</span>
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="49.11" data-path="staging/fmt.html">
+        <li class="chapter " data-level="49.10" data-path="staging/fmt.html">
             
                 
                     <a href="../staging/fmt.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.11.</b>
+                            <b>49.10.</b>
                         
                          Formatting
                     </a>
@@ -1927,13 +1889,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.12" data-path="staging/hash.html">
+        <li class="chapter " data-level="49.11" data-path="staging/hash.html">
             
                 
                     <a href="../staging/hash.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.12.</b>
+                            <b>49.11.</b>
                         
                          HashMap
                     </a>
@@ -1944,13 +1906,13 @@
                 
     
         
-        <li class="chapter " data-level="49.12.1" data-path="staging/hash/alt-key-types.html">
+        <li class="chapter " data-level="49.11.1" data-path="staging/hash/alt-key-types.html">
             
                 
                     <a href="../staging/hash/alt-key-types.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.12.1.</b>
+                            <b>49.11.1.</b>
                         
                          Alternate/custom key types
                     </a>
@@ -1960,13 +1922,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.12.2" data-path="staging/hash/hashset.html">
+        <li class="chapter " data-level="49.11.2" data-path="staging/hash/hashset.html">
             
                 
                     <a href="../staging/hash/hashset.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.12.2.</b>
+                            <b>49.11.2.</b>
                         
                          HashSet
                     </a>
@@ -2210,27 +2172,27 @@ type that implements the <code>Rand</code> trait (which includes all the primiti
 </code></pre>
 <pre><code>$ rustc gen.rs &amp;&amp; ./gen
 randomly generate some values for different primitive types
-u8: 226
-i8: -49
-u16: 8649
-i16: -31784
-f32: 0.512613
-f64: 0.890834
+u8: 180
+i8: 93
+u16: 55064
+i16: 4423
+f32: 0.765144
+f64: 0.68977
 10 randomly generated u8 values
-[167u8, 173u8, 108u8, 249u8, 37u8, 100u8, 90u8, 171u8, 41u8, 41u8]
+[43u8, 55u8, 84u8, 84u8, 22u8, 142u8, 55u8, 14u8, 0u8, 25u8]
 shuffle previous slice
-[37u8, 108u8, 41u8, 249u8, 173u8, 171u8, 90u8, 100u8, 41u8, 167u8]
+[43u8, 0u8, 25u8, 22u8, 55u8, 84u8, 142u8, 55u8, 14u8, 84u8]
 sample previous slice *with* replacement 10 times
-41u8
-108u8
-171u8
-167u8
-108u8
-90u8
-249u8
-171u8
-249u8
-41u8
+25u8
+22u8
+25u8
+22u8
+55u8
+14u8
+25u8
+84u8
+84u8
+84u8
 </code></pre><p>Several structs are available under the <code>std::rand::distributions</code> module, that
 can be used to generate values using different probability distributions like:
 normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
@@ -2256,27 +2218,27 @@ normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
 </code></pre>
 <pre><code>$ rustc distributions.rs &amp;&amp; ./distributions
 10 samples from a normal distribution with mean 0.0 and SD 1.0
-1.200107
-0.629798
--0.841816
--0.003729
--0.786802
--1.50222
-0.810168
--0.40432
-1.330923
--0.951628
+1.671122
+1.543426
+-0.16689
+-0.323774
+-0.439777
+0.27917
+0.410557
+-0.265521
+-0.829831
+0.182436
 10 samples from a T distribution with 5 degrees of freedom
-0.922373
--0.278274
--1.62363
--2.170542
--3.060526
--0.004938
-1.026895
-1.984979
--1.347781
-0.564613
+-1.731229
+-0.319248
+-0.042466
+-0.880935
+0.233644
+0.593994
+1.48736
+0.117178
+-0.371695
+-1.188472
 </code></pre><p>The <code>derive</code> attribute can be used to implement the <code>Rand</code> trait for custom
 types, this allows generation of random values of custom types.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// derive.rs</span>
@@ -2304,9 +2266,9 @@ types, this allows generation of random values of custom types.</p>
 </code></pre>
 <pre><code>$ rustc derive.rs &amp;&amp; ./derive
 random point
-Point { x: 0.108584f64, y: 0.787407f64 }
+Point { x: 0.170732f64, y: 0.331776f64 }
 random rectangle
-Rectangle { p1: Point { x: 0.518391f64, y: 0.589263f64 }, p2: Point { x: 0.730218f64, y: 0.444871f64 } }
+Rectangle { p1: Point { x: 0.348012f64, y: 0.675276f64 }, p2: Point { x: 0.053634f64, y: 0.186223f64 } }
 </code></pre>
                     
                     </section>
