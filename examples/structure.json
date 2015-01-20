@@ -126,11 +126,6 @@
     { "id": "simd", "title": "SIMD", "children": null  },
     { "id": "test", "title": "Testing", "children": null  },
     { "id": "unsafe", "title": "Unsafe operations", "children": null  },
-    { "id": "json", "title": "JSON parsing", "children": [
-        { "id": "json-enum", "title": "`Json`", "children": null },
-        { "id": "decodable", "title": "`Decodable`", "children": null },
-        { "id": "encodable", "title": "`Encodable`", "children": null }
-    ] },
     { "id": "fmt", "title": "Formatting", "children": null },
     { "id": "hash", "title": "HashMap", "children": [
         { "id": "alt-key-types", "title": "Alternate/custom key types", "children": null},
