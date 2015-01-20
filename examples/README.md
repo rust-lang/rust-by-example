@@ -4,7 +4,8 @@
 type safety, memory safety, concurrency and performance.
 
 This book is a collection of bitesize examples that illustrate various rustic
-concepts and the Rust distribution libraries.
+concepts and the Rust distribution libraries. The source code is hosted
+[here][home].
 
 Be sure to have rust [installed][install] and the
 [docs][std] at hand, let's
@@ -17,3 +18,4 @@ versions like 0.10, be sure to use a nightly version!
 [rust]: http://www.rust-lang.org/
 [install]: http://www.rust-lang.org/install.html
 [std]: http://doc.rust-lang.org/std/
+[home]: https://github.com/rust-lang/rust-by-example
