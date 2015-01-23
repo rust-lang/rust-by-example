@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.3" data-basepath=".." data-revision="1421931900253">
+    <div class="book" data-level="49.3" data-basepath=".." data-revision="1422032544481">
     
 
 <div class="book-summary">
@@ -2159,7 +2159,7 @@ attribute containing the name of the foreign library.</p>
     im: <span class="hljs-keyword">f32</span>,
 }
 
-<span class="hljs-keyword">impl</span> fmt::Show <span class="hljs-keyword">for</span> Complex {
+<span class="hljs-keyword">impl</span> fmt::Debug <span class="hljs-keyword">for</span> Complex {
     <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fmt</span></span>(&amp;<span class="hljs-keyword">self</span>, f: &amp;<span class="hljs-keyword">mut</span> fmt::Formatter) -&gt; fmt::Result {
         <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.im &lt; <span class="hljs-number">0</span>. {
             <span class="hljs-built_in">write!</span>(f, <span class="hljs-string">"{}-{}i"</span>, <span class="hljs-keyword">self</span>.re, -<span class="hljs-keyword">self</span>.im)
@@ -2201,7 +2201,7 @@ wrappers around them.</p>
     im: <span class="hljs-keyword">f32</span>,
 }
 
-<span class="hljs-keyword">impl</span> fmt::Show <span class="hljs-keyword">for</span> Complex {
+<span class="hljs-keyword">impl</span> fmt::Debug <span class="hljs-keyword">for</span> Complex {
     <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fmt</span></span>(&amp;<span class="hljs-keyword">self</span>, f: &amp;<span class="hljs-keyword">mut</span> fmt::Formatter) -&gt; fmt::Result {
         <span class="hljs-keyword">if</span> <span class="hljs-keyword">self</span>.im &lt; <span class="hljs-number">0</span>. {
             <span class="hljs-built_in">write!</span>(f, <span class="hljs-string">"{}-{}i"</span>, <span class="hljs-keyword">self</span>.re, -<span class="hljs-keyword">self</span>.im)

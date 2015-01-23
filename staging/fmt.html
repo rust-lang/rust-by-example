@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.10" data-basepath=".." data-revision="1421931900253">
+    <div class="book" data-level="49.10" data-basepath=".." data-revision="1422032544481">
     
 
 <div class="book-summary">
@@ -2140,7 +2140,7 @@ handles cases where the argument type is left unspecified: <code>{}</code> for i
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::fmt::{self, Formatter, Show};
+<div id="editor">use std::fmt::{self, Formatter, Display};
 // For .abs()
 use std::num::Float;
 
@@ -2152,7 +2152,7 @@ struct City {
     lon: f32,
 }
 
-impl Show for City {
+impl Display for City {
     // &#96;f&#96; is a buffer, this method must write the formatted string into it
     fn fmt(&amp;self, f: &amp;mut Formatter) -&gt; fmt::Result {
         let lat&#95;c = if self.lat &gt;= 0.0 { &#39;N&#39; } else { &#39;S&#39; };
@@ -2171,7 +2171,7 @@ fn main() {
         City { name: &quot;Oslo&quot;, lat: 59.95, lon: 10.75 },
         City { name: &quot;Vancouver&quot;, lat: 49.25, lon: -123.1 },
     ].iter() {
-        println!(&quot;{:?}&quot;, city);
+        println!(&quot;{}&quot;, &#42;city);
     }
 }</div>
 <div id="result"></div>
