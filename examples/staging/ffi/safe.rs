@@ -25,7 +25,7 @@ struct Complex {
     im: f32,
 }
 
-impl fmt::Show for Complex {
+impl fmt::Debug for Complex {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         if self.im < 0. {
             write!(f, "{}-{}i", self.re, -self.im)
