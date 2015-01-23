@@ -1,4 +1,4 @@
-use std::fmt::{self, Formatter, Show};
+use std::fmt::{self, Formatter, Display};
 // For .abs()
 use std::num::Float;
 
@@ -10,7 +10,7 @@ struct City {
     lon: f32,
 }
 
-impl Show for City {
+impl Display for City {
     // `f` is a buffer, this method must write the formatted string into it
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
@@ -29,7 +29,7 @@ fn main() {
         City { name: "Oslo", lat: 59.95, lon: 10.75 },
         City { name: "Vancouver", lat: 49.25, lon: -123.1 },
     ].iter() {
-        println!("{:?}", city);
+        println!("{}", *city);
     }
 }
 
