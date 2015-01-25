@@ -1,11 +1,11 @@
 fn main() {
     // This variable lives in the main function
-    let long_lived_variable = 1i;
+    let long_lived_variable = 1;
 
     // This is a block, and has a smaller scope than the main function
     {
         // This variable only exists in this block
-        let short_lived_variable = 2i;
+        let short_lived_variable = 2;
 
         println!("inner short: {}", short_lived_variable);
 
