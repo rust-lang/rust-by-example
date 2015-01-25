@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10" data-basepath="." data-revision="1422206458623">
+    <div class="book" data-level="10" data-basepath="." data-revision="1422212550070">
     
 
 <div class="book-summary">
@@ -2126,8 +2126,8 @@
                     
                         <h1 id="10-for-and-range">10 For and range</h1>
 <p>The <code>for in</code> construct can be used to iterate an <code>Iterator</code>, a lazy value
-generator (more details later). One of the most common iterators is the <code>range</code>
-function. <code>range(a, b)</code> will yield values from <code>a</code> (inclusive) to <code>b</code>
+generator (more details later). One of the easiest way to create an iterator
+is to use the range notation. <code>a..b</code> will yield values from <code>a</code> (inclusive) to <code>b</code>
 (exclusive) in steps of one.</p>
 <p>Let&#39;s write fizzbuzz using <code>for</code> instead of <code>while</code>.</p>
 <div id="active-code">
@@ -2135,7 +2135,7 @@ function. <code>range(a, b)</code> will yield values from <code>a</code> (inclus
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
     // &#96;n&#96; will take the values: 1, 2, ..., 100 in each iteration
-    for n in range(1u32, 101) {
+    for n in 1u32..101 {
         if n % 15 == 0 {
             println!(&quot;fizzbuzz&quot;);
         } else if n % 3 == 0 {
