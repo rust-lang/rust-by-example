@@ -17,7 +17,7 @@ fn main() {
              verb="jumps");
 
     // Special formatting can be specified in the placeholder after a `:`
-    println!("{} of {:b} people know binary, the other half don't", 1i, 2i);
+    println!("{} of {:b} people know binary, the other half don't", 1, 2);
 
     // Error! You are missing an argument
     println!("My name is {0}, {1} {0}", "Bond");
