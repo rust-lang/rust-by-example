@@ -1,7 +1,7 @@
 static LANGUAGE: &'static str = "Rust";
-static THRESHOLD: int = 10;
+static THRESHOLD: i32 = 10;
 
-fn is_big(n: int) -> bool {
+fn is_big(n: i32) -> bool {
     // Access constant in some function
     n > THRESHOLD
 }
