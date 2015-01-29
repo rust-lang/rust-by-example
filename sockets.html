@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="43" data-basepath="." data-revision="1422452244143">
+    <div class="book" data-level="43" data-basepath="." data-revision="1422499587484">
     
 
 <div class="book-summary">
@@ -2135,7 +2135,7 @@ accomplished using
 <p>The client program:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// client.rs</span>
 <span class="hljs-keyword">use</span> common::SOCKET_PATH;
-<span class="hljs-keyword">use</span> std::io::net::pipe::UnixStream;
+<span class="hljs-keyword">use</span> std::old_io::net::pipe::UnixStream;
 <span class="hljs-keyword">use</span> std::os;
 
 <span class="hljs-keyword">mod</span> common;
@@ -2167,10 +2167,10 @@ accomplished using
 <p>The server program:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// server.rs</span>
 <span class="hljs-keyword">use</span> common::SOCKET_PATH;
-<span class="hljs-keyword">use</span> std::io::fs;
-<span class="hljs-keyword">use</span> std::io::fs::PathExtensions;
-<span class="hljs-keyword">use</span> std::io::net::pipe::UnixListener;
-<span class="hljs-keyword">use</span> std::io::{Acceptor,Listener};
+<span class="hljs-keyword">use</span> std::old_io::fs;
+<span class="hljs-keyword">use</span> std::old_io::fs::PathExtensions;
+<span class="hljs-keyword">use</span> std::old_io::net::pipe::UnixListener;
+<span class="hljs-keyword">use</span> std::old_io::{Acceptor,Listener};
 
 <span class="hljs-keyword">mod</span> common;
 

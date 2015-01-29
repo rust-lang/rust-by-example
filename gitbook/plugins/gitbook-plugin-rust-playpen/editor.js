@@ -165,7 +165,7 @@ function runProgram(program, callback) {
   });
 
   // console.log("Sending", data);
-  req.open('POST', "http://play.rust-lang.org/evaluate.json", true);
+  req.open('POST', "https://play.rust-lang.org/evaluate.json", true);
   req.onload = function(e) {
     if (req.readyState === 4 && req.status === 200) {
       var result = JSON.parse(req.response).result;

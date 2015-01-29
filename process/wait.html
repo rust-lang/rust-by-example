@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="47.2" data-basepath=".." data-revision="1422452244143">
+    <div class="book" data-level="47.2" data-basepath=".." data-revision="1422499587484">
     
 
 <div class="book-summary">
@@ -2128,7 +2128,7 @@
 <p>When a <code>Process</code> goes out of scope, its <code>drop</code> method will <em>wait</em> until the
 child process finishes before releasing the resource.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// wait.rs</span>
-<span class="hljs-keyword">use</span> std::io::process::Command;
+<span class="hljs-keyword">use</span> std::old_io::process::Command;
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> <span class="hljs-number">_</span>process = Command::new(<span class="hljs-string">"sleep"</span>).arg(<span class="hljs-string">"5"</span>).spawn();
