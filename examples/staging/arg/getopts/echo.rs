@@ -1,8 +1,8 @@
 extern crate getopts;
 
 use std::os;
-use std::io::{print, println};
-use std::io::stdio;
+use std::old_io::{print, println};
+use std::old_io::stdio;
 
 static VERSION: &'static str = "1.0.0";
 

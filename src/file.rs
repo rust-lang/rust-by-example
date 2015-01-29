@@ -1,7 +1,7 @@
-use std::io::USER_RWX;
-use std::io::fs;
-use std::io::process::{Command,ProcessOutput};
-use std::io::{File,Truncate,Write};
+use std::old_io::USER_RWX;
+use std::old_io::fs;
+use std::old_io::process::{Command,ProcessOutput};
+use std::old_io::{File,Truncate,Write};
 use std::os;
 
 pub fn mkdir(path: &Path) {

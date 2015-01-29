@@ -1,4 +1,4 @@
-use std::io::process::Command;
+use std::old_io::process::Command;
 
 fn main() {
     let _process = Command::new("sleep").arg("5").spawn();

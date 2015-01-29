@@ -1,5 +1,5 @@
 use common::SOCKET_PATH;
-use std::io::net::pipe::UnixStream;
+use std::old_io::net::pipe::UnixStream;
 use std::os;
 
 mod common;

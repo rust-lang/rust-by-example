@@ -1,4 +1,4 @@
-use std::io::File;
+use std::old_io::File;
 
 static LOREM_IPSUM: &'static str =
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
