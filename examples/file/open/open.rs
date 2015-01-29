@@ -1,4 +1,4 @@
-use std::io::File;
+use std::old_io::File;
 
 fn main() {
     // Create a path to the desired file

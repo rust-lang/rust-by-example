@@ -1,4 +1,4 @@
-use std::io::fs::PathExtensions;
+use std::old_io::fs::PathExtensions;
 
 fn main() {
     // Create a `Path` from an `&'static str`

@@ -1,4 +1,4 @@
-use std::io::process::Command;
+use std::old_io::process::Command;
 
 static PANGRAM: &'static str =
 "the quick brown fox jumped over the lazy dog\n";

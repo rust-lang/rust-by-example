@@ -1,6 +1,6 @@
-use std::io::fs;
-use std::io::fs::PathExtensions;
-use std::io::{File, IoResult, USER_RWX};
+use std::old_io::fs;
+use std::old_io::fs::PathExtensions;
+use std::old_io::{File, IoResult, USER_RWX};
 
 // A simple implementation of `% cat path`
 fn cat(path: &Path) -> IoResult<String> {

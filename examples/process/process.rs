@@ -1,4 +1,4 @@
-use std::io::process::{Command,ProcessOutput};
+use std::old_io::process::{Command,ProcessOutput};
 
 fn main() {
     // Initial command `rustc`

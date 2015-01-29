@@ -1,5 +1,5 @@
-use std::io::Timer;
-use std::io::timer;
+use std::old_io::Timer;
+use std::old_io::timer;
 use std::time::duration::Duration;
 use std::iter;
 use std::sync::mpsc;
