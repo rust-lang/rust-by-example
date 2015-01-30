@@ -1,5 +1,5 @@
-It's possible to declare variables first, and initialize them later. But, this
-form is seldom used, as it may lead to the use of uninitialized variables.
+It's possible to declare variables first, and initialize them later. However,
+this form is seldom used, as it may lead to the use of uninitialized variables.
 
 {declare.play}
 
