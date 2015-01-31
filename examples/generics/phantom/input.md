@@ -1,4 +1,4 @@
-A Phantom type is a data type which contains extra hidden
+A phantom type is a data type which contains extra hidden
 generic parameters. These extra parameters hold no storage values.
 They are checked statically at compile time and only
 at compile time; they have no run-time behavior.
