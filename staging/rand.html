@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.6" data-basepath=".." data-revision="1422685779915">
+    <div class="book" data-level="49.6" data-basepath=".." data-revision="1422685906648">
     
 
 <div class="book-summary">
@@ -2172,27 +2172,27 @@ type that implements the <code>Rand</code> trait (which includes all the primiti
 </code></pre>
 <pre><code>$ rustc gen.rs &amp;&amp; ./gen
 randomly generate some values for different primitive types
-u8: 25
-i8: -89
-u16: 49483
-i16: -24947
-f32: 0.103435
-f64: 0.939071
+u8: 178
+i8: -71
+u16: 1312
+i16: 25177
+f32: 0.250993
+f64: 0.730969
 10 randomly generated u8 values
-[117, 27, 15, 85, 21, 2, 120, 178, 160, 98]
+[225, 43, 99, 176, 56, 19, 91, 27, 124, 150]
 shuffle previous slice
-[21, 27, 15, 120, 98, 178, 2, 160, 117, 85]
+[124, 91, 99, 56, 176, 19, 27, 150, 225, 43]
 sample previous slice *with* replacement 10 times
-178
-85
-21
-21
-85
-15
-98
-117
-178
-15
+27
+43
+56
+225
+27
+27
+225
+56
+91
+150
 </code></pre><p>Several structs are available under the <code>std::rand::distributions</code> module, that
 can be used to generate values using different probability distributions like:
 normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
@@ -2218,27 +2218,27 @@ normal, uniform, Student&#39;s T, Chi squared, Gamma, etc.</p>
 </code></pre>
 <pre><code>$ rustc distributions.rs &amp;&amp; ./distributions
 10 samples from a normal distribution with mean 0.0 and SD 1.0
-0.145192
--0.380065
--0.611289
--2.082812
--0.602067
-0.331504
--0.683077
--2.828551
--0.26405
-2.252326
+0.504792
+-0.353916
+-1.120995
+1.20518
+0.699845
+0.1869
+0.985778
+0.136511
+-0.464964
+1.135912
 10 samples from a T distribution with 5 degrees of freedom
-0.891781
--0.234927
--0.81257
-0.479184
--2.277504
--0.555437
-0.509889
--1.156687
--0.373439
--1.105556
+0.048864
+-1.117622
+-1.170095
+-1.750435
+-0.709543
+1.632723
+-0.53168
+-0.004346
+1.636282
+6.544291
 </code></pre><p>The <code>derive</code> attribute can be used to implement the <code>Rand</code> trait for custom
 types, this allows generation of random values of custom types.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// derive.rs</span>
@@ -2266,9 +2266,9 @@ types, this allows generation of random values of custom types.</p>
 </code></pre>
 <pre><code>$ rustc derive.rs &amp;&amp; ./derive
 random point
-Point { x: 0.296446, y: 0.846545 }
+Point { x: 0.467991, y: 0.744773 }
 random rectangle
-Rectangle { p1: Point { x: 0.772714, y: 0.343394 }, p2: Point { x: 0.980975, y: 0.749128 } }
+Rectangle { p1: Point { x: 0.433476, y: 0.338616 }, p2: Point { x: 0.606009, y: 0.691287 } }
 </code></pre>
                     
                     </section>

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="37" data-basepath="." data-revision="1422685779915">
+    <div class="book" data-level="37" data-basepath="." data-revision="1422685906648">
     
 
 <div class="book-summary">
@@ -2136,17 +2136,17 @@ be surpassed, the vector gets reallocated with a bigger capacity.</p>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
     // Iterators can be collected into vectors
-    let collected&#95;iterator: Vec&lt;int&gt; = range(0i, 10).collect();
-    println!(&quot;Collected range(0, 10) into: {}&quot;, collected&#95;iterator);
+    let collected&#95;iterator: Vec&lt;i32&gt; = range(0, 10).collect();
+    println!(&quot;Collected range(0, 10) into: {:?}&quot;, collected&#95;iterator);
 
     // The &#96;vec!&#96; macro can be used to initialize a vector
-    let mut xs = vec![1i, 2, 3];
-    println!(&quot;Initial vector: {}&quot;, xs);
+    let mut xs = vec![1i32, 2, 3];
+    println!(&quot;Initial vector: {:?}&quot;, xs);
 
     // Insert new element at the end of the vector
     println!(&quot;Push 4 into the vector&quot;);
     xs.push(4);
-    println!(&quot;Vector: {}&quot;, xs);
+    println!(&quot;Vector: {:?}&quot;, xs);
 
     // Error! Immutable vectors can&#39;t grow
     collected&#95;iterator.push(0);
@@ -2159,7 +2159,7 @@ be surpassed, the vector gets reallocated with a bigger capacity.</p>
     println!(&quot;Second element: {}&quot;, xs[1]);
 
     // &#96;pop&#96; removes the last element from the vector and returns it
-    println!(&quot;Pop last element: {}&quot;, xs.pop());
+    println!(&quot;Pop last element: {:?}&quot;, xs.pop());
 
     // Out of bounds indexing yields a task failure
     println!(&quot;Fourth element: {}&quot;, xs[3]);
