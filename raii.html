@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="20" data-basepath="." data-revision="1422499587484">
+    <div class="book" data-level="20" data-basepath="." data-revision="1422685779915">
     
 
 <div class="book-summary">
@@ -2125,7 +2125,7 @@
                     <section class="normal" id="section-gitbook_66">
                     
                         <h1 id="20-raii">20 RAII</h1>
-<p>Variables in Rust do more than just hold data in the stack, they can also <em>own</em>
+<p>Variables in Rust do more than just hold data in the stack: they can also <em>own</em>
 resources, e.g. <code>Box&lt;T&gt;</code> owns memory in the heap. Because Rust enforces the
 <a href="http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization" target="_blank">RAII</a>
 discipline, whenever an object goes out of scope, its destructor is called
@@ -2165,7 +2165,7 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>Don&#39;t take my word for it, let&#39;s check using <code>valgrind</code></p>
+<p>Don&#39;t take my word for it, let&#39;s check using <code>valgrind</code>:</p>
 <pre><code>$ rustc raii.rs &amp;&amp; valgrind ./raii
 ==26873== Memcheck, a memory error detector
 ==26873== Copyright (C) 2002-2013, and GNU GPL&#39;d, by Julian Seward et al.
@@ -2181,7 +2181,7 @@ fn main() {
 ==26873==
 ==26873== For counts of detected and suppressed errors, rerun with: -v
 ==26873== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
-</code></pre><p>You&#39;ll never have to manually free memory again or worry about memory leaks!</p>
+</code></pre><p>You&#39;ll never have to manually free memory or worry about memory leaks again!</p>
 
                     
                     </section>
