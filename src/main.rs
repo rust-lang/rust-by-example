@@ -1,8 +1,12 @@
+#![feature(os)]
+#![feature(io)]
+#![feature(std_misc)]
+#![feature(path)]
+#![feature(core)]
+
 #![deny(warnings)]
 #![feature(int_uint)]
 #![feature(plugin)]
-
-#![allow(unstable)]
 
 extern crate regex;
 
