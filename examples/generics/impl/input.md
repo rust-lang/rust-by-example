@@ -1,5 +1,5 @@
-Implementations can also be made generic. Generally `impl` is followed by
-the type `<Type>` although it is not a strict requirement.
+Implementations can also be made generic. Generally, `impl` is followed by
+the type `<Type>`, although it is not a strict requirement.
 
 ```rust
 struct S; // A null struct

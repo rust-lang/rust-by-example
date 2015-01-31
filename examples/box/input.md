@@ -4,7 +4,7 @@ All values in Rust are stack allocated by default. Values can be *boxed*
 goes out of scope, its destructor is called, the inner object is destroyed, and
 the memory in the heap is freed.
 
-Boxed values can be dereferenced using the `*` operator, this removes one layer
+Boxed values can be dereferenced using the `*` operator; this removes one layer
 of indirection. Alternatively, the `let box x = y` pattern can be used to
 "unbox" `y` into `x`.
 
