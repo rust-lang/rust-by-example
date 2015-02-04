@@ -39,8 +39,8 @@ enough". Let's analyze why this happens:
 
 The borrow checker will do this job for the programmer behind his/her back, to
 prevent him/her from (unintentionally) creating dangling pointers. Although,
-the programmer can be saved by the borrow checker without knowing what is a
-lifetime.
+the programmer can be saved by the borrow checker without knowing what a
+lifetime is.
 
 The programmer doesn't need to explicitly annotate lifetimes (nor understand
 what are lifetimes), for the borrow checker to do its job in most cases. These
