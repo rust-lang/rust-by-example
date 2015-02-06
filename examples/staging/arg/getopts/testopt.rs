@@ -1,9 +1,11 @@
 extern crate getopts;
 
-use std::os;
+use std::env;
 
 fn main() {
-    let args = os::args();
+    let args: Vec<String> = env::args().map(|x| x.into_string().unwrap())
+                                       .collect();
+    
     let opts = [
         getopts::optflag("a", "long_a", ""),
         getopts::optflag("b", "long_b", ""),
@@ -17,7 +19,7 @@ fn main() {
         Ok(m) => m,
         Err(f) => {
             println!("{}", f);
-            os::set_exit_status(1);
+            env::set_exit_status(1);
             return;
         }
     };

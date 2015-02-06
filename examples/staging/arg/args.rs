@@ -1,7 +1,8 @@
-use std::os;
+use std::env;
 
 fn main() {
-    let args = os::args();
+    let args: Vec<String> = env::args().map(|x| x.into_string().unwrap())
+                                       .collect();
     // The first argument is the path that was used to call the program.
     println!("My path is {}.", args[0]);
     // The rest of the arguments are the passed command line parameters.
