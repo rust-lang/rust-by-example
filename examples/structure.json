@@ -122,7 +122,6 @@
         { "id": "matching", "title": "Argument parsing", "children": null },
         { "id": "getopts", "title": "`getopts`", "children": null }
     ] },
-    { "id": "rand", "title": "Random", "children": null  },
     { "id": "simd", "title": "SIMD", "children": null  },
     { "id": "test", "title": "Testing", "children": null  },
     { "id": "unsafe", "title": "Unsafe operations", "children": null  },
