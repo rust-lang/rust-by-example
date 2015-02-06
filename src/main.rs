@@ -1,4 +1,4 @@
-#![feature(os)]
+#![feature(env)]
 #![feature(io)]
 #![feature(std_misc)]
 #![feature(path)]
