@@ -1,13 +1,13 @@
 use std::ops::Add;
 
 /// Null enumerations to define unit types
-#[derive(Show, Copy)]
+#[derive(Debug, Copy)]
 struct Inch;
-#[derive(Show, Copy)]
+#[derive(Debug, Copy)]
 struct Mm;
 
 /// Length is phantom type with hidden parameter `Unit`
-#[derive(Show, Copy)]
+#[derive(Debug, Copy)]
 struct Length<Unit, T>(T,);
 
 /// impl X for Y {} means "implement the trait `X` for the Type `Y`"

@@ -2,7 +2,7 @@ mod checked {
     // For .ln() and .sqrt()
     use std::num::Float;
     // Mathematical "errors" we want to catch
-    #[derive(Show)]
+    #[derive(Debug)]
     pub enum MathError {
         DivisionByZero,
         NegativeLogarithm,

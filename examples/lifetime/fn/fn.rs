@@ -1,4 +1,4 @@
-#[derive(Show)]
+#[derive(Debug)]
 struct Triplet {
     one: i32,
     two: i32,

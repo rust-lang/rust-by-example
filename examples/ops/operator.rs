@@ -3,10 +3,10 @@ use std::ops::Add;
 struct Foo;
 struct Bar;
 
-#[derive(Show)]
+#[derive(Debug)]
 struct FooBar;
 
-#[derive(Show)]
+#[derive(Debug)]
 struct BarFoo;
 
 // The `Add<T, U>` trait needs two generic parameters:
