@@ -1,4 +1,4 @@
-use std::os;
+use std::env;
 
 fn increase(number: i32) {
     println!("{}", number + 1);
@@ -17,7 +17,8 @@ match_args {{increase|decrease}} <integer>
 }
 
 fn main() {
-    let args = os::args();
+    let args: Vec<String> = env::args().map(|x| x.into_string().unwrap())
+                                       .collect();
 
     match args.as_slice() {
         // no arguments passed
@@ -36,10 +37,10 @@ fn main() {
         [_, ref cmd, ref num] => {
             // parse the number
             let number: i32 = match num.parse() {
-                Some(n) => {
+                Ok(n) => {
                     n
                 },
-                None => {
+                Err(_) => {
                     println!("error: second argument not an integer");
                     help();
                     return;

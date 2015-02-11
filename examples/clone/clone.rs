@@ -1,11 +1,11 @@
 #![feature(box_syntax)]
 
 // A unit struct without resources
-#[derive(Show, Copy)]
+#[derive(Debug, Copy)]
 struct Nil;
 
 // A tuple struct with resources that implements the `Clone` trait
-#[derive(Clone,Show)]
+#[derive(Clone,Debug)]
 struct Pair(Box<i32>, Box<i32>);
 
 fn main() {

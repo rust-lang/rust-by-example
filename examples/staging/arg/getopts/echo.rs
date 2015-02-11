@@ -1,13 +1,14 @@
 extern crate getopts;
 
-use std::os;
+use std::env;
 use std::old_io::{print, println};
 use std::old_io::stdio;
 
 static VERSION: &'static str = "1.0.0";
 
 fn main() {
-    let args = os::args();
+    let args: Vec<String> = env::args().map(|x| x.into_string().unwrap())
+                                       .collect();
     let ref program = args[0];
 
     // Set possible flags.
@@ -25,7 +26,7 @@ fn main() {
         Ok(m) => m,
         Err(f) => {
             println!("{}", f);
-            os::set_exit_status(1);
+            env::set_exit_status(1);
             return;
             // The exit code is 0 (success) by default.
             // Any exit code other than 0 indicates failure.

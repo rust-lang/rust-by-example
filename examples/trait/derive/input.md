@@ -25,7 +25,7 @@ This is a list of the "derivable" traits:
   create a zero instance of a numeric data type.
 * [`FromPrimitive`][from-primitive],
   to create an instance from a numeric primitive.
-* [`Show`][show], to
+* [`Debug`][debug], to
   format a value using the `{:?}` formatter.
 
 [attribute]: /attribute.html
@@ -41,4 +41,4 @@ This is a list of the "derivable" traits:
 [default]: http://doc.rust-lang.org/std/default/trait.Default.html
 [zero]: http://doc.rust-lang.org/std/num/trait.Zero.html
 [from-primitive]: http://doc.rust-lang.org/std/num/trait.FromPrimitive.html
-[show]: http://doc.rust-lang.org/std/fmt/trait.Show.html
+[debug]: http://doc.rust-lang.org/std/fmt/trait.Debug.html

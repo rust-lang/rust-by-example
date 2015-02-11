@@ -1,6 +1,6 @@
 use std::ops::{Add, Sub, Mul};
 
-#[derive(Show, Copy)]
+#[derive(Debug, Copy)]
 struct Vec2<T> {
     x: T,
     y: T,

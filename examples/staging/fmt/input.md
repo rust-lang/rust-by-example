@@ -9,14 +9,14 @@ The same variable (`foo`) can be formatted differently depending on which
 *argument type* is used: `X` vs `o` vs *unspecified*.
 
 This formatting functionality is implemented via traits, and there is one trait
-for each argument type. The most common formatting trait is `Show`, which
+for each argument type. The most common formatting trait is `Debug`, which
 handles cases where the argument type is left unspecified: `{}` for instance.
 
 {show.play}
 
 Here's the full list of formatting traits and their respective argument types:
 
-* *unspecified* -> `Show`
+* *unspecified* -> `Debug`
 * `d` and `i` -> `Signed`
 * `u` -> `Unsigned`
 * `b` -> `Bool`

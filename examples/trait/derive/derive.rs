@@ -3,7 +3,7 @@
 struct Centimeters(f64);
 
 // A tuple struct that can be printed
-#[derive(Show)]
+#[derive(Debug)]
 struct Inches(i32);
 
 impl Inches {
@@ -21,7 +21,7 @@ fn main() {
     let _one_second = Seconds(1);
 
     // Error! `Seconds` can't be printed, because it doesn't implement the
-    // `Show` trait
+    // `Debug` trait
     //println!("One second looks like: {}", _one_second);
     // TODO ^ Try uncommenting this line
 

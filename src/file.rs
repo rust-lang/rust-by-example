@@ -1,8 +1,8 @@
+use std::env;
 use std::old_io::USER_RWX;
 use std::old_io::fs;
 use std::old_io::process::{Command,ProcessOutput};
 use std::old_io::{File,Truncate,Write};
-use std::os;
 
 pub fn mkdir(path: &Path) {
     match fs::mkdir_recursive(path, USER_RWX) {
@@ -22,7 +22,7 @@ pub fn read(path: &Path) -> Result<String, String> {
 }
 
 pub fn run(prefix: &str, id: &str, src: &str) -> Result<String, String> {
-    let cwd = os::getcwd().unwrap();
+    let cwd = env::current_dir().unwrap();
     // Assume that the current working directory actually exists
     let out_dir = cwd.join(format!("bin/{}/{}", prefix, id));
 

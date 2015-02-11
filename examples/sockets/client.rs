@@ -1,12 +1,13 @@
+use std::env;
 use common::SOCKET_PATH;
 use std::old_io::net::pipe::UnixStream;
-use std::os;
 
 mod common;
 
 fn main() {
     // `args` returns the arguments passed to the program
-    let args = os::args();
+    let args: Vec<String> = env::args().map(|x| x.into_string().unwrap())
+                                       .collect();
     let socket = Path::new(SOCKET_PATH);
 
     // First argument is the message to be sent

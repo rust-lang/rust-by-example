@@ -14,8 +14,8 @@ fn main() {
 
     b.insert(5);
 
-    // If a collection's element type implements `Show`,
-    // then the collection implements `Show`.
+    // If a collection's element type implements `Debug`,
+    // then the collection implements `Debug`.
     // It usually prints its elements in the format `[elem1, elem2, ...]`
     println!("A: {:?}", a);
     println!("B: {:?}", b);
