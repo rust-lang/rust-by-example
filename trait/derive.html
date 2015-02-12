@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="30.1" data-basepath=".." data-revision="1422882025614">
+    <div class="book" data-level="30.1" data-basepath=".." data-revision="1423699524210">
     
 
 <div class="book-summary">
@@ -1809,29 +1809,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.6" data-path="staging/rand.html">
-            
-                
-                    <a href="../staging/rand.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>49.6.</b>
-                        
-                         Random
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="49.7" data-path="staging/simd.html">
+        <li class="chapter " data-level="49.6" data-path="staging/simd.html">
             
                 
                     <a href="../staging/simd.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.7.</b>
+                            <b>49.6.</b>
                         
                          SIMD
                     </a>
@@ -1841,13 +1825,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.8" data-path="staging/test.html">
+        <li class="chapter " data-level="49.7" data-path="staging/test.html">
             
                 
                     <a href="../staging/test.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.8.</b>
+                            <b>49.7.</b>
                         
                          Testing
                     </a>
@@ -1857,13 +1841,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.9" data-path="staging/unsafe.html">
+        <li class="chapter " data-level="49.8" data-path="staging/unsafe.html">
             
                 
                     <a href="../staging/unsafe.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.9.</b>
+                            <b>49.8.</b>
                         
                          Unsafe operations
                     </a>
@@ -1873,13 +1857,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.10" data-path="staging/fmt.html">
+        <li class="chapter " data-level="49.9" data-path="staging/fmt.html">
             
                 
                     <a href="../staging/fmt.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.10.</b>
+                            <b>49.9.</b>
                         
                          Formatting
                     </a>
@@ -1889,13 +1873,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.11" data-path="staging/hash.html">
+        <li class="chapter " data-level="49.10" data-path="staging/hash.html">
             
                 
                     <a href="../staging/hash.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.11.</b>
+                            <b>49.10.</b>
                         
                          HashMap
                     </a>
@@ -1906,13 +1890,13 @@
                 
     
         
-        <li class="chapter " data-level="49.11.1" data-path="staging/hash/alt-key-types.html">
+        <li class="chapter " data-level="49.10.1" data-path="staging/hash/alt-key-types.html">
             
                 
                     <a href="../staging/hash/alt-key-types.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.11.1.</b>
+                            <b>49.10.1.</b>
                         
                          Alternate/custom key types
                     </a>
@@ -1922,13 +1906,13 @@
         </li>
     
         
-        <li class="chapter " data-level="49.11.2" data-path="staging/hash/hashset.html">
+        <li class="chapter " data-level="49.10.2" data-path="staging/hash/hashset.html">
             
                 
                     <a href="../staging/hash/hashset.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>49.11.2.</b>
+                            <b>49.10.2.</b>
                         
                          HashSet
                     </a>
@@ -2122,7 +2106,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_97">
+                    <section class="normal" id="section-gitbook_96">
                     
                         <h2 id="301-derive">30.1 Derive</h2>
 <p>The compiler is capable of providing basic implementations for some traits via
@@ -2136,7 +2120,7 @@ manually implemented if a more complex behavior is required.</p>
 struct Centimeters(f64);
 
 // A tuple struct that can be printed
-#[derive(Show)]
+#[derive(Debug)]
 struct Inches(i32);
 
 impl Inches {
@@ -2154,7 +2138,7 @@ fn main() {
     let &#95;one&#95;second = Seconds(1);
 
     // Error! &#96;Seconds&#96; can&#39;t be printed, because it doesn&#39;t implement the
-    // &#96;Show&#96; trait
+    // &#96;Debug&#96; trait
     //println!(&quot;One second looks like: {}&quot;, &#95;one&#95;second);
     // TODO ^ Try uncommenting this line
 
@@ -2203,7 +2187,7 @@ to create an empty instance of a data type.</li>
 create a zero instance of a numeric data type.</li>
 <li><a href="http://doc.rust-lang.org/std/num/trait.FromPrimitive.html" target="_blank"><code>FromPrimitive</code></a>,
 to create an instance from a numeric primitive.</li>
-<li><a href="http://doc.rust-lang.org/std/fmt/trait.Show.html" target="_blank"><code>Show</code></a>, to
+<li><a href="http://doc.rust-lang.org/std/fmt/trait.Debug.html" target="_blank"><code>Debug</code></a>, to
 format a value using the <code>{:?}</code> formatter.</li>
 </ul>
 
