@@ -39,15 +39,43 @@ for file in $files ; do
     
     url=$(echo $link | awk -F"$DELIMITER" '{print $2}')
     
-    # -s: silent
-    # -L: follow redirect
-    # -o: send output to /dev/null
-    # -I: load headers only
-    # -w: write the status code to stdout
-    status_code=$(curl -s -L -o /dev/null -I -w "%{http_code}" "$url")
+    # Check relative, internal, urls
+    if [[ ! $url == http://* ]] && [[ ! $url == https://* ]]; then
+        
+        local_path=$url
+        
+        # Remove the .html if present
+        if [[ $local_path == *.html ]]; then
+            local_path=${local_path:0:${#local_path}-5}
+        fi
+        
+        # Build the local directory path
+        # This depends on the GitBook style directory structure
+        if [[ ! $local_path == /* ]]; then
+            local_path="./examples/$local_path"
+        else
+            local_path="./examples$local_path"
+        fi
+        
+        if [[ -d $local_path ]]; then
+            continue
+        fi
+        
+        status_code="404"
+        
+    # Check external urls
+    else
+        
+        # -s: silent
+        # -L: follow redirect
+        # -o: send output to /dev/null
+        # -I: load headers only
+        # -w: write the status code to stdout
+        status_code=$(curl -s -L -o /dev/null -I -w "%{http_code}" "$url")
     
-    if [[ $status_code == "200" ]]; then
-      continue
+        if [[ $status_code == "200" ]]; then
+          continue
+        fi  
     fi
         
     any_bad_links=true
