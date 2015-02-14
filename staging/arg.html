@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.5" data-basepath=".." data-revision="1423926236957">
+    <div class="book" data-level="49.5" data-basepath=".." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2114,7 +2114,9 @@ a <a href="http://static.rust-lang.org/doc/master/std/vec/index.html" target="_b
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::env;
+<div id="editor">#![feature(env)]
+
+use std::env;
 
 fn main() {
     let args: Vec&lt;String&gt; = env::args().map(|x| x.to&#95;string())

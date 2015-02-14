@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="43" data-basepath="." data-revision="1423926236957">
+    <div class="book" data-level="43" data-basepath="." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2118,6 +2118,11 @@ accomplished using
 </code></pre>
 <p>The client program:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// client.rs</span>
+#![feature(io)]
+#![feature(core)]
+#![feature(path)]
+#![feature(env)]
+
 <span class="hljs-keyword">use</span> std::env;
 <span class="hljs-keyword">use</span> common::SOCKET_PATH;
 <span class="hljs-keyword">use</span> std::old_io::net::pipe::UnixStream;
@@ -2151,6 +2156,9 @@ accomplished using
 </code></pre>
 <p>The server program:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// server.rs</span>
+#![feature(io)]
+#![feature(path)]
+
 <span class="hljs-keyword">use</span> common::SOCKET_PATH;
 <span class="hljs-keyword">use</span> std::old_io::fs;
 <span class="hljs-keyword">use</span> std::old_io::fs::PathExtensions;

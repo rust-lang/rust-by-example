@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="48" data-basepath="." data-revision="1423926236957">
+    <div class="book" data-level="48" data-basepath="." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2114,7 +2114,10 @@ module contains several functions that deal with the filesystem.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::old&#95;io::fs;
+<div id="editor">#![feature(io)]
+#![feature(path)]
+
+use std::old&#95;io::fs;
 use std::old&#95;io::fs::PathExtensions;
 use std::old&#95;io::{File, IoResult, USER&#95;RWX};
 
@@ -2189,7 +2192,7 @@ fn main() {
     // &#96;Directories&#96;, which implements the &#96;Iterator&lt;Path&gt; trait
     match fs::walk&#95;dir(&amp;Path::new(&quot;a&quot;)) {
         Err(why) =&gt; println!(&quot;! {:?}&quot;, why.kind),
-        Ok(mut paths) =&gt; for path in paths {
+        Ok(paths) =&gt; for path in paths {
             println!(&quot;&gt; {}&quot;, path.display());
         },
     }

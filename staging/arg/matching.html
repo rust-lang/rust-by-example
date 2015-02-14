@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.5.1" data-basepath="../.." data-revision="1423926236957">
+    <div class="book" data-level="49.5.1" data-basepath="../.." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2113,7 +2113,10 @@
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::env;
+<div id="editor">#![feature(core)]
+#![feature(env)]
+
+use std::env;
 
 fn increase(number: i32) {
     println!(&quot;{}&quot;, number + 1);

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="46.1" data-basepath=".." data-revision="1423926236957">
+    <div class="book" data-level="46.1" data-basepath=".." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2115,7 +2115,10 @@ file when its <code>drop</code>ed.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::old&#95;io::File;
+<div id="editor">#![feature(io)]
+#![feature(path)]
+
+use std::old&#95;io::File;
 
 fn main() {
     // Create a path to the desired file

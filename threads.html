@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="40" data-basepath="." data-revision="1423926236957">
+    <div class="book" data-level="40" data-basepath="." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2114,7 +2114,10 @@ function, the argument of this function is a moving closure.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::thread::Thread;
+<div id="editor">#![feature(core)]
+#![feature(std&#95;misc)]
+
+use std::thread::Thread;
 
 static NTHREADS: i32 = 10;
 

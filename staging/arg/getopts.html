@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.5.2" data-basepath="../.." data-revision="1423926236957">
+    <div class="book" data-level="49.5.2" data-basepath="../.." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2114,7 +2114,13 @@
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">extern crate getopts;
+<div id="editor">#![feature(io)]
+#![feature(rustc&#95;private)]
+#![feature(core)]
+#![feature(env)]
+#![feature(collections)]
+
+extern crate getopts;
 
 use std::env;
 use std::old&#95;io::{print, println};
@@ -2205,6 +2211,10 @@ Hello, World!
 <p>It is also possible to use <em>options</em> instead of <em>flags</em>, such that values can
 be passed to the program:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// testopt.rs</span>
+#![feature(rustc_private)]
+#![feature(collections)]
+#![feature(env)]
+
 <span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> getopts;
 
 <span class="hljs-keyword">use</span> std::env;

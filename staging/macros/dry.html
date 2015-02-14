@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.4.4" data-basepath="../.." data-revision="1423926236957">
+    <div class="book" data-level="49.4.4" data-basepath="../.." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2113,6 +2113,8 @@
 and/or test suites. Here is an example that implements and tests the <code>+=</code>, <code>*=</code>
 and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// dry.rs</span>
+#![feature(core)]
+
 <span class="hljs-keyword">use</span> std::iter;
 <span class="hljs-keyword">use</span> std::ops::{Add, Mul, Sub};
 

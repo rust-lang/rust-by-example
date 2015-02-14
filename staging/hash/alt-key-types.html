@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.10.1" data-basepath="../.." data-revision="1423926236957">
+    <div class="book" data-level="49.10.1" data-basepath="../.." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2134,7 +2134,9 @@ let&#39;s try making a very simple user logon system:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::collections::HashMap;
+<div id="editor">#![feature(hash)]
+
+use std::collections::HashMap;
 
 // Eq requires that you derive PartialEq on the type.
 #[derive(PartialEq, Eq, Hash)]

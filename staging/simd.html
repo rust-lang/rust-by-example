@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.6" data-basepath=".." data-revision="1423926236957">
+    <div class="book" data-level="49.6" data-basepath=".." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2113,6 +2113,8 @@
 exposed as structs (<code>f32x4</code>, <code>u8x16</code>, etc.), that implement basic operations
 (<code>+</code>, <code>-</code>, <code>*</code>, etc) using SIMD instructions under the hood.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// simd.rs</span>
+#![feature(core)]
+
 <span class="hljs-keyword">use</span> std::simd::f32x4;
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
@@ -2134,6 +2136,9 @@ exposed as structs (<code>f32x4</code>, <code>u8x16</code>, etc.), that implemen
 </code></pre><p>Here&#39;s a more complex example that sums two <code>Vec&lt;f32&gt;</code>, using the <code>f32x4</code> type
 to operate on 4-element chunks at a time.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// simd_add.rs</span>
+#![feature(test)]
+#![feature(core)]
+
 <span class="hljs-keyword">use</span> std::simd::f32x4;
 
 macro_rules! assert_equal_len {

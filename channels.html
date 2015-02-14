@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="41" data-basepath="." data-revision="1423926236957">
+    <div class="book" data-level="41" data-basepath="." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2115,7 +2115,9 @@ allow an unidirectional flow of information between two end-points: the
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::sync::mpsc::{Sender, Receiver};
+<div id="editor">#![feature(std&#95;misc)]
+
+use std::sync::mpsc::{Sender, Receiver};
 use std::sync::mpsc;
 use std::thread::Thread;
 
@@ -2127,7 +2129,7 @@ fn main() {
     // (type annotation is superfluous)
     let (tx, rx): (Sender&lt;usize&gt;, Receiver&lt;usize&gt;) = mpsc::channel();
 
-    for id in range(0, NTHREADS) {
+    for id in 0..NTHREADS {
         // The sender endpoint can be copied
         let thread&#95;tx = tx.clone();
 
@@ -2145,7 +2147,7 @@ fn main() {
 
     // Here, all the messages are collected
     let mut ids = Vec::with&#95;capacity(NTHREADS);
-    for &#95; in range(0, NTHREADS) {
+    for &#95; in 0..NTHREADS {
         // The &#96;recv&#96; method picks a message from the channel
         // &#96;recv&#96; will block the current thread if there no messages available
         ids.push(rx.recv());

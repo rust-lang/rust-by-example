@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.1" data-basepath=".." data-revision="1423926236957">
+    <div class="book" data-level="49.1" data-basepath=".." data-revision="1423927671718">
     
 
 <div class="book-summary">
@@ -2112,6 +2112,9 @@
 <p>Rust provides infrastructure for benchmarking via the <code>Bencher</code> struct and
 the <code>#[bench]</code> attribute. Details in the source code below.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// bench.rs</span>
+#![feature(test)]
+#![feature(core)]
+
 <span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> test;
 
 <span class="hljs-keyword">use</span> std::mem::replace;
