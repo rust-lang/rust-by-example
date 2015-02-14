@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="27" data-basepath="." data-revision="1423937081115">
+    <div class="book" data-level="27" data-basepath="." data-revision="1423937351686">
     
 
 <div class="book-summary">
@@ -2001,10 +2001,10 @@
                     <section class="normal" id="section-gitbook_76">
                     
                         <h1 id="27-panic">27 <code>panic!</code></h1>
-<p>The <code>panic!</code> macro can be used to generate a <em>task</em> panic and start unwinding
+<p>The <code>panic!</code> macro can be used to generate a panic and start unwinding
 its stack. While unwinding, the runtime will take care of freeing all the
-resources <em>owned</em> by the task by calling the destructor of all its objects.</p>
-<p>Since we are dealing with programs with only one task, <code>panic!</code> will cause the
+resources <em>owned</em> by the thread by calling the destructor of all its objects.</p>
+<p>Since we are dealing with programs with only one thread, <code>panic!</code> will cause the
 program to report the panic message and exit.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2014,7 +2014,7 @@ program to report the panic message and exit.</p>
 // Re-implementation of integer division (/)
 fn division(dividend: i32, divisor: i32) -&gt; i32 {
     if divisor == 0 {
-        // Division by zero triggers a task panic
+        // Division by zero triggers a panic
         panic!(&quot;division by zero&quot;);
     } else {
         dividend / divisor
@@ -2043,7 +2043,7 @@ fn main() {
 ==4401== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
 ==4401== Command: ./panic
 ==4401== 
-task &#39;&lt;main&gt;&#39; panicked at &#39;division by zero&#39;, panic.rs:5
+thread &#39;&lt;main&gt;&#39; panicked at &#39;division by zero&#39;, panic.rs:5
 ==4401== 
 ==4401== HEAP SUMMARY:
 ==4401==     in use at exit: 0 bytes in 0 blocks
