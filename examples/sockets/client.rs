@@ -6,7 +6,7 @@ mod common;
 
 fn main() {
     // `args` returns the arguments passed to the program
-    let args: Vec<String> = env::args().map(|x| x.into_string().unwrap())
+    let args: Vec<String> = env::args().map(|x| x.to_string())
                                        .collect();
     let socket = Path::new(SOCKET_PATH);
 

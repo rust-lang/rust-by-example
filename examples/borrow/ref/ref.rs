@@ -1,4 +1,5 @@
 #![feature(box_syntax)]
+#![feature(box_patterns)]
 
 #[derive(Copy)]
 struct Point { x: i32, y: i32 }

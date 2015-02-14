@@ -1,4 +1,5 @@
 #![feature(box_syntax)]
+#![feature(box_patterns)]
 
 use std::mem;
 

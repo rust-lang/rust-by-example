@@ -17,7 +17,7 @@ match_args {{increase|decrease}} <integer>
 }
 
 fn main() {
-    let args: Vec<String> = env::args().map(|x| x.into_string().unwrap())
+    let args: Vec<String> = env::args().map(|x| x.to_string())
                                        .collect();
 
     match args.as_slice() {
