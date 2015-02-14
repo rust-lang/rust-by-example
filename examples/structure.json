@@ -130,15 +130,5 @@
         { "id": "alt-key-types", "title": "Alternate/custom key types", "children": null},
         { "id": "hashset", "title": "HashSet", "children": null }
     ] }
-  ] },
-  { "id": "todo", "title": "TODO", "children": [
-    { "id": "assert", "title": "assert! and debug_assert!", "children": null },
-    { "id": "green", "title": "Green threads", "children": null },
-    { "id": "log", "title": "Logging", "children": null },
-    { "id": "rc", "title": "Reference counting", "children": null },
-    { "id": "regex", "title": "Regex", "children": null },
-    { "id": "rustdoc", "title": "rustdoc", "children": null },
-    { "id": "select", "title": "select!", "children": null },
-    { "id": "stdio", "title": "Standard I/O", "children": null }
   ] }
 ]
