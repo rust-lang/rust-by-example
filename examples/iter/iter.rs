@@ -29,7 +29,7 @@ fn main() {
     // Iterator that generates: 0, 1 and 2
     let mut sequence = 0..3;
 
-    println!("Four consecutive `next` calls on range(0, 3)");
+    println!("Four consecutive `next` calls on 0..3");
     println!("> {:?}", sequence.next());
     println!("> {:?}", sequence.next());
     println!("> {:?}", sequence.next());
@@ -37,7 +37,7 @@ fn main() {
 
     // The for construct will iterate an 'Iterator' until it returns 'None'.
     // Every 'Some' value is unwrapped and bound to a variable.
-    println!("Iterate over range(0, 3) using for");
+    println!("Iterate over 0..3 using for");
     for i in 0..3 {
         println!("> {}", i);
     }

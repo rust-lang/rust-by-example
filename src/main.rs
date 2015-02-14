@@ -37,7 +37,7 @@ fn main() {
         nexamples += count;
     }
 
-    let mut entries = range(0, nexamples).map(|_| {
+    let mut entries = (0..nexamples).map(|_| {
         rx.recv().unwrap()
     }).collect::<Vec<(Vec<uint>, String)>>();
 

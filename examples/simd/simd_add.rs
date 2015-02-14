@@ -33,7 +33,7 @@ fn simd_add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
     let p_y: *const f32 = ys.as_ptr();
 
     // sum excess elements that don't fit in the simd vector
-    for i in range(4 * chunks, size) {
+    for i in (4 * chunks)..size {
         // dereferencing a raw pointer requires an unsafe block
         unsafe {
             // offset by i elements
@@ -46,7 +46,7 @@ fn simd_add_assign(xs: &mut Vec<f32>, ys: &Vec<f32>) {
     let simd_p_y = p_y as *const f32x4;
 
     // sum "simd vector"
-    for i in range(0, chunks) {
+    for i in 0..chunks {
         unsafe {
             *simd_p_x.offset(i) += *simd_p_y.offset(i);
         }

@@ -1,5 +1,4 @@
 #![feature(test)]
-#![feature(core)]
 
 extern crate test;
 
@@ -44,7 +43,7 @@ fn recursive_fibonacci(b: &mut Bencher) {
     // exact code to benchmark must be passed as a closure to the iter
     // method of Bencher
     b.iter(|| {
-        range(0, BENCH_SIZE).map(fibonacci).collect::<Vec<u32>>()
+        (0..BENCH_SIZE).map(fibonacci).collect::<Vec<u32>>()
     })
 }
 

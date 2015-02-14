@@ -1,5 +1,3 @@
-#![feature(core)]
-
 use std::iter;
 use std::ops::{Add, Mul, Sub};
 
@@ -48,7 +46,7 @@ mod test {
         ($func: ident, $x:expr, $y:expr, $z:expr) => {
             #[test]
             fn $func() {
-                for size in range(0u32, 10) {
+                for size in 0u32..10 {
                     let mut x: Vec<_> = iter::repeat(size).take($x).collect();
                     let y: Vec<_> = iter::repeat(size).take($y).collect();
                     let z: Vec<_> = iter::repeat(size).take($z).collect();

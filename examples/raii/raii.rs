@@ -1,5 +1,4 @@
 #![feature(box_syntax)]
-#![feature(core)]
 
 fn create_box() {
     // Allocate an integer in the heap
@@ -21,7 +20,7 @@ fn main() {
     }
 
     // Create lots of boxes
-    for _ in range(0u32, 1_000) {
+    for _ in 0u32..1_000 {
         create_box();
     }
 
