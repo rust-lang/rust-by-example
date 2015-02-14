@@ -106,29 +106,27 @@
       { "id": "wait", "title": "Wait", "children": null }
   ] },
   { "id": "fs", "title": "Filesystem Operations", "children": null },
-  { "id": "staging", "title": "Staging Area", "children": [
-    { "id": "bench", "title": "Benchmarking", "children": null  },
-    { "id": "comment", "title": "Comments", "children": [
-        { "id": "doc-comment", "title": "Doc Comments", "children": null }
-    ] },
-    { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
-    { "id": "macros", "title": "macro_rules!", "children": [
-        { "id": "designators", "title": "Designators", "children": null },
-        { "id": "overload", "title": "Overload", "children": null },
-        { "id": "repeat", "title": "Repeat", "children": null },
-        { "id": "dry", "title": "DRY", "children": null }
-    ] },
-    { "id": "arg", "title": "Program arguments", "children": [
-        { "id": "matching", "title": "Argument parsing", "children": null },
-        { "id": "getopts", "title": "`getopts`", "children": null }
-    ] },
-    { "id": "simd", "title": "SIMD", "children": null  },
-    { "id": "test", "title": "Testing", "children": null  },
-    { "id": "unsafe", "title": "Unsafe operations", "children": null  },
-    { "id": "fmt", "title": "Formatting", "children": null },
-    { "id": "hash", "title": "HashMap", "children": [
-        { "id": "alt-key-types", "title": "Alternate/custom key types", "children": null},
-        { "id": "hashset", "title": "HashSet", "children": null }
-    ] }
+  { "id": "bench", "title": "Benchmarking", "children": null  },
+  { "id": "comment", "title": "Comments", "children": [
+      { "id": "doc-comment", "title": "Doc Comments", "children": null }
+  ] },
+  { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
+  { "id": "macros", "title": "macro_rules!", "children": [
+      { "id": "designators", "title": "Designators", "children": null },
+      { "id": "overload", "title": "Overload", "children": null },
+      { "id": "repeat", "title": "Repeat", "children": null },
+      { "id": "dry", "title": "DRY", "children": null }
+  ] },
+  { "id": "arg", "title": "Program arguments", "children": [
+      { "id": "matching", "title": "Argument parsing", "children": null },
+      { "id": "getopts", "title": "`getopts`", "children": null }
+  ] },
+  { "id": "simd", "title": "SIMD", "children": null  },
+  { "id": "test", "title": "Testing", "children": null  },
+  { "id": "unsafe", "title": "Unsafe operations", "children": null  },
+  { "id": "fmt", "title": "Formatting", "children": null },
+  { "id": "hash", "title": "HashMap", "children": [
+      { "id": "alt-key-types", "title": "Alternate/custom key types", "children": null},
+      { "id": "hashset", "title": "HashSet", "children": null }
   ] }
 ]
