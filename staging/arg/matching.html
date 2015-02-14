@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.5.1" data-basepath="../.." data-revision="1423746317962">
+    <div class="book" data-level="49.5.1" data-basepath="../.." data-revision="1423926236957">
     
 
 <div class="book-summary">
@@ -2132,7 +2132,7 @@ match&#95;args {{increase|decrease}} &lt;integer&gt;
 }
 
 fn main() {
-    let args: Vec&lt;String&gt; = env::args().map(|x| x.into&#95;string().unwrap())
+    let args: Vec&lt;String&gt; = env::args().map(|x| x.to&#95;string())
                                        .collect();
 
     match args.as&#95;slice() {

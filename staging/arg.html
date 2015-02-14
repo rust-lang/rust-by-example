@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.5" data-basepath=".." data-revision="1423746317962">
+    <div class="book" data-level="49.5" data-basepath=".." data-revision="1423926236957">
     
 
 <div class="book-summary">
@@ -2117,7 +2117,7 @@ a <a href="http://static.rust-lang.org/doc/master/std/vec/index.html" target="_b
 <div id="editor">use std::env;
 
 fn main() {
-    let args: Vec&lt;String&gt; = env::args().map(|x| x.into&#95;string().unwrap())
+    let args: Vec&lt;String&gt; = env::args().map(|x| x.to&#95;string())
                                        .collect();
     // The first argument is the path that was used to call the program.
     println!(&quot;My path is {}.&quot;, args[0]);
