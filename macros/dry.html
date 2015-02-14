@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="52.4" data-basepath=".." data-revision="1423935651381">
+    <div class="book" data-level="52.4" data-basepath=".." data-revision="1423936199447">
     
 
 <div class="book-summary">
@@ -2005,8 +2005,6 @@
 and/or test suites. Here is an example that implements and tests the <code>+=</code>, <code>*=</code>
 and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// dry.rs</span>
-#![feature(core)]
-
 <span class="hljs-keyword">use</span> std::iter;
 <span class="hljs-keyword">use</span> std::ops::{Add, Mul, Sub};
 
@@ -2055,7 +2053,7 @@ op!(sub_assign, Sub, -=, sub);
         ($func: ident, $x:expr, $y:expr, $z:expr) =&gt; {
             <span class="hljs-preprocessor">#[test]</span>
             <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span></span>() {
-                <span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> range(<span class="hljs-number">0u32</span>, <span class="hljs-number">10</span>) {
+                <span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> <span class="hljs-number">0u32</span>..<span class="hljs-number">10</span> {
                     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($x).collect();
                     <span class="hljs-keyword">let</span> y: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($y).collect();
                     <span class="hljs-keyword">let</span> z: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($z).collect();

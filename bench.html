@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49" data-basepath="." data-revision="1423935651381">
+    <div class="book" data-level="49" data-basepath="." data-revision="1423936199447">
     
 
 <div class="book-summary">
@@ -2005,7 +2005,6 @@
 the <code>#[bench]</code> attribute. Details in the source code below.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// bench.rs</span>
 #![feature(test)]
-#![feature(core)]
 
 <span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> test;
 
@@ -2050,7 +2049,7 @@ the <code>#[bench]</code> attribute. Details in the source code below.</p>
     <span class="hljs-comment">// exact code to benchmark must be passed as a closure to the iter</span>
     <span class="hljs-comment">// method of Bencher</span>
     b.iter(|| {
-        range(<span class="hljs-number">0</span>, BENCH_SIZE).map(fibonacci).collect::&lt;Vec&lt;<span class="hljs-keyword">u32</span>&gt;&gt;()
+        (<span class="hljs-number">0</span>..BENCH_SIZE).map(fibonacci).collect::&lt;Vec&lt;<span class="hljs-keyword">u32</span>&gt;&gt;()
     })
 }
 

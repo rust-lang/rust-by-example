@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="37" data-basepath="." data-revision="1423935651381">
+    <div class="book" data-level="37" data-basepath="." data-revision="1423936199447">
     
 
 <div class="book-summary">
@@ -2012,8 +2012,8 @@ be surpassed, the vector gets reallocated with a bigger capacity.</p>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
     // Iterators can be collected into vectors
-    let collected&#95;iterator: Vec&lt;i32&gt; = range(0, 10).collect();
-    println!(&quot;Collected range(0, 10) into: {:?}&quot;, collected&#95;iterator);
+    let collected&#95;iterator: Vec&lt;i32&gt; = (0..10).collect();
+    println!(&quot;Collected (0..10) into: {:?}&quot;, collected&#95;iterator);
 
     // The &#96;vec!&#96; macro can be used to initialize a vector
     let mut xs = vec![1i32, 2, 3];

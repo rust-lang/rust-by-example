@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="54" data-basepath="." data-revision="1423935651381">
+    <div class="book" data-level="54" data-basepath="." data-revision="1423936199447">
     
 
 <div class="book-summary">
@@ -2063,7 +2063,7 @@ macro_rules! assert_equal_len {
     <span class="hljs-keyword">let</span> p_y: *<span class="hljs-keyword">const</span> <span class="hljs-keyword">f32</span> = ys.as_ptr();
 
     <span class="hljs-comment">// sum excess elements that don't fit in the simd vector</span>
-    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span> * chunks, size) {
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> (<span class="hljs-number">4</span> * chunks)..size {
         <span class="hljs-comment">// dereferencing a raw pointer requires an unsafe block</span>
         <span class="hljs-keyword">unsafe</span> {
             <span class="hljs-comment">// offset by i elements</span>
@@ -2076,7 +2076,7 @@ macro_rules! assert_equal_len {
     <span class="hljs-keyword">let</span> simd_p_y = p_y <span class="hljs-keyword">as</span> *<span class="hljs-keyword">const</span> f32x4;
 
     <span class="hljs-comment">// sum "simd vector"</span>
-    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, chunks) {
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..chunks {
         <span class="hljs-keyword">unsafe</span> {
             *simd_p_x.offset(i) += *simd_p_y.offset(i);
         }
