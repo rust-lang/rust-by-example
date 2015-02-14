@@ -14,12 +14,26 @@
       { "id": "alias", "title": "Alias", "children": null }
   ] },
   { "id": "expression", "title": "Expressions", "children": null },
-  { "id": "if-else", "title": "If/else", "children": null },
-  { "id": "loop", "title": "Loop", "children": [
-      { "id": "nested", "title": "Nesting and labels", "children": null }
+  { "id": "flow_control", "title": "Flow Control", "children": [
+      { "id": "if-else", "title": "if/else", "children": null },
+      { "id": "loop", "title": "loop", "children": [
+          { "id": "nested", "title": "Nesting and labels", "children": null }
+      ] },
+      { "id": "while", "title": "while", "children": null },
+      { "id": "for", "title": "for and range", "children": null },
+      { "id": "match", "title": "match", "children": [
+          { "id": "destructuring", "title": "Destructuring", "children": [
+              { "id": "destructure_tuple", "title": "tuples", "children": null },
+              { "id": "destructure_enum", "title": "enums", "children": null },
+              { "id": "destructure_pointers", "title": "pointers/ref", "children": null },
+              { "id": "destructure_structures", "title": "structs", "children": null }
+          ] },
+          { "id": "guard", "title": "Guards", "children": null },
+          { "id": "binding", "title": "Binding", "children": null }
+      ] },
+      { "id": "if_let", "title": "if let", "children": null },
+      { "id": "while_let", "title": "while let", "children": null }
   ] },
-  { "id": "while", "title": "While", "children": null },
-  { "id": "for", "title": "For and range", "children": null },
   { "id": "fn", "title": "Functions", "children": [
       { "id": "unused", "title": "Unused", "children": null }
   ] },
@@ -40,10 +54,6 @@
       ] }
   ] },
   { "id": "tuples", "title": "Tuples", "children": null },
-  { "id": "match", "title": "Pattern matching", "children": [
-      { "id": "guard", "title": "Destructuring and guards", "children": null },
-      { "id": "struct", "title": "Destructuring structs", "children": null }
-  ] },
   { "id": "structs", "title": "Structures", "children": [
       { "id": "visibility", "title": "Visibility", "children": null }
   ] },
