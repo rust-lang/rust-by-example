@@ -1,3 +1,6 @@
+#![feature(test)]
+#![feature(core)]
+
 use std::simd::f32x4;
 
 macro_rules! assert_equal_len {

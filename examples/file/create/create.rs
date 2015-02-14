@@ -1,3 +1,6 @@
+#![feature(io)]
+#![feature(path)]
+
 use std::old_io::File;
 
 static LOREM_IPSUM: &'static str =

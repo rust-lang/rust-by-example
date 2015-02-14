@@ -1,3 +1,5 @@
+#![feature(io)]
+
 use std::old_io::process::{Command,ProcessOutput};
 
 fn main() {
@@ -15,12 +17,12 @@ fn main() {
             // Check if the process succeeded, i.e. the exit code was 0
             if exit.success() {
                 // `out` has type `Vec<u8>`, convert it to a UTF-8 `$str`
-                let s = String::from_utf8_lossy(out.as_slice());
+                let s = String::from_utf8_lossy(&out);
 
                 print!("rustc succeeded and stdout was:\n{}", s);
             } else {
                 // `err` also has type `Vec<u8>`
-                let s = String::from_utf8_lossy(err.as_slice());
+                let s = String::from_utf8_lossy(&err);
 
                 print!("rustc failed and stderr was:\n{}", s);
             }

@@ -1,3 +1,9 @@
+#![feature(io)]
+#![feature(rustc_private)]
+#![feature(core)]
+#![feature(env)]
+#![feature(collections)]
+
 extern crate getopts;
 
 use std::env;

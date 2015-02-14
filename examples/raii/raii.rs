@@ -1,4 +1,5 @@
 #![feature(box_syntax)]
+#![feature(core)]
 
 fn create_box() {
     // Allocate an integer in the heap

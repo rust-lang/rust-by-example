@@ -1,3 +1,6 @@
+#![feature(core)]
+#![feature(env)]
+
 use std::env;
 
 fn increase(number: i32) {

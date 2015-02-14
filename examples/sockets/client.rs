@@ -1,3 +1,8 @@
+#![feature(io)]
+#![feature(core)]
+#![feature(path)]
+#![feature(env)]
+
 use std::env;
 use common::SOCKET_PATH;
 use std::old_io::net::pipe::UnixStream;

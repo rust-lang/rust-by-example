@@ -1,3 +1,5 @@
+#![feature(core)]
+
 use std::iter;
 use std::ops::{Add, Mul, Sub};
 

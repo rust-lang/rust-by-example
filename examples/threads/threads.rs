@@ -1,3 +1,6 @@
+#![feature(core)]
+#![feature(std_misc)]
+
 use std::thread::Thread;
 
 static NTHREADS: i32 = 10;

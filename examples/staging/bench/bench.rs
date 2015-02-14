@@ -1,3 +1,6 @@
+#![feature(test)]
+#![feature(core)]
+
 extern crate test;
 
 use std::mem::replace;
