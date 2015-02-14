@@ -19,7 +19,7 @@ fn main() {
 
     println!("Wait {} ms...", interval.num_milliseconds());
 
-    // Block the task until notification arrives
+    // Block the thread until notification arrives
     let _ = oneshot.recv();
 
     println!("Done");

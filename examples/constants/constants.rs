@@ -9,7 +9,7 @@ fn is_big(n: i32) -> bool {
 fn main() {
     let n = 16;
 
-    // Access constant in the main task
+    // Access constant in the main thread
     println!("This is {}", LANGUAGE);
     println!("The threshold is {}", THRESHOLD);
     println!("{} is {}", n, if is_big(n) { "big" } else { "small" });

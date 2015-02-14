@@ -25,6 +25,6 @@ fn main() {
     // `pop` removes the last element from the vector and returns it
     println!("Pop last element: {:?}", xs.pop());
 
-    // Out of bounds indexing yields a task failure
+    // Out of bounds indexing yields a panic
     println!("Fourth element: {}", xs[3]);
 }
