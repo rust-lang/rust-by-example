@@ -1,3 +1,6 @@
+#![feature(path)]
+#![feature(io)]
+
 use std::old_io::fs::PathExtensions;
 
 fn main() {

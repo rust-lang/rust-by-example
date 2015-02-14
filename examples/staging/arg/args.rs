@@ -1,3 +1,5 @@
+#![feature(env)]
+
 use std::env;
 
 fn main() {

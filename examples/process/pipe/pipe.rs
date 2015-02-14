@@ -1,3 +1,5 @@
+#![feature(io)]
+
 use std::old_io::process::Command;
 
 static PANGRAM: &'static str =

@@ -1,3 +1,5 @@
+#![feature(std_misc)]
+
 use std::sync::mpsc::{Sender, Receiver};
 use std::sync::mpsc;
 use std::thread::Thread;
@@ -10,7 +12,7 @@ fn main() {
     // (type annotation is superfluous)
     let (tx, rx): (Sender<usize>, Receiver<usize>) = mpsc::channel();
 
-    for id in range(0, NTHREADS) {
+    for id in 0..NTHREADS {
         // The sender endpoint can be copied
         let thread_tx = tx.clone();
 
@@ -28,7 +30,7 @@ fn main() {
 
     // Here, all the messages are collected
     let mut ids = Vec::with_capacity(NTHREADS);
-    for _ in range(0, NTHREADS) {
+    for _ in 0..NTHREADS {
         // The `recv` method picks a message from the channel
         // `recv` will block the current thread if there no messages available
         ids.push(rx.recv());

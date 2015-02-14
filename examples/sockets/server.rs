@@ -1,3 +1,6 @@
+#![feature(io)]
+#![feature(path)]
+
 use common::SOCKET_PATH;
 use std::old_io::fs;
 use std::old_io::fs::PathExtensions;

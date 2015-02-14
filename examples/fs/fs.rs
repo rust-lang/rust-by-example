@@ -1,3 +1,6 @@
+#![feature(io)]
+#![feature(path)]
+
 use std::old_io::fs;
 use std::old_io::fs::PathExtensions;
 use std::old_io::{File, IoResult, USER_RWX};
@@ -73,7 +76,7 @@ fn main() {
     // `Directories`, which implements the `Iterator<Path> trait
     match fs::walk_dir(&Path::new("a")) {
         Err(why) => println!("! {:?}", why.kind),
-        Ok(mut paths) => for path in paths {
+        Ok(paths) => for path in paths {
             println!("> {}", path.display());
         },
     }

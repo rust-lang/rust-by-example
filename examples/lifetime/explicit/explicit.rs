@@ -1,3 +1,6 @@
+#![feature(core)]
+#![feature(collections)]
+
 struct Book {
     // `String` is a heap allocated string
     title: String,

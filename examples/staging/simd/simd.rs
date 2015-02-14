@@ -1,3 +1,5 @@
+#![feature(core)]
+
 use std::simd::f32x4;
 
 fn main() {

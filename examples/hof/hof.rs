@@ -1,3 +1,5 @@
+#![feature(core)]
+
 // The `AdditiveIterator` trait adds the `sum` method to iterators
 use std::iter::AdditiveIterator;
 use std::iter;

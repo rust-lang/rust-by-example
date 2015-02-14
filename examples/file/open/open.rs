@@ -1,3 +1,6 @@
+#![feature(io)]
+#![feature(path)]
+
 use std::old_io::File;
 
 fn main() {

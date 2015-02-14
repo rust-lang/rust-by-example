@@ -1,3 +1,6 @@
+#![feature(collections)]
+#![feature(core)]
+
 fn main() {
     // (all the type annotations are superfluous)
     // A reference to a string allocated in read only memory

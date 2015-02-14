@@ -1,3 +1,7 @@
+#![feature(core)]
+#![feature(io)]
+#![feature(std_misc)]
+
 use std::old_io::Timer;
 use std::old_io::timer;
 use std::time::duration::Duration;
