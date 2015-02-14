@@ -17,6 +17,7 @@
   min-height: 72px;
   font-size: 13px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  white-space: pre-wrap;
 }
 
 #result {
