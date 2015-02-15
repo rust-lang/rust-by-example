@@ -3,60 +3,6 @@ svn:wc:ra_dav:version-url
 V 57
 /ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict
 END
-ext-keybinding_menu.js
-K 25
-svn:wc:ra_dav:version-url
-V 80
-/ajaxorg/ace-builds/!svn/ver/106/trunk/src-min-noconflict/ext-keybinding_menu.js
-END
-mode-haskell.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict/mode-haskell.js
-END
-mode-livescript.js
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/mode-livescript.js
-END
-mode-cirru.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/mode-cirru.js
-END
-mode-logiql.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict/mode-logiql.js
-END
-ext-textarea.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/96/trunk/src-min-noconflict/ext-textarea.js
-END
-worker-html.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/104/trunk/src-min-noconflict/worker-html.js
-END
-mode-dart.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict/mode-dart.js
-END
-mode-eiffel.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict/mode-eiffel.js
-END
 mode-space.js
 K 25
 svn:wc:ra_dav:version-url
@@ -1094,4 +1040,58 @@ K 25
 svn:wc:ra_dav:version-url
 V 70
 /ajaxorg/ace-builds/!svn/ver/96/trunk/src-min-noconflict/mode-gcode.js
+END
+ext-keybinding_menu.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/ajaxorg/ace-builds/!svn/ver/106/trunk/src-min-noconflict/ext-keybinding_menu.js
+END
+mode-haskell.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict/mode-haskell.js
+END
+mode-livescript.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/mode-livescript.js
+END
+mode-cirru.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/mode-cirru.js
+END
+mode-logiql.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict/mode-logiql.js
+END
+ext-textarea.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/96/trunk/src-min-noconflict/ext-textarea.js
+END
+worker-html.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/104/trunk/src-min-noconflict/worker-html.js
+END
+mode-dart.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict/mode-dart.js
+END
+mode-eiffel.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/109/trunk/src-min-noconflict/mode-eiffel.js
 END
