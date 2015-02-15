@@ -4,7 +4,7 @@ A `Timer` represents an underlying OS timer, and can generate *one-shot* and
 {timers.play}
 
 The playpen has a time limit, so you won't be able to see the (full) output in
-the editor. Here's the output you should see, if you run this in a computer.
+the editor. Here's the output you should see, if you run this on a computer.
 
 ```
 $ rustc timers.rs && time ./timers
