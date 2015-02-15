@@ -1,7 +1,7 @@
 The `open` static method can be used to open a file in read-only mode.
 
-A `File` owns a resource, the file descriptor, and take cares of closing the
-file when its `drop`ed.
+A `File` owns a resource, the file descriptor and takes care of closing the
+file when it is `drop`ed.
 
 {open.play}
 
