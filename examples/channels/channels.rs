@@ -8,7 +8,7 @@ static NTHREADS: usize = 3;
 
 fn main() {
     // Channels have two endpoints: the `Sender<T>` and the `Receiver<T>`,
-    // where `T` is the type of the message to be transfer
+    // where `T` is the type of the message to be transferred
     // (type annotation is superfluous)
     let (tx, rx): (Sender<usize>, Receiver<usize>) = mpsc::channel();
 
