@@ -1,0 +1,38 @@
+Similar to `if let`, `while let` can make awkward `match` sequences
+more tolerable. Consider, for example the following sequence:
+
+```rust
+// Make `optional` of type `Option<i32>`
+let mut optional = Some(0);
+
+// Repeatedly try this test.
+loop {
+    match optional {
+        // If `optional` destructures, evaluate the block.
+        Some(i) => {
+            if i > 9 {
+                println!("Greater than 9, quit!");
+                optional = None;
+            } else {
+                println!("`i` is `{:?}`. Try again.", i);
+                optional = Some(i + 1);
+            }
+            // ^ Requires 3 indentations!
+        },
+        // Quit when the destructure fails, meaning `break`.
+        _ => { break; }
+        // ^ Why should this be required? Seems superfluous.
+    }
+}
+```
+
+`while let` makes this sequence much nicer:
+
+{while_let.play}
+
+### See also:
+[`enum`][enum], [`Option`][option], and the [RFC][while_let_rfc]
+
+[enum]: /enum.html
+[option]: /option.html
+[while_let_rfc]: https://github.com/rust-lang/rfcs/pull/214
