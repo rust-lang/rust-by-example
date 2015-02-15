@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="41" data-basepath="." data-revision="1424005411662">
+    <div class="book" data-level="41" data-basepath="." data-revision="1424014623182">
     
 
 <div class="book-summary">
@@ -2017,7 +2017,7 @@ static NTHREADS: usize = 3;
 
 fn main() {
     // Channels have two endpoints: the &#96;Sender&lt;T&gt;&#96; and the &#96;Receiver&lt;T&gt;&#96;,
-    // where &#96;T&#96; is the type of the message to be transfer
+    // where &#96;T&#96; is the type of the message to be transferred
     // (type annotation is superfluous)
     let (tx, rx): (Sender&lt;usize&gt;, Receiver&lt;usize&gt;) = mpsc::channel();
 
