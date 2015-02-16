@@ -20,7 +20,7 @@ fn main() {
 
     // Create an empty and growable `String`
     let mut string = String::new();
-    for c in chars.into_iter() {
+    for c in chars {
         // Insert a char at the end of string
         string.push(c);
         // Insert a string at the end of string
