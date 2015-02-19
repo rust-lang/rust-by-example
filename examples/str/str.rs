@@ -1,5 +1,6 @@
 #![feature(collections)]
 #![feature(core)]
+#![feature(str_words)]
 
 fn main() {
     // (all the type annotations are superfluous)
