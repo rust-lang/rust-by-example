@@ -2,7 +2,7 @@
 
 use std::sync::mpsc::{Sender, Receiver};
 use std::sync::mpsc;
-use std::thread::Thread;
+use std::thread;
 
 static NTHREADS: usize = 3;
 
@@ -17,7 +17,7 @@ fn main() {
         let thread_tx = tx.clone();
 
         // Each thread will send its id via the channel
-        Thread::spawn(move || {
+        thread::spawn(move || {
             // The thread takes ownership over `thread_tx`
             // Each thread queues a message in the channel
             thread_tx.send(id).unwrap();
