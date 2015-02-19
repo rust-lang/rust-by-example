@@ -1,6 +1,6 @@
 #![feature(std_misc)]
 
-use std::thread::Thread;
+use std::thread;
 
 static NTHREADS: i32 = 10;
 
@@ -8,7 +8,7 @@ static NTHREADS: i32 = 10;
 fn main() {
     for i in 0..NTHREADS {
         // Spin up another thread
-        let _ = Thread::scoped(move || {
+        let _ = thread::scoped(move || {
             println!("this is thread number {}", i)
         });
     }
