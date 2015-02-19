@@ -1,7 +1,7 @@
 language: node_js
 
 install:
-  - curl -s https://static.rust-lang.org/rustup.sh | sudo sh > /dev/null
+  - curl -L -s https://static.rust-lang.org/rustup.sh | sudo sh > /dev/null
 
 script:
   - rustc --version
