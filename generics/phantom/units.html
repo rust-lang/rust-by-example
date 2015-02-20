@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.2.1" data-basepath="../.." data-revision="1424264990196">
+    <div class="book" data-level="14.2.1" data-basepath="../.." data-revision="1424458234454">
     
 
 <div class="book-summary">
@@ -2146,6 +2146,7 @@
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">use std::ops::Add;
+use std::marker::PhantomData;
 
 /// Null enumerations to define unit types
 #[derive(Debug, Copy)]
@@ -2155,7 +2156,7 @@ struct Mm;
 
 /// Length is phantom type with hidden parameter &#96;Unit&#96;
 #[derive(Debug, Copy)]
-struct Length&lt;Unit, T&gt;(T,);
+struct Length&lt;Unit, T&gt;(T,PhantomData&lt;Unit&gt;);
 
 /// impl X for Y {} means &quot;implement the trait &#96;X&#96; for the Type &#96;Y&#96;&quot;
 /// The following lines implement the &#96;Add&#96; trait for Length.
@@ -2170,29 +2171,29 @@ struct Length&lt;Unit, T&gt;(T,);
 /// (meaning an i32 plus an i32, or an f64 plus an f64, etc.), and giving
 /// back a T (i32 + i32 = i32).
 ///
-/// So, this impl implements &#96;Add&lt;Length&lt;Unit, T&gt;&#96; for &#96;Length&lt;Unit, T&gt;&#96;, 
+/// So, this impl implements &#96;Add&lt;Length&lt;Unit, T&gt;&#96; for &#96;Length&lt;Unit, T&gt;&#96;,
 /// which means you can add a &#96;Length&#96; to another &#96;Length&#96; of the same type.
 ///
 /// &#96;type Output = Length&lt;Unit, T&gt;&#96; means that this impl gives back a
-/// &#96;Length&lt;Unit, T&gt;&#96;, so that 
+/// &#96;Length&lt;Unit, T&gt;&#96;, so that
 /// &#96;Length&lt;Mm, f64&gt; + Length&lt;Mm, f64&gt; = Length&lt;Mm, f64&gt;&#96;
 impl&lt;Unit, T: Add&lt;T, Output=T&gt; + Copy&gt; Add&lt;Length&lt;Unit, T&gt;&gt;
         for Length&lt;Unit, T&gt; {
     type Output = Length&lt;Unit, T&gt;;
 
     fn add(self, r: Length&lt;Unit, T&gt;) -&gt; Length&lt;Unit, T&gt; {
-        let Length(ref left)  = self;
-        let Length(ref right) = r;
+        let Length(ref left, &#95;)  = self;
+        let Length(ref right, &#95;) = r;
 
-        Length(&#42;left + &#42;right)
+        Length(&#42;left + &#42;right, PhantomData)
     }
 }
 
 fn main() {
     // Specialize one&#95;foot to have hidden parameter &#96;Inch&#96;
-    let one&#95;foot:  Length&lt;Inch, f32&gt; = Length(12.0);
+    let one&#95;foot:  Length&lt;Inch, f32&gt; = Length(12.0, PhantomData);
     // one&#95;meter has hidden parameter &#96;Mm&#96;
-    let one&#95;meter: Length&lt;Mm, f32&gt;   = Length(1000.0);
+    let one&#95;meter: Length&lt;Mm, f32&gt;   = Length(1000.0, PhantomData);
 
     let two&#95;feet = one&#95;foot + one&#95;foot;
     let two&#95;meters = one&#95;meter + one&#95;meter;

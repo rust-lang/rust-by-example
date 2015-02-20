@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="36" data-basepath="." data-revision="1424264990196">
+    <div class="book" data-level="36" data-basepath="." data-revision="1424458234454">
     
 
 <div class="book-summary">
@@ -2148,7 +2148,7 @@ function, the argument of this function is a moving closure.</p>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">#![feature(std&#95;misc)]
 
-use std::thread::Thread;
+use std::thread;
 
 static NTHREADS: i32 = 10;
 
@@ -2156,7 +2156,7 @@ static NTHREADS: i32 = 10;
 fn main() {
     for i in 0..NTHREADS {
         // Spin up another thread
-        let &#95; = Thread::scoped(move || {
+        let &#95; = thread::scoped(move || {
             println!(&quot;this is thread number {}&quot;, i)
         });
     }

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.2" data-basepath=".." data-revision="1424264990196">
+    <div class="book" data-level="14.2" data-basepath=".." data-revision="1424458234454">
     
 
 <div class="book-summary">
@@ -2148,7 +2148,9 @@ at compile time; they have no run-time behavior.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// Generic tuplestruct with same types in both
+<div id="editor">use std::marker::PhantomData;
+
+// Generic tuplestruct with same types in both
 // generic &lt;A&gt; and definition (A,)
 struct Tuple&lt;A&gt;(A,);
 
@@ -2156,12 +2158,12 @@ struct Tuple&lt;A&gt;(A,);
 // parameter. Storage is allocated for generic type A
 // yet not for B. Therefore, B cannot be used in computations.
 #[derive(PartialEq)] // Allow equality test for this type
-struct PhantomTuple&lt;A, B&gt;(A,);
+struct PhantomTuple&lt;A, B&gt;(A,PhantomData&lt;B&gt;);
 
 // Similarly, a phantom type struct which is generic over A
 // with hidden parameter B
 #[derive(PartialEq)] // Allow equality test for this type
-struct PhantomStruct&lt;A, B&gt; { first: A }
+struct PhantomStruct&lt;A, B&gt; { first: A, phantom: PhantomData&lt;B&gt; }
 
 fn main() {
     // instantiate Tuple
@@ -2169,18 +2171,24 @@ fn main() {
 
     // We can create similar types without carrying around extra info
     // PhantomTuple specialized to &lt;char, f32&gt;
-    let &#95;tuple1:  PhantomTuple&lt;char, f32&gt; = PhantomTuple(&#39;Q&#39;);
+    let &#95;tuple1:  PhantomTuple&lt;char, f32&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
     // PhantomTuple specialized to &lt;char, f64&gt;
-    let &#95;tuple2: PhantomTuple&lt;char, f64&gt; = PhantomTuple(&#39;Q&#39;);
+    let &#95;tuple2: PhantomTuple&lt;char, f64&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
 
     // Error: type mismatch so these cannot be compared
     //println!(&quot;&#95;tuple1 == &#95;tuple2 yields: {}&quot;,
     //          &#95;tuple1 == &#95;tuple2);
 
     // Specialized to &lt;char, f32&gt;
-    let &#95;struct1: PhantomStruct&lt;char, f32&gt; = PhantomStruct { first: &#39;Q&#39;};
+    let &#95;struct1: PhantomStruct&lt;char, f32&gt; = PhantomStruct {
+        first: &#39;Q&#39;,
+        phantom: PhantomData,
+    };
     // Specialized to &lt;char, f64&gt;
-    let &#95;struct2: PhantomStruct&lt;char, f64&gt; = PhantomStruct { first: &#39;Q&#39;};
+    let &#95;struct2: PhantomStruct&lt;char, f64&gt; = PhantomStruct {
+        first: &#39;Q&#39;,
+        phantom: PhantomData,
+    };
 
     // Error: type mismatch so these cannot be compared
     //println!(&quot;&#95;struct1 == &#95;struct2 yields: {}&quot;,

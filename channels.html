@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="37" data-basepath="." data-revision="1424264990196">
+    <div class="book" data-level="37" data-basepath="." data-revision="1424458234454">
     
 
 <div class="book-summary">
@@ -2151,7 +2151,7 @@ allow an unidirectional flow of information between two end-points: the
 
 use std::sync::mpsc::{Sender, Receiver};
 use std::sync::mpsc;
-use std::thread::Thread;
+use std::thread;
 
 static NTHREADS: usize = 3;
 
@@ -2166,7 +2166,7 @@ fn main() {
         let thread&#95;tx = tx.clone();
 
         // Each thread will send its id via the channel
-        Thread::spawn(move || {
+        thread::spawn(move || {
             // The thread takes ownership over &#96;thread&#95;tx&#96;
             // Each thread queues a message in the channel
             thread&#95;tx.send(id).unwrap();
