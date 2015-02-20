@@ -1,5 +1,7 @@
 language: node_js
 
+sudo: true
+
 install:
   - curl -L -s https://static.rust-lang.org/rustup.sh | sudo sh > /dev/null
 
