@@ -1,7 +1,6 @@
 #![feature(env)]
-#![feature(io)]
-#![feature(std_misc)]
-#![feature(path)]
+#![feature(old_io)]
+#![feature(old_path)]
 #![feature(core)]
 
 #![deny(warnings)]
@@ -13,7 +12,7 @@ extern crate regex;
 extern crate "rustc-serialize" as rustc_serialize;
 
 use example::Example;
-use std::thread::Thread;
+use std::thread;
 use std::sync::mpsc;
 
 mod example;
@@ -30,7 +29,7 @@ fn main() {
         let tx = tx.clone();
         let count = example.count();
 
-        let _ = Thread::scoped(move || {
+        let _ = thread::scoped(move || {
             example.process(vec!(i + 1), tx, 0, String::new());
         });
 
