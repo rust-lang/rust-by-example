@@ -1,4 +1,3 @@
-#![feature(box_syntax)]
 #![feature(box_patterns)]
 
 use std::mem;
@@ -22,7 +21,7 @@ fn origin() -> Point {
 
 fn boxed_origin() -> Box<Point> {
     // Allocate this point in the heap, and return a pointer to it
-    box Point { x: 0.0, y: 0.0 }
+    Box::new(Point { x: 0.0, y: 0.0 })
 }
 
 fn main() {
@@ -35,16 +34,16 @@ fn main() {
     };
 
     // Heap allocated rectangle
-    let boxed_rectangle: Box<Rectangle> = box Rectangle {
+    let boxed_rectangle: Box<Rectangle> = Box::new(Rectangle {
         p1: origin(),
         p2: origin()
-    };
+    });
 
     // The output of functions can be boxed
-    let boxed_point: Box<Point> = box origin();
+    let boxed_point: Box<Point> = Box::new(origin());
 
     // Double indirection
-    let box_in_a_box: Box<Box<Point>> = box boxed_origin();
+    let box_in_a_box: Box<Box<Point>> = Box::new(boxed_origin());
 
     println!("Point occupies {} bytes in the stack",
              mem::size_of_val(&point));

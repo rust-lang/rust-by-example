@@ -1,4 +1,3 @@
-#![feature(box_syntax)]
 #![feature(box_patterns)]
 
 #[derive(Copy)]
@@ -29,7 +28,7 @@ fn main() {
     println!("point is ({}, {})", point.x, point.y);
     println!("mutable_point is ({}, {})", mutable_point.x, mutable_point.y);
 
-    let mut tuple = (box 5u32, 3u32);
+    let mut tuple = (Box::new(5u32), 3u32);
 
     {
         // `ref` can also be paired with `box` to take a mutable reference to

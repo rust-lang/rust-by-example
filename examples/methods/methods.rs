@@ -1,5 +1,3 @@
-#![feature(box_syntax)]
-
 use std::num::Float;
 // To be able to use .abs(), you must include this
 
@@ -102,7 +100,7 @@ fn main() {
     // Ok, mutable object can call mutable methods
     square.translate(1.0, 1.0);
 
-    let pair = Pair(box 1, box 2);
+    let pair = Pair(Box::new(1), Box::new(2));
 
     pair.destroy();
 

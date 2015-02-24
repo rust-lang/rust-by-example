@@ -1,5 +1,3 @@
-#![feature(box_syntax)]
-
 // This function takes ownership of the heap allocated memory
 fn destroy_box(c: Box<i32>) {
     println!("destroying a box that contains {}", c);
@@ -18,7 +16,7 @@ fn main() {
     println!("x is {}, and y is {}", x, y);
 
     // `a` is a pointer to a heap allocated integer
-    let a = box 5i32;
+    let a = Box::new(5i32);
 
     println!("a contains: {}", a);
 

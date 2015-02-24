@@ -1,5 +1,3 @@
-#![feature(box_syntax)]
-
 // Allow Cons and Nil to be referred to without namespacing
 use List::{Cons, Nil};
 
@@ -22,7 +20,7 @@ impl List {
     // Consume a list, and return the same list with a new element at its front
     fn prepend(self, elem: u32) -> List {
         // `Cons` also has type List
-        Cons(elem, box self)
+        Cons(elem, Box::new(self))
     }
 
     // Return the length of the list
