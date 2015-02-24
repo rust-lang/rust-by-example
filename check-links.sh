@@ -88,7 +88,7 @@ for file in $files ; do
 done
 
 if $any_bad_links; then
-  exit 1
+  echo "Some links were bad."
 else
   echo "All links are 200!"
 fi
