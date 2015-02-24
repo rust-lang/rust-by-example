@@ -1,5 +1,6 @@
 #![feature(old_io)]
 #![feature(old_path)]
+#![feature(env)]
 
 #![deny(warnings)]
 #![feature(int_uint)]

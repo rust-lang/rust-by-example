@@ -46,7 +46,7 @@ pub fn run(prefix: &str, id: &str, src: &str) -> Result<String, String> {
         Ok(ProcessOutput { error, output, status }) => {
             let mut s = String::from_utf8(output).unwrap();
             if !status.success() {
-                s.push_str(String::from_utf8(error).unwrap().as_slice());
+                s.push_str(&String::from_utf8(error).unwrap());
             }
 
             Ok(s)

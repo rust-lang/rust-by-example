@@ -16,7 +16,7 @@ impl Example {
     pub fn get_list() -> Vec<Example> {
         match file::read(&Path::new("examples/structure.json")) {
             Err(why) => panic!("{}", why),
-            Ok(string) => match json::Json::from_str(string.as_slice()) {
+            Ok(string) => match json::Json::from_str(&string) {
                 Err(_) => panic!("structure.json is not valid json"),
                 Ok(json) => {
                     match Decodable::decode(&mut json::Decoder::new(json)) {
@@ -41,12 +41,12 @@ impl Example {
                    indent: uint,
                    prefix: String)
     {
-        let id = self.id.as_slice();
-        let prefix = prefix.as_slice();
-        let title = self.title.as_slice();
+        let id = &self.id;
+        let prefix = &prefix;
+        let title = &self.title;
 
         let entry =
-            match Markdown::process(number.as_slice(), id, title, prefix) {
+            match Markdown::process(&number, id, title, prefix) {
                 Ok(_) => {
                     let md = if prefix.chars().all(|c| c.is_whitespace()) {
                         format!("{}.md", id)
