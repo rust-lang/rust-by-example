@@ -1,18 +1,19 @@
 # Rust by Example
 
-[Rust][rust] is a programming language with a focus on
-type safety, memory safety, concurrency and performance.
+[Rust][rust] is a modern systems programming language focusing on safety and
+speed. It accomplishes these goals by being memory safe without using garbage
+collection.
 
-This book is a collection of bitesize examples that illustrate various rustic
-concepts and the Rust distribution libraries. The source code is hosted
-[here][home].
+Rust by Example is a collection of examples that illustrate various Rust
+concepts and the standard libraries. You can also [check out the source code
+for this site][home].
 
-Be sure to have Rust [installed][install] and the [docs][std] at hand,
-and let's start!
+Be sure to have Rust [installed][install] and the [docs][std] at hand, and
+let's start!
 
-*Note*: This book will follow the nightly version of Rust until we reach
-version 1.0; it's highly possible that some examples won't work with snapshot
-versions like 0.10, so be sure to use a nightly version!
+*Note*: Rust by Example follows the nightly builds until the beta or possibly
+the 1.0.0 final release. If you're following along on your computer, make sure
+to have the latest Rust installed.
 
 [rust]: http://www.rust-lang.org/
 [install]: http://www.rust-lang.org/install.html
