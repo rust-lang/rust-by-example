@@ -1,0 +1,2244 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Functions | Rust by Example</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.5.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+        
+    
+    
+    <link rel="next" href="./fn/unused.html" />
+    
+    
+    <link rel="prev" href="./flow_control/while_let.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="gitbook/style.css">
+
+    
+    <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-rust-playpen/editor.css">
+    
+
+
+        
+    <div class="book" data-level="8" data-basepath="." data-revision="1424797170574">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="hello.html">
+            
+                
+                    <a href="./hello.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         Hello World
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="print.html">
+            
+                
+                    <a href="./print.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         Formatted print
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="literals.html">
+            
+                
+                    <a href="./literals.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         Literals and operators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="variables.html">
+            
+                
+                    <a href="./variables.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         Variables
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="variables/mut.html">
+            
+                
+                    <a href="./variables/mut.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         Mutability
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="variables/scope.html">
+            
+                
+                    <a href="./variables/scope.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         Scope and shadowing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.3" data-path="variables/declare.html">
+            
+                
+                    <a href="./variables/declare.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                         Declare first
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="type.html">
+            
+                
+                    <a href="./type.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         Types
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="type/cast.html">
+            
+                
+                    <a href="./type/cast.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         Casting
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="type/literals.html">
+            
+                
+                    <a href="./type/literals.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         Literals
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.3" data-path="type/inference.html">
+            
+                
+                    <a href="./type/inference.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                         Inference
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.4" data-path="type/alias.html">
+            
+                
+                    <a href="./type/alias.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                         Alias
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="expression.html">
+            
+                
+                    <a href="./expression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         Expressions
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="flow_control.html">
+            
+                
+                    <a href="./flow_control.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         Flow Control
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="flow_control/if-else.html">
+            
+                
+                    <a href="./flow_control/if-else.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         if/else
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="flow_control/loop.html">
+            
+                
+                    <a href="./flow_control/loop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         loop
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.2.1" data-path="flow_control/loop/nested.html">
+            
+                
+                    <a href="./flow_control/loop/nested.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.1.</b>
+                        
+                         Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="flow_control/while.html">
+            
+                
+                    <a href="./flow_control/while.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         while
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="flow_control/for.html">
+            
+                
+                    <a href="./flow_control/for.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         for and range
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.5" data-path="flow_control/match.html">
+            
+                
+                    <a href="./flow_control/match.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                         match
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.5.1" data-path="flow_control/match/destructuring.html">
+            
+                
+                    <a href="./flow_control/match/destructuring.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.1.</b>
+                        
+                         Destructuring
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.5.1.1" data-path="flow_control/match/destructuring/destructure_tuple.html">
+            
+                
+                    <a href="./flow_control/match/destructuring/destructure_tuple.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.1.1.</b>
+                        
+                         tuples
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.5.1.2" data-path="flow_control/match/destructuring/destructure_enum.html">
+            
+                
+                    <a href="./flow_control/match/destructuring/destructure_enum.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.1.2.</b>
+                        
+                         enums
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.5.1.3" data-path="flow_control/match/destructuring/destructure_pointers.html">
+            
+                
+                    <a href="./flow_control/match/destructuring/destructure_pointers.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.1.3.</b>
+                        
+                         pointers/ref
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.5.1.4" data-path="flow_control/match/destructuring/destructure_structures.html">
+            
+                
+                    <a href="./flow_control/match/destructuring/destructure_structures.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.1.4.</b>
+                        
+                         structs
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.5.2" data-path="flow_control/match/guard.html">
+            
+                
+                    <a href="./flow_control/match/guard.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.2.</b>
+                        
+                         Guards
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.5.3" data-path="flow_control/match/binding.html">
+            
+                
+                    <a href="./flow_control/match/binding.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.3.</b>
+                        
+                         Binding
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.6" data-path="flow_control/if_let.html">
+            
+                
+                    <a href="./flow_control/if_let.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                         if let
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.7" data-path="flow_control/while_let.html">
+            
+                
+                    <a href="./flow_control/while_let.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                         while let
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="8" data-path="fn.html">
+            
+                
+                    <a href="./fn.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         Functions
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="8.1" data-path="fn/unused.html">
+            
+                
+                    <a href="./fn/unused.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                         Unused
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="mod.html">
+            
+                
+                    <a href="./mod.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         Modules
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="9.1" data-path="mod/visibility.html">
+            
+                
+                    <a href="./mod/visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                         Visibility
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.2" data-path="mod/use.html">
+            
+                
+                    <a href="./mod/use.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                         The `use` import
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.3" data-path="mod/super.html">
+            
+                
+                    <a href="./mod/super.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                         `super` and `self`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9.4" data-path="mod/split.html">
+            
+                
+                    <a href="./mod/split.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                         File hierarchy
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10" data-path="crates.html">
+            
+                
+                    <a href="./crates.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                         Crates
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="10.1" data-path="crates/lib.html">
+            
+                
+                    <a href="./crates/lib.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                         Library
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.2" data-path="crates/link.html">
+            
+                
+                    <a href="./crates/link.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                         `extern crate`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11" data-path="attribute.html">
+            
+                
+                    <a href="./attribute.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                         Attributes
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.1" data-path="attribute/crate.html">
+            
+                
+                    <a href="./attribute/crate.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                         Crates
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="11.2" data-path="attribute/cfg.html">
+            
+                
+                    <a href="./attribute/cfg.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.</b>
+                        
+                         `cfg`
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="11.2.1" data-path="attribute/cfg/custom.html">
+            
+                
+                    <a href="./attribute/cfg/custom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.1.</b>
+                        
+                         Custom
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="12" data-path="tuples.html">
+            
+                
+                    <a href="./tuples.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                         Tuples
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="13" data-path="structs.html">
+            
+                
+                    <a href="./structs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                         Structures
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="13.1" data-path="structs/visibility.html">
+            
+                
+                    <a href="./structs/visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                         Visibility
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14" data-path="generics.html">
+            
+                
+                    <a href="./generics.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                         Generics
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="14.1" data-path="generics/impl.html">
+            
+                
+                    <a href="./generics/impl.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.1.</b>
+                        
+                         Implementation
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.2" data-path="generics/phantom.html">
+            
+                
+                    <a href="./generics/phantom.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.2.</b>
+                        
+                         Phantom types
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="14.2.1" data-path="generics/phantom/units.html">
+            
+                
+                    <a href="./generics/phantom/units.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.2.1.</b>
+                        
+                         Unit conversions
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="15" data-path="box.html">
+            
+                
+                    <a href="./box.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                         Box, stack and heap
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16" data-path="raii.html">
+            
+                
+                    <a href="./raii.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.</b>
+                        
+                         RAII
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="17" data-path="move.html">
+            
+                
+                    <a href="./move.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.</b>
+                        
+                         Ownership and moves
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="17.1" data-path="move/mut.html">
+            
+                
+                    <a href="./move/mut.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>17.1.</b>
+                        
+                         Mutability
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18" data-path="borrow.html">
+            
+                
+                    <a href="./borrow.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.</b>
+                        
+                         Borrowing
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1" data-path="borrow/mut.html">
+            
+                
+                    <a href="./borrow/mut.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.</b>
+                        
+                         Mutability
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18.2" data-path="borrow/freeze.html">
+            
+                
+                    <a href="./borrow/freeze.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.2.</b>
+                        
+                         Freezing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18.3" data-path="borrow/alias.html">
+            
+                
+                    <a href="./borrow/alias.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.3.</b>
+                        
+                         Aliasing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="18.4" data-path="borrow/ref.html">
+            
+                
+                    <a href="./borrow/ref.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.4.</b>
+                        
+                         The ref pattern
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="19" data-path="lifetime.html">
+            
+                
+                    <a href="./lifetime.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.</b>
+                        
+                         Lifetimes
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="19.1" data-path="lifetime/borrow.html">
+            
+                
+                    <a href="./lifetime/borrow.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.1.</b>
+                        
+                         The borrow checker
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="19.2" data-path="lifetime/fn.html">
+            
+                
+                    <a href="./lifetime/fn.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.2.</b>
+                        
+                         Functions
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="19.3" data-path="lifetime/struct.html">
+            
+                
+                    <a href="./lifetime/struct.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>19.3.</b>
+                        
+                         Structs
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="20" data-path="constants.html">
+            
+                
+                    <a href="./constants.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>20.</b>
+                        
+                         Global constants
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="21" data-path="methods.html">
+            
+                
+                    <a href="./methods.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>21.</b>
+                        
+                         Methods
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="22" data-path="enum.html">
+            
+                
+                    <a href="./enum.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.</b>
+                        
+                         Enums
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="22.1" data-path="enum/c-like.html">
+            
+                
+                    <a href="./enum/c-like.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>22.1.</b>
+                        
+                         C-like
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="23" data-path="panic.html">
+            
+                
+                    <a href="./panic.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>23.</b>
+                        
+                         `panic!`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="24" data-path="option.html">
+            
+                
+                    <a href="./option.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>24.</b>
+                        
+                         `Option`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="25" data-path="array.html">
+            
+                
+                    <a href="./array.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>25.</b>
+                        
+                         Arrays and Slices
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="26" data-path="trait.html">
+            
+                
+                    <a href="./trait.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>26.</b>
+                        
+                         Traits
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="26.1" data-path="trait/derive.html">
+            
+                
+                    <a href="./trait/derive.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>26.1.</b>
+                        
+                         Derive
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="27" data-path="ops.html">
+            
+                
+                    <a href="./ops.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>27.</b>
+                        
+                         Operator Overloading
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="28" data-path="bounds.html">
+            
+                
+                    <a href="./bounds.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>28.</b>
+                        
+                         Bounds
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="29" data-path="drop.html">
+            
+                
+                    <a href="./drop.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>29.</b>
+                        
+                         Drop
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="30" data-path="iter.html">
+            
+                
+                    <a href="./iter.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>30.</b>
+                        
+                         Iterators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="31" data-path="closures.html">
+            
+                
+                    <a href="./closures.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>31.</b>
+                        
+                         Closures
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="32" data-path="hof.html">
+            
+                
+                    <a href="./hof.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>32.</b>
+                        
+                         Higher Order Functions
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="33" data-path="vec.html">
+            
+                
+                    <a href="./vec.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>33.</b>
+                        
+                         Vectors
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="34" data-path="str.html">
+            
+                
+                    <a href="./str.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>34.</b>
+                        
+                         Strings
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="35" data-path="clone.html">
+            
+                
+                    <a href="./clone.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>35.</b>
+                        
+                         Clone
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="36" data-path="threads.html">
+            
+                
+                    <a href="./threads.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>36.</b>
+                        
+                         Threads
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="37" data-path="channels.html">
+            
+                
+                    <a href="./channels.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>37.</b>
+                        
+                         Channels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="38" data-path="timers.html">
+            
+                
+                    <a href="./timers.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>38.</b>
+                        
+                         Timers
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="39" data-path="sockets.html">
+            
+                
+                    <a href="./sockets.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>39.</b>
+                        
+                         Unix sockets
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="40" data-path="result.html">
+            
+                
+                    <a href="./result.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>40.</b>
+                        
+                         `Result`
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="40.1" data-path="result/try.html">
+            
+                
+                    <a href="./result/try.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>40.1.</b>
+                        
+                         `try!`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="41" data-path="path.html">
+            
+                
+                    <a href="./path.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>41.</b>
+                        
+                         Path
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="42" data-path="file.html">
+            
+                
+                    <a href="./file.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>42.</b>
+                        
+                         File I/O
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="42.1" data-path="file/open.html">
+            
+                
+                    <a href="./file/open.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>42.1.</b>
+                        
+                         `open`
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="42.2" data-path="file/create.html">
+            
+                
+                    <a href="./file/create.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>42.2.</b>
+                        
+                         `create`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="43" data-path="process.html">
+            
+                
+                    <a href="./process.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>43.</b>
+                        
+                         Child processes
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="43.1" data-path="process/pipe.html">
+            
+                
+                    <a href="./process/pipe.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>43.1.</b>
+                        
+                         Pipes
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="43.2" data-path="process/wait.html">
+            
+                
+                    <a href="./process/wait.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>43.2.</b>
+                        
+                         Wait
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="44" data-path="fs.html">
+            
+                
+                    <a href="./fs.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>44.</b>
+                        
+                         Filesystem Operations
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="45" data-path="bench.html">
+            
+                
+                    <a href="./bench.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>45.</b>
+                        
+                         Benchmarking
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="46" data-path="comment.html">
+            
+                
+                    <a href="./comment.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>46.</b>
+                        
+                         Comments
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="46.1" data-path="comment/doc-comment.html">
+            
+                
+                    <a href="./comment/doc-comment.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>46.1.</b>
+                        
+                         Doc Comments
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="47" data-path="ffi.html">
+            
+                
+                    <a href="./ffi.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>47.</b>
+                        
+                         Foreign Function Interface
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="48" data-path="macros.html">
+            
+                
+                    <a href="./macros.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>48.</b>
+                        
+                         macro_rules!
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="48.1" data-path="macros/designators.html">
+            
+                
+                    <a href="./macros/designators.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>48.1.</b>
+                        
+                         Designators
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="48.2" data-path="macros/overload.html">
+            
+                
+                    <a href="./macros/overload.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>48.2.</b>
+                        
+                         Overload
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="48.3" data-path="macros/repeat.html">
+            
+                
+                    <a href="./macros/repeat.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>48.3.</b>
+                        
+                         Repeat
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="48.4" data-path="macros/dry.html">
+            
+                
+                    <a href="./macros/dry.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>48.4.</b>
+                        
+                         DRY
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49" data-path="arg.html">
+            
+                
+                    <a href="./arg.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.</b>
+                        
+                         Program arguments
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="49.1" data-path="arg/matching.html">
+            
+                
+                    <a href="./arg/matching.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.1.</b>
+                        
+                         Argument parsing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="49.2" data-path="arg/getopts.html">
+            
+                
+                    <a href="./arg/getopts.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>49.2.</b>
+                        
+                         `getopts`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="50" data-path="simd.html">
+            
+                
+                    <a href="./simd.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>50.</b>
+                        
+                         SIMD
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="51" data-path="test.html">
+            
+                
+                    <a href="./test.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>51.</b>
+                        
+                         Testing
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="52" data-path="unsafe.html">
+            
+                
+                    <a href="./unsafe.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>52.</b>
+                        
+                         Unsafe operations
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="53" data-path="fmt.html">
+            
+                
+                    <a href="./fmt.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>53.</b>
+                        
+                         Formatting
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="54" data-path="hash.html">
+            
+                
+                    <a href="./hash.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>54.</b>
+                        
+                         HashMap
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="54.1" data-path="hash/alt-key-types.html">
+            
+                
+                    <a href="./hash/alt-key-types.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>54.1.</b>
+                        
+                         Alternate/custom key types
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="54.2" data-path="hash/hashset.html">
+            
+                
+                    <a href="./hash/hashset.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>54.2.</b>
+                        
+                         HashSet
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Rust by Example</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_54">
+                    
+                        <h1 id="8-functions">8 Functions</h1>
+<p>Functions are declared using the <code>fn</code> keyword. Its arguments are type
+annotated, just like variables, and, if the function returns a value, the
+return type must be specified after an arrow <code>-&gt;</code>.</p>
+<p>The final expression in the function will be used as return value.
+Alternatively, the <code>return</code> statement can be used to return a value earlier
+from within the function, even from inside loops or ifs.</p>
+<p>Let&#39;s rewrite FizzBuzz using functions!</p>
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">// Unlike C/C++, there&#39;s no restriction on the order of function definitions
+fn main() {
+    // We can use this function here, and define it somewhere later
+    fizzbuzz&#95;to(100);
+}
+
+// Function that returns a boolean value
+fn is&#95;divisible&#95;by(lhs: u32, rhs: u32) -&gt; bool {
+    // Corner case, early return
+    if rhs == 0 {
+        return false;
+    }
+
+    // This is an expression, the &#96;return&#96; keyword is not necessary here
+    lhs % rhs == 0
+}
+
+// Functions that &quot;don&#39;t&quot; return a value, actually return the unit type &#96;()&#96;
+fn fizzbuzz(n: u32) -&gt; () {
+    if is&#95;divisible&#95;by(n, 15) {
+        println!(&quot;fizzbuzz&quot;);
+    } else if is&#95;divisible&#95;by(n, 3) {
+        println!(&quot;fizz&quot;);
+    } else if is&#95;divisible&#95;by(n, 5) {
+        println!(&quot;buzz&quot;);
+    } else {
+        println!(&quot;{}&quot;, n);
+    }
+}
+
+// When a function returns &#96;()&#96;, the return type can be omitted from the
+// signature
+fn fizzbuzz&#95;to(n: u32) {
+    for n in 1..n + 1 {
+        fizzbuzz(n);
+    }
+}</div>
+<div id="result"></div>
+</div>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./flow_control/while_let.html" class="navigation navigation-prev " aria-label="Previous page: while let"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="./fn/unused.html" class="navigation navigation-next " aria-label="Next page: Unused"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-rust-playpen/ace/ace.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js"></script>
+    
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"rust-playpen":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
