@@ -1,5 +1,3 @@
-#![feature(core)]
-
 // If you'd like to refer to the days without saying
 // `Day::Monday`, then you use the following notation
 // use Day::{

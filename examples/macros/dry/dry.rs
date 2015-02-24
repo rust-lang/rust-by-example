@@ -60,8 +60,8 @@ mod test {
     }
 
     // test add_assign, mul_assign and sub_assign
-    test!(add_assign, 1us, 2us, 3us);
-    test!(mul_assign, 2us, 3us, 6us);
-    test!(sub_assign, 3us, 2us, 1us);
+    test!(add_assign, 1usize, 2usize, 3usize);
+    test!(mul_assign, 2usize, 3usize, 6usize);
+    test!(sub_assign, 3usize, 2usize, 1usize);
 }
 

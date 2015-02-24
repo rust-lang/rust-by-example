@@ -1,5 +1,3 @@
-#![feature(core)]
-
 use std::fmt::{self, Formatter, Display};
 // For .abs()
 use std::num::Float;
