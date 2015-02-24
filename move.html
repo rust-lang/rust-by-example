@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17" data-basepath="." data-revision="1424803064522">
+    <div class="book" data-level="17" data-basepath="." data-revision="1424804374075">
     
 
 <div class="book-summary">
@@ -2151,9 +2151,7 @@ the creation of <em>dangling pointers</em>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-
-// This function takes ownership of the heap allocated memory
+<div id="editor">// This function takes ownership of the heap allocated memory
 fn destroy&#95;box(c: Box&lt;i32&gt;) {
     println!(&quot;destroying a box that contains {}&quot;, c);
 
@@ -2171,7 +2169,7 @@ fn main() {
     println!(&quot;x is {}, and y is {}&quot;, x, y);
 
     // &#96;a&#96; is a pointer to a heap allocated integer
-    let a = box 5i32;
+    let a = Box::new(5i32);
 
     println!(&quot;a contains: {}&quot;, a);
 

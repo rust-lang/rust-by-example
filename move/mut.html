@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.1" data-basepath=".." data-revision="1424803064522">
+    <div class="book" data-level="17.1" data-basepath=".." data-revision="1424804374075">
     
 
 <div class="book-summary">
@@ -2145,10 +2145,8 @@
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-
-fn main() {
-    let immutable&#95;box = box 5u32;
+<div id="editor">fn main() {
+    let immutable&#95;box = Box::new(5u32);
 
     println!(&quot;immutable&#95;box contains {}&quot;, immutable&#95;box);
 

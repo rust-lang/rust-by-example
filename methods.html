@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="21" data-basepath="." data-revision="1424803064522">
+    <div class="book" data-level="21" data-basepath="." data-revision="1424804374075">
     
 
 <div class="book-summary">
@@ -2147,9 +2147,7 @@ defined under a <code>impl</code> block.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-
-use std::num::Float;
+<div id="editor">use std::num::Float;
 // To be able to use .abs(), you must include this
 
 struct Point {
@@ -2251,7 +2249,7 @@ fn main() {
     // Ok, mutable object can call mutable methods
     square.translate(1.0, 1.0);
 
-    let pair = Pair(box 1, box 2);
+    let pair = Pair(Box::new(1), Box::new(2));
 
     pair.destroy();
 

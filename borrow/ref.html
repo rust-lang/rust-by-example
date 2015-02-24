@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.4" data-basepath=".." data-revision="1424803064522">
+    <div class="book" data-level="18.4" data-basepath=".." data-revision="1424804374075">
     
 
 <div class="book-summary">
@@ -2146,8 +2146,7 @@ keyword can be used to take references to the fields of a struct/tuple.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-#![feature(box&#95;patterns)]
+<div id="editor">#![feature(box&#95;patterns)]
 
 #[derive(Copy)]
 struct Point { x: i32, y: i32 }
@@ -2177,7 +2176,7 @@ fn main() {
     println!(&quot;point is ({}, {})&quot;, point.x, point.y);
     println!(&quot;mutable&#95;point is ({}, {})&quot;, mutable&#95;point.x, mutable&#95;point.y);
 
-    let mut tuple = (box 5u32, 3u32);
+    let mut tuple = (Box::new(5u32), 3u32);
 
     {
         // &#96;ref&#96; can also be paired with &#96;box&#96; to take a mutable reference to

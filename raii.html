@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16" data-basepath="." data-revision="1424803064522">
+    <div class="book" data-level="16" data-basepath="." data-revision="1424804374075">
     
 
 <div class="book-summary">
@@ -2150,23 +2150,21 @@ and the resources <em>owned</em> by it are freed. This behavior shields against
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-
-fn create&#95;box() {
+<div id="editor">fn create&#95;box() {
     // Allocate an integer in the heap
-    let &#95;function&#95;box = box 3i32;
+    let &#95;function&#95;box = Box::new(3i32);
 
     // &#96;&#95;function&#95;box&#96; gets destroyed here, memory gets freed
 }
 
 fn main() {
     // Allocate an integer in the heap
-    let &#95;boxed&#95;int = box 5i32;
+    let &#95;boxed&#95;int = Box::new(5i32);
 
     // new (smaller) scope
     {
         // Another heap allocated integer
-        let &#95;short&#95;lived&#95;box = box 4i32;
+        let &#95;short&#95;lived&#95;box = Box::new(4i32);
 
         // &#96;&#95;short&#95;lived&#95;box&#96; gets destroyed here, memory gets freed
     }

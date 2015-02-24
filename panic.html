@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="23" data-basepath="." data-revision="1424803064522">
+    <div class="book" data-level="23" data-basepath="." data-revision="1424804374075">
     
 
 <div class="book-summary">
@@ -2149,9 +2149,7 @@ program to report the panic message and exit.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-
-// Re-implementation of integer division (/)
+<div id="editor">// Re-implementation of integer division (/)
 fn division(dividend: i32, divisor: i32) -&gt; i32 {
     if divisor == 0 {
         // Division by zero triggers a panic
@@ -2164,7 +2162,7 @@ fn division(dividend: i32, divisor: i32) -&gt; i32 {
 // The &#96;main&#96; task
 fn main() {
     // Heap allocated integer
-    let &#95;x = box 0i32;
+    let &#95;x = Box::new(0i32);
 
     // This operation will trigger a task failure
     division(3, 0);

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="22" data-basepath="." data-revision="1424803064522">
+    <div class="book" data-level="22" data-basepath="." data-revision="1424804374075">
     
 
 <div class="book-summary">
@@ -2148,9 +2148,7 @@ as algebraic data types
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-
-// Allow Cons and Nil to be referred to without namespacing
+<div id="editor">// Allow Cons and Nil to be referred to without namespacing
 use List::{Cons, Nil};
 
 // A linked list node, which can take on any of these two variants
@@ -2172,7 +2170,7 @@ impl List {
     // Consume a list, and return the same list with a new element at its front
     fn prepend(self, elem: u32) -&gt; List {
         // &#96;Cons&#96; also has type List
-        Cons(elem, box self)
+        Cons(elem, Box::new(self))
     }
 
     // Return the length of the list

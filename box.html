@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15" data-basepath="." data-revision="1424803064522">
+    <div class="book" data-level="15" data-basepath="." data-revision="1424804374075">
     
 
 <div class="book-summary">
@@ -2152,8 +2152,7 @@ of indirection. Alternatively, the <code>let box x = y</code> pattern can be use
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-#![feature(box&#95;patterns)]
+<div id="editor">#![feature(box&#95;patterns)]
 
 use std::mem;
 
@@ -2176,7 +2175,7 @@ fn origin() -&gt; Point {
 
 fn boxed&#95;origin() -&gt; Box&lt;Point&gt; {
     // Allocate this point in the heap, and return a pointer to it
-    box Point { x: 0.0, y: 0.0 }
+    Box::new(Point { x: 0.0, y: 0.0 })
 }
 
 fn main() {
@@ -2189,16 +2188,16 @@ fn main() {
     };
 
     // Heap allocated rectangle
-    let boxed&#95;rectangle: Box&lt;Rectangle&gt; = box Rectangle {
+    let boxed&#95;rectangle: Box&lt;Rectangle&gt; = Box::new(Rectangle {
         p1: origin(),
         p2: origin()
-    };
+    });
 
     // The output of functions can be boxed
-    let boxed&#95;point: Box&lt;Point&gt; = box origin();
+    let boxed&#95;point: Box&lt;Point&gt; = Box::new(origin());
 
     // Double indirection
-    let box&#95;in&#95;a&#95;box: Box&lt;Box&lt;Point&gt;&gt; = box boxed&#95;origin();
+    let box&#95;in&#95;a&#95;box: Box&lt;Box&lt;Point&gt;&gt; = Box::new(boxed&#95;origin());
 
     println!(&quot;Point occupies {} bytes in the stack&quot;,
              mem::size&#95;of&#95;val(&amp;point));
