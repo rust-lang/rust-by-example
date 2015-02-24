@@ -1,5 +1,3 @@
-#![feature(box_syntax)]
-
 // A unit struct without resources
 #[derive(Debug, Copy)]
 struct Nil;
@@ -19,7 +17,7 @@ fn main() {
     println!("copy: {:?}", copied_nil);
 
     // Instantiate a `Pair`
-    let pair = Pair(box 1, box 2);
+    let pair = Pair(Box::new(1), Box::new(2));
     println!("original: {:?}", pair);
 
     // Copy `pair` into `moved_pair`, moves resources
@@ -27,7 +25,7 @@ fn main() {
     println!("copy: {:?}", moved_pair);
 
     // Error! `pair` has lost it resources
-    //println!("original: {}", pair);
+    //println!("original: {:?}", pair);
     // TODO ^ Try uncommenting this line
 
     // "Clone" `moved_pair` into `cloned_pair` (resources included)
