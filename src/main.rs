@@ -1,4 +1,3 @@
-#![feature(env)]
 #![feature(old_io)]
 #![feature(old_path)]
 

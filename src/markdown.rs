@@ -52,14 +52,14 @@ impl<'a, 'b> Markdown<'a, 'b> {
         let re = Regex::new(r"\{(.*\.rs)\}").unwrap();
 
         let mut table = Vec::new();
-        for line in self.content.as_slice().lines() {
+        for line in self.content.lines() {
             match re.captures(line) {
                 None => {},
                 Some(captures) => {
                     let src = captures.at(1).unwrap();
                     let input = format!("{{{}}}", src);
                     let p = format!("examples/{}/{}/{}", prefix, id, src);
-                    let output = match file::read(&Path::new(p.as_slice())) {
+                    let output = match file::read(&Path::new(&p)) {
                         Err(_) => {
                             return Err(format!("{} not found", p));
                         },
@@ -75,8 +75,8 @@ impl<'a, 'b> Markdown<'a, 'b> {
         }
 
         for (input, output) in table.into_iter() {
-            self.content = self.content.replace(input.as_slice(),
-                                                output.as_slice());
+            self.content = self.content.replace(&input,
+                                                &output);
         }
 
         Ok(())
@@ -92,7 +92,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
         file::mkdir(&dir);
 
         let mut table = Vec::new();
-        for line in self.content.as_slice().lines() {
+        for line in self.content.lines() {
             match r.captures(line) {
                 None => {},
                 Some(captures) => {
@@ -111,8 +111,8 @@ impl<'a, 'b> Markdown<'a, 'b> {
         }
 
         for (input, output) in table.into_iter() {
-            self.content = self.content.replace(input.as_slice(),
-                                                output.as_slice());
+            self.content = self.content.replace(&input,
+                                                &output);
         }
 
         Ok(())
@@ -125,7 +125,7 @@ impl<'a, 'b> Markdown<'a, 'b> {
 
         let mut once_ = false;
         let mut table = Vec::new();
-        for line in self.content.as_slice().lines() {
+        for line in self.content.lines() {
             match re.captures(line) {
                 None => {},
                 Some(captures) => {
@@ -139,12 +139,12 @@ impl<'a, 'b> Markdown<'a, 'b> {
                     let input = format!("{{{}.play}}", srcbase);
                     let src = format!("{}.rs", srcbase);
                     let p = format!("examples/{}/{}/{}", prefix, id, src);
-                    let output = match file::read(&Path::new(p.as_slice())) {
+                    let output = match file::read(&Path::new(&p)) {
                         Err(_) => {
                             return Err(format!("{} not found", p));
                         },
                         Ok(source) => {
-                            playpen::editor(source.as_slice())
+                            playpen::editor(&source)
                         }
                     };
 
@@ -154,8 +154,8 @@ impl<'a, 'b> Markdown<'a, 'b> {
         }
 
         for (input, output) in table.into_iter() {
-            self.content = self.content.replace(input.as_slice(),
-                                                output.as_slice());
+            self.content = self.content.replace(&input,
+                                                &output);
         }
 
         Ok(())
@@ -164,6 +164,6 @@ impl<'a, 'b> Markdown<'a, 'b> {
     fn save(&self) -> Result<(), String> {
         let path = Path::new(format!("stage/{}/{}.md", self.prefix, self.id));
 
-        file::write(&path, self.content.as_slice())
+        file::write(&path, &self.content)
     }
 }
