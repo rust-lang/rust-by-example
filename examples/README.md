@@ -1,6 +1,6 @@
 # Rust by Example
 
-[Rust][rust] is a programming language with a focus on
+[Rust] is a programming language with a focus on
 type safety, memory safety, concurrency and performance.
 
 This book is a collection of bitesize examples that illustrate various rustic
