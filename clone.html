@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="35" data-basepath="." data-revision="1424804374075">
+    <div class="book" data-level="35" data-basepath="." data-revision="1424805026386">
     
 
 <div class="book-summary">
@@ -2148,9 +2148,7 @@ the <code>Clone</code> trait.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;syntax)]
-
-// A unit struct without resources
+<div id="editor">// A unit struct without resources
 #[derive(Debug, Copy)]
 struct Nil;
 
@@ -2169,7 +2167,7 @@ fn main() {
     println!(&quot;copy: {:?}&quot;, copied&#95;nil);
 
     // Instantiate a &#96;Pair&#96;
-    let pair = Pair(box 1, box 2);
+    let pair = Pair(Box::new(1), Box::new(2));
     println!(&quot;original: {:?}&quot;, pair);
 
     // Copy &#96;pair&#96; into &#96;moved&#95;pair&#96;, moves resources
@@ -2177,7 +2175,7 @@ fn main() {
     println!(&quot;copy: {:?}&quot;, moved&#95;pair);
 
     // Error! &#96;pair&#96; has lost it resources
-    //println!(&quot;original: {}&quot;, pair);
+    //println!(&quot;original: {:?}&quot;, pair);
     // TODO ^ Try uncommenting this line
 
     // &quot;Clone&quot; &#96;moved&#95;pair&#96; into &#96;cloned&#95;pair&#96; (resources included)
