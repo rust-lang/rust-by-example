@@ -10,9 +10,10 @@ fn main() {
     println!("A boolean: {:?}", a_boolean);
     println!("Meet the unit value: {:?}", unit);
 
-    // The compiler warns about unused variables; these warnings can be
-    // silenced by prefixing the variable name with an underscore
+    // The compiler warns about unused variable bindings; these warnings can
+    // be silenced by prefixing the variable name with an underscore
     let _unused_variable = 3u32;
+
     let noisy_unused_variable = 2u32;
     // FIXME ^ Prefix with an underscore to suppress the warning
 }

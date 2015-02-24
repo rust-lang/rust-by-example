@@ -1,23 +1,23 @@
 fn main() {
-    // Declare a variable
-    let a_variable;
+    // Declare a variable binding
+    let a_binding;
 
     {
         let x = 2;
 
-        // Initialize the variable
-        a_variable = x * x;
+        // Initialize the binding
+        a_binding = x * x;
     }
 
-    println!("a variable: {}", a_variable);
+    println!("a binding: {}", a_binding);
 
-    let another_variable;
+    let another_binding;
 
-    // Error! Use of uninitialized variable
-    println!("another variable: {}", another_variable);
+    // Error! Use of uninitialized binding
+    println!("another binding: {}", another_binding);
     // FIXME ^ Comment out this line
 
-    another_variable = 1;
+    another_binding = 1;
 
-    println!("another variable: {}", another_variable);
+    println!("another binding: {}", another_binding);
 }
