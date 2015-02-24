@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../variables/scope.html" />
+    <link rel="next" href="../variable_bindings/scope.html" />
     
     
-    <link rel="prev" href="../variables.html" />
+    <link rel="prev" href="../variable_bindings.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.1" data-basepath=".." data-revision="1424817810645">
+    <div class="book" data-level="4.1" data-basepath=".." data-revision="1424820791375">
     
 
 <div class="book-summary">
@@ -118,15 +118,15 @@
         </li>
     
         
-        <li class="chapter " data-level="4" data-path="variables.html">
+        <li class="chapter " data-level="4" data-path="variable_bindings.html">
             
                 
-                    <a href="../variables.html">
+                    <a href="../variable_bindings.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
-                         Variables
+                         Variable Bindings
                     </a>
                 
             
@@ -135,10 +135,10 @@
                 
     
         
-        <li class="chapter active" data-level="4.1" data-path="variables/mut.html">
+        <li class="chapter active" data-level="4.1" data-path="variable_bindings/mut.html">
             
                 
-                    <a href="../variables/mut.html">
+                    <a href="../variable_bindings/mut.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.1.</b>
@@ -151,10 +151,10 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="variables/scope.html">
+        <li class="chapter " data-level="4.2" data-path="variable_bindings/scope.html">
             
                 
-                    <a href="../variables/scope.html">
+                    <a href="../variable_bindings/scope.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.2.</b>
@@ -167,10 +167,10 @@
         </li>
     
         
-        <li class="chapter " data-level="4.3" data-path="variables/declare.html">
+        <li class="chapter " data-level="4.3" data-path="variable_bindings/declare.html">
             
                 
-                    <a href="../variables/declare.html">
+                    <a href="../variable_bindings/declare.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.3.</b>
@@ -2141,24 +2141,24 @@
                     <section class="normal" id="section-gitbook_112">
                     
                         <h2 id="41-mutability">4.1 Mutability</h2>
-<p>Variables are immutable by default, but this can be overridden using the <code>mut</code>
-modifier.</p>
+<p>Variable bindings are immutable by default, but this can be overridden using
+the <code>mut</code> modifier.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
-    let &#95;immutable&#95;variable = 1;
-    let mut mutable&#95;variable = 1;
+    let &#95;immutable&#95;binding = 1;
+    let mut mutable&#95;binding = 1;
 
-    println!(&quot;Before mutation: {}&quot;, mutable&#95;variable);
+    println!(&quot;Before mutation: {}&quot;, mutable&#95;binding);
 
     // Ok
-    mutable&#95;variable += 1;
+    mutable&#95;binding += 1;
 
-    println!(&quot;After mutation: {}&quot;, mutable&#95;variable);
+    println!(&quot;After mutation: {}&quot;, mutable&#95;binding);
 
     // Error!
-    &#95;immutable&#95;variable += 1;
+    &#95;immutable&#95;binding += 1;
     // FIXME ^ Comment out this line
 }</div>
 <div id="result"></div>
@@ -2175,10 +2175,10 @@ modifier.</p>
         </div>
 
         
-        <a href="../variables.html" class="navigation navigation-prev " aria-label="Previous page: Variables"><i class="fa fa-angle-left"></i></a>
+        <a href="../variable_bindings.html" class="navigation navigation-prev " aria-label="Previous page: Variable Bindings"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../variables/scope.html" class="navigation navigation-next " aria-label="Next page: Scope and shadowing"><i class="fa fa-angle-right"></i></a>
+        <a href="../variable_bindings/scope.html" class="navigation navigation-next " aria-label="Next page: Scope and shadowing"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

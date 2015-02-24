@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="5.3" data-basepath=".." data-revision="1424817810645">
+    <div class="book" data-level="5.3" data-basepath=".." data-revision="1424820791375">
     
 
 <div class="book-summary">
@@ -118,15 +118,15 @@
         </li>
     
         
-        <li class="chapter " data-level="4" data-path="variables.html">
+        <li class="chapter " data-level="4" data-path="variable_bindings.html">
             
                 
-                    <a href="../variables.html">
+                    <a href="../variable_bindings.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
-                         Variables
+                         Variable Bindings
                     </a>
                 
             
@@ -135,10 +135,10 @@
                 
     
         
-        <li class="chapter " data-level="4.1" data-path="variables/mut.html">
+        <li class="chapter " data-level="4.1" data-path="variable_bindings/mut.html">
             
                 
-                    <a href="../variables/mut.html">
+                    <a href="../variable_bindings/mut.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.1.</b>
@@ -151,10 +151,10 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="variables/scope.html">
+        <li class="chapter " data-level="4.2" data-path="variable_bindings/scope.html">
             
                 
-                    <a href="../variables/scope.html">
+                    <a href="../variable_bindings/scope.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.2.</b>
@@ -167,10 +167,10 @@
         </li>
     
         
-        <li class="chapter " data-level="4.3" data-path="variables/declare.html">
+        <li class="chapter " data-level="4.3" data-path="variable_bindings/declare.html">
             
                 
-                    <a href="../variables/declare.html">
+                    <a href="../variable_bindings/declare.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.3.</b>
@@ -2150,15 +2150,15 @@ to infer its type. Here&#39;s an advanced example of type inference:</p>
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
-    // Using local inference, the compiler knows that &#96;elem&#96; has type u8
+    // Because of the annotation, the compiler knows that &#96;elem&#96; has type u8.
     let elem = 5u8;
 
-    // Create an empty vector (a growable array)
+    // Create an empty vector (a growable array).
     let mut vec = Vec::new();
     // At this point the compiler doesn&#39;t know the exact type of &#96;vec&#96;, it
-    // just knows that it&#39;s a vector of something (&#96;Vec&lt;&#95;&gt;&#96;)
+    // just knows that it&#39;s a vector of something (&#96;Vec&lt;&#95;&gt;&#96;).
 
-    // Insert &#96;elem&#96; in the vector
+    // Insert &#96;elem&#96; in the vector.
     vec.push(elem);
     // Aha! Now the compiler knows that &#96;vec&#96; is a vector of &#96;u8&#96;s (&#96;Vec&lt;u8&gt;&#96;)
     // TODO ^ Try commenting out the &#96;vec.push(elem)&#96; line

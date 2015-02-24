@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Variables | Rust by Example</title>
+        <title>Variable Bindings | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="./variables/mut.html" />
+    <link rel="next" href="./variable_bindings/mut.html" />
     
     
     <link rel="prev" href="./literals.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4" data-basepath="." data-revision="1424817810645">
+    <div class="book" data-level="4" data-basepath="." data-revision="1424820791375">
     
 
 <div class="book-summary">
@@ -118,15 +118,15 @@
         </li>
     
         
-        <li class="chapter active" data-level="4" data-path="variables.html">
+        <li class="chapter active" data-level="4" data-path="variable_bindings.html">
             
                 
-                    <a href="./variables.html">
+                    <a href="./variable_bindings.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
-                         Variables
+                         Variable Bindings
                     </a>
                 
             
@@ -135,10 +135,10 @@
                 
     
         
-        <li class="chapter " data-level="4.1" data-path="variables/mut.html">
+        <li class="chapter " data-level="4.1" data-path="variable_bindings/mut.html">
             
                 
-                    <a href="./variables/mut.html">
+                    <a href="./variable_bindings/mut.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.1.</b>
@@ -151,10 +151,10 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="variables/scope.html">
+        <li class="chapter " data-level="4.2" data-path="variable_bindings/scope.html">
             
                 
-                    <a href="./variables/scope.html">
+                    <a href="./variable_bindings/scope.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.2.</b>
@@ -167,10 +167,10 @@
         </li>
     
         
-        <li class="chapter " data-level="4.3" data-path="variables/declare.html">
+        <li class="chapter " data-level="4.3" data-path="variable_bindings/declare.html">
             
                 
-                    <a href="./variables/declare.html">
+                    <a href="./variable_bindings/declare.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.3.</b>
@@ -2140,7 +2140,7 @@
                 
                     <section class="normal" id="section-gitbook_114">
                     
-                        <h1 id="4-variables">4 Variables</h1>
+                        <h1 id="4-variable-bindings">4 Variable Bindings</h1>
 <p>Values (like literals) can be bound to variables, using the <code>let</code> binding.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2157,9 +2157,10 @@
     println!(&quot;A boolean: {:?}&quot;, a&#95;boolean);
     println!(&quot;Meet the unit value: {:?}&quot;, unit);
 
-    // The compiler warns about unused variables; these warnings can be
-    // silenced by prefixing the variable name with an underscore
+    // The compiler warns about unused variable bindings; these warnings can
+    // be silenced by prefixing the variable name with an underscore
     let &#95;unused&#95;variable = 3u32;
+
     let noisy&#95;unused&#95;variable = 2u32;
     // FIXME ^ Prefix with an underscore to suppress the warning
 }</div>
@@ -2178,7 +2179,7 @@
         <a href="./literals.html" class="navigation navigation-prev " aria-label="Previous page: Literals and operators"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./variables/mut.html" class="navigation navigation-next " aria-label="Next page: Mutability"><i class="fa fa-angle-right"></i></a>
+        <a href="./variable_bindings/mut.html" class="navigation navigation-next " aria-label="Next page: Mutability"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

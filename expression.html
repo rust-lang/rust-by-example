@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="6" data-basepath="." data-revision="1424817810645">
+    <div class="book" data-level="6" data-basepath="." data-revision="1424820791375">
     
 
 <div class="book-summary">
@@ -118,15 +118,15 @@
         </li>
     
         
-        <li class="chapter " data-level="4" data-path="variables.html">
+        <li class="chapter " data-level="4" data-path="variable_bindings.html">
             
                 
-                    <a href="./variables.html">
+                    <a href="./variable_bindings.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
-                         Variables
+                         Variable Bindings
                     </a>
                 
             
@@ -135,10 +135,10 @@
                 
     
         
-        <li class="chapter " data-level="4.1" data-path="variables/mut.html">
+        <li class="chapter " data-level="4.1" data-path="variable_bindings/mut.html">
             
                 
-                    <a href="./variables/mut.html">
+                    <a href="./variable_bindings/mut.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.1.</b>
@@ -151,10 +151,10 @@
         </li>
     
         
-        <li class="chapter " data-level="4.2" data-path="variables/scope.html">
+        <li class="chapter " data-level="4.2" data-path="variable_bindings/scope.html">
             
                 
-                    <a href="./variables/scope.html">
+                    <a href="./variable_bindings/scope.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.2.</b>
@@ -167,10 +167,10 @@
         </li>
     
         
-        <li class="chapter " data-level="4.3" data-path="variables/declare.html">
+        <li class="chapter " data-level="4.3" data-path="variable_bindings/declare.html">
             
                 
-                    <a href="./variables/declare.html">
+                    <a href="./variable_bindings/declare.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.3.</b>
@@ -2141,15 +2141,27 @@
                     <section class="normal" id="section-gitbook_31">
                     
                         <h1 id="6-expressions">6 Expressions</h1>
-<p>In Rust, almost every statement is an expression, meaning that the statement
-returns a value. This may not always be desired, so the output can be
-suppressed by ending the expression with a semicolon <code>;</code>.</p>
-<p>Blocks are expressions too, so they can be used as
-<a href="https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue" target="_blank">r-values</a>
-in assignments. The last expression in the block will be assigned to the
-<a href="https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue" target="_blank">l-value</a>.
-However, if the last expression of the block ends with a semicolon, the
-return value will be <code>()</code>.</p>
+<p>A Rust program is (mostly) made up of a series of statements:</p>
+<pre><code>fn main() {
+    // statement
+    // statement
+    // statement
+}
+</code></pre><p>There are a few kinds of statements in Rust. The most common two are declaring
+a variable binding, and using a <code>;</code> with an expression:</p>
+<pre><code>fn main() {
+    // variable binding
+    let x = 5;
+
+    // expression;
+    x;
+    x + 1;
+    15;
+}
+</code></pre><p>Blocks are expressions too, so they can be used as <a href="https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue" target="_blank">r-values</a> in
+assignments. The last expression in the block will be assigned to the
+<a href="https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue" target="_blank">l-value</a>. However, if the last expression of the block ends with a
+semicolon, the return value will be <code>()</code>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
