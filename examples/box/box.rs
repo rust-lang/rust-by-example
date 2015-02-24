@@ -1,5 +1,3 @@
-#![feature(box_patterns)]
-
 use std::mem;
 
 #[allow(dead_code)]
@@ -62,9 +60,4 @@ fn main() {
     let unboxed_point: Point = *boxed_point;
     println!("Unboxed point occupies {} bytes in the stack",
              mem::size_of_val(&unboxed_point));
-
-    // Unboxing via a destructuring pattern
-    let box another_unboxed_point = boxed_point;
-    println!("Another unboxed point occupies {} bytes in the stack",
-             mem::size_of_val(&another_unboxed_point));
 }
