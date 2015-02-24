@@ -1,5 +1,5 @@
 #![feature(core)]
-#![feature(io)]
+#![feature(old_io)]
 #![feature(std_misc)]
 
 use std::old_io::Timer;

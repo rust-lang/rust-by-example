@@ -1,5 +1,3 @@
-#![feature(std_misc)]
-
 use std::thread;
 
 static NTHREADS: i32 = 10;

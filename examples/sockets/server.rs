@@ -1,5 +1,5 @@
-#![feature(io)]
-#![feature(path)]
+#![feature(old_io)]
+#![feature(old_path)]
 
 use common::SOCKET_PATH;
 use std::old_io::fs;

@@ -1,7 +1,7 @@
-#![feature(io)]
-#![feature(core)]
-#![feature(path)]
+#![feature(old_io)]
+#![feature(old_path)]
 #![feature(env)]
+#![feature(core)]
 
 use std::env;
 use common::SOCKET_PATH;

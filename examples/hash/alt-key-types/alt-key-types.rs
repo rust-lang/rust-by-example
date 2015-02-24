@@ -1,5 +1,3 @@
-#![feature(hash)]
-
 use std::collections::HashMap;
 
 // Eq requires that you derive PartialEq on the type.
