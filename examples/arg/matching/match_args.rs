@@ -1,4 +1,3 @@
-#![feature(core)]
 #![feature(env)]
 
 use std::env;
@@ -23,14 +22,14 @@ fn main() {
     let args: Vec<String> = env::args().map(|x| x.to_string())
                                        .collect();
 
-    match args.as_slice() {
+    match &args[..] {
         // no arguments passed
         [ref name] => {
             println!("My name is '{}'. Try passing some arguments!", name);
         },
         // one argument passed
         [_, ref string] => {
-            if string.as_slice() == "42" {
+            if string == &"42" {
                 println!("This is the answer!");
             } else {
                 println!("This is not the answer.");
@@ -50,7 +49,7 @@ fn main() {
                 },
             };
             // parse the command
-            match cmd.as_slice() {
+            match &cmd[..] {
                 "increase" => increase(number),
                 "decrease" => decrease(number),
                 _ => {

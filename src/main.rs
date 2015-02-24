@@ -1,7 +1,6 @@
 #![feature(env)]
 #![feature(old_io)]
 #![feature(old_path)]
-#![feature(core)]
 
 #![deny(warnings)]
 #![feature(int_uint)]
@@ -47,7 +46,7 @@ fn main() {
                          .collect::<Vec<String>>()
                          .connect("\n");
 
-    match file::write(&Path::new("stage/SUMMARY.md"), summary.as_slice()) {
+    match file::write(&Path::new("stage/SUMMARY.md"), &summary) {
         Err(why) => panic!("{}", why),
         Ok(_) => {},
     }
