@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15" data-basepath="." data-revision="1424805026386">
+    <div class="book" data-level="15" data-basepath="." data-revision="1424811746915">
     
 
 <div class="book-summary">
@@ -2152,9 +2152,7 @@ of indirection. Alternatively, the <code>let box x = y</code> pattern can be use
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(box&#95;patterns)]
-
-use std::mem;
+<div id="editor">use std::mem;
 
 #[allow(dead&#95;code)]
 #[derive(Copy)]
@@ -2216,11 +2214,6 @@ fn main() {
     let unboxed&#95;point: Point = &#42;boxed&#95;point;
     println!(&quot;Unboxed point occupies {} bytes in the stack&quot;,
              mem::size&#95;of&#95;val(&amp;unboxed&#95;point));
-
-    // Unboxing via a destructuring pattern
-    let box another&#95;unboxed&#95;point = boxed&#95;point;
-    println!(&quot;Another unboxed point occupies {} bytes in the stack&quot;,
-             mem::size&#95;of&#95;val(&amp;another&#95;unboxed&#95;point));
 }</div>
 <div id="result"></div>
 </div>
