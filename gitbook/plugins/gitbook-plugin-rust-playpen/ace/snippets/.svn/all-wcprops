@@ -3,12 +3,6 @@ svn:wc:ra_dav:version-url
 V 66
 /ajaxorg/ace-builds/!svn/ver/111/trunk/src-min-noconflict/snippets
 END
-coffee.js
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/coffee.js
-END
 jsp.js
 K 25
 svn:wc:ra_dav:version-url
@@ -734,4 +728,10 @@ K 25
 svn:wc:ra_dav:version-url
 V 74
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/pgsql.js
+END
+coffee.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/coffee.js
 END
