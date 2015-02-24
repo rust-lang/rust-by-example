@@ -1,4 +1,3 @@
-#![feature(core)]
 #![feature(collections)]
 
 struct Book {
@@ -9,7 +8,7 @@ struct Book {
 }
 
 fn get_title<'a>(book: &'a Book) -> &'a str {
-    book.title.as_slice()
+    &book.title
 }
 
 fn main() {

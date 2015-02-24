@@ -1,7 +1,6 @@
 #![feature(old_io)]
 #![feature(old_path)]
 #![feature(env)]
-#![feature(core)]
 
 use std::env;
 use common::SOCKET_PATH;
@@ -16,10 +15,9 @@ fn main() {
     let socket = Path::new(SOCKET_PATH);
 
     // First argument is the message to be sent
-    let message = match args.as_slice() {
-        [_, ref message] => message.as_slice(),
-        _ => panic!("wrong number of arguments"),
-    };
+    if args.len() != 2 {
+        panic!("wrong number of arguments");
+    }
 
     // Connect to socket
     let mut stream = match UnixStream::connect(&socket) {
@@ -28,7 +26,7 @@ fn main() {
     };
 
     // Send message
-    match stream.write_str(message) {
+    match stream.write_str(&args[1]) {
         Err(_) => panic!("couldn't send message"),
         Ok(_) => {}
     }

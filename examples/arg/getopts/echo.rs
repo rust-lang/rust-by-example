@@ -1,13 +1,11 @@
 #![feature(old_io)]
 #![feature(rustc_private)]
 #![feature(env)]
-#![feature(core)]
 #![feature(collections)]
 
 extern crate getopts;
 
 use std::env;
-use std::old_io::{print, println};
 use std::old_io::stdio;
 
 static VERSION: &'static str = "1.0.0";
@@ -47,8 +45,9 @@ fn main() {
         println!(" {} [SHORT-OPTION]... [STRING]...", program);
         println!(" {} LONG-OPTION", program);
         println!("");
-        println(getopts::usage("Echo the STRING(s) to standard output.", &opts)
-                .as_slice());
+        let usage = getopts::usage("Echo the STRING(s) to standard output.",
+                                    &opts);
+        println!("{}", usage);
         return;
     }
 
@@ -60,7 +59,7 @@ fn main() {
     if !matches.free.is_empty() {
         //^ `matches.free` contains all the arguments that are not options.
         let string = matches.free.connect(" ");
-        print(string.as_slice());
+        println!("{}", string);
     }
 
     if !matches.opt_present("n") {
