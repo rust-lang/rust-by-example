@@ -15,9 +15,9 @@ WHITELIST = examples/attribute/cfg/custom/custom.rs \
             examples/print/print.rs \
             examples/type/cast/cast.rs \
             examples/type/type.rs \
-            examples/variables/scope/scope.rs \
-            examples/variables/mut/mut.rs \
-            examples/variables/declare/declare.rs \
+            examples/variable_bindings/scope/scope.rs \
+            examples/variable_bindings/mut/mut.rs \
+            examples/variable_bindings/declare/declare.rs \
             examples/vec/vec.rs
 
 srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))

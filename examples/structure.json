@@ -2,7 +2,7 @@
   { "id": "hello", "title": "Hello World", "children": null },
   { "id": "print", "title": "Formatted print", "children": null },
   { "id": "literals", "title": "Literals and operators", "children": null },
-  { "id": "variables", "title": "Variables", "children": [
+  { "id": "variable_bindings", "title": "Variable Bindings", "children": [
       { "id": "mut", "title": "Mutability", "children": null },
       { "id": "scope", "title": "Scope and shadowing", "children": null },
       { "id": "declare", "title": "Declare first", "children": null }
