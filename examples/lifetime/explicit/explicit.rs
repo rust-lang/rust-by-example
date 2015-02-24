@@ -1,5 +1,3 @@
-#![feature(collections)]
-
 struct Book {
     // `String` is a heap allocated string
     title: String,
@@ -15,8 +13,8 @@ fn main() {
     let geb = Book {
         // construct a `String` from a reference to a string (`&'static str`)
         // by copying of the data
-        author: String::from_str("Douglas Hofstadter"),
-        title: String::from_str("Godel, Escher, Bach"),
+        author: "Douglas Hofstadter".to_string(),
+        title: "Godel, Escher, Bach".to_string(),
         year: 1979,
     };
 
