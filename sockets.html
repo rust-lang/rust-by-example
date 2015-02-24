@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="39" data-basepath="." data-revision="1424799934078">
+    <div class="book" data-level="39" data-basepath="." data-revision="1424803064522">
     
 
 <div class="book-summary">
@@ -2153,7 +2153,6 @@ accomplished using
 #![feature(old_io)]
 #![feature(old_path)]
 #![feature(env)]
-#![feature(core)]
 
 <span class="hljs-keyword">use</span> std::env;
 <span class="hljs-keyword">use</span> common::SOCKET_PATH;
@@ -2168,10 +2167,9 @@ accomplished using
     <span class="hljs-keyword">let</span> socket = Path::new(SOCKET_PATH);
 
     <span class="hljs-comment">// First argument is the message to be sent</span>
-    <span class="hljs-keyword">let</span> message = <span class="hljs-keyword">match</span> args.as_slice() {
-        [<span class="hljs-number">_</span>, <span class="hljs-keyword">ref</span> message] =&gt; message.as_slice(),
-        <span class="hljs-number">_</span> =&gt; panic!(<span class="hljs-string">"wrong number of arguments"</span>),
-    };
+    <span class="hljs-keyword">if</span> args.len() != <span class="hljs-number">2</span> {
+        panic!(<span class="hljs-string">"wrong number of arguments"</span>);
+    }
 
     <span class="hljs-comment">// Connect to socket</span>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> stream = <span class="hljs-keyword">match</span> UnixStream::connect(&amp;socket) {
@@ -2180,7 +2178,7 @@ accomplished using
     };
 
     <span class="hljs-comment">// Send message</span>
-    <span class="hljs-keyword">match</span> stream.write_str(message) {
+    <span class="hljs-keyword">match</span> stream.write_str(&amp;args[<span class="hljs-number">1</span>]) {
         Err(<span class="hljs-number">_</span>) =&gt; panic!(<span class="hljs-string">"couldn't send message"</span>),
         Ok(<span class="hljs-number">_</span>) =&gt; {}
     }

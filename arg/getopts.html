@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.2" data-basepath=".." data-revision="1424799934078">
+    <div class="book" data-level="49.2" data-basepath=".." data-revision="1424803064522">
     
 
 <div class="book-summary">
@@ -2149,13 +2149,11 @@
 <div id="editor">#![feature(old&#95;io)]
 #![feature(rustc&#95;private)]
 #![feature(env)]
-#![feature(core)]
 #![feature(collections)]
 
 extern crate getopts;
 
 use std::env;
-use std::old&#95;io::{print, println};
 use std::old&#95;io::stdio;
 
 static VERSION: &amp;&#39;static str = &quot;1.0.0&quot;;
@@ -2195,8 +2193,9 @@ fn main() {
         println!(&quot; {} [SHORT-OPTION]... [STRING]...&quot;, program);
         println!(&quot; {} LONG-OPTION&quot;, program);
         println!(&quot;&quot;);
-        println(getopts::usage(&quot;Echo the STRING(s) to standard output.&quot;, &amp;opts)
-                .as&#95;slice());
+        let usage = getopts::usage(&quot;Echo the STRING(s) to standard output.&quot;,
+                                    &amp;opts);
+        println!(&quot;{}&quot;, usage);
         return;
     }
 
@@ -2208,7 +2207,7 @@ fn main() {
     if !matches.free.is&#95;empty() {
         //^ &#96;matches.free&#96; contains all the arguments that are not options.
         let string = matches.free.connect(&quot; &quot;);
-        print(string.as&#95;slice());
+        println!(&quot;{}&quot;, string);
     }
 
     if !matches.opt&#95;present(&quot;n&quot;) {

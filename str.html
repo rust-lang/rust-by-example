@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="34" data-basepath="." data-revision="1424799934078">
+    <div class="book" data-level="34" data-basepath="." data-revision="1424803064522">
     
 
 <div class="book-summary">
@@ -2151,7 +2151,6 @@ can be used to view into a <code>String</code>, just like <code>&amp;[T]</code> 
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">#![feature(collections)]
-#![feature(core)]
 #![feature(str&#95;words)]
 
 fn main() {
@@ -2183,7 +2182,7 @@ fn main() {
     // The trimmed string is a slice to the original string, hence no new
     // allocation is performed
     let chars&#95;to&#95;trim: &amp;[char] = &amp;[&#39; &#39;, &#39;,&#39;];
-    let trimmed&#95;str: &amp;str = string.as&#95;slice().trim&#95;matches(chars&#95;to&#95;trim);
+    let trimmed&#95;str: &amp;str = string.trim&#95;matches(chars&#95;to&#95;trim);
     println!(&quot;Used characters: {}&quot;, trimmed&#95;str);
 
     // Heap allocate a string

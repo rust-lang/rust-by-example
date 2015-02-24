@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="49.1" data-basepath=".." data-revision="1424799934078">
+    <div class="book" data-level="49.1" data-basepath=".." data-revision="1424803064522">
     
 
 <div class="book-summary">
@@ -2145,8 +2145,7 @@
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(core)]
-#![feature(env)]
+<div id="editor">#![feature(env)]
 
 use std::env;
 
@@ -2170,14 +2169,14 @@ fn main() {
     let args: Vec&lt;String&gt; = env::args().map(|x| x.to&#95;string())
                                        .collect();
 
-    match args.as&#95;slice() {
+    match &amp;args[..] {
         // no arguments passed
         [ref name] =&gt; {
             println!(&quot;My name is &#39;{}&#39;. Try passing some arguments!&quot;, name);
         },
         // one argument passed
         [&#95;, ref string] =&gt; {
-            if string.as&#95;slice() == &quot;42&quot; {
+            if string == &amp;&quot;42&quot; {
                 println!(&quot;This is the answer!&quot;);
             } else {
                 println!(&quot;This is not the answer.&quot;);
@@ -2197,7 +2196,7 @@ fn main() {
                 },
             };
             // parse the command
-            match cmd.as&#95;slice() {
+            match &amp;cmd[..] {
                 &quot;increase&quot; =&gt; increase(number),
                 &quot;decrease&quot; =&gt; decrease(number),
                 &#95; =&gt; {
