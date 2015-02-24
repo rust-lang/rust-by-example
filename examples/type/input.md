@@ -1,4 +1,4 @@
-Rust provides type safety via its static type-checker. Variables can be type
+Rust provides type safety via static typing. Variable bindingss can be type
 annotated when declared. However, in most cases, the compiler will be able to
 infer the type of the variable from the context, heavily reducing the
 annotation burden.

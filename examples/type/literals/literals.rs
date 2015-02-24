@@ -14,9 +14,4 @@ fn main() {
     println!("size of `z` in bytes: {}", std::mem::size_of_val(&z));
     println!("size of `i` in bytes: {}", std::mem::size_of_val(&i));
     println!("size of `f` in bytes: {}", std::mem::size_of_val(&f));
-
-    // Constraints (summands must have the same type) for `i` and `f`
-    let _constraint_i = x + i;
-    let _constraint_f = z + f;
-    // TODO ^ Try commenting out these two lines
 }
