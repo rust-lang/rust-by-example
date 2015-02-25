@@ -10,5 +10,5 @@ When the `crate_type` attribute is used, we no longer need to pass the
 ```
 $ rustc lib.rs
 $ ls lib*
-liberty.rlib
+library.rlib
 ```
