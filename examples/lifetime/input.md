@@ -1,12 +1,10 @@
 The compiler enforces valid borrowing using its borrow checker. To accomplish
-this, it keeps track of two things:
-* The *lifetime* of objects, and
-* The scope of blocks
+this, it keeps track of the scope of blocks.
 
 The lifetime of an object starts when the object is created and ends when it
 goes out of scope (i.e. it gets destroyed, because of the RAII discipline).
 
-A lifetime looks like this: `'burrito`, which reads as: "lifetime burrito".
+A lifetime looks like this: `'burrito`, which reads as: "the lifetime burrito".
 
 All references actually have a type signature of the form `&'a T`, where
 `'a` is the lifetime of the *referenced* object. The compiler takes care of
@@ -15,7 +13,7 @@ inserting the lifetime part `'a` so we can simply type annotate references with
 
 For example:
 
-``` rust
+```rust
 let integer: int = 5;
 let ref_to_int: &int = &integer;
 ```
