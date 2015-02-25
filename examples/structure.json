@@ -39,7 +39,7 @@
   ] },
   { "id": "mod", "title": "Modules", "children": [
       { "id": "visibility", "title": "Visibility", "children": null },
-      { "id": "use", "title": "The `use` import", "children": null },
+      { "id": "use", "title": "The `use` declaration", "children": null },
       { "id": "super", "title": "`super` and `self`", "children": null },
       { "id": "split", "title": "File hierarchy", "children": null }
   ] },
