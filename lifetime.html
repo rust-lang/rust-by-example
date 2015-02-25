@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="19" data-basepath="." data-revision="1424891630839">
+    <div class="book" data-level="19" data-basepath="." data-revision="1424895260765">
     
 
 <div class="book-summary">
@@ -2142,14 +2142,10 @@
                     
                         <h1 id="19-lifetimes">19 Lifetimes</h1>
 <p>The compiler enforces valid borrowing using its borrow checker. To accomplish
-this, it keeps track of two things:</p>
-<ul>
-<li>The <em>lifetime</em> of objects, and</li>
-<li>The scope of blocks</li>
-</ul>
+this, it keeps track of the scope of blocks.</p>
 <p>The lifetime of an object starts when the object is created and ends when it
 goes out of scope (i.e. it gets destroyed, because of the RAII discipline).</p>
-<p>A lifetime looks like this: <code>&#39;burrito</code>, which reads as: &quot;lifetime burrito&quot;.</p>
+<p>A lifetime looks like this: <code>&#39;burrito</code>, which reads as: &quot;the lifetime burrito&quot;.</p>
 <p>All references actually have a type signature of the form <code>&amp;&#39;a T</code>, where
 <code>&#39;a</code> is the lifetime of the <em>referenced</em> object. The compiler takes care of
 inserting the lifetime part <code>&#39;a</code> so we can simply type annotate references with
