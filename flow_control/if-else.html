@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="7.1" data-basepath=".." data-revision="1424822843756">
+    <div class="book" data-level="7.1" data-basepath=".." data-revision="1424824038859">
     
 
 <div class="book-summary">
@@ -2141,15 +2141,15 @@
                     <section class="normal" id="section-gitbook_37">
                     
                         <h2 id="71-ifelse">7.1 if/else</h2>
-<p>Branching with if-else is similar to C. Unlike C, the boolean condition doesn&#39;t
-need to be surrounded by parentheses, and each condition is followed by a
-block. If-else conditionals are expressions too, and, because of Rust&#39;s type
-safety, all branches must return the same type.</p>
+<p>Branching with <code>if</code>-<code>else</code> is similar to other languages. Unlike many of them,
+the boolean condition doesn&#39;t need to be surrounded by parentheses, and each
+condition is followed by a block. <code>if</code>-<code>else</code> conditionals are expressions,
+and, all branches must return the same type.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
-    let n = 5i32;
+    let n = 5;
 
     if n &lt; 0 {
         print!(&quot;{} is negative&quot;, n);
@@ -2163,16 +2163,16 @@ safety, all branches must return the same type.</p>
         if n &lt; 10 &amp;&amp; n &gt; -10 {
             println!(&quot;, and is a small number, increase ten-fold&quot;);
 
-            // This expression returns an &#96;int&#96;
+            // This expression returns an &#96;i32&#96;.
             10 &#42; n
         } else {
             println!(&quot;, and is a big number, reduce by two&quot;);
 
-            // This expression must return an &#96;int&#96; as well
+            // This expression must return an &#96;i32&#96; as well.
             n / 2
-            // TODO ^ Try suppressing this expression with a semicolon
+            // TODO ^ Try suppressing this expression with a semicolon.
         };
-    //   ^ Don&#39;t forget to put a semicolon here! All the &#96;let&#96; bindings need it
+    //   ^ Don&#39;t forget to put a semicolon here! All &#96;let&#96; bindings need it.
 
     println!(&quot;{} -&gt; {}&quot;, n, big&#95;n);
 }</div>
