@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18" data-basepath="." data-revision="1424879098022">
+    <div class="book" data-level="18" data-basepath="." data-revision="1424889833853">
     
 
 <div class="book-summary">
@@ -649,7 +649,7 @@
                         
                             <b>9.2.</b>
                         
-                         The `use` import
+                         The `use` declaration
                     </a>
                 
             
@@ -2152,24 +2152,24 @@ fn eat&#95;box(boxed&#95;int: Box&lt;i32&gt;) {
     println!(&quot;destroying box that contains {}&quot;, boxed&#95;int);
 }
 
-// This function borrows the box
-fn peep&#95;inside&#95;box(borrowed&#95;box: &amp;Box&lt;i32&gt;) {
-    println!(&quot;This box contains {}&quot;, borrowed&#95;box);
+// This function borrows an i32 instead
+fn peep&#95;inside&#95;box(borrowed&#95;int: &amp;i32) {
+    println!(&quot;This int is: {}&quot;, borrowed&#95;int);
 }
 
 fn main() {
     // A boxed integer
     let boxed&#95;int = Box::new(5);
 
-    // Borrow the box, ownership is not taken
+    // Borrow the contents of the box, ownership is not taken
     peep&#95;inside&#95;box(&amp;boxed&#95;int);
 
-    // The box can be borrowed again
+    // The contents can be borrowed again
     peep&#95;inside&#95;box(&amp;boxed&#95;int);
 
     {
         // Take a reference to the data contained inside the box
-        let &#95;ref&#95;to&#95;int: &amp;i32 = &amp;&#42;boxed&#95;int;
+        let &#95;ref&#95;to&#95;int: &amp;i32 = &amp;boxed&#95;int;
 
         // Error! Can&#39;t destroy boxed&#95;int, while the inner value has been
         // borrowed

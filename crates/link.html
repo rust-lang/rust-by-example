@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10.2" data-basepath=".." data-revision="1424879098022">
+    <div class="book" data-level="10.2" data-basepath=".." data-revision="1424889833853">
     
 
 <div class="book-summary">
@@ -649,7 +649,7 @@
                         
                             <b>9.2.</b>
                         
-                         The `use` import
+                         The `use` declaration
                     </a>
                 
             
@@ -2142,27 +2142,27 @@
                     
                         <h2 id="102-extern-crate">10.2 <code>extern crate</code></h2>
 <p>To link a crate to this new library, the <code>extern crate</code> declaration must be
-used. This will not only link the library, but also import all its items
-under a module named the same as the library. The visibility rules that apply
-to modules also apply to libraries.</p>
+used. This will not only link the library, but also import all its items under
+a module named the same as the library. The visibility rules that apply to
+modules also apply to libraries.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// executable.rs</span>
-<span class="hljs-comment">// Link to `liberty`, import items under the `erty` module</span>
-<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> erty;
+<span class="hljs-comment">// Link to `library`, import items under the `rary` module</span>
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> rary;
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    erty::public_function();
+    rary::public_function();
 
     <span class="hljs-comment">// Error! `private_function` is private</span>
-    <span class="hljs-comment">//erty::private_function();</span>
+    <span class="hljs-comment">//rary::private_function();</span>
 
-    erty::indirect_access();
+    rary::indirect_access();
 }
 </code></pre>
 <pre><code># The `-L .` argument adds the current directory to the library search path
 $ rustc -L . executable.rs &amp;&amp; ./executable
-called erty&#39;s `public_function()`
-called erty&#39;s `indirect_access()`, that
-&gt; called erty&#39;s `private_function()`
+called rary&#39;s `public_function()`
+called rary&#39;s `indirect_access()`, that
+&gt; called rary&#39;s `private_function()`
 </code></pre>
                     
                     </section>

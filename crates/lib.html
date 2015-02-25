@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10.1" data-basepath=".." data-revision="1424879098022">
+    <div class="book" data-level="10.1" data-basepath=".." data-revision="1424889833853">
     
 
 <div class="book-summary">
@@ -649,7 +649,7 @@
                         
                             <b>9.2.</b>
                         
-                         The `use` import
+                         The `use` declaration
                     </a>
                 
             
@@ -2142,27 +2142,27 @@
                     
                         <h2 id="101-library">10.1 Library</h2>
 <p>Let&#39;s create a library, and then see how to link it to another crate.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// erty.rs</span>
+<pre><code class="lang-rust"><span class="hljs-comment">// rary.rs</span>
 <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span></span>() {
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"called erty's `public_function()`"</span>);
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"called rary's `public_function()`"</span>);
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"called erty's `private_function()`"</span>);
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"called rary's `private_function()`"</span>);
 }
 
 <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span></span>() {
-    <span class="hljs-built_in">print!</span>(<span class="hljs-string">"called erty's `indirect_access()`, that\n&gt; "</span>);
+    <span class="hljs-built_in">print!</span>(<span class="hljs-string">"called rary's `indirect_access()`, that\n&gt; "</span>);
 
     private_function();
 }
 </code></pre>
-<pre><code>$ rustc --crate-type=lib erty.rs
+<pre><code>$ rustc --crate-type=lib rary.rs
 $ ls lib*
-liberty.rlib
+library.rlib
 </code></pre><p>Libraries get prefixed with &quot;lib&quot;, and by default they get named after their
-crate file, but this default name can be overridden using the
-<a href="/attribute/crate.html"><code>crate_name</code> attribute</a>.</p>
+crate file, but this default name can be overridden using the <a href="/attribute/crate.html"><code>crate_name</code>
+attribute</a>.</p>
 
                     
                     </section>

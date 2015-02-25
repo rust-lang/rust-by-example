@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="11.1" data-basepath=".." data-revision="1424879098022">
+    <div class="book" data-level="11.1" data-basepath=".." data-revision="1424889833853">
     
 
 <div class="book-summary">
@@ -649,7 +649,7 @@
                         
                             <b>9.2.</b>
                         
-                         The `use` import
+                         The `use` declaration
                     </a>
                 
             
@@ -2147,19 +2147,19 @@ attribute can be used to set the name of the crate.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// lib.rs</span>
 <span class="hljs-comment">// This crate is a library</span>
 #![crate_type = <span class="hljs-string">"lib"</span>]
-<span class="hljs-comment">// The library is named "erty"</span>
-#![crate_name = <span class="hljs-string">"erty"</span>]
+<span class="hljs-comment">// The library is named "rary"</span>
+#![crate_name = <span class="hljs-string">"rary"</span>]
 
 <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">public_function</span></span>() {
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"called erty's `public_function()`"</span>);
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"called rary's `public_function()`"</span>);
 }
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">private_function</span></span>() {
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"called erty's `private_function()`"</span>);
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"called rary's `private_function()`"</span>);
 }
 
 <span class="hljs-keyword">pub</span> <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">indirect_access</span></span>() {
-    <span class="hljs-built_in">print!</span>(<span class="hljs-string">"called erty's `indirect_access()`, that\n&gt; "</span>);
+    <span class="hljs-built_in">print!</span>(<span class="hljs-string">"called rary's `indirect_access()`, that\n&gt; "</span>);
 
     private_function();
 }
@@ -2168,7 +2168,7 @@ attribute can be used to set the name of the crate.</p>
 <code>--crate-type</code> flag to <code>rustc</code>.</p>
 <pre><code>$ rustc lib.rs
 $ ls lib*
-liberty.rlib
+library.rlib
 </code></pre>
                     
                     </section>

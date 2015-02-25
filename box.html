@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15" data-basepath="." data-revision="1424879098022">
+    <div class="book" data-level="15" data-basepath="." data-revision="1424889833853">
     
 
 <div class="book-summary">
@@ -649,7 +649,7 @@
                         
                             <b>9.2.</b>
                         
-                         The `use` import
+                         The `use` declaration
                     </a>
                 
             
@@ -2142,13 +2142,11 @@
                     
                         <h1 id="15-box-stack-and-heap">15 Box, stack and heap</h1>
 <p>All values in Rust are stack allocated by default. Values can be <em>boxed</em>
-(allocated in the heap) using the <code>box</code> construct. A box, with type signature
-<code>Box&lt;T&gt;</code>, is a smart pointer to a heap allocated value of type <code>T</code>. When a box
-goes out of scope, its destructor is called, the inner object is destroyed, and
-the memory in the heap is freed.</p>
+(allocated in the heap) by creating a <code>Box&lt;T&gt;</code>. A box is a smart pointer to a
+heap allocated value of type <code>T</code>. When a box goes out of scope, its destructor
+is called, the inner object is destroyed, and the memory in the heap is freed.</p>
 <p>Boxed values can be dereferenced using the <code>*</code> operator; this removes one layer
-of indirection. Alternatively, the <code>let box x = y</code> pattern can be used to
-&quot;unbox&quot; <code>y</code> into <code>x</code>.</p>
+of indirection. </p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>

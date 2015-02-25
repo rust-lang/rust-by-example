@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16" data-basepath="." data-revision="1424879098022">
+    <div class="book" data-level="16" data-basepath="." data-revision="1424889833853">
     
 
 <div class="book-summary">
@@ -649,7 +649,7 @@
                         
                             <b>9.2.</b>
                         
-                         The `use` import
+                         The `use` declaration
                     </a>
                 
             
@@ -2151,14 +2151,14 @@ and the resources <em>owned</em> by it are freed. This behavior shields against
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn create&#95;box() {
-    // Allocate an integer in the heap
+    // Allocate an integer on the heap
     let &#95;function&#95;box = Box::new(3i32);
 
     // &#96;&#95;function&#95;box&#96; gets destroyed here, memory gets freed
 }
 
 fn main() {
-    // Allocate an integer in the heap
+    // Allocate an integer on the heap
     let &#95;boxed&#95;int = Box::new(5i32);
 
     // new (smaller) scope
