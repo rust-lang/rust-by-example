@@ -10,7 +10,7 @@ fn main() {
         println!("inner short: {}", short_lived_binding);
 
         // This binding *shadows* the outer one
-        let long_lived_banding = 5_f32;
+        let long_lived_binding = 5_f32;
 
         println!("inner long: {}", long_lived_binding);
     }
