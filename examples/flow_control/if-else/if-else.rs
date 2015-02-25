@@ -1,5 +1,5 @@
 fn main() {
-    let n = 5i32;
+    let n = 5;
 
     if n < 0 {
         print!("{} is negative", n);
@@ -13,16 +13,16 @@ fn main() {
         if n < 10 && n > -10 {
             println!(", and is a small number, increase ten-fold");
 
-            // This expression returns an `int`
+            // This expression returns an `i32`.
             10 * n
         } else {
             println!(", and is a big number, reduce by two");
 
-            // This expression must return an `int` as well
+            // This expression must return an `i32` as well.
             n / 2
-            // TODO ^ Try suppressing this expression with a semicolon
+            // TODO ^ Try suppressing this expression with a semicolon.
         };
-    //   ^ Don't forget to put a semicolon here! All the `let` bindings need it
+    //   ^ Don't forget to put a semicolon here! All `let` bindings need it.
 
     println!("{} -> {}", n, big_n);
 }
