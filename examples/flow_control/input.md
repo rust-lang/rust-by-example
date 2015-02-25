@@ -1,3 +1,2 @@
-Here we will analyze various flow control structures such as
-`if`/`else`, `for` and the related `i..j` notation, `while`,
-`loop`, `match` and the related `if let` and `while let` simplifications.
+An essential part of any programming languages are ways to modify control flow:
+`if`/`else`, `for`, and others. Let's talk about them in Rust.
