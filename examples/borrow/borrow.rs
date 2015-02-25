@@ -3,24 +3,24 @@ fn eat_box(boxed_int: Box<i32>) {
     println!("destroying box that contains {}", boxed_int);
 }
 
-// This function borrows the box
-fn peep_inside_box(borrowed_box: &Box<i32>) {
-    println!("This box contains {}", borrowed_box);
+// This function borrows an i32 instead
+fn peep_inside_box(borrowed_int: &i32) {
+    println!("This int is: {}", borrowed_int);
 }
 
 fn main() {
     // A boxed integer
     let boxed_int = Box::new(5);
 
-    // Borrow the box, ownership is not taken
+    // Borrow the contents of the box, ownership is not taken
     peep_inside_box(&boxed_int);
 
-    // The box can be borrowed again
+    // The contents can be borrowed again
     peep_inside_box(&boxed_int);
 
     {
         // Take a reference to the data contained inside the box
-        let _ref_to_int: &i32 = &*boxed_int;
+        let _ref_to_int: &i32 = &boxed_int;
 
         // Error! Can't destroy boxed_int, while the inner value has been
         // borrowed
