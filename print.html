@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath="." data-revision="1424879068727">
+    <div class="book" data-level="2" data-basepath="." data-revision="1424879089444">
     
 
 <div class="book-summary">
@@ -2148,26 +2148,26 @@ be checked at compile time.</p>
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
-    // &#96;{}&#96; are placeholders for arguments that will be stringified.
-    println!(&quot;{} days&quot;, 31);
+    // &#96;{:?}&#96; are placeholders for arguments that will be stringified.
+    println!(&quot;{:?} days&quot;, 31);
 
     // Without a suffix, 31 becomes an i32. You can change what type 31 is,
     // with a suffix, and that is covered in the next chapter.
 
     // The positional arguments can be reused along the template.
-    println!(&quot;{0}, this is {1}. {1}, this is {0}&quot;, &quot;Alice&quot;, &quot;Bob&quot;);
+    println!(&quot;{0:?}, this is {1:?}. {1:?}, this is {0:?}&quot;, &quot;Alice&quot;, &quot;Bob&quot;);
 
     // Named arguments can also be used.
-    println!(&quot;{subject} {verb} {predicate}&quot;,
+    println!(&quot;{subject:?} {verb:?} {predicate:?}&quot;,
              predicate=&quot;over the lazy dog&quot;,
              subject=&quot;the quick brown fox&quot;,
              verb=&quot;jumps&quot;);
 
-    // Special formatting can be specified in the placeholder after a &#96;:&#96;.
-    println!(&quot;{} of {:b} people know binary, the other half don&#39;t&quot;, 1, 2);
+    // Special formatting can be specified in the place of the &#96;?&#96;.
+    println!(&quot;{:?} of {:b} people know binary, the other half don&#39;t&quot;, 1, 2);
 
     // Error! You are missing an argument.
-    println!(&quot;My name is {0}, {1} {0}&quot;, &quot;Bond&quot;);
+    println!(&quot;My name is {0:?}, {1:?} {0:?}&quot;, &quot;Bond&quot;);
     // FIXME ^ Add the missing argument: &quot;James&quot;
 }</div>
 <div id="result"></div>
