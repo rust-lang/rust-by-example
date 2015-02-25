@@ -1,12 +1,12 @@
 fn create_box() {
-    // Allocate an integer in the heap
+    // Allocate an integer on the heap
     let _function_box = Box::new(3i32);
 
     // `_function_box` gets destroyed here, memory gets freed
 }
 
 fn main() {
-    // Allocate an integer in the heap
+    // Allocate an integer on the heap
     let _boxed_int = Box::new(5i32);
 
     // new (smaller) scope

@@ -1,8 +1,3 @@
-// This crate is a library
-#![crate_type = "lib"]
-// The library is named "rary"
-#![crate_name = "rary"]
-
 pub fn public_function() {
     println!("called rary's `public_function()`");
 }

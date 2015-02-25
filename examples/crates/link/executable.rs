@@ -1,11 +1,11 @@
-// Link to `liberty`, import items under the `erty` module
-extern crate erty;
+// Link to `library`, import items under the `rary` module
+extern crate rary;
 
 fn main() {
-    erty::public_function();
+    rary::public_function();
 
     // Error! `private_function` is private
-    //erty::private_function();
+    //rary::private_function();
 
-    erty::indirect_access();
+    rary::indirect_access();
 }
