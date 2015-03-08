@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="19.1" data-basepath=".." data-revision="1425819811946">
+    <div class="book" data-level="19.1" data-basepath=".." data-revision="1425826662956">
     
 
 <div class="book-summary">
@@ -2155,18 +2155,18 @@ compiler error.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// FIXME To see the &quot;real&quot; compiler error, change both &#96;&amp;&#39;b&#96; and &#96;&amp;&#39;e&#96; into &#96;&amp;&#96;
+<div id="editor">// FIXME To see the &quot;real&quot; compiler error, change both &#96;&amp;&#39;c&#96; and &#96;&amp;&#39;d&#96; into &#96;&amp;&#96;
 
 fn main() { // &#96;&#39;main&#96; starts ────────────────────────────────────────────┐
     let stack&#95;integer: i32 = 5; // &#96;&#39;a&#96; starts ─────────────────────────┐ │
     let boxed&#95;integer = Box::new(4); // &#96;&#39;b&#96; starts ──────────────────┐ │ │
     //                                                                │ │ │
     // This is a valid operation                                      │ │ │
-    let ref&#95;to&#95;box: &amp;&#39;b i32 = &amp;&#42;boxed&#95;integer; // &#96;&#39;c&#96; starts ──────┐ │ │ │
+    let ref&#95;to&#95;box: &amp;&#39;c i32 = &amp;&#42;boxed&#95;integer; // &#96;&#39;c&#96; starts ──────┐ │ │ │
     //                                                              │ │ │ │
     // The compiler forbids this operation, because                 │ │ │ │
     // &#96;ref&#95;to&#95;another&#95;box&#96; would become a dangling pointer         │ │ │ │
-    let ref&#95;to&#95;another&#95;box: &amp;&#39;e i32 = { // &#96;&#39;let&#96; &#96;&#39;d&#96; start ───┬─┐ │ │ │ │
+    let ref&#95;to&#95;another&#95;box: &amp;&#39;d i32 = { // &#96;&#39;let&#96; &#96;&#39;d&#96; start ───┬─┐ │ │ │ │
         let another&#95;boxed&#95;integer = Box::new(3); // ──────────┐ │ │ │ │ │ │
         // ^ &#96;e&#96; starts                                       │ │ │ │ │ │ │
         &amp;&#42;another&#95;boxed&#95;integer //                            │ │ │ │ │ │ │
