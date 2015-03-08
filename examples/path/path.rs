@@ -1,7 +1,8 @@
-#![feature(old_path)]
-#![feature(old_io)]
+#![feature(path)]
+#![feature(path_ext)]
 
-use std::old_io::fs::PathExtensions;
+use std::path::Path;
+use std::fs::PathExt;
 
 fn main() {
     // Create a `Path` from an `&'static str`
@@ -25,20 +26,12 @@ fn main() {
         println!("{} is a directory", display);
     }
 
-    // `stat` returns an IoResult<FileStat> === Result<FileStat, IoError>
-    let stat = match path.stat() {
-        Err(why) => panic!("{}", why.desc),
-        Ok(stat) => stat,
-    };
-
-    println!("{} size is {} bytes", display, stat.size);
-
     // `join` merges a path with a byte container using the OS specific
     // separator, and returns the new path
     let new_path = path.join("a").join("b");
 
     // Convert the path into a string slice
-    match new_path.as_str() {
+    match new_path.to_str() {
         None => panic!("new path is not a valid UTF-8 sequence"),
         Some(s) => println!("new path is {}", s),
     }

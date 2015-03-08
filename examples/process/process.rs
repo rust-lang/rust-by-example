@@ -1,31 +1,19 @@
-#![feature(old_io)]
-
-use std::old_io::process::{Command,ProcessOutput};
+use std::process::Command;
 
 fn main() {
-    // Initial command `rustc`
-    let mut cmd = Command::new("rustc");
-    // append the "--version" flag to the command
-    cmd.arg("--version");
+    let output = Command::new("rustc")
+        .arg("--version")
+        .output().unwrap_or_else(|e| {
+            panic!("failed to execute process: {}", e)
+    });
 
-    // The `output` method will spawn `rustc --version`, wait until the process
-    // finishes and return the output of the process
-    match cmd.output() {
-        Err(why) => panic!("couldn't spawn rustc: {}", why.desc),
-        // Destructure `ProcessOutput`
-        Ok(ProcessOutput { error: err, output: out, status: exit }) => {
-            // Check if the process succeeded, i.e. the exit code was 0
-            if exit.success() {
-                // `out` has type `Vec<u8>`, convert it to a UTF-8 `$str`
-                let s = String::from_utf8_lossy(&out);
+    if output.status.success() {
+        let s = String::from_utf8_lossy(&output.stdout);
 
-                print!("rustc succeeded and stdout was:\n{}", s);
-            } else {
-                // `err` also has type `Vec<u8>`
-                let s = String::from_utf8_lossy(&err);
+        print!("rustc succeeded and stdout was:\n{}", s);
+    } else {
+        let s = String::from_utf8_lossy(&output.stderr);
 
-                print!("rustc failed and stderr was:\n{}", s);
-            }
-        },
+        print!("rustc failed and stderr was:\n{}", s);
     }
 }

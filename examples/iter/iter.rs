@@ -1,3 +1,5 @@
+#![feature(core)]
+
 struct Fibonacci {
     curr: u32,
     next: u32,

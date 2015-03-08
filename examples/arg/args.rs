@@ -1,4 +1,4 @@
-#![feature(env)]
+#![feature(collections)]
 
 use std::env;
 
