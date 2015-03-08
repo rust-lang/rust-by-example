@@ -1,7 +1,7 @@
-#![feature(old_io)]
 #![feature(old_path)]
-#![feature(env)]
 #![feature(core)]
+#![feature(io)]
+#![feature(path)]
 
 #![deny(warnings)]
 #![feature(int_uint)]

@@ -1,9 +1,11 @@
-use file;
 use markdown::Markdown;
 use rustc_serialize::{Decodable,json};
 use std::iter::AdditiveIterator;
 use std::iter::repeat;
 use std::sync::mpsc;
+use std::io::prelude::*;
+use std::fs;
+use std::fs::File;
 
 #[derive(RustcDecodable)]
 pub struct Example {
@@ -14,15 +16,17 @@ pub struct Example {
 
 impl Example {
     pub fn get_list() -> Vec<Example> {
-        match file::read(&Path::new("examples/structure.json")) {
-            Err(why) => panic!("{}", why),
-            Ok(string) => match json::Json::from_str(&string) {
-                Err(_) => panic!("structure.json is not valid json"),
-                Ok(json) => {
-                    match Decodable::decode(&mut json::Decoder::new(json)) {
-                        Err(_) => panic!("error decoding structure.json"),
-                        Ok(examples) => examples,
-                    }
+
+        let mut f = File::open(&Path::new("examples/structure.json")).unwrap();
+        let mut s = String::new();
+        f.read_to_string(&mut s).unwrap();
+
+        match json::Json::from_str(&s) {
+            Err(_) => panic!("structure.json is not valid json"),
+            Ok(json) => {
+                match Decodable::decode(&mut json::Decoder::new(json)) {
+                    Err(_) => panic!("error decoding structure.json"),
+                    Ok(examples) => examples,
                 }
             }
         }
@@ -74,7 +78,7 @@ impl Example {
             Some(ref children) => {
                 let path = Path::new(format!("stage/{}/{}", prefix, id));
 
-                file::mkdir(&path);
+                fs::create_dir_all(&path).unwrap();
 
                 for (i, example) in children.iter().enumerate() {
                     let tx = tx.clone();

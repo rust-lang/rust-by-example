@@ -2,6 +2,8 @@ use file;
 use playpen;
 use std::iter::repeat;
 use regex::Regex;
+use std::io::prelude::*;
+use std::fs::File;
 
 pub struct Markdown<'a, 'b> {
     content: String,
@@ -27,7 +29,11 @@ impl<'a, 'b> Markdown<'a, 'b> {
         -> Result<Markdown<'a, 'b>, String>
     {
         let path = Path::new(format!("examples/{}/{}/input.md", prefix, id));
-        let body = try!(file::read(&path));
+
+        let mut f = File::open(&path).unwrap();
+        let mut body = String::new();
+        f.read_to_string(&mut body).unwrap();
+
         let version = number.iter().map(|x| {
             format!("{}", x)
         }).collect::<Vec<String>>().connect(".");
@@ -59,15 +65,11 @@ impl<'a, 'b> Markdown<'a, 'b> {
                     let src = captures.at(1).unwrap();
                     let input = format!("{{{}}}", src);
                     let p = format!("examples/{}/{}/{}", prefix, id, src);
-                    let output = match file::read(&Path::new(&p)) {
-                        Err(_) => {
-                            return Err(format!("{} not found", p));
-                        },
-                        Ok(string) => {
-                            format!("``` rust\n// {}\n{}```",
-                                    src, string)
-                        }
-                    };
+
+                    let mut f = File::open(&Path::new(&p)).unwrap();
+                    let mut s = String::new();
+                    f.read_to_string(&mut s).unwrap();
+                    let output = format!("``` rust\n// {}\n{}```", src, s);
 
                     table.push((input, output))
                 }
@@ -139,14 +141,12 @@ impl<'a, 'b> Markdown<'a, 'b> {
                     let input = format!("{{{}.play}}", srcbase);
                     let src = format!("{}.rs", srcbase);
                     let p = format!("examples/{}/{}/{}", prefix, id, src);
-                    let output = match file::read(&Path::new(&p)) {
-                        Err(_) => {
-                            return Err(format!("{} not found", p));
-                        },
-                        Ok(source) => {
-                            playpen::editor(&source)
-                        }
-                    };
+
+                    let mut f = File::open(&Path::new(&p)).unwrap();
+                    let mut s = String::new();
+                    f.read_to_string(&mut s).unwrap();
+
+                    let output = playpen::editor(&s);
 
                     table.push((input, output))
                 }
@@ -165,5 +165,6 @@ impl<'a, 'b> Markdown<'a, 'b> {
         let path = Path::new(format!("stage/{}/{}.md", self.prefix, self.id));
 
         file::write(&path, &self.content)
+            .map_err(|e| e.description().to_string())
     }
 }

@@ -1,6 +1,6 @@
 #![feature(rustc_private)]
 #![feature(collections)]
-#![feature(env)]
+#![feature(exit_status)]
 
 extern crate getopts;
 

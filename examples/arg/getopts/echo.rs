@@ -1,7 +1,7 @@
 #![feature(old_io)]
 #![feature(rustc_private)]
-#![feature(env)]
 #![feature(collections)]
+#![feature(exit_status)]
 
 extern crate getopts;
 
