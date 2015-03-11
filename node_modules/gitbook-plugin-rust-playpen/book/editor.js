@@ -219,7 +219,11 @@ function handleResult(statusCode, message) {
 // Called on successful program run
 function handleSuccess(message) {
   resultDiv.style.backgroundColor = successColor;
-  resultDiv.innerHTML = escapeHTML(message);
+  var lines = message.split(newLineRegex);
+  message = lines.map(function(line) {
+    return escapeHTML(line);
+  }).join('<br />');
+  resultDiv.innerHTML = message;
 }
 
 // Called when program run results in warning(s)
