@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="48.1" data-basepath=".." data-revision="1426128805874">
+    <div class="book" data-level="48.1" data-basepath=".." data-revision="1426128819678">
     
 
 <div class="book-summary">
@@ -2129,7 +2129,9 @@
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::env;
+<div id="editor">#![feature(collections)]
+
+use std::env;
 
 fn increase(number: i32) {
     println!(&quot;{}&quot;, number + 1);
@@ -2148,8 +2150,7 @@ match&#95;args {{increase|decrease}} &lt;integer&gt;
 }
 
 fn main() {
-    let args: Vec&lt;String&gt; = env::args().map(|x| x.to&#95;string())
-                                       .collect();
+    let args: Vec&lt;String&gt; = env::args().collect();
 
     match &amp;args[..] {
         // no arguments passed
@@ -2217,8 +2218,8 @@ match_args {increase|decrease} &lt;integer&gt;
     Increase or decrease given integer by one.
 $ ./match_args increase 42
 43
-</code></pre><!-- TODO link to the getopts example, after moving this out of the staging area -->
-<p>For implementing more complicated, unix-like command line interfaces see the <code>getopts</code> example.</p>
+</code></pre><p>The next example demonstrates <code>getopts</code> as a way to build more advanced,
+unix-like command line interfaces.</p>
 
                     
                     </section>

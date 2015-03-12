@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="48.2" data-basepath=".." data-revision="1426128805874">
+    <div class="book" data-level="48.2" data-basepath=".." data-revision="1426128819678">
     
 
 <div class="book-summary">
@@ -2143,8 +2143,7 @@ use std::old&#95;io::stdio;
 static VERSION: &amp;&#39;static str = &quot;1.0.0&quot;;
 
 fn main() {
-    let args: Vec&lt;String&gt; = env::args().map(|x| x.to&#95;string())
-                                       .collect();
+    let args: Vec&lt;String&gt; = env::args().collect();
     let ref program = args[0];
 
     // Set possible flags.
@@ -2221,7 +2220,7 @@ $ ./echo --version
 echo version: 1.0.0
 $ ./echo Hello, World!
 Hello, World!
-</code></pre><p>This is a simplified version of the <code>echo</code> implementation by
+</code></pre><p>This is a simplified version of the implementation in
 <a href="https://github.com/uutils/coreutils" target="_blank">uutils</a>.</p>
 <p>It is also possible to use <em>options</em> instead of <em>flags</em>, such that values can
 be passed to the program:</p>
@@ -2235,8 +2234,7 @@ be passed to the program:</p>
 <span class="hljs-keyword">use</span> std::env;
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-keyword">let</span> args: Vec&lt;String&gt; = env::args().map(|x| x.to_string())
-                                       .collect();
+    <span class="hljs-keyword">let</span> args: Vec&lt;String&gt; = env::args().collect();
 
     <span class="hljs-keyword">let</span> opts = [
         getopts::optflag(<span class="hljs-string">"a"</span>, <span class="hljs-string">"long_a"</span>, <span class="hljs-string">""</span>),

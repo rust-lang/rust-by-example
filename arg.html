@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="48" data-basepath="." data-revision="1426128805874">
+    <div class="book" data-level="48" data-basepath="." data-revision="1426128819678">
     
 
 <div class="book-summary">
@@ -2125,8 +2125,8 @@
                     <section class="normal" id="section-gitbook_5">
                     
                         <h1 id="48-program-arguments">48 Program arguments</h1>
-<p>The command line arguments can be accessed using <code>std::os::args</code>, which returns
-a <a href="http://static.rust-lang.org/doc/master/std/vec/index.html" target="_blank">vector</a> of strings:</p>
+<p>The command line arguments can be accessed using <code>std::env::args</code>, which
+returns an iterator that yields a String for each argument:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2135,13 +2135,14 @@ a <a href="http://static.rust-lang.org/doc/master/std/vec/index.html" target="_b
 use std::env;
 
 fn main() {
-    let args: Vec&lt;String&gt; = env::args().map(|x| x.to&#95;string())
-                                       .collect();
+    let args: Vec&lt;String&gt; = env::args().collect();
+
     // The first argument is the path that was used to call the program.
     println!(&quot;My path is {}.&quot;, args[0]);
+
     // The rest of the arguments are the passed command line parameters.
     // Call the program like this:
-    // &#36; ./args arg1 arg2
+    //   &#36; ./args arg1 arg2
     println!(&quot;I got {:?} arguments: {:?}.&quot;, args.len() - 1, args.tail());
 }</div>
 <div id="result"></div>
@@ -2149,7 +2150,7 @@ fn main() {
 
 <pre><code>$ ./args 1 2 3
 My path is ./args.
-I got 3 arguments: [1, 2, 3].
+I got 3 arguments: [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;].
 </code></pre>
                     
                     </section>
