@@ -11,8 +11,7 @@ use std::old_io::stdio;
 static VERSION: &'static str = "1.0.0";
 
 fn main() {
-    let args: Vec<String> = env::args().map(|x| x.to_string())
-                                       .collect();
+    let args: Vec<String> = env::args().collect();
     let ref program = args[0];
 
     // Set possible flags.

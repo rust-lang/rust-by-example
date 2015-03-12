@@ -25,7 +25,7 @@ $ ./echo Hello, World!
 Hello, World!
 ```
 
-This is a simplified version of the `echo` implementation by
+This is a simplified version of the implementation in
 [uutils](https://github.com/uutils/coreutils).
 
 

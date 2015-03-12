@@ -17,8 +17,7 @@ match_args {{increase|decrease}} <integer>
 }
 
 fn main() {
-    let args: Vec<String> = env::args().map(|x| x.to_string())
-                                       .collect();
+    let args: Vec<String> = env::args().collect();
 
     match &args[..] {
         // no arguments passed

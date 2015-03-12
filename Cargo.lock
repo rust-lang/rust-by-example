@@ -2,13 +2,13 @@
 name = "update"
 version = "0.0.1"
 dependencies = [
- "regex 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
+ "regex 0.1.19 (registry+https://github.com/rust-lang/crates.io-index)",
  "rustc-serialize 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "regex"
-version = "0.1.18"
+version = "0.1.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
