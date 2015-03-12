@@ -1,5 +1,3 @@
-#![feature(collections)]
-
 use std::env;
 
 fn increase(number: i32) {
