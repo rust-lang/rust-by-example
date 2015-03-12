@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="50" data-basepath="." data-revision="1426128819678">
+    <div class="book" data-level="50" data-basepath="." data-revision="1426130243036">
     
 
 <div class="book-summary">
@@ -2152,7 +2152,7 @@ no parameters and return nothing.</p>
 <p>If you want the test to fail, just put <code>#[should_fail]</code> under <code>#[test]</code>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// fail.rs</span>
 <span class="hljs-preprocessor">#[test]</span>
-<span class="hljs-preprocessor">#[should_fail]</span>
+<span class="hljs-preprocessor">#[should_panic]</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">failing_test</span></span>() {
     <span class="hljs-built_in">assert!</span>(<span class="hljs-number">1i32</span> == <span class="hljs-number">2i32</span>);
 }
