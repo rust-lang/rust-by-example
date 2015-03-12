@@ -7,8 +7,7 @@ extern crate getopts;
 use std::env;
 
 fn main() {
-    let args: Vec<String> = env::args().map(|x| x.to_string())
-                                       .collect();
+    let args: Vec<String> = env::args().collect();
 
     let opts = [
         getopts::optflag("a", "long_a", ""),

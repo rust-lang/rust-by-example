@@ -25,6 +25,6 @@ $ ./match_args increase 42
 43
 ```
 
-<!-- TODO link to the getopts example, after moving this out of the staging area -->
-For implementing more complicated, unix-like command line interfaces see the `getopts` example.
+The next example demonstrates `getopts` as a way to build more advanced,
+unix-like command line interfaces.
 
