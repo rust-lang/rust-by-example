@@ -1,7 +1,4 @@
-#![feature(old_path)]
 #![feature(core)]
-#![feature(io)]
-#![feature(path)]
 
 #![deny(warnings)]
 #![feature(int_uint)]
@@ -14,6 +11,7 @@ extern crate "rustc-serialize" as rustc_serialize;
 use example::Example;
 use std::thread;
 use std::sync::mpsc;
+use std::path::Path;
 
 mod example;
 mod file;

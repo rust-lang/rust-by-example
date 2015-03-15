@@ -6,6 +6,7 @@ use std::io::prelude::*;
 use std::io;
 use std::fs;
 use std::fs::File;
+use std::path::Path;
 
 pub fn mkdir(path: &Path) {
     match fs::create_dir_all(path) {
@@ -18,9 +19,10 @@ pub fn run(prefix: &str, id: &str, src: &str) -> Result<String, String> {
     let cwd = env::current_dir().unwrap();
     // Assume that the current working directory actually exists
     let out_dir = cwd.join(&format!("bin/{}/{}", prefix, id));
+    let path_str = &format!("examples/{}/{}", prefix, id);
 
     match Command::new("rustc")
-        .current_dir(&Path::new(format!("examples/{}/{}", prefix, id)))
+        .current_dir(&Path::new(path_str))
         .arg(&format!("{}.rs", src))
         .arg("--out-dir")
         .arg(&out_dir)
@@ -29,7 +31,8 @@ pub fn run(prefix: &str, id: &str, src: &str) -> Result<String, String> {
             Err(e) => { return Ok(e.to_string()) },
     };
 
-    let executable = Path::new(format!("./bin/{}/{}/{}", prefix, id, src));
+    let exec_str = &format!("./bin/{}/{}/{}", prefix, id, src);
+    let executable = Path::new(exec_str);
 
     let output = match Command::new(&executable).output() {
         Ok(o) => o,

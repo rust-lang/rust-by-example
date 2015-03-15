@@ -6,6 +6,7 @@ use std::sync::mpsc;
 use std::io::prelude::*;
 use std::fs;
 use std::fs::File;
+use std::path::Path;
 
 #[derive(RustcDecodable)]
 pub struct Example {
@@ -76,7 +77,8 @@ impl Example {
         match self.children {
             None => {},
             Some(ref children) => {
-                let path = Path::new(format!("stage/{}/{}", prefix, id));
+                let path_str = &format!("stage/{}/{}", prefix, id);
+                let path = Path::new(path_str);
 
                 fs::create_dir_all(&path).unwrap();
 

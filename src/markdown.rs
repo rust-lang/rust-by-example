@@ -4,6 +4,8 @@ use std::iter::repeat;
 use regex::Regex;
 use std::io::prelude::*;
 use std::fs::File;
+use std::path::Path;
+use std::error::Error;
 
 pub struct Markdown<'a, 'b> {
     content: String,
@@ -28,7 +30,8 @@ impl<'a, 'b> Markdown<'a, 'b> {
     fn new(number: &[uint], id: &'a str, title: &str, prefix: &'b str)
         -> Result<Markdown<'a, 'b>, String>
     {
-        let path = Path::new(format!("examples/{}/{}/input.md", prefix, id));
+        let path_str = &format!("examples/{}/{}/input.md", prefix, id);
+        let path = Path::new(path_str);
 
         let mut f = File::open(&path).unwrap();
         let mut body = String::new();
@@ -89,9 +92,10 @@ impl<'a, 'b> Markdown<'a, 'b> {
         let prefix = self.prefix;
         let r = Regex::new(r"\{(.*)\.out\}").unwrap();
 
-        let dir = Path::new(format!("bin/{}/{}", prefix, id));
+        let dir_str = &format!("bin/{}/{}", prefix, id);
+        let dir = Path::new(dir_str);
 
-        file::mkdir(&dir);
+        file::mkdir(dir);
 
         let mut table = Vec::new();
         for line in self.content.lines() {
@@ -162,9 +166,10 @@ impl<'a, 'b> Markdown<'a, 'b> {
     }
 
     fn save(&self) -> Result<(), String> {
-        let path = Path::new(format!("stage/{}/{}.md", self.prefix, self.id));
+        let path_str = &format!("stage/{}/{}.md", self.prefix, self.id);
+        let path = Path::new(path_str);
 
         file::write(&path, &self.content)
-            .map_err(|e| e.description().to_string())
+            .map_err(|ref e| Error::description(e).to_string())
     }
 }
