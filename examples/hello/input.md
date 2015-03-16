@@ -2,7 +2,7 @@ This is the source code of the traditional Hello World program.
 
 {hello.play}
 
-`println!` is a *macro* (we'll cover them later) that prints text to the
+`println!` is a [*macro*][macros] that prints text to the
 console.
 
 A binary can be generated using the Rust compiler: `rustc`.
@@ -17,3 +17,5 @@ $ rustc hello.rs
 $ ./hello
 Hello World!
 ```
+
+[macros]: ./macros.html
