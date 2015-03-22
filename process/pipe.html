@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="42.1" data-basepath=".." data-revision="1427045733243">
+    <div class="book" data-level="42.1" data-basepath=".." data-revision="1427045783017">
     
 
 <div class="book-summary">
@@ -2169,18 +2169,22 @@ process via pipes.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(io)]
+<div id="editor">#![feature(core)]
 
-use std::process::Command;
+use std::error::Error;
 use std::io::prelude::&#42;;
+use std::process::{Command, Stdio};
 
 static PANGRAM: &amp;&#39;static str =
 &quot;the quick brown fox jumped over the lazy dog&#92;n&quot;;
 
 fn main() {
     // Spawn the &#96;wc&#96; command
-    let process = match Command::new(&quot;wc&quot;).spawn() {
-        Err(why) =&gt; panic!(&quot;couldn&#39;t spawn wc: {}&quot;, why.description()),
+    let process = match Command::new(&quot;wc&quot;)
+                                .stdin(Stdio::piped())
+                                .stdout(Stdio::piped())
+                                .spawn() {
+        Err(why) =&gt; panic!(&quot;couldn&#39;t spawn wc: {}&quot;, Error::description(&amp;why)),
         Ok(process) =&gt; process,
     };
 
@@ -2188,7 +2192,7 @@ fn main() {
         // Write a string to the stdin of &#96;wc&#96;
         match process.stdin.unwrap().write&#95;all(PANGRAM.as&#95;bytes()) {
             Err(why) =&gt; panic!(&quot;couldn&#39;t write to wc stdin: {}&quot;,
-                               why.description()),
+                               Error::description(&amp;why)),
             Ok(&#95;) =&gt; println!(&quot;sent pangram to wc&quot;),
         }
 
@@ -2203,7 +2207,7 @@ fn main() {
     let mut s = String::new();
     match process.stdout.unwrap().read&#95;to&#95;string(&amp;mut s) {
         Err(why) =&gt; panic!(&quot;couldn&#39;t read wc stdout: {}&quot;,
-                           why.description()),
+                           Error::description(&amp;why)),
         Ok(&#95;) =&gt; print!(&quot;wc responded with:&#92;n{}&quot;, s),
     }
 }</div>
