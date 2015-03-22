@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="./print/print_debug.html" />
+    <link rel="next" href="./literals.html" />
     
     
     <link rel="prev" href="./hello.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath="." data-revision="1426992460469">
+    <div class="book" data-level="2" data-basepath="." data-revision="1426997617766">
     
 
 <div class="book-summary">
@@ -98,44 +98,6 @@
                     </a>
                 
             
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="2.1" data-path="print/print_debug.html">
-            
-                
-                    <a href="./print/print_debug.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.1.</b>
-                        
-                         Debug
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="2.2" data-path="print/print_display.html">
-            
-                
-                    <a href="./print/print_display.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>2.2.</b>
-                        
-                         Display
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -2160,70 +2122,43 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_89">
+                    <section class="normal" id="section-gitbook_87">
                     
                         <h1 id="2-formatted-print">2 Formatted print</h1>
-<p>Printing is handled by a series of <a href="./macros.html">macros</a> defined in <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>
-some of which include:</p>
-<ul>
-<li><code>format!</code>: write formatted text to <a href="./str.html"><code>String</code></a></li>
-<li><code>print!</code>: same as <code>format!</code> but the text is printed to the console.</li>
-<li><code>println!</code>: same as <code>print!</code> but a newline is appended.</li>
-</ul>
-<p>All parse text in the same fashion. A plus is that the formatting correctness will
+<p>The <code>println!</code> macro not only prints to the console, but is also capable of
+formatting text and stringifying values. Plus, the formatting correctness will
 be checked at compile time.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
-    // In general, the &#96;{}&#96; will be automatically replaced with any
-    // arguments. These will be stringified.
-    println!(&quot;{} days&quot;, 31);
+    // &#96;{:?}&#96; are placeholders for arguments that will be stringified.
+    println!(&quot;{:?} days&quot;, 31);
 
     // Without a suffix, 31 becomes an i32. You can change what type 31 is,
-    // with a suffix.
+    // with a suffix, and that is covered in the next chapter.
 
-    // There are various optional patterns this works with. Positional
-    // arguments can be used.
-    println!(&quot;{0}, this is {1}. {1}, this is {0}&quot;, &quot;Alice&quot;, &quot;Bob&quot;);
+    // The positional arguments can be reused along the template.
+    println!(&quot;{0:?}, this is {1:?}. {1:?}, this is {0:?}&quot;, &quot;Alice&quot;, &quot;Bob&quot;);
 
-    // As can named arguments.
-    println!(&quot;{subject} {verb} {predicate}&quot;,
+    // Named arguments can also be used.
+    println!(&quot;{subject:?} {verb:?} {predicate:?}&quot;,
              predicate=&quot;over the lazy dog&quot;,
              subject=&quot;the quick brown fox&quot;,
              verb=&quot;jumps&quot;);
 
-    // Special formatting can be specified after a &#96;:&#96;.
-    println!(&quot;{} of {:b} people know binary, the other half don&#39;t&quot;, 1, 2);
+    // Special formatting can be specified in the place of the &#96;?&#96;.
+    println!(&quot;{:?} of {:b} people know binary, the other half don&#39;t&quot;, 1, 2);
 
-    // It will even check to make sure the correct number of arguments are
-    // used.
-    println!(&quot;My name is {0}, {1} {0}&quot;, &quot;Bond&quot;);
+    // Error! You are missing an argument.
+    println!(&quot;My name is {0:?}, {1:?} {0:?}&quot;, &quot;Bond&quot;);
     // FIXME ^ Add the missing argument: &quot;James&quot;
-
-    // Create a structure which contains an &#96;i32&#96;. Name it &#96;Structure&#96;.
-    struct Structure(i32);
-
-    // However, custom types such as this structure require more complicated
-    // handling. This will not work.
-    println!(&quot;This struct &#96;{}&#96; won&#39;t print...&quot;, Structure(3));
-    // FIXME ^ Comment out this line.
 }</div>
 <div id="result"></div>
 </div>
 
-<p><a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a> contains many <a href="./trait.html"><code>trait</code>s</a> which govern the display
-of text. The base form of two important ones are listed below:</p>
-<ul>
-<li><code>fmt::Debug</code>: Uses the <code>{:?}</code> marker. Format text for debugging purposes.</li>
-<li><code>fmt::Display</code>: Uses the <code>{}</code> marker. Format text in a more elegant, user
-friendly fashion.</li>
-</ul>
-<p>Here, <code>fmt::Display</code> was used because the std library provides implementations
-for these types. To print text for custom types, more steps are required.</p>
-<h3 id="see-also">See also:</h3>
-<p><a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>, <a href="./macros.html">macros</a>, <a href="./structs.html"><code>struct</code></a>,
-and <a href="./trait.html"><code>trait</code>s</a></p>
+<p>For more information about formatting, take a look at
+<a href="http://doc.rust-lang.org/std/fmt/" target="_blank">std::fmt</a>.</p>
 
                     
                     </section>
@@ -2237,7 +2172,7 @@ and <a href="./trait.html"><code>trait</code>s</a></p>
         <a href="./hello.html" class="navigation navigation-prev " aria-label="Previous page: Hello World"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./print/print_debug.html" class="navigation navigation-next " aria-label="Next page: Debug"><i class="fa fa-angle-right"></i></a>
+        <a href="./literals.html" class="navigation navigation-next " aria-label="Next page: Literals and operators"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
