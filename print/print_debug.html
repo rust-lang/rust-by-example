@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>The borrow checker | Rust by Example</title>
+        <title>Debug | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../lifetime/fn.html" />
+    <link rel="next" href="../print/print_display.html" />
     
     
-    <link rel="prev" href="../lifetime.html" />
+    <link rel="prev" href="../print.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="19.1" data-basepath=".." data-revision="1427045733243">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="1427045733243">
     
 
 <div class="book-summary">
@@ -103,7 +103,7 @@
                 
     
         
-        <li class="chapter " data-level="2.1" data-path="print/print_debug.html">
+        <li class="chapter active" data-level="2.1" data-path="print/print_debug.html">
             
                 
                     <a href="../print/print_debug.html">
@@ -1165,7 +1165,7 @@
                 
     
         
-        <li class="chapter active" data-level="19.1" data-path="lifetime/borrow.html">
+        <li class="chapter " data-level="19.1" data-path="lifetime/borrow.html">
             
                 
                     <a href="../lifetime/borrow.html">
@@ -2160,89 +2160,62 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_65">
+                    <section class="normal" id="section-gitbook_87">
                     
-                        <h2 id="191-the-borrow-checker">19.1 The borrow checker</h2>
-<p>Let&#39;s see how the compiler prevents the creation of dangling pointers via its
-borrow checker. To simplify the analysis and explanation, we have two
-additions:</p>
-<ul>
-<li>Lifetimes has been explicitly annotated in the source code.</li>
-<li>We have drawn the lifetime &quot;lines&quot;, which span from the creation of an object
-to its destruction. The block scopes have also been drawn.</li>
-</ul>
-<p>Note that explicit lifetime annotation on references <code>&amp;&#39;foo T</code> is not allowed
-by the compiler, so you must remove the lifetime part <code>&#39;foo</code> to see the &quot;real&quot;
-compiler error.</p>
+                        <h2 id="21-debug">2.1 Debug</h2>
+<p>All types which want to use <code>std::fmt</code> formatting <code>trait</code>s require an
+implementation to be printable. Automatic implementations are only provided
+for types such as in the <code>std</code> library. All others <em>must</em> be manually
+implemented somehow.</p>
+<p>The <code>fmt::Debug</code> <code>trait</code> makes this very straightforward. <em>All</em> types can
+<code>derive</code> (automatically create) the <code>fmt::Debug</code> implementation. This is
+not true for <code>fmt::Display</code> which must be manually implemented.</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// This structure cannot be printed either with `fmt::Display` or</span>
+<span class="hljs-comment">// with `fmt::Debug`</span>
+<span class="hljs-keyword">struct</span> UnPrintable(<span class="hljs-keyword">i32</span>);
+
+<span class="hljs-comment">// The `derive` attribute automatically creates the implementation</span>
+<span class="hljs-comment">// required to make this `struct` printable with `fmt::Debug`.</span>
+<span class="hljs-preprocessor">#[derive(Debug)]</span>
+<span class="hljs-keyword">struct</span> DebugPrintable(<span class="hljs-keyword">i32</span>);
+</code></pre>
+<p>All std library types automatically are printable with <code>{:?}</code> too:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// FIXME To see the &quot;real&quot; compiler error, change both &#96;&amp;&#39;c&#96; and &#96;&amp;&#39;d&#96; into &#96;&amp;&#96;
+<div id="editor">// Derive the &#96;fmt::Debug&#96; implementation for &#96;Structure&#96;. &#96;Structure&#96;
+// is a structure which contains a single &#96;i32&#96;.
+#[derive(Debug)]
+struct Structure(i32);
 
-fn main() { // &#96;&#39;main&#96; starts ────────────────────────────────────────────┐
-    let stack&#95;integer: i32 = 5; // &#96;&#39;a&#96; starts ─────────────────────────┐ │
-    let boxed&#95;integer = Box::new(4); // &#96;&#39;b&#96; starts ──────────────────┐ │ │
-    //                                                                │ │ │
-    // This is a valid operation                                      │ │ │
-    let ref&#95;to&#95;box: &amp;&#39;c i32 = &amp;&#42;boxed&#95;integer; // &#96;&#39;c&#96; starts ──────┐ │ │ │
-    //                                                              │ │ │ │
-    // The compiler forbids this operation, because                 │ │ │ │
-    // &#96;ref&#95;to&#95;another&#95;box&#96; would become a dangling pointer         │ │ │ │
-    let ref&#95;to&#95;another&#95;box: &amp;&#39;d i32 = { // &#96;&#39;let&#96; &#96;&#39;d&#96; start ───┬─┐ │ │ │ │
-        let another&#95;boxed&#95;integer = Box::new(3); // ──────────┐ │ │ │ │ │ │
-        // ^ &#96;e&#96; starts                                       │ │ │ │ │ │ │
-        &amp;&#42;another&#95;boxed&#95;integer //                            │ │ │ │ │ │ │
-    }; // &#96;&#39;e&#96; &#96;&#39;let&#96; end ────────────────────────────────────┴─┘ │ │ │ │ │
-    //                                                            │ │ │ │ │
-    let invalid&#95;dereference = &#42;ref&#95;to&#95;another&#95;box; //             │ │ │ │ │
-} // &#96;&#39;d&#96; &#96;&#39;c&#96; &#96;&#39;b&#96; &#96;&#39;a&#96; &#96;&#39;main&#96; end ─────────────────────────────┴─┴─┴─┴─┘</div>
+// Put a &#96;Structure&#96; inside of the structure &#96;Deep&#96;. Make it printable
+// also.
+#[derive(Debug)]
+struct Deep(Structure);
+
+fn main() {
+    // Printing with &#96;{:?}&#96; is similar to with &#96;{}&#96;.
+    println!(&quot;{:?} months in a year.&quot;, 12);
+    println!(&quot;{1:?} {0:?} is the {actor:?} name.&quot;,
+             &quot;Slater&quot;,
+             &quot;Christian&quot;,
+             actor=&quot;actor&#39;s&quot;);
+
+    // &#96;Structure&#96; is printable!
+    println!(&quot;Now {:?} will print!&quot;, Structure(3));
+
+    // The problem with &#96;derive&#96; is there is no control over how
+    // the results look. What if I was this to just show a &#96;7&#96;?
+    println!(&quot;Now {:?} will print!&quot;, Deep(Structure(7)));
+}</div>
 <div id="result"></div>
 </div>
 
-<p>The &quot;real&quot; compiler error is: &quot;<code>another_boxed_integer</code> does not live long
-enough&quot;. Let&#39;s analyze why this happens:</p>
-<ul>
-<li><code>stack_integer</code> has lifetime <code>&#39;a</code></li>
-<li><code>boxed_integer</code> has lifetime <code>&#39;b</code></li>
-<li><code>ref_to_box</code> has lifetime <code>&#39;c</code></li>
-<li><code>ref_to_another_box</code> has lifetime <code>&#39;d</code></li>
-<li><code>another_boxed_integer</code> has lifetime <code>&#39;e</code></li>
-<li><code>&#39;main</code> and <code>&#39;let</code> are the scopes of the blocks</li>
-<li>When a block scope ends, all the objects declared in it get destroyed<ul>
-<li><code>&#39;let</code> ends, and so does <code>&#39;e</code></li>
-<li><code>&#39;main</code> ends, and so does <code>&#39;a</code> <code>&#39;b</code> <code>&#39;c</code> and <code>&#39;d</code></li>
-</ul>
-</li>
-<li><code>ref_to_box</code> is a valid borrow, because<ul>
-<li><code>ref_to_box</code> has lifetime <code>&#39;c</code></li>
-<li><code>ref_to_box</code> points to an object with lifetime <code>&#39;b</code></li>
-<li><code>&#39;c</code> will never <em>outlive</em> <code>&#39;b</code> (this is expressed as <code>&#39;c &lt; &#39;b</code>)</li>
-<li>therefore <code>ref_to_box</code> will always point to valid data</li>
-</ul>
-</li>
-<li><code>ref_to_another_box</code> is an <em>invalid</em> borrow, because<ul>
-<li><code>ref_to_another_box</code> has lifetime <code>&#39;d</code></li>
-<li><code>ref_to_another_box</code> points to an object with lifetime <code>&#39;e</code></li>
-<li><code>&#39;d</code> outlives <code>&#39;e</code></li>
-<li>therefore <code>ref_to_another_box</code> can become a dangling pointer (it can point
-to destroyed data)<ul>
-<li>creation of dangling pointers is forbidden, so this borrow is invalid</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>The borrow checker will do this job for the programmer behind his/her back, to
-prevent him/her from (unintentionally) creating dangling pointers. Although,
-the programmer can be saved by the borrow checker without knowing what a
-lifetime is.</p>
-<p>The programmer doesn&#39;t need to explicitly annotate lifetimes (nor understand
-what are lifetimes), for the borrow checker to do its job in most cases. These
-are the cases where explicit lifetimes are required:</p>
-<ul>
-<li><a href="/lifetime/fn.html">Functions that return references</a></li>
-<li><a href="/lifetime/struct.html">Structs that hold references</a></li>
-</ul>
+<p>So <code>fmt::Debug</code> definitely makes this printable but sacrifices some
+elegance. Manually implementing <code>fmt::Display</code> will fix that.</p>
+<h3 id="see-also">See also:</h3>
+<p><a href="http://doc.rust-lang.org/reference.html#attributes" target="_blank">attributes</a>, <a href="./trait/derive.html"><code>derive</code></a>, <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>,
+and <a href="./structs.html"><code>struct</code></a></p>
 
                     
                     </section>
@@ -2253,10 +2226,10 @@ are the cases where explicit lifetimes are required:</p>
         </div>
 
         
-        <a href="../lifetime.html" class="navigation navigation-prev " aria-label="Previous page: Lifetimes"><i class="fa fa-angle-left"></i></a>
+        <a href="../print.html" class="navigation navigation-prev " aria-label="Previous page: Formatted print"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../lifetime/fn.html" class="navigation navigation-next " aria-label="Next page: Functions"><i class="fa fa-angle-right"></i></a>
+        <a href="../print/print_display.html" class="navigation navigation-next " aria-label="Next page: Display"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

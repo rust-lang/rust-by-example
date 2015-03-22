@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="41.2" data-basepath=".." data-revision="1426997617766">
+    <div class="book" data-level="41.2" data-basepath=".." data-revision="1427045733243">
     
 
 <div class="book-summary">
@@ -98,6 +98,44 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="print/print_debug.html">
+            
+                
+                    <a href="../print/print_debug.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         Debug
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="print/print_display.html">
+            
+                
+                    <a href="../print/print_display.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         Display
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -2130,8 +2168,7 @@ existed, the old content is destroyed, otherwise a new file is created.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(old&#95;path)]
-#![feature(io)]
+<div id="editor">#![feature(core)]
 
 static LOREM&#95;IPSUM: &amp;&#39;static str =
 &quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -2142,8 +2179,10 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 &quot;;
 
+use std::error::Error;
 use std::io::prelude::&#42;;
 use std::fs::File;
+use std::path::Path;
 
 fn main() {
     let path = Path::new(&quot;out/lorem&#95;ipsum.txt&quot;);
@@ -2153,14 +2192,15 @@ fn main() {
     let mut file = match File::create(&amp;path) {
         Err(why) =&gt; panic!(&quot;couldn&#39;t create {}: {}&quot;,
                            display,
-                           why.description()),
+                           Error::description(&amp;why)),
         Ok(file) =&gt; file,
     };
 
     // Write the &#96;LOREM&#95;IPSUM&#96; string to &#96;file&#96;, returns &#96;IoResult&lt;()&gt;&#96;
     match file.write&#95;all(LOREM&#95;IPSUM.as&#95;bytes()) {
         Err(why) =&gt; {
-            panic!(&quot;couldn&#39;t write to {}: {}&quot;, display, why.description())
+            panic!(&quot;couldn&#39;t write to {}: {}&quot;, display,
+                                               Error::description(&amp;why))
         },
         Ok(&#95;) =&gt; println!(&quot;successfully wrote to {}&quot;, display),
     }

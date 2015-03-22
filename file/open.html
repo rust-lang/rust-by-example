@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="41.1" data-basepath=".." data-revision="1426997617766">
+    <div class="book" data-level="41.1" data-basepath=".." data-revision="1427045733243">
     
 
 <div class="book-summary">
@@ -98,6 +98,44 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="print/print_debug.html">
+            
+                
+                    <a href="../print/print_debug.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         Debug
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="print/print_display.html">
+            
+                
+                    <a href="../print/print_display.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         Display
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -2131,11 +2169,12 @@ file when it is <code>drop</code>ed.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(old&#95;path)]
-#![feature(io)]
+<div id="editor">#![feature(core)]
 
-use std::io::prelude::&#42;;
+use std::error::Error;
 use std::fs::File;
+use std::io::prelude::&#42;;
+use std::path::Path;
 
 fn main() {
     // Create a path to the desired file
@@ -2145,14 +2184,16 @@ fn main() {
     // Open the path in read-only mode, returns &#96;IoResult&lt;File&gt;&#96;
     let mut file = match File::open(&amp;path) {
         // The &#96;desc&#96; field of &#96;IoError&#96; is a string that describes the error
-        Err(why) =&gt; panic!(&quot;couldn&#39;t open {}: {}&quot;, display, why.description()),
+        Err(why) =&gt; panic!(&quot;couldn&#39;t open {}: {}&quot;, display,
+                                                   Error::description(&amp;why)),
         Ok(file) =&gt; file,
     };
 
     // Read the file contents into a string, returns &#96;IoResult&lt;String&gt;&#96;
     let mut s = String::new();
     match file.read&#95;to&#95;string(&amp;mut s) {
-        Err(why) =&gt; panic!(&quot;couldn&#39;t read {}: {}&quot;, display, why.description()),
+        Err(why) =&gt; panic!(&quot;couldn&#39;t read {}: {}&quot;, display,
+                                                   Error::description(&amp;why)),
         Ok(&#95;) =&gt; print!(&quot;{} contains:&#92;n{}&quot;, display, s),
     }
 

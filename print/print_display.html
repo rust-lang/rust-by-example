@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>The borrow checker | Rust by Example</title>
+        <title>Display | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../lifetime/fn.html" />
+    <link rel="next" href="../literals.html" />
     
     
-    <link rel="prev" href="../lifetime.html" />
+    <link rel="prev" href="../print/print_debug.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="19.1" data-basepath=".." data-revision="1427045733243">
+    <div class="book" data-level="2.2" data-basepath=".." data-revision="1427045733243">
     
 
 <div class="book-summary">
@@ -119,7 +119,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.2" data-path="print/print_display.html">
+        <li class="chapter active" data-level="2.2" data-path="print/print_display.html">
             
                 
                     <a href="../print/print_display.html">
@@ -1165,7 +1165,7 @@
                 
     
         
-        <li class="chapter active" data-level="19.1" data-path="lifetime/borrow.html">
+        <li class="chapter " data-level="19.1" data-path="lifetime/borrow.html">
             
                 
                     <a href="../lifetime/borrow.html">
@@ -2160,89 +2160,112 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_65">
+                    <section class="normal" id="section-gitbook_88">
                     
-                        <h2 id="191-the-borrow-checker">19.1 The borrow checker</h2>
-<p>Let&#39;s see how the compiler prevents the creation of dangling pointers via its
-borrow checker. To simplify the analysis and explanation, we have two
-additions:</p>
+                        <h2 id="22-display">2.2 Display</h2>
+<p><code>fmt::Debug</code> hardly looks compact and clean, so it is often advantageous to
+customize the output appearance. This is done by manually implementing
+<a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>fmt::Display</code></a>, which uses the <code>{}</code> print marker. Implementing it
+looks like this:</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// Import the `fmt` module to make it available via `use`.</span>
+<span class="hljs-keyword">use</span> std::fmt;
+
+<span class="hljs-comment">// Define a structure which `fmt::Display` will be implemented for. This is simply</span>
+<span class="hljs-comment">// a structure containing an `i32` bound to the name `Structure`.</span>
+<span class="hljs-keyword">struct</span> Structure(<span class="hljs-keyword">i32</span>);
+
+<span class="hljs-comment">// In order to use the `{}` marker, the trait `fmt::Display` must be implemented</span>
+<span class="hljs-comment">// manually for the type.</span>
+<span class="hljs-keyword">impl</span> fmt::Display <span class="hljs-keyword">for</span> Structure {
+    <span class="hljs-comment">// This trait requires `fmt` with this exact signature.</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">fmt</span></span>(&amp;<span class="hljs-keyword">self</span>, f: &amp;<span class="hljs-keyword">mut</span> fmt::Formatter) -&gt; fmt::Result {
+        <span class="hljs-comment">// Print strictly the first element in the structure. `write!` uses</span>
+        <span class="hljs-comment">// syntax which is very similar to `println!`.</span>
+        <span class="hljs-built_in">write!</span>(f, <span class="hljs-string">"{}"</span>, <span class="hljs-keyword">self</span>.<span class="hljs-number">0</span>)
+    }
+}
+</code></pre>
+<p><code>fmt::Display</code> may be cleaner than <code>fmt::Debug</code> but this presents
+a problem for the <code>std</code> library. How should ambiguous types be displayed?
+For example, if the <code>std</code> library implemented a single style for all
+<code>Vec&lt;T&gt;</code>, what style should it be? Either of these two?</p>
 <ul>
-<li>Lifetimes has been explicitly annotated in the source code.</li>
-<li>We have drawn the lifetime &quot;lines&quot;, which span from the creation of an object
-to its destruction. The block scopes have also been drawn.</li>
+<li><code>Vec&lt;path&gt;</code>: <code>/:/etc:/home/username:/bin</code> (split on <code>:</code>)</li>
+<li><code>Vec&lt;number&gt;</code>: <code>1,2,3</code> (split on <code>,</code>)</li>
 </ul>
-<p>Note that explicit lifetime annotation on references <code>&amp;&#39;foo T</code> is not allowed
-by the compiler, so you must remove the lifetime part <code>&#39;foo</code> to see the &quot;real&quot;
-compiler error.</p>
+<p>No, because there is no ideal style for all types and the <code>std</code> library
+doesn&#39;t presume to dictate one. <code>fmt::Display</code> is not implemented for <code>Vec&lt;T&gt;</code>
+or for any other generic containers. <code>fmt::Debug</code> must then be used for these
+generic cases.</p>
+<p>This is not a problem though because for any new <em>container</em> type which is
+<em>not</em> generic,<code>fmt::Display</code> can be implemented.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// FIXME To see the &quot;real&quot; compiler error, change both &#96;&amp;&#39;c&#96; and &#96;&amp;&#39;d&#96; into &#96;&amp;&#96;
+<div id="editor">use std::fmt; // Import &#96;fmt&#96;
 
-fn main() { // &#96;&#39;main&#96; starts ────────────────────────────────────────────┐
-    let stack&#95;integer: i32 = 5; // &#96;&#39;a&#96; starts ─────────────────────────┐ │
-    let boxed&#95;integer = Box::new(4); // &#96;&#39;b&#96; starts ──────────────────┐ │ │
-    //                                                                │ │ │
-    // This is a valid operation                                      │ │ │
-    let ref&#95;to&#95;box: &amp;&#39;c i32 = &amp;&#42;boxed&#95;integer; // &#96;&#39;c&#96; starts ──────┐ │ │ │
-    //                                                              │ │ │ │
-    // The compiler forbids this operation, because                 │ │ │ │
-    // &#96;ref&#95;to&#95;another&#95;box&#96; would become a dangling pointer         │ │ │ │
-    let ref&#95;to&#95;another&#95;box: &amp;&#39;d i32 = { // &#96;&#39;let&#96; &#96;&#39;d&#96; start ───┬─┐ │ │ │ │
-        let another&#95;boxed&#95;integer = Box::new(3); // ──────────┐ │ │ │ │ │ │
-        // ^ &#96;e&#96; starts                                       │ │ │ │ │ │ │
-        &amp;&#42;another&#95;boxed&#95;integer //                            │ │ │ │ │ │ │
-    }; // &#96;&#39;e&#96; &#96;&#39;let&#96; end ────────────────────────────────────┴─┘ │ │ │ │ │
-    //                                                            │ │ │ │ │
-    let invalid&#95;dereference = &#42;ref&#95;to&#95;another&#95;box; //             │ │ │ │ │
-} // &#96;&#39;d&#96; &#96;&#39;c&#96; &#96;&#39;b&#96; &#96;&#39;a&#96; &#96;&#39;main&#96; end ─────────────────────────────┴─┴─┴─┴─┘</div>
+// A structure holding two numbers. &#96;Debug&#96; will be derived so the results can
+// be contrasted with &#96;Display&#96;.
+#[derive(Debug)]
+struct MinMax(i64, i64);
+
+// Implement &#96;Display&#96; for &#96;MinMax&#96;.
+impl fmt::Display for MinMax {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        // Use &#96;self.number&#96; to refer to each positional data point.
+        write!(f, &quot;({}, {})&quot;, self.0, self.1)
+    }
+}
+
+// Define a structure where the fields are nameable for comparison.
+#[derive(Debug)]
+struct Point2 {
+    x: f64,
+    y: f64,
+}
+
+// Similarly, implement for Point2
+impl fmt::Display for Point2 {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        // Customize so only &#96;x&#96; and &#96;y&#96; are denoted.
+        write!(f, &quot;x: {}, y: {}&quot;, self.x, self.y)
+    }
+}
+
+fn main() {
+    let minmax = MinMax(0, 14);
+
+    println!(&quot;Compare structures:&quot;);
+    println!(&quot;Display: {}&quot;, minmax);
+    println!(&quot;Debug: {:?}&quot;, minmax);
+
+    let big&#95;range =   MinMax(-300, 300);
+    let small&#95;range = MinMax(-3, 3);
+
+    println!(&quot;The big range is {big} and the small is {small}&quot;,
+             small = small&#95;range,
+             big = big&#95;range);
+
+    let point = Point2 { x: 3.3, y: 7.2 };
+
+    println!(&quot;Compare points:&quot;);
+    println!(&quot;Display: {}&quot;, point);
+    println!(&quot;Debug: {:?}&quot;, point);
+
+    // Error. Both &#96;Debug&#96; and &#96;Display&#96; were implemented but &#96;{:b}&#96;
+    // requires &#96;fmt::Binary&#96; to be implemented. This will not work.
+    // println!(&quot;What does Point2D look like in binary: {:b}?&quot;, point);
+}</div>
 <div id="result"></div>
 </div>
 
-<p>The &quot;real&quot; compiler error is: &quot;<code>another_boxed_integer</code> does not live long
-enough&quot;. Let&#39;s analyze why this happens:</p>
-<ul>
-<li><code>stack_integer</code> has lifetime <code>&#39;a</code></li>
-<li><code>boxed_integer</code> has lifetime <code>&#39;b</code></li>
-<li><code>ref_to_box</code> has lifetime <code>&#39;c</code></li>
-<li><code>ref_to_another_box</code> has lifetime <code>&#39;d</code></li>
-<li><code>another_boxed_integer</code> has lifetime <code>&#39;e</code></li>
-<li><code>&#39;main</code> and <code>&#39;let</code> are the scopes of the blocks</li>
-<li>When a block scope ends, all the objects declared in it get destroyed<ul>
-<li><code>&#39;let</code> ends, and so does <code>&#39;e</code></li>
-<li><code>&#39;main</code> ends, and so does <code>&#39;a</code> <code>&#39;b</code> <code>&#39;c</code> and <code>&#39;d</code></li>
-</ul>
-</li>
-<li><code>ref_to_box</code> is a valid borrow, because<ul>
-<li><code>ref_to_box</code> has lifetime <code>&#39;c</code></li>
-<li><code>ref_to_box</code> points to an object with lifetime <code>&#39;b</code></li>
-<li><code>&#39;c</code> will never <em>outlive</em> <code>&#39;b</code> (this is expressed as <code>&#39;c &lt; &#39;b</code>)</li>
-<li>therefore <code>ref_to_box</code> will always point to valid data</li>
-</ul>
-</li>
-<li><code>ref_to_another_box</code> is an <em>invalid</em> borrow, because<ul>
-<li><code>ref_to_another_box</code> has lifetime <code>&#39;d</code></li>
-<li><code>ref_to_another_box</code> points to an object with lifetime <code>&#39;e</code></li>
-<li><code>&#39;d</code> outlives <code>&#39;e</code></li>
-<li>therefore <code>ref_to_another_box</code> can become a dangling pointer (it can point
-to destroyed data)<ul>
-<li>creation of dangling pointers is forbidden, so this borrow is invalid</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>The borrow checker will do this job for the programmer behind his/her back, to
-prevent him/her from (unintentionally) creating dangling pointers. Although,
-the programmer can be saved by the borrow checker without knowing what a
-lifetime is.</p>
-<p>The programmer doesn&#39;t need to explicitly annotate lifetimes (nor understand
-what are lifetimes), for the borrow checker to do its job in most cases. These
-are the cases where explicit lifetimes are required:</p>
-<ul>
-<li><a href="/lifetime/fn.html">Functions that return references</a></li>
-<li><a href="/lifetime/struct.html">Structs that hold references</a></li>
-</ul>
+<p>So, <code>fmt::Display</code> has been implemented but <code>fmt::Binary</code> has not, and
+therefore cannot be used. <code>std::fmt</code> has many such <a href="./trait.html"><code>trait</code>s</a> and
+each requires it&#39;s own implementation. This is detailed further in
+<a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>.</p>
+<h3 id="see-also">See also:</h3>
+<p><a href="./trait/derive.html"><code>derive</code></a>, <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>, <a href="./macros.html">macros</a>, <a href="./structs.html"><code>struct</code></a>,
+<a href="./trait.html"><code>trait</code></a>, and <a href="./mod/use.html">use</a></p>
 
                     
                     </section>
@@ -2253,10 +2276,10 @@ are the cases where explicit lifetimes are required:</p>
         </div>
 
         
-        <a href="../lifetime.html" class="navigation navigation-prev " aria-label="Previous page: Lifetimes"><i class="fa fa-angle-left"></i></a>
+        <a href="../print/print_debug.html" class="navigation navigation-prev " aria-label="Previous page: Debug"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../lifetime/fn.html" class="navigation navigation-next " aria-label="Next page: Functions"><i class="fa fa-angle-right"></i></a>
+        <a href="../literals.html" class="navigation navigation-next " aria-label="Next page: Literals and operators"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
