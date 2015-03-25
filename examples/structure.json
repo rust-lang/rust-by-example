@@ -18,7 +18,7 @@
   ] },
   { "id": "expression", "title": "Expressions", "children": null },
   { "id": "flow_control", "title": "Flow Control", "children": [
-      { "id": "if-else", "title": "if/else", "children": null },
+      { "id": "if_else", "title": "if/else", "children": null },
       { "id": "loop", "title": "loop", "children": [
           { "id": "nested", "title": "Nesting and labels", "children": null }
       ] },
@@ -85,7 +85,7 @@
   { "id": "constants", "title": "Global constants", "children": null },
   { "id": "methods", "title": "Methods", "children": null },
   { "id": "enum", "title": "Enums", "children": [
-      { "id": "c-like", "title": "C-like", "children": null }
+      { "id": "c_like", "title": "C-like", "children": null }
   ] },
   { "id": "panic", "title": "`panic!`", "children": null },
   { "id": "option", "title": "`Option`", "children": null },
@@ -120,7 +120,7 @@
   { "id": "fs", "title": "Filesystem Operations", "children": null },
   { "id": "bench", "title": "Benchmarking", "children": null  },
   { "id": "comment", "title": "Comments", "children": [
-      { "id": "doc-comment", "title": "Doc Comments", "children": null }
+      { "id": "doc_comment", "title": "Doc Comments", "children": null }
   ] },
   { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
   { "id": "macros", "title": "macro_rules!", "children": [
@@ -138,7 +138,7 @@
   { "id": "unsafe", "title": "Unsafe operations", "children": null  },
   { "id": "fmt", "title": "Formatting", "children": null },
   { "id": "hash", "title": "HashMap", "children": [
-      { "id": "alt-key-types", "title": "Alternate/custom key types", "children": null},
+      { "id": "alt_key_types", "title": "Alternate/custom key types", "children": null},
       { "id": "hashset", "title": "HashSet", "children": null }
   ] }
 ]
