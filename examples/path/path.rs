@@ -1,4 +1,3 @@
-#![feature(path)]
 #![feature(path_ext)]
 
 use std::path::Path;

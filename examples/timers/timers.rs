@@ -1,11 +1,9 @@
-#![feature(core)]
 #![feature(old_io)]
 #![feature(std_misc)]
+#![feature(step_by)]
 
-use std::old_io::Timer;
-use std::old_io::timer;
+use std::old_io::{timer, Timer};
 use std::time::duration::Duration;
-use std::iter;
 use std::sync::mpsc;
 
 fn main() {
@@ -36,7 +34,7 @@ fn main() {
     let metronome: mpsc::Receiver<()> = timer.periodic(interval);
 
     println!("Countdown");
-    for i in iter::range_step(5i32, 0, -1) {
+    for i in (5i32..0).step_by(-1) {
         // This loop will run once every second
         let _ = metronome.recv();
 

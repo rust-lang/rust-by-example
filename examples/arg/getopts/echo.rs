@@ -1,4 +1,3 @@
-#![feature(old_io)]
 #![feature(rustc_private)]
 #![feature(collections)]
 #![feature(exit_status)]
@@ -6,7 +5,8 @@
 extern crate getopts;
 
 use std::env;
-use std::old_io::stdio;
+use std::io;
+use std::io::Write;
 
 static VERSION: &'static str = "1.0.0";
 
@@ -64,6 +64,6 @@ fn main() {
     if !matches.opt_present("n") {
         println!("")
     } else {
-        stdio::flush();
+        let _ = io::stdout().flush();
     }
 }
