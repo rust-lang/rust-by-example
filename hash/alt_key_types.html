@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Doc Comments | Rust by Example</title>
+        <title>Alternate/custom key types | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../ffi.html" />
+    <link rel="next" href="../hash/hashset.html" />
     
     
-    <link rel="prev" href="../comment.html" />
+    <link rel="prev" href="../hash.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="45.1" data-basepath=".." data-revision="1427288852339">
+    <div class="book" data-level="53.1" data-basepath=".." data-revision="1427394426886">
     
 
 <div class="book-summary">
@@ -345,10 +345,10 @@
                 
     
         
-        <li class="chapter " data-level="7.1" data-path="flow_control/if-else.html">
+        <li class="chapter " data-level="7.1" data-path="flow_control/if_else.html">
             
                 
-                    <a href="../flow_control/if-else.html">
+                    <a href="../flow_control/if_else.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.1.</b>
@@ -1267,10 +1267,10 @@
                 
     
         
-        <li class="chapter " data-level="22.1" data-path="enum/c-like.html">
+        <li class="chapter " data-level="22.1" data-path="enum/c_like.html">
             
                 
-                    <a href="../enum/c-like.html">
+                    <a href="../enum/c_like.html">
                         <i class="fa fa-check"></i>
                         
                             <b>22.1.</b>
@@ -1777,10 +1777,10 @@
                 
     
         
-        <li class="chapter active" data-level="45.1" data-path="comment/doc-comment.html">
+        <li class="chapter " data-level="45.1" data-path="comment/doc_comment.html">
             
                 
-                    <a href="../comment/doc-comment.html">
+                    <a href="../comment/doc_comment.html">
                         <i class="fa fa-check"></i>
                         
                             <b>45.1.</b>
@@ -2035,10 +2035,10 @@
                 
     
         
-        <li class="chapter " data-level="53.1" data-path="hash/alt-key-types.html">
+        <li class="chapter active" data-level="53.1" data-path="hash/alt_key_types.html">
             
                 
-                    <a href="../hash/alt-key-types.html">
+                    <a href="../hash/alt_key_types.html">
                         <i class="fa fa-check"></i>
                         
                             <b>53.1.</b>
@@ -2160,53 +2160,89 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_22">
+                    <section class="normal" id="section-gitbook_60">
                     
-                        <h2 id="451-doc-comments">45.1 Doc Comments</h2>
-<p>Doc comments are very useful for big projects that require documentation. When
-running <a href="https://github.com/rust-lang/rust/blob/master/src/doc/rustdoc.md" target="_blank">Rustdoc</a>, these are the comments that get compiled into
-documentation. They are denoted by a <code>///</code>, and support <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a>.</p>
+                        <h2 id="531-alternatecustom-key-types">53.1 Alternate/custom key types</h2>
+<p>Any type that implements the <code>Eq</code> and <code>Hash</code> traits can be a key in <code>HashMap</code>. 
+This includes:</p>
+<ul>
+<li><code>bool</code> (though not very useful since there is only two possible keys)</li>
+<li><code>int</code>, <code>uint</code>, and all variations thereof 
+(see <a href="http://doc.rust-lang.org/std/collections/struct.VecMap.html" target="_blank"><code>VecMap</code></a> for a more streamlined map implementation keyed by <code>uint</code>)</li>
+<li><code>String</code> and <code>&amp;str</code> (protip: you can have a <code>HashMap</code> keyed by <code>String</code> 
+and call <code>.get()</code> with an <code>&amp;str</code>)</li>
+</ul>
+<p>Note that <code>f32</code> and <code>f64</code> do <em>not</em> implement <code>Hash</code>, 
+likely because <a href="http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems" target="_blank">floating-point precision errors</a>
+would make using them as hashmap keys horribly error-prone.</p>
+<p>All collection classes implement <code>Eq</code> and <code>Hash</code> 
+if their contained type also respectively implements <code>Eq</code> and <code>Hash</code>. 
+For example, <code>Vec&lt;T&gt;</code> will implement <code>Hash</code> if <code>T</code> implements <code>Hash</code>.</p>
+<p>You can easily implement <code>Eq</code> and <code>Hash</code> for a custom type with just one line: 
+<code>#[derive(PartialEq, Eq, Hash)]</code></p>
+<p>The compiler will do the rest. If you want more control over the details, 
+you can implement <code>Eq</code> and/or <code>Hash</code> yourself. 
+This guide will not cover the specifics of implementing <code>Hash</code>. </p>
+<p>To play around with using a <code>struct</code> in <code>HashMap</code>, 
+let&#39;s try making a very simple user logon system:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">/// A human being is represented here
-pub struct Person {
-    /// A person must have a name, no matter how much Juliet may hate it
-    name: String,
+<div id="editor">use std::collections::HashMap;
+
+// Eq requires that you derive PartialEq on the type.
+#[derive(PartialEq, Eq, Hash)]
+struct Account&lt;&#39;a&gt;{
+    username: &amp;&#39;a str,
+    password: &amp;&#39;a str,
 }
 
-impl Person {
-    /// Returns a person with the name given them
-    ///
-    /// # Arguments
-    ///
-    /// &#42; &#96;name&#96; - A string slice that holds the name of the person
-    ///
-    /// # Example
-    ///
-    /// &#96;&#96;&#96;
-    /// // You can have rust code between fences inside the comments
-    /// // If you pass --test to Rustdoc, it will even test it for you!
-    /// let person = Person::new(&quot;name&quot;);
-    /// &#96;&#96;&#96;
-    pub fn new(name: &amp;str) -&gt; Person {
-        Person {
-            name: name.to&#95;string(),
-        }
-    }
+struct AccountInfo&lt;&#39;a&gt;{
+    name: &amp;&#39;a str,
+    email: &amp;&#39;a str,
+}
 
-    /// Gives a friendly hello!
-    ///
-    /// Says &quot;Hello, [name]&quot; to the &#96;Person&#96; it is called on.
-    pub fn hello(&amp; self) {
-        println!(&quot;Hello, {}!&quot;, self.name);
+type Accounts&lt;&#39;a&gt; = HashMap&lt;Account&lt;&#39;a&gt;, AccountInfo&lt;&#39;a&gt;&gt;;
+
+fn try&#95;logon&lt;&#39;a&gt;(accounts: &amp;Accounts&lt;&#39;a&gt;,
+        username: &amp;&#39;a str, password: &amp;&#39;a str){
+    println!(&quot;Username: {}&quot;, username);
+    println!(&quot;Password: {}&quot;, password);
+    println!(&quot;Attempting logon...&quot;);
+
+    let logon = Account {
+        username: username,
+        password: password,
+    };
+
+    match accounts.get(&amp;logon) {
+        Some(account&#95;info) =&gt; {
+            println!(&quot;Successful logon!&quot;);
+            println!(&quot;Name: {}&quot;, account&#95;info.name);
+            println!(&quot;Email: {}&quot;, account&#95;info.email);
+        },
+        &#95; =&gt; println!(&quot;Login failed!&quot;),
     }
 }
 
-fn main() {
-    let john = Person::new(&quot;John&quot;);
+fn main(){
+    let mut accounts: Accounts = HashMap::new();
 
-    john.hello();
+    let account = Account {
+        username: &quot;j.everyman&quot;,
+        password: &quot;password123&quot;,
+    };
+
+    let account&#95;info = AccountInfo {
+        name: &quot;John Everyman&quot;,
+        email: &quot;j.everyman@email.com&quot;,
+    };
+
+    accounts.insert(account, account&#95;info);
+
+    try&#95;logon(&amp;accounts, &quot;j.everyman&quot;, &quot;psasword123&quot;);
+
+    try&#95;logon(&amp;accounts, &quot;j.everyman&quot;, &quot;password123&quot;);
 }</div>
 <div id="result"></div>
 </div>
@@ -2221,10 +2257,10 @@ fn main() {
         </div>
 
         
-        <a href="../comment.html" class="navigation navigation-prev " aria-label="Previous page: Comments"><i class="fa fa-angle-left"></i></a>
+        <a href="../hash.html" class="navigation navigation-prev " aria-label="Previous page: HashMap"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../ffi.html" class="navigation navigation-next " aria-label="Next page: Foreign Function Interface"><i class="fa fa-angle-right"></i></a>
+        <a href="../hash/hashset.html" class="navigation navigation-next " aria-label="Next page: HashSet"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
