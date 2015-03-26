@@ -1,8 +1,8 @@
+#![feature(step_by)]
 #![feature(core)]
 
 // The `AdditiveIterator` trait adds the `sum` method to iterators
 use std::iter::AdditiveIterator;
-use std::iter;
 
 fn main() {
     println!("Find the sum of all the squared odd numbers under 1000");
@@ -12,7 +12,7 @@ fn main() {
     // Declare accumulator variable
     let mut acc = 0;
     // Iterate: 0, 1, 2, ... to infinity
-    for n in iter::count(0u32, 1) {
+    for n in (0u32..).step_by(1) {
         // Square the number
         let n_squared = n * n;
 
@@ -29,7 +29,7 @@ fn main() {
     // Functional approach
     let sum_of_squared_odd_numbers =
         // All natural numbers
-        iter::count(0u32, 1).
+        (0u32..).step_by(1).
         // Squared
         map(|n| n * n).
         // Below upper limit

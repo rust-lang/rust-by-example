@@ -2,7 +2,7 @@ To mark a function as a unit test, place `#[test]` (equivalent
 to `#[cfg(test)]`) above any function.  The function must take
 no parameters and return nothing.
 
-{unit-test.rs}
+{unit_test.rs}
 
 If you want the test to fail, just put `#[should_fail]` under `#[test]`.
 
@@ -19,8 +19,8 @@ compiled with `--test`.
 **note**: programs compiled with `--test` *ignore* information passed to stdout
 
 ```
-$ rustc --test unit-test.rs
-$ ./unit-test
+$ rustc --test unit_test.rs
+$ ./unit_test
 running 1 test
 test distance_test ... ok
 
@@ -30,7 +30,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
 If `--test` were not included, then this would happen
 
 ```
-$ rustc unit-test.rs
-$ ./unit-test
+$ rustc unit_test.rs
+$ ./unit_test
 If you see this, the tests were not compiled nor ran!
 ```

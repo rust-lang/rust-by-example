@@ -25,7 +25,7 @@ This guide will not cover the specifics of implementing `Hash`.
 To play around with using a `struct` in `HashMap`, 
 let's try making a very simple user logon system:
 
-{alt-key-types.play}
+{alt_key_types.play}
 
 [vecmap]: http://doc.rust-lang.org/std/collections/struct.VecMap.html
 [hash]: http://en.wikipedia.org/wiki/Hash_function

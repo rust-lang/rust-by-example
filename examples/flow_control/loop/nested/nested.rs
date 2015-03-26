@@ -1,3 +1,5 @@
+#![allow(unreachable_code)]
+
 fn main() {
     'outer: loop {
         println!("Entered the outer loop");

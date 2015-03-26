@@ -1,5 +1,3 @@
-#![feature(core)]
-
 use std::error::Error;
 use std::io::prelude::*;
 use std::process::{Command, Stdio};

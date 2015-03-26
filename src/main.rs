@@ -6,7 +6,7 @@
 
 extern crate regex;
 
-extern crate "rustc-serialize" as rustc_serialize;
+extern crate rustc_serialize;
 
 use example::Example;
 use std::thread;
