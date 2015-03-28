@@ -7,3 +7,5 @@ exception to this rule are the primitive types: `usize`, `f32`, etc.
 The main use of aliases is to reduce typing; for example the `IoResult<T>` type
 is an alias for the `Result<T, IoError>` type.
 
+### See also:
+[attributes](./attribute.html)
