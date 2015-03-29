@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="48.1" data-basepath=".." data-revision="1427547864667">
+    <div class="book" data-level="48.1" data-basepath=".." data-revision="1427662686824">
     
 
 <div class="book-summary">
@@ -2167,7 +2167,9 @@
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::env;
+<div id="editor">#![feature(slice&#95;patterns)]
+
+use std::env;
 
 fn increase(number: i32) {
     println!(&quot;{}&quot;, number + 1);
