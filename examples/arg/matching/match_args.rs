@@ -1,3 +1,5 @@
+#![feature(slice_patterns)]
+
 use std::env;
 
 fn increase(number: i32) {

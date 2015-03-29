@@ -1,11 +1,9 @@
 #![feature(core)]
 
 #![deny(warnings)]
-#![feature(int_uint)]
 #![feature(plugin)]
 
 extern crate regex;
-
 extern crate rustc_serialize;
 
 use example::Example;
@@ -36,7 +34,7 @@ fn main() {
 
     let mut entries = (0..nexamples).map(|_| {
         rx.recv().unwrap()
-    }).collect::<Vec<(Vec<uint>, String)>>();
+    }).collect::<Vec<(Vec<usize>, String)>>();
 
     entries.sort_by(|&(ref i, _), &(ref j, _)| i.cmp(j));
 
