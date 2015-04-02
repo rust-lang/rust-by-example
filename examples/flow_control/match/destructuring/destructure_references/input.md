@@ -4,6 +4,7 @@ References and mutable references can be retrieved via
 {ref.play}
 
 ### See also:
+
 [Borrowing (`&`)][borrow]
 
 [borrow]: /borrow.html

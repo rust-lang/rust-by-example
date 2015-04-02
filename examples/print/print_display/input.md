@@ -47,6 +47,7 @@ each requires it's own implementation. This is detailed further in
 [`std::fmt`][fmt].
 
 ### See also:
+
 [`derive`][derive], [`std::fmt`][fmt], [macros], [`struct`][structs],
 [`trait`][traits], and [use][use]
 

@@ -26,6 +26,7 @@ So `fmt::Debug` definitely makes this printable but sacrifices some
 elegance. Manually implementing `fmt::Display` will fix that.
 
 ### See also:
+
 [attributes][attributes], [`derive`][derive], [`std::fmt`][fmt],
 and [`struct`][structs]
 
