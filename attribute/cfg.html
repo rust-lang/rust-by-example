@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="11.2" data-basepath=".." data-revision="1428015058410">
+    <div class="book" data-level="11.2" data-basepath=".." data-revision="1428015081701">
     
 
 <div class="book-summary">
@@ -2163,7 +2163,12 @@
                     <section class="normal" id="section-gitbook_8">
                     
                         <h2 id="112-cfg">11.2 <code>cfg</code></h2>
-<p>The <code>cfg</code> attribute can be use to achieve conditional compilation.</p>
+<p>Conditional compilation is possible through two different operators:</p>
+<ul>
+<li>the <code>cfg</code> attribute: <code>#[cfg(...)]</code> in attribute position</li>
+<li>the <code>cfg!</code> macro: <code>cfg!(...)</code> in boolean expressions</li>
+</ul>
+<p>Both utilize identical syntax.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2181,13 +2186,19 @@ fn are&#95;you&#95;on&#95;linux() {
 
 fn main() {
     are&#95;you&#95;on&#95;linux();
+
+    println!(&quot;Are you sure?&quot;);
+    if cfg!(target&#95;os = &quot;linux&quot;) {
+        println!(&quot;Yes. It&#39;s definitely linux!&quot;);
+    } else {
+        println!(&quot;Yes. It&#39;s definitely &#42;not&#42; linux!&quot;);
+    }
 }</div>
 <div id="result"></div>
 </div>
 
-<p>See <a href="http://doc.rust-lang.org/reference.html#conditional-compilation" target="_blank">the
-Reference</a> for
-more details.</p>
+<h3 id="see-also">See also:</h3>
+<p><a href="http://doc.rust-lang.org/reference.html#conditional-compilation" target="_blank">the reference</a>, <a href="http://doc.rust-lang.org/std/macro.cfg!.html" target="_blank"><code>cfg!</code></a>, and <a href="/macros.html">macros</a>.</p>
 
                     
                     </section>
