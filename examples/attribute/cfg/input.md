@@ -1,7 +1,16 @@
-The `cfg` attribute can be use to achieve conditional compilation.
+Conditional compilation is possible through two different operators:
+
+* the `cfg` attribute: `#[cfg(...)]` in attribute position
+* the `cfg!` macro: `cfg!(...)` in boolean expressions
+
+Both utilize identical syntax.
 
 {cfg.play}
 
-See [the
-Reference](http://doc.rust-lang.org/reference.html#conditional-compilation) for
-more details.
+### See also:
+
+[the reference][ref], [`cfg!`][cfg], and [macros][macros].
+
+[cfg]: http://doc.rust-lang.org/std/macro.cfg!.html
+[macros]: /macros.html
+[ref]: http://doc.rust-lang.org/reference.html#conditional-compilation
