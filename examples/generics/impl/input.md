@@ -16,6 +16,7 @@ impl <T> GenericTup<T> {}
 {impl.play}
 
 ###See also:
+
 [impl](http://rustbyexample.com/methods.html),
 [struct](http://rustbyexample.com/structs.html), and
 [functions returning references](http://rustbyexample.com/lifetime/fn.html),

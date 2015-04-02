@@ -21,6 +21,7 @@ Here, `fmt::Display` was used because the std library provides implementations
 for these types. To print text for custom types, more steps are required.
 
 ### See also:
+
 [`std::fmt`][fmt], [macros][macros], [`struct`][structs],
 and [`trait`s][traits]
 

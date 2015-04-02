@@ -23,6 +23,7 @@ failure options to be specified:
 {if_let.play}
 
 ### See also:
+
 [`enum`][enum], [`Option`][option], and the [RFC][if_let_rfc]
 
 [enum]: /enum.html
