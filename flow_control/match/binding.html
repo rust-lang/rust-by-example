@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="7.5.3" data-basepath="../.." data-revision="1428014971192">
+    <div class="book" data-level="7.5.3" data-basepath="../.." data-revision="1428015020756">
     
 
 <div class="book-summary">
@@ -2163,17 +2163,25 @@
                     <section class="normal" id="section-gitbook_41">
                     
                         <h3 id="753-binding">7.5.3 Binding</h3>
-<p>Rust supports binding variables via a <code>match</code>:</p>
+<p>Indirectly accessing a variable makes it impossible to branch and use that
+variable without re-binding. <code>match</code> provides the <code>@</code> sigil for exactly
+this purpose:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">fn main() {
-    let age = 3;
-    // TODO ^ Try different values for &#96;age&#96;
+<div id="editor">// A function &#96;age&#96; which returns a &#96;u32&#96;.
+fn age() -&gt; u32 {
+    15
+}
 
+fn main() {
     println!(&quot;Tell me type of person you are&quot;);
-    match age {
-        // Bind to &#96;n&#96; for the sequence of 1 through 12.
+
+    match age() {
+        0             =&gt; println!(&quot;I&#39;m not born yet I guess&quot;),
+        // Could &#96;match&#96; 1 ... 12 directly but then what age
+        // would the child be? Instead, bind to &#96;n&#96; for the
+        // sequence of 1 .. 12. Now the age can be reported.
         n @ 1  ... 12 =&gt; println!(&quot;I&#39;m a child of age {:?}&quot;, n),
         n @ 13 ... 19 =&gt; println!(&quot;I&#39;m a teen of age {:?}&quot;, n),
         // Nothing bound. Return the result.
@@ -2182,6 +2190,9 @@
 }</div>
 <div id="result"></div>
 </div>
+
+<h3 id="see-also">See also:</h3>
+<p><a href="/fn.html">functions</a></p>
 
                     
                     </section>

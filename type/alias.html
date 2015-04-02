@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="5.4" data-basepath=".." data-revision="1428014971192">
+    <div class="book" data-level="5.4" data-basepath=".." data-revision="1428015020756">
     
 
 <div class="book-summary">
@@ -2178,6 +2178,8 @@ type Inch = u64;
 type u64&#95;t = u64;
 // TODO ^ Try removing the attribute
 
+// Use an attribute to silence warnings
+#[allow(trivial&#95;numeric&#95;casts)]
 fn main() {
     // &#96;NanoSecond&#96; = &#96;Inch&#96; = &#96;u64&#95;t&#96; = &#96;u64&#96;.
     let nanoseconds: NanoSecond = 5 as u64&#95;t;
@@ -2195,6 +2197,8 @@ fn main() {
 
 <p>The main use of aliases is to reduce typing; for example the <code>IoResult&lt;T&gt;</code> type
 is an alias for the <code>Result&lt;T, IoError&gt;</code> type.</p>
+<h3 id="see-also">See also:</h3>
+<p><a href="./attribute.html">attributes</a></p>
 
                     
                     </section>
