@@ -1,7 +1,4 @@
 mod checked {
-    // For .sqrt() and .ln()
-    use std::num::Float;
-
     #[derive(Debug)]
     enum MathError {
         DivisionByZero,

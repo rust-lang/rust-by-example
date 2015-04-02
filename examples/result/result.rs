@@ -1,6 +1,4 @@
 mod checked {
-    // For .ln() and .sqrt()
-    use std::num::Float;
     // Mathematical "errors" we want to catch
     #[derive(Debug)]
     pub enum MathError {
