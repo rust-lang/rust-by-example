@@ -7,6 +7,8 @@ type Inch = u64;
 type u64_t = u64;
 // TODO ^ Try removing the attribute
 
+// Use an attribute to silence warnings
+#[allow(trivial_numeric_casts)]
 fn main() {
     // `NanoSecond` = `Inch` = `u64_t` = `u64`.
     let nanoseconds: NanoSecond = 5 as u64_t;
