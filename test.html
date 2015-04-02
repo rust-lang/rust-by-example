@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="50" data-basepath="." data-revision="1428015020756">
+    <div class="book" data-level="50" data-basepath="." data-revision="1428015058410">
     
 
 <div class="book-summary">
@@ -2163,57 +2163,58 @@
                     <section class="normal" id="section-gitbook_100">
                     
                         <h1 id="50-testing">50 Testing</h1>
-<p>To mark a function as a unit test, place <code>#[test]</code> (equivalent
-to <code>#[cfg(test)]</code>) above any function.  The function must take
-no parameters and return nothing.</p>
+<p>Functions can be tested by using these <a href="./attribute.html">attributes</a>:</p>
+<ul>
+<li><code>#[test]</code> marks a function as a unit test. The function must take zero
+parameters and return nothing.</li>
+<li><code>#[should_panic]</code> marks a function as a panicking test.</li>
+</ul>
 <pre><code class="lang-rust"><span class="hljs-comment">// unit_test.rs</span>
-<span class="hljs-comment">// For .powi()</span>
-<span class="hljs-keyword">use</span> std::num::Float;
-
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance</span></span>(a: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>), b: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>)) -&gt; <span class="hljs-keyword">f32</span> {
-    (
-        (b.<span class="hljs-number">0</span>.powi(<span class="hljs-number">2</span>) - a.<span class="hljs-number">0</span>.powi(<span class="hljs-number">2</span>)) +
-        (b.<span class="hljs-number">1</span>.powi(<span class="hljs-number">2</span>) - a.<span class="hljs-number">1</span>.powi(<span class="hljs-number">2</span>))
-    ).sqrt()
-}
-
+<span class="hljs-comment">// Conditionally compile `main` only when the test-suite is *not* being run.</span>
+<span class="hljs-preprocessor">#[cfg(not(test))]</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">"If you see this, the tests were not compiled nor ran!"</span>);
 }
 
-<span class="hljs-preprocessor">#[test]</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance_test</span></span>() {
-    <span class="hljs-built_in">assert!</span>(distance((<span class="hljs-number">0f32</span>, <span class="hljs-number">0f32</span>), (<span class="hljs-number">1f32</span>, <span class="hljs-number">1f32</span>)) == (<span class="hljs-number">2f32</span>).sqrt());
-}
-</code></pre>
-<p>If you want the test to fail, just put <code>#[should_fail]</code> under <code>#[test]</code>.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// fail.rs</span>
-<span class="hljs-preprocessor">#[test]</span>
-<span class="hljs-preprocessor">#[should_panic]</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">failing_test</span></span>() {
-    <span class="hljs-built_in">assert!</span>(<span class="hljs-number">1i32</span> == <span class="hljs-number">2i32</span>);
-}
-</code></pre>
-<p>To run unit tests, add either the <code>--test</code> or <code>--cfg test</code> flag to the
-command.  When using either flag, you do not need a <code>main()</code> function
-as the executable will only include and run the functions flagged with
-<code>#[test]</code> or <code>#[cfg(test)]</code>.  If you don&#39;t pass the <code>--test</code> flag, <code>rustc</code> will
-ignore any functions flagged with <code>#[test]</code>.  That means calling any function
-flagged with <code>#[test]</code> will result in <code>rustc: unresolved name</code> if it is not
-compiled with <code>--test</code>.</p>
-<p><strong>note</strong>: programs compiled with <code>--test</code> <em>ignore</em> information passed to stdout</p>
-<pre><code>$ rustc --test unit_test.rs
-$ ./unit_test
-running 1 test
-test distance_test ... ok
+<span class="hljs-comment">// Conditionally compile the module `test` only when the test-suite is run.</span>
+<span class="hljs-preprocessor">#[cfg(test)]</span>
+<span class="hljs-keyword">mod</span> test {
+    <span class="hljs-comment">// A helper function `distance_test` will need.</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance</span></span>(a: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>), b: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>)) -&gt; <span class="hljs-keyword">f32</span> {
+        (
+            (b.<span class="hljs-number">0</span>.powi(<span class="hljs-number">2</span>) - a.<span class="hljs-number">0</span>.powi(<span class="hljs-number">2</span>)) +
+            (b.<span class="hljs-number">1</span>.powi(<span class="hljs-number">2</span>) - a.<span class="hljs-number">1</span>.powi(<span class="hljs-number">2</span>))
+        ).sqrt()
+    }
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+    <span class="hljs-preprocessor">#[test]</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance_test</span></span>() {
+        <span class="hljs-built_in">assert!</span>(distance((<span class="hljs-number">0f32</span>, <span class="hljs-number">0f32</span>), (<span class="hljs-number">1f32</span>, <span class="hljs-number">1f32</span>)) == (<span class="hljs-number">2f32</span>).sqrt());
+    }
+
+    <span class="hljs-preprocessor">#[test]</span>
+    <span class="hljs-preprocessor">#[should_panic]</span>
+    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">failing_test</span></span>() {
+        <span class="hljs-built_in">assert!</span>(<span class="hljs-number">1i32</span> == <span class="hljs-number">2i32</span>);
+    }
+}
+</code></pre>
+<p>Tests can be run with <code>cargo test</code> or <code>rustc --test</code>.</p>
+<pre><code>$ rustc --test unit_test.rs
+$ ./unit_test 
+
+running 2 tests
+test test::distance_test ... ok
+test test::failing_test ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured
 </code></pre><p>If <code>--test</code> were not included, then this would happen</p>
 <pre><code>$ rustc unit_test.rs
 $ ./unit_test
 If you see this, the tests were not compiled nor ran!
-</code></pre>
+</code></pre><h3 id="see-also">See also:</h3>
+<p><a href="./attribute.html">attributes</a>, <a href="./attribute/cfg.html">conditional compilation</a>, and <a href="./mod.html"><code>mod</code></a>.</p>
+
                     
                     </section>
                 
