@@ -3,7 +3,7 @@ language: node_js
 sudo: true
 
 install:
-  - curl -L https://static.rust-lang.org/rustup.sh | sudo sh
+  - curl -L https://static.rust-lang.org/rustup.sh | sudo sh -s -- --channel=nightly
 
 script:
   - rustc --version
