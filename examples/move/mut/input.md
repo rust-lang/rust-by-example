@@ -1,6 +1,8 @@
-Mutability of data can be changed when ownership is transferred.
+Mutability of data in a Box<t> can be changed when ownership is transferred.
 
-However, immutable data is protected from being accessed through
-mutable references at compile time.
+However, once an immutable reference to an object is borrowed, the reference
+cannot be made mutable by transferring ownership. This strict "const
+correctness" is one of the reasons to prefer references over Box<T>'s whenever
+possible.
 
 {mut.play}

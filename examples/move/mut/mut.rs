@@ -16,19 +16,15 @@ fn main() {
 
     println!("mutable_box now contains {}", mutable_box);
 
-    // on the other hand, suppose the variable itself is immutable
-    let x = 5u32;
+    // on the other hand, once a reference is made immutable
+    // it cannot be borrowed mutably.
+    let mut x = 5u32;
     let immutable_ref = &x;
+    // Compiler error!
+    let mutable_ref = &mut *immutable_ref;
 
-    println!("immutable_ref contains {}", immutable_ref);
-
-    // Mutability error
-    //*immutable_ref = 4;
-
-    // Compiler error! Can't force mutability by pointer indirection.
-    //let mutable_ref = &mut *immutable_ref;
-
-    // the underlying value must be mutable for a mutable reference to exist
+    // the underlying mutable value must be borrowed directly for a mutable
+    // reference to exist
     let mut x = 5u32;
     let mutable_ref = &mut x;
     println!("mutable_ref to mutable value contains {}", mutable_ref);
