@@ -17,7 +17,7 @@ fn main() {
     println!("mutable_box now contains {}", mutable_box);
 
     // on the other hand, suppose the variable itself is immutable
-    let x = &5u32;
+    let x = 5u32;
     let immutable_ref = &x;
 
     println!("immutable_ref contains {}", immutable_ref);
