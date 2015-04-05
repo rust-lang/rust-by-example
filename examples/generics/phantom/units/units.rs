@@ -2,13 +2,13 @@ use std::ops::Add;
 use std::marker::PhantomData;
 
 /// Null enumerations to define unit types
-#[derive(Debug, Copy)]
+#[derive(Debug, Clone, Copy)]
 struct Inch;
-#[derive(Debug, Copy)]
+#[derive(Debug, Clone, Copy)]
 struct Mm;
 
 /// Length is phantom type with hidden parameter `Unit`
-#[derive(Debug, Copy)]
+#[derive(Debug, Clone, Copy)]
 struct Length<Unit, T>(T,PhantomData<Unit>);
 
 /// impl X for Y {} means "implement the trait `X` for the Type `Y`"
@@ -30,7 +30,7 @@ struct Length<Unit, T>(T,PhantomData<Unit>);
 /// `type Output = Length<Unit, T>` means that this impl gives back a
 /// `Length<Unit, T>`, so that
 /// `Length<Mm, f64> + Length<Mm, f64> = Length<Mm, f64>`
-impl<Unit, T: Add<T, Output=T> + Copy> Add<Length<Unit, T>>
+impl<Unit, T: Add<T, Output=T> + Clone + Copy> Add<Length<Unit, T>>
         for Length<Unit, T> {
     type Output = Length<Unit, T>;
 

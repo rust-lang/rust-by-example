@@ -19,7 +19,7 @@ fn main() {
 
 // Minimal implementation of single precision complex numbers
 #[repr(C)]
-#[derive(Copy)]
+#[derive(Clone, Copy)]
 struct Complex {
     re: f32,
     im: f32,
