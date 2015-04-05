@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="46" data-basepath="." data-revision="1428015081701">
+    <div class="book" data-level="46" data-basepath="." data-revision="1428272340762">
     
 
 <div class="book-summary">
@@ -2191,7 +2191,7 @@ attribute containing the name of the foreign library.</p>
 
 <span class="hljs-comment">// Minimal implementation of single precision complex numbers</span>
 <span class="hljs-preprocessor">#[repr(C)]</span>
-<span class="hljs-preprocessor">#[derive(Copy)]</span>
+<span class="hljs-preprocessor">#[derive(Clone, Copy)]</span>
 <span class="hljs-keyword">struct</span> Complex {
     re: <span class="hljs-keyword">f32</span>,
     im: <span class="hljs-keyword">f32</span>,
@@ -2233,7 +2233,7 @@ wrappers around them.</p>
 
 <span class="hljs-comment">// Minimal implementation of single precision complex numbers</span>
 <span class="hljs-preprocessor">#[repr(C)]</span>
-<span class="hljs-preprocessor">#[derive(Copy)]</span>
+<span class="hljs-preprocessor">#[derive(Clone, Copy)]</span>
 <span class="hljs-keyword">struct</span> Complex {
     re: <span class="hljs-keyword">f32</span>,
     im: <span class="hljs-keyword">f32</span>,

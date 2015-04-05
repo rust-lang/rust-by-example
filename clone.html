@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="35" data-basepath="." data-revision="1428015081701">
+    <div class="book" data-level="35" data-basepath="." data-revision="1428272340762">
     
 
 <div class="book-summary">
@@ -2171,11 +2171,11 @@ the <code>Clone</code> trait.</p>
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">// A unit struct without resources
-#[derive(Debug, Copy)]
+#[derive(Debug, Clone, Copy)]
 struct Nil;
 
 // A tuple struct with resources that implements the &#96;Clone&#96; trait
-#[derive(Clone,Debug)]
+#[derive(Clone, Debug)]
 struct Pair(Box&lt;i32&gt;, Box&lt;i32&gt;);
 
 fn main() {

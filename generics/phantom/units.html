@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.2.1" data-basepath="../.." data-revision="1428015081701">
+    <div class="book" data-level="14.2.1" data-basepath="../.." data-revision="1428272340762">
     
 
 <div class="book-summary">
@@ -2171,13 +2171,13 @@
 use std::marker::PhantomData;
 
 /// Null enumerations to define unit types
-#[derive(Debug, Copy)]
+#[derive(Debug, Clone, Copy)]
 struct Inch;
-#[derive(Debug, Copy)]
+#[derive(Debug, Clone, Copy)]
 struct Mm;
 
 /// Length is phantom type with hidden parameter &#96;Unit&#96;
-#[derive(Debug, Copy)]
+#[derive(Debug, Clone, Copy)]
 struct Length&lt;Unit, T&gt;(T,PhantomData&lt;Unit&gt;);
 
 /// impl X for Y {} means &quot;implement the trait &#96;X&#96; for the Type &#96;Y&#96;&quot;
@@ -2199,7 +2199,7 @@ struct Length&lt;Unit, T&gt;(T,PhantomData&lt;Unit&gt;);
 /// &#96;type Output = Length&lt;Unit, T&gt;&#96; means that this impl gives back a
 /// &#96;Length&lt;Unit, T&gt;&#96;, so that
 /// &#96;Length&lt;Mm, f64&gt; + Length&lt;Mm, f64&gt; = Length&lt;Mm, f64&gt;&#96;
-impl&lt;Unit, T: Add&lt;T, Output=T&gt; + Copy&gt; Add&lt;Length&lt;Unit, T&gt;&gt;
+impl&lt;Unit, T: Add&lt;T, Output=T&gt; + Clone + Copy&gt; Add&lt;Length&lt;Unit, T&gt;&gt;
         for Length&lt;Unit, T&gt; {
     type Output = Length&lt;Unit, T&gt;;
 
