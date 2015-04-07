@@ -1,5 +1,6 @@
-The `create` static method opens a file in write-only mode. If the file already
-existed, the old content is destroyed, otherwise a new file is created.
+The `create` static method opens a file in write-only mode. If the file
+already existed, the old content is destroyed. Otherwise, a new file is
+created.
 
 {create.play}
 
@@ -24,4 +25,3 @@ failure conditions)
 
 There is also a more generic `open_mode` method that can open files in other
 modes like: read+write, append, etc.
-

@@ -1,5 +1,5 @@
 Rust provides experimental support for SIMD vectors. These SIMD vectors are
-exposed as structs (`f32x4`, `u8x16`, etc.), that implement basic operations
+exposed as structs (`f32x4`, `u8x16`, etc.) that implement basic operations
 (`+`, `-`, `*`, etc) using SIMD instructions under the hood.
 
 {simd.rs}
