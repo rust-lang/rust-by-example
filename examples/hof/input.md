@@ -1,5 +1,5 @@
-Rust provides Higher Order Functions (HOF), these are functions that take a
-closure as an argument to produce a more useful function. HOFs and lazy 
+Rust provides Higher Order Functions (HOF). These are functions that take a
+closure as an argument to produce a more useful function. HOFs and lazy
 iterators give Rust its functional flavor.
 
 {hof.play}

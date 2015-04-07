@@ -1,5 +1,5 @@
-The `ProcessOutput` struct represents the output of a finished child process.
-And the `Command` struct is a process builder.
+The `ProcessOutput` struct represents the output of a finished child process,
+and the `Command` struct is a process builder.
 
 {process.play}
 
