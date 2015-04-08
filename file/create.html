@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="41.2" data-basepath=".." data-revision="1428498302447">
+    <div class="book" data-level="41.2" data-basepath=".." data-revision="1428516789653">
     
 
 <div class="book-summary">
@@ -2187,7 +2187,7 @@ fn main() {
     let path = Path::new(&quot;out/lorem&#95;ipsum.txt&quot;);
     let display = path.display();
 
-    // Open a file in write-only mode, returns &#96;IoResult&lt;File&gt;&#96;
+    // Open a file in write-only mode, returns &#96;io::Result&lt;File&gt;&#96;
     let mut file = match File::create(&amp;path) {
         Err(why) =&gt; panic!(&quot;couldn&#39;t create {}: {}&quot;,
                            display,
@@ -2195,7 +2195,7 @@ fn main() {
         Ok(file) =&gt; file,
     };
 
-    // Write the &#96;LOREM&#95;IPSUM&#96; string to &#96;file&#96;, returns &#96;IoResult&lt;()&gt;&#96;
+    // Write the &#96;LOREM&#95;IPSUM&#96; string to &#96;file&#96;, returns &#96;io::Result&lt;()&gt;&#96;
     match file.write&#95;all(LOREM&#95;IPSUM.as&#95;bytes()) {
         Err(why) =&gt; {
             panic!(&quot;couldn&#39;t write to {}: {}&quot;, display,

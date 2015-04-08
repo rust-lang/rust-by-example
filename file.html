@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="41" data-basepath="." data-revision="1428498302447">
+    <div class="book" data-level="41" data-basepath="." data-revision="1428516789653">
     
 
 <div class="book-summary">
@@ -2166,7 +2166,7 @@
 <p>The <code>File</code> struct represents a file that has been opened (it wraps a file
 descriptor), and gives read and/or write access to the underlying file.</p>
 <p>Since many things can go wrong when doing file I/O, all the <code>File</code> methods
-return the <code>IoResult&lt;T&gt;</code> type, which is an alias for <code>Result&lt;T, IoError&gt;</code>.</p>
+return the <code>io::Result&lt;T&gt;</code> type, which is an alias for <code>Result&lt;T, io::Error&gt;</code>.</p>
 <p>This makes the failure of all I/O operations <em>explicit</em>. Thanks to this, the
 programmer can see all the failure paths, and is encouraged to handle them in
 a proactive manner.</p>

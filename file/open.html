@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="41.1" data-basepath=".." data-revision="1428498302447">
+    <div class="book" data-level="41.1" data-basepath=".." data-revision="1428516789653">
     
 
 <div class="book-summary">
@@ -2179,15 +2179,16 @@ fn main() {
     let path = Path::new(&quot;hello.txt&quot;);
     let display = path.display();
 
-    // Open the path in read-only mode, returns &#96;IoResult&lt;File&gt;&#96;
+    // Open the path in read-only mode, returns &#96;io::Result&lt;File&gt;&#96;
     let mut file = match File::open(&amp;path) {
-        // The &#96;desc&#96; field of &#96;IoError&#96; is a string that describes the error
+        // The &#96;description&#96; method of &#96;io::Error&#96; returns a string that
+        // describes the error
         Err(why) =&gt; panic!(&quot;couldn&#39;t open {}: {}&quot;, display,
                                                    Error::description(&amp;why)),
         Ok(file) =&gt; file,
     };
 
-    // Read the file contents into a string, returns &#96;IoResult&lt;String&gt;&#96;
+    // Read the file contents into a string, returns &#96;io::Result&lt;usize&gt;&#96;
     let mut s = String::new();
     match file.read&#95;to&#95;string(&amp;mut s) {
         Err(why) =&gt; panic!(&quot;couldn&#39;t read {}: {}&quot;, display,
