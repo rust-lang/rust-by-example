@@ -1,6 +1,5 @@
 use markdown::Markdown;
 use rustc_serialize::{Decodable,json};
-use std::iter::AdditiveIterator;
 use std::iter::repeat;
 use std::sync::mpsc;
 use std::io::prelude::*;
@@ -36,7 +35,9 @@ impl Example {
     pub fn count(&self) -> usize {
         match self.children {
             None => 1,
-            Some(ref children) => 1 + children.iter().map(|c| c.count()).sum(),
+            Some(ref children) => 1 + children.iter()
+                                              .map(|c| c.count())
+                                              .sum::<usize>(),
         }
     }
 
