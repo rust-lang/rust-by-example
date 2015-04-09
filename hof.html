@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="32" data-basepath="." data-revision="1428516789653">
+    <div class="book" data-level="32" data-basepath="." data-revision="1428607804214">
     
 
 <div class="book-summary">
@@ -2169,21 +2169,17 @@ iterators give Rust its functional flavor.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(step&#95;by)]
-#![feature(core)]
-
-// The &#96;AdditiveIterator&#96; trait adds the &#96;sum&#96; method to iterators
-use std::iter::AdditiveIterator;
+<div id="editor">#![feature(core)]
 
 fn main() {
     println!(&quot;Find the sum of all the squared odd numbers under 1000&quot;);
-    let upper = 1000u32;
+    let upper = 1000;
 
     // Imperative approach
     // Declare accumulator variable
     let mut acc = 0;
     // Iterate: 0, 1, 2, ... to infinity
-    for n in (0u32..).step&#95;by(1) {
+    for n in 0.. {
         // Square the number
         let n&#95;squared = n &#42; n;
 
@@ -2198,17 +2194,11 @@ fn main() {
     println!(&quot;imperative style: {}&quot;, acc);
 
     // Functional approach
-    let sum&#95;of&#95;squared&#95;odd&#95;numbers =
-        // All natural numbers
-        (0u32..).step&#95;by(1).
-        // Squared
-        map(|n| n &#42; n).
-        // Below upper limit
-        take&#95;while(|&amp;n| n &lt; upper).
-        // That are odd
-        filter(|n| is&#95;odd(&#42;n)).
-        // Sum them
-        sum();
+    let sum&#95;of&#95;squared&#95;odd&#95;numbers: u32 =
+        (0..).map(|n| n &#42; n)             // All natural numbers squared
+             .take&#95;while(|&amp;n| n &lt; upper) // Below upper limit
+             .filter(|n| is&#95;odd(&#42;n))     // That are odd
+             .sum();                     // Sum them
     println!(&quot;functional style: {}&quot;, sum&#95;of&#95;squared&#95;odd&#95;numbers);
 }
 
