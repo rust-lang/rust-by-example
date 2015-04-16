@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>constants | Rust by Example</title>
+        <title>Global constants | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -22,7 +22,7 @@
     <link rel="next" href="./methods.html" />
     
     
-    <link rel="prev" href="./lifetime/static_lifetime.html" />
+    <link rel="prev" href="./lifetime/struct.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="20" data-basepath="." data-revision="1429217348934">
+    <div class="book" data-level="20" data-basepath="." data-revision="1429217374328">
     
 
 <div class="book-summary">
@@ -1212,22 +1212,6 @@
             
         </li>
     
-        
-        <li class="chapter " data-level="19.4" data-path="lifetime/static_lifetime.html">
-            
-                
-                    <a href="./lifetime/static_lifetime.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>19.4.</b>
-                        
-                         static
-                    </a>
-                
-            
-            
-        </li>
-    
 
             </ul>
             
@@ -1242,7 +1226,7 @@
                         
                             <b>20.</b>
                         
-                         constants
+                         Global constants
                     </a>
                 
             
@@ -2178,25 +2162,21 @@
                 
                     <section class="normal" id="section-gitbook_24">
                     
-                        <h1 id="20-constants">20 constants</h1>
-<p>Rust has two different types of constants which can be declared in any scope
-including global. Both require explicit type annotation:</p>
-<ul>
-<li><code>const</code>: An unchangable value (the common case).</li>
-<li><code>static</code>: A possibly <code>mut</code>able variable with <a href="./lifetime/static_lifetime.html"><code>&#39;static</code></a> lifetime.</li>
-</ul>
-<p>One special case is the <code>&quot;string&quot;</code> literal. It can be assigned directly to a
-<code>static</code> variable without modification because it&#39;s type signature:
-<code>&amp;&#39;static str</code> has the required lifetime of <code>&#39;static</code>. All other reference
-types must be specifically annotated so that they fulfill the <code>&#39;static</code>
-lifetime. This may seem minor though because the required explicit annotation
-hides the distinction.</p>
+                        <h1 id="20-global-constants">20 Global constants</h1>
+<p>Constants can be declared in the global scope using the <code>static</code> keyword, the
+type annotation is obligatory in this case. These constants are placed in a
+read-only section of the memory and can be accessed in any other part of the
+program.</p>
+<p>String literals like <code>&quot;string&quot;</code> can also be assigned to static variables. These
+variables have type signature <code>&amp;&#39;static str</code>, and are references to strings
+allocated in read-only memory. <code>&#39;static</code> is a special lifetime that outlives
+all the other lifetimes, and indicates that the referenced data is available in
+all the scopes.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// Globals are declared outside all other scopes.
-static LANGUAGE: &amp;&#39;static str = &quot;Rust&quot;;
-const  THRESHOLD: i32 = 10;
+<div id="editor">static LANGUAGE: &amp;&#39;static str = &quot;Rust&quot;;
+static THRESHOLD: i32 = 10;
 
 fn is&#95;big(n: i32) -&gt; bool {
     // Access constant in some function
@@ -2211,16 +2191,20 @@ fn main() {
     println!(&quot;The threshold is {}&quot;, THRESHOLD);
     println!(&quot;{} is {}&quot;, n, if is&#95;big(n) { &quot;big&quot; } else { &quot;small&quot; });
 
-    // Error! Cannot modify a &#96;const&#96;.
+    // Error! Cannot modify a static item
     THRESHOLD = 5;
     // FIXME ^ Comment out this line
+
+    {
+        // String literals are references to read-only memory
+        let &#95;static&#95;string: &amp;&#39;static str = &quot;In read-only memory&quot;;
+
+        // When &#96;&#95;static&#95;string&#96; goes out of scope, we can no longer refer to
+        // the underlying data, but the string remains in the read-only memory
+    }
 }</div>
 <div id="result"></div>
 </div>
-
-<h3 id="see-also">See also:</h3>
-<p><a href="https://github.com/rust-lang/rfcs/blob/master/text/0246-const-vs-static.md" target="_blank">The <code>const</code>/<code>static</code> RFC</a>,
-<a href="./lifetime/static_lifetime.html"><code>&#39;static</code> lifetime</a></p>
 
                     
                     </section>
@@ -2231,7 +2215,7 @@ fn main() {
         </div>
 
         
-        <a href="./lifetime/static_lifetime.html" class="navigation navigation-prev " aria-label="Previous page: static"><i class="fa fa-angle-left"></i></a>
+        <a href="./lifetime/struct.html" class="navigation navigation-prev " aria-label="Previous page: Structs"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="./methods.html" class="navigation navigation-next " aria-label="Next page: Methods"><i class="fa fa-angle-right"></i></a>
