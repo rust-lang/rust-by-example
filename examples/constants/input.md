@@ -1,12 +1,22 @@
-Constants can be declared in the global scope using the `static` keyword, the
-type annotation is obligatory in this case. These constants are placed in a
-read-only section of the memory and can be accessed in any other part of the
-program.
+Rust has two different types of constants which can be declared in any scope
+including global. Both require explicit type annotation:
 
-String literals like `"string"` can also be assigned to static variables. These
-variables have type signature `&'static str`, and are references to strings
-allocated in read-only memory. `'static` is a special lifetime that outlives
-all the other lifetimes, and indicates that the referenced data is available in
-all the scopes.
+* `const`: An unchangable value (the common case).
+* `static`: A possibly `mut`able variable with [`'static`][static] lifetime.
+
+One special case is the `"string"` literal. It can be assigned directly to a
+`static` variable without modification because it's type signature:
+`&'static str` has the required lifetime of `'static`. All other reference
+types must be specifically annotated so that they fulfill the `'static`
+lifetime. This may seem minor though because the required explicit annotation
+hides the distinction.
 
 {constants.play}
+
+### See also:
+
+[The `const`/`static` RFC](
+https://github.com/rust-lang/rfcs/blob/master/text/0246-const-vs-static.md),
+[`'static` lifetime][static]
+
+[static]: ./lifetime/static_lifetime.html

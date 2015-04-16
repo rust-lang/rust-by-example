@@ -80,9 +80,10 @@
   { "id": "lifetime", "title": "Lifetimes", "children": [
       { "id": "borrow", "title": "The borrow checker", "children": null },
       { "id": "fn", "title": "Functions", "children": null },
-      { "id": "struct", "title": "Structs", "children": null }
+      { "id": "struct", "title": "Structs", "children": null },
+      { "id": "static_lifetime", "title": "static", "children": null }
   ] },
-  { "id": "constants", "title": "Global constants", "children": null },
+  { "id": "constants", "title": "constants", "children": null },
   { "id": "methods", "title": "Methods", "children": null },
   { "id": "enum", "title": "Enums", "children": [
       { "id": "c_like", "title": "C-like", "children": null }
