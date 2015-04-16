@@ -1,4 +1,5 @@
 #![feature(core)]
+#![feature(scoped)]
 
 #![deny(warnings)]
 #![feature(plugin)]

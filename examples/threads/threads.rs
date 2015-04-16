@@ -1,3 +1,5 @@
+#![feature(scoped)]
+
 use std::thread;
 
 static NTHREADS: i32 = 10;
