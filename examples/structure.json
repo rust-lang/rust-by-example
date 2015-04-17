@@ -105,7 +105,6 @@
   { "id": "clone", "title": "Clone", "children": null },
   { "id": "threads", "title": "Threads", "children": null },
   { "id": "channels", "title": "Channels", "children": null },
-  { "id": "timers", "title": "Timers", "children": null },
   { "id": "result", "title": "`Result`", "children": [
       { "id": "try", "title": "`try!`", "children": null }
   ] },
