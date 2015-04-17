@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>`create` | Rust by Example</title>
+        <title>static | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../process.html" />
+    <link rel="next" href="../constants.html" />
     
     
-    <link rel="prev" href="../file/open.html" />
+    <link rel="prev" href="../lifetime/struct.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="41.2" data-basepath=".." data-revision="1429275968501">
+    <div class="book" data-level="19.4" data-basepath=".." data-revision="1429275968501">
     
 
 <div class="book-summary">
@@ -1213,7 +1213,7 @@
         </li>
     
         
-        <li class="chapter " data-level="19.4" data-path="lifetime/static_lifetime.html">
+        <li class="chapter active" data-level="19.4" data-path="lifetime/static_lifetime.html">
             
                 
                     <a href="../lifetime/static_lifetime.html">
@@ -1669,7 +1669,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="41.2" data-path="file/create.html">
+        <li class="chapter " data-level="41.2" data-path="file/create.html">
             
                 
                     <a href="../file/create.html">
@@ -2176,69 +2176,38 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_33">
+                    <section class="normal" id="section-gitbook_67">
                     
-                        <h2 id="412-create">41.2 <code>create</code></h2>
-<p>The <code>create</code> static method opens a file in write-only mode. If the file
-already existed, the old content is destroyed. Otherwise, a new file is
-created.</p>
+                        <h2 id="194-static">19.4 static</h2>
+<p>A <code>&#39;static</code> lifetime is one which lasts for the lifetime of the running
+program. There are two ways to make a variable with <code>&#39;static</code> lifetime:</p>
+<ul>
+<li>Make a <code>&quot;string&quot;</code> literal which has type: <code>&amp;&#39;static str</code>.</li>
+<li>Make a constant with the <code>static</code> declaration.</li>
+</ul>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">static LOREM&#95;IPSUM: &amp;&#39;static str =
-&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-&quot;;
-
-use std::error::Error;
-use std::io::prelude::&#42;;
-use std::fs::File;
-use std::path::Path;
+<div id="editor">static NUM: i32 = 18;
 
 fn main() {
-    let path = Path::new(&quot;out/lorem&#95;ipsum.txt&quot;);
-    let display = path.display();
+    {
+        // String literals are references to read-only memory
+        let static&#95;string = &quot;In read-only memory&quot;;
 
-    // Open a file in write-only mode, returns &#96;io::Result&lt;File&gt;&#96;
-    let mut file = match File::create(&amp;path) {
-        Err(why) =&gt; panic!(&quot;couldn&#39;t create {}: {}&quot;,
-                           display,
-                           Error::description(&amp;why)),
-        Ok(file) =&gt; file,
-    };
-
-    // Write the &#96;LOREM&#95;IPSUM&#96; string to &#96;file&#96;, returns &#96;io::Result&lt;()&gt;&#96;
-    match file.write&#95;all(LOREM&#95;IPSUM.as&#95;bytes()) {
-        Err(why) =&gt; {
-            panic!(&quot;couldn&#39;t write to {}: {}&quot;, display,
-                                               Error::description(&amp;why))
-        },
-        Ok(&#95;) =&gt; println!(&quot;successfully wrote to {}&quot;, display),
+        // When &#96;&#95;static&#95;string&#96; goes out of scope, we can no longer refer to
+        // the underlying data, but the string remains in the read-only memory
+        println!(&quot;static&#95;string holds: {}&quot;, static&#95;string);
     }
+
+    println!(&quot;but now it&#39;s gone.&quot;);
+    println!(&quot;NUM: {} is still around though!&quot;, NUM);
 }</div>
 <div id="result"></div>
 </div>
 
-<p>As in the previous example, the playpen won&#39;t allow file I/O, so you&#39;ll hit one
-of the failure paths. Here&#39;s the expected successful output:</p>
-<pre><code>$ mkdir out
-$ rustc create.rs &amp;&amp; ./create
-successfully wrote to out/lorem_ipsum.txt
-$ cat out/lorem_ipsum.txt
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</code></pre><p>(As in the previous example, you are encouraged to test this example under
-failure conditions)</p>
-<p>There is also a more generic <code>open_mode</code> method that can open files in other
-modes like: read+write, append, etc.</p>
+<h3 id="see-also">See also:</h3>
+<p><a href="./constants.html"><code>&#39;static</code> constants</a></p>
 
                     
                     </section>
@@ -2249,10 +2218,10 @@ modes like: read+write, append, etc.</p>
         </div>
 
         
-        <a href="../file/open.html" class="navigation navigation-prev " aria-label="Previous page: `open`"><i class="fa fa-angle-left"></i></a>
+        <a href="../lifetime/struct.html" class="navigation navigation-prev " aria-label="Previous page: Structs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../process.html" class="navigation navigation-next " aria-label="Next page: Child processes"><i class="fa fa-angle-right"></i></a>
+        <a href="../constants.html" class="navigation navigation-next " aria-label="Next page: constants"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
