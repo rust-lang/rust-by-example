@@ -1,7 +1,7 @@
 // First attempt: No explicit lifetimes
 // Error! Compiler needs explicit lifetime
 //struct Singleton {
-    //one: &mut int,
+    //one: &mut i32,
 //}
 // TODO ^ Try uncommenting this struct
 
