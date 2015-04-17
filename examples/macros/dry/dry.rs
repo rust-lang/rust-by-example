@@ -46,10 +46,10 @@ mod test {
         ($func: ident, $x:expr, $y:expr, $z:expr) => {
             #[test]
             fn $func() {
-                for size in 0u32..10 {
-                    let mut x: Vec<_> = iter::repeat(size).take($x).collect();
-                    let y: Vec<_> = iter::repeat(size).take($y).collect();
-                    let z: Vec<_> = iter::repeat(size).take($z).collect();
+                for size in 0usize..10 {
+                    let mut x: Vec<_> = iter::repeat($x).take(size).collect();
+                    let y: Vec<_> = iter::repeat($y).take(size).collect();
+                    let z: Vec<_> = iter::repeat($z).take(size).collect();
 
                     super::$func(&mut x, &y);
 
@@ -60,8 +60,8 @@ mod test {
     }
 
     // test add_assign, mul_assign and sub_assign
-    test!(add_assign, 1usize, 2usize, 3usize);
-    test!(mul_assign, 2usize, 3usize, 6usize);
-    test!(sub_assign, 3usize, 2usize, 1usize);
+    test!(add_assign, 1u32, 2u32, 3u32);
+    test!(mul_assign, 2u32, 3u32, 6u32);
+    test!(sub_assign, 3u32, 2u32, 1u32);
 }
 
