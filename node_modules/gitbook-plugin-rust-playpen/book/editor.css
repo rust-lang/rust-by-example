@@ -16,7 +16,7 @@
   width: 100%;
   min-height: 72px;
   font-size: 13px;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, monospace;
   white-space: pre-wrap;
 }
 
@@ -27,7 +27,7 @@
   padding: 10px;
   display: none;
   border-radius: 4px;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Menlo, Monaco, Consolas, monospace;
   white-space: normal;
 }
 
