@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="46.4" data-basepath=".." data-revision="1429535185056">
+    <div class="book" data-level="46.4" data-basepath=".." data-revision="1429552676342">
     
 
 <div class="book-summary">
@@ -2215,10 +2215,10 @@ op!(sub_assign, Sub, -=, sub);
         ($func: ident, $x:expr, $y:expr, $z:expr) =&gt; {
             <span class="hljs-preprocessor">#[test]</span>
             <span class="hljs-function"><span class="hljs-keyword">fn</span> $<span class="hljs-title">func</span></span>() {
-                <span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> <span class="hljs-number">0u32</span>..<span class="hljs-number">10</span> {
-                    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($x).collect();
-                    <span class="hljs-keyword">let</span> y: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($y).collect();
-                    <span class="hljs-keyword">let</span> z: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat(size).take($z).collect();
+                <span class="hljs-keyword">for</span> size <span class="hljs-keyword">in</span> <span class="hljs-number">0u</span>size..<span class="hljs-number">10</span> {
+                    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat($x).take(size).collect();
+                    <span class="hljs-keyword">let</span> y: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat($y).take(size).collect();
+                    <span class="hljs-keyword">let</span> z: Vec&lt;<span class="hljs-number">_</span>&gt; = iter::repeat($z).take(size).collect();
 
                     super::$func(&amp;<span class="hljs-keyword">mut</span> x, &amp;y);
 
@@ -2229,9 +2229,9 @@ op!(sub_assign, Sub, -=, sub);
     }
 
     <span class="hljs-comment">// test add_assign, mul_assign and sub_assign</span>
-    test!(add_assign, <span class="hljs-number">1u</span>size, <span class="hljs-number">2u</span>size, <span class="hljs-number">3u</span>size);
-    test!(mul_assign, <span class="hljs-number">2u</span>size, <span class="hljs-number">3u</span>size, <span class="hljs-number">6u</span>size);
-    test!(sub_assign, <span class="hljs-number">3u</span>size, <span class="hljs-number">2u</span>size, <span class="hljs-number">1u</span>size);
+    test!(add_assign, <span class="hljs-number">1u32</span>, <span class="hljs-number">2u32</span>, <span class="hljs-number">3u32</span>);
+    test!(mul_assign, <span class="hljs-number">2u32</span>, <span class="hljs-number">3u32</span>, <span class="hljs-number">6u32</span>);
+    test!(sub_assign, <span class="hljs-number">3u32</span>, <span class="hljs-number">2u32</span>, <span class="hljs-number">1u32</span>);
 }
 </code></pre>
 <pre><code>$ rustc --test dry.rs &amp;&amp; ./dry
