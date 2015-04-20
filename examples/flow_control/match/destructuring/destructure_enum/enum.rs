@@ -23,7 +23,7 @@ fn main() {
         Color::Blue  => println!("The color is Blue!"),
         Color::Green => println!("The color is Green!"),
         Color::RGB(r, g, b) => {
-            println!("Red: {:?}, green: {:?}, and blue: {:?}!:", r, g, b);
+            println!("Red: {:?}, green: {:?}, and blue: {:?}!", r, g, b);
         },
         // Don't need another arm because all variants have been examined
     }
