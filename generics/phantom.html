@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.2" data-basepath=".." data-revision="1429709196068">
+    <div class="book" data-level="14.2" data-basepath=".." data-revision="1429715411534">
     
 
 <div class="book-summary">
@@ -2172,7 +2172,7 @@ at compile time; they have no run-time behavior.</p>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">use std::marker::PhantomData;
 
-// Generic tuplestruct with same types in both
+// Generic tuple struct with same types in both
 // generic &lt;A&gt; and definition (A,)
 struct Tuple&lt;A&gt;(A,);
 
@@ -2193,7 +2193,7 @@ fn main() {
 
     // We can create similar types without carrying around extra info
     // PhantomTuple specialized to &lt;char, f32&gt;
-    let &#95;tuple1:  PhantomTuple&lt;char, f32&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
+    let &#95;tuple1: PhantomTuple&lt;char, f32&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
     // PhantomTuple specialized to &lt;char, f64&gt;
     let &#95;tuple2: PhantomTuple&lt;char, f64&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
 
@@ -2214,7 +2214,7 @@ fn main() {
 
     // Error: type mismatch so these cannot be compared
     //println!(&quot;&#95;struct1 == &#95;struct2 yields: {}&quot;,
-    //          &#95;struct2 == &#95;struct2);
+    //          &#95;struct1 == &#95;struct2);
 }</div>
 <div id="result"></div>
 </div>
