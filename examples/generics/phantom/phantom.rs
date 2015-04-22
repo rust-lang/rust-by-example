@@ -1,6 +1,6 @@
 use std::marker::PhantomData;
 
-// Generic tuplestruct with same types in both
+// Generic tuple struct with same types in both
 // generic <A> and definition (A,)
 struct Tuple<A>(A,);
 
@@ -21,7 +21,7 @@ fn main() {
 
     // We can create similar types without carrying around extra info
     // PhantomTuple specialized to <char, f32>
-    let _tuple1:  PhantomTuple<char, f32> = PhantomTuple('Q', PhantomData);
+    let _tuple1: PhantomTuple<char, f32> = PhantomTuple('Q', PhantomData);
     // PhantomTuple specialized to <char, f64>
     let _tuple2: PhantomTuple<char, f64> = PhantomTuple('Q', PhantomData);
 
@@ -42,6 +42,6 @@ fn main() {
 
     // Error: type mismatch so these cannot be compared
     //println!("_struct1 == _struct2 yields: {}",
-    //          _struct2 == _struct2);
+    //          _struct1 == _struct2);
 }
 
