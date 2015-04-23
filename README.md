@@ -11,13 +11,24 @@ See [CONTRIBUTING.md][how-to-contribute].
 
 ## How to generate the static site
 
-First, make certain you install `nodejs` on Debian based distributions, or
-`node` on non-Debian distros. After installation, if you use a Debian based
-distro (i.e. Ubuntu), run:
+### Debian (Ubuntu) prerequisites
 
-    sudo ln -s /usr/bin/nodejs /usr/bin/node
+Install Rust [nightly](http://www.rust-lang.org/install.html) and
+run:
 
-Then run:
+```
+sudo apt-get install nodejs npm subversion
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+```
+
+### Non-Debian prerequisites
+
+Install Rust [nightly](http://www.rust-lang.org/install.html),
+`node`, `npm`, and `subversion`.
+
+### Build instructions
+
+Run:
 
 ```
 make all
