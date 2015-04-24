@@ -1,5 +1,4 @@
 #![feature(collections)]
-#![feature(str_words)]
 
 fn main() {
     // (all the type annotations are superfluous)
@@ -9,7 +8,7 @@ fn main() {
 
     // Iterate over words in reverse, no new string is allocated
     println!("Words in reverse");
-    for word in pangram.words().rev() {
+    for word in pangram.split_whitespace().rev() {
         println!("> {}", word);
     }
 
