@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="34" data-basepath="." data-revision="1429789314255">
+    <div class="book" data-level="34" data-basepath="." data-revision="1429886735986">
     
 
 <div class="book-summary">
@@ -2173,7 +2173,6 @@ can be used to view into a <code>String</code>, just like <code>&amp;[T]</code> 
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">#![feature(collections)]
-#![feature(str&#95;words)]
 
 fn main() {
     // (all the type annotations are superfluous)
@@ -2183,7 +2182,7 @@ fn main() {
 
     // Iterate over words in reverse, no new string is allocated
     println!(&quot;Words in reverse&quot;);
-    for word in pangram.words().rev() {
+    for word in pangram.split&#95;whitespace().rev() {
         println!(&quot;&gt; {}&quot;, word);
     }
 
