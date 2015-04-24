@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9" data-basepath="." data-revision="1429886735986">
+    <div class="book" data-level="9" data-basepath="." data-revision="1429899147095">
     
 
 <div class="book-summary">
@@ -2194,12 +2194,6 @@ mod my {
 
 fn main() {
     function();
-
-    // Items inside a module can be called using their full path
-    // The &#96;println&#96; function lives in the &#96;stdio&#96; module
-    // The &#96;stdio&#96; module lives in the &#96;io&#96; module
-    // And the &#96;io&#96; module lives in the &#96;std&#96; crate
-    std::old&#95;io::stdio::println(&quot;Hello World!&quot;);
 
     // Error! &#96;my::function&#96; is private
     my::function();
