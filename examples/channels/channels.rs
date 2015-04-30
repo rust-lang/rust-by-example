@@ -2,13 +2,13 @@ use std::sync::mpsc::{Sender, Receiver};
 use std::sync::mpsc;
 use std::thread;
 
-static NTHREADS: usize = 3;
+static NTHREADS: i32 = 3;
 
 fn main() {
     // Channels have two endpoints: the `Sender<T>` and the `Receiver<T>`,
     // where `T` is the type of the message to be transferred
     // (type annotation is superfluous)
-    let (tx, rx): (Sender<usize>, Receiver<usize>) = mpsc::channel();
+    let (tx, rx): (Sender<i32>, Receiver<i32>) = mpsc::channel();
 
     for id in 0..NTHREADS {
         // The sender endpoint can be copied
@@ -27,7 +27,7 @@ fn main() {
     }
 
     // Here, all the messages are collected
-    let mut ids = Vec::with_capacity(NTHREADS);
+    let mut ids = Vec::with_capacity(NTHREADS as usize);
     for _ in 0..NTHREADS {
         // The `recv` method picks a message from the channel
         // `recv` will block the current thread if there no messages available
