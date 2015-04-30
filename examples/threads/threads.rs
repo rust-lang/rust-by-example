@@ -2,7 +2,7 @@
 
 use std::thread;
 
-static NTHREADS: i32 = 10;
+static NTHREADS: usize = 10;
 
 // This is the `main` thread
 fn main() {
