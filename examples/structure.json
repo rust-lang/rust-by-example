@@ -147,7 +147,7 @@
         { "id": "simd", "title": "SIMD", "children": null  }
     ] },
     { "id": "meta", "title": "Meta", "children": [
-        { "id": "doc_comment", "title": "Documentation", "children": null },
+        { "id": "doc", "title": "Documentation", "children": null },
         { "id": "test", "title": "Testing", "children": null  },
         { "id": "bench", "title": "Benchmarking", "children": null  }
     ] },
