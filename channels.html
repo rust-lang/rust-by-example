@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="37" data-basepath="." data-revision="1430398971054">
+    <div class="book" data-level="37" data-basepath="." data-revision="1430411986543">
     
 
 <div class="book-summary">
@@ -2173,13 +2173,13 @@ allow an unidirectional flow of information between two end-points: the
 use std::sync::mpsc;
 use std::thread;
 
-static NTHREADS: usize = 3;
+static NTHREADS: i32 = 3;
 
 fn main() {
     // Channels have two endpoints: the &#96;Sender&lt;T&gt;&#96; and the &#96;Receiver&lt;T&gt;&#96;,
     // where &#96;T&#96; is the type of the message to be transferred
     // (type annotation is superfluous)
-    let (tx, rx): (Sender&lt;usize&gt;, Receiver&lt;usize&gt;) = mpsc::channel();
+    let (tx, rx): (Sender&lt;i32&gt;, Receiver&lt;i32&gt;) = mpsc::channel();
 
     for id in 0..NTHREADS {
         // The sender endpoint can be copied
@@ -2198,7 +2198,7 @@ fn main() {
     }
 
     // Here, all the messages are collected
-    let mut ids = Vec::with&#95;capacity(NTHREADS);
+    let mut ids = Vec::with&#95;capacity(NTHREADS as usize);
     for &#95; in 0..NTHREADS {
         // The &#96;recv&#96; method picks a message from the channel
         // &#96;recv&#96; will block the current thread if there no messages available
