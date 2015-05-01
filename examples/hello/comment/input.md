@@ -1,11 +1,18 @@
-Comments are a necessary part of any serious program, and most non-serious
-programs as well.
+Any program requires comments and indeed Rust supports
+a few different varieties:
 
-There are two ways to write comments in Rust, "block" (`/**/`) and "line"
-(`//`). However, the [Rust style guide][2] recommends only using the second.
-There are also "Doc" comments, used for documentation.
+* *Regular comments* which are ignored by the compiler:
+ - `// Line comments which go to the end of the line.`
+ - `/* Block comments which go to the closing deliminator. */`
+* *Doc comments* which are parsed into HTML library
+[documentation][docs]:
+ - `/// Generate library docs for the following item.`
+ - `!// Generate library docs for the enclosing item.`
 
 {comment.play}
 
-[1]: https://github.com/rust-lang/rust/blob/master/src/doc/rustdoc.md
-[2]: https://aturon.github.io/style/comments.html
+### See also:
+
+[Library documentation][docs]
+
+[docs]: /meta/doc.html
