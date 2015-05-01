@@ -31,6 +31,6 @@ If you see this, the tests were not compiled nor ran!
 
 [attributes][attributes], [conditional compilation][cfg], and [`mod`][mod].
 
-[attributes]: ./attribute.html
-[cfg]: ./attribute/cfg.html
-[mod]: ./mod.html
+[attributes]: /attribute.html
+[cfg]: /attribute/cfg.html
+[mod]: /mod.html

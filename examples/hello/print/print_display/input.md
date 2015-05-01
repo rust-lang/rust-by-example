@@ -51,9 +51,9 @@ each requires it's own implementation. This is detailed further in
 [`derive`][derive], [`std::fmt`][fmt], [macros], [`struct`][structs],
 [`trait`][traits], and [use][use]
 
-[derive]: ./trait/derive.html
+[derive]: /trait/derive.html
 [fmt]: http://doc.rust-lang.org/std/fmt/
-[macros]: ./macros.html
-[structs]: ./structs.html
-[traits]: ./trait.html
-[use]: ./mod/use.html
+[macros]: /macros.html
+[structs]: /custom_types/structs.html
+[traits]: /trait.html
+[use]: /mod/use.html

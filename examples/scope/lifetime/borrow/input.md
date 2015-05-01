@@ -49,5 +49,5 @@ are the cases where explicit lifetimes are required:
 * [Functions that return references][lifetime]
 * [Structs that hold references][structs]
 
-[lifetime]: /lifetime/fn.html
-[structs]: /lifetime/struct.html
+[lifetime]: /scope/lifetime/fn.html
+[structs]: /scope/lifetime/struct.html

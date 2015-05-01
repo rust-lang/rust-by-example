@@ -4,4 +4,4 @@ A `match` *guard* can be added to filter the arm.
 
 ### See also:
 
-[Tuples](/tuples.html)
+[Tuples](/primitives/tuples.html)

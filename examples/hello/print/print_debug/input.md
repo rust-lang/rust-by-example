@@ -31,7 +31,7 @@ elegance. Manually implementing `fmt::Display` will fix that.
 and [`struct`][structs]
 
 [attributes]: http://doc.rust-lang.org/reference.html#attributes
-[derive]: ./trait/derive.html
+[derive]: /trait/derive.html
 [fmt]: http://doc.rust-lang.org/std/fmt/
-[structs]: ./structs.html
+[structs]: /custom_types/structs.html
 

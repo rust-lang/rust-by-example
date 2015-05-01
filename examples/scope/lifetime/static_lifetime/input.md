@@ -10,4 +10,4 @@ program. There are two ways to make a variable with `'static` lifetime:
 
 [`'static` constants][static_const]
 
-[static_const]: ./constants.html
+[static_const]: /custom_types/constants.html
