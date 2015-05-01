@@ -1,144 +1,155 @@
 [
-  { "id": "hello", "title": "Hello World", "children": null },
-  { "id": "print", "title": "Formatted print", "children": [
-    { "id": "print_debug", "title": "Debug", "children": null },
-    { "id": "print_display", "title": "Display", "children": null }
-  ] },
-  { "id": "literals", "title": "Literals and operators", "children": null },
-  { "id": "variable_bindings", "title": "Variable Bindings", "children": [
-      { "id": "mut", "title": "Mutability", "children": null },
-      { "id": "scope", "title": "Scope and shadowing", "children": null },
-      { "id": "declare", "title": "Declare first", "children": null }
-  ] },
-  { "id": "type", "title": "Types", "children": [
-      { "id": "cast", "title": "Casting", "children": null },
-      { "id": "literals", "title": "Literals", "children": null },
-      { "id": "inference", "title": "Inference", "children": null },
-      { "id": "alias", "title": "Alias", "children": null }
-  ] },
-  { "id": "expression", "title": "Expressions", "children": null },
-  { "id": "flow_control", "title": "Flow Control", "children": [
-      { "id": "if_else", "title": "if/else", "children": null },
-      { "id": "loop", "title": "loop", "children": [
-          { "id": "nested", "title": "Nesting and labels", "children": null }
-      ] },
-      { "id": "while", "title": "while", "children": null },
-      { "id": "for", "title": "for and range", "children": null },
-      { "id": "match", "title": "match", "children": [
-          { "id": "destructuring", "title": "Destructuring", "children": [
-              { "id": "destructure_tuple", "title": "tuples", "children": null },
-              { "id": "destructure_enum", "title": "enums", "children": null },
-              { "id": "destructure_pointers", "title": "pointers/ref", "children": null },
-              { "id": "destructure_structures", "title": "structs", "children": null }
-          ] },
-          { "id": "guard", "title": "Guards", "children": null },
-          { "id": "binding", "title": "Binding", "children": null }
-      ] },
-      { "id": "if_let", "title": "if let", "children": null },
-      { "id": "while_let", "title": "while let", "children": null }
-  ] },
-  { "id": "fn", "title": "Functions", "children": [
-      { "id": "unused", "title": "Unused", "children": null }
-  ] },
-  { "id": "mod", "title": "Modules", "children": [
-      { "id": "visibility", "title": "Visibility", "children": null },
-      { "id": "use", "title": "The `use` declaration", "children": null },
-      { "id": "super", "title": "`super` and `self`", "children": null },
-      { "id": "split", "title": "File hierarchy", "children": null }
-  ] },
-  { "id": "crates", "title": "Crates", "children": [
-      { "id": "lib", "title": "Library", "children": null },
-      { "id": "link", "title": "`extern crate`", "children": null }
-  ] },
-  { "id": "attribute", "title": "Attributes", "children": [
-      { "id": "crate", "title": "Crates", "children": null },
-      { "id": "cfg", "title": "`cfg`", "children": [
-          { "id": "custom", "title": "Custom", "children": null }
-      ] }
-  ] },
-  { "id": "tuples", "title": "Tuples", "children": null },
-  { "id": "structs", "title": "Structures", "children": [
-      { "id": "visibility", "title": "Visibility", "children": null }
-  ] },
-  { "id": "generics", "title": "Generics", "children": [
-      { "id": "impl", "title": "Implementation", "children": null },
-      { "id": "phantom", "title": "Phantom types", "children": [
-          { "id": "units", "title": "Unit conversions", "children": null }
-      ] }
-  ] },
-  { "id": "box", "title": "Box, stack and heap", "children": null },
-  { "id": "raii", "title": "RAII", "children": null },
-  { "id": "move", "title": "Ownership and moves", "children": [
-      { "id": "mut", "title": "Mutability", "children": null }
-  ] },
-  { "id": "borrow", "title": "Borrowing", "children": [
-      { "id": "mut", "title": "Mutability", "children": null },
-      { "id": "freeze", "title": "Freezing", "children": null },
-      { "id": "alias", "title": "Aliasing", "children": null },
-      { "id": "ref", "title": "The ref pattern", "children": null }
-  ] },
-  { "id": "lifetime", "title": "Lifetimes", "children": [
-      { "id": "borrow", "title": "The borrow checker", "children": null },
-      { "id": "fn", "title": "Functions", "children": null },
-      { "id": "struct", "title": "Structs", "children": null },
-      { "id": "static_lifetime", "title": "static", "children": null }
-  ] },
-  { "id": "constants", "title": "constants", "children": null },
-  { "id": "methods", "title": "Methods", "children": null },
-  { "id": "enum", "title": "Enums", "children": [
-      { "id": "c_like", "title": "C-like", "children": null }
-  ] },
-  { "id": "panic", "title": "`panic!`", "children": null },
-  { "id": "option", "title": "`Option`", "children": null },
-  { "id": "array", "title": "Arrays and Slices", "children": null },
-  { "id": "trait", "title": "Traits", "children": [
-      { "id": "derive", "title": "Derive", "children": null }
-  ] },
-  { "id": "ops", "title": "Operator Overloading", "children": null },
-  { "id": "bounds", "title": "Bounds", "children": null },
-  { "id": "drop", "title": "Drop", "children": null },
-  { "id": "iter", "title": "Iterators", "children": null },
-  { "id": "closures", "title": "Closures", "children": null },
-  { "id": "hof", "title": "Higher Order Functions", "children": null },
-  { "id": "vec", "title": "Vectors", "children": null },
-  { "id": "str", "title": "Strings", "children": null },
-  { "id": "clone", "title": "Clone", "children": null },
-  { "id": "threads", "title": "Threads", "children": null },
-  { "id": "channels", "title": "Channels", "children": null },
-  { "id": "result", "title": "`Result`", "children": [
-      { "id": "try", "title": "`try!`", "children": null }
-  ] },
-  { "id": "path", "title": "Path", "children": null },
-  { "id": "file", "title": "File I/O", "children": [
-      { "id": "open", "title": "`open`", "children": null },
-      { "id": "create", "title": "`create`", "children": null }
-  ] },
-  { "id": "process", "title": "Child processes", "children": [
-      { "id": "pipe", "title": "Pipes", "children": null },
-      { "id": "wait", "title": "Wait", "children": null }
-  ] },
-  { "id": "fs", "title": "Filesystem Operations", "children": null },
-  { "id": "bench", "title": "Benchmarking", "children": null  },
-  { "id": "comment", "title": "Comments", "children": [
-      { "id": "doc_comment", "title": "Doc Comments", "children": null }
-  ] },
-  { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
-  { "id": "macros", "title": "macro_rules!", "children": [
-      { "id": "designators", "title": "Designators", "children": null },
-      { "id": "overload", "title": "Overload", "children": null },
-      { "id": "repeat", "title": "Repeat", "children": null },
-      { "id": "dry", "title": "DRY", "children": null }
-  ] },
-  { "id": "arg", "title": "Program arguments", "children": [
-      { "id": "matching", "title": "Argument parsing", "children": null },
-      { "id": "getopts", "title": "`getopts`", "children": null }
-  ] },
-  { "id": "simd", "title": "SIMD", "children": null  },
-  { "id": "test", "title": "Testing", "children": null  },
-  { "id": "unsafe", "title": "Unsafe operations", "children": null  },
-  { "id": "fmt", "title": "Formatting", "children": null },
-  { "id": "hash", "title": "HashMap", "children": [
-      { "id": "alt_key_types", "title": "Alternate/custom key types", "children": null},
-      { "id": "hashset", "title": "HashSet", "children": null }
-  ] }
+    { "id": "hello", "title": "Hello World", "children": [
+        { "id": "comment", "title": "Comments", "children": null },
+        { "id": "print", "title": "Formatted print", "children": [
+            { "id": "print_debug", "title": "Debug", "children": null },
+            { "id": "print_display", "title": "Display", "children": null },
+            { "id": "fmt", "title": "Formatting", "children": null }
+        ] }
+    ] },
+    { "id": "primitives", "title": "Primitives", "children": [
+        { "id": "literals", "title": "Literals and operators", "children": null },
+        { "id": "tuples", "title": "Tuples", "children": null },
+        { "id": "array", "title": "Arrays and Slices", "children": null }
+    ] },
+    { "id": "custom_types", "title": "Custom types", "children": [
+        { "id": "structs", "title": "Structures", "children": [
+            { "id": "visibility", "title": "Visibility", "children": null }
+        ] },
+        { "id": "enum", "title": "Enums", "children": [
+            { "id": "c_like", "title": "C-like", "children": null }
+        ] },
+        { "id": "constants", "title": "constants", "children": null }
+    ] },
+    { "id": "variable_bindings", "title": "Variable Bindings", "children": [
+        { "id": "mut", "title": "Mutability", "children": null },
+        { "id": "scope", "title": "Scope and shadowing", "children": null },
+        { "id": "declare", "title": "Declare first", "children": null }
+    ] },
+    { "id": "cast", "title": "Casting", "children": [
+        { "id": "literals", "title": "Literals", "children": null },
+        { "id": "inference", "title": "Inference", "children": null },
+        { "id": "alias", "title": "Alias", "children": null }
+    ] },
+    { "id": "expression", "title": "Expressions", "children": null },
+    { "id": "flow_control", "title": "Flow Control", "children": [
+        { "id": "if_else", "title": "if/else", "children": null },
+        { "id": "loop", "title": "loop", "children": [
+            { "id": "nested", "title": "Nesting and labels", "children": null }
+        ] },
+        { "id": "while", "title": "while", "children": null },
+        { "id": "for", "title": "for and range", "children": null },
+        { "id": "match", "title": "match", "children": [
+            { "id": "destructuring", "title": "Destructuring", "children": [
+                { "id": "destructure_tuple", "title": "tuples", "children": null },
+                { "id": "destructure_enum", "title": "enums", "children": null },
+                { "id": "destructure_pointers", "title": "pointers/ref", "children": null },
+                { "id": "destructure_structures", "title": "structs", "children": null }
+            ] },
+            { "id": "guard", "title": "Guards", "children": null },
+            { "id": "binding", "title": "Binding", "children": null }
+        ] },
+        { "id": "if_let", "title": "if let", "children": null },
+        { "id": "while_let", "title": "while let", "children": null }
+    ] },
+    { "id": "fn", "title": "Functions", "children": [
+        { "id": "unused", "title": "Unused", "children": null },
+        { "id": "methods", "title": "Methods", "children": null },
+        { "id": "closures", "title": "Closures", "children": null },
+        { "id": "hof", "title": "Higher Order Functions", "children": null }
+    ] },
+    { "id": "macros", "title": "macro_rules!", "children": [
+        { "id": "designators", "title": "Designators", "children": null },
+        { "id": "overload", "title": "Overload", "children": null },
+        { "id": "repeat", "title": "Repeat", "children": null },
+        { "id": "dry", "title": "DRY", "children": null }
+    ] },
+    { "id": "mod", "title": "Modules", "children": [
+        { "id": "visibility", "title": "Visibility", "children": null },
+        { "id": "use", "title": "The `use` declaration", "children": null },
+        { "id": "super", "title": "`super` and `self`", "children": null },
+        { "id": "split", "title": "File hierarchy", "children": null }
+    ] },
+    { "id": "crates", "title": "Crates", "children": [
+        { "id": "lib", "title": "Library", "children": null },
+        { "id": "link", "title": "`extern crate`", "children": null }
+    ] },
+    { "id": "attribute", "title": "Attributes", "children": [
+        { "id": "crate", "title": "Crates", "children": null },
+        { "id": "cfg", "title": "`cfg`", "children": [
+            { "id": "custom", "title": "Custom", "children": null }
+        ] }
+    ] },
+    { "id": "generics", "title": "Generics", "children": [
+        { "id": "impl", "title": "Implementation", "children": null },
+        { "id": "phantom", "title": "Phantom types", "children": [
+            { "id": "units", "title": "Unit conversions", "children": null }
+        ] }
+    ] },
+    { "id": "scope", "title": "Scoping rules", "children": [
+        { "id": "raii", "title": "RAII", "children": null },
+        { "id": "move", "title": "Ownership and moves", "children": [
+            { "id": "mut", "title": "Mutability", "children": null }
+        ] },
+        { "id": "borrow", "title": "Borrowing", "children": [
+            { "id": "mut", "title": "Mutability", "children": null },
+            { "id": "freeze", "title": "Freezing", "children": null },
+            { "id": "alias", "title": "Aliasing", "children": null },
+            { "id": "ref", "title": "The ref pattern", "children": null }
+        ] },
+        { "id": "lifetime", "title": "Lifetimes", "children": [
+            { "id": "borrow", "title": "The borrow checker", "children": null },
+            { "id": "fn", "title": "Functions", "children": null },
+            { "id": "struct", "title": "Structs", "children": null },
+            { "id": "static_lifetime", "title": "static", "children": null }
+        ] }
+    ] },
+    { "id": "trait", "title": "Traits", "children": [
+        { "id": "derive", "title": "Derive", "children": null },
+        { "id": "ops", "title": "Operator Overloading", "children": null },
+        { "id": "bounds", "title": "Bounds", "children": null },
+        { "id": "drop", "title": "Drop", "children": null },
+        { "id": "iter", "title": "Iterators", "children": null },
+        { "id": "clone", "title": "Clone", "children": null }
+    ] },
+    { "id": "std", "title": "Std library types", "children": [
+        { "id": "box", "title": "Box, stack and heap", "children": null },
+        { "id": "vec", "title": "Vectors", "children": null },
+        { "id": "str", "title": "Strings", "children": null },
+        { "id": "option", "title": "`Option`", "children": null },
+        { "id": "result", "title": "`Result`", "children": [
+            { "id": "try", "title": "`try!`", "children": null }
+        ] },
+        { "id": "panic", "title": "`panic!`", "children": null },
+        { "id": "hash", "title": "HashMap", "children": [
+            { "id": "alt_key_types", "title": "Alternate/custom key types", "children": null},
+            { "id": "hashset", "title": "HashSet", "children": null }
+        ] }
+    ] },
+    { "id": "std_misc", "title": "Std misc", "children": [
+        { "id": "threads", "title": "Threads", "children": null },
+        { "id": "channels", "title": "Channels", "children": null },
+        { "id": "path", "title": "Path", "children": null },
+        { "id": "file", "title": "File I/O", "children": [
+            { "id": "open", "title": "`open`", "children": null },
+            { "id": "create", "title": "`create`", "children": null }
+        ] },
+        { "id": "process", "title": "Child processes", "children": [
+            { "id": "pipe", "title": "Pipes", "children": null },
+            { "id": "wait", "title": "Wait", "children": null }
+        ] },
+        { "id": "fs", "title": "Filesystem Operations", "children": null },
+        { "id": "arg", "title": "Program arguments", "children": [
+            { "id": "matching", "title": "Argument parsing", "children": null },
+            { "id": "getopts", "title": "`getopts`", "children": null }
+        ] },
+        { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
+        { "id": "simd", "title": "SIMD", "children": null  }
+    ] },
+    { "id": "meta", "title": "Meta", "children": [
+        { "id": "doc_comment", "title": "Documentation", "children": null },
+        { "id": "test", "title": "Testing", "children": null  },
+        { "id": "bench", "title": "Benchmarking", "children": null  }
+    ] },
+    { "id": "unsafe", "title": "Unsafe operations", "children": null  }
 ]
