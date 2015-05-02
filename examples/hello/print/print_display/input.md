@@ -16,8 +16,10 @@ struct Structure(i32);
 impl fmt::Display for Structure {
     // This trait requires `fmt` with this exact signature.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Print strictly the first element in the structure. `write!` uses
-        // syntax which is very similar to `println!`.
+        // Write strictly the first element into the supplied output
+        // stream: `f`. Returns `fmt::Result` which indicates whether the
+        // operation succeeded or failed. Note that `write!` uses syntax which
+        // is very similar to `println!`.
         write!(f, "{}", self.0)
     }
 }

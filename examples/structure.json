@@ -3,7 +3,9 @@
         { "id": "comment", "title": "Comments", "children": null },
         { "id": "print", "title": "Formatted print", "children": [
             { "id": "print_debug", "title": "Debug", "children": null },
-            { "id": "print_display", "title": "Display", "children": null },
+            { "id": "print_display", "title": "Display", "children": [
+                { "id": "testcase_list", "title": "Testcase: List", "children": null }
+            ] },
             { "id": "fmt", "title": "Formatting", "children": null }
         ] }
     ] },
