@@ -4,4 +4,6 @@ A `struct` can be destructured with pattern matching.
 
 ### See also:
 
-[Structs](/structs.html)
+[`struct`][structs]
+
+[structs]: /structs.html

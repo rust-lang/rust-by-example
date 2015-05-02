@@ -4,4 +4,4 @@ Similarly, a `struct` can be destructured as shown:
 
 ### See also:
 
-[Structs](/structs.html), [The ref pattern](/borrow/ref.html)
+[Structs](/custom_types/structs.html), [The ref pattern](/scope/borrow/ref.html)

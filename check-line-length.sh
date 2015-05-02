@@ -5,9 +5,9 @@ WHITELIST=(
   ./src/playpen.rs
 )
 
-echo "Checking if any rust file has a line longer than 79 characters"
+echo "Checking if any rust file has a line longer than 99 characters"
 
-suspects=$(find . -name '*.rs' | xargs grep -El ".{80}")
+suspects=$(find . -name '*.rs' | xargs grep -El ".{100}")
 status=$?
 
 any_offender=false

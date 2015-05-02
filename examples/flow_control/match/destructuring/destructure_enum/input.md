@@ -6,6 +6,6 @@ An `enum` is destructured similarly:
 
 [`#[allow(...)]`][allow], [`enum`][enum], and [`#[derive(...)]`][derive]
 
-[enum]: /enum.html
+[enum]: /custom_types/enum.html
 [derive]: /trait/derive.html
 [allow]: /fn/unused.html

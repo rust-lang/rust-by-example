@@ -4,4 +4,4 @@ Tuples can be destructured in a `match` as follows:
 
 ### See also:
 
-[Tuples](/tuples.html)
+[Tuples](/primitives/tuples.html)
