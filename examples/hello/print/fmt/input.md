@@ -16,20 +16,14 @@ handles cases where the argument type is left unspecified: `{}` for instance.
 
 Here's the full list of formatting traits and their respective argument types:
 
-* *unspecified* -> `Debug`
-* `d` and `i` -> `Signed`
-* `u` -> `Unsigned`
-* `b` -> `Bool`
-* `c` -> `Char`
+* *unspecified* -> `Display`
+* `?` -> `Debug`
 * `o` -> `Octal`
 * `x` -> `LowerHex`
 * `X` -> `UpperHex`
-* `s` -> `String`
 * `p` -> `Pointer`
-* `t` -> `Binary`
-* `f` -> `Float`
+* `b` -> `Binary`
 * `e` -> `LowerExp`
 * `E` -> `UpperExp`
-* `?` -> `Poly`
 
 [deadbeef]: https://en.wikipedia.org/wiki/Deadbeef#Magic_debug_values
