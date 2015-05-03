@@ -8,7 +8,7 @@ enum Color {
     Red,
     Blue,
     Green,
-    // This requires 3 `i32`s and a name.
+    // This requires 3 `i32`s.
     RGB(i32, i32, i32),
 }
 
