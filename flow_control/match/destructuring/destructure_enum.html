@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="7.5.1.2" data-basepath="../../.." data-revision="1430669608598">
+    <div class="book" data-level="7.5.1.2" data-basepath="../../.." data-revision="1430743399004">
     
 
 <div class="book-summary">
@@ -2315,8 +2315,12 @@ enum Color {
     Red,
     Blue,
     Green,
-    // This requires 3 &#96;i32&#96;s.
-    RGB(i32, i32, i32),
+    // These likewise tie &#96;u32&#96; tuples to different names: color models.
+    RGB(u32, u32, u32),
+    HSV(u32, u32, u32),
+    HSL(u32, u32, u32),
+    CMY(u32, u32, u32),
+    CMYK(u32, u32, u32, u32),
 }
 
 fn main() {
@@ -2329,9 +2333,17 @@ fn main() {
         Color::Red   =&gt; println!(&quot;The color is Red!&quot;),
         Color::Blue  =&gt; println!(&quot;The color is Blue!&quot;),
         Color::Green =&gt; println!(&quot;The color is Green!&quot;),
-        Color::RGB(r, g, b) =&gt; {
-            println!(&quot;Red: {:?}, green: {:?}, and blue: {:?}!&quot;, r, g, b);
-        },
+        Color::RGB(r, g, b) =&gt;
+            println!(&quot;Red: {}, green: {}, and blue: {}!&quot;, r, g, b),
+        Color::HSV(h, s, v) =&gt;
+            println!(&quot;Hue: {}, saturation: {}, value: {}!&quot;, h, s, v),
+        Color::HSL(h, s, l) =&gt;
+            println!(&quot;Hue: {}, saturation: {}, lightness: {}!&quot;, h, s, l),
+        Color::CMY(c, m, y) =&gt;
+            println!(&quot;Cyan: {}, magenta: {}, yellow: {}!&quot;, c, m, y),
+        Color::CMYK(c, m, y, k) =&gt;
+            println!(&quot;Cyan: {}, magenta: {}, yellow: {}, key (black): {}!&quot;,
+                c, m, y, k),
         // Don&#39;t need another arm because all variants have been examined
     }
 }</div>
@@ -2339,7 +2351,8 @@ fn main() {
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="/fn/unused.html"><code>#[allow(...)]</code></a>, <a href="/custom_types/enum.html"><code>enum</code></a>, and <a href="/trait/derive.html"><code>#[derive(...)]</code></a></p>
+<p><a href="/fn/unused.html"><code>#[allow(...)]</code></a>, <a href="http://en.wikipedia.org/wiki/Color_model" target="_blank">color models</a>, <a href="/custom_types/enum.html"><code>enum</code></a>,
+and <a href="/trait/derive.html"><code>#[derive(...)]</code></a></p>
 
                     
                     </section>
