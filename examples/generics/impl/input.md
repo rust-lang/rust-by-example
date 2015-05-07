@@ -17,7 +17,7 @@ impl <T> GenericTup<T> {}
 
 ###See also:
 
-[impl](http://rustbyexample.com/methods.html),
-[struct](http://rustbyexample.com/structs.html), and
-[functions returning references](http://rustbyexample.com/lifetime/fn.html),
+[impl](/fn/methods.html),
+[struct](/custom_types/structs.html), and
+[functions returning references](/scope/lifetime/fn.html),
 

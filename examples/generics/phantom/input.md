@@ -7,6 +7,6 @@ at compile time; they have no run-time behavior.
 
 ###See also:
 
-[Derive](http://rustbyexample.com/trait/derive.html),
-[struct](http://rustbyexample.com/structs.html), and
-[TupleStructs](http://rustbyexample.com/structs.html)
+[Derive](/trait/derive.html),
+[struct](/custom_types/structs.html), and
+[TupleStructs](/custom_types/structs.html)
