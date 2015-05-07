@@ -4,6 +4,7 @@ use std::fs;
 use std::fs::{File, OpenOptions};
 use std::io;
 use std::io::prelude::*;
+use std::os::unix;
 use std::path::Path;
 
 // A simple implementation of `% cat path`
@@ -34,7 +35,7 @@ fn touch(path: &Path) -> io::Result<()> {
 fn main() {
     println!("`mkdir a`");
     // Create a directory, returns `io::Result<()>`
-    match fs::create_dir(&Path::new("a")) {
+    match fs::create_dir("a") {
         Err(why) => println!("! {:?}", why.kind()),
         Ok(_) => {},
     }
@@ -47,7 +48,7 @@ fn main() {
 
     println!("`mkdir -p a/c/d`");
     // Recursively create a directory, returns `io::Result<()>`
-    fs::create_dir_all(&Path::new("a/c/d")).unwrap_or_else(|why| {
+    fs::create_dir_all("a/c/d").unwrap_or_else(|why| {
         println!("! {:?}", why.kind());
     });
 
@@ -58,10 +59,11 @@ fn main() {
 
     println!("`ln -s ../b.txt a/c/b.txt`");
     // Create a symbolic link, returns `io::Result<()>`
-    fs::soft_link(&Path::new("../b.txt"),
-                &Path::new("a/c/b.txt")).unwrap_or_else(|why| {
+    if cfg!(target_family = "unix") {
+        unix::fs::symlink("../b.txt", "a/c/b.txt").unwrap_or_else(|why| {
         println!("! {:?}", why.kind());
-    });
+        });
+    }
 
     println!("`cat a/c/b.txt`");
     match cat(&Path::new("a/c/b.txt")) {
@@ -71,7 +73,7 @@ fn main() {
 
     println!("`ls a`");
     // Read the contents of a directory, returns `io::Result<Vec<Path>>`
-    match fs::read_dir(&Path::new("a")) {
+    match fs::read_dir("a") {
         Err(why) => println!("! {:?}", why.kind()),
         Ok(paths) => for path in paths {
             println!("> {:?}", path.unwrap().path());
@@ -81,7 +83,7 @@ fn main() {
     println!("`walk a`");
     // Recursively walk over the contents of a directory, returns
     // `Directories`, which implements the `Iterator<Path> trait
-    match fs::walk_dir(&Path::new("a")) {
+    match fs::walk_dir("a") {
         Err(why) => println!("! {:?}", why.kind()),
         Ok(paths) => for path in paths {
             println!("> {:?}", path.unwrap().path());
@@ -90,13 +92,13 @@ fn main() {
 
     println!("`rm a/c/e.txt`");
     // Remove a file, returns `io::Result<()>`
-    fs::remove_file(&Path::new("a/c/e.txt")).unwrap_or_else(|why| {
+    fs::remove_file("a/c/e.txt").unwrap_or_else(|why| {
         println!("! {:?}", why.kind());
     });
 
     println!("`rmdir a/c/d`");
     // Remove an empty directory, returns `io::Result<()>`
-    fs::remove_dir(&Path::new("a/c/d")).unwrap_or_else(|why| {
+    fs::remove_dir("a/c/d").unwrap_or_else(|why| {
         println!("! {:?}", why.kind());
     });
 }

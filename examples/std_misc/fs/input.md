@@ -39,3 +39,10 @@ a
 
 1 directory, 2 files
 ```
+
+### See also:
+
+[`cfg!`][cfg]
+
+[cfg]: /attribute/cfg.html
+
