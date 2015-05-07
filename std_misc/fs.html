@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.6" data-basepath=".." data-revision="1430917785286">
+    <div class="book" data-level="17.6" data-basepath=".." data-revision="1430988938339">
     
 
 <div class="book-summary">
@@ -2312,6 +2312,7 @@ use std::fs;
 use std::fs::{File, OpenOptions};
 use std::io;
 use std::io::prelude::&#42;;
+use std::os::unix;
 use std::path::Path;
 
 // A simple implementation of &#96;% cat path&#96;
@@ -2342,7 +2343,7 @@ fn touch(path: &amp;Path) -&gt; io::Result&lt;()&gt; {
 fn main() {
     println!(&quot;&#96;mkdir a&#96;&quot;);
     // Create a directory, returns &#96;io::Result&lt;()&gt;&#96;
-    match fs::create&#95;dir(&amp;Path::new(&quot;a&quot;)) {
+    match fs::create&#95;dir(&quot;a&quot;) {
         Err(why) =&gt; println!(&quot;! {:?}&quot;, why.kind()),
         Ok(&#95;) =&gt; {},
     }
@@ -2355,7 +2356,7 @@ fn main() {
 
     println!(&quot;&#96;mkdir -p a/c/d&#96;&quot;);
     // Recursively create a directory, returns &#96;io::Result&lt;()&gt;&#96;
-    fs::create&#95;dir&#95;all(&amp;Path::new(&quot;a/c/d&quot;)).unwrap&#95;or&#95;else(|why| {
+    fs::create&#95;dir&#95;all(&quot;a/c/d&quot;).unwrap&#95;or&#95;else(|why| {
         println!(&quot;! {:?}&quot;, why.kind());
     });
 
@@ -2366,10 +2367,11 @@ fn main() {
 
     println!(&quot;&#96;ln -s ../b.txt a/c/b.txt&#96;&quot;);
     // Create a symbolic link, returns &#96;io::Result&lt;()&gt;&#96;
-    fs::soft&#95;link(&amp;Path::new(&quot;../b.txt&quot;),
-                &amp;Path::new(&quot;a/c/b.txt&quot;)).unwrap&#95;or&#95;else(|why| {
+    if cfg!(target&#95;family = &quot;unix&quot;) {
+        unix::fs::symlink(&quot;../b.txt&quot;, &quot;a/c/b.txt&quot;).unwrap&#95;or&#95;else(|why| {
         println!(&quot;! {:?}&quot;, why.kind());
-    });
+        });
+    }
 
     println!(&quot;&#96;cat a/c/b.txt&#96;&quot;);
     match cat(&amp;Path::new(&quot;a/c/b.txt&quot;)) {
@@ -2379,7 +2381,7 @@ fn main() {
 
     println!(&quot;&#96;ls a&#96;&quot;);
     // Read the contents of a directory, returns &#96;io::Result&lt;Vec&lt;Path&gt;&gt;&#96;
-    match fs::read&#95;dir(&amp;Path::new(&quot;a&quot;)) {
+    match fs::read&#95;dir(&quot;a&quot;) {
         Err(why) =&gt; println!(&quot;! {:?}&quot;, why.kind()),
         Ok(paths) =&gt; for path in paths {
             println!(&quot;&gt; {:?}&quot;, path.unwrap().path());
@@ -2389,7 +2391,7 @@ fn main() {
     println!(&quot;&#96;walk a&#96;&quot;);
     // Recursively walk over the contents of a directory, returns
     // &#96;Directories&#96;, which implements the &#96;Iterator&lt;Path&gt; trait
-    match fs::walk&#95;dir(&amp;Path::new(&quot;a&quot;)) {
+    match fs::walk&#95;dir(&quot;a&quot;) {
         Err(why) =&gt; println!(&quot;! {:?}&quot;, why.kind()),
         Ok(paths) =&gt; for path in paths {
             println!(&quot;&gt; {:?}&quot;, path.unwrap().path());
@@ -2398,13 +2400,13 @@ fn main() {
 
     println!(&quot;&#96;rm a/c/e.txt&#96;&quot;);
     // Remove a file, returns &#96;io::Result&lt;()&gt;&#96;
-    fs::remove&#95;file(&amp;Path::new(&quot;a/c/e.txt&quot;)).unwrap&#95;or&#95;else(|why| {
+    fs::remove&#95;file(&quot;a/c/e.txt&quot;).unwrap&#95;or&#95;else(|why| {
         println!(&quot;! {:?}&quot;, why.kind());
     });
 
     println!(&quot;&#96;rmdir a/c/d&#96;&quot;);
     // Remove an empty directory, returns &#96;io::Result&lt;()&gt;&#96;
-    fs::remove&#95;dir(&amp;Path::new(&quot;a/c/d&quot;)).unwrap&#95;or&#95;else(|why| {
+    fs::remove&#95;dir(&quot;a/c/d&quot;).unwrap&#95;or&#95;else(|why| {
         println!(&quot;! {:?}&quot;, why.kind());
     });
 }</div>
@@ -2440,7 +2442,9 @@ a
     `-- b.txt -&gt; ../b.txt
 
 1 directory, 2 files
-</code></pre>
+</code></pre><h3 id="see-also">See also:</h3>
+<p><a href="/attribute/cfg.html"><code>cfg!</code></a></p>
+
                     
                     </section>
                 
