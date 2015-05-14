@@ -35,10 +35,7 @@ impl<Unit, T: Add<T, Output=T> + Clone + Copy> Add<Length<Unit, T>>
     type Output = Length<Unit, T>;
 
     fn add(self, r: Length<Unit, T>) -> Length<Unit, T> {
-        let Length(ref left, _)  = self;
-        let Length(ref right, _) = r;
-
-        Length(*left + *right, PhantomData)
+        Length(self.0 + r.0, PhantomData)
     }
 }
 

@@ -3,20 +3,12 @@ struct GenTup<T>(T,);
 
 // impl of Tup
 impl Tup {
-    fn value(&self) -> &f64 {
-        let &Tup ( ref val ) = self;
-
-        val
-    }
+    fn value(&self) -> &f64 { &self.0 }
 }
 
 // impl of GenTup for a generic type `T`
 impl <T> GenTup<T> {
-    fn value(&self) -> &T {
-        let &GenTup (ref val) = self;
-        
-        val
-    }
+    fn value(&self) -> &T { &self.0 }
 }
 
 fn main() {
