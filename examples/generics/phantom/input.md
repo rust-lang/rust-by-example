@@ -5,7 +5,7 @@ at compile time; they have no run-time behavior.
 
 {phantom.play}
 
-###See also:
+### See also:
 
 [Derive](http://rustbyexample.com/trait/derive.html),
 [struct](http://rustbyexample.com/structs.html), and
