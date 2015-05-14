@@ -11,27 +11,10 @@ struct Mm;
 #[derive(Debug, Clone, Copy)]
 struct Length<Unit, T>(T,PhantomData<Unit>);
 
-/// impl X for Y {} means "implement the trait `X` for the Type `Y`"
-/// The following lines implement the `Add` trait for Length.
-///
-/// The `<Unit, T: Add<T, Output=T>` after `impl` declares two generic
-/// types, `Unit`, which can be any type, and `T`, which is a type that
-/// must implement both traits `Copy` (which means no need to borrow,
-/// move, or clone; you can just pass in a variable, and both the caller
-/// and callee will own their own copy), and the trait `Add<T, Output=T>`.
-///
-/// `Add<T, Output=T>` means that the type implements Add, taking in a T
-/// (meaning an i32 plus an i32, or an f64 plus an f64, etc.), and giving
-/// back a T (i32 + i32 = i32).
-///
-/// So, this impl implements `Add<Length<Unit, T>` for `Length<Unit, T>`,
-/// which means you can add a `Length` to another `Length` of the same type.
-///
-/// `type Output = Length<Unit, T>` means that this impl gives back a
-/// `Length<Unit, T>`, so that
-/// `Length<Mm, f64> + Length<Mm, f64> = Length<Mm, f64>`
-impl<Unit, T: Add<T, Output=T> + Clone + Copy> Add<Length<Unit, T>>
-        for Length<Unit, T> {
+// This is similar to the header except `T` must also
+// implement `Clone` and `Copy.
+impl<Unit, T> Add<Length<Unit, T>> for Length<Unit, T> where
+    T: Add<T, Output=T> + Clone + Copy {
     type Output = Length<Unit, T>;
 
     fn add(self, r: Length<Unit, T>) -> Length<Unit, T> {
