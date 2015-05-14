@@ -98,7 +98,7 @@
             { "id": "testcase_add", "title": "Testcase: Add", "children": null }
         ] },
         { "id": "phantom", "title": "Phantom types", "children": [
-            { "id": "units", "title": "Unit conversions", "children": null }
+            { "id": "testcase_units", "title": "Testcase: unit conversions", "children": null }
         ] }
     ] },
     { "id": "scope", "title": "Scoping rules", "children": [
