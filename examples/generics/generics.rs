@@ -1,33 +1,25 @@
-// A generic struct
-struct Pair<T> {
-    first: T,
-    second: T,
-}
+// A concrete type `T`.
+struct T;
 
-// A generic function
-fn swap<T>(pair: Pair<T>) -> Pair<T> {
-    let Pair { first, second } = pair;
+// The first use of `T` was not preceded by `<T>` so `Single` must
+// be a concrete type. `T` is defined at the top.
+struct Single(T);
+//            ^ Here is `Single`s first use of the type `T`.
 
-    Pair { first: second, second: first }
-}
+// The first use of `T` is preceded by `<T>`. `SingleGen` must be
+// generic and has not yet been specialized. `T` could be anything
+// including `T` at the top.
+struct SingleGen<T>(T);
 
-// Reimplementing a 2-element tuple as a tuple struct
-struct Tuple2<T, U>(T, U);
-
+// Instantiating the types can be implicit or explicit.
 fn main() {
-    // Explicitly specialize `Pair`
-    let pair_of_chars: Pair<char> = Pair { first: 'a', second: 'b' };
+    // Regular `Single`.
+    let _s = Single(T);
 
-    // Implicitly specialize `Pair`
-    let pair_of_ints = Pair { first: 1i32, second: 2 };
+    // `SingleGen` explicity specialized.
+    let _char: SingleGen<char> = SingleGen('a');
 
-    // Explicitly specialize `Tuple2`
-    let _tuple: Tuple2<char, i32> = Tuple2('R', 2);
-
-    // Explicitly specialize `swap`
-    let _swapped_pair_of_chars = swap::<char>(pair_of_chars);
-
-    // Implicitly specialize `swap`
-    let _swapped_pair_of_ints = swap(pair_of_ints);
+    // `SingleGen`s implicitly specialized.
+    let _t   = SingleGen(T); // Uses `T` at top.
+    let _i32 = SingleGen(6); // Uses `i32`.
 }
-

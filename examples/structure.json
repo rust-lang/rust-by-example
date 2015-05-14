@@ -83,7 +83,20 @@
         ] }
     ] },
     { "id": "generics", "title": "Generics", "children": [
+        { "id": "gen_fn", "title": "Functions", "children": null },
         { "id": "impl", "title": "Implementation", "children": null },
+        { "id": "gen_trait", "title": "Traits", "children": null },
+        { "id": "bounds", "title": "Bounds", "children": [
+            { "id": "testcase_empty", "title": "Testcase: empty bounds", "children": null }
+        ] },
+        { "id": "multi_bounds", "title": "Multiple bounds", "children": null },
+        { "id": "where", "title": "Where clauses", "children": null },
+        { "id": "assoc_types", "title": "Associated types", "children": [
+            { "id": "the_problem", "title": "The problem", "children": null },
+            { "id": "the_solution", "title": "The solution", "children": null },
+            { "id": "constrain", "title": "Constraining", "children": null },
+            { "id": "testcase_add", "title": "Testcase: Add", "children": null }
+        ] },
         { "id": "phantom", "title": "Phantom types", "children": [
             { "id": "units", "title": "Unit conversions", "children": null }
         ] }
