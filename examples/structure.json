@@ -91,10 +91,11 @@
         ] },
         { "id": "multi_bounds", "title": "Multiple bounds", "children": null },
         { "id": "where", "title": "Where clauses", "children": null },
-        { "id": "assoc_types", "title": "Associated types", "children": [
+        { "id": "assoc_items", "title": "Associated items", "children": [
             { "id": "the_problem", "title": "The problem", "children": null },
-            { "id": "the_solution", "title": "The solution", "children": null },
+            { "id": "types", "title": "Associated types", "children": null },
             { "id": "constrain", "title": "Constraining", "children": null },
+            { "id": "consts", "title": "Associated consts", "children": null },
             { "id": "testcase_add", "title": "Testcase: Add", "children": null }
         ] },
         { "id": "phantom", "title": "Phantom types", "children": [

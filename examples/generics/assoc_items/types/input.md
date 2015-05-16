@@ -1,6 +1,6 @@
-Associated types moves the internal types locally into the trait to be
-called *output* types. This shields future users of the trait from the
-substantial boilerplate previously required. For example:
+Associated types forms the solution by moving the internal types locally into
+the trait to be called *output* types. This shields future users of the trait
+from the substantial boilerplate previously required. For example:
 
 ```rust
 // The original trait
@@ -32,4 +32,4 @@ fn difference<A, B, C>(container: &C) -> i32 where
 fn difference<C: Contains>(container: &C) -> i32 { ... }
 ```
 
-{solution.play}
+{types.play}
