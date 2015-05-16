@@ -3,6 +3,42 @@ svn:wc:ra_dav:version-url
 V 66
 /ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/snippets
 END
+lean.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/ajaxorg/ace-builds/!svn/ver/113/trunk/src-min-noconflict/snippets/lean.js
+END
+csharp.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/csharp.js
+END
+lua.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/lua.js
+END
+python.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/python.js
+END
+forth.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/forth.js
+END
+markdown.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/markdown.js
+END
 d.js
 K 25
 svn:wc:ra_dav:version-url
@@ -722,40 +758,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 77
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/makefile.js
-END
-lean.js
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/ajaxorg/ace-builds/!svn/ver/113/trunk/src-min-noconflict/snippets/lean.js
-END
-csharp.js
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/csharp.js
-END
-lua.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/lua.js
-END
-python.js
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/python.js
-END
-forth.js
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/forth.js
-END
-markdown.js
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/markdown.js
 END
