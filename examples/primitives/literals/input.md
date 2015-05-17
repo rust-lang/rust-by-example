@@ -10,7 +10,6 @@ Underscores can be inserted in numeric literals to improve readability, e.g.
 We need to tell the compiler the type of the literals we use. For now,
 we'll use the `u32` suffix to indicate that the literal is an unsigned 32-bit
 integer, and the `i32` suffix to indicate that it's a signed 32-bit integer.
-We'll cover the type system in [another chapter][primitives].
 
 The operators available and their precedence are similar to other
 [C-like languages][op-prec].
@@ -18,4 +17,3 @@ The operators available and their precedence are similar to other
 {literals.play}
 
 [op-prec]: https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages
-[primitives]: /primitives.html
