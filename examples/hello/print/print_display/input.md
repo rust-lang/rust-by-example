@@ -44,7 +44,7 @@ This is not a problem though because for any new *container* type which is
 {display.play}
 
 So, `fmt::Display` has been implemented but `fmt::Binary` has not, and
-therefore cannot be used. `std::fmt` has many such [`trait`s][traits] and
+therefore cannot be used. `std::fmt` has many such [`traits`][traits] and
 each requires it's own implementation. This is detailed further in
 [`std::fmt`][fmt].
 
