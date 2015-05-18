@@ -1,4 +1,4 @@
-Printing is handled by a series of [macros][macros] defined in [`std::fmt`][fmt]
+Printing is handled by a series of [`macros`][macros] defined in [`std::fmt`][fmt]
 some of which include:
 
 * `format!`: write formatted text to [`String`][string]
@@ -22,7 +22,7 @@ for these types. To print text for custom types, more steps are required.
 
 ### See also:
 
-[`std::fmt`][fmt], [macros][macros], [`struct`][structs],
+[`std::fmt`][fmt], [`macros`][macros], [`struct`][structs],
 and [`traits`][traits]
 
 [fmt]: http://doc.rust-lang.org/std/fmt/
