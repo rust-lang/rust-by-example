@@ -7,7 +7,7 @@ a few different varieties:
 * *Doc comments* which are parsed into HTML library
 [documentation][docs]:
  - `/// Generate library docs for the following item.`
- - `!// Generate library docs for the enclosing item.`
+ - `//! Generate library docs for the enclosing item.`
 
 {comment.play}
 
