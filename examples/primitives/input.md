@@ -9,8 +9,8 @@ Rust provides access to a wide variety of `primitives`. A sample includes:
 * arrays like `[1, 2, 3]`
 * tuples like `(1, true)`
 
-Variables can be always be *type annotated*. Numbers may additionally be
-annotated via a *suffix* or by *default*. Integers default to `i32` and
+Variables can always be *type annotated*. Numbers may additionally be
+annotated via a *suffix* or *by default*. Integers default to `i32` and
 floats to `f64`.
 
 {primitives.play}
