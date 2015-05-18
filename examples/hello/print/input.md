@@ -10,7 +10,7 @@ be checked at compile time.
 
 {print.play}
 
-[`std::fmt`][fmt] contains many [`trait`s][traits] which govern the display
+[`std::fmt`][fmt] contains many [`traits`][traits] which govern the display
 of text. The base form of two important ones are listed below:
 
 * `fmt::Debug`: Uses the `{:?}` marker. Format text for debugging purposes.
@@ -23,7 +23,7 @@ for these types. To print text for custom types, more steps are required.
 ### See also:
 
 [`std::fmt`][fmt], [macros][macros], [`struct`][structs],
-and [`trait`s][traits]
+and [`traits`][traits]
 
 [fmt]: http://doc.rust-lang.org/std/fmt/
 [macros]: /macros.html
