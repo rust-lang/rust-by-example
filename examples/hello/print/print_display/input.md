@@ -4,7 +4,7 @@ customize the output appearance. This is done by manually implementing
 looks like this:
 
 ```rust
-// Import the `fmt` module to make it available via `use`.
+// Import (via `use`) the `fmt` module to make it available.
 use std::fmt;
 
 // Define a structure which `fmt::Display` will be implemented for. This is simply
