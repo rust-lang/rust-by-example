@@ -1,6 +1,6 @@
 struct Container(i32, i32);
 
-// A trait which will check to see if 2 items are stored inside of container.
+// A trait which will check to see if two items are stored inside of container.
 // Also retrieves first or last value.
 trait Contains {
     // Define generic types here which methods will be able utilize.
