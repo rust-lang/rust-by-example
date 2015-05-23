@@ -1,5 +1,4 @@
-Implementations can also be made generic. Generally, `impl` is followed by
-the type `<Type>`, although it is not a strict requirement.
+Similar to functions, implementations require care to remain generic.
 
 ```rust
 struct S; // A null struct
@@ -13,11 +12,18 @@ impl GenericTup<S> {} // Specialize to `S` defined above
 impl <T> GenericTup<T> {}
 ```
 
+Note: Rust does not *currently* allow overlap between implementations. The
+3 separate implementations of `GenericTup` above cannot coexist. There are
+[plans][specialization_plans] to fix this though.
+
 {impl.play}
 
-###See also:
+### See also:
 
-[impl](http://rustbyexample.com/methods.html),
-[struct](http://rustbyexample.com/structs.html), and
-[functions returning references](http://rustbyexample.com/lifetime/fn.html),
+[functions returning references][fn], [`impl`][methods], and [`struct`][structs]
 
+
+[fn]: /scope/lifetime/fn.html
+[methods]: /fn/methods.html
+[specialization_plans]: http://blog.rust-lang.org/2015/05/11/traits.html#the-future
+[structs]: /custom_types/structs.html
