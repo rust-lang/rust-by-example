@@ -13,6 +13,6 @@ with a default initial capacity (recommended).
 
 For more information on how hashing and hash maps 
 (sometimes called hash tables) work, have a look at 
-[Wikipedia][wiki-hash]
+[Hash Table Wikipedia][wiki-hash]
 
-[wiki-hash]: (http://en.wikipedia.org/wiki/Hash_table)
+[wiki-hash]: http://en.wikipedia.org/wiki/Hash_table
