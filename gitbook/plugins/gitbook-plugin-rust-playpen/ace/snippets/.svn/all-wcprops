@@ -3,6 +3,96 @@ svn:wc:ra_dav:version-url
 V 66
 /ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/snippets
 END
+jade.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/jade.js
+END
+abap.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/abap.js
+END
+julia.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/julia.js
+END
+coldfusion.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/coldfusion.js
+END
+golang.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/golang.js
+END
+plain_text.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/plain_text.js
+END
+sh.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/sh.js
+END
+toml.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/toml.js
+END
+elm.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/ajaxorg/ace-builds/!svn/ver/106/trunk/src-min-noconflict/snippets/elm.js
+END
+asciidoc.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/asciidoc.js
+END
+luapage.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/luapage.js
+END
+ini.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/ini.js
+END
+smarty.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/smarty.js
+END
+java.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/java.js
+END
+tcl.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/tcl.js
+END
 live_script.js
 K 25
 svn:wc:ra_dav:version-url
@@ -668,94 +758,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 73
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/yaml.js
-END
-jade.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/jade.js
-END
-abap.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/abap.js
-END
-julia.js
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/julia.js
-END
-coldfusion.js
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/coldfusion.js
-END
-golang.js
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/golang.js
-END
-plain_text.js
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/plain_text.js
-END
-sh.js
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/sh.js
-END
-toml.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/toml.js
-END
-elm.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/ajaxorg/ace-builds/!svn/ver/106/trunk/src-min-noconflict/snippets/elm.js
-END
-asciidoc.js
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/asciidoc.js
-END
-luapage.js
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/luapage.js
-END
-ini.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/ini.js
-END
-smarty.js
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/smarty.js
-END
-java.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/java.js
-END
-tcl.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/tcl.js
 END
