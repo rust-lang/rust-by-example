@@ -8,7 +8,7 @@ looks like this:
 use std::fmt;
 
 // Define a structure which `fmt::Display` will be implemented for. This is simply
-// a structure containing an `i32` bound to the name `Structure`.
+// a tuple struct containing an `i32` bound to the name `Structure`.
 struct Structure(i32);
 
 // In order to use the `{}` marker, the trait `fmt::Display` must be implemented
