@@ -1,7 +1,7 @@
 fn main() {
     // This is an example of a line comment
     // Notice how there are two slashes at the beginning of the line
-    // And that anything written inside these will not be read by the compiler
+    // And that nothing written inside these will be read by the compiler
 
     // println!("Hello, world!");
 

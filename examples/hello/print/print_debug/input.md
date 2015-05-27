@@ -1,4 +1,4 @@
-All types which want to use `std::fmt` formatting `trait`s require an
+All types which want to use `std::fmt` formatting `traits` require an
 implementation to be printable. Automatic implementations are only provided
 for types such as in the `std` library. All others *must* be manually
 implemented somehow.
