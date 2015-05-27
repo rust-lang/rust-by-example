@@ -22,7 +22,7 @@ fn main() {
 
     // Error! `Seconds` can't be printed, because it doesn't implement the
     // `Debug` trait
-    //println!("One second looks like: {}", _one_second);
+    //println!("One second looks like: {:?}", _one_second);
     // TODO ^ Try uncommenting this line
 
     // Error: `Seconds` can't be compared, because it doesn't implement the
