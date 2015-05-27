@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2.2" data-basepath="../.." data-revision="1432742059521">
+    <div class="book" data-level="1.2.2" data-basepath="../.." data-revision="1432767703534">
     
 
 <div class="book-summary">
@@ -2509,7 +2509,7 @@
 customize the output appearance. This is done by manually implementing
 <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>fmt::Display</code></a>, which uses the <code>{}</code> print marker. Implementing it
 looks like this:</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// Import the `fmt` module to make it available via `use`.</span>
+<pre><code class="lang-rust"><span class="hljs-comment">// Import (via `use`) the `fmt` module to make it available.</span>
 <span class="hljs-keyword">use</span> std::fmt;
 
 <span class="hljs-comment">// Define a structure which `fmt::Display` will be implemented for. This is simply</span>
@@ -2604,7 +2604,7 @@ fn main() {
 </div>
 
 <p>So, <code>fmt::Display</code> has been implemented but <code>fmt::Binary</code> has not, and
-therefore cannot be used. <code>std::fmt</code> has many such <a href="/trait.html"><code>trait</code>s</a> and
+therefore cannot be used. <code>std::fmt</code> has many such <a href="/trait.html"><code>traits</code></a> and
 each requires it&#39;s own implementation. This is detailed further in
 <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>.</p>
 <h3 id="see-also">See also:</h3>
