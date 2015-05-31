@@ -4,5 +4,5 @@ documentation. They are denoted by a `///`, and support [Markdown][2].
 
 {doc.play}
 
-[1]: https://github.com/rust-lang/rust/blob/master/src/doc/rustdoc.md
+[1]: http://doc.rust-lang.org/book/documentation.html
 [2]: https://en.wikipedia.org/wiki/Markdown
