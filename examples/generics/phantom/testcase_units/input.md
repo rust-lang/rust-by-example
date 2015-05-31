@@ -3,20 +3,22 @@ for a phantom type. The `Add` `trait` is examined below:
 
 ```rust
 // This construction would impose: `Self + RHS = Output`.
+// where RHS and Self are of the same type.
 pub trait Add<RHS = Self> {
     type Output;
 
     fn add(self, rhs: RHS) -> Self::Output;
 }
 
-// So, `Output` must be `T` and therefore, `T + T = T`.
-impl<T> Add<T, Output = T> for T {}
+// `Output` must be `T` so that `T + T = T`.
+impl Add for T {
+    type Output = T;
+    ...
+}
 
-// Similarly, this imposes: `S<T> + S<T> = S<T>` can be
-// added only when `T + T = T`.
-impl<S<T>> Add<S<T> for S<T> where
-    T: Add<T, Output = T> {
-    type Output = S<T>;
+// Similarly, this imposes: `T<U> + T<U> = T<U>`
+impl<U> Add for T<U> {
+    type Output = T<U>;
     ...
 }
 ```
