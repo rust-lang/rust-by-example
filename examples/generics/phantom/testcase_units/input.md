@@ -3,7 +3,7 @@ for a phantom type. The `Add` `trait` is examined below:
 
 ```rust
 // This construction would impose: `Self + RHS = Output`.
-// where RHS and Self are of the same type.
+// where RHS defaults to Self if not specified in the implementation
 pub trait Add<RHS = Self> {
     type Output;
 
