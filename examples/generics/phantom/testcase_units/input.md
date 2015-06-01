@@ -10,13 +10,7 @@ pub trait Add<RHS = Self> {
     fn add(self, rhs: RHS) -> Self::Output;
 }
 
-// `Output` must be `T` so that `T + T = T`.
-impl Add for T {
-    type Output = T;
-    ...
-}
-
-// Similarly, this imposes: `T<U> + T<U> = T<U>`
+// `Output` must be `T<U>` so that `T<U> + T<U> = T<U>`
 impl<U> Add for T<U> {
     type Output = T<U>;
     ...
