@@ -16,7 +16,9 @@ fn main() {
     };
 
     {
-        // Write a string to the stdin of `wc`
+        // Write a string to the stdin of `wc`. 
+        // stdin has type `Option<ChildStdin>`, but since we know this instance 
+        // must have one, we can directly `unwrap` it.
         match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
             Err(why) => panic!("couldn't write to wc stdin: {}",
                                Error::description(&why)),
@@ -28,9 +30,7 @@ fn main() {
         // input we just sent
     }
 
-    // The `stdout` field also has type `Option<PipeStream>`
-    // the `as_mut` method will return a mutable reference to the value
-    // wrapped in a `Some` variant
+    // The `stdout` field also has type `Option<ChildStdout>` so must be unwrapped.
     let mut s = String::new();
     match process.stdout.unwrap().read_to_string(&mut s) {
         Err(why) => panic!("couldn't read wc stdout: {}",
