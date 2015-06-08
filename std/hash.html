@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.7" data-basepath=".." data-revision="1433682443715">
+    <div class="book" data-level="16.7" data-basepath=".." data-revision="1433725520573">
     
 
 <div class="book-summary">
@@ -2543,8 +2543,8 @@ fn main() {
         &#95; =&gt; println!(&quot;Don&#39;t have Daniel&#39;s number.&quot;),
     }
 
-    // &#96;HashMap::insert()&#96; returns true 
-    // if the inserted value is new, false otherwise
+    // &#96;HashMap::insert()&#96; returns &#96;None&#96;
+    // if the inserted value is new, &#96;Some(value)&#96; otherwise
     contacts.insert(&quot;Daniel&quot;, &quot;164-6743&quot;);
 
     match contacts.get(&amp;&quot;Ashley&quot;) {
