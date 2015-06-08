@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9.4" data-basepath=".." data-revision="1433769190123">
+    <div class="book" data-level="9.4" data-basepath=".." data-revision="1433775686585">
     
 
 <div class="book-summary">
@@ -2542,14 +2542,6 @@ macro_rules! op {
 op!(add_assign, Add, +=, add);
 op!(mul_assign, Mul, *=, mul);
 op!(sub_assign, Sub, -=, sub);
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> xs = iter::repeat(<span class="hljs-number">0f64</span>).take(<span class="hljs-number">5</span>).collect();
-    <span class="hljs-keyword">let</span> ys = iter::repeat(<span class="hljs-number">1f64</span>).take(<span class="hljs-number">6</span>).collect();
-
-    <span class="hljs-comment">// this operation will fail at runtime</span>
-    add_assign(&amp;<span class="hljs-keyword">mut</span> xs, &amp;ys);
-}
 
 <span class="hljs-keyword">mod</span> test {
     <span class="hljs-keyword">use</span> std::iter;
