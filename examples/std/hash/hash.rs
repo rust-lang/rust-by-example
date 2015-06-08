@@ -24,8 +24,8 @@ fn main() {
         _ => println!("Don't have Daniel's number."),
     }
 
-    // `HashMap::insert()` returns true 
-    // if the inserted value is new, false otherwise
+    // `HashMap::insert()` returns `None`
+    // if the inserted value is new, `Some(value)` otherwise
     contacts.insert("Daniel", "164-6743");
 
     match contacts.get(&"Ashley") {
