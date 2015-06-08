@@ -32,14 +32,6 @@ op!(add_assign, Add, +=, add);
 op!(mul_assign, Mul, *=, mul);
 op!(sub_assign, Sub, -=, sub);
 
-fn main() {
-    let mut xs = iter::repeat(0f64).take(5).collect();
-    let ys = iter::repeat(1f64).take(6).collect();
-
-    // this operation will fail at runtime
-    add_assign(&mut xs, &ys);
-}
-
 mod test {
     use std::iter;
     macro_rules! test {
