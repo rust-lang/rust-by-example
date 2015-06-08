@@ -16,8 +16,9 @@ fn main() {
     };
 
     {
-        // Write a string to the stdin of `wc`. 
-        // stdin has type `Option<ChildStdin>`, but since we know this instance 
+        // Write a string to the `stdin` of `wc`.
+        //
+        // `stdin` has type `Option<ChildStdin>`, but since we know this instance
         // must have one, we can directly `unwrap` it.
         match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
             Err(why) => panic!("couldn't write to wc stdin: {}",
@@ -25,9 +26,10 @@ fn main() {
             Ok(_) => println!("sent pangram to wc"),
         }
 
-        // `stdin` gets `drop`ed here, and the pipe is closed
+        // `stdin` gets `drop`ed here, and the pipe is closed.
+        //
         // This is very important, otherwise `wc` wouldn't start processing the
-        // input we just sent
+        // input we just sent.
     }
 
     // The `stdout` field also has type `Option<ChildStdout>` so must be unwrapped.
