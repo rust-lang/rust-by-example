@@ -12,10 +12,6 @@ impl GenericVal<S> {} // Specialize to `S` defined above
 impl <T> GenericVal<T> {}
 ```
 
-Note: Rust does not *currently* allow overlap between implementations. The
-3 separate implementations of `GenericVal` above cannot coexist. There are
-[plans][specialization_plans] to fix this though.
-
 {impl.play}
 
 ### See also:
