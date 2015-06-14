@@ -2,14 +2,14 @@ Similar to functions, implementations require care to remain generic.
 
 ```rust
 struct S; // A null struct
-struct GenericTup<T>(T,);
+struct GenericVal<T>(T,);
 
-// impl of GenericTup we specifically specialize:
-impl GenericTup<f32> {} // Specialize to `f32`
-impl GenericTup<S> {} // Specialize to `S` defined above
+// impl of GenericVal we specifically specialize:
+impl GenericVal<f32> {} // Specialize to `f32`
+impl GenericVal<S> {} // Specialize to `S` defined above
 
 // `<T>` Must precede the type to remain generic
-impl <T> GenericTup<T> {}
+impl <T> GenericVal<T> {}
 ```
 
 Note: Rust does not *currently* allow overlap between implementations. The
