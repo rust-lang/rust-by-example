@@ -17,6 +17,7 @@ fn apply_to_3<F>(f: F) -> i32 where
 
 fn main() {
     let greeting = "hello";
+    // A non-copy type.
     let mut farewell = "goodbye".to_owned();
 
     // Capture 2 variables: `greeting` by reference and

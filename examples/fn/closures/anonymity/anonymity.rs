@@ -1,6 +1,6 @@
-// `F` must implement `Fn` for a function which takes no
+// `F` must implement `Fn` for a closure which takes no
 // inputs and returns nothing. Exactly what is required
-// for `diary`.
+// for `print`.
 fn apply<F>(f: F) where
     F: Fn() {
 

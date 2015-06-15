@@ -1,6 +1,8 @@
 #![feature(core)]
 use std::boxed::FnBox;
 
+// Return a closure taking no inputs and returning nothing
+// which implements `FnBox` (capture by value).
 fn create_fnbox() -> Box<FnBox()> {
     let text = "FnBox".to_owned();
 

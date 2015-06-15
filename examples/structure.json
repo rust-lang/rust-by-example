@@ -59,7 +59,7 @@
         { "id": "closures", "title": "Closures", "children": [
             { "id": "capture", "title": "Capturing", "children": null },
             { "id": "input_parameters", "title": "As input parameters", "children": null },
-            { "id": "anonymity", "title": "Anonymity", "children": null },
+            { "id": "anonymity", "title": "Type anonymity", "children": null },
             { "id": "input_functions", "title": "Input functions", "children": null },
             { "id": "output_parameters", "title": "As output parameters", "children": null },
             { "id": "closure_analysis", "title": "Analysis", "children": [

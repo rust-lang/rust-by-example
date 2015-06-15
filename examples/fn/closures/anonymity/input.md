@@ -1,6 +1,6 @@
-Closures are supposedly anonymous. Does that affect it's usage? It surely
-does. Observe how using a closure in a function requires generics, which
-is necessary because of how they are defined:
+Closures succinctly capture variables from enclosing scopes. Does this have
+any consequences? It surely does. Observe how using a closure in a function
+requires generics, which is necessary because of how they are defined:
 
 ```rust
 // `F` must be generic.
