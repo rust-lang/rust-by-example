@@ -1,4 +1,3 @@
-use std::iter;
 use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {

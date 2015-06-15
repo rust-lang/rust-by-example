@@ -55,9 +55,18 @@
         { "id": "while_let", "title": "while let", "children": null }
     ] },
     { "id": "fn", "title": "Functions", "children": [
-        { "id": "unused", "title": "Unused", "children": null },
         { "id": "methods", "title": "Methods", "children": null },
-        { "id": "closures", "title": "Closures", "children": null },
+        { "id": "closures", "title": "Closures", "children": [
+            { "id": "capture", "title": "Capturing", "children": null },
+            { "id": "input_parameters", "title": "As input parameters", "children": null },
+            { "id": "anonymity", "title": "Type anonymity", "children": null },
+            { "id": "input_functions", "title": "Input functions", "children": null },
+            { "id": "output_parameters", "title": "As output parameters", "children": null },
+            { "id": "closure_analysis", "title": "Analysis", "children": [
+                { "id": "iter_any", "title": "Iterator::any", "children": null },
+                { "id": "iter_find", "title": "Iterator::find", "children": null }
+            ] }
+        ] },
         { "id": "hof", "title": "Higher Order Functions", "children": null }
     ] },
     { "id": "macros", "title": "macro_rules!", "children": [
@@ -77,6 +86,7 @@
         { "id": "link", "title": "`extern crate`", "children": null }
     ] },
     { "id": "attribute", "title": "Attributes", "children": [
+        { "id": "unused", "title": "Unused", "children": null },
         { "id": "crate", "title": "Crates", "children": null },
         { "id": "cfg", "title": "`cfg`", "children": [
             { "id": "custom", "title": "Custom", "children": null }

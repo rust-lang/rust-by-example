@@ -1,10 +1,15 @@
-Closures are special functions that can capture the variables available in the
-surrounding scope. Closures consist of three parts:
+Closures[^*] in Rust are functions with a slightly specialized syntax which
+can capture the enclosing environment. Their syntax and capabilties make them
+very convenient for on the fly usage. Some characteristics include:
 
-* A list of arguments enclosed by pipes `|`. These arguments can optionally be
-  type annotated, but usually the compiler will infer their types
-* Optionally the return type using an arrow `->`. Again, this usually gets
-  inferred
-* A block. The last expression is the return value
+* uses `||` instead of `()` around input variables.
+* *both* input and return *types* can be inferred.
+* input variable *names* must be specified.
+* body delimination (`{}`) is optional for a single expression. Mandatory
+otherwise.
+* the outer environment variables *may* be captured.
+* calling a closure is exactly like a function: `call(var)`.
 
 {closures.play}
+
+[^*]: Also called `lambdas` or `anonymous functions`.
