@@ -20,3 +20,12 @@ In addition, Rust will preferentially capture variables in the least
 restrictive manner possible on a variable-by-variable basis:
 
 {input_parameters.play}
+
+### See also:
+
+[`std::mem::drop`][drop], [`Fn`][fn], [`FnMut`][fnmut], and [`FnOnce`][fnonce]
+
+[drop]: http://doc.rust-lang.org/std/mem/fn.drop.html
+[fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
+[fnmut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
+[fnonce]: http://doc.rust-lang.org/std/ops/trait.FnOnce.html

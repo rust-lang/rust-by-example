@@ -20,7 +20,11 @@ closure.
 
 ### See also:
 
-[Boxing][box] and [Generics][generics]
+[Boxing][box], [`Fn`][fn], [`FnMut`][fnmut], [`FnBox`][fnbox], and
+[Generics][generics]
 
 [box]: /std/box.html
+[fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
+[fnmut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
+[fnbox]: http://doc.rust-lang.org/std/boxed/trait.FnBox.html
 [generics]: /generics.html
