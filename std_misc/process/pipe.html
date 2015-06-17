@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.5.1" data-basepath="../.." data-revision="1434546608986">
+    <div class="book" data-level="17.5.1" data-basepath="../.." data-revision="1434547769944">
     
 
 <div class="book-summary">
@@ -2669,21 +2669,23 @@ fn main() {
     };
 
     {
-        // Write a string to the stdin of &#96;wc&#96;
+        // Write a string to the &#96;stdin&#96; of &#96;wc&#96;.
+        //
+        // &#96;stdin&#96; has type &#96;Option&lt;ChildStdin&gt;&#96;, but since we know this instance
+        // must have one, we can directly &#96;unwrap&#96; it.
         match process.stdin.unwrap().write&#95;all(PANGRAM.as&#95;bytes()) {
             Err(why) =&gt; panic!(&quot;couldn&#39;t write to wc stdin: {}&quot;,
                                Error::description(&amp;why)),
             Ok(&#95;) =&gt; println!(&quot;sent pangram to wc&quot;),
         }
 
-        // &#96;stdin&#96; gets &#96;drop&#96;ed here, and the pipe is closed
+        // &#96;stdin&#96; gets &#96;drop&#96;ed here, and the pipe is closed.
+        //
         // This is very important, otherwise &#96;wc&#96; wouldn&#39;t start processing the
-        // input we just sent
+        // input we just sent.
     }
 
-    // The &#96;stdout&#96; field also has type &#96;Option&lt;PipeStream&gt;&#96;
-    // the &#96;as&#95;mut&#96; method will return a mutable reference to the value
-    // wrapped in a &#96;Some&#96; variant
+    // The &#96;stdout&#96; field also has type &#96;Option&lt;ChildStdout&gt;&#96; so must be unwrapped.
     let mut s = String::new();
     match process.stdout.unwrap().read&#95;to&#95;string(&amp;mut s) {
         Err(why) =&gt; panic!(&quot;couldn&#39;t read wc stdout: {}&quot;,
