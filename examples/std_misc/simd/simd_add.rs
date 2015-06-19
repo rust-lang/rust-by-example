@@ -1,5 +1,5 @@
 #![feature(test)]
-#![feature(core)]
+#![feature(core_simd)]
 
 use std::simd::f32x4;
 

@@ -1,4 +1,5 @@
-#![feature(core)]
+#![feature(fnbox)]
+
 use std::boxed::FnBox;
 
 // Return a closure taking no inputs and returning nothing

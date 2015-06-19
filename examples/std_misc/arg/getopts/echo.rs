@@ -1,12 +1,12 @@
 #![feature(rustc_private)]
-#![feature(collections)]
-#![feature(exit_status)]
+#![feature(slice_extras)]
 
 extern crate getopts;
 
 use std::env;
 use std::io;
 use std::io::Write;
+use std::process;
 
 static VERSION: &'static str = "1.0.0";
 
@@ -29,8 +29,7 @@ fn main() {
         Ok(m) => m,
         Err(f) => {
             println!("{}", f);
-            env::set_exit_status(1);
-            return;
+            process::exit(1);
             // The exit code is 0 (success) by default.
             // Any exit code other than 0 indicates failure.
         }
