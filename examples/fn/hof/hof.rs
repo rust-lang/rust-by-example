@@ -1,4 +1,4 @@
-#![feature(core)]
+#![feature(iter_arith)]
 
 fn main() {
     println!("Find the sum of all the squared odd numbers under 1000");

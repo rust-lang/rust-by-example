@@ -1,4 +1,4 @@
-#![feature(collections)]
+#![feature(slice_extras)]
 
 use std::env;
 

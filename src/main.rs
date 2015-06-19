@@ -1,7 +1,8 @@
-#![feature(core)]
+#![feature(iter_arith)]
 #![feature(scoped)]
 
 #![deny(warnings)]
+#![allow(deprecated)] // thread::scoped needs to go, but can't do it now
 #![feature(plugin)]
 
 extern crate regex;

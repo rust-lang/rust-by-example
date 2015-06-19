@@ -1,10 +1,10 @@
 #![feature(rustc_private)]
-#![feature(collections)]
-#![feature(exit_status)]
+#![feature(slice_extras)]
 
 extern crate getopts;
 
 use std::env;
+use std::process;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -22,15 +22,14 @@ fn main() {
         Ok(m) => m,
         Err(f) => {
             println!("{}", f);
-            env::set_exit_status(1);
-            return;
+            process::exit(1);
         }
     };
     let a = if matches.opt_present("a") {true} else {false};
     let b = if matches.opt_present("b") {true} else {false};
     let c = match matches.opt_str("c") {
         Some(s) => s,
-        None => String::from_str(""),
+        None => String::from(""),
     };
     //^ Use `matches.opt_default` if you need a default (`opflagopt`).
     //  Use `matches.opt_count` if you need to count how many were matched
