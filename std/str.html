@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.3" data-basepath=".." data-revision="1434633603602">
+    <div class="book" data-level="16.3" data-basepath=".." data-revision="1434755410741">
     
 
 <div class="book-summary">
@@ -2654,9 +2654,7 @@ can be used to view into a <code>String</code>, just like <code>&amp;[T]</code> 
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(collections)]
-
-fn main() {
+<div id="editor">fn main() {
     // (all the type annotations are superfluous)
     // A reference to a string allocated in read only memory
     let pangram: &amp;&#39;static str = &quot;the quick brown fox jumps over the lazy dog&quot;;
@@ -2689,7 +2687,7 @@ fn main() {
     println!(&quot;Used characters: {}&quot;, trimmed&#95;str);
 
     // Heap allocate a string
-    let alice = String::from&#95;str(&quot;I like dogs&quot;);
+    let alice = String::from(&quot;I like dogs&quot;);
     // Allocate new memory and store the modified string there
     let bob: String = alice.replace(&quot;dog&quot;, &quot;cat&quot;);
 

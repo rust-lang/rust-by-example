@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.7.2" data-basepath="../.." data-revision="1434633603602">
+    <div class="book" data-level="17.7.2" data-basepath="../.." data-revision="1434755410741">
     
 
 <div class="book-summary">
@@ -2651,14 +2651,14 @@
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">#![feature(rustc&#95;private)]
-#![feature(collections)]
-#![feature(exit&#95;status)]
+#![feature(slice&#95;extras)]
 
 extern crate getopts;
 
 use std::env;
 use std::io;
 use std::io::Write;
+use std::process;
 
 static VERSION: &amp;&#39;static str = &quot;1.0.0&quot;;
 
@@ -2681,8 +2681,7 @@ fn main() {
         Ok(m) =&gt; m,
         Err(f) =&gt; {
             println!(&quot;{}&quot;, f);
-            env::set&#95;exit&#95;status(1);
-            return;
+            process::exit(1);
             // The exit code is 0 (success) by default.
             // Any exit code other than 0 indicates failure.
         }
@@ -2746,12 +2745,12 @@ Hello, World!
 be passed to the program:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// testopt.rs</span>
 #![feature(rustc_private)]
-#![feature(collections)]
-#![feature(exit_status)]
+#![feature(slice_extras)]
 
 <span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> getopts;
 
 <span class="hljs-keyword">use</span> std::env;
+<span class="hljs-keyword">use</span> std::process;
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
     <span class="hljs-keyword">let</span> args: Vec&lt;String&gt; = env::args().collect();
@@ -2769,15 +2768,14 @@ be passed to the program:</p>
         Ok(m) =&gt; m,
         Err(f) =&gt; {
             <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{}"</span>, f);
-            env::set_exit_status(<span class="hljs-number">1</span>);
-            <span class="hljs-keyword">return</span>;
+            process::exit(<span class="hljs-number">1</span>);
         }
     };
     <span class="hljs-keyword">let</span> a = <span class="hljs-keyword">if</span> matches.opt_present(<span class="hljs-string">"a"</span>) {<span class="hljs-keyword">true</span>} <span class="hljs-keyword">else</span> {<span class="hljs-keyword">false</span>};
     <span class="hljs-keyword">let</span> b = <span class="hljs-keyword">if</span> matches.opt_present(<span class="hljs-string">"b"</span>) {<span class="hljs-keyword">true</span>} <span class="hljs-keyword">else</span> {<span class="hljs-keyword">false</span>};
     <span class="hljs-keyword">let</span> c = <span class="hljs-keyword">match</span> matches.opt_str(<span class="hljs-string">"c"</span>) {
         Some(s) =&gt; s,
-        None =&gt; String::from_str(<span class="hljs-string">""</span>),
+        None =&gt; String::from(<span class="hljs-string">""</span>),
     };
     <span class="hljs-comment">//^ Use `matches.opt_default` if you need a default (`opflagopt`).</span>
     <span class="hljs-comment">//  Use `matches.opt_count` if you need to count how many were matched</span>

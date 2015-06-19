@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.9" data-basepath=".." data-revision="1434633603602">
+    <div class="book" data-level="17.9" data-basepath=".." data-revision="1434755410741">
     
 
 <div class="book-summary">
@@ -2649,7 +2649,7 @@
 exposed as structs (<code>f32x4</code>, <code>u8x16</code>, etc.) that implement basic operations
 (<code>+</code>, <code>-</code>, <code>*</code>, etc) using SIMD instructions under the hood.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// simd.rs</span>
-#![feature(core)]
+#![feature(core_simd)]
 
 <span class="hljs-keyword">use</span> std::simd::f32x4;
 
@@ -2673,7 +2673,7 @@ exposed as structs (<code>f32x4</code>, <code>u8x16</code>, etc.) that implement
 to operate on 4-element chunks at a time.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// simd_add.rs</span>
 #![feature(test)]
-#![feature(core)]
+#![feature(core_simd)]
 
 <span class="hljs-keyword">use</span> std::simd::f32x4;
 
