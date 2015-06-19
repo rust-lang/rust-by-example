@@ -1,5 +1,3 @@
-#![feature(collections)]
-
 fn main() {
     // (all the type annotations are superfluous)
     // A reference to a string allocated in read only memory
@@ -33,7 +31,7 @@ fn main() {
     println!("Used characters: {}", trimmed_str);
 
     // Heap allocate a string
-    let alice = String::from_str("I like dogs");
+    let alice = String::from("I like dogs");
     // Allocate new memory and store the modified string there
     let bob: String = alice.replace("dog", "cat");
 
