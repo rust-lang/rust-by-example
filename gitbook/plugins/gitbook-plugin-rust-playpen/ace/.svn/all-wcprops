@@ -3,6 +3,42 @@ svn:wc:ra_dav:version-url
 V 57
 /ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict
 END
+mode-rust.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-rust.js
+END
+mode-velocity.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-velocity.js
+END
+mode-sjs.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-sjs.js
+END
+mode-tex.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/mode-tex.js
+END
+mode-xml.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-xml.js
+END
+mode-glsl.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-glsl.js
+END
 mode-less.js
 K 25
 svn:wc:ra_dav:version-url
@@ -1112,40 +1148,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 81
 /ajaxorg/ace-builds/!svn/ver/115/trunk/src-min-noconflict/ext-static_highlight.js
-END
-mode-rust.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-rust.js
-END
-mode-velocity.js
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-velocity.js
-END
-mode-sjs.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-sjs.js
-END
-mode-tex.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/mode-tex.js
-END
-mode-xml.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-xml.js
-END
-mode-glsl.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min-noconflict/mode-glsl.js
 END

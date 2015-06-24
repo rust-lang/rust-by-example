@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="5" data-basepath="." data-revision="1435164142000">
+    <div class="book" data-level="5" data-basepath="." data-revision="1435180287157">
     
 
 <div class="book-summary">
@@ -2653,7 +2653,10 @@ between integral types is well defined in Rust.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">fn main() {
+<div id="editor">// Suppress all warnings from casts which overflow.
+#![allow(overflowing&#95;literals)]
+
+fn main() {
     let decimal = 65.4321&#95;f32;
 
     // Error! No implicit conversion
