@@ -1,3 +1,6 @@
+// Suppress all warnings from casts which overflow.
+#![allow(overflowing_literals)]
+
 fn main() {
     let decimal = 65.4321_f32;
 
