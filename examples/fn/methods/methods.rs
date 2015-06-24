@@ -41,7 +41,7 @@ impl Rectangle {
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
 
-        2.0 * (x1 - x2).abs() + 2.0 * (y1 - y2).abs()
+        2.0 * ((x1 - x2).abs() + (y1 - y2).abs())
     }
 
     // This method requires the caller object to be mutable
