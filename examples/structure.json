@@ -15,9 +15,7 @@
         { "id": "array", "title": "Arrays and Slices", "children": null }
     ] },
     { "id": "custom_types", "title": "Custom types", "children": [
-        { "id": "structs", "title": "Structures", "children": [
-            { "id": "visibility", "title": "Visibility", "children": null }
-        ] },
+        { "id": "structs", "title": "Structures", "children": null },
         { "id": "enum", "title": "Enums", "children": [
             { "id": "c_like", "title": "C-like", "children": null }
         ] },
@@ -77,6 +75,7 @@
     ] },
     { "id": "mod", "title": "Modules", "children": [
         { "id": "visibility", "title": "Visibility", "children": null },
+        { "id": "struct_visibility", "title": "Struct visibility", "children": null },
         { "id": "use", "title": "The `use` declaration", "children": null },
         { "id": "super", "title": "`super` and `self`", "children": null },
         { "id": "split", "title": "File hierarchy", "children": null }
