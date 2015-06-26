@@ -1,41 +1,14 @@
-// If you'd like to refer to the days without saying
-// `Day::Monday`, then you use the following notation
-// use Day::{
-//     Monday,
-//     Tuesday,
-//     Wednesday,
-//     Thursday,
-//     Friday,
-//     Saturday,
-//     Sunday,
-// }
-//
-// And you can refer to enum variants just like in C
+// An attribute to hide warnings for unused code.
+#![allow(dead_code)]
 
 // enum with implicit discriminator (starts at 0)
-#[allow(dead_code)]
-enum Day {
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday,
-}
-
-impl Day {
-    fn mood(&self) {
-        println!("{}", match *self {
-            Day::Friday => "it's friday!",
-            Day::Saturday | Day::Sunday => "weekend :-)",
-            _ => "weekday...",
-        })
-    }
+enum Number {
+    Zero,
+    One,
+    Two,
 }
 
 // enum with explicit discriminator
-#[allow(dead_code)]
 enum Color {
     Red = 0xff0000,
     Green = 0x00ff00,
@@ -43,11 +16,10 @@ enum Color {
 }
 
 fn main() {
-    let today = Day::Monday;
+    // `enums` can be cast as integers.
+    println!("zero is {}", Number::Zero as i32);
+    println!("one is {}", Number::One as i32);
 
-    today.mood();
-
-    // enums can be casted into integers
     println!("roses are #{:06x}", Color::Red as i32);
     println!("violets are #{:06x}", Color::Blue as i32);
 }

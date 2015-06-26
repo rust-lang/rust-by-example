@@ -1,68 +1,45 @@
-// Allow Cons and Nil to be referred to without namespacing
-use List::{Cons, Nil};
+// An attribute to hide warnings for unused code.
+#![allow(dead_code)]
 
-// A linked list node, which can take on any of these two variants
-enum List {
-    // Cons: Tuple struct that wraps an element and a pointer to the next node
-    Cons(u32, Box<List>),
-    // Nil: A node that signifies the end of the linked list
-    Nil,
+// Create an `enum` to classify someone. Note how both names
+// and type information together specify the variant:
+// `Skinny != Fat` and `Height(i32) != Weight(i32)`. Each
+// is different and independent.
+enum Person {
+    // An `enum` may either be `unit-like`,
+    Skinny,
+    Fat,
+    // like tuple structs,
+    Height(i32),
+    Weight(i32),
+    // or like structures.
+    Info { name: String, height: i32 }
 }
 
-// Methods can be attached to an enum
-impl List {
-    // Create an empty list
-    fn new() -> List {
-        // `Nil` has type `List`
-        Nil
-    }
-
-    // Consume a list, and return the same list with a new element at its front
-    fn prepend(self, elem: u32) -> List {
-        // `Cons` also has type List
-        Cons(elem, Box::new(self))
-    }
-
-    // Return the length of the list
-    fn len(&self) -> u32 {
-        // `self` has to be matched, because the behavior of this method
-        // depends on the variant of `self`
-        // `self` has type `&List`, and `*self` has type `List`, matching on a
-        // concrete type `T` is preferred over a match on a reference `&T`
-        match *self {
-            // Can't take ownership of the tail, because `self` is borrowed;
-            // instead take a reference to the tail
-            Cons(_, ref tail) => 1 + tail.len(),
-            // Base Case: An empty list has zero length
-            Nil => 0
-        }
-    }
-
-    // Return representation of the list as a (heap allocated) string
-    fn stringify(&self) -> String {
-        match *self {
-            Cons(head, ref tail) => {
-                // `format!` is similar to `print!`, but returns a heap
-                // allocated string instead of printing to the console
-                format!("{}, {}", head, tail.stringify())
-            },
-            Nil => {
-                format!("Nil")
-            },
-        }
+// A function which takes a `Person` enum as an argument and
+// returns nothing.
+fn inspect(p: Person) {
+    // Usage of an `enum` must cover all cases (irrefutable)
+    // so a `match` is used to branch over it.
+    match p {
+        Person::Skinny    => println!("Is skinny!"),
+        Person::Fat       => println!("Is fat!"),
+        // Destructure `i` from inside the `enum`.
+        Person::Height(i) => println!("Has a height of {}.", i),
+        Person::Weight(i) => println!("Has a weight of {}.", i),
+        // Destructure `Info` into `name` and `height`.
+        Person::Info { name, height } => {
+            println!("{} is {} tall!", name, height);
+        },
     }
 }
 
 fn main() {
-    // Create an empty linked list
-    let mut list = List::new();
+    let person = Person::Height(18);
+    // `to_owned()` creates an owned `String` from a string slice.
+    let dave   = Person::Info { name: "Dave".to_owned(), height: 72 };
+    // ^ TODO: Try changing these to a different variants.
 
-    // Append some elements
-    list = list.prepend(1);
-    list = list.prepend(2);
-    list = list.prepend(3);
-
-    // Show the final state of the list
-    println!("linked list has length: {}", list.len());
-    println!("{}", list.stringify());
+    inspect(person);
+    inspect(dave);
 }

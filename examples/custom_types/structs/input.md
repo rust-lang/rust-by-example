@@ -7,4 +7,10 @@ There are three types of structures ("structs") that can be created using the
 
 {structs.play}
 
+### See also:
+
+[`attributes`][attributes] and [destructuring][destructuring]
+
+[attributes]: /attribute.html
 [c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
+[destructuring]: /flow_control/match/destructuring.html

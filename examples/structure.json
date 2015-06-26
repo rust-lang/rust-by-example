@@ -17,7 +17,9 @@
     { "id": "custom_types", "title": "Custom types", "children": [
         { "id": "structs", "title": "Structures", "children": null },
         { "id": "enum", "title": "Enums", "children": [
-            { "id": "c_like", "title": "C-like", "children": null }
+            { "id": "enum_use", "title": "use", "children": null },
+            { "id": "c_like", "title": "C-like", "children": null },
+            { "id": "testcase_linked_list", "title": "Testcase: linked-list", "children": null }
         ] },
         { "id": "constants", "title": "constants", "children": null }
     ] },
