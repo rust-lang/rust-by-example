@@ -1,16 +1,30 @@
-When writing functions that return references, lifetimes must be explicitly
-annotated. These functions are generic and we must tell the compiler what is
-the relationship between the lifetimes of the objects that appear in the
-arguments and the output.
+The borrow checker utilizes explicit lifetime annotation to reason about
+how long references should be valid. Failure to annotate lifetimes[^1] is akin
+to banning the borrow checker from validating borrows and so accordingly,
+annotation is mandatory.
 
-Let's illustrate with an example: we want a function that returns a reference
-to the title field of a Book struct. The most generic function that we could
-write would look like this:
+Since lifetimes *currently* have no explicit type or name associated with them,
+usage will require generics (similar to [closures][anonymity]). Somewhat
+peculiarly, lifetime annotation has a second additional meaning. `foo<'a, 'b>`
+states:
+
+1. `'a` and `'b` will represent names for lifetimes with non-specifiable
+(generic) types.
+2. The lifetime of `foo` may not exceed either lifetimes `'a` or `'b`.
+
+Explicit annotation of a type has the form: `&'a T` where `'a` has already
+been introduced.
 
 {explicit.play}
 
-The compiler can't tell how `'a` and `'b` are related, so we must supply this
-information. The answer here is that `'a = 'b`, the reason is that the title
-field will be destroyed when the book gets destroyed (same way with the
-creation time), therefore the title field has the same lifetime as the book.
+[^1]: [elision][elision] implicitly annotates lifetimes and so is different.
 
+### See also:
+
+[generics][generics] and [closures][closures]
+
+
+[anonymity]: /fn/closures/anonymity.html
+[closures]: /fn/closures.html
+[elision]: http://doc.rust-lang.org/nightly/book/lifetimes.html#lifetime-elision
+[generics]: /generics.html
