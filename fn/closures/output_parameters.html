@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.5" data-basepath="../.." data-revision="1435669734806">
+    <div class="book" data-level="8.2.5" data-basepath="../.." data-revision="1435687394828">
     
 
 <div class="book-summary">
@@ -2655,7 +2655,7 @@ possible by making it concrete. This can be done via boxing.</p>
 <li><code>Fn</code>: normal</li>
 <li><code>FnMut</code>: normal</li>
 <li><code>FnBox</code>: equivalent to <code>FnOnce</code> but specialized for this application
-because <code>FnOnce</code> currently interacts badly with the type system.</li>
+because <code>FnOnce</code> currently(version 1.1.0) interacts badly with the type system.</li>
 </ul>
 <p>Beyond this, the <code>move</code> keyword must be used which signals that all captures
 occur by value. This is required because any captures by reference would be
