@@ -9,7 +9,7 @@ The valid types for returns are slightly different than before:
 * `Fn`: normal
 * `FnMut`: normal
 * `FnBox`: equivalent to `FnOnce` but specialized for this application
-because `FnOnce` currently interacts badly with the type system.
+because `FnOnce` currently(version 1.1.0) interacts badly with the type system.
 
 Beyond this, the `move` keyword must be used which signals that all captures
 occur by value. This is required because any captures by reference would be
