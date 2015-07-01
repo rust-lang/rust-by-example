@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../custom_types/enum/c_like.html" />
+    <link rel="next" href="../custom_types/enum/enum_use.html" />
     
     
-    <link rel="prev" href="../custom_types/structs/visibility.html" />
+    <link rel="prev" href="../custom_types/structs.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="3.2" data-basepath=".." data-revision="1435762959783">
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="1435778191051">
     
 
 <div class="book-summary">
@@ -300,28 +300,6 @@
                 
             
             
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="3.1.1" data-path="custom_types/structs/visibility.html">
-            
-                
-                    <a href="../custom_types/structs/visibility.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.1.</b>
-                        
-                         Visibility
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         
@@ -342,15 +320,47 @@
                 
     
         
-        <li class="chapter " data-level="3.2.1" data-path="custom_types/enum/c_like.html">
+        <li class="chapter " data-level="3.2.1" data-path="custom_types/enum/enum_use.html">
+            
+                
+                    <a href="../custom_types/enum/enum_use.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                         use
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.2" data-path="custom_types/enum/c_like.html">
             
                 
                     <a href="../custom_types/enum/c_like.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.1.</b>
+                            <b>3.2.2.</b>
                         
                          C-like
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3" data-path="custom_types/enum/testcase_linked_list.html">
+            
+                
+                    <a href="../custom_types/enum/testcase_linked_list.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.</b>
+                        
+                         Testcase: linked-list
                     </a>
                 
             
@@ -1149,13 +1159,29 @@
         </li>
     
         
-        <li class="chapter " data-level="10.2" data-path="mod/use.html">
+        <li class="chapter " data-level="10.2" data-path="mod/struct_visibility.html">
+            
+                
+                    <a href="../mod/struct_visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                         Struct visibility
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.3" data-path="mod/use.html">
             
                 
                     <a href="../mod/use.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.2.</b>
+                            <b>10.3.</b>
                         
                          The `use` declaration
                     </a>
@@ -1165,13 +1191,13 @@
         </li>
     
         
-        <li class="chapter " data-level="10.3" data-path="mod/super.html">
+        <li class="chapter " data-level="10.4" data-path="mod/super.html">
             
                 
                     <a href="../mod/super.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.3.</b>
+                            <b>10.4.</b>
                         
                          `super` and `self`
                     </a>
@@ -1181,13 +1207,13 @@
         </li>
     
         
-        <li class="chapter " data-level="10.4" data-path="mod/split.html">
+        <li class="chapter " data-level="10.5" data-path="mod/split.html">
             
                 
                     <a href="../mod/split.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.4.</b>
+                            <b>10.5.</b>
                         
                          File hierarchy
                     </a>
@@ -2642,87 +2668,65 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_17">
+                    <section class="normal" id="section-gitbook_19">
                     
                         <h2 id="32-enums">3.2 Enums</h2>
-<p>The <code>enum</code> keyword allows the creation of
-<a href="http://en.wikipedia.org/wiki/Tagged_union" target="_blank">tagged unions</a>, which can be used
-as algebraic data types
-(<a href="http://en.wikipedia.org/wiki/Algebraic_data_type" target="_blank">ADT</a>).</p>
+<p>The <code>enum</code> keyword allows the creation of a type which may be one of a few
+different variants. Any variant which is valid as a <code>struct</code> is also valid as
+an <code>enum</code>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// Allow Cons and Nil to be referred to without namespacing
-use List::{Cons, Nil};
+<div id="editor">// An attribute to hide warnings for unused code.
+#![allow(dead&#95;code)]
 
-// A linked list node, which can take on any of these two variants
-enum List {
-    // Cons: Tuple struct that wraps an element and a pointer to the next node
-    Cons(u32, Box&lt;List&gt;),
-    // Nil: A node that signifies the end of the linked list
-    Nil,
+// Create an &#96;enum&#96; to classify someone. Note how both names
+// and type information together specify the variant:
+// &#96;Skinny != Fat&#96; and &#96;Height(i32) != Weight(i32)&#96;. Each
+// is different and independent.
+enum Person {
+    // An &#96;enum&#96; may either be &#96;unit-like&#96;,
+    Skinny,
+    Fat,
+    // like tuple structs,
+    Height(i32),
+    Weight(i32),
+    // or like structures.
+    Info { name: String, height: i32 }
 }
 
-// Methods can be attached to an enum
-impl List {
-    // Create an empty list
-    fn new() -&gt; List {
-        // &#96;Nil&#96; has type &#96;List&#96;
-        Nil
-    }
-
-    // Consume a list, and return the same list with a new element at its front
-    fn prepend(self, elem: u32) -&gt; List {
-        // &#96;Cons&#96; also has type List
-        Cons(elem, Box::new(self))
-    }
-
-    // Return the length of the list
-    fn len(&amp;self) -&gt; u32 {
-        // &#96;self&#96; has to be matched, because the behavior of this method
-        // depends on the variant of &#96;self&#96;
-        // &#96;self&#96; has type &#96;&amp;List&#96;, and &#96;&#42;self&#96; has type &#96;List&#96;, matching on a
-        // concrete type &#96;T&#96; is preferred over a match on a reference &#96;&amp;T&#96;
-        match &#42;self {
-            // Can&#39;t take ownership of the tail, because &#96;self&#96; is borrowed;
-            // instead take a reference to the tail
-            Cons(&#95;, ref tail) =&gt; 1 + tail.len(),
-            // Base Case: An empty list has zero length
-            Nil =&gt; 0
-        }
-    }
-
-    // Return representation of the list as a (heap allocated) string
-    fn stringify(&amp;self) -&gt; String {
-        match &#42;self {
-            Cons(head, ref tail) =&gt; {
-                // &#96;format!&#96; is similar to &#96;print!&#96;, but returns a heap
-                // allocated string instead of printing to the console
-                format!(&quot;{}, {}&quot;, head, tail.stringify())
-            },
-            Nil =&gt; {
-                format!(&quot;Nil&quot;)
-            },
-        }
+// A function which takes a &#96;Person&#96; enum as an argument and
+// returns nothing.
+fn inspect(p: Person) {
+    // Usage of an &#96;enum&#96; must cover all cases (irrefutable)
+    // so a &#96;match&#96; is used to branch over it.
+    match p {
+        Person::Skinny    =&gt; println!(&quot;Is skinny!&quot;),
+        Person::Fat       =&gt; println!(&quot;Is fat!&quot;),
+        // Destructure &#96;i&#96; from inside the &#96;enum&#96;.
+        Person::Height(i) =&gt; println!(&quot;Has a height of {}.&quot;, i),
+        Person::Weight(i) =&gt; println!(&quot;Has a weight of {}.&quot;, i),
+        // Destructure &#96;Info&#96; into &#96;name&#96; and &#96;height&#96;.
+        Person::Info { name, height } =&gt; {
+            println!(&quot;{} is {} tall!&quot;, name, height);
+        },
     }
 }
 
 fn main() {
-    // Create an empty linked list
-    let mut list = List::new();
+    let person = Person::Height(18);
+    // &#96;to&#95;owned()&#96; creates an owned &#96;String&#96; from a string slice.
+    let dave   = Person::Info { name: &quot;Dave&quot;.to&#95;owned(), height: 72 };
+    // ^ TODO: Try changing these to a different variants.
 
-    // Append some elements
-    list = list.prepend(1);
-    list = list.prepend(2);
-    list = list.prepend(3);
-
-    // Show the final state of the list
-    println!(&quot;linked list has length: {}&quot;, list.len());
-    println!(&quot;{}&quot;, list.stringify());
+    inspect(person);
+    inspect(dave);
 }</div>
 <div id="result"></div>
 </div>
 
+<h3 id="see-also">See also:</h3>
+<p><a href="/attribute.html"><code>attributes</code></a>, <a href="/flow_control/match.html"><code>match</code></a>, <a href="/fn.html"><code>fn</code></a>, and <a href="/std/str.html"><code>String</code></a></p>
 
                     
                     </section>
@@ -2733,10 +2737,10 @@ fn main() {
         </div>
 
         
-        <a href="../custom_types/structs/visibility.html" class="navigation navigation-prev " aria-label="Previous page: Visibility"><i class="fa fa-angle-left"></i></a>
+        <a href="../custom_types/structs.html" class="navigation navigation-prev " aria-label="Previous page: Structures"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../custom_types/enum/c_like.html" class="navigation navigation-next " aria-label="Next page: C-like"><i class="fa fa-angle-right"></i></a>
+        <a href="../custom_types/enum/enum_use.html" class="navigation navigation-next " aria-label="Next page: use"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

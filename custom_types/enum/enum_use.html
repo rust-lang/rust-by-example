@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Visibility | Rust by Example</title>
+        <title>use | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../custom_types/enum.html" />
+    <link rel="next" href="../../custom_types/enum/c_like.html" />
     
     
-    <link rel="prev" href="../../custom_types/structs.html" />
+    <link rel="prev" href="../../custom_types/enum.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="3.1.1" data-basepath="../.." data-revision="1435762959783">
+    <div class="book" data-level="3.2.1" data-basepath="../.." data-revision="1435778191051">
     
 
 <div class="book-summary">
@@ -300,28 +300,6 @@
                 
             
             
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter active" data-level="3.1.1" data-path="custom_types/structs/visibility.html">
-            
-                
-                    <a href="../../custom_types/structs/visibility.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.1.</b>
-                        
-                         Visibility
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         
@@ -342,15 +320,47 @@
                 
     
         
-        <li class="chapter " data-level="3.2.1" data-path="custom_types/enum/c_like.html">
+        <li class="chapter active" data-level="3.2.1" data-path="custom_types/enum/enum_use.html">
+            
+                
+                    <a href="../../custom_types/enum/enum_use.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                         use
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.2" data-path="custom_types/enum/c_like.html">
             
                 
                     <a href="../../custom_types/enum/c_like.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.1.</b>
+                            <b>3.2.2.</b>
                         
                          C-like
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3" data-path="custom_types/enum/testcase_linked_list.html">
+            
+                
+                    <a href="../../custom_types/enum/testcase_linked_list.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.</b>
+                        
+                         Testcase: linked-list
                     </a>
                 
             
@@ -1149,13 +1159,29 @@
         </li>
     
         
-        <li class="chapter " data-level="10.2" data-path="mod/use.html">
+        <li class="chapter " data-level="10.2" data-path="mod/struct_visibility.html">
+            
+                
+                    <a href="../../mod/struct_visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                         Struct visibility
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.3" data-path="mod/use.html">
             
                 
                     <a href="../../mod/use.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.2.</b>
+                            <b>10.3.</b>
                         
                          The `use` declaration
                     </a>
@@ -1165,13 +1191,13 @@
         </li>
     
         
-        <li class="chapter " data-level="10.3" data-path="mod/super.html">
+        <li class="chapter " data-level="10.4" data-path="mod/super.html">
             
                 
                     <a href="../../mod/super.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.3.</b>
+                            <b>10.4.</b>
                         
                          `super` and `self`
                     </a>
@@ -1181,13 +1207,13 @@
         </li>
     
         
-        <li class="chapter " data-level="10.4" data-path="mod/split.html">
+        <li class="chapter " data-level="10.5" data-path="mod/split.html">
             
                 
                     <a href="../../mod/split.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.4.</b>
+                            <b>10.5.</b>
                         
                          File hierarchy
                     </a>
@@ -2642,61 +2668,55 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_18">
+                    <section class="normal" id="section-gitbook_17">
                     
-                        <h3 id="311-visibility">3.1.1 Visibility</h3>
-<p>Structs have an extra level of visibility, their fields can be public or
-private (which is the default). This visibility only matters when a
-struct is accessed from outside the module where it is defined, and its
-goal is information hiding (encapsulation).</p>
+                        <h3 id="321-use">3.2.1 use</h3>
+<p>The <code>use</code> declaration can be used so manual scoping isn&#39;t needed:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">mod my {
-    // A public struct with public fields
-    pub struct WhiteBox&lt;T&gt; {
-        pub contents: T,
-    }
+<div id="editor">// An attribute to hide warnings for unused code.
+#![allow(dead&#95;code)]
 
-    // A public struct with private fields
-    #[allow(dead&#95;code)]
-    pub struct BlackBox&lt;T&gt; {
-        contents: T,
-    }
+enum Status {
+    Rich,
+    Poor,
+}
 
-    impl&lt;T&gt; BlackBox&lt;T&gt; {
-        // A public constructor
-        pub fn new(contents: T) -&gt; BlackBox&lt;T&gt; {
-            BlackBox {
-                contents: contents,
-            }
-        }
-    }
+enum Work {
+    Civilian,
+    Soldier,
 }
 
 fn main() {
-    // Public structs with public fields can be constructed as usual
-    let white&#95;box = my::WhiteBox { contents: &quot;public information&quot; };
+    // Explicitly &#96;use&#96; each name so they are available without
+    // manual scoping.
+    use Status::{Poor, Rich};
+    // Automatically &#96;use&#96; each name inside &#96;Work&#96;.
+    use Work::&#42;;
 
-    // and their fields can be normally accessed
-    println!(&quot;The white box contains: {}&quot;, white&#95;box.contents);
+    // Equivalent to &#96;Status::Poor&#96;.
+    let status = Poor;
+    // Equivalent to &#96;Work::Civilian&#96;.
+    let work = Civilian;
 
-    // but public structs with private fields can&#39;t be constructed
-    // Error! &#96;BlackBox&#96; has private fields
-    //let black&#95;box = my::BlackBox { contents: &quot;classified information&quot; };
-    // TODO ^ Try uncommenting this line
+    match status {
+        // Note the lack of scoping because of the explicit &#96;use&#96; above.
+        Rich =&gt; println!(&quot;The rich have lots of money!&quot;),
+        Poor =&gt; println!(&quot;The poor have no money...&quot;),
+    }
 
-    // However, structs with private fields can still be created using
-    // constructors
-    let &#95;black&#95;box = my::BlackBox::new(&quot;classified information&quot;);
-
-    // The private fields of a struct can&#39;t be accessed
-    // Error! The &#96;contents&#96; field is private
-    //println!(&quot;The black box contains: {}&quot;, &#95;black&#95;box.contents);
-    // TODO ^ Try uncommenting this line
+    match work {
+        // Note again the lack of scoping.
+        Civilian =&gt; println!(&quot;Civilians work!&quot;),
+        Soldier  =&gt; println!(&quot;Soldiers fight!&quot;),
+    }
 }</div>
 <div id="result"></div>
 </div>
+
+<h3 id="see-also">See also:</h3>
+<p><a href="/flow_control/match.html"><code>match</code></a> and <a href="/mod/use.html"><code>use</code></a> </p>
 
                     
                     </section>
@@ -2707,10 +2727,10 @@ fn main() {
         </div>
 
         
-        <a href="../../custom_types/structs.html" class="navigation navigation-prev " aria-label="Previous page: Structures"><i class="fa fa-angle-left"></i></a>
+        <a href="../../custom_types/enum.html" class="navigation navigation-prev " aria-label="Previous page: Enums"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../custom_types/enum.html" class="navigation navigation-next " aria-label="Next page: Enums"><i class="fa fa-angle-right"></i></a>
+        <a href="../../custom_types/enum/c_like.html" class="navigation navigation-next " aria-label="Next page: C-like"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

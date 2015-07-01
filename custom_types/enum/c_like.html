@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../custom_types/constants.html" />
+    <link rel="next" href="../../custom_types/enum/testcase_linked_list.html" />
     
     
-    <link rel="prev" href="../../custom_types/enum.html" />
+    <link rel="prev" href="../../custom_types/enum/enum_use.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="3.2.1" data-basepath="../.." data-revision="1435762959783">
+    <div class="book" data-level="3.2.2" data-basepath="../.." data-revision="1435778191051">
     
 
 <div class="book-summary">
@@ -300,28 +300,6 @@
                 
             
             
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="3.1.1" data-path="custom_types/structs/visibility.html">
-            
-                
-                    <a href="../../custom_types/structs/visibility.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>3.1.1.</b>
-                        
-                         Visibility
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
         </li>
     
         
@@ -342,15 +320,47 @@
                 
     
         
-        <li class="chapter active" data-level="3.2.1" data-path="custom_types/enum/c_like.html">
+        <li class="chapter " data-level="3.2.1" data-path="custom_types/enum/enum_use.html">
+            
+                
+                    <a href="../../custom_types/enum/enum_use.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                         use
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="3.2.2" data-path="custom_types/enum/c_like.html">
             
                 
                     <a href="../../custom_types/enum/c_like.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.1.</b>
+                            <b>3.2.2.</b>
                         
                          C-like
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2.3" data-path="custom_types/enum/testcase_linked_list.html">
+            
+                
+                    <a href="../../custom_types/enum/testcase_linked_list.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.</b>
+                        
+                         Testcase: linked-list
                     </a>
                 
             
@@ -1149,13 +1159,29 @@
         </li>
     
         
-        <li class="chapter " data-level="10.2" data-path="mod/use.html">
+        <li class="chapter " data-level="10.2" data-path="mod/struct_visibility.html">
+            
+                
+                    <a href="../../mod/struct_visibility.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                         Struct visibility
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="10.3" data-path="mod/use.html">
             
                 
                     <a href="../../mod/use.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.2.</b>
+                            <b>10.3.</b>
                         
                          The `use` declaration
                     </a>
@@ -1165,13 +1191,13 @@
         </li>
     
         
-        <li class="chapter " data-level="10.3" data-path="mod/super.html">
+        <li class="chapter " data-level="10.4" data-path="mod/super.html">
             
                 
                     <a href="../../mod/super.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.3.</b>
+                            <b>10.4.</b>
                         
                          `super` and `self`
                     </a>
@@ -1181,13 +1207,13 @@
         </li>
     
         
-        <li class="chapter " data-level="10.4" data-path="mod/split.html">
+        <li class="chapter " data-level="10.5" data-path="mod/split.html">
             
                 
                     <a href="../../mod/split.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>10.4.</b>
+                            <b>10.5.</b>
                         
                          File hierarchy
                     </a>
@@ -2644,49 +2670,22 @@
                 
                     <section class="normal" id="section-gitbook_16">
                     
-                        <h3 id="321-c-like">3.2.1 C-like</h3>
+                        <h3 id="322-c-like">3.2.2 C-like</h3>
 <p><code>enum</code> can also be used as C-like enums.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// If you&#39;d like to refer to the days without saying
-// &#96;Day::Monday&#96;, then you use the following notation
-// use Day::{
-//     Monday,
-//     Tuesday,
-//     Wednesday,
-//     Thursday,
-//     Friday,
-//     Saturday,
-//     Sunday,
-// }
-//
-// And you can refer to enum variants just like in C
+<div id="editor">// An attribute to hide warnings for unused code.
+#![allow(dead&#95;code)]
 
 // enum with implicit discriminator (starts at 0)
-#[allow(dead&#95;code)]
-enum Day {
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday,
-}
-
-impl Day {
-    fn mood(&amp;self) {
-        println!(&quot;{}&quot;, match &#42;self {
-            Day::Friday =&gt; &quot;it&#39;s friday!&quot;,
-            Day::Saturday | Day::Sunday =&gt; &quot;weekend :-)&quot;,
-            &#95; =&gt; &quot;weekday...&quot;,
-        })
-    }
+enum Number {
+    Zero,
+    One,
+    Two,
 }
 
 // enum with explicit discriminator
-#[allow(dead&#95;code)]
 enum Color {
     Red = 0xff0000,
     Green = 0x00ff00,
@@ -2694,16 +2693,18 @@ enum Color {
 }
 
 fn main() {
-    let today = Day::Monday;
+    // &#96;enums&#96; can be cast as integers.
+    println!(&quot;zero is {}&quot;, Number::Zero as i32);
+    println!(&quot;one is {}&quot;, Number::One as i32);
 
-    today.mood();
-
-    // enums can be casted into integers
     println!(&quot;roses are #{:06x}&quot;, Color::Red as i32);
     println!(&quot;violets are #{:06x}&quot;, Color::Blue as i32);
 }</div>
 <div id="result"></div>
 </div>
+
+<h3 id="see-also">See also:</h3>
+<p><a href="/cast.html">casting</a></p>
 
                     
                     </section>
@@ -2714,10 +2715,10 @@ fn main() {
         </div>
 
         
-        <a href="../../custom_types/enum.html" class="navigation navigation-prev " aria-label="Previous page: Enums"><i class="fa fa-angle-left"></i></a>
+        <a href="../../custom_types/enum/enum_use.html" class="navigation navigation-prev " aria-label="Previous page: use"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../custom_types/constants.html" class="navigation navigation-next " aria-label="Next page: constants"><i class="fa fa-angle-right"></i></a>
+        <a href="../../custom_types/enum/testcase_linked_list.html" class="navigation navigation-next " aria-label="Next page: Testcase: linked-list"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

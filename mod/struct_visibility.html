@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Testing | Rust by Example</title>
+        <title>Struct visibility | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../meta/bench.html" />
+    <link rel="next" href="../mod/use.html" />
     
     
-    <link rel="prev" href="../meta/doc.html" />
+    <link rel="prev" href="../mod/visibility.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.2" data-basepath=".." data-revision="1435778191051">
+    <div class="book" data-level="10.2" data-basepath=".." data-revision="1435778191051">
     
 
 <div class="book-summary">
@@ -1159,7 +1159,7 @@
         </li>
     
         
-        <li class="chapter " data-level="10.2" data-path="mod/struct_visibility.html">
+        <li class="chapter active" data-level="10.2" data-path="mod/struct_visibility.html">
             
                 
                     <a href="../mod/struct_visibility.html">
@@ -2527,7 +2527,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="18.2" data-path="meta/test.html">
+        <li class="chapter " data-level="18.2" data-path="meta/test.html">
             
                 
                     <a href="../meta/test.html">
@@ -2668,60 +2668,61 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_80">
+                    <section class="normal" id="section-gitbook_83">
                     
-                        <h2 id="182-testing">18.2 Testing</h2>
-<p>Functions can be tested by using these <a href="/attribute.html">attributes</a>:</p>
-<ul>
-<li><code>#[test]</code> marks a function as a unit test. The function must take zero
-parameters and return nothing.</li>
-<li><code>#[should_panic]</code> marks a function as a panicking test.</li>
-</ul>
-<pre><code class="lang-rust"><span class="hljs-comment">// unit_test.rs</span>
-<span class="hljs-comment">// Conditionally compile `main` only when the test-suite is *not* being run.</span>
-<span class="hljs-preprocessor">#[cfg(not(test))]</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"If you see this, the tests were not compiled nor ran!"</span>);
-}
-
-<span class="hljs-comment">// Conditionally compile the module `test` only when the test-suite is run.</span>
-<span class="hljs-preprocessor">#[cfg(test)]</span>
-<span class="hljs-keyword">mod</span> test {
-    <span class="hljs-comment">// A helper function `distance_test` will need.</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance</span></span>(a: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>), b: (<span class="hljs-keyword">f32</span>, <span class="hljs-keyword">f32</span>)) -&gt; <span class="hljs-keyword">f32</span> {
-        (
-            (b.<span class="hljs-number">0</span>.powi(<span class="hljs-number">2</span>) - a.<span class="hljs-number">0</span>.powi(<span class="hljs-number">2</span>)) +
-            (b.<span class="hljs-number">1</span>.powi(<span class="hljs-number">2</span>) - a.<span class="hljs-number">1</span>.powi(<span class="hljs-number">2</span>))
-        ).sqrt()
+                        <h2 id="102-struct-visibility">10.2 Struct visibility</h2>
+<p>Structs have an extra level of visibility, their fields can be public or
+private (which is the default). This visibility only matters when a
+struct is accessed from outside the module where it is defined, and its
+goal is information hiding (encapsulation).</p>
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">mod my {
+    // A public struct with public fields
+    pub struct WhiteBox&lt;T&gt; {
+        pub contents: T,
     }
 
-    <span class="hljs-preprocessor">#[test]</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">distance_test</span></span>() {
-        <span class="hljs-built_in">assert!</span>(distance((<span class="hljs-number">0f32</span>, <span class="hljs-number">0f32</span>), (<span class="hljs-number">1f32</span>, <span class="hljs-number">1f32</span>)) == (<span class="hljs-number">2f32</span>).sqrt());
+    // A public struct with private fields
+    #[allow(dead&#95;code)]
+    pub struct BlackBox&lt;T&gt; {
+        contents: T,
     }
 
-    <span class="hljs-preprocessor">#[test]</span>
-    <span class="hljs-preprocessor">#[should_panic]</span>
-    <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">failing_test</span></span>() {
-        <span class="hljs-built_in">assert!</span>(<span class="hljs-number">1i32</span> == <span class="hljs-number">2i32</span>);
+    impl&lt;T&gt; BlackBox&lt;T&gt; {
+        // A public constructor
+        pub fn new(contents: T) -&gt; BlackBox&lt;T&gt; {
+            BlackBox {
+                contents: contents,
+            }
+        }
     }
 }
-</code></pre>
-<p>Tests can be run with <code>cargo test</code> or <code>rustc --test</code>.</p>
-<pre><code>$ rustc --test unit_test.rs
-$ ./unit_test 
 
-running 2 tests
-test test::distance_test ... ok
-test test::failing_test ... ok
+fn main() {
+    // Public structs with public fields can be constructed as usual
+    let white&#95;box = my::WhiteBox { contents: &quot;public information&quot; };
 
-test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured
-</code></pre><p>If <code>--test</code> were not included, then this would happen</p>
-<pre><code>$ rustc unit_test.rs
-$ ./unit_test
-If you see this, the tests were not compiled nor ran!
-</code></pre><h3 id="see-also">See also:</h3>
-<p><a href="/attribute.html">attributes</a>, <a href="/attribute/cfg.html">conditional compilation</a>, and <a href="/mod.html"><code>mod</code></a>.</p>
+    // and their fields can be normally accessed
+    println!(&quot;The white box contains: {}&quot;, white&#95;box.contents);
+
+    // but public structs with private fields can&#39;t be constructed
+    // Error! &#96;BlackBox&#96; has private fields
+    //let black&#95;box = my::BlackBox { contents: &quot;classified information&quot; };
+    // TODO ^ Try uncommenting this line
+
+    // However, structs with private fields can still be created using
+    // constructors
+    let &#95;black&#95;box = my::BlackBox::new(&quot;classified information&quot;);
+
+    // The private fields of a struct can&#39;t be accessed
+    // Error! The &#96;contents&#96; field is private
+    //println!(&quot;The black box contains: {}&quot;, &#95;black&#95;box.contents);
+    // TODO ^ Try uncommenting this line
+}</div>
+<div id="result"></div>
+</div>
 
                     
                     </section>
@@ -2732,10 +2733,10 @@ If you see this, the tests were not compiled nor ran!
         </div>
 
         
-        <a href="../meta/doc.html" class="navigation navigation-prev " aria-label="Previous page: Documentation"><i class="fa fa-angle-left"></i></a>
+        <a href="../mod/visibility.html" class="navigation navigation-prev " aria-label="Previous page: Visibility"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../meta/bench.html" class="navigation navigation-next " aria-label="Next page: Benchmarking"><i class="fa fa-angle-right"></i></a>
+        <a href="../mod/use.html" class="navigation navigation-next " aria-label="Next page: The `use` declaration"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
