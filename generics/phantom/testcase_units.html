@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.8.1" data-basepath="../.." data-revision="1435778191051">
+    <div class="book" data-level="13.8.1" data-basepath="../.." data-revision="1435778294658">
     
 
 <div class="book-summary">
@@ -2673,21 +2673,17 @@
                         <h3 id="1381-testcase-unit-conversions">13.8.1 Testcase: unit conversions</h3>
 <p>A useful method of unit conversions can be examined by implementing <code>Add</code>
 for a phantom type. The <code>Add</code> <code>trait</code> is examined below:</p>
-<pre><code class="lang-rust">// This construction would impose: `Self + RHS = Output`.
+<pre><code class="lang-rust">// This construction would impose: `Self + RHS = Output`
+// where RHS defaults to Self if not specified in the implementation.
 pub trait Add&lt;RHS = Self&gt; {
     type Output;
 
     fn add(self, rhs: RHS) -&gt; Self::Output;
 }
 
-// So, `Output` must be `T` and therefore, `T + T = T`.
-impl&lt;T&gt; Add&lt;T, Output = T&gt; for T {}
-
-// Similarly, this imposes: `S&lt;T&gt; + S&lt;T&gt; = S&lt;T&gt;` can be
-// added only when `T + T = T`.
-impl&lt;S&lt;T&gt;&gt; Add&lt;S&lt;T&gt; for S&lt;T&gt; where
-    T: Add&lt;T, Output = T&gt; {
-    type Output = S&lt;T&gt;;
+// `Output` must be `T&lt;U&gt;` so that `T&lt;U&gt; + T&lt;U&gt; = T&lt;U&gt;`.
+impl&lt;U&gt; Add for T&lt;U&gt; {
+    type Output = T&lt;U&gt;;
     ...
 }
 </code></pre>
@@ -2698,42 +2694,48 @@ impl&lt;S&lt;T&gt;&gt; Add&lt;S&lt;T&gt; for S&lt;T&gt; where
 <div id="editor">use std::ops::Add;
 use std::marker::PhantomData;
 
-/// Null enumerations to define unit types
+/// Null enumerations define unit types.
 #[derive(Debug, Clone, Copy)]
 struct Inch;
 #[derive(Debug, Clone, Copy)]
 struct Mm;
 
-/// Length is phantom type with hidden parameter &#96;Unit&#96;
+/// &#96;Length&#96; is phantom type with hidden parameter &#96;Unit&#96;.
+///
+/// &#96;f64&#96; already implements the &#96;Clone&#96; and &#96;Copy&#96; traits.
 #[derive(Debug, Clone, Copy)]
-struct Length&lt;Unit, T&gt;(T,PhantomData&lt;Unit&gt;);
+struct Length&lt;Unit&gt;(f64,PhantomData&lt;Unit&gt;);
 
-// This is similar to the header except &#96;T&#96; must also
-// implement &#96;Clone&#96; and &#96;Copy.
-impl&lt;Unit, T&gt; Add&lt;Length&lt;Unit, T&gt;&gt; for Length&lt;Unit, T&gt; where
-    T: Add&lt;T, Output=T&gt; + Clone + Copy {
-    type Output = Length&lt;Unit, T&gt;;
+/// The &#96;Add&#96; trait defines the behavior of the &#96;+&#96; operator.
+impl&lt;Unit&gt; Add for Length&lt;Unit&gt; {
+     type Output = Length&lt;Unit&gt;;
 
-    fn add(self, r: Length&lt;Unit, T&gt;) -&gt; Length&lt;Unit, T&gt; {
-        Length(self.0 + r.0, PhantomData)
+    // add() returns a new &#96;Length&#96; struct containing the sum.
+    fn add(self, rhs: Length&lt;Unit&gt;) -&gt; Length&lt;Unit&gt; {
+        // &#96;+&#96; calls the &#96;Add&#96; implementation for &#96;f64&#96;.
+        Length(self.0 + rhs.0, PhantomData)
     }
 }
 
 fn main() {
-    // Specialize one&#95;foot to have hidden parameter &#96;Inch&#96;
-    let one&#95;foot:  Length&lt;Inch, f32&gt; = Length(12.0, PhantomData);
-    // one&#95;meter has hidden parameter &#96;Mm&#96;
-    let one&#95;meter: Length&lt;Mm, f32&gt;   = Length(1000.0, PhantomData);
+    // Specializes &#96;one&#95;foot&#96; to have hidden parameter &#96;Inch&#96;.
+    let one&#95;foot:  Length&lt;Inch&gt; = Length(12.0, PhantomData);
+    // &#96;one&#95;meter&#96; has hidden parameter &#96;Mm&#96;.
+    let one&#95;meter: Length&lt;Mm&gt;   = Length(1000.0, PhantomData);
 
+    // &#96;+&#96; calls the &#96;add()&#96; method we implemented for &#96;Length&lt;Unit&gt;&#96;.
+    //
+    // Since &#96;Length&#96; implements &#96;Clone&#96; + &#96;Copy&#96;, &#96;add()&#96; does not consume
+    // &#96;one&#95;foot&#96; and &#96;one&#95;meter&#96; but makes a copy of them in &#96;self&#96; and &#96;rhs&#96;.
     let two&#95;feet = one&#95;foot + one&#95;foot;
     let two&#95;meters = one&#95;meter + one&#95;meter;
 
-    // Addition works
+    // Addition works.
     println!(&quot;one foot + one&#95;foot = {:?}&quot;, two&#95;feet);
     println!(&quot;one meter + one&#95;meter = {:?}&quot;, two&#95;meters);
 
-    // Nonsensical operations fail as they should
-    // Error: type mismatch
+    // Nonsensical operations fail as they should:
+    // Error: type mismatch.
     //let one&#95;feter = one&#95;foot + one&#95;meter;
 }</div>
 <div id="result"></div>
