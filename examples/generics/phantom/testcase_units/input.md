@@ -2,21 +2,17 @@ A useful method of unit conversions can be examined by implementing `Add`
 for a phantom type. The `Add` `trait` is examined below:
 
 ```rust
-// This construction would impose: `Self + RHS = Output`.
+// This construction would impose: `Self + RHS = Output`
+// where RHS defaults to Self if not specified in the implementation.
 pub trait Add<RHS = Self> {
     type Output;
 
     fn add(self, rhs: RHS) -> Self::Output;
 }
 
-// So, `Output` must be `T` and therefore, `T + T = T`.
-impl<T> Add<T, Output = T> for T {}
-
-// Similarly, this imposes: `S<T> + S<T> = S<T>` can be
-// added only when `T + T = T`.
-impl<S<T>> Add<S<T> for S<T> where
-    T: Add<T, Output = T> {
-    type Output = S<T>;
+// `Output` must be `T<U>` so that `T<U> + T<U> = T<U>`.
+impl<U> Add for T<U> {
+    type Output = T<U>;
     ...
 }
 ```
