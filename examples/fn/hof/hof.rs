@@ -15,7 +15,7 @@ fn main() {
         if n_squared >= upper {
             // Break loop if exceeded the upper limit
             break;
-        } else if is_odd(n_squared) {
+        } else if is_odd(&n_squared) {
             // Accumulate value, if it's odd
             acc += n_squared;
         }
@@ -26,11 +26,11 @@ fn main() {
     let sum_of_squared_odd_numbers: u32 =
         (0..).map(|n| n * n)             // All natural numbers squared
              .take_while(|&n| n < upper) // Below upper limit
-             .filter(|n| is_odd(*n))     // That are odd
+             .filter(is_odd)             // That are odd
              .sum();                     // Sum them
     println!("functional style: {}", sum_of_squared_odd_numbers);
 }
 
-fn is_odd(n: u32) -> bool {
+fn is_odd(n: &u32) -> bool {
     n % 2 == 1
 }
