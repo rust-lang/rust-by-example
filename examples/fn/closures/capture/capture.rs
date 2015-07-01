@@ -45,7 +45,7 @@ fn main() {
         drop(movable);
     };
 
-    // `eat` consumes the variable so this can only be called once.
+    // `consume` consumes the variable so this can only be called once.
     consume();
     //consume();
     // ^ TODO: Try uncommenting this line.
