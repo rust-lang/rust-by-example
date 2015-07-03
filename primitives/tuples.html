@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2.2" data-basepath=".." data-revision="1435929023489">
+    <div class="book" data-level="2.2" data-basepath=".." data-revision="1435943228525">
     
 
 <div class="book-summary">
@@ -2712,6 +2712,12 @@ fn main() {
     // from a literal surrounded by parentheses
     println!(&quot;one element tuple: {:?}&quot;, (5u32,));
     println!(&quot;just an integer: {:?}&quot;, (5u32));
+
+    //tuples can be destructured to create bindings
+    let tuple = (1, &quot;hello&quot;, 4.5, true);
+
+    let (a, b, c, d) = tuple;
+    println!(&quot;{:?}, {:?}, {:?}, {:?}&quot;, a, b, c, d);
 }</div>
 <div id="result"></div>
 </div>
