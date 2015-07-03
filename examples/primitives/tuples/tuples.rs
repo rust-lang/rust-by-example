@@ -32,4 +32,10 @@ fn main() {
     // from a literal surrounded by parentheses
     println!("one element tuple: {:?}", (5u32,));
     println!("just an integer: {:?}", (5u32));
+    
+    //tuples can be destructured to create bindings
+    let tuple = (1, "hello", 4.5, true);
+
+    let (a, b, c, d) = tuple;
+    println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
 }
