@@ -1,5 +1,5 @@
 Closures[^*] in Rust are functions with a slightly specialized syntax which
-can capture the enclosing environment. Their syntax and capabilties make them
+can capture the enclosing environment. Their syntax and capabilities make them
 very convenient for on the fly usage. Some characteristics include:
 
 * uses `||` instead of `()` around input variables.
