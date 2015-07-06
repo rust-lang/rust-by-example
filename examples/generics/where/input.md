@@ -13,7 +13,7 @@ impl <A, D> MyTrait<A, D> for YourType where
 ```
 
 * `where` clauses are more expressive than the normal syntax. They can
-apply bounds to arbitrary expressions rather than just types. The
+apply bounds to arbitrary types rather than just type parameters. The
 following example cannot be directly expressed without a `where` clause:
 
 {where.play}
