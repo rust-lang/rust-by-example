@@ -13,7 +13,11 @@ states:
 2. The lifetime of `foo` may not exceed either lifetimes `'a` or `'b`.
 
 Explicit annotation of a type has the form: `&'a T` where `'a` has already
-been introduced.
+been introduced. Together with **Rule 2**, this specifies that any borrow
+*must* eventually be returned. That is, if a function/type borrows a
+reference, when the borrower ceases, the reference must be returned *or* the
+borrow would be invalid! Borrowing and never returning cannot really be called
+borrowing.
 
 {explicit.play}
 
@@ -26,5 +30,5 @@ been introduced.
 
 [anonymity]: /fn/closures/anonymity.html
 [closures]: /fn/closures.html
-[elision]: http://doc.rust-lang.org/nightly/book/lifetimes.html#lifetime-elision
+[elision]: /scope/lifetime/elision.html
 [generics]: /generics.html

@@ -1,4 +1,4 @@
-Some lifetime patterns are overwelmingly common and so they may be elide
+Some lifetime patterns are overwelmingly common and so they may be elided
 (dropped) and the borrow checker will implicitly add them. Elision exists
 solely because these patterns are common; saving typing and easing legibility.
 

@@ -11,5 +11,5 @@ Functions with lifetimes have a few different valid forms. Ignoring
 [functions][fn]
 
 
-[elision]: http://doc.rust-lang.org/nightly/book/lifetimes.html#lifetime-elision
+[elision]: /scope/lifetime/elision.html
 [fn]: /fn.html

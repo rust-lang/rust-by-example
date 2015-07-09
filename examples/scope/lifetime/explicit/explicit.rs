@@ -1,15 +1,8 @@
 // `print_refs` takes two references to `i32` which have different
-// lifetimes `'a` and `'b`. These two lifetimes must both outlive
-// the function `print_refs`.
+// lifetimes `'a` and `'b`. These two lifetimes must both be at
+// least as long as the function `print_refs`.
 fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("x is {} and y is {}", x, y);
-
-    // Suppose this `drop` worked. Then `print_refs` would outlive
-    // `x` and `four` from `main()` would refer to erased data.
-    // These two things go hand in hand and so both are banned.
-    //
-    //drop(*x);
-    // ERROR: cannot move out of borrowed content
 }
 
 // `failed_borrow` takes no references and returns nothing but has

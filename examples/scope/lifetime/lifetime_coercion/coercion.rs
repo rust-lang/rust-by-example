@@ -6,8 +6,8 @@ fn coerce_first<'a: 'b, 'b>(x: &'a i32, _: &'b i32) -> &'b i32 {
 }
 
 fn main() {
-    let x = 3;
-    let y = 4;
+    let x = 800;
+    let y = 8;
 
     let borrow_big = &x;
     {

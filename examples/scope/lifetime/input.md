@@ -1,11 +1,11 @@
 A *lifetime* is a construct the compiler (also called the borrow checker)
-uses to ensure all borrows are valid. Specifically, the lifetime refers to
-the span which starts when the variable is created and ends when the variable
-is destroyed. Borrowing (via `&` for example) also creates new lifetimes.
+uses to ensure all borrows are valid. Specifically, a lifetime starts when
+a variable is created and ends when it is destroyed. It can be visualized as
+vertical distance but since size is only relevant for subsets and supersets,
+scope is considered the more appropriate descriptive term.
 
-A borrow is valid as long as the borrow ends before (inside) the lender is
-destroyed. As you can see below, the lifetime of a variable is directly related
-to the scope in which it was created:
+Borrowing (via `&` for example) creates new lifetimes. A borrow is valid
+as long as the borrow ends before (inside) the lender is destroyed.
 
 {lifetime.play}
 
