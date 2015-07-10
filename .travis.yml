@@ -11,6 +11,10 @@ script:
   - make test
   - make book
 
+notifications:
+  email:
+    - mdinger.bugzilla@gmail.com
+
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
 
