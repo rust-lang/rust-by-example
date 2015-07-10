@@ -1,6 +1,5 @@
 // One input reference with lifetime `'a` which must live
-// longer than the function. This restricts the function
-// from ever being able to consume the input.
+// longer than the function.
 fn print_one<'a>(x: &'a i32) {
     println!("`print_one`: x is {}", x);
 }

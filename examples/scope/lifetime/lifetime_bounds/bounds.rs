@@ -3,9 +3,8 @@ use std::fmt::Debug; // Trait to bound with.
 #[derive(Debug)]
 // `Ref` contains a reference to type `T` where `T` is unknown
 // with an unknown lifetime `'a`. `T` is bounded such that any
-// references in `T` must outlive `'a` (a borrow from `T` must
-// be returned so `T` may return it to it's rightful owner).
-// In addition, the lifetime of `Ref` may not exceed `'a`.
+// references in `T` must outlive `'a`. In addition, the lifetime
+// of `Ref` may not exceed `'a`.
 struct Ref<'a, T: 'a>(&'a T);
 
 // A generic function which prints using the `Debug` trait.
