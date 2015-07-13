@@ -12,7 +12,7 @@ struct Pair<'a, 'b> {
 }
 
 fn main() {
-    // Let's say that `one` has lifetime `o`
+    // Let us say that `one` has lifetime `o`
     let mut one = 1;
 
     {
