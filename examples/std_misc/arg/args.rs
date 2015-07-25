@@ -1,5 +1,3 @@
-#![feature(slice_extras)]
-
 use std::env;
 
 fn main() {
@@ -11,5 +9,5 @@ fn main() {
     // The rest of the arguments are the passed command line parameters.
     // Call the program like this:
     //   $ ./args arg1 arg2
-    println!("I got {:?} arguments: {:?}.", args.len() - 1, args.tail());
+    println!("I got {:?} arguments: {:?}.", args.len() - 1, &args[1..]);
 }
