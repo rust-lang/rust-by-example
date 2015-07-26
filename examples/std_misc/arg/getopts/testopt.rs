@@ -1,5 +1,4 @@
 #![feature(rustc_private)]
-#![feature(slice_extras)]
 
 extern crate getopts;
 
@@ -18,7 +17,7 @@ fn main() {
         //  Use `optmulti`, `optflagmulti` if options can occur multiple times.
     ];
 
-    let matches = match getopts::getopts(args.tail(), &opts) {
+    let matches = match getopts::getopts(&args[1..], &opts) {
         Ok(m) => m,
         Err(f) => {
             println!("{}", f);

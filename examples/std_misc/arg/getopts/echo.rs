@@ -1,5 +1,4 @@
 #![feature(rustc_private)]
-#![feature(slice_extras)]
 
 extern crate getopts;
 
@@ -25,7 +24,7 @@ fn main() {
                          "output version information and exit"),
     ];
 
-    let matches = match getopts::getopts(args.tail(), &opts) {
+    let matches = match getopts::getopts(&args[1..], &opts) {
         Ok(m) => m,
         Err(f) => {
             println!("{}", f);
@@ -56,7 +55,7 @@ fn main() {
 
     if !matches.free.is_empty() {
         //^ `matches.free` contains all the arguments that are not options.
-        let string = matches.free.connect(" ");
+        let string = matches.free.join(" ");
         println!("{}", string);
     }
 
