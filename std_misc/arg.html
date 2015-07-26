@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.7" data-basepath=".." data-revision="1437829699577">
+    <div class="book" data-level="17.7" data-basepath=".." data-revision="1437883667459">
     
 
 <div class="book-summary">
@@ -2676,9 +2676,7 @@ returns an iterator that yields a String for each argument:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(slice&#95;extras)]
-
-use std::env;
+<div id="editor">use std::env;
 
 fn main() {
     let args: Vec&lt;String&gt; = env::args().collect();
@@ -2689,7 +2687,7 @@ fn main() {
     // The rest of the arguments are the passed command line parameters.
     // Call the program like this:
     //   &#36; ./args arg1 arg2
-    println!(&quot;I got {:?} arguments: {:?}.&quot;, args.len() - 1, args.tail());
+    println!(&quot;I got {:?} arguments: {:?}.&quot;, args.len() - 1, &amp;args[1..]);
 }</div>
 <div id="result"></div>
 </div>

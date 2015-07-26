@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.7.2" data-basepath="../.." data-revision="1437829699577">
+    <div class="book" data-level="17.7.2" data-basepath="../.." data-revision="1437883667459">
     
 
 <div class="book-summary">
@@ -2677,7 +2677,6 @@
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">#![feature(rustc&#95;private)]
-#![feature(slice&#95;extras)]
 
 extern crate getopts;
 
@@ -2703,7 +2702,7 @@ fn main() {
                          &quot;output version information and exit&quot;),
     ];
 
-    let matches = match getopts::getopts(args.tail(), &amp;opts) {
+    let matches = match getopts::getopts(&amp;args[1..], &amp;opts) {
         Ok(m) =&gt; m,
         Err(f) =&gt; {
             println!(&quot;{}&quot;, f);
@@ -2734,7 +2733,7 @@ fn main() {
 
     if !matches.free.is&#95;empty() {
         //^ &#96;matches.free&#96; contains all the arguments that are not options.
-        let string = matches.free.connect(&quot; &quot;);
+        let string = matches.free.join(&quot; &quot;);
         println!(&quot;{}&quot;, string);
     }
 
@@ -2771,7 +2770,6 @@ Hello, World!
 be passed to the program:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// testopt.rs</span>
 #![feature(rustc_private)]
-#![feature(slice_extras)]
 
 <span class="hljs-keyword">extern</span> <span class="hljs-keyword">crate</span> getopts;
 
@@ -2790,7 +2788,7 @@ be passed to the program:</p>
         <span class="hljs-comment">//  Use `optmulti`, `optflagmulti` if options can occur multiple times.</span>
     ];
 
-    <span class="hljs-keyword">let</span> matches = <span class="hljs-keyword">match</span> getopts::getopts(args.tail(), &amp;opts) {
+    <span class="hljs-keyword">let</span> matches = <span class="hljs-keyword">match</span> getopts::getopts(&amp;args[<span class="hljs-number">1</span>..], &amp;opts) {
         Ok(m) =&gt; m,
         Err(f) =&gt; {
             <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{}"</span>, f);
