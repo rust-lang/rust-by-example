@@ -7,7 +7,7 @@ pub trait Iterator {
     // The type being iterated over.
     type Item;
 
-    // `any` takes `&mut self` meaning the caller may be borrowed
+    // `find` takes `&mut self` meaning the caller may be borrowed
     // and modified, but not consumed.
     fn find<P>(&mut self, predicate: P) -> Option<Self::Item> where
         // `FnMut` meaning any captured variable may at most be
