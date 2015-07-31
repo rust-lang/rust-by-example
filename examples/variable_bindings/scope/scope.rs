@@ -21,4 +21,9 @@ fn main() {
     // FIXME ^ Comment out this line
 
     println!("outer long: {}", long_lived_binding);
+    
+    // This binding also *shadows* the previous binding
+    let long_lived_binding = 'a';
+    
+    println!("outer long: {}", long_lived_binding);
 }
