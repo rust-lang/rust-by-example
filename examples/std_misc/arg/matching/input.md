@@ -24,7 +24,3 @@ match_args {increase|decrease} <integer>
 $ ./match_args increase 42
 43
 ```
-
-The next example demonstrates `getopts` as a way to build more advanced,
-unix-like command line interfaces.
-
