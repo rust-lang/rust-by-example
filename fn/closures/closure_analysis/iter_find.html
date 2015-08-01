@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.6.2" data-basepath="../../.." data-revision="1438367482089">
+    <div class="book" data-level="8.2.6.2" data-basepath="../../.." data-revision="1438434118490">
     
 
 <div class="book-summary">
@@ -2662,7 +2662,7 @@ signature:</p>
     // The type being iterated over.
     type Item;
 
-    // `any` takes `&amp;mut self` meaning the caller may be borrowed
+    // `find` takes `&amp;mut self` meaning the caller may be borrowed
     // and modified, but not consumed.
     fn find&lt;P&gt;(&amp;mut self, predicate: P) -&gt; Option&lt;Self::Item&gt; where
         // `FnMut` meaning any captured variable may at most be
