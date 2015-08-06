@@ -6,7 +6,7 @@ over. This will require a rather involving syntax, though it seems
 straightforward at first.
 
 A type is specified as generic by `<A, B, ...>`. There are 2 basic rules
-regarding this which are applied *at* the types first use:
+regarding this which are applied *at* the type's first use:
 
 * Any type previously and locally specified to be generic is generic.
 * Everything else is concrete (non-generic).
