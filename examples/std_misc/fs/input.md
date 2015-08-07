@@ -1,10 +1,9 @@
 The `std::io::fs` module contains several functions that deal with the
 filesystem.
 
-{fs.play}
+{fs.rs}
 
-You won't be able to run the previous code, because the playpen doesn't allow
-file operations. Here's the expected successful output:
+Here's the expected successful output:
 
 ```
 $ rustc fs.rs && ./fs
@@ -45,4 +44,3 @@ a
 [`cfg!`][cfg]
 
 [cfg]: /attribute/cfg.html
-

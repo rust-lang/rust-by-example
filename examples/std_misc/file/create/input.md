@@ -2,10 +2,9 @@ The `create` static method opens a file in write-only mode. If the file
 already existed, the old content is destroyed. Otherwise, a new file is
 created.
 
-{create.play}
+{create.rs}
 
-As in the previous example, the playpen won't allow file I/O, so you'll hit one
-of the failure paths. Here's the expected successful output:
+Here's the expected successful output:
 
 ```
 $ mkdir out
@@ -21,7 +20,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ```
 
 (As in the previous example, you are encouraged to test this example under
-failure conditions)
+failure conditions.)
 
 There is also a more generic `open_mode` method that can open files in other
 modes like: read+write, append, etc.
