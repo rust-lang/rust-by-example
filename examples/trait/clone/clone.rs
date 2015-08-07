@@ -35,7 +35,7 @@ fn main() {
     drop(moved_pair);
 
     // Error! `moved_pair` has been `drop`ed
-    //println!("copy: {}", moved_pair);
+    //println!("copy: {:?}", moved_pair);
     // TODO ^ Try uncommenting this line
 
     // Clone can still be used
