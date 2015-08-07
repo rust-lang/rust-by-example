@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.4.1" data-basepath="../.." data-revision="1438958063584">
+    <div class="book" data-level="17.4.1" data-basepath="../.." data-revision="1438958110599">
     
 
 <div class="book-summary">
@@ -2658,43 +2658,38 @@
 <p>The <code>open</code> static method can be used to open a file in read-only mode.</p>
 <p>A <code>File</code> owns a resource, the file descriptor and takes care of closing the
 file when it is <code>drop</code>ed.</p>
-<div id="active-code">
-<button class="btn btn-primary" type="button" id="run-code">Run</button>
-<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::error::Error;
-use std::fs::File;
-use std::io::prelude::&#42;;
-use std::path::Path;
+<pre><code class="lang-rust"><span class="hljs-comment">// open.rs</span>
+<span class="hljs-keyword">use</span> std::error::Error;
+<span class="hljs-keyword">use</span> std::fs::File;
+<span class="hljs-keyword">use</span> std::io::prelude::*;
+<span class="hljs-keyword">use</span> std::path::Path;
 
-fn main() {
-    // Create a path to the desired file
-    let path = Path::new(&quot;hello.txt&quot;);
-    let display = path.display();
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-comment">// Create a path to the desired file</span>
+    <span class="hljs-keyword">let</span> path = Path::new(<span class="hljs-string">"hello.txt"</span>);
+    <span class="hljs-keyword">let</span> display = path.display();
 
-    // Open the path in read-only mode, returns &#96;io::Result&lt;File&gt;&#96;
-    let mut file = match File::open(&amp;path) {
-        // The &#96;description&#96; method of &#96;io::Error&#96; returns a string that
-        // describes the error
-        Err(why) =&gt; panic!(&quot;couldn&#39;t open {}: {}&quot;, display,
+    <span class="hljs-comment">// Open the path in read-only mode, returns `io::Result&lt;File&gt;`</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> file = <span class="hljs-keyword">match</span> File::open(&amp;path) {
+        <span class="hljs-comment">// The `description` method of `io::Error` returns a string that</span>
+        <span class="hljs-comment">// describes the error</span>
+        Err(why) =&gt; panic!(<span class="hljs-string">"couldn't open {}: {}"</span>, display,
                                                    Error::description(&amp;why)),
         Ok(file) =&gt; file,
     };
 
-    // Read the file contents into a string, returns &#96;io::Result&lt;usize&gt;&#96;
-    let mut s = String::new();
-    match file.read&#95;to&#95;string(&amp;mut s) {
-        Err(why) =&gt; panic!(&quot;couldn&#39;t read {}: {}&quot;, display,
+    <span class="hljs-comment">// Read the file contents into a string, returns `io::Result&lt;usize&gt;`</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> s = String::new();
+    <span class="hljs-keyword">match</span> file.read_to_string(&amp;<span class="hljs-keyword">mut</span> s) {
+        Err(why) =&gt; panic!(<span class="hljs-string">"couldn't read {}: {}"</span>, display,
                                                    Error::description(&amp;why)),
-        Ok(&#95;) =&gt; print!(&quot;{} contains:&#92;n{}&quot;, display, s),
+        Ok(<span class="hljs-number">_</span>) =&gt; <span class="hljs-built_in">print!</span>(<span class="hljs-string">"{} contains:\n{}"</span>, display, s),
     }
 
-    // &#96;file&#96; goes out of scope, and the &quot;hello.txt&quot; file gets closed
-}</div>
-<div id="result"></div>
-</div>
-
-<p>The playpen doesn&#39;t allow file I/O, so you&#39;ll hit one of the failure paths.
-Here&#39;s the expected successful output:</p>
+    <span class="hljs-comment">// `file` goes out of scope, and the "hello.txt" file gets closed</span>
+}
+</code></pre>
+<p>Here&#39;s the expected successful output:</p>
 <pre><code>$ echo &quot;Hello World!&quot; &gt; hello.txt
 $ rustc open.rs &amp;&amp; ./open
 hello.txt contains:

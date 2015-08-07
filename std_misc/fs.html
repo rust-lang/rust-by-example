@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.6" data-basepath=".." data-revision="1438958063584">
+    <div class="book" data-level="17.6" data-basepath=".." data-revision="1438958110599">
     
 
 <div class="book-summary">
@@ -2657,118 +2657,113 @@
                         <h2 id="176-filesystem-operations">17.6 Filesystem Operations</h2>
 <p>The <code>std::io::fs</code> module contains several functions that deal with the
 filesystem.</p>
-<div id="active-code">
-<button class="btn btn-primary" type="button" id="run-code">Run</button>
-<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(fs&#95;walk)]
+<pre><code class="lang-rust"><span class="hljs-comment">// fs.rs</span>
+#![feature(fs_walk)]
 
-use std::fs;
-use std::fs::{File, OpenOptions};
-use std::io;
-use std::io::prelude::&#42;;
-use std::os::unix;
-use std::path::Path;
+<span class="hljs-keyword">use</span> std::fs;
+<span class="hljs-keyword">use</span> std::fs::{File, OpenOptions};
+<span class="hljs-keyword">use</span> std::io;
+<span class="hljs-keyword">use</span> std::io::prelude::*;
+<span class="hljs-keyword">use</span> std::os::unix;
+<span class="hljs-keyword">use</span> std::path::Path;
 
-// A simple implementation of &#96;% cat path&#96;
-fn cat(path: &amp;Path) -&gt; io::Result&lt;String&gt; {
-    let mut f = try!(File::open(path));
-    let mut s = String::new();
-    match f.read&#95;to&#95;string(&amp;mut s) {
-        Ok(&#95;) =&gt; Ok(s),
+<span class="hljs-comment">// A simple implementation of `% cat path`</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">cat</span></span>(path: &amp;Path) -&gt; io::Result&lt;String&gt; {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> f = <span class="hljs-built_in">try!</span>(File::open(path));
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> s = String::new();
+    <span class="hljs-keyword">match</span> f.read_to_string(&amp;<span class="hljs-keyword">mut</span> s) {
+        Ok(<span class="hljs-number">_</span>) =&gt; Ok(s),
         Err(e) =&gt; Err(e),
     }
 }
 
-// A simple implementation of &#96;% echo s &gt; path&#96;
-fn echo(s: &amp;str, path: &amp;Path) -&gt; io::Result&lt;()&gt; {
-    let mut f = try!(File::create(path));
+<span class="hljs-comment">// A simple implementation of `% echo s &gt; path`</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">echo</span></span>(s: &amp;<span class="hljs-keyword">str</span>, path: &amp;Path) -&gt; io::Result&lt;()&gt; {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> f = <span class="hljs-built_in">try!</span>(File::create(path));
 
-    f.write&#95;all(s.as&#95;bytes())
+    f.write_all(s.as_bytes())
 }
 
-// A simple implementation of &#96;% touch path&#96; (ignores existing files)
-fn touch(path: &amp;Path) -&gt; io::Result&lt;()&gt; {
-    match OpenOptions::new().create(true).open(path) {
-        Ok(&#95;) =&gt; Ok(()),
+<span class="hljs-comment">// A simple implementation of `% touch path` (ignores existing files)</span>
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">touch</span></span>(path: &amp;Path) -&gt; io::Result&lt;()&gt; {
+    <span class="hljs-keyword">match</span> OpenOptions::new().create(<span class="hljs-keyword">true</span>).open(path) {
+        Ok(<span class="hljs-number">_</span>) =&gt; Ok(()),
         Err(e) =&gt; Err(e),
     }
 }
 
-fn main() {
-    println!(&quot;&#96;mkdir a&#96;&quot;);
-    // Create a directory, returns &#96;io::Result&lt;()&gt;&#96;
-    match fs::create&#95;dir(&quot;a&quot;) {
-        Err(why) =&gt; println!(&quot;! {:?}&quot;, why.kind()),
-        Ok(&#95;) =&gt; {},
+<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`mkdir a`"</span>);
+    <span class="hljs-comment">// Create a directory, returns `io::Result&lt;()&gt;`</span>
+    <span class="hljs-keyword">match</span> fs::create_dir(<span class="hljs-string">"a"</span>) {
+        Err(why) =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind()),
+        Ok(<span class="hljs-number">_</span>) =&gt; {},
     }
 
-    println!(&quot;&#96;echo hello &gt; a/b.txt&#96;&quot;);
-    // The previous match can be simplified using the &#96;unwrap&#95;or&#95;else&#96; method
-    echo(&quot;hello&quot;, &amp;Path::new(&quot;a/b.txt&quot;)).unwrap&#95;or&#95;else(|why| {
-        println!(&quot;! {:?}&quot;, why.kind());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`echo hello &gt; a/b.txt`"</span>);
+    <span class="hljs-comment">// The previous match can be simplified using the `unwrap_or_else` method</span>
+    echo(<span class="hljs-string">"hello"</span>, &amp;Path::new(<span class="hljs-string">"a/b.txt"</span>)).unwrap_or_else(|why| {
+        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind());
     });
 
-    println!(&quot;&#96;mkdir -p a/c/d&#96;&quot;);
-    // Recursively create a directory, returns &#96;io::Result&lt;()&gt;&#96;
-    fs::create&#95;dir&#95;all(&quot;a/c/d&quot;).unwrap&#95;or&#95;else(|why| {
-        println!(&quot;! {:?}&quot;, why.kind());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`mkdir -p a/c/d`"</span>);
+    <span class="hljs-comment">// Recursively create a directory, returns `io::Result&lt;()&gt;`</span>
+    fs::create_dir_all(<span class="hljs-string">"a/c/d"</span>).unwrap_or_else(|why| {
+        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind());
     });
 
-    println!(&quot;&#96;touch a/c/e.txt&#96;&quot;);
-    touch(&amp;Path::new(&quot;a/c/e.txt&quot;)).unwrap&#95;or&#95;else(|why| {
-        println!(&quot;! {:?}&quot;, why.kind());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`touch a/c/e.txt`"</span>);
+    touch(&amp;Path::new(<span class="hljs-string">"a/c/e.txt"</span>)).unwrap_or_else(|why| {
+        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind());
     });
 
-    println!(&quot;&#96;ln -s ../b.txt a/c/b.txt&#96;&quot;);
-    // Create a symbolic link, returns &#96;io::Result&lt;()&gt;&#96;
-    if cfg!(target&#95;family = &quot;unix&quot;) {
-        unix::fs::symlink(&quot;../b.txt&quot;, &quot;a/c/b.txt&quot;).unwrap&#95;or&#95;else(|why| {
-        println!(&quot;! {:?}&quot;, why.kind());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`ln -s ../b.txt a/c/b.txt`"</span>);
+    <span class="hljs-comment">// Create a symbolic link, returns `io::Result&lt;()&gt;`</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">cfg!</span>(target_family = <span class="hljs-string">"unix"</span>) {
+        unix::fs::symlink(<span class="hljs-string">"../b.txt"</span>, <span class="hljs-string">"a/c/b.txt"</span>).unwrap_or_else(|why| {
+        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind());
         });
     }
 
-    println!(&quot;&#96;cat a/c/b.txt&#96;&quot;);
-    match cat(&amp;Path::new(&quot;a/c/b.txt&quot;)) {
-        Err(why) =&gt; println!(&quot;! {:?}&quot;, why.kind()),
-        Ok(s) =&gt; println!(&quot;&gt; {}&quot;, s),
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`cat a/c/b.txt`"</span>);
+    <span class="hljs-keyword">match</span> cat(&amp;Path::new(<span class="hljs-string">"a/c/b.txt"</span>)) {
+        Err(why) =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind()),
+        Ok(s) =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">"&gt; {}"</span>, s),
     }
 
-    println!(&quot;&#96;ls a&#96;&quot;);
-    // Read the contents of a directory, returns &#96;io::Result&lt;Vec&lt;Path&gt;&gt;&#96;
-    match fs::read&#95;dir(&quot;a&quot;) {
-        Err(why) =&gt; println!(&quot;! {:?}&quot;, why.kind()),
-        Ok(paths) =&gt; for path in paths {
-            println!(&quot;&gt; {:?}&quot;, path.unwrap().path());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`ls a`"</span>);
+    <span class="hljs-comment">// Read the contents of a directory, returns `io::Result&lt;Vec&lt;Path&gt;&gt;`</span>
+    <span class="hljs-keyword">match</span> fs::read_dir(<span class="hljs-string">"a"</span>) {
+        Err(why) =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind()),
+        Ok(paths) =&gt; <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> paths {
+            <span class="hljs-built_in">println!</span>(<span class="hljs-string">"&gt; {:?}"</span>, path.unwrap().path());
         },
     }
 
-    println!(&quot;&#96;walk a&#96;&quot;);
-    // Recursively walk over the contents of a directory, returns
-    // &#96;Directories&#96;, which implements the &#96;Iterator&lt;Path&gt; trait
-    match fs::walk&#95;dir(&quot;a&quot;) {
-        Err(why) =&gt; println!(&quot;! {:?}&quot;, why.kind()),
-        Ok(paths) =&gt; for path in paths {
-            println!(&quot;&gt; {:?}&quot;, path.unwrap().path());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`walk a`"</span>);
+    <span class="hljs-comment">// Recursively walk over the contents of a directory, returns</span>
+    <span class="hljs-comment">// `Directories`, which implements the `Iterator&lt;Path&gt; trait</span>
+    <span class="hljs-keyword">match</span> fs::walk_dir(<span class="hljs-string">"a"</span>) {
+        Err(why) =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind()),
+        Ok(paths) =&gt; <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> paths {
+            <span class="hljs-built_in">println!</span>(<span class="hljs-string">"&gt; {:?}"</span>, path.unwrap().path());
         },
     }
 
-    println!(&quot;&#96;rm a/c/e.txt&#96;&quot;);
-    // Remove a file, returns &#96;io::Result&lt;()&gt;&#96;
-    fs::remove&#95;file(&quot;a/c/e.txt&quot;).unwrap&#95;or&#95;else(|why| {
-        println!(&quot;! {:?}&quot;, why.kind());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`rm a/c/e.txt`"</span>);
+    <span class="hljs-comment">// Remove a file, returns `io::Result&lt;()&gt;`</span>
+    fs::remove_file(<span class="hljs-string">"a/c/e.txt"</span>).unwrap_or_else(|why| {
+        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind());
     });
 
-    println!(&quot;&#96;rmdir a/c/d&#96;&quot;);
-    // Remove an empty directory, returns &#96;io::Result&lt;()&gt;&#96;
-    fs::remove&#95;dir(&quot;a/c/d&quot;).unwrap&#95;or&#95;else(|why| {
-        println!(&quot;! {:?}&quot;, why.kind());
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`rmdir a/c/d`"</span>);
+    <span class="hljs-comment">// Remove an empty directory, returns `io::Result&lt;()&gt;`</span>
+    fs::remove_dir(<span class="hljs-string">"a/c/d"</span>).unwrap_or_else(|why| {
+        <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind());
     });
-}</div>
-<div id="result"></div>
-</div>
-
-<p>You won&#39;t be able to run the previous code, because the playpen doesn&#39;t allow
-file operations. Here&#39;s the expected successful output:</p>
+}
+</code></pre>
+<p>Here&#39;s the expected successful output:</p>
 <pre><code>$ rustc fs.rs &amp;&amp; ./fs
 `mkdir a`
 `echo hello &gt; a/b.txt`
