@@ -2,8 +2,18 @@
 struct Point { x: i32, y: i32 }
 
 fn main() {
+    let c = 'y';
+
+    // A `ref` borrow on the left side of an assignment is equivalent to
+    // an `&` borrow on the right side.
+    let ref ref_c1 = c;
+    let ref_c2 = &c;
+
+    println!("ref_c1 equals ref_c2: {}", *ref_c1 == *ref_c2);
+
     let point = Point { x: 0, y: 0 };
 
+    // `ref` is also valid when destructuring a struct.
     let _copy_of_x = {
         // `ref_to_x` is a reference to the `x` field of `point`
         let Point { x: ref ref_to_x, y: _ } = point;
