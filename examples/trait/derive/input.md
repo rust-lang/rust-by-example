@@ -10,15 +10,10 @@ This is a list of the "derivable" traits:
   [`PartialEq`][partial-eq],
   [`Ord`][ord],
   [`PartialOrd`][partial-ord]
-* Serialization:
-  [`Encodable`][encodable],
-  [`Decodable`][decodable]
 * [`Clone`][clone],
   to create `T` from `&T` via a copy.
 * [`Hash`][hash], to
   compute a hash from `&T`.
-* `Rand`, to
-  create a random instance of a data type.
 * [`Default`][default],
   to create an empty instance of a data type.
 * `Zero`, to
@@ -31,8 +26,6 @@ This is a list of the "derivable" traits:
 [partial-eq]: http://doc.rust-lang.org/std/cmp/trait.PartialEq.html
 [ord]: http://doc.rust-lang.org/std/cmp/trait.Ord.html
 [partial-ord]: http://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
-[encodable]: http://doc.rust-lang.org/serialize/trait.Encodable.html
-[decodable]: http://doc.rust-lang.org/serialize/trait.Decodable.html
 [clone]: http://doc.rust-lang.org/std/clone/trait.Clone.html
 [hash]: http://doc.rust-lang.org/std/hash/trait.Hash.html
 [default]: http://doc.rust-lang.org/std/default/trait.Default.html
