@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.3.4" data-basepath="../.." data-revision="1439299478242">
+    <div class="book" data-level="14.3.4" data-basepath="../.." data-revision="1439320422625">
     
 
 <div class="book-summary">
@@ -2664,8 +2664,18 @@ keyword can be used to take references to the fields of a struct/tuple.</p>
 struct Point { x: i32, y: i32 }
 
 fn main() {
+    let c = &#39;y&#39;;
+
+    // A &#96;ref&#96; borrow on the left side of an assignment is equivalent to
+    // an &#96;&amp;&#96; borrow on the right side.
+    let ref ref&#95;c1 = c;
+    let ref&#95;c2 = &c;
+
+    println!(&quot;ref&#95;c1 equals ref&#95;c2: {}&quot;, &#42;ref&#95;c1 == &#42;ref&#95;c2);
+
     let point = Point { x: 0, y: 0 };
 
+    // &#96;ref&#96; is also valid when destructuring a struct.
     let &#95;copy&#95;of&#95;x = {
         // &#96;ref&#95;to&#95;x&#96; is a reference to the &#96;x&#96; field of &#96;point&#96;
         let Point { x: ref ref&#95;to&#95;x, y: &#95; } = point;
