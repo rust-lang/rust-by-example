@@ -12,10 +12,10 @@ fn main() {
     // other words, *Rule 2* must be true.
     print_refs(&four, &nine);
 
-    // Uses a lifetime without any input. The lifetime sizedness will
-    // be chosen by the caller (which is here) from available lifetimes
-    // (scopes). Any lifetime chosen will then be larger than that of
-    // the function.
+    // Note that there is no input even though the function specifies
+    // a lifetime. The sizedness of that lifetime will be determined
+    // by the caller (which is here) from available lifetimes (scopes).
+    // Any lifetime chosen will then be larger than that of the function.
     failed_borrow();
 }
 
