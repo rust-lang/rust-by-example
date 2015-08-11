@@ -1,4 +1,4 @@
-The borrow checker utilizes explicit lifetime annotation to reason about
+The borrow checker utilizes explicit lifetime annotations to reason about
 how long references should be valid. Failure to annotate lifetimes[^1] is akin
 to banning the borrow checker from validating borrows and so accordingly,
 annotation is mandatory.

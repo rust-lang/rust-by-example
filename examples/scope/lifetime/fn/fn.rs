@@ -1,5 +1,5 @@
 // One input reference with lifetime `'a` which must live
-// longer than the function.
+// at least as long as the function.
 fn print_one<'a>(x: &'a i32) {
     println!("`print_one`: x is {}", x);
 }
@@ -9,9 +9,9 @@ fn add_one<'a>(x: &'a mut i32) {
     *x += 1;
 }
 
-// Multiple elements with different lifetimes. This would
-// be equally acceptable if both references had the same
-// lifetime `'a`.
+// Multiple elements with different lifetimes. In this case, it
+// would be fine for both to have the same lifetime `'a`, but
+// in more complex cases, different lifetimes may be required.
 fn print_multi<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("`print_multi`: x is {}, y is {}", x, y);
 }
