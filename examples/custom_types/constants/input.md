@@ -5,7 +5,7 @@ including global. Both require explicit type annotation:
 * `static`: A possibly `mut`able variable with [`'static`][static] lifetime.
 
 One special case is the `"string"` literal. It can be assigned directly to a
-`static` variable without modification because it's type signature:
+`static` variable without modification because its type signature:
 `&'static str` has the required lifetime of `'static`. All other reference
 types must be specifically annotated so that they fulfill the `'static`
 lifetime. This may seem minor though because the required explicit annotation
