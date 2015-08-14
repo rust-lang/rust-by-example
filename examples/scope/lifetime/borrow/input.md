@@ -23,7 +23,7 @@ enough". Let's analyze why this happens:
 * `'main` and `'let` are the scopes of the blocks
 * When a block scope ends, all the objects declared in it get destroyed
   * `'let` ends, and so does `'e`
-  * `'main` ends, and so does `'a` `'b` `'c` and `'d`
+  * `'main` ends, and so do `'a` `'b` `'c` and `'d`
 * `ref_to_box` is a valid borrow, because
   * `ref_to_box` has lifetime `'c`
   * `ref_to_box` points to an object with lifetime `'b`
