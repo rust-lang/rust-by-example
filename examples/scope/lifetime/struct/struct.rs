@@ -1,33 +1,33 @@
-// First attempt: No explicit lifetimes
-// Error! Compiler needs explicit lifetime
-//struct Singleton {
-    //one: &mut i32,
-//}
-// TODO ^ Try uncommenting this struct
+// A type `Borrowed` which houses a reference to an
+// `i32`. This reference must outlive the structure.
+#[derive(Debug)]
+struct Borrowed<'a>(&'a i32);
 
-// Second attempt: Add lifetimes to all the references
-struct Pair<'a, 'b> {
-    one: &'a mut i32,
-    two: &'b mut i32,
+// Similarly, both references must outlive this structure.
+#[derive(Debug)]
+struct NamedBorrowed<'a> {
+    x: &'a i32,
+    y: &'a i32,
+}
+
+// An enum which is either an `i32` or a reference to one.
+#[derive(Debug)]
+enum Either<'a> {
+    Num(i32),
+    Ref(&'a i32),
 }
 
 fn main() {
-    // Let us say that `one` has lifetime `o`
-    let mut one = 1;
+    let x = 18;
+    let y = 15;
 
-    {
-        // And that `two` has lifetime `t`
-        // `two` has a shorter (and different) lifetime than `one` (`'t < 'o`)
-        let mut two = 2;
+    let single = Borrowed(&x);
+    let double = NamedBorrowed { x: &x, y: &y };
+    let reference = Either::Ref(&x);
+    let number    = Either::Num(y);
 
-        println!("Before: ({}, {})", one, two);
-
-        // `Pair` gets specialized for `'a = 'o` and `'b = 't`
-        let pair = Pair { one: &mut one, two: &mut two };
-
-        *pair.one = 2;
-        *pair.two = 1;
-
-        println!("After: ({}, {})", pair.one, pair.two);
-    }
+    println!("x is borrowed in {:?}", single);
+    println!("x and y are borrowed in {:?}", double);
+    println!("x is borrowed in {:?}", reference);
+    println!("y is *not* borrowed in {:?}", number);
 }

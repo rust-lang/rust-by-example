@@ -125,10 +125,14 @@
             { "id": "ref", "title": "The ref pattern", "children": null }
         ] },
         { "id": "lifetime", "title": "Lifetimes", "children": [
-            { "id": "borrow", "title": "The borrow checker", "children": null },
+            { "id": "explicit", "title": "Explicit annotation", "children": null },
             { "id": "fn", "title": "Functions", "children": null },
+            { "id": "methods", "title": "Methods", "children": null },
             { "id": "struct", "title": "Structs", "children": null },
-            { "id": "static_lifetime", "title": "static", "children": null }
+            { "id": "lifetime_bounds", "title": "Bounds", "children": null },
+            { "id": "lifetime_coercion", "title": "Coercion", "children": null },
+            { "id": "static_lifetime", "title": "static", "children": null },
+            { "id": "elision", "title": "elision", "children": null }
         ] }
     ] },
     { "id": "trait", "title": "Traits", "children": [

@@ -1,33 +1,13 @@
-The compiler enforces valid borrowing using its borrow checker. To accomplish
-this, it keeps track of the scope of blocks.
+A *lifetime* is a construct the compiler (also called the borrow checker)
+uses to ensure all borrows are valid. Specifically, a lifetime starts when
+a variable is created and ends when it is destroyed. It can be visualized as
+vertical distance but since size is only relevant for subsets and supersets,
+scope is considered the more appropriate descriptive term.
 
-The lifetime of an object starts when the object is created and ends when it
-goes out of scope (i.e. it gets destroyed, because of the RAII discipline).
+Borrowing (via `&` for example) creates new lifetimes. A borrow is valid
+as long as the borrow ends before (inside) the lender is destroyed.
 
-A lifetime looks like this: `'burrito`, which reads as: "the lifetime burrito".
+{lifetime.play}
 
-All references actually have a type signature of the form `&'a T`, where
-`'a` is the lifetime of the *referenced* object. The compiler takes care of
-inserting the lifetime part `'a` so we can simply type annotate references with
-`&T`.
-
-For example:
-
-```rust
-let integer: int = 5;
-let ref_to_int: &int = &integer;
-```
-
-* `integer` has lifetime `'i` (it could be any other name, like `'foo`)
-* `ref_to_int` has lifetime `'r` (references also have lifetimes!)
-* `ref_to_int` type signature actually is `&'i int` (the compiler inserts the
-  `'i` for us)
-* The type signature `&'i int` reads as:
-  * `&`: reference to an
-  * `int`: integer with
-  * `'i`: lifetime `i` (`i` is the lifetime of `integer`!)
-
-Because the compiler keeps track of the lifetime of referenced objects in the
-type system, it can avoid several memory bugs.
-
-Haven't grokked what a lifetime is yet? Don't dismay! See the next page.
+You may have noted that no names or types are assigned to label lifetimes.
+This restricts how lifetimes will be able to be used as we will see.

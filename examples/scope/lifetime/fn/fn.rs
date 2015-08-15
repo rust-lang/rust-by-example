@@ -1,50 +1,45 @@
-#[derive(Debug)]
-struct Triplet {
-    one: i32,
-    two: i32,
-    three: i32,
+// One input reference with lifetime `'a` which must live
+// at least as long as the function.
+fn print_one<'a>(x: &'a i32) {
+    println!("`print_one`: x is {}", x);
 }
 
-impl Triplet {
-    // First attempt: No explicit lifetimes
-    // The compiler infers that the field and the struct have the same lifetime
-    fn mut_one(&mut self) -> &mut i32 {
-        &mut self.one
-    }
-
-    // Second attempt: We explicitly annotate the lifetimes on all the
-    // references
-    // Error! The compiler doesn't know what is the relationship between the
-    // lifetime `structure` and the lifetime `field`
-    //fn mut_two<'structure, 'field>(&'structure mut self) -> &'field mut i32 {
-        //&mut self.two
-    //}
-    // TODO ^ Try uncommenting this method
-
-    // Third attempt: We think! What is the relationship between the lifetimes?
-    // Clearly `'field` *can't* outlive `'structure`, because the field will be
-    // destroyed when the struct gets destroyed
-    // If the fields get destroyed along with the struct, then that means that
-    // both the struct and its field have the same lifetime!
-    // Ok, so we need to tell the compiler that `'structure` = `'field`
-    // We can use a shorter name for the lifetime, it's common to use a single
-    // letter lifetime, let's use `'s`, because it's the first letter of
-    // structure
-    fn mut_three<'s>(&'s mut self) -> &'s mut i32 {
-        &mut self.three
-    }
+// Mutable references are possible with lifetimes as well.
+fn add_one<'a>(x: &'a mut i32) {
+    *x += 1;
 }
+
+// Multiple elements with different lifetimes. In this case, it
+// would be fine for both to have the same lifetime `'a`, but
+// in more complex cases, different lifetimes may be required.
+fn print_multi<'a, 'b>(x: &'a i32, y: &'b i32) {
+    println!("`print_multi`: x is {}, y is {}", x, y);
+}
+
+// This is invalid. An `i32` would be created, a reference
+// would be created, then immediately the data would be
+// dropped leaving a reference to invalid data to be returned.
+//
+// The reason the problem is caught is because of the restriction
+// `<'a>` imposes: `'a` must live longer than the function.
+//fn invalid_output<'a>() -> &'a i32 { &7 }
+
+// While returning references without input is banned, returning
+// references that have been passed in are perfectly acceptable.
+// One restriction is the correct lifetime must be returned.
+fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 { x }
 
 fn main() {
-    let mut triplet = Triplet { one: 1, two: 2, three: 3 };
+    let x = 7;
+    let y = 9;
+    
+    print_one(&x);
+    print_multi(&x, &y);
+    
+    let z = pass_x(&x, &y);
+    print_one(z);
 
-    println!("Before: {:?}", triplet);
-
-    *triplet.mut_one() = 0;
-    println!("After: {:?}", triplet);
-
-    // Use mutable reference to modify the original struct
-    *triplet.mut_three() = 0;
-
-    println!("After: {:?}", triplet);
+    let mut t = 3;
+    add_one(&mut t);
+    print_one(&t);
 }
