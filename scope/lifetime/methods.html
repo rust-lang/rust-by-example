@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>`open` | Rust by Example</title>
+        <title>Methods | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../std_misc/file/create.html" />
+    <link rel="next" href="../../scope/lifetime/struct.html" />
     
     
-    <link rel="prev" href="../../std_misc/file.html" />
+    <link rel="prev" href="../../scope/lifetime/fn.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.4.1" data-basepath="../.." data-revision="1439647433359">
+    <div class="book" data-level="14.4.3" data-basepath="../.." data-revision="1439647433359">
     
 
 <div class="book-summary">
@@ -1860,7 +1860,7 @@
         </li>
     
         
-        <li class="chapter " data-level="14.4.3" data-path="scope/lifetime/methods.html">
+        <li class="chapter active" data-level="14.4.3" data-path="scope/lifetime/methods.html">
             
                 
                     <a href="../../scope/lifetime/methods.html">
@@ -2360,7 +2360,7 @@
                 
     
         
-        <li class="chapter active" data-level="17.4.1" data-path="std_misc/file/open.html">
+        <li class="chapter " data-level="17.4.1" data-path="std_misc/file/open.html">
             
                 
                     <a href="../../std_misc/file/open.html">
@@ -2716,51 +2716,35 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_126">
+                    <section class="normal" id="section-gitbook_102">
                     
-                        <h3 id="1741-open">17.4.1 <code>open</code></h3>
-<p>The <code>open</code> static method can be used to open a file in read-only mode.</p>
-<p>A <code>File</code> owns a resource, the file descriptor and takes care of closing the
-file when it is <code>drop</code>ed.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// open.rs</span>
-<span class="hljs-keyword">use</span> std::error::Error;
-<span class="hljs-keyword">use</span> std::fs::File;
-<span class="hljs-keyword">use</span> std::io::prelude::*;
-<span class="hljs-keyword">use</span> std::path::Path;
+                        <h3 id="1443-methods">14.4.3 Methods</h3>
+<p>Methods are annotated similarly to functions:</p>
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">// A regular structure.
+struct Owner(i32);
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-comment">// Create a path to the desired file</span>
-    <span class="hljs-keyword">let</span> path = Path::new(<span class="hljs-string">"hello.txt"</span>);
-    <span class="hljs-keyword">let</span> display = path.display();
-
-    <span class="hljs-comment">// Open the path in read-only mode, returns `io::Result&lt;File&gt;`</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> file = <span class="hljs-keyword">match</span> File::open(&amp;path) {
-        <span class="hljs-comment">// The `description` method of `io::Error` returns a string that</span>
-        <span class="hljs-comment">// describes the error</span>
-        Err(why) =&gt; panic!(<span class="hljs-string">"couldn't open {}: {}"</span>, display,
-                                                   Error::description(&amp;why)),
-        Ok(file) =&gt; file,
-    };
-
-    <span class="hljs-comment">// Read the file contents into a string, returns `io::Result&lt;usize&gt;`</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> s = String::new();
-    <span class="hljs-keyword">match</span> file.read_to_string(&amp;<span class="hljs-keyword">mut</span> s) {
-        Err(why) =&gt; panic!(<span class="hljs-string">"couldn't read {}: {}"</span>, display,
-                                                   Error::description(&amp;why)),
-        Ok(<span class="hljs-number">_</span>) =&gt; <span class="hljs-built_in">print!</span>(<span class="hljs-string">"{} contains:\n{}"</span>, display, s),
+impl Owner {
+    // Annotate exactly like a normal function.
+    fn add&#95;one&lt;&#39;a&gt;(&amp;&#39;a mut self) { self.0 += 1 }
+    fn print&lt;&#39;a&gt;(&amp;&#39;a self) {
+        println!(&quot;&#96;print&#96;: {}&quot;, self.0);
     }
-
-    <span class="hljs-comment">// `file` goes out of scope, and the "hello.txt" file gets closed</span>
 }
-</code></pre>
-<p>Here&#39;s the expected successful output:</p>
-<pre><code>$ echo &quot;Hello World!&quot; &gt; hello.txt
-$ rustc open.rs &amp;&amp; ./open
-hello.txt contains:
-Hello World!
-</code></pre><p>(You are encouraged to test the previous example under different failure
-conditions: <code>hello.txt</code> doesn&#39;t exist, or <code>hello.txt</code> is not readable,
-etc.)</p>
+
+fn main() {
+    let mut owner  = Owner(18);
+
+    owner.add&#95;one();
+    owner.print();
+}</div>
+<div id="result"></div>
+</div>
+
+<h3 id="see-also">See also:</h3>
+<p><a href="/fn/methods.html">methods</a></p>
 
                     
                     </section>
@@ -2771,10 +2755,10 @@ etc.)</p>
         </div>
 
         
-        <a href="../../std_misc/file.html" class="navigation navigation-prev " aria-label="Previous page: File I/O"><i class="fa fa-angle-left"></i></a>
+        <a href="../../scope/lifetime/fn.html" class="navigation navigation-prev " aria-label="Previous page: Functions"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../std_misc/file/create.html" class="navigation navigation-next " aria-label="Next page: `create`"><i class="fa fa-angle-right"></i></a>
+        <a href="../../scope/lifetime/struct.html" class="navigation navigation-next " aria-label="Next page: Structs"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -3,42 +3,6 @@ svn:wc:ra_dav:version-url
 V 66
 /ajaxorg/ace-builds/!svn/ver/120/trunk/src-min-noconflict/snippets
 END
-soy_template.js
-K 25
-svn:wc:ra_dav:version-url
-V 81
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/soy_template.js
-END
-io.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/101/trunk/src-min-noconflict/snippets/io.js
-END
-makefile.js
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/makefile.js
-END
-ejs.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/ejs.js
-END
-livescript.js
-K 25
-svn:wc:ra_dav:version-url
-V 79
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/livescript.js
-END
-ftl.js
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/ftl.js
-END
 elixir.js
 K 25
 svn:wc:ra_dav:version-url
@@ -764,4 +728,40 @@ K 25
 svn:wc:ra_dav:version-url
 V 77
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/velocity.js
+END
+soy_template.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/soy_template.js
+END
+io.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/101/trunk/src-min-noconflict/snippets/io.js
+END
+makefile.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/makefile.js
+END
+ejs.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/ejs.js
+END
+livescript.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/livescript.js
+END
+ftl.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min-noconflict/snippets/ftl.js
 END

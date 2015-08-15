@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>The borrow checker | Rust by Example</title>
+        <title>Bounds | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../scope/lifetime/fn.html" />
+    <link rel="next" href="../../scope/lifetime/lifetime_coercion.html" />
     
     
-    <link rel="prev" href="../../scope/lifetime.html" />
+    <link rel="prev" href="../../scope/lifetime/struct.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.1" data-basepath="../.." data-revision="1439644004832">
+    <div class="book" data-level="14.4.5" data-basepath="../.." data-revision="1439647433359">
     
 
 <div class="book-summary">
@@ -1828,15 +1828,15 @@
                 
     
         
-        <li class="chapter active" data-level="14.4.1" data-path="scope/lifetime/borrow.html">
+        <li class="chapter " data-level="14.4.1" data-path="scope/lifetime/explicit.html">
             
                 
-                    <a href="../../scope/lifetime/borrow.html">
+                    <a href="../../scope/lifetime/explicit.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.4.1.</b>
                         
-                         The borrow checker
+                         Explicit annotation
                     </a>
                 
             
@@ -1860,13 +1860,29 @@
         </li>
     
         
-        <li class="chapter " data-level="14.4.3" data-path="scope/lifetime/struct.html">
+        <li class="chapter " data-level="14.4.3" data-path="scope/lifetime/methods.html">
+            
+                
+                    <a href="../../scope/lifetime/methods.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.3.</b>
+                        
+                         Methods
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.4" data-path="scope/lifetime/struct.html">
             
                 
                     <a href="../../scope/lifetime/struct.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>14.4.3.</b>
+                            <b>14.4.4.</b>
                         
                          Structs
                     </a>
@@ -1876,15 +1892,63 @@
         </li>
     
         
-        <li class="chapter " data-level="14.4.4" data-path="scope/lifetime/static_lifetime.html">
+        <li class="chapter active" data-level="14.4.5" data-path="scope/lifetime/lifetime_bounds.html">
+            
+                
+                    <a href="../../scope/lifetime/lifetime_bounds.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.5.</b>
+                        
+                         Bounds
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.6" data-path="scope/lifetime/lifetime_coercion.html">
+            
+                
+                    <a href="../../scope/lifetime/lifetime_coercion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.6.</b>
+                        
+                         Coercion
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.7" data-path="scope/lifetime/static_lifetime.html">
             
                 
                     <a href="../../scope/lifetime/static_lifetime.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>14.4.4.</b>
+                            <b>14.4.7.</b>
                         
                          static
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.8" data-path="scope/lifetime/elision.html">
+            
+                
+                    <a href="../../scope/lifetime/elision.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.8.</b>
+                        
+                         elision
                     </a>
                 
             
@@ -2652,89 +2716,55 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_97">
+                    <section class="normal" id="section-gitbook_100">
                     
-                        <h3 id="1441-the-borrow-checker">14.4.1 The borrow checker</h3>
-<p>Let&#39;s see how the compiler prevents the creation of dangling pointers via its
-borrow checker. To simplify the analysis and explanation, we have two
-additions:</p>
-<ul>
-<li>Lifetimes has been explicitly annotated in the source code.</li>
-<li>We have drawn the lifetime &quot;lines&quot;, which span from the creation of an object
-to its destruction. The block scopes have also been drawn.</li>
-</ul>
-<p>Note that explicit lifetime annotation on references <code>&amp;&#39;foo T</code> is not allowed
-by the compiler, so you must remove the lifetime part <code>&#39;foo</code> to see the &quot;real&quot;
-compiler error.</p>
+                        <h3 id="1445-bounds">14.4.5 Bounds</h3>
+<p>Just like generic types can be bounded, lifetimes as generics themselves
+utilize bounds also. <code>:</code> has a slightly different meaning than in
+<a href="/generics/bounds.html">generics</a> but <code>+</code> hasn&#39;t changed. Both are described below:</p>
+<ol>
+<li><code>T: &#39;a</code>: <em>All</em> references in <code>T</code> must outlive lifetime <code>&#39;a</code>.</li>
+<li><code>T: Trait + &#39;a</code>: Type <code>T</code> must implement trait <code>Trait</code> and <em>all</em> references
+in <code>T</code> must outlive <code>&#39;a</code>.</li>
+</ol>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// FIXME To see the &quot;real&quot; compiler error, change both &#96;&amp;&#39;c&#96; and &#96;&amp;&#39;d&#96; into &#96;&amp;&#96;
+<div id="editor">use std::fmt::Debug; // Trait to bound with.
 
-fn main() { // &#96;&#39;main&#96; starts ────────────────────────────────────────────┐
-    let stack&#95;integer: i32 = 5; // &#96;&#39;a&#96; starts ─────────────────────────┐ │
-    let boxed&#95;integer = Box::new(4); // &#96;&#39;b&#96; starts ──────────────────┐ │ │
-    //                                                                │ │ │
-    // This is a valid operation                                      │ │ │
-    let ref&#95;to&#95;box: &amp;&#39;c i32 = &amp;&#42;boxed&#95;integer; // &#96;&#39;c&#96; starts ──────┐ │ │ │
-    //                                                              │ │ │ │
-    // The compiler forbids this operation, because                 │ │ │ │
-    // &#96;ref&#95;to&#95;another&#95;box&#96; would become a dangling pointer         │ │ │ │
-    let ref&#95;to&#95;another&#95;box: &amp;&#39;d i32 = { // &#96;&#39;let&#96; &#96;&#39;d&#96; start ───┬─┐ │ │ │ │
-        let another&#95;boxed&#95;integer = Box::new(3); // ──────────┐ │ │ │ │ │ │
-        // ^ &#96;e&#96; starts                                       │ │ │ │ │ │ │
-        &amp;&#42;another&#95;boxed&#95;integer //                            │ │ │ │ │ │ │
-    }; // &#96;&#39;e&#96; &#96;&#39;let&#96; end ────────────────────────────────────┴─┘ │ │ │ │ │
-    //                                                            │ │ │ │ │
-    let invalid&#95;dereference = &#42;ref&#95;to&#95;another&#95;box; //             │ │ │ │ │
-} // &#96;&#39;d&#96; &#96;&#39;c&#96; &#96;&#39;b&#96; &#96;&#39;a&#96; &#96;&#39;main&#96; end ─────────────────────────────┴─┴─┴─┴─┘</div>
+#[derive(Debug)]
+// &#96;Ref&#96; contains a reference to type &#96;T&#96; where &#96;T&#96; is unknown
+// with an unknown lifetime &#96;&#39;a&#96;. &#96;T&#96; is bounded such that any
+// references in &#96;T&#96; must outlive &#96;&#39;a&#96;. In addition, the lifetime
+// of &#96;Ref&#96; may not exceed &#96;&#39;a&#96;.
+struct Ref&lt;&#39;a, T: &#39;a&gt;(&amp;&#39;a T);
+
+// A generic function which prints using the &#96;Debug&#96; trait.
+fn print&lt;T&gt;(t: T) where
+    T: Debug {
+    println!(&quot;&#96;print&#96;: t is {:?}&quot;, t);
+}
+
+// Here a reference to &#96;T&#96; is taken where &#96;T&#96; implements
+// &#96;Debug&#96; and &#42;all&#42; references in &#96;T&#96; outlive &#96;&#39;a&#96;. In
+// addition, &#96;&#39;a&#96; must outlive the function.
+fn print&#95;ref&lt;&#39;a, T&gt;(t: &amp;&#39;a T) where
+    T: Debug + &#39;a {
+    println!(&quot;&#96;print&#95;ref&#96;: t is {:?}&quot;, t);
+}
+
+fn main() {
+    let x = 7;
+    let ref&#95;x = Ref(&amp;x);
+
+    print&#95;ref(&amp;ref&#95;x);
+    print(ref&#95;x);
+}</div>
 <div id="result"></div>
 </div>
 
-<p>The &quot;real&quot; compiler error is: &quot;<code>another_boxed_integer</code> does not live long
-enough&quot;. Let&#39;s analyze why this happens:</p>
-<ul>
-<li><code>stack_integer</code> has lifetime <code>&#39;a</code></li>
-<li><code>boxed_integer</code> has lifetime <code>&#39;b</code></li>
-<li><code>ref_to_box</code> has lifetime <code>&#39;c</code></li>
-<li><code>ref_to_another_box</code> has lifetime <code>&#39;d</code></li>
-<li><code>another_boxed_integer</code> has lifetime <code>&#39;e</code></li>
-<li><code>&#39;main</code> and <code>&#39;let</code> are the scopes of the blocks</li>
-<li>When a block scope ends, all the objects declared in it get destroyed<ul>
-<li><code>&#39;let</code> ends, and so does <code>&#39;e</code></li>
-<li><code>&#39;main</code> ends, and so do <code>&#39;a</code> <code>&#39;b</code> <code>&#39;c</code> and <code>&#39;d</code></li>
-</ul>
-</li>
-<li><code>ref_to_box</code> is a valid borrow, because<ul>
-<li><code>ref_to_box</code> has lifetime <code>&#39;c</code></li>
-<li><code>ref_to_box</code> points to an object with lifetime <code>&#39;b</code></li>
-<li><code>&#39;c</code> will never <em>outlive</em> <code>&#39;b</code> (this is expressed as <code>&#39;c &lt; &#39;b</code>)</li>
-<li>therefore <code>ref_to_box</code> will always point to valid data</li>
-</ul>
-</li>
-<li><code>ref_to_another_box</code> is an <em>invalid</em> borrow, because<ul>
-<li><code>ref_to_another_box</code> has lifetime <code>&#39;d</code></li>
-<li><code>ref_to_another_box</code> points to an object with lifetime <code>&#39;e</code></li>
-<li><code>&#39;d</code> outlives <code>&#39;e</code></li>
-<li>therefore <code>ref_to_another_box</code> can become a dangling pointer (it can point
-to destroyed data)<ul>
-<li>creation of dangling pointers is forbidden, so this borrow is invalid</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>The borrow checker will do this job for the programmer behind his/her back, to
-prevent him/her from (unintentionally) creating dangling pointers. Although,
-the programmer can be saved by the borrow checker without knowing what a
-lifetime is.</p>
-<p>The programmer doesn&#39;t need to explicitly annotate lifetimes (nor understand
-what are lifetimes), for the borrow checker to do its job in most cases. These
-are the cases where explicit lifetimes are required:</p>
-<ul>
-<li><a href="/scope/lifetime/fn.html">Functions that return references</a></li>
-<li><a href="/scope/lifetime/struct.html">Structs that hold references</a></li>
-</ul>
+<h3 id="see-also">See also:</h3>
+<p><a href="/generics.html">generics</a> and <a href="/generics/bounds.html">bounds in generics</a></p>
 
                     
                     </section>
@@ -2745,10 +2775,10 @@ are the cases where explicit lifetimes are required:</p>
         </div>
 
         
-        <a href="../../scope/lifetime.html" class="navigation navigation-prev " aria-label="Previous page: Lifetimes"><i class="fa fa-angle-left"></i></a>
+        <a href="../../scope/lifetime/struct.html" class="navigation navigation-prev " aria-label="Previous page: Structs"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../scope/lifetime/fn.html" class="navigation navigation-next " aria-label="Next page: Functions"><i class="fa fa-angle-right"></i></a>
+        <a href="../../scope/lifetime/lifetime_coercion.html" class="navigation navigation-next " aria-label="Next page: Coercion"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

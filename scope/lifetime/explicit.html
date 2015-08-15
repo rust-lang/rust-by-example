@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>`open` | Rust by Example</title>
+        <title>Explicit annotation | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../std_misc/file/create.html" />
+    <link rel="next" href="../../scope/lifetime/fn.html" />
     
     
-    <link rel="prev" href="../../std_misc/file.html" />
+    <link rel="prev" href="../../scope/lifetime.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.4.1" data-basepath="../.." data-revision="1439647433359">
+    <div class="book" data-level="14.4.1" data-basepath="../.." data-revision="1439647433359">
     
 
 <div class="book-summary">
@@ -1828,7 +1828,7 @@
                 
     
         
-        <li class="chapter " data-level="14.4.1" data-path="scope/lifetime/explicit.html">
+        <li class="chapter active" data-level="14.4.1" data-path="scope/lifetime/explicit.html">
             
                 
                     <a href="../../scope/lifetime/explicit.html">
@@ -2360,7 +2360,7 @@
                 
     
         
-        <li class="chapter active" data-level="17.4.1" data-path="std_misc/file/open.html">
+        <li class="chapter " data-level="17.4.1" data-path="std_misc/file/open.html">
             
                 
                     <a href="../../std_misc/file/open.html">
@@ -2716,51 +2716,78 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_126">
+                    <section class="normal" id="section-gitbook_98">
                     
-                        <h3 id="1741-open">17.4.1 <code>open</code></h3>
-<p>The <code>open</code> static method can be used to open a file in read-only mode.</p>
-<p>A <code>File</code> owns a resource, the file descriptor and takes care of closing the
-file when it is <code>drop</code>ed.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// open.rs</span>
-<span class="hljs-keyword">use</span> std::error::Error;
-<span class="hljs-keyword">use</span> std::fs::File;
-<span class="hljs-keyword">use</span> std::io::prelude::*;
-<span class="hljs-keyword">use</span> std::path::Path;
+                        <h3 id="1441-explicit-annotation">14.4.1 Explicit annotation</h3>
+<p>The borrow checker utilizes explicit lifetime annotations to reason about
+how long references should be valid. Failure to annotate lifetimes<sup><a href="#fn_1" id="reffn_1">1</a></sup> is akin
+to banning the borrow checker from validating borrows and so accordingly,
+annotation is mandatory.</p>
+<p>Since lifetimes <em>currently</em> have no explicit type or name associated with them,
+usage will require generics (similar to <a href="/fn/closures/anonymity.html">closures</a>). Additionally,
+a second meaning will be associated with this lifetime syntax. <code>foo&lt;&#39;a, &#39;b&gt;</code>
+states:</p>
+<ol>
+<li><code>&#39;a</code> and <code>&#39;b</code> will represent names for lifetimes with non-specifiable
+(generic) types.</li>
+<li>The lifetime of <code>foo</code> may not exceed either lifetimes <code>&#39;a</code> or <code>&#39;b</code>.</li>
+</ol>
+<p>Explicit annotation of a type has the form: <code>&amp;&#39;a T</code> where <code>&#39;a</code> has already
+been introduced. The less obvious of the rules is <strong>Rule 2</strong> whose
+importance can usually be directly deduced from borrowing rules. Consider the
+following example:</p>
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">// This example uses &#96;main()&#96; at the top so it can be read top to
+// bottom. &#96;main()&#96; is usually at the bottom.
+fn main() {
+    // Create variables which will be borrowed.
+    let (four, nine) = (4, 9);
 
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-comment">// Create a path to the desired file</span>
-    <span class="hljs-keyword">let</span> path = Path::new(<span class="hljs-string">"hello.txt"</span>);
-    <span class="hljs-keyword">let</span> display = path.display();
+    // Borrows (&#96;&amp;&#96;) of both variables are passed into the function.
+    // If a borrow is truly a borrow, the variable must be returned,
+    // otherwise a borrow would be transferring ownership. This means
+    // no matter what, &#42;any&#42; input which is borrowed via function or
+    // otherwise, &#42;must&#42; still exist after the borrower ceases. In
+    // other words, &#42;Rule 2&#42; must be true.
+    print&#95;refs(&amp;four, &amp;nine);
 
-    <span class="hljs-comment">// Open the path in read-only mode, returns `io::Result&lt;File&gt;`</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> file = <span class="hljs-keyword">match</span> File::open(&amp;path) {
-        <span class="hljs-comment">// The `description` method of `io::Error` returns a string that</span>
-        <span class="hljs-comment">// describes the error</span>
-        Err(why) =&gt; panic!(<span class="hljs-string">"couldn't open {}: {}"</span>, display,
-                                                   Error::description(&amp;why)),
-        Ok(file) =&gt; file,
-    };
-
-    <span class="hljs-comment">// Read the file contents into a string, returns `io::Result&lt;usize&gt;`</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> s = String::new();
-    <span class="hljs-keyword">match</span> file.read_to_string(&amp;<span class="hljs-keyword">mut</span> s) {
-        Err(why) =&gt; panic!(<span class="hljs-string">"couldn't read {}: {}"</span>, display,
-                                                   Error::description(&amp;why)),
-        Ok(<span class="hljs-number">_</span>) =&gt; <span class="hljs-built_in">print!</span>(<span class="hljs-string">"{} contains:\n{}"</span>, display, s),
-    }
-
-    <span class="hljs-comment">// `file` goes out of scope, and the "hello.txt" file gets closed</span>
+    // Note that there is no input even though the function specifies
+    // a lifetime. The sizedness of that lifetime will be determined
+    // by the caller (which is here) from available lifetimes (scopes).
+    // Any lifetime chosen will then be larger than that of the function.
+    failed&#95;borrow();
 }
-</code></pre>
-<p>Here&#39;s the expected successful output:</p>
-<pre><code>$ echo &quot;Hello World!&quot; &gt; hello.txt
-$ rustc open.rs &amp;&amp; ./open
-hello.txt contains:
-Hello World!
-</code></pre><p>(You are encouraged to test the previous example under different failure
-conditions: <code>hello.txt</code> doesn&#39;t exist, or <code>hello.txt</code> is not readable,
-etc.)</p>
+
+// &#96;print&#95;refs&#96; takes two references to &#96;i32&#96; which have different
+// lifetimes &#96;&#39;a&#96; and &#96;&#39;b&#96;. These two lifetimes must both be at
+// least as long as the function &#96;print&#95;refs&#96;.
+fn print&#95;refs&lt;&#39;a, &#39;b&gt;(x: &amp;&#39;a i32, y: &amp;&#39;b i32) {
+    println!(&quot;x is {} and y is {}&quot;, x, y);
+}
+
+// There are no references to force &#96;&#39;a&#96; to be larger than the
+// function yet, &#96;&#39;a&#96; remains larger than the function.
+fn failed&#95;borrow&lt;&#39;a&gt;() {
+    let &#95;x = 12;
+
+    // Attempting to use the lifetime &#96;&#39;a&#96; as an explicit type
+    // annotation inside the function will fail because the
+    // lifetime of &#96;&amp;&#95;x&#96; is smaller than &#96;y&#96; has. A small lifetime
+    // cannot be coerced into a larger one.
+    //
+    //let y: &amp;&#39;a i32 = &amp;&#95;x;
+    // ERROR: &#96;&#95;x&#96; does not live long enough
+}</div>
+<div id="result"></div>
+</div>
+
+<blockquote id="fn_1">
+<sup>1</sup>. <a href="/scope/lifetime/elision.html">elision</a> implicitly annotates lifetimes and so is different.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<h3 id="see-also">See also:</h3>
+<p><a href="/generics.html">generics</a> and <a href="/fn/closures.html">closures</a></p>
 
                     
                     </section>
@@ -2771,10 +2798,10 @@ etc.)</p>
         </div>
 
         
-        <a href="../../std_misc/file.html" class="navigation navigation-prev " aria-label="Previous page: File I/O"><i class="fa fa-angle-left"></i></a>
+        <a href="../../scope/lifetime.html" class="navigation navigation-prev " aria-label="Previous page: Lifetimes"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../std_misc/file/create.html" class="navigation navigation-next " aria-label="Next page: `create`"><i class="fa fa-angle-right"></i></a>
+        <a href="../../scope/lifetime/fn.html" class="navigation navigation-next " aria-label="Next page: Functions"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

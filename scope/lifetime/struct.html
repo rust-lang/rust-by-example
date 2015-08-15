@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../scope/lifetime/static_lifetime.html" />
+    <link rel="next" href="../../scope/lifetime/lifetime_bounds.html" />
     
     
-    <link rel="prev" href="../../scope/lifetime/fn.html" />
+    <link rel="prev" href="../../scope/lifetime/methods.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.3" data-basepath="../.." data-revision="1439644004832">
+    <div class="book" data-level="14.4.4" data-basepath="../.." data-revision="1439647433359">
     
 
 <div class="book-summary">
@@ -1828,15 +1828,15 @@
                 
     
         
-        <li class="chapter " data-level="14.4.1" data-path="scope/lifetime/borrow.html">
+        <li class="chapter " data-level="14.4.1" data-path="scope/lifetime/explicit.html">
             
                 
-                    <a href="../../scope/lifetime/borrow.html">
+                    <a href="../../scope/lifetime/explicit.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.4.1.</b>
                         
-                         The borrow checker
+                         Explicit annotation
                     </a>
                 
             
@@ -1860,13 +1860,29 @@
         </li>
     
         
-        <li class="chapter active" data-level="14.4.3" data-path="scope/lifetime/struct.html">
+        <li class="chapter " data-level="14.4.3" data-path="scope/lifetime/methods.html">
+            
+                
+                    <a href="../../scope/lifetime/methods.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.3.</b>
+                        
+                         Methods
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="14.4.4" data-path="scope/lifetime/struct.html">
             
                 
                     <a href="../../scope/lifetime/struct.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>14.4.3.</b>
+                            <b>14.4.4.</b>
                         
                          Structs
                     </a>
@@ -1876,15 +1892,63 @@
         </li>
     
         
-        <li class="chapter " data-level="14.4.4" data-path="scope/lifetime/static_lifetime.html">
+        <li class="chapter " data-level="14.4.5" data-path="scope/lifetime/lifetime_bounds.html">
+            
+                
+                    <a href="../../scope/lifetime/lifetime_bounds.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.5.</b>
+                        
+                         Bounds
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.6" data-path="scope/lifetime/lifetime_coercion.html">
+            
+                
+                    <a href="../../scope/lifetime/lifetime_coercion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.6.</b>
+                        
+                         Coercion
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.7" data-path="scope/lifetime/static_lifetime.html">
             
                 
                     <a href="../../scope/lifetime/static_lifetime.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>14.4.4.</b>
+                            <b>14.4.7.</b>
                         
                          static
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.8" data-path="scope/lifetime/elision.html">
+            
+                
+                    <a href="../../scope/lifetime/elision.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.8.</b>
+                        
+                         elision
                     </a>
                 
             
@@ -2652,48 +2716,51 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_101">
+                    <section class="normal" id="section-gitbook_104">
                     
-                        <h3 id="1443-structs">14.4.3 Structs</h3>
-<p>Explicit lifetimes are also required in structs that hold references.</p>
+                        <h3 id="1444-structs">14.4.4 Structs</h3>
+<p>Annotation of lifetimes in structures are also similar to functions:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// First attempt: No explicit lifetimes
-// Error! Compiler needs explicit lifetime
-//struct Singleton {
-    //one: &amp;mut i32,
-//}
-// TODO ^ Try uncommenting this struct
+<div id="editor">// A type &#96;Borrowed&#96; which houses a reference to an
+// &#96;i32&#96;. This reference must outlive the structure.
+#[derive(Debug)]
+struct Borrowed&lt;&#39;a&gt;(&amp;&#39;a i32);
 
-// Second attempt: Add lifetimes to all the references
-struct Pair&lt;&#39;a, &#39;b&gt; {
-    one: &amp;&#39;a mut i32,
-    two: &amp;&#39;b mut i32,
+// Similarly, both references must outlive this structure.
+#[derive(Debug)]
+struct NamedBorrowed&lt;&#39;a&gt; {
+    x: &amp;&#39;a i32,
+    y: &amp;&#39;a i32,
+}
+
+// An enum which is either an &#96;i32&#96; or a reference to one.
+#[derive(Debug)]
+enum Either&lt;&#39;a&gt; {
+    Num(i32),
+    Ref(&amp;&#39;a i32),
 }
 
 fn main() {
-    // Let us say that &#96;one&#96; has lifetime &#96;o&#96;
-    let mut one = 1;
+    let x = 18;
+    let y = 15;
 
-    {
-        // And that &#96;two&#96; has lifetime &#96;t&#96;
-        // &#96;two&#96; has a shorter (and different) lifetime than &#96;one&#96; (&#96;&#39;t &lt; &#39;o&#96;)
-        let mut two = 2;
+    let single = Borrowed(&amp;x);
+    let double = NamedBorrowed { x: &amp;x, y: &amp;y };
+    let reference = Either::Ref(&amp;x);
+    let number    = Either::Num(y);
 
-        println!(&quot;Before: ({}, {})&quot;, one, two);
-
-        // &#96;Pair&#96; gets specialized for &#96;&#39;a = &#39;o&#96; and &#96;&#39;b = &#39;t&#96;
-        let pair = Pair { one: &amp;mut one, two: &amp;mut two };
-
-        &#42;pair.one = 2;
-        &#42;pair.two = 1;
-
-        println!(&quot;After: ({}, {})&quot;, pair.one, pair.two);
-    }
+    println!(&quot;x is borrowed in {:?}&quot;, single);
+    println!(&quot;x and y are borrowed in {:?}&quot;, double);
+    println!(&quot;x is borrowed in {:?}&quot;, reference);
+    println!(&quot;y is &#42;not&#42; borrowed in {:?}&quot;, number);
 }</div>
 <div id="result"></div>
 </div>
+
+<h3 id="see-also">See also:</h3>
+<p><a href="/custom_types/structs.html"><code>structs</code></a></p>
 
                     
                     </section>
@@ -2704,10 +2771,10 @@ fn main() {
         </div>
 
         
-        <a href="../../scope/lifetime/fn.html" class="navigation navigation-prev " aria-label="Previous page: Functions"><i class="fa fa-angle-left"></i></a>
+        <a href="../../scope/lifetime/methods.html" class="navigation navigation-prev " aria-label="Previous page: Methods"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../scope/lifetime/static_lifetime.html" class="navigation navigation-next " aria-label="Next page: static"><i class="fa fa-angle-right"></i></a>
+        <a href="../../scope/lifetime/lifetime_bounds.html" class="navigation navigation-next " aria-label="Next page: Bounds"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

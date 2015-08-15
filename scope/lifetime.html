@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="../scope/lifetime/borrow.html" />
+    <link rel="next" href="../scope/lifetime/explicit.html" />
     
     
     <link rel="prev" href="../scope/borrow/ref.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4" data-basepath=".." data-revision="1439644004832">
+    <div class="book" data-level="14.4" data-basepath=".." data-revision="1439647433359">
     
 
 <div class="book-summary">
@@ -1828,15 +1828,15 @@
                 
     
         
-        <li class="chapter " data-level="14.4.1" data-path="scope/lifetime/borrow.html">
+        <li class="chapter " data-level="14.4.1" data-path="scope/lifetime/explicit.html">
             
                 
-                    <a href="../scope/lifetime/borrow.html">
+                    <a href="../scope/lifetime/explicit.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.4.1.</b>
                         
-                         The borrow checker
+                         Explicit annotation
                     </a>
                 
             
@@ -1860,13 +1860,29 @@
         </li>
     
         
-        <li class="chapter " data-level="14.4.3" data-path="scope/lifetime/struct.html">
+        <li class="chapter " data-level="14.4.3" data-path="scope/lifetime/methods.html">
+            
+                
+                    <a href="../scope/lifetime/methods.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.3.</b>
+                        
+                         Methods
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.4" data-path="scope/lifetime/struct.html">
             
                 
                     <a href="../scope/lifetime/struct.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>14.4.3.</b>
+                            <b>14.4.4.</b>
                         
                          Structs
                     </a>
@@ -1876,15 +1892,63 @@
         </li>
     
         
-        <li class="chapter " data-level="14.4.4" data-path="scope/lifetime/static_lifetime.html">
+        <li class="chapter " data-level="14.4.5" data-path="scope/lifetime/lifetime_bounds.html">
+            
+                
+                    <a href="../scope/lifetime/lifetime_bounds.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.5.</b>
+                        
+                         Bounds
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.6" data-path="scope/lifetime/lifetime_coercion.html">
+            
+                
+                    <a href="../scope/lifetime/lifetime_coercion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.6.</b>
+                        
+                         Coercion
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.7" data-path="scope/lifetime/static_lifetime.html">
             
                 
                     <a href="../scope/lifetime/static_lifetime.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>14.4.4.</b>
+                            <b>14.4.7.</b>
                         
                          static
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.8" data-path="scope/lifetime/elision.html">
+            
+                
+                    <a href="../scope/lifetime/elision.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.8.</b>
+                        
+                         elision
                     </a>
                 
             
@@ -2652,37 +2716,46 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_100">
+                    <section class="normal" id="section-gitbook_105">
                     
                         <h2 id="144-lifetimes">14.4 Lifetimes</h2>
-<p>The compiler enforces valid borrowing using its borrow checker. To accomplish
-this, it keeps track of the scope of blocks.</p>
-<p>The lifetime of an object starts when the object is created and ends when it
-goes out of scope (i.e. it gets destroyed, because of the RAII discipline).</p>
-<p>A lifetime looks like this: <code>&#39;burrito</code>, which reads as: &quot;the lifetime burrito&quot;.</p>
-<p>All references actually have a type signature of the form <code>&amp;&#39;a T</code>, where
-<code>&#39;a</code> is the lifetime of the <em>referenced</em> object. The compiler takes care of
-inserting the lifetime part <code>&#39;a</code> so we can simply type annotate references with
-<code>&amp;T</code>.</p>
-<p>For example:</p>
-<pre><code class="lang-rust"><span class="hljs-keyword">let</span> integer: <span class="hljs-keyword">int</span> = <span class="hljs-number">5</span>;
-<span class="hljs-keyword">let</span> ref_to_int: &amp;<span class="hljs-keyword">int</span> = &amp;integer;
-</code></pre>
-<ul>
-<li><code>integer</code> has lifetime <code>&#39;i</code> (it could be any other name, like <code>&#39;foo</code>)</li>
-<li><code>ref_to_int</code> has lifetime <code>&#39;r</code> (references also have lifetimes!)</li>
-<li><code>ref_to_int</code> type signature actually is <code>&amp;&#39;i int</code> (the compiler inserts the
-<code>&#39;i</code> for us)</li>
-<li>The type signature <code>&amp;&#39;i int</code> reads as:<ul>
-<li><code>&amp;</code>: reference to an</li>
-<li><code>int</code>: integer with</li>
-<li><code>&#39;i</code>: lifetime <code>i</code> (<code>i</code> is the lifetime of <code>integer</code>!)</li>
-</ul>
-</li>
-</ul>
-<p>Because the compiler keeps track of the lifetime of referenced objects in the
-type system, it can avoid several memory bugs.</p>
-<p>Haven&#39;t grokked what a lifetime is yet? Don&#39;t dismay! See the next page.</p>
+<p>A <em>lifetime</em> is a construct the compiler (also called the borrow checker)
+uses to ensure all borrows are valid. Specifically, a lifetime starts when
+a variable is created and ends when it is destroyed. It can be visualized as
+vertical distance but since size is only relevant for subsets and supersets,
+scope is considered the more appropriate descriptive term.</p>
+<p>Borrowing (via <code>&amp;</code> for example) creates new lifetimes. A borrow is valid
+as long as the borrow ends before (inside) the lender is destroyed.</p>
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">// Lifetimes are annotated with lines denoting when each variable
+// is created and destroyed. &#96;i&#96; has the largest lifetime because it&#39;s
+// scope entirely encloses both &#96;borrow1&#96; and &#96;borrow2&#96;. The sizedness
+// of &#96;borrow1&#96; compared with &#96;borrow2&#96; is irrelevant since they are
+// disjoint.
+fn main() {
+    let i = 3; // Lifetime for &#96;i&#96; starts. ───────┐
+    //                                            │
+    { //                                          │
+        let borrow1 = &i; // &#96;borrow1&#96; starts. ──┐│
+        //                                       ││
+        println!(&quot;borrow1: {}&quot;, borrow1); //     ││
+    } // &#96;borrow1 ends. ─────────────────────────┘│
+    //                                            │
+    //                                            │
+    { //                                          │
+        let borrow2 = &i; // &#96;borrow2&#96; starts. ──┐│
+        //                                       ││
+        println!(&quot;borrow2: {}&quot;, borrow2); //     ││
+    } // &#96;borrow2&#96; ends. ────────────────────────┘│
+    //                                            │
+}   // Lifetime ends. ────────────────────────────┘</div>
+<div id="result"></div>
+</div>
+
+<p>You may have noted that no names or types are assigned to label lifetimes.
+This restricts how lifetimes will be able to be used as we will see.</p>
 
                     
                     </section>
@@ -2696,7 +2769,7 @@ type system, it can avoid several memory bugs.</p>
         <a href="../scope/borrow/ref.html" class="navigation navigation-prev " aria-label="Previous page: The ref pattern"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../scope/lifetime/borrow.html" class="navigation navigation-next " aria-label="Next page: The borrow checker"><i class="fa fa-angle-right"></i></a>
+        <a href="../scope/lifetime/explicit.html" class="navigation navigation-next " aria-label="Next page: Explicit annotation"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

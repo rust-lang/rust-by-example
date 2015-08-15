@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../trait.html" />
+    <link rel="next" href="../../scope/lifetime/elision.html" />
     
     
-    <link rel="prev" href="../../scope/lifetime/struct.html" />
+    <link rel="prev" href="../../scope/lifetime/lifetime_coercion.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.4" data-basepath="../.." data-revision="1439644004832">
+    <div class="book" data-level="14.4.7" data-basepath="../.." data-revision="1439647433359">
     
 
 <div class="book-summary">
@@ -1828,15 +1828,15 @@
                 
     
         
-        <li class="chapter " data-level="14.4.1" data-path="scope/lifetime/borrow.html">
+        <li class="chapter " data-level="14.4.1" data-path="scope/lifetime/explicit.html">
             
                 
-                    <a href="../../scope/lifetime/borrow.html">
+                    <a href="../../scope/lifetime/explicit.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.4.1.</b>
                         
-                         The borrow checker
+                         Explicit annotation
                     </a>
                 
             
@@ -1860,13 +1860,29 @@
         </li>
     
         
-        <li class="chapter " data-level="14.4.3" data-path="scope/lifetime/struct.html">
+        <li class="chapter " data-level="14.4.3" data-path="scope/lifetime/methods.html">
+            
+                
+                    <a href="../../scope/lifetime/methods.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.3.</b>
+                        
+                         Methods
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.4" data-path="scope/lifetime/struct.html">
             
                 
                     <a href="../../scope/lifetime/struct.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>14.4.3.</b>
+                            <b>14.4.4.</b>
                         
                          Structs
                     </a>
@@ -1876,15 +1892,63 @@
         </li>
     
         
-        <li class="chapter active" data-level="14.4.4" data-path="scope/lifetime/static_lifetime.html">
+        <li class="chapter " data-level="14.4.5" data-path="scope/lifetime/lifetime_bounds.html">
+            
+                
+                    <a href="../../scope/lifetime/lifetime_bounds.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.5.</b>
+                        
+                         Bounds
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.6" data-path="scope/lifetime/lifetime_coercion.html">
+            
+                
+                    <a href="../../scope/lifetime/lifetime_coercion.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.6.</b>
+                        
+                         Coercion
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="14.4.7" data-path="scope/lifetime/static_lifetime.html">
             
                 
                     <a href="../../scope/lifetime/static_lifetime.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>14.4.4.</b>
+                            <b>14.4.7.</b>
                         
                          static
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="14.4.8" data-path="scope/lifetime/elision.html">
+            
+                
+                    <a href="../../scope/lifetime/elision.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.8.</b>
+                        
+                         elision
                     </a>
                 
             
@@ -2652,19 +2716,27 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_99">
+                    <section class="normal" id="section-gitbook_103">
                     
-                        <h3 id="1444-static">14.4.4 static</h3>
+                        <h3 id="1447-static">14.4.7 static</h3>
 <p>A <code>&#39;static</code> lifetime is one which lasts for the lifetime of the running
 program. There are two ways to make a variable with <code>&#39;static</code> lifetime:</p>
 <ul>
 <li>Make a <code>&quot;string&quot;</code> literal which has type: <code>&amp;&#39;static str</code>.</li>
 <li>Make a constant with the <code>static</code> declaration.</li>
 </ul>
+<p><code>statics</code> may also be coerced to smaller lifetimes since they are clearly
+larger than most:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">static NUM: i32 = 18;
+
+// Return a reference to &#96;NUM&#96; which is coerced to the
+// lifetime of &#96;&#39;a&#96; which was used as an input.
+fn coerce&#95;static&lt;&#39;a&gt;(&#95;: &amp;&#39;a i32) -&gt; &amp;&#39;a i32 {
+    &amp;NUM
+}
 
 fn main() {
     {
@@ -2678,6 +2750,13 @@ fn main() {
 
     println!(&quot;but now it&#39;s gone.&quot;);
     println!(&quot;NUM: {} is still around though!&quot;, NUM);
+
+    {
+        let i = 9;
+        let coerced&#95;num = coerce&#95;static(&amp;i);
+
+        println!(&quot;coerced&#95;num: {}&quot;, coerced&#95;num);
+    }
 }</div>
 <div id="result"></div>
 </div>
@@ -2694,10 +2773,10 @@ fn main() {
         </div>
 
         
-        <a href="../../scope/lifetime/struct.html" class="navigation navigation-prev " aria-label="Previous page: Structs"><i class="fa fa-angle-left"></i></a>
+        <a href="../../scope/lifetime/lifetime_coercion.html" class="navigation navigation-prev " aria-label="Previous page: Coercion"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../trait.html" class="navigation navigation-next " aria-label="Next page: Traits"><i class="fa fa-angle-right"></i></a>
+        <a href="../../scope/lifetime/elision.html" class="navigation navigation-next " aria-label="Next page: elision"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

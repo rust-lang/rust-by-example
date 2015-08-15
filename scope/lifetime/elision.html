@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>`open` | Rust by Example</title>
+        <title>elision | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../std_misc/file/create.html" />
+    <link rel="next" href="../../trait.html" />
     
     
-    <link rel="prev" href="../../std_misc/file.html" />
+    <link rel="prev" href="../../scope/lifetime/static_lifetime.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.4.1" data-basepath="../.." data-revision="1439647433359">
+    <div class="book" data-level="14.4.8" data-basepath="../.." data-revision="1439647433359">
     
 
 <div class="book-summary">
@@ -1940,7 +1940,7 @@
         </li>
     
         
-        <li class="chapter " data-level="14.4.8" data-path="scope/lifetime/elision.html">
+        <li class="chapter active" data-level="14.4.8" data-path="scope/lifetime/elision.html">
             
                 
                     <a href="../../scope/lifetime/elision.html">
@@ -2360,7 +2360,7 @@
                 
     
         
-        <li class="chapter active" data-level="17.4.1" data-path="std_misc/file/open.html">
+        <li class="chapter " data-level="17.4.1" data-path="std_misc/file/open.html">
             
                 
                     <a href="../../std_misc/file/open.html">
@@ -2716,51 +2716,45 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_126">
+                    <section class="normal" id="section-gitbook_97">
                     
-                        <h3 id="1741-open">17.4.1 <code>open</code></h3>
-<p>The <code>open</code> static method can be used to open a file in read-only mode.</p>
-<p>A <code>File</code> owns a resource, the file descriptor and takes care of closing the
-file when it is <code>drop</code>ed.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// open.rs</span>
-<span class="hljs-keyword">use</span> std::error::Error;
-<span class="hljs-keyword">use</span> std::fs::File;
-<span class="hljs-keyword">use</span> std::io::prelude::*;
-<span class="hljs-keyword">use</span> std::path::Path;
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-comment">// Create a path to the desired file</span>
-    <span class="hljs-keyword">let</span> path = Path::new(<span class="hljs-string">"hello.txt"</span>);
-    <span class="hljs-keyword">let</span> display = path.display();
-
-    <span class="hljs-comment">// Open the path in read-only mode, returns `io::Result&lt;File&gt;`</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> file = <span class="hljs-keyword">match</span> File::open(&amp;path) {
-        <span class="hljs-comment">// The `description` method of `io::Error` returns a string that</span>
-        <span class="hljs-comment">// describes the error</span>
-        Err(why) =&gt; panic!(<span class="hljs-string">"couldn't open {}: {}"</span>, display,
-                                                   Error::description(&amp;why)),
-        Ok(file) =&gt; file,
-    };
-
-    <span class="hljs-comment">// Read the file contents into a string, returns `io::Result&lt;usize&gt;`</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> s = String::new();
-    <span class="hljs-keyword">match</span> file.read_to_string(&amp;<span class="hljs-keyword">mut</span> s) {
-        Err(why) =&gt; panic!(<span class="hljs-string">"couldn't read {}: {}"</span>, display,
-                                                   Error::description(&amp;why)),
-        Ok(<span class="hljs-number">_</span>) =&gt; <span class="hljs-built_in">print!</span>(<span class="hljs-string">"{} contains:\n{}"</span>, display, s),
-    }
-
-    <span class="hljs-comment">// `file` goes out of scope, and the "hello.txt" file gets closed</span>
+                        <h3 id="1448-elision">14.4.8 elision</h3>
+<p>Some lifetime patterns are overwelmingly common and so they may be elided
+(dropped) and the borrow checker will implicitly add them. Elision exists
+solely because these patterns are common; saving typing and easing legibility.</p>
+<p>This section is brief and not comprehensive. See <a href="http://doc.rust-lang.org/book/lifetimes.html#lifetime-elision" target="_blank">lifetime elision</a>
+in the book for a more comprehensive treatment.</p>
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">// These two functions have essentially identical signatures
+// because the compiler implicitly adds the lifetimes to
+// the first.
+fn elide&#95;input(x: &amp;i32) {
+    println!(&quot;&#96;elide&#95;input&#96;: {}&quot;, x)
 }
-</code></pre>
-<p>Here&#39;s the expected successful output:</p>
-<pre><code>$ echo &quot;Hello World!&quot; &gt; hello.txt
-$ rustc open.rs &amp;&amp; ./open
-hello.txt contains:
-Hello World!
-</code></pre><p>(You are encouraged to test the previous example under different failure
-conditions: <code>hello.txt</code> doesn&#39;t exist, or <code>hello.txt</code> is not readable,
-etc.)</p>
+fn annotated&#95;input&lt;&#39;a&gt;(x: &amp;&#39;a i32) {
+    println!(&quot;&#96;annotated&#95;input&#96;: {}&quot;, x)
+}
+
+// Similarly, lifetimes are added implicitly to the first.
+fn elide&#95;pass(x: &amp;i32) -&gt; &amp;i32 { x }
+fn annotated&#95;pass&lt;&#39;a&gt;(x: &amp;&#39;a i32) -&gt; &amp;&#39;a i32 { x }
+
+fn main() {
+    let x = 3;
+
+    elide&#95;input(&amp;x);
+    annotated&#95;input(&amp;x);
+
+    println!(&quot;&#96;elide&#95;pass&#96;: {}&quot;, elide&#95;pass(&amp;x));
+    println!(&quot;&#96;annotated&#95;pass&#96;: {}&quot;, annotated&#95;pass(&amp;x));
+}</div>
+<div id="result"></div>
+</div>
+
+<h3 id="see-also">See also:</h3>
+<p><a href="http://doc.rust-lang.org/book/lifetimes.html#lifetime-elision" target="_blank">elision</a></p>
 
                     
                     </section>
@@ -2771,10 +2765,10 @@ etc.)</p>
         </div>
 
         
-        <a href="../../std_misc/file.html" class="navigation navigation-prev " aria-label="Previous page: File I/O"><i class="fa fa-angle-left"></i></a>
+        <a href="../../scope/lifetime/static_lifetime.html" class="navigation navigation-prev " aria-label="Previous page: static"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../std_misc/file/create.html" class="navigation navigation-next " aria-label="Next page: `create`"><i class="fa fa-angle-right"></i></a>
+        <a href="../../trait.html" class="navigation navigation-next " aria-label="Next page: Traits"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
