@@ -36,10 +36,15 @@ fn inspect(p: Person) {
 
 fn main() {
     let person = Person::Height(18);
+    let danny  = Person::Weight(10);
     // `to_owned()` creates an owned `String` from a string slice.
     let dave   = Person::Info { name: "Dave".to_owned(), height: 72 };
-    // ^ TODO: Try changing these to a different variants.
+    let john   = Person::Fat;
+    let larry  = Person::Skinny;
 
     inspect(person);
+    inspect(danny);
     inspect(dave);
+    inspect(john);
+    inspect(larry);
 }
