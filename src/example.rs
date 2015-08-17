@@ -37,7 +37,7 @@ impl Example {
             None => 1,
             Some(ref children) => 1 + children.iter()
                                               .map(|c| c.count())
-                                              .sum::<usize>(),
+                                              .fold(0, |sum, i| sum + i),
         }
     }
 

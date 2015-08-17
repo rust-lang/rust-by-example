@@ -159,7 +159,7 @@ function escapeHTML(unsafe) {
 function runProgram(program, callback) {
   var req = new XMLHttpRequest();
   var data = JSON.stringify({
-    version: "nightly",
+    version: "stable",
       optimize: "0",
       code: program
   });

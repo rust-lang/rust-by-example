@@ -1,5 +1,3 @@
-#![feature(iter_arith)]
-
 fn main() {
     println!("Find the sum of all the squared odd numbers under 1000");
     let upper = 1000;
@@ -27,7 +25,7 @@ fn main() {
         (0..).map(|n| n * n)             // All natural numbers squared
              .take_while(|&n| n < upper) // Below upper limit
              .filter(|n| is_odd(*n))     // That are odd
-             .sum();                     // Sum them
+             .fold(0, |sum, i| sum + i); // Sum them
     println!("functional style: {}", sum_of_squared_odd_numbers);
 }
 
