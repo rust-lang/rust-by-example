@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="3.2" data-basepath=".." data-revision="1439730644276">
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="1439773642268">
     
 
 <div class="book-summary">
@@ -2763,12 +2763,17 @@ fn inspect(p: Person) {
 
 fn main() {
     let person = Person::Height(18);
+    let danny  = Person::Weight(10);
     // &#96;to&#95;owned()&#96; creates an owned &#96;String&#96; from a string slice.
     let dave   = Person::Info { name: &quot;Dave&quot;.to&#95;owned(), height: 72 };
-    // ^ TODO: Try changing these to a different variants.
+    let john   = Person::Fat;
+    let larry  = Person::Skinny;
 
     inspect(person);
+    inspect(danny);
     inspect(dave);
+    inspect(john);
+    inspect(larry);
 }</div>
 <div id="result"></div>
 </div>
