@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.3" data-basepath=".." data-revision="1439852003995">
+    <div class="book" data-level="8.3" data-basepath=".." data-revision="1439853889924">
     
 
 <div class="book-summary">
@@ -1574,29 +1574,13 @@
         </li>
     
         
-        <li class="chapter " data-level="13.7.4" data-path="generics/assoc_items/consts.html">
-            
-                
-                    <a href="../generics/assoc_items/consts.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>13.7.4.</b>
-                        
-                         Associated consts
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="13.7.5" data-path="generics/assoc_items/testcase_add.html">
+        <li class="chapter " data-level="13.7.4" data-path="generics/assoc_items/testcase_add.html">
             
                 
                     <a href="../generics/assoc_items/testcase_add.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>13.7.5.</b>
+                            <b>13.7.4.</b>
                         
                          Testcase: Add
                     </a>
@@ -2520,22 +2504,6 @@
             
         </li>
     
-        
-        <li class="chapter " data-level="17.9" data-path="std_misc/simd.html">
-            
-                
-                    <a href="../std_misc/simd.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>17.9.</b>
-                        
-                         SIMD
-                    </a>
-                
-            
-            
-        </li>
-    
 
             </ul>
             
@@ -2584,22 +2552,6 @@
                             <b>18.2.</b>
                         
                          Testing
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="18.3" data-path="meta/bench.html">
-            
-                
-                    <a href="../meta/bench.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>18.3.</b>
-                        
-                         Benchmarking
                     </a>
                 
             
@@ -2725,9 +2677,7 @@ and lazy iterators give Rust its functional flavor.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#![feature(iter&#95;arith)]
-
-fn main() {
+<div id="editor">fn main() {
     println!(&quot;Find the sum of all the squared odd numbers under 1000&quot;);
     let upper = 1000;
 
@@ -2754,7 +2704,7 @@ fn main() {
         (0..).map(|n| n &#42; n)             // All natural numbers squared
              .take&#95;while(|&amp;n| n &lt; upper) // Below upper limit
              .filter(|n| is&#95;odd(&#42;n))     // That are odd
-             .sum();                     // Sum them
+             .fold(0, |sum, i| sum + i); // Sum them
     println!(&quot;functional style: {}&quot;, sum&#95;of&#95;squared&#95;odd&#95;numbers);
 }
 

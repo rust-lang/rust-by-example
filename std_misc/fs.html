@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.6" data-basepath=".." data-revision="1439852003995">
+    <div class="book" data-level="17.6" data-basepath=".." data-revision="1439853889924">
     
 
 <div class="book-summary">
@@ -1574,29 +1574,13 @@
         </li>
     
         
-        <li class="chapter " data-level="13.7.4" data-path="generics/assoc_items/consts.html">
-            
-                
-                    <a href="../generics/assoc_items/consts.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>13.7.4.</b>
-                        
-                         Associated consts
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="13.7.5" data-path="generics/assoc_items/testcase_add.html">
+        <li class="chapter " data-level="13.7.4" data-path="generics/assoc_items/testcase_add.html">
             
                 
                     <a href="../generics/assoc_items/testcase_add.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>13.7.5.</b>
+                            <b>13.7.4.</b>
                         
                          Testcase: Add
                     </a>
@@ -2520,22 +2504,6 @@
             
         </li>
     
-        
-        <li class="chapter " data-level="17.9" data-path="std_misc/simd.html">
-            
-                
-                    <a href="../std_misc/simd.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>17.9.</b>
-                        
-                         SIMD
-                    </a>
-                
-            
-            
-        </li>
-    
 
             </ul>
             
@@ -2584,22 +2552,6 @@
                             <b>18.2.</b>
                         
                          Testing
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="18.3" data-path="meta/bench.html">
-            
-                
-                    <a href="../meta/bench.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>18.3.</b>
-                        
-                         Benchmarking
                     </a>
                 
             
@@ -2716,14 +2668,12 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_121">
+                    <section class="normal" id="section-gitbook_126">
                     
                         <h2 id="176-filesystem-operations">17.6 Filesystem Operations</h2>
 <p>The <code>std::io::fs</code> module contains several functions that deal with the
 filesystem.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// fs.rs</span>
-#![feature(fs_walk)]
-
 <span class="hljs-keyword">use</span> std::fs;
 <span class="hljs-keyword">use</span> std::fs::{File, OpenOptions};
 <span class="hljs-keyword">use</span> std::io;
@@ -2798,16 +2748,6 @@ filesystem.</p>
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`ls a`"</span>);
     <span class="hljs-comment">// Read the contents of a directory, returns `io::Result&lt;Vec&lt;Path&gt;&gt;`</span>
     <span class="hljs-keyword">match</span> fs::read_dir(<span class="hljs-string">"a"</span>) {
-        Err(why) =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind()),
-        Ok(paths) =&gt; <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> paths {
-            <span class="hljs-built_in">println!</span>(<span class="hljs-string">"&gt; {:?}"</span>, path.unwrap().path());
-        },
-    }
-
-    <span class="hljs-built_in">println!</span>(<span class="hljs-string">"`walk a`"</span>);
-    <span class="hljs-comment">// Recursively walk over the contents of a directory, returns</span>
-    <span class="hljs-comment">// `Directories`, which implements the `Iterator&lt;Path&gt; trait</span>
-    <span class="hljs-keyword">match</span> fs::walk_dir(<span class="hljs-string">"a"</span>) {
         Err(why) =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">"! {:?}"</span>, why.kind()),
         Ok(paths) =&gt; <span class="hljs-keyword">for</span> path <span class="hljs-keyword">in</span> paths {
             <span class="hljs-built_in">println!</span>(<span class="hljs-string">"&gt; {:?}"</span>, path.unwrap().path());

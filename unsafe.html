@@ -20,7 +20,7 @@
     
     
     
-    <link rel="prev" href="./meta/bench.html" />
+    <link rel="prev" href="./meta/test.html" />
     
 
         
@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="19" data-basepath="." data-revision="1439852003995">
+    <div class="book" data-level="19" data-basepath="." data-revision="1439853889924">
     
 
 <div class="book-summary">
@@ -1572,29 +1572,13 @@
         </li>
     
         
-        <li class="chapter " data-level="13.7.4" data-path="generics/assoc_items/consts.html">
-            
-                
-                    <a href="./generics/assoc_items/consts.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>13.7.4.</b>
-                        
-                         Associated consts
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="13.7.5" data-path="generics/assoc_items/testcase_add.html">
+        <li class="chapter " data-level="13.7.4" data-path="generics/assoc_items/testcase_add.html">
             
                 
                     <a href="./generics/assoc_items/testcase_add.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>13.7.5.</b>
+                            <b>13.7.4.</b>
                         
                          Testcase: Add
                     </a>
@@ -2518,22 +2502,6 @@
             
         </li>
     
-        
-        <li class="chapter " data-level="17.9" data-path="std_misc/simd.html">
-            
-                
-                    <a href="./std_misc/simd.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>17.9.</b>
-                        
-                         SIMD
-                    </a>
-                
-            
-            
-        </li>
-    
 
             </ul>
             
@@ -2582,22 +2550,6 @@
                             <b>18.2.</b>
                         
                          Testing
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="18.3" data-path="meta/bench.html">
-            
-                
-                    <a href="./meta/bench.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>18.3.</b>
-                        
-                         Benchmarking
                     </a>
                 
             
@@ -2714,7 +2666,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_143">
+                    <section class="normal" id="section-gitbook_140">
                     
                         <h1 id="19-unsafe-operations">19 Unsafe operations</h1>
 <p>As an introduction to this section, to borrow from <a href="http://doc.rust-lang.org/master/guide-unsafe.html" target="_blank">the official docs</a>, &quot;one should try to
@@ -2756,28 +2708,6 @@ the same size and alignment:</p>
     }
 }
 </code></pre>
-<h3 id="inline-assembly">Inline Assembly</h3>
-<p>Inline assembly functions very similarly to the inline assembly of C, which
-makes sense considering its implementation is not handled by rust, rather by
-the LLVM.  It allows for direct access to assembly manipulation, which can
-massively increase speed, but it can also decrease portability and stability.
-In most cases the compiler will optimize your rust code to better assembly than
-you could write, so in most instances it is not worth it. The first parameter
-of asm!() is the format of the assembly, the parameter following the colon is
-the output variable, and the parameter(s) following that are the input
-variables.</p>
-<p><strong>Note</strong>: <code>#![feature(asm)]</code> is currently required to use inline assembly.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// asm.rs</span>
-#![feature(asm)]
-
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">add</span></span>(a: <span class="hljs-keyword">i32</span>, b: <span class="hljs-keyword">i32</span>) -&gt; <span class="hljs-keyword">i32</span> {
-    <span class="hljs-keyword">let</span> sum: <span class="hljs-keyword">i32</span>;
-    <span class="hljs-keyword">unsafe</span> {
-        asm!(<span class="hljs-string">"add $2, $1; mov $1, $0"</span> : <span class="hljs-string">"=r"</span>(sum) : <span class="hljs-string">"r"</span>(a), <span class="hljs-string">"r"</span>(b));
-    }
-    sum
-}
-</code></pre>
 
                     
                     </section>
@@ -2788,7 +2718,7 @@ variables.</p>
         </div>
 
         
-        <a href="./meta/bench.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Benchmarking"><i class="fa fa-angle-left"></i></a>
+        <a href="./meta/test.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Testing"><i class="fa fa-angle-left"></i></a>
         
         
     </div>
