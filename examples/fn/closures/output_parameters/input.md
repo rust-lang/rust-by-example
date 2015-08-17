@@ -8,6 +8,9 @@ The valid types for returns are slightly different than before:
 
 * `Fn`: normal
 * `FnMut`: normal
+* `FnOnce`: There is some unsual things at play here, so the [`FnBox`][fnbox]
+  type is currently needed, and is unstable. This is expected to change in
+  the future.
 
 Beyond this, the `move` keyword must be used which signals that all captures
 occur by value. This is required because any captures by reference would be
@@ -23,4 +26,5 @@ closure.
 [box]: /std/box.html
 [fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
 [fnmut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
+[fnbox]: http://doc.rust-lang.org/std/boxed/trait.FnBox.html 
 [generics]: /generics.html
