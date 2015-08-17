@@ -106,7 +106,6 @@
             { "id": "the_problem", "title": "The problem", "children": null },
             { "id": "types", "title": "Associated types", "children": null },
             { "id": "constrain", "title": "Constraining", "children": null },
-            { "id": "consts", "title": "Associated consts", "children": null },
             { "id": "testcase_add", "title": "Testcase: Add", "children": null }
         ] },
         { "id": "phantom", "title": "Phantom types", "children": [
@@ -173,13 +172,11 @@
         { "id": "arg", "title": "Program arguments", "children": [
             { "id": "matching", "title": "Argument parsing", "children": null }
         ] },
-        { "id": "ffi", "title": "Foreign Function Interface", "children": null  },
-        { "id": "simd", "title": "SIMD", "children": null  }
+        { "id": "ffi", "title": "Foreign Function Interface", "children": null  }
     ] },
     { "id": "meta", "title": "Meta", "children": [
         { "id": "doc", "title": "Documentation", "children": null },
-        { "id": "test", "title": "Testing", "children": null  },
-        { "id": "bench", "title": "Benchmarking", "children": null  }
+        { "id": "test", "title": "Testing", "children": null  }
     ] },
     { "id": "unsafe", "title": "Unsafe operations", "children": null  }
 ]
