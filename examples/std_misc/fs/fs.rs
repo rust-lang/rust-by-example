@@ -1,5 +1,3 @@
-#![feature(fs_walk)]
-
 use std::fs;
 use std::fs::{File, OpenOptions};
 use std::io;
@@ -74,16 +72,6 @@ fn main() {
     println!("`ls a`");
     // Read the contents of a directory, returns `io::Result<Vec<Path>>`
     match fs::read_dir("a") {
-        Err(why) => println!("! {:?}", why.kind()),
-        Ok(paths) => for path in paths {
-            println!("> {:?}", path.unwrap().path());
-        },
-    }
-
-    println!("`walk a`");
-    // Recursively walk over the contents of a directory, returns
-    // `Directories`, which implements the `Iterator<Path> trait
-    match fs::walk_dir("a") {
         Err(why) => println!("! {:?}", why.kind()),
         Ok(paths) => for path in paths {
             println!("> {:?}", path.unwrap().path());

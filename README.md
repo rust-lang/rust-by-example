@@ -13,7 +13,7 @@ See [CONTRIBUTING.md][how-to-contribute].
 
 ### Debian (Ubuntu) prerequisites
 
-Install Rust [nightly](http://www.rust-lang.org/install.html) and
+Install [Rust](http://www.rust-lang.org/install.html) and
 run:
 
 ```

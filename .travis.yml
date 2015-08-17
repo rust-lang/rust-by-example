@@ -2,7 +2,7 @@ language: node_js
 sudo: false
 
 install:
-  - curl -L https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly --yes --prefix=$PWD --disable-sudo --disable-ldconfig
+  - curl -L https://static.rust-lang.org/rustup.sh | sh -s -- --yes --prefix=$PWD --disable-sudo --disable-ldconfig
   - export PATH=$PATH:$PWD/bin
   - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/lib
 

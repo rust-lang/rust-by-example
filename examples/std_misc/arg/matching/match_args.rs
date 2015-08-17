@@ -1,5 +1,3 @@
-#![feature(slice_patterns)]
-
 use std::env;
 
 fn increase(number: i32) {
@@ -21,21 +19,23 @@ match_args {{increase|decrease}} <integer>
 fn main() {
     let args: Vec<String> = env::args().collect();
 
-    match &args[..] {
+    match args.len() {
         // no arguments passed
-        [ref name] => {
-            println!("My name is '{}'. Try passing some arguments!", name);
+        1 => {
+            println!("My name is 'match_args'. Try passing some arguments!");
         },
         // one argument passed
-        [_, ref string] => {
-            if string == &"42" {
+        2 => {
+            if &42 == &args[1].parse().unwrap() {
                 println!("This is the answer!");
             } else {
                 println!("This is not the answer.");
             }
         },
         // one command and one argument passed
-        [_, ref cmd, ref num] => {
+        3 => {
+            let cmd = &args[1];
+            let num = &args[2];
             // parse the number
             let number: i32 = match num.parse() {
                 Ok(n) => {

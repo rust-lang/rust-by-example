@@ -11,9 +11,6 @@ for this site][home].
 Be sure to have Rust [installed][install] and the [docs][std] at hand, and
 let's start!
 
-*Note*: Rust by Example uses the latest nightly build. If you're
-following along on your computer, make sure to have it installed.
-
 [rust]: http://www.rust-lang.org/
 [install]: http://www.rust-lang.org/install.html
 [std]: http://doc.rust-lang.org/std/

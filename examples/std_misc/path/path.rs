@@ -1,7 +1,4 @@
-#![feature(path_ext)]
-
 use std::path::Path;
-use std::fs::PathExt;
 
 fn main() {
     // Create a `Path` from an `&'static str`
@@ -9,21 +6,6 @@ fn main() {
 
     // The `display` method returns a `Show`able structure
     let display = path.display();
-
-    // Check if the path exists
-    if path.exists() {
-        println!("{} exists", display);
-    }
-
-    // Check if the path is a file
-    if path.is_file() {
-        println!("{} is a file", display);
-    }
-
-    // Check if the path is a directory
-    if path.is_dir() {
-        println!("{} is a directory", display);
-    }
 
     // `join` merges a path with a byte container using the OS specific
     // separator, and returns the new path

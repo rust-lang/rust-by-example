@@ -1,8 +1,5 @@
-#![feature(iter_arith)]
-
 #![deny(warnings)]
 #![allow(deprecated)]
-#![feature(plugin)]
 
 extern crate regex;
 extern crate rustc_serialize;
