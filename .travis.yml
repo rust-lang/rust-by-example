@@ -1,10 +1,15 @@
-language: node_js
+language: rust
 sudo: false
 
+rust:
+  - stable
+  - beta
+  - nightly
+
 install:
-  - curl -L https://static.rust-lang.org/rustup.sh | sh -s -- --yes --prefix=$PWD --disable-sudo --disable-ldconfig
-  - export PATH=$PATH:$PWD/bin
-  - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/lib
+  - curl https://nodejs.org/dist/v0.12.7/node-v0.12.7-sunos-x64.tar.gz > node.tar.gz
+  - tar xf node.tar.gz
+  - export PATH=$PATH:$pwd/node-v0.12.7-linux-x64/bin
 
 script:
   - rustc --version
