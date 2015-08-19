@@ -1,4 +1,4 @@
-Rust provides a mechanism for spawning native OS threads via the `scoped`
+Rust provides a mechanism for spawning native OS threads via the `spawn`
 function, the argument of this function is a moving closure.
 
 {threads.play}
