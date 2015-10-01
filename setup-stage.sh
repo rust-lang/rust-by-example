@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ace_repository='https://github.com/ajaxorg/ace-builds/trunk/src-min-noconflict'
+ace_repository='https://github.com/ajaxorg/ace-builds/trunk/src-min'
 ace_playpen_local='node_modules/gitbook-plugin-rust-playpen'
 
 mkdir -p bin
