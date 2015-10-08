@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2.2.1" data-basepath="../../.." data-revision="1444222667722">
+    <div class="book" data-level="1.2.2.1" data-basepath="../../.." data-revision="1444306417246">
     
 
 <div class="book-summary">
@@ -2695,18 +2695,20 @@ impl fmt::Display for List {
         // Dereference &#96;self&#96; and create a reference to &#96;vec&#96;
         // via destructuring.
         let List(ref vec) = &#42;self;
-        let len = vec.len(); // Save the vector length in &#96;len&#96;.
+
+        try!(write!(f, &quot;[&quot;));
 
         // Iterate over &#96;vec&#96; in &#96;v&#96; while enumerating the iteration
         // count in &#96;count&#96;.
         for (count, v) in vec.iter().enumerate() {
-            // For every element except the last, format &#96;write!&#96;
-            // with a comma. Use &#96;try!&#96; to return on errors.
-            if count &lt; len - 1 { try!(write!(f, &quot;{}, &quot;, v)) }
+            // For every element except the first, add a comma
+            // before calling &#96;write!&#96;. Use &#96;try!&#96; to return on errors.
+            if count != 0 { try!(write!(f, &quot;, &quot;)); }
+            try!(write!(f, &quot;{}&quot;, v));
         }
 
-        // &#96;write!&#96; the last value without special formatting.
-        write!(f, &quot;{}&quot;, vec[len-1])
+        // Close the opened bracket and return a fmt::Result value
+        write!(f, &quot;]&quot;)
     }
 }
 
