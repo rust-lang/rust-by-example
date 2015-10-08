@@ -8,18 +8,20 @@ impl fmt::Display for List {
         // Dereference `self` and create a reference to `vec`
         // via destructuring.
         let List(ref vec) = *self;
-        let len = vec.len(); // Save the vector length in `len`.
+
+        try!(write!(f, "["));
 
         // Iterate over `vec` in `v` while enumerating the iteration
         // count in `count`.
         for (count, v) in vec.iter().enumerate() {
-            // For every element except the last, format `write!`
-            // with a comma. Use `try!` to return on errors.
-            if count < len - 1 { try!(write!(f, "{}, ", v)) }
+            // For every element except the first, add a comma
+            // before calling `write!`. Use `try!` to return on errors.
+            if count != 0 { try!(write!(f, ", ")); }
+            try!(write!(f, "{}", v));
         }
 
-        // `write!` the last value without special formatting.
-        write!(f, "{}", vec[len-1])
+        // Close the opened bracket and return a fmt::Result value
+        write!(f, "]")
     }
 }
 
