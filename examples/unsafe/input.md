@@ -1,7 +1,6 @@
 As an introduction to this section, to borrow from [the official docs](
-http://doc.rust-lang.org/master/guide-unsafe.html), "one should try to
-minimize the amount of unsafe code in a code base." With that in mind, let's
-get started!
+http://doc.rust-lang.org/book/unsafe.html), "one should try to minimize the
+amount of unsafe code in a code base." With that in mind, let's get started!
 Unsafe blocks in Rust are used to bypass protections put in place by the
 compiler; specifically, there are four primary things that unsafe blocks are
 used for:
