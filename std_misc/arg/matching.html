@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.7.1" data-basepath="../.." data-revision="1444741473245">
+    <div class="book" data-level="17.7.1" data-basepath="../.." data-revision="1444770957083">
     
 
 <div class="book-summary">
@@ -2703,10 +2703,9 @@ fn main() {
         },
         // one argument passed
         2 =&gt; {
-            if &amp;42 == &amp;args[1].parse().unwrap() {
-                println!(&quot;This is the answer!&quot;);
-            } else {
-                println!(&quot;This is not the answer.&quot;);
+            match args[1].parse() {
+                Ok(42) =&gt; println!(&quot;This is the answer!&quot;),
+                &#95; =&gt; println!(&quot;This is not the answer.&quot;),
             }
         },
         // one command and one argument passed
