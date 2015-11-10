@@ -23,7 +23,7 @@ fn main() {
     // a reference because the right side is not one.
     let _not_a_reference = 3;
 
-    // Rust provides `ref` for exacty this purpose. It modifies the
+    // Rust provides `ref` for exactly this purpose. It modifies the
     // assignment so that a reference is created for the element; this
     // reference is assigned.
     let ref _is_a_reference = 3;
