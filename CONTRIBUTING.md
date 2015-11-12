@@ -64,7 +64,7 @@ See the [README][readme] for details about how the static site is generated.
 
 ## Markdown (.md)
 
-* Lines should contain a maximum of 79 characters.
+* Lines should contain a maximum of 99 characters.
 * Use reference style hyperlinks, for example:
 
 Instead of:
@@ -80,7 +80,7 @@ Use:
 
 ## Rust code (.rs)
 
-* Lines should contain a maximum of 79 characters.
+* Lines should contain a maximum of 99 characters.
 * In comments, types, methods, macros and variables should be wrapped in
   backticks, e.g. ``` `println!` ```
 
