@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2" data-basepath=".." data-revision="1447333426993">
+    <div class="book" data-level="1.2" data-basepath=".." data-revision="1447366332271">
     
 
 <div class="book-summary">
@@ -2703,6 +2703,17 @@ be checked at compile time.</p>
 
     // Special formatting can be specified after a &#96;:&#96;.
     println!(&quot;{} of {:b} people know binary, the other half don&#39;t&quot;, 1, 2);
+
+    // You can right-align text with a specified width. This will output
+    // &quot;     1&quot;. 5 white spaces and a &quot;1&quot;.
+    println!(&quot;{number:&gt;width&#36;}&quot;,
+             number=1,
+             width=6);
+
+    // You can pad numbers with extra zeroes. This will output &quot;000001&quot;.
+    println!(&quot;{number:&gt;0width&#36;}&quot;,
+             number=1,
+             width=6);
 
     // It will even check to make sure the correct number of arguments are
     // used.
