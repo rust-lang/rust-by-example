@@ -19,6 +19,17 @@ fn main() {
     // Special formatting can be specified after a `:`.
     println!("{} of {:b} people know binary, the other half don't", 1, 2);
 
+    // You can right-align text with a specified width. This will output
+    // "     1". 5 white spaces and a "1".
+    println!("{number:>width$}",
+             number=1,
+             width=6);
+
+    // You can pad numbers with extra zeroes. This will output "000001".
+    println!("{number:>0width$}",
+             number=1,
+             width=6);
+
     // It will even check to make sure the correct number of arguments are
     // used.
     println!("My name is {0}, {1} {0}", "Bond");
