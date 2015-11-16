@@ -29,7 +29,7 @@ for these types. To print text for custom types, more steps are required.
    check the [`std::fmt`][fmt] documentation for setting the number of
    decimals to display)
 
-### See also:
+### See also
 
 [`std::fmt`][fmt], [`macros`][macros], [`struct`][structs],
 and [`traits`][traits]
