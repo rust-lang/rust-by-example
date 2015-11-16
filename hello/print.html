@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2" data-basepath=".." data-revision="1447685188485">
+    <div class="book" data-level="1.2" data-basepath=".." data-revision="1447713944883">
     
 
 <div class="book-summary">
@@ -2736,7 +2736,16 @@ friendly fashion.</li>
 </ul>
 <p>Here, <code>fmt::Display</code> was used because the std library provides implementations
 for these types. To print text for custom types, more steps are required.</p>
-<h3 id="see-also">See also:</h3>
+<h3 id="activities">Activities</h3>
+<ul>
+<li>Fix the two isses in the above code (see FIXME) so that it runs without
+error.</li>
+<li>Add a <code>println!</code> macro that prints: <code>Pi is roughly 3.143</code>, using twenty-two
+divided by seven to generate the estimate for Pi. (Hint: you may need to
+check the <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a> documentation for setting the number of
+decimals to display)</li>
+</ul>
+<h3 id="see-also">See also</h3>
 <p><a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>, <a href="/macros.html"><code>macros</code></a>, <a href="/custom_types/structs.html"><code>struct</code></a>,
 and <a href="/trait.html"><code>traits</code></a></p>
 
