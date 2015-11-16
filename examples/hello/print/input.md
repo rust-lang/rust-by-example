@@ -10,6 +10,14 @@ be checked at compile time.
 
 {print.play}
 
+> **Activities**:
+>  * Fix the two isses in the above code (see FIXME) so that it runs without
+>    error.
+>  * Add a `println!` macro that prints: `Pi is roughly 3.143`, using twenty-two
+>    divided by seven to generate the estimate for Pi. (Hint: you may need to
+>    check the [`std::fmt`][fmt] documentation for setting the number of
+>    decimals to display)
+
 [`std::fmt`][fmt] contains many [`traits`][traits] which govern the display
 of text. The base form of two important ones are listed below:
 
