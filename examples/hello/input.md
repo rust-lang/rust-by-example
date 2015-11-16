@@ -5,13 +5,13 @@ This is the source code of the traditional Hello World program.
 `println!` is a [*macro*][macros] that prints text to the
 console.
 
-**Activity**: Click 'Run' above to see the expected output. Next, add a new
-line with a second `println!` macro so that the output
-shows:
-```
-Hello World!
-I'm a Rustacian!
-```
+> **Activity**: Click 'Run' above to see the expected output. Next, add a new
+> line with a second `println!` macro so that the output
+> shows:
+> ```
+> Hello World!
+> I'm a Rustacian!
+> ```
 
 A binary can be generated using the Rust compiler: `rustc`.
 
