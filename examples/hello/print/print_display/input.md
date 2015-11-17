@@ -48,7 +48,16 @@ therefore cannot be used. `std::fmt` has many such [`traits`][traits] and
 each requires it's own implementation. This is detailed further in
 [`std::fmt`][fmt].
 
-### See also:
+### Activity
+
+Using the `Point2` struct as an example, add a Complex struct to the example
+above. When printed in the same way, the output should be:
+```
+Display: 3.3 + 7.2i
+Debug: Complex { real: 3.3, imag: 7.2 }
+```
+
+### See also
 
 [`derive`][derive], [`std::fmt`][fmt], [macros], [`struct`][structs],
 [`trait`][traits], and [use][use]
