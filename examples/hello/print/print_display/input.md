@@ -50,8 +50,9 @@ each requires it's own implementation. This is detailed further in
 
 ### Activity
 
-Using the `Point2` struct as an example, add a Complex struct to the example
-above. When printed in the same way, the output should be:
+After checking the output of the above example, use the `Point2` struct as
+guide to add a Complex struct to the example. When printed in the same
+way, the output should be:
 ```
 Display: 3.3 + 7.2i
 Debug: Complex { real: 3.3, imag: 7.2 }
