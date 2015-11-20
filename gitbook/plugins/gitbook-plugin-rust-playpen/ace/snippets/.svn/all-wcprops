@@ -3,6 +3,36 @@ svn:wc:ra_dav:version-url
 V 55
 /ajaxorg/ace-builds/!svn/ver/129/trunk/src-min/snippets
 END
+vhdl.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/vhdl.js
+END
+nix.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/nix.js
+END
+snippets.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/snippets.js
+END
+javascript.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/javascript.js
+END
+scad.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/scad.js
+END
 ruby.js
 K 25
 svn:wc:ra_dav:version-url
@@ -752,34 +782,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 68
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/autohotkey.js
-END
-vhdl.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/vhdl.js
-END
-nix.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/nix.js
-END
-snippets.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/snippets.js
-END
-javascript.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/javascript.js
-END
-scad.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/scad.js
 END
