@@ -6,6 +6,10 @@ fn reverse(pair: (i32, bool)) -> (bool, i32) {
     (boolean, integer)
 }
 
+// The following struct is for the activity.
+#[derive(Debug)]
+struct Matrix(f32, f32, f32, f32);
+
 fn main() {
     // A tuple with a bunch of different types
     let long_tuple = (1u8, 2u16, 3u32, 4u64,
@@ -32,10 +36,14 @@ fn main() {
     // from a literal surrounded by parentheses
     println!("one element tuple: {:?}", (5u32,));
     println!("just an integer: {:?}", (5u32));
-    
+
     //tuples can be destructured to create bindings
     let tuple = (1, "hello", 4.5, true);
 
     let (a, b, c, d) = tuple;
     println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
+
+    let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
+    println!("{:?}", matrix)
+
 }

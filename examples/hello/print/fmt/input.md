@@ -26,7 +26,7 @@ RGB (128, 255, 90) 0x80FF5A
 RGB (0, 3, 254) 0x0003FE
 RGB (0, 0, 0) 0x000000
 ```
-Two hints in case you get stuck:
+Two hints if you get stuck:
  * You [may need to list each color more than once][argument_types],
  * You can [pad with zeros to a width of 2][fmt_width] with `:02`.
 
