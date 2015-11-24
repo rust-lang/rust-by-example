@@ -15,7 +15,7 @@ mod my {
 
     // Items can access other items in the same module
     pub fn indirect_access() {
-        print!("called `my::indirect_access()`, that\n> ");
+        print!("called `my::indirect_access()`");
 
         // regardless of their visibility
         private_function();
