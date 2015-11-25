@@ -16,7 +16,7 @@ straightforward:
 
 {testcase_list.play}
 
-### See also:
+### See also
 
 [`for`][for], [`ref`][ref], [`Result`][result], [`struct`][struct],
 [`try!`][try], and [`vec!`][vec]

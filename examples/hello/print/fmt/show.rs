@@ -21,6 +21,13 @@ impl Display for City {
     }
 }
 
+#[derive(Debug)]
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8,
+}
+
 fn main() {
     for city in [
         City { name: "Dublin", lat: 53.347778, lon: -6.259722 },
@@ -29,5 +36,13 @@ fn main() {
     ].iter() {
         println!("{}", *city);
     }
+    for color in [
+        Color { red: 128, green: 255, blue: 90 },
+        Color { red: 0, green: 3, blue: 254 },
+        Color { red: 0, green: 0, blue: 0 },
+    ].iter() {
+        // Switch this to use {} once you've added an implementation
+        // for fmt::Display
+        println!("{:?}", *color)
+    }
 }
-
