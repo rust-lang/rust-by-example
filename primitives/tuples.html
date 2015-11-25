@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2.2" data-basepath=".." data-revision="1448456457016">
+    <div class="book" data-level="2.2" data-basepath=".." data-revision="1448458294989">
     
 
 <div class="book-summary">
@@ -2686,6 +2686,10 @@ fn reverse(pair: (i32, bool)) -&gt; (bool, i32) {
     (boolean, integer)
 }
 
+// The following struct is for the activity.
+#[derive(Debug)]
+struct Matrix(f32, f32, f32, f32);
+
 fn main() {
     // A tuple with a bunch of different types
     let long&#95;tuple = (1u8, 2u16, 3u32, 4u64,
@@ -2718,9 +2722,33 @@ fn main() {
 
     let (a, b, c, d) = tuple;
     println!(&quot;{:?}, {:?}, {:?}, {:?}&quot;, a, b, c, d);
+
+    let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
+    println!(&quot;{:?}&quot;, matrix)
+
 }</div>
 <div id="result"></div>
 </div>
+
+<h3 id="activity">Activity</h3>
+<ol>
+<li><em>Recap</em>: Add the <code>fmt::Display</code> trait to the Matrix <code>struct</code> in the above example,
+so that if you switch from printing the debug format <code>{:?}</code> to the display
+format <code>{}</code>, you see the following output:<pre><code>( 1.1 1.2 )
+( 2.1 2.2 )
+</code></pre>You may want to refer back to the example for <a href="print_display">print display</a>.</li>
+<li>Add a <code>transpose</code> function using the <code>reverse</code> function as a template, which
+accepts a matrix as an argument, and returns a matrix in which two elements
+have been swapped. For example:<pre><code>println!(&quot;Matrix:\n{}&quot;, matrix)
+println!(&quot;Transpose:\n{}&quot;, transpose(matrix))
+</code></pre>results in the output:<pre><code>Matrix:
+( 1.1 1.2 )
+( 2.1 2.2 )
+Transpose:
+( 1.1 2.1 )
+( 1.2 2.2 )
+</code></pre></li>
+</ol>
 
                     
                     </section>

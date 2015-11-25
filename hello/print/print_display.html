@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2.2" data-basepath="../.." data-revision="1448456457016">
+    <div class="book" data-level="1.2.2" data-basepath="../.." data-revision="1448458294989">
     
 
 <div class="book-summary">
@@ -2668,7 +2668,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_73">
+                    <section class="normal" id="section-gitbook_70">
                     
                         <h3 id="122-display">1.2.2 Display</h3>
 <p><code>fmt::Debug</code> hardly looks compact and clean, so it is often advantageous to
@@ -2773,7 +2773,13 @@ fn main() {
 therefore cannot be used. <code>std::fmt</code> has many such <a href="/trait.html"><code>traits</code></a> and
 each requires it&#39;s own implementation. This is detailed further in
 <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>.</p>
-<h3 id="see-also">See also:</h3>
+<h3 id="activity">Activity</h3>
+<p>After checking the output of the above example, use the <code>Point2</code> struct as
+guide to add a Complex struct to the example. When printed in the same
+way, the output should be:</p>
+<pre><code>Display: 3.3 + 7.2i
+Debug: Complex { real: 3.3, imag: 7.2 }
+</code></pre><h3 id="see-also">See also</h3>
 <p><a href="/trait/derive.html"><code>derive</code></a>, <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a>, <a href="/macros.html">macros</a>, <a href="/custom_types/structs.html"><code>struct</code></a>,
 <a href="/trait.html"><code>trait</code></a>, and <a href="/mod/use.html">use</a></p>
 

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2.3" data-basepath="../.." data-revision="1448456457016">
+    <div class="book" data-level="1.2.3" data-basepath="../.." data-revision="1448458294989">
     
 
 <div class="book-summary">
@@ -2709,6 +2709,13 @@ impl Display for City {
     }
 }
 
+#[derive(Debug)]
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8,
+}
+
 fn main() {
     for city in [
         City { name: &quot;Dublin&quot;, lat: 53.347778, lon: -6.259722 },
@@ -2717,22 +2724,34 @@ fn main() {
     ].iter() {
         println!(&quot;{}&quot;, &#42;city);
     }
+    for color in [
+        Color { red: 128, green: 255, blue: 90 },
+        Color { red: 0, green: 3, blue: 254 },
+        Color { red: 0, green: 0, blue: 0 },
+    ].iter() {
+        // Switch this to use {} once you&#39;ve added an implementation
+        // for fmt::Display
+        println!(&quot;{:?}&quot;, &#42;color)
+    }
 }</div>
 <div id="result"></div>
 </div>
 
-<p>Here&#39;s the full list of formatting traits and their respective argument types:</p>
+<p>You can view a <a href="http://doc.rust-lang.org/std/fmt/#formatting-traits" target="_blank">full list of formatting traits</a> and their argument
+types in the <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a> documentation.</p>
+<h3 id="activity">Activity</h3>
+<p>Add an implementation of the <code>fmt::Display</code> trait for the <code>Color</code> struct above
+so that the output displays as:</p>
+<pre><code>RGB (128, 255, 90) 0x80FF5A
+RGB (0, 3, 254) 0x0003FE
+RGB (0, 0, 0) 0x000000
+</code></pre><p>Two hints if you get stuck:</p>
 <ul>
-<li><em>unspecified</em> -&gt; <code>Display</code></li>
-<li><code>?</code> -&gt; <code>Debug</code></li>
-<li><code>o</code> -&gt; <code>Octal</code></li>
-<li><code>x</code> -&gt; <code>LowerHex</code></li>
-<li><code>X</code> -&gt; <code>UpperHex</code></li>
-<li><code>p</code> -&gt; <code>Pointer</code></li>
-<li><code>b</code> -&gt; <code>Binary</code></li>
-<li><code>e</code> -&gt; <code>LowerExp</code></li>
-<li><code>E</code> -&gt; <code>UpperExp</code></li>
+<li>You <a href="http://doc.rust-lang.org/std/fmt/#argument-types" target="_blank">may need to list each color more than once</a>,</li>
+<li>You can <a href="http://doc.rust-lang.org/std/fmt/#width" target="_blank">pad with zeros to a width of 2</a> with <code>:02</code>.</li>
 </ul>
+<h3 id="see-also">See also</h3>
+<p><a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a></p>
 
                     
                     </section>
