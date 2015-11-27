@@ -27,7 +27,7 @@ fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {
 }
 
 // There are no references to force `'a` to be larger than the
-// function yet, `'a` remains larger than the function.
+// function, yet `'a` remains larger than the function.
 fn failed_borrow<'a>() {
     let _x = 12;
 
