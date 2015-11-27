@@ -1,5 +1,5 @@
 `Iterator::any` is a function which when passed an iterator, will return
-`true` if any element satisfies the predicate. Otherwise `false`. It's
+`true` if any element satisfies the predicate. Otherwise `false`. Its
 signature:
 
 ```rust

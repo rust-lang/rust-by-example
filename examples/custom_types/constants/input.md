@@ -1,7 +1,7 @@
 Rust has two different types of constants which can be declared in any scope
 including global. Both require explicit type annotation:
 
-* `const`: An unchangable value (the common case).
+* `const`: An unchangeable value (the common case).
 * `static`: A possibly `mut`able variable with [`'static`][static] lifetime.
 
 One special case is the `"string"` literal. It can be assigned directly to a
