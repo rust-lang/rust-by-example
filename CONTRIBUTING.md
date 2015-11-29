@@ -15,7 +15,7 @@ not clear". The example id is the relative path in the URL without the html
 extension, e.g. URL: `http://rustbyexample.com/variables/scope.html` -> id:
 `variables/scope`
 
-If its something simple like a typo, you can send a PR directly.
+If it's something simple like a typo, you can send a PR directly.
 
 # Sending a PR for a small fix
 
