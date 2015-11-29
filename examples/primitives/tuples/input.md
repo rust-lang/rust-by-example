@@ -14,7 +14,7 @@ use tuples to return multiple values, as tuples can hold any number of values.
 ( 1.1 1.2 )
 ( 2.1 2.2 )
 ```
-    You may want to refer back to the example for [print display](print_display).
+    You may want to refer back to the example for [print display][print_display].
  2. Add a `transpose` function using the `reverse` function as a template, which
     accepts a matrix as an argument, and returns a matrix in which two elements
     have been swapped. For example:
