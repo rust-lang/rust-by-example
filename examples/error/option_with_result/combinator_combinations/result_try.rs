@@ -3,14 +3,16 @@ use std::fs::File;
 
 type Result<T> = std::result::Result<T, String>;
 
-// Setup to make this work. Create two files with some info.
+// Setup to make this work. Create two files with some info. Ignore the
+// return values because we don't care about them here.
 fn setup() {
-    // Ignore the return value because we don't care about it.
-    let _ = File::create("a")
-        .and_then(|mut file| file.write_all(b"grape"));
+    File::create("a")
+        .and_then(|mut file| file.write_all(b"grape"))
+        .unwrap();
 
-    let _ = File::create("b")
-        .and_then(|mut file| file.write_all(b"fruit"));
+    File::create("b")
+        .and_then(|mut file| file.write_all(b"fruit"))
+        .unwrap();
 }
 
 // Get the data from each file with the data stored in a `Result`.

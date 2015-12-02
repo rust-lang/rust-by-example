@@ -18,9 +18,9 @@ types. In order to define a valid `Result<T, E>` type, the user has a few choice
 * convert it to `String` or some other intermediate choice
 * box it up into `Box<Error>` via type erasure
 
-Boxing it is a common choice. The only penalty is that the error type is only known
-at runtime and not statically determined. All that needs to be done to enable this
-is implement the `Error` trait:
+Boxing it is a common choice. The only penalty is that the underlying error type is only known
+at runtime and not [statically determined][dynamic_dispatch]. All that needs to be done to enable
+this is implement the `Error` trait:
 
 ```rust
 trait Error: Debug + Display {
@@ -36,6 +36,7 @@ is `Box<Error>` as it was before with `DoubleError`.
 
 ### See also:
 
-[`Error` trait][error]
+[Dynamic dispatch][dynamic_dispatch] and [`Error` trait][error]
 
+[dynamic_dispatch]: http://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch
 [error]: http://doc.rust-lang.org/std/error/trait.Error.html

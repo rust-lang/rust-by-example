@@ -38,7 +38,7 @@ fn concat(a: &str, b: &str) -> Result<String> {
 
 fn main() {
     // Ignore this result.
-    let _ = setup();
+    setup().unwrap();
 
     match concat("a", "b") {
         Ok(n)  => println!("{}", n),
