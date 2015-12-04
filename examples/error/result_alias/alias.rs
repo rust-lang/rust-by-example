@@ -13,7 +13,7 @@ fn double_number(number_str: &str) -> Result<i32> {
 fn print(result: Result<i32>) {
     match result {
         Ok(n)  => println!("n is {}", n),
-        Err(e) => println!("Error: {:?}", e),
+        Err(e) => println!("Error: {}", e),
     }
 }
 

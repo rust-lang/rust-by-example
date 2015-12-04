@@ -18,16 +18,19 @@ enum DoubleError {
 // How the type is displayed is completely separate from where the errors are generated.
 // We do not need to be concerned that the display style will clutter the complex logic
 // our utility requires. They are separate matters which are handled separately.
+//
+// We don't store extra info about the errors. If we had desired, for example, to state
+// which string failed to parse then we can't without modifying our types to carry that
+// information accordingly.
 impl fmt::Display for DoubleError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "Error: {}", match *self {
-            DoubleError::EmptyVec => 
-                "please use a vector with at least one element".to_owned(),
-            // We didn't store extra info about the error. If we had desired, for
-            // example, to state which string failed to parse then we can't without
-            // modifying our type to carry that information.
-            DoubleError::Parse(ref e) => e.to_string(),
-        })
+        match *self {
+            DoubleError::EmptyVec =>
+                write!(f, "please use a vector with at least one element"),
+            // This is a wrapper so defer to the underlying types' own implementation
+            // of `fmt`.
+            DoubleError::Parse(ref e) => e.fmt(f),
+        }
     }
 }
 
@@ -44,7 +47,7 @@ fn double_first(vec: Vec<&str>) -> Result<i32> {
 fn print(result: Result<i32>) {
     match result {
         Ok(n)  => println!("The first doubled is {}", n),
-        Err(e) => println!("{}", e),
+        Err(e) => println!("Error: {}", e),
     }
 }
 

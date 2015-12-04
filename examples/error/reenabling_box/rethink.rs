@@ -19,22 +19,22 @@ impl From<ParseIntError> for DoubleError {
 
 impl fmt::Display for DoubleError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "Error: {}", match *self {
-            DoubleError::EmptyVec => 
-                "please use a vector with at least one element".to_owned(),
-            DoubleError::Parse(ref e) => e.to_string(),
-        })
+        match *self {
+            DoubleError::EmptyVec =>
+                write!(f, "please use a vector with at least one element"),
+            DoubleError::Parse(ref e) => e.fmt(f),
+        }
     }
 }
 
 impl error::Error for DoubleError {
     fn description(&self) -> &str {
         match *self {
-            // Trying to use `Display` here results in the string being immediately
-            // dropped which won't compile so we have to write out the phrase again.
-            DoubleError::EmptyVec => "please use a vector with at least one element",
-            // This already impls `Error`, so defer to its implementation.
-            DoubleError::Parse(ref err) => err.description(),
+            // A very short description of the error. Doesn't need to be the
+            // same as `Display`.
+            DoubleError::EmptyVec => "empty vectors not allowed",
+            // This already impls `Error`, so defer to its own implementation.
+            DoubleError::Parse(ref e) => e.description(),
         }
     }
 
@@ -60,7 +60,7 @@ fn double_first(vec: Vec<&str>) -> Result<i32> {
 fn print(result: Result<i32>) {
     match result {
         Ok(n)  => println!("The first doubled is {}", n),
-        Err(e) => println!("{}", e),
+        Err(e) => println!("Error: {}", e),
     }
 }
 

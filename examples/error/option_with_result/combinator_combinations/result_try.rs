@@ -46,6 +46,6 @@ fn main() {
 
     match concat("a", "b") {
         Ok(n)  => println!("{}", n),
-        Err(e) => println!("Error: {:?}", e),
+        Err(e) => println!("Error: {}", e),
     }
 }

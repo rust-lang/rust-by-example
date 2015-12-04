@@ -19,7 +19,7 @@ fn double_number_map(number_str: &str) -> Result<i32, ParseIntError> {
 fn print(result: Result<i32, ParseIntError>) {
     match result {
         Ok(n)  => println!("n is {}", n),
-        Err(e) => println!("Error: {:?}", e),
+        Err(e) => println!("Error: {}", e),
     }
 }
 
