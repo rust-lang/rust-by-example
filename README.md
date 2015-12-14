@@ -1,5 +1,6 @@
-[![Build Status][travis-image]][travis-link]
 # Rust by Example
+
+[![Build Status][travis-image]][travis-link]
 
 ## What's this?
 
