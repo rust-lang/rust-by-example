@@ -1,5 +1,5 @@
 Similar to `if let`, `while let` can make awkward `match` sequences
-more tolerable. Consider, for example the following sequence:
+more tolerable. Consider the following sequence that increments `i`:
 
 ```rust
 // Make `optional` of type `Option<i32>`
@@ -19,14 +19,14 @@ loop {
             }
             // ^ Requires 3 indentations!
         },
-        // Quit when the destructure fails, meaning `break`.
+        // Quit the loop when the destructure fails:
         _ => { break; }
-        // ^ Why should this be required? Seems superfluous.
+        // ^ Why should this be required? There must be a better way!
     }
 }
 ```
 
-`while let` makes this sequence much nicer:
+Using `while let` makes this sequence much nicer:
 
 {while_let.play}
 
