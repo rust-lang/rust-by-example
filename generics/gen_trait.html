@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.3" data-basepath=".." data-revision="1450443656583">
+    <div class="book" data-level="13.3" data-basepath=".." data-revision="1450457131073">
     
 
 <div class="book-summary">
@@ -2907,8 +2907,8 @@
                     <section class="normal" id="section-gitbook_70">
                     
                         <h2 id="133-traits">13.3 Traits</h2>
-<p>Of course <code>trait</code>s can also be generic. Here is a trait which reimplements
-the <code>Drop</code> <code>trait</code> as a generic method which <code>drop</code>s itself and an input.</p>
+<p>Of course <code>trait</code>s can also be generic. Here we define one which reimplements
+the <code>Drop</code> <code>trait</code> as a generic method to <code>drop</code> itself and an input.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2919,7 +2919,7 @@ struct Null;
 // A trait generic over &#96;T&#96;.
 trait DoubleDrop&lt;T&gt; {
     // It defines a method on the caller type which takes an
-    // additional single parameter and does nothing with it.
+    // additional single parameter &#96;T&#96; and does nothing with it.
     fn double&#95;drop(self, &#95;: T);
 }
 
@@ -2946,7 +2946,7 @@ fn main() {
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="http://doc.rust-lang.org/std/ops/trait.Drop.html" target="_blank"><code>Drop</code></a>, <a href="/custom_types/structs.html"><code>struct</code>s</a>, and <a href="/trait.html"><code>trait</code>s</a></p>
+<p><a href="http://doc.rust-lang.org/std/ops/trait.Drop.html" target="_blank"><code>Drop</code></a>, <a href="/custom_types/structs.html"><code>struct</code></a>, and <a href="/trait.html"><code>trait</code></a></p>
 
                     
                     </section>

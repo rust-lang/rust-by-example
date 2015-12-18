@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="7.6" data-basepath=".." data-revision="1450443656583">
+    <div class="book" data-level="7.6" data-basepath=".." data-revision="1450457131073">
     
 
 <div class="book-summary">
@@ -2929,12 +2929,12 @@ failure options to be specified:</p>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
     // All have type &#96;Option&lt;i32&gt;&#96;
-    let number   = Some(7);
+    let number = Some(7);
     let letter: Option&lt;i32&gt; = None;
     let emoticon: Option&lt;i32&gt; = None;
 
     // The &#96;if let&#96; construct reads: &quot;if &#96;let&#96; destructures &#96;number&#96; into
-    // &#96;Some(i)&#96;, evaluate the block (&#96;{}&#96;). Else do nothing.
+    // &#96;Some(i)&#96;, evaluate the block (&#96;{}&#96;).
     if let Some(i) = number {
         println!(&quot;Matched {:?}!&quot;, i);
     }
@@ -2943,7 +2943,7 @@ failure options to be specified:</p>
     if let Some(i) = letter {
         println!(&quot;Matched {:?}!&quot;, i);
     } else {
-        // Destructure failed. Change the failure case.
+        // Destructure failed. Change to the failure case.
         println!(&quot;Didn&#39;t match a number. Let&#39;s go with a letter!&quot;);
     };
 
@@ -2952,12 +2952,12 @@ failure options to be specified:</p>
 
     if let Some(i) = emoticon {
         println!(&quot;Matched {:?}!&quot;, i);
-    // Destructure failed. Evaluated the condition to see if this branch
-    // should be taken.
+    // Destructure failed. Evaluate an &#96;else if&#96; condition to see if the
+    // alternate failure branch should be taken:
     } else if i&#95;like&#95;letters {
         println!(&quot;Didn&#39;t match a number. Let&#39;s go with a letter!&quot;);
-    // The condition evaluated false. This branch is the default.
     } else {
+        // The condition evaluated false. This branch is the default:
         println!(&quot;I don&#39;t like letters. Let&#39;s go with an emoticon :)!&quot;);
     };
 }</div>

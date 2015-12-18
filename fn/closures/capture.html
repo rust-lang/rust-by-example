@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.1" data-basepath="../.." data-revision="1450443656583">
+    <div class="book" data-level="8.2.1" data-basepath="../.." data-revision="1450457131073">
     
 
 <div class="book-summary">
@@ -2922,6 +2922,8 @@ required.</p>
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
+    use std::mem;
+
     let color = &quot;green&quot;;
 
     // A closure to print &#96;color&#96; which immediately borrows (&#96;&amp;&#96;)
@@ -2959,13 +2961,13 @@ required.</p>
     // A non-copy type.
     let movable = Box::new(3);
 
-    // &#96;drop&#96; requires &#96;T&#96; so this must take by value. A copy type
+    // &#96;mem::drop&#96; requires &#96;T&#96; so this must take by value. A copy type
     // would copy into the closure leaving the original untouched.
     // A non-copy must move and so &#96;movable&#96; immediately moves into
     // the closure.
     let consume = || {
         println!(&quot;&#96;movable&#96;: {:?}&quot;, movable);
-        drop(movable);
+        mem::drop(movable);
     };
 
     // &#96;consume&#96; consumes the variable so this can only be called once.
