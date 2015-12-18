@@ -1,4 +1,6 @@
 fn main() {
+    use std::mem;
+    
     let color = "green";
 
     // A closure to print `color` which immediately borrows (`&`)
@@ -36,13 +38,13 @@ fn main() {
     // A non-copy type.
     let movable = Box::new(3);
 
-    // `drop` requires `T` so this must take by value. A copy type
+    // `mem::drop` requires `T` so this must take by value. A copy type
     // would copy into the closure leaving the original untouched.
     // A non-copy must move and so `movable` immediately moves into
     // the closure.
     let consume = || {
         println!("`movable`: {:?}", movable);
-        drop(movable);
+        mem::drop(movable);
     };
 
     // `consume` consumes the variable so this can only be called once.

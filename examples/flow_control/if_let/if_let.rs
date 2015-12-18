@@ -1,11 +1,11 @@
 fn main() {
     // All have type `Option<i32>`
-    let number   = Some(7);
+    let number = Some(7);
     let letter: Option<i32> = None;
     let emoticon: Option<i32> = None;
 
     // The `if let` construct reads: "if `let` destructures `number` into
-    // `Some(i)`, evaluate the block (`{}`). Else do nothing.
+    // `Some(i)`, evaluate the block (`{}`).
     if let Some(i) = number {
         println!("Matched {:?}!", i);
     }
@@ -14,7 +14,7 @@ fn main() {
     if let Some(i) = letter {
         println!("Matched {:?}!", i);
     } else {
-        // Destructure failed. Change the failure case.
+        // Destructure failed. Change to the failure case.
         println!("Didn't match a number. Let's go with a letter!");
     };
 
@@ -23,12 +23,12 @@ fn main() {
 
     if let Some(i) = emoticon {
         println!("Matched {:?}!", i);
-    // Destructure failed. Evaluated the condition to see if this branch
-    // should be taken.
+    // Destructure failed. Evaluate an `else if` condition to see if the
+    // alternate failure branch should be taken:
     } else if i_like_letters {
         println!("Didn't match a number. Let's go with a letter!");
-    // The condition evaluated false. This branch is the default.
     } else {
+        // The condition evaluated false. This branch is the default:
         println!("I don't like letters. Let's go with an emoticon :)!");
     };
 }

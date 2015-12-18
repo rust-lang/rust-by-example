@@ -18,7 +18,7 @@ struct UnPrintable(i32);
 struct DebugPrintable(i32);
 ```
 
-All std library types automatically are printable with `{:?}` too:
+All `std` library types automatically are printable with `{:?}` too:
 
 {debug.play}
 
