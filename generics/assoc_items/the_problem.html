@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.7.1" data-basepath="../.." data-revision="1450702831664">
+    <div class="book" data-level="13.7.1" data-basepath="../.." data-revision="1450738631528">
     
 
 <div class="book-summary">
@@ -2929,8 +2929,8 @@ trait Contains&lt;A, B&gt; {
 
 impl Contains&lt;i32, i32&gt; for Container {
     // True if the numbers stored are equal.
-    fn contains(&amp;self, number: &amp;i32, digit: &amp;i32) -&gt; bool {
-        (&amp;self.0 == number) &amp;&amp; (&amp;self.1 == digit)
+    fn contains(&amp;self, number&#95;1: &amp;i32, number&#95;2: &amp;i32) -&gt; bool {
+        (&amp;self.0 == number&#95;1) &amp;&amp; (&amp;self.1 == number&#95;2)
     }
 
     // Grab the first number.
@@ -2948,14 +2948,14 @@ fn difference&lt;A, B, C&gt;(container: &amp;C) -&gt; i32 where
 }
 
 fn main() {
-    let number = 3;
-    let digit = 10;
+    let number&#95;1 = 3;
+    let number&#95;2 = 10;
 
-    let container = Container(number, digit);
+    let container = Container(number&#95;1, number&#95;2);
 
     println!(&quot;Does container contain {} and {}: {}&quot;,
-        &amp;number, &amp;digit,
-        container.contains(&amp;number, &amp;digit));
+        &amp;number&#95;1, &amp;number&#95;2,
+        container.contains(&amp;number&#95;1, &amp;number&#95;2));
     println!(&quot;First number: {}&quot;, container.first());
     println!(&quot;Last number: {}&quot;, container.last());
 
