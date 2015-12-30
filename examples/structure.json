@@ -62,7 +62,7 @@
             { "id": "anonymity", "title": "Type anonymity", "children": null },
             { "id": "input_functions", "title": "Input functions", "children": null },
             { "id": "output_parameters", "title": "As output parameters", "children": null },
-            { "id": "closure_analysis", "title": "Analysis", "children": [
+            { "id": "closure_examples", "title": "Examples in `std`", "children": [
                 { "id": "iter_any", "title": "Iterator::any", "children": null },
                 { "id": "iter_find", "title": "Iterator::find", "children": null }
             ] }
