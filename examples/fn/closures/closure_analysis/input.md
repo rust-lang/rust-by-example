@@ -1,1 +1,1 @@
-A brief analysis of a few different `std` library closure examples.
+This section contains a few examples of using closures in the `std` library.
