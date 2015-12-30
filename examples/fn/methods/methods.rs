@@ -12,7 +12,7 @@ impl Point {
         Point { x: 0.0, y: 0.0 }
     }
 
-    // Another static method, that takes two arguments
+    // Another static method, taking two arguments:
     fn new(x: f64, y: f64) -> Point {
         Point { x: x, y: y }
     }
@@ -78,7 +78,7 @@ fn main() {
         p2: Point::new(3.0, 4.0),
     };
 
-    // Instance method are called using the dot operator
+    // Instance methods are called using the dot operator
     // Note that the first argument `&self` is implicitly passed, i.e.
     // `rectangle.perimeter()` === `perimeter(&rectangle)`
     println!("Rectangle perimeter: {}", rectangle.perimeter());
@@ -94,7 +94,7 @@ fn main() {
     //rectangle.translate(1.0, 0.0);
     // TODO ^ Try uncommenting this line
 
-    // Ok, mutable object can call mutable methods
+    // Okay! Mutable objects can call mutable methods
     square.translate(1.0, 1.0);
 
     let pair = Pair(Box::new(1), Box::new(2));
