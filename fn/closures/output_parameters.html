@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="../../fn/closures/closure_analysis.html" />
+    <link rel="next" href="../../fn/closures/closure_examples.html" />
     
     
     <link rel="prev" href="../../fn/closures/input_functions.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.5" data-basepath="../.." data-revision="1451576114762">
+    <div class="book" data-level="8.2.5" data-basepath="../.." data-revision="1451576154549">
     
 
 <div class="book-summary">
@@ -960,15 +960,15 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_analysis.html">
+        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_examples.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis.html">
+                    <a href="../../fn/closures/closure_examples.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.</b>
                         
-                         Analysis
+                         Examples in `std`
                     </a>
                 
             
@@ -977,10 +977,10 @@
                 
     
         
-        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_analysis/iter_any.html">
+        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_examples/iter_any.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis/iter_any.html">
+                    <a href="../../fn/closures/closure_examples/iter_any.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.1.</b>
@@ -993,10 +993,10 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_analysis/iter_find.html">
+        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_examples/iter_find.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis/iter_find.html">
+                    <a href="../../fn/closures/closure_examples/iter_find.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.2.</b>
@@ -2907,22 +2907,23 @@
                     <section class="normal" id="section-gitbook_65">
                     
                         <h3 id="825-as-output-parameters">8.2.5 As output parameters</h3>
-<p>Closures as input parameters are possible so returning one should also be
-possible. However, returning closure types are problematic because Rust
-currently only supports returning concrete (non-generic) types. Anonymous
-closure types are, by definition, unknown and so returning a closure is only
-possible by making it concrete. This can be done via boxing.</p>
-<p>The valid types for returns are slightly different than before:</p>
+<p>Using closures as input parameters are possible, so returning closures as 
+output parameters should also be possible. However, returning closure types 
+are problematic because Rust currently only supports returning concrete 
+(non-generic) types. Anonymous closure types are, by definition, unknown 
+and so returning a closure is only possible by making it concrete. This 
+can be done via boxing.</p>
+<p>The valid traits for returns are slightly different than before:</p>
 <ul>
 <li><code>Fn</code>: normal</li>
 <li><code>FnMut</code>: normal</li>
-<li><code>FnOnce</code>: There is some unsual things at play here, so the <a href="http://doc.rust-lang.org/std/boxed/trait.FnBox.html" target="_blank"><code>FnBox</code></a>
+<li><code>FnOnce</code>: There are some unusual things at play here, so the <a href="http://doc.rust-lang.org/std/boxed/trait.FnBox.html" target="_blank"><code>FnBox</code></a>
 type is currently needed, and is unstable. This is expected to change in
 the future.</li>
 </ul>
-<p>Beyond this, the <code>move</code> keyword must be used which signals that all captures
+<p>Beyond this, the <code>move</code> keyword must be used, which signals that all captures
 occur by value. This is required because any captures by reference would be
-dropped as soon as the function exited leaving invalid references in the
+dropped as soon as the function exited, leaving invalid references in the
 closure.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2964,7 +2965,7 @@ fn main() {
         <a href="../../fn/closures/input_functions.html" class="navigation navigation-prev " aria-label="Previous page: Input functions"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../fn/closures/closure_analysis.html" class="navigation navigation-next " aria-label="Next page: Analysis"><i class="fa fa-angle-right"></i></a>
+        <a href="../../fn/closures/closure_examples.html" class="navigation navigation-next " aria-label="Next page: Examples in `std`"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

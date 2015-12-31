@@ -22,7 +22,7 @@
     <link rel="next" href="../macros.html" />
     
     
-    <link rel="prev" href="../fn/closures/closure_analysis/iter_find.html" />
+    <link rel="prev" href="../fn/closures/closure_examples/iter_find.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.3" data-basepath=".." data-revision="1451576114762">
+    <div class="book" data-level="8.3" data-basepath=".." data-revision="1451576154549">
     
 
 <div class="book-summary">
@@ -960,15 +960,15 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_analysis.html">
+        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_examples.html">
             
                 
-                    <a href="../fn/closures/closure_analysis.html">
+                    <a href="../fn/closures/closure_examples.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.</b>
                         
-                         Analysis
+                         Examples in `std`
                     </a>
                 
             
@@ -977,10 +977,10 @@
                 
     
         
-        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_analysis/iter_any.html">
+        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_examples/iter_any.html">
             
                 
-                    <a href="../fn/closures/closure_analysis/iter_any.html">
+                    <a href="../fn/closures/closure_examples/iter_any.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.1.</b>
@@ -993,10 +993,10 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_analysis/iter_find.html">
+        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_examples/iter_find.html">
             
                 
-                    <a href="../fn/closures/closure_analysis/iter_find.html">
+                    <a href="../fn/closures/closure_examples/iter_find.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.2.</b>
@@ -2913,7 +2913,11 @@ and lazy iterators give Rust its functional flavor.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">fn main() {
+<div id="editor">fn is&#95;odd(n: u32) -&gt; bool {
+    n % 2 == 1
+}
+
+fn main() {
     println!(&quot;Find the sum of all the squared odd numbers under 1000&quot;);
     let upper = 1000;
 
@@ -2942,10 +2946,6 @@ and lazy iterators give Rust its functional flavor.</p>
              .filter(|n| is&#95;odd(&#42;n))     // That are odd
              .fold(0, |sum, i| sum + i); // Sum them
     println!(&quot;functional style: {}&quot;, sum&#95;of&#95;squared&#95;odd&#95;numbers);
-}
-
-fn is&#95;odd(n: u32) -&gt; bool {
-    n % 2 == 1
 }</div>
 <div id="result"></div>
 </div>
@@ -2964,7 +2964,7 @@ implement their fair share of HOFs.</p>
         </div>
 
         
-        <a href="../fn/closures/closure_analysis/iter_find.html" class="navigation navigation-prev " aria-label="Previous page: Iterator::find"><i class="fa fa-angle-left"></i></a>
+        <a href="../fn/closures/closure_examples/iter_find.html" class="navigation navigation-prev " aria-label="Previous page: Iterator::find"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../macros.html" class="navigation navigation-next " aria-label="Next page: macro_rules!"><i class="fa fa-angle-right"></i></a>

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.4" data-basepath="../.." data-revision="1451576114762">
+    <div class="book" data-level="8.2.4" data-basepath="../.." data-revision="1451576154549">
     
 
 <div class="book-summary">
@@ -960,15 +960,15 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_analysis.html">
+        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_examples.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis.html">
+                    <a href="../../fn/closures/closure_examples.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.</b>
                         
-                         Analysis
+                         Examples in `std`
                     </a>
                 
             
@@ -977,10 +977,10 @@
                 
     
         
-        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_analysis/iter_any.html">
+        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_examples/iter_any.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis/iter_any.html">
+                    <a href="../../fn/closures/closure_examples/iter_any.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.1.</b>
@@ -993,10 +993,10 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_analysis/iter_find.html">
+        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_examples/iter_find.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis/iter_find.html">
+                    <a href="../../fn/closures/closure_examples/iter_find.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.2.</b>
@@ -2908,21 +2908,27 @@
                     
                         <h3 id="824-input-functions">8.2.4 Input functions</h3>
 <p>Since closures are possible as arguments, you might wonder if functions
-are also possible and indeed they are. The previously mentioned <code>Fn</code>,
-<code>FnMut</code>, and <code>FnOnce</code> <code>traits</code> all dictate what fashion a closure captures
-variables from the enclosing scope. A function can <em>never</em> capture variables
-and thus is strictly less flexible. Therefore, any function which can
-take a closure as an argument can also take a function.</p>
+are possible as well. Indeed they are! The previously mentioned <code>Fn</code>,
+<code>FnMut</code>, and <code>FnOnce</code> <code>traits</code> all dictate in what fashion a closure captures
+variables from the enclosing scope. Because a function can <em>never</em> capture
+variables, closures are strictly more flexible. Therefore, any function which 
+can take a closure as an argument can also take a function.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">fn call&#95;function&lt;F: Fn()&gt;(f: F) {
+<div id="editor">// A function which takes a closure as an argument and calls it.
+fn call&#95;function&lt;F: Fn()&gt;(f: F) {
     f()
 }
 
-fn print() { println!(&quot;I&#39;m a function!&quot;) }
+fn print() {
+    println!(&quot;I&#39;m a function! I can be used like a closure.&quot;)
+}
 
 fn main() {
+    let closure = || println!(&quot;I&#39;m a closure!&quot;);
+    call&#95;function(closure);
+
     call&#95;function(print);
 }</div>
 <div id="result"></div>

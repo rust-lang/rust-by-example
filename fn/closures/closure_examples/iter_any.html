@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Iterator::find | Rust by Example</title>
+        <title>Iterator::any | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../../../fn/hof.html" />
+    <link rel="next" href="../../../fn/closures/closure_examples/iter_find.html" />
     
     
-    <link rel="prev" href="../../../fn/closures/closure_analysis/iter_any.html" />
+    <link rel="prev" href="../../../fn/closures/closure_examples.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.6.2" data-basepath="../../.." data-revision="1451576114762">
+    <div class="book" data-level="8.2.6.1" data-basepath="../../.." data-revision="1451576154549">
     
 
 <div class="book-summary">
@@ -960,15 +960,15 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_analysis.html">
+        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_examples.html">
             
                 
-                    <a href="../../../fn/closures/closure_analysis.html">
+                    <a href="../../../fn/closures/closure_examples.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.</b>
                         
-                         Analysis
+                         Examples in `std`
                     </a>
                 
             
@@ -977,10 +977,10 @@
                 
     
         
-        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_analysis/iter_any.html">
+        <li class="chapter active" data-level="8.2.6.1" data-path="fn/closures/closure_examples/iter_any.html">
             
                 
-                    <a href="../../../fn/closures/closure_analysis/iter_any.html">
+                    <a href="../../../fn/closures/closure_examples/iter_any.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.1.</b>
@@ -993,10 +993,10 @@
         </li>
     
         
-        <li class="chapter active" data-level="8.2.6.2" data-path="fn/closures/closure_analysis/iter_find.html">
+        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_examples/iter_find.html">
             
                 
-                    <a href="../../../fn/closures/closure_analysis/iter_find.html">
+                    <a href="../../../fn/closures/closure_examples/iter_find.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.2.</b>
@@ -2904,23 +2904,23 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_61">
+                    <section class="normal" id="section-gitbook_60">
                     
-                        <h4 id="8262-iteratorfind">8.2.6.2 Iterator::find</h4>
-<p><code>Iterator::find</code> is a function which when passed an iterator, will return
-the first element which satisfies the predicate as an <code>Option</code>. It&#39;s
+                        <h4 id="8261-iteratorany">8.2.6.1 Iterator::any</h4>
+<p><code>Iterator::any</code> is a function which when passed an iterator, will return
+<code>true</code> if any element satisfies the predicate. Otherwise <code>false</code>. Its
 signature:</p>
 <pre><code class="lang-rust">pub trait Iterator {
     // The type being iterated over.
     type Item;
 
-    // `find` takes `&amp;mut self` meaning the caller may be borrowed
+    // `any` takes `&amp;mut self` meaning the caller may be borrowed
     // and modified, but not consumed.
-    fn find&lt;P&gt;(&amp;mut self, predicate: P) -&gt; Option&lt;Self::Item&gt; where
+    fn any&lt;F&gt;(&amp;mut self, f: F) -&gt; bool where
         // `FnMut` meaning any captured variable may at most be
-        // modified, not consumed. `&amp;Self::Item` states it takes
-        // arguments to the closure by reference.
-        P: FnMut(&amp;Self::Item) -&gt; bool {}
+        // modified, not consumed. `Self::Item` states it takes
+        // arguments to the closure by value.
+        F: FnMut(Self::Item) -&gt; bool {}
 }
 </code></pre>
 <div id="active-code">
@@ -2930,28 +2930,24 @@ signature:</p>
     let vec1 = vec![1, 2, 3];
     let vec2 = vec![4, 5, 6];
 
-    // &#96;iter()&#96; yields &#96;&amp;i32&#96;. &#96;into&#95;iter()&#96; yields &#96;i32&#96;.
-    let mut iter = vec1.iter();
-    let mut into&#95;iter = vec2.into&#95;iter();
-
-    // A reference to what is yielded is &#96;&amp;&amp;i32&#96;. Destructure to &#96;i32&#96;.
-    println!(&quot;Find 2 in vec1: {:?}&quot;, iter     .find(|&amp;&amp;x| x == 2));
-    // A reference to what is yielded is &#96;&amp;i32&#96;. Destructure to &#96;i32&#96;.
-    println!(&quot;Find 2 in vec2: {:?}&quot;, into&#95;iter.find(| &amp;x| x == 2));
+    // &#96;iter()&#96; for vecs yields &#96;&amp;i32&#96;. Destructure to &#96;i32&#96;.
+    println!(&quot;2 in vec1: {}&quot;, vec1.iter()     .any(|&amp;x| x == 2));
+    // &#96;into&#95;iter()&#96; for vecs yields &#96;i32&#96;. No destructuring required.
+    println!(&quot;2 in vec2: {}&quot;, vec2.into&#95;iter().any(| x| x == 2));
 
     let array1 = [1, 2, 3];
     let array2 = [4, 5, 6];
 
-    // &#96;iter()&#96; is normal. &#96;into&#95;iter()&#96; for arrays unusually
-    // yields &#96;&amp;i32&#96;. These would not normally both be &#96;&amp;&amp;&#96;.
-    println!(&quot;Find 2 in array1: {:?}&quot;, array1.iter()     .find(|&amp;&amp;x| x == 2));
-    println!(&quot;Find 2 in array2: {:?}&quot;, array2.into&#95;iter().find(|&amp;&amp;x| x == 2));
+    // &#96;iter()&#96; for arrays yields &#96;&amp;i32&#96;.
+    println!(&quot;2 in array1: {}&quot;, array1.iter()     .any(|&amp;x| x == 2));
+    // &#96;into&#95;iter()&#96; for arrays unusually yields &#96;&amp;i32&#96;.
+    println!(&quot;2 in array2: {}&quot;, array2.into&#95;iter().any(|&amp;x| x == 2));
 }</div>
 <div id="result"></div>
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find" target="_blank"><code>Iterator::find</code></a></p>
+<p><a href="http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any" target="_blank"><code>std::iter::iterator::any</code></a></p>
 
                     
                     </section>
@@ -2962,10 +2958,10 @@ signature:</p>
         </div>
 
         
-        <a href="../../../fn/closures/closure_analysis/iter_any.html" class="navigation navigation-prev " aria-label="Previous page: Iterator::any"><i class="fa fa-angle-left"></i></a>
+        <a href="../../../fn/closures/closure_examples.html" class="navigation navigation-prev " aria-label="Previous page: Examples in `std`"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../../fn/hof.html" class="navigation navigation-next " aria-label="Next page: Higher Order Functions"><i class="fa fa-angle-right"></i></a>
+        <a href="../../../fn/closures/closure_examples/iter_find.html" class="navigation navigation-next " aria-label="Next page: Iterator::find"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

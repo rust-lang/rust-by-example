@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.2" data-basepath="../.." data-revision="1451576114762">
+    <div class="book" data-level="8.2.2" data-basepath="../.." data-revision="1451576154549">
     
 
 <div class="book-summary">
@@ -960,15 +960,15 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_analysis.html">
+        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_examples.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis.html">
+                    <a href="../../fn/closures/closure_examples.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.</b>
                         
-                         Analysis
+                         Examples in `std`
                     </a>
                 
             
@@ -977,10 +977,10 @@
                 
     
         
-        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_analysis/iter_any.html">
+        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_examples/iter_any.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis/iter_any.html">
+                    <a href="../../fn/closures/closure_examples/iter_any.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.1.</b>
@@ -993,10 +993,10 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_analysis/iter_find.html">
+        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_examples/iter_find.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis/iter_find.html">
+                    <a href="../../fn/closures/closure_examples/iter_find.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.2.</b>
@@ -2907,15 +2907,15 @@
                     <section class="normal" id="section-gitbook_64">
                     
                         <h3 id="822-as-input-parameters">8.2.2 As input parameters</h3>
-<p>It has been noted that Rust chooses how to capture variable on the fly
+<p>It has been noted that Rust chooses how to capture variables on the fly
 without annotation. This is all very convenient in normal usage however when
 writing functions, this ambiguity is not allowed. The closure&#39;s complete
-type including which capturing type must be annotated. The manner of capture
+type, including which capturing type, must be annotated. The manner of capture
 a closure uses is annotated as one of the following <code>traits</code>:</p>
 <ul>
 <li><code>Fn</code>: takes captures by reference (<code>&amp;T</code>)</li>
 <li><code>FnMut</code>: takes captures by mutable reference (<code>&amp;mut T</code>)</li>
-<li><code>FnOnce</code>: take captures by value (<code>T</code>)</li>
+<li><code>FnOnce</code>: takes captures by value (<code>T</code>)</li>
 </ul>
 <p>Even annotated, these are very flexible: a parameter of <code>FnOnce</code> specifies
 the closure <em>may</em> capture by <code>T</code> or <code>&amp;mut T</code> or <code>&amp;T</code> at will (if a move is
@@ -2930,9 +2930,9 @@ restrictive manner possible on a variable-by-variable basis:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// A function which takes a closure as an argument and calls
-// it. The closure takes no input and returns nothing.
+<div id="editor">// A function which takes a closure as an argument and calls it.
 fn apply&lt;F&gt;(f: F) where
+    // The closure takes no input and returns nothing.
     F: FnOnce() {
     // ^ TODO: Try changing this to &#96;Fn&#96; or &#96;FnMut&#96;.
 
@@ -2948,6 +2948,8 @@ fn apply&#95;to&#95;3&lt;F&gt;(f: F) -&gt; i32 where
 }
 
 fn main() {
+    use std::mem;
+
     let greeting = &quot;hello&quot;;
     // A non-copy type.
     let mut farewell = &quot;goodbye&quot;.to&#95;owned();
@@ -2966,7 +2968,7 @@ fn main() {
 
         // Manually calling drop forces &#96;farewell&#96; to
         // be captured by value. Now requires &#96;FnOnce&#96;.
-        drop(farewell);
+        mem::drop(farewell);
     };
 
     // Call the function which applies the closure.

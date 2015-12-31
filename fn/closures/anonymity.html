@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.3" data-basepath="../.." data-revision="1451576114762">
+    <div class="book" data-level="8.2.3" data-basepath="../.." data-revision="1451576154549">
     
 
 <div class="book-summary">
@@ -960,15 +960,15 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_analysis.html">
+        <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_examples.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis.html">
+                    <a href="../../fn/closures/closure_examples.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.</b>
                         
-                         Analysis
+                         Examples in `std`
                     </a>
                 
             
@@ -977,10 +977,10 @@
                 
     
         
-        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_analysis/iter_any.html">
+        <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_examples/iter_any.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis/iter_any.html">
+                    <a href="../../fn/closures/closure_examples/iter_any.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.1.</b>
@@ -993,10 +993,10 @@
         </li>
     
         
-        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_analysis/iter_find.html">
+        <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_examples/iter_find.html">
             
                 
-                    <a href="../../fn/closures/closure_analysis/iter_find.html">
+                    <a href="../../fn/closures/closure_examples/iter_find.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.2.</b>
@@ -2904,7 +2904,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_58">
+                    <section class="normal" id="section-gitbook_59">
                     
                         <h3 id="823-type-anonymity">8.2.3 Type anonymity</h3>
 <p>Closures succinctly capture variables from enclosing scopes. Does this have
@@ -2922,18 +2922,17 @@ implementing the functionality via one of the <code>traits</code>: <code>Fn</cod
 <code>FnOnce</code> for this unknown type. This type is assigned to the variable which
 is stored until calling.</p>
 <p>Since this new type is of unknown type, any usage in a function will require
-generics. However, an unbounded type parameter (<code>&lt;T&gt;</code>) would still be ambiguous
+generics. However, an unbounded type parameter <code>&lt;T&gt;</code> would still be ambiguous
 and not be allowed. Thus, bounding by one of the <code>traits</code>: <code>Fn</code>, <code>FnMut</code>, or
 <code>FnOnce</code> (which it implements) is sufficient to specify its type.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">// &#96;F&#96; must implement &#96;Fn&#96; for a closure which takes no
-// inputs and returns nothing. Exactly what is required
+// inputs and returns nothing - exactly what is required
 // for &#96;print&#96;.
 fn apply&lt;F&gt;(f: F) where
     F: Fn() {
-
     f()
 }
 
