@@ -30,8 +30,9 @@ fn main() {
 
     let optional_float = Some(0f32);
 
-    // The `unwrap` method will extract the value wrapped in a `Some` variant,
-    // or will `panic!` if called on a `None` variant
+    // Unwrapping a `Some` variant will extract the value wrapped.
     println!("{:?} unwraps to {:?}", optional_float, optional_float.unwrap());
+
+    // Unwrapping a `None` variant will `panic!`
     println!("{:?} unwraps to {:?}", none, none.unwrap());
 }
