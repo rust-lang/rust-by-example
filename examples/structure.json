@@ -73,7 +73,7 @@
         { "id": "designators", "title": "Designators", "children": null },
         { "id": "overload", "title": "Overload", "children": null },
         { "id": "repeat", "title": "Repeat", "children": null },
-        { "id": "dry", "title": "DRY", "children": null }
+        { "id": "dry", "title": "DRY (Don't Repeat Yourself)", "children": null }
     ] },
     { "id": "mod", "title": "Modules", "children": [
         { "id": "visibility", "title": "Visibility", "children": null },

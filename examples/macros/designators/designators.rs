@@ -1,23 +1,26 @@
 macro_rules! create_function {
-    // this macro takes an argument of "type" `ident`
-    // the `ident` designator is used for variable/function names
+    // This macro takes an argument of type `ident` and creates
+    // a function named `$func_name`.
+    // The `ident` designator is used for variable/function names.
     ($func_name:ident) => (
-        // this macro creates a function with name `$func_name`
         fn $func_name() {
-            // the stringify! macro converts an `ident` into a string
+            // The `stringify!` macro converts an `ident` into a string.
             println!("You called {:?}()",
                      stringify!($func_name))
         }
     )
 }
 
+// Create functions named `foo` and `bar` with the above macro.
 create_function!(foo);
 create_function!(bar);
 
 macro_rules! print_result {
-    // the `expr` designator is used for expressions
+    // This macro takes an expression of type `expr` and prints
+    // it as a string along with its result.
+    // The `expr` designator is used for expressions.
     ($expression:expr) => (
-        // stringify! will convert the expression *as it is* into a string
+        // `stringify!` will convert the expression *as it is* into a string.
         println!("{:?} = {:?}",
                  stringify!($expression),
                  $expression)
@@ -30,7 +33,7 @@ fn main() {
 
     print_result!(1u32 + 1);
 
-    // remember that blocks are expressions
+    // Recall that blocks are expressions too!
     print_result!({
         let x = 1u32;
 
