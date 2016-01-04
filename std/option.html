@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.4" data-basepath=".." data-revision="1451912479955">
+    <div class="book" data-level="17.4" data-basepath=".." data-revision="1451916614356">
     
 
 <div class="book-summary">
@@ -2949,9 +2949,10 @@ fn main() {
 
     let optional&#95;float = Some(0f32);
 
-    // The &#96;unwrap&#96; method will extract the value wrapped in a &#96;Some&#96; variant,
-    // or will &#96;panic!&#96; if called on a &#96;None&#96; variant
+    // Unwrapping a &#96;Some&#96; variant will extract the value wrapped.
     println!(&quot;{:?} unwraps to {:?}&quot;, optional&#95;float, optional&#95;float.unwrap());
+
+    // Unwrapping a &#96;None&#96; variant will &#96;panic!&#96;
     println!(&quot;{:?} unwraps to {:?}&quot;, none, none.unwrap());
 }</div>
 <div id="result"></div>
