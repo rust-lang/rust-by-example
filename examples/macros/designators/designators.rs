@@ -1,6 +1,6 @@
 macro_rules! create_function {
-    // This macro takes an argument of type `ident` and creates
-    // a function named `$func_name`.
+    // This macro takes an argument of designator `ident` and
+    // creates a function named `$func_name`.
     // The `ident` designator is used for variable/function names.
     ($func_name:ident) => (
         fn $func_name() {
