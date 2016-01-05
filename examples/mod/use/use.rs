@@ -1,4 +1,4 @@
-// Bind the `deeply::nested::function` path to `other_function`
+// Bind the `deeply::nested::function` path to `other_function`.
 use deeply::nested::function as other_function;
 
 fn function() {
@@ -19,16 +19,14 @@ fn main() {
 
     println!("Entering block");
     {
-        // This is equivalent to `use deeply::nested::function as function`
-        // This `function` will shadow the outer one
+        // This is equivalent to `use deeply::nested::function as function`.
+        // This `function()` will shadow the outer one.
         use deeply::nested::function;
-
         function();
 
+        // `use` bindings have a local scope. In this case, the
+        // shadowing of `function()` is only in this block.
         println!("Leaving block");
-
-        // `use` bindings have a local scope, in this case the `function`
-        // shadowing is only available in this scope
     }
 
     function();
