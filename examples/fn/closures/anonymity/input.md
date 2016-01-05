@@ -17,7 +17,7 @@ implementing the functionality via one of the `traits`: `Fn`, `FnMut`, or
 is stored until calling.
 
 Since this new type is of unknown type, any usage in a function will require
-generics. However, an unbounded type parameter (`<T>`) would still be ambiguous
+generics. However, an unbounded type parameter `<T>` would still be ambiguous
 and not be allowed. Thus, bounding by one of the `traits`: `Fn`, `FnMut`, or
 `FnOnce` (which it implements) is sufficient to specify its type.
 

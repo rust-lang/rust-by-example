@@ -22,7 +22,7 @@ for these types. To print text for custom types, more steps are required.
 
 ### Activities
 
- * Fix the two isses in the above code (see FIXME) so that it runs without
+ * Fix the two issues in the above code (see FIXME) so that it runs without
    error.
  * Add a `println!` macro that prints: `Pi is roughly 3.143`, using twenty-two
    divided by seven to generate the estimate for Pi. (Hint: you may need to

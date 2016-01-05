@@ -11,9 +11,10 @@ We need to tell the compiler the type of the literals we use. For now,
 we'll use the `u32` suffix to indicate that the literal is an unsigned 32-bit
 integer, and the `i32` suffix to indicate that it's a signed 32-bit integer.
 
-The operators available and their precedence are similar to other
+The operators available and their precedence [in Rust][rust op-prec] are similar to other
 [C-like languages][op-prec].
 
 {literals.play}
 
+[rust op-prec]: http://doc.rust-lang.org/reference.html#operator-precedence
 [op-prec]: https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages

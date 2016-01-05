@@ -1,6 +1,6 @@
-// A function which takes a closure as an argument and calls
-// it. The closure takes no input and returns nothing.
+// A function which takes a closure as an argument and calls it.
 fn apply<F>(f: F) where
+    // The closure takes no input and returns nothing.
     F: FnOnce() {
     // ^ TODO: Try changing this to `Fn` or `FnMut`.
 
@@ -16,6 +16,8 @@ fn apply_to_3<F>(f: F) -> i32 where
 }
 
 fn main() {
+    use std::mem;
+    
     let greeting = "hello";
     // A non-copy type.
     let mut farewell = "goodbye".to_owned();
@@ -34,7 +36,7 @@ fn main() {
 
         // Manually calling drop forces `farewell` to
         // be captured by value. Now requires `FnOnce`.
-        drop(farewell);
+        mem::drop(farewell);
     };
 
     // Call the function which applies the closure.

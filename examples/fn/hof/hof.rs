@@ -1,3 +1,7 @@
+fn is_odd(n: u32) -> bool {
+    n % 2 == 1
+}
+
 fn main() {
     println!("Find the sum of all the squared odd numbers under 1000");
     let upper = 1000;
@@ -27,8 +31,4 @@ fn main() {
              .filter(|n| is_odd(*n))     // That are odd
              .fold(0, |sum, i| sum + i); // Sum them
     println!("functional style: {}", sum_of_squared_odd_numbers);
-}
-
-fn is_odd(n: u32) -> bool {
-    n % 2 == 1
 }
