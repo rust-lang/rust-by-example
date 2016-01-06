@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10.4" data-basepath=".." data-revision="1452085209118">
+    <div class="book" data-level="10.4" data-basepath=".." data-revision="1452092345746">
     
 
 <div class="book-summary">
@@ -2907,8 +2907,8 @@
                     <section class="normal" id="section-gitbook_96">
                     
                         <h2 id="104-super-and-self">10.4 <code>super</code> and <code>self</code></h2>
-<p>The <code>super</code> and <code>self</code> keywords can be used in the path, to remove ambiguity
-when accessing items.</p>
+<p>The <code>super</code> and <code>self</code> keywords can be used in the path to remove ambiguity
+when accessing items and to prevent unnecessary hardcoding of paths.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2916,41 +2916,13 @@ when accessing items.</p>
     println!(&quot;called &#96;function()&#96;&quot;);
 }
 
-mod my {
-    pub fn indirect&#95;call() {
-        // Let&#39;s access all the functions named &#96;function&#96; from this scope
-        print!(&quot;called &#96;my::indirect&#95;call()&#96;, that&#92;n&gt; &quot;);
-
-        // &#96;my::function&#96; can be called directly
-        function();
-
-        {
-            // This will bind to the &#96;cool::function&#96; in the &#42;crate&#42; scope
-            // In this case the crate scope is the outermost scope
-            use cool::function as root&#95;cool&#95;function;
-
-            print!(&quot;&gt; &quot;);
-            root&#95;cool&#95;function();
-        }
-
-        {
-            // &#96;self&#96; refers to the current module scope, in this case: &#96;my&#96;
-            use self::cool::function as my&#95;cool&#95;function;
-
-            print!(&quot;&gt; &quot;);
-            my&#95;cool&#95;function();
-        }
-
-        {
-            // &#96;super&#96; refers to the parent scope, i.e. outside of the &#96;my&#96;
-            // module
-            use super::function as root&#95;function;
-
-            print!(&quot;&gt; &quot;);
-            root&#95;function();
-        }
+mod cool {
+    pub fn function() {
+        println!(&quot;called &#96;cool::function()&#96;&quot;);
     }
+}
 
+mod my {
     fn function() {
         println!(&quot;called &#96;my::function()&#96;&quot;);
     }
@@ -2960,11 +2932,29 @@ mod my {
             println!(&quot;called &#96;my::cool::function()&#96;&quot;);
         }
     }
-}
 
-mod cool {
-    pub fn function() {
-        println!(&quot;called &#96;cool::function()&#96;&quot;);
+    pub fn indirect&#95;call() {
+        // Let&#39;s access all the functions named &#96;function&#96; from this scope!
+        print!(&quot;called &#96;my::indirect&#95;call()&#96;, that&#92;n&gt; &quot;);
+
+        // The &#96;self&#96; keyword refers to the current module scope - in this case &#96;my&#96;.
+        // Calling &#96;self::function()&#96; and calling &#96;function()&#96; directly both give
+        // the same result, because they refer to the same function.
+        self::function();
+        function();
+
+        // We can also use &#96;self&#96; to access another module inside &#96;my&#96;:
+        self::cool::function();
+
+        // The &#96;super&#96; keyword refers to the parent scope (outside the &#96;my&#96; module).
+        super::function();
+
+        // This will bind to the &#96;cool::function&#96; in the &#42;crate&#42; scope.
+        // In this case the crate scope is the outermost scope.
+        {
+            use cool::function as root&#95;function;
+            root&#95;function();
+        }
     }
 }
 

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10.2" data-basepath=".." data-revision="1452085209118">
+    <div class="book" data-level="10.2" data-basepath=".." data-revision="1452092345746">
     
 
 <div class="book-summary">
@@ -2907,27 +2907,27 @@
                     <section class="normal" id="section-gitbook_95">
                     
                         <h2 id="102-struct-visibility">10.2 Struct visibility</h2>
-<p>Structs have an extra level of visibility, their fields can be public or
-private (which is the default). This visibility only matters when a
-struct is accessed from outside the module where it is defined, and its
-goal is information hiding (encapsulation).</p>
+<p>Structs have an extra level of visibility with their fields. The visibility 
+defaults to private, and can be overridden with the <code>pub</code> modifier. This 
+visibility only matters when a struct is accessed from outside the module 
+where it is defined, and has the goal of hiding information (encapsulation).</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">mod my {
-    // A public struct with public fields
+    // A public struct with a public field of generic type &#96;T&#96;
     pub struct WhiteBox&lt;T&gt; {
         pub contents: T,
     }
 
-    // A public struct with private fields
+    // A public struct with a private field of generic type &#96;T&#96;
     #[allow(dead&#95;code)]
     pub struct BlackBox&lt;T&gt; {
         contents: T,
     }
 
     impl&lt;T&gt; BlackBox&lt;T&gt; {
-        // A public constructor
+        // A public constructor method
         pub fn new(contents: T) -&gt; BlackBox&lt;T&gt; {
             BlackBox {
                 contents: contents,
@@ -2940,25 +2940,28 @@ fn main() {
     // Public structs with public fields can be constructed as usual
     let white&#95;box = my::WhiteBox { contents: &quot;public information&quot; };
 
-    // and their fields can be normally accessed
+    // and their fields can be normally accessed.
     println!(&quot;The white box contains: {}&quot;, white&#95;box.contents);
 
-    // but public structs with private fields can&#39;t be constructed
+    // Public structs with private fields cannot be constructed using field names.
     // Error! &#96;BlackBox&#96; has private fields
     //let black&#95;box = my::BlackBox { contents: &quot;classified information&quot; };
     // TODO ^ Try uncommenting this line
 
-    // However, structs with private fields can still be created using
-    // constructors
+    // However, structs with private fields can be created using
+    // public constructors
     let &#95;black&#95;box = my::BlackBox::new(&quot;classified information&quot;);
 
-    // The private fields of a struct can&#39;t be accessed
+    // and the private fields of a public struct cannot be accessed.
     // Error! The &#96;contents&#96; field is private
     //println!(&quot;The black box contains: {}&quot;, &#95;black&#95;box.contents);
     // TODO ^ Try uncommenting this line
 }</div>
 <div id="result"></div>
 </div>
+
+<h3 id="see-also">See also:</h3>
+<p><a href="/generics.html">generics</a> and <a href="/fn/methods.html">methods</a></p>
 
                     
                     </section>

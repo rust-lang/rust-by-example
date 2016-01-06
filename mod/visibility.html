@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10.1" data-basepath=".." data-revision="1452085209118">
+    <div class="book" data-level="10.1" data-basepath=".." data-revision="1452092345746">
     
 
 <div class="book-summary">
@@ -2913,30 +2913,26 @@ accessed from outside the module scope.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">fn function() {
-    println!(&quot;called &#96;function()&#96;&quot;);
-}
-
+<div id="editor">// A module named &#96;my&#96;
 mod my {
-    // A public function
-    pub fn function() {
-        println!(&quot;called &#96;my::function()&#96;&quot;);
-    }
-
-    // A private function
+    // Items in modules default to private visibility.
     fn private&#95;function() {
         println!(&quot;called &#96;my::private&#95;function()&#96;&quot;);
     }
 
-    // Items can access other items in the same module
+    // Use the &#96;pub&#96; modifier to override default visibility.
+    pub fn function() {
+        println!(&quot;called &#96;my::function()&#96;&quot;);
+    }
+
+    // Items can access other items in the same module,
+    // even when private.
     pub fn indirect&#95;access() {
         print!(&quot;called &#96;my::indirect&#95;access()&#96;, that&#92;n&gt; &quot;);
-
-        // regardless of their visibility
         private&#95;function();
     }
 
-    // A public module
+    // Modules can also be nested
     pub mod nested {
         pub fn function() {
             println!(&quot;called &#96;my::nested::function()&#96;&quot;);
@@ -2948,42 +2944,42 @@ mod my {
         }
     }
 
-    // A private module
-    mod inaccessible {
+    // Nested modules follow the same rules for visibility
+    mod private&#95;nested {
         #[allow(dead&#95;code)]
-        pub fn public&#95;function() {
-            println!(&quot;called &#96;my::inaccessible::public&#95;function()&#96;&quot;);
+        pub fn function() {
+            println!(&quot;called &#96;my::private&#95;nested::function()&#96;&quot;);
         }
     }
 }
 
+fn function() {
+    println!(&quot;called &#96;function()&#96;&quot;);
+}
+
 fn main() {
-    // The public items of a module can be accessed
+    // Modules allow disambiguation between items that have the same name.
+    function();
     my::function();
 
-    // modules allow disambiguation between items that have the same name
-    function();
+    // Public items, including those inside nested modules, can be
+    // accessed from outside the parent module.
+    my::indirect&#95;access();
+    my::nested::function();
 
-    // The private items of a module can&#39;t be directly accessed
+    // Private items of a module cannot be directly accessed, even if
+    // nested in a public module:
+
     // Error! &#96;private&#95;function&#96; is private
     //my::private&#95;function();
     // TODO ^ Try uncommenting this line
 
-    my::indirect&#95;access();
-
-    // Public items inside public nested modules can be accessed from outside
-    // the parent module
-    my::nested::function();
-
-    // but private items inside public nested modules can&#39;t be accessed
     // Error! &#96;private&#95;function&#96; is private
     //my::nested::private&#95;function();
     // TODO ^ Try uncommenting this line
 
-    // Items inside private nested modules can&#39;t be accessed, regardless of
-    // their visibility
-    // Error! &#96;inaccessible&#96; is a private module
-    //my::inaccessible::public&#95;function();
+    // Error! &#96;private&#95;nested&#96; is a private module
+    //my::private&#95;nested::function();
     // TODO ^ Try uncommenting this line
 }</div>
 <div id="result"></div>

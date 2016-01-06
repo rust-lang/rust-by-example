@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10.3" data-basepath=".." data-revision="1452085209118">
+    <div class="book" data-level="10.3" data-basepath=".." data-revision="1452092345746">
     
 
 <div class="book-summary">
@@ -2912,7 +2912,7 @@ access.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// Bind the &#96;deeply::nested::function&#96; path to &#96;other&#95;function&#96;
+<div id="editor">// Bind the &#96;deeply::nested::function&#96; path to &#96;other&#95;function&#96;.
 use deeply::nested::function as other&#95;function;
 
 fn function() {
@@ -2933,16 +2933,14 @@ fn main() {
 
     println!(&quot;Entering block&quot;);
     {
-        // This is equivalent to &#96;use deeply::nested::function as function&#96;
-        // This &#96;function&#96; will shadow the outer one
+        // This is equivalent to &#96;use deeply::nested::function as function&#96;.
+        // This &#96;function()&#96; will shadow the outer one.
         use deeply::nested::function;
-
         function();
 
+        // &#96;use&#96; bindings have a local scope. In this case, the
+        // shadowing of &#96;function()&#96; is only in this block.
         println!(&quot;Leaving block&quot;);
-
-        // &#96;use&#96; bindings have a local scope, in this case the &#96;function&#96;
-        // shadowing is only available in this scope
     }
 
     function();

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10" data-basepath="." data-revision="1452085209118">
+    <div class="book" data-level="10" data-basepath="." data-revision="1452092345746">
     
 
 <div class="book-summary">
@@ -2912,39 +2912,6 @@ code in logical units (modules), and manage visibility (public/private) between
 them.</p>
 <p>A module is a collection of items: functions, structs, traits, <code>impl</code> blocks,
 and even other modules.</p>
-<div id="active-code">
-<button class="btn btn-primary" type="button" id="run-code">Run</button>
-<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">fn function() {
-    println!(&quot;called &#96;function()&#96;&quot;);
-}
-
-// A module named &#96;my&#96;
-mod my {
-    // A module can contain items like functions
-    #[allow(dead&#95;code)]
-    fn function() {
-        println!(&quot;called &#96;my::function()&#96;&quot;);
-    }
-
-    // Modules can be nested
-    mod nested {
-        #[allow(dead&#95;code)]
-        fn function() {
-            println!(&quot;called &#96;my::nested::function()&#96;&quot;);
-        }
-    }
-}
-
-fn main() {
-    function();
-
-    // Error! &#96;my::function&#96; is private
-    my::function();
-    // TODO ^ Comment out this line
-}</div>
-<div id="result"></div>
-</div>
 
                     
                     </section>
