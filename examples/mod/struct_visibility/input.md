@@ -1,6 +1,13 @@
-Structs have an extra level of visibility, their fields can be public or
-private (which is the default). This visibility only matters when a
-struct is accessed from outside the module where it is defined, and its
-goal is information hiding (encapsulation).
+Structs have an extra level of visibility with their fields. The visibility 
+defaults to private, and can be overridden with the `pub` modifier. This 
+visibility only matters when a struct is accessed from outside the module 
+where it is defined, and has the goal of hiding information (encapsulation).
 
 {struct.play}
+
+### See also:
+
+[generics][generics] and [methods][methods]
+
+[generics]: /generics.html
+[methods]: /fn/methods.html

@@ -4,5 +4,3 @@ them.
 
 A module is a collection of items: functions, structs, traits, `impl` blocks,
 and even other modules.
-
-{mod.play}

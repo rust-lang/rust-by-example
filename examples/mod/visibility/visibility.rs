@@ -1,27 +1,23 @@
-fn function() {
-    println!("called `function()`");
-}
-
+// A module named `my`
 mod my {
-    // A public function
-    pub fn function() {
-        println!("called `my::function()`");
-    }
-
-    // A private function
+    // Items in modules default to private visibility.
     fn private_function() {
         println!("called `my::private_function()`");
     }
-
-    // Items can access other items in the same module
+    
+    // Use the `pub` modifier to override default visibility.
+    pub fn function() {
+        println!("called `my::function()`");
+    }
+    
+    // Items can access other items in the same module,
+    // even when private.
     pub fn indirect_access() {
         print!("called `my::indirect_access()`, that\n> ");
-
-        // regardless of their visibility
         private_function();
     }
 
-    // A public module
+    // Modules can also be nested
     pub mod nested {
         pub fn function() {
             println!("called `my::nested::function()`");
@@ -32,42 +28,42 @@ mod my {
             println!("called `my::nested::private_function()`");
         }
     }
-
-    // A private module
-    mod inaccessible {
+    
+    // Nested modules follow the same rules for visibility
+    mod private_nested {
         #[allow(dead_code)]
-        pub fn public_function() {
-            println!("called `my::inaccessible::public_function()`");
+        pub fn function() {
+            println!("called `my::private_nested::function()`");
         }
     }
 }
 
+fn function() {
+    println!("called `function()`");
+}
+
 fn main() {
-    // The public items of a module can be accessed
-    my::function();
-
-    // modules allow disambiguation between items that have the same name
+    // Modules allow disambiguation between items that have the same name.
     function();
+    my::function();
+    
+    // Public items, including those inside nested modules, can be
+    // accessed from outside the parent module.
+    my::indirect_access();
+    my::nested::function();
 
-    // The private items of a module can't be directly accessed
+    // Private items of a module cannot be directly accessed, even if
+    // nested in a public module:
+    
     // Error! `private_function` is private
     //my::private_function();
     // TODO ^ Try uncommenting this line
 
-    my::indirect_access();
-
-    // Public items inside public nested modules can be accessed from outside
-    // the parent module
-    my::nested::function();
-
-    // but private items inside public nested modules can't be accessed
     // Error! `private_function` is private
     //my::nested::private_function();
     // TODO ^ Try uncommenting this line
 
-    // Items inside private nested modules can't be accessed, regardless of
-    // their visibility
-    // Error! `inaccessible` is a private module
-    //my::inaccessible::public_function();
+    // Error! `private_nested` is a private module
+    //my::private_nested::function();
     // TODO ^ Try uncommenting this line
 }
