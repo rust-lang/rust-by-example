@@ -87,7 +87,7 @@
         { "id": "link", "title": "`extern crate`", "children": null }
     ] },
     { "id": "attribute", "title": "Attributes", "children": [
-        { "id": "unused", "title": "Unused", "children": null },
+        { "id": "unused", "title": "`dead_code`", "children": null },
         { "id": "crate", "title": "Crates", "children": null },
         { "id": "cfg", "title": "`cfg`", "children": [
             { "id": "custom", "title": "Custom", "children": null }
