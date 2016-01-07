@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9.3" data-basepath=".." data-revision="1452171619059">
+    <div class="book" data-level="9.3" data-basepath=".." data-revision="1452193937530">
     
 
 <div class="book-summary">
@@ -1113,7 +1113,7 @@
                         
                             <b>9.4.</b>
                         
-                         DRY
+                         DRY (Don&#39;t Repeat Yourself)
                     </a>
                 
             
@@ -2916,21 +2916,21 @@ Also note that the semicolon is optional on the last case.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// min! will calculate the minimum of any number of arguments
-macro&#95;rules! min {
-    // base case
+<div id="editor">// &#96;min!&#96; will calculate the minimum of any number of arguments.
+macro&#95;rules! find&#95;min {
+    // Base case:
     (&#36;x:expr) =&gt; (&#36;x);
     // &#96;&#36;x&#96; followed by at least one &#96;&#36;y,&#96;
     (&#36;x:expr, &#36;(&#36;y:expr),+) =&gt; (
-        // call min! on the tail &#96;&#36;y&#96;
-        std::cmp::min(&#36;x, min!(&#36;(&#36;y),+))
+        // Call &#96;find&#95;min!&#96; on the tail &#96;&#36;y&#96;
+        std::cmp::min(&#36;x, find&#95;min!(&#36;(&#36;y),+))
     )
 }
 
 fn main() {
-    println!(&quot;{}&quot;, min!(1u32));
-    println!(&quot;{}&quot;, min!(1u32 + 2 , 2u32));
-    println!(&quot;{}&quot;, min!(5u32, 2u32 &#42; 3, 4u32));
+    println!(&quot;{}&quot;, find&#95;min!(1u32));
+    println!(&quot;{}&quot;, find&#95;min!(1u32 + 2 , 2u32));
+    println!(&quot;{}&quot;, find&#95;min!(5u32, 2u32 &#42; 3, 4u32));
 }</div>
 <div id="result"></div>
 </div>
@@ -2947,7 +2947,7 @@ fn main() {
         <a href="../macros/overload.html" class="navigation navigation-prev " aria-label="Previous page: Overload"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../macros/dry.html" class="navigation navigation-next " aria-label="Next page: DRY"><i class="fa fa-angle-right"></i></a>
+        <a href="../macros/dry.html" class="navigation navigation-next " aria-label="Next page: DRY (Don&#39;t Repeat Yourself)"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>DRY | Rust by Example</title>
+        <title>DRY (Don&#39;t Repeat Yourself) | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9.4" data-basepath=".." data-revision="1452171619059">
+    <div class="book" data-level="9.4" data-basepath=".." data-revision="1452193937530">
     
 
 <div class="book-summary">
@@ -1113,7 +1113,7 @@
                         
                             <b>9.4.</b>
                         
-                         DRY
+                         DRY (Don&#39;t Repeat Yourself)
                     </a>
                 
             
@@ -2906,16 +2906,16 @@
                 
                     <section class="normal" id="section-gitbook_87">
                     
-                        <h2 id="94-dry">9.4 DRY</h2>
-<p>Macros allow writing DRY code, by factoring out the common parts of functions
+                        <h2 id="94-dry-dont-repeat-yourself">9.4 DRY (Don&#39;t Repeat Yourself)</h2>
+<p>Macros allow writing DRY code by factoring out the common parts of functions
 and/or test suites. Here is an example that implements and tests the <code>+=</code>, <code>*=</code>
-and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>.</p>
+and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// dry.rs</span>
 <span class="hljs-keyword">use</span> std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
     <span class="hljs-comment">// The `tt` (token tree) designator is used for</span>
-    <span class="hljs-comment">// operators and tokens</span>
+    <span class="hljs-comment">// operators and tokens.</span>
     ($a:ident, $b: ident, $func:ident, $op:tt) =&gt; (
         <span class="hljs-built_in">assert!</span>($a.len() == $b.len(),
                 <span class="hljs-string">"{:?}: dimension mismatch: {:?} {:?} {:?}"</span>,
@@ -2939,7 +2939,7 @@ macro_rules! op {
     )
 }
 
-<span class="hljs-comment">// implement add_assign, mul_assign, and sub_assign functions</span>
+<span class="hljs-comment">// Implement `add_assign`, `mul_assign`, and `sub_assign` functions.</span>
 op!(add_assign, Add, +=, add);
 op!(mul_assign, Mul, *=, mul);
 op!(sub_assign, Sub, -=, sub);
@@ -2963,7 +2963,7 @@ op!(sub_assign, Sub, -=, sub);
         }
     }
 
-    <span class="hljs-comment">// test add_assign, mul_assign and sub_assign</span>
+    <span class="hljs-comment">// Test `add_assign`, `mul_assign` and `sub_assign`</span>
     test!(add_assign, <span class="hljs-number">1u32</span>, <span class="hljs-number">2u32</span>, <span class="hljs-number">3u32</span>);
     test!(mul_assign, <span class="hljs-number">2u32</span>, <span class="hljs-number">3u32</span>, <span class="hljs-number">6u32</span>);
     test!(sub_assign, <span class="hljs-number">3u32</span>, <span class="hljs-number">2u32</span>, <span class="hljs-number">1u32</span>);

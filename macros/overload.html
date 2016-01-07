@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9.2" data-basepath=".." data-revision="1452171619059">
+    <div class="book" data-level="9.2" data-basepath=".." data-revision="1452193937530">
     
 
 <div class="book-summary">
@@ -1113,7 +1113,7 @@
                         
                             <b>9.4.</b>
                         
-                         DRY
+                         DRY (Don&#39;t Repeat Yourself)
                     </a>
                 
             
@@ -2907,21 +2907,23 @@
                     <section class="normal" id="section-gitbook_88">
                     
                         <h2 id="92-overload">9.2 Overload</h2>
-<p>Macros can be overloaded to accept different combinations of arguments.</p>
+<p>Macros can be overloaded to accept different combinations of arguments. 
+In that regard, <code>macro_rules!</code> can work similarly to a match block:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// macro&#95;rules! is similar to a match block
+<div id="editor">// &#96;test!&#96; will compare &#96;&#36;left&#96; and &#96;&#36;right&#96;
+// in different ways depending on how you invoke it:
 macro&#95;rules! test {
-    // the arguments don&#39;t need to be separated by a comma
-    // any template can be used
+    // Arguments don&#39;t need to be separated by a comma.
+    // Any template can be used!
     (&#36;left:expr; and &#36;right:expr) =&gt; (
         println!(&quot;{:?} and {:?} is {:?}&quot;,
                  stringify!(&#36;left),
                  stringify!(&#36;right),
                  &#36;left &amp;&amp; &#36;right)
     );
-    // ^ each arm must be ended with a semicolon
+    // ^ each arm must end with a semicolon.
     (&#36;left:expr; or &#36;right:expr) =&gt; (
         println!(&quot;{:?} or {:?} is {:?}&quot;,
                  stringify!(&#36;left),

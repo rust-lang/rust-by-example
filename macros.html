@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9" data-basepath="." data-revision="1452171619059">
+    <div class="book" data-level="9" data-basepath="." data-revision="1452193937530">
     
 
 <div class="book-summary">
@@ -1113,7 +1113,7 @@
                         
                             <b>9.4.</b>
                         
-                         DRY
+                         DRY (Don&#39;t Repeat Yourself)
                     </a>
                 
             
@@ -2915,17 +2915,17 @@ expanded into source code that gets compiled with the rest of the program.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// This is the simplest macro, &#96;say&#95;hello&#96; is the name of the macro
+<div id="editor">// This is a simple macro named &#96;say&#95;hello&#96;.
 macro&#95;rules! say&#95;hello {
-    // &#96;()&#96; indicates that the macro takes no argument
+    // &#96;()&#96; indicates that the macro takes no argument.
     () =&gt; (
-        // the macro will expand into the contents of this block
+        // The macro will expand into the contents of this block.
         println!(&quot;Hello!&quot;);
     )
 }
 
 fn main() {
-    // this call will expand into &#96;println!(&quot;Hello&quot;);&#96;
+    // This call will expand into &#96;println!(&quot;Hello&quot;);&#96;
     say&#95;hello!()
 }</div>
 <div id="result"></div>

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9.1" data-basepath=".." data-revision="1452171619059">
+    <div class="book" data-level="9.1" data-basepath=".." data-revision="1452193937530">
     
 
 <div class="book-summary">
@@ -1113,7 +1113,7 @@
                         
                             <b>9.4.</b>
                         
-                         DRY
+                         DRY (Don&#39;t Repeat Yourself)
                     </a>
                 
             
@@ -2913,25 +2913,28 @@ with a <em>designator</em>:</p>
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">macro&#95;rules! create&#95;function {
-    // this macro takes an argument of &quot;type&quot; &#96;ident&#96;
-    // the &#96;ident&#96; designator is used for variable/function names
+    // This macro takes an argument of designator &#96;ident&#96; and
+    // creates a function named &#96;&#36;func&#95;name&#96;.
+    // The &#96;ident&#96; designator is used for variable/function names.
     (&#36;func&#95;name:ident) =&gt; (
-        // this macro creates a function with name &#96;&#36;func&#95;name&#96;
         fn &#36;func&#95;name() {
-            // the stringify! macro converts an &#96;ident&#96; into a string
+            // The &#96;stringify!&#96; macro converts an &#96;ident&#96; into a string.
             println!(&quot;You called {:?}()&quot;,
                      stringify!(&#36;func&#95;name))
         }
     )
 }
 
+// Create functions named &#96;foo&#96; and &#96;bar&#96; with the above macro.
 create&#95;function!(foo);
 create&#95;function!(bar);
 
 macro&#95;rules! print&#95;result {
-    // the &#96;expr&#96; designator is used for expressions
+    // This macro takes an expression of type &#96;expr&#96; and prints
+    // it as a string along with its result.
+    // The &#96;expr&#96; designator is used for expressions.
     (&#36;expression:expr) =&gt; (
-        // stringify! will convert the expression &#42;as it is&#42; into a string
+        // &#96;stringify!&#96; will convert the expression &#42;as it is&#42; into a string.
         println!(&quot;{:?} = {:?}&quot;,
                  stringify!(&#36;expression),
                  &#36;expression)
@@ -2944,7 +2947,7 @@ fn main() {
 
     print&#95;result!(1u32 + 1);
 
-    // remember that blocks are expressions
+    // Recall that blocks are expressions too!
     print&#95;result!({
         let x = 1u32;
 
