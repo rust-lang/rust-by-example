@@ -3,7 +3,7 @@ Conditional compilation is possible through two different operators:
 * the `cfg` attribute: `#[cfg(...)]` in attribute position
 * the `cfg!` macro: `cfg!(...)` in boolean expressions
 
-Both utilize identical syntax.
+Both utilize identical argument syntax.
 
 {cfg.play}
 
