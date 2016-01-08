@@ -7,19 +7,21 @@ is actually considered valid.
 A type parameter is specified as generic by the use of angle brackets and
 [camel case][camelcase]: `<A, B, ...>`. "Generic type parameters" are
 typically represented as `<T>`. In Rust, "generic" also describes anything that
-accepts one or more generic type parameters `<T>`. For example, defining a
-*generic function* named `foo` that takes an argument `T` of any type:
+accepts one or more generic type parameters `<T>`. Any type specified as a 
+generic type parameter is generic, and everything else is concrete (non-generic).
+
+For example, defining a *generic function* named `foo` that takes an argument
+`T` of any type:
 
 ```rust
 fn foo<T>(T) { ... }
 ```
 
-There are 2 basic rules regarding this which are applied at the type's first use:
+Because `T` has been specified as a generic type parameter, it is considered
+generic when used here as `(T)`. This is the case even if `T` has previously
+been defined as a `struct`.
 
-* Any type previously specified to be generic is generic.
-* Everything else is concrete (non-generic).
-
-These rules play out like this:
+This example shows some of the syntax in action:
 
 {generics.play}
 

@@ -15,11 +15,12 @@ fn main() {
     // `Single` is concrete and explicitly takes `A`.
     let _s = Single(A);
     
-    // Instantiating generic types can be explicit or implicit.
-    // `SingleGen` explicitly specialized:
+    // Here, `SingleGen` is explicitly specialized. This reads as:
+    // Create a variable `_char` of type `SingleGen<char>`
+    // and give it the value `SingleGen('a')`
     let _char: SingleGen<char> = SingleGen('a');
 
-    // `SingleGen` implicitly specialized:
+    // `SingleGen` can also be implicitly specialized:
     let _t    = SingleGen(A); // Uses `A` defined at the top.
     let _i32  = SingleGen(6); // Uses `i32`.
     let _char = SingleGen('a'); // Uses `char`.
