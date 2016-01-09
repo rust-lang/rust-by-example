@@ -1,25 +1,27 @@
-// A concrete type `T`.
-struct T;
+// A concrete type `A`.
+struct A;
 
-// The first use of `T` was not preceded by `<T>` so `Single` must
-// be a concrete type. `T` is defined at the top.
-struct Single(T);
-//            ^ Here is `Single`s first use of the type `T`.
+// In defining the type `Single`, the first use of `A` is not preceded by `<A>`.
+// Therefore, `Single` is a concrete type, and `A` is defined as above.
+struct Single(A);
+//            ^ Here is `Single`s first use of the type `A`.
 
-// The first use of `T` is preceded by `<T>`. `SingleGen` must be
-// generic and has not yet been specialized. `T` could be anything
-// including `T` at the top.
+// Here, `<T>` precedes the first use of `T`, so `SingleGen` is a generic type.
+// Because the type parameter `T` is generic, it could be anything, including
+// the concrete type `A` defined at the top.
 struct SingleGen<T>(T);
 
-// Instantiating the types can be implicit or explicit.
 fn main() {
-    // Regular `Single`.
-    let _s = Single(T);
-
-    // `SingleGen` explicity specialized.
+    // `Single` is concrete and explicitly takes `A`.
+    let _s = Single(A);
+    
+    // Here, `SingleGen` is explicitly specialized. This reads as:
+    // Create a variable `_char` of type `SingleGen<char>`
+    // and give it the value `SingleGen('a')`
     let _char: SingleGen<char> = SingleGen('a');
 
-    // `SingleGen`s implicitly specialized.
-    let _t   = SingleGen(T); // Uses `T` at top.
-    let _i32 = SingleGen(6); // Uses `i32`.
+    // `SingleGen` can also be implicitly specialized:
+    let _t    = SingleGen(A); // Uses `A` defined at the top.
+    let _i32  = SingleGen(6); // Uses `i32`.
+    let _char = SingleGen('a'); // Uses `char`.
 }
