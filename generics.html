@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13" data-basepath="." data-revision="1452344551590">
+    <div class="book" data-level="13" data-basepath="." data-revision="1452365975138">
     
 
 <div class="book-summary">
@@ -1307,7 +1307,7 @@
                         
                             <b>12.1.</b>
                         
-                         Unused
+                         `dead_code`
                     </a>
                 
             
@@ -2907,46 +2907,53 @@
                     <section class="normal" id="section-gitbook_84">
                     
                         <h1 id="13-generics">13 Generics</h1>
-<p>Generics is the topic of generalizing types and functionality to be more broad
-than one specific type. This is extremely useful in reducing code duplication
-in many ways. We will find though that being generic will involve taking
-great care to actually specify what types a generic type is actually valid
-over. This will require a rather involving syntax, though it seems
-straightforward at first.</p>
-<p>A type is specified as generic by <code>&lt;A, B, ...&gt;</code>. There are 2 basic rules
-regarding this which are applied <em>at</em> the type&#39;s first use:</p>
-<ul>
-<li>Any type previously and locally specified to be generic is generic.</li>
-<li>Everything else is concrete (non-generic).</li>
-</ul>
-<p>These rules play out like this:</p>
+<p>Generics is the topic of generalizing types and functionality to broader
+cases. This is extremely useful in reducing code duplication in many ways,
+but requires a rather involving syntax. However, we will find that being 
+generic involves taking great care to specify over what types a generic type 
+is actually considered valid.</p>
+<p>A type parameter is specified as generic by the use of angle brackets and
+<a href="https://en.wikipedia.org/wiki/CamelCase" target="_blank">camel case</a>: <code>&lt;A, B, ...&gt;</code>. &quot;Generic type parameters&quot; are
+typically represented as <code>&lt;T&gt;</code>. In Rust, &quot;generic&quot; also describes anything that
+accepts one or more generic type parameters <code>&lt;T&gt;</code>. Any type specified as a 
+generic type parameter is generic, and everything else is concrete (non-generic).</p>
+<p>For example, defining a <em>generic function</em> named <code>foo</code> that takes an argument
+<code>T</code> of any type:</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">foo</span></span>&lt;T&gt;(T) { ... }
+</code></pre>
+<p>Because <code>T</code> has been specified as a generic type parameter, it is considered
+generic when used here as <code>(T)</code>. This is the case even if <code>T</code> has previously
+been defined as a <code>struct</code>.</p>
+<p>This example shows some of the syntax in action:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// A concrete type &#96;T&#96;.
-struct T;
+<div id="editor">// A concrete type &#96;A&#96;.
+struct A;
 
-// The first use of &#96;T&#96; was not preceded by &#96;&lt;T&gt;&#96; so &#96;Single&#96; must
-// be a concrete type. &#96;T&#96; is defined at the top.
-struct Single(T);
-//            ^ Here is &#96;Single&#96;s first use of the type &#96;T&#96;.
+// In defining the type &#96;Single&#96;, the first use of &#96;A&#96; is not preceded by &#96;&lt;A&gt;&#96;.
+// Therefore, &#96;Single&#96; is a concrete type, and &#96;A&#96; is defined as above.
+struct Single(A);
+//            ^ Here is &#96;Single&#96;s first use of the type &#96;A&#96;.
 
-// The first use of &#96;T&#96; is preceded by &#96;&lt;T&gt;&#96;. &#96;SingleGen&#96; must be
-// generic and has not yet been specialized. &#96;T&#96; could be anything
-// including &#96;T&#96; at the top.
+// Here, &#96;&lt;T&gt;&#96; precedes the first use of &#96;T&#96;, so &#96;SingleGen&#96; is a generic type.
+// Because the type parameter &#96;T&#96; is generic, it could be anything, including
+// the concrete type &#96;A&#96; defined at the top.
 struct SingleGen&lt;T&gt;(T);
 
-// Instantiating the types can be implicit or explicit.
 fn main() {
-    // Regular &#96;Single&#96;.
-    let &#95;s = Single(T);
+    // &#96;Single&#96; is concrete and explicitly takes &#96;A&#96;.
+    let &#95;s = Single(A);
 
-    // &#96;SingleGen&#96; explicity specialized.
+    // Here, &#96;SingleGen&#96; is explicitly specialized. This reads as:
+    // Create a variable &#96;&#95;char&#96; of type &#96;SingleGen&lt;char&gt;&#96;
+    // and give it the value &#96;SingleGen(&#39;a&#39;)&#96;
     let &#95;char: SingleGen&lt;char&gt; = SingleGen(&#39;a&#39;);
 
-    // &#96;SingleGen&#96;s implicitly specialized.
-    let &#95;t   = SingleGen(T); // Uses &#96;T&#96; at top.
-    let &#95;i32 = SingleGen(6); // Uses &#96;i32&#96;.
+    // &#96;SingleGen&#96; can also be implicitly specialized:
+    let &#95;t    = SingleGen(A); // Uses &#96;A&#96; defined at the top.
+    let &#95;i32  = SingleGen(6); // Uses &#96;i32&#96;.
+    let &#95;char = SingleGen(&#39;a&#39;); // Uses &#96;char&#96;.
 }</div>
 <div id="result"></div>
 </div>
