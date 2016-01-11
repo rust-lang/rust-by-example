@@ -1,12 +1,12 @@
 Similar to functions, implementations require care to remain generic.
 
 ```rust
-struct S; // A null struct
-struct GenericVal<T>(T,);
+struct S; // Concrete type `S`
+struct GenericVal<T>(T,); // Generic type `GenericVal`
 
-// impl of GenericVal we specifically specialize:
-impl GenericVal<f32> {} // Specialize to `f32`
-impl GenericVal<S> {} // Specialize to `S` defined above
+// impl of GenericVal where we explicitly specify type parameters:
+impl GenericVal<f32> {} // Specify `f32`
+impl GenericVal<S> {} // Specify `S` as defined above
 
 // `<T>` Must precede the type to remain generic
 impl <T> GenericVal<T> {}

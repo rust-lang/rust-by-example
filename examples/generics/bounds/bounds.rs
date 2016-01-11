@@ -14,7 +14,7 @@ struct Rectangle { length: f64, height: f64 }
 #[allow(dead_code)]
 struct Triangle  { length: f64, height: f64 }
 
-// The generic `T` must implement `Debug`. So regardless
+// The generic `T` must implement `Debug`. Regardless
 // of the type, this will work properly.
 fn print_debug<T: Debug>(t: &T) {
     println!("{:?}", t);
