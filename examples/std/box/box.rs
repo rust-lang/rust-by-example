@@ -1,6 +1,5 @@
 use std::mem;
 
-#[allow(dead_code)]
 #[derive(Clone, Copy)]
 struct Point {
     x: f64,
