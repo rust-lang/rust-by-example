@@ -106,7 +106,7 @@
             { "id": "the_problem", "title": "The Problem", "children": null },
             { "id": "types", "title": "Associated types", "children": null }
         ] },
-        { "id": "phantom", "title": "Phantom types", "children": [
+        { "id": "phantom", "title": "Phantom type parameters", "children": [
             { "id": "testcase_units", "title": "Testcase: unit conversions", "children": null }
         ] }
     ] },
