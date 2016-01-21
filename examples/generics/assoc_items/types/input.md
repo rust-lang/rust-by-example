@@ -1,15 +1,10 @@
-Associated types forms the solution by moving the internal types locally into
-the trait to be called *output* types. This shields future users of the trait
-from the substantial boilerplate previously required. For example:
+The use of "Associated types" improves the overall readability of code 
+by moving inner types locally into a trait as *output* types. Syntax
+for the `trait` definition is as follows:
 
 ```rust
-// The original trait
-trait Contains<A, B> {
-    fn contains(&self, &A, &B) -> bool;
-}
-
-// Updated. Now `A` and `B` are defined in the trait via the `type` keyword
-// (Note: `type` is this context is different from `type` when used for
+// `A` and `B` are defined in the trait via the `type` keyword.
+// (Note: `type` in this context is different from `type` when used for
 // aliases).
 trait Contains {
     type A;
@@ -20,16 +15,18 @@ trait Contains {
 }
 ```
 
-Users of the `trait` reap the greatest benefits though. This generic function
-doesn't need to express `A` or `B` at all:
+Note that functions that use the `trait` `Contains` are no longer required
+to express `A` or `B` at all:
 
 ```rust
-// The original
+// Without using associated types
 fn difference<A, B, C>(container: &C) -> i32 where
     C: Contains<A, B> { ... }
 
-// The updated now no longer has `A` and `B` as requirements.
+// Using associated types
 fn difference<C: Contains>(container: &C) -> i32 { ... }
 ```
+
+Let's rewrite the example from the previous section using associated types:
 
 {types.play}

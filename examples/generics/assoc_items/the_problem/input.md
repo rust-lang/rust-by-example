@@ -1,22 +1,20 @@
-`trait`s generic over container types have strict type specification
-requirements. Users of the `trait`s *must* specify all generic types, even
-irrelevant ones.
+A `trait` that is generic over its container type has type specification
+requirements - users of the `trait` *must* specify all of its generic types.
 
-Specifically, examine the `Contains` `trait` and the `difference()` function
-which utilizes it. The fact that `Contains` is generic immediately forces
-users of the `trait` regardless of need to explicitly state *all* the
-`trait`'s generic types.
+In the example below, the `Contains` `trait` allows the use of the generic 
+types `A` and `B`. The trait is then implemented for the `Container` type, 
+specifying `i32` for `A` and `B` so that it can be used with `fn difference()`.
+
+Because `Contains` is generic, we are forced to explicitly state *all* of the 
+generic types for `fn difference()`. In practice, we want a way to express that 
+`A` and `B` are determined by the *input* `C`. As you will see in the next 
+section, associated types provide exactly that capability.
 
 {problem.play}
-
-The problem is we require a way to express that `A` and `B` are determined
-by the *input* `C`. Having to express them as *input* parameters is just
-hindering. Associated types provides exactly that capability.
 
 ### See also:
 
 [`struct`s][structs], and [`trait`s][traits]
-
 
 [structs]: /custom_types/structs.html
 [traits]: /trait.html

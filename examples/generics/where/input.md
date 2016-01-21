@@ -1,27 +1,30 @@
-A `where` clause is an alternate way to express a bound. It is done by
-expressing the bound immediately before the opening `{` instead of at the
-types first mention. Some reasons a `where` is useful include:
+A bound can also be expressed using a `where` clause immediately
+before the opening `{`, rather than at the type's first mention. 
+Additionally, `where` clauses can apply bounds to arbitrary types, 
+rather than just to type parameters.
 
-* It is clearer to specify the generic types and bounds separately than
-together. For example, these two are equivalent:
+Some cases that a `where` clause is useful:
+
+* When specifying generic types and bounds separately is clearer:
 
 ```rust
 impl <A: TraitB + TraitC, D: TraitE + TraitF> MyTrait<A, D> for YourType {}
+
+// Expressing bounds with a `where` clause
 impl <A, D> MyTrait<A, D> for YourType where
     A: TraitB + TraitC,
     D: TraitE + TraitF {}
 ```
 
-* `where` clauses are more expressive than the normal syntax. They can
-apply bounds to arbitrary types rather than just type parameters. The
-following example cannot be directly expressed without a `where` clause:
+* When using a `where` clause is more expressive than using normal syntax. 
+The `impl` in this example cannot be directly expressed without a `where` clause:
 
 {where.play}
 
 ### See also:
 
-[RFC][where], [`struct`s][structs], and [`trait`s][traits]
+[RFC][where], [`struct`][struct], and [`trait`][trait]
 
-[structs]: /custom_types/structs.html
-[traits]: /trait.html
+[struct]: /custom_types/structs.html
+[trait]: /trait.html
 [where]: https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md
