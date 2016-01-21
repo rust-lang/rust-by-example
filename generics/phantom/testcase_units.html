@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.8.1" data-basepath="../.." data-revision="1453333379677">
+    <div class="book" data-level="13.8.1" data-basepath="../.." data-revision="1453336922590">
     
 
 <div class="book-summary">
@@ -1534,7 +1534,7 @@
                         
                             <b>13.7.1.</b>
                         
-                         The problem
+                         The Problem
                     </a>
                 
             
@@ -1571,7 +1571,7 @@
                         
                             <b>13.8.</b>
                         
-                         Phantom types
+                         Phantom type parameters
                     </a>
                 
             
@@ -2876,7 +2876,7 @@
                     
                         <h3 id="1381-testcase-unit-conversions">13.8.1 Testcase: unit conversions</h3>
 <p>A useful method of unit conversions can be examined by implementing <code>Add</code>
-for a phantom type. The <code>Add</code> <code>trait</code> is examined below:</p>
+with a phantom type parameter. The <code>Add</code> <code>trait</code> is examined below:</p>
 <pre><code class="lang-rust">// This construction would impose: `Self + RHS = Output`
 // where RHS defaults to Self if not specified in the implementation.
 pub trait Add&lt;RHS = Self&gt; {
@@ -2898,13 +2898,13 @@ impl&lt;U&gt; Add for T&lt;U&gt; {
 <div id="editor">use std::ops::Add;
 use std::marker::PhantomData;
 
-/// Null enumerations define unit types.
+/// Create void enumerations to define unit types.
 #[derive(Debug, Clone, Copy)]
-struct Inch;
+enum Inch {}
 #[derive(Debug, Clone, Copy)]
-struct Mm;
+enum Mm {}
 
-/// &#96;Length&#96; is phantom type with hidden parameter &#96;Unit&#96;.
+/// &#96;Length&#96; is a type with phantom type parameter &#96;Unit&#96;.
 ///
 /// &#96;f64&#96; already implements the &#96;Clone&#96; and &#96;Copy&#96; traits.
 #[derive(Debug, Clone, Copy)]
@@ -2922,15 +2922,15 @@ impl&lt;Unit&gt; Add for Length&lt;Unit&gt; {
 }
 
 fn main() {
-    // Specializes &#96;one&#95;foot&#96; to have hidden parameter &#96;Inch&#96;.
+    // Specifies &#96;one&#95;foot&#96; to have phantom type parameter &#96;Inch&#96;.
     let one&#95;foot:  Length&lt;Inch&gt; = Length(12.0, PhantomData);
-    // &#96;one&#95;meter&#96; has hidden parameter &#96;Mm&#96;.
+    // &#96;one&#95;meter&#96; has phantom type parameter &#96;Mm&#96;.
     let one&#95;meter: Length&lt;Mm&gt;   = Length(1000.0, PhantomData);
 
     // &#96;+&#96; calls the &#96;add()&#96; method we implemented for &#96;Length&lt;Unit&gt;&#96;.
     //
-    // Since &#96;Length&#96; implements &#96;Clone&#96; + &#96;Copy&#96;, &#96;add()&#96; does not consume
-    // &#96;one&#95;foot&#96; and &#96;one&#95;meter&#96; but makes a copy of them in &#96;self&#96; and &#96;rhs&#96;.
+    // Since &#96;Length&#96; implements &#96;Copy&#96;, &#96;add()&#96; does not consume
+    // &#96;one&#95;foot&#96; and &#96;one&#95;meter&#96; but copies them into &#96;self&#96; and &#96;rhs&#96;.
     let two&#95;feet = one&#95;foot + one&#95;foot;
     let two&#95;meters = one&#95;meter + one&#95;meter;
 
@@ -2939,21 +2939,15 @@ fn main() {
     println!(&quot;one meter + one&#95;meter = {:?}&quot;, two&#95;meters);
 
     // Nonsensical operations fail as they should:
-    // Error: type mismatch.
+    // Compile-time Error: type mismatch.
     //let one&#95;feter = one&#95;foot + one&#95;meter;
 }</div>
 <div id="result"></div>
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="/scope/borrow.html">Borrowing (<code>&amp;</code>)</a>,
-<a href="/trait/bounds.html">Bounds (<code>X: Y</code>)</a>,
-<a href="/custom_types/enum.html">enum</a>,
-<a href="/fn/methods.html">impl &amp; self</a>,
-<a href="/trait/ops.html">Overloading</a>,
-<a href="/scope/borrow/ref.html">ref</a>,
-<a href="/trait.html">Traits (<code>X for Y</code>)</a>, and
-<a href="/custom_types/structs.html">TupleStructs</a>.</p>
+<p><a href="/scope/borrow.html">Borrowing (<code>&amp;</code>)</a>, <a href="/trait/bounds.html">Bounds (<code>X: Y</code>)</a>, <a href="/custom_types/enum.html">enum</a>, <a href="/fn/methods.html">impl &amp; self</a>,
+<a href="/trait/ops.html">Overloading</a>, <a href="/scope/borrow/ref.html">ref</a>, <a href="/trait.html">Traits (<code>X for Y</code>)</a>, and <a href="/custom_types/structs.html">TupleStructs</a>.</p>
 
                     
                     </section>
@@ -2964,7 +2958,7 @@ fn main() {
         </div>
 
         
-        <a href="../../generics/phantom.html" class="navigation navigation-prev " aria-label="Previous page: Phantom types"><i class="fa fa-angle-left"></i></a>
+        <a href="../../generics/phantom.html" class="navigation navigation-prev " aria-label="Previous page: Phantom type parameters"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../../scope.html" class="navigation navigation-next " aria-label="Next page: Scoping rules"><i class="fa fa-angle-right"></i></a>

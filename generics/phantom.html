@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Phantom types | Rust by Example</title>
+        <title>Phantom type parameters | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.8" data-basepath=".." data-revision="1453333379677">
+    <div class="book" data-level="13.8" data-basepath=".." data-revision="1453336922590">
     
 
 <div class="book-summary">
@@ -1534,7 +1534,7 @@
                         
                             <b>13.7.1.</b>
                         
-                         The problem
+                         The Problem
                     </a>
                 
             
@@ -1571,7 +1571,7 @@
                         
                             <b>13.8.</b>
                         
-                         Phantom types
+                         Phantom type parameters
                     </a>
                 
             
@@ -2874,57 +2874,54 @@
                 
                     <section class="normal" id="section-gitbook_80">
                     
-                        <h2 id="138-phantom-types">13.8 Phantom types</h2>
-<p>A phantom type is a data type which contains extra hidden
-generic parameters. These extra parameters hold no storage values.
-They are checked statically at compile time and only
-at compile time; they have no run-time behavior.</p>
+                        <h2 id="138-phantom-type-parameters">13.8 Phantom type parameters</h2>
+<p>A phantom type parameter is one that doesn&#39;t show up at runtime,
+but is checked statically (and only) at compile time.</p>
+<p>Data types can use extra generic type parameters to act as markers
+or to perform compile-time type checking. These extra parameters 
+hold no storage values, and have no run-time behavior.</p>
+<p>In the following example, we combine <a href="https://doc.rust-lang.org/std/marker/struct.PhantomData.html" target="_blank">std::marker::PhantomData</a>
+with the phantom type parameter concept to create tuples containing
+different data types.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">use std::marker::PhantomData;
 
-// Generic tuple struct with same types in both
-// generic &lt;A&gt; and definition (A,)
-struct Tuple&lt;A&gt;(A,);
-
-// This tuple is a phantom type. B is a hidden
-// parameter. Storage is allocated for generic type A
-// yet not for B. Therefore, B cannot be used in computations.
+// A phantom tuple struct which is generic over A with hidden parameter B.
 #[derive(PartialEq)] // Allow equality test for this type
 struct PhantomTuple&lt;A, B&gt;(A,PhantomData&lt;B&gt;);
 
-// Similarly, a phantom type struct which is generic over A
-// with hidden parameter B
+// A phantom type struct which is generic over A with hidden parameter B.
 #[derive(PartialEq)] // Allow equality test for this type
 struct PhantomStruct&lt;A, B&gt; { first: A, phantom: PhantomData&lt;B&gt; }
 
-fn main() {
-    // instantiate Tuple
-    let &#95;tuple: Tuple&lt;char&gt; = Tuple(&#39;R&#39;);
+// Note: Storage is allocated for generic type A, but not for B.
+//       Therefore, B cannot be used in computations.
 
-    // We can create similar types without carrying around extra info
-    // PhantomTuple specialized to &lt;char, f32&gt;
+fn main() {
+    // Here, &#96;f32&#96; and &#96;f64&#96;
+    // PhantomTuple type specified as &lt;char, f32&gt;
     let &#95;tuple1: PhantomTuple&lt;char, f32&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
-    // PhantomTuple specialized to &lt;char, f64&gt;
+    // PhantomTuple type specified as &lt;char, f64&gt;
     let &#95;tuple2: PhantomTuple&lt;char, f64&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
 
-    // Error: type mismatch so these cannot be compared
-    //println!(&quot;&#95;tuple1 == &#95;tuple2 yields: {}&quot;,
-    //          &#95;tuple1 == &#95;tuple2);
-
-    // Specialized to &lt;char, f32&gt;
+    // Type specified as &lt;char, f32&gt;
     let &#95;struct1: PhantomStruct&lt;char, f32&gt; = PhantomStruct {
         first: &#39;Q&#39;,
         phantom: PhantomData,
     };
-    // Specialized to &lt;char, f64&gt;
+    // Type specified as &lt;char, f64&gt;
     let &#95;struct2: PhantomStruct&lt;char, f64&gt; = PhantomStruct {
         first: &#39;Q&#39;,
         phantom: PhantomData,
     };
 
-    // Error: type mismatch so these cannot be compared
+    // Compile-time Error! Type mismatch so these cannot be compared:
+    //println!(&quot;&#95;tuple1 == &#95;tuple2 yields: {}&quot;,
+    //          &#95;tuple1 == &#95;tuple2);
+
+    // Compile-time Error! Type mismatch so these cannot be compared:
     //println!(&quot;&#95;struct1 == &#95;struct2 yields: {}&quot;,
     //          &#95;struct1 == &#95;struct2);
 }</div>
@@ -2932,9 +2929,7 @@ fn main() {
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="/trait/derive.html">Derive</a>,
-<a href="/custom_types/structs.html">struct</a>, and
-<a href="/custom_types/structs.html">TupleStructs</a></p>
+<p><a href="/trait/derive.html">Derive</a>, <a href="/custom_types/structs.html">struct</a>, and <a href="/custom_types/structs.html">TupleStructs</a></p>
 
                     
                     </section>

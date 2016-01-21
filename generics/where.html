@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.6" data-basepath=".." data-revision="1453333379677">
+    <div class="book" data-level="13.6" data-basepath=".." data-revision="1453336922590">
     
 
 <div class="book-summary">
@@ -1534,7 +1534,7 @@
                         
                             <b>13.7.1.</b>
                         
-                         The problem
+                         The Problem
                     </a>
                 
             
@@ -1571,7 +1571,7 @@
                         
                             <b>13.8.</b>
                         
-                         Phantom types
+                         Phantom type parameters
                     </a>
                 
             
@@ -2875,22 +2875,24 @@
                     <section class="normal" id="section-gitbook_81">
                     
                         <h2 id="136-where-clauses">13.6 Where clauses</h2>
-<p>A <code>where</code> clause is an alternate way to express a bound. It is done by
-expressing the bound immediately before the opening <code>{</code> instead of at the
-types first mention. Some reasons a <code>where</code> is useful include:</p>
+<p>A bound can also be expressed using a <code>where</code> clause immediately
+before the opening <code>{</code>, rather than at the type&#39;s first mention. 
+Additionally, <code>where</code> clauses can apply bounds to arbitrary types, 
+rather than just to type parameters.</p>
+<p>Some cases that a <code>where</code> clause is useful:</p>
 <ul>
-<li>It is clearer to specify the generic types and bounds separately than
-together. For example, these two are equivalent:</li>
+<li>When specifying generic types and bounds separately is clearer:</li>
 </ul>
 <pre><code class="lang-rust"><span class="hljs-keyword">impl</span> &lt;A: TraitB + TraitC, D: TraitE + TraitF&gt; MyTrait&lt;A, D&gt; <span class="hljs-keyword">for</span> YourType {}
+
+<span class="hljs-comment">// Expressing bounds with a `where` clause</span>
 <span class="hljs-keyword">impl</span> &lt;A, D&gt; MyTrait&lt;A, D&gt; <span class="hljs-keyword">for</span> YourType where
     A: TraitB + TraitC,
     D: TraitE + TraitF {}
 </code></pre>
 <ul>
-<li><code>where</code> clauses are more expressive than the normal syntax. They can
-apply bounds to arbitrary types rather than just type parameters. The
-following example cannot be directly expressed without a <code>where</code> clause:</li>
+<li>When using a <code>where</code> clause is more expressive than using normal syntax. 
+The <code>impl</code> in this example cannot be directly expressed without a <code>where</code> clause:</li>
 </ul>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2901,13 +2903,12 @@ trait PrintInOption {
     fn print&#95;in&#95;option(self);
 }
 
+// Because we would otherwise have to express this as &#96;T: Debug&#96; or 
+// use another method of indirect approach, this requires a &#96;where&#96; clause:
 impl&lt;T&gt; PrintInOption for T where
-    // Without a &#96;where&#96; clause we would have to express this as
-    // &#96;T: Debug&#96; or use some other method to indirectly approach
-    // this. The bound we want though is &#96;Option&lt;T&gt;: Debug&#96; because
-    // that&#39;s what being printed. To do otherwise would be to use
-    // the wrong bound. This requires a &#96;where&#96; clause.
     Option&lt;T&gt;: Debug {
+    // We want &#96;Option&lt;T&gt;: Debug&#96; as our bound because that is what&#39;s
+    // being printed. Doing otherwise would be using the wrong bound.
     fn print&#95;in&#95;option(self) {
         println!(&quot;{:?}&quot;, Some(self));
     }
@@ -2922,7 +2923,7 @@ fn main() {
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md" target="_blank">RFC</a>, <a href="/custom_types/structs.html"><code>struct</code>s</a>, and <a href="/trait.html"><code>trait</code>s</a></p>
+<p><a href="https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md" target="_blank">RFC</a>, <a href="/custom_types/structs.html"><code>struct</code></a>, and <a href="/trait.html"><code>trait</code></a></p>
 
                     
                     </section>

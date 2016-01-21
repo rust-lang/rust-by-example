@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.7.2" data-basepath="../.." data-revision="1453333379677">
+    <div class="book" data-level="13.7.2" data-basepath="../.." data-revision="1453336922590">
     
 
 <div class="book-summary">
@@ -1534,7 +1534,7 @@
                         
                             <b>13.7.1.</b>
                         
-                         The problem
+                         The Problem
                     </a>
                 
             
@@ -1571,7 +1571,7 @@
                         
                             <b>13.8.</b>
                         
-                         Phantom types
+                         Phantom type parameters
                     </a>
                 
             
@@ -2875,16 +2875,11 @@
                     <section class="normal" id="section-gitbook_72">
                     
                         <h3 id="1372-associated-types">13.7.2 Associated types</h3>
-<p>Associated types forms the solution by moving the internal types locally into
-the trait to be called <em>output</em> types. This shields future users of the trait
-from the substantial boilerplate previously required. For example:</p>
-<pre><code class="lang-rust">// The original trait
-trait Contains&lt;A, B&gt; {
-    fn contains(&amp;self, &amp;A, &amp;B) -&gt; bool;
-}
-
-// Updated. Now `A` and `B` are defined in the trait via the `type` keyword
-// (Note: `type` is this context is different from `type` when used for
+<p>The use of &quot;Associated types&quot; improves the overall readability of code 
+by moving inner types locally into a trait as <em>output</em> types. Syntax
+for the <code>trait</code> definition is as follows:</p>
+<pre><code class="lang-rust">// `A` and `B` are defined in the trait via the `type` keyword.
+// (Note: `type` in this context is different from `type` when used for
 // aliases).
 trait Contains {
     type A;
@@ -2894,24 +2889,25 @@ trait Contains {
     fn contains(&amp;self, &amp;Self::A, &amp;Self::B) -&gt; bool;
 }
 </code></pre>
-<p>Users of the <code>trait</code> reap the greatest benefits though. This generic function
-doesn&#39;t need to express <code>A</code> or <code>B</code> at all:</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// The original</span>
+<p>Note that functions that use the <code>trait</code> <code>Contains</code> are no longer required
+to express <code>A</code> or <code>B</code> at all:</p>
+<pre><code class="lang-rust"><span class="hljs-comment">// Without using associated types</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">difference</span></span>&lt;A, B, C&gt;(container: &amp;C) -&gt; <span class="hljs-keyword">i32</span> where
     C: Contains&lt;A, B&gt; { ... }
 
-<span class="hljs-comment">// The updated now no longer has `A` and `B` as requirements.</span>
+<span class="hljs-comment">// Using associated types</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">difference</span></span>&lt;C: Contains&gt;(container: &amp;C) -&gt; <span class="hljs-keyword">i32</span> { ... }
 </code></pre>
+<p>Let&#39;s rewrite the example from the previous section using associated types:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">struct Container(i32, i32);
 
-// A trait which will check to see if two items are stored inside of container.
+// A trait which checks if 2 items are stored inside of container.
 // Also retrieves first or last value.
 trait Contains {
-    // Define generic types here which methods will be able utilize.
+    // Define generic types here which methods will be able to utilize.
     type A;
     type B;
 
@@ -2968,10 +2964,10 @@ fn main() {
         </div>
 
         
-        <a href="../../generics/assoc_items/the_problem.html" class="navigation navigation-prev " aria-label="Previous page: The problem"><i class="fa fa-angle-left"></i></a>
+        <a href="../../generics/assoc_items/the_problem.html" class="navigation navigation-prev " aria-label="Previous page: The Problem"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../generics/phantom.html" class="navigation navigation-next " aria-label="Next page: Phantom types"><i class="fa fa-angle-right"></i></a>
+        <a href="../../generics/phantom.html" class="navigation navigation-next " aria-label="Next page: Phantom type parameters"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

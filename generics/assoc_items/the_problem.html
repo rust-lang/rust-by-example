@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>The problem | Rust by Example</title>
+        <title>The Problem | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.7.1" data-basepath="../.." data-revision="1453333379677">
+    <div class="book" data-level="13.7.1" data-basepath="../.." data-revision="1453336922590">
     
 
 <div class="book-summary">
@@ -1534,7 +1534,7 @@
                         
                             <b>13.7.1.</b>
                         
-                         The problem
+                         The Problem
                     </a>
                 
             
@@ -1571,7 +1571,7 @@
                         
                             <b>13.8.</b>
                         
-                         Phantom types
+                         Phantom type parameters
                     </a>
                 
             
@@ -2874,20 +2874,22 @@
                 
                     <section class="normal" id="section-gitbook_71">
                     
-                        <h3 id="1371-the-problem">13.7.1 The problem</h3>
-<p><code>trait</code>s generic over container types have strict type specification
-requirements. Users of the <code>trait</code>s <em>must</em> specify all generic types, even
-irrelevant ones.</p>
-<p>Specifically, examine the <code>Contains</code> <code>trait</code> and the <code>difference()</code> function
-which utilizes it. The fact that <code>Contains</code> is generic immediately forces
-users of the <code>trait</code> regardless of need to explicitly state <em>all</em> the
-<code>trait</code>&#39;s generic types.</p>
+                        <h3 id="1371-the-problem">13.7.1 The Problem</h3>
+<p>A <code>trait</code> that is generic over its container type has type specification
+requirements - users of the <code>trait</code> <em>must</em> specify all of its generic types.</p>
+<p>In the example below, the <code>Contains</code> <code>trait</code> allows the use of the generic 
+types <code>A</code> and <code>B</code>. The trait is then implemented for the <code>Container</code> type, 
+specifying <code>i32</code> for <code>A</code> and <code>B</code> so that it can be used with <code>fn difference()</code>.</p>
+<p>Because <code>Contains</code> is generic, we are forced to explicitly state <em>all</em> of the 
+generic types for <code>fn difference()</code>. In practice, we want a way to express that 
+<code>A</code> and <code>B</code> are determined by the <em>input</em> <code>C</code>. As you will see in the next 
+section, associated types provide exactly that capability.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">struct Container(i32, i32);
 
-// A trait which will check to see if 2 items are stored inside of container.
+// A trait which checks if 2 items are stored inside of container.
 // Also retrieves first or last value.
 trait Contains&lt;A, B&gt; {
     fn contains(&amp;self, &amp;A, &amp;B) -&gt; bool; // Explicitly requires &#96;A&#96; and &#96;B&#96;.
@@ -2932,9 +2934,6 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>The problem is we require a way to express that <code>A</code> and <code>B</code> are determined
-by the <em>input</em> <code>C</code>. Having to express them as <em>input</em> parameters is just
-hindering. Associated types provides exactly that capability.</p>
 <h3 id="see-also">See also:</h3>
 <p><a href="/custom_types/structs.html"><code>struct</code>s</a>, and <a href="/trait.html"><code>trait</code>s</a></p>
 
