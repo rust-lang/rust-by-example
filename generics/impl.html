@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.2" data-basepath=".." data-revision="1453336922590">
+    <div class="book" data-level="13.2" data-basepath=".." data-revision="1453381285404">
     
 
 <div class="book-summary">
@@ -2872,16 +2872,16 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_76">
+                    <section class="normal" id="section-gitbook_77">
                     
                         <h2 id="132-implementation">13.2 Implementation</h2>
 <p>Similar to functions, implementations require care to remain generic.</p>
-<pre><code class="lang-rust"><span class="hljs-keyword">struct</span> S; <span class="hljs-comment">// A null struct</span>
-<span class="hljs-keyword">struct</span> GenericVal&lt;T&gt;(T,);
+<pre><code class="lang-rust"><span class="hljs-keyword">struct</span> S; <span class="hljs-comment">// Concrete type `S`</span>
+<span class="hljs-keyword">struct</span> GenericVal&lt;T&gt;(T,); <span class="hljs-comment">// Generic type `GenericVal`</span>
 
-<span class="hljs-comment">// impl of GenericVal we specifically specialize:</span>
-<span class="hljs-keyword">impl</span> GenericVal&lt;<span class="hljs-keyword">f32</span>&gt; {} <span class="hljs-comment">// Specialize to `f32`</span>
-<span class="hljs-keyword">impl</span> GenericVal&lt;S&gt; {} <span class="hljs-comment">// Specialize to `S` defined above</span>
+<span class="hljs-comment">// impl of GenericVal where we explicitly specify type parameters:</span>
+<span class="hljs-keyword">impl</span> GenericVal&lt;<span class="hljs-keyword">f32</span>&gt; {} <span class="hljs-comment">// Specify `f32`</span>
+<span class="hljs-keyword">impl</span> GenericVal&lt;S&gt; {} <span class="hljs-comment">// Specify `S` as defined above</span>
 
 <span class="hljs-comment">// `&lt;T&gt;` Must precede the type to remain generic</span>
 <span class="hljs-keyword">impl</span> &lt;T&gt; GenericVal&lt;T&gt; {}

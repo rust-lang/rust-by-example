@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13" data-basepath="." data-revision="1453336922590">
+    <div class="book" data-level="13" data-basepath="." data-revision="1453381285404">
     
 
 <div class="book-summary">
@@ -2913,12 +2913,12 @@ fn main() {
     // &#96;Single&#96; is concrete and explicitly takes &#96;A&#96;.
     let &#95;s = Single(A);
 
-    // Here, &#96;SingleGen&#96; is explicitly specialized. This reads as:
     // Create a variable &#96;&#95;char&#96; of type &#96;SingleGen&lt;char&gt;&#96;
     // and give it the value &#96;SingleGen(&#39;a&#39;)&#96;
+    // Here, &#96;SingleGen&#96; has a type parameter explicitly specified.
     let &#95;char: SingleGen&lt;char&gt; = SingleGen(&#39;a&#39;);
 
-    // &#96;SingleGen&#96; can also be implicitly specialized:
+    // &#96;SingleGen&#96; can also have a type parameter implicitly specified:
     let &#95;t    = SingleGen(A); // Uses &#96;A&#96; defined at the top.
     let &#95;i32  = SingleGen(6); // Uses &#96;i32&#96;.
     let &#95;char = SingleGen(&#39;a&#39;); // Uses &#96;char&#96;.

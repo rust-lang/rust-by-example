@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.4" data-basepath=".." data-revision="1453336922590">
+    <div class="book" data-level="13.4" data-basepath=".." data-revision="1453381285404">
     
 
 <div class="book-summary">
@@ -2879,13 +2879,13 @@
 stipulate what functionality a type implements. For example, the following
 example uses the trait <code>Display</code> to print and so it requires <code>T</code> to be bound
 by <code>Display</code>; that is, <code>T</code> <em>must</em> implement <code>Display</code>.</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// This function reads: `printer` takes generic type `T` which</span>
+<pre><code class="lang-rust"><span class="hljs-comment">// Define a function `printer` that takes a generic type `T` which</span>
 <span class="hljs-comment">// must implement trait `Display`.</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">printer</span></span>&lt;T: Display&gt;(t: T) {
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{}"</span>, t);
 }
 </code></pre>
-<p>One consequence of this is it allows generic instances to access the methods
+<p>One consequence is that generic instances are allowed to access the methods
 of the traits specified in the bounds. For example:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2906,7 +2906,7 @@ struct Rectangle { length: f64, height: f64 }
 #[allow(dead&#95;code)]
 struct Triangle  { length: f64, height: f64 }
 
-// The generic &#96;T&#96; must implement &#96;Debug&#96;. So regardless
+// The generic &#96;T&#96; must implement &#96;Debug&#96;. Regardless
 // of the type, this will work properly.
 fn print&#95;debug&lt;T: Debug&gt;(t: &amp;T) {
     println!(&quot;{:?}&quot;, t);

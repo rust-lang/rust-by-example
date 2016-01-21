@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.1" data-basepath=".." data-revision="1453336922590">
+    <div class="book" data-level="13.1" data-basepath=".." data-revision="1453381285404">
     
 
 <div class="book-summary">
@@ -2875,47 +2875,53 @@
                     <section class="normal" id="section-gitbook_75">
                     
                         <h2 id="131-functions">13.1 Functions</h2>
-<p>The same set of rules can be applied to functions: a type <code>T</code> is only
-generic if it has been preceded by <code>&lt;T&gt;</code>. This allows functions to have
-a variety of forms, some which may have surprising consequences.</p>
-<p>Generic function usage also sometimes requires explicitly specializing
-the call. An explicitly specialized function call looks like:
+<p>The same set of rules can be applied to functions: a type <code>T</code> becomes
+generic when preceded by <code>&lt;T&gt;</code>. </p>
+<p>Using generic functions sometimes requires explicitly specifying type 
+parameters. This may be if the function is called where the return type 
+is generic, or if the compiler doesn&#39;t have enough information to infer 
+the necessary type parameters.</p>
+<p>A function call with explicitly specified type parameters looks like:
 <code>fun::&lt;A, B, ...&gt;()</code>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">struct T;          // Concrete type.
-struct S(T);       // Concrete type.
-struct SGen&lt;T&gt;(T); // Generic type.
+<div id="editor">struct A;          // Concrete type &#96;A&#96;.
+struct S(A);       // Concrete type &#96;S&#96;.
+struct SGen&lt;T&gt;(T); // Generic type &#96;SGen&#96;.
 
 // These functions all take ownership of the variable passed into
 // them and immediately go out of scope freeing the variable.
-//
-// This has no preceding &#96;&lt;T&gt;&#96; so this must be a regular function.
-fn die&#95;regular(s: S) {}
 
-// Has a &#96;&lt;T&gt;&#96; but it isn&#39;t preceded by &#96;&lt;T&gt;&#96; to make it generic.
-// This is a regular function which takes &#96;SGen&lt;T&gt;&#96; which has
-// been specialized to type &#96;T&#96; defined at the top.
-fn die&#95;generic&#95;specialized&#95;t(s: SGen&lt;T&gt;) {}
+// Define a function &#96;reg&#95;fn&#96; that takes an argument &#96;s&#96; of type &#96;S&#96;.
+// This has no &#96;&lt;T&gt;&#96; so this is not a generic function.
+fn reg&#95;fn(s: S) {}
 
-// A regular function taking &#96;SGen&lt;T&gt;&#96; specialized to &#96;i32&#96;.
-fn die&#95;generic&#95;specialized&#95;i32(s: SGen&lt;i32&gt;) {}
+// Define a function &#96;gen&#95;spec&#95;t&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;T&gt;&#96;
+// that has been explicitly given the type parameter &#96;A&#96;. Because A has not 
+// been specified as a generic type parameter for gen&#95;spec&#95;t, it is not generic.
+fn gen&#95;spec&#95;t(s: SGen&lt;A&gt;) {}
 
-// &#96;&lt;T&gt;&#96; is preceded by &#96;&lt;T&gt;&#96;. This function is generic over &#96;T&#96;.
-fn die&#95;generic&lt;T&gt;(s: SGen&lt;T&gt;) {}
+// Define a function &#96;gen&#95;spec&#95;i32&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;i32&gt;&#96;
+// that has been explicitly given the type parameter &#96;i32&#96;.
+// This function is also not generic.
+fn gen&#95;spec&#95;i32(s: SGen&lt;i32&gt;) {}
+
+// Define a function &#96;generic&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;T&gt;&#96;.
+// Because &#96;SGen&lt;T&gt;&#96; is preceded by &#96;&lt;T&gt;&#96;, this function is generic over &#96;T&#96;.
+fn generic&lt;T&gt;(s: SGen&lt;T&gt;) {}
 
 fn main() {
-    // Use the regular functions like normal
-    die&#95;regular(S(T));                    // Concrete type.
-    die&#95;generic&#95;specialized&#95;t(SGen(T));   // Specialized generic type.
-    die&#95;generic&#95;specialized&#95;i32(SGen(6)); // Specialized generic type.
+    // Using the non-generic functions
+    reg&#95;fn(S(A));          // Concrete type.
+    gen&#95;spec&#95;t(SGen(A));   // Implicitly specified type parameter &#96;A&#96;.
+    gen&#95;spec&#95;i32(SGen(6)); // Implicitly specified type parameter &#96;i32&#96;.
 
-    // Explicitly specialize &#96;die&#95;generic()&#96; to &#96;char&#96;.
-    die&#95;generic::&lt;char&gt;(SGen(&#39;a&#39;));
+    // Explicitly specified type parameter &#96;char&#96; to &#96;generic()&#96;.
+    generic::&lt;char&gt;(SGen(&#39;a&#39;));
 
-    // Implicitly specialize &#96;die&#95;generic()&#96; to &#96;char&#96;.
-    die&#95;generic(SGen(&#39;c&#39;));
+    // Implicitly specified type parameter &#96;char&#96; to &#96;generic()&#96;.
+    generic(SGen(&#39;c&#39;));
 }</div>
 <div id="result"></div>
 </div>
