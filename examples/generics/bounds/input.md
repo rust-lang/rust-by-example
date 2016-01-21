@@ -4,14 +4,14 @@ example uses the trait `Display` to print and so it requires `T` to be bound
 by `Display`; that is, `T` *must* implement `Display`.
 
 ```rust
-// This function reads: `printer` takes generic type `T` which
+// Define a function `printer` that takes a generic type `T` which
 // must implement trait `Display`.
 fn printer<T: Display>(t: T) {
     println!("{}", t);
 }
 ```
 
-One consequence of this is it allows generic instances to access the methods
+One consequence is that generic instances are allowed to access the methods
 of the traits specified in the bounds. For example:
 
 {bounds.play}

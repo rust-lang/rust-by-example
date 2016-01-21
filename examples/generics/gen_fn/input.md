@@ -1,9 +1,12 @@
-The same set of rules can be applied to functions: a type `T` is only
-generic if it has been preceded by `<T>`. This allows functions to have
-a variety of forms, some which may have surprising consequences.
+The same set of rules can be applied to functions: a type `T` becomes
+generic when preceded by `<T>`. 
 
-Generic function usage also sometimes requires explicitly specializing
-the call. An explicitly specialized function call looks like:
+Using generic functions sometimes requires explicitly specifying type 
+parameters. This may be if the function is called where the return type 
+is generic, or if the compiler doesn't have enough information to infer 
+the necessary type parameters.
+
+A function call with explicitly specified type parameters looks like:
 `fun::<A, B, ...>()`.
 
 {fn.play}
