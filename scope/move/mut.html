@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.2.1" data-basepath="../.." data-revision="1453467756827">
+    <div class="book" data-level="14.2.1" data-basepath="../.." data-revision="1453475226009">
     
 
 <div class="book-summary">
@@ -2887,10 +2887,10 @@
     // Mutability error
     //&#42;immutable&#95;box = 4;
 
-    // Hand over the box, changing the mutability
+    // &#42;Move&#42; the box, changing the ownership (and mutability)
     let mut mutable&#95;box = immutable&#95;box;
 
-    println!(&quot;mutable&#95;box contained {}&quot;, mutable&#95;box);
+    println!(&quot;mutable&#95;box contains {}&quot;, mutable&#95;box);
 
     // Modify the contents of the box
     &#42;mutable&#95;box = 4;

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.2" data-basepath=".." data-revision="1453467756827">
+    <div class="book" data-level="14.2" data-basepath=".." data-revision="1453475226009">
     
 
 <div class="book-summary">
@@ -2875,52 +2875,52 @@
                     <section class="normal" id="section-gitbook_117">
                     
                         <h2 id="142-ownership-and-moves">14.2 Ownership and moves</h2>
-<p>Because variables are in charge of freeing their resources (if any), resources
-can only have <em>one</em> owner, otherwise resources would get freed more than once.</p>
-<p>When doing assignments <code>let x = y</code>, or passing function arguments by value
-<code>foo(x)</code>, the <em>ownership</em> of the resources, if any, is transferred; this is
-known as a &quot;move&quot; in Rust-speak.</p>
+<p>Because variables are in charge of freeing their own resources, 
+<strong>resources can only have one owner</strong>. This also prevents resources 
+from being freed more than once. Note that not all variables own 
+resources (e.g. <a href="/flow_control/match/destructuring/destructure_pointers.html">references</a>).</p>
+<p>When doing assignments (<code>let x = y</code>) or passing function arguments by value
+(<code>foo(x)</code>), the <em>ownership</em> of the resources is transferred. In Rust-speak, 
+this is known as a <em>move</em>.</p>
 <p>After moving resources, the previous owner can no longer be used. This avoids
-the creation of <em>dangling pointers</em>.</p>
+creating dangling pointers.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">// This function takes ownership of the heap allocated memory
 fn destroy&#95;box(c: Box&lt;i32&gt;) {
-    println!(&quot;destroying a box that contains {}&quot;, c);
+    println!(&quot;Destroying a box that contains {}&quot;, c);
 
-    // &#96;c&#96; will be destroyed in this scope, and the memory will be freed
+    // &#96;c&#96; is destroyed and the memory freed
 }
 
 fn main() {
-    // Stack allocated integer
+    // &#95;Stack&#95; allocated integer
     let x = 5u32;
 
-    // &quot;Copy&quot; &#96;x&#96; into &#96;y&#96;, there are no resources to move
+    // &#42;Copy&#42; &#96;x&#96; into &#96;y&#96; - no resources are moved
     let y = x;
 
     // Both values can be independently used
     println!(&quot;x is {}, and y is {}&quot;, x, y);
 
-    // &#96;a&#96; is a pointer to a heap allocated integer
+    // &#96;a&#96; is a pointer to a &#95;heap&#95; allocated integer
     let a = Box::new(5i32);
 
     println!(&quot;a contains: {}&quot;, a);
 
-    // &quot;Move&quot; &#96;a&#96; into &#96;b&#96;
-    // Here&#39;s what happens under the hood: the pointer &#96;a&#96; gets copied (&#42;not&#42;
-    // the data on the heap, just its address) into &#96;b&#96;. Now both are pointers
-    // to the &#42;same&#42; heap allocated data. But now, &#96;b&#96; &#42;owns&#42; the heap
-    // allocated data; &#96;b&#96; is now in charge of freeing the memory in the heap.
+    // &#42;Move&#42; &#96;a&#96; into &#96;b&#96;
     let b = a;
+    // The pointer address of &#96;a&#96; is copied (not the data) into &#96;b&#96;.
+    // Both are now pointers to the same heap allocated data, but
+    // &#96;b&#96; now owns it.
 
-    // After the previous move, &#96;a&#96; can no longer be used
     // Error! &#96;a&#96; can no longer access the data, because it no longer owns the
     // heap memory
     //println!(&quot;a contains: {}&quot;, a);
     // TODO ^ Try uncommenting this line
 
-    // &quot;Move&quot; &#96;b&#96; into the function; &#96;b&#96; gives up ownership of the heap data
+    // This function takes ownership of the heap allocated memory from &#96;b&#96;
     destroy&#95;box(b);
 
     // Since the heap memory has been freed at this point, this action would
@@ -2931,6 +2931,7 @@ fn main() {
 }</div>
 <div id="result"></div>
 </div>
+
 
                     
                     </section>
