@@ -1,17 +1,17 @@
 fn main() {
-    let mut _integer = 5i32;
+    let mut mutable_integer = 7i32;
 
     {
-        // Borrow `integer`
-        let _ref_to_integer = &_integer;
+        // Borrow `mutable_integer`
+        let large_integer = &mutable_integer;
 
-        // Error! `integer` is frozen in this scope
-        _integer = 4;
+        // Error! `mutable_integer` is frozen in this scope
+        mutable_integer = 50;
         // FIXME ^ Comment out this line
 
-        // `ref_to_integer` goes out of scope
+        // `large_integer` goes out of scope
     }
 
-    // Ok! `integer` is not frozen in this scope
-    _integer = 4;
+    // Ok! `mutable_integer` is not frozen in this scope
+    mutable_integer = 3;
 }
