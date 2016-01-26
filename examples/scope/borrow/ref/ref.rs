@@ -2,7 +2,7 @@
 struct Point { x: i32, y: i32 }
 
 fn main() {
-    let c = 'y';
+    let c = 'Q';
 
     // A `ref` borrow on the left side of an assignment is equivalent to
     // an `&` borrow on the right side.
@@ -15,10 +15,10 @@ fn main() {
 
     // `ref` is also valid when destructuring a struct.
     let _copy_of_x = {
-        // `ref_to_x` is a reference to the `x` field of `point`
+        // `ref_to_x` is a reference to the `x` field of `point`.
         let Point { x: ref ref_to_x, y: _ } = point;
 
-        // Return a copy of the `x` field of `point`
+        // Return a copy of the `x` field of `point`.
         *ref_to_x
     };
 
@@ -26,17 +26,24 @@ fn main() {
     let mut mutable_point = point;
 
     {
-        // `ref` can be paired with `mut` to take mutable references
+        // `ref` can be paired with `mut` to take mutable references.
         let Point { x: _, y: ref mut mut_ref_to_y } = mutable_point;
 
-        // Mutate the `y` field of `mutable_point`, via a mutable reference
+        // Mutate the `y` field of `mutable_point` via a mutable reference.
         *mut_ref_to_y = 1;
     }
 
     println!("point is ({}, {})", point.x, point.y);
     println!("mutable_point is ({}, {})", mutable_point.x, mutable_point.y);
 
-    let tuple = (Box::new(5u32), 3u32);
-
-    println!("tuple is {:?}", tuple);
+    // A mutable tuple that includes a pointer
+    let mut mutable_tuple = (Box::new(5u32), 3u32);
+    
+    {
+        // Destructure `mutable_ tuple` to change the value of `last`.
+        let (_, ref mut last) = mutable_tuple;
+        *last = 2u32;
+    }
+    
+    println!("tuple is {:?}", mutable_tuple);
 }

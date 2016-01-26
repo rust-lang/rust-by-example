@@ -12,7 +12,7 @@ fn main() {
                  borrowed_point.x, another_borrow.y, point.z);
 
         // Error! Can't borrow point as mutable because it's currently
-        // borrowed as immutable
+        // borrowed as immutable.
         //let mutable_borrow = &mut point;
         // TODO ^ Try uncommenting this line
 
@@ -24,13 +24,15 @@ fn main() {
 
         // Change data via mutable reference
         mutable_borrow.x = 5;
+        mutable_borrow.y = 2;
+        mutable_borrow.z = 1;
 
         // Error! Can't borrow `point` as immutable because it's currently
-        // borrowed as mutable
+        // borrowed as mutable.
         //let y = &point.y;
         // TODO ^ Try uncommenting this line
 
-        // Error! Can't print, because println! takes an immutable reference
+        // Error! Can't print because `println!` takes an immutable reference.
         //println!("Point Z coordinate is {}", point.z);
         // TODO ^ Try uncommenting this line
 
