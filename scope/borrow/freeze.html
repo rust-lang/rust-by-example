@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.3.2" data-basepath="../.." data-revision="1453813291822">
+    <div class="book" data-level="14.3.2" data-basepath="../.." data-revision="1453815253494">
     
 
 <div class="book-summary">
@@ -2875,27 +2875,27 @@
                     <section class="normal" id="section-gitbook_103">
                     
                         <h3 id="1432-freezing">14.3.2 Freezing</h3>
-<p>When data is borrowed, it also <em>freezes</em>. <em>Frozen</em> data can&#39;t be modified via
-the original object, until all the references to it go out of scope.</p>
+<p>When data is immutably borrowed, it also <em>freezes</em>. <em>Frozen</em> data can&#39;t be 
+modified via the original object until all references to it go out of scope:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn main() {
-    let mut &#95;integer = 5i32;
+    let mut mutable&#95;integer = 7i32;
 
     {
-        // Borrow &#96;integer&#96;
-        let &#95;ref&#95;to&#95;integer = &amp;&#95;integer;
+        // Borrow &#96;mutable&#95;integer&#96;
+        let large&#95;integer = &amp;mutable&#95;integer;
 
-        // Error! &#96;integer&#96; is frozen in this scope
-        &#95;integer = 4;
+        // Error! &#96;mutable&#95;integer&#96; is frozen in this scope
+        mutable&#95;integer = 50;
         // FIXME ^ Comment out this line
 
-        // &#96;ref&#95;to&#95;integer&#96; goes out of scope
+        // &#96;large&#95;integer&#96; goes out of scope
     }
 
-    // Ok! &#96;integer&#96; is not frozen in this scope
-    &#95;integer = 4;
+    // Ok! &#96;mutable&#95;integer&#96; is not frozen in this scope
+    mutable&#95;integer = 3;
 }</div>
 <div id="result"></div>
 </div>

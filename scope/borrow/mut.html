@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.3.1" data-basepath="../.." data-revision="1453813291822">
+    <div class="book" data-level="14.3.1" data-basepath="../.." data-revision="1453815253494">
     
 
 <div class="book-summary">
@@ -2875,9 +2875,10 @@
                     <section class="normal" id="section-gitbook_104">
                     
                         <h3 id="1431-mutability">14.3.1 Mutability</h3>
-<p><code>&amp;T</code> borrows the data via an immutable reference, and the borrower can read the
-data but not modify it. Mutable data can be mutably borrowed via a mutable
-reference <code>&amp;mut T</code>, giving read/write access to the borrower.</p>
+<p>Mutable data can be mutably borrowed using <code>&amp;mut T</code>. This is called 
+a <em>mutable reference</em> and gives read/write access to the borrower.
+In contrast, <code>&amp;T</code> borrows the data via an immutable reference, and 
+the borrower can read the data but not modify it:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2892,42 +2893,45 @@ struct Book {
 
 // This function takes a reference to a book
 fn borrow&#95;book(book: &amp;Book) {
-    println!(&quot;I borrowed {} {} edition&quot;, book.title, book.year);
+    println!(&quot;I immutably borrowed {} - {} edition&quot;, book.title, book.year);
 }
 
-// This function takes a reference to a mutable book
+// This function takes a reference to a mutable book and changes &#96;year&#96; to 2014
 fn new&#95;edition(book: &amp;mut Book) {
-    // the fields of the book can be modified
     book.year = 2014;
+    println!(&quot;I mutably borrowed {} - {} edition&quot;, book.title, book.year);
 }
 
 fn main() {
-    // An immutable Book
-    let geb = Book {
+    // Create an immutable Book named &#96;immutabook&#96;
+    let immutabook = Book {
         // string literals have type &#96;&amp;&#39;static str&#96;
         author: &quot;Douglas Hofstadter&quot;,
         title: &quot;Gödel, Escher, Bach&quot;,
         year: 1979,
     };
 
-    // Immutably borrow &#96;geb&#96;
-    borrow&#95;book(&amp;geb);
+    // Create a mutable copy of &#96;immutabook&#96; and call it &#96;mutabook&#96;
+    let mut mutabook = immutabook;
 
-    // Error! Can&#39;t borrow an immutable object as mutable
-    new&#95;edition(&amp;mut geb);
-    // FIXME ^ Comment out this line
+    // Immutably borrow an immutable object
+    borrow&#95;book(&amp;immutabook);
 
-    // &#96;mutable&#95;geb&#96; is a mutable copy of &#96;geb&#96;
-    let mut mutable&#95;geb = geb;
+    // Immutably borrow a mutable object
+    borrow&#95;book(&amp;mutabook);
 
     // Borrow a mutable object as mutable
-    new&#95;edition(&amp;mut mutable&#95;geb);
+    new&#95;edition(&amp;mut mutabook);
 
-    // Mutable objects can be immutably borrowed
-    borrow&#95;book(&amp;mutable&#95;geb);
+    // Error! Cannot borrow an immutable object as mutable
+    new&#95;edition(&amp;mut immutabook);
+    // FIXME ^ Comment out this line
 }</div>
 <div id="result"></div>
 </div>
+
+<h3 id="see-also">See Also</h3>
+<p><a href="scope/lifetime/static_lifetime.html"><code>static</code></a></p>
 
                     
                     </section>

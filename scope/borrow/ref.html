@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.3.4" data-basepath="../.." data-revision="1453813291822">
+    <div class="book" data-level="14.3.4" data-basepath="../.." data-revision="1453815253494">
     
 
 <div class="book-summary">
@@ -2876,7 +2876,8 @@
                     
                         <h3 id="1434-the-ref-pattern">14.3.4 The ref pattern</h3>
 <p>When doing pattern matching or destructuring via the <code>let</code> binding, the <code>ref</code>
-keyword can be used to take references to the fields of a struct/tuple.</p>
+keyword can be used to take references to the fields of a struct/tuple. The 
+example below shows a few instances where this can be useful:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2884,7 +2885,7 @@ keyword can be used to take references to the fields of a struct/tuple.</p>
 struct Point { x: i32, y: i32 }
 
 fn main() {
-    let c = &#39;y&#39;;
+    let c = &#39;Q&#39;;
 
     // A &#96;ref&#96; borrow on the left side of an assignment is equivalent to
     // an &#96;&amp;&#96; borrow on the right side.
@@ -2897,10 +2898,10 @@ fn main() {
 
     // &#96;ref&#96; is also valid when destructuring a struct.
     let &#95;copy&#95;of&#95;x = {
-        // &#96;ref&#95;to&#95;x&#96; is a reference to the &#96;x&#96; field of &#96;point&#96;
+        // &#96;ref&#95;to&#95;x&#96; is a reference to the &#96;x&#96; field of &#96;point&#96;.
         let Point { x: ref ref&#95;to&#95;x, y: &#95; } = point;
 
-        // Return a copy of the &#96;x&#96; field of &#96;point&#96;
+        // Return a copy of the &#96;x&#96; field of &#96;point&#96;.
         &#42;ref&#95;to&#95;x
     };
 
@@ -2908,19 +2909,26 @@ fn main() {
     let mut mutable&#95;point = point;
 
     {
-        // &#96;ref&#96; can be paired with &#96;mut&#96; to take mutable references
+        // &#96;ref&#96; can be paired with &#96;mut&#96; to take mutable references.
         let Point { x: &#95;, y: ref mut mut&#95;ref&#95;to&#95;y } = mutable&#95;point;
 
-        // Mutate the &#96;y&#96; field of &#96;mutable&#95;point&#96;, via a mutable reference
+        // Mutate the &#96;y&#96; field of &#96;mutable&#95;point&#96; via a mutable reference.
         &#42;mut&#95;ref&#95;to&#95;y = 1;
     }
 
     println!(&quot;point is ({}, {})&quot;, point.x, point.y);
     println!(&quot;mutable&#95;point is ({}, {})&quot;, mutable&#95;point.x, mutable&#95;point.y);
 
-    let tuple = (Box::new(5u32), 3u32);
+    // A mutable tuple that includes a pointer
+    let mut mutable&#95;tuple = (Box::new(5u32), 3u32);
 
-    println!(&quot;tuple is {:?}&quot;, tuple);
+    {
+        // Destructure &#96;mutable&#95; tuple&#96; to change the value of &#96;last&#96;.
+        let (&#95;, ref mut last) = mutable&#95;tuple;
+        &#42;last = 2u32;
+    }
+
+    println!(&quot;tuple is {:?}&quot;, mutable&#95;tuple);
 }</div>
 <div id="result"></div>
 </div>

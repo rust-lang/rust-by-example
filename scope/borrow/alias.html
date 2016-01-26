@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.3.3" data-basepath="../.." data-revision="1453813291822">
+    <div class="book" data-level="14.3.3" data-basepath="../.." data-revision="1453815253494">
     
 
 <div class="book-summary">
@@ -2876,9 +2876,9 @@
                     
                         <h3 id="1433-aliasing">14.3.3 Aliasing</h3>
 <p>Data can be immutably borrowed any number of times, but while immutably
-borrowed, the original data can&#39;t be mutably borrowed. On the other side,
+borrowed, the original data can&#39;t be mutably borrowed. On the other hand,
 only <em>one</em> mutable borrow is allowed at a time. The original data can be
-borrowed again after the mutable reference goes out of scope.</p>
+borrowed again only <em>after</em> the mutable reference goes out of scope.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2896,7 +2896,7 @@ fn main() {
                  borrowed&#95;point.x, another&#95;borrow.y, point.z);
 
         // Error! Can&#39;t borrow point as mutable because it&#39;s currently
-        // borrowed as immutable
+        // borrowed as immutable.
         //let mutable&#95;borrow = &amp;mut point;
         // TODO ^ Try uncommenting this line
 
@@ -2908,13 +2908,15 @@ fn main() {
 
         // Change data via mutable reference
         mutable&#95;borrow.x = 5;
+        mutable&#95;borrow.y = 2;
+        mutable&#95;borrow.z = 1;
 
         // Error! Can&#39;t borrow &#96;point&#96; as immutable because it&#39;s currently
-        // borrowed as mutable
+        // borrowed as mutable.
         //let y = &amp;point.y;
         // TODO ^ Try uncommenting this line
 
-        // Error! Can&#39;t print, because println! takes an immutable reference
+        // Error! Can&#39;t print because &#96;println!&#96; takes an immutable reference.
         //println!(&quot;Point Z coordinate is {}&quot;, point.z);
         // TODO ^ Try uncommenting this line
 

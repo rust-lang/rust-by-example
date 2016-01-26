@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.3" data-basepath=".." data-revision="1453813291822">
+    <div class="book" data-level="14.3" data-basepath=".." data-revision="1453815253494">
     
 
 <div class="book-summary">
@@ -2875,53 +2875,51 @@
                     <section class="normal" id="section-gitbook_106">
                     
                         <h2 id="143-borrowing">14.3 Borrowing</h2>
-<p>Most of the time, we&#39;d like to access some data without taking ownership over
-it. To accomplish this, Rust provides a <em>borrowing</em> mechanism. Instead of
+<p>Most of the time, we&#39;d like to access data without taking ownership over
+it. To accomplish this, Rust uses a <em>borrowing</em> mechanism. Instead of
 passing objects by-value (<code>T</code>), objects can be passed by reference (<code>&amp;T</code>).</p>
+<p>The compiler statically guarantees (via its borrow checker) that references 
+<em>always</em> point to valid objects. That is, while references to an object
+exist, the object cannot be destroyed.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// This function takes ownership of the box
+<div id="editor">// This function takes ownership of a box and destroys it 
 fn eat&#95;box(boxed&#95;int: Box&lt;i32&gt;) {
-    println!(&quot;destroying box that contains {}&quot;, boxed&#95;int);
+    println!(&quot;Destroying box that contains {}&quot;, boxed&#95;int);
 }
 
-// This function borrows an i32 instead
-fn peep&#95;inside&#95;box(borrowed&#95;int: &amp;i32) {
+// This function borrows an i32
+fn borrow&#95;box(borrowed&#95;int: &amp;i32) {
     println!(&quot;This int is: {}&quot;, borrowed&#95;int);
 }
 
 fn main() {
-    // A boxed integer
+    // Create a boxed integer
     let boxed&#95;int = Box::new(5);
 
-    // Borrow the contents of the box, ownership is not taken
-    peep&#95;inside&#95;box(&amp;boxed&#95;int);
-
-    // The contents can be borrowed again
-    peep&#95;inside&#95;box(&amp;boxed&#95;int);
+    // Borrow the contents of the box. Ownership is not taken,
+    // so the contents can be borrowed again.
+    borrow&#95;box(&amp;boxed&#95;int);
+    borrow&#95;box(&amp;boxed&#95;int);
 
     {
         // Take a reference to the data contained inside the box
         let &#95;ref&#95;to&#95;int: &amp;i32 = &amp;boxed&#95;int;
 
-        // Error! Can&#39;t destroy boxed&#95;int, while the inner value has been
-        // borrowed
+        // Error! 
+        // Can&#39;t destroy &#96;boxed&#95;int&#96; while the inner value is borrowed.
         eat&#95;box(boxed&#95;int);
         // FIXME ^ Comment out this line
 
-        // &#96;&#95;ref&#95;to&#95;int&#96; goes out of scope
+        // &#96;&#95;ref&#95;to&#95;int&#96; goes out of scope and is no longer borrowed.
     }
 
-    // Give up ownership of the box
+    // Box can now give up ownership to &#96;eat&#95;box&#96; and be destroyed
     eat&#95;box(boxed&#95;int);
 }</div>
 <div id="result"></div>
 </div>
-
-<p>The compiler statically guarantees that references <em>always</em> point to valid
-objects, via its borrow checker. For example, the original object can&#39;t be
-destroyed, while references to it exists.</p>
 
                     
                     </section>
