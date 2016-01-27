@@ -25,7 +25,7 @@ line with a second `println!` macro so that the output
 shows:
 ```
 Hello World!
-I'm a Rustacian!
+I'm a Rustacean!
 ```
 
 [macros]: ./macros.html
