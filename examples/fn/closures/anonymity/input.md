@@ -1,6 +1,6 @@
 Closures succinctly capture variables from enclosing scopes. Does this have
 any consequences? It surely does. Observe how using a closure in a function
-requires generics, which is necessary because of how they are defined:
+requires [generics], which is necessary because of how they are defined:
 
 ```rust
 // `F` must be generic.
@@ -28,6 +28,7 @@ and not be allowed. Thus, bounding by one of the `traits`: `Fn`, `FnMut`, or
 [A thorough analysis][thorough_analysis], [`Fn`][fn], [`FnMut`][fn_mut],
 and [`FnOnce`][fn_once]
 
+[generics]: /generics.html
 [fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
 [fn_mut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
 [fn_once]: http://doc.rust-lang.org/std/ops/trait.FnOnce.html
