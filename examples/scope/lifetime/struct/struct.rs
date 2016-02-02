@@ -1,9 +1,9 @@
 // A type `Borrowed` which houses a reference to an
-// `i32`. This reference must outlive the structure.
+// `i32`. The reference to `i32` must outlive `Borrowed`.
 #[derive(Debug)]
 struct Borrowed<'a>(&'a i32);
 
-// Similarly, both references must outlive this structure.
+// Similarly, both references here must outlive this structure.
 #[derive(Debug)]
 struct NamedBorrowed<'a> {
     x: &'a i32,
