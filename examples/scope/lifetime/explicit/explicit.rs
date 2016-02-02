@@ -5,7 +5,7 @@ fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("x is {} and y is {}", x, y);
 }
 
-// A function which has no input, but has a lifetime parameter `'a`.
+// A function which takes no arguments, but has a lifetime parameter `'a`.
 fn failed_borrow<'a>() {
     let _x = 12;
 
@@ -17,7 +17,7 @@ fn failed_borrow<'a>() {
 }
 
 fn main() {
-    // Create variables which will be borrowed.
+    // Create variables to be borrowed below.
     let (four, nine) = (4, 9);
     
     // Borrows (`&`) of both variables are passed into the function.

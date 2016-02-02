@@ -16,9 +16,8 @@ fn print_multi<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("`print_multi`: x is {}, y is {}", x, y);
 }
 
-// Returning references without input is banned, but returning
-// references that have been passed in is acceptable.
-// One restriction is that the correct lifetime must be returned.
+// Returning references that have been passed in is acceptable.
+// However, the correct lifetime must be returned.
 fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 { x }
 
 //fn invalid_output<'a>() -> &'a i32 { &7 }

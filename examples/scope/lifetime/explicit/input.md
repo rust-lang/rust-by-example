@@ -1,20 +1,18 @@
 The borrow checker uses explicit lifetime annotations to determine
 how long references should be valid. In cases where lifetimes are not
-elided[^1], failure to annotate lifetimes is akin to banning the borrow 
-checker from validating borrows and annotation is mandatory. 
-The syntax for explicitly annotating a lifetime uses an apostrophe 
-character as follows: 
+elided[^1], Rust requires explicit annotations to determine what the 
+lifetime of a reference should be. The syntax for explicitly annotating 
+a lifetime uses an apostrophe character as follows: 
 
 ```rust
 foo<'a>
 // `foo` has a lifetime parameter `'a`
 ```
 
-Usage of lifetimes requires generics (similar to [closures][anonymity]) 
-since lifetimes have no type or name associated with them. Additionally, 
-this lifetime syntax indicates that the lifetime of `foo` may not exceed 
-that of `'a`. Explicit annotation of a type has the form `&'a T` where 
-`'a` has already been introduced.
+Similar to [closures][anonymity], using lifetimes requires generics. 
+Additionally, this lifetime syntax indicates that the lifetime of `foo` 
+may not exceed that of `'a`. Explicit annotation of a type has the form 
+`&'a T` where `'a` has already been introduced.
 
 In cases with multiple lifetimes, the syntax is similar:
 
