@@ -25,6 +25,6 @@ fn main() {
     let x = 7;
     let ref_x = Ref(&x);
     
-    print(ref_x);
     print_ref(&ref_x);
+    print(ref_x);
 }
