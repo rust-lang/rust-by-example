@@ -16,18 +16,15 @@ fn print_multi<'a, 'b>(x: &'a i32, y: &'b i32) {
     println!("`print_multi`: x is {}, y is {}", x, y);
 }
 
-// This is invalid. An `i32` would be created, a reference
-// would be created, then immediately the data would be
-// dropped leaving a reference to invalid data to be returned.
-//
-// The reason the problem is caught is because of the restriction
-// `<'a>` imposes: `'a` must live longer than the function.
-//fn invalid_output<'a>() -> &'a i32 { &7 }
-
-// While returning references without input is banned, returning
-// references that have been passed in are perfectly acceptable.
-// One restriction is the correct lifetime must be returned.
+// Returning references that have been passed in is acceptable.
+// However, the correct lifetime must be returned.
 fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 { x }
+
+//fn invalid_output<'a>() -> &'a i32 { &7 }
+// The above is invalid: 'a` must live longer than the function.
+// Here, `&7` would create an `i32`, followed by a reference.
+// Then the data is dropped upon exiting the scope, leaving 
+// a reference to invalid data to be returned.
 
 fn main() {
     let x = 7;

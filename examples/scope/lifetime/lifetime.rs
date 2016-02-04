@@ -1,6 +1,6 @@
-// Lifetimes are annotated with lines denoting when each variable
-// is created and destroyed. `i` has the largest lifetime because it's
-// scope entirely encloses both `borrow1` and `borrow2`. The sizedness
+// Here, lifetimes are annotated with lines denoting when each variable
+// is created and destroyed. `i` has the largest lifetime because its
+// scope entirely encloses both `borrow1` and `borrow2`. The "size"
 // of `borrow1` compared with `borrow2` is irrelevant since they are
 // disjoint.
 fn main() {

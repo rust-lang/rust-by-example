@@ -9,5 +9,5 @@ as long as the borrow ends before (inside) the lender is destroyed.
 
 {lifetime.play}
 
-You may have noted that no names or types are assigned to label lifetimes.
+Note that no names or types are assigned to label lifetimes.
 This restricts how lifetimes will be able to be used as we will see.

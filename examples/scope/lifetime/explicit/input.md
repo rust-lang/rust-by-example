@@ -1,21 +1,29 @@
-The borrow checker utilizes explicit lifetime annotations to reason about
-how long references should be valid. Failure to annotate lifetimes[^1] is akin
-to banning the borrow checker from validating borrows and so accordingly,
-annotation is mandatory.
+The borrow checker uses explicit lifetime annotations to determine
+how long references should be valid. In cases where lifetimes are not
+elided[^1], Rust requires explicit annotations to determine what the 
+lifetime of a reference should be. The syntax for explicitly annotating 
+a lifetime uses an apostrophe character as follows: 
 
-Since lifetimes *currently* have no explicit type or name associated with them,
-usage will require generics (similar to [closures][anonymity]). Additionally,
-a second meaning will be associated with this lifetime syntax. `foo<'a, 'b>`
-states:
+```rust
+foo<'a>
+// `foo` has a lifetime parameter `'a`
+```
 
-1. `'a` and `'b` will represent names for lifetimes with non-specifiable
-(generic) types.
-2. The lifetime of `foo` may not exceed either lifetimes `'a` or `'b`.
+Similar to [closures][anonymity], using lifetimes requires generics. 
+Additionally, this lifetime syntax indicates that the lifetime of `foo` 
+may not exceed that of `'a`. Explicit annotation of a type has the form 
+`&'a T` where `'a` has already been introduced.
 
-Explicit annotation of a type has the form: `&'a T` where `'a` has already
-been introduced. The less obvious of the rules is **Rule 2** whose
-importance can usually be directly deduced from borrowing rules. Consider the
-following example:
+In cases with multiple lifetimes, the syntax is similar:
+
+```rust
+foo<'a, 'b>
+// `foo` has lifetime parameters `'a` and `'b`
+```
+
+In this case, the lifetime of `foo` cannot exceed that of either `'a` *or* `'b`.
+
+See the following example for explicit lifetime annotation in use:
 
 {explicit.play}
 
@@ -24,7 +32,6 @@ following example:
 ### See also:
 
 [generics][generics] and [closures][closures]
-
 
 [anonymity]: /fn/closures/anonymity.html
 [closures]: /fn/closures.html
