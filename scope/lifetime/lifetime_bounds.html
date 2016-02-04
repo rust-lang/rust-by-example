@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.5" data-basepath="../.." data-revision="1454591012363">
+    <div class="book" data-level="14.4.5" data-basepath="../.." data-revision="1454616549065">
     
 
 <div class="book-summary">
@@ -2875,25 +2875,26 @@
                     <section class="normal" id="section-gitbook_110">
                     
                         <h3 id="1445-bounds">14.4.5 Bounds</h3>
-<p>Just like generic types can be bounded, lifetimes as generics themselves
-utilize bounds also. <code>:</code> has a slightly different meaning than in
-<a href="/generics/bounds.html">generics</a> but <code>+</code> hasn&#39;t changed. Both are described below:</p>
+<p>Just like generic types can be bounded, lifetimes (themselves generic)
+use bounds as well. The <code>:</code> character has a slightly different meaning here, 
+but <code>+</code> is the same. Note how the following read:</p>
 <ol>
 <li><code>T: &#39;a</code>: <em>All</em> references in <code>T</code> must outlive lifetime <code>&#39;a</code>.</li>
 <li><code>T: Trait + &#39;a</code>: Type <code>T</code> must implement trait <code>Trait</code> and <em>all</em> references
 in <code>T</code> must outlive <code>&#39;a</code>.</li>
 </ol>
+<p>The example below shows the above syntax in action:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">use std::fmt::Debug; // Trait to bound with.
 
 #[derive(Debug)]
-// &#96;Ref&#96; contains a reference to type &#96;T&#96; where &#96;T&#96; is unknown
-// with an unknown lifetime &#96;&#39;a&#96;. &#96;T&#96; is bounded such that any
-// references in &#96;T&#96; must outlive &#96;&#39;a&#96;. In addition, the lifetime
-// of &#96;Ref&#96; may not exceed &#96;&#39;a&#96;.
 struct Ref&lt;&#39;a, T: &#39;a&gt;(&amp;&#39;a T);
+// &#96;Ref&#96; contains a reference to a generic type &#96;T&#96; that has
+// an unknown lifetime &#96;&#39;a&#96;. &#96;T&#96; is bounded such that any
+// &#42;references&#42; in &#96;T&#96; must outlive &#96;&#39;a&#96;. Additionally, the lifetime
+// of &#96;Ref&#96; may not exceed &#96;&#39;a&#96;.
 
 // A generic function which prints using the &#96;Debug&#96; trait.
 fn print&lt;T&gt;(t: T) where
@@ -2902,7 +2903,7 @@ fn print&lt;T&gt;(t: T) where
 }
 
 // Here a reference to &#96;T&#96; is taken where &#96;T&#96; implements
-// &#96;Debug&#96; and &#42;all&#42; references in &#96;T&#96; outlive &#96;&#39;a&#96;. In
+// &#96;Debug&#96; and all &#42;references&#42; in &#96;T&#96; outlive &#96;&#39;a&#96;. In
 // addition, &#96;&#39;a&#96; must outlive the function.
 fn print&#95;ref&lt;&#39;a, T&gt;(t: &amp;&#39;a T) where
     T: Debug + &#39;a {
@@ -2920,7 +2921,8 @@ fn main() {
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="/generics.html">generics</a> and <a href="/generics/bounds.html">bounds in generics</a></p>
+<p><a href="/generics.html">generics</a>, <a href="/generics/bounds.html">bounds in generics</a>, and 
+<a href="/generics/multi_bounds.html">multiple bounds in generics</a></p>
 
                     
                     </section>

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.2" data-basepath="../.." data-revision="1454591012363">
+    <div class="book" data-level="14.4.2" data-basepath="../.." data-revision="1454616549065">
     
 
 <div class="book-summary">
@@ -2875,13 +2875,15 @@
                     <section class="normal" id="section-gitbook_109">
                     
                         <h3 id="1442-functions">14.4.2 Functions</h3>
-<p>Functions with lifetimes have a few different valid forms. Ignoring
-<a href="/scope/lifetime/elision.html">elision</a> for the time being, the rules for function parameters are:</p>
+<p>Ignoring <a href="/scope/lifetime/elision.html">elision</a>, function signatures with lifetimes have a few constraints: </p>
 <ul>
 <li>any reference <em>must</em> have an annotated lifetime.</li>
 <li>any reference being returned <em>must</em> have the same lifetime as an input or
 be <code>static</code>.</li>
 </ul>
+<p>Additionally, note that returning references without input is banned if it
+would result in returning references to invalid data. The following example shows
+off some valid forms of functions with lifetimes:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2903,18 +2905,15 @@ fn print&#95;multi&lt;&#39;a, &#39;b&gt;(x: &amp;&#39;a i32, y: &amp;&#39;b i32)
     println!(&quot;&#96;print&#95;multi&#96;: x is {}, y is {}&quot;, x, y);
 }
 
-// This is invalid. An &#96;i32&#96; would be created, a reference
-// would be created, then immediately the data would be
-// dropped leaving a reference to invalid data to be returned.
-//
-// The reason the problem is caught is because of the restriction
-// &#96;&lt;&#39;a&gt;&#96; imposes: &#96;&#39;a&#96; must live longer than the function.
-//fn invalid&#95;output&lt;&#39;a&gt;() -&gt; &amp;&#39;a i32 { &amp;7 }
-
-// While returning references without input is banned, returning
-// references that have been passed in are perfectly acceptable.
-// One restriction is the correct lifetime must be returned.
+// Returning references that have been passed in is acceptable.
+// However, the correct lifetime must be returned.
 fn pass&#95;x&lt;&#39;a, &#39;b&gt;(x: &amp;&#39;a i32, &#95;: &amp;&#39;b i32) -&gt; &amp;&#39;a i32 { x }
+
+//fn invalid&#95;output&lt;&#39;a&gt;() -&gt; &amp;&#39;a i32 { &amp;7 }
+// The above is invalid: &#39;a&#96; must live longer than the function.
+// Here, &#96;&amp;7&#96; would create an &#96;i32&#96;, followed by a reference.
+// Then the data is dropped upon exiting the scope, leaving 
+// a reference to invalid data to be returned.
 
 fn main() {
     let x = 7;

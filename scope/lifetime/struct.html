@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.4" data-basepath="../.." data-revision="1454591012363">
+    <div class="book" data-level="14.4.4" data-basepath="../.." data-revision="1454616549065">
     
 
 <div class="book-summary">
@@ -2880,11 +2880,11 @@
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">// A type &#96;Borrowed&#96; which houses a reference to an
-// &#96;i32&#96;. This reference must outlive the structure.
+// &#96;i32&#96;. The reference to &#96;i32&#96; must outlive &#96;Borrowed&#96;.
 #[derive(Debug)]
 struct Borrowed&lt;&#39;a&gt;(&amp;&#39;a i32);
 
-// Similarly, both references must outlive this structure.
+// Similarly, both references here must outlive this structure.
 #[derive(Debug)]
 struct NamedBorrowed&lt;&#39;a&gt; {
     x: &amp;&#39;a i32,

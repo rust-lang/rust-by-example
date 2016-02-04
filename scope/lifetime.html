@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4" data-basepath=".." data-revision="1454591012363">
+    <div class="book" data-level="14.4" data-basepath=".." data-revision="1454616549065">
     
 
 <div class="book-summary">
@@ -2885,9 +2885,9 @@ as long as the borrow ends before (inside) the lender is destroyed.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// Lifetimes are annotated with lines denoting when each variable
-// is created and destroyed. &#96;i&#96; has the largest lifetime because it&#39;s
-// scope entirely encloses both &#96;borrow1&#96; and &#96;borrow2&#96;. The sizedness
+<div id="editor">// Here, lifetimes are annotated with lines denoting when each variable
+// is created and destroyed. &#96;i&#96; has the largest lifetime because its
+// scope entirely encloses both &#96;borrow1&#96; and &#96;borrow2&#96;. The &quot;size&quot;
 // of &#96;borrow1&#96; compared with &#96;borrow2&#96; is irrelevant since they are
 // disjoint.
 fn main() {
@@ -2910,7 +2910,7 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>You may have noted that no names or types are assigned to label lifetimes.
+<p>Note that no names or types are assigned to label lifetimes.
 This restricts how lifetimes will be able to be used as we will see.</p>
 
                     

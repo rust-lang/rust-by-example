@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.6" data-basepath="../.." data-revision="1454591012363">
+    <div class="book" data-level="14.4.6" data-basepath="../.." data-revision="1454616549065">
     
 
 <div class="book-summary">
@@ -2875,31 +2875,34 @@
                     <section class="normal" id="section-gitbook_111">
                     
                         <h3 id="1446-coercion">14.4.6 Coercion</h3>
-<p>A lifetime may be coerced into another if the the original is larger than
-the new lifetime:</p>
+<p>A longer lifetime can be coerced into a shorter one 
+so that it works inside a scope it normally wouldn&#39;t work in.
+This comes in the form of inferred coercion by the Rust compiler,
+and also in the form of declaring a lifetime difference:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// &#96;x&#96; is a reference with lifetime &#96;&#39;a&#96; which is larger than &#96;&#39;b&#96;.
-// Both &#96;&#39;a&#96; and &#96;&#39;b&#96; are larger than &#96;coerce&#95;first&#96;. Since &#96;&#39;a&#96; is
-// larger than &#96;&#39;b&#96;, it may be coerced.
-fn coerce&#95;first&lt;&#39;a: &#39;b, &#39;b&gt;(x: &amp;&#39;a i32, &#95;: &amp;&#39;b i32) -&gt; &amp;&#39;b i32 {
-    x
+<div id="editor">// Here, Rust infers a lifetime that is as short as possible.
+// The two references are then coerced to that lifetime.
+fn multiply&lt;&#39;a&gt;(first: &amp;&#39;a i32, second: &amp;&#39;a i32) -&gt; i32 {
+    first &#42; second
+}
+
+// &#96;&lt;&#39;a: &#39;b, &#39;b&gt;&#96; reads as lifetime &#96;&#39;a&#96; is at least as long as &#96;&#39;b&#96;.
+// Here, we take in an &#96;&amp;&#39;a i32&#96; and return a &#96;&amp;&#39;b i32&#96; as a result of coercion.
+fn choose&#95;first&lt;&#39;a: &#39;b, &#39;b&gt;(first: &amp;&#39;a i32, &#95;: &amp;&#39;b i32) -&gt; &amp;&#39;b i32 {
+    first
 }
 
 fn main() {
-    let x = 800;
-    let y = 8;
+    let first = 2; // Longer lifetime
 
-    let borrow&#95;big = &x;
     {
-        // This reference is inside a scope and therefore is
-        // smaller than the other borrow.
-        let borrow&#95;small = &y;
+        let second = 3; // Shorter lifetime
 
-        let coerced = coerce&#95;first(borrow&#95;big, borrow&#95;small);
-        println!(&quot;&#96;coerced&#96; is {}&quot;, coerced);
-    }
+        println!(&quot;The product is {}&quot;, multiply(&amp;first, &amp;second));
+        println!(&quot;{} is the first&quot;, choose&#95;first(&amp;first, &amp;second));
+    };
 }</div>
 <div id="result"></div>
 </div>

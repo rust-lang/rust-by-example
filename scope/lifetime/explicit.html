@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.1" data-basepath="../.." data-revision="1454591012363">
+    <div class="book" data-level="14.4.1" data-basepath="../.." data-revision="1454616549065">
     
 
 <div class="book-summary">
@@ -2875,66 +2875,59 @@
                     <section class="normal" id="section-gitbook_108">
                     
                         <h3 id="1441-explicit-annotation">14.4.1 Explicit annotation</h3>
-<p>The borrow checker utilizes explicit lifetime annotations to reason about
-how long references should be valid. Failure to annotate lifetimes<sup><a href="#fn_1" id="reffn_1">1</a></sup> is akin
-to banning the borrow checker from validating borrows and so accordingly,
-annotation is mandatory.</p>
-<p>Since lifetimes <em>currently</em> have no explicit type or name associated with them,
-usage will require generics (similar to <a href="/fn/closures/anonymity.html">closures</a>). Additionally,
-a second meaning will be associated with this lifetime syntax. <code>foo&lt;&#39;a, &#39;b&gt;</code>
-states:</p>
-<ol>
-<li><code>&#39;a</code> and <code>&#39;b</code> will represent names for lifetimes with non-specifiable
-(generic) types.</li>
-<li>The lifetime of <code>foo</code> may not exceed either lifetimes <code>&#39;a</code> or <code>&#39;b</code>.</li>
-</ol>
-<p>Explicit annotation of a type has the form: <code>&amp;&#39;a T</code> where <code>&#39;a</code> has already
-been introduced. The less obvious of the rules is <strong>Rule 2</strong> whose
-importance can usually be directly deduced from borrowing rules. Consider the
-following example:</p>
+<p>The borrow checker uses explicit lifetime annotations to determine
+how long references should be valid. In cases where lifetimes are not
+elided<sup><a href="#fn_1" id="reffn_1">1</a></sup>, Rust requires explicit annotations to determine what the 
+lifetime of a reference should be. The syntax for explicitly annotating 
+a lifetime uses an apostrophe character as follows: </p>
+<pre><code class="lang-rust">foo&lt;'a&gt;
+<span class="hljs-comment">// `foo` has a lifetime parameter `'a`</span>
+</code></pre>
+<p>Similar to <a href="/fn/closures/anonymity.html">closures</a>, using lifetimes requires generics. 
+Additionally, this lifetime syntax indicates that the lifetime of <code>foo</code> 
+may not exceed that of <code>&#39;a</code>. Explicit annotation of a type has the form 
+<code>&amp;&#39;a T</code> where <code>&#39;a</code> has already been introduced.</p>
+<p>In cases with multiple lifetimes, the syntax is similar:</p>
+<pre><code class="lang-rust">foo&lt;'a, 'b&gt;
+<span class="hljs-comment">// `foo` has lifetime parameters `'a` and `'b`</span>
+</code></pre>
+<p>In this case, the lifetime of <code>foo</code> cannot exceed that of either <code>&#39;a</code> <em>or</em> <code>&#39;b</code>.</p>
+<p>See the following example for explicit lifetime annotation in use:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// This example uses &#96;main()&#96; at the top so it can be read top to
-// bottom. &#96;main()&#96; is usually at the bottom.
-fn main() {
-    // Create variables which will be borrowed.
-    let (four, nine) = (4, 9);
-
-    // Borrows (&#96;&amp;&#96;) of both variables are passed into the function.
-    // If a borrow is truly a borrow, the variable must be returned,
-    // otherwise a borrow would be transferring ownership. This means
-    // no matter what, &#42;any&#42; input which is borrowed via function or
-    // otherwise, &#42;must&#42; still exist after the borrower ceases. In
-    // other words, &#42;Rule 2&#42; must be true.
-    print&#95;refs(&amp;four, &amp;nine);
-
-    // Note that there is no input even though the function specifies
-    // a lifetime. The sizedness of that lifetime will be determined
-    // by the caller (which is here) from available lifetimes (scopes).
-    // Any lifetime chosen will then be larger than that of the function.
-    failed&#95;borrow();
-}
-
-// &#96;print&#95;refs&#96; takes two references to &#96;i32&#96; which have different
+<div id="editor">// &#96;print&#95;refs&#96; takes two references to &#96;i32&#96; which have different
 // lifetimes &#96;&#39;a&#96; and &#96;&#39;b&#96;. These two lifetimes must both be at
 // least as long as the function &#96;print&#95;refs&#96;.
 fn print&#95;refs&lt;&#39;a, &#39;b&gt;(x: &amp;&#39;a i32, y: &amp;&#39;b i32) {
     println!(&quot;x is {} and y is {}&quot;, x, y);
 }
 
-// There are no references to force &#96;&#39;a&#96; to be larger than the
-// function, yet &#96;&#39;a&#96; remains larger than the function.
+// A function which takes no arguments, but has a lifetime parameter &#96;&#39;a&#96;.
 fn failed&#95;borrow&lt;&#39;a&gt;() {
     let &#95;x = 12;
 
-    // Attempting to use the lifetime &#96;&#39;a&#96; as an explicit type
-    // annotation inside the function will fail because the
-    // lifetime of &#96;&amp;&#95;x&#96; is smaller than &#96;y&#96; has. A small lifetime
-    // cannot be coerced into a larger one.
-    //
-    //let y: &amp;&#39;a i32 = &amp;&#95;x;
     // ERROR: &#96;&#95;x&#96; does not live long enough
+    //let y: &amp;&#39;a i32 = &amp;&#95;x;
+    // Attempting to use the lifetime &#96;&#39;a&#96; as an explicit type annotation 
+    // inside the function will fail because the lifetime of &#96;&amp;&#95;x&#96; is shorter
+    // than that of &#96;y&#96;. A short lifetime cannot be coerced into a longer one.
+}
+
+fn main() {
+    // Create variables to be borrowed below.
+    let (four, nine) = (4, 9);
+
+    // Borrows (&#96;&amp;&#96;) of both variables are passed into the function.
+    print&#95;refs(&amp;four, &amp;nine);
+    // Any input which is borrowed must outlive the borrower. 
+    // In other words, the lifetime of &#96;four&#96; and &#96;nine&#96; must 
+    // be longer than that of &#96;print&#95;refs&#96;.
+
+    failed&#95;borrow();
+    // &#96;failed&#95;borrow&#96; contains no references to force &#96;&#39;a&#96; to be 
+    // longer than the lifetime of the function, but &#96;&#39;a&#96; is longer.
+    // Because the lifetime is never constrained, it defaults to &#96;&#39;static&#96;.
 }</div>
 <div id="result"></div>
 </div>

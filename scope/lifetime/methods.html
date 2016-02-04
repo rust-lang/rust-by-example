@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.3" data-basepath="../.." data-revision="1454591012363">
+    <div class="book" data-level="14.4.3" data-basepath="../.." data-revision="1454616549065">
     
 
 <div class="book-summary">
@@ -2879,11 +2879,10 @@
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// A regular structure.
-struct Owner(i32);
+<div id="editor">struct Owner(i32);
 
 impl Owner {
-    // Annotate exactly like a normal function.
+    // Annotate lifetimes as in a standalone function.
     fn add&#95;one&lt;&#39;a&gt;(&amp;&#39;a mut self) { self.0 += 1 }
     fn print&lt;&#39;a&gt;(&amp;&#39;a self) {
         println!(&quot;&#96;print&#96;: {}&quot;, self.0);
