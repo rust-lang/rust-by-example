@@ -1,23 +1,25 @@
-// These two functions have essentially identical signatures
-// because the compiler implicitly adds the lifetimes to
-// the first.
-fn elide_input(x: &i32) {
-    println!("`elide_input`: {}", x)
+// `elided_input` and `annotated_input` essentially have identical signatures
+// because the lifetime of `elided_input` is elided by the compiler:
+fn elided_input(x: &i32) {
+    println!("`elided_input`: {}", x)
 }
+
 fn annotated_input<'a>(x: &'a i32) {
     println!("`annotated_input`: {}", x)
 }
 
-// Similarly, lifetimes are added implicitly to the first.
-fn elide_pass(x: &i32) -> &i32 { x }
+// Similarly, `elided_pass` and `annotated_pass` have identical signatures
+// because the lifetime is added implicitly to `elided_pass`:
+fn elided_pass(x: &i32) -> &i32 { x }
+
 fn annotated_pass<'a>(x: &'a i32) -> &'a i32 { x }
 
 fn main() {
     let x = 3;
     
-    elide_input(&x);
+    elided_input(&x);
     annotated_input(&x);
 
-    println!("`elide_pass`: {}", elide_pass(&x));
+    println!("`elided_pass`: {}", elided_pass(&x));
     println!("`annotated_pass`: {}", annotated_pass(&x));
 }
