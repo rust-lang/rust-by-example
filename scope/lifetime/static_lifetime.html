@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.7" data-basepath="../.." data-revision="1454937323111">
+    <div class="book" data-level="14.4.7" data-basepath="../.." data-revision="1454967540271">
     
 
 <div class="book-summary">
@@ -2872,47 +2872,52 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_113">
+                    <section class="normal" id="section-gitbook_112">
                     
                         <h3 id="1447-static">14.4.7 static</h3>
-<p>A <code>&#39;static</code> lifetime is one which lasts for the lifetime of the running
-program. There are two ways to make a variable with <code>&#39;static</code> lifetime:</p>
+<p>A <code>&#39;static</code> lifetime is longest possible lifetime, and lasts for 
+the lifetime of the running program. A <code>&#39;static</code> lifetime may also be 
+coerced to a shorter lifetimes. There are two ways to make a variable 
+with <code>&#39;static</code> lifetime, and both are stored in the read-only memory
+of the binary:</p>
 <ul>
-<li>Make a <code>&quot;string&quot;</code> literal which has type: <code>&amp;&#39;static str</code>.</li>
 <li>Make a constant with the <code>static</code> declaration.</li>
+<li>Make a <code>string</code> literal which has type: <code>&amp;&#39;static str</code>.</li>
 </ul>
-<p><code>statics</code> may also be coerced to smaller lifetimes since they are clearly
-larger than most:</p>
+<p>See the following example for a display of each method:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">static NUM: i32 = 18;
+<div id="editor">// Make a constant with &#96;&#39;static&#96; lifetime.
+static NUM: i32 = 18;
 
-// Return a reference to &#96;NUM&#96; which is coerced to the
-// lifetime of &#96;&#39;a&#96; which was used as an input.
+// Returns a reference to &#96;NUM&#96; where its &#96;&#39;static&#96; 
+// lifetime is coerced to that of the input argument.
 fn coerce&#95;static&lt;&#39;a&gt;(&#95;: &amp;&#39;a i32) -&gt; &amp;&#39;a i32 {
     &amp;NUM
 }
 
 fn main() {
     {
-        // String literals are references to read-only memory
-        let static&#95;string = &quot;In read-only memory&quot;;
+        // Make a &#96;string&#96; literal and print it:
+        let static&#95;string = &quot;I&#39;m in read-only memory&quot;;
+        println!(&quot;static&#95;string: {}&quot;, static&#95;string);
 
-        // When &#96;&#95;static&#95;string&#96; goes out of scope, we can no longer refer to
-        // the underlying data, but the string remains in the read-only memory
-        println!(&quot;static&#95;string holds: {}&quot;, static&#95;string);
+        // When &#96;static&#95;string&#96; goes out of scope, the reference
+        // can no longer be used, but the data remains in the binary.
     }
-
-    println!(&quot;but now it&#39;s gone.&quot;);
-    println!(&quot;NUM: {} is still around though!&quot;, NUM);
 
     {
-        let i = 9;
-        let coerced&#95;num = coerce&#95;static(&amp;i);
+        // Make an integer to use for &#96;coerce&#95;static&#96;:
+        let lifetime&#95;num = 9;
 
-        println!(&quot;coerced&#95;num: {}&quot;, coerced&#95;num);
+        // Coerce &#96;NUM&#96; to lifetime of &#96;lifetime&#95;num&#96;:
+        let coerced&#95;static = coerce&#95;static(&amp;lifetime&#95;num);
+
+        println!(&quot;coerced&#95;static: {}&quot;, coerced&#95;static);
     }
+
+    println!(&quot;NUM: {} stays accessible!&quot;, NUM);
 }</div>
 <div id="result"></div>
 </div>

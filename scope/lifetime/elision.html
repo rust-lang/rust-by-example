@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.8" data-basepath="../.." data-revision="1454937323111">
+    <div class="book" data-level="14.4.8" data-basepath="../.." data-revision="1454967540271">
     
 
 <div class="book-summary">
@@ -2875,35 +2875,38 @@
                     <section class="normal" id="section-gitbook_107">
                     
                         <h3 id="1448-elision">14.4.8 elision</h3>
-<p>Some lifetime patterns are overwelmingly common and so they may be elided
-(dropped) and the borrow checker will implicitly add them. Elision exists
-solely because these patterns are common; saving typing and easing legibility.</p>
-<p>This section is brief and not comprehensive. See <a href="http://doc.rust-lang.org/book/lifetimes.html#lifetime-elision" target="_blank">lifetime elision</a>
-in the book for a more comprehensive treatment.</p>
+<p>Some lifetime patterns are overwelmingly common and so the borrow checker 
+will implicitly add them to save typing and to improve readability. 
+This process of implicit addition is called elision. Elision exists in Rust
+solely because these patterns are common.</p>
+<p>The following code shows a few examples of elision. For a more comprehensive 
+description of elision, see <a href="http://doc.rust-lang.org/book/lifetimes.html#lifetime-elision" target="_blank">lifetime elision</a> in the book.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// These two functions have essentially identical signatures
-// because the compiler implicitly adds the lifetimes to
-// the first.
-fn elide&#95;input(x: &amp;i32) {
-    println!(&quot;&#96;elide&#95;input&#96;: {}&quot;, x)
+<div id="editor">// &#96;elided&#95;input&#96; and &#96;annotated&#95;input&#96; essentially have identical signatures
+// because the lifetime of &#96;elided&#95;input&#96; is elided by the compiler:
+fn elided&#95;input(x: &amp;i32) {
+    println!(&quot;&#96;elided&#95;input&#96;: {}&quot;, x)
 }
+
 fn annotated&#95;input&lt;&#39;a&gt;(x: &amp;&#39;a i32) {
     println!(&quot;&#96;annotated&#95;input&#96;: {}&quot;, x)
 }
 
-// Similarly, lifetimes are added implicitly to the first.
-fn elide&#95;pass(x: &amp;i32) -&gt; &amp;i32 { x }
+// Similarly, &#96;elided&#95;pass&#96; and &#96;annotated&#95;pass&#96; have identical signatures
+// because the lifetime is added implicitly to &#96;elided&#95;pass&#96;:
+fn elided&#95;pass(x: &amp;i32) -&gt; &amp;i32 { x }
+
 fn annotated&#95;pass&lt;&#39;a&gt;(x: &amp;&#39;a i32) -&gt; &amp;&#39;a i32 { x }
 
 fn main() {
     let x = 3;
 
-    elide&#95;input(&amp;x);
+    elided&#95;input(&amp;x);
     annotated&#95;input(&amp;x);
 
-    println!(&quot;&#96;elide&#95;pass&#96;: {}&quot;, elide&#95;pass(&amp;x));
+    println!(&quot;&#96;elided&#95;pass&#96;: {}&quot;, elided&#95;pass(&amp;x));
     println!(&quot;&#96;annotated&#95;pass&#96;: {}&quot;, annotated&#95;pass(&amp;x));
 }</div>
 <div id="result"></div>
