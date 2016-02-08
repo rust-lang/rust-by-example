@@ -1,11 +1,13 @@
-A `'static` lifetime is one which lasts for the lifetime of the running
-program. There are two ways to make a variable with `'static` lifetime:
+A `'static` lifetime is longest possible lifetime, and lasts for 
+the lifetime of the running program. A `'static` lifetime may also be 
+coerced to a shorter lifetimes. There are two ways to make a variable 
+with `'static` lifetime, and both are stored in the read-only memory
+of the binary:
 
-* Make a `"string"` literal which has type: `&'static str`.
 * Make a constant with the `static` declaration.
+* Make a `string` literal which has type: `&'static str`.
 
-`statics` may also be coerced to smaller lifetimes since they are clearly
-larger than most:
+See the following example for a display of each method:
 
 {static_lifetime.play}
 

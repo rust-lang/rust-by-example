@@ -1,28 +1,31 @@
+// Make a constant with `'static` lifetime.
 static NUM: i32 = 18;
 
-// Return a reference to `NUM` which is coerced to the
-// lifetime of `'a` which was used as an input.
+// Returns a reference to `NUM` where its `'static` 
+// lifetime is coerced to that of the input argument.
 fn coerce_static<'a>(_: &'a i32) -> &'a i32 {
     &NUM
 }
 
 fn main() {
     {
-        // String literals are references to read-only memory
-        let static_string = "In read-only memory";
+        // Make a `string` literal and print it:
+        let static_string = "I'm in read-only memory";
+        println!("static_string: {}", static_string);
 
-        // When `_static_string` goes out of scope, we can no longer refer to
-        // the underlying data, but the string remains in the read-only memory
-        println!("static_string holds: {}", static_string);
+        // When `static_string` goes out of scope, the reference
+        // can no longer be used, but the data remains in the binary.
     }
     
-    println!("but now it's gone.");
-    println!("NUM: {} is still around though!", NUM);
-
     {
-        let i = 9;
-        let coerced_num = coerce_static(&i);
+        // Make an integer to use for `coerce_static`:
+        let lifetime_num = 9;
 
-        println!("coerced_num: {}", coerced_num);
+        // Coerce `NUM` to lifetime of `lifetime_num`:
+        let coerced_static = coerce_static(&lifetime_num);
+
+        println!("coerced_static: {}", coerced_static);
     }
+    
+    println!("NUM: {} stays accessible!", NUM);
 }
