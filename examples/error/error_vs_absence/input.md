@@ -1,5 +1,5 @@
-Previously, we have used the type `Option` to annotate that absense is a possibility. This
-absense sometimes appears as an error, for example when `None` is unwrapped. In the more
+Previously, we have used the type `Option` to annotate that absence is a possibility. This
+absence sometimes appears as an error, for example when `None` is unwrapped. In the more
 general case where there may be multiple failure points for a multitude of different reasons,
 an `Option` can be replaced by the more general `Result` type. A `Result<T, E>` has these
 variants:
