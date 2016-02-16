@@ -1,5 +1,5 @@
 `Iterator::find` is a function which when passed an iterator, will return
-the first element which satisfies the predicate as an `Option`. It's
+the first element which satisfies the predicate as an `Option`. Its
 signature:
 
 ```rust
