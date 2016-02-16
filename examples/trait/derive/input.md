@@ -2,9 +2,7 @@ The compiler is capable of providing basic implementations for some traits via
 the `#[derive]` [attribute][attribute]. These traits can still be
 manually implemented if a more complex behavior is required.
 
-{derive.play}
-
-This is a list of the "derivable" traits:
+The following is a list of the "derivable" traits:
 * Comparison traits:
   [`Eq`][eq],
   [`PartialEq`][partial-eq],
@@ -20,6 +18,8 @@ This is a list of the "derivable" traits:
   create a zero instance of a numeric data type.
 * [`Debug`][debug], to
   format a value using the `{:?}` formatter.
+
+{derive.play}
 
 [attribute]: /attribute.html
 [eq]: http://doc.rust-lang.org/std/cmp/trait.Eq.html
