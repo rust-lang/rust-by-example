@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15" data-basepath="." data-revision="1455721917465">
+    <div class="book" data-level="15" data-basepath="." data-revision="1455727982269">
     
 
 <div class="book-summary">
@@ -2875,60 +2875,30 @@
                     <section class="normal" id="section-gitbook_151">
                     
                         <h1 id="15-traits">15 Traits</h1>
-<p>A <code>trait</code> is a collection of methods declared/defined for an unknown type:
-<code>Self</code>. Traits can be implemented for any data type.</p>
+<p>A <code>trait</code> is a collection of methods defined for an unknown type:
+<code>Self</code>. They can access other methods declared in the same trait.</p>
+<p>Traits can be implemented for any data type. In the example below,
+we define <code>Animal</code>, a group of methods. The <code>Animal</code> <code>trait</code> is 
+then implemented for the <code>Sheep</code> data type, allowing the use of 
+methods from <code>Animal</code> with a <code>Sheep</code>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">trait Animal {
-    // Static method signature; &#96;Self&#96; refers to the implementor type
+<div id="editor">struct Sheep { naked: bool, name: &amp;&#39;static str }
+
+trait Animal {
+    // Static method signature; &#96;Self&#96; refers to the implementor type.
     fn new(name: &amp;&#39;static str) -&gt; Self;
 
-    // Instance methods, only signatures
+    // Instance method signatures; these will return a string.
     fn name(&amp;self) -&gt; &amp;&#39;static str;
     fn noise(&amp;self) -&gt; &amp;&#39;static str;
 
-    // A trait can provide default method definitions
+    // Traits can provide default method definitions.
     fn talk(&amp;self) {
-        // These definitions can access other methods declared in the same
-        // trait
         println!(&quot;{} says {}&quot;, self.name(), self.noise());
     }
 }
-
-struct Dog { name: &amp;&#39;static str }
-
-impl Dog {
-    fn wag&#95;tail(&amp;self) {
-        println!(&quot;{} wags tail&quot;, self.name);
-    }
-}
-
-// Implement the &#96;Animal&#96; trait for &#96;Dog&#96;
-impl Animal for Dog {
-    // Replace &#96;Self&#96; with the implementor type: &#96;Dog&#96;
-    fn new(name: &amp;&#39;static str) -&gt; Dog {
-        Dog { name: name }
-    }
-
-    fn name(&amp;self) -&gt; &amp;&#39;static str {
-        self.name
-    }
-
-    fn noise(&amp;self) -&gt; &amp;&#39;static str {
-        &quot;woof!&quot;
-    }
-
-    // Default trait methods can be overridden
-    fn talk(&amp;self) {
-        // Traits methods can access the implementor methods
-        self.wag&#95;tail();
-
-        println!(&quot;{} says {}&quot;, self.name, self.noise());
-    }
-}
-
-struct Sheep { naked: bool, name: &amp;&#39;static str }
 
 impl Sheep {
     fn is&#95;naked(&amp;self) -&gt; bool {
@@ -2937,18 +2907,19 @@ impl Sheep {
 
     fn shear(&amp;mut self) {
         if self.is&#95;naked() {
-            // Implementor methods can use the implementor&#39;s trait methods
-            println!(&quot;{} is already naked!&quot;, self.name());
+            // Implementor methods can use the implementor&#39;s trait methods.
+            println!(&quot;{} is already naked...&quot;, self.name());
         } else {
-            println!(&quot;{} gets a haircut&quot;, self.name);
+            println!(&quot;{} gets a haircut!&quot;, self.name);
 
-            self.talk();
             self.naked = true;
         }
     }
 }
 
+// Implement the &#96;Animal&#96; trait for &#96;Sheep&#96;.
 impl Animal for Sheep {
+    // &#96;Self&#96; is the implementor type: &#96;Sheep&#96;.
     fn new(name: &amp;&#39;static str) -&gt; Sheep {
         Sheep { name: name, naked: false }
     }
@@ -2959,22 +2930,26 @@ impl Animal for Sheep {
 
     fn noise(&amp;self) -&gt; &amp;&#39;static str {
         if self.is&#95;naked() {
-            &quot;baaah&quot;
+            &quot;baaaaah?&quot;
         } else {
-            &quot;baaaaaaaaaaaah&quot;
+            &quot;baaaaah!&quot;
         }
+    }
+
+    // Default trait methods can be overridden.
+    fn talk(&amp;self) {
+        // For example, we can add some quiet contemplation.
+        println!(&quot;{} pauses briefly... {}&quot;, self.name, self.noise());
     }
 }
 
 fn main() {
-    // Type annotation is necessary in this case
+    // Type annotation is necessary in this case.
     let mut dolly: Sheep = Animal::new(&quot;Dolly&quot;);
-    let spike: Dog = Animal::new(&quot;Spike&quot;);
-    // TODO ^ Try removing the type annotations
+    // TODO ^ Try removing the type annotations.
 
+    dolly.talk();
     dolly.shear();
-
-    spike.talk();
     dolly.talk();
 }</div>
 <div id="result"></div>

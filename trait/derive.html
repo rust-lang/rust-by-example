@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15.1" data-basepath=".." data-revision="1455721917465">
+    <div class="book" data-level="15.1" data-basepath=".." data-revision="1455727982269">
     
 
 <div class="book-summary">
@@ -2878,60 +2878,7 @@
 <p>The compiler is capable of providing basic implementations for some traits via
 the <code>#[derive]</code> <a href="/attribute.html">attribute</a>. These traits can still be
 manually implemented if a more complex behavior is required.</p>
-<div id="active-code">
-<button class="btn btn-primary" type="button" id="run-code">Run</button>
-<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// A tuple struct that can be compared
-#[derive(PartialEq, PartialOrd)]
-struct Centimeters(f64);
-
-// A tuple struct that can be printed
-#[derive(Debug)]
-struct Inches(i32);
-
-impl Inches {
-    fn to&#95;centimeters(&amp;self) -&gt; Centimeters {
-        let &amp;Inches(inches) = self;
-
-        Centimeters(inches as f64 &#42; 2.54)
-    }
-}
-
-// A vanilla tuple struct
-struct Seconds(i32);
-
-fn main() {
-    let &#95;one&#95;second = Seconds(1);
-
-    // Error! &#96;Seconds&#96; can&#39;t be printed, because it doesn&#39;t implement the
-    // &#96;Debug&#96; trait
-    //println!(&quot;One second looks like: {:?}&quot;, &#95;one&#95;second);
-    // TODO ^ Try uncommenting this line
-
-    // Error: &#96;Seconds&#96; can&#39;t be compared, because it doesn&#39;t implement the
-    // &#96;PartialEq&#96; trait
-    //let &#95;this&#95;is&#95;true = &#95;one&#95;second == &#95;one&#95;second;
-    // TODO ^ Try uncommenting this line
-
-    let foot = Inches(12);
-
-    println!(&quot;One foot === {:?}&quot;, foot);
-
-    let meter = Centimeters(100.0);
-
-    let cmp =
-        if foot.to&#95;centimeters() &lt; meter {
-            &quot;smaller&quot;
-        } else {
-            &quot;bigger&quot;
-        };
-
-    println!(&quot;one foot is {} than one meter&quot;, cmp);
-}</div>
-<div id="result"></div>
-</div>
-
-<p>This is a list of the &quot;derivable&quot; traits:</p>
+<p>The following is a list of the &quot;derivable&quot; traits:</p>
 <ul>
 <li>Comparison traits:
 <a href="http://doc.rust-lang.org/std/cmp/trait.Eq.html" target="_blank"><code>Eq</code></a>,
@@ -2949,6 +2896,57 @@ create a zero instance of a numeric data type.</li>
 <li><a href="http://doc.rust-lang.org/std/fmt/trait.Debug.html" target="_blank"><code>Debug</code></a>, to
 format a value using the <code>{:?}</code> formatter.</li>
 </ul>
+<div id="active-code">
+<button class="btn btn-primary" type="button" id="run-code">Run</button>
+<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
+<div id="editor">// &#96;Centimeters&#96;, a tuple struct that can be compared
+#[derive(PartialEq, PartialOrd)]
+struct Centimeters(f64);
+
+// &#96;Inches&#96;, a tuple struct that can be printed
+#[derive(Debug)]
+struct Inches(i32);
+
+impl Inches {
+    fn to&#95;centimeters(&amp;self) -&gt; Centimeters {
+        let &amp;Inches(inches) = self;
+
+        Centimeters(inches as f64 &#42; 2.54)
+    }
+}
+
+// &#96;Seconds&#96;, a tuple struct no additional attributes
+struct Seconds(i32);
+
+fn main() {
+    let &#95;one&#95;second = Seconds(1);
+
+    // Error: &#96;Seconds&#96; can&#39;t be printed; it doesn&#39;t implement the &#96;Debug&#96; trait
+    //println!(&quot;One second looks like: {:?}&quot;, &#95;one&#95;second);
+    // TODO ^ Try uncommenting this line
+
+    // Error: &#96;Seconds&#96; can&#39;t be compared; it doesn&#39;t implement the &#96;PartialEq&#96; trait
+    //let &#95;this&#95;is&#95;true = (&#95;one&#95;second == &#95;one&#95;second);
+    // TODO ^ Try uncommenting this line
+
+    let foot = Inches(12);
+
+    println!(&quot;One foot equals {:?}&quot;, foot);
+
+    let meter = Centimeters(100.0);
+
+    let cmp =
+        if foot.to&#95;centimeters() &lt; meter {
+            &quot;smaller&quot;
+        } else {
+            &quot;bigger&quot;
+        };
+
+    println!(&quot;One foot is {} than one meter.&quot;, cmp);
+}</div>
+<div id="result"></div>
+</div>
+
 
                     
                     </section>
