@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.7.1" data-basepath="../.." data-revision="1457148123127">
+    <div class="book" data-level="17.7.1" data-basepath="../.." data-revision="1457194371358">
     
 
 <div class="book-summary">
@@ -2879,12 +2879,11 @@
 This includes:</p>
 <ul>
 <li><code>bool</code> (though not very useful since there is only two possible keys)</li>
-<li><code>int</code>, <code>uint</code>, and all variations thereof 
-(see <a href="http://doc.rust-lang.org/std/collections/struct.VecMap.html" target="_blank"><code>VecMap</code></a> for a more streamlined map implementation keyed by <code>uint</code>)</li>
-<li><code>String</code> and <code>&amp;str</code> (protip: you can have a <code>HashMap</code> keyed by <code>String</code> 
+<li><code>int</code>, <code>uint</code>, and all variations thereof</li>
+<li><code>String</code> and <code>&amp;str</code> (protip: you can have a <code>HashMap</code> keyed by <code>String</code>
 and call <code>.get()</code> with an <code>&amp;str</code>)</li>
 </ul>
-<p>Note that <code>f32</code> and <code>f64</code> do <em>not</em> implement <code>Hash</code>, 
+<p>Note that <code>f32</code> and <code>f64</code> do <em>not</em> implement <code>Hash</code>,
 likely because <a href="http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems" target="_blank">floating-point precision errors</a>
 would make using them as hashmap keys horribly error-prone.</p>
 <p>All collection classes implement <code>Eq</code> and <code>Hash</code> 
