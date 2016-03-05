@@ -2,11 +2,11 @@ Any type that implements the `Eq` and `Hash` traits can be a key in `HashMap`.
 This includes:
 
 * `bool` (though not very useful since there is only two possible keys)
-* `int`, `uint`, and all variations thereof 
-* `String` and `&str` (protip: you can have a `HashMap` keyed by `String` 
+* `int`, `uint`, and all variations thereof
+* `String` and `&str` (protip: you can have a `HashMap` keyed by `String`
 and call `.get()` with an `&str`)
 
-Note that `f32` and `f64` do *not* implement `Hash`, 
+Note that `f32` and `f64` do *not* implement `Hash`,
 likely because [floating-point precision errors][floating]
 would make using them as hashmap keys horribly error-prone.
 
