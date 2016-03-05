@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="5" data-basepath="." data-revision="1457114935245">
+    <div class="book" data-level="5" data-basepath="." data-revision="1457148123127">
     
 
 <div class="book-summary">
@@ -2907,6 +2907,8 @@ fn main() {
     println!(&quot;1000 as a u16 is: {}&quot;, 1000 as u16);
 
     // 1000 - 256 - 256 - 256 = 232
+    // Under the hood, the first 8 bits from the least significant bit (LSB) are used, 
+    // while the rest towards the most significant bit (MSB) get truncated.
     println!(&quot;1000 as a u8 is : {}&quot;, 1000 as u8);
     // -1 + 256 = 255
     println!(&quot;  -1 as a u8 is : {}&quot;, (-1i8) as u8);
