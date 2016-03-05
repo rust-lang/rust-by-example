@@ -3,7 +3,6 @@ This includes:
 
 * `bool` (though not very useful since there is only two possible keys)
 * `int`, `uint`, and all variations thereof 
-(see [`VecMap`][vecmap] for a more streamlined map implementation keyed by `uint`)
 * `String` and `&str` (protip: you can have a `HashMap` keyed by `String` 
 and call `.get()` with an `&str`)
 
@@ -27,6 +26,5 @@ let's try making a very simple user logon system:
 
 {alt_key_types.play}
 
-[vecmap]: http://doc.rust-lang.org/std/collections/struct.VecMap.html
 [hash]: http://en.wikipedia.org/wiki/Hash_function
 [floating]: http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems
