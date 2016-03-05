@@ -22,6 +22,8 @@ fn main() {
     println!("1000 as a u16 is: {}", 1000 as u16);
 
     // 1000 - 256 - 256 - 256 = 232
+    // Under the hood, the first 8 bits from the least significant bit (LSB) are used, 
+    // while the rest towards the most significant bit (MSB) get truncated.
     println!("1000 as a u8 is : {}", 1000 as u8);
     // -1 + 256 = 255
     println!("  -1 as a u8 is : {}", (-1i8) as u8);
