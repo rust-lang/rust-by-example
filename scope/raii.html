@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.1" data-basepath=".." data-revision="1457194371358">
+    <div class="book" data-level="14.1" data-basepath=".." data-revision="1457232036869">
     
 
 <div class="book-summary">
@@ -2887,21 +2887,21 @@ manually free memory or worry about memory leaks again! Here&#39;s a quick showc
 <div id="editor">// raii.rs
 fn create&#95;box() {
     // Allocate an integer on the heap
-    let box1 = Box::new(3i32);
+    let &#95;box1 = Box::new(3i32);
 
-    // &#96;box1&#96; is destroyed here, and memory gets freed
+    // &#96;&#95;box1&#96; is destroyed here, and memory gets freed
 }
 
 fn main() {
     // Allocate an integer on the heap
-    let box2 = Box::new(5i32);
+    let &#95;box2 = Box::new(5i32);
 
     // A nested scope:
     {
         // Allocate an integer on the heap
-        let box3 = Box::new(4i32);
+        let &#95;box3 = Box::new(4i32);
 
-        // &#96;box3&#96; is destroyed here, and memory gets freed
+        // &#96;&#95;box3&#96; is destroyed here, and memory gets freed
     }
 
     // Creating lots of boxes just for fun
@@ -2910,7 +2910,7 @@ fn main() {
         create&#95;box();
     }
 
-    // &#96;box2&#96; is destroyed here, and memory gets freed
+    // &#96;&#95;box2&#96; is destroyed here, and memory gets freed
 }</div>
 <div id="result"></div>
 </div>
