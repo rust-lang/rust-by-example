@@ -1,4 +1,4 @@
-use std::ops::Add;
+use std::ops;
 
 struct Foo;
 struct Bar;
@@ -9,11 +9,10 @@ struct FooBar;
 #[derive(Debug)]
 struct BarFoo;
 
-// The `Add<T, U>` trait needs two generic parameters:
-// * T is the type of the RHS summand, and
-// * U is the type of the sum
-// This block implements the operation: Foo + Bar = FooBar
-impl Add<Bar> for Foo {
+// The `std::ops::Add` trait is used to specify the functionality of `+`.
+// Here, we make `Add<Bar>` - the trait for addition with a RHS of type `Bar`.
+// The following block implements the operation: Foo + Bar = FooBar
+impl ops::Add<Bar> for Foo {
     type Output = FooBar;
 
     fn add(self, _rhs: Bar) -> FooBar {
@@ -23,9 +22,10 @@ impl Add<Bar> for Foo {
     }
 }
 
-// Addition can be implemented in a non-commutative way
+// By reversing the types, we end up implementing non-commutative addition.
+// Here, we make `Add<Foo>` - the trait for addition with a RHS of type `Foo`.
 // This block implements the operation: Bar + Foo = BarFoo
-impl Add<Foo> for Bar {
+impl ops::Add<Foo> for Bar {
     type Output = BarFoo;
 
     fn add(self, _rhs: Foo) -> BarFoo {
