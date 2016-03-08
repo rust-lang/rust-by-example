@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15.2" data-basepath=".." data-revision="1457456281156">
+    <div class="book" data-level="15.2" data-basepath=".." data-revision="1457456317249">
     
 
 <div class="book-summary">
@@ -2872,17 +2872,19 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_150">
+                    <section class="normal" id="section-gitbook_149">
                     
                         <h2 id="152-operator-overloading">15.2 Operator Overloading</h2>
-<p>In Rust, many of the operators can be overloaded via traits. This is possible
-because operators are just sugar for method calls. For example, <code>a + b</code>
-desugars to <code>a.add(b)</code>. This <code>add</code> method is part of the <code>Add</code> trait; hence,
-any implementor of the <code>Add</code> trait will be able to use the <code>+</code> operator.</p>
+<p>In Rust, many of the operators can be overloaded via traits. That is, some operators can
+be used to accomplish different tasks based on their input arguments. This is possible
+because operators are syntactic sugar for method calls. For example, the <code>+</code> operator in 
+<code>a + b</code> calls the <code>add</code> method (as in <code>a.add(b)</code>). This <code>add</code> method is part of the <code>Add</code> 
+trait. Hence, the <code>+</code> operator can be used by any implementor of the <code>Add</code> trait.</p>
+<p>A list of the traits that overload operators, such as <code>Add</code>, are available <a href="http://doc.rust-lang.org/core/ops/" target="_blank">here</a>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">use std::ops::Add;
+<div id="editor">use std::ops;
 
 struct Foo;
 struct Bar;
@@ -2893,11 +2895,10 @@ struct FooBar;
 #[derive(Debug)]
 struct BarFoo;
 
-// The &#96;Add&lt;T, U&gt;&#96; trait needs two generic parameters:
-// &#42; T is the type of the RHS summand, and
-// &#42; U is the type of the sum
-// This block implements the operation: Foo + Bar = FooBar
-impl Add&lt;Bar&gt; for Foo {
+// The &#96;std::ops::Add&#96; trait is used to specify the functionality of &#96;+&#96;.
+// Here, we make &#96;Add&lt;Bar&gt;&#96; - the trait for addition with a RHS of type &#96;Bar&#96;.
+// The following block implements the operation: Foo + Bar = FooBar
+impl ops::Add&lt;Bar&gt; for Foo {
     type Output = FooBar;
 
     fn add(self, &#95;rhs: Bar) -&gt; FooBar {
@@ -2907,9 +2908,10 @@ impl Add&lt;Bar&gt; for Foo {
     }
 }
 
-// Addition can be implemented in a non-commutative way
+// By reversing the types, we end up implementing non-commutative addition.
+// Here, we make &#96;Add&lt;Foo&gt;&#96; - the trait for addition with a RHS of type &#96;Foo&#96;.
 // This block implements the operation: Bar + Foo = BarFoo
-impl Add&lt;Foo&gt; for Bar {
+impl ops::Add&lt;Foo&gt; for Bar {
     type Output = BarFoo;
 
     fn add(self, &#95;rhs: Foo) -&gt; BarFoo {
@@ -2926,7 +2928,8 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>Here is a <a href="http://doc.rust-lang.org/core/ops/" target="_blank">list</a> of the traits that overload operators.</p>
+<h3 id="see-also">See Also</h3>
+<p><a href="http://doc.rust-lang.org/core/ops/trait.Add.html" target="_blank">Add</a>, <a href="https://doc.rust-lang.org/book/syntax-index.html" target="_blank">Syntax Index</a></p>
 
                     
                     </section>
