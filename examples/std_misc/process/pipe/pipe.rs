@@ -15,22 +15,21 @@ fn main() {
         Ok(process) => process,
     };
 
-    {
-        // Write a string to the `stdin` of `wc`.
-        //
-        // `stdin` has type `Option<ChildStdin>`, but since we know this instance
-        // must have one, we can directly `unwrap` it.
-        match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
-            Err(why) => panic!("couldn't write to wc stdin: {}",
-                               Error::description(&why)),
-            Ok(_) => println!("sent pangram to wc"),
-        }
-
-        // `stdin` gets `drop`ed here, and the pipe is closed.
-        //
-        // This is very important, otherwise `wc` wouldn't start processing the
-        // input we just sent.
+    // Write a string to the `stdin` of `wc`.
+    //
+    // `stdin` has type `Option<ChildStdin>`, but since we know this instance
+    // must have one, we can directly `unwrap` it.
+    match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
+        Err(why) => panic!("couldn't write to wc stdin: {}",
+                           Error::description(&why)),
+        Ok(_) => println!("sent pangram to wc"),
     }
+
+    // Because `stdin` does not live after the above calls, it is `drop`ed,
+    // and the pipe is closed.
+    //
+    // This is very important, otherwise `wc` wouldn't start processing the
+    // input we just sent.
 
     // The `stdout` field also has type `Option<ChildStdout>` so must be unwrapped.
     let mut s = String::new();
