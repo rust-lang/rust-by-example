@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.5.1" data-basepath="../.." data-revision="1457456369969">
+    <div class="book" data-level="18.5.1" data-basepath="../.." data-revision="1457497868460">
     
 
 <div class="book-summary">
@@ -2898,22 +2898,21 @@ fn main() {
         Ok(process) =&gt; process,
     };
 
-    {
-        // Write a string to the &#96;stdin&#96; of &#96;wc&#96;.
-        //
-        // &#96;stdin&#96; has type &#96;Option&lt;ChildStdin&gt;&#96;, but since we know this instance
-        // must have one, we can directly &#96;unwrap&#96; it.
-        match process.stdin.unwrap().write&#95;all(PANGRAM.as&#95;bytes()) {
-            Err(why) =&gt; panic!(&quot;couldn&#39;t write to wc stdin: {}&quot;,
-                               Error::description(&amp;why)),
-            Ok(&#95;) =&gt; println!(&quot;sent pangram to wc&quot;),
-        }
-
-        // &#96;stdin&#96; gets &#96;drop&#96;ed here, and the pipe is closed.
-        //
-        // This is very important, otherwise &#96;wc&#96; wouldn&#39;t start processing the
-        // input we just sent.
+    // Write a string to the &#96;stdin&#96; of &#96;wc&#96;.
+    //
+    // &#96;stdin&#96; has type &#96;Option&lt;ChildStdin&gt;&#96;, but since we know this instance
+    // must have one, we can directly &#96;unwrap&#96; it.
+    match process.stdin.unwrap().write&#95;all(PANGRAM.as&#95;bytes()) {
+        Err(why) =&gt; panic!(&quot;couldn&#39;t write to wc stdin: {}&quot;,
+                           Error::description(&amp;why)),
+        Ok(&#95;) =&gt; println!(&quot;sent pangram to wc&quot;),
     }
+
+    // Because &#96;stdin&#96; does not live after the above calls, it is &#96;drop&#96;ed,
+    // and the pipe is closed.
+    //
+    // This is very important, otherwise &#96;wc&#96; wouldn&#39;t start processing the
+    // input we just sent.
 
     // The &#96;stdout&#96; field also has type &#96;Option&lt;ChildStdout&gt;&#96; so must be unwrapped.
     let mut s = String::new();
