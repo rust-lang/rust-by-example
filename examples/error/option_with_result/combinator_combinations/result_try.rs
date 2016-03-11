@@ -31,8 +31,8 @@ fn get_data(path: &str) -> Result<String> {
 }
 
 // Concat the contents of the two files together into a new `Result`.
-fn concat(a: &str, b: &str) -> Result<String> {
-    let (data_a, data_b) = (get_data(a), get_data(b));
+fn concat(filename_a: &str, filename_b: &str) -> Result<String> {
+    let (data_a, data_b) = (get_data(filename_a), get_data(filename_b));
     
     data_a.and_then(|a|
         // Return `Ok` when both `a` and `b` are `Ok`. Otherwise return
