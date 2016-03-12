@@ -2,8 +2,7 @@ struct Droppable {
     name: &'static str,
 }
 
-// This `drop` implementation doesn't free resources; but instead reports its
-// usage via a print to the console
+// This trivial implementation of `drop` adds a print to console.
 impl Drop for Droppable {
     fn drop(&mut self) {
         println!("> Dropping {}", self.name);
