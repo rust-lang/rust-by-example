@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.7.2" data-basepath="../.." data-revision="1457773574290">
+    <div class="book" data-level="16.7.2" data-basepath="../.." data-revision="1457785910163">
     
 
 <div class="book-summary">
@@ -2913,8 +2913,8 @@ fn get&#95;data(path: &amp;str) -&gt; Result&lt;String&gt; {
 }
 
 // Concat the contents of the two files together into a new &#96;Result&#96;.
-fn concat(a: &amp;str, b: &amp;str) -&gt; Result&lt;String&gt; {
-    let (data&#95;a, data&#95;b) = (get&#95;data(a), get&#95;data(b));
+fn concat(filename&#95;a: &amp;str, filename&#95;b: &amp;str) -&gt; Result&lt;String&gt; {
+    let (data&#95;a, data&#95;b) = (get&#95;data(filename&#95;a), get&#95;data(filename&#95;b));
 
     data&#95;a.and&#95;then(|a|
         // Return &#96;Ok&#96; when both &#96;a&#96; and &#96;b&#96; are &#96;Ok&#96;. Otherwise return
