@@ -11,8 +11,7 @@ fn printer<T: Display>(t: T) {
 }
 ```
 
-Bounding restricts the generic from being specialized to types that do 
-*not* conform to the bounds. That is:
+Bounding restricts the generic to types that conform to the bounds. That is:
 
 ```rust
 struct S<T: Display>(T);
