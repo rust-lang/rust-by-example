@@ -1,8 +1,8 @@
 # Rust by Example
 
-[Rust][rust] is a modern systems programming language focusing on safety and
-speed. It accomplishes these goals by being memory safe without using garbage
-collection.
+[Rust][rust] is a modern systems programming language focusing on safety, speed
+and concurrency. It accomplishes these goals by being memory safe without using 
+garbage collection.
 
 Rust by Example is a collection of examples that illustrate various Rust
 concepts and the standard libraries. You can also [check out the source code
