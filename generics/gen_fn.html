@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.1" data-basepath=".." data-revision="1458310031000">
+    <div class="book" data-level="13.1" data-basepath=".." data-revision="1458349509743">
     
 
 <div class="book-summary">
@@ -2895,21 +2895,21 @@ struct SGen&lt;T&gt;(T); // Generic type &#96;SGen&#96;.
 
 // Define a function &#96;reg&#95;fn&#96; that takes an argument &#96;s&#96; of type &#96;S&#96;.
 // This has no &#96;&lt;T&gt;&#96; so this is not a generic function.
-fn reg&#95;fn(s: S) {}
+fn reg&#95;fn(&#95;s: S) {}
 
 // Define a function &#96;gen&#95;spec&#95;t&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;T&gt;&#96;
 // that has been explicitly given the type parameter &#96;A&#96;. Because A has not 
 // been specified as a generic type parameter for gen&#95;spec&#95;t, it is not generic.
-fn gen&#95;spec&#95;t(s: SGen&lt;A&gt;) {}
+fn gen&#95;spec&#95;t(&#95;s: SGen&lt;A&gt;) {}
 
 // Define a function &#96;gen&#95;spec&#95;i32&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;i32&gt;&#96;
 // that has been explicitly given the type parameter &#96;i32&#96;.
 // This function is also not generic.
-fn gen&#95;spec&#95;i32(s: SGen&lt;i32&gt;) {}
+fn gen&#95;spec&#95;i32(&#95;s: SGen&lt;i32&gt;) {}
 
 // Define a function &#96;generic&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;T&gt;&#96;.
 // Because &#96;SGen&lt;T&gt;&#96; is preceded by &#96;&lt;T&gt;&#96;, this function is generic over &#96;T&#96;.
-fn generic&lt;T&gt;(s: SGen&lt;T&gt;) {}
+fn generic&lt;T&gt;(&#95;s: SGen&lt;T&gt;) {}
 
 fn main() {
     // Using the non-generic functions
