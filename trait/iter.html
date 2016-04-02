@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15.5" data-basepath=".." data-revision="1459559262906">
+    <div class="book" data-level="15.5" data-basepath=".." data-revision="1459611258163">
     
 
 <div class="book-summary">
@@ -2875,8 +2875,14 @@
                     <section class="normal" id="section-gitbook_149">
                     
                         <h2 id="155-iterators">15.5 Iterators</h2>
-<p>The <code>Iterator</code> trait is used to implement iterators over collections (like
-arrays) and lazy value generators.</p>
+<p>The <code>Iterator</code> trait is used to implement iterators over collections such as arrays.</p>
+<p>The trait requires only a method to be defined for the <code>next</code> element, 
+which may be manually defined in an <code>impl</code> block or automatically 
+defined (as in arrays and ranges).</p>
+<p>As a point of convenience for common situations, the <code>for</code> construct 
+turns some collections into iterators using the <a href="https://doc.rust-lang.org/std/iter/trait.IntoIterator.html" target="_blank"><code>.into_iterator()</code></a> method.</p>
+<p>Methods that can be accessed using the <code>Iterator</code> trait in addition 
+to those shown in the example below can be found <a href="http://doc.rust-lang.org/core/iter/trait.Iterator.html" target="_blank">here</a>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2885,30 +2891,34 @@ arrays) and lazy value generators.</p>
     next: u32,
 }
 
-// Implement &#39;Iterator&#39; for &#39;Fibonacci&#39;
+// Implement &#96;Iterator&#96; for &#96;Fibonacci&#96;.
+// The &#96;Iterator&#96; trait only requires a method to be defined for the &#96;next&#96; element.
 impl Iterator for Fibonacci {
     type Item = u32;
-    // The &#39;Iterator&#39; trait only requires the &#39;next&#39; method to be defined. The
-    // return type is &#39;Option&lt;T&gt;&#39;, &#39;None&#39; is returned when the &#39;Iterator&#39; is
-    // over, otherwise the next value is returned wrapped in &#39;Some&#39;
+
+    // Here, we define the sequence using &#96;.curr&#96; and &#96;.next&#96;.
+    // The return type is &#96;Option&lt;T&gt;&#96;:
+    //     &#42; When the &#96;Iterator&#96; is finished, &#96;None&#96; is returned.
+    //     &#42; Otherwise, the next value is wrapped in &#96;Some&#96; and returned.
     fn next(&amp;mut self) -&gt; Option&lt;u32&gt; {
         let new&#95;next = self.curr + self.next;
 
         self.curr = self.next;
         self.next = new&#95;next;
 
-        // &#39;Some&#39; is always returned, this is an infinite value generator
+        // Since there&#39;s no endpoint to a Fibonacci sequence, the &#96;Iterator&#96; 
+        // will never return &#96;None&#96;, and &#96;Some&#96; is always returned.
         Some(self.curr)
     }
 }
 
-// Returns a fibonacci sequence generator
+// Returns a Fibonacci sequence generator
 fn fibonacci() -&gt; Fibonacci {
     Fibonacci { curr: 1, next: 1 }
 }
 
 fn main() {
-    // Iterator that generates: 0, 1 and 2
+    // &#96;0..3&#96; is an &#96;Iterator&#96; that generates: 0, 1, and 2.
     let mut sequence = 0..3;
 
     println!(&quot;Four consecutive &#96;next&#96; calls on 0..3&quot;);
@@ -2917,22 +2927,20 @@ fn main() {
     println!(&quot;&gt; {:?}&quot;, sequence.next());
     println!(&quot;&gt; {:?}&quot;, sequence.next());
 
-    // The for construct will iterate an &#39;Iterator&#39; until it returns &#39;None&#39;.
-    // Every &#39;Some&#39; value is unwrapped and bound to a variable.
-    println!(&quot;Iterate over 0..3 using for&quot;);
+    // &#96;for&#96; works through an &#96;Iterator&#96; until it returns &#96;None&#96;.
+    // Each &#96;Some&#96; value is unwrapped and bound to a variable (here, &#96;i&#96;).
+    println!(&quot;Iterate through 0..3 using &#96;for&#96;&quot;);
     for i in 0..3 {
         println!(&quot;&gt; {}&quot;, i);
     }
 
-    // The &#39;take(n)&#39; method will reduce an iterator to its first &#39;n&#39; terms,
-    // which is pretty useful for infinite value generators
+    // The &#96;take(n)&#96; method reduces an &#96;Iterator&#96; to its first &#96;n&#96; terms.
     println!(&quot;The first four terms of the Fibonacci sequence are: &quot;);
     for i in fibonacci().take(4) {
         println!(&quot;&gt; {}&quot;, i);
     }
 
-    // The &#39;skip(n)&#39; method will shorten an iterator by dropping its first &#39;n&#39;
-    // terms
+    // The &#96;skip(n)&#96; method shortens an &#96;Iterator&#96; by dropping its first &#96;n&#96; terms.
     println!(&quot;The next four terms of the Fibonacci sequence are: &quot;);
     for i in fibonacci().skip(4).take(4) {
         println!(&quot;&gt; {}&quot;, i);
@@ -2940,7 +2948,7 @@ fn main() {
 
     let array = [1u32, 3, 3, 7];
 
-    // The &#39;iter&#39; method produces an &#39;Iterator&#39; over an array/slice
+    // The &#96;iter&#96; method produces an &#96;Iterator&#96; over an array/slice.
     println!(&quot;Iterate the following array {:?}&quot;, &amp;array);
     for i in array.iter() {
         println!(&quot;&gt; {}&quot;, i);
@@ -2949,8 +2957,6 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>The <code>Iterator</code> trait gives access to
-<a href="http://doc.rust-lang.org/core/iter/trait.Iterator.html" target="_blank">several methods</a>.</p>
 
                     
                     </section>
