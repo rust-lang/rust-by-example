@@ -22,7 +22,7 @@
     <link rel="next" href="../trait/iter.html" />
     
     
-    <link rel="prev" href="../trait/bounds.html" />
+    <link rel="prev" href="../trait/ops.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15.4" data-basepath=".." data-revision="1459611258163">
+    <div class="book" data-level="15.3" data-basepath=".." data-revision="1459611289866">
     
 
 <div class="book-summary">
@@ -1967,29 +1967,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.3" data-path="trait/bounds.html">
-            
-                
-                    <a href="../trait/bounds.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>15.3.</b>
-                        
-                         Bounds
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter active" data-level="15.4" data-path="trait/drop.html">
+        <li class="chapter active" data-level="15.3" data-path="trait/drop.html">
             
                 
                     <a href="../trait/drop.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.4.</b>
+                            <b>15.3.</b>
                         
                          Drop
                     </a>
@@ -1999,13 +1983,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.5" data-path="trait/iter.html">
+        <li class="chapter " data-level="15.4" data-path="trait/iter.html">
             
                 
                     <a href="../trait/iter.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.5.</b>
+                            <b>15.4.</b>
                         
                          Iterators
                     </a>
@@ -2015,13 +1999,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.6" data-path="trait/clone.html">
+        <li class="chapter " data-level="15.5" data-path="trait/clone.html">
             
                 
                     <a href="../trait/clone.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.6.</b>
+                            <b>15.5.</b>
                         
                          Clone
                     </a>
@@ -2872,15 +2856,17 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_148">
+                    <section class="normal" id="section-gitbook_147">
                     
-                        <h2 id="154-drop">15.4 Drop</h2>
-<p>The <code>Drop</code> trait only has one method: <code>drop</code>, and this method is called when
-an object goes out of scope. The main use of the <code>Drop</code> trait is to free the
+                        <h2 id="153-drop">15.3 Drop</h2>
+<p>The <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html" target="_blank"><code>Drop</code></a> trait only has one method: <code>drop</code>, which is called automatically 
+when an object goes out of scope. The main use of the <code>Drop</code> trait is to free the
 resources that the implementor instance owns.</p>
-<p><code>Box</code>, <code>Vec</code>, <code>String</code>, <code>File</code> and <code>Process</code> are some examples of types that
-implement the <code>Drop</code> trait to free resources. The <code>Drop</code> trait can be
-implemented for any custom data type.</p>
+<p><code>Box</code>, <code>Vec</code>, <code>String</code>, <code>File</code>, and <code>Process</code> are some examples of types that
+implement the <code>Drop</code> trait to free resources. The <code>Drop</code> trait can also be
+manually implemented for any custom data type.</p>
+<p>The following example adds a print to console to the <code>drop</code> function to announce
+when it is called.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2888,8 +2874,7 @@ implemented for any custom data type.</p>
     name: &amp;&#39;static str,
 }
 
-// This &#96;drop&#96; implementation doesn&#39;t free resources; but instead reports its
-// usage via a print to the console
+// This trivial implementation of &#96;drop&#96; adds a print to console.
 impl Drop for Droppable {
     fn drop(&amp;mut self) {
         println!(&quot;&gt; Dropping {}&quot;, self.name);
@@ -2928,6 +2913,7 @@ fn main() {
 <div id="result"></div>
 </div>
 
+
                     
                     </section>
                 
@@ -2937,7 +2923,7 @@ fn main() {
         </div>
 
         
-        <a href="../trait/bounds.html" class="navigation navigation-prev " aria-label="Previous page: Bounds"><i class="fa fa-angle-left"></i></a>
+        <a href="../trait/ops.html" class="navigation navigation-prev " aria-label="Previous page: Operator Overloading"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../trait/iter.html" class="navigation navigation-next " aria-label="Next page: Iterators"><i class="fa fa-angle-right"></i></a>

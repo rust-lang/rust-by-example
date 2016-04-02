@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.4" data-basepath=".." data-revision="1459611258163">
+    <div class="book" data-level="13.4" data-basepath=".." data-revision="1459611289866">
     
 
 <div class="book-summary">
@@ -1967,29 +1967,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.3" data-path="trait/bounds.html">
-            
-                
-                    <a href="../trait/bounds.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>15.3.</b>
-                        
-                         Bounds
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="15.4" data-path="trait/drop.html">
+        <li class="chapter " data-level="15.3" data-path="trait/drop.html">
             
                 
                     <a href="../trait/drop.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.4.</b>
+                            <b>15.3.</b>
                         
                          Drop
                     </a>
@@ -1999,13 +1983,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.5" data-path="trait/iter.html">
+        <li class="chapter " data-level="15.4" data-path="trait/iter.html">
             
                 
                     <a href="../trait/iter.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.5.</b>
+                            <b>15.4.</b>
                         
                          Iterators
                     </a>
@@ -2015,13 +1999,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.6" data-path="trait/clone.html">
+        <li class="chapter " data-level="15.5" data-path="trait/clone.html">
             
                 
                     <a href="../trait/clone.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.6.</b>
+                            <b>15.5.</b>
                         
                          Clone
                     </a>
@@ -2872,10 +2856,10 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_73">
+                    <section class="normal" id="section-gitbook_74">
                     
                         <h2 id="134-bounds">13.4 Bounds</h2>
-<p>When working with generics, the types often must use traits as <em>bounds</em> to
+<p>When working with generics, the type parameters often must use traits as <em>bounds</em> to
 stipulate what functionality a type implements. For example, the following
 example uses the trait <code>Display</code> to print and so it requires <code>T</code> to be bound
 by <code>Display</code>; that is, <code>T</code> <em>must</em> implement <code>Display</code>.</p>
@@ -2885,8 +2869,15 @@ by <code>Display</code>; that is, <code>T</code> <em>must</em> implement <code>D
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">"{}"</span>, t);
 }
 </code></pre>
-<p>One consequence is that generic instances are allowed to access the methods
-of the traits specified in the bounds. For example:</p>
+<p>Bounding restricts the generic to types that conform to the bounds. That is:</p>
+<pre><code class="lang-rust"><span class="hljs-keyword">struct</span> S&lt;T: Display&gt;(T);
+
+<span class="hljs-comment">// Error! `Vec&lt;T&gt;` does not implement `Display`. This</span>
+<span class="hljs-comment">// specialization will fail.</span>
+<span class="hljs-keyword">let</span> s = S(<span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>]);
+</code></pre>
+<p>Another effect of bounding is that generic instances are allowed to access the 
+<a href="/fn/methods.html">methods</a> of traits specified in the bounds. For example:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2931,14 +2922,8 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>Bounding also restricts the generic from being specialized to
-types that do <em>not</em> conform to the bounds. That is:</p>
-<pre><code class="lang-rust"><span class="hljs-keyword">struct</span> S&lt;T: Display&gt;(T);
-
-<span class="hljs-comment">// Error! `Vec&lt;T&gt;` does not implement `Display`. This</span>
-<span class="hljs-comment">// specialization will fail.</span>
-<span class="hljs-keyword">let</span> s = S(<span class="hljs-built_in">vec!</span>[<span class="hljs-number">1</span>]);
-</code></pre>
+<p>As an additional note, <a href="/generics/where.html"><code>where</code></a> clauses can also be used to apply bounds in
+some cases to be more expressive.</p>
 <h3 id="see-also">See also:</h3>
 <p><a href="/hello/print.html"><code>std::fmt</code></a>, <a href="/custom_types/structs.html"><code>struct</code>s</a>, and <a href="/trait.html"><code>trait</code>s</a></p>
 

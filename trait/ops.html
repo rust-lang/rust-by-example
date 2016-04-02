@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="../trait/bounds.html" />
+    <link rel="next" href="../trait/drop.html" />
     
     
     <link rel="prev" href="../trait/derive.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15.2" data-basepath=".." data-revision="1459611258163">
+    <div class="book" data-level="15.2" data-basepath=".." data-revision="1459611289866">
     
 
 <div class="book-summary">
@@ -1967,29 +1967,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.3" data-path="trait/bounds.html">
-            
-                
-                    <a href="../trait/bounds.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>15.3.</b>
-                        
-                         Bounds
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="15.4" data-path="trait/drop.html">
+        <li class="chapter " data-level="15.3" data-path="trait/drop.html">
             
                 
                     <a href="../trait/drop.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.4.</b>
+                            <b>15.3.</b>
                         
                          Drop
                     </a>
@@ -1999,13 +1983,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.5" data-path="trait/iter.html">
+        <li class="chapter " data-level="15.4" data-path="trait/iter.html">
             
                 
                     <a href="../trait/iter.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.5.</b>
+                            <b>15.4.</b>
                         
                          Iterators
                     </a>
@@ -2015,13 +1999,13 @@
         </li>
     
         
-        <li class="chapter " data-level="15.6" data-path="trait/clone.html">
+        <li class="chapter " data-level="15.5" data-path="trait/clone.html">
             
                 
                     <a href="../trait/clone.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>15.6.</b>
+                            <b>15.5.</b>
                         
                          Clone
                     </a>
@@ -2872,7 +2856,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_150">
+                    <section class="normal" id="section-gitbook_149">
                     
                         <h2 id="152-operator-overloading">15.2 Operator Overloading</h2>
 <p>In Rust, many of the operators can be overloaded via traits. That is, some operators can
@@ -2880,7 +2864,7 @@ be used to accomplish different tasks based on their input arguments. This is po
 because operators are syntactic sugar for method calls. For example, the <code>+</code> operator in 
 <code>a + b</code> calls the <code>add</code> method (as in <code>a.add(b)</code>). This <code>add</code> method is part of the <code>Add</code> 
 trait. Hence, the <code>+</code> operator can be used by any implementor of the <code>Add</code> trait.</p>
-<p>A list of the traits that overload operators, such as <code>Add</code>, are available <a href="http://doc.rust-lang.org/core/ops/" target="_blank">here</a>.</p>
+<p>A list of the traits, such as <code>Add</code>, that overload operators are available <a href="http://doc.rust-lang.org/core/ops/" target="_blank">here</a>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2943,7 +2927,7 @@ fn main() {
         <a href="../trait/derive.html" class="navigation navigation-prev " aria-label="Previous page: Derive"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../trait/bounds.html" class="navigation navigation-next " aria-label="Next page: Bounds"><i class="fa fa-angle-right"></i></a>
+        <a href="../trait/drop.html" class="navigation navigation-next " aria-label="Next page: Drop"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
