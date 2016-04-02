@@ -4,7 +4,7 @@ because operators are syntactic sugar for method calls. For example, the `+` ope
 `a + b` calls the `add` method (as in `a.add(b)`). This `add` method is part of the `Add` 
 trait. Hence, the `+` operator can be used by any implementor of the `Add` trait.
 
-A list of the traits that overload operators, such as `Add`, are available [here][ops].
+A list of the traits, such as `Add`, that overload operators are available [here][ops].
 
 {operator.play}
 
