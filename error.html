@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16" data-basepath="." data-revision="1459872567343">
+    <div class="book" data-level="16" data-basepath="." data-revision="1459878352097">
     
 
 <div class="book-summary">
@@ -2856,21 +2856,23 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_40">
+                    <section class="normal" id="section-gitbook_39">
                     
                         <h1 id="16-error-handling">16 Error handling</h1>
-<p>Error handling is the process of handling the possibility of failure. For example, failing to
-read a file and then continuing to use that <em>bad</em> input regardless clearly would be problematic.
-Error handling allows us to notice and handle those errors in some explicit fashion, saving the
-rest of the program from pollution.</p>
-<p>The simplest error handling mechanism we will see is the <code>panic</code>; it prints an error message,
-starts unwinding the task, and usually exits the program. Consider the following example:</p>
+<p>Error handling is the process of handling the possibility of failure. For 
+example, failing to read a file and then continuing to use that <em>bad</em> input 
+would clearly be problematic. Error handling allows us to notice and handle 
+those errors in an explicit fashion, saving the rest of the program from 
+potential issues.</p>
+<p>The simplest error handling mechanism we will see is <code>panic</code>. It prints an 
+error message, starts unwinding the task, and usually exits the program. 
+Consider the following example:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn give&#95;princess(gift: &amp;str) {
-    // Princesses hate snakes so definitely stop the computation while
-    // she shouts her dislike.
+    // Princesses hate snakes, so we need to stop if
+    // she expresses her disapproval!
     if gift == &quot;snake&quot; { panic!(&quot;AAAaaaaa!!!!&quot;); }
 
     println!(&quot;I love {}s!!!!!&quot;, gift);
@@ -2883,12 +2885,14 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>This easily shows that we can induce program failure at will but it has a problem: what happens
-if the princess is <em>not</em> given a gift? Technically, we <em>could</em> explicitly test this with a check
-against the null string (<code>&quot;&quot;</code>) the same way as with the snake however this is not reliable. The
-problem is that programmers do not habitually make these checks unless required by the compiler.
-In order for this to always be reliable, we require the compiler to point out the cases where there
-may not be a gift. <code>str</code> does not do that for us; we require something else called <code>Option</code>.</p>
+<p>This shows that we can induce program failure at will, but raises a 
+question: what happens if the princess is <em>not</em> given a gift? We <em>could</em> 
+explicitly test this with a check against the null string (<code>&quot;&quot;</code>) as we do
+with the snake, but this is not reliable. The problem is that programmers do 
+not habitually test these checks unless required to by the compiler.</p>
+<p>In order for this to be reliable, we&#39;ll want the compiler to point out 
+cases where there may not be a gift. As you&#39;ll see in the next section, we 
+can use <code>Option</code> to take care of this condition.</p>
 
                     
                     </section>

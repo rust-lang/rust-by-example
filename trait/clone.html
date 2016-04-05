@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="15.5" data-basepath=".." data-revision="1459872567343">
+    <div class="book" data-level="15.5" data-basepath=".." data-revision="1459878352097">
     
 
 <div class="book-summary">
@@ -2860,9 +2860,10 @@
                     
                         <h2 id="155-clone">15.5 Clone</h2>
 <p>When dealing with resources, the default behavior is to transfer them during
-assignments or function calls. Sometimes the intention is to make a copy of the
-resource. This can be accomplished by calling the <code>clone</code> method, defined in
-the <code>Clone</code> trait.</p>
+assignments or function calls. However, sometimes we need to make a 
+copy of the resource as well.</p>
+<p>The <a href="https://doc.rust-lang.org/std/clone/trait.Clone.html" target="_blank"><code>Clone</code></a> trait helps us do exactly this. Most commonly, we can 
+use the <code>.clone()</code> method defined by the <code>Clone</code> trait.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2884,7 +2885,7 @@ fn main() {
     println!(&quot;original: {:?}&quot;, nil);
     println!(&quot;copy: {:?}&quot;, copied&#95;nil);
 
-    // Instantiate a &#96;Pair&#96;
+    // Instantiate &#96;Pair&#96;
     let pair = Pair(Box::new(1), Box::new(2));
     println!(&quot;original: {:?}&quot;, pair);
 
@@ -2896,21 +2897,21 @@ fn main() {
     //println!(&quot;original: {:?}&quot;, pair);
     // TODO ^ Try uncommenting this line
 
-    // &quot;Clone&quot; &#96;moved&#95;pair&#96; into &#96;cloned&#95;pair&#96; (resources included)
+    // Clone &#96;moved&#95;pair&#96; into &#96;cloned&#95;pair&#96; (resources are included)
     let cloned&#95;pair = moved&#95;pair.clone();
-
-    // &#96;Drop&#96; the original pair
+    // Drop the original pair using std::mem::drop
     drop(moved&#95;pair);
 
-    // Error! &#96;moved&#95;pair&#96; has been &#96;drop&#96;ed
+    // Error! &#96;moved&#95;pair&#96; has been dropped
     //println!(&quot;copy: {:?}&quot;, moved&#95;pair);
     // TODO ^ Try uncommenting this line
 
-    // Clone can still be used
+    // The result from .clone() can still be used!
     println!(&quot;clone: {:?}&quot;, cloned&#95;pair);
 }</div>
 <div id="result"></div>
 </div>
+
 
                     
                     </section>
