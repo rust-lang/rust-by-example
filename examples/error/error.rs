@@ -1,6 +1,6 @@
 fn give_princess(gift: &str) {
-    // Princesses hate snakes so definitely stop the computation while
-    // she shouts her dislike.
+    // Princesses hate snakes, so we need to stop if
+    // she expresses her disapproval!
     if gift == "snake" { panic!("AAAaaaaa!!!!"); }
 
     println!("I love {}s!!!!!", gift);

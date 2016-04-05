@@ -16,7 +16,7 @@ fn main() {
     println!("original: {:?}", nil);
     println!("copy: {:?}", copied_nil);
 
-    // Instantiate a `Pair`
+    // Instantiate `Pair`
     let pair = Pair(Box::new(1), Box::new(2));
     println!("original: {:?}", pair);
 
@@ -27,17 +27,16 @@ fn main() {
     // Error! `pair` has lost it resources
     //println!("original: {:?}", pair);
     // TODO ^ Try uncommenting this line
-
-    // "Clone" `moved_pair` into `cloned_pair` (resources included)
+    
+    // Clone `moved_pair` into `cloned_pair` (resources are included)
     let cloned_pair = moved_pair.clone();
-
-    // `Drop` the original pair
+    // Drop the original pair using std::mem::drop
     drop(moved_pair);
 
-    // Error! `moved_pair` has been `drop`ed
+    // Error! `moved_pair` has been dropped
     //println!("copy: {:?}", moved_pair);
     // TODO ^ Try uncommenting this line
 
-    // Clone can still be used
+    // The result from .clone() can still be used!
     println!("clone: {:?}", cloned_pair);
 }
