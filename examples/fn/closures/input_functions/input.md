@@ -1,11 +1,12 @@
-Since closures are possible as arguments, you might wonder if functions
-are possible as well. Indeed they are! The previously mentioned `Fn`,
-`FnMut`, and `FnOnce` `traits` all dictate in what fashion a closure captures
-variables from the enclosing scope. Because a function can *never* capture
-variables, closures are strictly more flexible. Therefore, any function which 
-can take a closure as an argument can also take a function.
+Since closures may be used as arguments, you might wonder if the same can be said 
+about functions. And indeed they can! However, because a function can 
+*never* capture variables, closures are strictly more flexible. Therefore, any 
+function which can take a closure as an argument can also take a function.
 
 {input_functions.play}
+
+As an additional note, the `Fn`, `FnMut`, and `FnOnce` `traits` dictate how
+a closure captures variables from the enclosing scope. 
 
 ### See also:
 
