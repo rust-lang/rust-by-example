@@ -14,15 +14,12 @@ install:
   - curl https://nodejs.org/dist/v0.12.7/node-v0.12.7-sunos-x64.tar.gz > node.tar.gz
   - tar xf node.tar.gz
   - export PATH=$PATH:$pwd/node-v0.12.7-linux-x64/bin
-  - sudo apt-get install -y calibre
 
 script:
   - rustc --version
   - make
   - make test
   - make html
-  - make pdf
-  - make epub
 
 notifications:
   email:
