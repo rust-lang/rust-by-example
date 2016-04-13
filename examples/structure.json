@@ -143,7 +143,7 @@
         { "id": "unwrap", "title": "Option & unwrap", "children": null },
         { "id": "map", "title": "map", "children": null },
         { "id": "and_then", "title": "and_then", "children": null },
-        { "id": "error_vs_absence", "title": "Errors vs Absence", "children": null },
+        { "id": "result", "title": "Result", "children": null },
         { "id": "result_map", "title": "map for Result", "children": null },
         { "id": "result_alias", "title": "Result as an alias", "children": null },
         { "id": "option_with_result", "title": "Options with Results", "children": [
