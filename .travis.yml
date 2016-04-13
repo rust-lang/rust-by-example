@@ -19,7 +19,9 @@ script:
   - rustc --version
   - make
   - make test
-  - make book
+  - make html
+  - make pdf
+  - make epub
 
 notifications:
   email:

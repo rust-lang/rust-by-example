@@ -33,7 +33,7 @@ Run:
 
 ```
 make all
-make book
+make html pdf epub
 make test
 ```
 
