@@ -9,7 +9,7 @@ In the following example, `cookable_v2()` results in an `Option<Food>`.
 Using `map()` instead of `and_then()` would have given an `Option<Option<Food>>`, 
 which is an invalid type for `eat()`.
 
-{combinators.play}
+{and_then.play}
 
 ### See also:
 
