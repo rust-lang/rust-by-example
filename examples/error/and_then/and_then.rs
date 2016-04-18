@@ -24,7 +24,7 @@ fn have_recipe(food: Food) -> Option<Food> {
 fn cookable_v1(food: Food) -> Option<Food> {
     match have_ingredients(food) {
         None       => None,
-        Some(food) => match can_cook(food) {
+        Some(food) => match have_recipe(food) {
             None       => None,
             Some(food) => Some(food),
         },
@@ -33,7 +33,7 @@ fn cookable_v1(food: Food) -> Option<Food> {
 
 // This can conveniently be rewritten more compactly with `and_then()`:
 fn cookable_v2(food: Food) -> Option<Food> {
-    have_ingredients(food).and_then(can_cook)
+    have_ingredients(food).and_then(have_recipe)
 }
 
 fn eat(food: Food, day: Day) {
