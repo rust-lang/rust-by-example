@@ -1,4 +1,4 @@
-Closures in Rust, also called lambdas or anonymous functions, are functions 
+Closures in Rust, also called lambdas, are functions 
 that can capture the enclosing environment. Their syntax and capabilities make them
 very convenient for on the fly usage. Some characteristics include:
 
