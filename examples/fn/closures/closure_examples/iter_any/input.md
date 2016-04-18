@@ -21,6 +21,6 @@ pub trait Iterator {
 
 ### See also:
 
-[`std::iter::iterator::any`][any]
+[`std::iter::Iterator::any`][any]
 
 [any]: http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any

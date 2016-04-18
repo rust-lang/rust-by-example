@@ -1,5 +1,5 @@
-Closures[^*] in Rust are functions with a slightly specialized syntax which
-can capture the enclosing environment. Their syntax and capabilities make them
+Closures in Rust, also called lambdas, are functions 
+that can capture the enclosing environment. Their syntax and capabilities make them
 very convenient for on the fly usage. Some characteristics include:
 
 * uses `||` instead of `()` around input variables.
@@ -11,5 +11,3 @@ otherwise.
 * calling a closure is exactly like a function: `call(var)`.
 
 {closures.play}
-
-[^*]: Also called `lambdas` or `anonymous functions`.

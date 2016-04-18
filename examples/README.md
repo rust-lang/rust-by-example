@@ -1,15 +1,15 @@
 # Rust by Example
 
-[Rust][rust] is a modern systems programming language focusing on safety, speed
+[Rust][rust] is a modern systems programming language focusing on safety, speed,
 and concurrency. It accomplishes these goals by being memory safe without using 
 garbage collection.
 
-Rust by Example is a collection of examples that illustrate various Rust
-concepts and the standard libraries. You can also [check out the source code
-for this site][home].
+Rust by Example (RBE) is a collection of runnable examples that illustrate various Rust
+concepts and standard libraries. To get even more out of these examples, don't forget
+to [install Rust locally][install] and check out the [official docs][std]. 
+Additionally for the curious, you can also [check out the source code for this site][home].
 
-Be sure to have Rust [installed][install] and the [docs][std] at hand, and
-let's start!
+Now let's begin!
 
 [rust]: http://www.rust-lang.org/
 [install]: http://www.rust-lang.org/install.html

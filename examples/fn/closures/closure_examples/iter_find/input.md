@@ -21,6 +21,6 @@ pub trait Iterator {
 
 ### See also:
 
-[`std::iter::iterator::find`][find]
+[`std::iter::Iterator::find`][find]
 
 [find]: http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find
