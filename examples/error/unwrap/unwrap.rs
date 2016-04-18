@@ -1,18 +1,17 @@
-// The commoner cannot bring down the task which precludes the option of `panic`.
-// These must all be handled manually. `match` would be the correct approach.
+// The commoner has seen it all, and handles situations well.
+// All gifts are handled manually using `match`.
 fn give_commoner(gift: Option<&str>) {
-    // Specify a specific course of action for each case.
+    // Specify a course of action for each case.
     match gift {
-        Some("snake") => println!("Yuck! Throws the snake in the fire."),
-        Some(inner)   => println!("{}! How nice.", inner),
+        Some("snake") => println!("Yuck! I'm throwing that snake in a fire."),
+        Some(inner)   => println!("{}? How nice.", inner),
         None          => println!("No gift? Oh well."),
     }
 }
 
-// A princess is allowed to bring down the task at will so `panic` is an option.
+// Our sheltered princess will `panic` at the sight of snakes.
 fn give_princess(gift: Option<&str>) {
-    // Using `unwrap` defers the case analysis to the std library which will
-    // `panic` when it receives a `None`.
+    // Using `unwrap` returns a `panic` when it receives a `None`.
     let inside = gift.unwrap();
     if inside == "snake" { panic!("AAAaaaaa!!!!"); }
 

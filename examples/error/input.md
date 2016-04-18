@@ -17,5 +17,6 @@ with the snake, but this is not reliable. The problem is that programmers do
 not habitually test these checks unless required to by the compiler.
 
 In order for this to be reliable, we'll want the compiler to point out 
-cases where there may not be a gift. As you'll see in the next section, we 
-can use `Option` to take care of this condition.
+cases where there may not be a gift. In this chapter, we will learn to use
+`Option` to take care of this condition, as well as various functions to 
+deal with the results of one or more uses of `Option`.

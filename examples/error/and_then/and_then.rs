@@ -11,30 +11,29 @@ fn have_ingredients(food: Food) -> Option<Food> {
     }
 }
 
-// We know how to make everything except Cordon Bleu.
-fn can_cook(food: Food) -> Option<Food> {
+// We have the recipe for everything except Cordon Bleu.
+fn have_recipe(food: Food) -> Option<Food> {
     match food {
         Food::CordonBleu => None,
         _                => Some(food),
     }
 }
 
-// To make a meal, we require both the ingredients and the ability to make that
-// meal, which is only possible when both are true; thus successes chain.
-// Conveniently, this can be rewritten more compactly with `and_then()`.
+// To make a dish, we need both the ingredients and the recipe.
+// We can represent the logic with a chain of `match`es:
 fn cookable_v1(food: Food) -> Option<Food> {
     match have_ingredients(food) {
         None       => None,
-        Some(food) => match can_cook(food) {
+        Some(food) => match have_recipe(food) {
             None       => None,
             Some(food) => Some(food),
         },
     }
 }
 
-// Same as `v1` above but uses `and_then()` instead.
+// This can conveniently be rewritten more compactly with `and_then()`:
 fn cookable_v2(food: Food) -> Option<Food> {
-    have_ingredients(food).and_then(can_cook)
+    have_ingredients(food).and_then(have_recipe)
 }
 
 fn eat(food: Food, day: Day) {

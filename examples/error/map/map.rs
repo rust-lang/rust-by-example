@@ -15,8 +15,7 @@ fn peel(food: Option<Food>) -> Option<Peeled> {
     }
 }
 
-// Similarly, we still need to keep track of whether there is a problem. If there
-// is, we just pass it on.
+// Like above, we need to know if the peeled food exists before chopping.
 fn chop(peeled: Option<Peeled>) -> Option<Chopped> {
     match peeled {
         Some(Peeled(food)) => Some(Chopped(food)),
@@ -24,19 +23,20 @@ fn chop(peeled: Option<Peeled>) -> Option<Chopped> {
     }
 }
 
-// Same as before, when `Some`, pass `food` to `Cooked`, otherwise return `None`.
+// Similar to previous checks, but using `map()` instead of `match`.
 fn cook(chopped: Option<Chopped>) -> Option<Cooked> {
     chopped.map(|Chopped(food)| Cooked(food))
 }
 
-// You could even simplify the process further
+// Alternatively, we can chain multiple uses of `map()` to simplify 
+// the above process.
 fn process(food: Option<Food>) -> Option<Cooked> {
     food.map(|f| Peeled(f))
         .map(|Peeled(f)| Chopped(f))
         .map(|Chopped(f)| Cooked(f))
 }
 
-// Can we eat it now?
+// It's important to know whether there's food or not before trying to eat it!
 fn eat(food: Option<Cooked>) {
     match food {
         Some(food) => println!("Mmm. I love {:?}", food),
