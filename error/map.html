@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="../error/more_combinators.html" />
+    <link rel="next" href="../error/and_then.html" />
     
     
     <link rel="prev" href="../error/unwrap.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.2" data-basepath=".." data-revision="1461002975791">
+    <div class="book" data-level="16.2" data-basepath=".." data-revision="1461011141475">
     
 
 <div class="book-summary">
@@ -2069,15 +2069,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.3" data-path="error/more_combinators.html">
+        <li class="chapter " data-level="16.3" data-path="error/and_then.html">
             
                 
-                    <a href="../error/more_combinators.html">
+                    <a href="../error/and_then.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.3.</b>
                         
-                         More combinators
+                         and_then
                     </a>
                 
             
@@ -2085,15 +2085,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4" data-path="error/error_vs_absence.html">
+        <li class="chapter " data-level="16.4" data-path="error/result.html">
             
                 
-                    <a href="../error/error_vs_absence.html">
+                    <a href="../error/result.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.4.</b>
                         
-                         Errors vs Absence
+                         Result
                     </a>
                 
             
@@ -2859,16 +2859,14 @@
                     <section class="normal" id="section-gitbook_29">
                     
                         <h2 id="162-map">16.2 map</h2>
-<p>Like before, <code>match</code> is a valid method for handling an <code>Option</code> however you may find that this
-gets tedious with heavy usage of <code>Options</code>. Luckily, there is an easier way.</p>
-<p>Consider the example below and in particular <code>peel()</code> and <code>chop()</code>; since each of these
-operations is only valid when the input exists, it seems sensible that bad input simply means
-the result is bad. This results in the simplistic mapping <code>Some -&gt; Some</code> and <code>None -&gt; None</code>.
-This is actually so common that there is a built in method for it called <code>map()</code> which is
-already implemented on <code>Option</code>.</p>
-<p>The result of this is that <code>chop()</code> is simpler to write than any of the previous methods.
-Furthermore, the ability to chain these together makes it even more flexible; <code>process()</code>
-easily can replace all the previous functions and still be compact.</p>
+<p><code>match</code> is a valid method for handling <code>Option</code>s. However, you may eventually
+find heavy usage tedious; this is the case especially with operations that
+are only valid with an input.</p>
+<p>For situations where a simplistic mapping of <code>Some -&gt; Some</code> and 
+<code>None -&gt; None</code> is needed, <code>Option</code> has a built in method called <code>map()</code>.</p>
+<p>Multiple <code>map()</code> calls can be chained together for even more flexibility.
+In the following example, <code>process()</code> easily replaces all functions previous
+to it while staying compact.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2889,8 +2887,7 @@ fn peel(food: Option&lt;Food&gt;) -&gt; Option&lt;Peeled&gt; {
     }
 }
 
-// Similarly, we still need to keep track of whether there is a problem. If there
-// is, we just pass it on.
+// Like above, we need to know if the peeled food exists before chopping.
 fn chop(peeled: Option&lt;Peeled&gt;) -&gt; Option&lt;Chopped&gt; {
     match peeled {
         Some(Peeled(food)) =&gt; Some(Chopped(food)),
@@ -2898,19 +2895,20 @@ fn chop(peeled: Option&lt;Peeled&gt;) -&gt; Option&lt;Chopped&gt; {
     }
 }
 
-// Same as before, when &#96;Some&#96;, pass &#96;food&#96; to &#96;Cooked&#96;, otherwise return &#96;None&#96;.
+// Similar to previous checks, but using &#96;map()&#96; instead of &#96;match&#96;.
 fn cook(chopped: Option&lt;Chopped&gt;) -&gt; Option&lt;Cooked&gt; {
     chopped.map(|Chopped(food)| Cooked(food))
 }
 
-// You could even simplify the process further
+// Alternatively, we can chain multiple uses of &#96;map()&#96; to simplify 
+// the above process.
 fn process(food: Option&lt;Food&gt;) -&gt; Option&lt;Cooked&gt; {
     food.map(|f| Peeled(f))
         .map(|Peeled(f)| Chopped(f))
         .map(|Chopped(f)| Cooked(f))
 }
 
-// Can we eat it now?
+// It&#39;s important to know whether there&#39;s food or not before trying to eat it!
 fn eat(food: Option&lt;Cooked&gt;) {
     match food {
         Some(food) =&gt; println!(&quot;Mmm. I love {:?}&quot;, food),
@@ -2936,7 +2934,7 @@ fn main() {
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="/custom_types/structs.html"><code>struct</code>s</a></p>
+<p><a href="/fn/closures.html">closures</a></p>
 
                     
                     </section>
@@ -2950,7 +2948,7 @@ fn main() {
         <a href="../error/unwrap.html" class="navigation navigation-prev " aria-label="Previous page: Option &amp; unwrap"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../error/more_combinators.html" class="navigation navigation-next " aria-label="Next page: More combinators"><i class="fa fa-angle-right"></i></a>
+        <a href="../error/and_then.html" class="navigation navigation-next " aria-label="Next page: and_then"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

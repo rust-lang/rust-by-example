@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.1" data-basepath=".." data-revision="1461002975791">
+    <div class="book" data-level="16.1" data-basepath=".." data-revision="1461011141475">
     
 
 <div class="book-summary">
@@ -2069,15 +2069,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.3" data-path="error/more_combinators.html">
+        <li class="chapter " data-level="16.3" data-path="error/and_then.html">
             
                 
-                    <a href="../error/more_combinators.html">
+                    <a href="../error/and_then.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.3.</b>
                         
-                         More combinators
+                         and_then
                     </a>
                 
             
@@ -2085,15 +2085,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4" data-path="error/error_vs_absence.html">
+        <li class="chapter " data-level="16.4" data-path="error/result.html">
             
                 
-                    <a href="../error/error_vs_absence.html">
+                    <a href="../error/result.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.4.</b>
                         
-                         Errors vs Absence
+                         Result
                     </a>
                 
             
@@ -2859,36 +2859,39 @@
                     <section class="normal" id="section-gitbook_39">
                     
                         <h2 id="161-option--unwrap">16.1 Option &amp; unwrap</h2>
-<p>We determined a snake is an inappropriate gift for a princess. What if she expected a gift
-but did not receive one? Clearly that would be just as bad but how would it be handled? Well,
-<code>Option&lt;T&gt;</code> is the type which is used when absense is a possibility. This manifests itself as
-two choices:</p>
+<p>We determined a snake is an inappropriate gift for a princess. But what if 
+she expected a gift and didn&#39;t receive one? That would be just as bad, so 
+it needs to be handled! In the <code>std</code> library, an <code>enum</code> called <code>Option&lt;T&gt;</code> 
+is used when absence is a possibility. It manifests itself as one of 
+two &quot;options&quot;:</p>
 <ul>
-<li><code>Some&lt;T&gt;</code>: An element <code>T</code> was found</li>
+<li><code>Some(T)</code>: An element of type <code>T</code> was found</li>
 <li><code>None</code>: No element was found</li>
 </ul>
-<p>These can either be explicitly handled via <code>match</code> or implicitly with <code>unwrap</code>. <code>unwrap</code>,
-deferring to the std library, either returns the inner element or <code>panics</code>. Regardless of
-explicit or implicit handling, an <code>enum</code> such as <code>Option</code> will have all cases handled. The
-compiler ensures that none are forgotten giving us more confidence in its robustness.</p>
+<p>These can either be explicitly handled via <code>match</code> or implicitly with 
+<code>unwrap</code>. Implicit handling either returns the inner element or <code>panic</code>s.</p>
+<p>Note that it&#39;s possible to manually customize <code>panic</code> with 
+<a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.expect" target="_blank">expect</a>, but <code>unwrap</code> otherwise leaves us with a less 
+meaningful output than explicit handling. In the following example, 
+explicit handling yields a more controlled result while retaining the 
+option to <code>panic</code> if desired. </p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// The commoner cannot bring down the task which precludes the option of &#96;panic&#96;.
-// These must all be handled manually. &#96;match&#96; would be the correct approach.
+<div id="editor">// The commoner has seen it all, and handles situations well.
+// All gifts are handled manually using &#96;match&#96;.
 fn give&#95;commoner(gift: Option&lt;&amp;str&gt;) {
-    // Specify a specific course of action for each case.
+    // Specify a course of action for each case.
     match gift {
-        Some(&quot;snake&quot;) =&gt; println!(&quot;Yuck! Throws the snake in the fire.&quot;),
-        Some(inner)   =&gt; println!(&quot;{}! How nice.&quot;, inner),
+        Some(&quot;snake&quot;) =&gt; println!(&quot;Yuck! I&#39;m throwing that snake in a fire.&quot;),
+        Some(inner)   =&gt; println!(&quot;{}? How nice.&quot;, inner),
         None          =&gt; println!(&quot;No gift? Oh well.&quot;),
     }
 }
 
-// A princess is allowed to bring down the task at will so &#96;panic&#96; is an option.
+// Our sheltered princess will &#96;panic&#96; at the sight of snakes.
 fn give&#95;princess(gift: Option&lt;&amp;str&gt;) {
-    // Using &#96;unwrap&#96; defers the case analysis to the std library which will
-    // &#96;panic&#96; when it receives a &#96;None&#96;.
+    // Using &#96;unwrap&#96; returns a &#96;panic&#96; when it receives a &#96;None&#96;.
     let inside = gift.unwrap();
     if inside == &quot;snake&quot; { panic!(&quot;AAAaaaaa!!!!&quot;); }
 
@@ -2913,13 +2916,6 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>As you can see, direct control yielded an even nicer result than the original <code>panic</code> along
-with the choice to <code>panic</code> if we desired. <code>unwrap</code> on the other hand, deferring to the std
-library left us with the most generic and unhelpful: &quot;I unwrapped a <code>None</code>!&quot; meanwhile yielding
-the good results the rest of the time. A more meaningful message will require a better approach<sup><a href="#fn_1" id="reffn_1">1</a></sup>.</p>
-<blockquote id="fn_1">
-<sup>1</sup>. ignoring <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.expect" target="_blank">expect</a> which allows manual customization of the <code>panic</code> for now<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
 
                     
                     </section>

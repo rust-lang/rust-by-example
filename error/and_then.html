@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>More combinators | Rust by Example</title>
+        <title>and_then | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="../error/error_vs_absence.html" />
+    <link rel="next" href="../error/result.html" />
     
     
     <link rel="prev" href="../error/map.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.3" data-basepath=".." data-revision="1461002975791">
+    <div class="book" data-level="16.3" data-basepath=".." data-revision="1461011141475">
     
 
 <div class="book-summary">
@@ -2069,15 +2069,15 @@
         </li>
     
         
-        <li class="chapter active" data-level="16.3" data-path="error/more_combinators.html">
+        <li class="chapter active" data-level="16.3" data-path="error/and_then.html">
             
                 
-                    <a href="../error/more_combinators.html">
+                    <a href="../error/and_then.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.3.</b>
                         
-                         More combinators
+                         and_then
                     </a>
                 
             
@@ -2085,15 +2085,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4" data-path="error/error_vs_absence.html">
+        <li class="chapter " data-level="16.4" data-path="error/result.html">
             
                 
-                    <a href="../error/error_vs_absence.html">
+                    <a href="../error/result.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.4.</b>
                         
-                         Errors vs Absence
+                         Result
                     </a>
                 
             
@@ -2856,12 +2856,17 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_30">
+                    <section class="normal" id="section-gitbook_28">
                     
-                        <h2 id="163-more-combinators">16.3 More combinators</h2>
-<p><code>map()</code> was previously described as a way to simplify a <code>match</code> which also allows chaining.
-However, <code>map()</code> does not work for all cases because the constituents often occur in many
-different combinations. Consider the following example:</p>
+                        <h2 id="163-and_then">16.3 and_then</h2>
+<p><code>map()</code> was described as a chainable way to simplify <code>match</code> statements. 
+However, using <code>map()</code> on a function that returns an <code>Option&lt;T&gt;</code> results 
+in the nested <code>Option&lt;Option&lt;T&gt;&gt;</code>. Chaining multiple calls together can 
+then become confusing.</p>
+<p>That&#39;s where <code>and_then()</code> comes in. Known in some languages as flatmap, <code>and_then()</code> calls its function input with the wrapped value or returns <code>None</code> if the <code>Option</code> is <code>None</code>.</p>
+<p>In the following example, <code>cookable_v2()</code> results in an <code>Option&lt;Food&gt;</code>. 
+Using <code>map()</code> instead of <code>and_then()</code> would have given an <code>Option&lt;Option&lt;Food&gt;&gt;</code>, 
+which is an invalid type for <code>eat()</code>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2878,30 +2883,29 @@ fn have&#95;ingredients(food: Food) -&gt; Option&lt;Food&gt; {
     }
 }
 
-// We know how to make everything except Cordon Bleu.
-fn can&#95;cook(food: Food) -&gt; Option&lt;Food&gt; {
+// We have the recipe for everything except Cordon Bleu.
+fn have&#95;recipe(food: Food) -&gt; Option&lt;Food&gt; {
     match food {
         Food::CordonBleu =&gt; None,
         &#95;                =&gt; Some(food),
     }
 }
 
-// To make a meal, we require both the ingredients and the ability to make that
-// meal, which is only possible when both are true; thus successes chain.
-// Conveniently, this can be rewritten more compactly with &#96;and&#95;then()&#96;.
+// To make a dish, we need both the ingredients and the recipe.
+// We can represent the logic with a chain of &#96;match&#96;es:
 fn cookable&#95;v1(food: Food) -&gt; Option&lt;Food&gt; {
     match have&#95;ingredients(food) {
         None       =&gt; None,
-        Some(food) =&gt; match can&#95;cook(food) {
+        Some(food) =&gt; match have&#95;recipe(food) {
             None       =&gt; None,
             Some(food) =&gt; Some(food),
         },
     }
 }
 
-// Same as &#96;v1&#96; above but uses &#96;and&#95;then()&#96; instead.
+// This can conveniently be rewritten more compactly with &#96;and&#95;then()&#96;:
 fn cookable&#95;v2(food: Food) -&gt; Option&lt;Food&gt; {
-    have&#95;ingredients(food).and&#95;then(can&#95;cook)
+    have&#95;ingredients(food).and&#95;then(have&#95;recipe)
 }
 
 fn eat(food: Food, day: Day) {
@@ -2921,18 +2925,6 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>The reason this worked is because <code>and_then()</code> happened to require the exact function type as an
-input that was needed here. <code>map()</code> did not. Comparing the signatures of their input types, you
-will see that when the function returned an <code>Option</code>, <code>and_then()</code> became the one and <em>only</em>
-valid choice.</p>
-<pre><code class="lang-rust">map():      FnOnce(T) -&gt; U
-and_then(): FnOnce(T) -&gt; Option&lt;U&gt;
-</code></pre>
-<p>These are just two of many different combinators that are implemented on
-<a href="http://doc.rust-lang.org/std/option/enum.Option.html" target="_blank"><code>Option</code></a> by the std library for many different use cases. It is advantageous
-to become familiar with them because they can simplify many error handling procedures and
-avoid the ugly and suicidal <code>panic!()</code> alternative. The other common error handling type,
-<code>Result</code>, also uses most of these same constructs so the skills are transferable.</p>
 <h3 id="see-also">See also:</h3>
 <p><a href="http://doc.rust-lang.org/std/option/enum.Option.html" target="_blank"><code>Option</code></a>, <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.map" target="_blank"><code>Option::map()</code></a>, and <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then" target="_blank"><code>Option::and_then()</code></a></p>
 
@@ -2948,7 +2940,7 @@ avoid the ugly and suicidal <code>panic!()</code> alternative. The other common 
         <a href="../error/map.html" class="navigation navigation-prev " aria-label="Previous page: map"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../error/error_vs_absence.html" class="navigation navigation-next " aria-label="Next page: Errors vs Absence"><i class="fa fa-angle-right"></i></a>
+        <a href="../error/result.html" class="navigation navigation-next " aria-label="Next page: Result"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
