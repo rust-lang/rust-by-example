@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.3.1" data-basepath="../.." data-revision="1461766961926">
+    <div class="book" data-level="14.3.1" data-basepath="../.." data-revision="1461767000818">
     
 
 <div class="book-summary">
@@ -2866,7 +2866,7 @@ the borrower can read the data but not modify it:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">#[allow(dead&#95;code)]
+<div id="editor"><pre>#[allow(dead&#95;code)]
 #[derive(Clone, Copy)]
 struct Book {
     // &#96;&amp;&#39;static str&#96; is a reference to a string allocated in read only memory
@@ -2910,7 +2910,7 @@ fn main() {
     // Error! Cannot borrow an immutable object as mutable
     new&#95;edition(&amp;mut immutabook);
     // FIXME ^ Comment out this line
-}</div>
+}</pre></div>
 <div id="result"></div>
 </div>
 

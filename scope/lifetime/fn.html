@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.2" data-basepath="../.." data-revision="1461766961926">
+    <div class="book" data-level="14.4.2" data-basepath="../.." data-revision="1461767000818">
     
 
 <div class="book-summary">
@@ -2871,7 +2871,7 @@ off some valid forms of functions with lifetimes:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// One input reference with lifetime &#96;&#39;a&#96; which must live
+<div id="editor"><pre>// One input reference with lifetime &#96;&#39;a&#96; which must live
 // at least as long as the function.
 fn print&#95;one&lt;&#39;a&gt;(x: &amp;&#39;a i32) {
     println!(&quot;&#96;print&#95;one&#96;: x is {}&quot;, x);
@@ -2912,7 +2912,7 @@ fn main() {
     let mut t = 3;
     add&#95;one(&amp;mut t);
     print&#95;one(&amp;t);
-}</div>
+}</pre></div>
 <div id="result"></div>
 </div>
 

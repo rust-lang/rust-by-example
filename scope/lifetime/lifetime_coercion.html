@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.6" data-basepath="../.." data-revision="1461766961926">
+    <div class="book" data-level="14.4.6" data-basepath="../.." data-revision="1461767000818">
     
 
 <div class="book-summary">
@@ -2866,7 +2866,7 @@ and also in the form of declaring a lifetime difference:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// Here, Rust infers a lifetime that is as short as possible.
+<div id="editor"><pre>// Here, Rust infers a lifetime that is as short as possible.
 // The two references are then coerced to that lifetime.
 fn multiply&lt;&#39;a&gt;(first: &amp;&#39;a i32, second: &amp;&#39;a i32) -&gt; i32 {
     first &#42; second
@@ -2887,7 +2887,7 @@ fn main() {
         println!(&quot;The product is {}&quot;, multiply(&amp;first, &amp;second));
         println!(&quot;{} is the first&quot;, choose&#95;first(&amp;first, &amp;second));
     };
-}</div>
+}</pre></div>
 <div id="result"></div>
 </div>
 

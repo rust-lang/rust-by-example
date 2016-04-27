@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4.1" data-basepath="../.." data-revision="1461766961926">
+    <div class="book" data-level="14.4.1" data-basepath="../.." data-revision="1461767000818">
     
 
 <div class="book-summary">
@@ -2880,7 +2880,7 @@ may not exceed that of <code>&#39;a</code>. Explicit annotation of a type has th
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// &#96;print&#95;refs&#96; takes two references to &#96;i32&#96; which have different
+<div id="editor"><pre>// &#96;print&#95;refs&#96; takes two references to &#96;i32&#96; which have different
 // lifetimes &#96;&#39;a&#96; and &#96;&#39;b&#96;. These two lifetimes must both be at
 // least as long as the function &#96;print&#95;refs&#96;.
 fn print&#95;refs&lt;&#39;a, &#39;b&gt;(x: &amp;&#39;a i32, y: &amp;&#39;b i32) {
@@ -2912,7 +2912,7 @@ fn main() {
     // &#96;failed&#95;borrow&#96; contains no references to force &#96;&#39;a&#96; to be 
     // longer than the lifetime of the function, but &#96;&#39;a&#96; is longer.
     // Because the lifetime is never constrained, it defaults to &#96;&#39;static&#96;.
-}</div>
+}</pre></div>
 <div id="result"></div>
 </div>
 

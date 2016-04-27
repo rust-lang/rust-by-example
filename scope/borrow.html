@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.3" data-basepath=".." data-revision="1461766961926">
+    <div class="book" data-level="14.3" data-basepath=".." data-revision="1461767000818">
     
 
 <div class="book-summary">
@@ -2868,7 +2868,7 @@ exist, the object cannot be destroyed.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// This function takes ownership of a box and destroys it 
+<div id="editor"><pre>// This function takes ownership of a box and destroys it 
 fn eat&#95;box(boxed&#95;int: Box&lt;i32&gt;) {
     println!(&quot;Destroying box that contains {}&quot;, boxed&#95;int);
 }
@@ -2901,7 +2901,7 @@ fn main() {
 
     // Box can now give up ownership to &#96;eat&#95;box&#96; and be destroyed
     eat&#95;box(boxed&#95;int);
-}</div>
+}</pre></div>
 <div id="result"></div>
 </div>
 

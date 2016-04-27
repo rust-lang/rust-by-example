@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.4" data-basepath=".." data-revision="1461766961926">
+    <div class="book" data-level="14.4" data-basepath=".." data-revision="1461767000818">
     
 
 <div class="book-summary">
@@ -2872,7 +2872,7 @@ lifetimes relate to scopes, as well as how the two differ.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// Lifetimes are annotated below with lines denoting the creation
+<div id="editor"><pre>// Lifetimes are annotated below with lines denoting the creation
 // and destruction of each variable.
 // &#96;i&#96; has the longest lifetime because its scope entirely encloses 
 // both &#96;borrow1&#96; and &#96;borrow2&#96;. The duration of &#96;borrow1&#96; compared 
@@ -2893,7 +2893,7 @@ fn main() {
         println!(&quot;borrow2: {}&quot;, borrow2); //              ││
     } // &#96;borrow2&#96; ends. ─────────────────────────────────┘│
     //                                                     │
-}   // Lifetime ends. ─────────────────────────────────────┘</div>
+}   // Lifetime ends. ─────────────────────────────────────┘</pre></div>
 <div id="result"></div>
 </div>
 

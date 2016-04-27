@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.2" data-basepath="../.." data-revision="1461766961926">
+    <div class="book" data-level="8.2.2" data-basepath="../.." data-revision="1461767000818">
     
 
 <div class="book-summary">
@@ -2882,7 +2882,7 @@ restrictive manner possible on a variable-by-variable basis:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor">// A function which takes a closure as an argument and calls it.
+<div id="editor"><pre>// A function which takes a closure as an argument and calls it.
 fn apply&lt;F&gt;(f: F) where
     // The closure takes no input and returns nothing.
     F: FnOnce() {
@@ -2929,7 +2929,7 @@ fn main() {
     let double = |x| 2 &#42; x;
 
     println!(&quot;3 doubled: {}&quot;, apply&#95;to&#95;3(double));
-}</div>
+}</pre></div>
 <div id="result"></div>
 </div>
 
