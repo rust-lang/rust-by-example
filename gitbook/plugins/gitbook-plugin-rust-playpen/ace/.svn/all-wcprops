@@ -3,108 +3,6 @@ svn:wc:ra_dav:version-url
 V 46
 /ajaxorg/ace-builds/!svn/ver/138/trunk/src-min
 END
-mode-perl.js
-K 25
-svn:wc:ra_dav:version-url
-V 59
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/mode-perl.js
-END
-theme-eclipse.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/theme-eclipse.js
-END
-theme-sqlserver.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/theme-sqlserver.js
-END
-ace.js
-K 25
-svn:wc:ra_dav:version-url
-V 53
-/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/ace.js
-END
-mode-verilog.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/mode-verilog.js
-END
-mode-jack.js
-K 25
-svn:wc:ra_dav:version-url
-V 59
-/ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/mode-jack.js
-END
-mode-sh.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/129/trunk/src-min/mode-sh.js
-END
-mode-smarty.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-smarty.js
-END
-mode-html_elixir.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-html_elixir.js
-END
-mode-forth.js
-K 25
-svn:wc:ra_dav:version-url
-V 60
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/mode-forth.js
-END
-worker-xquery.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/129/trunk/src-min/worker-xquery.js
-END
-mode-scala.js
-K 25
-svn:wc:ra_dav:version-url
-V 60
-/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-scala.js
-END
-mode-d.js
-K 25
-svn:wc:ra_dav:version-url
-V 56
-/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min/mode-d.js
-END
-ext-beautify.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/ext-beautify.js
-END
-mode-text.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/2/trunk/src-min/mode-text.js
-END
-mode-abc.js
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min/mode-abc.js
-END
-mode-groovy.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-groovy.js
-END
 mode-autohotkey.js
 K 25
 svn:wc:ra_dav:version-url
@@ -1208,4 +1106,106 @@ K 25
 svn:wc:ra_dav:version-url
 V 58
 /ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-svg.js
+END
+mode-perl.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/mode-perl.js
+END
+theme-eclipse.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/theme-eclipse.js
+END
+theme-sqlserver.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/theme-sqlserver.js
+END
+ace.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/ace.js
+END
+mode-verilog.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/mode-verilog.js
+END
+mode-jack.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/mode-jack.js
+END
+mode-sh.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/129/trunk/src-min/mode-sh.js
+END
+mode-smarty.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-smarty.js
+END
+mode-html_elixir.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-html_elixir.js
+END
+mode-forth.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/mode-forth.js
+END
+worker-xquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/129/trunk/src-min/worker-xquery.js
+END
+mode-scala.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-scala.js
+END
+mode-d.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min/mode-d.js
+END
+ext-beautify.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/ext-beautify.js
+END
+mode-text.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/2/trunk/src-min/mode-text.js
+END
+mode-abc.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min/mode-abc.js
+END
+mode-groovy.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/mode-groovy.js
 END
