@@ -16,7 +16,7 @@ fn main() {
     let _s = Single(A);
     
     // Create a variable `_char` of type `SingleGen<char>`
-    // and give it the value `SingleGen('a')`
+    // and give it the value `SingleGen('a')`.
     // Here, `SingleGen` has a type parameter explicitly specified.
     let _char: SingleGen<char> = SingleGen('a');
 
