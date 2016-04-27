@@ -2,7 +2,7 @@ pub fn editor(source: &str) -> String {
     format!("<div id=\"active-code\">
 <button class=\"btn btn-primary\" type=\"button\" id=\"run-code\">Run</button>
 <button class=\"btn btn-primary\" type=\"button\" id=\"reset-code\">Reset</button>
-<div id=\"editor\">{}</div>
+<div id=\"editor\"><pre>{}</pre></div>
 <div id=\"result\"></div>
 </div>", escape(source))
 }

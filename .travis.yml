@@ -19,7 +19,7 @@ script:
   - rustc --version
   - make
   - make test
-  - make book
+  - make html
 
 notifications:
   email:

@@ -22,16 +22,22 @@ WHITELIST = examples/attribute/cfg/custom/custom.rs \
 
 srcs = $(filter-out $(WHITELIST),$(shell find examples -name '*.rs'))
 
-.PHONY: all book clean test serve
+.PHONY: all html epub pdf clean test serve
 
 all:
 	./setup-stage.sh
 	cargo run
 
-book: node_modules/gitbook
+html: node_modules/gitbook
 	$(GITBOOK) build stage
 	./fix-edit-button.sh
 	./add-relinks.sh
+
+epub:	node_modules/gitbook
+	$(GITBOOK) epub stage
+
+pdf:	node_modules/gitbook
+	$(GITBOOK) pdf stage
 
 clean:
 	rm -rf bin stage
