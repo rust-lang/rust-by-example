@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.4" data-basepath=".." data-revision="1461705032081">
+    <div class="book" data-level="16.4" data-basepath=".." data-revision="1461766933413">
     
 
 <div class="book-summary">
@@ -2859,11 +2859,10 @@
                     <section class="normal" id="section-gitbook_36">
                     
                         <h2 id="164-result">16.4 Result</h2>
-<p>Previously, we have used the type <code>Option</code> to annotate that absence is a possibility. This
-absence sometimes appears as an error, for example when <code>None</code> is unwrapped. In the more
-general case where there may be multiple failure points for a multitude of different reasons,
-an <code>Option</code> can be replaced by the more general <code>Result</code> type. A <code>Result&lt;T, E&gt;</code> has these
-variants:</p>
+<p>Previously, we have used the <code>Option</code> type to annotate that absence is a possibility. This
+absence sometimes appears as an error, such as when <code>None</code> is unwrapped. 
+When multiple failure points may exist, an <code>Option</code> can be replaced by the 
+more general <code>Result</code> type. A <code>Result&lt;T, E&gt;</code> has these variants:</p>
 <ul>
 <li><code>Ok&lt;T&gt;</code>: An element <code>T</code> was found</li>
 <li><code>Err&lt;E&gt;</code>: An error was found with element <code>E</code></li>
@@ -2874,9 +2873,9 @@ variants:</p>
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">fn double&#95;number(number&#95;str: &amp;str) -&gt; i32 {
-    // It might not always be possible to parse a string into the other type
+    // It might not always be possible to parse a string into the other type,
     // so &#96;parse()&#96; returns a &#96;Result&#96; indicating possible failure. Let&#39;s
-    // just try &#96;unwrap()&#96; to get the number out. Will it bite us?
+    // try using &#96;unwrap()&#96; to get the number out. Will it bite us?
     2 &#42; number&#95;str.parse::&lt;i32&gt;().unwrap()
 }
 
@@ -2890,8 +2889,8 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>Clearly, panicking on an <code>Err</code> leaves an unhelpful error message. Do we even know anything
-about libcore that the error is telling us all about? There must be a better way.</p>
+<p>Clearly, panicking on an <code>Err</code> leaves an unhelpful error message. Luckily for us, 
+the upcoming combinators are available to help us with errors.</p>
 <h3 id="see-also">See also:</h3>
 <p><a href="http://doc.rust-lang.org/std/result/enum.Result.html" target="_blank"><code>Result</code></a></p>
 

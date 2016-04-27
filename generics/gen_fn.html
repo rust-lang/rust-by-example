@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.1" data-basepath=".." data-revision="1461705032081">
+    <div class="book" data-level="13.1" data-basepath=".." data-revision="1461766933413">
     
 
 <div class="book-summary">
@@ -2860,9 +2860,9 @@
                     
                         <h2 id="131-functions">13.1 Functions</h2>
 <p>The same set of rules can be applied to functions: a type <code>T</code> becomes
-generic when preceded by <code>&lt;T&gt;</code>. </p>
+generic when preceded by <code>&lt;T&gt;</code>.</p>
 <p>Using generic functions sometimes requires explicitly specifying type 
-parameters. This may be if the function is called where the return type 
+parameters. This may be the case if the function is called where the return type 
 is generic, or if the compiler doesn&#39;t have enough information to infer 
 the necessary type parameters.</p>
 <p>A function call with explicitly specified type parameters looks like:
@@ -2874,24 +2874,24 @@ the necessary type parameters.</p>
 struct S(A);       // Concrete type &#96;S&#96;.
 struct SGen&lt;T&gt;(T); // Generic type &#96;SGen&#96;.
 
-// These functions all take ownership of the variable passed into
-// them and immediately go out of scope freeing the variable.
+// The following functions all take ownership of the variable passed into
+// them and immediately go out of scope, freeing the variable.
 
-// Define a function &#96;reg&#95;fn&#96; that takes an argument &#96;s&#96; of type &#96;S&#96;.
+// Define a function &#96;reg&#95;fn&#96; that takes an argument &#96;&#95;s&#96; of type &#96;S&#96;.
 // This has no &#96;&lt;T&gt;&#96; so this is not a generic function.
 fn reg&#95;fn(&#95;s: S) {}
 
-// Define a function &#96;gen&#95;spec&#95;t&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;T&gt;&#96;
-// that has been explicitly given the type parameter &#96;A&#96;. Because A has not 
-// been specified as a generic type parameter for gen&#95;spec&#95;t, it is not generic.
+// Define a function &#96;gen&#95;spec&#95;t&#96; that takes an argument &#96;&#95;s&#96; of type &#96;SGen&lt;T&gt;&#96;.
+// It has been explicitly given the type parameter &#96;A&#96;, but because &#96;A&#96; has not 
+// been specified as a generic type parameter for &#96;gen&#95;spec&#95;t&#96;, it is not generic.
 fn gen&#95;spec&#95;t(&#95;s: SGen&lt;A&gt;) {}
 
-// Define a function &#96;gen&#95;spec&#95;i32&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;i32&gt;&#96;
-// that has been explicitly given the type parameter &#96;i32&#96;.
-// This function is also not generic.
+// Define a function &#96;gen&#95;spec&#95;i32&#96; that takes an argument &#96;&#95;s&#96; of type &#96;SGen&lt;i32&gt;&#96;.
+// It has been explicitly given the type parameter &#96;i32&#96;, which is a specific type.
+// Because &#96;i32&#96; is not a generic type, this function is also not generic.
 fn gen&#95;spec&#95;i32(&#95;s: SGen&lt;i32&gt;) {}
 
-// Define a function &#96;generic&#96; that takes an argument &#96;s&#96; of type &#96;SGen&lt;T&gt;&#96;.
+// Define a function &#96;generic&#96; that takes an argument &#96;&#95;s&#96; of type &#96;SGen&lt;T&gt;&#96;.
 // Because &#96;SGen&lt;T&gt;&#96; is preceded by &#96;&lt;T&gt;&#96;, this function is generic over &#96;T&#96;.
 fn generic&lt;T&gt;(&#95;s: SGen&lt;T&gt;) {}
 

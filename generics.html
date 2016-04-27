@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13" data-basepath="." data-revision="1461705032081">
+    <div class="book" data-level="13" data-basepath="." data-revision="1461766933413">
     
 
 <div class="book-summary">
@@ -2859,13 +2859,14 @@
                     <section class="normal" id="section-gitbook_82">
                     
                         <h1 id="13-generics">13 Generics</h1>
-<p>Generics is the topic of generalizing types and functionality to broader
-cases. This is extremely useful in reducing code duplication in many ways,
-but requires a rather involving syntax. However, we will find that being 
-generic involves taking great care to specify over what types a generic type 
-is actually considered valid.</p>
-<p>A type parameter is specified as generic by the use of angle brackets and
-<a href="https://en.wikipedia.org/wiki/CamelCase" target="_blank">camel case</a>: <code>&lt;A, B, ...&gt;</code>. &quot;Generic type parameters&quot; are
+<p><em>Generics</em> is the topic of generalizing types and functionalities to broader
+cases. This is extremely useful for reducing code duplication in many ways,
+but can call for rather involving syntax. Namely, being generic requires 
+taking great care to specify over which types a generic type 
+is actually considered valid. The simplest and most common use of generics 
+is for type parameters.</p>
+<p>A type parameter is specified as generic by the use of angle brackets and upper
+<a href="https://en.wikipedia.org/wiki/CamelCase" target="_blank">camel case</a>: <code>&lt;Aaa, Bbb, ...&gt;</code>. &quot;Generic type parameters&quot; are
 typically represented as <code>&lt;T&gt;</code>. In Rust, &quot;generic&quot; also describes anything that
 accepts one or more generic type parameters <code>&lt;T&gt;</code>. Any type specified as a 
 generic type parameter is generic, and everything else is concrete (non-generic).</p>
@@ -2873,9 +2874,9 @@ generic type parameter is generic, and everything else is concrete (non-generic)
 <code>T</code> of any type:</p>
 <pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">foo</span></span>&lt;T&gt;(T) { ... }
 </code></pre>
-<p>Because <code>T</code> has been specified as a generic type parameter, it is considered
-generic when used here as <code>(T)</code>. This is the case even if <code>T</code> has previously
-been defined as a <code>struct</code>.</p>
+<p>Because <code>T</code> has been specified as a generic type parameter using <code>&lt;T&gt;</code>, it 
+is considered generic when used here as <code>(T)</code>. This is the case even if <code>T</code> 
+has previously been defined as a <code>struct</code>.</p>
 <p>This example shows some of the syntax in action:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2898,7 +2899,7 @@ fn main() {
     let &#95;s = Single(A);
 
     // Create a variable &#96;&#95;char&#96; of type &#96;SingleGen&lt;char&gt;&#96;
-    // and give it the value &#96;SingleGen(&#39;a&#39;)&#96;
+    // and give it the value &#96;SingleGen(&#39;a&#39;)&#96;.
     // Here, &#96;SingleGen&#96; has a type parameter explicitly specified.
     let &#95;char: SingleGen&lt;char&gt; = SingleGen(&#39;a&#39;);
 

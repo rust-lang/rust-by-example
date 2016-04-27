@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.8" data-basepath=".." data-revision="1461705032081">
+    <div class="book" data-level="13.8" data-basepath=".." data-revision="1461766933413">
     
 
 <div class="book-summary">
@@ -2862,8 +2862,8 @@
 <p>A phantom type parameter is one that doesn&#39;t show up at runtime,
 but is checked statically (and only) at compile time.</p>
 <p>Data types can use extra generic type parameters to act as markers
-or to perform compile-time type checking. These extra parameters 
-hold no storage values, and have no run-time behavior.</p>
+or to perform type checking at compile time. These extra parameters 
+hold no storage values, and have no runtime behavior.</p>
 <p>In the following example, we combine <a href="https://doc.rust-lang.org/std/marker/struct.PhantomData.html" target="_blank">std::marker::PhantomData</a>
 with the phantom type parameter concept to create tuples containing
 different data types.</p>
@@ -2872,30 +2872,30 @@ different data types.</p>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor">use std::marker::PhantomData;
 
-// A phantom tuple struct which is generic over A with hidden parameter B.
-#[derive(PartialEq)] // Allow equality test for this type
+// A phantom tuple struct which is generic over &#96;A&#96; with hidden parameter &#96;B&#96;.
+#[derive(PartialEq)] // Allow equality test for this type.
 struct PhantomTuple&lt;A, B&gt;(A,PhantomData&lt;B&gt;);
 
-// A phantom type struct which is generic over A with hidden parameter B.
-#[derive(PartialEq)] // Allow equality test for this type
+// A phantom type struct which is generic over &#96;A&#96; with hidden parameter &#96;B&#96;.
+#[derive(PartialEq)] // Allow equality test for this type.
 struct PhantomStruct&lt;A, B&gt; { first: A, phantom: PhantomData&lt;B&gt; }
 
-// Note: Storage is allocated for generic type A, but not for B.
-//       Therefore, B cannot be used in computations.
+// Note: Storage is allocated for generic type &#96;A&#96;, but not for &#96;B&#96;.
+//       Therefore, &#96;B&#96; cannot be used in computations.
 
 fn main() {
-    // Here, &#96;f32&#96; and &#96;f64&#96;
-    // PhantomTuple type specified as &lt;char, f32&gt;
+    // Here, &#96;f32&#96; and &#96;f64&#96; are the hidden parameters.
+    // PhantomTuple type specified as &#96;&lt;char, f32&gt;&#96;.
     let &#95;tuple1: PhantomTuple&lt;char, f32&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
-    // PhantomTuple type specified as &lt;char, f64&gt;
+    // PhantomTuple type specified as &#96;&lt;char, f64&gt;&#96;.
     let &#95;tuple2: PhantomTuple&lt;char, f64&gt; = PhantomTuple(&#39;Q&#39;, PhantomData);
 
-    // Type specified as &lt;char, f32&gt;
+    // Type specified as &#96;&lt;char, f32&gt;&#96;.
     let &#95;struct1: PhantomStruct&lt;char, f32&gt; = PhantomStruct {
         first: &#39;Q&#39;,
         phantom: PhantomData,
     };
-    // Type specified as &lt;char, f64&gt;
+    // Type specified as &#96;&lt;char, f64&gt;&#96;.
     let &#95;struct2: PhantomStruct&lt;char, f64&gt; = PhantomStruct {
         first: &#39;Q&#39;,
         phantom: PhantomData,
