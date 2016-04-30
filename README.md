@@ -104,6 +104,10 @@ license.
 
 See LICENSE-APACHE and LICENSE-MIT for more details.
 
+## Translation to another languages
+
+[Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
+
 [travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
 [travis-link]: https://travis-ci.org/rust-lang/rust-by-example
 [website]: http://rustbyexample.com
