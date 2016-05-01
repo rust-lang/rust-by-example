@@ -19,8 +19,8 @@ use tuples to return multiple values, as tuples can hold any number of values.
     accepts a matrix as an argument, and returns a matrix in which two elements
     have been swapped. For example:
 ```
-println!("Matrix:\n{}", matrix)
-println!("Transpose:\n{}", transpose(matrix))
+println!("Matrix:\n{}", matrix);
+println!("Transpose:\n{}", transpose(matrix));
 ```
 results in the output:
 ```
