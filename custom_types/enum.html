@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="3.2" data-basepath=".." data-revision="1462129308491">
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="1462143563817">
     
 
 <div class="book-summary">
@@ -2870,12 +2870,12 @@ an <code>enum</code>.</p>
 
 // Create an &#96;enum&#96; to classify someone. Note how both names
 // and type information together specify the variant:
-// &#96;Skinny != Fat&#96; and &#96;Height(i32) != Weight(i32)&#96;. Each
+// &#96;Engineer != Scientist&#96; and &#96;Height(i32) != Weight(i32)&#96;. Each
 // is different and independent.
 enum Person {
     // An &#96;enum&#96; may either be &#96;unit-like&#96;,
-    Skinny,
-    Fat,
+    Engineer,
+    Scientist,
     // like tuple structs,
     Height(i32),
     Weight(i32),
@@ -2889,8 +2889,8 @@ fn inspect(p: Person) {
     // Usage of an &#96;enum&#96; must cover all cases (irrefutable)
     // so a &#96;match&#96; is used to branch over it.
     match p {
-        Person::Skinny    =&gt; println!(&quot;Is skinny!&quot;),
-        Person::Fat       =&gt; println!(&quot;Is fat!&quot;),
+        Person::Engineer  =&gt; println!(&quot;Is an engineer!&quot;),
+        Person::Scientist =&gt; println!(&quot;Is a scientist!&quot;),
         // Destructure &#96;i&#96; from inside the &#96;enum&#96;.
         Person::Height(i) =&gt; println!(&quot;Has a height of {}.&quot;, i),
         Person::Weight(i) =&gt; println!(&quot;Has a weight of {}.&quot;, i),
@@ -2902,18 +2902,18 @@ fn inspect(p: Person) {
 }
 
 fn main() {
-    let person = Person::Height(18);
-    let danny  = Person::Weight(10);
+    let person   = Person::Height(18);
+    let amira    = Person::Weight(10);
     // &#96;to&#95;owned()&#96; creates an owned &#96;String&#96; from a string slice.
-    let dave   = Person::Info { name: &quot;Dave&quot;.to&#95;owned(), height: 72 };
-    let john   = Person::Fat;
-    let larry  = Person::Skinny;
+    let dave     = Person::Info { name: &quot;Dave&quot;.to&#95;owned(), height: 72 };
+    let rebecca  = Person::Scientist;
+    let rohan    = Person::Engineer;
 
     inspect(person);
-    inspect(danny);
+    inspect(amira);
     inspect(dave);
-    inspect(john);
-    inspect(larry);
+    inspect(rebecca);
+    inspect(rohan);
 }</pre></div>
 <div id="result"></div>
 </div>
