@@ -3,12 +3,12 @@
 
 // Create an `enum` to classify someone. Note how both names
 // and type information together specify the variant:
-// `Skinny != Fat` and `Height(i32) != Weight(i32)`. Each
+// `Engineer != Scientist` and `Height(i32) != Weight(i32)`. Each
 // is different and independent.
 enum Person {
     // An `enum` may either be `unit-like`,
-    Skinny,
-    Fat,
+    Engineer,
+    Scientist,
     // like tuple structs,
     Height(i32),
     Weight(i32),
@@ -22,8 +22,8 @@ fn inspect(p: Person) {
     // Usage of an `enum` must cover all cases (irrefutable)
     // so a `match` is used to branch over it.
     match p {
-        Person::Skinny    => println!("Is skinny!"),
-        Person::Fat       => println!("Is fat!"),
+        Person::Engineer  => println!("Is an engineer!"),
+        Person::Scientist => println!("Is a scientist!"),
         // Destructure `i` from inside the `enum`.
         Person::Height(i) => println!("Has a height of {}.", i),
         Person::Weight(i) => println!("Has a weight of {}.", i),
@@ -35,16 +35,16 @@ fn inspect(p: Person) {
 }
 
 fn main() {
-    let person = Person::Height(18);
-    let danny  = Person::Weight(10);
+    let person   = Person::Height(18);
+    let amira    = Person::Weight(10);
     // `to_owned()` creates an owned `String` from a string slice.
-    let dave   = Person::Info { name: "Dave".to_owned(), height: 72 };
-    let john   = Person::Fat;
-    let larry  = Person::Skinny;
+    let dave     = Person::Info { name: "Dave".to_owned(), height: 72 };
+    let rebecca  = Person::Scientist;
+    let rohan    = Person::Engineer;
 
     inspect(person);
-    inspect(danny);
+    inspect(amira);
     inspect(dave);
-    inspect(john);
-    inspect(larry);
+    inspect(rebecca);
+    inspect(rohan);
 }
