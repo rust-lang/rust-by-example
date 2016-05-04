@@ -1,10 +1,9 @@
-// The first attempt conveniently uses `unwrap` with the aforementioned
-// bad errors it results in.
+// Our first attempt uses `unwrap` and provides unhelpful errors.
 fn double_first(vec: Vec<&str>) -> i32 {
-    // What if the vector is empty?
+    // Returns an error if the input vector is empty:
     let first = vec.first().unwrap();
 
-    // What if the element doesn't parse to a number?
+    // Returns an error if the element doesn't parse to a number:
     2 * first.parse::<i32>().unwrap()
 }
 
@@ -14,7 +13,11 @@ fn main() {
     let strings = vec!["tofu", "93", "18"];
 
     println!("The first doubled is {}", double_first(numbers));
+    
+    // This line results in the first error:
     println!("The first doubled is {}", double_first(empty));
-    // ^ Comment out this line to see the second error.
+    // ^ Comment this out to see the second error.
+    
+    // This line results in a second error:
     println!("The first doubled is {}", double_first(strings));
 }
