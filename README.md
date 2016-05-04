@@ -97,16 +97,17 @@ The Makefile provides the following recipes:
   under `localhost:4000`
 * `make test`: will check all the rust source files for compilation errors
 
+## Translations to other languages
+
+* [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
+* [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
+
 ## License
 
 Rust by Example is dual-licensed under the Apache 2.0 license and the MIT
 license.
 
 See LICENSE-APACHE and LICENSE-MIT for more details.
-
-## Translation to another languages
-
-[Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
 
 [travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
 [travis-link]: https://travis-ci.org/rust-lang/rust-by-example
