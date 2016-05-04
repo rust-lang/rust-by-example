@@ -1,7 +1,7 @@
 use std::num::ParseIntError;
 use std::result;
 
-// Define a generic alias for a `Result` of type `ParseIntError`.
+// Define a generic alias for a `Result` with the error type `ParseIntError`.
 type AliasedResult<T> = result::Result<T, ParseIntError>;
 
 // Use the alias defined above to refer to our specific `Result` type.
