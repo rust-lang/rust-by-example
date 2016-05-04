@@ -97,7 +97,7 @@ The Makefile provides the following recipes:
   under `localhost:4000`
 * `make test`: will check all the rust source files for compilation errors
 
-## Translation to another languages
+## Translations to other languages
 
 * [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
 * [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
