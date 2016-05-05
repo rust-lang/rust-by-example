@@ -143,9 +143,10 @@
         { "id": "unwrap", "title": "Option & unwrap", "children": null },
         { "id": "map", "title": "map", "children": null },
         { "id": "and_then", "title": "and_then", "children": null },
-        { "id": "result", "title": "Result", "children": null },
-        { "id": "result_map", "title": "map for Result", "children": null },
-        { "id": "result_alias", "title": "Result as an alias", "children": null },
+        { "id": "result", "title": "Result", "children": [
+            { "id": "result_map", "title": "map for Result", "children": null },
+            { "id": "result_alias", "title": "aliases for Result", "children": null }
+        ] }, 
         { "id": "option_with_result", "title": "Options with Results", "children": [
             { "id": "result_string_errors", "title": "Errors as strings", "children": null },
             { "id": "combinator_combinations", "title": "Combining separate combinators", "children": null },
