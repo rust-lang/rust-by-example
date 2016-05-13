@@ -3,263 +3,11 @@ svn:wc:ra_dav:version-url
 V 55
 /ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/snippets
 END
-pascal.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/pascal.js
-END
-soy_template.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/soy_template.js
-END
-javascript.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/javascript.js
-END
-erlang.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/erlang.js
-END
-makefile.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/makefile.js
-END
-elm.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/106/trunk/src-min/snippets/elm.js
-END
-luapage.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/luapage.js
-END
-ini.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ini.js
-END
-live_script.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/ajaxorg/ace-builds/!svn/ver/111/trunk/src-min/snippets/live_script.js
-END
-powershell.js
+livescript.js
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/powershell.js
-END
-c_cpp.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/c_cpp.js
-END
-php.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/php.js
-END
-logiql.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/logiql.js
-END
-gherkin.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/gherkin.js
-END
-eiffel.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/96/trunk/src-min/snippets/eiffel.js
-END
-sjs.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/sjs.js
-END
-tex.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/tex.js
-END
-xml.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/xml.js
-END
-yaml.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/yaml.js
-END
-abap.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/abap.js
-END
-scheme.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/scheme.js
-END
-typescript.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/typescript.js
-END
-dockerfile.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/dockerfile.js
-END
-toml.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/toml.js
-END
-mel.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/mel.js
-END
-java.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/java.js
-END
-forth.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/forth.js
-END
-vala.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/vala.js
-END
-scala.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/scala.js
-END
-d.js
-K 25
-svn:wc:ra_dav:version-url
-V 59
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/d.js
-END
-haskell.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/haskell.js
-END
-haxe.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/haxe.js
-END
-html.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/html.js
-END
-julia.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/julia.js
-END
-snippets.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/snippets.js
-END
-sass.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/sass.js
-END
-twig.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/twig.js
-END
-fortran.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/snippets/fortran.js
-END
-csharp.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/csharp.js
-END
-ejs.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ejs.js
-END
-haml.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/haml.js
-END
-ftl.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ftl.js
-END
-rdoc.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rdoc.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/livescript.js
 END
 gitignore.js
 K 25
@@ -273,77 +21,77 @@ svn:wc:ra_dav:version-url
 V 63
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ocaml.js
 END
-properties.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/properties.js
-END
-xquery.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/xquery.js
-END
-nix.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/nix.js
-END
-perl.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/perl.js
-END
-django.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/django.js
-END
-coldfusion.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/coldfusion.js
-END
-plain_text.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/plain_text.js
-END
-golang.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/golang.js
-END
-wollok.js
+elixir.js
 K 25
 svn:wc:ra_dav:version-url
 V 65
-/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/wollok.js
+/ajaxorg/ace-builds/!svn/ver/106/trunk/src-min/snippets/elixir.js
 END
-rst.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/rst.js
-END
-jack.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jack.js
-END
-lua.js
+jsp.js
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/lua.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsp.js
+END
+matlab.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/matlab.js
+END
+yaml.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/yaml.js
+END
+stylus.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/stylus.js
+END
+abap.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/abap.js
+END
+handlebars.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/handlebars.js
+END
+jsoniq.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsoniq.js
+END
+jsx.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsx.js
+END
+toml.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/toml.js
+END
+lucene.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/lucene.js
+END
+objectivec.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/objectivec.js
 END
 batchfile.js
 K 25
@@ -351,29 +99,53 @@ svn:wc:ra_dav:version-url
 V 67
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/batchfile.js
 END
-text.js
+java.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/java.js
+END
+vala.js
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/text.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/vala.js
+END
+ada.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ada.js
+END
+haxe.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/haxe.js
+END
+apache_conf.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/apache_conf.js
+END
+applescript.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/applescript.js
+END
+coffee.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/coffee.js
 END
 swift.js
 K 25
 svn:wc:ra_dav:version-url
 V 64
 /ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/swift.js
-END
-vbscript.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/vbscript.js
-END
-rust.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rust.js
 END
 razor.js
 K 25
@@ -393,11 +165,11 @@ svn:wc:ra_dav:version-url
 V 63
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/cobol.js
 END
-protobuf.js
+sql.js
 K 25
 svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/protobuf.js
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/sql.js
 END
 r.js
 K 25
@@ -405,11 +177,23 @@ svn:wc:ra_dav:version-url
 V 60
 /ajaxorg/ace-builds/!svn/ver/115/trunk/src-min/snippets/r.js
 END
-glsl.js
+prolog.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/prolog.js
+END
+html.js
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/glsl.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/html.js
+END
+snippets.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/snippets.js
 END
 mysql.js
 K 25
@@ -417,17 +201,17 @@ svn:wc:ra_dav:version-url
 V 63
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/mysql.js
 END
+mips_assembler.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/ajaxorg/ace-builds/!svn/ver/113/trunk/src-min/snippets/mips_assembler.js
+END
 mipsassembler.js
 K 25
 svn:wc:ra_dav:version-url
 V 72
 /ajaxorg/ace-builds/!svn/ver/113/trunk/src-min/snippets/mipsassembler.js
-END
-less.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/less.js
 END
 praat.js
 K 25
@@ -435,11 +219,215 @@ svn:wc:ra_dav:version-url
 V 63
 /ajaxorg/ace-builds/!svn/ver/96/trunk/src-min/snippets/praat.js
 END
-io.js
+sass.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/sass.js
+END
+twig.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/twig.js
+END
+elm.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/106/trunk/src-min/snippets/elm.js
+END
+luapage.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/luapage.js
+END
+ini.js
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/ajaxorg/ace-builds/!svn/ver/101/trunk/src-min/snippets/io.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ini.js
+END
+python.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/python.js
+END
+haml.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/haml.js
+END
+live_script.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/ajaxorg/ace-builds/!svn/ver/111/trunk/src-min/snippets/live_script.js
+END
+pgsql.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/pgsql.js
+END
+rdoc.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rdoc.js
+END
+php.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/php.js
+END
+gherkin.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/gherkin.js
+END
+liquid.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/liquid.js
+END
+sjs.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/sjs.js
+END
+tex.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/tex.js
+END
+xml.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/xml.js
+END
+perl.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/perl.js
+END
+jack.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jack.js
+END
+sh.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/sh.js
+END
+mel.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/mel.js
+END
+latex.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/latex.js
+END
+smarty.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/smarty.js
+END
+haskell.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/haskell.js
+END
+text.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/text.js
+END
+groovy.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/groovy.js
+END
+rhtml.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rhtml.js
+END
+autohotkey.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/autohotkey.js
+END
+vbscript.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/vbscript.js
+END
+rust.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rust.js
+END
+protobuf.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/protobuf.js
+END
+glsl.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/glsl.js
+END
+pascal.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/pascal.js
+END
+javascript.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/javascript.js
+END
+less.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/less.js
+END
+erlang.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/erlang.js
 END
 diff.js
 K 25
@@ -459,17 +447,23 @@ svn:wc:ra_dav:version-url
 V 62
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/scss.js
 END
+fortran.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/138/trunk/src-min/snippets/fortran.js
+END
 lean.js
 K 25
 svn:wc:ra_dav:version-url
 V 63
 /ajaxorg/ace-builds/!svn/ver/113/trunk/src-min/snippets/lean.js
 END
-tcl.js
+ejs.js
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/tcl.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ejs.js
 END
 markdown.js
 K 25
@@ -477,11 +471,11 @@ svn:wc:ra_dav:version-url
 V 66
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/markdown.js
 END
-livescript.js
+powershell.js
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/livescript.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/powershell.js
 END
 assembly_x86.js
 K 25
@@ -489,59 +483,35 @@ svn:wc:ra_dav:version-url
 V 70
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/assembly_x86.js
 END
-pgsql.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/pgsql.js
-END
-dot.js
+ftl.js
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/dot.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ftl.js
 END
-css.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/css.js
-END
-lsl.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/lsl.js
-END
-elixir.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/106/trunk/src-min/snippets/elixir.js
-END
-svg.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/svg.js
-END
-matlab.js
+logiql.js
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/matlab.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/logiql.js
 END
-stylus.js
+eiffel.js
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/stylus.js
+/ajaxorg/ace-builds/!svn/ver/96/trunk/src-min/snippets/eiffel.js
 END
-handlebars.js
+nix.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/nix.js
+END
+gobstones.js
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/handlebars.js
+/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/gobstones.js
 END
 jade.js
 K 25
@@ -549,35 +519,35 @@ svn:wc:ra_dav:version-url
 V 62
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jade.js
 END
-jsoniq.js
+scheme.js
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsoniq.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/scheme.js
 END
-verilog.js
+html_ruby.js
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/verilog.js
+V 67
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/html_ruby.js
 END
-lucene.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/lucene.js
-END
-objectivec.js
+typescript.js
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/objectivec.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/typescript.js
 END
-latex.js
+dockerfile.js
 K 25
 svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/latex.js
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/dockerfile.js
+END
+rst.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/rst.js
 END
 asciidoc.js
 K 25
@@ -585,29 +555,35 @@ svn:wc:ra_dav:version-url
 V 66
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/asciidoc.js
 END
-html_elixir.js
+lua.js
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/ajaxorg/ace-builds/!svn/ver/129/trunk/src-min/snippets/html_elixir.js
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/lua.js
 END
-abc.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/111/trunk/src-min/snippets/abc.js
-END
-rhtml.js
+gcode.js
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rhtml.js
+/ajaxorg/ace-builds/!svn/ver/96/trunk/src-min/snippets/gcode.js
 END
-coffee.js
+cirru.js
 K 25
 svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/coffee.js
+V 63
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/cirru.js
+END
+sqlserver.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min/snippets/sqlserver.js
+END
+space.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/space.js
 END
 mask.js
 K 25
@@ -620,24 +596,6 @@ K 25
 svn:wc:ra_dav:version-url
 V 62
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/vhdl.js
-END
-prolog.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/prolog.js
-END
-clojure.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/clojure.js
-END
-mips_assembler.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/ajaxorg/ace-builds/!svn/ver/113/trunk/src-min/snippets/mips_assembler.js
 END
 mushcode.js
 K 25
@@ -657,11 +615,11 @@ svn:wc:ra_dav:version-url
 V 63
 /ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/nsis.js
 END
-textile.js
+csharp.js
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/textile.js
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/csharp.js
 END
 ruby.js
 K 25
@@ -669,17 +627,35 @@ svn:wc:ra_dav:version-url
 V 62
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ruby.js
 END
-python.js
+tcl.js
 K 25
 svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/python.js
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/tcl.js
 END
-liquid.js
+c_cpp.js
 K 25
 svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/liquid.js
+V 63
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/c_cpp.js
+END
+dot.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/dot.js
+END
+css.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/css.js
+END
+lsl.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/lsl.js
 END
 dart.js
 K 25
@@ -687,11 +663,23 @@ svn:wc:ra_dav:version-url
 V 62
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/dart.js
 END
-jsp.js
+properties.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/properties.js
+END
+xquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/xquery.js
+END
+svg.js
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsp.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/svg.js
 END
 c9search.js
 K 25
@@ -699,29 +687,35 @@ svn:wc:ra_dav:version-url
 V 66
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/c9search.js
 END
+django.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/django.js
+END
 actionscript.js
 K 25
 svn:wc:ra_dav:version-url
 V 71
 /ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/actionscript.js
 END
-gobstones.js
+coldfusion.js
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/gobstones.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/coldfusion.js
 END
-jsx.js
+plain_text.js
 K 25
 svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsx.js
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/plain_text.js
 END
-html_ruby.js
+golang.js
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/html_ruby.js
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/golang.js
 END
 lisp.js
 K 25
@@ -729,71 +723,53 @@ svn:wc:ra_dav:version-url
 V 62
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/lisp.js
 END
+verilog.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/verilog.js
+END
+wollok.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/wollok.js
+END
 json.js
 K 25
 svn:wc:ra_dav:version-url
 V 62
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/json.js
 END
-sh.js
+html_elixir.js
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/sh.js
+V 70
+/ajaxorg/ace-builds/!svn/ver/129/trunk/src-min/snippets/html_elixir.js
 END
-smarty.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/smarty.js
-END
-gcode.js
+forth.js
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/ajaxorg/ace-builds/!svn/ver/96/trunk/src-min/snippets/gcode.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/forth.js
 END
-cirru.js
+scala.js
 K 25
 svn:wc:ra_dav:version-url
 V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/cirru.js
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/scala.js
 END
-ada.js
+d.js
 K 25
 svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ada.js
+V 59
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/d.js
 END
-groovy.js
+abc.js
 K 25
 svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/groovy.js
-END
-sqlserver.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/118/trunk/src-min/snippets/sqlserver.js
-END
-apache_conf.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/apache_conf.js
-END
-applescript.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/applescript.js
-END
-space.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/space.js
+V 62
+/ajaxorg/ace-builds/!svn/ver/111/trunk/src-min/snippets/abc.js
 END
 maze.js
 K 25
@@ -801,21 +777,45 @@ svn:wc:ra_dav:version-url
 V 63
 /ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/snippets/maze.js
 END
-autohotkey.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/autohotkey.js
-END
 velocity.js
 K 25
 svn:wc:ra_dav:version-url
 V 66
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/velocity.js
 END
-sql.js
+clojure.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/clojure.js
+END
+julia.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/julia.js
+END
+soy_template.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/soy_template.js
+END
+io.js
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/sql.js
+/ajaxorg/ace-builds/!svn/ver/101/trunk/src-min/snippets/io.js
+END
+makefile.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/makefile.js
+END
+textile.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/textile.js
 END
