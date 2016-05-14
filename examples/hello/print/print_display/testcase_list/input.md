@@ -18,10 +18,10 @@ straightforward:
 
 ### Activity
 
-Try changing to program so that the index of each element in the vector is also printed. The new output should look like this:
+Try changing the program so that the index of each element in the vector is also printed. The new output should look like this:
 
-```
-[0: 10, 1: 40, 2: 30].
+```rust
+[0: 1, 1: 2, 2: 3]
 ```
 
 
