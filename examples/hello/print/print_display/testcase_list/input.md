@@ -16,6 +16,15 @@ straightforward:
 
 {testcase_list.play}
 
+### Activity
+
+Try changing to program so that the index of each element in the vector is also printed. The new output should look like this:
+
+```
+[0: 10, 1: 40, 2: 30].
+```
+
+
 ### See also
 
 [`for`][for], [`ref`][ref], [`Result`][result], [`struct`][struct],
