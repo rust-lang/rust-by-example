@@ -1,6 +1,5 @@
-Numeric literals can be type annotated by adding the type as a suffix, with the
-exception of `usize` that uses the `usize` suffix and `isize` that uses the
-`isize` suffix.
+Numeric literals can be type annotated by adding the type as a suffix. As an example, 
+to specify that the literal `42` should have the type `i32`, write `42i32`.
 
 The type of unsuffixed numeric literals will depend on how they are used. If no
 constraint exists, the compiler will use `i32` for integers, and `f64` for
