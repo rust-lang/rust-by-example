@@ -22,7 +22,7 @@ fn main() {
     println!("1000 as a u16 is: {}", 1000 as u16);
 
     // 1000 - 256 - 256 - 256 = 232
-    // Under the hood, the first 8 bits from the least significant bit (LSB) are used, 
+    // Under the hood, the first 8 least significant bits (LSB) are kept,
     // while the rest towards the most significant bit (MSB) get truncated.
     println!("1000 as a u8 is : {}", 1000 as u8);
     // -1 + 256 = 255
@@ -31,9 +31,9 @@ fn main() {
     // For positive numbers, this is the same as the modulus
     println!("1000 mod 256 is : {}", 1000 % 256);
 
-    // When casting to a signed type, the result is the same as 
-    // first casting to the corresponding unsigned type then 
-    // taking the two's complement.
+    // When casting to a signed type, the (bitwise) result is the same as 
+    // first casting to the corresponding unsigned type. If the most significant 
+    // bit of that value is 1, then the value is negative.
 
     // Unless it already fits, of course.
     println!(" 128 as a i16 is: {}", 128 as i16);
