@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.4.1" data-basepath="../.." data-revision="1464019872840">
+    <div class="book" data-level="18.4.1" data-basepath="../.." data-revision="1464099525352">
     
 
 <div class="book-summary">
@@ -2884,7 +2884,7 @@ file when it is <code>drop</code>ed.</p>
         <span class="hljs-comment">// The `description` method of `io::Error` returns a string that</span>
         <span class="hljs-comment">// describes the error</span>
         Err(why) =&gt; panic!(<span class="hljs-string">"couldn't open {}: {}"</span>, display,
-                                                   Error::description(&amp;why)),
+                                                   why.description()),
         Ok(file) =&gt; file,
     };
 
@@ -2892,7 +2892,7 @@ file when it is <code>drop</code>ed.</p>
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> s = String::new();
     <span class="hljs-keyword">match</span> file.read_to_string(&amp;<span class="hljs-keyword">mut</span> s) {
         Err(why) =&gt; panic!(<span class="hljs-string">"couldn't read {}: {}"</span>, display,
-                                                   Error::description(&amp;why)),
+                                                   why.description()),
         Ok(<span class="hljs-number">_</span>) =&gt; <span class="hljs-built_in">print!</span>(<span class="hljs-string">"{} contains:\n{}"</span>, display, s),
     }
 

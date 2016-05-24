@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.5.1" data-basepath="../.." data-revision="1464019872840">
+    <div class="book" data-level="18.5.1" data-basepath="../.." data-revision="1464099525352">
     
 
 <div class="book-summary">
@@ -2884,7 +2884,7 @@ fn main() {
                                 .stdin(Stdio::piped())
                                 .stdout(Stdio::piped())
                                 .spawn() {
-        Err(why) =&gt; panic!(&quot;couldn&#39;t spawn wc: {}&quot;, Error::description(&amp;why)),
+        Err(why) =&gt; panic!(&quot;couldn&#39;t spawn wc: {}&quot;, why.description()),
         Ok(process) =&gt; process,
     };
 
@@ -2894,7 +2894,7 @@ fn main() {
     // must have one, we can directly &#96;unwrap&#96; it.
     match process.stdin.unwrap().write&#95;all(PANGRAM.as&#95;bytes()) {
         Err(why) =&gt; panic!(&quot;couldn&#39;t write to wc stdin: {}&quot;,
-                           Error::description(&amp;why)),
+                           why.description()),
         Ok(&#95;) =&gt; println!(&quot;sent pangram to wc&quot;),
     }
 
@@ -2908,7 +2908,7 @@ fn main() {
     let mut s = String::new();
     match process.stdout.unwrap().read&#95;to&#95;string(&amp;mut s) {
         Err(why) =&gt; panic!(&quot;couldn&#39;t read wc stdout: {}&quot;,
-                           Error::description(&amp;why)),
+                           why.description()),
         Ok(&#95;) =&gt; print!(&quot;wc responded with:&#92;n{}&quot;, s),
     }
 }</pre></div>

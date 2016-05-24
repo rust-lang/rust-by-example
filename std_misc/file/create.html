@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.4.2" data-basepath="../.." data-revision="1464019872840">
+    <div class="book" data-level="18.4.2" data-basepath="../.." data-revision="1464099525352">
     
 
 <div class="book-summary">
@@ -2891,7 +2891,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> file = <span class="hljs-keyword">match</span> File::create(&amp;path) {
         Err(why) =&gt; panic!(<span class="hljs-string">"couldn't create {}: {}"</span>,
                            display,
-                           Error::description(&amp;why)),
+                           why.description()),
         Ok(file) =&gt; file,
     };
 
@@ -2899,7 +2899,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     <span class="hljs-keyword">match</span> file.write_all(LOREM_IPSUM.as_bytes()) {
         Err(why) =&gt; {
             panic!(<span class="hljs-string">"couldn't write to {}: {}"</span>, display,
-                                               Error::description(&amp;why))
+                                               why.description())
         },
         Ok(<span class="hljs-number">_</span>) =&gt; <span class="hljs-built_in">println!</span>(<span class="hljs-string">"successfully wrote to {}"</span>, display),
     }
