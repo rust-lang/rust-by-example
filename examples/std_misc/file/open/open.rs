@@ -13,7 +13,7 @@ fn main() {
         // The `description` method of `io::Error` returns a string that
         // describes the error
         Err(why) => panic!("couldn't open {}: {}", display,
-                                                   Error::description(&why)),
+                                                   why.description()),
         Ok(file) => file,
     };
 
@@ -21,7 +21,7 @@ fn main() {
     let mut s = String::new();
     match file.read_to_string(&mut s) {
         Err(why) => panic!("couldn't read {}: {}", display,
-                                                   Error::description(&why)),
+                                                   why.description()),
         Ok(_) => print!("{} contains:\n{}", display, s),
     }
 

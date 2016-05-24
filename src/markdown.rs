@@ -170,6 +170,6 @@ impl<'a, 'b> Markdown<'a, 'b> {
         let path = Path::new(path_str);
 
         file::write(&path, &self.content)
-            .map_err(|ref e| Error::description(e).to_string())
+            .map_err(|ref e| e.description().to_string())
     }
 }

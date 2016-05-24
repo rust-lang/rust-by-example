@@ -20,7 +20,7 @@ fn main() {
     let mut file = match File::create(&path) {
         Err(why) => panic!("couldn't create {}: {}",
                            display,
-                           Error::description(&why)),
+                           why.description()),
         Ok(file) => file,
     };
 
@@ -28,7 +28,7 @@ fn main() {
     match file.write_all(LOREM_IPSUM.as_bytes()) {
         Err(why) => {
             panic!("couldn't write to {}: {}", display,
-                                               Error::description(&why))
+                                               why.description())
         },
         Ok(_) => println!("successfully wrote to {}", display),
     }
