@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Errors as strings | Rust by Example</title>
+        <title>Strings as errors | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.5.1" data-basepath="../.." data-revision="1464099525352">
+    <div class="book" data-level="16.5.1" data-basepath="../.." data-revision="1464112265531">
     
 
 <div class="book-summary">
@@ -2164,7 +2164,7 @@
                         
                             <b>16.5.1.</b>
                         
-                         Errors as strings
+                         Strings as errors
                     </a>
                 
             
@@ -2864,27 +2864,29 @@
                 
                     <section class="normal" id="section-gitbook_32">
                     
-                        <h3 id="1651-errors-as-strings">16.5.1 Errors as strings</h3>
-<p>Eliminating <code>unwrap</code> from the previous example requires more care. The two types in play
-being <code>Option</code> and <code>Result</code>, one valid approach would be to convert both into a <code>Result</code>
-with a common <code>Err</code> type. We will try it with <code>Err(String)</code> which seems like a nice first
-approximation:</p>
+                        <h3 id="1651-strings-as-errors">16.5.1 Strings as errors</h3>
+<p>From our previous example, one method of solving our issue with <code>unwrap</code> is to remove it.
+In doing so, we must move from implicit to explicit error handling. Since the only 
+types in play are <code>Option</code> and <code>Result</code>, we can consider converting both into 
+<code>Result</code>s with the same <code>Err</code> type. For our first attempt at this solution, 
+let&#39;s try using a <code>String</code> for our error:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>type Result&lt;T&gt; = std::result::Result&lt;T, String&gt;;
+<div id="editor"><pre>// Use &#96;String&#96; as our error type
+type Result&lt;T&gt; = std::result::Result&lt;T, String&gt;;
 
 fn double&#95;first(vec: Vec&lt;&amp;str&gt;) -&gt; Result&lt;i32&gt; {
     vec.first()
-       // Convert the &#96;Option&#96; to a &#96;Result&#96; if there is a value; otherwise
-       // use an &#96;Err&#96; containing this &#96;String&#96;.
+       // Convert the &#96;Option&#96; to a &#96;Result&#96; if there is a value.
+       // Otherwise, provide an &#96;Err&#96; containing this &#96;String&#96;.
        .ok&#95;or(&quot;Please use a vector with at least one element.&quot;.to&#95;owned())
-       // &#96;parse&#96; returns a &#96;Result&lt;T, ParseIntError&gt;&#96;.
+       // Recall that &#96;parse&#96; returns a &#96;Result&lt;T, ParseIntError&gt;&#96;.
        .and&#95;then(|s| s.parse::&lt;i32&gt;()
-                      //  The return type is &#96;Result&lt;T, String&gt;&#96;. We need
-                      //  to map only the errors &#96;parse&#96; yields to &#96;String&#96;.
+                      // Map the errors &#96;parse&#96; yields to &#96;String&#96;.
+                      // The return type is then &#96;Result&lt;T, String&gt;&#96;.
                       .map&#95;err(|e| e.to&#95;string())
-                      // Apply the double to the number inside.
+                      // At this point, we can double the number inside.
                       .map(|i| 2 &#42; i))
 }
 
@@ -2907,11 +2909,9 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>This is not too bad but it is hardly as nice as the original (it can still be nicer but
-we are not there yet). The question is, does this approach scale well. Consider the next
-example.</p>
-<h3 id="see-also">See also:</h3>
-<p><a href="http://doc.rust-lang.org/std/result/enum.Result.html" target="_blank"><code>Result</code></a> and <a href="http://doc.rust-lang.org/std/io/type.Result.html" target="_blank"><code>io::Result</code></a></p>
+<p>This is not too bad, but it is hardly as nice as the original (it can still be nicer but
+we are not there yet). Unfortunately, this approach scales poorly with increasing 
+numbers of <code>Result</code>s, as will be seen in the next example.</p>
 
                     
                     </section>

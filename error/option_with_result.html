@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.5" data-basepath=".." data-revision="1464099525352">
+    <div class="book" data-level="16.5" data-basepath=".." data-revision="1464112265531">
     
 
 <div class="book-summary">
@@ -2164,7 +2164,7 @@
                         
                             <b>16.5.1.</b>
                         
-                         Errors as strings
+                         Strings as errors
                     </a>
                 
             
@@ -2865,22 +2865,26 @@
                     <section class="normal" id="section-gitbook_33">
                     
                         <h2 id="165-options-with-results">16.5 Options with Results</h2>
-<p>The previous examples have always been very convenient; a <code>Result</code> interacts with the same
-<code>Results</code> and an <code>Option</code> with the same <code>Option</code>. Sometimes it is not this easy though;
-<code>Options</code> and <code>Results</code> may have to interact or even <code>Result&lt;T, Error1&gt;</code> with
-<code>Result&lt;T, Error2&gt;</code>.</p>
-<p>Here is an example where one returns an <code>Option</code> and the other returns an <code>Result</code>. Aside
-from messy errors provided by <code>unwrap</code>, this looks reasonable:</p>
+<p>In the following sections, we will see how to combine separate operations returning 
+<code>Option</code> and <code>Result</code> into a single operation that returns whichever one makes the 
+most sense.</p>
+<p>The previous examples have always been very convenient; a <code>Result</code> interacted 
+with another <code>Result</code> and an <code>Option</code> interacted with another <code>Option</code>. Unfortunately, 
+it&#39;s not always that easy. An <code>Option</code> may have to interact with a <code>Result</code>, and a 
+<code>Result&lt;T, Error1&gt;</code> may have to interact with a <code>Result&lt;T, Error2&gt;</code>.</p>
+<p>To start us off, the example below uses <code>Vec::first</code> and <code>parse::&lt;i32&gt;</code> with <code>unwrap</code> to 
+generate errors. <code>Vec::first</code> returns an <code>Option</code>, while <code>parse::&lt;i32&gt;</code> 
+returns a <code>Result&lt;i32, ParseIntError&gt;</code>.</p>
+<p>Note that this code &quot;works&quot;, but is meant to showcase <strong>improper</strong> error handling: </p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>// The first attempt conveniently uses &#96;unwrap&#96; with the aforementioned
-// bad errors it results in.
+<div id="editor"><pre>// Our first attempt uses &#96;unwrap&#96; and provides unhelpful errors.
 fn double&#95;first(vec: Vec&lt;&amp;str&gt;) -&gt; i32 {
-    // What if the vector is empty?
+    // Returns an error if the input vector is empty:
     let first = vec.first().unwrap();
 
-    // What if the element doesn&#39;t parse to a number?
+    // Returns an error if the element doesn&#39;t parse to a number:
     2 &#42; first.parse::&lt;i32&gt;().unwrap()
 }
 
@@ -2890,15 +2894,16 @@ fn main() {
     let strings = vec![&quot;tofu&quot;, &quot;93&quot;, &quot;18&quot;];
 
     println!(&quot;The first doubled is {}&quot;, double&#95;first(numbers));
+
+    // This line results in the first error:
     println!(&quot;The first doubled is {}&quot;, double&#95;first(empty));
-    // ^ Comment out this line to see the second error.
+    // ^ Comment this out to see the second error.
+
+    // This line results in a second error:
     println!(&quot;The first doubled is {}&quot;, double&#95;first(strings));
 }</pre></div>
 <div id="result"></div>
 </div>
-
-<h3 id="see-also">See also:</h3>
-<p><a href="http://doc.rust-lang.org/std/result/enum.Result.html" target="_blank"><code>Result</code></a> and <a href="http://doc.rust-lang.org/std/io/type.Result.html" target="_blank"><code>io::Result</code></a></p>
 
                     
                     </section>
@@ -2912,7 +2917,7 @@ fn main() {
         <a href="../error/result/result_alias.html" class="navigation navigation-prev " aria-label="Previous page: aliases for Result"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../error/option_with_result/result_string_errors.html" class="navigation navigation-next " aria-label="Next page: Errors as strings"><i class="fa fa-angle-right"></i></a>
+        <a href="../error/option_with_result/result_string_errors.html" class="navigation navigation-next " aria-label="Next page: Strings as errors"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
