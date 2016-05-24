@@ -1,16 +1,16 @@
-The previous examples have always been very convenient; a `Result` interacts with the same
-`Results` and an `Option` with the same `Option`. Sometimes it is not this easy though;
-`Options` and `Results` may have to interact or even `Result<T, Error1>` with
-`Result<T, Error2>`.
+In the following sections, we will see how to combine separate operations returning 
+`Option` and `Result` into a single operation that returns whichever one makes the 
+most sense.
 
-Here is an example where one returns an `Option` and the other returns an `Result`. Aside
-from messy errors provided by `unwrap`, this looks reasonable:
+The previous examples have always been very convenient; a `Result` interacted 
+with another `Result` and an `Option` interacted with another `Option`. Unfortunately, 
+it's not always that easy. An `Option` may have to interact with a `Result`, and a 
+`Result<T, Error1>` may have to interact with a `Result<T, Error2>`.
+
+To start us off, the example below uses `Vec::first` and `parse::<i32>` with `unwrap` to 
+generate errors. `Vec::first` returns an `Option`, while `parse::<i32>` 
+returns a `Result<i32, ParseIntError>`.
+
+Note that this code "works", but is meant to showcase **improper** error handling: 
 
 {option_result.play}
-
-### See also:
-
-[`Result`][result] and [`io::Result`][io_result]
-
-[result]: http://doc.rust-lang.org/std/result/enum.Result.html
-[io_result]: http://doc.rust-lang.org/std/io/type.Result.html

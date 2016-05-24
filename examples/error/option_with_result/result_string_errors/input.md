@@ -1,17 +1,11 @@
-Eliminating `unwrap` from the previous example requires more care. The two types in play
-being `Option` and `Result`, one valid approach would be to convert both into a `Result`
-with a common `Err` type. We will try it with `Err(String)` which seems like a nice first
-approximation:
+From our previous example, one method of solving our issue with `unwrap` is to remove it.
+In doing so, we must move from implicit to explicit error handling. Since the only 
+types in play are `Option` and `Result`, we can consider converting both into 
+`Result`s with the same `Err` type. For our first attempt at this solution, 
+let's try using a `String` for our error:
 
 {result_string.play}
 
-This is not too bad but it is hardly as nice as the original (it can still be nicer but
-we are not there yet). The question is, does this approach scale well. Consider the next
-example.
-
-### See also:
-
-[`Result`][result] and [`io::Result`][io_result]
-
-[result]: http://doc.rust-lang.org/std/result/enum.Result.html
-[io_result]: http://doc.rust-lang.org/std/io/type.Result.html
+This is not too bad, but it is hardly as nice as the original (it can still be nicer but
+we are not there yet). Unfortunately, this approach scales poorly with increasing 
+numbers of `Result`s, as will be seen in the next example.

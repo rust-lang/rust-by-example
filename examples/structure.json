@@ -148,7 +148,7 @@
             { "id": "result_alias", "title": "aliases for Result", "children": null }
         ] }, 
         { "id": "option_with_result", "title": "Options with Results", "children": [
-            { "id": "result_string_errors", "title": "Errors as strings", "children": null },
+            { "id": "result_string_errors", "title": "Strings as errors", "children": null },
             { "id": "combinator_combinations", "title": "Combining separate combinators", "children": null },
             { "id": "enter_try", "title": "Enter try!", "children": null }
         ] },
