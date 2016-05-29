@@ -5,7 +5,7 @@ the borrower can read the data but not modify it:
 
 {mut.play}
 
-### See Also
+### See also:
 [`static`][static]
 
-[static]: scope/lifetime/static_lifetime.html
+[static]: ../lifetime/static_lifetime.html
