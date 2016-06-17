@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2" data-basepath=".." data-revision="1466093282972">
+    <div class="book" data-level="1.2" data-basepath=".." data-revision="1466152776437">
     
 
 <div class="book-summary">
@@ -2911,6 +2911,7 @@ be checked at compile time.</p>
     // FIXME ^ Add the missing argument: &quot;James&quot;
 
     // Create a structure which contains an &#96;i32&#96;. Name it &#96;Structure&#96;.
+    #[allow(dead&#95;code)]
     struct Structure(i32);
 
     // However, custom types such as this structure require more complicated
@@ -2934,8 +2935,9 @@ for these types. To print text for custom types, more steps are required.</p>
 <ul>
 <li>Fix the two issues in the above code (see FIXME) so that it runs without
 error.</li>
-<li>Add a <code>println!</code> macro that prints: <code>Pi is roughly 3.143</code>, using twenty-two
-divided by seven to generate the estimate for Pi. (Hint: you may need to
+<li>Add a <code>println!</code> macro that prints: <code>Pi is roughly 3.142</code> by controlling
+the number of decimal places shown. For the purposes of this exercise,
+use <code>let pi = 3.141592</code> as an estimate for Pi. (Hint: you may need to
 check the <a href="http://doc.rust-lang.org/std/fmt/" target="_blank"><code>std::fmt</code></a> documentation for setting the number of
 decimals to display)</li>
 </ul>

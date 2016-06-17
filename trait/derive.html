@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="14.1" data-basepath=".." data-revision="1466093282972">
+    <div class="book" data-level="14.1" data-basepath=".." data-revision="1466152776437">
     
 
 <div class="book-summary">
@@ -2868,23 +2868,16 @@
 <p>The compiler is capable of providing basic implementations for some traits via
 the <code>#[derive]</code> <a href="/attribute.html">attribute</a>. These traits can still be
 manually implemented if a more complex behavior is required.</p>
-<p>The following is a list of the &quot;derivable&quot; traits:</p>
+<p>The following is a list of derivable traits:</p>
 <ul>
 <li>Comparison traits:
-<a href="http://doc.rust-lang.org/std/cmp/trait.Eq.html" target="_blank"><code>Eq</code></a>,
-<a href="http://doc.rust-lang.org/std/cmp/trait.PartialEq.html" target="_blank"><code>PartialEq</code></a>,
-<a href="http://doc.rust-lang.org/std/cmp/trait.Ord.html" target="_blank"><code>Ord</code></a>,
-<a href="http://doc.rust-lang.org/std/cmp/trait.PartialOrd.html" target="_blank"><code>PartialOrd</code></a></li>
-<li><a href="http://doc.rust-lang.org/std/clone/trait.Clone.html" target="_blank"><code>Clone</code></a>,
-to create <code>T</code> from <code>&amp;T</code> via a copy.</li>
-<li><a href="http://doc.rust-lang.org/std/hash/trait.Hash.html" target="_blank"><code>Hash</code></a>, to
-compute a hash from <code>&amp;T</code>.</li>
-<li><a href="http://doc.rust-lang.org/std/default/trait.Default.html" target="_blank"><code>Default</code></a>,
-to create an empty instance of a data type.</li>
-<li><code>Zero</code>, to
-create a zero instance of a numeric data type.</li>
-<li><a href="http://doc.rust-lang.org/std/fmt/trait.Debug.html" target="_blank"><code>Debug</code></a>, to
-format a value using the <code>{:?}</code> formatter.</li>
+<a href="http://doc.rust-lang.org/std/cmp/trait.Eq.html" target="_blank"><code>Eq</code></a>, <a href="http://doc.rust-lang.org/std/cmp/trait.PartialEq.html" target="_blank"><code>PartialEq</code></a>, <a href="http://doc.rust-lang.org/std/cmp/trait.Ord.html" target="_blank"><code>Ord</code></a>, <a href="http://doc.rust-lang.org/std/cmp/trait.PartialOrd.html" target="_blank"><code>PartialOrd</code></a></li>
+<li><a href="http://doc.rust-lang.org/std/clone/trait.Clone.html" target="_blank"><code>Clone</code></a>, to create <code>T</code> from <code>&amp;T</code> via a copy.</li>
+<li><a href="https://doc.rust-lang.org/core/marker/trait.Copy.html" target="_blank"><code>Copy</code></a>, to give a type &#39;copy semantics&#39; instead of &#39;move semantics&#39;</li>
+<li><a href="http://doc.rust-lang.org/std/hash/trait.Hash.html" target="_blank"><code>Hash</code></a>, to compute a hash from <code>&amp;T</code>.</li>
+<li><a href="http://doc.rust-lang.org/std/default/trait.Default.html" target="_blank"><code>Default</code></a>, to create an empty instance of a data type.</li>
+<li><code>Zero</code>, to create a zero instance of a numeric data type.</li>
+<li><a href="http://doc.rust-lang.org/std/fmt/trait.Debug.html" target="_blank"><code>Debug</code></a>, to format a value using the <code>{:?}</code> formatter.</li>
 </ul>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2937,6 +2930,8 @@ fn main() {
 <div id="result"></div>
 </div>
 
+<h3 id="see-also">See also:</h3>
+<p><a href="https://doc.rust-lang.org/reference.html#derive" target="_blank"><code>derive</code></a></p>
 
                     
                     </section>
