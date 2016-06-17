@@ -32,6 +32,7 @@ fn main() {
     // FIXME ^ Add the missing argument: "James"
     
     // Create a structure which contains an `i32`. Name it `Structure`.
+    #[allow(dead_code)]
     struct Structure(i32);
 
     // However, custom types such as this structure require more complicated
