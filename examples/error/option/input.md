@@ -16,6 +16,6 @@ meaningful output than explicit handling. In the following example,
 explicit handling yields a more controlled result while retaining the 
 option to `panic` if desired. 
 
-{unwrap.play}
+{option.play}
 
 [expect]: http://doc.rust-lang.org/std/option/enum.Option.html#method.expect
