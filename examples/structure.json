@@ -140,7 +140,8 @@
         { "id": "dry", "title": "DRY (Don't Repeat Yourself)", "children": null }
     ] },
     { "id": "error", "title": "Error handling", "children": [
-        { "id": "unwrap", "title": "Option & unwrap", "children": null },
+        { "id": "panic_unwrap", "title": "panic & unwrap", "children": null },
+        { "id": "option", "title": "Option", "children": null },
         { "id": "map", "title": "map", "children": null },
         { "id": "and_then", "title": "and_then", "children": null },
         { "id": "result", "title": "Result", "children": [
