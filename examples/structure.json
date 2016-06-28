@@ -140,10 +140,11 @@
         { "id": "dry", "title": "DRY (Don't Repeat Yourself)", "children": null }
     ] },
     { "id": "error", "title": "Error handling", "children": [
-        { "id": "panic_unwrap", "title": "panic & unwrap", "children": null },
-        { "id": "option", "title": "Option", "children": null },
-        { "id": "map", "title": "map", "children": null },
-        { "id": "and_then", "title": "and_then", "children": null },
+        { "id": "panic", "title": "panic", "children": null },
+        { "id": "option_unwrap", "title": "Option & unwrap", "children": [
+            { "id": "map", "title": "Combinators: map", "children": null },
+            { "id": "and_then", "title": "Combinators: and_then", "children": null },
+        ] },
         { "id": "result", "title": "Result", "children": [
             { "id": "result_map", "title": "map for Result", "children": null },
             { "id": "result_alias", "title": "aliases for Result", "children": null }
@@ -151,10 +152,10 @@
         { "id": "option_with_result", "title": "Options with Results", "children": [
             { "id": "result_string_errors", "title": "Strings as errors", "children": null },
             { "id": "combinator_combinations", "title": "Combining separate combinators", "children": null },
-            { "id": "enter_try", "title": "Enter try!", "children": null }
+            { "id": "enter_try", "title": "try!", "children": null }
         ] },
         { "id": "limits_of_strings", "title": "The limits of strings", "children": null },
-        { "id": "reenter_try", "title": "Re-enter try!", "children": null },
+        { "id": "reenter_try", "title": "Other uses of try!", "children": null },
         { "id": "reenabling_box", "title": "Re-enabling box", "children": null }
     ] },
     { "id": "std", "title": "Std library types", "children": [
