@@ -101,7 +101,7 @@
             { "id": "types", "title": "Associated types", "children": null }
         ] },
         { "id": "phantom", "title": "Phantom type parameters", "children": [
-            { "id": "testcase_units", "title": "Testcase: unit conversions", "children": null }
+            { "id": "testcase_units", "title": "Testcase: unit clarification", "children": null }
         ] }
     ] },
     { "id": "scope", "title": "Scoping rules", "children": [
@@ -146,7 +146,7 @@
         { "id": "result", "title": "Result", "children": [
             { "id": "result_map", "title": "map for Result", "children": null },
             { "id": "result_alias", "title": "aliases for Result", "children": null }
-        ] }, 
+        ] },
         { "id": "option_with_result", "title": "Options with Results", "children": [
             { "id": "result_string_errors", "title": "Strings as errors", "children": null },
             { "id": "combinator_combinations", "title": "Combining separate combinators", "children": null },
