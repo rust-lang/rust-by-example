@@ -10,7 +10,10 @@ fn main() {
     /* 
      * This is another type of comment, the block comment. In general,
      * the line comment is the recommended comment style however the
-     * block comment is extremely useful for debugging
+     * block comment is extremely useful for temporarily disabling
+     * a large chunk of code. /* Block comments can be /* nested, */ */
+     * so it takes only a few keystrokes to comment out all the lines
+     * in this main() function. /*/*/* Try it yourself! */*/*/
      */
 
      /*
