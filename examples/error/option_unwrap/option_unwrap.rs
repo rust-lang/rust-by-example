@@ -1,5 +1,5 @@
-// The commoner has seen it all, and handles situations well.
-// All gifts are handled manually using `match`.
+// The commoner has seen it all, and can handle any gift well.
+// All gifts are handled explicitly using `match`.
 fn give_commoner(gift: Option<&str>) {
     // Specify a course of action for each case.
     match gift {
@@ -10,8 +10,9 @@ fn give_commoner(gift: Option<&str>) {
 }
 
 // Our sheltered princess will `panic` at the sight of snakes.
+// All gifts are handled implicitly using `unwrap`.
 fn give_princess(gift: Option<&str>) {
-    // Using `unwrap` returns a `panic` when it receives a `None`.
+    // `unwrap` returns a `panic` when it receives a `None`.
     let inside = gift.unwrap();
     if inside == "snake" { panic!("AAAaaaaa!!!!"); }
 
@@ -19,7 +20,7 @@ fn give_princess(gift: Option<&str>) {
 }
 
 fn main() {
-    let food  = Some("chicken");
+    let food  = Some("cabbage");
     let snake = Some("snake");
     let void  = None;
 
