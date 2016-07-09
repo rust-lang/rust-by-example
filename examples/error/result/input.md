@@ -1,22 +1,34 @@
-Previously, we have used the `Option` type to annotate that absence is a possibility. This
-absence sometimes appears as an error, such as when `None` is unwrapped. 
-When multiple failure points may exist, an `Option` can be replaced by the 
-more general `Result` type. A `Result<T, E>` has these variants:
+[`Result`][result] is a richer version of the [`Option`][option] type that 
+describes possible *error* instead of possible *absence*.
+
+That is, `Result<T, E>` could have one of two outcomes:
 
 * `Ok<T>`: An element `T` was found
 * `Err<E>`: An error was found with element `E`
 
-Similar to `Option`, `Result` also contains the `unwrap()` method which yields the element
-`T` or calls `panic!()`. So far, this should seem similar to `Option`:
+By convention, the expected outcome is “Ok” while the unexpected outcome is “Err”.
+
+Like `Option`, `Result` has many methods associated with it. `unwrap()`, for 
+example, either yields the element `T` or `panic`s. For case handling, 
+there are many combinators between `Result` and `Option` that overlap.
+
+In working with Rust, you will likely encounter methods that return the 
+`Result` type, such as the [`parse()`][parse] method. It might not always 
+be possible to parse a string into the other type, so `parse()` returns a 
+`Result` indicating possible failure.
+
+Let's see what happens when we successfully and unsuccessfully `parse()` a string:
 
 {result.play}
 
-Clearly, panicking on an `Err` leaves an unhelpful error message. Luckily for us, 
-the upcoming combinators are available to help us with errors.
+In the unsuccessful case, `parse()` leaves us with an error for `unwrap()` 
+to `panic` on. Additionally, the `panic` exits our program and provides an 
+unpleasant error message.
 
+To improve the quality of our error message, we'll need to be more specific 
+about the return type. Additionally, we should consider explicitly handling 
+the error.
 
-### See also:
-
-[`Result`][result]
-
+[option]: http://doc.rust-lang.org/std/option/enum.Option.html
 [result]: http://doc.rust-lang.org/std/result/enum.Result.html
+[parse]: https://doc.rust-lang.org/std/primitive.str.html#method.parse
