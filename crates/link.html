@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="10.2" data-basepath=".." data-revision="1468351665329">
+    <div class="book" data-level="10.2" data-basepath=".." data-revision="1468353842310">
     
 
 <div class="book-summary">
@@ -2882,8 +2882,9 @@ modules also apply to libraries.</p>
     rary::indirect_access();
 }
 </code></pre>
-<pre><code># The `-L .` argument adds the current directory to the library search path
-$ rustc -L . executable.rs &amp;&amp; ./executable
+<pre><code># Where library.rlib is the path to to the compiled library, assumed that it&#39;s
+# in the same directory here:
+$ rustc executable.rs --extern rary=library.rlib &amp;&amp; ./executable
 called rary&#39;s `public_function()`
 called rary&#39;s `indirect_access()`, that
 &gt; called rary&#39;s `private_function()`
