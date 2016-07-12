@@ -6,8 +6,9 @@ modules also apply to libraries.
 {executable.rs}
 
 ```
-# The `-L .` argument adds the current directory to the library search path
-$ rustc -L . executable.rs && ./executable
+# Where library.rlib is the path to to the compiled library, assumed that it's
+# in the same directory here:
+$ rustc executable.rs --extern rary=library.rlib && ./executable
 called rary's `public_function()`
 called rary's `indirect_access()`, that
 > called rary's `private_function()`
