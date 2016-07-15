@@ -1,33 +1,32 @@
-# Rust by Example
+# Rust на примерах
 
 [![Build Status][travis-image]][travis-link]
 
-## What's this?
+## Что это за проект?
 
-This is the source code of the [Rust by Example][website] website!
+Это исходный код сайта [Rust by Example][website], переведенный на русский язык!
 
-## How to contribute
+## Как помочь проекту?
 
-See [CONTRIBUTING.md][how-to-contribute].
+Смотри [CONTRIBUTING.md][how-to-contribute].
 
-## How to generate the static site
+## Как сгенерировать статический сайт
 
-### Debian (Ubuntu) prerequisites
+### Предварительные настройки для Debian (Ubuntu)
 
-Install [Rust](http://www.rust-lang.org/install.html) and
-run:
+Установить [Rust](http://www.rust-lang.org/install.html) и выполнить:
 
 ```
 sudo apt-get install nodejs npm subversion
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
-### Non-Debian prerequisites
+### Предварительные настройки для не-Debian дистрибутивов
 
-Install Rust [nightly](http://www.rust-lang.org/install.html),
+Установить Rust [nightly](http://www.rust-lang.org/install.html),
 `node`, `npm`, and `subversion`.
 
-### Build instructions
+### Инструкция по сборке проекта
 
 Run:
 
@@ -37,77 +36,78 @@ make html pdf epub
 make test
 ```
 
-View the results with `make serve`.
+Посмотреть результат с помощью `make serve`.
 
-### Details
+### Детали проекта
 
-We use these tools to generate the static site:
+Мы используем следующие инструменты для генерации сайта:
 
 * [Rust][rust-lang] \o/
 * [GitBook][gitbook]
 
-`gitbook` will generate the site from Markdown files (see details about how it
-works [here][gitbook-format]).
+`gitbook` генерирует сайт из Markdown файлов (посмотреть, как это работает
+можно [тут][gitbook-format]).
 
-Before running `gitbook`, we do a preprocessing step using
+Перед запуском `gitbook`, мы делаем предварительную обработку, используя
 [src/main.rs][main-rs].
 
-This preprocessing has two steps:
+Предварительная обработка состоит из двух шагов:
 
-### Generating the `SUMMARY.md`
+### Генерация `SUMMARY.md`
 
-`SUMMARY.md` is generated from the
-[examples/structure.json][structure] file. This JSON file
-contains a tree-like structure of "examples".
+`SUMMARY.md` генерируется из
+[examples/structure.json][structure] файла. Это JSON файл, который
+хранит в себе древовидную структуру "примеров".
 
-Each example has:
+У каждого примера есть:
 
-* an id, e.g. `hello`
-* a title, e.g. `Hello World`
-* optionally, children, which is a vector of sub-examples, e.g. `null`
-* a directory under `examples`, e.g. [examples/hello][hello-folder]
-* an entry in examples/structure.json, e.g.
+* id, например `hello`
+* title, например `Hello World`
+* необзятельный обьект - children, который будет являться дополнением к примерам, например `null`
+* папку внутри `examples`, например [examples/hello][hello-folder]
+* входную запись в examples/structure.json, например
   `{ "id": "hello", "title": "Hello World", "children": null }`
-* some source file(s), e.g. [examples/hello/hello.rs][hello-rs]
-* an input markdown file, e.g.
+* файл(ы) исходного кода, например [examples/hello/hello.rs][hello-rs]
+* входной markdown файл, например
   [examples/hello/input.md][hello-md]
 
-When dealing with a child example, the path will have to include the id of its
-ancestors; e.g. `examples/variable/mut/input.md`, implies that a `mut` example
-lives under the `variable` example.
+При работе с дополнительными примерами, путь к нему будет содержать id оригинального примера, например `examples/variable/mut/input.md`, т.е пример `mut` является дополнительным примером к `variable`
 
-### Processing `input.md`
+### Обработка `input.md`
 
-Instead of including the Rust code directly in `input.md`, the code lives in
-separate source files; the preprocessing step will insert the source code
-into the Markdown file.
+Вместо добавления кода на Rust в `input.md`, исходный код был сохранен в отдельном файле.
+Данный шаг предварительной обработки добавит код в Markdown файл.
 
-For example, to insert the source code of the `hello.rs` file, the following
-syntax is used in the Markdown file:
+Например, чтобы добавить исходный код из файла `hello.rs`, в Markdown файле используется следующий синтаксис
 
-* `{hello.play}` expands the source code embedded in a live code editor
-* `{hello.rs}` expands to static/plain source code.
-* `{hello.out}` expands to the output of executing the source code.
+* `{hello.play}` добавляется к исходному коду в онлайн редактор кода
+* `{hello.rs}` добавляется к обычному исходному коду.
+* `{hello.out}` добавляется к выводу, который отображается после исполнения исходного кода.
 
-The Makefile provides the following recipes:
+В Makefile доступны следующие сценарии:
 
-* `make`: builds `update.rs` and does the preprocessing step
-* `make book`: runs `gitbook` to generate the book
-* `make serve`: runs `gitbook --serve` to generate the book and publishes it
-  under `localhost:4000`
-* `make test`: will check all the rust source files for compilation errors
+* `make`: сборка `update.rs` и выполнения шагов предварительной обработки
+* `make book`: запуск `gitbook` для генерации книги
+* `make serve`: запуск `gitbook --serve` для генерации книги и публикации ее по адресу `localhost:4000`
+* `make test`: проверка всего исходного кода на языке Rust на наличие ошибок компиляции
 
-## Translations to other languages
+## Перевод на другии языки
 
-* [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
-* [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
+* [Английский](https://github.com/rust-lang/rust-by-example)
+* [Китайский](https://github.com/rust-lang-cn/rust-by-example-cn)
+* [Японский](https://github.com/rust-lang-ja/rust-by-example-ja)
 
-## License
+## Лицензия
 
-Rust by Example is dual-licensed under the Apache 2.0 license and the MIT
-license.
+`Rust на примерах` распространяется по двойной лицензии - лицензия Apache 2.0 и лицензия MIT.
 
-See LICENSE-APACHE and LICENSE-MIT for more details.
+Более подробную информацию можно найти в файлах LICENSE-APACHE и LICENSE-MIT соответственно.
+
+## От переводчика
+
+Перевод `Rust by examples` находится в процессе выполнения. За ходом перевода можно наблюдать [тут](https://github.com/GordonFrikker/rust-by-example-ru/issues/1). 
+
+Буду рад помощи.
 
 [travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
 [travis-link]: https://travis-ci.org/rust-lang/rust-by-example
