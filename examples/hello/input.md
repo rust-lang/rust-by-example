@@ -1,28 +1,26 @@
-This is the source code of the traditional Hello World program.
+Это исходный код традиционной программы "Hello World"
 
 {hello.play}
 
-`println!` is a [*macro*][macros] that prints text to the
-console.
+`println!` - это [*макрос*][macros], который отображает текст в консоле.
 
-A binary can be generated using the Rust compiler: `rustc`.
+Исполняемый файл может быть сгенерирован с помощью компилятора Rust - `rustc`.
 
 ```
 $ rustc hello.rs
 ```
 
-`rustc` will produce a `hello` binary that can be executed.
+`rustc` создаст исполняемый файл `hello`, который можно будет запустить.
 
 ```
 $ ./hello
 Hello World!
 ```
 
-### Activity
+### Задание
 
-Click 'Run' above to see the expected output. Next, add a new
-line with a second `println!` macro so that the output
-shows:
+Нажми кнопку 'Run', чтобы увидеть ожидаемый результат. 
+Затем, добавь новую строку с другим макросом `println!`, чтобы вывод был таким:
 ```
 Hello World!
 I'm a Rustacean!

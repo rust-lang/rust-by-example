@@ -1,14 +1,14 @@
-// This is a comment, and will be ignored by the compiler
-// You can test this code by clicking the "Run" button over there ->
-// or if prefer to use your keyboard, you can use the "Ctrl + Enter" shortcut
+// Эта строка является комментарием и она будет проигнорирована компилятором
+// Протестировать код можно нажав на кнопку "Run" вот тут ->
+// так же можно использовать клавиатуру, нажав сочетание клавиш "Ctrl + Enter"
 
-// This code is editable, feel free to hack it!
-// You can always return to the original code by clicking the "Reset" button ->
+// Этот код можно редактировать не стесняясь, дерзайте!
+// Всегда можно вернуть оригинальный код, нажав на кнопку "Reset" вот тут ->
 
-// This is the main function
+// Это главная функция. С нее начинается исполнение любой программы
 fn main() {
-    // The statements here will be executed when the compiled binary is called
+    // Следующий код будет исполнен в момент, когда будет запущен исполняемый файл
 
-    // Print text to the console
+    // Отображаем текст в консоле
     println!("Hello World!");
 }
