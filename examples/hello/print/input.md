@@ -1,39 +1,38 @@
-Printing is handled by a series of [`macros`][macros] defined in [`std::fmt`][fmt]
-some of which include:
+Вывод обрабатывается несколькими [`макросами`][macros], которые определены в [`std::fmt`][fmt]. Вот некоторые из них:
 
-* `format!`: write formatted text to [`String`][string]
-* `print!`: same as `format!` but the text is printed to the console.
-* `println!`: same as `print!` but a newline is appended.
+* `format!`: записывает форматированный текст в [`String`][string].
+* `print!`: работает аналогично с `format!`, но текст выводится в консоль.
+* `println!`: аналогично `print!`, но в конце добавляется переход на новую строку.
 
-All parse text in the same fashion. A plus is that the formatting correctness will
-be checked at compile time.
+Весь текст обрабатывается аналогичным образом. Плюс данного метода в том, что корректность 
+форматирования будет проверена на этапе комплиции программы.
 
 {print.play}
 
-[`std::fmt`][fmt] contains many [`traits`][traits] which govern the display
-of text. The base form of two important ones are listed below:
+[`std::fmt`][fmt] содержит в себе много [`типажей (traits)`][traits], которые управляют 
+отображением текста. Базовая форма двух самых важных рассмотрена ниже:
 
-* `fmt::Debug`: Uses the `{:?}` marker. Format text for debugging purposes.
-* `fmt::Display`: Uses the `{}` marker. Format text in a more elegant, user
-friendly fashion.
+* `fmt::Debug`: Использует `{:?}` marker. Форматирует текст для отладочных целей.
+* `fmt::Display`: Использует `{}` marker. Форматирует текст в более элегантном,
+удобном для пользователя стиле.
 
-Here, `fmt::Display` was used because the std library provides implementations
-for these types. To print text for custom types, more steps are required.
+В данном примере используется `fmt::Display`, потому что стандартная библиотека предоставляет реализацию для данного типа. Для отображения собственных типов потребуется больше дополнительных шагов.
 
-### Activities
+### Задание
 
- * Fix the two issues in the above code (see FIXME) so that it runs without
-   error.
- * Add a `println!` macro that prints: `Pi is roughly 3.142` by controlling
-   the number of decimal places shown. For the purposes of this exercise,
-   use `let pi = 3.141592` as an estimate for Pi. (Hint: you may need to
-   check the [`std::fmt`][fmt] documentation for setting the number of
-   decimals to display)
+ * Исправьте две ошибки в коде выше (смотрите FIXME), чтобы код 
+   комплировался без ошибок
+ * Добавьте макрос `println!`, который выводит: `Pi is roughly 3.142` c помощью 
+   управления количеством знаков после запятой. Для выполнения данного задания создайте
+   переменную, которая будет хранить в себе значение числа Пи: `let pi = 3.141592`. 
+   (Подсказка: вым необходимо ознакомиться с документация по 
+   [`std::fmt`][fmt], чтобы узнать, 
+   как отобразить только часть знаков после запятой в консоле.)
 
-### See also
+### Смотрите также
 
-[`std::fmt`][fmt], [`macros`][macros], [`struct`][structs],
-and [`traits`][traits]
+[`std::fmt`][fmt], [`macros`][macros], [`struct`][structs]
+и [`traits`][traits]
 
 [fmt]: http://doc.rust-lang.org/std/fmt/
 [macros]: /macros.html

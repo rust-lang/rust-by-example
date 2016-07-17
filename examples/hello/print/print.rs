@@ -1,42 +1,43 @@
 fn main() {
-    // In general, the `{}` will be automatically replaced with any
-    // arguments. These will be stringified.
+    // `{}` автоматически будет заменено на
+    // аргументы. Они будут преобразованы в строку.
     println!("{} days", 31);
 
-    // Without a suffix, 31 becomes an i32. You can change what type 31 is,
-    // with a suffix.
+    // Без суффиксов, 31 является i32. Можно изменить тип 31,
+    // используя суффикс.
 
-    // There are various optional patterns this works with. Positional
-    // arguments can be used.
+    // Существует множество способов работы с форматированным выводом. Можно указать
+    // позицию для каждого аргумента.
     println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");
 
-    // As can named arguments.
+    // Так же можно именовать аргументы.
     println!("{subject} {verb} {object}",
              object="the lazy dog",
              subject="the quick brown fox",
              verb="jumps over");
 
-    // Special formatting can be specified after a `:`.
+    // Специальное форматирование может быть определено после `:`.
     println!("{} of {:b} people know binary, the other half don't", 1, 2);
 
-    // You can right-align text with a specified width. This will output
-    // "     1". 5 white spaces and a "1".
+    // Можно выравнивать текст, сдвигая его на указанную ширину. 
+    // Данный макрос отобразит в консоле
+    // "     1". 5 пробелов и "1".
     println!("{number:>width$}", number=1, width=6);
 
-    // You can pad numbers with extra zeroes. This will output "000001".
+    // Можно добавить цифрам пару нулен. Данный макрос выведет "000001".
     println!("{number:>0width$}", number=1, width=6);
 
-    // It will even check to make sure the correct number of arguments are
-    // used.
+    // Компилятор обязательно проверит, что в макрос переденом правильное количество
+    // аргументов.
     println!("My name is {0}, {1} {0}", "Bond");
-    // FIXME ^ Add the missing argument: "James"
+    // FIXME ^ Добавьте недостающий аргумент: "James"
     
-    // Create a structure which contains an `i32`. Name it `Structure`.
+    // Создаем структуру, которая хранит в себе `i32`. Назовем ее `Structure`.
     #[allow(dead_code)]
     struct Structure(i32);
 
-    // However, custom types such as this structure require more complicated
-    // handling. This will not work.
+    // Однако, пользовательские типы данных, например, как эта структура
+    // требуют более сложной обработки для вывода. Данный код не будет работать.
     println!("This struct `{}` won't print...", Structure(3));
-    // FIXME ^ Comment out this line.
+    // FIXME ^ Закоментируйте эту строку.
 }
