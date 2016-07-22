@@ -4,31 +4,28 @@ use std::fmt;
 type Result<T> = std::result::Result<T, DoubleError>;
 
 #[derive(Debug)]
-// Define our error types. These may be customized however is useful for our error
-// handling cases. Now we will be able to defer to the underlying tools error
-// implementation, write our own errors, or something in between.
+// Define our error types. These may be customized for our error handling cases. 
+// Now we will be able to write our own errors, defer to an underlying error
+// implementation, or do something in between.
 enum DoubleError {
     // We don't require any extra info to detail this error.
     EmptyVec,
-    // We will defer to the parse error implementation for their error. Supplying extra
-    // info would require adding more data to the type.
+    // We will defer to the parse error implementation for their error.
+    // Supplying extra info requires adding more data to the type.
     Parse(ParseIntError),
 }
 
-// How the type is displayed is completely separate from where the errors are generated.
-// We do not need to be concerned that the display style will clutter the complex logic
-// our utility requires. They are separate matters which are handled separately.
+// Generation of an error is completely separate from how it is displayed.
+// There's no need to be concerned about cluttering complex logic with the display style.
 //
-// We don't store extra info about the errors. If we had desired, for example, to state
-// which string failed to parse then we can't without modifying our types to carry that
-// information accordingly.
+// Note that we don't store any extra info about the errors. This means we can't state
+// which string failed to parse without modifying our types to carry that information.
 impl fmt::Display for DoubleError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match *self {
             DoubleError::EmptyVec =>
-                write!(f, "please use a vector with at least one element"),
-            // This is a wrapper so defer to the underlying types' own implementation
-            // of `fmt`.
+                write!(f, "Please use a vector with at least one element."),
+            // This is a wrapper, so defer to the underlying types' implementation of `fmt`.
             DoubleError::Parse(ref e) => e.fmt(f),
         }
     }

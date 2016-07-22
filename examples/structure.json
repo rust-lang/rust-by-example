@@ -154,7 +154,7 @@
             { "id": "combinator_combinations", "title": "Combining separate combinators", "children": null },
             { "id": "enter_try", "title": "try!", "children": null }
         ] },
-        { "id": "limits_of_strings", "title": "The limits of strings", "children": null },
+        { "id": "define_error_type", "title": "Defining an error type", "children": null },
         { "id": "reenter_try", "title": "Other uses of try!", "children": null },
         { "id": "reenabling_box", "title": "Re-enabling box", "children": null }
     ] },
