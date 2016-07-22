@@ -9,9 +9,9 @@ enum DoubleError {
     Parse(ParseIntError),
 }
 
-// Implement the conversion from `ParseIntError` to `DoubleError`. This will be
-// automatically called by `try!` if a `ParseIntError` needs converting into
-// a `DoubleError`.
+// Implement the conversion from `ParseIntError` to `DoubleError`. 
+// This will be automatically called by `try!` if a `ParseIntError` 
+// needs to be converted into a `DoubleError`.
 impl From<ParseIntError> for DoubleError {
     fn from(err: ParseIntError) -> DoubleError {
         DoubleError::Parse(err)

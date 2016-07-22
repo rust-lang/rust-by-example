@@ -24,7 +24,7 @@ impl fmt::Display for DoubleError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match *self {
             DoubleError::EmptyVec =>
-                write!(f, "Please use a vector with at least one element."),
+                write!(f, "please use a vector with at least one element"),
             // This is a wrapper, so defer to the underlying types' implementation of `fmt`.
             DoubleError::Parse(ref e) => e.fmt(f),
         }
