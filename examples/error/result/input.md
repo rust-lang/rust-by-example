@@ -25,9 +25,8 @@ In the unsuccessful case, `parse()` leaves us with an error for `unwrap()`
 to `panic` on. Additionally, the `panic` exits our program and provides an 
 unpleasant error message.
 
-To improve the quality of our error message, we'll need to be more specific 
-about the return type. Additionally, we should consider explicitly handling 
-the error.
+To improve the quality of our error message, we should be more specific 
+about the return type and consider explicitly handling the error.
 
 [option]: http://doc.rust-lang.org/std/option/enum.Option.html
 [result]: http://doc.rust-lang.org/std/result/enum.Result.html
