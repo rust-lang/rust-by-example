@@ -1,34 +1,32 @@
-All types which want to use `std::fmt` formatting `traits` require an
-implementation to be printable. Automatic implementations are only provided
-for types such as in the `std` library. All others *must* be manually
-implemented somehow.
+Все типы, которые будут использовать `типажи (traits)` форматирования `std::fmt` требуют
+их реализации для возможности печати. Автоматическая реализация предоставлена только для
+типов из `стандартной библиотеки (std)`. Все остальные типы *должны* иметь собственную реализацию.
 
-The `fmt::Debug` `trait` makes this very straightforward. *All* types can
-`derive` (automatically create) the `fmt::Debug` implementation. This is
-not true for `fmt::Display` which must be manually implemented.
+C помощью `типажа` `fmt::Debug` это сделать очень просто. *Все* типы могут
+`выводить (derive)` (автоматически создавать) реализацию `fmt::Debug`. Сделать подобное с `fmt::Display` невозможно, он должен быть реализовн вручную.
 
 ```rust
-// This structure cannot be printed either with `fmt::Display` or
-// with `fmt::Debug`
+// Эта структура не может быть напечатана с помощью `fmt::Display` 
+// или с помощью `fmt::Debug`
 struct UnPrintable(i32);
 
-// The `derive` attribute automatically creates the implementation
-// required to make this `struct` printable with `fmt::Debug`.
+// Атрибут `выводить (derive)` автоматически реализует
+// необходимые методы, чтобы была возможность 
+// печатать данную `структуру` с помощью `fmt::Debug`.
 #[derive(Debug)]
 struct DebugPrintable(i32);
 ```
 
-All `std` library types automatically are printable with `{:?}` too:
+Все типы в `стандартной библиотеке (std)` могут быть напечатаны с `{:?}`:
 
 {debug.play}
 
-So `fmt::Debug` definitely makes this printable but sacrifices some
-elegance. Manually implementing `fmt::Display` will fix that.
+`fmt::Debug` дает возможность выводить информацию о обьектах на экран, жертвуя при этом элегантность. Реализовав типаж `fmt::Display` вручную можно исправить это.
 
-### See also
+### Смотрите также
 
 [attributes][attributes], [`derive`][derive], [`std::fmt`][fmt],
-and [`struct`][structs]
+и [`struct`][structs]
 
 [attributes]: http://doc.rust-lang.org/reference.html#attributes
 [derive]: /trait/derive.html
