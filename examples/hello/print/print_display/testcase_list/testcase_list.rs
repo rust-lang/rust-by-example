@@ -1,26 +1,26 @@
-use std::fmt; // Import the `fmt` module.
+use std::fmt; // Импортируем модуль `fmt`.
 
-// Define a structure named `List` containing a `Vec`.
+// Определим структуру с именим `List`, которая хранит в себе `Vec`.
 struct List(Vec<i32>);
 
 impl fmt::Display for List {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Dereference `self` and create a reference to `vec`
-        // via destructuring.
+        // Разыменуем `self` и создадим связь с `vec`
+        // с помощью ссылки.
         let List(ref vec) = *self;
 
         try!(write!(f, "["));
 
-        // Iterate over `vec` in `v` while enumerating the iteration
-        // count in `count`.
+        // Пройдемся по каждому `v` в `vec`.
+        // Номер итерации хранится в `count`.
         for (count, v) in vec.iter().enumerate() {
-            // For every element except the first, add a comma
-            // before calling `write!`. Use `try!` to return on errors.
+            // Для каждого элемента, кроме первого, добавим запятую
+            // до вызова `write!`. Используем `try!`, чтобы вернуться при наличие ошибок.
             if count != 0 { try!(write!(f, ", ")); }
             try!(write!(f, "{}", v));
         }
 
-        // Close the opened bracket and return a fmt::Result value
+        // Закроем открытую скобку и вернем значение `fmt::Result` 
         write!(f, "]")
     }
 }
