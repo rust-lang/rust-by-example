@@ -1,5 +1,5 @@
-When a `Process` goes out of scope, its `drop` method will *wait* until the
-child process finishes before releasing the resource.
+If you'd like to wait for a `process::Child` to finish, you must call
+`Child::wait`, which will return a `process::ExitStatus`.
 
 {wait.rs}
 
