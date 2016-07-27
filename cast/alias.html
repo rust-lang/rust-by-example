@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="5.3" data-basepath=".." data-revision="1469579077179">
+    <div class="book" data-level="5.3" data-basepath=".." data-revision="1469581241307">
     
 
 <div class="book-summary">
@@ -2862,7 +2862,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_14">
+                    <section class="normal" id="section-gitbook_13">
                     
                         <h2 id="53-alias">5.3 Alias</h2>
 <p>The <code>type</code> statement can be used to give a new name to an existing type. Types
@@ -2880,8 +2880,6 @@ type Inch = u64;
 type u64&#95;t = u64;
 // TODO ^ Try removing the attribute
 
-// Use an attribute to silence warnings
-#[allow(trivial&#95;numeric&#95;casts)]
 fn main() {
     // &#96;NanoSecond&#96; = &#96;Inch&#96; = &#96;u64&#95;t&#96; = &#96;u64&#96;.
     let nanoseconds: NanoSecond = 5 as u64&#95;t;
