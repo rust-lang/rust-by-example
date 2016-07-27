@@ -1,28 +1,27 @@
-A tuple is a collection of values of different types. Tuples are constructed
-using parentheses `()`, and each tuple itself is a value with type signature
-`(T1, T2, ...)`, where `T1`, `T2` are the types of its members. Functions can
-use tuples to return multiple values, as tuples can hold any number of values.
+Кортежи - коллекция, которая хранит в себе переменные разных типов. Кортежи создаются с помощью
+круглых скобок `()`, и каждый кортеж является переменной с сигнатурой типов
+`(T1, T2, ...)`, где `T1`, `T2` тип члена кортежа. Функции могут использовать
+кортежи для возвращения нескольких значений, т.к кортежи могут хранить любое количество значений.
 
 {tuples.play}
 
-### Activity
+### Задание
 
- 1. *Recap*: Add the `fmt::Display` trait to the Matrix `struct` in the above example,
-    so that if you switch from printing the debug format `{:?}` to the display
-    format `{}`, you see the following output:
+ 1. *Повторение*: Добавьте реализацию типажа `fmt::Display` для `структуры` Matrix в примерах выше,
+    чтобы, когда вы измените формат вывода с `{:?}` на `{}` 
+    на консоль вывелось:
 ```
 ( 1.1 1.2 )
 ( 2.1 2.2 )
 ```
-    You may want to refer back to the example for [print display][print_display].
- 2. Add a `transpose` function using the `reverse` function as a template, which
-    accepts a matrix as an argument, and returns a matrix in which two elements
-    have been swapped. For example:
+    Вы можете вернуться на пример [print display][print_display].
+ 2. Добавьте функцию `transpose`, используя функцию `reverse`, как пример, которая принимает
+    матрицу, как аргумент и возвращает матрицу, в которой два элемента поменялись местами. Например:
 ```
 println!("Matrix:\n{}", matrix);
 println!("Transpose:\n{}", transpose(matrix));
 ```
-results in the output:
+Результат:
 ```
 Matrix:
 ( 1.1 1.2 )
