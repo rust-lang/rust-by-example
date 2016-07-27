@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.2" data-basepath="../.." data-revision="1469581241307">
+    <div class="book" data-level="8.2.2" data-basepath="../.." data-revision="1469651293823">
     
 
 <div class="book-summary">
@@ -2865,26 +2865,28 @@
                     <section class="normal" id="section-gitbook_64">
                     
                         <h3 id="822-as-input-parameters">8.2.2 As input parameters</h3>
-<p>It has been noted that Rust chooses how to capture variables on the fly
-without annotation. This is all very convenient in normal usage however when
-writing functions, this ambiguity is not allowed. The closure&#39;s complete
-type, including which capturing type, must be annotated. The manner of capture
-a closure uses is annotated as one of the following <code>traits</code>:</p>
+<p>While Rust chooses how to capture variables on the fly mostly without type 
+annotation, this ambiguity is not allowed when writing functions. When 
+taking a closure as an input parameter, the closure&#39;s complete type must be 
+annotated using one of a few <code>traits</code>. In order of decreasing restriction, 
+they are:</p>
 <ul>
-<li><code>Fn</code>: takes captures by reference (<code>&amp;T</code>)</li>
-<li><code>FnMut</code>: takes captures by mutable reference (<code>&amp;mut T</code>)</li>
-<li><code>FnOnce</code>: takes captures by value (<code>T</code>)</li>
+<li><code>Fn</code>: the closure captures by reference (<code>&amp;T</code>)</li>
+<li><code>FnMut</code>: the closure captures by mutable reference (<code>&amp;mut T</code>)</li>
+<li><code>FnOnce</code>: the closure captures by value (<code>T</code>)</li>
 </ul>
-<p>Even annotated, these are very flexible: a parameter of <code>FnOnce</code> specifies
-the closure <em>may</em> capture by <code>T</code> or <code>&amp;mut T</code> or <code>&amp;T</code> at will (if a move is
-possible, any type of borrow should also be possible). The reverse is not
-true: if the parameter is <code>Fn</code>, then nothing lower is allowed. Therefore,
-the rule is:</p>
-<ul>
-<li>any annotated parameter restricts capture to itself and above</li>
-</ul>
-<p>In addition, Rust will preferentially capture variables in the least
-restrictive manner possible on a variable-by-variable basis:</p>
+<p>On a variable-by-variable basis, the compiler will capture variables in the 
+least restrictive manner possible. </p>
+<p>For instance, consider a parameter annotated as <code>FnOnce</code>. This specifies 
+that the closure <em>may</em> capture by <code>&amp;T</code>, <code>&amp;mut T</code>, or <code>T</code>, but the compiler 
+will ultimately choose based on how the captured variables are used in the 
+closure.</p>
+<p>This is because if a move is possible, then any type of borrow should also 
+be possible. Note that the reverse is not true. If the parameter is 
+annotated as <code>Fn</code>, then capturing variables by <code>&amp;mut T</code> or <code>T</code> are not 
+allowed.</p>
+<p>In the following example, try swapping the usage of <code>Fn</code>, <code>FnMut</code>, and 
+<code>FnOnce</code> to see what happens:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
