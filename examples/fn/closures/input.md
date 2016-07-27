@@ -13,6 +13,6 @@ variable names *must* be specified.
 Other characteristics of closures include:
 * using `||` instead of `()` around input variables.
 * optional body delimination (`{}`) for a single expression (mandatory otherwise).
-* optional capturing of the outer environment variables.
+* the ability to capture the outer environment variables.
 
 {closures.play}
