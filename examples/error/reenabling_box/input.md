@@ -32,7 +32,7 @@ trait Error: Debug + Display {
 By implementing this, our previous example would be just as valid when the error type
 is `Box<Error>` as it was before with `DoubleError`.
 
-{rethink.play}
+{reenabling_box.play}
 
 ### See also:
 
