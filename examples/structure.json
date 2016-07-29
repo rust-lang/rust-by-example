@@ -150,8 +150,7 @@
             { "id": "result_alias", "title": "aliases for Result", "children": null }
         ] }, 
         { "id": "multiple_error_types", "title": "Multiple error types", "children": [
-            { "id": "result_string_errors", "title": "Strings as errors", "children": null },
-            { "id": "combinator_combinations", "title": "Combining separate combinators", "children": null },
+            { "id": "early_returns", "title": "Early returns", "children": null },
             { "id": "enter_try", "title": "try!", "children": null }
         ] },
         { "id": "define_error_type", "title": "Defining an error type", "children": null },
