@@ -7,7 +7,7 @@ fn double_first(vec: Vec<&str>) -> Result<i32> {
        // Otherwise, provide an `Err` containing this `String`.
        .ok_or("Please use a vector with at least one element.".to_owned())
        .and_then(|s| s.parse::<i32>()
-                      // Map the errors `parse` yields to `String`.
+                      // Map any errors that `parse` yields to `String`.
                       .map_err(|e| e.to_string())
                       // `Result<T, String>` is the new return type, 
                       // and we can now double the number inside.
