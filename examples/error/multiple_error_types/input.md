@@ -1,9 +1,10 @@
 The previous examples have always been very convenient; `Result`s interact 
 with other `Result`s and `Option`s interact with other `Option`s. 
 
-Sometimes an `Option` needs to interact with a `Result`, or a `Result<T, Error1>` 
-needs to interact with a `Result<T, Error2>`. In those cases, we want to 
-handle the *composition of distinct error types*.
+Sometimes an `Option` needs to interact with a `Result`, or a 
+`Result<T, Error1>` needs to interact with a `Result<T, Error2>`. In those 
+cases, we want to manage our different error types in a way that makes them 
+composable and easy to interact with.
 
 In the following code, two instances of `unwrap` generate different error 
 types. `Vec::first` returns an `Option`, while `parse::<i32>` returns a 
@@ -27,11 +28,16 @@ fn main() {
 }
 ```
 
-Using our knowledge of combinators, we can rewrite the above to explicitly
-handle errors. In doing so, we convert both `Option`s and `Result`s into 
-`Result`s, and map them to the same error type (`String`):
+Using our knowledge of combinators, we can rewrite the above to explicitly 
+handle errors. Since two different types of errors can occur, we need to 
+convert them to a common type such as a `String`.
+
+To do so, we convert both the `Option` and `Result` into `Result`s, and 
+then map their errors to the same type:
 
 {multiple_error_types.play}
+
+In the next section, we'll see an alternate method of explicitly handling these errors.
 
 ### See Also:
 
