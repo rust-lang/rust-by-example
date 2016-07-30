@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.5.2" data-basepath="../.." data-revision="1469826816255">
+    <div class="book" data-level="18.5.2" data-basepath="../.." data-revision="1469848465789">
     
 
 <div class="book-summary">
@@ -2865,13 +2865,14 @@
                     <section class="normal" id="section-gitbook_141">
                     
                         <h3 id="1852-wait">18.5.2 Wait</h3>
-<p>When a <code>Process</code> goes out of scope, its <code>drop</code> method will <em>wait</em> until the
-child process finishes before releasing the resource.</p>
+<p>If you&#39;d like to wait for a <code>process::Child</code> to finish, you must call
+<code>Child::wait</code>, which will return a <code>process::ExitStatus</code>.</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// wait.rs</span>
 <span class="hljs-keyword">use</span> std::process::Command;
 
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
-    <span class="hljs-keyword">let</span> <span class="hljs-number">_</span>process = Command::new(<span class="hljs-string">"sleep"</span>).arg(<span class="hljs-string">"5"</span>).spawn();
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> child = Command::new(<span class="hljs-string">"sleep"</span>).arg(<span class="hljs-string">"5"</span>).spawn().unwrap();
+    <span class="hljs-keyword">let</span> <span class="hljs-number">_</span>result = child.wait().unwrap();
 
     <span class="hljs-built_in">println!</span>(<span class="hljs-string">"reached end of main"</span>);
 }
