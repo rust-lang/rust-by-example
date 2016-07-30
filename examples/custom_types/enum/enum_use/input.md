@@ -1,8 +1,8 @@
-The `use` declaration can be used so manual scoping isn't needed:
+Декларация `use` может быть использована для того, чтобы не было необходимости в указание области видимости:
 
 {use.play}
 
-### See also:
+### Смотрите также:
 
 [`match`][match] and [`use`][use] 
 

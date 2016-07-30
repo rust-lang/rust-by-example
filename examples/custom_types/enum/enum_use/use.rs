@@ -1,4 +1,5 @@
-// An attribute to hide warnings for unused code.
+// Атрибут, который убирает предупреждения компилятора
+// о неиспользуемом коде
 #![allow(dead_code)]
 
 enum Status {
@@ -12,25 +13,26 @@ enum Work {
 }
 
 fn main() {
-    // Explicitly `use` each name so they are available without
-    // manual scoping.
+    // Используем `use` для каждого из вариантов, чтобы они были доступны
+    // без указания области видимости.
     use Status::{Poor, Rich};
-    // Automatically `use` each name inside `Work`.
+    // Автоматически используем `use` для каждого из вариантов в `Work`.
     use Work::*;
 
-    // Equivalent to `Status::Poor`.
+    // Эквивалентно `Status::Poor`.
     let status = Poor;
-    // Equivalent to `Work::Civilian`.
+    // Эквивалентно to `Work::Civilian`.
     let work = Civilian;
 
     match status {
-        // Note the lack of scoping because of the explicit `use` above.
+        // Обратите внимание, как используются варианты из перечисления `Status`
+        // все благодаря `use`
         Rich => println!("The rich have lots of money!"),
         Poor => println!("The poor have no money..."),
     }
 
     match work {
-        // Note again the lack of scoping.
+        // И снова используем варианты напрямую.
         Civilian => println!("Civilians work!"),
         Soldier  => println!("Soldiers fight!"),
     }
