@@ -1,36 +1,29 @@
 language: rust
 sudo: false
-
 rust:
-  - stable
-  - beta
-  - nightly
-
+- stable
+- beta
+- nightly
 matrix:
   allow_failures:
-    - rust: nightly
-
+  - rust: nightly
 install:
-  - curl https://nodejs.org/dist/v0.12.7/node-v0.12.7-sunos-x64.tar.gz > node.tar.gz
-  - tar xf node.tar.gz
-  - export PATH=$PATH:$pwd/node-v0.12.7-linux-x64/bin
-
+- curl https://nodejs.org/dist/v0.12.7/node-v0.12.7-sunos-x64.tar.gz > node.tar.gz
+- tar xf node.tar.gz
+- export PATH=$PATH:$pwd/node-v0.12.7-linux-x64/bin
 script:
-  - rustc --version
-  - make
-  - make test
-  - make html
-
+- rustc --version
+- make
+- make test
+- make html
 notifications:
   email:
-    - mdinger.bugzilla@gmail.com
-
+  - shaposhnikigor95@bk.ru
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
-
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
+  deploy.sh
 branches:
   only: master
-
 env:
   global:
-    - secure: "oFD/tic8JAwpMXuMDBZXV4ot6w1NLWvHQTrDKmUHSMQJC1cbbrR1p5q8XayfjtmdqQdFQmIfM6YHEKeHw//ypgObWjYS8q00OaaMDXPTdmgr1Ee4nhgkkDihT+kVij0rn96W/QvyAVoaV5hJoyUr3Nhk+mnHEYm3M+Q3LAQglRg="
+  - secure: fJOxcmTYJ77TSzW1w5aEMvueMrlxPAD/pL792sf9RvCpYF9OY+AV08UpVp4trt5yZ3XrVsLutD9qKrifw4OO5CtGMKpvyFJNjrt0JHEzkqoGtKsU7LHH8TsVTzyGsUbODZT0eO8x4aFyTTXs9WY//JedN+DV6TBEmRqfoPaaLndt4bg9KTSHXNOSApIV+YwOZUnPCegWkRf+nkKsWJKkudyFB/K3lFCs++mLC+Ww475PyfLzhmVyYW/5QG2aihpBNRtyRbUlwKmm/TS3MTFveAyRP7JguD1ktNwctD+59B68I40gcReRWfkb532N75liHldoV8Ft48HmUT89x3mG04fxABHbxTTNZZPVucfmMktzBkABlyaT/+UR5UKjyJRI/vouknuo1fkxcm6m6HDoCi6Ts4mVdXeVdRsU0JWc8uHN6wG1IAESZGpag3hfA58S6DdsYptenEY8guyHS7gteitk0LmtaVsfTc90QjaiAWQfHf6BxcA4E6X4w3aMb2ozXh5f/3KWNAyq398toLqhZdtNUX2qH5cEX3OkO4/9YUKt9XVyG8++8ViL8il8JTAL4Cn48NO1TfR2VPVsG6YtdXTN80Cv0EqfP0Mk+W2llu34+dOOy75ZVBE61vPZK11bICH+qXLU+JqybncKuF9Gmv71Em+hwjuxRLR+noiZspA=
