@@ -63,7 +63,7 @@ make test
 
 * id, например `hello`
 * title, например `Hello World`
-* необзятельный обьект - children, который будет являться дополнением к примерам, например `null`
+* необязательный объект - children, который будет являться дополнением к примерам, например `null`
 * папку внутри `examples`, например [examples/hello][hello-folder]
 * входную запись в examples/structure.json, например
   `{ "id": "hello", "title": "Hello World", "children": null }`
@@ -91,7 +91,7 @@ make test
 * `make serve`: запуск `gitbook --serve` для генерации книги и публикации ее по адресу `localhost:4000`
 * `make test`: проверка всего исходного кода на языке Rust на наличие ошибок компиляции
 
-## Перевод на другии языки
+## Перевод на другие языки
 
 * [Английский](https://github.com/rust-lang/rust-by-example)
 * [Китайский](https://github.com/rust-lang-cn/rust-by-example-cn)
