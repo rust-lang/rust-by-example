@@ -9,11 +9,15 @@ Rust на примерах - это набор исполняемых приме
 еще больше из этих примеров, не забудьте [установить Rust на своем компьютере][install] и 
 проверить [официальную документацию][std]. 
 
-Кроме этого можно [посмотреть исходный код этого сайта][home].
+Если вы ранее не сталкивались с языком программирования Rust, то советую вам для начала ознакомиться с [русскоязычной книгой по Rust][rustbookru].
+
+Кроме этого можно [посмотреть исходный код этого сайта][home] или [оригинала][originalhome].
 
 И так, давайте начнем!
 
 [rust]: http://www.rust-lang.org/
 [install]: http://www.rust-lang.org/install.html
 [std]: http://doc.rust-lang.org/std/
-[home]: https://github.com/rust-lang/rust-by-example
+[originalhome]: https://github.com/rust-lang/rust-by-example
+[home]: https://github.com/Gordon-F/rust-by-example-ru
+[rustbookru]: http://rurust.github.io/rust_book_ru
