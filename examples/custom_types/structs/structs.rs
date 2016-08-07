@@ -2,12 +2,12 @@
 struct Nil;
 
 // A tuple struct
-struct Pair(i32, f64);
+struct Pair(i32, f32);
 
 // A struct with two fields
 struct Point {
-    x: f64,
-    y: f64,
+    x: f32,
+    y: f32,
 }
 
 // Structs can be reused as fields of another struct
