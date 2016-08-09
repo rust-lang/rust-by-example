@@ -24,7 +24,7 @@ fn main() {
     let moved_pair = pair;
     println!("copy: {:?}", moved_pair);
 
-    // Error! `pair` has lost it resources
+    // Error! `pair` has lost its resources
     //println!("original: {:?}", pair);
     // TODO ^ Try uncommenting this line
     
