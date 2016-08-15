@@ -1,15 +1,15 @@
-Conditional compilation is possible through two different operators:
+Условная компиляция возможна благодаря двум операторам:
 
-* the `cfg` attribute: `#[cfg(...)]` in attribute position
-* the `cfg!` macro: `cfg!(...)` in boolean expressions
+* Атрибуту `cfg`: `#[cfg(...)]`, который указывается на месте атрибута
+* Макросу `cfg!`: `cfg!(...)`, который можно использовать в условных выражениях
 
-Both utilize identical argument syntax.
+Обе инициализации имеют идентичный синтаксис для принятия аргументов.
 
 {cfg.play}
 
-### See also:
+### Смотрите также:
 
-[the reference][ref], [`cfg!`][cfg], and [macros][macros].
+[the reference][ref], [`cfg!`][cfg], и [макросы][macros].
 
 [cfg]: http://doc.rust-lang.org/std/macro.cfg!.html
 [macros]: /macros.html

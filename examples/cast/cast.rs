@@ -1,24 +1,26 @@
-// Suppress all warnings from casts which overflow.
+// Убрать все предупреждения
+// которые вызываются переполнением при преобразование типов.
 #![allow(overflowing_literals)]
 
 fn main() {
     let decimal = 65.4321_f32;
 
-    // Error! No implicit conversion
+    // Ошибка ! Нет неявного преобразование
     let integer: u8 = decimal;
-    // FIXME ^ Comment out this line
+    // FIXME ^ Закоментируйте данную строку
 
-    // Explicit conversion
+    // Явное преобразование
     let integer = decimal as u8;
     let character = integer as char;
 
     println!("Casting: {} -> {} -> {}", decimal, integer, character);
 
+    // когда преобразовывается любое значение в беззнаковый тип T
     // when casting any value to an unsigned type, T, 
     // std::T::MAX + 1 is added or subtracted until the value
     // fits into the new type
 
-    // 1000 already fits in a u16
+    // 1000 поместится в u16
     println!("1000 as a u16 is: {}", 1000 as u16);
 
     // 1000 - 256 - 256 - 256 = 232
