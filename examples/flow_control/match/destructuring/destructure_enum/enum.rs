@@ -1,8 +1,6 @@
-// Must derive `Debug` so `println!` can be used.
 // `allow` required to silence warnings because only
 // one variant is used.
 #[allow(dead_code)]
-#[derive(Debug)]
 enum Color {
     // These 3 are specified solely by their name.
     Red,
