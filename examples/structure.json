@@ -1,5 +1,5 @@
 [
-    { "id": "hello", "title": "Hello World", "children": [
+    { "id": "hello", "title": "Привет, мир!", "children": [
         { "id": "comment", "title": "Comments", "children": null },
         { "id": "print", "title": "Formatted print", "children": [
             { "id": "print_debug", "title": "Debug", "children": null },
