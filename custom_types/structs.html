@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="3.1" data-basepath=".." data-revision="1471620180316">
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="1471642522969">
     
 
 <div class="book-summary">
@@ -2915,6 +2915,9 @@ fn main() {
 
     // Instantiate a tuple struct
     let pair = Pair(1, 0.1);
+
+    // Access the fields of a tuple struct
+    println!(&quot;pair contains {:?} and {:?}&quot;, pair.0, pair.1);
 
     // Destructure a tuple struct
     let Pair(integer, decimal) = pair;
