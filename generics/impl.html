@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="12.2" data-basepath=".." data-revision="1471547308473">
+    <div class="book" data-level="12.2" data-basepath=".." data-revision="1471620146696">
     
 
 <div class="book-summary">
@@ -2879,22 +2879,27 @@
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>struct Val (f64,);
-struct GenVal&lt;T&gt;(T,);
+<div id="editor"><pre>struct Val {
+    val: f64
+}
+
+struct GenVal&lt;T&gt;{
+    gen&#95;val: T
+}
 
 // impl of Val
 impl Val {
-    fn value(&amp;self) -&gt; &amp;f64 { &amp;self.0 }
+    fn value(&amp;self) -&gt; &amp;f64 { &amp;self.val }
 }
 
 // impl of GenVal for a generic type &#96;T&#96;
 impl &lt;T&gt; GenVal&lt;T&gt; {
-    fn value(&amp;self) -&gt; &amp;T { &amp;self.0 }
+    fn value(&amp;self) -&gt; &amp;T { &amp;self.gen&#95;val }
 }
 
 fn main() {
-    let x = Val(3.0);
-    let y = GenVal(3i32);
+    let x = Val { val: 3.0 };
+    let y = GenVal { gen&#95;val: 3i32 };
 
     println!(&quot;{}, {}&quot;, x.value(), y.value());
 }</pre></div>
