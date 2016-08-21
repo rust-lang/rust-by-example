@@ -8,7 +8,7 @@ used for:
 * dereferencing raw pointers
 * calling a function over FFI (but this is covered in a different part of the
   book)
-* changing types through `std::cast::transmute`
+* changing types through `std::mem::transmute`
 * inline assembly
 
 ### Raw Pointers
