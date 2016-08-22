@@ -33,7 +33,7 @@
         { "id": "inference", "title": "Inference", "children": null },
         { "id": "alias", "title": "Alias", "children": null }
     ] },
-    { "id": "expression", "title": "Expressions", "children": null },
+    { "id": "expression", "title": "Выражения", "children": null },
     { "id": "flow_control", "title": "Flow Control", "children": [
         { "id": "if_else", "title": "if/else", "children": null },
         { "id": "loop", "title": "loop", "children": [
