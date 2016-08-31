@@ -80,7 +80,7 @@ fn main() {
 
     // Instance methods are called using the dot operator
     // Note that the first argument `&self` is implicitly passed, i.e.
-    // `rectangle.perimeter()` === `perimeter(&rectangle)`
+    // `rectangle.perimeter()` === `Rectangle::perimeter(&rectangle)`
     println!("Rectangle perimeter: {}", rectangle.perimeter());
     println!("Rectangle area: {}", rectangle.area());
 
