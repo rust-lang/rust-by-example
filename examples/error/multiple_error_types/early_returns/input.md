@@ -9,7 +9,8 @@ write. Consider this version of the previous example, rewritten using early retu
 {early_returns.play}
 
 At this point, we've learned to explicitly handle errors using combinators 
-and early returns. While we generally want to avoid panicking, always 
-handling errors explicitly is cumbersome.
+and early returns. While we generally want to avoid panicking, explicitly 
+handling all of our errors is cumbersome.
 
-So what if we could `unwrap` it without possibly inducing `panic`? That is where we are headed next.
+In the next section, we'll introduce `try!` for the cases where we simply 
+need to `unwrap` without possibly inducing `panic`. 
