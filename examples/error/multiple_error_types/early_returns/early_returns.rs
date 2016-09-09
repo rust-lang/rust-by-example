@@ -1,51 +1,33 @@
-use std::io::prelude::*;
-use std::fs::File;
-
+// Use `String` as our error type
 type Result<T> = std::result::Result<T, String>;
 
-// Setup to make this work. Create two files with some info. Ignore the
-// return values because we don't care about them here.
-fn setup() {
-    File::create("a")
-        .and_then(|mut file| file.write_all(b"grape"))
-        .unwrap();
+fn double_first(vec: Vec<&str>) -> Result<i32> {
+   // Convert the `Option` to a `Result` if there is a value.
+   // Otherwise, provide an `Err` containing this `String`.
+    let first = match vec.first() {
+        Some(first) => first,
+        None => return Err("Please use a vector with at least one element.".to_owned())
+    };
 
-    File::create("b")
-        .and_then(|mut file| file.write_all(b"fruit"))
-        .unwrap();
+    // Double the number inside if `parse` works fine.
+    // Otherwise, map any errors that `parse` yields to `String`.
+    match first.parse::<i32>() {
+        Ok(i) => Ok(2 * i),
+        Err(e) => Err(e.to_string()),
+    }
 }
 
-// Get the data from each file with the data stored in a `Result`.
-fn get_data(path: &str) -> Result<String> {
-    File::open(path)
-        .map_err(|err| err.to_string())
-        .and_then(|mut file| {
-            let mut contents = String::new();
-
-            // Read the data into `contents`.
-            file.read_to_string(&mut contents)
-                .map_err(|err| err.to_string())
-                // Ignore the output `read_to_string` returns and return `contents`.
-                .map(|_| contents)
-        })
-}
-
-// Concat the contents of the two files together into a new `Result`.
-fn concat(filename_a: &str, filename_b: &str) -> Result<String> {
-    let (data_a, data_b) = (get_data(filename_a), get_data(filename_b));
-    
-    data_a.and_then(|a|
-        // Return `Ok` when both `a` and `b` are `Ok`. Otherwise return
-        // whichever has the first `Err`.
-        data_b.and_then(|b| Ok(a + &b))
-    )
+fn print(result: Result<i32>) {
+    match result {
+        Ok(n)  => println!("The first doubled is {}", n),
+        Err(e) => println!("Error: {}", e),
+    }
 }
 
 fn main() {
-    setup();
+    let empty = vec![];
+    let strings = vec!["tofu", "93", "18"];
 
-    match concat("a", "b") {
-        Ok(n)  => println!("{}", n),
-        Err(e) => println!("Error: {}", e),
-    }
+    print(double_first(empty));
+    print(double_first(strings));
 }
