@@ -143,7 +143,7 @@
         { "id": "panic", "title": "`panic`", "children": null },
         { "id": "option_unwrap", "title": "`Option` & `unwrap`", "children": [
             { "id": "map", "title": "Combinators: `map`", "children": null },
-            { "id": "and_then", "title": "Combinators: `and_then`", "children": null },
+            { "id": "and_then", "title": "Combinators: `and_then`", "children": null }
         ] },
         { "id": "result", "title": "`Result`", "children": [
             { "id": "result_map", "title": "`map` for `Result`", "children": null },

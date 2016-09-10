@@ -41,7 +41,7 @@ In the next section, we'll see an alternate method of explicitly handling these 
 
 ### See Also:
 
-[`Option::ok_or`][okor], [Result::map_err][maperr]
+[`Option::ok_or`][okor], [`Result::map_err`][maperr]
 
 [okor]: https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or
 [maperr]: https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err
