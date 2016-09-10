@@ -17,7 +17,7 @@ This is only mostly true. It actually means `unwrap` or
 between different types, this means that if you `try!` where the error is 
 convertible to the return type, it will convert automatically.
 
-Here, we rewrite the previous example using `try!` As a result, the 
+Here, we rewrite the previous example using `try!`. As a result, the 
 `map_err` will go away when `From::from` is implemented for our error type:
 
 {reenter_try.play}
