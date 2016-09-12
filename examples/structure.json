@@ -1,24 +1,24 @@
 [
     { "id": "hello", "title": "Привет, мир!", "children": [
-        { "id": "comment", "title": "Comments", "children": null },
-        { "id": "print", "title": "Formatted print", "children": [
+        { "id": "comment", "title": "Комментарии", "children": null },
+        { "id": "print", "title": "Форматированный вывод", "children": [
             { "id": "print_debug", "title": "Debug", "children": null },
             { "id": "print_display", "title": "Display", "children": [
-                { "id": "testcase_list", "title": "Testcase: List", "children": null }
+                { "id": "testcase_list", "title": "Тест: Список", "children": null }
             ] },
-            { "id": "fmt", "title": "Formatting", "children": null }
+            { "id": "fmt", "title": "Форматирование", "children": null }
         ] }
     ] },
-    { "id": "primitives", "title": "Primitives", "children": [
-        { "id": "literals", "title": "Literals and operators", "children": null },
-        { "id": "tuples", "title": "Tuples", "children": null },
-        { "id": "array", "title": "Arrays and Slices", "children": null }
+    { "id": "primitives", "title": "Примитивы", "children": [
+        { "id": "literals", "title": "Литералов и операторы", "children": null },
+        { "id": "tuples", "title": "Кортежи", "children": null },
+        { "id": "array", "title": "Массив и Срезы", "children": null }
     ] },
-    { "id": "custom_types", "title": "Custom types", "children": [
-        { "id": "structs", "title": "Structures", "children": null },
-        { "id": "enum", "title": "Enums", "children": [
+    { "id": "custom_types", "title": "Пользовательские типы", "children": [
+        { "id": "structs", "title": "Структуры", "children": null },
+        { "id": "enum", "title": "Перечисления", "children": [
             { "id": "enum_use", "title": "use", "children": null },
-            { "id": "c_like", "title": "C-like", "children": null },
+            { "id": "c_like", "title": "C-подобные", "children": null },
             { "id": "testcase_linked_list", "title": "Testcase: linked-list", "children": null }
         ] },
         { "id": "constants", "title": "constants", "children": null }
