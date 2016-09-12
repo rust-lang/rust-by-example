@@ -1,12 +1,12 @@
-The `type` statement can be used to give a new name to an existing type. Types
-must have `CamelCase` names, or the compiler will raise a warning. The
-exception to this rule are the primitive types: `usize`, `f32`, etc.
+Оператор type используется, чтобы задать новое имя существующему типу. 
+Имя типа должно быть в стиле CamelCase, иначе компилятор выдаст предупреждение. 
+Исключением являются примитивные типы: usize, f32 и другие.
 
 {alias.play}
 
-The main use of aliases is to reduce typing; for example the `IoResult<T>` type
-is an alias for the `Result<T, IoError>` type.
+Основное применение псевдонимов — сокращение размера кода: например, тип IoResult<T> является 
+псевдонимом типа Result<T, IoError>.
 
-### See also:
+### Смотрите также:
 
 [Attributes](/attribute.html)

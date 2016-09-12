@@ -15,37 +15,37 @@ fn main() {
 
     println!("Casting: {} -> {} -> {}", decimal, integer, character);
 
-    // когда преобразовывается любое значение в беззнаковый тип T
-    // when casting any value to an unsigned type, T, 
-    // std::T::MAX + 1 is added or subtracted until the value
-    // fits into the new type
+    // Когда преобразовывается любое значение в беззнаковый тип T
+    // std::T::MAX + 1 добавляется или вычитается до тех пор, пока значение
+    // не будет помещаться в новый тип.
 
     // 1000 поместится в u16
     println!("1000 as a u16 is: {}", 1000 as u16);
 
     // 1000 - 256 - 256 - 256 = 232
-    // Under the hood, the first 8 least significant bits (LSB) are kept,
-    // while the rest towards the most significant bit (MSB) get truncated.
+    // Подробнее. Первые 8 младших битов (LSB) сохраняются,
+    // а старшие биты (MSB) будут усечены.
     println!("1000 as a u8 is : {}", 1000 as u8);
     // -1 + 256 = 255
     println!("  -1 as a u8 is : {}", (-1i8) as u8);
 
-    // For positive numbers, this is the same as the modulus
+    // Для положительных чисел результатом будет остаток от деления
     println!("1000 mod 256 is : {}", 1000 % 256);
 
-    // When casting to a signed type, the (bitwise) result is the same as 
-    // first casting to the corresponding unsigned type. If the most significant 
-    // bit of that value is 1, then the value is negative.
+    // Когда значение преобразовывается в знаковый тип,
+    // побитовый результат будет таким же, как и
+    // первое преобразование к соответствующему типу без знака. Если старший бит этого значения
+    // равен 1, то это значение отрицательное.
 
-    // Unless it already fits, of course.
+    // За исключением случая, когда значение умещается в тип.
     println!(" 128 as a i16 is: {}", 128 as i16);
-    // 128 as u8 -> 128, whose two's complement in eight bits is:
+    // 128 as u8 -> 128, дополнительный код которого в 8 битах:
     println!(" 128 as a i8 is : {}", 128 as i8);
 
-    // repeating the example above
+    // повторяем примеры
     // 1000 as u8 -> 232
     println!("1000 as a i8 is : {}", 1000 as i8);
-    // and the two's complement of 232 is -24
+    // и дополнительный код 232 - это -24
     println!(" 232 as a i8 is : {}", 232 as i8);
 
 

@@ -28,10 +28,10 @@
         { "id": "scope", "title": "Scope and shadowing", "children": null },
         { "id": "declare", "title": "Declare first", "children": null }
     ] },
-    { "id": "cast", "title": "Casting", "children": [
-        { "id": "literals", "title": "Literals", "children": null },
-        { "id": "inference", "title": "Inference", "children": null },
-        { "id": "alias", "title": "Alias", "children": null }
+    { "id": "cast", "title": "Преобразование типов", "children": [
+        { "id": "literals", "title": "Литералы", "children": null },
+        { "id": "inference", "title": "Вывод типов", "children": null },
+        { "id": "alias", "title": "Псевдонимы", "children": null }
     ] },
     { "id": "expression", "title": "Выражения", "children": null },
     { "id": "flow_control", "title": "Flow Control", "children": [

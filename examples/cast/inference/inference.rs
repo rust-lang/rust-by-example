@@ -1,16 +1,17 @@
 fn main() {
-    // Because of the annotation, the compiler knows that `elem` has type u8.
+    // Благодаря выведению типов компилятор знает, `elem` имеет тип - u8.
     let elem = 5u8;
 
-    // Create an empty vector (a growable array).
+    // Создадим пустой вектор (расширяемый массив).
     let mut vec = Vec::new();
-    // At this point the compiler doesn't know the exact type of `vec`, it
-    // just knows that it's a vector of something (`Vec<_>`).
+    // В данном месте компилятор не знает точный тип `vec`, он лишь знает,
+    // что это вектор чего-то там (`Vec<_>`).
 
-    // Insert `elem` in the vector.
+    // Добавляем `elem` в вектор.
     vec.push(elem);
-    // Aha! Now the compiler knows that `vec` is a vector of `u8`s (`Vec<u8>`)
-    // TODO ^ Try commenting out the `vec.push(elem)` line
+    // Ага! Теперь компилятор знает, что `vec` - это вектор, который хранит в себе тип `u8`
+    // (`Vec<u8>`)
+    // TODO ^ Попробуйте закомментировать строку `vec.push(elem)`
 
     println!("{:?}", vec);
 }
