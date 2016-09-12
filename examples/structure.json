@@ -80,11 +80,11 @@
         { "id": "lib", "title": "Library", "children": null },
         { "id": "link", "title": "`extern crate`", "children": null }
     ] },
-    { "id": "attribute", "title": "Attributes", "children": [
-        { "id": "unused", "title": "`dead_code`", "children": null },
-        { "id": "crate", "title": "Crates", "children": null },
-        { "id": "cfg", "title": "`cfg`", "children": [
-            { "id": "custom", "title": "Custom", "children": null }
+    { "id": "attribute", "title": "Атрибуты", "children": [
+        { "id": "unused", "title": "`Мертвый код`", "children": null },
+        { "id": "crate", "title": "Контейнеры", "children": null },
+        { "id": "cfg", "title": "Условные атрибуты", "children": [
+            { "id": "custom", "title": "Собственные условия", "children": null }
         ] }
     ] },
     { "id": "generics", "title": "Generics", "children": [
