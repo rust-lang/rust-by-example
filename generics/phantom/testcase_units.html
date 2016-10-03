@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="12.8.1" data-basepath="../.." data-revision="1475514557276">
+    <div class="book" data-level="12.8.1" data-basepath="../.." data-revision="1475531520461">
     
 
 <div class="book-summary">
@@ -2894,11 +2894,12 @@ enum Inch {}
 #[derive(Debug, Clone, Copy)]
 enum Mm {}
 
-/// &#96;Length&#96; is a type with phantom type parameter &#96;Unit&#96;.
+/// &#96;Length&#96; is a type with phantom type parameter &#96;Unit&#96;,
+/// and is not generic over the length type (that is &#96;f64&#96;).
 ///
 /// &#96;f64&#96; already implements the &#96;Clone&#96; and &#96;Copy&#96; traits.
 #[derive(Debug, Clone, Copy)]
-struct Length&lt;Unit&gt;(f64,PhantomData&lt;Unit&gt;);
+struct Length&lt;Unit&gt;(f64, PhantomData&lt;Unit&gt;);
 
 /// The &#96;Add&#96; trait defines the behavior of the &#96;+&#96; operator.
 impl&lt;Unit&gt; Add for Length&lt;Unit&gt; {
@@ -2925,8 +2926,8 @@ fn main() {
     let two&#95;meters = one&#95;meter + one&#95;meter;
 
     // Addition works.
-    println!(&quot;one foot + one&#95;foot = {:?}&quot;, two&#95;feet);
-    println!(&quot;one meter + one&#95;meter = {:?}&quot;, two&#95;meters);
+    println!(&quot;one foot + one&#95;foot = {:?} in&quot;, two&#95;feet.0);
+    println!(&quot;one meter + one&#95;meter = {:?} mm&quot;, two&#95;meters.0);
 
     // Nonsensical operations fail as they should:
     // Compile-time Error: type mismatch.
