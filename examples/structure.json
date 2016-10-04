@@ -123,7 +123,8 @@
             { "id": "lifetime_bounds", "title": "Bounds", "children": null },
             { "id": "lifetime_coercion", "title": "Coercion", "children": null },
             { "id": "static_lifetime", "title": "static", "children": null },
-            { "id": "elision", "title": "elision", "children": null }
+            { "id": "elision", "title": "elision", "children": null },
+            { "id": "testcase_multiple_lifetimes", "title": "Testcase: multiple lifetimes", "children": null }
         ] }
     ] },
     { "id": "trait", "title": "Traits", "children": [
