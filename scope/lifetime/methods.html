@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.4.3" data-basepath="../.." data-revision="1475791875973">
+    <div class="book" data-level="13.4.3" data-basepath="../.." data-revision="1475852123370">
     
 
 <div class="book-summary">
@@ -2873,7 +2873,7 @@
 
 impl Owner {
     // Annotate lifetimes as in a standalone function.
-    fn add&#95;one&lt;&#39;a&gt;(&amp;&#39;a mut self) { self.0 += 1 }
+    fn add&#95;one&lt;&#39;a&gt;(&amp;&#39;a mut self) { self.0 += 1; }
     fn print&lt;&#39;a&gt;(&amp;&#39;a self) {
         println!(&quot;&#96;print&#96;: {}&quot;, self.0);
     }
