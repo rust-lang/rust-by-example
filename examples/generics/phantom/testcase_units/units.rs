@@ -7,11 +7,12 @@ enum Inch {}
 #[derive(Debug, Clone, Copy)]
 enum Mm {}
 
-/// `Length` is a type with phantom type parameter `Unit`.
+/// `Length` is a type with phantom type parameter `Unit`,
+/// and is not generic over the length type (that is `f64`).
 ///
 /// `f64` already implements the `Clone` and `Copy` traits.
 #[derive(Debug, Clone, Copy)]
-struct Length<Unit>(f64,PhantomData<Unit>);
+struct Length<Unit>(f64, PhantomData<Unit>);
 
 /// The `Add` trait defines the behavior of the `+` operator.
 impl<Unit> Add for Length<Unit> {
@@ -38,8 +39,8 @@ fn main() {
     let two_meters = one_meter + one_meter;
 
     // Addition works.
-    println!("one foot + one_foot = {:?}", two_feet);
-    println!("one meter + one_meter = {:?}", two_meters);
+    println!("one foot + one_foot = {:?} in", two_feet.0);
+    println!("one meter + one_meter = {:?} mm", two_meters.0);
 
     // Nonsensical operations fail as they should:
     // Compile-time Error: type mismatch.
