@@ -54,8 +54,8 @@
         { "id": "if_let", "title": "if let", "children": null },
         { "id": "while_let", "title": "while let", "children": null }
     ] },
-    { "id": "fn", "title": "Functions", "children": [
-        { "id": "methods", "title": "Methods", "children": null },
+    { "id": "fn", "title": "Функции", "children": [
+        { "id": "methods", "title": "Методы", "children": null },
         { "id": "closures", "title": "Closures", "children": [
             { "id": "capture", "title": "Capturing", "children": null },
             { "id": "input_parameters", "title": "As input parameters", "children": null },
@@ -67,7 +67,7 @@
                 { "id": "iter_find", "title": "Iterator::find", "children": null }
             ] }
         ] },
-        { "id": "hof", "title": "Higher Order Functions", "children": null }
+        { "id": "hof", "title": "Функции Высшего Порядка", "children": null }
     ] },
     { "id": "mod", "title": "Modules", "children": [
         { "id": "visibility", "title": "Visibility", "children": null },
