@@ -23,10 +23,10 @@
         ] },
         { "id": "constants", "title": "constants", "children": null }
     ] },
-    { "id": "variable_bindings", "title": "Variable Bindings", "children": [
-        { "id": "mut", "title": "Mutability", "children": null },
-        { "id": "scope", "title": "Scope and shadowing", "children": null },
-        { "id": "declare", "title": "Declare first", "children": null }
+    { "id": "variable_bindings", "title": "Связывание переменных", "children": [
+        { "id": "mut", "title": "Изменяемость", "children": null },
+        { "id": "scope", "title": "Область видимость", "children": null },
+        { "id": "declare", "title": "Предварительное объявление", "children": null }
     ] },
     { "id": "cast", "title": "Преобразование типов", "children": [
         { "id": "literals", "title": "Литералы", "children": null },
