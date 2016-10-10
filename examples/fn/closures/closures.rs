@@ -19,14 +19,4 @@ fn main() {
     let one = || 1;
     println!("closure returning one: {}", one());
 
-    // It is possible to capture variables from the enclosing
-    // environment; something which is impossible with functions.
-    let professor_x = "Charles Xavier";
-
-    // A closure which takes no argument, returning nothing, prints
-    // a variable from the enclosing scope.
-    let print = || println!("Professor X's name is: {}", professor_x);
-
-    // Call the closure.
-    print();
 }
