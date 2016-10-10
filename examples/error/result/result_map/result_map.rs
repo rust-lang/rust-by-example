@@ -1,7 +1,6 @@
 use std::num::ParseIntError;
 
-// With the return type rewritten, we proceed to use pattern matching without
-// `unwrap()`, but it is tedious.
+// With the return type rewritten, we use pattern matching without `unwrap()`.
 fn double_number(number_str: &str) -> Result<i32, ParseIntError> {
     match number_str.parse::<i32>() {
         Ok(n)  => Ok(2 * n),
@@ -28,7 +27,7 @@ fn main() {
     let twenty = double_number("10");
     print(twenty);
 
-    // The following now provides a much more useful error message
+    // The following now provides a much more helpful error message.
     let tt = double_number_map("t");
     print(tt);
 }
