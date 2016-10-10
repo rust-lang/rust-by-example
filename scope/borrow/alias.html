@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.3.3" data-basepath="../.." data-revision="1476121111087">
+    <div class="book" data-level="13.3.3" data-basepath="../.." data-revision="1476121278506">
     
 
 <div class="book-summary">
@@ -2916,12 +2916,17 @@ fn main() {
         //println!(&quot;Point Z coordinate is {}&quot;, point.z);
         // TODO ^ Try uncommenting this line
 
+        // Ok! Mutable references can be passed as immutable to &#96;println!&#96;
+        println!(&quot;Point has coordinates: ({}, {}, {})&quot;,
+                 mutable&#95;borrow.x, mutable&#95;borrow.y, mutable&#95;borrow.z);
+
         // Mutable reference goes out of scope
     }
 
     // Immutable references to point are allowed again
+    let borrowed&#95;point = &point;
     println!(&quot;Point now has coordinates: ({}, {}, {})&quot;,
-             point.x, point.y, point.z);
+             borrowed&#95;point.x, borrowed&#95;point.y, borrowed&#95;point.z);
 }</pre></div>
 <div id="result"></div>
 </div>
