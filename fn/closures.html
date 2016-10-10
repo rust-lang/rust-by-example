@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2" data-basepath=".." data-revision="1476121036963">
+    <div class="book" data-level="8.2" data-basepath=".." data-revision="1476121111087">
     
 
 <div class="book-summary">
@@ -2893,6 +2893,7 @@ variable names <em>must</em> be specified.</p>
     // Increment via closures and functions.
     fn  function            (i: i32) -&gt; i32 { i + 1 }
 
+    // Closures are anonymous, here we are binding them to references
     // Annotation is identical to function annotation but is optional
     // as are the &#96;{}&#96; wrapping the body. These nameless functions
     // are assigned to appropriately named variables.
@@ -2902,24 +2903,14 @@ variable names <em>must</em> be specified.</p>
     let i = 1;
     // Call the function and closures.
     println!(&quot;function: {}&quot;, function(i));
-    println!(&quot;annotated closure: {}&quot;, closure&#95;annotated(i));
-    println!(&quot;inferred closure: {}&quot;, closure&#95;inferred(i));
+    println!(&quot;closure&#95;annotated: {}&quot;, closure&#95;annotated(i));
+    println!(&quot;closure&#95;inferred: {}&quot;, closure&#95;inferred(i));
 
     // A closure taking no arguments which returns an &#96;i32&#96;.
     // The return type is inferred.
     let one = || 1;
     println!(&quot;closure returning one: {}&quot;, one());
 
-    // It is possible to capture variables from the enclosing
-    // environment; something which is impossible with functions.
-    let professor&#95;x = &quot;Charles Xavier&quot;;
-
-    // A closure which takes no argument, returning nothing, prints
-    // a variable from the enclosing scope.
-    let print = || println!(&quot;Professor X&#39;s name is: {}&quot;, professor&#95;x);
-
-    // Call the closure.
-    print();
 }</pre></div>
 <div id="result"></div>
 </div>
