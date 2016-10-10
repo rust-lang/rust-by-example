@@ -11,8 +11,8 @@ fn main() {
     let i = 1;
     // Call the function and closures.
     println!("function: {}", function(i));
-    println!("annotated closure: {}", closure_annotated(i));
-    println!("inferred closure: {}", closure_inferred(i));
+    println!("closure_annotated: {}", closure_annotated(i));
+    println!("closure_inferred: {}", closure_inferred(i));
 
     // A closure taking no arguments which returns an `i32`.
     // The return type is inferred.
