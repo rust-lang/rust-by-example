@@ -2,6 +2,7 @@ fn main() {
     // Increment via closures and functions.
     fn  function            (i: i32) -> i32 { i + 1 }
 
+    // Closures are anonymous, here we are binding them to references
     // Annotation is identical to function annotation but is optional
     // as are the `{}` wrapping the body. These nameless functions
     // are assigned to appropriately named variables.
