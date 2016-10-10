@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.3" data-basepath=".." data-revision="1476120816193">
+    <div class="book" data-level="13.3" data-basepath=".." data-revision="1476120892886">
     
 
 <div class="book-summary">
@@ -2880,39 +2880,40 @@ exist, the object cannot be destroyed.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>// This function takes ownership of a box and destroys it 
-fn eat&#95;box(boxed&#95;int: Box&lt;i32&gt;) {
-    println!(&quot;Destroying box that contains {}&quot;, boxed&#95;int);
+<div id="editor"><pre>// This function takes ownership of a box and destroys it
+fn eat&#95;box&#95;i32(boxed&#95;i32: Box&lt;i32&gt;) {
+    println!(&quot;Destroying box that contains {}&quot;, boxed&#95;i32);
 }
 
 // This function borrows an i32
-fn borrow&#95;box(borrowed&#95;int: &amp;i32) {
-    println!(&quot;This int is: {}&quot;, borrowed&#95;int);
+fn borrow&#95;i32(borrowed&#95;i32: &amp;i32) {
+    println!(&quot;This int is: {}&quot;, borrowed&#95;i32);
 }
 
 fn main() {
-    // Create a boxed integer
-    let boxed&#95;int = Box::new(5);
+    // Create a boxed i32, and a stacked i32
+    let boxed&#95;i32 = Box::new(5&#95;i32);
+    let stacked&#95;i32 = 6&#95;i32;
 
     // Borrow the contents of the box. Ownership is not taken,
     // so the contents can be borrowed again.
-    borrow&#95;box(&amp;boxed&#95;int);
-    borrow&#95;box(&amp;boxed&#95;int);
+    borrow&#95;i32(&amp;boxed&#95;i32);
+    borrow&#95;i32(&amp;stacked&#95;i32);
 
     {
         // Take a reference to the data contained inside the box
-        let &#95;ref&#95;to&#95;int: &amp;i32 = &amp;boxed&#95;int;
+        let &#95;ref&#95;to&#95;i32: &amp;i32 = &amp;boxed&#95;i32;
 
-        // Error! 
-        // Can&#39;t destroy &#96;boxed&#95;int&#96; while the inner value is borrowed.
-        eat&#95;box(boxed&#95;int);
+        // Error!
+        // Can&#39;t destroy &#96;boxed&#95;i32&#96; while the inner value is borrowed.
+        eat&#95;box&#95;i32(boxed&#95;i32);
         // FIXME ^ Comment out this line
 
-        // &#96;&#95;ref&#95;to&#95;int&#96; goes out of scope and is no longer borrowed.
+        // &#96;&#95;ref&#95;to&#95;i32&#96; goes out of scope and is no longer borrowed.
     }
 
-    // Box can now give up ownership to &#96;eat&#95;box&#96; and be destroyed
-    eat&#95;box(boxed&#95;int);
+    // &#96;boxed&#95;i32&#96; can now give up ownership to &#96;eat&#95;box&#96; and be destroyed
+    eat&#95;box&#95;i32(boxed&#95;i32);
 }</pre></div>
 <div id="result"></div>
 </div>
