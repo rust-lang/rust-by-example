@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="13.4.2" data-basepath="../.." data-revision="1476116606698">
+    <div class="book" data-level="13.4.2" data-basepath="../.." data-revision="1476120788914">
     
 
 <div class="book-summary">
@@ -2900,7 +2900,7 @@ fn print&#95;multi&lt;&#39;a, &#39;b&gt;(x: &amp;&#39;a i32, y: &amp;&#39;b i32)
 fn pass&#95;x&lt;&#39;a, &#39;b&gt;(x: &amp;&#39;a i32, &#95;: &amp;&#39;b i32) -&gt; &amp;&#39;a i32 { x }
 
 //fn invalid&#95;output&lt;&#39;a&gt;() -&gt; &amp;&#39;a i32 { &amp;7 }
-// The above is invalid: &#39;a&#96; must live longer than the function.
+// The above is invalid: &#96;&#39;a&#96; must live longer than the function.
 // Here, &#96;&amp;7&#96; would create an &#96;i32&#96;, followed by a reference.
 // Then the data is dropped upon exiting the scope, leaving 
 // a reference to invalid data to be returned.
