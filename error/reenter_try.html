@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Re-enter try! | Rust by Example</title>
+        <title>Other uses of `try!` | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../error/reenabling_box.html" />
+    <link rel="next" href="../error/boxing_errors.html" />
     
     
-    <link rel="prev" href="../error/limits_of_strings.html" />
+    <link rel="prev" href="../error/define_error_type.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.7" data-basepath=".." data-revision="1476120788914">
+    <div class="book" data-level="16.6" data-basepath=".." data-revision="1476120816193">
     
 
 <div class="book-summary">
@@ -2037,15 +2037,15 @@
                 
     
         
-        <li class="chapter " data-level="16.1" data-path="error/unwrap.html">
+        <li class="chapter " data-level="16.1" data-path="error/panic.html">
             
                 
-                    <a href="../error/unwrap.html">
+                    <a href="../error/panic.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.1.</b>
                         
-                         Option &amp; unwrap
+                         `panic`
                     </a>
                 
             
@@ -2053,31 +2053,32 @@
         </li>
     
         
-        <li class="chapter " data-level="16.2" data-path="error/map.html">
+        <li class="chapter " data-level="16.2" data-path="error/option_unwrap.html">
             
                 
-                    <a href="../error/map.html">
+                    <a href="../error/option_unwrap.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.2.</b>
                         
-                         map
+                         `Option` &amp; `unwrap`
                     </a>
                 
             
             
-        </li>
+            <ul class="articles">
+                
     
         
-        <li class="chapter " data-level="16.3" data-path="error/and_then.html">
+        <li class="chapter " data-level="16.2.1" data-path="error/option_unwrap/map.html">
             
                 
-                    <a href="../error/and_then.html">
+                    <a href="../error/option_unwrap/map.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.3.</b>
+                            <b>16.2.1.</b>
                         
-                         and_then
+                         Combinators: `map`
                     </a>
                 
             
@@ -2085,15 +2086,36 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4" data-path="error/result.html">
+        <li class="chapter " data-level="16.2.2" data-path="error/option_unwrap/and_then.html">
+            
+                
+                    <a href="../error/option_unwrap/and_then.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.2.2.</b>
+                        
+                         Combinators: `and_then`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16.3" data-path="error/result.html">
             
                 
                     <a href="../error/result.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.</b>
+                            <b>16.3.</b>
                         
-                         Result
+                         `Result`
                     </a>
                 
             
@@ -2102,15 +2124,15 @@
                 
     
         
-        <li class="chapter " data-level="16.4.1" data-path="error/result/result_map.html">
+        <li class="chapter " data-level="16.3.1" data-path="error/result/result_map.html">
             
                 
                     <a href="../error/result/result_map.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.1.</b>
+                            <b>16.3.1.</b>
                         
-                         map for Result
+                         `map` for `Result`
                     </a>
                 
             
@@ -2118,15 +2140,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4.2" data-path="error/result/result_alias.html">
+        <li class="chapter " data-level="16.3.2" data-path="error/result/result_alias.html">
             
                 
                     <a href="../error/result/result_alias.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.2.</b>
+                            <b>16.3.2.</b>
                         
-                         aliases for Result
+                         aliases for `Result`
                     </a>
                 
             
@@ -2139,15 +2161,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5" data-path="error/option_with_result.html">
+        <li class="chapter " data-level="16.4" data-path="error/multiple_error_types.html">
             
                 
-                    <a href="../error/option_with_result.html">
+                    <a href="../error/multiple_error_types.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.</b>
+                            <b>16.4.</b>
                         
-                         Options with Results
+                         Multiple error types
                     </a>
                 
             
@@ -2156,15 +2178,15 @@
                 
     
         
-        <li class="chapter " data-level="16.5.1" data-path="error/option_with_result/result_string_errors.html">
+        <li class="chapter " data-level="16.4.1" data-path="error/multiple_error_types/early_returns.html">
             
                 
-                    <a href="../error/option_with_result/result_string_errors.html">
+                    <a href="../error/multiple_error_types/early_returns.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.1.</b>
+                            <b>16.4.1.</b>
                         
-                         Strings as errors
+                         Early returns
                     </a>
                 
             
@@ -2172,31 +2194,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5.2" data-path="error/option_with_result/combinator_combinations.html">
+        <li class="chapter " data-level="16.4.2" data-path="error/multiple_error_types/enter_try.html">
             
                 
-                    <a href="../error/option_with_result/combinator_combinations.html">
+                    <a href="../error/multiple_error_types/enter_try.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.2.</b>
+                            <b>16.4.2.</b>
                         
-                         Combining separate combinators
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="16.5.3" data-path="error/option_with_result/enter_try.html">
-            
-                
-                    <a href="../error/option_with_result/enter_try.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.5.3.</b>
-                        
-                         Enter try!
+                         Introducing `try!`
                     </a>
                 
             
@@ -2209,15 +2215,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.6" data-path="error/limits_of_strings.html">
+        <li class="chapter " data-level="16.5" data-path="error/define_error_type.html">
             
                 
-                    <a href="../error/limits_of_strings.html">
+                    <a href="../error/define_error_type.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.6.</b>
+                            <b>16.5.</b>
                         
-                         The limits of strings
+                         Defining an error type
                     </a>
                 
             
@@ -2225,15 +2231,15 @@
         </li>
     
         
-        <li class="chapter active" data-level="16.7" data-path="error/reenter_try.html">
+        <li class="chapter active" data-level="16.6" data-path="error/reenter_try.html">
             
                 
                     <a href="../error/reenter_try.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.7.</b>
+                            <b>16.6.</b>
                         
-                         Re-enter try!
+                         Other uses of `try!`
                     </a>
                 
             
@@ -2241,15 +2247,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.8" data-path="error/reenabling_box.html">
+        <li class="chapter " data-level="16.7" data-path="error/boxing_errors.html">
             
                 
-                    <a href="../error/reenabling_box.html">
+                    <a href="../error/boxing_errors.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.8.</b>
+                            <b>16.7.</b>
                         
-                         Re-enabling box
+                         `Box`ing errors
                     </a>
                 
             
@@ -2862,23 +2868,25 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_35">
+                    <section class="normal" id="section-gitbook_36">
                     
-                        <h2 id="167-re-enter-try">16.7 Re-enter try!</h2>
-<p>If you will notice from the previous example, when we call <code>parse</code>, the immediate reaction
-is to <code>map</code> the error from a library error into our new custom error type.</p>
+                        <h2 id="166-other-uses-of-try">16.6 Other uses of <code>try!</code></h2>
+<p>Notice in the previous example that our immediate reaction to calling 
+<code>parse</code> is to <code>map</code> the error from a library error into our new custom 
+error type:</p>
 <pre><code class="lang-rust">.and_then(|s| s.parse::&lt;<span class="hljs-keyword">i32</span>&gt;()
     .map_err(DoubleError::Parse)
 </code></pre>
-<p>This is a very simple and also common operation so it would be convenient if eliding it
-would work but alas, it does not. <code>and_then</code> is not sufficiently flexible that it can handle
-this; <code>try!</code> is though.</p>
-<p><code>try!</code> has previously been explained as either <code>unwrap</code> or <code>return Err(err)</code> which is only
-<code>93%</code> correct. It actually means <code>unwrap</code> or <code>return Err(From::from(err))</code>. Since <code>From::from</code>
-is a conversion utility between different types, this means if you <code>try!</code> something where the
-error is convertible to the return type, it will convert automatically. This means, if we
-rewrite this example with <code>try!</code> when <code>From::from</code> is implemented for our error type,
-the <code>map_err</code> will go away:</p>
+<p>Since this is a simple and common operation, it would be convenient if it 
+could be elided. Alas, because <code>and_then</code> is not sufficiently flexible, it 
+cannot. However, we can instead use <code>try!</code>.</p>
+<p><code>try!</code> was previously explained as either <code>unwrap</code> or <code>return Err(err)</code>. 
+This is only mostly true. It actually means <code>unwrap</code> or 
+<code>return Err(From::from(err))</code>. Since <code>From::from</code> is a conversion utility 
+between different types, this means that if you <code>try!</code> where the error is 
+convertible to the return type, it will convert automatically.</p>
+<p>Here, we rewrite the previous example using <code>try!</code>. As a result, the 
+<code>map_err</code> will go away when <code>From::from</code> is implemented for our error type:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
@@ -2893,9 +2901,9 @@ enum DoubleError {
     Parse(ParseIntError),
 }
 
-// Implement the conversion from &#96;ParseIntError&#96; to &#96;DoubleError&#96;. This will be
-// automatically called by &#96;try!&#96; if a &#96;ParseIntError&#96; needs converting into
-// a &#96;DoubleError&#96;.
+// Implement the conversion from &#96;ParseIntError&#96; to &#96;DoubleError&#96;. 
+// This will be automatically called by &#96;try!&#96; if a &#96;ParseIntError&#96; 
+// needs to be converted into a &#96;DoubleError&#96;.
 impl From&lt;ParseIntError&gt; for DoubleError {
     fn from(err: ParseIntError) -&gt; DoubleError {
         DoubleError::Parse(err)
@@ -2941,18 +2949,20 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>This is actually fairly clean now. If you compare it with the original <code>panic</code>, it is very similar
-to replacing the <code>unwrap</code> calls with <code>try!</code> except that the return types are <code>Result</code> and so
-they must be destructured at the top level.</p>
-<p>However, do not expect error handling of this sort to replace all usage of <code>unwrap</code> in
-practice. Error handling of this sort tripled our code line count and cannot really be
-called simple even if this is heavily biased by the small code size. Indeed, moving a 1000 line
-library from <code>unwrap</code> to more proper error handling might be feasible in an additional
-100 lines of code though the necessary refractoring definitely would not be trivial.</p>
-<p>This is a very reasonable place to be. Many libraries might get away with only
-implementing <code>Display</code> and then adding <code>From</code> on an as needed basis. A serious library
-though will have users with certain expections about how it should implement error handling.
-In those cases, the error handling will need to be taken one step further.</p>
+<p>This is actually fairly clean now. Compared with the original <code>panic</code>, it 
+is very similar to replacing the <code>unwrap</code> calls with <code>try!</code> except that the 
+return types are <code>Result</code>. As a result, they must be destructured at the 
+top level.</p>
+<p>Note that you should not expect error handling of this sort to always 
+replace <code>unwrap</code>. This type of error handling tripled our line count and 
+cannot really be considered simple (even when heavily biased by the small 
+code size).</p>
+<p>Indeed, moving a 1000 line library from <code>unwrap</code> to more proper error 
+handling might be feasible in an additional 100 lines of code. However, the 
+necessary refactoring would most definitely not be trivial.</p>
+<p>Many libraries might get away with only implementing <code>Display</code> and 
+adding <code>From</code> on an as needed basis. However, more serious libraries will 
+eventually need to meet higher expections of error handling implementation.</p>
 <h3 id="see-also">See also:</h3>
 <p><a href="http://doc.rust-lang.org/std/convert/trait.From.html" target="_blank"><code>From::from</code></a> and <a href="http://doc.rust-lang.org/std/macro.try!.html" target="_blank"><code>try!</code></a></p>
 
@@ -2965,10 +2975,10 @@ In those cases, the error handling will need to be taken one step further.</p>
         </div>
 
         
-        <a href="../error/limits_of_strings.html" class="navigation navigation-prev " aria-label="Previous page: The limits of strings"><i class="fa fa-angle-left"></i></a>
+        <a href="../error/define_error_type.html" class="navigation navigation-prev " aria-label="Previous page: Defining an error type"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../error/reenabling_box.html" class="navigation navigation-next " aria-label="Next page: Re-enabling box"><i class="fa fa-angle-right"></i></a>
+        <a href="../error/boxing_errors.html" class="navigation navigation-next " aria-label="Next page: `Box`ing errors"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

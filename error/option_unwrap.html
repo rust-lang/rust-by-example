@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Re-enabling box | Rust by Example</title>
+        <title>`Option` &amp; `unwrap` | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../std.html" />
+    <link rel="next" href="../error/option_unwrap/map.html" />
     
     
-    <link rel="prev" href="../error/reenter_try.html" />
+    <link rel="prev" href="../error/panic.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.8" data-basepath=".." data-revision="1476120788914">
+    <div class="book" data-level="16.2" data-basepath=".." data-revision="1476120816193">
     
 
 <div class="book-summary">
@@ -2037,15 +2037,15 @@
                 
     
         
-        <li class="chapter " data-level="16.1" data-path="error/unwrap.html">
+        <li class="chapter " data-level="16.1" data-path="error/panic.html">
             
                 
-                    <a href="../error/unwrap.html">
+                    <a href="../error/panic.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.1.</b>
                         
-                         Option &amp; unwrap
+                         `panic`
                     </a>
                 
             
@@ -2053,31 +2053,32 @@
         </li>
     
         
-        <li class="chapter " data-level="16.2" data-path="error/map.html">
+        <li class="chapter active" data-level="16.2" data-path="error/option_unwrap.html">
             
                 
-                    <a href="../error/map.html">
+                    <a href="../error/option_unwrap.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.2.</b>
                         
-                         map
+                         `Option` &amp; `unwrap`
                     </a>
                 
             
             
-        </li>
+            <ul class="articles">
+                
     
         
-        <li class="chapter " data-level="16.3" data-path="error/and_then.html">
+        <li class="chapter " data-level="16.2.1" data-path="error/option_unwrap/map.html">
             
                 
-                    <a href="../error/and_then.html">
+                    <a href="../error/option_unwrap/map.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.3.</b>
+                            <b>16.2.1.</b>
                         
-                         and_then
+                         Combinators: `map`
                     </a>
                 
             
@@ -2085,15 +2086,36 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4" data-path="error/result.html">
+        <li class="chapter " data-level="16.2.2" data-path="error/option_unwrap/and_then.html">
+            
+                
+                    <a href="../error/option_unwrap/and_then.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.2.2.</b>
+                        
+                         Combinators: `and_then`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16.3" data-path="error/result.html">
             
                 
                     <a href="../error/result.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.</b>
+                            <b>16.3.</b>
                         
-                         Result
+                         `Result`
                     </a>
                 
             
@@ -2102,15 +2124,15 @@
                 
     
         
-        <li class="chapter " data-level="16.4.1" data-path="error/result/result_map.html">
+        <li class="chapter " data-level="16.3.1" data-path="error/result/result_map.html">
             
                 
                     <a href="../error/result/result_map.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.1.</b>
+                            <b>16.3.1.</b>
                         
-                         map for Result
+                         `map` for `Result`
                     </a>
                 
             
@@ -2118,15 +2140,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4.2" data-path="error/result/result_alias.html">
+        <li class="chapter " data-level="16.3.2" data-path="error/result/result_alias.html">
             
                 
                     <a href="../error/result/result_alias.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.2.</b>
+                            <b>16.3.2.</b>
                         
-                         aliases for Result
+                         aliases for `Result`
                     </a>
                 
             
@@ -2139,15 +2161,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5" data-path="error/option_with_result.html">
+        <li class="chapter " data-level="16.4" data-path="error/multiple_error_types.html">
             
                 
-                    <a href="../error/option_with_result.html">
+                    <a href="../error/multiple_error_types.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.</b>
+                            <b>16.4.</b>
                         
-                         Options with Results
+                         Multiple error types
                     </a>
                 
             
@@ -2156,15 +2178,15 @@
                 
     
         
-        <li class="chapter " data-level="16.5.1" data-path="error/option_with_result/result_string_errors.html">
+        <li class="chapter " data-level="16.4.1" data-path="error/multiple_error_types/early_returns.html">
             
                 
-                    <a href="../error/option_with_result/result_string_errors.html">
+                    <a href="../error/multiple_error_types/early_returns.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.1.</b>
+                            <b>16.4.1.</b>
                         
-                         Strings as errors
+                         Early returns
                     </a>
                 
             
@@ -2172,31 +2194,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5.2" data-path="error/option_with_result/combinator_combinations.html">
+        <li class="chapter " data-level="16.4.2" data-path="error/multiple_error_types/enter_try.html">
             
                 
-                    <a href="../error/option_with_result/combinator_combinations.html">
+                    <a href="../error/multiple_error_types/enter_try.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.2.</b>
+                            <b>16.4.2.</b>
                         
-                         Combining separate combinators
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="16.5.3" data-path="error/option_with_result/enter_try.html">
-            
-                
-                    <a href="../error/option_with_result/enter_try.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.5.3.</b>
-                        
-                         Enter try!
+                         Introducing `try!`
                     </a>
                 
             
@@ -2209,15 +2215,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.6" data-path="error/limits_of_strings.html">
+        <li class="chapter " data-level="16.5" data-path="error/define_error_type.html">
             
                 
-                    <a href="../error/limits_of_strings.html">
+                    <a href="../error/define_error_type.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.6.</b>
+                            <b>16.5.</b>
                         
-                         The limits of strings
+                         Defining an error type
                     </a>
                 
             
@@ -2225,15 +2231,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.7" data-path="error/reenter_try.html">
+        <li class="chapter " data-level="16.6" data-path="error/reenter_try.html">
             
                 
                     <a href="../error/reenter_try.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.7.</b>
+                            <b>16.6.</b>
                         
-                         Re-enter try!
+                         Other uses of `try!`
                     </a>
                 
             
@@ -2241,15 +2247,15 @@
         </li>
     
         
-        <li class="chapter active" data-level="16.8" data-path="error/reenabling_box.html">
+        <li class="chapter " data-level="16.7" data-path="error/boxing_errors.html">
             
                 
-                    <a href="../error/reenabling_box.html">
+                    <a href="../error/boxing_errors.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.8.</b>
+                            <b>16.7.</b>
                         
-                         Re-enabling box
+                         `Box`ing errors
                     </a>
                 
             
@@ -2864,116 +2870,68 @@
                 
                     <section class="normal" id="section-gitbook_34">
                     
-                        <h2 id="168-re-enabling-box">16.8 Re-enabling box</h2>
-<p>We have seen that by implementing <code>Display</code> and <code>From</code> for our error type, we have enabled
-usage of almost all of the std library error handling tools. That is, we missed one
-capability: the ability to easily <code>box</code> our error type.</p>
-<p>Namely, the std library will automatically convert from any type which implements the
-<code>Error</code> trait into the trait object <code>Box&lt;Error&gt;</code> via <code>From</code>. To a library user, this
-conveniently allows the following:</p>
-<pre><code class="lang-rust"><span class="hljs-comment">// Any error type automatically convertible to `Box&lt;Error&gt;` may be used here.</span>
-<span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">foo</span></span>(...) -&gt; Result&lt;T, Box&lt;Error&gt;&gt; { ... }
-</code></pre>
-<p>For example, a user may use a variety of libraries which each provide their own error
-types. In order to define a valid <code>Result&lt;T, E&gt;</code> type, the user has a few choices:</p>
+                        <h2 id="162-option--unwrap">16.2 <code>Option</code> &amp; <code>unwrap</code></h2>
+<p>In the last example, we showed that we can induce program failure at will. 
+We told our program to <code>panic</code> if the princess received an inappropriate 
+gift - a snake. But what if the princess expected a gift and didn&#39;t receive 
+one? That case would be just as bad, so it needs to be handled!</p>
+<p>We <em>could</em> test this against the null string (<code>&quot;&quot;</code>) as we do with a snake. 
+Since we&#39;re using Rust, let&#39;s instead have the compiler point out cases 
+where there&#39;s no gift.</p>
+<p>An <code>enum</code> called <code>Option&lt;T&gt;</code> in the <code>std</code> library is used when absence is a 
+possibility. It manifests itself as one of two &quot;options&quot;:</p>
 <ul>
-<li>define a new wrapper error type around the external libraries error types</li>
-<li>convert it to <code>String</code> or some other intermediate choice</li>
-<li>box it up into <code>Box&lt;Error&gt;</code> via type erasure</li>
+<li><code>Some(T)</code>: An element of type <code>T</code> was found</li>
+<li><code>None</code>: No element was found</li>
 </ul>
-<p>Boxing it is a common choice. The only penalty is that the underlying error type is only known
-at runtime and not <a href="http://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch" target="_blank">statically determined</a>. All that needs to be done to enable
-this is implement the <code>Error</code> trait:</p>
-<pre><code class="lang-rust">trait Error: Debug + Display {
-    fn description(&amp;self) -&gt; &amp;str;
-    fn cause(&amp;self) -&gt; Option&lt;&amp;Error&gt;;
-}
-</code></pre>
-<p>By implementing this, our previous example would be just as valid when the error type
-is <code>Box&lt;Error&gt;</code> as it was before with <code>DoubleError</code>.</p>
+<p>These cases can either be explicitly handled via <code>match</code> or implicitly with 
+<code>unwrap</code>. Implicit handling will either return the inner element or <code>panic</code>.</p>
+<p>Note that it&#39;s possible to manually customize <code>panic</code> with <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.expect" target="_blank">expect</a>, 
+but <code>unwrap</code> otherwise leaves us with a less meaningful output than explicit 
+handling. In the following example, explicit handling yields a more 
+controlled result while retaining the option to <code>panic</code> if desired.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>use std::error;
-use std::fmt;
-use std::num::ParseIntError;
-
-// Change the alias to &#96;Box&lt;error::Error&gt;&#96;.
-type Result&lt;T&gt; = std::result::Result&lt;T, Box&lt;error::Error&gt;&gt;;
-
-#[derive(Debug)]
-enum DoubleError {
-    EmptyVec,
-    Parse(ParseIntError),
-}
-
-impl From&lt;ParseIntError&gt; for DoubleError {
-    fn from(err: ParseIntError) -&gt; DoubleError {
-        DoubleError::Parse(err)
+<div id="editor"><pre>// The commoner has seen it all, and can handle any gift well.
+// All gifts are handled explicitly using &#96;match&#96;.
+fn give&#95;commoner(gift: Option&lt;&amp;str&gt;) {
+    // Specify a course of action for each case.
+    match gift {
+        Some(&quot;snake&quot;) =&gt; println!(&quot;Yuck! I&#39;m throwing that snake in a fire.&quot;),
+        Some(inner)   =&gt; println!(&quot;{}? How nice.&quot;, inner),
+        None          =&gt; println!(&quot;No gift? Oh well.&quot;),
     }
 }
 
-impl fmt::Display for DoubleError {
-    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
-        match &#42;self {
-            DoubleError::EmptyVec =&gt;
-                write!(f, &quot;please use a vector with at least one element&quot;),
-            DoubleError::Parse(ref e) =&gt; e.fmt(f),
-        }
-    }
-}
+// Our sheltered princess will &#96;panic&#96; at the sight of snakes.
+// All gifts are handled implicitly using &#96;unwrap&#96;.
+fn give&#95;princess(gift: Option&lt;&amp;str&gt;) {
+    // &#96;unwrap&#96; returns a &#96;panic&#96; when it receives a &#96;None&#96;.
+    let inside = gift.unwrap();
+    if inside == &quot;snake&quot; { panic!(&quot;AAAaaaaa!!!!&quot;); }
 
-impl error::Error for DoubleError {
-    fn description(&amp;self) -&gt; &amp;str {
-        match &#42;self {
-            // A very short description of the error. Doesn&#39;t need to be the
-            // same as &#96;Display&#96;.
-            DoubleError::EmptyVec =&gt; &quot;empty vectors not allowed&quot;,
-            // This already impls &#96;Error&#96;, so defer to its own implementation.
-            DoubleError::Parse(ref e) =&gt; e.description(),
-        }
-    }
-
-    fn cause(&amp;self) -&gt; Option&lt;&amp;error::Error&gt; {
-        match &#42;self {
-            // No underlying cause so return &#96;None&#96;.
-            DoubleError::EmptyVec =&gt; None,
-            // The cause is the underlying implementation error type. Is implicitly
-            // cast to the trait object &#96;&amp;error::Error&#96;. This works because the
-            // underlying type already implements the &#96;Error&#96; trait.
-            DoubleError::Parse(ref e) =&gt; Some(e),
-        }
-    }
-}
-
-fn double&#95;first(vec: Vec&lt;&amp;str&gt;) -&gt; Result&lt;i32&gt; {
-    let first = try!(vec.first().ok&#95;or(DoubleError::EmptyVec));
-    let parsed = try!(first.parse::&lt;i32&gt;());
-
-    Ok(2 &#42; parsed)
-}
-
-fn print(result: Result&lt;i32&gt;) {
-    match result {
-        Ok(n)  =&gt; println!(&quot;The first doubled is {}&quot;, n),
-        Err(e) =&gt; println!(&quot;Error: {}&quot;, e),
-    }
+    println!(&quot;I love {}s!!!!!&quot;, inside);
 }
 
 fn main() {
-    let numbers = vec![&quot;93&quot;, &quot;18&quot;];
-    let empty = vec![];
-    let strings = vec![&quot;tofu&quot;, &quot;93&quot;, &quot;18&quot;];
+    let food  = Some(&quot;cabbage&quot;);
+    let snake = Some(&quot;snake&quot;);
+    let void  = None;
 
-    print(double&#95;first(numbers));
-    print(double&#95;first(empty));
-    print(double&#95;first(strings));
+    give&#95;commoner(food);
+    give&#95;commoner(snake);
+    give&#95;commoner(void);
+
+    let bird = Some(&quot;robin&quot;);
+    let nothing = None;
+
+    give&#95;princess(bird);
+    give&#95;princess(nothing);
 }</pre></div>
 <div id="result"></div>
 </div>
 
-<h3 id="see-also">See also:</h3>
-<p><a href="http://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch" target="_blank">Dynamic dispatch</a> and <a href="http://doc.rust-lang.org/std/error/trait.Error.html" target="_blank"><code>Error</code> trait</a></p>
 
                     
                     </section>
@@ -2984,10 +2942,10 @@ fn main() {
         </div>
 
         
-        <a href="../error/reenter_try.html" class="navigation navigation-prev " aria-label="Previous page: Re-enter try!"><i class="fa fa-angle-left"></i></a>
+        <a href="../error/panic.html" class="navigation navigation-prev " aria-label="Previous page: `panic`"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../std.html" class="navigation navigation-next " aria-label="Next page: Std library types"><i class="fa fa-angle-right"></i></a>
+        <a href="../error/option_unwrap/map.html" class="navigation navigation-next " aria-label="Next page: Combinators: `map`"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

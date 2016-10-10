@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Enter try! | Rust by Example</title>
+        <title>`Box`ing errors | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -13,16 +13,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
-        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
         
         
     
     
-    <link rel="next" href="../../error/limits_of_strings.html" />
+    <link rel="next" href="../std.html" />
     
     
-    <link rel="prev" href="../../error/option_with_result/combinator_combinations.html" />
+    <link rel="prev" href="../error/reenter_try.html" />
     
 
         
@@ -30,15 +30,15 @@
     <body>
         
         
-<link rel="stylesheet" href="../../gitbook/style.css">
+<link rel="stylesheet" href="../gitbook/style.css">
 
     
-    <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-rust-playpen/editor.css">
+    <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-rust-playpen/editor.css">
     
 
 
         
-    <div class="book" data-level="16.5.3" data-basepath="../.." data-revision="1476120788914">
+    <div class="book" data-level="16.7" data-basepath=".." data-revision="1476120816193">
     
 
 <div class="book-summary">
@@ -59,7 +59,7 @@
         <li class="chapter " data-level="0" data-path="index.html">
             
                 
-                    <a href="../../index.html">
+                    <a href="../index.html">
                         <i class="fa fa-check"></i>
                         
                          Introduction
@@ -73,7 +73,7 @@
         <li class="chapter " data-level="1" data-path="hello.html">
             
                 
-                    <a href="../../hello.html">
+                    <a href="../hello.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.</b>
@@ -90,7 +90,7 @@
         <li class="chapter " data-level="1.1" data-path="hello/comment.html">
             
                 
-                    <a href="../../hello/comment.html">
+                    <a href="../hello/comment.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.1.</b>
@@ -106,7 +106,7 @@
         <li class="chapter " data-level="1.2" data-path="hello/print.html">
             
                 
-                    <a href="../../hello/print.html">
+                    <a href="../hello/print.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.2.</b>
@@ -123,7 +123,7 @@
         <li class="chapter " data-level="1.2.1" data-path="hello/print/print_debug.html">
             
                 
-                    <a href="../../hello/print/print_debug.html">
+                    <a href="../hello/print/print_debug.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.2.1.</b>
@@ -139,7 +139,7 @@
         <li class="chapter " data-level="1.2.2" data-path="hello/print/print_display.html">
             
                 
-                    <a href="../../hello/print/print_display.html">
+                    <a href="../hello/print/print_display.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.2.2.</b>
@@ -156,7 +156,7 @@
         <li class="chapter " data-level="1.2.2.1" data-path="hello/print/print_display/testcase_list.html">
             
                 
-                    <a href="../../hello/print/print_display/testcase_list.html">
+                    <a href="../hello/print/print_display/testcase_list.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.2.2.1.</b>
@@ -177,7 +177,7 @@
         <li class="chapter " data-level="1.2.3" data-path="hello/print/fmt.html">
             
                 
-                    <a href="../../hello/print/fmt.html">
+                    <a href="../hello/print/fmt.html">
                         <i class="fa fa-check"></i>
                         
                             <b>1.2.3.</b>
@@ -203,7 +203,7 @@
         <li class="chapter " data-level="2" data-path="primitives.html">
             
                 
-                    <a href="../../primitives.html">
+                    <a href="../primitives.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.</b>
@@ -220,7 +220,7 @@
         <li class="chapter " data-level="2.1" data-path="primitives/literals.html">
             
                 
-                    <a href="../../primitives/literals.html">
+                    <a href="../primitives/literals.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.1.</b>
@@ -236,7 +236,7 @@
         <li class="chapter " data-level="2.2" data-path="primitives/tuples.html">
             
                 
-                    <a href="../../primitives/tuples.html">
+                    <a href="../primitives/tuples.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.2.</b>
@@ -252,7 +252,7 @@
         <li class="chapter " data-level="2.3" data-path="primitives/array.html">
             
                 
-                    <a href="../../primitives/array.html">
+                    <a href="../primitives/array.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.3.</b>
@@ -273,7 +273,7 @@
         <li class="chapter " data-level="3" data-path="custom_types.html">
             
                 
-                    <a href="../../custom_types.html">
+                    <a href="../custom_types.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.</b>
@@ -290,7 +290,7 @@
         <li class="chapter " data-level="3.1" data-path="custom_types/structs.html">
             
                 
-                    <a href="../../custom_types/structs.html">
+                    <a href="../custom_types/structs.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.1.</b>
@@ -306,7 +306,7 @@
         <li class="chapter " data-level="3.2" data-path="custom_types/enum.html">
             
                 
-                    <a href="../../custom_types/enum.html">
+                    <a href="../custom_types/enum.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.2.</b>
@@ -323,7 +323,7 @@
         <li class="chapter " data-level="3.2.1" data-path="custom_types/enum/enum_use.html">
             
                 
-                    <a href="../../custom_types/enum/enum_use.html">
+                    <a href="../custom_types/enum/enum_use.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.2.1.</b>
@@ -339,7 +339,7 @@
         <li class="chapter " data-level="3.2.2" data-path="custom_types/enum/c_like.html">
             
                 
-                    <a href="../../custom_types/enum/c_like.html">
+                    <a href="../custom_types/enum/c_like.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.2.2.</b>
@@ -355,7 +355,7 @@
         <li class="chapter " data-level="3.2.3" data-path="custom_types/enum/testcase_linked_list.html">
             
                 
-                    <a href="../../custom_types/enum/testcase_linked_list.html">
+                    <a href="../custom_types/enum/testcase_linked_list.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.2.3.</b>
@@ -376,7 +376,7 @@
         <li class="chapter " data-level="3.3" data-path="custom_types/constants.html">
             
                 
-                    <a href="../../custom_types/constants.html">
+                    <a href="../custom_types/constants.html">
                         <i class="fa fa-check"></i>
                         
                             <b>3.3.</b>
@@ -397,7 +397,7 @@
         <li class="chapter " data-level="4" data-path="variable_bindings.html">
             
                 
-                    <a href="../../variable_bindings.html">
+                    <a href="../variable_bindings.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
@@ -414,7 +414,7 @@
         <li class="chapter " data-level="4.1" data-path="variable_bindings/mut.html">
             
                 
-                    <a href="../../variable_bindings/mut.html">
+                    <a href="../variable_bindings/mut.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.1.</b>
@@ -430,7 +430,7 @@
         <li class="chapter " data-level="4.2" data-path="variable_bindings/scope.html">
             
                 
-                    <a href="../../variable_bindings/scope.html">
+                    <a href="../variable_bindings/scope.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.2.</b>
@@ -446,7 +446,7 @@
         <li class="chapter " data-level="4.3" data-path="variable_bindings/declare.html">
             
                 
-                    <a href="../../variable_bindings/declare.html">
+                    <a href="../variable_bindings/declare.html">
                         <i class="fa fa-check"></i>
                         
                             <b>4.3.</b>
@@ -467,7 +467,7 @@
         <li class="chapter " data-level="5" data-path="cast.html">
             
                 
-                    <a href="../../cast.html">
+                    <a href="../cast.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.</b>
@@ -484,7 +484,7 @@
         <li class="chapter " data-level="5.1" data-path="cast/literals.html">
             
                 
-                    <a href="../../cast/literals.html">
+                    <a href="../cast/literals.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.1.</b>
@@ -500,7 +500,7 @@
         <li class="chapter " data-level="5.2" data-path="cast/inference.html">
             
                 
-                    <a href="../../cast/inference.html">
+                    <a href="../cast/inference.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.2.</b>
@@ -516,7 +516,7 @@
         <li class="chapter " data-level="5.3" data-path="cast/alias.html">
             
                 
-                    <a href="../../cast/alias.html">
+                    <a href="../cast/alias.html">
                         <i class="fa fa-check"></i>
                         
                             <b>5.3.</b>
@@ -537,7 +537,7 @@
         <li class="chapter " data-level="6" data-path="expression.html">
             
                 
-                    <a href="../../expression.html">
+                    <a href="../expression.html">
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
@@ -553,7 +553,7 @@
         <li class="chapter " data-level="7" data-path="flow_control.html">
             
                 
-                    <a href="../../flow_control.html">
+                    <a href="../flow_control.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.</b>
@@ -570,7 +570,7 @@
         <li class="chapter " data-level="7.1" data-path="flow_control/if_else.html">
             
                 
-                    <a href="../../flow_control/if_else.html">
+                    <a href="../flow_control/if_else.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.1.</b>
@@ -586,7 +586,7 @@
         <li class="chapter " data-level="7.2" data-path="flow_control/loop.html">
             
                 
-                    <a href="../../flow_control/loop.html">
+                    <a href="../flow_control/loop.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.2.</b>
@@ -603,7 +603,7 @@
         <li class="chapter " data-level="7.2.1" data-path="flow_control/loop/nested.html">
             
                 
-                    <a href="../../flow_control/loop/nested.html">
+                    <a href="../flow_control/loop/nested.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.2.1.</b>
@@ -624,7 +624,7 @@
         <li class="chapter " data-level="7.3" data-path="flow_control/while.html">
             
                 
-                    <a href="../../flow_control/while.html">
+                    <a href="../flow_control/while.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.3.</b>
@@ -640,7 +640,7 @@
         <li class="chapter " data-level="7.4" data-path="flow_control/for.html">
             
                 
-                    <a href="../../flow_control/for.html">
+                    <a href="../flow_control/for.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.4.</b>
@@ -656,7 +656,7 @@
         <li class="chapter " data-level="7.5" data-path="flow_control/match.html">
             
                 
-                    <a href="../../flow_control/match.html">
+                    <a href="../flow_control/match.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.5.</b>
@@ -673,7 +673,7 @@
         <li class="chapter " data-level="7.5.1" data-path="flow_control/match/destructuring.html">
             
                 
-                    <a href="../../flow_control/match/destructuring.html">
+                    <a href="../flow_control/match/destructuring.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.5.1.</b>
@@ -690,7 +690,7 @@
         <li class="chapter " data-level="7.5.1.1" data-path="flow_control/match/destructuring/destructure_tuple.html">
             
                 
-                    <a href="../../flow_control/match/destructuring/destructure_tuple.html">
+                    <a href="../flow_control/match/destructuring/destructure_tuple.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.5.1.1.</b>
@@ -706,7 +706,7 @@
         <li class="chapter " data-level="7.5.1.2" data-path="flow_control/match/destructuring/destructure_enum.html">
             
                 
-                    <a href="../../flow_control/match/destructuring/destructure_enum.html">
+                    <a href="../flow_control/match/destructuring/destructure_enum.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.5.1.2.</b>
@@ -722,7 +722,7 @@
         <li class="chapter " data-level="7.5.1.3" data-path="flow_control/match/destructuring/destructure_pointers.html">
             
                 
-                    <a href="../../flow_control/match/destructuring/destructure_pointers.html">
+                    <a href="../flow_control/match/destructuring/destructure_pointers.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.5.1.3.</b>
@@ -738,7 +738,7 @@
         <li class="chapter " data-level="7.5.1.4" data-path="flow_control/match/destructuring/destructure_structures.html">
             
                 
-                    <a href="../../flow_control/match/destructuring/destructure_structures.html">
+                    <a href="../flow_control/match/destructuring/destructure_structures.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.5.1.4.</b>
@@ -759,7 +759,7 @@
         <li class="chapter " data-level="7.5.2" data-path="flow_control/match/guard.html">
             
                 
-                    <a href="../../flow_control/match/guard.html">
+                    <a href="../flow_control/match/guard.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.5.2.</b>
@@ -775,7 +775,7 @@
         <li class="chapter " data-level="7.5.3" data-path="flow_control/match/binding.html">
             
                 
-                    <a href="../../flow_control/match/binding.html">
+                    <a href="../flow_control/match/binding.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.5.3.</b>
@@ -796,7 +796,7 @@
         <li class="chapter " data-level="7.6" data-path="flow_control/if_let.html">
             
                 
-                    <a href="../../flow_control/if_let.html">
+                    <a href="../flow_control/if_let.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.6.</b>
@@ -812,7 +812,7 @@
         <li class="chapter " data-level="7.7" data-path="flow_control/while_let.html">
             
                 
-                    <a href="../../flow_control/while_let.html">
+                    <a href="../flow_control/while_let.html">
                         <i class="fa fa-check"></i>
                         
                             <b>7.7.</b>
@@ -833,7 +833,7 @@
         <li class="chapter " data-level="8" data-path="fn.html">
             
                 
-                    <a href="../../fn.html">
+                    <a href="../fn.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.</b>
@@ -850,7 +850,7 @@
         <li class="chapter " data-level="8.1" data-path="fn/methods.html">
             
                 
-                    <a href="../../fn/methods.html">
+                    <a href="../fn/methods.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.1.</b>
@@ -866,7 +866,7 @@
         <li class="chapter " data-level="8.2" data-path="fn/closures.html">
             
                 
-                    <a href="../../fn/closures.html">
+                    <a href="../fn/closures.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.</b>
@@ -883,7 +883,7 @@
         <li class="chapter " data-level="8.2.1" data-path="fn/closures/capture.html">
             
                 
-                    <a href="../../fn/closures/capture.html">
+                    <a href="../fn/closures/capture.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.1.</b>
@@ -899,7 +899,7 @@
         <li class="chapter " data-level="8.2.2" data-path="fn/closures/input_parameters.html">
             
                 
-                    <a href="../../fn/closures/input_parameters.html">
+                    <a href="../fn/closures/input_parameters.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.2.</b>
@@ -915,7 +915,7 @@
         <li class="chapter " data-level="8.2.3" data-path="fn/closures/anonymity.html">
             
                 
-                    <a href="../../fn/closures/anonymity.html">
+                    <a href="../fn/closures/anonymity.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.3.</b>
@@ -931,7 +931,7 @@
         <li class="chapter " data-level="8.2.4" data-path="fn/closures/input_functions.html">
             
                 
-                    <a href="../../fn/closures/input_functions.html">
+                    <a href="../fn/closures/input_functions.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.4.</b>
@@ -947,7 +947,7 @@
         <li class="chapter " data-level="8.2.5" data-path="fn/closures/output_parameters.html">
             
                 
-                    <a href="../../fn/closures/output_parameters.html">
+                    <a href="../fn/closures/output_parameters.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.5.</b>
@@ -963,7 +963,7 @@
         <li class="chapter " data-level="8.2.6" data-path="fn/closures/closure_examples.html">
             
                 
-                    <a href="../../fn/closures/closure_examples.html">
+                    <a href="../fn/closures/closure_examples.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.</b>
@@ -980,7 +980,7 @@
         <li class="chapter " data-level="8.2.6.1" data-path="fn/closures/closure_examples/iter_any.html">
             
                 
-                    <a href="../../fn/closures/closure_examples/iter_any.html">
+                    <a href="../fn/closures/closure_examples/iter_any.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.1.</b>
@@ -996,7 +996,7 @@
         <li class="chapter " data-level="8.2.6.2" data-path="fn/closures/closure_examples/iter_find.html">
             
                 
-                    <a href="../../fn/closures/closure_examples/iter_find.html">
+                    <a href="../fn/closures/closure_examples/iter_find.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.2.6.2.</b>
@@ -1022,7 +1022,7 @@
         <li class="chapter " data-level="8.3" data-path="fn/hof.html">
             
                 
-                    <a href="../../fn/hof.html">
+                    <a href="../fn/hof.html">
                         <i class="fa fa-check"></i>
                         
                             <b>8.3.</b>
@@ -1043,7 +1043,7 @@
         <li class="chapter " data-level="9" data-path="mod.html">
             
                 
-                    <a href="../../mod.html">
+                    <a href="../mod.html">
                         <i class="fa fa-check"></i>
                         
                             <b>9.</b>
@@ -1060,7 +1060,7 @@
         <li class="chapter " data-level="9.1" data-path="mod/visibility.html">
             
                 
-                    <a href="../../mod/visibility.html">
+                    <a href="../mod/visibility.html">
                         <i class="fa fa-check"></i>
                         
                             <b>9.1.</b>
@@ -1076,7 +1076,7 @@
         <li class="chapter " data-level="9.2" data-path="mod/struct_visibility.html">
             
                 
-                    <a href="../../mod/struct_visibility.html">
+                    <a href="../mod/struct_visibility.html">
                         <i class="fa fa-check"></i>
                         
                             <b>9.2.</b>
@@ -1092,7 +1092,7 @@
         <li class="chapter " data-level="9.3" data-path="mod/use.html">
             
                 
-                    <a href="../../mod/use.html">
+                    <a href="../mod/use.html">
                         <i class="fa fa-check"></i>
                         
                             <b>9.3.</b>
@@ -1108,7 +1108,7 @@
         <li class="chapter " data-level="9.4" data-path="mod/super.html">
             
                 
-                    <a href="../../mod/super.html">
+                    <a href="../mod/super.html">
                         <i class="fa fa-check"></i>
                         
                             <b>9.4.</b>
@@ -1124,7 +1124,7 @@
         <li class="chapter " data-level="9.5" data-path="mod/split.html">
             
                 
-                    <a href="../../mod/split.html">
+                    <a href="../mod/split.html">
                         <i class="fa fa-check"></i>
                         
                             <b>9.5.</b>
@@ -1145,7 +1145,7 @@
         <li class="chapter " data-level="10" data-path="crates.html">
             
                 
-                    <a href="../../crates.html">
+                    <a href="../crates.html">
                         <i class="fa fa-check"></i>
                         
                             <b>10.</b>
@@ -1162,7 +1162,7 @@
         <li class="chapter " data-level="10.1" data-path="crates/lib.html">
             
                 
-                    <a href="../../crates/lib.html">
+                    <a href="../crates/lib.html">
                         <i class="fa fa-check"></i>
                         
                             <b>10.1.</b>
@@ -1178,7 +1178,7 @@
         <li class="chapter " data-level="10.2" data-path="crates/link.html">
             
                 
-                    <a href="../../crates/link.html">
+                    <a href="../crates/link.html">
                         <i class="fa fa-check"></i>
                         
                             <b>10.2.</b>
@@ -1199,7 +1199,7 @@
         <li class="chapter " data-level="11" data-path="attribute.html">
             
                 
-                    <a href="../../attribute.html">
+                    <a href="../attribute.html">
                         <i class="fa fa-check"></i>
                         
                             <b>11.</b>
@@ -1216,7 +1216,7 @@
         <li class="chapter " data-level="11.1" data-path="attribute/unused.html">
             
                 
-                    <a href="../../attribute/unused.html">
+                    <a href="../attribute/unused.html">
                         <i class="fa fa-check"></i>
                         
                             <b>11.1.</b>
@@ -1232,7 +1232,7 @@
         <li class="chapter " data-level="11.2" data-path="attribute/crate.html">
             
                 
-                    <a href="../../attribute/crate.html">
+                    <a href="../attribute/crate.html">
                         <i class="fa fa-check"></i>
                         
                             <b>11.2.</b>
@@ -1248,7 +1248,7 @@
         <li class="chapter " data-level="11.3" data-path="attribute/cfg.html">
             
                 
-                    <a href="../../attribute/cfg.html">
+                    <a href="../attribute/cfg.html">
                         <i class="fa fa-check"></i>
                         
                             <b>11.3.</b>
@@ -1265,7 +1265,7 @@
         <li class="chapter " data-level="11.3.1" data-path="attribute/cfg/custom.html">
             
                 
-                    <a href="../../attribute/cfg/custom.html">
+                    <a href="../attribute/cfg/custom.html">
                         <i class="fa fa-check"></i>
                         
                             <b>11.3.1.</b>
@@ -1291,7 +1291,7 @@
         <li class="chapter " data-level="12" data-path="generics.html">
             
                 
-                    <a href="../../generics.html">
+                    <a href="../generics.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.</b>
@@ -1308,7 +1308,7 @@
         <li class="chapter " data-level="12.1" data-path="generics/gen_fn.html">
             
                 
-                    <a href="../../generics/gen_fn.html">
+                    <a href="../generics/gen_fn.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.1.</b>
@@ -1324,7 +1324,7 @@
         <li class="chapter " data-level="12.2" data-path="generics/impl.html">
             
                 
-                    <a href="../../generics/impl.html">
+                    <a href="../generics/impl.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.2.</b>
@@ -1340,7 +1340,7 @@
         <li class="chapter " data-level="12.3" data-path="generics/gen_trait.html">
             
                 
-                    <a href="../../generics/gen_trait.html">
+                    <a href="../generics/gen_trait.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.3.</b>
@@ -1356,7 +1356,7 @@
         <li class="chapter " data-level="12.4" data-path="generics/bounds.html">
             
                 
-                    <a href="../../generics/bounds.html">
+                    <a href="../generics/bounds.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.4.</b>
@@ -1373,7 +1373,7 @@
         <li class="chapter " data-level="12.4.1" data-path="generics/bounds/testcase_empty.html">
             
                 
-                    <a href="../../generics/bounds/testcase_empty.html">
+                    <a href="../generics/bounds/testcase_empty.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.4.1.</b>
@@ -1394,7 +1394,7 @@
         <li class="chapter " data-level="12.5" data-path="generics/multi_bounds.html">
             
                 
-                    <a href="../../generics/multi_bounds.html">
+                    <a href="../generics/multi_bounds.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.5.</b>
@@ -1410,7 +1410,7 @@
         <li class="chapter " data-level="12.6" data-path="generics/where.html">
             
                 
-                    <a href="../../generics/where.html">
+                    <a href="../generics/where.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.6.</b>
@@ -1426,7 +1426,7 @@
         <li class="chapter " data-level="12.7" data-path="generics/assoc_items.html">
             
                 
-                    <a href="../../generics/assoc_items.html">
+                    <a href="../generics/assoc_items.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.7.</b>
@@ -1443,7 +1443,7 @@
         <li class="chapter " data-level="12.7.1" data-path="generics/assoc_items/the_problem.html">
             
                 
-                    <a href="../../generics/assoc_items/the_problem.html">
+                    <a href="../generics/assoc_items/the_problem.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.7.1.</b>
@@ -1459,7 +1459,7 @@
         <li class="chapter " data-level="12.7.2" data-path="generics/assoc_items/types.html">
             
                 
-                    <a href="../../generics/assoc_items/types.html">
+                    <a href="../generics/assoc_items/types.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.7.2.</b>
@@ -1480,7 +1480,7 @@
         <li class="chapter " data-level="12.8" data-path="generics/phantom.html">
             
                 
-                    <a href="../../generics/phantom.html">
+                    <a href="../generics/phantom.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.8.</b>
@@ -1497,7 +1497,7 @@
         <li class="chapter " data-level="12.8.1" data-path="generics/phantom/testcase_units.html">
             
                 
-                    <a href="../../generics/phantom/testcase_units.html">
+                    <a href="../generics/phantom/testcase_units.html">
                         <i class="fa fa-check"></i>
                         
                             <b>12.8.1.</b>
@@ -1523,7 +1523,7 @@
         <li class="chapter " data-level="13" data-path="scope.html">
             
                 
-                    <a href="../../scope.html">
+                    <a href="../scope.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.</b>
@@ -1540,7 +1540,7 @@
         <li class="chapter " data-level="13.1" data-path="scope/raii.html">
             
                 
-                    <a href="../../scope/raii.html">
+                    <a href="../scope/raii.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.1.</b>
@@ -1556,7 +1556,7 @@
         <li class="chapter " data-level="13.2" data-path="scope/move.html">
             
                 
-                    <a href="../../scope/move.html">
+                    <a href="../scope/move.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.2.</b>
@@ -1573,7 +1573,7 @@
         <li class="chapter " data-level="13.2.1" data-path="scope/move/mut.html">
             
                 
-                    <a href="../../scope/move/mut.html">
+                    <a href="../scope/move/mut.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.2.1.</b>
@@ -1594,7 +1594,7 @@
         <li class="chapter " data-level="13.3" data-path="scope/borrow.html">
             
                 
-                    <a href="../../scope/borrow.html">
+                    <a href="../scope/borrow.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.3.</b>
@@ -1611,7 +1611,7 @@
         <li class="chapter " data-level="13.3.1" data-path="scope/borrow/mut.html">
             
                 
-                    <a href="../../scope/borrow/mut.html">
+                    <a href="../scope/borrow/mut.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.3.1.</b>
@@ -1627,7 +1627,7 @@
         <li class="chapter " data-level="13.3.2" data-path="scope/borrow/freeze.html">
             
                 
-                    <a href="../../scope/borrow/freeze.html">
+                    <a href="../scope/borrow/freeze.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.3.2.</b>
@@ -1643,7 +1643,7 @@
         <li class="chapter " data-level="13.3.3" data-path="scope/borrow/alias.html">
             
                 
-                    <a href="../../scope/borrow/alias.html">
+                    <a href="../scope/borrow/alias.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.3.3.</b>
@@ -1659,7 +1659,7 @@
         <li class="chapter " data-level="13.3.4" data-path="scope/borrow/ref.html">
             
                 
-                    <a href="../../scope/borrow/ref.html">
+                    <a href="../scope/borrow/ref.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.3.4.</b>
@@ -1680,7 +1680,7 @@
         <li class="chapter " data-level="13.4" data-path="scope/lifetime.html">
             
                 
-                    <a href="../../scope/lifetime.html">
+                    <a href="../scope/lifetime.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.</b>
@@ -1697,7 +1697,7 @@
         <li class="chapter " data-level="13.4.1" data-path="scope/lifetime/explicit.html">
             
                 
-                    <a href="../../scope/lifetime/explicit.html">
+                    <a href="../scope/lifetime/explicit.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.1.</b>
@@ -1713,7 +1713,7 @@
         <li class="chapter " data-level="13.4.2" data-path="scope/lifetime/fn.html">
             
                 
-                    <a href="../../scope/lifetime/fn.html">
+                    <a href="../scope/lifetime/fn.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.2.</b>
@@ -1729,7 +1729,7 @@
         <li class="chapter " data-level="13.4.3" data-path="scope/lifetime/methods.html">
             
                 
-                    <a href="../../scope/lifetime/methods.html">
+                    <a href="../scope/lifetime/methods.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.3.</b>
@@ -1745,7 +1745,7 @@
         <li class="chapter " data-level="13.4.4" data-path="scope/lifetime/struct.html">
             
                 
-                    <a href="../../scope/lifetime/struct.html">
+                    <a href="../scope/lifetime/struct.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.4.</b>
@@ -1761,7 +1761,7 @@
         <li class="chapter " data-level="13.4.5" data-path="scope/lifetime/lifetime_bounds.html">
             
                 
-                    <a href="../../scope/lifetime/lifetime_bounds.html">
+                    <a href="../scope/lifetime/lifetime_bounds.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.5.</b>
@@ -1777,7 +1777,7 @@
         <li class="chapter " data-level="13.4.6" data-path="scope/lifetime/lifetime_coercion.html">
             
                 
-                    <a href="../../scope/lifetime/lifetime_coercion.html">
+                    <a href="../scope/lifetime/lifetime_coercion.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.6.</b>
@@ -1793,7 +1793,7 @@
         <li class="chapter " data-level="13.4.7" data-path="scope/lifetime/static_lifetime.html">
             
                 
-                    <a href="../../scope/lifetime/static_lifetime.html">
+                    <a href="../scope/lifetime/static_lifetime.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.7.</b>
@@ -1809,7 +1809,7 @@
         <li class="chapter " data-level="13.4.8" data-path="scope/lifetime/elision.html">
             
                 
-                    <a href="../../scope/lifetime/elision.html">
+                    <a href="../scope/lifetime/elision.html">
                         <i class="fa fa-check"></i>
                         
                             <b>13.4.8.</b>
@@ -1835,7 +1835,7 @@
         <li class="chapter " data-level="14" data-path="trait.html">
             
                 
-                    <a href="../../trait.html">
+                    <a href="../trait.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.</b>
@@ -1852,7 +1852,7 @@
         <li class="chapter " data-level="14.1" data-path="trait/derive.html">
             
                 
-                    <a href="../../trait/derive.html">
+                    <a href="../trait/derive.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.1.</b>
@@ -1868,7 +1868,7 @@
         <li class="chapter " data-level="14.2" data-path="trait/ops.html">
             
                 
-                    <a href="../../trait/ops.html">
+                    <a href="../trait/ops.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.2.</b>
@@ -1884,7 +1884,7 @@
         <li class="chapter " data-level="14.3" data-path="trait/drop.html">
             
                 
-                    <a href="../../trait/drop.html">
+                    <a href="../trait/drop.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.3.</b>
@@ -1900,7 +1900,7 @@
         <li class="chapter " data-level="14.4" data-path="trait/iter.html">
             
                 
-                    <a href="../../trait/iter.html">
+                    <a href="../trait/iter.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.4.</b>
@@ -1916,7 +1916,7 @@
         <li class="chapter " data-level="14.5" data-path="trait/clone.html">
             
                 
-                    <a href="../../trait/clone.html">
+                    <a href="../trait/clone.html">
                         <i class="fa fa-check"></i>
                         
                             <b>14.5.</b>
@@ -1937,7 +1937,7 @@
         <li class="chapter " data-level="15" data-path="macros.html">
             
                 
-                    <a href="../../macros.html">
+                    <a href="../macros.html">
                         <i class="fa fa-check"></i>
                         
                             <b>15.</b>
@@ -1954,7 +1954,7 @@
         <li class="chapter " data-level="15.1" data-path="macros/designators.html">
             
                 
-                    <a href="../../macros/designators.html">
+                    <a href="../macros/designators.html">
                         <i class="fa fa-check"></i>
                         
                             <b>15.1.</b>
@@ -1970,7 +1970,7 @@
         <li class="chapter " data-level="15.2" data-path="macros/overload.html">
             
                 
-                    <a href="../../macros/overload.html">
+                    <a href="../macros/overload.html">
                         <i class="fa fa-check"></i>
                         
                             <b>15.2.</b>
@@ -1986,7 +1986,7 @@
         <li class="chapter " data-level="15.3" data-path="macros/repeat.html">
             
                 
-                    <a href="../../macros/repeat.html">
+                    <a href="../macros/repeat.html">
                         <i class="fa fa-check"></i>
                         
                             <b>15.3.</b>
@@ -2002,7 +2002,7 @@
         <li class="chapter " data-level="15.4" data-path="macros/dry.html">
             
                 
-                    <a href="../../macros/dry.html">
+                    <a href="../macros/dry.html">
                         <i class="fa fa-check"></i>
                         
                             <b>15.4.</b>
@@ -2023,7 +2023,7 @@
         <li class="chapter " data-level="16" data-path="error.html">
             
                 
-                    <a href="../../error.html">
+                    <a href="../error.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.</b>
@@ -2037,15 +2037,15 @@
                 
     
         
-        <li class="chapter " data-level="16.1" data-path="error/unwrap.html">
+        <li class="chapter " data-level="16.1" data-path="error/panic.html">
             
                 
-                    <a href="../../error/unwrap.html">
+                    <a href="../error/panic.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.1.</b>
                         
-                         Option &amp; unwrap
+                         `panic`
                     </a>
                 
             
@@ -2053,15 +2053,32 @@
         </li>
     
         
-        <li class="chapter " data-level="16.2" data-path="error/map.html">
+        <li class="chapter " data-level="16.2" data-path="error/option_unwrap.html">
             
                 
-                    <a href="../../error/map.html">
+                    <a href="../error/option_unwrap.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.2.</b>
                         
-                         map
+                         `Option` &amp; `unwrap`
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="16.2.1" data-path="error/option_unwrap/map.html">
+            
+                
+                    <a href="../error/option_unwrap/map.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.2.1.</b>
+                        
+                         Combinators: `map`
                     </a>
                 
             
@@ -2069,15 +2086,53 @@
         </li>
     
         
-        <li class="chapter " data-level="16.3" data-path="error/and_then.html">
+        <li class="chapter " data-level="16.2.2" data-path="error/option_unwrap/and_then.html">
             
                 
-                    <a href="../../error/and_then.html">
+                    <a href="../error/option_unwrap/and_then.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.2.2.</b>
+                        
+                         Combinators: `and_then`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16.3" data-path="error/result.html">
+            
+                
+                    <a href="../error/result.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.3.</b>
                         
-                         and_then
+                         `Result`
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="16.3.1" data-path="error/result/result_map.html">
+            
+                
+                    <a href="../error/result/result_map.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.3.1.</b>
+                        
+                         `map` for `Result`
                     </a>
                 
             
@@ -2085,15 +2140,36 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4" data-path="error/result.html">
+        <li class="chapter " data-level="16.3.2" data-path="error/result/result_alias.html">
             
                 
-                    <a href="../../error/result.html">
+                    <a href="../error/result/result_alias.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.3.2.</b>
+                        
+                         aliases for `Result`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16.4" data-path="error/multiple_error_types.html">
+            
+                
+                    <a href="../error/multiple_error_types.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.4.</b>
                         
-                         Result
+                         Multiple error types
                     </a>
                 
             
@@ -2102,15 +2178,15 @@
                 
     
         
-        <li class="chapter " data-level="16.4.1" data-path="error/result/result_map.html">
+        <li class="chapter " data-level="16.4.1" data-path="error/multiple_error_types/early_returns.html">
             
                 
-                    <a href="../../error/result/result_map.html">
+                    <a href="../error/multiple_error_types/early_returns.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.4.1.</b>
                         
-                         map for Result
+                         Early returns
                     </a>
                 
             
@@ -2118,15 +2194,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4.2" data-path="error/result/result_alias.html">
+        <li class="chapter " data-level="16.4.2" data-path="error/multiple_error_types/enter_try.html">
             
                 
-                    <a href="../../error/result/result_alias.html">
+                    <a href="../error/multiple_error_types/enter_try.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.4.2.</b>
                         
-                         aliases for Result
+                         Introducing `try!`
                     </a>
                 
             
@@ -2139,32 +2215,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5" data-path="error/option_with_result.html">
+        <li class="chapter " data-level="16.5" data-path="error/define_error_type.html">
             
                 
-                    <a href="../../error/option_with_result.html">
+                    <a href="../error/define_error_type.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.5.</b>
                         
-                         Options with Results
-                    </a>
-                
-            
-            
-            <ul class="articles">
-                
-    
-        
-        <li class="chapter " data-level="16.5.1" data-path="error/option_with_result/result_string_errors.html">
-            
-                
-                    <a href="../../error/option_with_result/result_string_errors.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.5.1.</b>
-                        
-                         Strings as errors
+                         Defining an error type
                     </a>
                 
             
@@ -2172,52 +2231,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5.2" data-path="error/option_with_result/combinator_combinations.html">
+        <li class="chapter " data-level="16.6" data-path="error/reenter_try.html">
             
                 
-                    <a href="../../error/option_with_result/combinator_combinations.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.5.2.</b>
-                        
-                         Combining separate combinators
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter active" data-level="16.5.3" data-path="error/option_with_result/enter_try.html">
-            
-                
-                    <a href="../../error/option_with_result/enter_try.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.5.3.</b>
-                        
-                         Enter try!
-                    </a>
-                
-            
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="16.6" data-path="error/limits_of_strings.html">
-            
-                
-                    <a href="../../error/limits_of_strings.html">
+                    <a href="../error/reenter_try.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.6.</b>
                         
-                         The limits of strings
+                         Other uses of `try!`
                     </a>
                 
             
@@ -2225,31 +2247,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.7" data-path="error/reenter_try.html">
+        <li class="chapter active" data-level="16.7" data-path="error/boxing_errors.html">
             
                 
-                    <a href="../../error/reenter_try.html">
+                    <a href="../error/boxing_errors.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.7.</b>
                         
-                         Re-enter try!
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="16.8" data-path="error/reenabling_box.html">
-            
-                
-                    <a href="../../error/reenabling_box.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.8.</b>
-                        
-                         Re-enabling box
+                         `Box`ing errors
                     </a>
                 
             
@@ -2265,7 +2271,7 @@
         <li class="chapter " data-level="17" data-path="std.html">
             
                 
-                    <a href="../../std.html">
+                    <a href="../std.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.</b>
@@ -2282,7 +2288,7 @@
         <li class="chapter " data-level="17.1" data-path="std/box.html">
             
                 
-                    <a href="../../std/box.html">
+                    <a href="../std/box.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.1.</b>
@@ -2298,7 +2304,7 @@
         <li class="chapter " data-level="17.2" data-path="std/vec.html">
             
                 
-                    <a href="../../std/vec.html">
+                    <a href="../std/vec.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.2.</b>
@@ -2314,7 +2320,7 @@
         <li class="chapter " data-level="17.3" data-path="std/str.html">
             
                 
-                    <a href="../../std/str.html">
+                    <a href="../std/str.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.3.</b>
@@ -2330,7 +2336,7 @@
         <li class="chapter " data-level="17.4" data-path="std/option.html">
             
                 
-                    <a href="../../std/option.html">
+                    <a href="../std/option.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.4.</b>
@@ -2346,7 +2352,7 @@
         <li class="chapter " data-level="17.5" data-path="std/result.html">
             
                 
-                    <a href="../../std/result.html">
+                    <a href="../std/result.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.5.</b>
@@ -2363,7 +2369,7 @@
         <li class="chapter " data-level="17.5.1" data-path="std/result/try.html">
             
                 
-                    <a href="../../std/result/try.html">
+                    <a href="../std/result/try.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.5.1.</b>
@@ -2384,7 +2390,7 @@
         <li class="chapter " data-level="17.6" data-path="std/panic.html">
             
                 
-                    <a href="../../std/panic.html">
+                    <a href="../std/panic.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.6.</b>
@@ -2400,7 +2406,7 @@
         <li class="chapter " data-level="17.7" data-path="std/hash.html">
             
                 
-                    <a href="../../std/hash.html">
+                    <a href="../std/hash.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.7.</b>
@@ -2417,7 +2423,7 @@
         <li class="chapter " data-level="17.7.1" data-path="std/hash/alt_key_types.html">
             
                 
-                    <a href="../../std/hash/alt_key_types.html">
+                    <a href="../std/hash/alt_key_types.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.7.1.</b>
@@ -2433,7 +2439,7 @@
         <li class="chapter " data-level="17.7.2" data-path="std/hash/hashset.html">
             
                 
-                    <a href="../../std/hash/hashset.html">
+                    <a href="../std/hash/hashset.html">
                         <i class="fa fa-check"></i>
                         
                             <b>17.7.2.</b>
@@ -2459,7 +2465,7 @@
         <li class="chapter " data-level="18" data-path="std_misc.html">
             
                 
-                    <a href="../../std_misc.html">
+                    <a href="../std_misc.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.</b>
@@ -2476,7 +2482,7 @@
         <li class="chapter " data-level="18.1" data-path="std_misc/threads.html">
             
                 
-                    <a href="../../std_misc/threads.html">
+                    <a href="../std_misc/threads.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.1.</b>
@@ -2492,7 +2498,7 @@
         <li class="chapter " data-level="18.2" data-path="std_misc/channels.html">
             
                 
-                    <a href="../../std_misc/channels.html">
+                    <a href="../std_misc/channels.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.2.</b>
@@ -2508,7 +2514,7 @@
         <li class="chapter " data-level="18.3" data-path="std_misc/path.html">
             
                 
-                    <a href="../../std_misc/path.html">
+                    <a href="../std_misc/path.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.3.</b>
@@ -2524,7 +2530,7 @@
         <li class="chapter " data-level="18.4" data-path="std_misc/file.html">
             
                 
-                    <a href="../../std_misc/file.html">
+                    <a href="../std_misc/file.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.4.</b>
@@ -2541,7 +2547,7 @@
         <li class="chapter " data-level="18.4.1" data-path="std_misc/file/open.html">
             
                 
-                    <a href="../../std_misc/file/open.html">
+                    <a href="../std_misc/file/open.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.4.1.</b>
@@ -2557,7 +2563,7 @@
         <li class="chapter " data-level="18.4.2" data-path="std_misc/file/create.html">
             
                 
-                    <a href="../../std_misc/file/create.html">
+                    <a href="../std_misc/file/create.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.4.2.</b>
@@ -2578,7 +2584,7 @@
         <li class="chapter " data-level="18.5" data-path="std_misc/process.html">
             
                 
-                    <a href="../../std_misc/process.html">
+                    <a href="../std_misc/process.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.5.</b>
@@ -2595,7 +2601,7 @@
         <li class="chapter " data-level="18.5.1" data-path="std_misc/process/pipe.html">
             
                 
-                    <a href="../../std_misc/process/pipe.html">
+                    <a href="../std_misc/process/pipe.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.5.1.</b>
@@ -2611,7 +2617,7 @@
         <li class="chapter " data-level="18.5.2" data-path="std_misc/process/wait.html">
             
                 
-                    <a href="../../std_misc/process/wait.html">
+                    <a href="../std_misc/process/wait.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.5.2.</b>
@@ -2632,7 +2638,7 @@
         <li class="chapter " data-level="18.6" data-path="std_misc/fs.html">
             
                 
-                    <a href="../../std_misc/fs.html">
+                    <a href="../std_misc/fs.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.6.</b>
@@ -2648,7 +2654,7 @@
         <li class="chapter " data-level="18.7" data-path="std_misc/arg.html">
             
                 
-                    <a href="../../std_misc/arg.html">
+                    <a href="../std_misc/arg.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.7.</b>
@@ -2665,7 +2671,7 @@
         <li class="chapter " data-level="18.7.1" data-path="std_misc/arg/matching.html">
             
                 
-                    <a href="../../std_misc/arg/matching.html">
+                    <a href="../std_misc/arg/matching.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.7.1.</b>
@@ -2686,7 +2692,7 @@
         <li class="chapter " data-level="18.8" data-path="std_misc/ffi.html">
             
                 
-                    <a href="../../std_misc/ffi.html">
+                    <a href="../std_misc/ffi.html">
                         <i class="fa fa-check"></i>
                         
                             <b>18.8.</b>
@@ -2707,7 +2713,7 @@
         <li class="chapter " data-level="19" data-path="meta.html">
             
                 
-                    <a href="../../meta.html">
+                    <a href="../meta.html">
                         <i class="fa fa-check"></i>
                         
                             <b>19.</b>
@@ -2724,7 +2730,7 @@
         <li class="chapter " data-level="19.1" data-path="meta/doc.html">
             
                 
-                    <a href="../../meta/doc.html">
+                    <a href="../meta/doc.html">
                         <i class="fa fa-check"></i>
                         
                             <b>19.1.</b>
@@ -2740,7 +2746,7 @@
         <li class="chapter " data-level="19.2" data-path="meta/test.html">
             
                 
-                    <a href="../../meta/test.html">
+                    <a href="../meta/test.html">
                         <i class="fa fa-check"></i>
                         
                             <b>19.2.</b>
@@ -2761,7 +2767,7 @@
         <li class="chapter " data-level="20" data-path="unsafe.html">
             
                 
-                    <a href="../../unsafe.html">
+                    <a href="../unsafe.html">
                         <i class="fa fa-check"></i>
                         
                             <b>20.</b>
@@ -2854,7 +2860,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../" >Rust by Example</a>
+        <a href="../" >Rust by Example</a>
     </h1>
 </div>
 
@@ -2862,80 +2868,119 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_31">
+                    <section class="normal" id="section-gitbook_27">
                     
-                        <h3 id="1653-enter-try">16.5.3 Enter try!</h3>
-<p>The previous problem was awkward because avoiding <code>unwrap</code> forced us to nest deeper and
-deeper when what we really wanted was to get the variable <em>out</em>. So, is there any way
-to accomodate this approach without <code>panic</code>? Well, what is a valid action to take when
-an <code>Err</code> is found? It turns out there are two:</p>
-<ol>
-<li><code>panic!</code> which we already decided to try to avoid if possible</li>
-<li><code>return</code> because an <code>Err</code> means it cannot be handled</li>
-</ol>
-<p>This is exactly the purpose of <code>try!</code>; it is <em>almost</em><sup><a href="#fn_1" id="reffn_1">1</a></sup> exactly equivalent to an
-<code>unwrap</code> which <code>returns</code> instead of <code>panics</code> on <code>Errs</code>.</p>
+                        <h2 id="167-boxing-errors">16.7 <code>Box</code>ing errors</h2>
+<p>By implementing <code>Display</code> and <code>From</code> for our error type, we enabled
+almost all of the <code>std</code> library error handling tools. However, we missed 
+something: the ability to easily <code>Box</code> our error type.</p>
+<p>The <code>std</code> library automatically converts any type that implements the 
+<code>Error</code> trait into the trait object <code>Box&lt;Error&gt;</code>, via <code>From</code>. To a 
+library user, this conveniently allows the following:</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">foo</span></span>(...) -&gt; Result&lt;T, Box&lt;Error&gt;&gt; { ... }
+</code></pre>
+<p>A user may use any variety of external libraries which each provide their own error
+types. In order to define a valid <code>Result&lt;T, E&gt;</code> type, the user has a few choices:</p>
+<ul>
+<li>define a new wrapper error type around the library&#39;s error types</li>
+<li>convert the error types to <code>String</code> or another intermediate choice</li>
+<li><code>Box</code> the error types into <code>Box&lt;Error&gt;</code> via type erasure</li>
+</ul>
+<p>&quot;Boxing&quot; the error type is a common choice. The drawback is that the 
+underlying error type is only known at runtime and not 
+<a href="http://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch" target="_blank">statically determined</a>. As mentioned above, all that 
+needs to be done is to implement the <code>Error</code> trait:</p>
+<pre><code class="lang-rust">trait Error: Debug + Display {
+    fn description(&amp;self) -&gt; &amp;str;
+    fn cause(&amp;self) -&gt; Option&lt;&amp;Error&gt;;
+}
+</code></pre>
+<p>With this implementation, let&#39;s look at our most recent example. Note that 
+it is just as valid with the error type of <code>Box&lt;Error&gt;</code> as it was before 
+with <code>DoubleError</code>:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>use std::io::prelude::&#42;;
-use std::fs::File;
+<div id="editor"><pre>use std::error;
+use std::fmt;
+use std::num::ParseIntError;
 
-type Result&lt;T&gt; = std::result::Result&lt;T, String&gt;;
+// Change the alias to &#96;Box&lt;error::Error&gt;&#96;.
+type Result&lt;T&gt; = std::result::Result&lt;T, Box&lt;error::Error&gt;&gt;;
 
-// Setup to make this work. Create two files with some info.
-fn setup() -&gt; std::io::Result&lt;()&gt; {
-    let mut a = try!(File::create(&quot;a&quot;));
-    try!(a.write&#95;all(b&quot;grape&quot;));
-
-    let mut b = try!(File::create(&quot;b&quot;));
-    b.write&#95;all(b&quot;fruit&quot;)
+#[derive(Debug)]
+enum DoubleError {
+    EmptyVec,
+    Parse(ParseIntError),
 }
 
-// Get the data from each file with the data stored in a &#96;Result&#96;.
-fn get&#95;data(path: &amp;str) -&gt; Result&lt;String&gt; {
-    // &#96;try&#96; unwraps the value or returns the error.
-    let mut file = try!(File::open(path)
-        // Errors still must be converted to strings.
-        .map&#95;err(|err| err.to&#95;string())
-    );
-    let mut contents = String::new();
-
-    // Read the data into &#96;contents&#96;.
-    try!(file.read&#95;to&#95;string(&amp;mut contents)
-        .map&#95;err(|err| err.to&#95;string())
-    );
-
-    Ok(contents)
+impl From&lt;ParseIntError&gt; for DoubleError {
+    fn from(err: ParseIntError) -&gt; DoubleError {
+        DoubleError::Parse(err)
+    }
 }
 
-// Concat the contents of the two files together into a new &#96;Result&#96;.
-fn concat(a: &amp;str, b: &amp;str) -&gt; Result&lt;String&gt; {
-    let (data&#95;a, data&#95;b) = (try!(get&#95;data(a)), try!(get&#95;data(b)));
+impl fmt::Display for DoubleError {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        match &#42;self {
+            DoubleError::EmptyVec =&gt;
+                write!(f, &quot;please use a vector with at least one element&quot;),
+            DoubleError::Parse(ref e) =&gt; e.fmt(f),
+        }
+    }
+}
 
-    Ok(data&#95;a + &amp;data&#95;b)
+impl error::Error for DoubleError {
+    fn description(&amp;self) -&gt; &amp;str {
+        match &#42;self {
+            // A very short description of the error. Doesn&#39;t need to be the
+            // same as &#96;Display&#96;.
+            DoubleError::EmptyVec =&gt; &quot;empty vectors not allowed&quot;,
+            // This already impls &#96;Error&#96;, so defer to its own implementation.
+            DoubleError::Parse(ref e) =&gt; e.description(),
+        }
+    }
+
+    fn cause(&amp;self) -&gt; Option&lt;&amp;error::Error&gt; {
+        match &#42;self {
+            // No underlying cause so return &#96;None&#96;.
+            DoubleError::EmptyVec =&gt; None,
+            // The cause is the underlying implementation error type. Is implicitly
+            // cast to the trait object &#96;&amp;error::Error&#96;. This works because the
+            // underlying type already implements the &#96;Error&#96; trait.
+            DoubleError::Parse(ref e) =&gt; Some(e),
+        }
+    }
+}
+
+fn double&#95;first(vec: Vec&lt;&amp;str&gt;) -&gt; Result&lt;i32&gt; {
+    let first = try!(vec.first().ok&#95;or(DoubleError::EmptyVec));
+    let parsed = try!(first.parse::&lt;i32&gt;());
+
+    Ok(2 &#42; parsed)
+}
+
+fn print(result: Result&lt;i32&gt;) {
+    match result {
+        Ok(n)  =&gt; println!(&quot;The first doubled is {}&quot;, n),
+        Err(e) =&gt; println!(&quot;Error: {}&quot;, e),
+    }
 }
 
 fn main() {
-    // Ignore this result.
-    setup().unwrap();
+    let numbers = vec![&quot;93&quot;, &quot;18&quot;];
+    let empty = vec![];
+    let strings = vec![&quot;tofu&quot;, &quot;93&quot;, &quot;18&quot;];
 
-    match concat(&quot;a&quot;, &quot;b&quot;) {
-        Ok(n)  =&gt; println!(&quot;{}&quot;, n),
-        Err(e) =&gt; println!(&quot;Error: {}&quot;, e),
-    }
+    print(double&#95;first(numbers));
+    print(double&#95;first(empty));
+    print(double&#95;first(strings));
 }</pre></div>
 <div id="result"></div>
 </div>
 
-<p>This really is a <em>huge</em> improvement but there is still the nagging issue of <code>map_err</code>. There is
-actually a way to avoid it (we are using it everywhere it seems) but we are still missing some
-details. First, we have to learn how to make better errors.</p>
-<blockquote id="fn_1">
-<sup>1</sup>. See <a href="/error/reenter_try.html">re-enter try!</a> for more details.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
 <h3 id="see-also">See also:</h3>
-<p><a href="http://doc.rust-lang.org/std/result/enum.Result.html" target="_blank"><code>Result</code></a> and <a href="http://doc.rust-lang.org/std/io/type.Result.html" target="_blank"><code>io::Result</code></a></p>
+<p><a href="http://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch" target="_blank">Dynamic dispatch</a> and <a href="http://doc.rust-lang.org/std/error/trait.Error.html" target="_blank"><code>Error</code> trait</a></p>
 
                     
                     </section>
@@ -2946,27 +2991,27 @@ details. First, we have to learn how to make better errors.</p>
         </div>
 
         
-        <a href="../../error/option_with_result/combinator_combinations.html" class="navigation navigation-prev " aria-label="Previous page: Combining separate combinators"><i class="fa fa-angle-left"></i></a>
+        <a href="../error/reenter_try.html" class="navigation navigation-prev " aria-label="Previous page: Other uses of `try!`"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../error/limits_of_strings.html" class="navigation navigation-next " aria-label="Next page: The limits of strings"><i class="fa fa-angle-right"></i></a>
+        <a href="../std.html" class="navigation navigation-next " aria-label="Next page: Std library types"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
-<script src="../../gitbook/app.js"></script>
+<script src="../gitbook/app.js"></script>
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-rust-playpen/ace/ace.js"></script>
-    
-
-    
-    <script src="../../gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>
+    <script src="../gitbook/plugins/gitbook-plugin-rust-playpen/ace/ace.js"></script>
     
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js"></script>
+    <script src="../gitbook/plugins/gitbook-plugin-rust-playpen/editor.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js"></script>
     
 
     
@@ -2974,7 +3019,7 @@ details. First, we have to learn how to make better errors.</p>
     
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
     
 
 <script>

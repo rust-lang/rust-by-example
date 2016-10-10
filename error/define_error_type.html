@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>and_then | Rust by Example</title>
+        <title>Defining an error type | Rust by Example</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../error/result.html" />
+    <link rel="next" href="../error/reenter_try.html" />
     
     
-    <link rel="prev" href="../error/map.html" />
+    <link rel="prev" href="../error/multiple_error_types/enter_try.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.3" data-basepath=".." data-revision="1476120788914">
+    <div class="book" data-level="16.5" data-basepath=".." data-revision="1476120816193">
     
 
 <div class="book-summary">
@@ -2037,15 +2037,15 @@
                 
     
         
-        <li class="chapter " data-level="16.1" data-path="error/unwrap.html">
+        <li class="chapter " data-level="16.1" data-path="error/panic.html">
             
                 
-                    <a href="../error/unwrap.html">
+                    <a href="../error/panic.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.1.</b>
                         
-                         Option &amp; unwrap
+                         `panic`
                     </a>
                 
             
@@ -2053,31 +2053,32 @@
         </li>
     
         
-        <li class="chapter " data-level="16.2" data-path="error/map.html">
+        <li class="chapter " data-level="16.2" data-path="error/option_unwrap.html">
             
                 
-                    <a href="../error/map.html">
+                    <a href="../error/option_unwrap.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.2.</b>
                         
-                         map
+                         `Option` &amp; `unwrap`
                     </a>
                 
             
             
-        </li>
+            <ul class="articles">
+                
     
         
-        <li class="chapter active" data-level="16.3" data-path="error/and_then.html">
+        <li class="chapter " data-level="16.2.1" data-path="error/option_unwrap/map.html">
             
                 
-                    <a href="../error/and_then.html">
+                    <a href="../error/option_unwrap/map.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.3.</b>
+                            <b>16.2.1.</b>
                         
-                         and_then
+                         Combinators: `map`
                     </a>
                 
             
@@ -2085,15 +2086,36 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4" data-path="error/result.html">
+        <li class="chapter " data-level="16.2.2" data-path="error/option_unwrap/and_then.html">
+            
+                
+                    <a href="../error/option_unwrap/and_then.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.2.2.</b>
+                        
+                         Combinators: `and_then`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16.3" data-path="error/result.html">
             
                 
                     <a href="../error/result.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.</b>
+                            <b>16.3.</b>
                         
-                         Result
+                         `Result`
                     </a>
                 
             
@@ -2102,15 +2124,15 @@
                 
     
         
-        <li class="chapter " data-level="16.4.1" data-path="error/result/result_map.html">
+        <li class="chapter " data-level="16.3.1" data-path="error/result/result_map.html">
             
                 
                     <a href="../error/result/result_map.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.1.</b>
+                            <b>16.3.1.</b>
                         
-                         map for Result
+                         `map` for `Result`
                     </a>
                 
             
@@ -2118,15 +2140,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4.2" data-path="error/result/result_alias.html">
+        <li class="chapter " data-level="16.3.2" data-path="error/result/result_alias.html">
             
                 
                     <a href="../error/result/result_alias.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.2.</b>
+                            <b>16.3.2.</b>
                         
-                         aliases for Result
+                         aliases for `Result`
                     </a>
                 
             
@@ -2139,15 +2161,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5" data-path="error/option_with_result.html">
+        <li class="chapter " data-level="16.4" data-path="error/multiple_error_types.html">
             
                 
-                    <a href="../error/option_with_result.html">
+                    <a href="../error/multiple_error_types.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.</b>
+                            <b>16.4.</b>
                         
-                         Options with Results
+                         Multiple error types
                     </a>
                 
             
@@ -2156,15 +2178,15 @@
                 
     
         
-        <li class="chapter " data-level="16.5.1" data-path="error/option_with_result/result_string_errors.html">
+        <li class="chapter " data-level="16.4.1" data-path="error/multiple_error_types/early_returns.html">
             
                 
-                    <a href="../error/option_with_result/result_string_errors.html">
+                    <a href="../error/multiple_error_types/early_returns.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.1.</b>
+                            <b>16.4.1.</b>
                         
-                         Strings as errors
+                         Early returns
                     </a>
                 
             
@@ -2172,31 +2194,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5.2" data-path="error/option_with_result/combinator_combinations.html">
+        <li class="chapter " data-level="16.4.2" data-path="error/multiple_error_types/enter_try.html">
             
                 
-                    <a href="../error/option_with_result/combinator_combinations.html">
+                    <a href="../error/multiple_error_types/enter_try.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.2.</b>
+                            <b>16.4.2.</b>
                         
-                         Combining separate combinators
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="16.5.3" data-path="error/option_with_result/enter_try.html">
-            
-                
-                    <a href="../error/option_with_result/enter_try.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.5.3.</b>
-                        
-                         Enter try!
+                         Introducing `try!`
                     </a>
                 
             
@@ -2209,15 +2215,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.6" data-path="error/limits_of_strings.html">
+        <li class="chapter active" data-level="16.5" data-path="error/define_error_type.html">
             
                 
-                    <a href="../error/limits_of_strings.html">
+                    <a href="../error/define_error_type.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.6.</b>
+                            <b>16.5.</b>
                         
-                         The limits of strings
+                         Defining an error type
                     </a>
                 
             
@@ -2225,15 +2231,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.7" data-path="error/reenter_try.html">
+        <li class="chapter " data-level="16.6" data-path="error/reenter_try.html">
             
                 
                     <a href="../error/reenter_try.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.7.</b>
+                            <b>16.6.</b>
                         
-                         Re-enter try!
+                         Other uses of `try!`
                     </a>
                 
             
@@ -2241,15 +2247,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.8" data-path="error/reenabling_box.html">
+        <li class="chapter " data-level="16.7" data-path="error/boxing_errors.html">
             
                 
-                    <a href="../error/reenabling_box.html">
+                    <a href="../error/boxing_errors.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.8.</b>
+                            <b>16.7.</b>
                         
-                         Re-enabling box
+                         `Box`ing errors
                     </a>
                 
             
@@ -2862,77 +2868,95 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_27">
+                    <section class="normal" id="section-gitbook_28">
                     
-                        <h2 id="163-and_then">16.3 and_then</h2>
-<p><code>map()</code> was described as a chainable way to simplify <code>match</code> statements. 
-However, using <code>map()</code> on a function that returns an <code>Option&lt;T&gt;</code> results 
-in the nested <code>Option&lt;Option&lt;T&gt;&gt;</code>. Chaining multiple calls together can 
-then become confusing.</p>
-<p>That&#39;s where <code>and_then()</code> comes in. Known in some languages as flatmap, <code>and_then()</code> calls its function input with the wrapped value or returns <code>None</code> if the <code>Option</code> is <code>None</code>.</p>
-<p>In the following example, <code>cookable_v2()</code> results in an <code>Option&lt;Food&gt;</code>. 
-Using <code>map()</code> instead of <code>and_then()</code> would have given an <code>Option&lt;Option&lt;Food&gt;&gt;</code>, 
-which is an invalid type for <code>eat()</code>.</p>
+                        <h2 id="165-defining-an-error-type">16.5 Defining an error type</h2>
+<p>Rust allows us to define our own error types. In general, a &quot;good&quot; error type:</p>
+<ul>
+<li>Represents different errors with the same type</li>
+<li>Presents nice error messages to the user</li>
+<li>Is easy to compare with other types<ul>
+<li>Good: <code>Err(EmptyVec)</code></li>
+<li>Bad: <code>Err(&quot;Please use a vector with at least one element&quot;.to_owned())</code></li>
+</ul>
+</li>
+<li>Can hold information about the error<ul>
+<li>Good: <code>Err(BadChar(c, position))</code></li>
+<li>Bad: <code>Err(&quot;+ cannot be used here&quot;.to_owned())</code></li>
+</ul>
+</li>
+</ul>
+<p>Note that a <code>String</code> (which we&#39;ve been using up to this point) fulfills the 
+first two criteria, but not the last two. This makes <code>String</code> errors verbose 
+to create and difficult to react to. It should not be necessary to pollute 
+logic heavy code with <code>String</code> formatting simply to display nicely.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>#![allow(dead&#95;code)]
+<div id="editor"><pre>use std::num::ParseIntError;
+use std::fmt;
 
-#[derive(Debug)] enum Food { CordonBleu, Steak, Sushi }
-#[derive(Debug)] enum Day { Monday, Tuesday, Wednesday }
+type Result&lt;T&gt; = std::result::Result&lt;T, DoubleError&gt;;
 
-// We don&#39;t have the ingredients to make Sushi.
-fn have&#95;ingredients(food: Food) -&gt; Option&lt;Food&gt; {
-    match food {
-        Food::Sushi =&gt; None,
-        &#95;           =&gt; Some(food),
+#[derive(Debug)]
+// Define our error types. These may be customized for our error handling cases. 
+// Now we will be able to write our own errors, defer to an underlying error
+// implementation, or do something in between.
+enum DoubleError {
+    // We don&#39;t require any extra info to detail this error.
+    EmptyVec,
+    // We will defer to the parse error implementation for their error.
+    // Supplying extra info requires adding more data to the type.
+    Parse(ParseIntError),
+}
+
+// Generation of an error is completely separate from how it is displayed.
+// There&#39;s no need to be concerned about cluttering complex logic with the display style.
+//
+// Note that we don&#39;t store any extra info about the errors. This means we can&#39;t state
+// which string failed to parse without modifying our types to carry that information.
+impl fmt::Display for DoubleError {
+    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+        match &#42;self {
+            DoubleError::EmptyVec =&gt;
+                write!(f, &quot;please use a vector with at least one element&quot;),
+            // This is a wrapper, so defer to the underlying types&#39; implementation of &#96;fmt&#96;.
+            DoubleError::Parse(ref e) =&gt; e.fmt(f),
+        }
     }
 }
 
-// We have the recipe for everything except Cordon Bleu.
-fn have&#95;recipe(food: Food) -&gt; Option&lt;Food&gt; {
-    match food {
-        Food::CordonBleu =&gt; None,
-        &#95;                =&gt; Some(food),
-    }
+fn double&#95;first(vec: Vec&lt;&amp;str&gt;) -&gt; Result&lt;i32&gt; {
+    vec.first()
+       // Change the error to our new type.
+       .ok&#95;or(DoubleError::EmptyVec)
+       .and&#95;then(|s| s.parse::&lt;i32&gt;()
+            // Update to the new error type here also.
+            .map&#95;err(DoubleError::Parse)
+            .map(|i| 2 &#42; i))
 }
 
-// To make a dish, we need both the ingredients and the recipe.
-// We can represent the logic with a chain of &#96;match&#96;es:
-fn cookable&#95;v1(food: Food) -&gt; Option&lt;Food&gt; {
-    match have&#95;ingredients(food) {
-        None       =&gt; None,
-        Some(food) =&gt; match have&#95;recipe(food) {
-            None       =&gt; None,
-            Some(food) =&gt; Some(food),
-        },
-    }
-}
-
-// This can conveniently be rewritten more compactly with &#96;and&#95;then()&#96;:
-fn cookable&#95;v2(food: Food) -&gt; Option&lt;Food&gt; {
-    have&#95;ingredients(food).and&#95;then(have&#95;recipe)
-}
-
-fn eat(food: Food, day: Day) {
-    match cookable&#95;v2(food) {
-        Some(food) =&gt; println!(&quot;Yay! On {:?} we get to eat {:?}.&quot;, day, food),
-        None       =&gt; println!(&quot;Oh no. We don&#39;t get to eat on {:?}?&quot;, day),
+fn print(result: Result&lt;i32&gt;) {
+    match result {
+        Ok(n)  =&gt; println!(&quot;The first doubled is {}&quot;, n),
+        Err(e) =&gt; println!(&quot;Error: {}&quot;, e),
     }
 }
 
 fn main() {
-    let (cordon&#95;bleu, steak, sushi) = (Food::CordonBleu, Food::Steak, Food::Sushi);
+    let numbers = vec![&quot;93&quot;, &quot;18&quot;];
+    let empty = vec![];
+    let strings = vec![&quot;tofu&quot;, &quot;93&quot;, &quot;18&quot;];
 
-    eat(cordon&#95;bleu, Day::Monday);
-    eat(steak, Day::Tuesday);
-    eat(sushi, Day::Wednesday);
+    print(double&#95;first(numbers));
+    print(double&#95;first(empty));
+    print(double&#95;first(strings));
 }</pre></div>
 <div id="result"></div>
 </div>
 
 <h3 id="see-also">See also:</h3>
-<p><a href="http://doc.rust-lang.org/std/option/enum.Option.html" target="_blank"><code>Option</code></a>, <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.map" target="_blank"><code>Option::map()</code></a>, and <a href="http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then" target="_blank"><code>Option::and_then()</code></a></p>
+<p><a href="http://doc.rust-lang.org/std/result/enum.Result.html" target="_blank"><code>Result</code></a> and <a href="http://doc.rust-lang.org/std/io/type.Result.html" target="_blank"><code>io::Result</code></a></p>
 
                     
                     </section>
@@ -2943,10 +2967,10 @@ fn main() {
         </div>
 
         
-        <a href="../error/map.html" class="navigation navigation-prev " aria-label="Previous page: map"><i class="fa fa-angle-left"></i></a>
+        <a href="../error/multiple_error_types/enter_try.html" class="navigation navigation-prev " aria-label="Previous page: Introducing `try!`"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../error/result.html" class="navigation navigation-next " aria-label="Next page: Result"><i class="fa fa-angle-right"></i></a>
+        <a href="../error/reenter_try.html" class="navigation navigation-next " aria-label="Next page: Other uses of `try!`"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

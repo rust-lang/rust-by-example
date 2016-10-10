@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="./error/unwrap.html" />
+    <link rel="next" href="./error/panic.html" />
     
     
     <link rel="prev" href="./macros/dry.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16" data-basepath="." data-revision="1476120788914">
+    <div class="book" data-level="16" data-basepath="." data-revision="1476120816193">
     
 
 <div class="book-summary">
@@ -2037,15 +2037,15 @@
                 
     
         
-        <li class="chapter " data-level="16.1" data-path="error/unwrap.html">
+        <li class="chapter " data-level="16.1" data-path="error/panic.html">
             
                 
-                    <a href="./error/unwrap.html">
+                    <a href="./error/panic.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.1.</b>
                         
-                         Option &amp; unwrap
+                         `panic`
                     </a>
                 
             
@@ -2053,31 +2053,32 @@
         </li>
     
         
-        <li class="chapter " data-level="16.2" data-path="error/map.html">
+        <li class="chapter " data-level="16.2" data-path="error/option_unwrap.html">
             
                 
-                    <a href="./error/map.html">
+                    <a href="./error/option_unwrap.html">
                         <i class="fa fa-check"></i>
                         
                             <b>16.2.</b>
                         
-                         map
+                         `Option` &amp; `unwrap`
                     </a>
                 
             
             
-        </li>
+            <ul class="articles">
+                
     
         
-        <li class="chapter " data-level="16.3" data-path="error/and_then.html">
+        <li class="chapter " data-level="16.2.1" data-path="error/option_unwrap/map.html">
             
                 
-                    <a href="./error/and_then.html">
+                    <a href="./error/option_unwrap/map.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.3.</b>
+                            <b>16.2.1.</b>
                         
-                         and_then
+                         Combinators: `map`
                     </a>
                 
             
@@ -2085,15 +2086,36 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4" data-path="error/result.html">
+        <li class="chapter " data-level="16.2.2" data-path="error/option_unwrap/and_then.html">
+            
+                
+                    <a href="./error/option_unwrap/and_then.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>16.2.2.</b>
+                        
+                         Combinators: `and_then`
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="16.3" data-path="error/result.html">
             
                 
                     <a href="./error/result.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.</b>
+                            <b>16.3.</b>
                         
-                         Result
+                         `Result`
                     </a>
                 
             
@@ -2102,15 +2124,15 @@
                 
     
         
-        <li class="chapter " data-level="16.4.1" data-path="error/result/result_map.html">
+        <li class="chapter " data-level="16.3.1" data-path="error/result/result_map.html">
             
                 
                     <a href="./error/result/result_map.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.1.</b>
+                            <b>16.3.1.</b>
                         
-                         map for Result
+                         `map` for `Result`
                     </a>
                 
             
@@ -2118,15 +2140,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.4.2" data-path="error/result/result_alias.html">
+        <li class="chapter " data-level="16.3.2" data-path="error/result/result_alias.html">
             
                 
                     <a href="./error/result/result_alias.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.4.2.</b>
+                            <b>16.3.2.</b>
                         
-                         aliases for Result
+                         aliases for `Result`
                     </a>
                 
             
@@ -2139,15 +2161,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5" data-path="error/option_with_result.html">
+        <li class="chapter " data-level="16.4" data-path="error/multiple_error_types.html">
             
                 
-                    <a href="./error/option_with_result.html">
+                    <a href="./error/multiple_error_types.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.</b>
+                            <b>16.4.</b>
                         
-                         Options with Results
+                         Multiple error types
                     </a>
                 
             
@@ -2156,15 +2178,15 @@
                 
     
         
-        <li class="chapter " data-level="16.5.1" data-path="error/option_with_result/result_string_errors.html">
+        <li class="chapter " data-level="16.4.1" data-path="error/multiple_error_types/early_returns.html">
             
                 
-                    <a href="./error/option_with_result/result_string_errors.html">
+                    <a href="./error/multiple_error_types/early_returns.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.1.</b>
+                            <b>16.4.1.</b>
                         
-                         Strings as errors
+                         Early returns
                     </a>
                 
             
@@ -2172,31 +2194,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.5.2" data-path="error/option_with_result/combinator_combinations.html">
+        <li class="chapter " data-level="16.4.2" data-path="error/multiple_error_types/enter_try.html">
             
                 
-                    <a href="./error/option_with_result/combinator_combinations.html">
+                    <a href="./error/multiple_error_types/enter_try.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.5.2.</b>
+                            <b>16.4.2.</b>
                         
-                         Combining separate combinators
-                    </a>
-                
-            
-            
-        </li>
-    
-        
-        <li class="chapter " data-level="16.5.3" data-path="error/option_with_result/enter_try.html">
-            
-                
-                    <a href="./error/option_with_result/enter_try.html">
-                        <i class="fa fa-check"></i>
-                        
-                            <b>16.5.3.</b>
-                        
-                         Enter try!
+                         Introducing `try!`
                     </a>
                 
             
@@ -2209,15 +2215,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.6" data-path="error/limits_of_strings.html">
+        <li class="chapter " data-level="16.5" data-path="error/define_error_type.html">
             
                 
-                    <a href="./error/limits_of_strings.html">
+                    <a href="./error/define_error_type.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.6.</b>
+                            <b>16.5.</b>
                         
-                         The limits of strings
+                         Defining an error type
                     </a>
                 
             
@@ -2225,15 +2231,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.7" data-path="error/reenter_try.html">
+        <li class="chapter " data-level="16.6" data-path="error/reenter_try.html">
             
                 
                     <a href="./error/reenter_try.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.7.</b>
+                            <b>16.6.</b>
                         
-                         Re-enter try!
+                         Other uses of `try!`
                     </a>
                 
             
@@ -2241,15 +2247,15 @@
         </li>
     
         
-        <li class="chapter " data-level="16.8" data-path="error/reenabling_box.html">
+        <li class="chapter " data-level="16.7" data-path="error/boxing_errors.html">
             
                 
-                    <a href="./error/reenabling_box.html">
+                    <a href="./error/boxing_errors.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>16.8.</b>
+                            <b>16.7.</b>
                         
-                         Re-enabling box
+                         `Box`ing errors
                     </a>
                 
             
@@ -2867,39 +2873,9 @@
                         <h1 id="16-error-handling">16 Error handling</h1>
 <p>Error handling is the process of handling the possibility of failure. For 
 example, failing to read a file and then continuing to use that <em>bad</em> input 
-would clearly be problematic. Error handling allows us to notice and handle 
-those errors in an explicit fashion, saving the rest of the program from 
-potential issues.</p>
-<p>The simplest error handling mechanism we will see is <code>panic</code>. It prints an 
-error message, starts unwinding the task, and usually exits the program. 
-Consider the following example:</p>
-<div id="active-code">
-<button class="btn btn-primary" type="button" id="run-code">Run</button>
-<button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>fn give&#95;princess(gift: &amp;str) {
-    // Princesses hate snakes, so we need to stop if
-    // she expresses her disapproval!
-    if gift == &quot;snake&quot; { panic!(&quot;AAAaaaaa!!!!&quot;); }
-
-    println!(&quot;I love {}s!!!!!&quot;, gift);
-}
-
-fn main() {
-    give&#95;princess(&quot;teddy bear&quot;);
-    give&#95;princess(&quot;snake&quot;);
-}</pre></div>
-<div id="result"></div>
-</div>
-
-<p>This shows that we can induce program failure at will, but raises a 
-question: what happens if the princess is <em>not</em> given a gift? We <em>could</em> 
-explicitly test this with a check against the null string (<code>&quot;&quot;</code>) as we do
-with the snake, but this is not reliable. The problem is that programmers do 
-not habitually test these checks unless required to by the compiler.</p>
-<p>In order for this to be reliable, we&#39;ll want the compiler to point out 
-cases where there may not be a gift. In this chapter, we will learn to use
-<code>Option</code> to take care of this condition, as well as various functions to 
-deal with the results of one or more uses of <code>Option</code>.</p>
+would clearly be problematic. Noticing and explicitly managing those errors<br>saves the rest of the program from various pitfalls.</p>
+<p>For a more rigorous discussion of error handling, refer to the error 
+handling section in the <a href="https://doc.rust-lang.org/book/error-handling.html" target="_blank">official book</a>.</p>
 
                     
                     </section>
@@ -2913,7 +2889,7 @@ deal with the results of one or more uses of <code>Option</code>.</p>
         <a href="./macros/dry.html" class="navigation navigation-prev " aria-label="Previous page: DRY (Don&#39;t Repeat Yourself)"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./error/unwrap.html" class="navigation navigation-next " aria-label="Next page: Option &amp; unwrap"><i class="fa fa-angle-right"></i></a>
+        <a href="./error/panic.html" class="navigation navigation-next " aria-label="Next page: `panic`"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
