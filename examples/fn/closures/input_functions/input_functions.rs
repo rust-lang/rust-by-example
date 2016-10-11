@@ -6,7 +6,7 @@ fn call_me<F: Fn()>(f: F) {
 
 // Define a wrapper function satisfying the `Fn` bound
 fn function() {
-    println!("I'm a function!")
+    println!("I'm a function!");
 }
 
 fn main() {
