@@ -43,6 +43,7 @@ fn main() {
     // Call the function which applies the closure.
     apply(diary);
 
+    // `double` satisfies `apply_to_3`'s trait bound
     let double = |x| 2 * x;
 
     println!("3 doubled: {}", apply_to_3(double));
