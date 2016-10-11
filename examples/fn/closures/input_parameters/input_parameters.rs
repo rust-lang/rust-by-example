@@ -4,7 +4,7 @@ fn apply<F>(f: F) where
     F: FnOnce() {
     // ^ TODO: Try changing this to `Fn` or `FnMut`.
 
-    f()
+    f();
 }
 
 // A function which takes a closure and returns an `i32`.
@@ -17,7 +17,7 @@ fn apply_to_3<F>(f: F) -> i32 where
 
 fn main() {
     use std::mem;
-    
+
     let greeting = "hello";
     // A non-copy type.
     let mut farewell = "goodbye".to_owned();
