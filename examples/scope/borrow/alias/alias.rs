@@ -36,10 +36,15 @@ fn main() {
         //println!("Point Z coordinate is {}", point.z);
         // TODO ^ Try uncommenting this line
 
+        // Ok! Mutable references can be passed as immutable to `println!`
+        println!("Point has coordinates: ({}, {}, {})",
+                 mutable_borrow.x, mutable_borrow.y, mutable_borrow.z);
+
         // Mutable reference goes out of scope
     }
 
     // Immutable references to point are allowed again
+    let borrowed_point = &point;
     println!("Point now has coordinates: ({}, {}, {})",
-             point.x, point.y, point.z);
+             borrowed_point.x, borrowed_point.y, borrowed_point.z);
 }
