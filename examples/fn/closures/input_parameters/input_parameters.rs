@@ -20,6 +20,7 @@ fn main() {
 
     let greeting = "hello";
     // A non-copy type.
+    // `to_owned` creates owned data from borrowed one
     let mut farewell = "goodbye".to_owned();
 
     // Capture 2 variables: `greeting` by reference and
