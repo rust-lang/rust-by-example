@@ -1,6 +1,6 @@
 Since closures may be used as arguments, you might wonder if the same can be said
 about functions. And indeed they can! If you declare a function that takes a
-closure as parameter, then any function that satisfy the trait bound of that
+closure as parameter, then any function that satisfies the trait bound of that
 closure can be passed as a parameter.
 
 {input_functions.play}
