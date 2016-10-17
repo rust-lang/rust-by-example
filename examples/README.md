@@ -19,5 +19,5 @@ Rust на примерах - это набор исполняемых приме
 [install]: http://www.rust-lang.org/install.html
 [std]: http://doc.rust-lang.org/std/
 [originalhome]: https://github.com/rust-lang/rust-by-example
-[home]: https://github.com/Gordon-F/rust-by-example-ru
+[home]: https://github.com/ruRust/rust-by-example-ru
 [rustbookru]: http://rurust.github.io/rust_book_ru

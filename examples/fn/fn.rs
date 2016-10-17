@@ -1,21 +1,21 @@
-// Unlike C/C++, there's no restriction on the order of function definitions
+// В отличие от С/С++, нет никаких ограничений касаемо порядка определений функций
 fn main() {
-    // We can use this function here, and define it somewhere later
+    // Можно использовать функцию здесь, а определить где-нибудь потом
     fizzbuzz_to(100);
 }
 
-// Function that returns a boolean value
+// Функция, возвращающая логическое значение
 fn is_divisible_by(lhs: u32, rhs: u32) -> bool {
-    // Corner case, early return
+    // Граничный случай, ранний возврат
     if rhs == 0 {
         return false;
     }
 
-    // This is an expression, the `return` keyword is not necessary here
+    // Это - выражение, ключевое слово `return` здесь не требуется
     lhs % rhs == 0
 }
 
-// Functions that "don't" return a value, actually return the unit type `()`
+// Функция, которая «не возвращает» значение, на самом деле возвращает единичный тип `()`
 fn fizzbuzz(n: u32) -> () {
     if is_divisible_by(n, 15) {
         println!("fizzbuzz");
@@ -28,8 +28,7 @@ fn fizzbuzz(n: u32) -> () {
     }
 }
 
-// When a function returns `()`, the return type can be omitted from the
-// signature
+// Когда функция возвращает `()`, возвращаемый тип можно не указывать
 fn fizzbuzz_to(n: u32) {
     for n in 1..n + 1 {
         fizzbuzz(n);

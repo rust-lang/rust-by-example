@@ -1,8 +1,8 @@
-It's possible to declare variable bindings first, and initialize them later.
-However, this form is seldom used, as it may lead to the use of uninitialized
-variables.
+Можно сначала объявить связь с переменной, а инициализировать ее позже.
+Однако, такая форма используется редко, 
+так как может привести к использованию неинициализированных переменных.
 
 {declare.play}
 
-The compiler forbids use of uninitialized variables, as this would lead to
-undefined behavior.
+Компилятор запрещает использование неинициализированных переменных, 
+так как это привело бы к неопределённому поведению.

@@ -4,7 +4,7 @@
 
 ## Что это за проект?
 
-Это исходный код сайта [Rust by Example][website], переведенный на русский язык! Перевод можно найти по адресу https://gordon-f.github.io/rust-by-example-ru
+Это исходный код сайта [Rust by Example][website], переведенный на русский язык! Перевод можно найти по адресу https://rurust.github.io/rust-by-example-ru
 
 ## Как помочь проекту?
 
@@ -109,8 +109,8 @@ make test
 
 Буду рад помощи.
 
-[travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
-[travis-link]: https://travis-ci.org/rust-lang/rust-by-example
+[travis-image]: https://travis-ci.org/ruRust/rust-by-example-ru.svg?branch=master
+[travis-link]: https://travis-ci.org/ruRust/rust-by-example-ru
 [website]: http://rustbyexample.com
 [how-to-contribute]: CONTRIBUTING.md
 [rust-lang]: http://www.rust-lang.org/

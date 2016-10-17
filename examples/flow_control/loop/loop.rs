@@ -1,25 +1,25 @@
 fn main() {
     let mut count = 0u32;
 
-    println!("Let's count until infinity!");
+    println!("Давайте считать до бесконечности!");
 
-    // Infinite loop
+    // Бесконечный цикл
     loop {
         count += 1;
 
         if count == 3 {
-            println!("three");
+            println!("три");
 
-            // Skip the rest of this iteration
+            // Пропустить оставшуюся часть цикла
             continue;
         }
 
         println!("{}", count);
 
         if count == 5 {
-            println!("OK, that's enough");
+            println!("Всё, достаточно");
 
-            // Exit this loop
+            // Выйти из цикла
             break;
         }
     }
