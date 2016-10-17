@@ -1,6 +1,5 @@
 fn give_princess(gift: &str) {
-    // Princesses hate snakes, so we need to stop if
-    // she expresses her disapproval!
+    // Princesses hate snakes, so we need to stop if she disapproves!
     if gift == "snake" { panic!("AAAaaaaa!!!!"); }
 
     println!("I love {}s!!!!!", gift);

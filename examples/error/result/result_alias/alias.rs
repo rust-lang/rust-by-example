@@ -4,7 +4,7 @@ use std::result;
 // Define a generic alias for a `Result` with the error type `ParseIntError`.
 type AliasedResult<T> = result::Result<T, ParseIntError>;
 
-// Use the alias defined above to refer to our specific `Result` type.
+// Use the above alias to refer to our specific `Result` type.
 fn double_number(number_str: &str) -> AliasedResult<i32> {
     number_str.parse::<i32>().map(|n| 2 * n)
 }

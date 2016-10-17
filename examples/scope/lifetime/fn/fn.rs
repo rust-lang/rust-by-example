@@ -21,7 +21,7 @@ fn print_multi<'a, 'b>(x: &'a i32, y: &'b i32) {
 fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 { x }
 
 //fn invalid_output<'a>() -> &'a i32 { &7 }
-// The above is invalid: 'a` must live longer than the function.
+// The above is invalid: `'a` must live longer than the function.
 // Here, `&7` would create an `i32`, followed by a reference.
 // Then the data is dropped upon exiting the scope, leaving 
 // a reference to invalid data to be returned.

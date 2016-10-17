@@ -1,4 +1,4 @@
-Using closures as input parameters are possible, so returning closures as 
+Closures as input parameters are possible, so returning closures as 
 output parameters should also be possible. However, returning closure types 
 are problematic because Rust currently only supports returning concrete 
 (non-generic) types. Anonymous closure types are, by definition, unknown 
