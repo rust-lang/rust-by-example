@@ -3,108 +3,6 @@ svn:wc:ra_dav:version-url
 V 55
 /ajaxorg/ace-builds/!svn/ver/142/trunk/src-min/snippets
 END
-textile.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/textile.js
-END
-csharp.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/csharp.js
-END
-haml.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/haml.js
-END
-rdoc.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rdoc.js
-END
-properties.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/properties.js
-END
-jsp.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsp.js
-END
-xquery.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/xquery.js
-END
-perl.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/perl.js
-END
-django.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/django.js
-END
-gobstones.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/gobstones.js
-END
-jsx.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsx.js
-END
-coldfusion.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/coldfusion.js
-END
-html_ruby.js
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/html_ruby.js
-END
-plain_text.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/plain_text.js
-END
-golang.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/golang.js
-END
-wollok.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/wollok.js
-END
-jack.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jack.js
-END
 gcode.js
 K 25
 svn:wc:ra_dav:version-url
@@ -842,4 +740,106 @@ K 25
 svn:wc:ra_dav:version-url
 V 62
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/twig.js
+END
+textile.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/textile.js
+END
+csharp.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/csharp.js
+END
+haml.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/haml.js
+END
+rdoc.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rdoc.js
+END
+properties.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/properties.js
+END
+jsp.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsp.js
+END
+xquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/xquery.js
+END
+perl.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/perl.js
+END
+django.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/django.js
+END
+gobstones.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/gobstones.js
+END
+jsx.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jsx.js
+END
+coldfusion.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/coldfusion.js
+END
+html_ruby.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/html_ruby.js
+END
+plain_text.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/plain_text.js
+END
+golang.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/golang.js
+END
+wollok.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/ajaxorg/ace-builds/!svn/ver/135/trunk/src-min/snippets/wollok.js
+END
+jack.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/jack.js
 END
