@@ -3,7 +3,7 @@
 // for `print`.
 fn apply<F>(f: F) where
     F: Fn() {
-    f()
+    f();
 }
 
 fn main() {
