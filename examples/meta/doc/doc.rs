@@ -1,3 +1,5 @@
+#![crate_name = "doc"]
+
 /// A human being is represented here
 pub struct Person {
     /// A person must have a name, no matter how much Juliet may hate it
@@ -16,6 +18,7 @@ impl Person {
     /// ```
     /// // You can have rust code between fences inside the comments
     /// // If you pass --test to Rustdoc, it will even test it for you!
+    /// use doc::Person;
     /// let person = Person::new("name");
     /// ```
     pub fn new(name: &str) -> Person {
