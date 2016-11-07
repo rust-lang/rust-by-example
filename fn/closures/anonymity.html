@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.3" data-basepath="../.." data-revision="1478539562305">
+    <div class="book" data-level="8.2.3" data-basepath="../.." data-revision="1478539661961">
     
 
 <div class="book-summary">
@@ -2872,12 +2872,13 @@
                     
                         <h3 id="823-type-anonymity">8.2.3 Type anonymity</h3>
 <p>Closures succinctly capture variables from enclosing scopes. Does this have
-any consequences? It surely does. Observe how using a closure in a function
-requires <a href="/generics.html">generics</a>, which is necessary because of how they are defined:</p>
+any consequences? It surely does. Observe how using a closure as a function
+parameter requires <a href="/generics.html">generics</a>, which is necessary because of how they are
+defined:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// `F` must be generic.</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">apply</span></span>&lt;F&gt;(f: F) where
     F: FnOnce() {
-    f()
+    f();
 }
 </code></pre>
 <p>When a closure is defined, the compiler implicitly creates a new
@@ -2897,7 +2898,7 @@ and not be allowed. Thus, bounding by one of the <code>traits</code>: <code>Fn</
 // for &#96;print&#96;.
 fn apply&lt;F&gt;(f: F) where
     F: Fn() {
-    f()
+    f();
 }
 
 fn main() {

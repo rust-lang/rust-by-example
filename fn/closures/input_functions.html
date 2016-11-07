@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.4" data-basepath="../.." data-revision="1478539562305">
+    <div class="book" data-level="8.2.4" data-basepath="../.." data-revision="1478539661961">
     
 
 <div class="book-summary">
@@ -2871,35 +2871,36 @@
                     <section class="normal" id="section-gitbook_63">
                     
                         <h3 id="824-input-functions">8.2.4 Input functions</h3>
-<p>Since closures may be used as arguments, you might wonder if the same can be said 
-about functions. And indeed they can! However, because a function can 
-<em>never</em> capture variables, closures are strictly more flexible. Therefore, any 
-function which can take a closure as an argument can also take a function.</p>
+<p>Since closures may be used as arguments, you might wonder if the same can be said
+about functions. And indeed they can! If you declare a function that takes a
+closure as parameter, then any function that satisfies the trait bound of that
+closure can be passed as a parameter.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>// Define a function which takes a function as an argument and calls it.
-fn call&#95;function&lt;F: Fn()&gt;(f: F) {
-    f()
+<div id="editor"><pre>// Define a function which takes a generic &#96;F&#96; argument
+// bounded by &#96;Fn&#96;, and calls it
+fn call&#95;me&lt;F: Fn()&gt;(f: F) {
+    f();
 }
 
-// Define a simple function to be used as an input.
-fn print() {
-    println!(&quot;I&#39;m a function!&quot;)
+// Define a wrapper function satisfying the &#96;Fn&#96; bound
+fn function() {
+    println!(&quot;I&#39;m a function!&quot;);
 }
 
 fn main() {
-    // Define a closure similar to the &#96;print()&#96; function above.
+    // Define a closure satisfying the &#96;Fn&#96; bound
     let closure = || println!(&quot;I&#39;m a closure!&quot;);
 
-    call&#95;function(closure);
-    call&#95;function(print);
+    call&#95;me(closure);
+    call&#95;me(function);
 }</pre></div>
 <div id="result"></div>
 </div>
 
 <p>As an additional note, the <code>Fn</code>, <code>FnMut</code>, and <code>FnOnce</code> <code>traits</code> dictate how
-a closure captures variables from the enclosing scope. </p>
+a closure captures variables from the enclosing scope.</p>
 <h3 id="see-also">See also:</h3>
 <p><a href="http://doc.rust-lang.org/std/ops/trait.Fn.html" target="_blank"><code>Fn</code></a>, <a href="http://doc.rust-lang.org/std/ops/trait.FnMut.html" target="_blank"><code>FnMut</code></a>, and <a href="http://doc.rust-lang.org/std/ops/trait.FnOnce.html" target="_blank"><code>FnOnce</code></a></p>
 
