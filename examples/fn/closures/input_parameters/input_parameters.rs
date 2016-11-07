@@ -4,7 +4,7 @@ fn apply<F>(f: F) where
     F: FnOnce() {
     // ^ TODO: Try changing this to `Fn` or `FnMut`.
 
-    f()
+    f();
 }
 
 // A function which takes a closure and returns an `i32`.
@@ -17,9 +17,10 @@ fn apply_to_3<F>(f: F) -> i32 where
 
 fn main() {
     use std::mem;
-    
+
     let greeting = "hello";
     // A non-copy type.
+    // `to_owned` creates owned data from borrowed one
     let mut farewell = "goodbye".to_owned();
 
     // Capture 2 variables: `greeting` by reference and
@@ -42,6 +43,7 @@ fn main() {
     // Call the function which applies the closure.
     apply(diary);
 
+    // `double` satisfies `apply_to_3`'s trait bound
     let double = |x| 2 * x;
 
     println!("3 doubled: {}", apply_to_3(double));
