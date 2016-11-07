@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="19.1" data-basepath=".." data-revision="1478535153266">
+    <div class="book" data-level="19.1" data-basepath=".." data-revision="1478538696499">
     
 
 <div class="book-summary">
@@ -2877,7 +2877,9 @@ documentation. They are denoted by a <code>///</code>, and support <a href="http
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>/// A human being is represented here
+<div id="editor"><pre>#![crate&#95;name = &quot;doc&quot;]
+
+/// A human being is represented here
 pub struct Person {
     /// A person must have a name, no matter how much Juliet may hate it
     name: String,
@@ -2895,6 +2897,7 @@ impl Person {
     /// &#96;&#96;&#96;
     /// // You can have rust code between fences inside the comments
     /// // If you pass --test to Rustdoc, it will even test it for you!
+    /// use doc::Person;
     /// let person = Person::new(&quot;name&quot;);
     /// &#96;&#96;&#96;
     pub fn new(name: &amp;str) -&gt; Person {
@@ -2919,6 +2922,12 @@ fn main() {
 <div id="result"></div>
 </div>
 
+<p>To run the tests, first build the code as a library, then tell rustdoc where
+to find the library so it can link it into each doctest program:</p>
+<pre><code>rustc doc.rs --crate-type lib
+rustdoc --test --extern doc=&quot;libdoc.rs&quot;
+</code></pre><p>(When you run <code>cargo test</code> on a library crate, Cargo will automatically
+generate and run the correct rustc and rustdoc commands.)</p>
 
                     
                     </section>
