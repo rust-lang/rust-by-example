@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.2.2" data-basepath="../.." data-revision="1478539520496">
+    <div class="book" data-level="8.2.2" data-basepath="../.." data-revision="1478539562305">
     
 
 <div class="book-summary">
@@ -2902,7 +2902,7 @@ fn apply&lt;F&gt;(f: F) where
     F: FnOnce() {
     // ^ TODO: Try changing this to &#96;Fn&#96; or &#96;FnMut&#96;.
 
-    f()
+    f();
 }
 
 // A function which takes a closure and returns an &#96;i32&#96;.
@@ -2918,6 +2918,7 @@ fn main() {
 
     let greeting = &quot;hello&quot;;
     // A non-copy type.
+    // &#96;to&#95;owned&#96; creates owned data from borrowed one
     let mut farewell = &quot;goodbye&quot;.to&#95;owned();
 
     // Capture 2 variables: &#96;greeting&#96; by reference and
@@ -2940,6 +2941,7 @@ fn main() {
     // Call the function which applies the closure.
     apply(diary);
 
+    // &#96;double&#96; satisfies &#96;apply&#95;to&#95;3&#96;&#39;s trait bound
     let double = |x| 2 &#42; x;
 
     println!(&quot;3 doubled: {}&quot;, apply&#95;to&#95;3(double));
