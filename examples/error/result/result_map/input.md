@@ -3,7 +3,7 @@ To avoid that, we need to be more specific about the return type. There, the
 regular element is of type `i32`.
 
 To determine the `Err` type, we look to 
-[`parse()`](parse), which is implemented with the [`FromStr`][from_str] trait for 
+[`parse()`][parse], which is implemented with the [`FromStr`][from_str] trait for 
 [`i32`][i32]. As a result, the `Err` type is specified as [`ParseIntError`][parse_int_error].
 
 In the example below, the straightforward `match` statement leads to code 
