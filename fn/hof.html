@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="8.3" data-basepath=".." data-revision="1479366161964">
+    <div class="book" data-level="8.3" data-basepath=".." data-revision="1479414471431">
     
 
 <div class="book-summary">
@@ -2868,7 +2868,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_65">
+                    <section class="normal" id="section-gitbook_66">
                     
                         <h2 id="83-higher-order-functions">8.3 Higher Order Functions</h2>
 <p>Rust provides Higher Order Functions (HOF). These are functions that
@@ -2907,7 +2907,7 @@ fn main() {
     let sum&#95;of&#95;squared&#95;odd&#95;numbers: u32 =
         (0..).map(|n| n &#42; n)             // All natural numbers squared
              .take&#95;while(|&amp;n| n &lt; upper) // Below upper limit
-             .filter(|n| is&#95;odd(&#42;n))     // That are odd
+             .filter(|&amp;n| is&#95;odd(n))     // That are odd
              .fold(0, |sum, i| sum + i); // Sum them
     println!(&quot;functional style: {}&quot;, sum&#95;of&#95;squared&#95;odd&#95;numbers);
 }</pre></div>
