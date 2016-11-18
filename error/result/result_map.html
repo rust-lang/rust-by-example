@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.3.1" data-basepath="../.." data-revision="1479414583756">
+    <div class="book" data-level="16.3.1" data-basepath="../.." data-revision="1479431762966">
     
 
 <div class="book-summary">
@@ -2875,7 +2875,7 @@
 To avoid that, we need to be more specific about the return type. There, the 
 regular element is of type <code>i32</code>.</p>
 <p>To determine the <code>Err</code> type, we look to 
-<a href="parse"><code>parse()</code></a>, which is implemented with the <a href="http://doc.rust-lang.org/std/str/trait.FromStr.html" target="_blank"><code>FromStr</code></a> trait for 
+<a href="https://doc.rust-lang.org/std/primitive.str.html#method.parse" target="_blank"><code>parse()</code></a>, which is implemented with the <a href="http://doc.rust-lang.org/std/str/trait.FromStr.html" target="_blank"><code>FromStr</code></a> trait for 
 <a href="http://doc.rust-lang.org/std/primitive.i32.html" target="_blank"><code>i32</code></a>. As a result, the <code>Err</code> type is specified as <a href="http://doc.rust-lang.org/std/num/struct.ParseIntError.html" target="_blank"><code>ParseIntError</code></a>.</p>
 <p>In the example below, the straightforward <code>match</code> statement leads to code 
 that is overall more cumbersome. Luckily, the <code>map</code> method of <code>Option</code> is 
