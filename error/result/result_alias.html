@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.3.2" data-basepath="../.." data-revision="1479431862108">
+    <div class="book" data-level="16.3.2" data-basepath="../.." data-revision="1479488789220">
     
 
 <div class="book-summary">
@@ -2868,7 +2868,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_36">
+                    <section class="normal" id="section-gitbook_37">
                     
                         <h3 id="1632-aliases-for-result">16.3.2 aliases for <code>Result</code></h3>
 <p>How about when we want to reuse a specific <code>Result</code> type many times? 
@@ -2882,10 +2882,9 @@ can succinctly define <em>all</em> associated <code>Results</code>. This is so u
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor"><pre>use std::num::ParseIntError;
-use std::result;
 
 // Define a generic alias for a &#96;Result&#96; with the error type &#96;ParseIntError&#96;.
-type AliasedResult&lt;T&gt; = result::Result&lt;T, ParseIntError&gt;;
+type AliasedResult&lt;T&gt; = Result&lt;T, ParseIntError&gt;;
 
 // Use the above alias to refer to our specific &#96;Result&#96; type.
 fn double&#95;number(number&#95;str: &amp;str) -&gt; AliasedResult&lt;i32&gt; {
