@@ -18,14 +18,14 @@ Install [Rust](http://www.rust-lang.org/install.html) and
 run:
 
 ```
-sudo apt-get install nodejs npm subversion
+sudo apt-get install nodejs npm subversion calibre
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
 ### Non-Debian prerequisites
 
 Install Rust [nightly](http://www.rust-lang.org/install.html),
-`node`, `npm`, and `subversion`.
+`node`, `npm`, `subversion` and `calibre`.
 
 ### Build instructions
 
