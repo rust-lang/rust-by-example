@@ -16,5 +16,5 @@ required.
 
 [`Box`][box] and [`std::mem::drop`][drop]
 
-[box]: /std/box.html
+[box]: ../std/box.html
 [drop]: http://doc.rust-lang.org/std/mem/fn.drop.html

@@ -33,7 +33,7 @@ See the following example for explicit lifetime annotation in use:
 
 [generics][generics] and [closures][closures]
 
-[anonymity]: /fn/closures/anonymity.html
-[closures]: /fn/closures.html
-[elision]: /scope/lifetime/elision.html
-[generics]: /generics.html
+[anonymity]: ../fn/closures/anonymity.html
+[closures]: ../fn/closures.html
+[elision]: ../scope/lifetime/elision.html
+[generics]: ../generics.html

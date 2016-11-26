@@ -11,5 +11,5 @@ These expand beyond what the [primitives][primitives] provide.
 
 [primitives][primitives] and [the std library][std]
 
-[primitives]: /primitives.html
+[primitives]: ../primitives.html
 [std]: http://doc.rust-lang.org/std/

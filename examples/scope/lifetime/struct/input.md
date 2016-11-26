@@ -7,4 +7,4 @@ Annotation of lifetimes in structures are also similar to functions:
 [`structs`][structs]
 
 
-[structs]: /custom_types/structs.html
+[structs]: ../custom_types/structs.html

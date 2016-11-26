@@ -14,5 +14,5 @@ off some valid forms of functions with lifetimes:
 
 [functions][fn]
 
-[elision]: /scope/lifetime/elision.html
-[fn]: /fn.html
+[elision]: ../scope/lifetime/elision.html
+[fn]: ../fn.html

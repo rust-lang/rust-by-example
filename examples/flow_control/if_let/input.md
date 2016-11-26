@@ -26,6 +26,6 @@ failure options to be specified:
 
 [`enum`][enum], [`Option`][option], and the [RFC][if_let_rfc]
 
-[enum]: /custom_types/enum.html
+[enum]: ../custom_types/enum.html
 [if_let_rfc]: https://github.com/rust-lang/rfcs/pull/160
-[option]: /std/option.html
+[option]: ../std/option.html

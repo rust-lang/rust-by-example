@@ -16,5 +16,5 @@ section, associated types provide exactly that capability.
 
 [`struct`s][structs], and [`trait`s][traits]
 
-[structs]: /custom_types/structs.html
-[traits]: /trait.html
+[structs]: ../custom_types/structs.html
+[traits]: ../trait.html
