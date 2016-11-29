@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.6" data-basepath=".." data-revision="1480385401122">
+    <div class="book" data-level="18.6" data-basepath=".." data-revision="1480444822520">
     
 
 <div class="book-summary">
@@ -2900,7 +2900,7 @@ filesystem.</p>
 
 <span class="hljs-comment">// A simple implementation of `% touch path` (ignores existing files)</span>
 <span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">touch</span></span>(path: &amp;Path) -&gt; io::Result&lt;()&gt; {
-    <span class="hljs-keyword">match</span> OpenOptions::new().create(<span class="hljs-keyword">true</span>).open(path) {
+    <span class="hljs-keyword">match</span> OpenOptions::new().create(<span class="hljs-keyword">true</span>).write(<span class="hljs-keyword">true</span>).open(path) {
         Ok(<span class="hljs-number">_</span>) =&gt; Ok(()),
         Err(e) =&gt; Err(e),
     }
