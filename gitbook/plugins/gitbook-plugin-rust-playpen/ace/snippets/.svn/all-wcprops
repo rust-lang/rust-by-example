@@ -3,36 +3,6 @@ svn:wc:ra_dav:version-url
 V 55
 /ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/snippets
 END
-lsl.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/lsl.js
-END
-ocaml.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ocaml.js
-END
-rust.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rust.js
-END
-velocity.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/velocity.js
-END
-svg.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/svg.js
-END
 glsl.js
 K 25
 svn:wc:ra_dav:version-url
@@ -854,4 +824,34 @@ K 25
 svn:wc:ra_dav:version-url
 V 61
 /ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/css.js
+END
+lsl.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/123/trunk/src-min/snippets/lsl.js
+END
+ocaml.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/ocaml.js
+END
+rust.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/rust.js
+END
+velocity.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/velocity.js
+END
+svg.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/84/trunk/src-min/snippets/svg.js
 END
