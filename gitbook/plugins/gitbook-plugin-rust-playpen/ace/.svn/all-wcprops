@@ -3,6 +3,42 @@ svn:wc:ra_dav:version-url
 V 46
 /ajaxorg/ace-builds/!svn/ver/156/trunk/src-min
 END
+ext-old_ie.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/ext-old_ie.js
+END
+mode-golang.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/mode-golang.js
+END
+mode-wollok.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/mode-wollok.js
+END
+theme-clouds.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/theme-clouds.js
+END
+mode-sh.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/mode-sh.js
+END
+theme-kr_theme.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/theme-kr_theme.js
+END
 mode-textile.js
 K 25
 svn:wc:ra_dav:version-url
@@ -1208,40 +1244,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 65
 /ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/theme-sqlserver.js
-END
-ext-old_ie.js
-K 25
-svn:wc:ra_dav:version-url
-V 60
-/ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/ext-old_ie.js
-END
-mode-golang.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/mode-golang.js
-END
-mode-wollok.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/mode-wollok.js
-END
-theme-clouds.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/theme-clouds.js
-END
-mode-sh.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/156/trunk/src-min/mode-sh.js
-END
-theme-kr_theme.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/120/trunk/src-min/theme-kr_theme.js
 END
