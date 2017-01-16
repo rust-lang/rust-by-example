@@ -1,3 +1,11 @@
+// Enable feature field init shorthand
+#![feature(field_init_shorthand)]
+#[derive(Debug)]
+struct Person<'a> {
+    name: &'a str,
+    age: u8
+}
+
 // A unit struct
 struct Nil;
 
@@ -18,6 +26,15 @@ struct Rectangle {
 }
 
 fn main() {
+    // Create struct with field init shorthand
+    let name = "Peter";
+    let age = 27;
+    let peter = Person { name, age };
+    
+    // Print debug struct
+    println!("{:?}", peter);
+    
+    
     // Instantiate a `Point`
     let point: Point = Point { x: 0.3, y: 0.4 };
 
