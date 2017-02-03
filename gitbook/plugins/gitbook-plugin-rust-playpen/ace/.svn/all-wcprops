@@ -3,6 +3,24 @@ svn:wc:ra_dav:version-url
 V 45
 /ajaxorg/ace-builds/!svn/ver/72/trunk/src-min
 END
+mode-php.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-php.js
+END
+mode-gitignore.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-gitignore.js
+END
+ext-static_highlight.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/ext-static_highlight.js
+END
 mode-rust.js
 K 25
 svn:wc:ra_dav:version-url
@@ -1226,22 +1244,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 57
 /ajaxorg/ace-builds/!svn/ver/2/trunk/src-min/mode-text.js
-END
-mode-php.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-php.js
-END
-mode-gitignore.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-gitignore.js
-END
-ext-static_highlight.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/ext-static_highlight.js
 END
