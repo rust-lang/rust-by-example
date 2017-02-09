@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2.2" data-basepath="../.." data-revision="1486616957987">
+    <div class="book" data-level="1.2.2" data-basepath="../.." data-revision="1486678375027">
     
 
 <div class="book-summary">
@@ -2929,13 +2929,13 @@ impl fmt::Display for MinMax {
 
 // Define a structure where the fields are nameable for comparison.
 #[derive(Debug)]
-struct Point2 {
+struct Point2D {
     x: f64,
     y: f64,
 }
 
-// Similarly, implement for Point2
-impl fmt::Display for Point2 {
+// Similarly, implement for Point2D
+impl fmt::Display for Point2D {
     fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
         // Customize so only &#96;x&#96; and &#96;y&#96; are denoted.
         write!(f, &quot;x: {}, y: {}&quot;, self.x, self.y)
@@ -2956,7 +2956,7 @@ fn main() {
              small = small&#95;range,
              big = big&#95;range);
 
-    let point = Point2 { x: 3.3, y: 7.2 };
+    let point = Point2D { x: 3.3, y: 7.2 };
 
     println!(&quot;Compare points:&quot;);
     println!(&quot;Display: {}&quot;, point);
