@@ -33,6 +33,13 @@ fn main() {
         p2: point,
     };
 
+    // Create a struct using field initialization shorthand. When local names
+    // match the names of the public fields of the struct, you don't have to
+    // type them twice!
+    let p1 = 0.1;
+    let p2 = 0.3;
+    let _shorthand = Point { p1, p2 };
+
     // Instantiate a unit struct
     let _nil = Nil;
 
