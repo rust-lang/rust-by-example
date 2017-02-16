@@ -50,7 +50,7 @@ each requires its own implementation. This is detailed further in
 
 ### Activity
 
-After checking the output of the above example, use the `Point2` struct as
+After checking the output of the above example, use the `Point2D` struct as
 guide to add a Complex struct to the example. When printed in the same
 way, the output should be:
 ```
