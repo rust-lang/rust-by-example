@@ -43,4 +43,4 @@ a
 
 [`cfg!`][cfg]
 
-[cfg]: ../attribute/cfg.html
+[cfg]: /attribute/cfg.html

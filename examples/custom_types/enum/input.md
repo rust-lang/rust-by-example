@@ -7,8 +7,8 @@ an `enum`.
 
 [`attributes`][attributes], [`match`][match], [`fn`][fn], и [`String`][str]
 
-[attributes]: ../attribute.html
+[attributes]: /attribute.html
 [c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
-[match]: ../flow_control/match.html
-[fn]: ../fn.html
-[str]: ../std/str.html
+[match]: /flow_control/match.html
+[fn]: /fn.html
+[str]: /std/str.html

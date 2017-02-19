@@ -58,9 +58,9 @@ Debug: Complex { real: 3.3, imag: 7.2 }
 [`derive`][derive], [`std::fmt`][fmt], [macros], [`struct`][structs],
 [`trait`][traits], и [use][use]
 
-[derive]: ../trait/derive.html
+[derive]: /trait/derive.html
 [fmt]: http://doc.rust-lang.org/std/fmt/
-[macros]: ../macros.html
-[structs]: ../custom_types/structs.html
-[traits]: ../trait.html
-[use]: ../mod/use.html
+[macros]: /macros.html
+[structs]: /custom_types/structs.html
+[traits]: /trait.html
+[use]: /mod/use.html

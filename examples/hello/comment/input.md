@@ -15,4 +15,4 @@ Rust предоставляет несколько способов коммен
 
 [Library documentation][docs]
 
-[docs]: ../meta/doc.html
+[docs]: /meta/doc.html

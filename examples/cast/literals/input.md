@@ -19,6 +19,6 @@
   Подробнее см. [модули][mod] и [контейнеры][crate], 
   а так же соответствующую [главу в книге](http://rurust.github.io/rust_book_ru/src/crates-and-modules.html) 
 
-[borrow]: ../scope/borrow.html
-[mod]: ../mod.html
-[crate]: ../crates.html
+[borrow]: /scope/borrow.html
+[mod]: /mod.html
+[crate]: /crates.html

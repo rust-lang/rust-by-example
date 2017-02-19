@@ -30,5 +30,5 @@ This example shows some of the syntax in action:
 
 [`struct`s][structs]
 
-[structs]: ../custom_types/structs.html
+[structs]: /custom_types/structs.html
 [camelcase]: https://en.wikipedia.org/wiki/CamelCase

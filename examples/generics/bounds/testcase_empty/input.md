@@ -10,4 +10,4 @@ include any functionality, you can still use it as a bound. `Eq` and
 
 [eq]: http://doc.rust-lang.org/std/cmp/trait.Eq.html
 [ord]: http://doc.rust-lang.org/std/cmp/trait.Ord.html
-[traits]: ../trait.html
+[traits]: /trait.html

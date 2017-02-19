@@ -11,4 +11,4 @@
 
 [Итераторы (Iterator)][iter]
 
-[iter]: ../trait/iter.html
+[iter]: /trait/iter.html

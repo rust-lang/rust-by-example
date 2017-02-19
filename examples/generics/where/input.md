@@ -25,6 +25,6 @@ The `impl` in this example cannot be directly expressed without a `where` clause
 
 [RFC][where], [`struct`][struct], and [`trait`][trait]
 
-[struct]: ../custom_types/structs.html
-[trait]: ../trait.html
+[struct]: /custom_types/structs.html
+[trait]: /trait.html
 [where]: https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md

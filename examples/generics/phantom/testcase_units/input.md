@@ -28,10 +28,10 @@ The whole implementation:
 
 [Borrowing (`&`)]: /scope/borrow.html
 [Bounds (`X: Y`)]: /trait/bounds.html
-[enum]: ../custom_types/enum.html
+[enum]: /custom_types/enum.html
 [impl & self]: /fn/methods.html
-[Overloading]: ../trait/ops.html
-[ref]: ../scope/borrow/ref.html
+[Overloading]: /trait/ops.html
+[ref]: /scope/borrow/ref.html
 [Traits (`X for Y`)]: /trait.html
-[TupleStructs]: ../custom_types/structs.html
+[TupleStructs]: /custom_types/structs.html
 [std::marker::PhantomData]: https://doc.rust-lang.org/std/marker/struct.PhantomData.html

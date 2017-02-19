@@ -6,4 +6,4 @@
 
 [casting][cast]
 
-[cast]: ../cast.html
+[cast]: /cast.html

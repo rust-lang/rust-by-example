@@ -11,5 +11,5 @@ the `primitives`. Some of these include:
 
 [primitives][primitives] and [the std library][std]
 
-[primitives]: ../primitives.html
+[primitives]: /primitives.html
 [std]: http://doc.rust-lang.org/std/

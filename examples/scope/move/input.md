@@ -12,4 +12,4 @@ creating dangling pointers.
 
 {move.play}
 
-[references]: ../flow_control/match/destructuring/destructure_pointers.html
+[references]: /flow_control/match/destructuring/destructure_pointers.html
