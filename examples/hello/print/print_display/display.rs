@@ -15,13 +15,13 @@ impl fmt::Display for MinMax {
 
 // Определим структуру с именованными полями, для сравнения 
 #[derive(Debug)]
-struct Point2 {
+struct Point2D {
     x: f64,
     y: f64,
 }
 
 // По аналогии, реализуем `Display` для Point2
-impl fmt::Display for Point2 {
+impl fmt::Display for Point2D {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // Обращаться к полям структуры Point2 будет по имени
         write!(f, "x: {}, y: {}", self.x, self.y)
@@ -42,7 +42,7 @@ fn main() {
              small = small_range,
              big = big_range);
 
-    let point = Point2 { x: 3.3, y: 7.2 };
+    let point = Point2D { x: 3.3, y: 7.2 };
 
     println!("Compare points:");
     println!("Display: {}", point);

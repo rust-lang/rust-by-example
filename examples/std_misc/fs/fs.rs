@@ -24,7 +24,7 @@ fn echo(s: &str, path: &Path) -> io::Result<()> {
 
 // A simple implementation of `% touch path` (ignores existing files)
 fn touch(path: &Path) -> io::Result<()> {
-    match OpenOptions::new().create(true).open(path) {
+    match OpenOptions::new().create(true).write(true).open(path) {
         Ok(_) => Ok(()),
         Err(e) => Err(e),
     }
