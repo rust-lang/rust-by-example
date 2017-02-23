@@ -21,7 +21,7 @@
             { "id": "c_like", "title": "C-подобные", "children": null },
             { "id": "testcase_linked_list", "title": "Testcase: linked-list", "children": null }
         ] },
-        { "id": "constants", "title": "constants", "children": null }
+        { "id": "constants", "title": "константы", "children": null }
     ] },
     { "id": "variable_bindings", "title": "Связывание переменных", "children": [
         { "id": "mut", "title": "Изменяемость", "children": null },
