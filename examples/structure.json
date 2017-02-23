@@ -37,7 +37,7 @@
     { "id": "flow_control", "title": "Управление потоком", "children": [
         { "id": "if_else", "title": "if/else", "children": null },
         { "id": "loop", "title": "loop", "children": [
-            { "id": "nested", "title": "Nesting and labels", "children": null }
+            { "id": "nested", "title": "Вложенность и метки", "children": null }
         ] },
         { "id": "while", "title": "while", "children": null },
         { "id": "for", "title": "for and range", "children": null },
