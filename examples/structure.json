@@ -56,7 +56,7 @@
     ] },
     { "id": "fn", "title": "Функции", "children": [
         { "id": "methods", "title": "Методы", "children": null },
-        { "id": "closures", "title": "Closures", "children": [
+        { "id": "closures", "title": "Замыкания", "children": [
             { "id": "capture", "title": "Capturing", "children": null },
             { "id": "input_parameters", "title": "As input parameters", "children": null },
             { "id": "anonymity", "title": "Type anonymity", "children": null },
