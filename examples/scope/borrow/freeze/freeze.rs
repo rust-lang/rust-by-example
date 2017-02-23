@@ -7,7 +7,7 @@ fn main() {
 
         // Error! `_mutable_integer` is frozen in this scope
         _mutable_integer = 50;
-        // FIXME ^ Comment out this line
+        // ИСПРАВЬТЕ ^ Comment out this line
 
         // `_large_integer` goes out of scope
     }

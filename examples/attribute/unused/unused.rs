@@ -5,7 +5,7 @@ fn used_function() {}
 fn unused_function() {}
 
 fn noisy_unused_function() {}
-// FIXME ^ Добавьте атрибут `dead_code`, чтобы убрать предупреждение
+// ИСПРАВЬТЕ ^ Добавьте атрибут `dead_code`, чтобы убрать предупреждение
 
 fn main() {
     used_function();

@@ -18,7 +18,7 @@ fn main() {
 
     // Ошибка! `short_lived_binding` нет в этой области видимости
     println!("outer short: {}", short_lived_binding);
-    // FIXME ^ Закомментируйте строку
+    // ИСПРАВЬТЕ ^ Закомментируйте строку
 
     println!("outer long: {}", long_lived_binding);
     

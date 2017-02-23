@@ -60,7 +60,7 @@ impl Animal for Sheep {
 fn main() {
     // Анотация типа в данном случае необходима.
     let mut dolly: Sheep = Animal::new("Dolly");
-    // TODO ^ Попробуйте убрать аннотацию типа
+    // ЗАДАНИЕ ^ Попробуйте убрать аннотацию типа
 
     dolly.talk();
     dolly.shear();

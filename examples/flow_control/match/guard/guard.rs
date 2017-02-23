@@ -1,6 +1,6 @@
 fn main() {
     let pair = (2, -2);
-    // TODO ^ Try different values for `pair`
+    // ЗАДАНИЕ ^ Try different values for `pair`
 
     println!("Tell me about {:?}", pair);
     match pair {

@@ -57,13 +57,13 @@ fn main() {
     
     // Error! `private_function` is private
     //my::private_function();
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
 
     // Error! `private_function` is private
     //my::nested::private_function();
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
 
     // Error! `private_nested` is a private module
     //my::private_nested::function();
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
 }

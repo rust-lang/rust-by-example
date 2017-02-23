@@ -6,7 +6,7 @@ type Inch = u64;
 // о именах не в стиле CamelCase
 #[allow(non_camel_case_types)]
 type u64_t = u64;
-// TODO ^ Попробуйте удалить атрибут
+// ЗАДАНИЕ ^ Попробуйте удалить атрибут
 
 fn main() {
     // `NanoSecond` = `Inch` = `u64_t` = `u64`.
