@@ -13,6 +13,9 @@ git fetch upstream && git reset upstream/gh-pages
 #echo "rustbyexample.com" > CNAME
 cp -r ../../vendor/gitbook/* gitbook/
 
+#fix editor syntax highlight
+sed -i 's#/gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js#../gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js#g' gitbook/plugins/gitbook-plugin-rust-playpen/editor.js
+
 touch .
 
 git add -A .
