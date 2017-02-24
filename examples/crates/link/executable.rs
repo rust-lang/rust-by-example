@@ -1,10 +1,10 @@
-// Link to `library`, import items under the `rary` module
+// Ссылка на `библиотеку`. Импортируем элементы, как модуль `rary`
 extern crate rary;
 
 fn main() {
     rary::public_function();
 
-    // Error! `private_function` is private
+    // Ошибка! Функция `private_function` приватная
     //rary::private_function();
 
     rary::indirect_access();
