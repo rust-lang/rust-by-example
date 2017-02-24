@@ -76,7 +76,7 @@
         { "id": "super", "title": "`super` and `self`", "children": null },
         { "id": "split", "title": "File hierarchy", "children": null }
     ] },
-    { "id": "crates", "title": "Crates", "children": [
+    { "id": "crates", "title": "Контейнеры", "children": [
         { "id": "lib", "title": "Library", "children": null },
         { "id": "link", "title": "`extern crate`", "children": null }
     ] },
