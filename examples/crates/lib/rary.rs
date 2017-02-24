@@ -1,13 +1,13 @@
 pub fn public_function() {
-    println!("called rary's `public_function()`");
+    println!("вызвана `public_function()` контейнера rary");
 }
 
 fn private_function() {
-    println!("called rary's `private_function()`");
+    println!("вызвана `private_function()` контейнера rary");
 }
 
 pub fn indirect_access() {
-    print!("called rary's `indirect_access()`, that\n> ");
+    print!("вызвана `indirect_access()` контейнера rary, которая\n> ");
 
     private_function();
 }
