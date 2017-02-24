@@ -48,7 +48,7 @@
                 { "id": "destructure_pointers", "title": "pointers/ref", "children": null },
                 { "id": "destructure_structures", "title": "structs", "children": null }
             ] },
-            { "id": "guard", "title": "Guards", "children": null },
+            { "id": "guard", "title": "Ограничитель шаблонов", "children": null },
             { "id": "binding", "title": "Binding", "children": null }
         ] },
         { "id": "if_let", "title": "if let", "children": null },
