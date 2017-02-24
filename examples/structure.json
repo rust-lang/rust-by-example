@@ -42,7 +42,7 @@
         { "id": "while", "title": "while", "children": null },
         { "id": "for", "title": "for and range", "children": null },
         { "id": "match", "title": "match", "children": [
-            { "id": "destructuring", "title": "Destructuring", "children": [
+            { "id": "destructuring", "title": "Деструктуризация", "children": [
                 { "id": "destructure_tuple", "title": "tuples", "children": null },
                 { "id": "destructure_enum", "title": "enums", "children": null },
                 { "id": "destructure_pointers", "title": "pointers/ref", "children": null },
