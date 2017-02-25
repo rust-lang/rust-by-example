@@ -40,7 +40,7 @@ Many libraries might get away with only implementing `Display` and
 adding `From` on an as needed basis. However, more serious libraries will 
 eventually need to meet higher expectations of error handling implementation.
 
-### See also:
+### Смотрите также:
 
 [`From::from`][from] and [`try!`][try]
 

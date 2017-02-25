@@ -24,7 +24,7 @@ and not be allowed. Thus, bounding by one of the `traits`: `Fn`, `FnMut`, or
 
 {anonymity.play}
 
-### See also:
+### Смотрите также:
 
 [A thorough analysis][thorough_analysis], [`Fn`][fn], [`FnMut`][fn_mut],
 and [`FnOnce`][fn_once]

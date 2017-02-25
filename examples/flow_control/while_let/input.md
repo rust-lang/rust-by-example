@@ -30,7 +30,7 @@ Using `while let` makes this sequence much nicer:
 
 {while_let.play}
 
-### See also:
+### Смотрите также:
 
 [`enum`][enum], [`Option`][option], and the [RFC][while_let_rfc]
 

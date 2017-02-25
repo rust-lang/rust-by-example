@@ -29,7 +29,7 @@ See the following example for explicit lifetime annotation in use:
 
 [^1]: [elision][elision] implicitly annotates lifetimes and so is different.
 
-### See also:
+### Смотрите также:
 
 [generics][generics] and [closures][closures]
 

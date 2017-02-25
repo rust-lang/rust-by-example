@@ -12,7 +12,7 @@ section, associated types provide exactly that capability.
 
 {problem.play}
 
-### See also:
+### Смотрите также:
 
 [`struct`s][structs], and [`trait`s][traits]
 

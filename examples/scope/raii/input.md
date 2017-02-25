@@ -30,7 +30,7 @@ $ rustc raii.rs && valgrind ./raii
 
 No leaks here!
 
-### See also:
+### Смотрите также:
 
 [Box][box]
 

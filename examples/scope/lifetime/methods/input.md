@@ -2,7 +2,7 @@ Methods are annotated similarly to functions:
 
 {methods.play}
 
-### See also:
+### Смотрите также:
 
 [methods][methods]
 

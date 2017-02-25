@@ -3,7 +3,7 @@ the `Drop` `trait` as a generic method to `drop` itself and an input.
 
 {trait.play}
 
-### See also:
+### Смотрите также:
 
 [`Drop`][Drop], [`struct`][structs], and [`trait`][traits]
 

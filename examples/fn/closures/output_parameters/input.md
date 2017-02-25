@@ -20,7 +20,7 @@ closure.
 
 {output_parameters.play}
 
-### See also:
+### Смотрите также:
 
 [Boxing][box], [`Fn`][fn], [`FnMut`][fnmut], and [Generics][generics].
 

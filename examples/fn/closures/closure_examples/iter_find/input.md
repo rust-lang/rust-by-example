@@ -19,7 +19,7 @@ pub trait Iterator {
 
 {iter_find.play}
 
-### See also:
+### Смотрите также:
 
 [`std::iter::Iterator::find`][find]
 

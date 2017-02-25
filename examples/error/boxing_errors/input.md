@@ -35,7 +35,7 @@ with `DoubleError`:
 
 {boxing_errors.play}
 
-### See also:
+### Смотрите также:
 
 [Dynamic dispatch][dynamic_dispatch] and [`Error` trait][error]
 

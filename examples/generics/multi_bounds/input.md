@@ -3,7 +3,7 @@ separated with `,`.
 
 {multi.play}
 
-### See also:
+### Смотрите также:
 
 [`std::fmt`][fmt] and [`trait`s][traits]
 

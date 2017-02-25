@@ -2,7 +2,7 @@ A common use for `enums` is to create a linked-list:
 
 {linked_list.play}
 
-### See also:
+### Смотрите также:
 
 [`Box`][box] and [methods][methods]
 

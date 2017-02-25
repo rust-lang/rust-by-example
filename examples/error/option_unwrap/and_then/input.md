@@ -12,7 +12,7 @@ Using `map()` instead of `and_then()` would have given an
 
 {and_then.play}
 
-### See also:
+### Смотрите также:
 
 [closures][closures], [`Option`][option], and [`Option::and_then()`][and_then]
 

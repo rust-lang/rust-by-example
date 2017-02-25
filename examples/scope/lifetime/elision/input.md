@@ -8,7 +8,7 @@ description of elision, see [lifetime elision][elision] in the book.
 
 {elision.play}
 
-### See also:
+### Смотрите также:
 
 [elision][elision]
 

@@ -14,7 +14,7 @@ The following is a list of derivable traits:
  
 {derive.play}
 
-### See also:
+### Смотрите также:
 [`derive`][derive]
 
 [attribute]: /attribute.html

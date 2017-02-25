@@ -21,7 +21,7 @@ The whole implementation:
 
 {units.play}
 
-### See also:
+### Смотрите также:
 
 [Borrowing (`&`)], [Bounds (`X: Y`)], [enum], [impl & self],
 [Overloading], [ref], [Traits (`X for Y`)], and [TupleStructs].

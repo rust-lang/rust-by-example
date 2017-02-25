@@ -3,6 +3,6 @@
 
 {guard.play}
 
-### See also:
+### Смотрите также:
 
 [Tuples](/primitives/tuples.html)

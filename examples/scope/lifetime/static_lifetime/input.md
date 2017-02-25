@@ -11,7 +11,7 @@ See the following example for a display of each method:
 
 {static_lifetime.play}
 
-### See also:
+### Смотрите также:
 
 [`'static` constants][static_const]
 

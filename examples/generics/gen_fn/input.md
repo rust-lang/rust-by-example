@@ -11,7 +11,7 @@ A function call with explicitly specified type parameters looks like:
 
 {fn.play}
 
-### See also:
+### Смотрите также:
 
 [functions][fn] and [`struct`s][structs]
 
