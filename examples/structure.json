@@ -70,7 +70,7 @@
         { "id": "hof", "title": "Функции Высшего Порядка", "children": null }
     ] },
     { "id": "mod", "title": "Модули", "children": [
-        { "id": "visibility", "title": "Visibility", "children": null },
+        { "id": "visibility", "title": "Видимость", "children": null },
         { "id": "struct_visibility", "title": "Struct visibility", "children": null },
         { "id": "use", "title": "The `use` declaration", "children": null },
         { "id": "super", "title": "`super` and `self`", "children": null },
