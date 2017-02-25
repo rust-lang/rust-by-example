@@ -1,31 +1,31 @@
-// Bind the `deeply::nested::function` path to `other_function`.
+// Привязать путь `deeply::nested::function` к `other_function`.
 use deeply::nested::function as other_function;
 
 fn function() {
-    println!("called `function()`");
+    println!("вызвана `function()`");
 }
 
 mod deeply {
     pub mod nested {
         pub fn function() {
-            println!("called `deeply::nested::function()`")
+            println!("вызвана `deeply::nested::function()`")
         }
     }
 }
 
 fn main() {
-    // Easier access to `deeply::nested::function`
+    // Упрощённый доступ к `deeply::nested::function`
     other_function();
 
     println!("Entering block");
     {
-        // This is equivalent to `use deeply::nested::function as function`.
-        // This `function()` will shadow the outer one.
+        // Эквивалентно `use deeply::nested::function as function`.
+        // `function()` затенение собой внешнюю функцию.
         use deeply::nested::function;
         function();
 
-        // `use` bindings have a local scope. In this case, the
-        // shadowing of `function()` is only in this block.
+        // у привязок `use` локальная область видимости. В данном случае
+        // внешняя `function()` затенена только в этом блоке.
         println!("Leaving block");
     }
 

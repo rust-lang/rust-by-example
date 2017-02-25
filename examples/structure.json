@@ -72,7 +72,7 @@
     { "id": "mod", "title": "Модули", "children": [
         { "id": "visibility", "title": "Видимость", "children": null },
         { "id": "struct_visibility", "title": "Struct visibility", "children": null },
-        { "id": "use", "title": "The `use` declaration", "children": null },
+        { "id": "use", "title": "Декларация `use`", "children": null },
         { "id": "super", "title": "`super` and `self`", "children": null },
         { "id": "split", "title": "File hierarchy", "children": null }
     ] },
