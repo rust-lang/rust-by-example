@@ -171,7 +171,7 @@
             { "id": "hashset", "title": "HashSet", "children": null }
         ] }
     ] },
-    { "id": "std_misc", "title": "Std misc", "children": [
+    { "id": "std_misc", "title": "Разное в стандартной библиотеке", "children": [
         { "id": "threads", "title": "Threads", "children": null },
         { "id": "channels", "title": "Channels", "children": null },
         { "id": "path", "title": "Path", "children": null },
