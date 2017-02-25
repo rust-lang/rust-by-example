@@ -89,7 +89,7 @@
     ] },
     { "id": "generics", "title": "Generics", "children": [
         { "id": "gen_fn", "title": "Functions", "children": null },
-        { "id": "impl", "title": "Implementation", "children": null },
+        { "id": "impl", "title": "Реализация", "children": null },
         { "id": "gen_trait", "title": "Traits", "children": null },
         { "id": "bounds", "title": "Bounds", "children": [
             { "id": "testcase_empty", "title": "Testcase: empty bounds", "children": null }

@@ -1,20 +1,20 @@
-Similar to functions, implementations require care to remain generic.
+Подобно функциям, реализации требуют выполнения некоторых условий, чтобы оставаться обобщенными.
 
 ```rust
-struct S; // Concrete type `S`
-struct GenericVal<T>(T,); // Generic type `GenericVal`
+struct S; // Конкретный тип `S`
+struct GenericVal<T>(T,); // Обобщенный тип `GenericVal`
 
-// impl of GenericVal where we explicitly specify type parameters:
-impl GenericVal<f32> {} // Specify `f32`
-impl GenericVal<S> {} // Specify `S` as defined above
+// Реализация GenericVal, где мы явно указавыем типы данных параметров:
+impl GenericVal<f32> {} // Указываем тип `f32`
+impl GenericVal<S> {} // Указываем тип `S`, который мы определили выше
 
-// `<T>` Must precede the type to remain generic
+// `<T>` Должен указываться перед типом, чтобы оставаться обобщенным
 impl <T> GenericVal<T> {}
 ```
 
 {impl.play}
 
-### See also:
+### Смотрите также:
 
 [functions returning references][fn], [`impl`][methods], and [`struct`][structs]
 

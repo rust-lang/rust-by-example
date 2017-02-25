@@ -6,12 +6,12 @@ struct GenVal<T>{
     gen_val: T
 }
 
-// impl of Val
+// Реалицация Val
 impl Val {
     fn value(&self) -> &f64 { &self.val }
 }
 
-// impl of GenVal for a generic type `T`
+// Реалицация GenVal для обобщённого типа `T`
 impl <T> GenVal<T> {
     fn value(&self) -> &T { &self.gen_val }
 }
