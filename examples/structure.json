@@ -172,7 +172,7 @@
         ] }
     ] },
     { "id": "std_misc", "title": "Разное в стандартной библиотеке", "children": [
-        { "id": "threads", "title": "Threads", "children": null },
+        { "id": "threads", "title": "Потоки", "children": null },
         { "id": "channels", "title": "Channels", "children": null },
         { "id": "path", "title": "Path", "children": null },
         { "id": "file", "title": "File I/O", "children": [
