@@ -158,7 +158,7 @@
         { "id": "boxing_errors", "title": "`Box`ing errors", "children": null }
     ] },
     { "id": "std", "title": "Std library types", "children": [
-        { "id": "box", "title": "Box, stack and heap", "children": null },
+        { "id": "box", "title": "Упаковка, стек и куча", "children": null },
         { "id": "vec", "title": "Вектора", "children": null },
         { "id": "str", "title": "Strings", "children": null },
         { "id": "option", "title": "`Option`", "children": null },
