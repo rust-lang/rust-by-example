@@ -1,4 +1,4 @@
-Tuples can be destructured in a `match` as follows:
+Кортежи можно деструктурировать с помощью `match` следующим образом:
 
 {tuples.play}
 
