@@ -74,7 +74,7 @@
         { "id": "struct_visibility", "title": "Struct visibility", "children": null },
         { "id": "use", "title": "Декларация `use`", "children": null },
         { "id": "super", "title": "`super` and `self`", "children": null },
-        { "id": "split", "title": "File hierarchy", "children": null }
+        { "id": "split", "title": "Иерархия файлов", "children": null }
     ] },
     { "id": "crates", "title": "Контейнеры", "children": [
         { "id": "lib", "title": "Библиотеки", "children": null },
