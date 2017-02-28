@@ -15,6 +15,6 @@ The example below shows the above syntax in action:
 [generics][generics], [bounds in generics][bounds], and 
 [multiple bounds in generics][multibounds]
 
-[generics]: /generics.html
-[bounds]: /generics/bounds.html
-[multibounds]: /generics/multi_bounds.html
+[generics]: ../../generics.html
+[bounds]: ../../generics/bounds.html
+[multibounds]: ../../generics/multi_bounds.html

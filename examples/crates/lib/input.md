@@ -12,4 +12,4 @@ library.rlib
 что и их контейнеры, но это имя можно изменить 
 с помощью [атрибута `crate_name`][crate-name].
 
-[crate-name]: /attribute/crate.html
+[crate-name]: ../attribute/crate.html

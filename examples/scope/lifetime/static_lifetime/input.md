@@ -15,4 +15,4 @@ See the following example for a display of each method:
 
 [`'static` constants][static_const]
 
-[static_const]: /custom_types/constants.html
+[static_const]: ../../custom_types/constants.html

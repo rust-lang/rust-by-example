@@ -11,5 +11,5 @@
 
 [примитивы][primitives] и [стандартная библиотека][std]
 
-[primitives]: /primitives.html
+[primitives]: primitives.html
 [std]: http://doc.rust-lang.org/std/

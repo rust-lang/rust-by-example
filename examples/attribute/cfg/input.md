@@ -12,5 +12,5 @@
 [the reference][ref], [`cfg!`][cfg], и [макросы][macros].
 
 [cfg]: http://doc.rust-lang.org/std/macro.cfg!.html
-[macros]: /macros.html
+[macros]: ../macros.html
 [ref]: http://doc.rust-lang.org/reference.html#conditional-compilation
