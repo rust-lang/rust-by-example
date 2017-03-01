@@ -1,77 +1,47 @@
-# Opening an issue
+# Создание новой задачи (issue)
 
-## I would like to see an example about $TOPIC
+## Отправление PR с исправлением мелкой ошибки
 
-Please check if such topic is already part of our
-[TODO list][issues-all]. If that's
-not the case, leave your request as a comment on that issue.
+Если вы отправляете PR с исправлением мелкой ошибки в существующий пример, пожалуйста,
+укажите id примера в заголовке PR, например "type/literals: исправление опечатки".
 
-## There's a typo/error in example $X
-## Example $X is not clear
-## I have an idea for example $X
+## Я нашёл опечатку в примере $X
 
-Please include the example id in the issue title, e.g. "variables/mut: concept
-not clear". The example id is the relative path in the URL without the html
-extension, e.g. URL: `http://rustbyexample.com/variables/scope.html` -> id:
-`variables/scope`
+Пожалуйста, напишите об этой опечатке в #9. 
 
-If it's something simple like a typo, you can send a PR directly.
+Если вы хотите сами исправить опечатку, но считаете, что у вас недостаточно опыта,
+ознакомьтесь с [инструкцией][first-pr] на сайте сообщества.
 
-# Sending a PR for a small fix
+Найти пример в исходном коде сайта довольно просто. Например, 
+если ссылка на пример выглядит так: `https://rurust.github.io/rust-by-example-ru/primitives.html`, то исходный код примера можно найти по пути `examples/primitives/`. Текст в файле `input.md`, а исходный код в `example_name.rs`.
 
-If you are submitting a correction/modification to an existing chapter, please
-start the commit message with the example id, e.g. "type/literals: fix typo".
+Структуру книги можно изучить в файле `examples/structure.json`
 
-# I want to contribute an example about $TOPIC
+## Я бы хотел увидеть пример по вопросу $TOPIC
+## Я нашел ошибку в примере $X
+## Пример $X не полностью раскрывает тему
+## У меня есть идеи по поводу примера $X
+## Я бы хотел добавить новый пример $X
 
-## Check if there is an action plan for that topic
+Данный проект является переводом. Задачи подобного рода лучше заводить в [репозитории][original-repo] оригинала.
 
-Look for
-[issues][issues-open]
-that have a C-* label:
+# Отправление PR с исправлением мелкой ошибки
 
-* C-new: A new chapter, there probably a lot to do here.
-
-* C-expand: Expand an existing chapter, new examples are needed.
-
-* C-split: The current chapter is too long, we want to split it into smaller
-  chunks.
-
-* C-taken: Someone is already working in this issue, but if there is a lot of
-  work to do, probably you can still help.
-
-## Let us know what are you working on
-
-If an issue about the topic already exists, leave a comment there to let us
-know that you'll help. Otherwise, open a new issue mentioning what topic you
-plan to work on.
-
-## Hack away
-
-See the [README][readme] for details about how the static site is generated.
-
-## Finally, send a PR
-
-* Don't forget to register the example in the `examples/structure.json` file.
-
-* Include the example id in the commit message header, e.g. for
-  `literals/string` use the message "literals: add example about strings"
-
-* Add a `Close #123` to the commit message, to close the issue that's been used
-  to track your work.
+Если вы отправляете PR с исправлением мелкой ошибки в существующий пример, пожалуйста,
+укажите id примера в заголовке PR, например "type/literals: исправление опечатки".
 
 # Code Style
 
 ## Markdown (.md)
 
-* Lines should contain a maximum of 99 characters.
-* Use reference style hyperlinks, for example:
+* Строки должны содержать не более 99 символов.
+* Ссылки должны быть выполнены в следующем стиле:
 
-Instead of:
+Вместо:
 
     [Goto my URL](http://www.myurl.com)
 
-Use:
+Используем:
 
     [Goto my URL][1]
 
@@ -80,10 +50,11 @@ Use:
 
 ## Rust code (.rs)
 
-* Lines should contain a maximum of 99 characters.
-* In comments, types, methods, macros and variables should be wrapped in
-  backticks, e.g. ``` `println!` ```
+* Строки должны содержать не более 99 символов.
+* В комментариях код должен быть заключён в кавычки, например: ``` `println!` ```
 
 [issues-all]: https://github.com/rust-lang/rust-by-example/issues/
 [issues-open]: https://github.com/rust-lang/rust-by-example/issues?labels=&page=1&state=open
 [readme]: README.md
+[first-pr]: https://rustycrate.ru/%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0/2016/03/07/contributing.html
+[original-repo]:https://github.com/rust-lang/rust-by-example
