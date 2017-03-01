@@ -3,6 +3,24 @@ svn:wc:ra_dav:version-url
 V 54
 /ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/snippets
 END
+scad.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/scad.js
+END
+nsis.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/62/trunk/src-min/snippets/nsis.js
+END
+latex.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/latex.js
+END
 ruby.js
 K 25
 svn:wc:ra_dav:version-url
@@ -836,22 +854,4 @@ K 25
 svn:wc:ra_dav:version-url
 V 68
 /ajaxorg/ace-builds/!svn/ver/57/trunk/src-min/snippets/javascript.js
-END
-scad.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/scad.js
-END
-nsis.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/62/trunk/src-min/snippets/nsis.js
-END
-latex.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/latex.js
 END
