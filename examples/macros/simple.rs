@@ -1,13 +1,13 @@
-// This is a simple macro named `say_hello`.
+// Этот простой макрос называется `say_hello`.
 macro_rules! say_hello {
-    // `()` indicates that the macro takes no argument.
+    // `()` указывает, что макрос не принимает аргументов.
     () => (
-        // The macro will expand into the contents of this block.
+        // Макрос будет раскрываться с содержимым этого блока.
         println!("Hello!");
     )
 }
 
 fn main() {
-    // This call will expand into `println!("Hello");`
+    // Этот вызов будет раскрыт в код `println!("Hello");`
     say_hello!()
 }
