@@ -4,12 +4,11 @@
 struct Structure(i32);
 
 // Добавим структуру `Structure` в структуру `Deep`.
-// Релазиуем для `Deep` возможность вывода с помощью fmt::Debug`.
+// Реализуем для `Deep` возможность вывода с помощью fmt::Debug`.
 #[derive(Debug)]
 struct Deep(Structure);
 
 fn main() {
-    // Printing with `{:?}` is similar to with `{}`.
     // Вывод с помощью `{:?}` аналогичен `{}`.
     println!("{:?} months in a year.", 12);
     println!("{1:?} {0:?} is the {actor:?} name.",
