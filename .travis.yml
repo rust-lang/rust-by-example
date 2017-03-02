@@ -22,7 +22,7 @@ script:
 - make test
 - make html
 - ./check-paths.sh
-- htmlproofer stage/_book --log-level error --only-4xx --check-html --url-ignore "#"
+- htmlproofer stage/_book --log-level error --only-4xx --check-html --allow-hash-href --file-ignore "stage/_book/cast/alias.html"
 notifications:
   email:
   - shaposhnikigor95@bk.ru
