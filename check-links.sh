@@ -1,3 +1,5 @@
+#!/bin/bash
+
 EXIT_CODE=0
 UPSTREAM_BUG=("stage/_book/generics/phantom/testcase_units.html")
 WHITE_LIST=("stage/_book/cast/alias.html")
