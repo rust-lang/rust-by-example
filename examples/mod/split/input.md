@@ -30,4 +30,4 @@ $ rustc split.rs && ./split
 вызвана `my::nested::function()`
 ```
 
-[visibility]: /mod/visibility.html
+[visibility]: ../mod/visibility.html

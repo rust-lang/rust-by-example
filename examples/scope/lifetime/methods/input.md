@@ -7,4 +7,4 @@ Methods are annotated similarly to functions:
 [methods][methods]
 
 
-[methods]: /fn/methods.html
+[methods]: ../../fn/methods.html

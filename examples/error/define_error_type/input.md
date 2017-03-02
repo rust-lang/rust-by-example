@@ -22,4 +22,4 @@ logic heavy code with `String` formatting simply to display nicely.
 
 [result]: http://doc.rust-lang.org/std/result/enum.Result.html
 [io_result]: http://doc.rust-lang.org/std/io/type.Result.html
-[inplace]: /error/option_with_result/result_string_errors.html
+[inplace]: ../error/option_with_result/result_string_errors.html

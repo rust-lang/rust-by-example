@@ -8,4 +8,4 @@ the borrower can read the data but not modify it:
 ### Смотрите также:
 [`static`][static]
 
-[static]: /lifetime/static_lifetime.html
+[static]: ../../scope/lifetime/static_lifetime.html

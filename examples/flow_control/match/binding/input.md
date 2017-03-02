@@ -7,4 +7,4 @@ names:
 ### Смотрите также:
 [functions][functions]
 
-[functions]: /fn.html
+[functions]: ../../fn.html

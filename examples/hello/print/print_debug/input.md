@@ -29,7 +29,7 @@ struct DebugPrintable(i32);
 и [`struct`][structs]
 
 [attributes]: http://doc.rust-lang.org/reference.html#attributes
-[derive]: /trait/derive.html
+[derive]: ../../trait/derive.html
 [fmt]: http://doc.rust-lang.org/std/fmt/
-[structs]: /custom_types/structs.html
+[structs]: ../../custom_types/structs.html
 

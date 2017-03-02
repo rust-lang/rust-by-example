@@ -35,7 +35,7 @@
 и [`traits`][traits]
 
 [fmt]: http://doc.rust-lang.org/std/fmt/
-[macros]: /macros.html
-[string]: /std/str.html
-[structs]: /custom_types/structs.html
-[traits]: /trait.html
+[macros]: ../macros.html
+[string]: ../std/str.html
+[structs]: ../custom_types/structs.html
+[traits]: ../trait.html
