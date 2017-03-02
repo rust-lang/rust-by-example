@@ -16,7 +16,7 @@ grep -qR ': /' ./examples
 if [ "$?" -eq 0 ]; then
     echo "Some links are absolute.."
     grep -R ': /' ./examples
-    exit 1
+    any_bad_links=true
 fi
 
 files=$(find ./examples -name "*.md")
