@@ -1,8 +1,8 @@
-Closures as input parameters are possible, so returning closures as 
-output parameters should also be possible. However, returning closure types 
-are problematic because Rust currently only supports returning concrete 
-(non-generic) types. Anonymous closure types are, by definition, unknown 
-and so returning a closure is only possible by making it concrete. This 
+Closures as input parameters are possible, so returning closures as
+output parameters should also be possible. However, returning closure types
+are problematic because Rust currently only supports returning concrete
+(non-generic) types. Anonymous closure types are, by definition, unknown
+and so returning a closure is only possible by making it concrete. This
 can be done via boxing.
 
 The valid traits for returns are slightly different than before:
@@ -27,5 +27,5 @@ closure.
 [box]: ../../std/box.html
 [fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
 [fnmut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fnbox]: http://doc.rust-lang.org/std/boxed/trait.FnBox.html 
+[fnbox]: http://doc.rust-lang.org/std/boxed/trait.FnBox.html
 [generics]: ../../generics.html

@@ -33,4 +33,3 @@ fn main() {
     println!("Symmetric Difference: {:?}",
              a.symmetric_difference(&b).collect::<Vec<&i32>>());
 }
-

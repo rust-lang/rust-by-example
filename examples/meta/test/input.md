@@ -10,7 +10,7 @@ Tests can be run with `cargo test` or `rustc --test`.
 
 ```
 $ rustc --test unit_test.rs
-$ ./unit_test 
+$ ./unit_test
 
 running 2 tests
 test test::distance_test ... ok

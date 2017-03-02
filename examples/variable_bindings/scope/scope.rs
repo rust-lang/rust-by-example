@@ -21,9 +21,9 @@ fn main() {
     // ИСПРАВЬТЕ ^ Закомментируйте строку
 
     println!("outer long: {}", long_lived_binding);
-    
+
     // Это связывание так же *скрывает* собой предыдущие
     let long_lived_binding = 'a';
-    
+
     println!("outer long: {}", long_lived_binding);
 }

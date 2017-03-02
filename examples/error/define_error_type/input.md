@@ -9,9 +9,9 @@ Rust allows us to define our own error types. In general, a "good" error type:
     - Good: `Err(BadChar(c, position))`
     - Bad: `Err("+ cannot be used here".to_owned())`
 
-Note that a `String` (which we've been using up to this point) fulfills the 
-first two criteria, but not the last two. This makes `String` errors verbose 
-to create and difficult to react to. It should not be necessary to pollute 
+Note that a `String` (which we've been using up to this point) fulfills the
+first two criteria, but not the last two. This makes `String` errors verbose
+to create and difficult to react to. It should not be necessary to pollute
 logic heavy code with `String` formatting simply to display nicely.
 
 {define_error_type.play}

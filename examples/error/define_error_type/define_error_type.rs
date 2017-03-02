@@ -4,7 +4,7 @@ use std::fmt;
 type Result<T> = std::result::Result<T, DoubleError>;
 
 #[derive(Debug)]
-// Define our error types. These may be customized for our error handling cases. 
+// Define our error types. These may be customized for our error handling cases.
 // Now we will be able to write our own errors, defer to an underlying error
 // implementation, or do something in between.
 enum DoubleError {

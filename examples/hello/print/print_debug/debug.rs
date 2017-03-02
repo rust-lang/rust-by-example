@@ -3,7 +3,7 @@
 #[derive(Debug)]
 struct Structure(i32);
 
-// Добавим структуру `Structure` в структуру `Deep`. 
+// Добавим структуру `Structure` в структуру `Deep`.
 // Релазиуем для `Deep` возможность вывода с помощью fmt::Debug`.
 #[derive(Debug)]
 struct Deep(Structure);
@@ -19,9 +19,9 @@ fn main() {
 
     // `Structure` теперь можно напечатать!
     println!("Now {:?} will print!", Structure(3));
-    
+
     // Проблема с `выводом (derive)`, в том, что у нас не будет контроля
-    // над тем, как будет выглядить результат. 
+    // над тем, как будет выглядить результат.
     // Что если мы хотим напечатать просто `7`?
     println!("Now {:?} will print!", Deep(Structure(7)));
 }

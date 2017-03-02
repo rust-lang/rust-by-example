@@ -11,7 +11,7 @@ The following is a list of derivable traits:
 * [`Default`][default], to create an empty instance of a data type.
 * `Zero`, to create a zero instance of a numeric data type.
 * [`Debug`][debug], to format a value using the `{:?}` formatter.
- 
+
 {derive.play}
 
 ### Смотрите также:

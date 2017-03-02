@@ -23,16 +23,16 @@ fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 { x }
 //fn invalid_output<'a>() -> &'a i32 { &7 }
 // The above is invalid: `'a` must live longer than the function.
 // Here, `&7` would create an `i32`, followed by a reference.
-// Then the data is dropped upon exiting the scope, leaving 
+// Then the data is dropped upon exiting the scope, leaving
 // a reference to invalid data to be returned.
 
 fn main() {
     let x = 7;
     let y = 9;
-    
+
     print_one(&x);
     print_multi(&x, &y);
-    
+
     let z = pass_x(&x, &y);
     print_one(z);
 

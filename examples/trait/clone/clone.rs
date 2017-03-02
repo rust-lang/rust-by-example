@@ -27,7 +27,7 @@ fn main() {
     // Error! `pair` has lost its resources
     //println!("original: {:?}", pair);
     // ЗАДАНИЕ ^ Try uncommenting this line
-    
+
     // Clone `moved_pair` into `cloned_pair` (resources are included)
     let cloned_pair = moved_pair.clone();
     // Drop the original pair using std::mem::drop

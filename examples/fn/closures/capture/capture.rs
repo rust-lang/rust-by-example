@@ -1,6 +1,6 @@
 fn main() {
     use std::mem;
-    
+
     let color = "green";
 
     // A closure to print `color` which immediately borrows (`&`)
@@ -34,7 +34,7 @@ fn main() {
 
     //let reborrow = &mut count;
     // ^ TODO: try uncommenting this line.
-    
+
     // A non-copy type.
     let movable = Box::new(3);
 

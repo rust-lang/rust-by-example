@@ -20,7 +20,7 @@ impl fmt::Display for List {
             try!(write!(f, "{}", v));
         }
 
-        // Закроем открытую скобку и вернем значение `fmt::Result` 
+        // Закроем открытую скобку и вернем значение `fmt::Result`
         write!(f, "]")
     }
 }

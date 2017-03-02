@@ -38,12 +38,12 @@ fn main() {
 
     // A mutable tuple that includes a pointer
     let mut mutable_tuple = (Box::new(5u32), 3u32);
-    
+
     {
         // Destructure `mutable_ tuple` to change the value of `last`.
         let (_, ref mut last) = mutable_tuple;
         *last = 2u32;
     }
-    
+
     println!("tuple is {:?}", mutable_tuple);
 }

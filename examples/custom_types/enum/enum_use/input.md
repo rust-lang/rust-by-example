@@ -4,7 +4,7 @@
 
 ### Смотрите также:
 
-[`match`][match] and [`use`][use] 
+[`match`][match] and [`use`][use]
 
 [use]: ../../mod/use.html
 [match]: ../../flow_control/match.html
