@@ -14,7 +14,7 @@ if [ "$?" -eq 0 ]; then
 fi
 
 htmlproofer stage/_book --log-level error --only-4xx --check-html --allow-hash-href --file-ignore $(join_by , "${WHITE_LIST[@]}")
-if [ "$?" -eq 0 ]; then
+if [ "$?" -ne 0 ]; then
     echo "Some links are broken.."
     EXIT_CODE=1
 fi
