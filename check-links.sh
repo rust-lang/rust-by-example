@@ -12,6 +12,13 @@ echo "Checking links..."
 
 any_bad_links=false
 
+grep -qR ': /' ./examples
+if [ "$?" -eq 0 ]; then
+    echo "Some links are absolute.."
+    grep -R ': /' ./examples
+    exit 1
+fi
+
 files=$(find ./examples -name "*.md")
 
 for file in $files ; do

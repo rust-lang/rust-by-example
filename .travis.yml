@@ -20,7 +20,6 @@ before_script:
 script:
 - make
 - make test
-- grep -qR ': /' examples; if [ "$?" -eq 0 ]; then exit 1; else exit 0; fi
 - make html
 - htmlproofer stage/_book --log-level error --only-4xx --check-html --url-ignore "#"
 notifications:
