@@ -45,7 +45,7 @@ clean:
 test:
 	@$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
-    ./check-line-length-md.sh
+	./check-line-length-md.sh
 	./check-links.sh
 
 serve: node_modules/gitbook
