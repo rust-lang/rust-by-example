@@ -17,7 +17,8 @@
   Код можно разделить на логические единицы, называемые *модулями*. В данном случае,
   функция определена в модуле `mem`, а модуль `mem` определён в *контейнере* `std`.
   Подробнее см. [модули][mod] и [контейнеры][crate],
-  а так же соответствующую [главу в книге](http://rurust.github.io/rust_book_ru/src/crates-and-modules.html)
+  а так же соответствующую 
+  [главу в книге](http://rurust.github.io/rust_book_ru/src/crates-and-modules.html)
 
 [borrow]: ../scope/borrow.html
 [mod]: ../mod.html

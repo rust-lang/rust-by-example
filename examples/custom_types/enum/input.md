@@ -1,5 +1,6 @@
-Ключевое слово `enum` позволяет создавать тип данных, который представляет собой один из нескольких возможных вариантов. Any variant which is valid as a `struct` is also valid as
-an `enum`.
+Ключевое слово `enum` позволяет создавать тип данных, 
+который представляет собой один из нескольких возможных вариантов. 
+Any variant which is valid as a `struct` is also valid as an `enum`.
 
 {enum.play}
 

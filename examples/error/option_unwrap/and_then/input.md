@@ -4,7 +4,8 @@ in the nested `Option<Option<T>>`. Chaining multiple calls together can
 then become confusing. That's where another combinator called `and_then()`,
 known in some languages as flatmap, comes in.
 
-`and_then()` calls its function input with the wrapped value and returns the result. If the `Option` is `None`, then it returns `None` instead.
+`and_then()` calls its function input with the wrapped value and returns the result. 
+If the `Option` is `None`, then it returns `None` instead.
 
 In the following example, `cookable_v2()` results in an `Option<Food>`.
 Using `map()` instead of `and_then()` would have given an
