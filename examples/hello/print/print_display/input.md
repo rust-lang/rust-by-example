@@ -1,6 +1,6 @@
 `fmt::Debug` выглядит не очень компактно и красиво, 
 поэтому полезно настраивать внешний вид информации, которая будет напечатана. 
-Это можно сделать реализовав `типаж (trait)` [`fmt::Display`][fmt] вручную, 
+Это можно сделать реализовав `типаж` [`fmt::Display`][fmt] вручную, 
 который использует маркер `{}` для печати. Его реализация выглядит следующим образом:
 
 ```rust
@@ -59,8 +59,8 @@ Debug: Complex { real: 3.3, imag: 7.2 }
 
 ### Смотрите также
 
-[`derive`][derive], [`std::fmt`][fmt], [macros], [`struct`][structs],
-[`trait`][traits], и [use][use]
+[`derive`][derive], [`std::fmt`][fmt], [macros], [`структуры`][structs],
+[`типажи`][traits], и [use][use]
 
 [derive]: ../../trait/derive.html
 [fmt]: http://doc.rust-lang.org/std/fmt/

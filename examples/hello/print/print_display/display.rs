@@ -1,14 +1,14 @@
 use std::fmt; // Импортируем `fmt`
 
 // Структура, которая хранит в себе два числа.
-//Вывод типажа `Debug` добавлен для сравнения с `Display`.
+// Вывод типажа `Debug` добавлен для сравнения с `Display`.
 #[derive(Debug)]
 struct MinMax(i64, i64);
 
 // Реализуем `Display` для `MinMax`.
 impl fmt::Display for MinMax {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Используем `self.number`, чтобы получить доступ к каждому полю структуры.
+        // Используем `self.номер`, чтобы получить доступ к каждому полю структуры.
         write!(f, "({}, {})", self.0, self.1)
     }
 }
@@ -20,10 +20,10 @@ struct Point2D {
     y: f64,
 }
 
-// По аналогии, реализуем `Display` для Point2
+// По аналогии, реализуем `Display` для Point2D
 impl fmt::Display for Point2D {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Обращаться к полям структуры Point2 будет по имени
+        // Обращаться к полям структуры Point2D будет по имени
         write!(f, "x: {}, y: {}", self.x, self.y)
     }
 }
@@ -31,20 +31,20 @@ impl fmt::Display for Point2D {
 fn main() {
     let minmax = MinMax(0, 14);
 
-    println!("Compare structures:");
+    println!("Сравниваем структуры:");
     println!("Display: {}", minmax);
     println!("Debug: {:?}", minmax);
 
     let big_range =   MinMax(-300, 300);
     let small_range = MinMax(-3, 3);
 
-    println!("The big range is {big} and the small is {small}",
+    println!("Большой диапозон - {big} и маленький диапозон {small}",
              small = small_range,
              big = big_range);
 
     let point = Point2D { x: 3.3, y: 7.2 };
 
-    println!("Compare points:");
+    println!("Сравниваем точки:");
     println!("Display: {}", point);
     println!("Debug: {:?}", point);
 

@@ -1,4 +1,4 @@
-// Вывод и реализация `fmt::Debug` для `Structure`. `Structure`
+// Вывод и реализация `fmt::Debug` для `Structure`.
 // `Structure` - это структура, которая содержит в себе один `i32`.
 #[derive(Debug)]
 struct Structure(i32);
@@ -10,17 +10,17 @@ struct Deep(Structure);
 
 fn main() {
     // Вывод с помощью `{:?}` аналогичен `{}`.
-    println!("{:?} months in a year.", 12);
-    println!("{1:?} {0:?} is the {actor:?} name.",
-             "Slater",
-             "Christian",
-             actor="actor's");
+    println!("{:?} месяцев в году.", 12);
+    println!("{1:?} {0:?} - это имя {actor:?}.",
+             "Слэйтер",
+             "Кристиан",
+             actor="актера");
 
     // `Structure` теперь можно напечатать!
-    println!("Now {:?} will print!", Structure(3));
+    println!("Теперь {:?} будет выведена на экран!", Structure(3));
 
     // Проблема с `выводом (derive)`, в том, что у нас не будет контроля
     // над тем, как будет выглядить результат.
     // Что если мы хотим напечатать просто `7`?
-    println!("Now {:?} will print!", Deep(Structure(7)));
+    println!("А теперь напечатаем {:?}", Deep(Structure(7)));
 }

@@ -30,9 +30,9 @@ struct Color {
 
 fn main() {
     for city in [
-        City { name: "Dublin", lat: 53.347778, lon: -6.259722 },
-        City { name: "Oslo", lat: 59.95, lon: 10.75 },
-        City { name: "Vancouver", lat: 49.25, lon: -123.1 },
+        City { name: "Дублин", lat: 53.347778, lon: -6.259722 },
+        City { name: "Осло", lat: 59.95, lon: 10.75 },
+        City { name: "Ванкувер", lat: 49.25, lon: -123.1 },
     ].iter() {
         println!("{}", *city);
     }
