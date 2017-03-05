@@ -1,14 +1,14 @@
-Variables in Rust do more than just hold data in the stack: they also *own*
-resources, e.g. `Box<T>` owns memory in the heap. Rust enforces [RAII][raii]
-(Resource Acquisition Is Initialization), so whenever an object goes out of
-scope, its destructor is called and its owned resources are freed.
+Переменные в Rust не только держат данные в стеке, они также могут *владеть*
+ресурсами; к примеру, `Box<T>` владеет памятью в куче. Поскольку Rust строго
+придерживается идиоме [RAII][raii], то когда объект выходит за зону видимости, вызывается
+его деструктор, а ресурс, которым он *владеет* освобождается. 
 
-This behavior shields against *resource leak* bugs, so you'll never have to
-manually free memory or worry about memory leaks again! Here's a quick showcase:
+Такое поведение защищает от багов, связанных с *утечкой ресурсов.* 
+Вам больше никогда не потребуется вручную освобождать память или же беспокоятся об её утечках!
 
 {raii.play}
 
-Of course, we can double check for memory errors using [`valgrind`][valgrind]:
+Конечно, мы можем убедится, что в нашей программе нет ошибок с памятью, используя [`valgrind`][valgrind]:
 
 ```
 $ rustc raii.rs && valgrind ./raii
@@ -28,11 +28,11 @@ $ rustc raii.rs && valgrind ./raii
 ==26873== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
 ```
 
-No leaks here!
+Утечки отсутствуют!
 
 ### Смотрите также:
 
-[Box][box]
+[Упаковка][box]
 
 [raii]: http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization
 [box]: ../std/box.html
