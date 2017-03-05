@@ -3,168 +3,6 @@ svn:wc:ra_dav:version-url
 V 45
 /ajaxorg/ace-builds/!svn/ver/72/trunk/src-min
 END
-keybinding-vim.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/keybinding-vim.js
-END
-mode-dart.js
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-dart.js
-END
-mode-properties.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-properties.js
-END
-ext-elastic_tabstops_lite.js
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/ext-elastic_tabstops_lite.js
-END
-mode-xquery.js
-K 25
-svn:wc:ra_dav:version-url
-V 60
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-xquery.js
-END
-mode-sjs.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-sjs.js
-END
-mode-tex.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-tex.js
-END
-mode-xml.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-xml.js
-END
-mode-c9search.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-c9search.js
-END
-mode-actionscript.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-actionscript.js
-END
-mode-django.js
-K 25
-svn:wc:ra_dav:version-url
-V 60
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-django.js
-END
-theme-pastel_on_dark.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/theme-pastel_on_dark.js
-END
-mode-haskell_cabal.js
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-haskell_cabal.js
-END
-mode-coldfusion.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-coldfusion.js
-END
-theme-tomorrow.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/theme-tomorrow.js
-END
-worker-lua.js
-K 25
-svn:wc:ra_dav:version-url
-V 59
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/worker-lua.js
-END
-mode-plain_text.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/mode-plain_text.js
-END
-mode-lisp.js
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-lisp.js
-END
-ext-split.js
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/ext-split.js
-END
-mode-golang.js
-K 25
-svn:wc:ra_dav:version-url
-V 60
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-golang.js
-END
-mode-wollok.js
-K 25
-svn:wc:ra_dav:version-url
-V 60
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-wollok.js
-END
-mode-json.js
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-json.js
-END
-theme-twilight.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/theme-twilight.js
-END
-theme-solarized_dark.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/theme-solarized_dark.js
-END
-mode-mel.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-mel.js
-END
-mode-latex.js
-K 25
-svn:wc:ra_dav:version-url
-V 59
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-latex.js
-END
-mode-tsx.js
-K 25
-svn:wc:ra_dav:version-url
-V 57
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-tsx.js
-END
 theme-tomorrow_night_eighties.js
 K 25
 svn:wc:ra_dav:version-url
@@ -1244,4 +1082,166 @@ K 25
 svn:wc:ra_dav:version-url
 V 61
 /ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-gherkin.js
+END
+keybinding-vim.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/keybinding-vim.js
+END
+mode-dart.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-dart.js
+END
+mode-properties.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-properties.js
+END
+ext-elastic_tabstops_lite.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/ext-elastic_tabstops_lite.js
+END
+mode-xquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-xquery.js
+END
+mode-sjs.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-sjs.js
+END
+mode-tex.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-tex.js
+END
+mode-xml.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-xml.js
+END
+mode-c9search.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-c9search.js
+END
+mode-actionscript.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-actionscript.js
+END
+mode-django.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-django.js
+END
+theme-pastel_on_dark.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/theme-pastel_on_dark.js
+END
+mode-haskell_cabal.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-haskell_cabal.js
+END
+mode-coldfusion.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-coldfusion.js
+END
+theme-tomorrow.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/theme-tomorrow.js
+END
+worker-lua.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/worker-lua.js
+END
+mode-plain_text.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/mode-plain_text.js
+END
+mode-lisp.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-lisp.js
+END
+ext-split.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/ext-split.js
+END
+mode-golang.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-golang.js
+END
+mode-wollok.js
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-wollok.js
+END
+mode-json.js
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-json.js
+END
+theme-twilight.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/theme-twilight.js
+END
+theme-solarized_dark.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/theme-solarized_dark.js
+END
+mode-mel.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-mel.js
+END
+mode-latex.js
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-latex.js
+END
+mode-tsx.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/mode-tsx.js
 END
