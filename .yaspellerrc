@@ -1,0 +1,14 @@
+{
+    "lang": "ru",
+    "dictionary": [
+        "беззнаков(ы(й|м)|ое)",
+        "суффиксная",
+        "метапрограммирование",
+        "раскомментировать"
+    ],
+    "report": [
+        "console"
+    ],
+    "checkYo": true,
+    "ignoreUppercase": true
+}
