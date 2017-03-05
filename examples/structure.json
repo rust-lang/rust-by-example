@@ -107,7 +107,7 @@
     { "id": "scope", "title": "Scoping rules", "children": [
         { "id": "raii", "title": "RAII", "children": null },
         { "id": "move", "title": "Ownership and moves", "children": [
-            { "id": "mut", "title": "Mutability", "children": null }
+            { "id": "mut", "title": "Изменяемость", "children": null }
         ] },
         { "id": "borrow", "title": "Заимствование", "children": [
             { "id": "mut", "title": "Mutability", "children": null },

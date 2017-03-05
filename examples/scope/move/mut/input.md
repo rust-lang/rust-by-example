@@ -1,3 +1,3 @@
-Mutability of data can be changed when ownership is transferred.
+Изменяемость данных может быть изменена при передаче владения.
 
 {mut.play}
