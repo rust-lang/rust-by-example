@@ -111,7 +111,7 @@
         ] },
         { "id": "borrow", "title": "Borrowing", "children": [
             { "id": "mut", "title": "Mutability", "children": null },
-            { "id": "freeze", "title": "Freezing", "children": null },
+            { "id": "freeze", "title": "Замораживание", "children": null },
             { "id": "alias", "title": "Aliasing", "children": null },
             { "id": "ref", "title": "The ref pattern", "children": null }
         ] },
