@@ -1,5 +1,5 @@
 fn main() {
-    // Эта переменная живет в функции main
+    // Эта переменная живёт в функции main
     let long_lived_binding = 1;
 
     // Это блок, он имеет меньшую область видимости, чем функция main
@@ -9,7 +9,7 @@ fn main() {
 
         println!("inner short: {}", short_lived_binding);
 
-        // Эта переменная *скрывает* собой внешнуюю
+        // Эта переменная *скрывает* собой внешнюю
         let long_lived_binding = 5_f32;
 
         println!("inner long: {}", long_lived_binding);

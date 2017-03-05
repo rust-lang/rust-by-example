@@ -48,7 +48,7 @@ fn main() {
     println!("Display: {}", point);
     println!("Debug: {:?}", point);
 
-    // Ошибка. Типажи `Debug` и `Display` были реализованны, но `{:b}`
+    // Ошибка. Типажи `Debug` и `Display` были реализованы, но `{:b}`
     // необходима реализация `fmt::Binary`. Следующий код не сработает.
     // println!("What does Point2D look like in binary: {:b}?", point);
 }

@@ -4,7 +4,7 @@
 
 ## Что это за проект?
 
-Это исходный код сайта [Rust by Example][website], переведенный на русский язык! Перевод можно найти по адресу https://rurust.github.io/rust-by-example-ru
+Это исходный код сайта [Rust by Example][website], переведённый на русский язык! Перевод можно найти по адресу https://rurust.github.io/rust-by-example-ru
 
 ## Как помочь проекту?
 
@@ -75,7 +75,7 @@ make test
 
 ### Обработка `input.md`
 
-Вместо добавления кода на Rust в `input.md`, исходный код был сохранен в отдельном файле.
+Вместо добавления кода на Rust в `input.md`, исходный код был сохранён в отдельном файле.
 Данный шаг предварительной обработки добавит код в Markdown файл.
 
 Например, чтобы добавить исходный код из файла `hello.rs`, в Markdown файле используется следующий синтаксис
@@ -105,7 +105,7 @@ make test
 
 ## От переводчика
 
-Перевод `Rust by examples` находится в процессе выполнения. За ходом перевода можно наблюдать [тут](https://github.com/GordonFrikker/rust-by-example-ru/issues/1). 
+Перевод `Rust by examples` находится в процессе выполнения. За ходом перевода можно наблюдать [тут](https://github.com/GordonFrikker/rust-by-example-ru/issues/1).
 
 Буду рад помощи.
 
@@ -121,4 +121,3 @@ make test
 [hello-folder]: examples/hello
 [hello-rs]: examples/hello/hello.rs
 [hello-md]: examples/hello/input.md
-

@@ -23,7 +23,7 @@ fn main() {
     // Память для массивов выделяется в стеке
     println!("array occupies {} bytes", mem::size_of_val(&xs));
 
-    // Массивы могут быть автоматически заимствованны как срез
+    // Массивы могут быть автоматически заимствованы как срез
     println!("borrow the whole array as a slice");
     analyze_slice(&xs);
 

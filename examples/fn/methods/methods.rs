@@ -28,7 +28,7 @@ impl Rectangle {
     // `&self` это сахар для `self: &Self`, где `Self` это тип
     // вызываемого объекта. В этом месте `Self` = `Rectangle`
     fn area(&self) -> f64 {
-        // `self` дает допуск к полям структуры через оператор точка
+        // `self` даёт допуск к полям структуры через оператор точка
         let Point { x: x1, y: y1 } = self.p1;
         let Point { x: x2, y: y2 } = self.p2;
 

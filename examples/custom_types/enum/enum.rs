@@ -39,7 +39,7 @@ fn inspect(p: Person) {
 fn main() {
     let person   = Person::Height(18);
     let amira    = Person::Weight(10);
-    // `to_owned()` создает копию `String` из среза строки.
+    // `to_owned()` создаёт копию `String` из среза строки.
     let dave     = Person::Info { name: "Dave".to_owned(), height: 72 };
     let rebecca  = Person::Scientist;
     let rohan    = Person::Engineer;

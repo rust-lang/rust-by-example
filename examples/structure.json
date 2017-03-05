@@ -81,7 +81,7 @@
         { "id": "link", "title": "`extern crate`", "children": null }
     ] },
     { "id": "attribute", "title": "Атрибуты", "children": [
-        { "id": "unused", "title": "`Мертвый код`", "children": null },
+        { "id": "unused", "title": "`Мёртвый код`", "children": null },
         { "id": "crate", "title": "Контейнеры", "children": null },
         { "id": "cfg", "title": "Условные атрибуты", "children": [
             { "id": "custom", "title": "Собственные условия", "children": null }
