@@ -109,7 +109,7 @@
         { "id": "move", "title": "Ownership and moves", "children": [
             { "id": "mut", "title": "Mutability", "children": null }
         ] },
-        { "id": "borrow", "title": "Borrowing", "children": [
+        { "id": "borrow", "title": "Заимствование", "children": [
             { "id": "mut", "title": "Mutability", "children": null },
             { "id": "freeze", "title": "Замораживание", "children": null },
             { "id": "alias", "title": "Aliasing", "children": null },
