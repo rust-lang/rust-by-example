@@ -38,7 +38,7 @@ fn main() {
     let big_range =   MinMax(-300, 300);
     let small_range = MinMax(-3, 3);
 
-    println!("Большой диапозон - {big} и маленький диапозон {small}",
+    println!("Большой диапазон - {big} и маленький диапазон {small}",
              small = small_range,
              big = big_range);
 
