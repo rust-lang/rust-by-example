@@ -1,4 +1,4 @@
-The `super` and `self` keywords can be used in the path to remove ambiguity
-when accessing items and to prevent unnecessary hardcoding of paths.
+Ключевые слова `super` и `self` в пути используются, 
+чтобы устранить неоднозначность между используемыми элементами модуля.
 
 {super.play}

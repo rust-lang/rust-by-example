@@ -73,7 +73,7 @@
         { "id": "visibility", "title": "Видимость", "children": null },
         { "id": "struct_visibility", "title": "Struct visibility", "children": null },
         { "id": "use", "title": "Декларация `use`", "children": null },
-        { "id": "super", "title": "`super` and `self`", "children": null },
+        { "id": "super", "title": "`super` и `self`", "children": null },
         { "id": "split", "title": "Иерархия файлов", "children": null }
     ] },
     { "id": "crates", "title": "Контейнеры", "children": [
