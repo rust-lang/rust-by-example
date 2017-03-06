@@ -47,6 +47,7 @@ test: node_modules/yaspeller
 	@$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
 	./check-line-length-md.sh
+	./check-links.sh
 	$(YASPELLER) --only-errors README.md CONTRIBUTING.md examples
 
 serve: node_modules/gitbook
