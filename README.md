@@ -2,6 +2,14 @@
 
 [![Build Status][travis-image]][travis-link]
 
+## От переводчика
+
+Перевод `Rust by examples` находится в процессе выполнения. За ходом перевода можно наблюдать [тут](https://github.com/ruRust/rust-by-example-ru/issues/1).
+
+Отдельное спасибо @suhr и @AKhranovskiy. Перевод основан на их работе.
+
+Буду рад помощи.
+
 Проверка правописания: [Яндекс.Спеллер][yaspeller]
 
 ## Что это за проект?
@@ -104,12 +112,6 @@ make test
 `Rust на примерах` распространяется по двойной лицензии - лицензия Apache 2.0 и лицензия MIT.
 
 Более подробную информацию можно найти в файлах LICENSE-APACHE и LICENSE-MIT соответственно.
-
-## От переводчика
-
-Перевод `Rust by examples` находится в процессе выполнения. За ходом перевода можно наблюдать [тут](https://github.com/GordonFrikker/rust-by-example-ru/issues/1).
-
-Буду рад помощи.
 
 [travis-image]: https://travis-ci.org/ruRust/rust-by-example-ru.svg?branch=master
 [travis-link]: https://travis-ci.org/ruRust/rust-by-example-ru
