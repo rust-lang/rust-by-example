@@ -1,4 +1,4 @@
-A common use for `enums` is to create a linked-list:
+Пример использования `enums` для создания связанного списка:
 
 {linked_list.play}
 
