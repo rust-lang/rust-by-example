@@ -49,7 +49,7 @@
                 { "id": "destructure_structures", "title": "Структуры", "children": null }
             ] },
             { "id": "guard", "title": "Ограничитель шаблонов", "children": null },
-            { "id": "binding", "title": "Binding", "children": null }
+            { "id": "binding", "title": "Связывание", "children": null }
         ] },
         { "id": "if_let", "title": "if let", "children": null },
         { "id": "while_let", "title": "while let", "children": null }

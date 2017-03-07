@@ -1,10 +1,10 @@
-Indirectly accessing a variable makes it impossible to branch and use that
-variable without re-binding. `match` provides the `@` sigil for binding values to
-names:
+Косвенный доступ к переменной делает невозможным ветвление и использование
+переменной без повторной привязки. `match` предоставляет символ `@` 
+для привязки значения к имени:
 
 {binding.play}
 
 ### Смотрите также:
-[functions][functions]
+[функции][functions]
 
 [functions]: ../../fn.html
