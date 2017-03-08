@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EXIT_CODE=0
-UPSTREAM_BUG=("stage/_book/generics/phantom/testcase_units.html")
+UPSTREAM_BUG=()
 WHITE_LIST=("stage/_book/cast/alias.html")
 
 WHITE_LIST+=("${UPSTREAM_BUG[@]}")
