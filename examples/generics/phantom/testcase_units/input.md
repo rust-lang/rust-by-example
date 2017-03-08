@@ -27,7 +27,7 @@ The whole implementation:
 [Overloading], [ref], [Traits (`X for Y`)], and [TupleStructs].
 
 [Borrowing (`&`)]: ../../scope/borrow.html
-[Bounds (`X: Y`)]: ../../trait/bounds.html
+[Bounds (`X: Y`)]: ../../generics/bounds.html
 [enum]: ../../custom_types/enum.html
 [impl & self]: ../../fn/methods.html
 [Overloading]: ../../trait/ops.html

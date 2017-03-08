@@ -60,6 +60,7 @@ function initEditor() {
   var executeCode = function(ev) {
     resultDiv.style.display = "block";
     resultDiv.innerHTML = "Running...";
+    resultDiv.scrollIntoView();
 
     // Clear previous markers, if any
     markers.map(function(id) { editor.getSession().removeMarker(id); });
