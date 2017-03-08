@@ -3,7 +3,7 @@ mod checked {
     #[derive(Debug)]
     pub enum MathError {
         DivisionByZero,
-        NegativeLogarithm,
+        NonPositiveLogarithm,
         NegativeSquareRoot,
     }
 
@@ -29,8 +29,8 @@ mod checked {
     }
 
     pub fn ln(x: f64) -> MathResult {
-        if x < 0.0 {
-            Err(MathError::NegativeLogarithm)
+        if x <= 0.0 {
+            Err(MathError::NonPositiveLogarithm)
         } else {
             Ok(x.ln())
         }
