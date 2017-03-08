@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.5" data-basepath=".." data-revision="1488989692448">
+    <div class="book" data-level="17.5" data-basepath=".." data-revision="1488989732988">
     
 
 <div class="book-summary">
@@ -2868,7 +2868,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_125">
+                    <section class="normal" id="section-gitbook_126">
                     
                         <h2 id="175-result">17.5 <code>Result</code></h2>
 <p>We&#39;ve seen that the <code>Option</code> enum can be used as a return value from functions
@@ -2890,7 +2890,7 @@ which (hopefully) explains the cause of the failure. (<code>why</code> has type 
     #[derive(Debug)]
     pub enum MathError {
         DivisionByZero,
-        NegativeLogarithm,
+        NonPositiveLogarithm,
         NegativeSquareRoot,
     }
 
@@ -2916,8 +2916,8 @@ which (hopefully) explains the cause of the failure. (<code>why</code> has type 
     }
 
     pub fn ln(x: f64) -&gt; MathResult {
-        if x &lt; 0.0 {
-            Err(MathError::NegativeLogarithm)
+        if x &lt;= 0.0 {
+            Err(MathError::NonPositiveLogarithm)
         } else {
             Ok(x.ln())
         }
