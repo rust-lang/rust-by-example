@@ -5,9 +5,9 @@ struct List(Vec<i32>);
 
 impl fmt::Display for List {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Dereference `self` and create a reference to `vec`
-        // via destructuring.
-        let List(ref vec) = *self;
+        // Extract the value using tuple indexing
+        // and create a reference to `vec`.
+        let vec = &self.0;
 
         write!(f, "[")?;
 
