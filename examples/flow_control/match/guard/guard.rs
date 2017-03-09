@@ -1,13 +1,13 @@
 fn main() {
     let pair = (2, -2);
-    // TODO ^ Try different values for `pair`
+    // ЗАДАНИЕ ^ Попробуйте разные значения `pair`
 
-    println!("Tell me about {:?}", pair);
+    println!("Расскажи мне о {:?}", pair);
     match pair {
-        (x, y) if x == y => println!("These are twins"),
-        // The ^ `if condition` part is a guard
-        (x, y) if x + y == 0 => println!("Antimatter, kaboom!"),
-        (x, _) if x % 2 == 1 => println!("The first one is odd"),
-        _ => println!("No correlation..."),
+        (x, y) if x == y => println!("Близнецы"),
+        // Данное ^ `условие if` является ограничителем шаблонов
+        (x, y) if x + y == 0 => println!("Антиматерия, бабах!"),
+        (x, _) if x % 2 == 1 => println!("Первое число чётно"),
+        _ => println!("Нет корреляции..."),
     }
 }

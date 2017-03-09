@@ -16,7 +16,7 @@ logic heavy code with `String` formatting simply to display nicely.
 
 {define_error_type.play}
 
-### See also:
+### Смотрите также:
 
 [`Result`][result] and [`io::Result`][io_result]
 

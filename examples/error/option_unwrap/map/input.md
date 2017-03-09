@@ -12,7 +12,7 @@ to it while staying compact.
 
 {map.play}
 
-### See also:
+### Смотрите также:
 
 [closures][closures], [`Option`][option], [`Option::map()`][map]
 

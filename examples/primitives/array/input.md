@@ -1,10 +1,6 @@
-An array is a collection of objects of the same type `T`, stored in contiguous
-memory. Arrays are created using brackets `[]`, and their size, which is known
-at compile time, is part of their type signature `[T; size]`.
+`Массив (arrays)` - это коллекция объектов одинакового типа `T`, расположенных в памяти непосредственно друг за другом. Массивы создаются с помощью квадратных скобок `[]`, а их размер должен быть известен во время компиляции и являются частью сигнатуры типа `[T; size]`. 
 
-Slices are similar to arrays, but their size is not known at compile time.
-Instead, a slice is a two-word object, the first word is a pointer to the data,
-and the second word is the length of the slice. Slices can be used to borrow a
-section of an array, and have the type signature `&[T]`.
+`Срезы slices` похожи на массивы, но из размер не известен в момент компиляции программы.
+Срезы представляют собой объекты, состоящие из указателя на данные и размер среза. Срезы могут быть использованы для заимствования части массива и будут иметь сигнатуру типа `&[T]`. 
 
 {array.play}

@@ -2,20 +2,20 @@
 
 fn main() {
     'outer: loop {
-        println!("Entered the outer loop");
+        println!("Вошли во внешний цикл");
 
         'inner: loop {
-            println!("Entered the inner loop");
+            println!("Вошли во внутренний цикл");
 
-            // This would break only the inner loop
+            // Это прервёт лишь внутренний цикл
             //break;
 
-            // This breaks the outer loop
+            // Это прервёт внешний цикл
             break 'outer;
         }
 
-        println!("This point will never be reached");
+        println!("Эта точка не будет достигнута");
     }
 
-    println!("Exited the outer loop");
+    println!("Вышли из внешнего цикла");
 }

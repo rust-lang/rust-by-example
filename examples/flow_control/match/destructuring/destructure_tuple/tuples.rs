@@ -1,14 +1,14 @@
 fn main() {
     let pair = (0, -2);
-    // TODO ^ Try different values for `pair`
+    // ЗАДАНИЕ ^ Попробуйте другие значения для `pair`
 
     println!("Tell me about {:?}", pair);
-    // Match can be used to destructure a tuple
+    // Match можно использовать для деструктуризации кортежей
     match pair {
-        // Destructure the second
-        (0, y) => println!("First is `0` and `y` is `{:?}`", y),
-        (x, 0) => println!("`x` is `{:?}` and last is `0`", x),
-        _      => println!("It doesn't matter what they are"),
-        // `_` means don't bind the value to a variable
+        // Деструктурируем два значения
+        (0, y) => println!("Первое значение `0`, а `y` равно `{:?}`", y),
+        (x, 0) => println!("`x` равно `{:?}`, а второе значение `0`", x),
+        _      => println!("Неважно, какого они значения"),
+         // `_` означает, что значение не будет связано с переменной
     }
 }

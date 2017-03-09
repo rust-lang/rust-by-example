@@ -1,22 +1,23 @@
-Numeric literals can be type annotated by adding the type as a suffix. As an example, 
-to specify that the literal `42` should have the type `i32`, write `42i32`.
+Числовые литералы могут быть обозначены добавлением типа в качестве суффикса. Например, 
+чтобы указать, что литерал `42` должен иметь тип `i32`, необходимо написать `42i32`.
 
-The type of unsuffixed numeric literals will depend on how they are used. If no
-constraint exists, the compiler will use `i32` for integers, and `f64` for
-floating-point numbers.
+Тип литералов без суффикса будет зависеть от того, как они используются. Если нет никаких 
+ограничений, то компилятор будет использовать `i32` для целочисленных литералов, а `f64` для 
+литералов с плавающей точкой.
 
 {literals.play}
 
-There are some concepts used in the previous code that haven't been explained
-yet, here's a brief explanation for the impatient readers:
+В предыдущем коде используются некоторые вещи, которые не были объяснены ранее. 
+Вот краткое объяснение для нетерпеливых читателей:
 
-* `fun(&foo)` is used to pass an argument to a function *by reference*, rather
-  than by value (`fun(foo)`). For more details see [borrowing][borrow].
-* `std::mem::size_of_val` is a function, but called with its *full path*. Code
-  can be split in logical units called *modules*. In this case, the
-  `size_of_val` function is defined in the `mem` module, and the `mem` module
-  is defined in the `std` *crate*. For more details, see
-  [modules][mod] and [crates][crate].
+* `fun(&foo)` используется для передаче аргумента в функцию *по ссылке*, вместо
+  передачи по значению (`fun(foo)`). Подробнее см. [заимствование][borrow] или соответствующую 
+  [главу в книгу](http://rurust.github.io/rust_book_ru/src/references-and-borrowing.html).
+* `std::mem::size_of_val` является функцией, но вызывается с указанием *полного пути*. 
+  Код можно разделить на логические единицы, называемые *модулями*. В данном случае, 
+  функция определена в модуле `mem`, а модуль `mem` определён в *контейнере* `std`. 
+  Подробнее см. [модули][mod] и [контейнеры][crate], 
+  а так же соответствующую [главу в книге](http://rurust.github.io/rust_book_ru/src/crates-and-modules.html) 
 
 [borrow]: /scope/borrow.html
 [mod]: /mod.html

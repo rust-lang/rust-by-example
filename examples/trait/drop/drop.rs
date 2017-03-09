@@ -31,7 +31,7 @@ fn main() {
 
     // Variable can be manually dropped using the `drop` function
     drop(_a);
-    // TODO ^ Try commenting this line
+    // ЗАДАНИЕ ^ Try commenting this line
 
     println!("end of the main function");
 

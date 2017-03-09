@@ -27,7 +27,7 @@ $ ./unit_test
 If you see this, the tests were not compiled nor ran!
 ```
 
-### See also:
+### Смотрите также:
 
 [attributes][attributes], [conditional compilation][cfg], and [`mod`][mod].
 

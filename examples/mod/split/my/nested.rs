@@ -1,8 +1,8 @@
 pub fn function() {
-    println!("called `my::nested::function()`");
+    println!("вызвана `my::nested::function()`");
 }
 
 #[allow(dead_code)]
 fn private_function() {
-    println!("called `my::nested::private_function()`");
+    println!("вызвана `my::nested::private_function()`");
 }

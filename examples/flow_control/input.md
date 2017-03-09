@@ -1,2 +1,2 @@
-An essential part of any programming languages are ways to modify control flow:
-`if`/`else`, `for`, and others. Let's talk about them in Rust.
+Неотъемлемой частью любого языка программирования является изменение потоков управления:
+`if`/`else`, `for` и другие. Давайте поговорим о них в языке Rust.

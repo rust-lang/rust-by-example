@@ -11,7 +11,7 @@ different data types.
 
 {phantom.play}
 
-### See also:
+### Смотрите также:
 
 [Derive], [struct], and [TupleStructs]
 

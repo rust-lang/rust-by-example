@@ -26,7 +26,7 @@ fn main() {
 
     // Error! `pair` has lost its resources
     //println!("original: {:?}", pair);
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
     
     // Clone `moved_pair` into `cloned_pair` (resources are included)
     let cloned_pair = moved_pair.clone();
@@ -35,7 +35,7 @@ fn main() {
 
     // Error! `moved_pair` has been dropped
     //println!("copy: {:?}", moved_pair);
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
 
     // The result from .clone() can still be used!
     println!("clone: {:?}", cloned_pair);

@@ -10,7 +10,7 @@ Here's a quick example to show off the syntax:
 
 {alias.play}
 
-### See also:
+### Смотрите также:
 
 [`Result`][result] and [`io::Result`][io_result]
 

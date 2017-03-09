@@ -26,7 +26,7 @@ In the following example, try swapping the usage of `Fn`, `FnMut`, and
 
 {input_parameters.play}
 
-### See also:
+### Смотрите также:
 
 [`std::mem::drop`][drop], [`Fn`][fn], [`FnMut`][fnmut], and [`FnOnce`][fnonce]
 

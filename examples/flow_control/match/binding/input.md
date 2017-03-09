@@ -4,7 +4,7 @@ names:
 
 {binding.play}
 
-### See also:
+### Смотрите также:
 [functions][functions]
 
 [functions]: /fn.html

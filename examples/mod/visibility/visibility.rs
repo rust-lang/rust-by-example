@@ -1,69 +1,69 @@
-// A module named `my`
+// Модуль по имени `my`
 mod my {
-    // Items in modules default to private visibility.
+    // Все элементы модуля по умолчанию являются приватными.
     fn private_function() {
-        println!("called `my::private_function()`");
+        println!("вызвана `my::private_function()`");
     }
     
-    // Use the `pub` modifier to override default visibility.
+    // Используем модификатор `pub`, чтобы сделать элемент публичным.
     pub fn function() {
-        println!("called `my::function()`");
+        println!("вызвана `my::function()`");
     }
     
-    // Items can access other items in the same module,
-    // even when private.
+    // Приватные элементы модуля доступны другим элементам
+    // данного модуля.
     pub fn indirect_access() {
-        print!("called `my::indirect_access()`, that\n> ");
+        print!("вызвана `my::indirect_access()`, that\n> ");
         private_function();
     }
 
-    // Modules can also be nested
+    // Модули так же могут быть вложенными
     pub mod nested {
         pub fn function() {
-            println!("called `my::nested::function()`");
+            println!("вызвана `my::nested::function()`");
         }
 
         #[allow(dead_code)]
         fn private_function() {
-            println!("called `my::nested::private_function()`");
+            println!("вызвана `my::nested::private_function()`");
         }
     }
     
-    // Nested modules follow the same rules for visibility
+    // Вложенные модули подчиняются тем же правилам видимости
     mod private_nested {
         #[allow(dead_code)]
         pub fn function() {
-            println!("called `my::private_nested::function()`");
+            println!("вызвана `my::private_nested::function()`");
         }
     }
 }
 
 fn function() {
-    println!("called `function()`");
+    println!("вызвана `function()`");
 }
 
 fn main() {
-    // Modules allow disambiguation between items that have the same name.
+    // Модули позволяют устранить противоречия между элементами, которые имеют одинаковые названия.
     function();
     my::function();
     
-    // Public items, including those inside nested modules, can be
-    // accessed from outside the parent module.
+    // Публичные элементы, включая те, что находятся во вложенном модуле, 
+    // доступны извне родительского модуля
     my::indirect_access();
     my::nested::function();
 
-    // Private items of a module cannot be directly accessed, even if
-    // nested in a public module:
+    // Приватные элементы модуля не доступны напрямую,
+    // даже если вложенный модуль является публичным:
     
-    // Error! `private_function` is private
+    // Ошибка! функция `private_function` приватная
     //my::private_function();
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 
-    // Error! `private_function` is private
+    // Ошибка! функция `private_function` приватная
     //my::nested::private_function();
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 
-    // Error! `private_nested` is a private module
+    // Ошибка! Модуль `private_nested` является приватным
     //my::private_nested::function();
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 }

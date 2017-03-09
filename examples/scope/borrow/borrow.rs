@@ -25,7 +25,7 @@ fn main() {
         // Error!
         // Can't destroy `boxed_i32` while the inner value is borrowed.
         eat_box_i32(boxed_i32);
-        // FIXME ^ Comment out this line
+        // ИСПРАВЬТЕ ^ Comment out this line
 
         // `_ref_to_i32` goes out of scope and is no longer borrowed.
     }

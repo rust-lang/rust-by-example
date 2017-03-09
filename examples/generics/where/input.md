@@ -21,7 +21,7 @@ The `impl` in this example cannot be directly expressed without a `where` clause
 
 {where.play}
 
-### See also:
+### Смотрите также:
 
 [RFC][where], [`struct`][struct], and [`trait`][trait]
 

@@ -29,7 +29,7 @@ Another effect of bounding is that generic instances are allowed to access the
 As an additional note, [`where`][where] clauses can also be used to apply bounds in
 some cases to be more expressive.
 
-### See also:
+### Смотрите также:
 
 [`std::fmt`][fmt], [`struct`s][structs], and [`trait`s][traits]
 

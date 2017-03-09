@@ -26,7 +26,7 @@ This example shows some of the syntax in action:
 
 {generics.play}
 
-### See also:
+### Смотрите также:
 
 [`struct`s][structs]
 

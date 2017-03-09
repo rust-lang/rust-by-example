@@ -4,7 +4,7 @@ include any functionality, you can still use it as a bound. `Eq` and
 
 {empty.play}
 
-### See also:
+### Смотрите также:
 
 [`std::cmp::Eq`][eq], [`std::cmp::Ord`s][ord], and [`trait`s][traits]
 

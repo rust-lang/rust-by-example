@@ -30,7 +30,7 @@ fn main() {
     // Public structs with private fields cannot be constructed using field names.
     // Error! `BlackBox` has private fields
     //let black_box = my::BlackBox { contents: "classified information" };
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
 
     // However, structs with private fields can be created using
     // public constructors
@@ -39,5 +39,5 @@ fn main() {
     // and the private fields of a public struct cannot be accessed.
     // Error! The `contents` field is private
     //println!("The black box contains: {}", _black_box.contents);
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
 }

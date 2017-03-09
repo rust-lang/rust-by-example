@@ -2,7 +2,7 @@ An `enum` is destructured similarly:
 
 {enum.play}
 
-### See also:
+### Смотрите также:
 
 [`#[allow(...)]`][allow], [color models][color_models] and [`enum`][enum]
 

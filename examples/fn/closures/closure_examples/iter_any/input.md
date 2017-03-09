@@ -19,7 +19,7 @@ pub trait Iterator {
 
 {iter_any.play}
 
-### See also:
+### Смотрите также:
 
 [`std::iter::Iterator::any`][any]
 

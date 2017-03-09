@@ -1,7 +1,8 @@
-A `match` *guard* can be added to filter the arm.
+Внутри конструкции `match` можно добавить *ограничитель шаблонов*
+для фильтрации возможных вариантов.
 
 {guard.play}
 
-### See also:
+### Смотрите также:
 
 [Tuples](/primitives/tuples.html)

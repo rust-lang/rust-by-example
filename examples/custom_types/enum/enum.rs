@@ -1,33 +1,35 @@
-// An attribute to hide warnings for unused code.
+// Атрибут, который убирает предупреждения компилятора
+// о неиспользуемом коде
 #![allow(dead_code)]
 
-// Create an `enum` to classify someone. Note how both names
+// Создадим `enum`, для классификации кого либо. Обратите внимание на то, как
 // and type information together specify the variant:
 // `Engineer != Scientist` and `Height(i32) != Weight(i32)`. Each
 // is different and independent.
 enum Person {
-    // An `enum` may either be `unit-like`,
+    // `enum` так же может быть `единичным`,
     Engineer,
     Scientist,
-    // like tuple structs,
+    // может быть как кортежная структура,
     Height(i32),
     Weight(i32),
-    // or like structures.
+    // или как просто структура.
     Info { name: String, height: i32 }
 }
 
-// A function which takes a `Person` enum as an argument and
-// returns nothing.
+// Функция, которая принимает Person` в качестве аргумента
+// и не возвращает ничего.
 fn inspect(p: Person) {
-    // Usage of an `enum` must cover all cases (irrefutable)
-    // so a `match` is used to branch over it.
+    // При использование `enum` компилятору необходимо указать, 
+    // что нужно делать при каждом из возможных вариантов.
+    // Для этого мы используем `match`.
     match p {
         Person::Engineer  => println!("Is an engineer!"),
         Person::Scientist => println!("Is a scientist!"),
-        // Destructure `i` from inside the `enum`.
+        // Деструктурируем `i` из `enum`.
         Person::Height(i) => println!("Has a height of {}.", i),
         Person::Weight(i) => println!("Has a weight of {}.", i),
-        // Destructure `Info` into `name` and `height`.
+        // Деструктурируем `Info` в `name` и `height`.
         Person::Info { name, height } => {
             println!("{} is {} tall!", name, height);
         },
@@ -37,7 +39,7 @@ fn inspect(p: Person) {
 fn main() {
     let person   = Person::Height(18);
     let amira    = Person::Weight(10);
-    // `to_owned()` creates an owned `String` from a string slice.
+    // `to_owned()` создает копию `String` из среза строки.
     let dave     = Person::Info { name: "Dave".to_owned(), height: 72 };
     let rebecca  = Person::Scientist;
     let rohan    = Person::Engineer;

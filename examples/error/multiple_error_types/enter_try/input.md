@@ -19,7 +19,7 @@ to make more structured and informative errors by defining their types.
 
 [^1]: See [re-enter try!][re_enter_try] for more details.
 
-### See also:
+### Смотрите также:
 
 [`Result`][result] and [`io::Result`][io_result]
 

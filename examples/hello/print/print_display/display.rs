@@ -1,29 +1,29 @@
-use std::fmt; // Import `fmt`
+use std::fmt; // Импортируем `fmt`
 
-// A structure holding two numbers. `Debug` will be derived so the results can
-// be contrasted with `Display`.
+// Структура, которая хранит в себе два числа. 
+//Вывод типажа `Debug` добавлен для сравнения с `Display`.
 #[derive(Debug)]
 struct MinMax(i64, i64);
 
-// Implement `Display` for `MinMax`.
+// Реализуем `Display` для `MinMax`.
 impl fmt::Display for MinMax {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Use `self.number` to refer to each positional data point.
+        // Используем `self.number`, чтобы получить доступ к каждому полю структуры.
         write!(f, "({}, {})", self.0, self.1)
     }
 }
 
-// Define a structure where the fields are nameable for comparison.
+// Определим структуру с именованными полями, для сравнения 
 #[derive(Debug)]
 struct Point2D {
     x: f64,
     y: f64,
 }
 
-// Similarly, implement for Point2D
+// По аналогии, реализуем `Display` для Point2
 impl fmt::Display for Point2D {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Customize so only `x` and `y` are denoted.
+        // Обращаться к полям структуры Point2 будет по имени
         write!(f, "x: {}, y: {}", self.x, self.y)
     }
 }
@@ -48,7 +48,7 @@ fn main() {
     println!("Display: {}", point);
     println!("Debug: {:?}", point);
 
-    // Error. Both `Debug` and `Display` were implemented but `{:b}`
-    // requires `fmt::Binary` to be implemented. This will not work.
+    // Ошибка. Типажи `Debug` и `Display` были реализованны, но `{:b}`
+    // необходима реализация `fmt::Binary`. Следующий код не сработает.
     // println!("What does Point2D look like in binary: {:b}?", point);
 }

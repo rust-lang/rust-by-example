@@ -12,7 +12,7 @@ required.
 
 {capture.play}
 
-### See also:
+### Смотрите также:
 
 [`Box`][box] and [`std::mem::drop`][drop]
 

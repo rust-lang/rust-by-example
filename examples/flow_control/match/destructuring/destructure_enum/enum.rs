@@ -16,7 +16,7 @@ enum Color {
 
 fn main() {
     let color = Color::RGB(122, 17, 40);
-    // TODO ^ Try different variants for `color`
+    // ЗАДАНИЕ ^ Try different variants for `color`
 
     println!("What color is it?");
     // An `enum` can be destructured using a `match`.

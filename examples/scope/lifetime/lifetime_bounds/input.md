@@ -10,7 +10,7 @@ The example below shows the above syntax in action:
 
 {bounds.play}
 
-### See also:
+### Смотрите также:
 
 [generics][generics], [bounds in generics][bounds], and 
 [multiple bounds in generics][multibounds]

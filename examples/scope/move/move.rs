@@ -29,7 +29,7 @@ fn main() {
     // Error! `a` can no longer access the data, because it no longer owns the
     // heap memory
     //println!("a contains: {}", a);
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
 
     // This function takes ownership of the heap allocated memory from `b`
     destroy_box(b);
@@ -38,5 +38,5 @@ fn main() {
     // result in dereferencing freed memory, but it's forbidden by the compiler
     // Error! Same reason as the previous Error
     //println!("b contains: {}", b);
-    // TODO ^ Try uncommenting this line
+    // ЗАДАНИЕ ^ Try uncommenting this line
 }

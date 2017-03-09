@@ -8,7 +8,7 @@ closure can be passed as a parameter.
 As an additional note, the `Fn`, `FnMut`, and `FnOnce` `traits` dictate how
 a closure captures variables from the enclosing scope.
 
-### See also:
+### Смотрите также:
 
 [`Fn`][fn], [`FnMut`][fn_mut], and [`FnOnce`][fn_once]
 
