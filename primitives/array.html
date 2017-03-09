@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="1488989838711">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="1489070707863">
     
 
 <div class="book-summary">
@@ -2868,7 +2868,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_98">
+                    <section class="normal" id="section-gitbook_97">
                     
                         <h2 id="23-arrays-and-slices">2.3 Arrays and Slices</h2>
 <p>An array is a collection of objects of the same type <code>T</code>, stored in contiguous
@@ -2876,8 +2876,10 @@ memory. Arrays are created using brackets <code>[]</code>, and their size, which
 at compile time, is part of their type signature <code>[T; size]</code>.</p>
 <p>Slices are similar to arrays, but their size is not known at compile time.
 Instead, a slice is a two-word object, the first word is a pointer to the data,
-and the second word is the length of the slice. Slices can be used to borrow a
-section of an array, and have the type signature <code>&amp;[T]</code>.</p>
+and the second word is the length of the slice. The word size is the same as 
+usize, determined by the processor architecture eg 64 bits on an x86-64. 
+Slices can be used to borrow a section of an array, and have the type signature 
+<code>&amp;[T]</code>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
