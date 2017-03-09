@@ -14,7 +14,7 @@ git fetch upstream && git reset upstream/gh-pages
 cp -r ../../vendor/gitbook/* gitbook/
 
 #fix editor syntax highlight
-sed -i 's#/gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js#../gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js#g' gitbook/plugins/gitbook-plugin-rust-playpen/editor.js
+sed -i 's#/gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js#/rust-by-example-ru/gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js#g' gitbook/plugins/gitbook-plugin-rust-playpen/editor.js
 
 touch .
 
