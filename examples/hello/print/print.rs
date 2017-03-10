@@ -17,7 +17,7 @@ fn main() {
              verb="jumps over");
 
     // Special formatting can be specified after a `:`.
-    println!("{} of {:b} people know binary, the other half don't", 1, 2);
+    println!("{} of {:b} people know binary, the other half doesn't", 1, 2);
 
     // You can right-align text with a specified width. This will output
     // "     1". 5 white spaces and a "1".
