@@ -1,7 +1,8 @@
 Implementing `fmt::Display` for a structure where the elements must each be
 handled sequentially is tricky. The problem is that each `write!` generates a
 `fmt::Result`. Proper handling of this requires dealing with *all* the
-results. Rust provides the `try!` macro for exactly this purpose.
+results. Rust provides the `try!` macro and alternatively the equivalent 
+`?` operator for exactly this purpose.
 
 Using `try!` on `write!` looks like this:
 
@@ -11,7 +12,13 @@ Using `try!` on `write!` looks like this:
 try!(write!(f, "{}", value));
 ```
 
-With `try!` available, implementing `fmt::Display` for a `Vec` is
+The `?` shorthand alternative looks like this:
+
+```rust
+write!(f, "{}", value)?;
+```
+
+With `?` available, implementing `fmt::Display` for a `Vec` is
 straightforward:
 
 {testcase_list.play}
