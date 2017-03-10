@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2.2.1" data-basepath="../../.." data-revision="1489165350420">
+    <div class="book" data-level="1.2.2.1" data-basepath="../../.." data-revision="1489177843024">
     
 
 <div class="book-summary">
@@ -2868,19 +2868,23 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_3">
+                    <section class="normal" id="section-gitbook_4">
                     
                         <h4 id="1221-testcase-list">1.2.2.1 Testcase: List</h4>
 <p>Implementing <code>fmt::Display</code> for a structure where the elements must each be
 handled sequentially is tricky. The problem is that each <code>write!</code> generates a
 <code>fmt::Result</code>. Proper handling of this requires dealing with <em>all</em> the
-results. Rust provides the <code>try!</code> macro for exactly this purpose.</p>
+results. Rust provides the <code>try!</code> macro and alternatively the equivalent 
+<code>?</code> operator for exactly this purpose.</p>
 <p>Using <code>try!</code> on <code>write!</code> looks like this:</p>
 <pre><code class="lang-rust"><span class="hljs-comment">// Try `write!` to see if it errors. If it errors, return</span>
 <span class="hljs-comment">// the error. Otherwise continue.</span>
 <span class="hljs-built_in">try!</span>(<span class="hljs-built_in">write!</span>(f, <span class="hljs-string">"{}"</span>, value));
 </code></pre>
-<p>With <code>try!</code> available, implementing <code>fmt::Display</code> for a <code>Vec</code> is
+<p>The <code>?</code> shorthand alternative looks like this:</p>
+<pre><code class="lang-rust"><span class="hljs-built_in">write!</span>(f, <span class="hljs-string">"{}"</span>, value)?;
+</code></pre>
+<p>With <code>?</code> available, implementing <code>fmt::Display</code> for a <code>Vec</code> is
 straightforward:</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2896,15 +2900,15 @@ impl fmt::Display for List {
         // via destructuring.
         let List(ref vec) = &#42;self;
 
-        try!(write!(f, &quot;[&quot;));
+        write!(f, &quot;[&quot;)?;
 
         // Iterate over &#96;vec&#96; in &#96;v&#96; while enumerating the iteration
         // count in &#96;count&#96;.
         for (count, v) in vec.iter().enumerate() {
-            // For every element except the first, add a comma
-            // before calling &#96;write!&#96;. Use &#96;try!&#96; to return on errors.
-            if count != 0 { try!(write!(f, &quot;, &quot;)); }
-            try!(write!(f, &quot;{}&quot;, v));
+            // For every element except the first, add a comma.
+            // Use the ? operator, or try!, to return on errors.
+            if count != 0 { write!(f, &quot;, &quot;)?; }
+            write!(f, &quot;{}&quot;, v)?;
         }
 
         // Close the opened bracket and return a fmt::Result value
