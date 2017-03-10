@@ -1,17 +1,17 @@
 mod my {
-    // A public struct with a public field of generic type `T`
+    // Публичная структура с публичным полем обобщённого типа `T`
     pub struct WhiteBox<T> {
         pub contents: T,
     }
 
-    // A public struct with a private field of generic type `T`
+    // Публичная структура с приватным полем обобщённого типа `T`
     #[allow(dead_code)]
     pub struct BlackBox<T> {
         contents: T,
     }
 
     impl<T> BlackBox<T> {
-        // A public constructor method
+        // Публичный конструктор
         pub fn new(contents: T) -> BlackBox<T> {
             BlackBox {
                 contents: contents,
@@ -21,23 +21,23 @@ mod my {
 }
 
 fn main() {
-    // Public structs with public fields can be constructed as usual
-    let white_box = my::WhiteBox { contents: "public information" };
+    // Публичная структура с публичным полем может быть создана, как обычно
+    let white_box = my::WhiteBox { contents: "публичную информацию" };
 
-    // and their fields can be normally accessed.
-    println!("The white box contains: {}", white_box.contents);
+    // а их поля доступны всем.
+    println!("Белая упаковка хранит: {}", white_box.contents);
 
-    // Public structs with private fields cannot be constructed using field names.
-    // Error! `BlackBox` has private fields
-    //let black_box = my::BlackBox { contents: "classified information" };
-    // ЗАДАНИЕ ^ Try uncommenting this line
+    // Публичные структуры с приватными полями не могут быть созданы, используя имя полей
+    // Ошибка! `BlackBox` имеет приватные поля
+    //let black_box = my::BlackBox { contents: "классифицированную информацию" };
+    // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 
-    // However, structs with private fields can be created using
-    // public constructors
-    let _black_box = my::BlackBox::new("classified information");
+    // Однако, структуры с приватными полями могут быть созданы с помощью
+    // публичного конструктора
+    let _black_box = my::BlackBox::new("классифицированную информацию");
 
-    // and the private fields of a public struct cannot be accessed.
-    // Error! The `contents` field is private
-    //println!("The black box contains: {}", _black_box.contents);
-    // ЗАДАНИЕ ^ Try uncommenting this line
+    // нельзя получить доступ к приватным полям публичных структур.
+    // Ошибка! Поле `contents` приватное
+    //println!("Чёрная упаковка хранит: {}", _black_box.contents);
+    // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 }
