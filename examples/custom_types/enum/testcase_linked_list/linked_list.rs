@@ -63,6 +63,6 @@ fn main() {
     list = list.prepend(3);
 
     // Отображаем окончательное состояние списка
-    println!("linked list has length: {}", list.len());
+    println!("размер связанного списка: {}", list.len());
     println!("{}", list.stringify());
 }

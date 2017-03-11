@@ -18,9 +18,9 @@ enum Color {
 
 fn main() {
     // `enums` может быть преобразован в целочисленное значение.
-    println!("zero is {}", Number::Zero as i32);
-    println!("one is {}", Number::One as i32);
+    println!("нулевой элемент {}", Number::Zero as i32);
+    println!("первый элемент {}", Number::One as i32);
 
-    println!("roses are #{:06x}", Color::Red as i32);
-    println!("violets are #{:06x}", Color::Blue as i32);
+    println!("красный цвет #{:06x}", Color::Red as i32);
+    println!("голубой цвет #{:06x}", Color::Blue as i32);
 }

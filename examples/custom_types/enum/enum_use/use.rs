@@ -27,13 +27,13 @@ fn main() {
     match status {
         // Обратите внимание, как используются варианты из перечисления `Status`
         // все благодаря `use`
-        Rich => println!("The rich have lots of money!"),
-        Poor => println!("The poor have no money..."),
+        Rich => println!("У богатого куча денег!"),
+        Poor => println!("У бедняка денег нет, но он держится..."),
     }
 
     match work {
         // И снова используем варианты напрямую.
-        Civilian => println!("Civilians work!"),
-        Soldier  => println!("Soldiers fight!"),
+        Civilian => println!("Гражданин работает!"),
+        Soldier  => println!("Солдаты служат!"),
     }
 }

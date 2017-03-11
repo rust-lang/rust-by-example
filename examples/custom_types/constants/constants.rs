@@ -11,9 +11,9 @@ fn main() {
     let n = 16;
 
     // Получаем доступ к константе внутри функции main
-    println!("This is {}", LANGUAGE);
-    println!("The threshold is {}", THRESHOLD);
-    println!("{} is {}", n, if is_big(n) { "big" } else { "small" });
+    println!("Это язык {}", LANGUAGE);
+    println!("Установим предел, равный {}", THRESHOLD);
+    println!("Число {} {} предела", n, if is_big(n) { "больше" } else { "меньше" });
 
     // Ошибка! `константы` нельзя изменить.
     THRESHOLD = 5;

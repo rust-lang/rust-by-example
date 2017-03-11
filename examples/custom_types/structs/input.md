@@ -2,7 +2,7 @@
 
 * Кортежная структура, которая, в общем, является именованным кортежем.
 * Классическую [C структуру][c_struct]
-* Единичную (unit) структуру, которая не имеет полей, но может быть полезна для обобщённых типов.
+* Единичную структуру, которая не имеет полей, но может быть полезна для обобщённых типов.
 
 {structs.play}
 
@@ -16,8 +16,8 @@
 
 ### Смотрите также:
 
-[`attributes`][attributes] и [destructuring][destructuring]
+[`атрибуты`][attributes] и [деструктуризация][destructuring]
 
 [attributes]: ../attribute.html
-[c_struct]: http://en.wikipedia.org/wiki/Struct_(C_programming_language)
+[c_struct]: https://ru.wikipedia.org/wiki/Структура_(язык_Си)
 [destructuring]: ../flow_control/match/destructuring.html

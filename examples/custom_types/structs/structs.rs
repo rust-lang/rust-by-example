@@ -22,7 +22,7 @@ fn main() {
     let point: Point = Point { x: 0.3, y: 0.4 };
 
     // Получаем доступ к полям структуры `point`
-    println!("point coordinates: ({}, {})", point.x, point.y);
+    println!("координаты точки: ({}, {})", point.x, point.y);
 
     // Деструктурируем `point` создавая связь с помощью `let`
     let Point { x: my_x, y: my_y } = point;
@@ -42,5 +42,5 @@ fn main() {
     // Деструктурируем кортежную структуру
     let Pair(integer, decimal) = pair;
 
-    println!("pair contains {:?} and {:?}", integer, decimal);
+    println!("Pair хранит в себе {:?} и {:?}", integer, decimal);
 }
