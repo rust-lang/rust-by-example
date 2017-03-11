@@ -19,27 +19,27 @@ fn main() {
                       'a', true);
 
     // К значениям переменных внутри кортежа можно обратиться по индексу
-    println!("long tuple first value: {}", long_tuple.0);
-    println!("long tuple second value: {}", long_tuple.1);
+    println!("первое значение длинного кортежа: {}", long_tuple.0);
+    println!("второе значение длинного кортежа: {}", long_tuple.1);
 
     // Кортежи могут содержать в себе кортежи
     let tuple_of_tuples = ((1u8, 2u16, 2u32), (4u64, -1i8), -2i16);
 
     // Кортежи можно напечатать
-    println!("tuple of tuples: {:?}", tuple_of_tuples);
+    println!("кортеж из кортежей: {:?}", tuple_of_tuples);
 
     let pair = (1, true);
-    println!("pair is {:?}", pair);
+    println!("pair хранит в себе {:?}", pair);
 
-    println!("the reversed pair is {:?}", reverse(pair));
+    println!("перевёрнутая pair будет {:?}", reverse(pair));
 
     // Для создания кортежа, содержащего один элемент, необходимо написать элемент и
     // поставить запятую внутри круглых скобок.
-    println!("one element tuple: {:?}", (5u32,));
-    println!("just an integer: {:?}", (5u32));
+    println!("кортеж из одного элемента: {:?}", (5u32,));
+    println!("просто целочисленное значение: {:?}", (5u32));
 
     // Кортежи можно разобрать на части (деструктурировать) для создания связи
-    let tuple = (1, "hello", 4.5, true);
+    let tuple = (1, "привет", 4.5, true);
 
     let (a, b, c, d) = tuple;
     println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);

@@ -10,7 +10,7 @@
         ] }
     ] },
     { "id": "primitives", "title": "Примитивы", "children": [
-        { "id": "literals", "title": "Литералов и операторы", "children": null },
+        { "id": "literals", "title": "Литералы и операторы", "children": null },
         { "id": "tuples", "title": "Кортежи", "children": null },
         { "id": "array", "title": "Массив и Срезы", "children": null }
     ] },

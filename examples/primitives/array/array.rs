@@ -2,8 +2,8 @@ use std::mem;
 
 // Эта функция заимствует срез
 fn analyze_slice(slice: &[i32]) {
-    println!("first element of the slice: {}", slice[0]);
-    println!("the slice has {} elements", slice.len());
+    println!("первый элемент среза: {}", slice[0]);
+    println!("в срезе {} элементов", slice.len());
 }
 
 fn main() {
@@ -14,21 +14,21 @@ fn main() {
     let ys: [i32; 500] = [0; 500];
 
     // Индекс начинается с 0
-    println!("first element of the array: {}", xs[0]);
-    println!("second element of the array: {}", xs[1]);
+    println!("первый элемент массива: {}", xs[0]);
+    println!("второй элемент массива: {}", xs[1]);
 
     // `len` возвращает длину массива
-    println!("array size: {}", xs.len());
+    println!("размер массива: {}", xs.len());
 
     // Память для массивов выделяется в стеке
-    println!("array occupies {} bytes", mem::size_of_val(&xs));
+    println!("массив занимает {} байт", mem::size_of_val(&xs));
 
     // Массивы могут быть автоматически заимствованы как срез
-    println!("borrow the whole array as a slice");
+    println!("заимствуем весь массив, используя срез");
     analyze_slice(&xs);
 
     // Срезы могут указывать на часть массива
-    println!("borrow a section of the array as a slice");
+    println!("заимствуем часть массива как срез");
     analyze_slice(&ys[1 .. 4]);
 
     // Выход за границу массива заставит компилятор паниковать.
