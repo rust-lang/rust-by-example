@@ -25,7 +25,7 @@ fn inspect(p: Person) {
     // Для этого мы используем `match`.
     match p {
         Person::Engineer  => println!("Инженер!"),
-        Person::Scientist => println!("Ученый!"),
+        Person::Scientist => println!("Учёный!"),
         // Деструктурируем `i` из `enum`.
         Person::Height(i) => println!("Рост {}.", i),
         Person::Weight(i) => println!("Вес {}.", i),
