@@ -1,8 +1,7 @@
-For pointers, a distinction needs to be made between destructuring
-and dereferencing as they are different concepts which are used
-differently from a language like `C`.
+Для указателей необходимо различать деструктуризацию и разыменование, 
+поскольку это разные концепции, которые используются иначе, чем в языке `С`.
 
- * Dereferencing uses `*`
- * Destructuring uses `&`, `ref`, and `ref mut`
+ * Разыменование использует `*`
+ * Деструктуризация использует `&`, `ref` и `ref mut`
 
 {pointers.play}
