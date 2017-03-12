@@ -1,22 +1,22 @@
-// Re-implementation of integer division (/)
+// Реализуем свою версию целочисленного деления (/)
 fn division(dividend: i32, divisor: i32) -> i32 {
     if divisor == 0 {
-        // Division by zero triggers a panic
+        // Деление на ноль вызывает панику
         panic!("division by zero");
     } else {
         dividend / divisor
     }
 }
 
-// The `main` task
+// Основной поток `main`
 fn main() {
-    // Heap allocated integer
+    // Целочисленное значение, выделенное в куче
     let _x = Box::new(0i32);
 
-    // This operation will trigger a task failure
+    // Это операция вызовет панику в основном потоке
     division(3, 0);
 
-    println!("This point won't be reached!");
+    println!("Эта часть кода не будет достигнута");
 
-    // `_x` should get destroyed at this point
+    // `_x` должен быть уничтожен в этой точке
 }

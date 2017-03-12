@@ -1,13 +1,14 @@
-The `panic!` macro can be used to generate a panic and start unwinding
-its stack. While unwinding, the runtime will take care of freeing all the
-resources *owned* by the thread by calling the destructor of all its objects.
+Макрос `panic!` используется для генерации паники и раскрутки стека.
+Во время раскрутки стека, среда выполнения возьмёт на себя всю ответственность по
+освобождению ресурсов, которыми *владеет* текущий поток, вызывая деструкторы
+всех объектов.
 
-Since we are dealing with programs with only one thread, `panic!` will cause the
-program to report the panic message and exit.
+Так как в данном случае мы имеем дело с однопоточной программой, `panic!` заставит
+программу вывести сообщение с ошибкой и завершится.
 
 {panic.play}
 
-Let's check that `panic!` doesn't leak memory.
+Давайте убедимся, что `panic!` не приводит к утечки памяти.
 
 ```
 $ rustc panic.rs && valgrind ./panic
