@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.2.2.1" data-basepath="../../.." data-revision="1489352996522">
+    <div class="book" data-level="1.2.2.1" data-basepath="../../.." data-revision="1489418929617">
     
 
 <div class="book-summary">
@@ -2896,9 +2896,9 @@ struct List(Vec&lt;i32&gt;);
 
 impl fmt::Display for List {
     fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
-        // Dereference &#96;self&#96; and create a reference to &#96;vec&#96;
-        // via destructuring.
-        let List(ref vec) = &#42;self;
+        // Extract the value using tuple indexing
+        // and create a reference to &#96;vec&#96;.
+        let vec = &amp;self.0;
 
         write!(f, &quot;[&quot;)?;
 
