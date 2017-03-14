@@ -1,24 +1,24 @@
-For some use cases, `match` is awkward. For example:
+В некоторых случаях использование `match` выглядит неуклюже. Например:
 
 ```rust
-// Make `optional` of type `Option<i32>`
+// Создадим переменную `optional` с типом `Option<i32>`
 let optional = Some(7);
 
 match optional {
     Some(i) => {
-        println!("This is a really long string and `{:?}`", i);
-        // ^ Needed 2 indentations just so we could destructure
-        // `i` from the option.
+        println!("Это действительно очень длинная строка и `{:?}`", i);
+        // ^ Необходимо два вложения для того, чтобы просто деструктурировать
+        // `i` из опционального типа.
     },
     _ => {},
-    // ^ Required because `match` is exhaustive. Doesn't it seem
-    // like wasted space?
+    // ^ Требуется, потому что `match` должен учесть все варианты. Вам не кажется
+    // это немного лишним?
 };
 
 ```
 
-`if let` is cleaner for this use case and in addition allows various
-failure options to be specified:
+`if let` намного компактнее и выразительнее для данного случая и, кроме того, 
+позволяет рассмотреть различные варианты ошибок.
 
 {if_let.play}
 
