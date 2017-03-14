@@ -1,11 +1,11 @@
 fn give_princess(gift: &str) {
-    // Princesses hate snakes, so we need to stop if she disapproves!
-    if gift == "snake" { panic!("AAAaaaaa!!!!"); }
+    // Принцесса ненавидит змей, поэтому нам нужно остановиться, если она не одобрит!
+    if gift == "змея" { panic!("AAAaaaaa!!!!"); }
 
-    println!("I love {}s!!!!!", gift);
+    println!("Я люблю тебя, {}!!!!!", gift);
 }
 
 fn main() {
-    give_princess("teddy bear");
-    give_princess("snake");
+    give_princess("плюшевый мишка");
+    give_princess("змея");
 }
