@@ -139,7 +139,7 @@
         { "id": "repeat", "title": "Repeat", "children": null },
         { "id": "dry", "title": "DRY (Don't Repeat Yourself)", "children": null }
     ] },
-    { "id": "error", "title": "Error handling", "children": [
+    { "id": "error", "title": "Обработка ошибок", "children": [
         { "id": "panic", "title": "`panic`", "children": null },
         { "id": "option_unwrap", "title": "`Option` & `unwrap`", "children": [
             { "id": "map", "title": "Combinators: `map`", "children": null },
