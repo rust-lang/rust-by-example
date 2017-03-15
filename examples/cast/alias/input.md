@@ -4,7 +4,7 @@ exception to this rule are the primitive types: `usize`, `f32`, etc.
 
 {alias.play}
 
-The main use of aliases is to reduce typing; for example the `IoResult<T>` type
+The main use of aliases is to reduce boilerplate; for example the `IoResult<T>` type
 is an alias for the `Result<T, IoError>` type.
 
 ### See also:
