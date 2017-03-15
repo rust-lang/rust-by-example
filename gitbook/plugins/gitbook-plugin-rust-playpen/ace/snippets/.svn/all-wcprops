@@ -3,72 +3,6 @@ svn:wc:ra_dav:version-url
 V 54
 /ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/snippets
 END
-c_cpp.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/c_cpp.js
-END
-maze.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/snippets/maze.js
-END
-jsp.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/jsp.js
-END
-vbscript.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/vbscript.js
-END
-protobuf.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/protobuf.js
-END
-jsx.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/jsx.js
-END
-soy_template.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/soy_template.js
-END
-csharp.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/csharp.js
-END
-markdown.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/markdown.js
-END
-bro.js
-K 25
-svn:wc:ra_dav:version-url
-V 61
-/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/snippets/bro.js
-END
-forth.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/forth.js
-END
 scala.js
 K 25
 svn:wc:ra_dav:version-url
@@ -854,4 +788,70 @@ K 25
 svn:wc:ra_dav:version-url
 V 68
 /ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/objectivec.js
+END
+c_cpp.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/c_cpp.js
+END
+maze.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/56/trunk/src-min/snippets/maze.js
+END
+jsp.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/jsp.js
+END
+vbscript.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/vbscript.js
+END
+protobuf.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/protobuf.js
+END
+jsx.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/jsx.js
+END
+soy_template.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/soy_template.js
+END
+csharp.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/csharp.js
+END
+markdown.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/markdown.js
+END
+bro.js
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/snippets/bro.js
+END
+forth.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/forth.js
 END
