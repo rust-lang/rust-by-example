@@ -57,12 +57,12 @@
     { "id": "fn", "title": "Функции", "children": [
         { "id": "methods", "title": "Методы", "children": null },
         { "id": "closures", "title": "Замыкания", "children": [
-            { "id": "capture", "title": "Capturing", "children": null },
-            { "id": "input_parameters", "title": "As input parameters", "children": null },
-            { "id": "anonymity", "title": "Type anonymity", "children": null },
-            { "id": "input_functions", "title": "Input functions", "children": null },
-            { "id": "output_parameters", "title": "As output parameters", "children": null },
-            { "id": "closure_examples", "title": "Examples in `std`", "children": [
+            { "id": "capture", "title": "Захват", "children": null },
+            { "id": "input_parameters", "title": "Как входные параметры", "children": null },
+            { "id": "anonymity", "title": "Анонимность типов", "children": null },
+            { "id": "input_functions", "title": "Входные функции", "children": null },
+            { "id": "output_parameters", "title": "Как выходные параметры", "children": null },
+            { "id": "closure_examples", "title": "Примеры из `std`", "children": [
                 { "id": "iter_any", "title": "Iterator::any", "children": null },
                 { "id": "iter_find", "title": "Iterator::find", "children": null }
             ] }

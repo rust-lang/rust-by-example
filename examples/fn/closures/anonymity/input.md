@@ -1,32 +1,33 @@
-Closures succinctly capture variables from enclosing scopes. Does this have
-any consequences? It surely does. Observe how using a closure as a function
-parameter requires [generics], which is necessary because of how they are
-defined:
+Замыкания временно захватывают переменные из окружающих областей видимости.
+Имеет ли это какие-либо последствия? Конечно. Как видите, использование
+замыкания в аргументах функции требует [обобщённых типов][generics] из-за
+особенностей реализации замыканий:
 
 ```rust
-// `F` must be generic.
+// `F` должен быть обобщённым типом.
 fn apply<F>(f: F) where
     F: FnOnce() {
     f();
 }
 ```
 
-When a closure is defined, the compiler implicitly creates a new
-anonymous structure to store the captured variables inside, meanwhile
-implementing the functionality via one of the `traits`: `Fn`, `FnMut`, or
-`FnOnce` for this unknown type. This type is assigned to the variable which
-is stored until calling.
+Во время определения замыкания компилятор неявно создаёт новую анонимную
+структуру для хранения захваченных переменных, тем временем реализуя
+функциональность для некого неизвестного типа с помощью одного из типажей: `Fn`,
+`FnMut`, или `FnOnce`. Этот тип присваивается переменной, которая хранится до
+самого вызова замыкания.
 
-Since this new type is of unknown type, any usage in a function will require
-generics. However, an unbounded type parameter `<T>` would still be ambiguous
-and not be allowed. Thus, bounding by one of the `traits`: `Fn`, `FnMut`, or
-`FnOnce` (which it implements) is sufficient to specify its type.
+Так как этот новый тип заранее неизвестен, любое его использование в функции
+потребует обобщённых типов. Тем не менее, неограниченный параметр типа `<T>`
+по прежнему будет неоднозначным и недопустим. Таким образом, ограничение по
+одному из типажей: `Fn`, `FnMut`, или `FnOnce` (которые он реализует) необходимо
+для использования этого типа.
 
 {anonymity.play}
 
 ### Смотрите также:
 
-[A thorough analysis][thorough_analysis], [`Fn`][fn], [`FnMut`][fn_mut],
+[Подробный разбор][thorough_analysis], [`Fn`][fn], [`FnMut`][fn_mut],
 and [`FnOnce`][fn_once]
 
 [generics]: ../../generics.html
