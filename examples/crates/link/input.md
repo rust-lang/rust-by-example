@@ -6,7 +6,7 @@
 {executable.rs}
 
 ```
-# Где library.rlib путь к скомпилированной библиотеки. Предположим, что
+# Где library.rlib путь к скомпилированной библиотеке. Предположим, что
 # она находится в той же директории:
 $ rustc executable.rs --extern rary=library.rlib && ./executable
 вызвана `public_function()` контейнера rary
