@@ -6,7 +6,7 @@ fn main() {
     // This is our data to process.
     // We will calculate the sum of all digits via a threaded map-reduce algorithm.
     // each whitespace separated chunk will be handled in a different thread.
-    // Try it: see what happens to the output if you insert spaces!
+    // TODO: see what happens to the output if you insert spaces!
     let data = "86967897737416471853297327050364959
 11861322575564723963297542624962850
 70856234701860851907960690014725639
@@ -44,6 +44,7 @@ fn main() {
         //   unsigned 32-bit integer ('-> u32')
         // Rust is smart enough to infer the '-> u32' from the closure itself
         //   so we could have left that out.
+        // TODO: try removing the 'move' and see what happens
         children.push(thread::spawn(move || -> u32 {
             // Calculate the intermediate sum of this segment:
             let result = data_segment
@@ -81,6 +82,7 @@ fn main() {
 
     // combine all intermediate sums into a single final sum.
     //   we use the "turbofish" ::<> notation to provide sum() with a type hint
+    // TODO: try without the turbofish, by instead explicitly specifying the type of intermediate_sums
     let final_result = intermediate_sums.iter().sum::<u32>();
 
     println!("Final sum result: {}", final_result);
