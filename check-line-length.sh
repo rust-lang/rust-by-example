@@ -17,8 +17,8 @@ if [[ $status == 0 ]]; then
       continue
     fi
     any_offender=true
-    echo "> $suspect exceeds 79 chars"
-    awk 'length($0) > 79' $suspect
+    echo "> $suspect exceeds 99 chars"
+    awk 'length($0) > 99' $suspect
   done
 
 fi
