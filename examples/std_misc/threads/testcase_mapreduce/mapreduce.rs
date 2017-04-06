@@ -4,9 +4,9 @@ use std::thread;
 fn main() {
 
     // This is our data to process.
-    // We will calculate the sum of all digits via a threaded 
-    // map-reduce algorithm.
-    // each whitespace separated chunk will be handled in a different thread.
+    // We will calculate the sum of all digits via a threaded  map-reduce algorithm.
+    // Each whitespace separated chunk will be handled in a different thread.
+    //
     // TODO: see what happens to the output if you insert spaces!
     let data = "86967897737416471853297327050364959
 11861322575564723963297542624962850
@@ -30,23 +30,27 @@ fn main() {
     // each chunk will be a reference (&str) into the actual data
     let chunked_data = data.split_whitespace();
 
-    // iterate over the data segments.
-    //   .enumerate() adds the current loop index to whatever is iterated
-    //   the resulting tuple "(index, element)" is then immediately
-    //   "destructured" into two variables, "i" and "data_segment" with a
-    //  "destructuring assignment"
+    // Iterate over the data segments.
+    // .enumerate() adds the current loop index to whatever is iterated
+    // the resulting tuple "(index, element)" is then immediately
+    // "destructured" into two variables, "i" and "data_segment" with a
+    // "destructuring assignment"
     for (i, data_segment) in chunked_data.enumerate() {
         println!("data segment {} is \"{}\"", i, data_segment);
 
         // Process each data segment in a separate thread
-        // spawn() returns a handle to the new thread, which we MUST keep
-        //   to access the returned value
-        // 'move || -> u32' is syntax for a closure that takes 
-        //   no arguments ('||'), takes ownership of its captured
-        //   variables ('move') and returns an
-        //   unsigned 32-bit integer ('-> u32')
-        // Rust is smart enough to infer the '-> u32' from the closure itself
-        //   so we could have left that out.
+        //
+        // spawn() returns a handle to the new thread,
+        // which we MUST keep to access the returned value
+        //
+        // 'move || -> u32' is syntax for a closure that:
+        // * takes no arguments ('||')
+        // * takes ownership of its captured variables ('move') and
+        // * returns an unsigned 32-bit integer ('-> u32')
+        //
+        // Rust is smart enough to infer the '-> u32' from 
+        // the closure itself so we could have left that out.
+        //
         // TODO: try removing the 'move' and see what happens
         children.push(thread::spawn(move || -> u32 {
             // Calculate the intermediate sum of this segment:
@@ -61,9 +65,8 @@ fn main() {
             // println! locks stdout, so no text-interleaving occurs
             println!("processed segment {}, result={}", i, result);
 
-            // "return" not needed, because Rust is an "expression language",
-            //   the last evaluated expression in each block is automatically
-            //   its value.
+            // "return" not needed, because Rust is an "expression language", the
+            // last evaluated expression in each block is automatically its value.
             result
 
         }));
@@ -85,9 +88,11 @@ fn main() {
     }
 
     // combine all intermediate sums into a single final sum.
-    //   we use the "turbofish" ::<> to provide sum() with a type hint
-    // TODO: try without the turbofish, by instead explicitly specifying the
-    //   type of intermediate_sums
+    //
+    // we use the "turbofish" ::<> to provide sum() with a type hint.
+    //
+    // TODO: try without the turbofish, by instead explicitly 
+    // specifying the type of intermediate_sums
     let final_result = intermediate_sums.iter().sum::<u32>();
 
     println!("Final sum result: {}", final_result);
