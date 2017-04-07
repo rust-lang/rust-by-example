@@ -23,7 +23,7 @@ until the threads exit, so no dangling pointers occur.
 
 ### Assignments
 It is not wise to let our number of threads depend on user inputted data.
-What if the user decides to insert a lot of spaces? Do we _really_ want to spawn 2.000 threads?
+What if the user decides to insert a lot of spaces? Do we _really_ want to spawn 2,000 threads?
 Modify the program so that the data is always chunked into a limited number of chunks,
 defined by a static constant at the beginning of the program.
 
