@@ -6,4 +6,8 @@ we define `Animal`, a group of methods. The `Animal` `trait` is
 then implemented for the `Sheep` data type, allowing the use of 
 methods from `Animal` with a `Sheep`.
 
+**Note**: we are using `&'static str` below to simplify ownership semantics for
+this particular example. In general, it is more practical to use `&str` or
+`String` (an owned string type).
+
 {trait.play}
