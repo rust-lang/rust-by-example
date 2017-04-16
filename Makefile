@@ -41,6 +41,8 @@ pdf:	node_modules/gitbook
 
 clean:
 	rm -rf bin stage
+	rm -rf node_modules/gitbook
+	rm -rf node_modules/.bin
 
 test:
 	@$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
