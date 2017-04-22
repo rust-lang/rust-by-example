@@ -3,60 +3,6 @@ svn:wc:ra_dav:version-url
 V 54
 /ajaxorg/ace-builds/!svn/ver/72/trunk/src-min/snippets
 END
-text.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/text.js
-END
-groovy.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/groovy.js
-END
-rhtml.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/rhtml.js
-END
-autohotkey.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/autohotkey.js
-END
-vbscript.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/vbscript.js
-END
-rust.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/rust.js
-END
-protobuf.js
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/protobuf.js
-END
-glsl.js
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/glsl.js
-END
-pascal.js
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/pascal.js
-END
 less.js
 K 25
 svn:wc:ra_dav:version-url
@@ -854,4 +800,58 @@ K 25
 svn:wc:ra_dav:version-url
 V 65
 /ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/haskell.js
+END
+text.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/text.js
+END
+groovy.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/groovy.js
+END
+rhtml.js
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/rhtml.js
+END
+autohotkey.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/autohotkey.js
+END
+vbscript.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/vbscript.js
+END
+rust.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/rust.js
+END
+protobuf.js
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/protobuf.js
+END
+glsl.js
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/glsl.js
+END
+pascal.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/ajaxorg/ace-builds/!svn/ver/42/trunk/src-min/snippets/pascal.js
 END
