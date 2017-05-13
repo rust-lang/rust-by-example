@@ -40,7 +40,7 @@ fn process(food: Option<Food>) -> Option<Cooked> {
 // Check whether there's food or not before trying to eat it!
 fn eat(food: Option<Cooked>) {
     match food {
-        Some(food) => println!("Mmm. I love {:?}", food),
+        Some(food) => println!("Mmm. I love {:?}", food.0),
         None       => println!("Oh no! It wasn't edible."),
     }
 }
