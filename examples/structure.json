@@ -37,7 +37,8 @@
     { "id": "flow_control", "title": "Flow Control", "children": [
         { "id": "if_else", "title": "if/else", "children": null },
         { "id": "loop", "title": "loop", "children": [
-            { "id": "nested", "title": "Nesting and labels", "children": null }
+            { "id": "nested", "title": "Nesting and labels", "children": null },
+            { "id": "return", "title": "Returning from loops", "children": null }
         ] },
         { "id": "while", "title": "while", "children": null },
         { "id": "for", "title": "for and range", "children": null },
