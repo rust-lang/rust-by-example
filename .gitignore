@@ -1,6 +1,7 @@
 bin/*
 stage/*
 node_modules/*
+!node_modules/gitbook/theme/templates/book/page.html
 !node_modules/gitbook-plugin-rust-playpen
 node_modules/gitbook-plugin-rust-playpen/book/mode-rust.js
 node_modules/gitbook-plugin-rust-playpen/book/ace
