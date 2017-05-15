@@ -172,7 +172,9 @@
         ] }
     ] },
     { "id": "std_misc", "title": "Std misc", "children": [
-        { "id": "threads", "title": "Threads", "children": null },
+        { "id": "threads", "title": "Threads", "children": [
+            { "id": "testcase_mapreduce", "title": "Testcase: map-reduce", "children": null}
+        ] },
         { "id": "channels", "title": "Channels", "children": null },
         { "id": "path", "title": "Path", "children": null },
         { "id": "file", "title": "File I/O", "children": [
