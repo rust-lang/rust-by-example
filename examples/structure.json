@@ -172,7 +172,7 @@
         ] }
     ] },
     { "id": "std_misc", "title": "Разное в стандартной библиотеке", "children": [
-        { "id": "threads", "title": "Потоки", "children": null },
+        { "id": "threads", "title": "Потоки", "children": [
             { "id": "testcase_mapreduce", "title": "Testcase: map-reduce", "children": null}
         ] },
         { "id": "channels", "title": "Channels", "children": null },
