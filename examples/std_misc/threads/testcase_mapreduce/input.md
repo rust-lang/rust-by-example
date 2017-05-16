@@ -1,4 +1,5 @@
-Rust makes it very easy to parallelise data processing, without many of the headaches traditionally associated with such an attempt.
+Rust makes it very easy to parallelise data processing,
+without many of the headaches traditionally associated with such an attempt.
 
 The standard library provides great threading primitives out of the box.
 These, combined with Rust's concept of Ownership and aliasing rules, automatically prevent
