@@ -1,34 +1,33 @@
-*Generics* is the topic of generalizing types and functionalities to broader
-cases. This is extremely useful for reducing code duplication in many ways,
-but can call for rather involving syntax. Namely, being generic requires
-taking great care to specify over which types a generic type
-is actually considered valid. The simplest and most common use of generics
-is for type parameters.
+*Обобщения* позволяют генерализировать типы и функционал для более общих случаев. Они
+чрезвычайно полезны благодаря уменьшению дублирования кода, однако могут привести к
+сравнительному усложнению синтаксиса. А именно, использование обобщений требует особого
+внимания при определении допустимых реальных типов которыми могут заменяться обобщённые.
+Наиболее простым и распространённым применением обобщений является обобщение параметров
+типа.
 
-A type parameter is specified as generic by the use of angle brackets and upper
-[camel case][camelcase]: `<Aaa, Bbb, ...>`. "Generic type parameters" are
-typically represented as `<T>`. In Rust, "generic" also describes anything that
-accepts one or more generic type parameters `<T>`. Any type specified as a
-generic type parameter is generic, and everything else is concrete (non-generic).
+Обобщить параметр типа можно используя угловые скобки и верхний [верблюжий регистр][camelcase]:
+`<Aaa, Bbb, ...>`. "Обобщённые параметры типа" обычно представлены как `<T>`. В Rust,
+"обобщённым" также принято называть все, что может принимать один или более обобщённых
+параметров типа `<T>`. Любой тип, указанный в качестве параметра обобщённого типа,
+является обобщённым, а всё остальное является конкретным (не обобщённым).
 
-For example, defining a *generic function* named `foo` that takes an argument
-`T` of any type:
+Например, объявление *обобщённой функции* `foo` принимающей аргумент `T` любого типа:
 
 ```rust
 fn foo<T>(T) { ... }
 ```
 
-Because `T` has been specified as a generic type parameter using `<T>`, it
-is considered generic when used here as `(T)`. This is the case even if `T`
-has previously been defined as a `struct`.
+Поскольку `T` был объявлен как обобщённый тип, посредством `<T>`, он считается обобщённым
+когда используется как `(T)`. Это работает даже если `T` был определён как [структура]
+[structs].
 
-This example shows some of the syntax in action:
+Пример ниже демонстрирует синтаксис в действии:
 
 {generics.play}
 
 ### Смотрите также:
 
-[`struct`s][structs]
+[Структуры][structs]
 
 [structs]: custom_types/structs.html
-[camelcase]: https://en.wikipedia.org/wiki/CamelCase
+[camelcase]: https://ru.wikipedia.org/wiki/CamelCase

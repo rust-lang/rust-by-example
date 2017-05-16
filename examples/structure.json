@@ -87,7 +87,7 @@
             { "id": "custom", "title": "Собственные условия", "children": null }
         ] }
     ] },
-    { "id": "generics", "title": "Generics", "children": [
+    { "id": "generics", "title": "Обобщения", "children": [
         { "id": "gen_fn", "title": "Functions", "children": null },
         { "id": "impl", "title": "Реализация", "children": null },
         { "id": "gen_trait", "title": "Traits", "children": null },
