@@ -2,7 +2,7 @@ mod checked {
     #[derive(Debug)]
     enum MathError {
         DivisionByZero,
-        NegativeLogarithm,
+        NonPositiveLogarithm,
         NegativeSquareRoot,
     }
 
@@ -25,8 +25,8 @@ mod checked {
     }
 
     fn ln(x: f64) -> MathResult {
-        if x < 0.0 {
-            Err(MathError::NegativeLogarithm)
+        if x <= 0.0 {
+            Err(MathError::NonPositiveLogarithm)
         } else {
             Ok(x.ln())
         }
@@ -46,8 +46,8 @@ mod checked {
     pub fn op(x: f64, y: f64) {
         match op_(x, y) {
             Err(why) => panic!(match why {
-                MathError::NegativeLogarithm
-                    => "logarithm of negative number",
+                MathError::NonPositiveLogarithm
+                    => "logarithm of non-positive number",
                 MathError::DivisionByZero
                     => "division by zero",
                 MathError::NegativeSquareRoot
