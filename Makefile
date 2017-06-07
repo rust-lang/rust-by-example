@@ -2,7 +2,7 @@ GITBOOK = node_modules/.bin/gitbook
 RUSTC = rustc
 STRICT = -D deprecated
 QUIET = -A unused-variables -A dead-code -A unused-assignments
-RUSTC_NT = $(RUSTC) -Z no-trans --test $(QUIET) # ${STRICT}
+RUSTC_NT = $(RUSTC) --emit=metadata --test $(QUIET) # ${STRICT}
 WHITELIST = examples/attribute/cfg/custom/custom.rs \
             examples/scope/borrow/borrow.rs \
             examples/scope/borrow/freeze/freeze.rs \
