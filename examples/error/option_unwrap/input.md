@@ -23,4 +23,4 @@ controlled result while retaining the option to `panic` if desired.
 
 {option_unwrap.play}
 
-[expect]: http://doc.rust-lang.org/std/option/enum.Option.html#method.expect
+[expect]: https://doc.rust-lang.org/std/option/enum.Option.html#method.expect

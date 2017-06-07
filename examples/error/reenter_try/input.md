@@ -44,5 +44,5 @@ eventually need to meet higher expectations of error handling implementation.
 
 [`From::from`][from] and [`try!`][try]
 
-[from]: http://doc.rust-lang.org/std/convert/trait.From.html
-[try]: http://doc.rust-lang.org/std/macro.try!.html
+[from]: https://doc.rust-lang.org/std/convert/trait.From.html
+[try]: https://doc.rust-lang.org/std/macro.try!.html

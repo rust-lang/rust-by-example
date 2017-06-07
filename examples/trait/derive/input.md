@@ -18,13 +18,13 @@ The following is a list of derivable traits:
 [`derive`][derive]
 
 [attribute]: /attribute.html
-[eq]: http://doc.rust-lang.org/std/cmp/trait.Eq.html
-[partial-eq]: http://doc.rust-lang.org/std/cmp/trait.PartialEq.html
-[ord]: http://doc.rust-lang.org/std/cmp/trait.Ord.html
-[partial-ord]: http://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
-[clone]: http://doc.rust-lang.org/std/clone/trait.Clone.html
+[eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
+[partial-eq]: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
+[ord]: https://doc.rust-lang.org/std/cmp/trait.Ord.html
+[partial-ord]: https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html
+[clone]: https://doc.rust-lang.org/std/clone/trait.Clone.html
 [copy]: https://doc.rust-lang.org/core/marker/trait.Copy.html
-[hash]: http://doc.rust-lang.org/std/hash/trait.Hash.html
-[default]: http://doc.rust-lang.org/std/default/trait.Default.html
-[debug]: http://doc.rust-lang.org/std/fmt/trait.Debug.html
+[hash]: https://doc.rust-lang.org/std/hash/trait.Hash.html
+[default]: https://doc.rust-lang.org/std/default/trait.Default.html
+[debug]: https://doc.rust-lang.org/std/fmt/trait.Debug.html
 [derive]: https://doc.rust-lang.org/reference.html#derive

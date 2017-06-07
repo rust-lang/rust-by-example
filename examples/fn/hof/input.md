@@ -9,5 +9,5 @@ and
 [Iterator][iter]
 implement their fair share of HOFs.
 
-[option]: http://doc.rust-lang.org/core/option/enum.Option.html
-[iter]: http://doc.rust-lang.org/core/iter/trait.Iterator.html
+[option]: https://doc.rust-lang.org/core/option/enum.Option.html
+[iter]: https://doc.rust-lang.org/core/iter/trait.Iterator.html

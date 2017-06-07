@@ -23,4 +23,4 @@ pub trait Iterator {
 
 [`std::iter::Iterator::find`][find]
 
-[find]: http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find
+[find]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.find

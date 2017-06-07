@@ -14,5 +14,5 @@ More `str`/`String` methods can be found under the
 [std::string][string]
 modules
 
-[str]: http://doc.rust-lang.org/std/str/
-[string]: http://doc.rust-lang.org/std/string/
+[str]: https://doc.rust-lang.org/std/str/
+[string]: https://doc.rust-lang.org/std/string/

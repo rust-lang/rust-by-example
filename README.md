@@ -14,7 +14,7 @@ See [CONTRIBUTING.md][how-to-contribute].
 
 ### Debian (Ubuntu) prerequisites
 
-Install [Rust](http://www.rust-lang.org/install.html) and
+Install [Rust](https://www.rust-lang.org/install.html) and
 run:
 
 ```
@@ -24,7 +24,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 ### Non-Debian prerequisites
 
-Install Rust [nightly](http://www.rust-lang.org/install.html),
+Install Rust [nightly](https://www.rust-lang.org/install.html),
 `node`, `npm`, `subversion` and `calibre`.
 
 ### Build instructions
@@ -111,10 +111,10 @@ See LICENSE-APACHE and LICENSE-MIT for more details.
 
 [travis-image]: https://travis-ci.org/rust-lang/rust-by-example.svg?branch=master
 [travis-link]: https://travis-ci.org/rust-lang/rust-by-example
-[website]: http://rustbyexample.com
+[website]: https://rustbyexample.com
 [how-to-contribute]: CONTRIBUTING.md
-[rust-lang]: http://www.rust-lang.org/
-[gitbook]: http://www.gitbook.io
+[rust-lang]: https://www.rust-lang.org/
+[gitbook]: https://www.gitbook.io
 [gitbook-format]: https://github.com/GitbookIO/gitbook#book-format
 [main-rs]: src/main.rs
 [structure]: examples/structure.json

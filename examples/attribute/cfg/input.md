@@ -11,6 +11,6 @@ Both utilize identical argument syntax.
 
 [the reference][ref], [`cfg!`][cfg], and [macros][macros].
 
-[cfg]: http://doc.rust-lang.org/std/macro.cfg!.html
+[cfg]: https://doc.rust-lang.org/std/macro.cfg!.html
 [macros]: /macros.html
-[ref]: http://doc.rust-lang.org/reference.html#conditional-compilation
+[ref]: https://doc.rust-lang.org/reference.html#conditional-compilation

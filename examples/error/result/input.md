@@ -28,6 +28,6 @@ unpleasant error message.
 To improve the quality of our error message, we should be more specific 
 about the return type and consider explicitly handling the error.
 
-[option]: http://doc.rust-lang.org/std/option/enum.Option.html
-[result]: http://doc.rust-lang.org/std/result/enum.Result.html
+[option]: https://doc.rust-lang.org/std/option/enum.Option.html
+[result]: https://doc.rust-lang.org/std/result/enum.Result.html
 [parse]: https://doc.rust-lang.org/std/primitive.str.html#method.parse

@@ -11,7 +11,7 @@ Additionally for the curious, you can also [check out the source code for this s
 
 Now let's begin!
 
-[rust]: http://www.rust-lang.org/
-[install]: http://www.rust-lang.org/install.html
-[std]: http://doc.rust-lang.org/std/
+[rust]: https://www.rust-lang.org/
+[install]: https://www.rust-lang.org/install.html
+[std]: https://doc.rust-lang.org/std/
 [home]: https://github.com/rust-lang/rust-by-example

@@ -39,5 +39,5 @@ with `DoubleError`:
 
 [Dynamic dispatch][dynamic_dispatch] and [`Error` trait][error]
 
-[dynamic_dispatch]: http://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch
-[error]: http://doc.rust-lang.org/std/error/trait.Error.html
+[dynamic_dispatch]: https://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch
+[error]: https://doc.rust-lang.org/std/error/trait.Error.html

@@ -34,6 +34,6 @@ No leaks here!
 
 [Box][box]
 
-[raii]: http://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization
+[raii]: https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization
 [box]: /std/box.html
 [valgrind]: http://valgrind.org/info/

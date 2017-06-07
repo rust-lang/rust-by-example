@@ -12,4 +12,4 @@ description of elision, see [lifetime elision][elision] in the book.
 
 [elision][elision]
 
-[elision]: http://doc.rust-lang.org/book/lifetimes.html#lifetime-elision
+[elision]: https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision

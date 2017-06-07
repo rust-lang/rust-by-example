@@ -23,6 +23,6 @@ to make more structured and informative errors by defining their types.
 
 [`Result`][result] and [`io::Result`][io_result]
 
-[result]: http://doc.rust-lang.org/std/result/enum.Result.html
-[io_result]: http://doc.rust-lang.org/std/io/type.Result.html
+[result]: https://doc.rust-lang.org/std/result/enum.Result.html
+[io_result]: https://doc.rust-lang.org/std/io/type.Result.html
 [re_enter_try]: /error/reenter_try.html

@@ -15,5 +15,5 @@ rustdoc --test --extern doc="libdoc.rs"
 (When you run `cargo test` on a library crate, Cargo will automatically
 generate and run the correct rustc and rustdoc commands.)
 
-[1]: http://doc.rust-lang.org/book/documentation.html
+[1]: https://doc.rust-lang.org/book/documentation.html
 [2]: https://en.wikipedia.org/wiki/Markdown
