@@ -12,4 +12,4 @@ These expand beyond what the [primitives][primitives] provide.
 [primitives][primitives] and [the std library][std]
 
 [primitives]: /primitives.html
-[std]: http://doc.rust-lang.org/std/
+[std]: https://doc.rust-lang.org/std/

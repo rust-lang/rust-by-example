@@ -10,4 +10,4 @@ be surpassed, the vector is reallocated with a larger capacity.
 More `Vec` methods can be found under the
 [std::vec][vec] module
 
-[vec]: http://doc.rust-lang.org/std/vec/
+[vec]: https://doc.rust-lang.org/std/vec/

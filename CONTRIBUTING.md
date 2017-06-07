@@ -12,7 +12,7 @@ not the case, leave your request as a comment on that issue.
 
 Please include the example id in the issue title, e.g. "variables/mut: concept
 not clear". The example id is the relative path in the URL without the html
-extension, e.g. URL: `http://rustbyexample.com/variables/scope.html` -> id:
+extension, e.g. URL: `https://rustbyexample.com/variables/scope.html` -> id:
 `variables/scope`
 
 If it's something simple like a typo, you can send a PR directly.
@@ -69,14 +69,14 @@ See the [README][readme] for details about how the static site is generated.
 
 Instead of:
 
-    [Goto my URL](http://www.myurl.com)
+    [Goto my URL](https://www.example.com)
 
 Use:
 
     [Goto my URL][1]
 
     (Bottom of page)
-    [1]: http://www.myurl.com
+    [1]: https://www.example.com
 
 ## Rust code (.rs)
 

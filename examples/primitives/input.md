@@ -19,4 +19,4 @@ floats to `f64`.
 
 [the `std` library][std]
 
-[std]: http://doc.rust-lang.org/std/
+[std]: https://doc.rust-lang.org/std/

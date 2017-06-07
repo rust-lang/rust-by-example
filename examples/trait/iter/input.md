@@ -13,4 +13,4 @@ to those shown in the example below can be found [here][iter].
 {iter.play}
 
 [intoiter]: https://doc.rust-lang.org/std/iter/trait.IntoIterator.html
-[iter]: http://doc.rust-lang.org/core/iter/trait.Iterator.html
+[iter]: https://doc.rust-lang.org/core/iter/trait.Iterator.html

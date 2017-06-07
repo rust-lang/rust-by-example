@@ -12,6 +12,6 @@ A list of the traits, such as `Add`, that overload operators are available [here
 
 [Add][add], [Syntax Index][syntax]
 
-[add]: http://doc.rust-lang.org/core/ops/trait.Add.html
-[ops]: http://doc.rust-lang.org/core/ops/
+[add]: https://doc.rust-lang.org/core/ops/trait.Add.html
+[ops]: https://doc.rust-lang.org/core/ops/
 [syntax]: https://doc.rust-lang.org/book/syntax-index.html

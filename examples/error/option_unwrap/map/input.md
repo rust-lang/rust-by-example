@@ -18,5 +18,5 @@ to it while staying compact.
 
 [combinators]: https://doc.rust-lang.org/book/glossary.html#combinators
 [closures]: /fn/closures.html
-[option]: http://doc.rust-lang.org/std/option/enum.Option.html
-[map]: http://doc.rust-lang.org/std/option/enum.Option.html#method.map
+[option]: https://doc.rust-lang.org/std/option/enum.Option.html
+[map]: https://doc.rust-lang.org/std/option/enum.Option.html#method.map

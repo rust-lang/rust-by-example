@@ -35,7 +35,7 @@ for these types. To print text for custom types, more steps are required.
 [`std::fmt`][fmt], [`macros`][macros], [`struct`][structs],
 and [`traits`][traits]
 
-[fmt]: http://doc.rust-lang.org/std/fmt/
+[fmt]: https://doc.rust-lang.org/std/fmt/
 [macros]: /macros.html
 [string]: /std/str.html
 [structs]: /custom_types/structs.html

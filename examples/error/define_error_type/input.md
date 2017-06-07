@@ -20,6 +20,6 @@ logic heavy code with `String` formatting simply to display nicely.
 
 [`Result`][result] and [`io::Result`][io_result]
 
-[result]: http://doc.rust-lang.org/std/result/enum.Result.html
-[io_result]: http://doc.rust-lang.org/std/io/type.Result.html
+[result]: https://doc.rust-lang.org/std/result/enum.Result.html
+[io_result]: https://doc.rust-lang.org/std/io/type.Result.html
 [inplace]: /error/option_with_result/result_string_errors.html

@@ -9,5 +9,5 @@ patterns when the `trait` is generic over its container type.
 
 [RFC][RFC]
 
-[items]: http://doc.rust-lang.org/reference.html#items
+[items]: https://doc.rust-lang.org/reference.html#items
 [RFC]: https://github.com/rust-lang/rfcs/blob/master/text/0195-associated-items.md
