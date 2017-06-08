@@ -1,5 +1,3 @@
-// Enable feature field init shorthand
-#![feature(field_init_shorthand)]
 #[derive(Debug)]
 struct Person<'a> {
     name: &'a str,
