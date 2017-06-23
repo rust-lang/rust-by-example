@@ -6,8 +6,8 @@ compiler; specifically, there are four primary things that unsafe blocks are
 used for:
 
 * dereferencing raw pointers
-* calling a function over FFI (but this is covered in a different part of the
-  book)
+* calling a function over FFI (but this is covered in [a previous
+  chapter](/std_misc/ffi.html) of the book)
 * changing types through `std::mem::transmute`
 * inline assembly
 
