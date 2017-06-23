@@ -9,7 +9,7 @@ to find the library so it can link it into each doctest program:
 
 ```
 rustc doc.rs --crate-type lib
-rustdoc --test --extern doc="libdoc.rs"
+rustdoc --test --extern doc="libdoc.rlib" doc.rs
 ```
 
 (When you run `cargo test` on a library crate, Cargo will automatically
