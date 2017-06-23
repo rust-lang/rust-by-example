@@ -5,7 +5,7 @@ fn main() {
     let path = Path::new(".");
 
     // The `display` method returns a `Show`able structure
-    let display = path.display();
+    let _display = path.display();
 
     // `join` merges a path with a byte container using the OS specific
     // separator, and returns the new path
