@@ -8,4 +8,4 @@ and the `Ok(ok)` branch expands to an `ok` expression.
 Be sure to check the [documentation][docs],
 as there are many methods to map/compose `Result`.
 
-[docs]: http://doc.rust-lang.org/std/result/index.html
+[docs]: https://doc.rust-lang.org/std/result/index.html

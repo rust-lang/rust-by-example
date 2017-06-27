@@ -37,7 +37,7 @@
 [`std::fmt`][fmt], [`макросы`][macros], [`структуры`][structs]
 и [`типажи`][traits]
 
-[fmt]: http://doc.rust-lang.org/std/fmt/
+[fmt]: https://doc.rust-lang.org/std/fmt/
 [macros]: ../macros.html
 [string]: ../std/str.html
 [structs]: ../custom_types/structs.html

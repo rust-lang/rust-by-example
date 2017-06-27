@@ -24,23 +24,23 @@
 
 ### Предварительные настройки для Debian (Ubuntu)
 
-Установить [Rust](http://www.rust-lang.org/install.html) и выполнить:
+Установить [Rust](https://www.rust-lang.org/install.html) и выполнить:
 
-```
+```bash
 sudo apt-get install nodejs npm subversion
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
 ### Предварительные настройки для не-Debian дистрибутивов
 
-Установить Rust [nightly](http://www.rust-lang.org/install.html),
+Установить Rust [nightly](https://www.rust-lang.org/install.html),
 `node`, `npm`, and `subversion`.
 
 ### Инструкция по сборке проекта
 
 Run:
 
-```
+```bash
 make all
 make html pdf epub
 make test
@@ -116,10 +116,10 @@ make test
 [travis-image]: https://travis-ci.org/ruRust/rust-by-example-ru.svg?branch=master
 [travis-link]: https://travis-ci.org/ruRust/rust-by-example-ru
 [yaspeller]: https://tech.yandex.ru/speller/
-[website]: http://rustbyexample.com
+[website]: https://rustbyexample.com
 [how-to-contribute]: CONTRIBUTING.md
-[rust-lang]: http://www.rust-lang.org/
-[gitbook]: http://www.gitbook.io
+[rust-lang]: https://www.rust-lang.org/
+[gitbook]: https://www.gitbook.io
 [gitbook-format]: https://github.com/GitbookIO/gitbook#book-format
 [main-rs]: src/main.rs
 [structure]: examples/structure.json

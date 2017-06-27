@@ -18,5 +18,5 @@ Using `map()` instead of `and_then()` would have given an
 [closures][closures], [`Option`][option], and [`Option::and_then()`][and_then]
 
 [closures]: ../../fn/closures.html
-[option]: http://doc.rust-lang.org/std/option/enum.Option.html
-[and_then]: http://doc.rust-lang.org/std/option/enum.Option.html#method.and_then
+[option]: https://doc.rust-lang.org/std/option/enum.Option.html
+[and_then]: https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then

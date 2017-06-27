@@ -5,4 +5,4 @@
 
 {while.play}
 
-[fizzbuzz]: http://en.wikipedia.org/wiki/Fizz_buzz
+[fizzbuzz]: https://en.wikipedia.org/wiki/Fizz_buzz

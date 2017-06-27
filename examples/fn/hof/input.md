@@ -9,5 +9,5 @@ Rust предоставляет Функций Высшего Порядка(Ф�
 [Iterator][iter]
 реализуют свою часть функций высшего порядка..
 
-[option]: http://doc.rust-lang.org/core/option/enum.Option.html
-[iter]: http://doc.rust-lang.org/core/iter/trait.Iterator.html
+[option]: https://doc.rust-lang.org/core/option/enum.Option.html
+[iter]: https://doc.rust-lang.org/core/iter/trait.Iterator.html

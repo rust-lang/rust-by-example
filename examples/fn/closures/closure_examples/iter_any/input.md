@@ -23,4 +23,4 @@ pub trait Iterator {
 
 [`std::iter::Iterator::any`][any]
 
-[any]: http://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any
+[any]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any

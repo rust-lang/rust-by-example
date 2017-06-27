@@ -16,5 +16,5 @@ Here's a quick example to show off the syntax:
 [`Result`][result] and [`io::Result`][io_result]
 
 [typealias]: ../../cast/alias.html
-[result]: http://doc.rust-lang.org/std/result/enum.Result.html
-[io_result]: http://doc.rust-lang.org/std/io/type.Result.html
+[result]: https://doc.rust-lang.org/std/result/enum.Result.html
+[io_result]: https://doc.rust-lang.org/std/io/type.Result.html

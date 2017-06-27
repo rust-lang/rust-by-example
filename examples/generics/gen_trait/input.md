@@ -7,6 +7,6 @@ the `Drop` `trait` as a generic method to `drop` itself and an input.
 
 [`Drop`][Drop], [`struct`][structs], and [`trait`][traits]
 
-[Drop]: http://doc.rust-lang.org/std/ops/trait.Drop.html
+[Drop]: https://doc.rust-lang.org/std/ops/trait.Drop.html
 [structs]: ../custom_types/structs.html
 [traits]: ../trait.html

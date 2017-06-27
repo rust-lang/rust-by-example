@@ -1,19 +1,19 @@
 mod my {
     // Публичная структура с публичным полем обобщённого типа `T`
-    pub struct WhiteBox<T> {
+    pub struct OpenBox<T> {
         pub contents: T,
     }
 
     // Публичная структура с приватным полем обобщённого типа `T`
     #[allow(dead_code)]
-    pub struct BlackBox<T> {
+    pub struct ClosedBox<T> {
         contents: T,
     }
 
-    impl<T> BlackBox<T> {
+    impl<T> ClosedBox<T> {
         // Публичный конструктор
-        pub fn new(contents: T) -> BlackBox<T> {
-            BlackBox {
+        pub fn new(contents: T) -> ClosedBox<T> {
+            ClosedBox {
                 contents: contents,
             }
         }
@@ -22,22 +22,22 @@ mod my {
 
 fn main() {
     // Публичная структура с публичным полем может быть создана, как обычно
-    let white_box = my::WhiteBox { contents: "публичную информацию" };
+    let open_box = my::OpenBox { contents: "публичную информацию" };
 
     // а их поля доступны всем.
-    println!("Белая упаковка хранит: {}", white_box.contents);
+    println!("Открытая упаковка хранит: {}", white_box.contents);
 
     // Публичные структуры с приватными полями не могут быть созданы, используя имя полей
-    // Ошибка! `BlackBox` имеет приватные поля
-    //let black_box = my::BlackBox { contents: "классифицированную информацию" };
+    // Ошибка! `ClosedBox` имеет приватные поля
+    //let closed_box = my::ClosedBox { contents: "классифицированную информацию" };
     // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 
     // Однако, структуры с приватными полями могут быть созданы с помощью
     // публичного конструктора
-    let _black_box = my::BlackBox::new("классифицированную информацию");
+    let _closed_box = my::ClosedBox::new("классифицированную информацию");
 
     // нельзя получить доступ к приватным полям публичных структур.
     // Ошибка! Поле `contents` приватное
-    //println!("Чёрная упаковка хранит: {}", _black_box.contents);
+    //println!("Закрытая упаковка хранит: {}", _closed_box.contents);
     // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 }

@@ -13,6 +13,6 @@
 
 [`Fn`][fn], [`FnMut`][fn_mut], и [`FnOnce`][fn_once]
 
-[fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
-[fn_mut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fn_once]: http://doc.rust-lang.org/std/ops/trait.FnOnce.html
+[fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
+[fn_mut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
+[fn_once]: https://doc.rust-lang.org/std/ops/trait.FnOnce.html

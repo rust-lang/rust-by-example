@@ -17,4 +17,4 @@
 [`Box`][box] и [`std::mem::drop`][drop]
 
 [box]: ../../std/box.html
-[drop]: http://doc.rust-lang.org/std/mem/fn.drop.html
+[drop]: https://doc.rust-lang.org/std/mem/fn.drop.html

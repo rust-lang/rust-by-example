@@ -28,7 +28,7 @@
 
 [`std::mem::drop`][drop], [`Fn`][fn], [`FnMut`][fnmut], и [`FnOnce`][fnonce]
 
-[drop]: http://doc.rust-lang.org/std/mem/fn.drop.html
-[fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
-[fnmut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fnonce]: http://doc.rust-lang.org/std/ops/trait.FnOnce.html
+[drop]: https://doc.rust-lang.org/std/mem/fn.drop.html
+[fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
+[fnmut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
+[fnonce]: https://doc.rust-lang.org/std/ops/trait.FnOnce.html

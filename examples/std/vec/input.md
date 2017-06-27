@@ -11,4 +11,4 @@
 Подробную информацию о методах объекта `Vec`
 можно почитать в разделе модуля [std::vec][vec]
 
-[vec]: http://doc.rust-lang.org/std/vec/
+[vec]: https://doc.rust-lang.org/std/vec/

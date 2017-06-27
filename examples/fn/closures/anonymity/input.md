@@ -31,7 +31,7 @@ fn apply<F>(f: F) where
 and [`FnOnce`][fn_once]
 
 [generics]: ../../generics.html
-[fn]: http://doc.rust-lang.org/std/ops/trait.Fn.html
-[fn_mut]: http://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fn_once]: http://doc.rust-lang.org/std/ops/trait.FnOnce.html
-[thorough_analysis]: http://huonw.github.io/blog/2015/05/finding-closure-in-rust/
+[fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
+[fn_mut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
+[fn_once]: https://doc.rust-lang.org/std/ops/trait.FnOnce.html
+[thorough_analysis]: https://huonw.github.io/blog/2015/05/finding-closure-in-rust/

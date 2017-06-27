@@ -18,8 +18,7 @@ impl <T> GenericVal<T> {}
 
 [functions returning references][fn], [`impl`][methods], and [`struct`][structs]
 
-
 [fn]: ../scope/lifetime/fn.html
 [methods]: ../fn/methods.html
-[specialization_plans]: http://blog.rust-lang.org/2015/05/11/traits.html#the-future
+[specialization_plans]: https://blog.rust-lang.org/2015/05/11/traits.html#the-future
 [structs]: ../custom_types/structs.html

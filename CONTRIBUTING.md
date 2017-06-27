@@ -40,14 +40,14 @@
 
 Вместо:
 
-    [Goto my URL](http://www.myurl.com)
+    [Goto my URL](https://www.example.com)
 
 Используем:
 
     [Goto my URL][1]
 
     (Bottom of page)
-    [1]: http://www.myurl.com
+    [1]: https://www.example.com
 
 ## Rust code (.rs)
 

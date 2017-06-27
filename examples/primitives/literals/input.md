@@ -17,5 +17,5 @@
 
 {literals.play}
 
-[rust op-prec]: http://doc.rust-lang.org/reference.html#operator-precedence
+[rust op-prec]: https://doc.rust-lang.org/reference.html#operator-precedence
 [op-prec]: https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages

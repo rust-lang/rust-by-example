@@ -33,8 +33,8 @@ RGB (0, 0, 0) 0x000000
 ### Смотрите также
 [`std::fmt`][fmt]
 
-[argument_types]: http://doc.rust-lang.org/std/fmt/#argument-types
+[argument_types]: https://doc.rust-lang.org/std/fmt/#argument-types
 [deadbeef]: https://en.wikipedia.org/wiki/Deadbeef#Magic_debug_values
-[fmt]: http://doc.rust-lang.org/std/fmt/
-[fmt_traits]: http://doc.rust-lang.org/std/fmt/#formatting-traits
-[fmt_width]: http://doc.rust-lang.org/std/fmt/#width
+[fmt]: https://doc.rust-lang.org/std/fmt/
+[fmt_traits]: https://doc.rust-lang.org/std/fmt/#formatting-traits
+[fmt_width]: https://doc.rust-lang.org/std/fmt/#width

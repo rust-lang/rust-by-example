@@ -1,3 +1,9 @@
+#[derive(Debug)]
+struct Person<'a> {
+    name: &'a str,
+    age: u8
+}
+
 // Единичная структура
 struct Nil;
 
@@ -18,13 +24,22 @@ struct Rectangle {
 }
 
 fn main() {
-    // Создаём связь со структурой `Point`
+    // Создаем структуру с помощью короткой инициализации полей
+    let name = "Петя";
+    let age = 27;
+    let peter = Person { name, age };
+    
+    // Дебаг вывод структуры
+    println!("{:?}", peter);
+    
+    
+    // Создаем структуру `Point`
     let point: Point = Point { x: 0.3, y: 0.4 };
 
-    // Получаем доступ к полям структуры `point`
-    println!("координаты точки: ({}, {})", point.x, point.y);
+    // Получаем доступ к полям структуры `Point`
+    println!("Координаты точки: ({}, {})", point.x, point.y);
 
-    // Деструктурируем `point` создавая связь с помощью `let`
+    // Деструктурируем `Point` создавая связь с помощью `let`
     let Point { x: my_x, y: my_y } = point;
 
     let _rectangle = Rectangle {
