@@ -33,7 +33,7 @@ fn main() {
     println!("{:?}", peter);
     
     
-    // Создаем структуру `Point`
+    // Создаём структуру `Point`
     let point: Point = Point { x: 0.3, y: 0.4 };
 
     // Получаем доступ к полям структуры `Point`
