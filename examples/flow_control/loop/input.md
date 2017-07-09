@@ -1,7 +1,6 @@
-Rust provides a `loop` keyword to indicate an infinite loop.
+Rust предоставляет ключевое слово `loop` для обозначения бесконечного цикла.
 
-The `break` statement can be used to exit a loop at anytime, whereas the
-`continue` statement can be used to skip the rest of the iteration and start a
-new one.
+Оператор `break` используется чтобы выйти из цикла в любое время, оператор
+`continue` используется чтобы пропустить оставшуюся часть цикла и начать новую итерацию.
 
 {loop.play}

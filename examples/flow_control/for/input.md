@@ -1,14 +1,14 @@
-The `for in` construct can be used to iterate through an `Iterator`. 
-One of the easiest ways to create an iterator is to use the range
-notation `a..b`. This yields values from `a` (inclusive) to `b` 
-(exclusive) in steps of one.
+Конструкция `for in` может быть использована для итерации по `Итераторам (Iterator)`.
+Один из самых простых способов создать итератор это использовать
+диапазон значений `a..b`. Это вернёт нам значения от `a` (включительно) до `b`
+(исключительно) за один шаг.
 
-Let's write FizzBuzz using `for` instead of `while`.
+Давайте напишем FizzBuzz, используя `for` вместо `while`.
 
 {for.play}
 
-###See also
+### Смотрите также:
 
-[Iterator][iter]
+[Итераторы (Iterator)][iter]
 
-[iter]: /trait/iter.html
+[iter]: ../trait/iter.html

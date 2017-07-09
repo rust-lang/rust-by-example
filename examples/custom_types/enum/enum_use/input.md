@@ -1,10 +1,11 @@
-The `use` declaration can be used so manual scoping isn't needed:
+Декларация `use` используется, чтобы 
+убрать необходимость указывать область видимости:
 
 {use.play}
 
-### See also:
+### Смотрите также:
 
-[`match`][match] and [`use`][use] 
+[`сопоставление с образцом`][match] и [`use`][use]
 
-[use]: /mod/use.html
-[match]: /flow_control/match.html
+[use]: ../../mod/use.html
+[match]: ../../flow_control/match.html

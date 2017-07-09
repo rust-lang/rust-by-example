@@ -17,7 +17,7 @@ fn main() {
 
     compare_prints(&string);
     //compare_prints(&array);
-    // TODO ^ Try uncommenting this.
+    // ЗАДАНИЕ ^ Try uncommenting this.
 
     compare_types(&array, &vec);
 }

@@ -1,11 +1,11 @@
-The `crate_type` attribute can be used to tell the compiler whether a crate is
-a binary or a library (and even which type of library), and the `crate_name`
-attribute can be used to set the name of the crate.
+Атрибут `crate_type` используется, чтобы сказать компилятору,
+какой контейнер является библиотекой (и каким типом библиотеки),
+а какой исполняемым файлом. Атрибут `crate_name` используется для указания имя контейнера.
 
 {lib.rs}
 
-When the `crate_type` attribute is used, we no longer need to pass the
-`--crate-type` flag to `rustc`.
+Если мы используем атрибут `crate_type`,
+то нам больше нет необходимости передавать флаг `--crate-type` компилятору.
 
 ```
 $ rustc lib.rs

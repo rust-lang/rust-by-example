@@ -1,25 +1,26 @@
-// Derive the `fmt::Debug` implementation for `Structure`. `Structure`
-// is a structure which contains a single `i32`.
+// Вывод и реализация `fmt::Debug` для `Structure`.
+// `Structure` - это структура, которая содержит в себе один `i32`.
 #[derive(Debug)]
 struct Structure(i32);
 
-// Put a `Structure` inside of the structure `Deep`. Make it printable
-// also.
+// Добавим структуру `Structure` в структуру `Deep`.
+// Реализуем для `Deep` возможность вывода с помощью fmt::Debug`.
 #[derive(Debug)]
 struct Deep(Structure);
 
 fn main() {
-    // Printing with `{:?}` is similar to with `{}`.
-    println!("{:?} months in a year.", 12);
-    println!("{1:?} {0:?} is the {actor:?} name.",
-             "Slater",
-             "Christian",
-             actor="actor's");
+    // Вывод с помощью `{:?}` аналогичен `{}`.
+    println!("{:?} месяцев в году.", 12);
+    println!("{1:?} {0:?} - это имя {actor:?}.",
+             "Слэйтер",
+             "Кристиан",
+             actor="актёра");
 
-    // `Structure` is printable!
-    println!("Now {:?} will print!", Structure(3));
-    
-    // The problem with `derive` is there is no control over how
-    // the results look. What if I want this to just show a `7`?
-    println!("Now {:?} will print!", Deep(Structure(7)));
+    // `Structure` теперь можно напечатать!
+    println!("Теперь {:?} будет выведена на экран!", Structure(3));
+
+    // Проблема с `выводом (derive)`, в том, что у нас не будет контроля
+    // над тем, как будет выглядеть результат.
+    // Что если мы хотим напечатать просто `7`?
+    println!("А теперь напечатаем {:?}", Deep(Structure(7)));
 }

@@ -1,18 +1,18 @@
-Closures in Rust, also called lambdas, are functions that can capture 
-the enclosing environment. For example, a closure that captures the x 
-variable:
+Замыкания в Rust, так же называемые лямбда, это функции,
+которые замыкают своё окружение.
+Для примера, замыкание, которое захватывает значение переменной x:
 ```Rust
 |val| val + x
 ```
+Синтаксис и возможности замыканий делают их очень удобными
+для использования "на лету". Использование замыканий похоже на использование функций.
+Однако, тип входных и возвращаемых значений *может* быть выведен, а
+название аргумента *должно*  быть указано.
 
-The syntax and capabilities of closures make them very convenient for 
-on the fly usage. Calling a closure is exactly like calling a function.
-However, both input and return types *can* be inferred and input 
-variable names *must* be specified.
-
-Other characteristics of closures include:
-* using `||` instead of `()` around input variables.
-* optional body delimination (`{}`) for a single expression (mandatory otherwise).
-* the ability to capture the outer environment variables.
+Другие характеристики замыканий включают в себя:
+* использование `||` вместо `()` для аргументов.
+* опциональное ограничения тела функции (`{}`) для одного выражения
+(в противном случае обязательно).
+* возможность захвата переменных за пределами окружения
 
 {closures.play}

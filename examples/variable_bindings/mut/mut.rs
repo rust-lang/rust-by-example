@@ -2,14 +2,14 @@ fn main() {
     let _immutable_binding = 1;
     let mut mutable_binding = 1;
 
-    println!("Before mutation: {}", mutable_binding);
+    println!("Перед изменением: {}", mutable_binding);
 
     // Ok
     mutable_binding += 1;
 
-    println!("After mutation: {}", mutable_binding);
+    println!("После изменения: {}", mutable_binding);
 
-    // Error!
+    // Ошибка!
     _immutable_binding += 1;
-    // FIXME ^ Comment out this line
+    // ИСПРАВЬТЕ ^ Закомментируйте эту строку
 }

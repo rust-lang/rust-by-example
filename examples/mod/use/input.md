@@ -1,4 +1,4 @@
-The `use` declaration can be used to bind a full path to a new name, for easier
-access.
+Декларация `use` используется, чтобы связать полный путь с новым именем,
+что упрощает доступ.
 
 {use.play}

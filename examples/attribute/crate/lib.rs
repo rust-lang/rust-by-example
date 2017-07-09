@@ -1,6 +1,6 @@
-// This crate is a library
+// Этот контейнер - библиотека
 #![crate_type = "lib"]
-// The library is named "rary"
+// Эта библиотека называется "rary"
 #![crate_name = "rary"]
 
 pub fn public_function() {

@@ -1,12 +1,9 @@
-The type inference engine is pretty smart. It does more than looking at the
-type of the
-[r-value][rvalue]
-during an initialization. It also looks at how the variable is used afterwards 
-to infer its type. Here's an advanced example of type inference:
+Движок вывода типов весьма умён. Он делает куда больше, чем просто смотрит на тип [r-value][rvalue]
+при инициализации. Он также смотрит, как используется значение после инициализации, чтобы
+вывести его тип. Вот расширенный пример вывода типов:
 
 {inference.play}
 
-No type annotation of variables was needed, the compiler is happy and so is the
-programmer!
+Не потребовалось никакой аннотации типов переменных, компилятор счастлив, как и программист!
 
 [rvalue]: https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue

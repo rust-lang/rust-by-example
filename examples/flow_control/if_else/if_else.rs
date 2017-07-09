@@ -2,27 +2,27 @@ fn main() {
     let n = 5;
 
     if n < 0 {
-        print!("{} is negative", n);
+        print!("{} — отрицательное", n);
     } else if n > 0 {
-        print!("{} is positive", n);
+        print!("{} — положительное", n);
     } else {
-        print!("{} is zero", n);
+        print!("{} — нуль", n);
     }
 
     let big_n =
         if n < 10 && n > -10 {
-            println!(", and is a small number, increase ten-fold");
+            println!(", малое по модулю число, умножим его в десять раз");
 
-            // This expression returns an `i32`.
+            // Это выражение вернёт `i32`.
             10 * n
         } else {
-            println!(", and is a big number, reduce by two");
+            println!(", большое по модулю число, уменьшим его вдвое");
 
-            // This expression must return an `i32` as well.
+            // И это выражение вернёт `i32`.
             n / 2
-            // TODO ^ Try suppressing this expression with a semicolon.
+            // ЗАДАНИЕ ^ Попробуйте отбросить значение, добавив точку с запятой.
         };
-    //   ^ Don't forget to put a semicolon here! All `let` bindings need it.
+    //   ^ Не забудьте добавить тут точку с запятой! Все операторы `let` требуют её..
 
     println!("{} -> {}", n, big_n);
 }

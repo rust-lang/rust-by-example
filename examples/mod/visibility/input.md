@@ -1,5 +1,5 @@
-By default, the items in a module have private visibility, but this can be
-overridden with the `pub` modifier. Only the public items of a module can be
-accessed from outside the module scope.
+По умолчанию, элементы модуля являются приватными,
+но это можно изменить добавив модификатор `pub`.
+Только публичные элементы модуля могут быть доступны за пределами его области видимости.
 
 {visibility.play}

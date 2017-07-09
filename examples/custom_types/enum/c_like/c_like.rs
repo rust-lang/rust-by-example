@@ -1,14 +1,15 @@
-// An attribute to hide warnings for unused code.
+// Атрибут, который убирает предупреждения компилятора
+// о неиспользуемом коде
 #![allow(dead_code)]
 
-// enum with implicit discriminator (starts at 0)
+// enum с неопределённым перечислением (начинается с 0)
 enum Number {
     Zero,
     One,
     Two,
 }
 
-// enum with explicit discriminator
+// enum с определённым перечислением
 enum Color {
     Red = 0xff0000,
     Green = 0x00ff00,
@@ -16,10 +17,10 @@ enum Color {
 }
 
 fn main() {
-    // `enums` can be cast as integers.
-    println!("zero is {}", Number::Zero as i32);
-    println!("one is {}", Number::One as i32);
+    // `enums` может быть преобразован в целочисленное значение.
+    println!("нулевой элемент {}", Number::Zero as i32);
+    println!("первый элемент {}", Number::One as i32);
 
-    println!("roses are #{:06x}", Color::Red as i32);
-    println!("violets are #{:06x}", Color::Blue as i32);
+    println!("красный цвет #{:06x}", Color::Red as i32);
+    println!("голубой цвет #{:06x}", Color::Blue as i32);
 }

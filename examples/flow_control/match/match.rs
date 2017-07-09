@@ -1,26 +1,26 @@
 fn main() {
     let number = 13;
-    // TODO ^ Try different values for `number`
+    // ЗАДАНИЕ ^ Попробуйте присвоить `number` другое значение
 
     println!("Tell me about {}", number);
     match number {
-        // Match a single value
+        // Сопоставление с одним значением
         1 => println!("One!"),
-        // Match several values
+        // Сопоставление с несколькими значениями
         2 | 3 | 5 | 7 | 11 => println!("This is a prime"),
-        // Match an inclusive range
+        // Сопоставление с диапазоном значений
         13...19 => println!("A teen"),
-        // Handle the rest of cases
+        // Обработка остальных случаев
         _ => println!("Ain't special"),
     }
 
     let boolean = true;
-    // Match is an expression too
+    // Match так же является выражением
     let binary = match boolean {
-        // The arms of a match must cover all the possible values
+        // Ветви match должны обработать все возможные значения переменной
         false => 0,
         true => 1,
-        // TODO ^ Try commenting out one of these arms
+        // ЗАДАНИЕ ^ Попробуйте закомментировать эту ветвь
     };
 
     println!("{} -> {}", boolean, binary);

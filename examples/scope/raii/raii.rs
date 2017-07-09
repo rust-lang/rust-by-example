@@ -1,28 +1,28 @@
 // raii.rs
 fn create_box() {
-    // Allocate an integer on the heap
+    // Выделить память для целого число в куче
     let _box1 = Box::new(3i32);
 
-    // `_box1` is destroyed here, and memory gets freed
+    // `_box1` здесь уничтожается, а память освобождается
 }
 
 fn main() {
-    // Allocate an integer on the heap
+    // Выделить память для целого число в куче
     let _box2 = Box::new(5i32);
 
-    // A nested scope:
+    // Вложенная область видимости:
     {
-        // Allocate an integer on the heap
+        // Выделить память для ещё одного целого число в куче
         let _box3 = Box::new(4i32);
 
-        // `_box3` is destroyed here, and memory gets freed
+        // `_box3` здесь уничтожается, а память освобождается
     }
 
-    // Creating lots of boxes just for fun
-    // There's no need to manually free memory!
+    // Создаём большое количество упаковок. Просто потому что можем.
+    // Здесь нет необходимости освобождать память вручную!
     for _ in 0u32..1_000 {
         create_box();
     }
 
-    // `_box2` is destroyed here, and memory gets freed
+    // `_box2` здесь уничтожается, а память освобождается
 }

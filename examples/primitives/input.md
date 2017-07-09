@@ -1,22 +1,23 @@
-Rust provides access to a wide variety of `primitives`. A sample includes:
+Rust предоставляет доступ к большому количеству `примитивов`:
 
-* signed integers: `i8`, `i16`, `i32`, `i64` and `isize` (pointer size)
-* unsigned integers: `u8`, `u16`, `u32`, `u64` and `usize` (pointer size)
-* floating point: `f32`, `f64`
-* `char` Unicode scalar values like `'a'`, `'α'` and `'∞'` (4 bytes each)
-* `bool` either `true` or `false`
-* and the unit type `()`, whose only value is also `()`
-* arrays like `[1, 2, 3]`
-* tuples like `(1, true)`
+* знаковые целочисленные: `i8`, `i16`, `i32`, `i64` и `isize` (размер указателя)
+* беззнаковым целочисленные: `u8`, `u16`, `u32`, `u64` и `usize` (размер указателя)
+* вещественные: `f32`, `f64`
+* `char` скалярное значение Unicode, например: `'a'`, `'α'` и `'∞'` (4 байта каждый)
+* `bool`: `true` или `false`
+* единичный тип `()`, значение которого так же `()`
+* массивы, например `[1, 2, 3]`
+* кортежи, например `(1, true)`
 
-Variables can always be *type annotated*. Numbers may additionally be
-annotated via a *suffix* or *by default*. Integers default to `i32` and
-floats to `f64`.
+Переменные всегда должны быть *аннотированы*.
+Числам можно указать определённый тип с помощью *суффикса*,
+иначе будет присвоен *тип по умолчанию*.
+Целочисленные значения по умолчанию `i32`, а вещественные `f64`.
 
 {primitives.play}
 
-### See also:
+### Смотрите также:
 
-[the `std` library][std]
+[стандартная библиотека][std]
 
 [std]: https://doc.rust-lang.org/std/

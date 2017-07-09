@@ -1,19 +1,19 @@
-// Similarly `mod inaccessible` and `mod nested` will locate the `nested.rs`
-// and `inaccessible.rs` files and insert them here under their respective
-// modules
+// Точно так же, `mod inaccessible` и `mod nested` обнаружат файлы `nested.rs`
+// и `inaccessible.rs`, и затем вставят их здесь в соответствующие модули
+
 mod inaccessible;
 pub mod nested;
 
 pub fn function() {
-    println!("called `my::function()`");
+    println!("вызвана `my::function()`");
 }
 
 fn private_function() {
-    println!("called `my::private_function()`");
+    println!("вызывает `my::private_function()`");
 }
 
 pub fn indirect_access() {
-    print!("called `my::indirect_access()`, that\n> ");
+    print!("вызвана `my::indirect_access()`, которая\n> ");
 
     private_function();
 }

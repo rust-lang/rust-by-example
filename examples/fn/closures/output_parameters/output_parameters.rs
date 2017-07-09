@@ -1,13 +1,13 @@
 fn create_fn() -> Box<Fn()> {
     let text = "Fn".to_owned();
 
-    Box::new(move || println!("This is a: {}", text))
+    Box::new(move || println!("Это a: {}", text))
 }
 
 fn create_fnmut() -> Box<FnMut()> {
     let text = "FnMut".to_owned();
 
-    Box::new(move || println!("This is a: {}", text))
+    Box::new(move || println!("Это a: {}", text))
 }
 
 fn main() {

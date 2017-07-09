@@ -3,17 +3,16 @@ fn main() {
     let a_boolean = true;
     let unit = ();
 
-    // copy `an_integer` into `copied_integer`
+    // скопировать значение `an_integer` в `copied_integer`
     let copied_integer = an_integer;
 
-    println!("An integer: {:?}", copied_integer);
-    println!("A boolean: {:?}", a_boolean);
-    println!("Meet the unit value: {:?}", unit);
+    println!("Целое: {:?}", copied_integer);
+    println!("Логическое: {:?}", a_boolean);
+    println!("Встречайте единичное значение: {:?}", unit);
 
-    // The compiler warns about unused variable bindings; these warnings can
-    // be silenced by prefixing the variable name with an underscore
+    // Компилятор предупреждает о неиспользуемых переменных; эти предупреждения можно
+    // отключить используя подчёркивание перед именем переменной
     let _unused_variable = 3u32;
-
     let noisy_unused_variable = 2u32;
-    // FIXME ^ Prefix with an underscore to suppress the warning
+    // ИСПРАВЬТЕ ^ Добавьте подчёркивание
 }

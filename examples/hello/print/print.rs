@@ -1,42 +1,42 @@
 fn main() {
-    // In general, the `{}` will be automatically replaced with any
-    // arguments. These will be stringified.
-    println!("{} days", 31);
+    // `{}` автоматически будет заменено на
+    // аргументы. Они будут преобразованы в строку.
+    println!("{} дней", 31);
 
-    // Without a suffix, 31 becomes an i32. You can change what type 31 is,
-    // with a suffix.
+    // Без суффиксов, 31 является i32. Можно изменить тип 31,
+    // используя суффикс.
 
-    // There are various optional patterns this works with. Positional
-    // arguments can be used.
-    println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");
+    // Существует множество способов работы с форматированным выводом. Можно указать
+    // позицию для каждого аргумента.
+    println!("{0}, это {1}. {1}, это {0}", "Алиса", "Боб");
 
-    // As can named arguments.
+    // Так же можно именовать аргументы.
     println!("{subject} {verb} {object}",
-             object="the lazy dog",
-             subject="the quick brown fox",
-             verb="jumps over");
+             object="ленивую собаку",
+             subject="быстрая коричневая лиса",
+             verb="прыгает через");
 
-    // Special formatting can be specified after a `:`.
-    println!("{} of {:b} people know binary, the other half doesn't", 1, 2);
+    println!("{} из {:b} людей знают, что такое двоичный код, а остальные нет.", 1, 2);
 
-    // You can right-align text with a specified width. This will output
-    // "     1". 5 white spaces and a "1".
+    // Можно выравнивать текст, сдвигая его на указанную ширину.
+    // Данный макрос отобразит в консоли
+    // "     1". 5 пробелов и "1".
     println!("{number:>width$}", number=1, width=6);
 
-    // You can pad numbers with extra zeroes. This will output "000001".
+    // Можно добавить к цифрам пару нулей. Данный макрос выведет "000001".
     println!("{number:>0width$}", number=1, width=6);
 
-    // It will even check to make sure the correct number of arguments are
-    // used.
-    println!("My name is {0}, {1} {0}", "Bond");
-    // FIXME ^ Add the missing argument: "James"
-    
-    // Create a structure which contains an `i32`. Name it `Structure`.
+    // Компилятор обязательно проверит, что в макрос передано правильное количество
+    // аргументов.
+    println!("Меня зовут {0}, {1} {0}", "Бонд");
+    // ИСПРАВЬТЕ ^ Добавьте недостающий аргумент: "Джеймс"
+
+    // Создаём структуру, которая хранит в себе `i32`. Назовём её `Structure`.
     #[allow(dead_code)]
     struct Structure(i32);
 
-    // However, custom types such as this structure require more complicated
-    // handling. This will not work.
-    println!("This struct `{}` won't print...", Structure(3));
-    // FIXME ^ Comment out this line.
+    // Однако, пользовательские типы данных, например, как эта структура
+    // требуют более сложной обработки для вывода. Данный код не будет работать.
+    println!("Эта структура `{}` не хочет выводится на экран...", Structure(3));
+    // ИСПРАВЬТЕ ^ Закомментируйте эту строку.
 }

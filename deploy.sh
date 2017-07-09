@@ -5,13 +5,16 @@ rev=$(git rev-parse --short HEAD)
 cd stage/_book
 
 git init
-git config user.name "Steve Klabnik"
-git config user.email "steve@steveklabnik.com"
-git remote add upstream "https://$GH_TOKEN@github.com/rust-lang/rust-by-example.git"
+git config user.name "Igor.Shaposhnik"
+git config user.email "shaposhnikigor95@bk.ru"
+git remote add upstream "https://$GH_TOKEN@github.com/ruRust/rust-by-example-ru.git"
 git fetch upstream && git reset upstream/gh-pages
 
-echo "rustbyexample.com" > CNAME
+#echo "rustbyexample.com" > CNAME
 cp -r ../../vendor/gitbook/* gitbook/
+
+#fix editor syntax highlight
+sed -i 's#/gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js#/rust-by-example-ru/gitbook/plugins/gitbook-plugin-rust-playpen/mode-rust.js#g' gitbook/plugins/gitbook-plugin-rust-playpen/editor.js
 
 touch .
 

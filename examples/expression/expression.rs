@@ -5,12 +5,12 @@ fn main() {
         let x_squared = x * x;
         let x_cube = x_squared * x;
 
-        // This expression will be assigned to `y`
+        // Результат этого выражение будет присвоен переменной `y`
         x_cube + x_squared + x
     };
 
     let z = {
-        // The semicolon suppresses this expression and `()` is assigned to `z`
+        // Т.к это выражение оканчивается на `;`, переменной `z` будет присвоен `()`
         2 * x;
     };
 

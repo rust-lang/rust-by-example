@@ -1,6 +1,6 @@
-Rust provides a mechanism for spawning native OS threads via the `spawn`
-function, the argument of this function is a moving closure.
+В Rust имеется механизм для запуска потоков ОС посредством функции `scoped`,
+которая принимает перемещающее окружение замыкания в качестве аргумента.
 
 {threads.play}
 
-These threads will be scheduled by the OS.
+Эти потоки управляются ОС.

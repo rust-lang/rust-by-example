@@ -1,39 +1,39 @@
-Similar to `if let`, `while let` can make awkward `match` sequences
-more tolerable. Consider the following sequence that increments `i`:
+Так же, как и`if let`, `while let` может сделать неудобный `match`
+более терпимым. Рассмотрим следующий пример, в котором мы увеличиваем значение `i`:
 
 ```rust
-// Make `optional` of type `Option<i32>`
+// Создадим переменную `optional` с типом `Option<i32>`
 let mut optional = Some(0);
 
-// Repeatedly try this test.
+// Неоднократно повторим наш тест.
 loop {
     match optional {
-        // If `optional` destructures, evaluate the block.
+        // Если `optional` деструктурируется, выполним следующий блок.
         Some(i) => {
             if i > 9 {
-                println!("Greater than 9, quit!");
+                println!("Больше 9, уходим отсюда!");
                 optional = None;
             } else {
-                println!("`i` is `{:?}`. Try again.", i);
+                println!("`i` равен `{:?}`. Попробуем еще раз.", i);
                 optional = Some(i + 1);
             }
-            // ^ Requires 3 indentations!
+            // ^ Требует 3 уровня вложенности!
         },
-        // Quit the loop when the destructure fails:
+        // Выходим из цикла в случаи ошибки деструктуризации:
         _ => { break; }
-        // ^ Why should this be required? There must be a better way!
+        // ^ Зачем это нужно? Должен быть способ сделать это лучше!
     }
 }
 ```
 
-Using `while let` makes this sequence much nicer:
+Использование `while let` делает этот пример немного приятнее:
 
 {while_let.play}
 
-### See also:
+### Смотрите также:
 
 [`enum`][enum], [`Option`][option], and the [RFC][while_let_rfc]
 
-[enum]: /custom_types/enum.html
-[option]: /std/option.html
+[enum]: ../custom_types/enum.html
+[option]: ../std/option.html
 [while_let_rfc]: https://github.com/rust-lang/rfcs/pull/214

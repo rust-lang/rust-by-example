@@ -3,10 +3,10 @@ the `Drop` `trait` as a generic method to `drop` itself and an input.
 
 {trait.play}
 
-### See also:
+### Смотрите также:
 
 [`Drop`][Drop], [`struct`][structs], and [`trait`][traits]
 
 [Drop]: https://doc.rust-lang.org/std/ops/trait.Drop.html
-[structs]: /custom_types/structs.html
-[traits]: /trait.html
+[structs]: ../custom_types/structs.html
+[traits]: ../trait.html

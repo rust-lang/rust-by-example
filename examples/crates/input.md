@@ -1,9 +1,9 @@
-A crate is a compilation unit in Rust. Whenever `rustc some_file.rs` is called,
-`some_file.rs` is treated as the *crate file*. If `some_file.rs` has `mod`
-declarations in it, then the contents of the module files will get merged with
-the crate file *before* running the compiler over it. In other words, modules
-do *not* get compiled individually, only crates get compiled.
+Контейнер (`crate`) — единица компиляции в языке Rust.
+Когда вызывается `rustc some_file.rs`, `some_file.rs` обрабатывается как *файл контейнера*.
+Если в `some_file.rs` есть декларация `mod`, то содержимое модуля
+будет объединено с файлом контейнера *перед* его компиляцией.
+Другими словами, модули *не* собираются отдельно, собираются лишь контейнеры.
 
-A crate can be compiled into a binary or into a library. By default, `rustc`
-will produce a binary from a crate. This behavior can be overridden by passing
-the `--crate-type` flag to `rustc`.
+Контейнер может быть скомпилирован в исполняемый файл или в библиотеку.
+По умолчанию, `rustc` создаёт исполняемый файл из контейнера.
+Это поведение может быть изменено добавлением флага `--crate-type` к `rustc`.

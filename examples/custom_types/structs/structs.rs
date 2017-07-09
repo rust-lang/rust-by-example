@@ -4,19 +4,19 @@ struct Person<'a> {
     age: u8
 }
 
-// A unit struct
+// Единичная структура
 struct Nil;
 
-// A tuple struct
-struct Pair(i32, f32);
+// Кортежная структура
+struct Pair(i32, f64);
 
-// A struct with two fields
+// Структура с двумя полями
 struct Point {
-    x: f32,
-    y: f32,
+    x: f64,
+    y: f64,
 }
 
-// Structs can be reused as fields of another struct
+// Структуры могут быть использованы как поля другой структуры
 #[allow(dead_code)]
 struct Rectangle {
     p1: Point,
@@ -24,41 +24,38 @@ struct Rectangle {
 }
 
 fn main() {
-    // Create struct with field init shorthand
-    let name = "Peter";
+    // Создаём структуру с помощью короткой инициализации полей
+    let name = "Петя";
     let age = 27;
     let peter = Person { name, age };
     
-    // Print debug struct
+    // Дебаг вывод структуры
     println!("{:?}", peter);
     
     
-    // Instantiate a `Point`
+    // Создаём структуру `Point`
     let point: Point = Point { x: 0.3, y: 0.4 };
 
-    // Access the fields of the point
-    println!("point coordinates: ({}, {})", point.x, point.y);
+    // Получаем доступ к полям структуры `Point`
+    println!("Координаты точки: ({}, {})", point.x, point.y);
 
-    // Destructure the point using a `let` binding
+    // Деструктурируем `Point` создавая связь с помощью `let`
     let Point { x: my_x, y: my_y } = point;
 
     let _rectangle = Rectangle {
-        // struct instantiation is an expression too
+        // инициализация структуры так же является выражением
         p1: Point { x: my_y, y: my_x },
         p2: point,
     };
 
-    // Instantiate a unit struct
+    // Создаём связь с единичной структурой
     let _nil = Nil;
 
-    // Instantiate a tuple struct
+    // Создаём связь с кортежной структурой
     let pair = Pair(1, 0.1);
 
-    // Access the fields of a tuple struct
-    println!("pair contains {:?} and {:?}", pair.0, pair.1);
-
-    // Destructure a tuple struct
+    // Деструктурируем кортежную структуру
     let Pair(integer, decimal) = pair;
 
-    println!("pair contains {:?} and {:?}", integer, decimal);
+    println!("Pair хранит в себе {:?} и {:?}", integer, decimal);
 }

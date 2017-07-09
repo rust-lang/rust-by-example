@@ -1,34 +1,34 @@
 fn main() {
-    // All have type `Option<i32>`
+    // Все переменные типа `Option<i32>`
     let number = Some(7);
     let letter: Option<i32> = None;
     let emoticon: Option<i32> = None;
 
-    // The `if let` construct reads: "if `let` destructures `number` into
-    // `Some(i)`, evaluate the block (`{}`).
+    // Конструкция `if let` читает, как: "Если `let` деструктуризирует `number` в
+    // `Some(i)`, выполнить блок (`{}`).
     if let Some(i) = number {
-        println!("Matched {:?}!", i);
+        println!("Соответствует {:?}!", i);
     }
 
-    // If you need to specify a failure, use an else:
+    // Если нужно указать, что делать, в случае ошибки, можно добавить else:
     if let Some(i) = letter {
-        println!("Matched {:?}!", i);
+        println!("Соответствует {:?}!", i);
     } else {
-        // Destructure failed. Change to the failure case.
-        println!("Didn't match a number. Let's go with a letter!");
+        // Ошибка деструктуризации. Переходим к обработке ошибки.
+        println!("Не соответствует числу. Давайте попробуем строку!");
     };
 
-    // Provide an altered failing condition.
+    // Добавляем ещё одну ситуация несоответствия образцу.
     let i_like_letters = false;
 
     if let Some(i) = emoticon {
-        println!("Matched {:?}!", i);
-    // Destructure failed. Evaluate an `else if` condition to see if the
-    // alternate failure branch should be taken:
+        println!("Соответствует {:?}!", i);
+    // Оцените условие `else if`, чтобы увидеть, 
+    // должна ли быть альтернативная ветка отказа:
     } else if i_like_letters {
-        println!("Didn't match a number. Let's go with a letter!");
+        println!("Не соответствует числу. Давайте попробуем строку!");
     } else {
-        // The condition evaluated false. This branch is the default:
-        println!("I don't like letters. Let's go with an emoticon :)!");
+        // Рассматриваем ложное условие. Эта ветвь по умолчанию:
+        println!("Мне не нравится сравнивать строки. Давайте возьмём смайлик :)!");
     };
 }

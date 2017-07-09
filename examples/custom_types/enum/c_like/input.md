@@ -1,9 +1,9 @@
-`enum` can also be used as C-like enums.
+`enum` могут быть как C-подобные перечисления.
 
 {c_like.play}
 
-### See also:
+### Смотрите также:
 
-[casting][cast]
+[приведение типа][cast]
 
-[cast]: /cast.html
+[cast]: ../../cast.html

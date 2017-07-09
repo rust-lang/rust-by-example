@@ -1,33 +1,33 @@
-A Rust program is (mostly) made up of a series of statements:
-
+Программы на языке Rust - это (в основном) набор последовательных операторов:
 
 ```
 fn main() {
-    // statement
-    // statement
-    // statement
+    // оператор
+    // оператор
+    // оператор
 }
 ```
 
-There are a few kinds of statements in Rust. The most common two are declaring
-a variable binding, and using a `;` with an expression:
+Существует несколько типов операторов в Rust.
+Наиболее распространённые - оператор связывания и оператор выражения:
 
 ```
 fn main() {
-    // variable binding
+    // оператор связывания
     let x = 5;
 
-    // expression;
+    // оператор выражения
     x;
     x + 1;
     15;
 }
 ```
 
-Blocks are expressions too, so they can be used as [r-values][rvalue] in
-assignments. The last expression in the block will be assigned to the
-[l-value][lvalue]. However, if the last expression of the block ends with a
-semicolon, the return value will be `()`.
+Блоки так же могут быть частью оператора выражения.
+Они используются в качестве [r-values][rvalue] при присваивание.
+Последнее выражение в блоке будет присвоено [l-value][lvalue].
+Однако, если последнее выражение в блоке оканчивается точкой с запятой,
+в качестве значения будет возвращено `()`.
 
 {expression.play}
 

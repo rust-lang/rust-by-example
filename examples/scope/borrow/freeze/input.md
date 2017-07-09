@@ -1,4 +1,4 @@
-When data is immutably borrowed, it also *freezes*. *Frozen* data can't be 
-modified via the original object until all references to it go out of scope:
+Когда данные заимствуются, они заодно и *замораживаются*. *Замороженные* данные
+не могут быть изменены до тех пор, пока все ссылки не выйдут за область видимости:
 
 {freeze.play}

@@ -7,9 +7,9 @@ the `primitives`. Some of these include:
 * error handling types: `Result<i32, i32>`
 * heap allocated pointers: `Box<i32>`
 
-### See also:
+### Смотрите также:
 
 [primitives][primitives] and [the std library][std]
 
-[primitives]: /primitives.html
+[primitives]: primitives.html
 [std]: https://doc.rust-lang.org/std/

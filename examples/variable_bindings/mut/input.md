@@ -1,6 +1,6 @@
-Variable bindings are immutable by default, but this can be overridden using
-the `mut` modifier.
+По умолчанию связывание переменных является неизменяемым,
+но с помощью модификатора `mut` можно разрешить изменения.
 
 {mut.play}
 
-The compiler will throw a detailed diagnostic about mutability errors.
+Компилятор будет выводить подробные сообщения об ошибках, связанных с изменяемостью.

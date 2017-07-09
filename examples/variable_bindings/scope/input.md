@@ -1,6 +1,6 @@
-Variable bindings have a scope, and are constrained to live in a *block*. A
-block is a collection of statements enclosed by braces `{}`. Also, [variable
-shadowing][variable-shadow] is allowed.
+Связывание переменных имеет локальную область видимости, и живут эти переменные в *блоке*.
+Блок — набор инструкций, заключённый между фигурными скобками `{}`.
+Кроме того, допускается [затенение переменных.][variable-shadow].
 
 {scope.play}
 

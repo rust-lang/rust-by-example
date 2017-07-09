@@ -1,9 +1,11 @@
-Error handling is the process of handling the possibility of failure. For
-example, failing to read a file and then continuing to use that *bad* input
-would clearly be problematic. Noticing and explicitly managing those errors
-saves the rest of the program from various pitfalls.
+Обработка ошибок - это процесс обработки возможного отказа программы.
+Например, если вы не сможете прочитать содержимое файла,
+то потом продолжать использовать эти *некорректные* данные будет проблематично.
+Корректно управляя этими ошибками мы сможем сохранить
+работоспособность остальной части программы.
 
-For a more rigorous discussion of error handling, refer to the error
-handling section in the [official book][book].
+Более подробно тема обработки ошибок рассмотрена в [официальной книге][book].
+Так же можете ознакомится с [русскоязычным вариантом][ru_book].
 
 [book]: https://doc.rust-lang.org/book/error-handling.html
+[ru_book]: http://rurust.github.io/rust_book_ru/src/error-handling.html

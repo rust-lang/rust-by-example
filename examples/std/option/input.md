@@ -1,9 +1,10 @@
-Sometimes it's desirable to catch the failure of some parts of a program
-instead of calling `panic!`; this can be accomplished using the `Option` enum.
+Иногда желательно перехватить ошибку в какой-либо части программы
+вместо вызова паники с помощью макроса `panic!`. Это можно сделать
+с помощью перечисления `Option`.
 
-The `Option<T>` enum has two variants:
+Перечисление `Option<T>` имеет два варианта:
 
-* `None`, to indicate failure or lack of value, and
-* `Some(value)`, a tuple struct that wraps a `value` with type `T`.
+* `None`, указывающий о наличии ошибки или отсутствия значений
+* `Some(value)`, кортежная структура, обёртка для `значения` типа `T`.
 
 {option.play}

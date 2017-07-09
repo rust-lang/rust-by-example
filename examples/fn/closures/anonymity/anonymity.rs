@@ -1,6 +1,6 @@
-// `F` must implement `Fn` for a closure which takes no
-// inputs and returns nothing - exactly what is required
-// for `print`.
+// `F` должен реализовать `Fn` для замыкания, которое
+// ничего не принимает и не возвращает - именно то,
+// что нужно для `print`.
 fn apply<F>(f: F) where
     F: Fn() {
     f();
@@ -9,8 +9,8 @@ fn apply<F>(f: F) where
 fn main() {
     let x = 7;
 
-    // Capture `x` into an anonymous type and implement
-    // `Fn` for it. Store it in `print`.
+    // Захватываем `x` в анонимный тип и реализуем
+    // `Fn` для него. Сохраняем его как `print`.
     let print = || println!("{}", x);
 
     apply(print);

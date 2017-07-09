@@ -1,30 +1,31 @@
 fn main() {
-    // Iterators can be collected into vectors
+    // Итераторы можно собрать в вектора
     let collected_iterator: Vec<i32> = (0..10).collect();
-    println!("Collected (0..10) into: {:?}", collected_iterator);
+    println!("Собираем (0..10) в: {:?}", collected_iterator);
 
-    // The `vec!` macro can be used to initialize a vector
+    // Для инициализации вектора можно использовать макрос `vec!`
     let mut xs = vec![1i32, 2, 3];
-    println!("Initial vector: {:?}", xs);
+    println!("Начальный вектор: {:?}", xs);
 
-    // Insert new element at the end of the vector
-    println!("Push 4 into the vector");
+    // Вставляет новый элемент в конце вектора
+    println!("Добавляем 4 элементы в вектор");
     xs.push(4);
-    println!("Vector: {:?}", xs);
+    println!("Вектор: {:?}", xs);
 
-    // Error! Immutable vectors can't grow
+    // Ошибка! Неизменяемые вектора не могут увеличиваться
     collected_iterator.push(0);
-    // FIXME ^ Comment out this line
+    // ИСПРАВЬТЕ ^ Закомментируйте эту строку
 
-    // The `len` method yields the current size of the vector
-    println!("Vector size: {}", xs.len());
+    // Метод `len` возвращает текущий размер вектора
+    println!("Размер вектора: {}", xs.len());
 
-    // Indexing is done using the square brackets (indexing starts at 0)
-    println!("Second element: {}", xs[1]);
+    // Обращение к элементам вектора записывается с помощью квадратных скобок
+    // (нумерация элементов начинается с 0)
+    println!("Второй элемент: {}", xs[1]);
 
-    // `pop` removes the last element from the vector and returns it
-    println!("Pop last element: {:?}", xs.pop());
+    // `pop` удаляет последний элемент из вектора и возвращает его
+    println!("Удаляем последний элемент: {:?}", xs.pop());
 
-    // Out of bounds indexing yields a panic
-    println!("Fourth element: {}", xs[3]);
+    // Обращение к элементу за пределами вектора вызывает ошибку
+    println!("Четвёртый элемент: {}", xs[3]);
 }

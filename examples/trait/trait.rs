@@ -1,14 +1,14 @@
 struct Sheep { naked: bool, name: &'static str }
 
 trait Animal {
-    // Static method signature; `Self` refers to the implementor type.
+    // Сигнатура статического метода, `Self` ссылается на реализующий тип.
     fn new(name: &'static str) -> Self;
 
-    // Instance method signatures; these will return a string.
+    // Сигнатура метода экземпляра; они возвращают строки.
     fn name(&self) -> &'static str;
     fn noise(&self) -> &'static str;
 
-    // Traits can provide default method definitions.
+    // Типаж может содержать определение метода по умолчанию
     fn talk(&self) {
         println!("{} says {}", self.name(), self.noise());
     }
@@ -21,7 +21,7 @@ impl Sheep {
 
     fn shear(&mut self) {
         if self.is_naked() {
-            // Implementor methods can use the implementor's trait methods.
+            // Методы типа могут использовать методы типажа, реализованного для этого типа.
             println!("{} is already naked...", self.name());
         } else {
             println!("{} gets a haircut!", self.name);
@@ -31,9 +31,9 @@ impl Sheep {
     }
 }
 
-// Implement the `Animal` trait for `Sheep`.
+// Реализуем типаж `Animal` для `Sheep`.
 impl Animal for Sheep {
-    // `Self` is the implementor type: `Sheep`.
+    // `Self` реализующий тип: `Sheep`.
     fn new(name: &'static str) -> Sheep {
         Sheep { name: name, naked: false }
     }
@@ -49,18 +49,18 @@ impl Animal for Sheep {
             "baaaaah!"
         }
     }
-    
-    // Default trait methods can be overridden.
+
+    // Методы по умолчанию могут быть переопределены.
     fn talk(&self) {
-        // For example, we can add some quiet contemplation.
+        // Например, мы добавили немного спокойного миросозерцания...
         println!("{} pauses briefly... {}", self.name, self.noise());
     }
 }
 
 fn main() {
-    // Type annotation is necessary in this case.
+    // Аннотация типа в данном случае необходима.
     let mut dolly: Sheep = Animal::new("Dolly");
-    // TODO ^ Try removing the type annotations.
+    // ЗАДАНИЕ ^ Попробуйте убрать аннотацию типа
 
     dolly.talk();
     dolly.shear();

@@ -1,10 +1,10 @@
-A common use for `enums` is to create a linked-list:
+Пример использования `enums` для создания связанного списка:
 
 {linked_list.play}
 
-### See also:
+### Смотрите также:
 
-[`Box`][box] and [methods][methods]
+[`Box`][box] и [`методы`][methods]
 
-[box]: /std/box.html
-[methods]: /fn/methods.html
+[box]: ../../std/box.html
+[methods]: ../../fn/methods.html

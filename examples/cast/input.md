@@ -1,8 +1,8 @@
-Rust provides no implicit type conversion (coercion) between primitive types.
-But, explicit type conversion (casting) can be performed using the `as` keyword.
+Rust не предусматривает неявного преобразования типов (принудительное) между примитивными типами.
+Но, явное преобразование типов (casting) можно выполнить используя ключевое слово `as`.
 
-Rules for converting between integral types follow C conventions generally,
-except in cases where C has undefined behavior. The behavior of all casts
-between integral types is well defined in Rust.
+Правила, используемые для преобразование внутренних типов, такие же, как в языке C,
+за исключением тех случаев, когда преобразование типов в языке C вызывает неопределённое поведение.
+Поведение всех приведений между встроенными типами чётко определено в Rust.
 
 {cast.play}

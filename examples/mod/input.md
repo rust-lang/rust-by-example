@@ -1,6 +1,6 @@
-Rust provides a powerful module system that can be used to hierarchically split
-code in logical units (modules), and manage visibility (public/private) between
-them.
+Rust предоставляет мощную систему модулей, которая используется,
+чтобы иерархически разделить код на логические единицы (модули) и
+управлять видимостью (публичное и приватное) между ними.
 
-A module is a collection of items: functions, structs, traits, `impl` blocks,
-and even other modules.
+Модуль это набор элементов, таких как: функции, структуры, типажи, блоки реализации
+и даже другие модули.

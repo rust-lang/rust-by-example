@@ -1,22 +1,21 @@
-Rust has two different types of constants which can be declared in any scope
-including global. Both require explicit type annotation:
+В Rust есть два типа констант, которые могут быть объявлены
+в любой области видимости, включая глобальную. Оба требуют явной аннотации типа:
 
-* `const`: An unchangeable value (the common case).
-* `static`: A possibly `mut`able variable with [`'static`][static] lifetime.
+* `const`: Неизменяемая переменная (в общем случае).
+* `static`: Возможно, изменяемая переменная с временем жизни [`'static`][static].
 
-One special case is the `"string"` literal. It can be assigned directly to a
-`static` variable without modification because its type signature:
-`&'static str` has the required lifetime of `'static`. All other reference
-types must be specifically annotated so that they fulfill the `'static`
-lifetime. This may seem minor though because the required explicit annotation
-hides the distinction.
+Частным случаем является литерал `"string"`. Он может быть напрямую
+назначен переменной с временем жизни `'static`, т.к сигнатура его типа:
+`&'static str` требует время жизни `'static`. Для всех остальных ссылочных типов
+должно быть указано время жизни `'static`. Это может показаться
+незначительным, но в требовании явной аннотации типов и скрываются различия.
 
 {constants.play}
 
-### See also:
+### Смотрите также:
 
-[The `const`/`static` RFC](
+[RFC для `const`/`static`](
 https://github.com/rust-lang/rfcs/blob/master/text/0246-const-vs-static.md),
-[`'static` lifetime][static]
+[`время жизни 'static`][static]
 
-[static]: /scope/lifetime/static_lifetime.html
+[static]: ../scope/lifetime/static_lifetime.html

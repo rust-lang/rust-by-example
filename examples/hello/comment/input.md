@@ -1,18 +1,18 @@
-Any program requires comments and indeed Rust supports
-a few different varieties:
+Каждая программа, безусловно, нуждается в комментариях и
+Rust предоставляет несколько способов комментирования кода:
 
-* *Regular comments* which are ignored by the compiler:
- - `// Line comments which go to the end of the line.`
- - `/* Block comments which go to the closing delimiter. */`
-* *Doc comments* which are parsed into HTML library
-[documentation][docs]:
- - `/// Generate library docs for the following item.`
- - `//! Generate library docs for the enclosing item.`
+* *Обычные комментарии*, которые игнорируются компилятором:
+ - `// Однострочный комментарий. Который завершается в конце строки.`
+ - `/* Блочный комментарий, который продолжается до завершающего символа. */`
+* *Doc комментарии*, которые будут сгенерированы в HTML
+[документацию][docs]:
+ - `/// Генерация документации для функции.`
+ - `//! Генерация документации для модуля.`
 
 {comment.play}
 
-### See also:
+### Смотрите также:
 
-[Library documentation][docs]
+[Документирование библиотек][docs]
 
-[docs]: /meta/doc.html
+[docs]: ../meta/doc.html

@@ -1,6 +1,7 @@
-The `while` keyword can be used to loop until a condition is met.
+Ключевое слово `while` используется для создания цикла, который будет выполняться,
+пока условие истинно.
 
-Let's write the infamous [FizzBuzz][fizzbuzz] using a `while` loop.
+Давайте напишем печально известный [FizzBuzz][fizzbuzz] используя цикл `while`.
 
 {while.play}
 

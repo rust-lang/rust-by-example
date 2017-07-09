@@ -1,13 +1,14 @@
-Vectors are re-sizable arrays. Like slices, their size is not known at compile
-time, but they can grow or shrink at any time. A vector is represented using
-3 words: a pointer to the data, its length, and its capacity. The capacity
-indicates how much memory is reserved for the vector. The vector can grow as
-long as the length is smaller than the capacity. When this threshold needs to
-be surpassed, the vector is reallocated with a larger capacity.
+Вектора — это массивы с изменяемым размером. Как и у срезов, их размер не
+известен при компиляции, но он может увеличиваться и уменьшаться в любое время.
+Вектор определяется тремя словами: указатель на данные, длина вектора и
+его ёмкость. Ёмкость определяет, сколько памяти резервируется для вектора.
+Вектор может увеличиваться, пока его длина меньше его ёмкости. При необходимости
+превысить заданное значение объёма, вектору повторно выделяется память большего
+объёма.
 
 {vec.play}
 
-More `Vec` methods can be found under the
-[std::vec][vec] module
+Подробную информацию о методах объекта `Vec`
+можно почитать в разделе модуля [std::vec][vec]
 
 [vec]: https://doc.rust-lang.org/std/vec/

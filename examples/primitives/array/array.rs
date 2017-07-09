@@ -1,36 +1,37 @@
 use std::mem;
 
-// This function borrows a slice
+// Эта функция заимствует срез
 fn analyze_slice(slice: &[i32]) {
-    println!("first element of the slice: {}", slice[0]);
-    println!("the slice has {} elements", slice.len());
+    println!("первый элемент среза: {}", slice[0]);
+    println!("в срезе {} элементов", slice.len());
 }
 
 fn main() {
-    // Fixed-size array (type signature is superfluous)
+    // Массив фиксированного размера (указывать сигнатуру типа необязательно)
     let xs: [i32; 5] = [1, 2, 3, 4, 5];
 
-    // All elements can be initialized to the same value
+    // Все элементы могут быть инициализированы одной и той же переменной
     let ys: [i32; 500] = [0; 500];
 
-    // Indexing starts at 0
-    println!("first element of the array: {}", xs[0]);
-    println!("second element of the array: {}", xs[1]);
+    // Индекс начинается с 0
+    println!("первый элемент массива: {}", xs[0]);
+    println!("второй элемент массива: {}", xs[1]);
 
-    // `len` returns the size of the array
-    println!("array size: {}", xs.len());
+    // `len` возвращает длину массива
+    println!("размер массива: {}", xs.len());
 
-    // Arrays are stack allocated
-    println!("array occupies {} bytes", mem::size_of_val(&xs));
+    // Память для массивов выделяется в стеке
+    println!("массив занимает {} байт", mem::size_of_val(&xs));
 
-    // Arrays can be automatically borrowed as slices
-    println!("borrow the whole array as a slice");
+    // Массивы могут быть автоматически заимствованы как срез
+    println!("заимствуем весь массив, используя срез");
     analyze_slice(&xs);
 
-    // Slices can point to a section of an array
-    println!("borrow a section of the array as a slice");
+    // Срезы могут указывать на часть массива
+    println!("заимствуем часть массива как срез");
     analyze_slice(&ys[1 .. 4]);
 
-    // Out of bound indexing yields a panic
+    // Выход за границу массива заставит компилятор паниковать.
+    // Не надо так.
     println!("{}", xs[5]);
 }

@@ -1,11 +1,12 @@
-The compiler provides a `dead_code`
-[*lint*][lint] that will warn
-about unused functions. An *attribute* can be used to disable the lint.
+Компилятор предоставляет [*проверку*][lint] на `мертвый код`,
+которая предупреждает о неиспользованных функциях.
+
+*Атрибут dead_code* можно использовать, чтобы отключить данную проверку.
 
 {unused.play}
 
-Note that in real programs, you should eliminate dead code. In these examples
-we'll allow dead code in some places because of the interactive nature of the
-examples.
+Обратите внимание, что в реальных программах, вы должны удалить неиспользуемый код.
+В этих примерах мы разрешаем оставить неиспользуемый код в некоторых местах,
+но, это только для примера!
 
 [lint]: https://en.wikipedia.org/wiki/Lint_%28software%29

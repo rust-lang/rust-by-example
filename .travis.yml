@@ -1,36 +1,33 @@
 language: rust
 sudo: false
-
 rust:
-  - stable
-  - beta
-  - nightly
-
+- stable
+- beta
+- nightly
 matrix:
   allow_failures:
-    - rust: nightly
-
+  - rust: nightly
 install:
-  - curl https://nodejs.org/dist/v0.12.7/node-v0.12.7-sunos-x64.tar.gz > node.tar.gz
-  - tar xf node.tar.gz
-  - export PATH=$PATH:$pwd/node-v0.12.7-linux-x64/bin
-
+- nvm install 6
+- rvm use 2.2.3 --install --binary --fuzzy
+- gem install html-proofer
+before_script:
+- rustc --version
+- node --version
+- ruby --version
+- htmlproofer --version
 script:
-  - rustc --version
-  - make
-  - make test
-  - make html
-
+- make
+- make html
+- make test
 notifications:
   email:
-    - mdinger.bugzilla@gmail.com
-
+  - shaposhnikigor95@bk.ru
 after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
-
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
 branches:
   only: master
-
 env:
   global:
-    - secure: "oFD/tic8JAwpMXuMDBZXV4ot6w1NLWvHQTrDKmUHSMQJC1cbbrR1p5q8XayfjtmdqQdFQmIfM6YHEKeHw//ypgObWjYS8q00OaaMDXPTdmgr1Ee4nhgkkDihT+kVij0rn96W/QvyAVoaV5hJoyUr3Nhk+mnHEYm3M+Q3LAQglRg="
+  - secure: 0FF2FpMOvmRgbGwjMkKRNr842UsVIsA3bZ9Hzm/dg3e7HrBfpeswksYt7CEsoHKe/JFOhNIfkopBVSUVE6iG0Ic+1DkPADqFJbGWyQWT8h+O8QOwYO1vu7mXSttZ6UBanBtS+duvakRXGrQTe9DNgWo56Vj48TjVwGS/2SPp20UGpI3f4P83k1pZj77N8mDQVs6uC9LlohY8nNdYlSjPGhW6jz5eQQHK49oudEXgiv29n9b9kRyRmB80LLFyK6Y7yCa7+5mN/cUXpW/GvCr/DoAfO3UymyuroO71PogMOYcmfqEPCMbwO23DQ0CJMxkUL6EHBdi4XCuHlXHbZmNVmU6vzyS0zO1lLRljk3sP+5daUpactRiUfylNfiedu5rkYd0Llvp3FjUjB6F4OXj5+uS4eVtbOWUXNQevAxM42SsBecrLcOJ/tS54UebOPgUshFp5SqQiPXsbzqZWVFNRHXYsO5iAMrarZXM4S/pBAGHEarmcENDPDX2KDshTr2ro3oOMXxnG/hNDy/OM4iJzHeKq3TPOi7VTeGUzPksSwG1FL/slkh2YjIGfcS5k3OdElOusxUAZt/3xyAXD+yG/a52z9YcfYVzEJ5SsWFTPNuYH6a9LJdGgpqKMiRrPHZ/OLRYonjXGTSowDi2Lh56G4QcWdHYp6hMxfQbDEH0ynI4=
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true

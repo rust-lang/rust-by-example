@@ -1,9 +1,9 @@
-Most of the time, we'd like to access data without taking ownership over
-it. To accomplish this, Rust uses a *borrowing* mechanism. Instead of
-passing objects by-value (`T`), objects can be passed by reference (`&T`).
+Большую часть времени мы хотим обращаться к данным без получения владения над
+ними. Для этого Rust предоставляет механизм *заимствования.* Вместо передачи
+объектов по значению (`T`), объекты могут быть переданы по ссылке (`&T`).
 
-The compiler statically guarantees (via its borrow checker) that references 
-*always* point to valid objects. That is, while references to an object
-exist, the object cannot be destroyed.
+Компилятор статически гарантирует, что ссылки *всегда* указывают на допустимые
+объекты посредством проверки заимствований. К примеру, исходные объект не может
+быть уничтожен, пока существуют ссылки на него.
 
 {borrow.play}

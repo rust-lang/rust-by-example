@@ -11,13 +11,13 @@ The following is a list of derivable traits:
 * [`Default`][default], to create an empty instance of a data type.
 * `Zero`, to create a zero instance of a numeric data type.
 * [`Debug`][debug], to format a value using the `{:?}` formatter.
- 
+
 {derive.play}
 
-### See also:
+### Смотрите также:
 [`derive`][derive]
 
-[attribute]: /attribute.html
+[attribute]: ../attribute.html
 [eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
 [partial-eq]: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
 [ord]: https://doc.rust-lang.org/std/cmp/trait.Ord.html

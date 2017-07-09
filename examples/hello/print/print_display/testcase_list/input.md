@@ -1,45 +1,46 @@
-Implementing `fmt::Display` for a structure where the elements must each be
-handled sequentially is tricky. The problem is that each `write!` generates a
-`fmt::Result`. Proper handling of this requires dealing with *all* the
-results. Rust provides the `try!` macro and alternatively the equivalent 
-`?` operator for exactly this purpose.
+Реализовать `fmt::Display` для структуры, в которой каждый элемент должен обрабатываться
+последовательно не так то просто.
+Проблема в том, что `write!` каждый раз возвращает `fmt::Result`.
+Правильная обработка `fmt::Result` требует работы с *каждым* результатом.
+Для подобных случаев Rust предоставляет макрос `try!` или эквивалентный ему оператор `?`,
+который больше подходит для данного примера.
 
-Using `try!` on `write!` looks like this:
+Использование `try!` для `write!` выглядит следующим образом:
 
 ```rust
-// Try `write!` to see if it errors. If it errors, return
-// the error. Otherwise continue.
+// Попробуй исполнить `write!`, чтобы узнать, вернется ли ошибка. Если ошибка, верни ее.
+// Если нет, то продолжи.
 try!(write!(f, "{}", value));
 ```
 
-The `?` shorthand alternative looks like this:
+Более компактная версия примера с использованием оператора `?`:
 
 ```rust
 write!(f, "{}", value)?;
 ```
 
-With `?` available, implementing `fmt::Display` for a `Vec` is
-straightforward:
+С помощью оператора `?` реализация `fmt::Display` для `Vec` довольно простая:
 
 {testcase_list.play}
 
-### Activity
+### Задание
 
-Try changing the program so that the index of each element in the vector is also printed. The new output should look like this:
+Попробуйте изменить программу так, чтобы индекс элемента так же выводился в консоль.
+Новый вывод должен выглядеть примерно вот так:
 
 ```rust
 [0: 1, 1: 2, 2: 3]
 ```
 
 
-### See also
+### Смотрите также
 
 [`for`][for], [`ref`][ref], [`Result`][result], [`struct`][struct],
-[`try!`][try], and [`vec!`][vec]
+[`try!`][try], и [`vec!`][vec]
 
-[for]: /flow_control/for.html
-[result]: /std/result.html
-[ref]: /scope/borrow/ref.html
-[struct]: /custom_types/structs.html
-[try]: /std/result/try.html
-[vec]: /std/vec.html
+[for]: ../../../flow_control/for.html
+[result]: ../../../std/result.html
+[ref]: ../../../scope/borrow/ref.html
+[struct]: ../../../custom_types/structs.html
+[try]: ../../../std/result/try.html
+[vec]: ../../../std/vec.html

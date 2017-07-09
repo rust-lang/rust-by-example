@@ -1,4 +1,4 @@
-Rust provides pattern matching via the `match` keyword, which can be used like
-a C `switch`.
+Rust предоставляет ключевое слово `match`, которое используется для проверки на
+соответствие шаблону. `match` можно использовать как `switch` в языке C.
 
 {match.play}

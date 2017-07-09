@@ -1,9 +1,9 @@
-All values in Rust are stack allocated by default. Values can be *boxed*
-(allocated in the heap) by creating a `Box<T>`. A box is a smart pointer to a
-heap allocated value of type `T`. When a box goes out of scope, its destructor
-is called, the inner object is destroyed, and the memory in the heap is freed.
+По умолчанию, все значения в Rust располагаются в стеке. Значения можно *упаковать*
+(разместить в куче), создав упаковку `Box<T>`. Упаковка — умный указатель на значение
+типа `T` в куче. Когда упаковка оказывается за пределами области видимости, вызывается
+деструктор, содержащийся в ней объект уничтожается, а память в куче освобождается.
 
-Boxed values can be dereferenced using the `*` operator; this removes one layer
-of indirection. 
+Упакованные значения могут быть разыменованы с помощью операции `*`.
+Эта операция убирает один уровень косвенности.
 
 {box.play}

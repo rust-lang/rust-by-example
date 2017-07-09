@@ -2,9 +2,9 @@ Annotation of lifetimes in structures are also similar to functions:
 
 {struct.play}
 
-### See also:
+### Смотрите также:
 
 [`structs`][structs]
 
 
-[structs]: /custom_types/structs.html
+[structs]: ../../custom_types/structs.html

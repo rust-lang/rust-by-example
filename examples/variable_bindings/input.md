@@ -1,8 +1,7 @@
-Rust provides type safety via static typing. Variable bindings can be type
-annotated when declared. However, in most cases, the compiler will be able
-to infer the type of the variable from the context, heavily reducing the
-annotation burden.
+Rust предоставляет безопасность типов с помощью статической типизации.
+Тип переменной может быть указан при объявление связи с переменной.
+Тем не менее, в большинстве случаев, компилятор сможет определить тип переменной из контекста.
 
-Values (like literals) can be bound to variables, using the `let` binding.
+Значения (как и литералы) могут быть привязаны к переменным, используя оператор `let`.
 
 {variable_bindings.play}

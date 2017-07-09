@@ -4,10 +4,10 @@ include any functionality, you can still use it as a bound. `Eq` and
 
 {empty.play}
 
-### See also:
+### Смотрите также:
 
 [`std::cmp::Eq`][eq], [`std::cmp::Ord`s][ord], and [`trait`s][traits]
 
 [eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
 [ord]: https://doc.rust-lang.org/std/cmp/trait.Ord.html
-[traits]: /trait.html
+[traits]: ../../trait.html

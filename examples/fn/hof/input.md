@@ -1,13 +1,13 @@
-Rust provides Higher Order Functions (HOF). These are functions that
-take one or more functions and/or produce a more useful function. HOFs
-and lazy iterators give Rust its functional flavor.
+Rust предоставляет Функций Высшего Порядка(ФВП). Это функций которые берут один или
+больше функций и производит более полезные функций.
+ФВП и ленивые итераторы дают языку Rust функциональную особенность.
 
 {hof.play}
 
 [Option][option]
-and
+и
 [Iterator][iter]
-implement their fair share of HOFs.
+реализуют свою часть функций высшего порядка..
 
 [option]: https://doc.rust-lang.org/core/option/enum.Option.html
 [iter]: https://doc.rust-lang.org/core/iter/trait.Iterator.html

@@ -3,8 +3,8 @@ References and mutable references can be retrieved via
 
 {ref.play}
 
-### See also:
+### Смотрите также:
 
 [Borrowing (`&`)][borrow]
 
-[borrow]: /borrow.html
+[borrow]: ../../../borrow.html

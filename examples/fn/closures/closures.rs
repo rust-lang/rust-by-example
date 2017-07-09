@@ -1,23 +1,23 @@
 fn main() {
-    // Increment via closures and functions.
+    // Инкремент с помощью замыкания и функции.
     fn  function            (i: i32) -> i32 { i + 1 }
 
-    // Closures are anonymous, here we are binding them to references
-    // Annotation is identical to function annotation but is optional
-    // as are the `{}` wrapping the body. These nameless functions
-    // are assigned to appropriately named variables.
+    // Замыкания анонимны. Тут мы связываем их с ссылками
+    // Аннотация идентичны аннотации типов функции, но является опциональной
+    // как и оборачивания тела в `{}`. Эти безымянные функции
+    // назначены соответствующе названным переменным.
     let closure_annotated = |i: i32| -> i32 { i + 1 };
     let closure_inferred  = |i     |          i + 1  ;
 
     let i = 1;
-    // Call the function and closures.
-    println!("function: {}", function(i));
-    println!("closure_annotated: {}", closure_annotated(i));
-    println!("closure_inferred: {}", closure_inferred(i));
+    // Вызов функции и замыкания.
+    println!("функция: {}", function(i));
+    println!("замыкание с указанием типа: {}", closure_annotated(i));
+    println!("замыкание с выводом типа: {}", closure_inferred(i));
 
-    // A closure taking no arguments which returns an `i32`.
-    // The return type is inferred.
+    // Замыкание не принимает аргументов, но возвращает `i32`.
+    // Тип возвращаемого значения выведен автоматически.
     let one = || 1;
-    println!("closure returning one: {}", one());
+    println!("замыкание, возвращающее один: {}", one());
 
 }

@@ -9,7 +9,7 @@ fn double_first(vec: Vec<&str>) -> Result<i32> {
        .and_then(|s| s.parse::<i32>()
                       // Map any errors that `parse` yields to `String`.
                       .map_err(|e| e.to_string())
-                      // `Result<T, String>` is the new return type, 
+                      // `Result<T, String>` is the new return type,
                       // and we can now double the number inside.
                       .map(|i| 2 * i))
 }

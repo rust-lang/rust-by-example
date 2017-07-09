@@ -1,23 +1,23 @@
 fn main() {
-    // Declare a variable binding
+    // Объявляем связь с переменной
     let a_binding;
 
     {
         let x = 2;
 
-        // Initialize the binding
+        // Инициализируем связь
         a_binding = x * x;
     }
 
-    println!("a binding: {}", a_binding);
+    println!("связь а: {}", a_binding);
 
     let another_binding;
 
-    // Error! Use of uninitialized binding
-    println!("another binding: {}", another_binding);
-    // FIXME ^ Comment out this line
+    // Ошибка! Использование неинициализированной связи с переменной
+    println!("другая связь: {}", another_binding);
+    // ИСПРАВЬТЕ ^ Закомментируйте строку
 
     another_binding = 1;
 
-    println!("another binding: {}", another_binding);
+    println!("другая связь: {}", another_binding);
 }

@@ -1,17 +1,17 @@
 mod my {
-    // A public struct with a public field of generic type `T`
+    // Публичная структура с публичным полем обобщённого типа `T`
     pub struct OpenBox<T> {
         pub contents: T,
     }
 
-    // A public struct with a private field of generic type `T`
+    // Публичная структура с приватным полем обобщённого типа `T`
     #[allow(dead_code)]
     pub struct ClosedBox<T> {
         contents: T,
     }
 
     impl<T> ClosedBox<T> {
-        // A public constructor method
+        // Публичный конструктор
         pub fn new(contents: T) -> ClosedBox<T> {
             ClosedBox {
                 contents: contents,
@@ -21,23 +21,23 @@ mod my {
 }
 
 fn main() {
-    // Public structs with public fields can be constructed as usual
-    let open_box = my::OpenBox { contents: "public information" };
+    // Публичная структура с публичным полем может быть создана, как обычно
+    let open_box = my::OpenBox { contents: "публичную информацию" };
 
-    // and their fields can be normally accessed.
-    println!("The open box contains: {}", open_box.contents);
+    // а их поля доступны всем.
+    println!("Открытая упаковка хранит: {}", open_box.contents);
 
-    // Public structs with private fields cannot be constructed using field names.
-    // Error! `ClosedBox` has private fields
-    //let closed_box = my::ClosedBox { contents: "classified information" };
-    // TODO ^ Try uncommenting this line
+    // Публичные структуры с приватными полями не могут быть созданы, используя имя полей
+    // Ошибка! `ClosedBox` имеет приватные поля
+    //let closed_box = my::ClosedBox { contents: "классифицированную информацию" };
+    // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 
-    // However, structs with private fields can be created using
-    // public constructors
-    let _closed_box = my::ClosedBox::new("classified information");
+    // Однако, структуры с приватными полями могут быть созданы с помощью
+    // публичного конструктора
+    let _closed_box = my::ClosedBox::new("классифицированную информацию");
 
-    // and the private fields of a public struct cannot be accessed.
-    // Error! The `contents` field is private
-    //println!("The closed box contains: {}", _closed_box.contents);
-    // TODO ^ Try uncommenting this line
+    // нельзя получить доступ к приватным полям публичных структур.
+    // Ошибка! Поле `contents` приватное
+    //println!("Закрытая упаковка хранит: {}", _closed_box.contents);
+    // ЗАДАНИЕ ^ Попробуйте раскомментировать эту строку
 }

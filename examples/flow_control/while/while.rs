@@ -1,8 +1,8 @@
 fn main() {
-    // A counter variable
+    // Переменная счётчик
     let mut n = 1;
 
-    // Loop while `n` is less than 101
+    // Цикл while будет работать, пока `n` меньше 101
     while n < 101 {
         if n % 15 == 0 {
             println!("fizzbuzz");
@@ -14,7 +14,7 @@ fn main() {
             println!("{}", n);
         }
 
-        // Increment counter
+        // Увеличиваем значение счётчика
         n += 1;
     }
 }

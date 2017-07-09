@@ -1,5 +1,6 @@
-It's possible to `break` or `continue` outer loops when dealing with nested
-loops. In these cases, the loops must be annotated with some `'label`, and the
-label must be passed to the `break`/`continue` statement.
+Можно прерывать выполнение внешних циклов с помощью `break` или `continue`,
+когда речь заходит о вложенных циклах.
+Для этого циклы должны быть обозначены метками вроде `'label`,
+а метки должны быть переданы операторам `break` или `continue`.
 
 {nested.play}

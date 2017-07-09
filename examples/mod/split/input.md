@@ -1,5 +1,5 @@
-Modules can be mapped to a file/directory hierarchy. Let's break down the
-[visibility example][visibility] in files:
+Модули могут быть отображены на иерархию файлов и директорий.
+Давайте разобьём [пример с видимостью модулей][visibility] на файлы:
 
 ```
 $ tree .
@@ -19,15 +19,15 @@ $ tree .
 
 {my/inaccessible.rs}
 
-Let's check that things still work as before:
+Убедимся, что всё работает так, как раньше:
 
 ```
 $ rustc split.rs && ./split
-called `my::function()`
-called `function()`
-called `my::indirect_access()`, that
-> called `my::private_function()`
-called `my::nested::function()`
+вызвана `my::function()`
+вызвана `function()`
+вызвана `my::indirect_access()`, которая
+> вызывает `my::private_function()`
+вызвана `my::nested::function()`
 ```
 
-[visibility]: /mod/visibility.html
+[visibility]: ../mod/visibility.html

@@ -1,6 +1,7 @@
-Rust custom data types are formed mainly through the two keywords:
+В языке программирования Rust пользовательские типы данных
+в основном создаются при помощи двух ключевых слов:
 
-* `struct`: define a structure
-* `enum`: define an enumeration
+* `struct`: определение структуры
+* `enum`: определение перечисления
 
-Constants can also be created via the `const` and `static` keywords.
+Константы так же могут быть созданы с помощью ключевых слов `const` и `static`

@@ -1,15 +1,15 @@
-Many other types are provided by the std library to support
-things such as:
+Многие другие типы предоставляются стандартной библиотекой
+для вспомогательных целей, например:
 
-* Threads
-* Channels
-* File I/O
+* Потоки
+* Каналы
+* Файловые операции Ввода/Вывода
 
-These expand beyond what the [primitives][primitives] provide.
+Они расширяют возможности, которые предоставляют [примитивы][primitives].
 
-### See also:
+### Смотрите также:
 
-[primitives][primitives] and [the std library][std]
+[примитивы][primitives] и [стандартная библиотека][std]
 
-[primitives]: /primitives.html
+[primitives]: primitives.html
 [std]: https://doc.rust-lang.org/std/

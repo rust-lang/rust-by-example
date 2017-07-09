@@ -1,4 +1,5 @@
 GITBOOK = node_modules/.bin/gitbook
+YASPELLER = node_modules/.bin/yaspeller
 RUSTC = rustc
 STRICT = -D deprecated
 QUIET = -A unused-variables -A dead-code -A unused-assignments
@@ -42,13 +43,18 @@ pdf:	node_modules/gitbook
 clean:
 	rm -rf bin stage
 
-test:
+test: node_modules/yaspeller
 	@$(foreach src,$(srcs),$(RUSTC_NT) $(src) || exit;)
 	./check-line-length.sh
+	./check-line-length-md.sh
 	./check-links.sh
+	$(YASPELLER) --only-errors README.md CONTRIBUTING.md examples
 
 serve: node_modules/gitbook
 	$(GITBOOK) serve stage
 
 node_modules/gitbook:
 	npm install gitbook@1.5.0
+
+node_modules/yaspeller:
+	npm install yaspeller

@@ -1,11 +1,11 @@
-Functions are declared using the `fn` keyword. Its arguments are type
-annotated, just like variables, and, if the function returns a value, the
-return type must be specified after an arrow `->`.
+Функции объявляются с помощью ключевого слова `fn`. Их аргументы имеют явно заданный тип,
+как у переменных, и, если функция возвращает значение,
+возвращаемый тип должен быть указан после стрелки `->`.
 
-The final expression in the function will be used as return value.
-Alternatively, the `return` statement can be used to return a value earlier
-from within the function, even from inside loops or `if`s.
+Последнее выражение в функции будет использовано как возвращаемое значение.
+Так же можно использовать оператор `return`, чтобы вернуть значение из функции раньше,
+даже из цикла или оператора `if`.
 
-Let's rewrite FizzBuzz using functions!
+Давайте перепишем FizzBuzz используя функции!
 
 {fn.play}

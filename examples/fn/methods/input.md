@@ -1,5 +1,4 @@
-Methods are functions attached to objects. These methods have access to the
-data of the object and its other methods via the `self` keyword. Methods are
-defined under an `impl` block.
+Методы - это функций прикреплённые к объектам. Эти методы имеют допуск к данным объекта и
+его другим методам через ключевое слово `self`. Методы определяются под блоком `impl`.
 
 {methods.play}

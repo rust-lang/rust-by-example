@@ -1,13 +1,13 @@
-Structs have an extra level of visibility with their fields. The visibility 
-defaults to private, and can be overridden with the `pub` modifier. This 
-visibility only matters when a struct is accessed from outside the module 
-where it is defined, and has the goal of hiding information (encapsulation).
+Структуры имеют дополнительный уровень видимости благодаря полями. По умолчанию
+видимость полей приватная, но, это можно изменить с помощью модификатора `pub`.
+Приватная видимость имеет значение только при обращении к структуре извне модуля,
+где она определена, и необходимо скрыть информацию (инкапсуляция).
 
 {struct.play}
 
-### See also:
+### Смотрите также:
 
-[generics][generics] and [methods][methods]
+[обобщённость][generics] and [методы][methods]
 
-[generics]: /generics.html
-[methods]: /fn/methods.html
+[generics]: ../generics.html
+[methods]: ../fn/methods.html

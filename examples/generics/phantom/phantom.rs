@@ -28,11 +28,11 @@ fn main() {
         first: 'Q',
         phantom: PhantomData,
     };
-    
+
     // Compile-time Error! Type mismatch so these cannot be compared:
     //println!("_tuple1 == _tuple2 yields: {}",
     //          _tuple1 == _tuple2);
-    
+
     // Compile-time Error! Type mismatch so these cannot be compared:
     //println!("_struct1 == _struct2 yields: {}",
     //          _struct1 == _struct2);

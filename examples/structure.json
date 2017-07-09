@@ -1,95 +1,95 @@
 [
-    { "id": "hello", "title": "Hello World", "children": [
-        { "id": "comment", "title": "Comments", "children": null },
-        { "id": "print", "title": "Formatted print", "children": [
+    { "id": "hello", "title": "Привет, мир!", "children": [
+        { "id": "comment", "title": "Комментарии", "children": null },
+        { "id": "print", "title": "Форматированный вывод", "children": [
             { "id": "print_debug", "title": "Debug", "children": null },
             { "id": "print_display", "title": "Display", "children": [
-                { "id": "testcase_list", "title": "Testcase: List", "children": null }
+                { "id": "testcase_list", "title": "Тест: Список", "children": null }
             ] },
-            { "id": "fmt", "title": "Formatting", "children": null }
+            { "id": "fmt", "title": "Форматирование", "children": null }
         ] }
     ] },
-    { "id": "primitives", "title": "Primitives", "children": [
-        { "id": "literals", "title": "Literals and operators", "children": null },
-        { "id": "tuples", "title": "Tuples", "children": null },
-        { "id": "array", "title": "Arrays and Slices", "children": null }
+    { "id": "primitives", "title": "Примитивы", "children": [
+        { "id": "literals", "title": "Литералы и операторы", "children": null },
+        { "id": "tuples", "title": "Кортежи", "children": null },
+        { "id": "array", "title": "Массив и Срезы", "children": null }
     ] },
-    { "id": "custom_types", "title": "Custom types", "children": [
-        { "id": "structs", "title": "Structures", "children": null },
-        { "id": "enum", "title": "Enums", "children": [
+    { "id": "custom_types", "title": "Пользовательские типы", "children": [
+        { "id": "structs", "title": "Структуры", "children": null },
+        { "id": "enum", "title": "Перечисления", "children": [
             { "id": "enum_use", "title": "use", "children": null },
-            { "id": "c_like", "title": "C-like", "children": null },
+            { "id": "c_like", "title": "C-подобные", "children": null },
             { "id": "testcase_linked_list", "title": "Testcase: linked-list", "children": null }
         ] },
-        { "id": "constants", "title": "constants", "children": null }
+        { "id": "constants", "title": "константы", "children": null }
     ] },
-    { "id": "variable_bindings", "title": "Variable Bindings", "children": [
-        { "id": "mut", "title": "Mutability", "children": null },
-        { "id": "scope", "title": "Scope and shadowing", "children": null },
-        { "id": "declare", "title": "Declare first", "children": null }
+    { "id": "variable_bindings", "title": "Связывание переменных", "children": [
+        { "id": "mut", "title": "Изменяемость", "children": null },
+        { "id": "scope", "title": "Область видимость", "children": null },
+        { "id": "declare", "title": "Предварительное объявление", "children": null }
     ] },
-    { "id": "cast", "title": "Casting", "children": [
-        { "id": "literals", "title": "Literals", "children": null },
-        { "id": "inference", "title": "Inference", "children": null },
-        { "id": "alias", "title": "Alias", "children": null }
+    { "id": "cast", "title": "Преобразование типов", "children": [
+        { "id": "literals", "title": "Литералы", "children": null },
+        { "id": "inference", "title": "Вывод типов", "children": null },
+        { "id": "alias", "title": "Псевдонимы", "children": null }
     ] },
-    { "id": "expression", "title": "Expressions", "children": null },
-    { "id": "flow_control", "title": "Flow Control", "children": [
+    { "id": "expression", "title": "Выражения", "children": null },
+    { "id": "flow_control", "title": "Управление потоком", "children": [
         { "id": "if_else", "title": "if/else", "children": null },
         { "id": "loop", "title": "loop", "children": [
-            { "id": "nested", "title": "Nesting and labels", "children": null }
+            { "id": "nested", "title": "Вложенность и метки", "children": null }
         ] },
         { "id": "while", "title": "while", "children": null },
         { "id": "for", "title": "for and range", "children": null },
         { "id": "match", "title": "match", "children": [
-            { "id": "destructuring", "title": "Destructuring", "children": [
-                { "id": "destructure_tuple", "title": "tuples", "children": null },
-                { "id": "destructure_enum", "title": "enums", "children": null },
+            { "id": "destructuring", "title": "Деструктуризация", "children": [
+                { "id": "destructure_tuple", "title": "Кортежи", "children": null },
+                { "id": "destructure_enum", "title": "Перечисления", "children": null },
                 { "id": "destructure_pointers", "title": "pointers/ref", "children": null },
-                { "id": "destructure_structures", "title": "structs", "children": null }
+                { "id": "destructure_structures", "title": "Структуры", "children": null }
             ] },
-            { "id": "guard", "title": "Guards", "children": null },
-            { "id": "binding", "title": "Binding", "children": null }
+            { "id": "guard", "title": "Ограничитель шаблонов", "children": null },
+            { "id": "binding", "title": "Связывание", "children": null }
         ] },
         { "id": "if_let", "title": "if let", "children": null },
         { "id": "while_let", "title": "while let", "children": null }
     ] },
-    { "id": "fn", "title": "Functions", "children": [
-        { "id": "methods", "title": "Methods", "children": null },
-        { "id": "closures", "title": "Closures", "children": [
-            { "id": "capture", "title": "Capturing", "children": null },
-            { "id": "input_parameters", "title": "As input parameters", "children": null },
-            { "id": "anonymity", "title": "Type anonymity", "children": null },
-            { "id": "input_functions", "title": "Input functions", "children": null },
-            { "id": "output_parameters", "title": "As output parameters", "children": null },
-            { "id": "closure_examples", "title": "Examples in `std`", "children": [
+    { "id": "fn", "title": "Функции", "children": [
+        { "id": "methods", "title": "Методы", "children": null },
+        { "id": "closures", "title": "Замыкания", "children": [
+            { "id": "capture", "title": "Захват", "children": null },
+            { "id": "input_parameters", "title": "Как входные параметры", "children": null },
+            { "id": "anonymity", "title": "Анонимность типов", "children": null },
+            { "id": "input_functions", "title": "Входные функции", "children": null },
+            { "id": "output_parameters", "title": "Как выходные параметры", "children": null },
+            { "id": "closure_examples", "title": "Примеры из `std`", "children": [
                 { "id": "iter_any", "title": "Iterator::any", "children": null },
                 { "id": "iter_find", "title": "Iterator::find", "children": null }
             ] }
         ] },
-        { "id": "hof", "title": "Higher Order Functions", "children": null }
+        { "id": "hof", "title": "Функции Высшего Порядка", "children": null }
     ] },
-    { "id": "mod", "title": "Modules", "children": [
-        { "id": "visibility", "title": "Visibility", "children": null },
-        { "id": "struct_visibility", "title": "Struct visibility", "children": null },
-        { "id": "use", "title": "The `use` declaration", "children": null },
-        { "id": "super", "title": "`super` and `self`", "children": null },
-        { "id": "split", "title": "File hierarchy", "children": null }
+    { "id": "mod", "title": "Модули", "children": [
+        { "id": "visibility", "title": "Видимость", "children": null },
+        { "id": "struct_visibility", "title": "Видимость структуры", "children": null },
+        { "id": "use", "title": "Декларация `use`", "children": null },
+        { "id": "super", "title": "`super` и `self`", "children": null },
+        { "id": "split", "title": "Иерархия файлов", "children": null }
     ] },
-    { "id": "crates", "title": "Crates", "children": [
-        { "id": "lib", "title": "Library", "children": null },
+    { "id": "crates", "title": "Контейнеры", "children": [
+        { "id": "lib", "title": "Библиотеки", "children": null },
         { "id": "link", "title": "`extern crate`", "children": null }
     ] },
-    { "id": "attribute", "title": "Attributes", "children": [
-        { "id": "unused", "title": "`dead_code`", "children": null },
-        { "id": "crate", "title": "Crates", "children": null },
-        { "id": "cfg", "title": "`cfg`", "children": [
-            { "id": "custom", "title": "Custom", "children": null }
+    { "id": "attribute", "title": "Атрибуты", "children": [
+        { "id": "unused", "title": "`Мёртвый код`", "children": null },
+        { "id": "crate", "title": "Контейнеры", "children": null },
+        { "id": "cfg", "title": "Условные атрибуты", "children": [
+            { "id": "custom", "title": "Собственные условия", "children": null }
         ] }
     ] },
-    { "id": "generics", "title": "Generics", "children": [
+    { "id": "generics", "title": "Обобщения", "children": [
         { "id": "gen_fn", "title": "Functions", "children": null },
-        { "id": "impl", "title": "Implementation", "children": null },
+        { "id": "impl", "title": "Реализация", "children": null },
         { "id": "gen_trait", "title": "Traits", "children": null },
         { "id": "bounds", "title": "Bounds", "children": [
             { "id": "testcase_empty", "title": "Testcase: empty bounds", "children": null }
@@ -106,12 +106,12 @@
     ] },
     { "id": "scope", "title": "Scoping rules", "children": [
         { "id": "raii", "title": "RAII", "children": null },
-        { "id": "move", "title": "Ownership and moves", "children": [
-            { "id": "mut", "title": "Mutability", "children": null }
+        { "id": "move", "title": "Владение и перемещение", "children": [
+            { "id": "mut", "title": "Изменяемость", "children": null }
         ] },
-        { "id": "borrow", "title": "Borrowing", "children": [
+        { "id": "borrow", "title": "Заимствование", "children": [
             { "id": "mut", "title": "Mutability", "children": null },
-            { "id": "freeze", "title": "Freezing", "children": null },
+            { "id": "freeze", "title": "Замораживание", "children": null },
             { "id": "alias", "title": "Aliasing", "children": null },
             { "id": "ref", "title": "The ref pattern", "children": null }
         ] },
@@ -139,7 +139,7 @@
         { "id": "repeat", "title": "Repeat", "children": null },
         { "id": "dry", "title": "DRY (Don't Repeat Yourself)", "children": null }
     ] },
-    { "id": "error", "title": "Error handling", "children": [
+    { "id": "error", "title": "Обработка ошибок", "children": [
         { "id": "panic", "title": "`panic`", "children": null },
         { "id": "option_unwrap", "title": "`Option` & `unwrap`", "children": [
             { "id": "map", "title": "Combinators: `map`", "children": null },
@@ -158,8 +158,8 @@
         { "id": "boxing_errors", "title": "`Box`ing errors", "children": null }
     ] },
     { "id": "std", "title": "Std library types", "children": [
-        { "id": "box", "title": "Box, stack and heap", "children": null },
-        { "id": "vec", "title": "Vectors", "children": null },
+        { "id": "box", "title": "Упаковка, стек и куча", "children": null },
+        { "id": "vec", "title": "Вектора", "children": null },
         { "id": "str", "title": "Strings", "children": null },
         { "id": "option", "title": "`Option`", "children": null },
         { "id": "result", "title": "`Result`", "children": [
@@ -171,8 +171,8 @@
             { "id": "hashset", "title": "HashSet", "children": null }
         ] }
     ] },
-    { "id": "std_misc", "title": "Std misc", "children": [
-        { "id": "threads", "title": "Threads", "children": [
+    { "id": "std_misc", "title": "Разное в стандартной библиотеке", "children": [
+        { "id": "threads", "title": "Потоки", "children": [
             { "id": "testcase_mapreduce", "title": "Testcase: map-reduce", "children": null}
         ] },
         { "id": "channels", "title": "Channels", "children": null },

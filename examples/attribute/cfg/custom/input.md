@@ -1,13 +1,14 @@
-Some conditionals like `target_os` are implicitly provided by `rustc`, but
-custom conditionals must be passed to `rustc` using the `--cfg` flag.
+Некоторые условия, например, `target_os` предоставляются компилятором.
+Если мы хотим создать собственные условия, 
+то их необходимо передать компилятору используя флаг `--cfg`.
 
 {custom.rs}
 
-Without the custom `cfg` flag:
+Без указания флага `cfg`:
 
 {custom.out}
 
-With the custom `cfg` flag:
+С указанием флага `cfg`:
 
 ```
 $ rustc --cfg some_condition custom.rs && ./custom

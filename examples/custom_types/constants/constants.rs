@@ -1,21 +1,21 @@
-// Globals are declared outside all other scopes.
+// Константы объявлены в глобальной области видимости.
 static LANGUAGE: &'static str = "Rust";
 const  THRESHOLD: i32 = 10;
 
 fn is_big(n: i32) -> bool {
-    // Access constant in some function
+    // Получаем доступ к константе внутри функции
     n > THRESHOLD
 }
 
 fn main() {
     let n = 16;
 
-    // Access constant in the main thread
-    println!("This is {}", LANGUAGE);
-    println!("The threshold is {}", THRESHOLD);
-    println!("{} is {}", n, if is_big(n) { "big" } else { "small" });
+    // Получаем доступ к константе внутри функции main
+    println!("Это язык {}", LANGUAGE);
+    println!("Установим предел, равный {}", THRESHOLD);
+    println!("Число {} {} предела", n, if is_big(n) { "больше" } else { "меньше" });
 
-    // Error! Cannot modify a `const`.
+    // Ошибка! `константы` нельзя изменить.
     THRESHOLD = 5;
-    // FIXME ^ Comment out this line
+    // ИСПРАВЬТЕ ^ Закомментируйте эту строчку
 }

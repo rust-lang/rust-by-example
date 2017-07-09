@@ -1,6 +1,6 @@
-Branching with `if`-`else` is similar to other languages. Unlike many of them,
-the boolean condition doesn't need to be surrounded by parentheses, and each
-condition is followed by a block. `if`-`else` conditionals are expressions,
-and, all branches must return the same type.
+Ветвление с помощью `if`-`else` такое же, как и в других языка программирования.
+В отличие от многих других языков программирования, логические условия не должны быть заключены
+в круглые скобки и после каждого условия должен следовать блок.
+Условия `if`-`else` являются выражениями, и все ветки должны возвращать одинаковый тип данных.
 
 {if_else.play}

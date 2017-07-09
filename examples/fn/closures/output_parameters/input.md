@@ -1,31 +1,31 @@
-Closures as input parameters are possible, so returning closures as 
-output parameters should also be possible. However, returning closure types 
-are problematic because Rust currently only supports returning concrete 
-(non-generic) types. Anonymous closure types are, by definition, unknown 
-and so returning a closure is only possible by making it concrete. This 
-can be done via boxing.
+Замыкания могут использоваться как входные параметры, следовательно их возврат в
+качестве выходных параметров также должен быть возможен. Однако, это сопряжено
+с трудностями из-за того, что Rust в настоящее время поддерживает только возврат
+конкретных (не обобщённых) типов. Типы анонимных замыканий, по определению,
+неизвестны. И поэтому возвращение замыканий возможно только путём конкретизации
+их типов. Это можно реализовать упаковав замыкание.
 
-The valid traits for returns are slightly different than before:
+Возможные типажи для возвращаемых значений немного отличаются от прежних:
 
-* `Fn`: normal
-* `FnMut`: normal
-* `FnOnce`: There are some unusual things at play here, so the [`FnBox`][fnbox]
-  type is currently needed, and is unstable. This is expected to change in
-  the future.
+* `Fn`: как раньше
+* `FnMut`: как раньше
+* `FnOnce`: здесь присутствуют некоторые неожиданности, поэтому необходим тип
+  [`FnBox`][fnbox], но он нестабилен в настоящее время. В будущем ожидаются
+  изменения этой ситуации.
 
-Beyond this, the `move` keyword must be used, which signals that all captures
-occur by value. This is required because any captures by reference would be
-dropped as soon as the function exited, leaving invalid references in the
-closure.
+Помимо этого, должно быть использовано ключевое слово `move`, чтобы
+сигнализировать о том, что все переменные захватываются по значению. Это
+необходимо, так как любые захваченные по ссылке значения будут удалены после
+выхода из функции, оставляя недопустимые ссылки в замыкании.
 
 {output_parameters.play}
 
-### See also:
+### Смотрите также:
 
-[Boxing][box], [`Fn`][fn], [`FnMut`][fnmut], and [Generics][generics].
+[Упаковка][box], [`Fn`][fn], [`FnMut`][fnmut], и [Обобщённые типы][generics].
 
-[box]: /std/box.html
+[box]: ../../std/box.html
 [fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
 [fnmut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fnbox]: https://doc.rust-lang.org/std/boxed/trait.FnBox.html 
-[generics]: /generics.html
+[fnbox]: https://doc.rust-lang.org/std/boxed/trait.FnBox.html
+[generics]: ../../generics.html

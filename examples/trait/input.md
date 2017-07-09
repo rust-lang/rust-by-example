@@ -1,9 +1,9 @@
-A `trait` is a collection of methods defined for an unknown type:
-`Self`. They can access other methods declared in the same trait.
+`Типаж (trait)` - это набор методов, определённых для неизвестного типа:
+`Self`. Они могут получать доступ к другим методам,
+которые были объявлены в том же типаже.
 
-Traits can be implemented for any data type. In the example below,
-we define `Animal`, a group of methods. The `Animal` `trait` is 
-then implemented for the `Sheep` data type, allowing the use of 
-methods from `Animal` with a `Sheep`.
+Типажи могут быть реализованы для любых типов данных. В примере ниже,
+мы определили группу методов `Animal`. Типаж `Animal` реализован для типа данных
+`Sheep`, что позволяет использовать методы из `Animal` внутри `Sheep`.
 
 {trait.play}

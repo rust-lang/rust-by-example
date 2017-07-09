@@ -21,7 +21,7 @@ struct S<T: Display>(T);
 let s = S(vec![1]);
 ```
 
-Another effect of bounding is that generic instances are allowed to access the 
+Another effect of bounding is that generic instances are allowed to access the
 [methods] of traits specified in the bounds. For example:
 
 {bounds.play}
@@ -29,12 +29,12 @@ Another effect of bounding is that generic instances are allowed to access the
 As an additional note, [`where`][where] clauses can also be used to apply bounds in
 some cases to be more expressive.
 
-### See also:
+### Смотрите также:
 
 [`std::fmt`][fmt], [`struct`s][structs], and [`trait`s][traits]
 
-[fmt]: /hello/print.html
-[methods]: /fn/methods.html
-[structs]: /custom_types/structs.html
-[traits]: /trait.html
-[where]: /generics/where.html
+[fmt]: ../hello/print.html
+[methods]: ../fn/methods.html
+[structs]: ../custom_types/structs.html
+[traits]: ../trait.html
+[where]: ../generics/where.html
