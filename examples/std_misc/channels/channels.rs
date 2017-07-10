@@ -30,7 +30,7 @@ fn main() {
     let mut ids = Vec::with_capacity(NTHREADS as usize);
     for _ in 0..NTHREADS {
         // The `recv` method picks a message from the channel
-        // `recv` will block the current thread if there're no messages available
+        // `recv` will block the current thread if there are no messages available
         ids.push(rx.recv());
     }
 
