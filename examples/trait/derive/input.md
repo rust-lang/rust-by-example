@@ -27,4 +27,4 @@ The following is a list of derivable traits:
 [hash]: https://doc.rust-lang.org/std/hash/trait.Hash.html
 [default]: https://doc.rust-lang.org/std/default/trait.Default.html
 [debug]: https://doc.rust-lang.org/std/fmt/trait.Debug.html
-[derive]: https://doc.rust-lang.org/reference.html#derive
+[derive]: https://doc.rust-lang.org/reference/attributes.html#derive
