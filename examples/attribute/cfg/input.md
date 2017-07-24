@@ -13,4 +13,4 @@ Both utilize identical argument syntax.
 
 [cfg]: https://doc.rust-lang.org/std/macro.cfg!.html
 [macros]: /macros.html
-[ref]: https://doc.rust-lang.org/reference.html#conditional-compilation
+[ref]: https://doc.rust-lang.org/reference/attributes.html#conditional-compilation
