@@ -4,7 +4,7 @@ two flavors of `Path`: `posix::Path`, for UNIX-like systems, and
 platform-specific `Path` variant.
 
 A `Path` can be created from almost any type that implements the
-`BytesContainer` trait, like a string, and provides several methods to get
+`OsStr` trait, like a string, and provides several methods to get
 information from the file/directory the path points to.
 
 Note that a `Path` is *not* internally represented as an UTF-8 string, but
@@ -14,4 +14,8 @@ instead is stored as a vector of bytes (`Vec<u8>`). Therefore, converting a
 {path.play}
 
 Be sure to check at other `Path` methods (`posix::Path` or `windows::Path`) and
-the `FileStat` struct.
+the `Metadata` struct.
+
+### See also
+
+[OsStr](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) and [Metadata](https://doc.rust-lang.org/std/fs/struct.Metadata.html).
