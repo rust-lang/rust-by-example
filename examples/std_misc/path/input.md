@@ -18,4 +18,7 @@ the `Metadata` struct.
 
 ### See also
 
-[OsStr](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) and [Metadata](https://doc.rust-lang.org/std/fs/struct.Metadata.html).
+[OsStr][1] and [Metadata][2].
+
+[1]: https://doc.rust-lang.org/std/ffi/struct.OsStr.html
+[2]: https://doc.rust-lang.org/std/fs/struct.Metadata.html
