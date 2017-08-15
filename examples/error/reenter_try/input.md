@@ -3,7 +3,7 @@ Notice in the previous example that our immediate reaction to calling
 error type:
 
 ```rust
-.and_then(|s| s.parse::<i32>()
+.and_then(|s| s.parse::<i32>())
     .map_err(DoubleError::Parse)
 ```
 
