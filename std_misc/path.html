@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.3" data-basepath=".." data-revision="1494245342365">
+    <div class="book" data-level="18.3" data-basepath=".." data-revision="1502826561518">
     
 
 <div class="book-summary">
@@ -609,6 +609,22 @@
                             <b>7.2.1.</b>
                         
                          Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2.2" data-path="flow_control/loop/return.html">
+            
+                
+                    <a href="../flow_control/loop/return.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.2.</b>
+                        
+                         Returning from loops
                     </a>
                 
             
@@ -2492,6 +2508,28 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1.1" data-path="std_misc/threads/testcase_mapreduce.html">
+            
+                
+                    <a href="../std_misc/threads/testcase_mapreduce.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.1.</b>
+                        
+                         Testcase: map-reduce
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2876,7 +2914,7 @@ two flavors of <code>Path</code>: <code>posix::Path</code>, for UNIX-like system
 <code>windows::Path</code>, for Windows. The prelude exports the appropriate
 platform-specific <code>Path</code> variant.</p>
 <p>A <code>Path</code> can be created from almost any type that implements the
-<code>BytesContainer</code> trait, like a string, and provides several methods to get
+<code>OsStr</code> trait, like a string, and provides several methods to get
 information from the file/directory the path points to.</p>
 <p>Note that a <code>Path</code> is <em>not</em> internally represented as an UTF-8 string, but
 instead is stored as a vector of bytes (<code>Vec&lt;u8&gt;</code>). Therefore, converting a
@@ -2891,7 +2929,7 @@ fn main() {
     let path = Path::new(&quot;.&quot;);
 
     // The &#96;display&#96; method returns a &#96;Show&#96;able structure
-    let display = path.display();
+    let &#95;display = path.display();
 
     // &#96;join&#96; merges a path with a byte container using the OS specific
     // separator, and returns the new path
@@ -2907,7 +2945,9 @@ fn main() {
 </div>
 
 <p>Be sure to check at other <code>Path</code> methods (<code>posix::Path</code> or <code>windows::Path</code>) and
-the <code>FileStat</code> struct.</p>
+the <code>Metadata</code> struct.</p>
+<h3 id="see-also">See also</h3>
+<p><a href="https://doc.rust-lang.org/std/ffi/struct.OsStr.html" target="_blank">OsStr</a> and <a href="https://doc.rust-lang.org/std/fs/struct.Metadata.html" target="_blank">Metadata</a>.</p>
 
                     
                     </section>

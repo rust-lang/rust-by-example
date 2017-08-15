@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="16.3.1" data-basepath="../.." data-revision="1494245342365">
+    <div class="book" data-level="16.3.1" data-basepath="../.." data-revision="1502826561518">
     
 
 <div class="book-summary">
@@ -609,6 +609,22 @@
                             <b>7.2.1.</b>
                         
                          Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2.2" data-path="flow_control/loop/return.html">
+            
+                
+                    <a href="../../flow_control/loop/return.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.2.</b>
+                        
+                         Returning from loops
                     </a>
                 
             
@@ -2492,6 +2508,28 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1.1" data-path="std_misc/threads/testcase_mapreduce.html">
+            
+                
+                    <a href="../../std_misc/threads/testcase_mapreduce.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.1.</b>
+                        
+                         Testcase: map-reduce
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2875,11 +2913,11 @@
 To avoid that, we need to be more specific about the return type. There, the 
 regular element is of type <code>i32</code>.</p>
 <p>To determine the <code>Err</code> type, we look to 
-<a href="https://doc.rust-lang.org/std/primitive.str.html#method.parse" target="_blank"><code>parse()</code></a>, which is implemented with the <a href="http://doc.rust-lang.org/std/str/trait.FromStr.html" target="_blank"><code>FromStr</code></a> trait for 
-<a href="http://doc.rust-lang.org/std/primitive.i32.html" target="_blank"><code>i32</code></a>. As a result, the <code>Err</code> type is specified as <a href="http://doc.rust-lang.org/std/num/struct.ParseIntError.html" target="_blank"><code>ParseIntError</code></a>.</p>
+<a href="https://doc.rust-lang.org/std/primitive.str.html#method.parse" target="_blank"><code>parse()</code></a>, which is implemented with the <a href="https://doc.rust-lang.org/std/str/trait.FromStr.html" target="_blank"><code>FromStr</code></a> trait for 
+<a href="https://doc.rust-lang.org/std/primitive.i32.html" target="_blank"><code>i32</code></a>. As a result, the <code>Err</code> type is specified as <a href="https://doc.rust-lang.org/std/num/struct.ParseIntError.html" target="_blank"><code>ParseIntError</code></a>.</p>
 <p>In the example below, the straightforward <code>match</code> statement leads to code 
 that is overall more cumbersome. Luckily, the <code>map</code> method of <code>Option</code> is 
-one of many combinators also implemented for <code>Result</code>. <a href="http://doc.rust-lang.org/std/result/enum.Result.html" target="_blank"><code>enum.Result</code></a> 
+one of many combinators also implemented for <code>Result</code>. <a href="https://doc.rust-lang.org/std/result/enum.Result.html" target="_blank"><code>enum.Result</code></a> 
 contains a complete listing.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>

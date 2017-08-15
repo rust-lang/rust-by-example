@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="17.5.1" data-basepath="../.." data-revision="1494245342365">
+    <div class="book" data-level="17.5.1" data-basepath="../.." data-revision="1502826561518">
     
 
 <div class="book-summary">
@@ -609,6 +609,22 @@
                             <b>7.2.1.</b>
                         
                          Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2.2" data-path="flow_control/loop/return.html">
+            
+                
+                    <a href="../../flow_control/loop/return.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.2.</b>
+                        
+                         Returning from loops
                     </a>
                 
             
@@ -2492,6 +2508,28 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1.1" data-path="std_misc/threads/testcase_mapreduce.html">
+            
+                
+                    <a href="../../std_misc/threads/testcase_mapreduce.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.1.</b>
+                        
+                         Testcase: map-reduce
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2868,7 +2906,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_125">
+                    <section class="normal" id="section-gitbook_126">
                     
                         <h3 id="1751-try">17.5.1 <code>try!</code></h3>
 <p>Chaining results using match can get pretty untidy; luckily, the <code>try!</code> macro
@@ -2882,7 +2920,7 @@ and the <code>Ok(ok)</code> branch expands to an <code>ok</code> expression.</p>
     #[derive(Debug)]
     enum MathError {
         DivisionByZero,
-        NegativeLogarithm,
+        NonPositiveLogarithm,
         NegativeSquareRoot,
     }
 
@@ -2905,8 +2943,8 @@ and the <code>Ok(ok)</code> branch expands to an <code>ok</code> expression.</p>
     }
 
     fn ln(x: f64) -&gt; MathResult {
-        if x &lt; 0.0 {
-            Err(MathError::NegativeLogarithm)
+        if x &lt;= 0.0 {
+            Err(MathError::NonPositiveLogarithm)
         } else {
             Ok(x.ln())
         }
@@ -2926,8 +2964,8 @@ and the <code>Ok(ok)</code> branch expands to an <code>ok</code> expression.</p>
     pub fn op(x: f64, y: f64) {
         match op&#95;(x, y) {
             Err(why) =&gt; panic!(match why {
-                MathError::NegativeLogarithm
-                    =&gt; &quot;logarithm of negative number&quot;,
+                MathError::NonPositiveLogarithm
+                    =&gt; &quot;logarithm of non-positive number&quot;,
                 MathError::DivisionByZero
                     =&gt; &quot;division by zero&quot;,
                 MathError::NegativeSquareRoot
@@ -2944,7 +2982,7 @@ fn main() {
 <div id="result"></div>
 </div>
 
-<p>Be sure to check the <a href="http://doc.rust-lang.org/std/result/index.html" target="_blank">documentation</a>,
+<p>Be sure to check the <a href="https://doc.rust-lang.org/std/result/index.html" target="_blank">documentation</a>,
 as there are many methods to map/compose <code>Result</code>.</p>
 
                     

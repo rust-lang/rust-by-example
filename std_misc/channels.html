@@ -22,7 +22,7 @@
     <link rel="next" href="../std_misc/path.html" />
     
     
-    <link rel="prev" href="../std_misc/threads.html" />
+    <link rel="prev" href="../std_misc/threads/testcase_mapreduce.html" />
     
 
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="18.2" data-basepath=".." data-revision="1494245342365">
+    <div class="book" data-level="18.2" data-basepath=".." data-revision="1502826561518">
     
 
 <div class="book-summary">
@@ -609,6 +609,22 @@
                             <b>7.2.1.</b>
                         
                          Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2.2" data-path="flow_control/loop/return.html">
+            
+                
+                    <a href="../flow_control/loop/return.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.2.</b>
+                        
+                         Returning from loops
                     </a>
                 
             
@@ -2492,6 +2508,28 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1.1" data-path="std_misc/threads/testcase_mapreduce.html">
+            
+                
+                    <a href="../std_misc/threads/testcase_mapreduce.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.1.</b>
+                        
+                         Testcase: map-reduce
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2909,7 +2947,7 @@ fn main() {
     let mut ids = Vec::with&#95;capacity(NTHREADS as usize);
     for &#95; in 0..NTHREADS {
         // The &#96;recv&#96; method picks a message from the channel
-        // &#96;recv&#96; will block the current thread if there no messages available
+        // &#96;recv&#96; will block the current thread if there are no messages available
         ids.push(rx.recv());
     }
 
@@ -2928,7 +2966,7 @@ fn main() {
         </div>
 
         
-        <a href="../std_misc/threads.html" class="navigation navigation-prev " aria-label="Previous page: Threads"><i class="fa fa-angle-left"></i></a>
+        <a href="../std_misc/threads/testcase_mapreduce.html" class="navigation navigation-prev " aria-label="Previous page: Testcase: map-reduce"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../std_misc/path.html" class="navigation navigation-next " aria-label="Next page: Path"><i class="fa fa-angle-right"></i></a>

@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="19.1" data-basepath=".." data-revision="1494245342365">
+    <div class="book" data-level="19.1" data-basepath=".." data-revision="1502826561518">
     
 
 <div class="book-summary">
@@ -609,6 +609,22 @@
                             <b>7.2.1.</b>
                         
                          Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2.2" data-path="flow_control/loop/return.html">
+            
+                
+                    <a href="../flow_control/loop/return.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.2.</b>
+                        
+                         Returning from loops
                     </a>
                 
             
@@ -2492,6 +2508,28 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1.1" data-path="std_misc/threads/testcase_mapreduce.html">
+            
+                
+                    <a href="../std_misc/threads/testcase_mapreduce.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.1.</b>
+                        
+                         Testcase: map-reduce
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2868,11 +2906,11 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_88">
+                    <section class="normal" id="section-gitbook_89">
                     
                         <h2 id="191-documentation">19.1 Documentation</h2>
 <p>Doc comments are very useful for big projects that require documentation. When
-running <a href="http://doc.rust-lang.org/book/documentation.html" target="_blank">Rustdoc</a>, these are the comments that get compiled into
+running <a href="https://doc.rust-lang.org/book/documentation.html" target="_blank">Rustdoc</a>, these are the comments that get compiled into
 documentation. They are denoted by a <code>///</code>, and support <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a>.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
@@ -2925,7 +2963,7 @@ fn main() {
 <p>To run the tests, first build the code as a library, then tell rustdoc where
 to find the library so it can link it into each doctest program:</p>
 <pre><code>rustc doc.rs --crate-type lib
-rustdoc --test --extern doc=&quot;libdoc.rs&quot;
+rustdoc --test --extern doc=&quot;libdoc.rlib&quot; doc.rs
 </code></pre><p>(When you run <code>cargo test</code> on a library crate, Cargo will automatically
 generate and run the correct rustc and rustdoc commands.)</p>
 

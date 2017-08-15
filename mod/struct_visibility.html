@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9.2" data-basepath=".." data-revision="1494245342365">
+    <div class="book" data-level="9.2" data-basepath=".." data-revision="1502826561518">
     
 
 <div class="book-summary">
@@ -609,6 +609,22 @@
                             <b>7.2.1.</b>
                         
                          Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2.2" data-path="flow_control/loop/return.html">
+            
+                
+                    <a href="../flow_control/loop/return.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.2.</b>
+                        
+                         Returning from loops
                     </a>
                 
             
@@ -2492,6 +2508,28 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1.1" data-path="std_misc/threads/testcase_mapreduce.html">
+            
+                
+                    <a href="../std_misc/threads/testcase_mapreduce.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.1.</b>
+                        
+                         Testcase: map-reduce
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2868,7 +2906,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_92">
+                    <section class="normal" id="section-gitbook_94">
                     
                         <h2 id="92-struct-visibility">9.2 Struct visibility</h2>
 <p>Structs have an extra level of visibility with their fields. The visibility 
@@ -2880,20 +2918,20 @@ where it is defined, and has the goal of hiding information (encapsulation).</p>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
 <div id="editor"><pre>mod my {
     // A public struct with a public field of generic type &#96;T&#96;
-    pub struct WhiteBox&lt;T&gt; {
+    pub struct OpenBox&lt;T&gt; {
         pub contents: T,
     }
 
     // A public struct with a private field of generic type &#96;T&#96;
     #[allow(dead&#95;code)]
-    pub struct BlackBox&lt;T&gt; {
+    pub struct ClosedBox&lt;T&gt; {
         contents: T,
     }
 
-    impl&lt;T&gt; BlackBox&lt;T&gt; {
+    impl&lt;T&gt; ClosedBox&lt;T&gt; {
         // A public constructor method
-        pub fn new(contents: T) -&gt; BlackBox&lt;T&gt; {
-            BlackBox {
+        pub fn new(contents: T) -&gt; ClosedBox&lt;T&gt; {
+            ClosedBox {
                 contents: contents,
             }
         }
@@ -2902,23 +2940,23 @@ where it is defined, and has the goal of hiding information (encapsulation).</p>
 
 fn main() {
     // Public structs with public fields can be constructed as usual
-    let white&#95;box = my::WhiteBox { contents: &quot;public information&quot; };
+    let open&#95;box = my::OpenBox { contents: &quot;public information&quot; };
 
     // and their fields can be normally accessed.
-    println!(&quot;The white box contains: {}&quot;, white&#95;box.contents);
+    println!(&quot;The open box contains: {}&quot;, open&#95;box.contents);
 
     // Public structs with private fields cannot be constructed using field names.
-    // Error! &#96;BlackBox&#96; has private fields
-    //let black&#95;box = my::BlackBox { contents: &quot;classified information&quot; };
+    // Error! &#96;ClosedBox&#96; has private fields
+    //let closed&#95;box = my::ClosedBox { contents: &quot;classified information&quot; };
     // TODO ^ Try uncommenting this line
 
     // However, structs with private fields can be created using
     // public constructors
-    let &#95;black&#95;box = my::BlackBox::new(&quot;classified information&quot;);
+    let &#95;closed&#95;box = my::ClosedBox::new(&quot;classified information&quot;);
 
     // and the private fields of a public struct cannot be accessed.
     // Error! The &#96;contents&#96; field is private
-    //println!(&quot;The black box contains: {}&quot;, &#95;black&#95;box.contents);
+    //println!(&quot;The closed box contains: {}&quot;, &#95;closed&#95;box.contents);
     // TODO ^ Try uncommenting this line
 }</pre></div>
 <div id="result"></div>

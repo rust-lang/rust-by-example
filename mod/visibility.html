@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="9.1" data-basepath=".." data-revision="1494245342365">
+    <div class="book" data-level="9.1" data-basepath=".." data-revision="1502826561518">
     
 
 <div class="book-summary">
@@ -609,6 +609,22 @@
                             <b>7.2.1.</b>
                         
                          Nesting and labels
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2.2" data-path="flow_control/loop/return.html">
+            
+                
+                    <a href="../flow_control/loop/return.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.2.</b>
+                        
+                         Returning from loops
                     </a>
                 
             
@@ -2492,6 +2508,28 @@
                 
             
             
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="18.1.1" data-path="std_misc/threads/testcase_mapreduce.html">
+            
+                
+                    <a href="../std_misc/threads/testcase_mapreduce.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>18.1.1.</b>
+                        
+                         Testcase: map-reduce
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         
@@ -2868,7 +2906,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_95">
+                    <section class="normal" id="section-gitbook_97">
                     
                         <h2 id="91-visibility">9.1 Visibility</h2>
 <p>By default, the items in a module have private visibility, but this can be
@@ -2877,42 +2915,73 @@ accessed from outside the module scope.</p>
 <div id="active-code">
 <button class="btn btn-primary" type="button" id="run-code">Run</button>
 <button class="btn btn-primary" type="button" id="reset-code">Reset</button>
-<div id="editor"><pre>// A module named &#96;my&#96;
-mod my {
+<div id="editor"><pre>// A module named &#96;my&#95;mod&#96;
+mod my&#95;mod {
     // Items in modules default to private visibility.
     fn private&#95;function() {
-        println!(&quot;called &#96;my::private&#95;function()&#96;&quot;);
+        println!(&quot;called &#96;my&#95;mod::private&#95;function()&#96;&quot;);
     }
 
     // Use the &#96;pub&#96; modifier to override default visibility.
     pub fn function() {
-        println!(&quot;called &#96;my::function()&#96;&quot;);
+        println!(&quot;called &#96;my&#95;mod::function()&#96;&quot;);
     }
 
     // Items can access other items in the same module,
     // even when private.
     pub fn indirect&#95;access() {
-        print!(&quot;called &#96;my::indirect&#95;access()&#96;, that&#92;n&gt; &quot;);
+        print!(&quot;called &#96;my&#95;mod::indirect&#95;access()&#96;, that&#92;n&gt; &quot;);
         private&#95;function();
     }
 
     // Modules can also be nested
     pub mod nested {
         pub fn function() {
-            println!(&quot;called &#96;my::nested::function()&#96;&quot;);
+            println!(&quot;called &#96;my&#95;mod::nested::function()&#96;&quot;);
         }
 
         #[allow(dead&#95;code)]
         fn private&#95;function() {
-            println!(&quot;called &#96;my::nested::private&#95;function()&#96;&quot;);
+            println!(&quot;called &#96;my&#95;mod::nested::private&#95;function()&#96;&quot;);
         }
+
+        // Functions declared using &#96;pub(in path)&#96; syntax are only visible
+        // within the given path. &#96;path&#96; must be a parent or ancestor module
+        pub(in my&#95;mod) fn public&#95;function&#95;in&#95;my&#95;mod() {
+            print!(&quot;called &#96;my&#95;mod::nested::public&#95;function&#95;in&#95;my&#95;mod()&#96;, that&#92;n &gt; &quot;);
+            public&#95;function&#95;in&#95;nested()
+        }
+
+        // Functions declared using &#96;pub(self)&#96; syntax are only visible within
+        // the current module
+        pub(self) fn public&#95;function&#95;in&#95;nested() {
+            println!(&quot;called &#96;my&#95;mod::nested::public&#95;function&#95;in&#95;nested&quot;);
+        }
+
+        // Functions declared using &#96;pub(super)&#96; syntax are only visible within
+        // the parent module
+        pub(super) fn public&#95;function&#95;in&#95;super&#95;mod() {
+            println!(&quot;called my&#95;mod::nested::public&#95;function&#95;in&#95;super&#95;mod&quot;);
+        }
+    }
+
+    pub fn call&#95;public&#95;function&#95;in&#95;my&#95;mod() {
+        print!(&quot;called &#96;my&#95;mod::call&#95;public&#95;funcion&#95;in&#95;my&#95;mod()&#96;, that&#92;n&gt; &quot;);
+        nested::public&#95;function&#95;in&#95;my&#95;mod();
+        print!(&quot;&gt; &quot;);
+        nested::public&#95;function&#95;in&#95;super&#95;mod();
+    }
+
+    // pub(crate) makes functions visible only within the current crate
+    pub(crate) fn public&#95;function&#95;in&#95;crate() {
+        println!(&quot;called &#96;my&#95;mod::public&#95;function&#95;in&#95;crate()&quot;);
     }
 
     // Nested modules follow the same rules for visibility
     mod private&#95;nested {
         #[allow(dead&#95;code)]
         pub fn function() {
-            println!(&quot;called &#96;my::private&#95;nested::function()&#96;&quot;);
+            println!(&quot;called &#96;my&#95;mod::private&#95;nested::function()&#96;&quot;);
         }
     }
 }
@@ -2924,26 +2993,35 @@ fn function() {
 fn main() {
     // Modules allow disambiguation between items that have the same name.
     function();
-    my::function();
+    my&#95;mod::function();
 
     // Public items, including those inside nested modules, can be
     // accessed from outside the parent module.
-    my::indirect&#95;access();
-    my::nested::function();
+    my&#95;mod::indirect&#95;access();
+    my&#95;mod::nested::function();
+    my&#95;mod::call&#95;public&#95;function&#95;in&#95;my&#95;mod();
+
+    // pub(crate) items can be called from anywhere in the same crate
+    my&#95;mod::public&#95;function&#95;in&#95;crate();
+
+    // pub(in path) items can only be called from within the mode specified
+    // Error! function &#96;public&#95;function&#95;in&#95;my&#95;mod&#96; is private
+    //my&#95;mod::nested::public&#95;function&#95;in&#95;my&#95;mod();
+    // TODO ^ Try uncommenting this line
 
     // Private items of a module cannot be directly accessed, even if
     // nested in a public module:
 
     // Error! &#96;private&#95;function&#96; is private
-    //my::private&#95;function();
+    //my&#95;mod::private&#95;function();
     // TODO ^ Try uncommenting this line
 
     // Error! &#96;private&#95;function&#96; is private
-    //my::nested::private&#95;function();
+    //my&#95;mod::nested::private&#95;function();
     // TODO ^ Try uncommenting this line
 
     // Error! &#96;private&#95;nested&#96; is a private module
-    //my::private&#95;nested::function();
+    //my&#95;mod::private&#95;nested::function();
     // TODO ^ Try uncommenting this line
 }</pre></div>
 <div id="result"></div>
