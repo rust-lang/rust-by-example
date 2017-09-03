@@ -33,6 +33,17 @@ a
 1 directory, 2 files
 ```
 
+An alternative way to define the function `cat` is with `?` notation:
+
+```
+fn cat(path: &Path) -> io::Result<String> {
+    let mut f = File::open(path)?;
+    let mut s = String::new();
+    f.read_to_string(&mut s)?;
+    Ok(s)
+}
+```
+
 ### See also:
 
 [`cfg!`][cfg]
