@@ -1,3 +1,8 @@
+# use
+
+The `use` declaration can be used so manual scoping isn't needed:
+
+```rust,editable
 // An attribute to hide warnings for unused code.
 #![allow(dead_code)]
 
@@ -35,3 +40,11 @@ fn main() {
         Soldier  => println!("Soldiers fight!"),
     }
 }
+```
+
+### See also:
+
+[`match`][match] and [`use`][use] 
+
+[use]: /mod/use.html
+[match]: /flow_control/match.html

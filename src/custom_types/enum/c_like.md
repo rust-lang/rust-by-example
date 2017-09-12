@@ -1,3 +1,8 @@
+# C-like
+
+`enum` can also be used as C-like enums.
+
+```rust,editable
 // An attribute to hide warnings for unused code.
 #![allow(dead_code)]
 
@@ -23,3 +28,10 @@ fn main() {
     println!("roses are #{:06x}", Color::Red as i32);
     println!("violets are #{:06x}", Color::Blue as i32);
 }
+```
+
+### See also:
+
+[casting][cast]
+
+[cast]: /cast.html

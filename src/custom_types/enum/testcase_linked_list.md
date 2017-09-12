@@ -1,3 +1,8 @@
+# Testcase: linked-list
+
+A common use for `enums` is to create a linked-list:
+
+```rust,editable
 use List::*;
 
 enum List {
@@ -64,3 +69,11 @@ fn main() {
     println!("linked list has length: {}", list.len());
     println!("{}", list.stringify());
 }
+```
+
+### See also:
+
+[`Box`][box] and [methods][methods]
+
+[box]: /std/box.html
+[methods]: /fn/methods.html
