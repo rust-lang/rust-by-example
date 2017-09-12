@@ -32,3 +32,5 @@
     - [Literals](cast/literals.md)
     - [Inference](cast/inference.md)
     - [Aliasing](cast/alias.md)
+
+- [Expressions](expression.md)
