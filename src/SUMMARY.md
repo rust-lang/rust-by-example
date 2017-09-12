@@ -45,7 +45,11 @@
     - [Library](crates/lib.md)
     - [`extern crate`](crates/link.md)
 
-- [Attributes]()
+- [Attributes](attribute.md)
+    - [`dead_code`](attribute/unused.md)
+    - [Crates](attribute/crate.md)
+    - [`cfg`](attribute/cfg.md)
+        - [Custom](attribute/cfg/custom.md)
 
 - [Generics]()
 

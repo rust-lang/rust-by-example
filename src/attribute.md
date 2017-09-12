@@ -1,3 +1,5 @@
+# Attributes
+
 An attribute is metadata applied to some module, crate or item. This metadata
 can be used to/for:
 

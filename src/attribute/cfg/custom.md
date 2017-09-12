@@ -1,15 +1,24 @@
+# Custom
+
 Some conditionals like `target_os` are implicitly provided by `rustc`, but
 custom conditionals must be passed to `rustc` using the `--cfg` flag.
 
-{custom.rs}
+```rust,editable
+#[cfg(some_condition)]
+fn conditional_function() {
+    println!("condition met!")
+}
 
-Without the custom `cfg` flag:
+fn main() {
+    conditional_function();
+}
+```
 
-{custom.out}
+Try to run this to see what happens without the custom `cfg` flag.
 
 With the custom `cfg` flag:
 
-```
+```bash
 $ rustc --cfg some_condition custom.rs && ./custom
 condition met!
 ```
