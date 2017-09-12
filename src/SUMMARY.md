@@ -41,7 +41,9 @@
 
 - [Modules]()
 
-- [Crates]()
+- [Crates](crates.md)
+    - [Library](crates/lib.md)
+    - [`extern crate`](crates/link.md)
 
 - [Attributes]()
 
