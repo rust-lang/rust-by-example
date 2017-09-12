@@ -65,6 +65,8 @@
 
 - [Std misc]()
 
-- [Meta]()
+- [Meta](meta.md)
+    - [Documentation](meta/doc.md)
+    - [Testing](meta/test.md)
 
 - [Unsafe Operations](unsafe.md)
