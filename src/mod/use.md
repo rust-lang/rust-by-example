@@ -1,3 +1,9 @@
+# The `use` declaration
+
+The `use` declaration can be used to bind a full path to a new name, for easier
+access.
+
+```rust,editable
 // Bind the `deeply::nested::function` path to `other_function`.
 use deeply::nested::function as other_function;
 
@@ -31,3 +37,4 @@ fn main() {
 
     function();
 }
+```

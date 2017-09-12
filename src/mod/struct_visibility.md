@@ -1,3 +1,11 @@
+# Struct visibility
+
+Structs have an extra level of visibility with their fields. The visibility 
+defaults to private, and can be overridden with the `pub` modifier. This 
+visibility only matters when a struct is accessed from outside the module 
+where it is defined, and has the goal of hiding information (encapsulation).
+
+```rust,editable
 mod my {
     // A public struct with a public field of generic type `T`
     pub struct OpenBox<T> {
@@ -41,3 +49,11 @@ fn main() {
     //println!("The closed box contains: {}", _closed_box.contents);
     // TODO ^ Try uncommenting this line
 }
+```
+
+### See also:
+
+[generics][generics] and [methods][methods]
+
+[generics]: /generics.html
+[methods]: /fn/methods.html

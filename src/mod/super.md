@@ -1,3 +1,9 @@
+# `super` and `self`
+
+The `super` and `self` keywords can be used in the path to remove ambiguity
+when accessing items and to prevent unnecessary hardcoding of paths.
+
+```rust,editable
 fn function() {
     println!("called `function()`");
 }
@@ -47,3 +53,4 @@ mod my {
 fn main() {
     my::indirect_call();
 }
+```

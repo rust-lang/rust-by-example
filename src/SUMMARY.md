@@ -39,7 +39,12 @@
 
 - [Functions]()
 
-- [Modules]()
+- [Modules](mod.md)
+    - [Visibility](mod/visibility.md)
+    - [Struct visibility](mod/struct_visibility.md)
+    - [The `use` declaration](mod/use.md)
+    - [`super` and `self`](mod/super.md)
+    - [File hierarchy](mod/split.md)
 
 - [Crates](crates.md)
     - [Library](crates/lib.md)
