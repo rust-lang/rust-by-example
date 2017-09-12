@@ -1,3 +1,13 @@
+# Casting
+
+Rust provides no implicit type conversion (coercion) between primitive types.
+But, explicit type conversion (casting) can be performed using the `as` keyword.
+
+Rules for converting between integral types follow C conventions generally,
+except in cases where C has undefined behavior. The behavior of all casts
+between integral types is well defined in Rust.
+
+```rust,editable
 // Suppress all warnings from casts which overflow.
 #![allow(overflowing_literals)]
 
@@ -45,6 +55,5 @@ fn main() {
     println!("1000 as a i8 is : {}", 1000 as i8);
     // and the two's complement of 232 is -24
     println!(" 232 as a i8 is : {}", 232 as i8);
-
-
 }
+```

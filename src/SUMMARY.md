@@ -27,3 +27,8 @@
     - [Mutability](variable_bindings/mut.md)
     - [Scope and Shadowing](variable_bindings/scope.md)
     - [Declare first](variable_bindings/declare.md)
+
+- [Casting](cast.md)
+    - [Literals](cast/literals.md)
+    - [Inference](cast/inference.md)
+    - [Aliasing](cast/alias.md)
