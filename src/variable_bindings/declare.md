@@ -1,3 +1,10 @@
+# Declare first
+
+It's possible to declare variable bindings first, and initialize them later.
+However, this form is seldom used, as it may lead to the use of uninitialized
+variables.
+
+```rust,editable
 fn main() {
     // Declare a variable binding
     let a_binding;
@@ -21,3 +28,7 @@ fn main() {
 
     println!("another binding: {}", another_binding);
 }
+```
+
+The compiler forbids use of uninitialized variables, as this would lead to
+undefined behavior.

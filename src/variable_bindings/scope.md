@@ -1,3 +1,10 @@
+# Scope and Shadowing
+
+Variable bindings have a scope, and are constrained to live in a *block*. A
+block is a collection of statements enclosed by braces `{}`. Also, [variable
+shadowing][variable-shadow] is allowed.
+
+```rust,editable
 fn main() {
     // This binding lives in the main function
     let long_lived_binding = 1;
@@ -27,3 +34,6 @@ fn main() {
     
     println!("outer long: {}", long_lived_binding);
 }
+```
+
+[variable-shadow]: https://en.wikipedia.org/wiki/Variable_shadowing

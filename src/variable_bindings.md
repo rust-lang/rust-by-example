@@ -1,3 +1,13 @@
+# Variable Bindings
+
+Rust provides type safety via static typing. Variable bindings can be type
+annotated when declared. However, in most cases, the compiler will be able
+to infer the type of the variable from the context, heavily reducing the
+annotation burden.
+
+Values (like literals) can be bound to variables, using the `let` binding.
+
+```rust,editable
 fn main() {
     let an_integer = 1u32;
     let a_boolean = true;
@@ -17,3 +27,4 @@ fn main() {
     let noisy_unused_variable = 2u32;
     // FIXME ^ Prefix with an underscore to suppress the warning
 }
+```

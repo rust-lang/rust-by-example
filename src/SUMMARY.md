@@ -22,3 +22,8 @@
         - [C-like](custom_types/enum/c_like.md)
         - [Testcase: linked-list](custom_types/enum/testcase_linked_list.md)
     - [constants](custom_types/constants.md)
+
+- [Variable Bindings](variable_bindings.md)
+    - [Mutability](variable_bindings/mut.md)
+    - [Scope and Shadowing](variable_bindings/scope.md)
+    - [Declare first](variable_bindings/declare.md)
