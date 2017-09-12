@@ -1,0 +1,6 @@
+title = "Rust By Example"
+description = "A description"
+author = "The Rust Community"
+
+[output.html.playpen]
+editable = true
