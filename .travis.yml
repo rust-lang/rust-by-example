@@ -1,0 +1,12 @@
+sudo: false
+language: rust
+cache: cargo
+rust:
+  - stable
+branches:
+  only:
+  - master
+before_script:
+  - (cargo install mdbook --git https://github.com/azerupi/mdBook.git --force || true)
+script:
+  - mdbook test
