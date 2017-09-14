@@ -1,4 +1,4 @@
-# Litearls and operators
+# Literals and operators
 
 Integers `1`, floats `1.2`, characters `'a'`, strings `"abc"`, booleans `true`
 and the unit type `()` can be expressed using literals.

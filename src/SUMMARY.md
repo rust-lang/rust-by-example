@@ -11,7 +11,7 @@
         - [Formatting](hello/print/fmt.md)
 
 - [Primitives](primitives.md)
-    - [Litearls and operators](primitives/literals.md)
+    - [Literals and operators](primitives/literals.md)
     - [Tuples](primitives/tuples.md)
     - [Arrays and Slices](primitives/array.md)
 
