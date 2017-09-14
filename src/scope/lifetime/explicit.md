@@ -6,7 +6,7 @@ elided[^1], Rust requires explicit annotations to determine what the
 lifetime of a reference should be. The syntax for explicitly annotating 
 a lifetime uses an apostrophe character as follows: 
 
-```rust
+```rust,ignore
 foo<'a>
 // `foo` has a lifetime parameter `'a`
 ```
@@ -18,7 +18,7 @@ may not exceed that of `'a`. Explicit annotation of a type has the form
 
 In cases with multiple lifetimes, the syntax is similar:
 
-```rust
+```rust,ignore
 foo<'a, 'b>
 // `foo` has lifetime parameters `'a` and `'b`
 ```
@@ -27,7 +27,7 @@ In this case, the lifetime of `foo` cannot exceed that of either `'a` *or* `'b`.
 
 See the following example for explicit lifetime annotation in use:
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // `print_refs` takes two references to `i32` which have different
 // lifetimes `'a` and `'b`. These two lifetimes must both be at
 // least as long as the function `print_refs`.

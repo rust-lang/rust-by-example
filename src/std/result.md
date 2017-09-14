@@ -12,7 +12,7 @@ The `Result<T, E>` enum has two variants:
 * `Err(why)`, which indicates that the operation failed, and wraps `why`,
   which (hopefully) explains the cause of the failure. (`why` has type `E`)
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 mod checked {
     // Mathematical "errors" we want to catch
     #[derive(Debug)]

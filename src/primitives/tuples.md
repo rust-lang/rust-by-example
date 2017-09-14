@@ -73,7 +73,7 @@ fn main() {
     accepts a matrix as an argument, and returns a matrix in which two elements
     have been swapped. For example:
 
-    ```rust
+    ```rust,ignore
     println!("Matrix:\n{}", matrix);
     println!("Transpose:\n{}", transpose(matrix));
     ```

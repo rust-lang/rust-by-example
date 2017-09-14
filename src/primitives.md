@@ -15,7 +15,7 @@ Variables can always be *type annotated*. Numbers may additionally be
 annotated via a *suffix* or *by default*. Integers default to `i32` and
 floats to `f64`.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn main() {
     // Variables can be type annotated.
     let logical: bool = true;

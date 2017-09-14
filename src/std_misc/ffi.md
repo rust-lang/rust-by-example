@@ -4,7 +4,7 @@ Rust provides a Foreign Function Interface (FFI) to C libraries. Foreign
 functions must be declared inside an `extern` block annotated with a `#[link]`
 attribute containing the name of the foreign library.
 
-```rust,editable
+```rust,ignore
 use std::fmt;
 
 // this extern block links to the libm library
@@ -49,7 +49,7 @@ impl fmt::Debug for Complex {
 Since calling foreign functions is considered unsafe, it's common to write safe
 wrappers around them.
 
-```rust,editable
+```rust,ignore
 use std::fmt;
 
 #[link(name = "m")]

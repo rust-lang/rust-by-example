@@ -4,7 +4,7 @@
 the first element which satisfies the predicate as an `Option`. Its
 signature:
 
-```rust
+```rust,ignore
 pub trait Iterator {
     // The type being iterated over.
     type Item;

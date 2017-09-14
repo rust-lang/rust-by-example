@@ -5,7 +5,7 @@ can be used to make things pretty again. The `try!` macro expands to a match
 expression, where the `Err(err)` branch expands to an early `return Err(err)`,
 and the `Ok(ok)` branch expands to an `ok` expression.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 mod checked {
     #[derive(Debug)]
     enum MathError {

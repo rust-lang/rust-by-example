@@ -10,7 +10,7 @@ some of which include:
 All parse text in the same fashion. A plus is that the formatting correctness will
 be checked at compile time.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn main() {
     // In general, the `{}` will be automatically replaced with any
     // arguments. These will be stringified.

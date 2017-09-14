@@ -4,7 +4,7 @@
 `true` if any element satisfies the predicate. Otherwise `false`. Its
 signature:
 
-```rust
+```rust,ignore
 pub trait Iterator {
     // The type being iterated over.
     type Item;

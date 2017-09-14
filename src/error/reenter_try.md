@@ -4,7 +4,7 @@ Notice in the previous example that our immediate reaction to calling
 `parse` is to `map` the error from a library error into our new custom 
 error type:
 
-```rust
+```rust,ignore
 .and_then(|s| s.parse::<i32>())
     .map_err(DoubleError::Parse)
 ```

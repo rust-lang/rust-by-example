@@ -13,7 +13,7 @@ types must be specifically annotated so that they fulfill the `'static`
 lifetime. This may seem minor though because the required explicit annotation
 hides the distinction.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // Globals are declared outside all other scopes.
 static LANGUAGE: &'static str = "Rust";
 const  THRESHOLD: i32 = 10;

@@ -20,7 +20,7 @@ trait Contains {
 Note that functions that use the `trait` `Contains` are no longer required
 to express `A` or `B` at all:
 
-```rust
+```rust,ignore
 // Without using associated types
 fn difference<A, B, C>(container: &C) -> i32 where
     C: Contains<A, B> { ... }

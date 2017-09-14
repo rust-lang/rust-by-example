@@ -8,7 +8,7 @@ The `std` library automatically converts any type that implements the
 `Error` trait into the trait object `Box<Error>`, via `From`. To a 
 library user, this conveniently allows the following:
 
-```rust
+```rust,ignore
 fn foo(...) -> Result<T, Box<Error>> { ... }
 ```
 
@@ -24,7 +24,7 @@ underlying error type is only known at runtime and not
 [statically determined][dynamic_dispatch]. As mentioned above, all that 
 needs to be done is to implement the `Error` trait:
 
-```rust
+```rust,ignore
 trait Error: Debug + Display {
     fn description(&self) -> &str;
     fn cause(&self) -> Option<&Error>;

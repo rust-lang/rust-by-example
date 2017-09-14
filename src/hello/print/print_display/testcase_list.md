@@ -8,7 +8,7 @@ results. Rust provides the `try!` macro and alternatively the equivalent
 
 Using `try!` on `write!` looks like this:
 
-```rust
+```rust,ignore
 // Try `write!` to see if it errors. If it errors, return
 // the error. Otherwise continue.
 try!(write!(f, "{}", value));
@@ -16,7 +16,7 @@ try!(write!(f, "{}", value));
 
 The `?` shorthand alternative looks like this:
 
-```rust
+```rust,ignore
 write!(f, "{}", value)?;
 ```
 
@@ -61,7 +61,7 @@ fn main() {
 
 Try changing the program so that the index of each element in the vector is also printed. The new output should look like this:
 
-```rust
+```rust,ignore
 [0: 1, 1: 2, 2: 3]
 ```
 

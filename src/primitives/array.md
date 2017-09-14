@@ -11,7 +11,7 @@ usize, determined by the processor architecture eg 64 bits on an x86-64.
 Slices can be used to borrow a section of an array, and have the type signature 
 `&[T]`.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 use std::mem;
 
 // This function borrows a slice

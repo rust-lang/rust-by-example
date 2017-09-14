@@ -3,7 +3,7 @@
 A useful method of unit conversions can be examined by implementing `Add`
 with a phantom type parameter. The `Add` `trait` is examined below:
 
-```rust
+```rust,ignore
 // This construction would impose: `Self + RHS = Output`
 // where RHS defaults to Self if not specified in the implementation.
 pub trait Add<RHS = Self> {

@@ -16,12 +16,12 @@ generic type parameter is generic, and everything else is concrete (non-generic)
 For example, defining a *generic function* named `foo` that takes an argument
 `T` of any type:
 
-```rust
-fn foo<T>(T) { ... }
+```rust,ignore
+fn foo<T>(arg: T) { ... }
 ```
 
 Because `T` has been specified as a generic type parameter using `<T>`, it 
-is considered generic when used here as `(T)`. This is the case even if `T` 
+is considered generic when used here as `(arg: T)`. This is the case even if `T` 
 has previously been defined as a `struct`.
 
 This example shows some of the syntax in action:

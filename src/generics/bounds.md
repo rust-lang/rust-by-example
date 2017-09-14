@@ -5,7 +5,7 @@ stipulate what functionality a type implements. For example, the following
 example uses the trait `Display` to print and so it requires `T` to be bound
 by `Display`; that is, `T` *must* implement `Display`.
 
-```rust
+```rust,ignore
 // Define a function `printer` that takes a generic type `T` which
 // must implement trait `Display`.
 fn printer<T: Display>(t: T) {
@@ -15,7 +15,7 @@ fn printer<T: Display>(t: T) {
 
 Bounding restricts the generic to types that conform to the bounds. That is:
 
-```rust
+```rust,ignore
 struct S<T: Display>(T);
 
 // Error! `Vec<T>` does not implement `Display`. This

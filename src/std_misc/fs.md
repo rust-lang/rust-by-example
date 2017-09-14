@@ -3,7 +3,7 @@
 The `std::io::fs` module contains several functions that deal with the
 filesystem.
 
-```rust,editable
+```rust,ignore
 use std::fs;
 use std::fs::{File, OpenOptions};
 use std::io;
@@ -119,7 +119,7 @@ $ rustc fs.rs && ./fs
 
 And the final state of the `a` directory is:
 
-```
+```text
 $ tree a
 a
 |-- b.txt

@@ -8,7 +8,7 @@ The compiler statically guarantees (via its borrow checker) that references
 *always* point to valid objects. That is, while references to an object
 exist, the object cannot be destroyed.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // This function takes ownership of a box and destroys it
 fn eat_box_i32(boxed_i32: Box<i32>) {
     println!("Destroying box that contains {}", boxed_i32);

@@ -5,7 +5,7 @@ used. This will not only link the library, but also import all its items under
 a module named the same as the library. The visibility rules that apply to
 modules also apply to libraries.
 
-```rust,editable
+```rust,ignore
 // Link to `library`, import items under the `rary` module
 extern crate rary;
 

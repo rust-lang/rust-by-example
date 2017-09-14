@@ -23,7 +23,7 @@ but `unwrap` otherwise leaves us with a less meaningful output than explicit
 handling. In the following example, explicit handling yields a more 
 controlled result while retaining the option to `panic` if desired.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // The commoner has seen it all, and can handle any gift well.
 // All gifts are handled explicitly using `match`.
 fn give_commoner(gift: Option<&str>) {

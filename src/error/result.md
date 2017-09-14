@@ -21,7 +21,7 @@ be possible to parse a string into the other type, so `parse()` returns a
 
 Let's see what happens when we successfully and unsuccessfully `parse()` a string:
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn double_number(number_str: &str) -> i32 {
     // Let's try using `unwrap()` to get the number out. Will it bite us?
     2 * number_str.parse::<i32>().unwrap()

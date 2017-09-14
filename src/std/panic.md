@@ -7,7 +7,7 @@ resources *owned* by the thread by calling the destructor of all its objects.
 Since we are dealing with programs with only one thread, `panic!` will cause the
 program to report the panic message and exit.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 // Re-implementation of integer division (/)
 fn division(dividend: i32, divisor: i32) -> i32 {
     if divisor == 0 {

@@ -4,7 +4,7 @@ Doc comments are very useful for big projects that require documentation. When
 running [Rustdoc][1], these are the comments that get compiled into
 documentation. They are denoted by a `///`, and support [Markdown][2].
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 #![crate_name = "doc"]
 
 /// A human being is represented here

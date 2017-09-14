@@ -3,7 +3,7 @@
 Some conditionals like `target_os` are implicitly provided by `rustc`, but
 custom conditionals must be passed to `rustc` using the `--cfg` flag.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 #[cfg(some_condition)]
 fn conditional_function() {
     println!("condition met!")

@@ -5,7 +5,7 @@ a *mutable reference* and gives read/write access to the borrower.
 In contrast, `&T` borrows the data via an immutable reference, and 
 the borrower can read the data but not modify it:
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 #[allow(dead_code)]
 #[derive(Clone, Copy)]
 struct Book {

@@ -9,7 +9,7 @@ Some cases that a `where` clause is useful:
 
 * When specifying generic types and bounds separately is clearer:
 
-```rust
+```rust,ignore
 impl <A: TraitB + TraitC, D: TraitE + TraitF> MyTrait<A, D> for YourType {}
 
 // Expressing bounds with a `where` clause

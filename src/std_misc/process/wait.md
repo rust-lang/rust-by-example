@@ -3,7 +3,7 @@
 If you'd like to wait for a `process::Child` to finish, you must call
 `Child::wait`, which will return a `process::ExitStatus`.
 
-```rust,editable
+```rust,ignore
 use std::process::Command;
 
 fn main() {

@@ -52,7 +52,7 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured
 
 If `--test` were not included, then this would happen
 
-```
+```bash
 $ rustc unit_test.rs
 $ ./unit_test
 If you see this, the tests were not compiled nor ran!
