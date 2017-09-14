@@ -5,8 +5,7 @@ two flavors of `Path`: `posix::Path`, for UNIX-like systems, and
 `windows::Path`, for Windows. The prelude exports the appropriate
 platform-specific `Path` variant.
 
-A `Path` can be created from almost any type that implements the
-`OsStr` trait, like a string, and provides several methods to get
+A `Path` can be created from an `OsStr`, and provides several methods to get
 information from the file/directory the path points to.
 
 Note that a `Path` is *not* internally represented as an UTF-8 string, but
