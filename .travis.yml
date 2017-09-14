@@ -9,4 +9,7 @@ branches:
 before_script:
   - (cargo install mdbook --git https://github.com/azerupi/mdBook.git --force || true)
 script:
+  - mdbook build
   - mdbook test
+after_success:
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
