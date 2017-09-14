@@ -2,7 +2,7 @@
 
 rev=$(git rev-parse --short HEAD)
 
-cd stage/_book
+cd book
 
 git init
 git config user.name "Steve Klabnik"
@@ -11,7 +11,6 @@ git remote add upstream "https://$GITHUB_TOKEN@github.com/rust-lang/rust-by-exam
 git fetch upstream && git reset upstream/gh-pages
 
 echo "rustbyexample.com" > CNAME
-cp -r ../../vendor/gitbook/* gitbook/
 
 touch .
 
