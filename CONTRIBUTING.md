@@ -1,0 +1,63 @@
+# Rust by Example contribution guidelines
+
+Thank you for your interest in making Rust by Example (also known as RBE)
+better! We'd love to have your contribution. We expect all contributors to
+abide by the [Rust code of conduct], which you can find at that link or in the
+[`CODE_OF_CONDUCT.md`] file in this repository.
+
+[Rust code of conduct]: https://www.rust-lang.org/en-US/conduct.html
+[`CODE_OF_CONDUCT.md`]: https://github.com/rust-lang/rust-by-example/blob/master/CODE_OF_CONDUCT.md
+
+## License
+
+RBE is dual licenced under the MIT and Apache 2.0 licenses, and so are all
+contributions. Please see the [`LICENSE-MIT`] and [`LICENSE-APACHE`] files in
+this directory for more details.
+
+[`LICENSE-MIT`]: https://github.com/rust-lang/rust-by-example/blob/master/LICENSE-MIT
+[`LICENSE-APACHE`]: https://github.com/rust-lang/rust-by-example/blob/master/LICENSE-APACHE
+
+## Pull Requests
+
+To make changes to RBE, please send in pull requests on GitHub to the `master`
+branch. We'll review them and either merge or request changes. Travis CI tests
+everything as well, so you may get feedback from it too.
+
+If you make additions or other changes to a pull request, feel free to either amend
+previous commits or only add new ones, however you prefer. We may ask you to squash
+your commits before merging, depending.
+
+
+## Issue Tracker
+
+You can find the issue tracker [on
+GitHub](https://github.com/rust-lang/rust-by-example/issues). If you've found a
+problem with RBE, please open an issue there.
+
+Information about labels is coming soon!
+
+## Development workflow
+
+To build RBE, [install Rust], and then:
+
+```bash
+> git clone https://github.com/rust-lang/rust-by-example
+> cd rust-by-example
+> cargo install mdbook
+> mdbook build
+```
+
+[install Rust]: http://rust-lang.org/install.html
+
+The files will be in the `book` directory at the top-level; `mdbook open` will
+open the contents in your web browser.
+
+To run the tests:
+
+```bash
+> mdbook test
+```
+
+If you're adding a new chapter, you'll need to edit `src\SUMMARY.md` to add it. If
+you're tweaking an existing example, you'll need to edit the corresponding file; check
+`src\SUMMARY.md` to see a mapping of where chapters go to files.
