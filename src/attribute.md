@@ -4,6 +4,7 @@ An attribute is metadata applied to some module, crate or item. This metadata
 can be used to/for:
 
 <!-- TODO: Link these to their respective examples -->
+
 * [conditional compilation of code][cfg]
 * [set crate name, version and type (binary or library)][crate]
 * disable [lints][lint] (warnings)
