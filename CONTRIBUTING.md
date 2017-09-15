@@ -34,7 +34,14 @@ You can find the issue tracker [on
 GitHub](https://github.com/rust-lang/rust-by-example/issues). If you've found a
 problem with RBE, please open an issue there.
 
-Information about labels is coming soon!
+We use the following labels:
+
+* `enhancement`: This is for any request for new sections or functionality.
+* `bug`: This is for anything that's in RBE, but incorrect or not working.
+* `discussion`: A discussion about improving something in RBE; this may lead to new
+  enhancement or bug issues.
+* `E-mentor`: This issue has someone dedicated to helping a new contributor fix it!
+  Can apply to both enhancement or bug issues.
 
 ## Development workflow
 
