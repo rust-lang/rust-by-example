@@ -1,6 +1,7 @@
-# `Iter<Result<_>>`
+# Iterating over `Result`s
 
-A function you call on an iterable might fail, for example:
+An `Iter::map` operation might fail, for example:
+
 ```rust,editable
 fn main() {
     let strings = vec!["tofu", "93", "18"];
@@ -32,8 +33,8 @@ fn main() {
 
 ## Fail the entire operation with `collect()`
 
-`Result` implements `FromIter` so that a vector of results (Vec<Result<T, E>>)
-can be turned into a result with a vector (Result<Vec<T>, E>). Once an
+`Result` implements `FromIter` so that a vector of results (`Vec<Result<T, E>>`)
+can be turned into a result with a vector (`Result<Vec<T>, E>`). Once an
 `Result::Err` is found, the iteration will terminate.
 
 ```rust,editable
@@ -47,7 +48,7 @@ fn main() {
 }
 ```
 
-This same technique can be used with `Option` as well.
+This same technique can be used with `Option`.
 
 ## Collect all valid values and failures with `partition()`
 
