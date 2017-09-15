@@ -5,9 +5,9 @@ An `Iter::map` operation might fail, for example:
 ```rust,editable
 fn main() {
     let strings = vec!["tofu", "93", "18"];
-    let possible_numbers: Vec<Result<i32, _>> = strings
+    let possible_numbers: Vec<_> = strings
         .into_iter()
-        .map(|s| s.parse())
+        .map(|s| s.parse::<i32>())
         .collect();
     println!("Results: {:?}", possible_numbers);
 }
@@ -22,9 +22,9 @@ Let's step through strategies for handling this.
 ```rust,editable
 fn main() {
     let strings = vec!["tofu", "93", "18"];
-    let numbers: Vec<i32> = strings
+    let numbers: Vec<_> = strings
         .into_iter()
-        .map(|s| s.parse())
+        .map(|s| s.parse::<i32>())
         .filter_map(Result::ok)
         .collect();
     println!("Results: {:?}", numbers);
@@ -40,9 +40,9 @@ can be turned into a result with a vector (`Result<Vec<T>, E>`). Once an
 ```rust,editable
 fn main() {
     let strings = vec!["tofu", "93", "18"];
-    let numbers: Result<Vec<i32>, _> = strings
+    let numbers: Result<Vec<_>, _> = strings
         .into_iter()
-        .map(|s| s.parse())
+        .map(|s| s.parse::<i32>())
         .collect();
     println!("Results: {:?}", numbers);
 }
@@ -55,9 +55,9 @@ This same technique can be used with `Option`.
 ```rust,editable
 fn main() {
     let strings = vec!["tofu", "93", "18"];
-    let (numbers, errors): (Vec<Result<i32, _>>, Vec<_>) = strings
+    let (numbers, errors): (Vec<_>, Vec<_>) = strings
         .into_iter()
-        .map(|s| s.parse())
+        .map(|s| s.parse::<i32>())
         .partition(Result::is_ok);
     println!("Numbers: {:?}", numbers);
     println!("Errors: {:?}", errors);
@@ -70,9 +70,9 @@ When you look at the results, you'll note that everything is still wrapped in
 ```rust,editable
 fn main() {
     let strings = vec!["tofu", "93", "18"];
-    let (numbers, errors): (Vec<Result<i32, _>>, Vec<_>) = strings
+    let (numbers, errors): (Vec<_>, Vec<_>) = strings
         .into_iter()
-        .map(|s| s.parse())
+        .map(|s| s.parse::<i32>())
         .partition(Result::is_ok);
     let numbers: Vec<_> = numbers.into_iter().map(Result::unwrap).collect();
     let errors: Vec<_> = errors.into_iter().map(Result::unwrap_err).collect();
