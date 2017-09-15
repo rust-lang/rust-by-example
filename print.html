@@ -2856,13 +2856,15 @@ called rary's `indirect_access()`, that
 <p>An attribute is metadata applied to some module, crate or item. This metadata
 can be used to/for:</p>
 <!-- TODO: Link these to their respective examples -->
-* [conditional compilation of code][cfg]
-* [set crate name, version and type (binary or library)][crate]
-* disable [lints][lint] (warnings)
-* enable compiler features (macros, glob imports, etc.)
-* link to a foreign library
-* mark functions as unit tests
-* mark functions that will be part of a benchmark
+<ul>
+<li><a href="/attribute/cfg.html">conditional compilation of code</a></li>
+<li><a href="/attribute/crate.html">set crate name, version and type (binary or library)</a></li>
+<li>disable <a href="https://en.wikipedia.org/wiki/Lint_%28software%29">lints</a> (warnings)</li>
+<li>enable compiler features (macros, glob imports, etc.)</li>
+<li>link to a foreign library</li>
+<li>mark functions as unit tests</li>
+<li>mark functions that will be part of a benchmark</li>
+</ul>
 <p>When attributes apply to a whole crate, their syntax is <code>#![crate_attribute]</code>,
 and when they apply to a module or item, the syntax is <code>#[item_attribute]</code>
 (notice the missing bang <code>!</code>).</p>
