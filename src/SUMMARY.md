@@ -143,6 +143,7 @@
     - [Defining an error type](error/define_error_type.md)
     - [Other uses of `try!`](error/reenter_try.md)
     - [`Box`ing errors](error/boxing_errors.md)
+    - [Iterating over `Result`s](error/iter_result.md)
 
 - [Std library types](std.md)
     - [Box, stack and heap](std/box.md)
