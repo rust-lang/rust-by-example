@@ -1,89 +1,70 @@
-# Opening an issue
+# Rust by Example contribution guidelines
 
-## I would like to see an example about $TOPIC
+Thank you for your interest in making Rust by Example (also known as RBE)
+better! We'd love to have your contribution. We expect all contributors to
+abide by the [Rust code of conduct], which you can find at that link or in the
+[`CODE_OF_CONDUCT.md`] file in this repository.
 
-Please check if such topic is already part of our
-[TODO list][issues-all]. If that's
-not the case, leave your request as a comment on that issue.
+[Rust code of conduct]: https://www.rust-lang.org/en-US/conduct.html
+[`CODE_OF_CONDUCT.md`]: https://github.com/rust-lang/rust-by-example/blob/master/CODE_OF_CONDUCT.md
 
-## There's a typo/error in example $X
-## Example $X is not clear
-## I have an idea for example $X
+## License
 
-Please include the example id in the issue title, e.g. "variables/mut: concept
-not clear". The example id is the relative path in the URL without the html
-extension, e.g. URL: `https://rustbyexample.com/variables/scope.html` -> id:
-`variables/scope`
+RBE is dual licenced under the MIT and Apache 2.0 licenses, and so are all
+contributions. Please see the [`LICENSE-MIT`] and [`LICENSE-APACHE`] files in
+this directory for more details.
 
-If it's something simple like a typo, you can send a PR directly.
+[`LICENSE-MIT`]: https://github.com/rust-lang/rust-by-example/blob/master/LICENSE-MIT
+[`LICENSE-APACHE`]: https://github.com/rust-lang/rust-by-example/blob/master/LICENSE-APACHE
 
-# Sending a PR for a small fix
+## Pull Requests
 
-If you are submitting a correction/modification to an existing chapter, please
-start the commit message with the example id, e.g. "type/literals: fix typo".
+To make changes to RBE, please send in pull requests on GitHub to the `master`
+branch. We'll review them and either merge or request changes. Travis CI tests
+everything as well, so you may get feedback from it too.
 
-# I want to contribute an example about $TOPIC
+If you make additions or other changes to a pull request, feel free to either amend
+previous commits or only add new ones, however you prefer. We may ask you to squash
+your commits before merging, depending.
 
-## Check if there is an action plan for that topic
 
-Look for
-[issues][issues-open]
-that have a C-* label:
+## Issue Tracker
 
-* C-new: A new chapter, there probably a lot to do here.
+You can find the issue tracker [on
+GitHub](https://github.com/rust-lang/rust-by-example/issues). If you've found a
+problem with RBE, please open an issue there.
 
-* C-expand: Expand an existing chapter, new examples are needed.
+We use the following labels:
 
-* C-split: The current chapter is too long, we want to split it into smaller
-  chunks.
+* `enhancement`: This is for any request for new sections or functionality.
+* `bug`: This is for anything that's in RBE, but incorrect or not working.
+* `discussion`: A discussion about improving something in RBE; this may lead to new
+  enhancement or bug issues.
+* `E-mentor`: This issue has someone dedicated to helping a new contributor fix it!
+  Can apply to both enhancement or bug issues.
 
-* C-taken: Someone is already working in this issue, but if there is a lot of
-  work to do, probably you can still help.
+## Development workflow
 
-## Let us know what are you working on
+To build RBE, [install Rust], and then:
 
-If an issue about the topic already exists, leave a comment there to let us
-know that you'll help. Otherwise, open a new issue mentioning what topic you
-plan to work on.
+```bash
+> git clone https://github.com/rust-lang/rust-by-example
+> cd rust-by-example
+> cargo install mdbook
+> mdbook build
+```
 
-## Hack away
+[install Rust]: http://rust-lang.org/install.html
 
-See the [README][readme] for details about how the static site is generated.
+The files will be in the `book` directory at the top-level; `mdbook open` will
+open the contents in your web browser.
 
-## Finally, send a PR
+To run the tests:
 
-* Don't forget to register the example in the `examples/structure.json` file.
+```bash
+> mdbook test
+```
 
-* Include the example id in the commit message header, e.g. for
-  `literals/string` use the message "literals: add example about strings"
-
-* Add a `Close #123` to the commit message, to close the issue that's been used
-  to track your work.
-
-# Code Style
-
-## Markdown (.md)
-
-* Lines should contain a maximum of 99 characters.
-* Use reference style hyperlinks, for example:
-
-Instead of:
-
-    [Goto my URL](https://www.example.com)
-
-Use:
-
-    [Goto my URL][1]
-
-    (Bottom of page)
-    [1]: https://www.example.com
-
-## Rust code (.rs)
-
-* Lines should contain a maximum of 99 characters.
-* In comments, types, methods, macros and variables should be wrapped in
-  backticks, e.g. ``` `println!` ```
-
-[issues-all]: https://github.com/rust-lang/rust-by-example/issues/
-[issues-open]: https://github.com/rust-lang/rust-by-example/issues?labels=&page=1&state=open
-[readme]: README.md
+If you're adding a new chapter, you'll need to edit `src\SUMMARY.md` to add it. If
+you're tweaking an existing example, you'll need to edit the corresponding file; check
+`src\SUMMARY.md` to see a mapping of where chapters go to files.
