@@ -7,7 +7,7 @@ Learn Rust with examples (Live code editor included)
 ## Using
 
 If you'd like to read Rust by Example, you can visit
-[https://rustbyexample.com/][] to read it online.
+[https://rustbyexample.com/](https://rustbyexample.com/) to read it online.
 
 If you'd like to read it locally, [install Rust], and then:
 
