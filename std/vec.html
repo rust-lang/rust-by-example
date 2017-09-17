@@ -124,6 +124,26 @@ be surpassed, the vector is reallocated with a larger capacity.</p>
 
     // Out of bounds indexing yields a panic
     println!(&quot;Fourth element: {}&quot;, xs[3]);
+    // FIXME ^ Comment out this line
+
+    // `Vector`s can be easily iterated over
+    println!(&quot;Contents of xs:&quot;);
+    for x in xs.iter() {
+        println!(&quot;&gt; {}&quot;x);
+    }
+
+    // A `Vector` can also be iterated over while the iteration
+    // count is enumerated in a separate variable (`i`)
+    for (i, x) in xs.iter().enumerate() {
+        println!(&quot;In position {} we have value {}&quot;, i, x);
+    }
+
+    // Thanks to `iter_mut`, mutable `Vector`s can also be iterated
+    // over in a way that allows modifying each value
+    for x in xs.iter_mut() {
+        *x *= 3;
+    }
+    println!(&quot;Updated vector: {:?}&quot;, xs);
 }
 </code></pre></pre>
 <p>More <code>Vec</code> methods can be found under the
