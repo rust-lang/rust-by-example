@@ -37,6 +37,26 @@ fn main() {
 
     // Out of bounds indexing yields a panic
     println!("Fourth element: {}", xs[3]);
+    // FIXME ^ Comment out this line
+
+    // `Vector`s can be easily iterated over
+    println!("Contents of xs:");
+    for x in xs.iter() {
+        println!("> {}"x);
+    }
+
+    // A `Vector` can also be iterated over while the iteration
+    // count is enumerated in a separate variable (`i`)
+    for (i, x) in xs.iter().enumerate() {
+        println!("In position {} we have value {}", i, x);
+    }
+
+    // Thanks to `iter_mut`, mutable `Vector`s can also be iterated
+    // over in a way that allows modifying each value
+    for x in xs.iter_mut() {
+        *x *= 3;
+    }
+    println!("Updated vector: {:?}", xs);
 }
 ```
 
