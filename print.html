@@ -4495,7 +4495,7 @@ fn main() {
     println!(&quot;Bar + Foo = {:?}&quot;, Bar + Foo);
 }
 </code></pre></pre>
-<p>###See Also</p>
+<a class="header" href="print.html#see-also-53" id="see-also-53"><h3>See Also</h3></a>
 <p><a href="https://doc.rust-lang.org/core/ops/trait.Add.html">Add</a>, <a href="https://doc.rust-lang.org/book/syntax-index.html">Syntax Index</a></p>
 <a class="header" href="print.html#drop" id="drop"><h1>Drop</h1></a>
 <p>The <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait only has one method: <code>drop</code>, which is called automatically
@@ -5026,7 +5026,7 @@ fn main() {
     eat(cooked_potato);
 }
 </code></pre></pre>
-<a class="header" href="print.html#see-also-53" id="see-also-53"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-54" id="see-also-54"><h3>See also:</h3></a>
 <p><a href="/fn/closures.html">closures</a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.map"><code>Option::map()</code></a></p>
 <a class="header" href="print.html#combinators-and_then" id="combinators-and_then"><h1>Combinators: <code>and_then</code></h1></a>
 <p><code>map()</code> was described as a chainable way to simplify <code>match</code> statements.
@@ -5091,7 +5091,7 @@ fn main() {
     eat(sushi, Day::Wednesday);
 }
 </code></pre></pre>
-<a class="header" href="print.html#see-also-54" id="see-also-54"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-55" id="see-also-55"><h3>See also:</h3></a>
 <p><a href="/fn/closures.html">closures</a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a>, and <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then"><code>Option::and_then()</code></a></p>
 <a class="header" href="print.html#result" id="result"><h1><code>Result</code></h1></a>
 <p><a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> is a richer version of the <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a> type that
@@ -5204,7 +5204,7 @@ fn main() {
     print(double_number(&quot;t&quot;));
 }
 </code></pre></pre>
-<a class="header" href="print.html#see-also-55" id="see-also-55"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-56" id="see-also-56"><h3>See also:</h3></a>
 <p><a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> and <a href="https://doc.rust-lang.org/std/io/type.Result.html"><code>io::Result</code></a></p>
 <a class="header" href="print.html#multiple-error-types" id="multiple-error-types"><h1>Multiple error types</h1></a>
 <p>The previous examples have always been very convenient; <code>Result</code>s interact
@@ -5269,7 +5269,7 @@ fn main() {
 }
 </code></pre></pre>
 <p>In the next section, we'll see an alternate method of explicitly handling these errors.</p>
-<a class="header" href="print.html#see-also-56" id="see-also-56"><h3>See Also:</h3></a>
+<a class="header" href="print.html#see-also-57" id="see-also-57"><h3>See Also:</h3></a>
 <p><a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.ok_or"><code>Option::ok_or</code></a>, <a href="https://doc.rust-lang.org/std/result/enum.Result.html#method.map_err"><code>Result::map_err</code></a></p>
 <a class="header" href="print.html#early-returns" id="early-returns"><h1>Early returns</h1></a>
 <p>In the previous example, we explicitly handled the errors using combinators.
@@ -5378,7 +5378,7 @@ would look like this using <code>try!</code>:</p>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>See <a href="/error/reenter_question_mark.html">re-enter ?</a> for more details.</p>
 </div>
-<a class="header" href="print.html#see-also-57" id="see-also-57"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-58" id="see-also-58"><h3>See also:</h3></a>
 <p><a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> and <a href="https://doc.rust-lang.org/std/io/type.Result.html"><code>io::Result</code></a></p>
 <a class="header" href="print.html#defining-an-error-type" id="defining-an-error-type"><h1>Defining an error type</h1></a>
 <p>Rust allows us to define our own error types. In general, a &quot;good&quot; error type:</p>
@@ -5462,7 +5462,7 @@ fn main() {
     print(double_first(strings));
 }
 </code></pre></pre>
-<a class="header" href="print.html#see-also-58" id="see-also-58"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-59" id="see-also-59"><h3>See also:</h3></a>
 <p><a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> and <a href="https://doc.rust-lang.org/std/io/type.Result.html"><code>io::Result</code></a></p>
 <a class="header" href="print.html#other-uses-of-" id="other-uses-of-"><h1>Other uses of <code>?</code></h1></a>
 <p>Notice in the previous example that our immediate reaction to calling
@@ -5552,7 +5552,7 @@ necessary refactoring would most definitely not be trivial.</p>
 <p>Many libraries might get away with only implementing <code>Display</code> and
 adding <code>From</code> on an as needed basis. However, more serious libraries will
 eventually need to meet higher expectations of error handling implementation.</p>
-<a class="header" href="print.html#see-also-59" id="see-also-59"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-60" id="see-also-60"><h3>See also:</h3></a>
 <p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From::from</code></a> and <a href="https://doc.rust-lang.org/reference/expressions.html#the--operator"><code>?</code></a></p>
 <a class="header" href="print.html#boxing-errors" id="boxing-errors"><h1><code>Box</code>ing errors</h1></a>
 <p>By implementing <code>Display</code> and <code>From</code> for our error type, we enabled
@@ -5658,7 +5658,7 @@ fn main() {
     print(double_first(strings));
 }
 </code></pre></pre>
-<a class="header" href="print.html#see-also-60" id="see-also-60"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-61" id="see-also-61"><h3>See also:</h3></a>
 <p><a href="https://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch">Dynamic dispatch</a> and <a href="https://doc.rust-lang.org/std/error/trait.Error.html"><code>Error</code> trait</a></p>
 <a class="header" href="print.html#iterating-over-results" id="iterating-over-results"><h1>Iterating over <code>Result</code>s</h1></a>
 <p>An <code>Iter::map</code> operation might fail, for example:</p>
@@ -5733,7 +5733,7 @@ the <code>primitives</code>. Some of these include:</p>
 <li>error handling types: <code>Result&lt;i32, i32&gt;</code></li>
 <li>heap allocated pointers: <code>Box&lt;i32&gt;</code></li>
 </ul>
-<a class="header" href="print.html#see-also-61" id="see-also-61"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-62" id="see-also-62"><h3>See also:</h3></a>
 <p><a href="/primitives.html">primitives</a> and <a href="https://doc.rust-lang.org/std/">the std library</a></p>
 <a class="header" href="print.html#box-stack-and-heap" id="box-stack-and-heap"><h1>Box, stack and heap</h1></a>
 <p>All values in Rust are stack allocated by default. Values can be <em>boxed</em>
@@ -6368,7 +6368,7 @@ things such as:</p>
 <li>File I/O</li>
 </ul>
 <p>These expand beyond what the <a href="/primitives.html">primitives</a> provide.</p>
-<a class="header" href="print.html#see-also-62" id="see-also-62"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-63" id="see-also-63"><h3>See also:</h3></a>
 <p><a href="/primitives.html">primitives</a> and <a href="https://doc.rust-lang.org/std/">the std library</a></p>
 <a class="header" href="print.html#threads" id="threads"><h1>Threads</h1></a>
 <p>Rust provides a mechanism for spawning native OS threads via the <code>spawn</code>
@@ -6520,7 +6520,7 @@ fn main() {
 What if the user decides to insert a lot of spaces? Do we <em>really</em> want to spawn 2,000 threads?
 Modify the program so that the data is always chunked into a limited number of chunks,
 defined by a static constant at the beginning of the program.</p>
-<a class="header" href="print.html#see-also-63" id="see-also-63"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-64" id="see-also-64"><h3>See also:</h3></a>
 <ul>
 <li><a href="/std_misc/threads.html">Threads</a></li>
 <li><a href="/std/vec.html">vectors</a> and <a href="/trait/iter.html">iterators</a></li>
@@ -6607,7 +6607,7 @@ fn main() {
 </code></pre></pre>
 <p>Be sure to check at other <code>Path</code> methods (<code>posix::Path</code> or <code>windows::Path</code>) and
 the <code>Metadata</code> struct.</p>
-<a class="header" href="print.html#see-also-64" id="see-also-64"><h3>See also</h3></a>
+<a class="header" href="print.html#see-also-65" id="see-also-65"><h3>See also</h3></a>
 <p><a href="https://doc.rust-lang.org/std/ffi/struct.OsStr.html">OsStr</a> and <a href="https://doc.rust-lang.org/std/fs/struct.Metadata.html">Metadata</a>.</p>
 <a class="header" href="print.html#file-io" id="file-io"><h1>File I/O</h1></a>
 <p>The <code>File</code> struct represents a file that has been opened (it wraps a file
@@ -6934,7 +6934,7 @@ a
     Ok(s)
 }
 </code></pre>
-<a class="header" href="print.html#see-also-65" id="see-also-65"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-66" id="see-also-66"><h3>See also:</h3></a>
 <p><a href="/attribute/cfg.html"><code>cfg!</code></a></p>
 <a class="header" href="print.html#program-arguments" id="program-arguments"><h1>Program arguments</h1></a>
 <p>The command line arguments can be accessed using <code>std::env::args</code>, which
@@ -7246,7 +7246,7 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured
 $ ./unit_test
 If you see this, the tests were not compiled nor ran!
 </code></pre>
-<a class="header" href="print.html#see-also-66" id="see-also-66"><h3>See also:</h3></a>
+<a class="header" href="print.html#see-also-67" id="see-also-67"><h3>See also:</h3></a>
 <p><a href="/attribute.html">attributes</a>, <a href="/attribute/cfg.html">conditional compilation</a>, and <a href="/mod.html"><code>mod</code></a>.</p>
 <a class="header" href="print.html#unsafe-operations" id="unsafe-operations"><h1>Unsafe Operations</h1></a>
 <p>As an introduction to this section, to borrow from <a href="https://doc.rust-lang.org/book/unsafe.html">the official docs</a>, &quot;one should try to minimize the
