@@ -1,9 +1,10 @@
-# `try!`
+# `?`
 
-Chaining results using match can get pretty untidy; luckily, the `try!` macro
-can be used to make things pretty again. The `try!` macro expands to a match
-expression, where the `Err(err)` branch expands to an early `return Err(err)`,
-and the `Ok(ok)` branch expands to an `ok` expression.
+Chaining results using match can get pretty untidy; luckily, the `?` operator
+can be used to make things pretty again. `?` is used at the end of an expression
+returning a `Result`, and is equivalent to a match expression, where the 
+`Err(err)` branch expands to an early `return Err(err)`, and the `Ok(ok)` branch 
+expands to an `ok` expression.
 
 ```rust,editable,ignore,mdbook-runnable
 mod checked {
@@ -43,10 +44,10 @@ mod checked {
     // Intermediate function
     fn op_(x: f64, y: f64) -> MathResult {
         // if `div` "fails", then `DivisionByZero` will be `return`ed
-        let ratio = try!(div(x, y));
+        let ratio = div(x, y)?;
 
         // if `ln` "fails", then `NegativeLogarithm` will be `return`ed
-        let ln = try!(ln(ratio));
+        let ln = ln(ratio)?;
 
         sqrt(ln)
     }

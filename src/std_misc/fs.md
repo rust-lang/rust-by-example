@@ -13,7 +13,7 @@ use std::path::Path;
 
 // A simple implementation of `% cat path`
 fn cat(path: &Path) -> io::Result<String> {
-    let mut f = try!(File::open(path));
+    let mut f = File::open(path)?;
     let mut s = String::new();
     match f.read_to_string(&mut s) {
         Ok(_) => Ok(s),
@@ -23,7 +23,7 @@ fn cat(path: &Path) -> io::Result<String> {
 
 // A simple implementation of `% echo s > path`
 fn echo(s: &str, path: &Path) -> io::Result<()> {
-    let mut f = try!(File::create(path));
+    let mut f = File::create(path)?;
 
     f.write_all(s.as_bytes())
 }
