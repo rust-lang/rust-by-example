@@ -47,7 +47,28 @@ Note that up until now, we've been using `String`s as errors. However, they
 are somewhat limiting as an error type. In the next section, we'll learn how 
 to make more structured and informative errors by defining their types. 
 
-[^1]: See [re-enter ?][re_enter_try] for more details.
+
+## The `try!` macro
+
+Before there was `?`, the same functionality was achieved with the `try!` macro.
+The `?` operator is now recommended, but you may still find `try!` when looking
+at older code. The same `double_first` function from the previous example 
+would look like this using `try!`:
+
+```rust,ignore
+fn double_first(vec: Vec<&str>) -> Result<i32> {
+    let first = try!(vec.first()
+        .ok_or("Please use a vector with at least one element.".to_owned()));
+    
+    let value = try!(first.parse::<i32>()
+        .map_err(|e| e.to_string()));
+    
+    Ok(2 * value)
+}
+```
+
+
+[^1]: See [re-enter ?][re_enter_?] for more details.
 
 ### See also:
 
