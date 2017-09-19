@@ -16,7 +16,7 @@ If you'd like to read it locally, [install Rust], and then:
 > cd rust-by-example
 > cargo install mdbook
 > mdbook build
-> mdbook open
+> mdbook serve
 ```
 
 [install Rust]: http://rust-lang.org/install.html

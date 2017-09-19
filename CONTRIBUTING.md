@@ -56,7 +56,7 @@ To build RBE, [install Rust], and then:
 
 [install Rust]: http://rust-lang.org/install.html
 
-The files will be in the `book` directory at the top-level; `mdbook open` will
+The files will be in the `book` directory at the top-level; `mdbook serve` will
 open the contents in your web browser.
 
 To run the tests:
