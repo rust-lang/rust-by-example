@@ -89,8 +89,8 @@ impl error::Error for DoubleError {
 }
 
 fn double_first(vec: Vec<&str>) -> Result<i32> {
-    let first = try!(vec.first().ok_or(DoubleError::EmptyVec));
-    let parsed = try!(first.parse::<i32>());
+    let first = vec.first().ok_or(DoubleError::EmptyVec)?;
+    let parsed = first.parse::<i32>()?;
 
     Ok(2 * parsed)
 }

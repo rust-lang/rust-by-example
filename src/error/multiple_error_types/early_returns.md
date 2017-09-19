@@ -48,5 +48,5 @@ At this point, we've learned to explicitly handle errors using combinators
 and early returns. While we generally want to avoid panicking, explicitly 
 handling all of our errors is cumbersome.
 
-In the next section, we'll introduce `try!` for the cases where we simply 
+In the next section, we'll introduce `?` for the cases where we simply 
 need to `unwrap` without possibly inducing `panic`. 
