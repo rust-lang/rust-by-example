@@ -75,6 +75,9 @@
                 <div id="menu-bar" class="menu-bar">
                     <div class="left-buttons">
                         <i id="sidebar-toggle" class="fa fa-bars"></i>
+                        <!-- START - Rust-By-Example customization -->
+                         <i id="edit-button" class="fa fa-edit">Edit</i>
+                         <!-- END - Rust-By-Example customization -->
                         <i id="theme-toggle" class="fa fa-paint-brush"></i>
                     </div>
 
@@ -179,6 +182,11 @@ If you see this, the tests were not compiled nor ran!
             if ($(".fa").css("font-family") !== "FontAwesome") {
                 $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
             }
+             // START - Rust-By-Example customization
+            $("#edit-button").click(function(){
+                 var editWindow = window.open("https://github.com/rust-lang/rust-by-example/edit/master/src/meta/test.md");
+             });
+            // END - Rust-By-Example customization
         </script>
 
         <!-- Livereload script (if served using the cli tool) -->
