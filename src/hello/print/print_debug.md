@@ -22,7 +22,7 @@ struct DebugPrintable(i32);
 
 All `std` library types automatically are printable with `{:?}` too:
 
-```rust,editible
+```rust,editable
 // Derive the `fmt::Debug` implementation for `Structure`. `Structure`
 // is a structure which contains a single `i32`.
 #[derive(Debug)]
