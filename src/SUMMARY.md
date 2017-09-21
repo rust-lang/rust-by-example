@@ -140,9 +140,9 @@
         - [Early returns](error/result/early_returns.md)
         - [Introducing `?`](error/result/enter_question_mark.md)
     - [Multiple error types](error/multiple_error_types.md)
-    - [Defining an error type](error/define_error_type.md)
-    - [Other uses of `?`](error/reenter_question_mark.md)
-    - [`Box`ing errors](error/boxing_errors.md)
+        - [Defining an error type](error/multiple_error_types/define_error_type.md)
+        - [Other uses of `?`](error/multiple_error_types/reenter_question_mark.md)
+        - [`Box`ing errors](error/multiple_error_types/boxing_errors.md)
     - [Iterating over `Result`s](error/iter_result.md)
 
 - [Std library types](std.md)
