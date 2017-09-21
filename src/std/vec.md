@@ -42,7 +42,7 @@ fn main() {
     // `Vector`s can be easily iterated over
     println!("Contents of xs:");
     for x in xs.iter() {
-        println!("> {}"x);
+        println!("> {}", x);
     }
 
     // A `Vector` can also be iterated over while the iteration
