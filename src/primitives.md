@@ -2,18 +2,25 @@
 
 Rust provides access to a wide variety of `primitives`. A sample includes:
 
+
+### Scalar Types
+
 * signed integers: `i8`, `i16`, `i32`, `i64` and `isize` (pointer size)
 * unsigned integers: `u8`, `u16`, `u32`, `u64` and `usize` (pointer size)
 * floating point: `f32`, `f64`
 * `char` Unicode scalar values like `'a'`, `'α'` and `'∞'` (4 bytes each)
 * `bool` either `true` or `false`
-* and the unit type `()`, whose only value is also `()`
+
+
+### Compound Types
+
 * arrays like `[1, 2, 3]`
 * tuples like `(1, true)`
+* and the unit type `()`, whose only value is also `()`
 
 Variables can always be *type annotated*. Numbers may additionally be
 annotated via a *suffix* or *by default*. Integers default to `i32` and
-floats to `f64`.
+floats to `f64`. Note that Rust can also infer types from context.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -26,16 +33,28 @@ fn main() {
     // Or a default will be used.
     let default_float   = 3.0; // `f64`
     let default_integer = 7;   // `i32`
-
-    let mut mutable = 12; // Mutable `i32`.
-
-    // Error! The type of a variable can't be changed
+    
+    // A type can also be inferred from context 
+    let mut inferred_type = 12; // Type i64 is inferred from another line
+    inferred_type = 4294967296i64;
+    
+    // A mutable variable's value can be changed.
+    let mut mutable = 12; // Mutable `i32`
+    mutable = 21;
+    
+    // Error! The type of a variable can't be changed.
     mutable = true;
+    
+    // Variables can be overwritten with shadowing.
+    let mutable = true;
 }
 ```
 
 ### See also:
 
-[the `std` library][std]
+[the `std` library][std], [`mut`][mut], [inference], and [shadowing]
 
 [std]: https://doc.rust-lang.org/std/
+[mut]: https://rustbyexample.com/variable_bindings/mut.html
+[inference]: https://rustbyexample.com/cast/inference.html
+[shadowing]: https://rustbyexample.com/variable_bindings/scope.html
