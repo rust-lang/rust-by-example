@@ -10,13 +10,15 @@ Rust provides access to a wide variety of `primitives`. A sample includes:
 * floating point: `f32`, `f64`
 * `char` Unicode scalar values like `'a'`, `'α'` and `'∞'` (4 bytes each)
 * `bool` either `true` or `false`
+* and the unit type `()`, whose only possible value is an empty tuple: `()`
 
+Despite the value of a unit type being a tuple, it is not considered a
+compound type because it does not contain multiple values. 
 
 ### Compound Types
 
 * arrays like `[1, 2, 3]`
 * tuples like `(1, true)`
-* and the unit type `()`, whose only value is also `()`
 
 Variables can always be *type annotated*. Numbers may additionally be
 annotated via a *suffix* or *by default*. Integers default to `i32` and
