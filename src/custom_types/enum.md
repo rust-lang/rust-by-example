@@ -8,52 +8,50 @@ an `enum`.
 // An attribute to hide warnings for unused code.
 #![allow(dead_code)]
 
-// Create an `enum` to classify someone. Note how both names
-// and type information together specify the variant:
-// `Engineer != Scientist` and `Height(i32) != Weight(i32)`. Each
-// is different and independent.
-enum Person {
+// Create an `enum` to classify a web event. Note how both
+// names and type information together specify the variant:
+// `PageLoad != PageUnload` and `KeyPress(char) != Paste(String)`.
+// Each is different and independent.
+enum WebEvent {
     // An `enum` may either be `unit-like`,
-    Engineer,
-    Scientist,
+    PageLoad,
+    PageUnload,
     // like tuple structs,
-    Height(i32),
-    Weight(i32),
+    KeyPress(char),
+    Paste(String),
     // or like structures.
-    Info { name: String, height: i32 }
+    Click { x: i64, y: i64 },
 }
 
-// A function which takes a `Person` enum as an argument and
+// A function which takes a `WebEvent` enum as an argument and
 // returns nothing.
-fn inspect(p: Person) {
-    // Usage of an `enum` must cover all cases (irrefutable)
-    // so a `match` is used to branch over it.
-    match p {
-        Person::Engineer  => println!("Is an engineer!"),
-        Person::Scientist => println!("Is a scientist!"),
-        // Destructure `i` from inside the `enum`.
-        Person::Height(i) => println!("Has a height of {}.", i),
-        Person::Weight(i) => println!("Has a weight of {}.", i),
-        // Destructure `Info` into `name` and `height`.
-        Person::Info { name, height } => {
-            println!("{} is {} tall!", name, height);
+fn inspect(event: WebEvent) {
+    match event {
+        WebEvent::PageLoad  => println!("page loaded"),
+        WebEvent::PageUnload => println!("page unloaded"),
+        // Destructure `c` from inside the `enum`.
+        WebEvent::KeyPress(c) => println!("pressed '{}'.", c),
+        WebEvent::Paste(s) => println!("pasted \"{}\".", s),
+        // Destructure `Click` into `x` and `y`.
+        WebEvent::Click { x, y } => {
+            println!("clicked at x={}, y={}.", x, y);
         },
     }
 }
 
 fn main() {
-    let person   = Person::Height(18);
-    let amira    = Person::Weight(10);
+    let pressed = WebEvent::KeyPress('x');
     // `to_owned()` creates an owned `String` from a string slice.
-    let dave     = Person::Info { name: "Dave".to_owned(), height: 72 };
-    let rebecca  = Person::Scientist;
-    let rohan    = Person::Engineer;
+    let pasted  = WebEvent::Paste("my text".to_owned());
+    let click   = WebEvent::Click { x: 20, y: 80 };
+    let load    = WebEvent::PageLoad;
+    let unload  = WebEvent::PageUnload;
 
-    inspect(person);
-    inspect(amira);
-    inspect(dave);
-    inspect(rebecca);
-    inspect(rohan);
+    inspect(pressed);
+    inspect(pasted);
+    inspect(click);
+    inspect(load);
+    inspect(unload);
 }
 
 ```
