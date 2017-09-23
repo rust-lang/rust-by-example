@@ -1,65 +1,60 @@
 # Other uses of `?`
 
-Notice in the previous example that our immediate reaction to calling 
-`parse` is to `map` the error from a library error into our new custom 
-error type:
+Notice in the previous example that our immediate reaction to calling
+`parse` is to `map` the error from a library error into a boxed
+error:
 
 ```rust,ignore
-.and_then(|s| s.parse::<i32>())
-    .map_err(DoubleError::Parse)
+.and_then(|s| s.parse::<i32>()
+    .map_err(|e| e.into())
 ```
 
-Since this is a simple and common operation, it would be convenient if it 
-could be elided. Alas, because `and_then` is not sufficiently flexible, it 
+Since this is a simple and common operation, it would be convenient if it
+could be elided. Alas, because `and_then` is not sufficiently flexible, it
 cannot. However, we can instead use `?`.
 
-`?` was previously explained as either `unwrap` or `return Err(err)`. 
-This is only mostly true. It actually means `unwrap` or 
-`return Err(From::from(err))`. Since `From::from` is a conversion utility 
-between different types, this means that if you `?` where the error is 
+`?` was previously explained as either `unwrap` or `return Err(err)`.
+This is only mostly true. It actually means `unwrap` or
+`return Err(From::from(err))`. Since `From::from` is a conversion utility
+between different types, this means that if you `?` where the error is
 convertible to the return type, it will convert automatically.
 
-Here, we rewrite the previous example using `?`. As a result, the 
+Here, we rewrite the previous example using `?`. As a result, the
 `map_err` will go away when `From::from` is implemented for our error type:
 
 ```rust,editable
-use std::num::ParseIntError;
+use std::error;
 use std::fmt;
+use std::num::ParseIntError;
 
-type Result<T> = std::result::Result<T, DoubleError>;
+// Change the alias to `Box<error::Error>`.
+type Result<T> = std::result::Result<T, Box<error::Error>>;
 
 #[derive(Debug)]
-enum DoubleError {
-    EmptyVec,
-    Parse(ParseIntError),
-}
+struct EmptyVec;
 
-// Implement the conversion from `ParseIntError` to `DoubleError`. 
-// This will be automatically called by `?` if a `ParseIntError` 
-// needs to be converted into a `DoubleError`.
-impl From<ParseIntError> for DoubleError {
-    fn from(err: ParseIntError) -> DoubleError {
-        DoubleError::Parse(err)
+impl fmt::Display for EmptyVec {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "invalid first item to double")
     }
 }
 
-impl fmt::Display for DoubleError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        match *self {
-            DoubleError::EmptyVec =>
-                write!(f, "please use a vector with at least one element"),
-            DoubleError::Parse(ref e) => e.fmt(f),
-        }
+impl error::Error for EmptyVec {
+    fn description(&self) -> &str {
+        "invalid first item to double"
+    }
+
+    fn cause(&self) -> Option<&error::Error> {
+        // Generic error, underlying cause isn't tracked.
+        None
     }
 }
 
 // The same structure as before but rather than chain all `Results`
 // and `Options` along, we `?` to get the inner value out immediately.
 fn double_first(vec: Vec<&str>) -> Result<i32> {
-    // Still convert to `Result` by stating how to convert `None`.
-    let first = vec.first().ok_or(DoubleError::EmptyVec)?;
+    let first = vec.first().ok_or(EmptyVec)?;
     let parsed = first.parse::<i32>()?;
-
     Ok(2 * parsed)
 }
 
@@ -71,7 +66,7 @@ fn print(result: Result<i32>) {
 }
 
 fn main() {
-    let numbers = vec!["93", "18"];
+    let numbers = vec!["42", "93", "18"];
     let empty = vec![];
     let strings = vec!["tofu", "93", "18"];
 
@@ -81,23 +76,10 @@ fn main() {
 }
 ```
 
-This is actually fairly clean now. Compared with the original `panic`, it 
-is very similar to replacing the `unwrap` calls with `?` except that the 
-return types are `Result`. As a result, they must be destructured at the 
+This is actually fairly clean now. Compared with the original `panic`, it
+is very similar to replacing the `unwrap` calls with `?` except that the
+return types are `Result`. As a result, they must be destructured at the
 top level.
-
-Note that you should not expect error handling of this sort to always 
-replace `unwrap`. This type of error handling tripled our line count and 
-cannot really be considered simple (even when heavily biased by the small 
-code size).
-
-Indeed, moving a 1000 line library from `unwrap` to more proper error 
-handling might be feasible in an additional 100 lines of code. However, the 
-necessary refactoring would most definitely not be trivial.
-
-Many libraries might get away with only implementing `Display` and 
-adding `From` on an as needed basis. However, more serious libraries will 
-eventually need to meet higher expectations of error handling implementation.
 
 ### See also:
 
