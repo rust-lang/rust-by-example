@@ -49,7 +49,7 @@ fn main() {
 ```
 
 Luckily, `Option`'s `map`, `and_then`, and many other combinators are also
-implemented for `Result`. [`enum.Result`][result] contains a complete listing.
+implemented for `Result`. [`Result`][result] contains a complete listing.
 
 ```rust,editable
 use std::num::ParseIntError;
