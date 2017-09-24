@@ -7,7 +7,7 @@ $( document ).ready(function() {
     window.onunload = function(){};
 
     // Set theme
-    var theme = store.get('theme');
+    var theme = store.get('mdbook-theme');
     if (theme === null || theme === undefined) { theme = 'light'; }
 
     set_theme(theme);
@@ -145,7 +145,7 @@ $( document ).ready(function() {
             });
         }
 
-        store.set('theme', theme);
+        store.set('mdbook-theme', theme);
 
         $('body').removeClass().addClass(theme);
     }
@@ -336,17 +336,17 @@ function sidebarToggle() {
     var html = $("html");
     if ( html.hasClass("sidebar-hidden") ) {
         html.removeClass("sidebar-hidden").addClass("sidebar-visible");
-        store.set('sidebar', 'visible');
+        store.set('mdbook-sidebar', 'visible');
     } else if ( html.hasClass("sidebar-visible") ) {
         html.removeClass("sidebar-visible").addClass("sidebar-hidden");
-        store.set('sidebar', 'hidden');
+        store.set('mdbook-sidebar', 'hidden');
     } else {
         if($("#sidebar").position().left === 0){
             html.addClass("sidebar-hidden");
-            store.set('sidebar', 'hidden');
+            store.set('mdbook-sidebar', 'hidden');
         } else {
             html.addClass("sidebar-visible");
-            store.set('sidebar', 'visible');
+            store.set('mdbook-sidebar', 'visible');
         }
     }
 }
@@ -358,22 +358,24 @@ function run_rust_code(code_block) {
         result_block = code_block.find(".result");
     }
 
-    let text = playpen_text(code_block);;
-
+    let text = playpen_text(code_block);
+    
     var params = {
-        version: "stable",
-        optimize: "0",
-        code: text,
-    };
+	channel: "stable",
+	mode: "debug",
+	crateType: "bin",
+	tests: false,
+	code: text,
+    }
 
     if(text.indexOf("#![feature") !== -1) {
-        params.version = "nightly";
+        params.channel = "nightly";
     }
 
     result_block.text("Running...");
 
     $.ajax({
-        url: "https://play.rust-lang.org/evaluate.json",
+        url: "https://play.rust-lang.org/execute",
         method: "POST",
         crossDomain: true,
         dataType: "json",
@@ -381,7 +383,7 @@ function run_rust_code(code_block) {
         data: JSON.stringify(params),
         timeout: 15000,
         success: function(response){
-            result_block.text(response.result);
+           result_block.text(response.success ? response.stdout : response.stderr);
         },
         error: function(qXHR, textStatus, errorThrown){
             result_block.text("Playground communication " + textStatus);
