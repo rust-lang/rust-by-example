@@ -2361,7 +2361,7 @@ signature:</p>
         F: FnMut(Self::Item) -&gt; bool {}
 }
 </code></pre>
-<pre><code class="language-rust ignore">fn main() {
+<pre><pre class="playpen"><code class="language-rust editable">fn main() {
     let vec1 = vec![1, 2, 3];
     let vec2 = vec![4, 5, 6];
 
@@ -2378,7 +2378,7 @@ signature:</p>
     // `into_iter()` for arrays unusually yields `&amp;i32`.
     println!(&quot;2 in array2: {}&quot;, array2.into_iter().any(|&amp;x| x == 2));
 }
-</code></pre>
+</code></pre></pre>
 <a class="header" href="print.html#see-also-27" id="see-also-27"><h3>See also:</h3></a>
 <p><a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.any"><code>std::iter::Iterator::any</code></a></p>
 <a class="header" href="print.html#iteratorfind" id="iteratorfind"><h1>Iterator::find</h1></a>
