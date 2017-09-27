@@ -93,19 +93,25 @@
                 <div id="content" class="content">
                     <a class="header" href="primitives.html#primitives" id="primitives"><h1>Primitives</h1></a>
 <p>Rust provides access to a wide variety of <code>primitives</code>. A sample includes:</p>
+<a class="header" href="primitives.html#scalar-types" id="scalar-types"><h3>Scalar Types</h3></a>
 <ul>
 <li>signed integers: <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code> and <code>isize</code> (pointer size)</li>
 <li>unsigned integers: <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code> and <code>usize</code> (pointer size)</li>
 <li>floating point: <code>f32</code>, <code>f64</code></li>
 <li><code>char</code> Unicode scalar values like <code>'a'</code>, <code>'α'</code> and <code>'∞'</code> (4 bytes each)</li>
 <li><code>bool</code> either <code>true</code> or <code>false</code></li>
-<li>and the unit type <code>()</code>, whose only value is also <code>()</code></li>
+<li>and the unit type <code>()</code>, whose only possible value is an empty tuple: <code>()</code></li>
+</ul>
+<p>Despite the value of a unit type being a tuple, it is not considered a
+compound type because it does not contain multiple values.</p>
+<a class="header" href="primitives.html#compound-types" id="compound-types"><h3>Compound Types</h3></a>
+<ul>
 <li>arrays like <code>[1, 2, 3]</code></li>
 <li>tuples like <code>(1, true)</code></li>
 </ul>
 <p>Variables can always be <em>type annotated</em>. Numbers may additionally be
 annotated via a <em>suffix</em> or <em>by default</em>. Integers default to <code>i32</code> and
-floats to <code>f64</code>.</p>
+floats to <code>f64</code>. Note that Rust can also infer types from context.</p>
 <pre><pre class="playpen"><code class="language-rust editable ignore mdbook-runnable">fn main() {
     // Variables can be type annotated.
     let logical: bool = true;
@@ -116,15 +122,24 @@ floats to <code>f64</code>.</p>
     // Or a default will be used.
     let default_float   = 3.0; // `f64`
     let default_integer = 7;   // `i32`
-
-    let mut mutable = 12; // Mutable `i32`.
-
-    // Error! The type of a variable can't be changed
+    
+    // A type can also be inferred from context 
+    let mut inferred_type = 12; // Type i64 is inferred from another line
+    inferred_type = 4294967296i64;
+    
+    // A mutable variable's value can be changed.
+    let mut mutable = 12; // Mutable `i32`
+    mutable = 21;
+    
+    // Error! The type of a variable can't be changed.
     mutable = true;
+    
+    // Variables can be overwritten with shadowing.
+    let mutable = true;
 }
 </code></pre></pre>
 <a class="header" href="primitives.html#see-also" id="see-also"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/std/">the <code>std</code> library</a></p>
+<p><a href="https://doc.rust-lang.org/std/">the <code>std</code> library</a>, <a href="https://rustbyexample.com/variable_bindings/mut.html"><code>mut</code></a>, <a href="https://rustbyexample.com/cast/inference.html">inference</a>, and <a href="https://rustbyexample.com/variable_bindings/scope.html">shadowing</a></p>
 
                 </div>
 
