@@ -1,34 +1,33 @@
 # `map` for `Result`
 
-Panicking in the previous example gave us an unhelpful error message.
-To avoid that, we need to be more specific about the return type. There, the 
-regular element is of type `i32`.
+Panicking in the previous example's `multiply` does not make for robust code.
+Generally, we want to return the error to the caller so it can decide what is
+the right way to respond to errors.
 
-To determine the `Err` type, we look to 
-[`parse()`][parse], which is implemented with the [`FromStr`][from_str] trait for 
-[`i32`][i32]. As a result, the `Err` type is specified as [`ParseIntError`][parse_int_error].
+We first need to know what kind of error type we are dealing with. To determine
+the `Err` type, we look to [`parse()`][parse], which is implemented with the
+[`FromStr`][from_str] trait for [`i32`][i32]. As a result, the `Err` type is
+specified as [`ParseIntError`][parse_int_error].
 
-In the example below, the straightforward `match` statement leads to code 
-that is overall more cumbersome. Luckily, the `map` method of `Option` is 
-one of many combinators also implemented for `Result`. [`enum.Result`][result] 
-contains a complete listing.
+In the example below, the straightforward `match` statement leads to code
+that is overall more cumbersome.
 
 ```rust,editable
 use std::num::ParseIntError;
 
 // With the return type rewritten, we use pattern matching without `unwrap()`.
-fn double_number(number_str: &str) -> Result<i32, ParseIntError> {
-    match number_str.parse::<i32>() {
-        Ok(n)  => Ok(2 * n),
+fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
+    match first_number_str.parse::<i32>() {
+        Ok(first_number)  => {
+            match second_number_str.parse::<i32>() {
+                Ok(second_number)  => {
+                    Ok(first_number * second_number)
+                },
+                Err(e) => Err(e),
+            }
+        },
         Err(e) => Err(e),
     }
-}
-
-// As with `Option`, we can use combinators such as `map()`.
-// This function is otherwise identical to the one above and reads:
-// Modify n if the value is valid, otherwise pass on the error.
-fn double_number_map(number_str: &str) -> Result<i32, ParseIntError> {
-    number_str.parse::<i32>().map(|n| 2 * n)
 }
 
 fn print(result: Result<i32, ParseIntError>) {
@@ -40,11 +39,44 @@ fn print(result: Result<i32, ParseIntError>) {
 
 fn main() {
     // This still presents a reasonable answer.
-    let twenty = double_number("10");
+    let twenty = multiply("10", "2");
     print(twenty);
 
     // The following now provides a much more helpful error message.
-    let tt = double_number_map("t");
+    let tt = multiply("t", "2");
+    print(tt);
+}
+```
+
+Luckily, `Option`'s `map`, `and_then`, and many other combinators are also
+implemented for `Result`. [`Result`][result] contains a complete listing.
+
+```rust,editable
+use std::num::ParseIntError;
+
+// As with `Option`, we can use combinators such as `map()`.
+// This function is otherwise identical to the one above and reads:
+// Modify n if the value is valid, otherwise pass on the error.
+fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
+    first_number_str.parse::<i32>().and_then(|first_number| {
+        second_number_str.parse::<i32>().map(|second_number| first_number * second_number)
+    })
+}
+
+fn print(result: Result<i32, ParseIntError>) {
+    match result {
+        Ok(n)  => println!("n is {}", n),
+        Err(e) => println!("Error: {}", e),
+    }
+}
+
+fn main() {
+    // This still presents a reasonable answer.
+    let twenty = multiply("10", "2");
+    print(twenty);
+
+    // The following now provides a much more helpful error message.
+    let tt = multiply("t", "2");
     print(tt);
 }
 ```
