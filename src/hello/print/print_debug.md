@@ -51,7 +51,26 @@ fn main() {
 ```
 
 So `fmt::Debug` definitely makes this printable but sacrifices some
-elegance. Manually implementing `fmt::Display` will fix that.
+elegance. Rust also provides "pretty printing" with `{:#?}`.
+
+```rust,editable
+#[derive(Debug)]
+struct Person<'a> {
+    name: &'a str,
+    age: u8
+}
+
+fn main() {
+    let name = "Peter";
+    let age = 27;
+    let peter = Person { name, age };
+
+    // Pretty print
+    println!("{:#?}", peter);
+}
+```
+
+One can manually implement `fmt::Display` to control the display.
 
 ### See also
 
