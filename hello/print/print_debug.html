@@ -139,7 +139,23 @@ fn main() {
 }
 </code></pre></pre>
 <p>So <code>fmt::Debug</code> definitely makes this printable but sacrifices some
-elegance. Manually implementing <code>fmt::Display</code> will fix that.</p>
+elegance. Rust also provides &quot;pretty printing&quot; with <code>{:#?}</code>.</p>
+<pre><pre class="playpen"><code class="language-rust editable">#[derive(Debug)]
+struct Person&lt;'a&gt; {
+    name: &amp;'a str,
+    age: u8
+}
+
+fn main() {
+    let name = &quot;Peter&quot;;
+    let age = 27;
+    let peter = Person { name, age };
+
+    // Pretty print
+    println!(&quot;{:#?}&quot;, peter);
+}
+</code></pre></pre>
+<p>One can manually implement <code>fmt::Display</code> to control the display.</p>
 <a class="header" href="hello/print/print_debug.html#see-also" id="see-also"><h3>See also</h3></a>
 <p><a href="https://doc.rust-lang.org/reference/attributes.html">attributes</a>, <a href="/trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>,
 and <a href="/custom_types/structs.html"><code>struct</code></a></p>
