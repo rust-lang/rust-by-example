@@ -6,7 +6,7 @@ custom conditionals must be passed to `rustc` using the `--cfg` flag.
 ```rust,editable,ignore,mdbook-runnable
 #[cfg(some_condition)]
 fn conditional_function() {
-    println!("condition met!")
+    println!("condition met!");
 }
 
 fn main() {

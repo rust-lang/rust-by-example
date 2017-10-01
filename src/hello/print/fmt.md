@@ -60,7 +60,7 @@ fn main() {
     ].iter() {
         // Switch this to use {} once you've added an implementation
         // for fmt::Display
-        println!("{:?}", *color)
+        println!("{:?}", *color);
     }
 }
 ```

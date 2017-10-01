@@ -14,7 +14,7 @@ fn function() {
 mod deeply {
     pub mod nested {
         pub fn function() {
-            println!("called `deeply::nested::function()`")
+            println!("called `deeply::nested::function()`");
         }
     }
 }
