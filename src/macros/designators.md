@@ -12,7 +12,7 @@ macro_rules! create_function {
         fn $func_name() {
             // The `stringify!` macro converts an `ident` into a string.
             println!("You called {:?}()",
-                     stringify!($func_name))
+                     stringify!($func_name));
         }
     )
 }
@@ -29,7 +29,7 @@ macro_rules! print_result {
         // `stringify!` will convert the expression *as it is* into a string.
         println!("{:?} = {:?}",
                  stringify!($expression),
-                 $expression)
+                 $expression);
     )
 }
 
