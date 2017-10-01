@@ -614,7 +614,7 @@ fn main() {
     ].iter() {
         // Switch this to use {} once you've added an implementation
         // for fmt::Display
-        println!(&quot;{:?}&quot;, *color)
+        println!(&quot;{:?}&quot;, *color);
     }
 }
 </code></pre></pre>
@@ -775,7 +775,7 @@ fn main() {
     println!(&quot;{:?}, {:?}, {:?}, {:?}&quot;, a, b, c, d);
 
     let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
-    println!(&quot;{:?}&quot;, matrix)
+    println!(&quot;{:?}&quot;, matrix);
 
 }
 </code></pre></pre>
@@ -2743,7 +2743,7 @@ fn function() {
 mod deeply {
     pub mod nested {
         pub fn function() {
-            println!(&quot;called `deeply::nested::function()`&quot;)
+            println!(&quot;called `deeply::nested::function()`&quot;);
         }
     }
 }
@@ -3033,13 +3033,13 @@ library.rlib
 <pre><pre class="playpen"><code class="language-rust editable">// This function only gets compiled if the target OS is linux
 #[cfg(target_os = &quot;linux&quot;)]
 fn are_you_on_linux() {
-    println!(&quot;You are running linux!&quot;)
+    println!(&quot;You are running linux!&quot;);
 }
 
 // And this function only gets compiled if the target OS is *not* linux
 #[cfg(not(target_os = &quot;linux&quot;))]
 fn are_you_on_linux() {
-    println!(&quot;You are *not* running linux!&quot;)
+    println!(&quot;You are *not* running linux!&quot;);
 }
 
 fn main() {
@@ -3060,7 +3060,7 @@ fn main() {
 custom conditionals must be passed to <code>rustc</code> using the <code>--cfg</code> flag.</p>
 <pre><pre class="playpen"><code class="language-rust editable ignore mdbook-runnable">#[cfg(some_condition)]
 fn conditional_function() {
-    println!(&quot;condition met!&quot;)
+    println!(&quot;condition met!&quot;);
 }
 
 fn main() {
@@ -4381,11 +4381,11 @@ description of elision, see <a href="https://doc.rust-lang.org/book/lifetimes.ht
 <pre><pre class="playpen"><code class="language-rust editable">// `elided_input` and `annotated_input` essentially have identical signatures
 // because the lifetime of `elided_input` is elided by the compiler:
 fn elided_input(x: &amp;i32) {
-    println!(&quot;`elided_input`: {}&quot;, x)
+    println!(&quot;`elided_input`: {}&quot;, x);
 }
 
 fn annotated_input&lt;'a&gt;(x: &amp;'a i32) {
-    println!(&quot;`annotated_input`: {}&quot;, x)
+    println!(&quot;`annotated_input`: {}&quot;, x);
 }
 
 // Similarly, `elided_pass` and `annotated_pass` have identical signatures
@@ -4804,7 +4804,7 @@ with a <em>designator</em>:</p>
         fn $func_name() {
             // The `stringify!` macro converts an `ident` into a string.
             println!(&quot;You called {:?}()&quot;,
-                     stringify!($func_name))
+                     stringify!($func_name));
         }
     )
 }
@@ -4821,7 +4821,7 @@ macro_rules! print_result {
         // `stringify!` will convert the expression *as it is* into a string.
         println!(&quot;{:?} = {:?}&quot;,
                  stringify!($expression),
-                 $expression)
+                 $expression);
     )
 }
 
@@ -6550,7 +6550,7 @@ fn main() {
     for i in 0..NTHREADS {
         // Spin up another thread
         children.push(thread::spawn(move || {
-            println!(&quot;this is thread number {}&quot;, i)
+            println!(&quot;this is thread number {}&quot;, i);
         }));
     }
 

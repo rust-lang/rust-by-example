@@ -106,7 +106,7 @@ fn main() {
     for i in 0..NTHREADS {
         // Spin up another thread
         children.push(thread::spawn(move || {
-            println!(&quot;this is thread number {}&quot;, i)
+            println!(&quot;this is thread number {}&quot;, i);
         }));
     }
 

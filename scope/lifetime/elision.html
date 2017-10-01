@@ -101,11 +101,11 @@ description of elision, see <a href="https://doc.rust-lang.org/book/lifetimes.ht
 <pre><pre class="playpen"><code class="language-rust editable">// `elided_input` and `annotated_input` essentially have identical signatures
 // because the lifetime of `elided_input` is elided by the compiler:
 fn elided_input(x: &amp;i32) {
-    println!(&quot;`elided_input`: {}&quot;, x)
+    println!(&quot;`elided_input`: {}&quot;, x);
 }
 
 fn annotated_input&lt;'a&gt;(x: &amp;'a i32) {
-    println!(&quot;`annotated_input`: {}&quot;, x)
+    println!(&quot;`annotated_input`: {}&quot;, x);
 }
 
 // Similarly, `elided_pass` and `annotated_pass` have identical signatures

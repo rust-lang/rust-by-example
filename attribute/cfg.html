@@ -101,13 +101,13 @@
 <pre><pre class="playpen"><code class="language-rust editable">// This function only gets compiled if the target OS is linux
 #[cfg(target_os = &quot;linux&quot;)]
 fn are_you_on_linux() {
-    println!(&quot;You are running linux!&quot;)
+    println!(&quot;You are running linux!&quot;);
 }
 
 // And this function only gets compiled if the target OS is *not* linux
 #[cfg(not(target_os = &quot;linux&quot;))]
 fn are_you_on_linux() {
-    println!(&quot;You are *not* running linux!&quot;)
+    println!(&quot;You are *not* running linux!&quot;);
 }
 
 fn main() {
