@@ -1,11 +1,11 @@
 # elision
 
-Some lifetime patterns are overwelmingly common and so the borrow checker 
-will implicitly add them to save typing and to improve readability. 
+Some lifetime patterns are overwelmingly common and so the borrow checker
+will implicitly add them to save typing and to improve readability.
 This process of implicit addition is called elision. Elision exists in Rust
 solely because these patterns are common.
 
-The following code shows a few examples of elision. For a more comprehensive 
+The following code shows a few examples of elision. For a more comprehensive
 description of elision, see [lifetime elision][elision] in the book.
 
 ```rust,editable
@@ -27,7 +27,7 @@ fn annotated_pass<'a>(x: &'a i32) -> &'a i32 { x }
 
 fn main() {
     let x = 3;
-    
+
     elided_input(&x);
     annotated_input(&x);
 
@@ -40,4 +40,4 @@ fn main() {
 
 [elision][elision]
 
-[elision]: https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision
+[elision]: https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#lifetime-elision

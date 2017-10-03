@@ -8,4 +8,4 @@ saves the rest of the program from various pitfalls.
 For a more rigorous discussion of error handling, refer to the error
 handling section in the [official book][book].
 
-[book]: https://doc.rust-lang.org/book/error-handling.html
+[book]: https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html
