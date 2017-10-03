@@ -4377,7 +4377,7 @@ will implicitly add them to save typing and to improve readability.
 This process of implicit addition is called elision. Elision exists in Rust
 solely because these patterns are common.</p>
 <p>The following code shows a few examples of elision. For a more comprehensive
-description of elision, see <a href="https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision">lifetime elision</a> in the book.</p>
+description of elision, see <a href="https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#lifetime-elision">lifetime elision</a> in the book.</p>
 <pre><pre class="playpen"><code class="language-rust editable">// `elided_input` and `annotated_input` essentially have identical signatures
 // because the lifetime of `elided_input` is elided by the compiler:
 fn elided_input(x: &amp;i32) {
@@ -4396,7 +4396,7 @@ fn annotated_pass&lt;'a&gt;(x: &amp;'a i32) -&gt; &amp;'a i32 { x }
 
 fn main() {
     let x = 3;
-    
+
     elided_input(&amp;x);
     annotated_input(&amp;x);
 
@@ -4405,7 +4405,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-51" id="see-also-51"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision">elision</a></p>
+<p><a href="https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#lifetime-elision">elision</a></p>
 <a class="header" href="print.html#traits-1" id="traits-1"><h1>Traits</h1></a>
 <p>A <code>trait</code> is a collection of methods defined for an unknown type:
 <code>Self</code>. They can access other methods declared in the same trait.</p>
@@ -4595,7 +4595,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-53" id="see-also-53"><h3>See Also</h3></a>
-<p><a href="https://doc.rust-lang.org/core/ops/trait.Add.html">Add</a>, <a href="https://doc.rust-lang.org/book/syntax-index.html">Syntax Index</a></p>
+<p><a href="https://doc.rust-lang.org/core/ops/trait.Add.html">Add</a>, <a href="https://doc.rust-lang.org/book/second-edition/appendix-02-operators.html">Syntax Index</a></p>
 <a class="header" href="print.html#drop" id="drop"><h1>Drop</h1></a>
 <p>The <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait only has one method: <code>drop</code>, which is called automatically
 when an object goes out of scope. The main use of the <code>Drop</code> trait is to free the
@@ -4979,7 +4979,7 @@ example, failing to read a file and then continuing to use that <em>bad</em> inp
 would clearly be problematic. Noticing and explicitly managing those errors
 saves the rest of the program from various pitfalls.</p>
 <p>For a more rigorous discussion of error handling, refer to the error
-handling section in the <a href="https://doc.rust-lang.org/book/error-handling.html">official book</a>.</p>
+handling section in the <a href="https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html">official book</a>.</p>
 <a class="header" href="print.html#panic" id="panic"><h1><code>panic</code></h1></a>
 <p>The simplest error handling mechanism we will see is <code>panic</code>. It prints an
 error message, starts unwinding the task, and usually exits the program.
@@ -6628,7 +6628,7 @@ fn main() {
         // * takes ownership of its captured variables ('move') and
         // * returns an unsigned 32-bit integer ('-&gt; u32')
         //
-        // Rust is smart enough to infer the '-&gt; u32' from 
+        // Rust is smart enough to infer the '-&gt; u32' from
         // the closure itself so we could have left that out.
         //
         // TODO: try removing the 'move' and see what happens
@@ -6671,7 +6671,7 @@ fn main() {
     //
     // we use the &quot;turbofish&quot; ::&lt;&gt; to provide sum() with a type hint.
     //
-    // TODO: try without the turbofish, by instead explicitly 
+    // TODO: try without the turbofish, by instead explicitly
     // specifying the type of intermediate_sums
     let final_result = intermediate_sums.iter().sum::&lt;u32&gt;();
 
@@ -6689,8 +6689,8 @@ defined by a static constant at the beginning of the program.</p>
 <ul>
 <li><a href="/std_misc/threads.html">Threads</a></li>
 <li><a href="/std/vec.html">vectors</a> and <a href="/trait/iter.html">iterators</a></li>
-<li><a href="/fn/closures.html">closures</a>, <a href="/scope/move.html">move</a> semantics and <a href="https://doc.rust-lang.org/book/closures.html#move-closures"><code>move</code> closures</a></li>
-<li><a href="https://doc.rust-lang.org/book/patterns.html#destructuring">destructuring</a> assignments</li>
+<li><a href="/fn/closures.html">closures</a>, <a href="/scope/move.html">move</a> semantics and <a href="https://doc.rust-lang.org/book/second-edition/ch13-01-closures.html#closures-can-capture-their-environment"><code>move</code> closures</a></li>
+<li><a href="https://doc.rust-lang.org/book/second-edition/ch18-03-pattern-syntax.html#destructuring-to-break-apart-values">destructuring</a> assignments</li>
 <li><a href="https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect">turbofish notation</a> to help type inference</li>
 <li><a href="/error/option_unwrap.html">unwrap vs. expect</a></li>
 <li><a href="https://doc.rust-lang.org/book/loops.html#enumerate">enumerate</a></li>
@@ -7414,11 +7414,11 @@ If you see this, the tests were not compiled nor ran!
 <a class="header" href="print.html#see-also-65" id="see-also-65"><h3>See also:</h3></a>
 <p><a href="/attribute.html">attributes</a>, <a href="/attribute/cfg.html">conditional compilation</a>, and <a href="/mod.html"><code>mod</code></a>.</p>
 <a class="header" href="print.html#unsafe-operations" id="unsafe-operations"><h1>Unsafe Operations</h1></a>
-<p>As an introduction to this section, to borrow from <a href="https://doc.rust-lang.org/book/unsafe.html">the official docs</a>, &quot;one should try to minimize the
-amount of unsafe code in a code base.&quot; With that in mind, let's get started!
-Unsafe blocks in Rust are used to bypass protections put in place by the
-compiler; specifically, there are four primary things that unsafe blocks are
-used for:</p>
+<p>As an introduction to this section, to borrow from <a href="https://doc.rust-lang.org/book/second-edition/ch19-01-unsafe-rust.html">the official docs</a>,
+&quot;one should try to minimize the amount of unsafe code in a code base.&quot; With that
+in mind, let's get started! Unsafe blocks in Rust are used to bypass protections
+put in place by the compiler; specifically, there are four primary things that
+unsafe blocks are used for:</p>
 <ul>
 <li>dereferencing raw pointers</li>
 <li>calling a function over FFI (but this is covered in <a href="/std_misc/ffi.html">a previous

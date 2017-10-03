@@ -97,7 +97,7 @@ will implicitly add them to save typing and to improve readability.
 This process of implicit addition is called elision. Elision exists in Rust
 solely because these patterns are common.</p>
 <p>The following code shows a few examples of elision. For a more comprehensive
-description of elision, see <a href="https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision">lifetime elision</a> in the book.</p>
+description of elision, see <a href="https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#lifetime-elision">lifetime elision</a> in the book.</p>
 <pre><pre class="playpen"><code class="language-rust editable">// `elided_input` and `annotated_input` essentially have identical signatures
 // because the lifetime of `elided_input` is elided by the compiler:
 fn elided_input(x: &amp;i32) {
@@ -116,7 +116,7 @@ fn annotated_pass&lt;'a&gt;(x: &amp;'a i32) -&gt; &amp;'a i32 { x }
 
 fn main() {
     let x = 3;
-    
+
     elided_input(&amp;x);
     annotated_input(&amp;x);
 
@@ -125,7 +125,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="scope/lifetime/elision.html#see-also" id="see-also"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/book/lifetimes.html#lifetime-elision">elision</a></p>
+<p><a href="https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#lifetime-elision">elision</a></p>
 
                 </div>
 
