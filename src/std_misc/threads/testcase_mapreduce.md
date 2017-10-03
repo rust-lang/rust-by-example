@@ -72,7 +72,7 @@ fn main() {
         // * takes ownership of its captured variables ('move') and
         // * returns an unsigned 32-bit integer ('-> u32')
         //
-        // Rust is smart enough to infer the '-> u32' from 
+        // Rust is smart enough to infer the '-> u32' from
         // the closure itself so we could have left that out.
         //
         // TODO: try removing the 'move' and see what happens
@@ -115,7 +115,7 @@ fn main() {
     //
     // we use the "turbofish" ::<> to provide sum() with a type hint.
     //
-    // TODO: try without the turbofish, by instead explicitly 
+    // TODO: try without the turbofish, by instead explicitly
     // specifying the type of intermediate_sums
     let final_result = intermediate_sums.iter().sum::<u32>();
 
@@ -143,10 +143,10 @@ defined by a static constant at the beginning of the program.
 [thread]: /std_misc/threads.html
 [vectors]: /std/vec.html
 [iterators]: /trait/iter.html
-[destructuring]: https://doc.rust-lang.org/book/patterns.html#destructuring
+[destructuring]: https://doc.rust-lang.org/book/second-edition/ch18-03-pattern-syntax.html#destructuring-to-break-apart-values
 [closures]: /fn/closures.html
 [move]: /scope/move.html
-[move_closure]: https://doc.rust-lang.org/book/closures.html#move-closures
+[move_closure]: https://doc.rust-lang.org/book/second-edition/ch13-01-closures.html#closures-can-capture-their-environment
 [turbofish]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect
 [unwrap]: /error/option_unwrap.html
 [enumerate]: https://doc.rust-lang.org/book/loops.html#enumerate

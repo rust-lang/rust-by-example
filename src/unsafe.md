@@ -1,11 +1,10 @@
 # Unsafe Operations
 
-As an introduction to this section, to borrow from [the official docs](
-https://doc.rust-lang.org/book/unsafe.html), "one should try to minimize the
-amount of unsafe code in a code base." With that in mind, let's get started!
-Unsafe blocks in Rust are used to bypass protections put in place by the
-compiler; specifically, there are four primary things that unsafe blocks are
-used for:
+As an introduction to this section, to borrow from [the official docs][unsafe],
+"one should try to minimize the amount of unsafe code in a code base." With that
+in mind, let's get started! Unsafe blocks in Rust are used to bypass protections
+put in place by the compiler; specifically, there are four primary things that
+unsafe blocks are used for:
 
 * dereferencing raw pointers
 * calling a function over FFI (but this is covered in [a previous
@@ -42,3 +41,5 @@ fn main() {
     }
 }
 ```
+
+[unsafe]: https://doc.rust-lang.org/book/second-edition/ch19-01-unsafe-rust.html
