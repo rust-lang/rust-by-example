@@ -52,7 +52,7 @@ fn main() {
 
     // repeating the example above
     // 1000 as u8 -> 232
-    println!("1000 as a i8 is : {}", 1000 as i8);
+    println!("1000 as a i8 is : {}", 1000 as u8);
     // and the two's complement of 232 is -24
     println!(" 232 as a i8 is : {}", 232 as i8);
 }
