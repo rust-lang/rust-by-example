@@ -48,10 +48,10 @@ We use the following labels:
 To build RBE, [install Rust], and then:
 
 ```bash
-> git clone https://github.com/rust-lang/rust-by-example
-> cd rust-by-example
-> cargo install mdbook
-> mdbook build
+$ git clone https://github.com/rust-lang/rust-by-example
+$ cd rust-by-example
+$ cargo install mdbook
+$ mdbook build
 ```
 
 [install Rust]: http://rust-lang.org/install.html
@@ -62,7 +62,7 @@ open the contents in your web browser.
 To run the tests:
 
 ```bash
-> mdbook test
+$ mdbook test
 ```
 
 If you're adding a new chapter, you'll need to edit `src\SUMMARY.md` to add it. If

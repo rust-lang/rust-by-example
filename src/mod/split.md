@@ -3,7 +3,7 @@
 Modules can be mapped to a file/directory hierarchy. Let's break down the
 [visibility example][visibility] in files:
 
-```text
+```bash
 $ tree .
 .
 |-- my
