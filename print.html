@@ -1339,7 +1339,7 @@ fn main() {
 
     // repeating the example above
     // 1000 as u8 -&gt; 232
-    println!(&quot;1000 as a i8 is : {}&quot;, 1000 as i8);
+    println!(&quot;1000 as a i8 is : {}&quot;, 1000 as u8);
     // and the two's complement of 232 is -24
     println!(&quot; 232 as a i8 is : {}&quot;, 232 as i8);
 }
@@ -1673,6 +1673,12 @@ a C <code>switch</code>.</p>
 </code></pre></pre>
 <a class="header" href="print.html#destructuring" id="destructuring"><h1>Destructuring</h1></a>
 <p>A <code>match</code> block can destructure items in a variety of ways.</p>
+<ul>
+<li><a href="enum">Destructuring Enums</a></li>
+<li><a href="refs">Destructuring Pointers</a></li>
+<li><a href="struct">Destructuring Structutures</a></li>
+<li><a href="tuple">Destructuring Tuples</a></li>
+</ul>
 <a class="header" href="print.html#tuples-1" id="tuples-1"><h1>tuples</h1></a>
 <p>Tuples can be destructured in a <code>match</code> as follows:</p>
 <pre><pre class="playpen"><code class="language-rust editable">fn main() {
@@ -2823,7 +2829,7 @@ fn main() {
 <a class="header" href="print.html#file-hierarchy" id="file-hierarchy"><h1>File hierarchy</h1></a>
 <p>Modules can be mapped to a file/directory hierarchy. Let's break down the
 <a href="/mod/visibility.html">visibility example</a> in files:</p>
-<pre><code class="language-text">$ tree .
+<pre><code class="language-bash">$ tree .
 .
 |-- my
 |   |-- inaccessible.rs
@@ -6303,7 +6309,7 @@ fn main() {
 }
 </code></pre></pre>
 <p>Let's check that <code>panic!</code> doesn't leak memory.</p>
-<pre><code class="language-text">$ rustc panic.rs &amp;&amp; valgrind ./panic
+<pre><code class="language-bash">$ rustc panic.rs &amp;&amp; valgrind ./panic
 ==4401== Memcheck, a memory error detector
 ==4401== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
 ==4401== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
