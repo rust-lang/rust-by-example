@@ -24,7 +24,7 @@ impl Days {
     }
 }
 
-fn old_enough(age: Years) -> bool {
+fn old_enough(age: &Years) -> bool {
     if age.0 >= 18 {
         return true
     }
@@ -34,9 +34,9 @@ fn old_enough(age: Years) -> bool {
 fn main() {
     let age = Years(5);
     let age_days = age.to_days();
-    println!("Old enough {}", old_enough(age));
-    println!("Old enough {}", old_enough(age_days.to_years()));
-    // println!("Old enough {}", old_enough(age_days));
+    println!("Old enough {}", old_enough(&age));
+    println!("Old enough {}", old_enough(&age_days.to_years()));
+    // println!("Old enough {}", old_enough(&age_days));
 }
 ```
 
