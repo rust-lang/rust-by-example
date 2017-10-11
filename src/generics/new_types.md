@@ -28,7 +28,7 @@ fn old_enough(age: Years) -> bool {
     if age.0 >= 18 {
         return true
     }
-    return false
+    false
 }
 
 fn main() {
