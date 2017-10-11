@@ -46,7 +46,7 @@ mod checked {
         // if `div` "fails", then `DivisionByZero` will be `return`ed
         let ratio = div(x, y)?;
 
-        // if `ln` "fails", then `NegativeLogarithm` will be `return`ed
+        // if `ln` "fails", then `NonPositiveLogarithm` will be `return`ed
         let ln = ln(ratio)?;
 
         sqrt(ln)
