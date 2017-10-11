@@ -1617,7 +1617,8 @@ expression.</p>
     }
 }
 </code></pre></pre>
-<a class="header" href="print.html#for-and-range" id="for-and-range"><h1>for and range</h1></a>
+<a class="header" href="print.html#for-loops" id="for-loops"><h1>for loops</h1></a>
+<a class="header" href="print.html#for-and-range" id="for-and-range"><h2>for and range</h2></a>
 <p>The <code>for in</code> construct can be used to iterate through an <code>Iterator</code>.
 One of the easiest ways to create an iterator is to use the range
 notation <code>a..b</code>. This yields values from <code>a</code> (inclusive) to <code>b</code>
@@ -1638,6 +1639,58 @@ notation <code>a..b</code>. This yields values from <code>a</code> (inclusive) t
     }
 }
 </code></pre></pre>
+<a class="header" href="print.html#for-and-iterators" id="for-and-iterators"><h2>for and iterators</h2></a>
+<p>The <code>for in</code> construct is able to interact with an <code>Iterator</code> in several ways.
+As discussed in with the <a href="/trait/iter.html">Iterator</a> trait, if not specified, the <code>for</code>
+loop will apply the <code>into_iter</code> function on the collection provided to convert
+the collection into an iterator. This is not the only means to convert a
+collection into an iterator however, the other functions available include
+<code>iter</code> and <code>iter_mut</code>.</p>
+<p>These 3 functions will return different views of the data within your
+collection.</p>
+<ul>
+<li><code>iter</code> - This borrows each element of the collection through each iteration.
+Thus leaving the collection untouched and available for reuse after the loop.</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust editable">let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+
+    for name in names.iter() {
+        match name {
+            &amp;&quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+            _ =&gt; println!(&quot;Hello {}&quot;, name),
+        }
+    }
+</code></pre></pre>
+<ul>
+<li><code>into_iter</code> - This consumes the collection so that on each iteration the exact
+data is provided. Once the collection has been consumed it is no longer
+available for reuse as it has been 'moved' within the loop.</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust editable">let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+
+for name in names.into_iter() {
+        match name {
+            &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+            _ =&gt; println!(&quot;Hello {}&quot;, name),
+        }
+    }
+</code></pre></pre>
+<ul>
+<li><code>iter_mut</code> - This mutably borrows each element of the collection, allowing for
+the collection to be modified in place.</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust editable">let mut names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+
+for name in names.iter_mut() {
+        match name {
+            &amp;mut &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+            _ =&gt; println!(&quot;Hello {}&quot;, name),
+        }
+    }
+</code></pre></pre>
+<p>In the above snippets note the type of <code>match</code> branch, that is the key
+difference in the types or iteration. The difference in type then of course
+implies differing actions that are able to be performed.</p>
 <a class="header" href="print.html#see-also-14" id="see-also-14"><h3>See also</h3></a>
 <p><a href="/trait/iter.html">Iterator</a></p>
 <a class="header" href="print.html#match" id="match"><h1>match</h1></a>
