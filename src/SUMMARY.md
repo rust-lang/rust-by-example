@@ -91,6 +91,7 @@
         - [Testcase: empty bounds](generics/bounds/testcase_empty.md)
     - [Multiple bounds](generics/multi_bounds.md)
     - [Where clauses](generics/where.md)
+    - [New Type Idiom](generics/new_types.md)
     - [Associated items](generics/assoc_items.md)
         - [The Problem](generics/assoc_items/the_problem.md)
         - [Associated types](generics/assoc_items/types.md)
