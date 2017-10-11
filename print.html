@@ -6305,7 +6305,7 @@ expands to an <code>ok</code> expression.</p>
         // if `div` &quot;fails&quot;, then `DivisionByZero` will be `return`ed
         let ratio = div(x, y)?;
 
-        // if `ln` &quot;fails&quot;, then `NegativeLogarithm` will be `return`ed
+        // if `ln` &quot;fails&quot;, then `NonPositiveLogarithm` will be `return`ed
         let ln = ln(ratio)?;
 
         sqrt(ln)
