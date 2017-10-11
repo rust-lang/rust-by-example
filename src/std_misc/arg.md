@@ -1,7 +1,9 @@
 # Program arguments
 
+## Standard Library
+
 The command line arguments can be accessed using `std::env::args`, which
-returns an iterator that yields a String for each argument:
+returns an iterator that yields a `String` for each argument:
 
 ```rust,editable
 use std::env;
@@ -24,3 +26,12 @@ $ ./args 1 2 3
 My path is ./args.
 I got 3 arguments: ["1", "2", "3"].
 ```
+
+## Crates
+
+Alternatively, there are numerous crates that can provide extra functionality
+when creating command line applications. The [Rust Cookbook] exhibits best
+practices on how to use one of the more popular command line argument crates,
+`clap`.
+
+[Rust Cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/app.html#ex-clap-basic
