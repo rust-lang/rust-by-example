@@ -7108,8 +7108,9 @@ a
 <a class="header" href="print.html#see-also-64" id="see-also-64"><h3>See also:</h3></a>
 <p><a href="/attribute/cfg.html"><code>cfg!</code></a></p>
 <a class="header" href="print.html#program-arguments" id="program-arguments"><h1>Program arguments</h1></a>
+<a class="header" href="print.html#standard-library" id="standard-library"><h2>Standard Library</h2></a>
 <p>The command line arguments can be accessed using <code>std::env::args</code>, which
-returns an iterator that yields a String for each argument:</p>
+returns an iterator that yields a <code>String</code> for each argument:</p>
 <pre><pre class="playpen"><code class="language-rust editable">use std::env;
 
 fn main() {
@@ -7128,6 +7129,11 @@ fn main() {
 My path is ./args.
 I got 3 arguments: [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;].
 </code></pre>
+<a class="header" href="print.html#crates-2" id="crates-2"><h2>Crates</h2></a>
+<p>Alternatively, there are numerous crates that can provide extra functionality
+when creating command line applications. The <a href="https://rust-lang-nursery.github.io/rust-cookbook/app.html#ex-clap-basic">Rust Cookbook</a> exhibits best
+practices on how to use one of the more popular command line argument crates,
+<code>clap</code>.</p>
 <a class="header" href="print.html#argument-parsing" id="argument-parsing"><h1>Argument parsing</h1></a>
 <p>Matching can be used to parse simple arguments:</p>
 <pre><pre class="playpen"><code class="language-rust editable">use std::env;
