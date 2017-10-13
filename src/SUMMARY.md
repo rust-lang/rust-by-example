@@ -34,6 +34,9 @@
     - [Inference](types/inference.md)
     - [Aliasing](types/alias.md)
 
+- [Conversion](conversion.md)
+    - [From and Into](conversion/from_into.md)
+
 - [Expressions](expression.md)
 
 - [Flow Control](flow_control.md)
