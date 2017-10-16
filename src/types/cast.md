@@ -24,7 +24,7 @@ fn main() {
 
     println!("Casting: {} -> {} -> {}", decimal, integer, character);
 
-    // when casting any value to an unsigned type, T, 
+    // when casting any value to an unsigned type, T,
     // std::T::MAX + 1 is added or subtracted until the value
     // fits into the new type
 
@@ -41,8 +41,8 @@ fn main() {
     // For positive numbers, this is the same as the modulus
     println!("1000 mod 256 is : {}", 1000 % 256);
 
-    // When casting to a signed type, the (bitwise) result is the same as 
-    // first casting to the corresponding unsigned type. If the most significant 
+    // When casting to a signed type, the (bitwise) result is the same as
+    // first casting to the corresponding unsigned type. If the most significant
     // bit of that value is 1, then the value is negative.
 
     // Unless it already fits, of course.

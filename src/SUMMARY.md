@@ -28,10 +28,15 @@
     - [Scope and Shadowing](variable_bindings/scope.md)
     - [Declare first](variable_bindings/declare.md)
 
-- [Casting](cast.md)
-    - [Literals](cast/literals.md)
-    - [Inference](cast/inference.md)
-    - [Aliasing](cast/alias.md)
+- [Types](types.md)
+    - [Casting](types/cast.md)
+    - [Literals](types/literals.md)
+    - [Inference](types/inference.md)
+    - [Aliasing](types/alias.md)
+
+- [Conversion](conversion.md)
+    - [From and Into](conversion/from_into.md)
+    - [To and From String](conversion/string.md)
 
 - [Expressions](expression.md)
 
