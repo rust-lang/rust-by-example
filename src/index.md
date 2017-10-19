@@ -19,7 +19,9 @@ Now let's begin!
 
 - [Variable Bindings](variable_bindings.html) - mutable bindings, scope, shadowing.
 
-- [Casting](cast.html) - Learn about explicit conversion between types.
+- [Types](types.html) - Learn about changing and defining types.
+
+- [Conversion](conversion.html)
 
 - [Expressions](expression.html)
 
