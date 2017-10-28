@@ -6,9 +6,9 @@ like a small language. This allows you to define concise or intuitive syntax for
 some special functionality (within bounds).
 
 Suppose that I want to define a little calculator API. I would like to supply
-a bunch of expressions and print the results.
+an expression an have the output printed to console.
 
-```rust
+```rust,editable
 macro_rules! calculate {
     (eval $e:expr) => {{
         {
@@ -16,18 +16,15 @@ macro_rules! calculate {
             println!("{} = {}", stringify!{$e}, val);
         }
     }};
-
-    (eval $e:expr, $(eval $es:expr),+) => {{
-        calculate! { eval $e }
-        calculate! { $(eval $es),+ }
-    }};
 }
 
 fn main() {
     calculate! {
-        eval 1 + 2, // hehehe `eval` is _not_ a Rust keyword!
-        eval 3 + 4,
-        eval (2 * 3) + 1
+        eval 1 + 2 // hehehe `eval` is _not_ a Rust keyword!
+    }
+
+    calculate! {
+        eval (1 + 2) * (3 / 4)
     }
 }
 ```
@@ -35,13 +32,9 @@ fn main() {
 Output:
 ```
 1 + 2 = 3
-3 + 4 = 7
-(2 * 3) + 1 = 7
+(1 + 2) * (3 / 4) = 0
 ```
 
 This was a very simple example, but much more complex interfaces have been
 developed, such as [`lazy_static`](https://crates.io/crates/lazy_static) or
 [`clap`](https://crates.io/crates/clap).
-
-Notice that this is also a _variadic_ interface -- that is, it can take an
-arbitrary number of arguments (in this case, expressions to `eval`).
