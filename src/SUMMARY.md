@@ -82,6 +82,10 @@
     - [Library](crates/lib.md)
     - [`extern crate`](crates/link.md)
 
+- [Cargo](cargo.md)
+    - [Dependencies](cargo/deps.md)
+    - [Tests](cargo/test.md)
+
 - [Attributes](attribute.md)
     - [`dead_code`](attribute/unused.md)
     - [Crates](attribute/crate.md)
