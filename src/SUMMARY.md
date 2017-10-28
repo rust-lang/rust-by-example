@@ -134,6 +134,7 @@
     - [Overload](macros/overload.md)
     - [Repeat](macros/repeat.md)
     - [DRY (Don't Repeat Yourself)](macros/dry.md)
+    - [DSL (Domain Specific Languages)](macros/dsl.md)
 
 - [Error handling](error.md)
     - [`panic`](error/panic.md)
