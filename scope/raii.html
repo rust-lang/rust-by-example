@@ -148,6 +148,26 @@ fn main() {
 ==26873== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
 </code></pre>
 <p>No leaks here!</p>
+<a class="header" href="scope/raii.html#destructor" id="destructor"><h2>Destructor</h2></a>
+<p>The notion of a destructor in Rust is provided through the <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait. The
+destructor is called when the resource goes out of scope. This trait is not
+required to be implemented for every type, only implement it for your type if
+you require its own destructor logic.</p>
+<p>Run the below example to see how the <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait works. When the variable in
+the <code>main</code> function goes out of scope the custom destructor wil be invoked.</p>
+<pre><pre class="playpen"><code class="language-rust editable">struct ToDrop;
+
+impl Drop for ToDrop {
+    fn drop(&amp;mut self) {
+        println!(&quot;ToDrop is being dropped&quot;);
+    }
+}
+
+fn main() {
+    let x = ToDrop;
+    println!(&quot;Made a ToDrop!&quot;);
+}
+</code></pre></pre>
 <a class="header" href="scope/raii.html#see-also" id="see-also"><h3>See also:</h3></a>
 <p><a href="/std/box.html">Box</a></p>
 
