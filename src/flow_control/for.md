@@ -42,7 +42,8 @@ collection.
   Thus leaving the collection untouched and available for reuse after the loop.
 
 ```rust, editable
-let names = vec!["Bob", "Frank", "Ferris"];
+fn main () {
+    let names = vec!["Bob", "Frank", "Ferris"];
 
     for name in names.iter() {
         match name {
@@ -50,6 +51,7 @@ let names = vec!["Bob", "Frank", "Ferris"];
             _ => println!("Hello {}", name),
         }
     }
+}
 ```
 
 * `into_iter` - This consumes the collection so that on each iteration the exact
@@ -57,28 +59,32 @@ let names = vec!["Bob", "Frank", "Ferris"];
   available for reuse as it has been 'moved' within the loop.
 
 ```rust, editable
-let names = vec!["Bob", "Frank", "Ferris"];
+fn main () {
+    let names = vec!["Bob", "Frank", "Ferris"];
 
-for name in names.into_iter() {
+    for name in names.into_iter() {
         match name {
             "Ferris" => println!("There is a rustacean among us!"),
             _ => println!("Hello {}", name),
         }
     }
+}
 ```
 
 * `iter_mut` - This mutably borrows each element of the collection, allowing for
   the collection to be modified in place.
 
 ```rust, editable
-let mut names = vec!["Bob", "Frank", "Ferris"];
+fn main () {
+    let mut names = vec!["Bob", "Frank", "Ferris"];
 
-for name in names.iter_mut() {
+    for name in names.iter_mut() {
         match name {
             &mut "Ferris" => println!("There is a rustacean among us!"),
             _ => println!("Hello {}", name),
         }
     }
+}
 ```
 
 In the above snippets note the type of `match` branch, that is the key
