@@ -9,14 +9,42 @@ easy way to run all of your tests!
 cargo test
 ```
 
-or to run a specific test
+You should see output like this:
+
+```
+$ cargo test
+   Compiling blah v0.1.0 (file:///nobackup/blah)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.89 secs
+     Running target/debug/deps/blah-d3b32b97275ec472
+
+running 3 tests
+test test_bar ... ok
+test test_baz ... ok
+test test_foo_bar ... ok
+test test_foo ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+You can also run tests whose name matches a pattern:
 
 ```sh
 cargo test test_foo
 ```
 
-You should see output like this:
+```
+$ cargo test test_foo
+   Compiling blah v0.1.0 (file:///nobackup/blah)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.35 secs
+     Running target/debug/deps/blah-d3b32b97275ec472
 
+running 2 tests
+test test_foo ... ok
+test test_foo_bar ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out
 ```
-TODO TODO TODO (this is not what you will actually see)
-```
+
+One word of caution: Cargo may run multiple tests concurrently, so make sure
+that they don't race with each other. For example, if they all output to a
+file, you should make them write to different files.
