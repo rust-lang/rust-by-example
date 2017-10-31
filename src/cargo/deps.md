@@ -22,9 +22,9 @@ After the above commands, you should see something like this:
 
 ```
 foo
-├── Cargo.toml
-└── src
-    └── main.rs
+|-- Cargo.toml
+|-- src
+    |-- main.rs
 ```
 
 The `main.rs` is the root source file for your new project -- nothing new there.
