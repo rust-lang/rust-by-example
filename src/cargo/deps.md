@@ -20,11 +20,11 @@ a library, but all of the concepts are the same.
 
 After the above commands, you should see something like this:
 
-```
+```txt
 foo
-|-- Cargo.toml
-|-- src
-    |-- main.rs
+├── Cargo.toml
+└── src
+    └── main.rs
 ```
 
 The `main.rs` is the root source file for your new project -- nothing new there.
