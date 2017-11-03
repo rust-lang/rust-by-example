@@ -184,8 +184,10 @@
         - [Argument parsing](std_misc/arg/matching.md)
     - [Foreign Function Interface](std_misc/ffi.md)
 
+- [Testing](testing.md)
+    - [Unit testing](testing/unit_testing.md)
+
 - [Meta](meta.md)
     - [Documentation](meta/doc.md)
-    - [Testing](meta/test.md)
 
 - [Unsafe Operations](unsafe.md)
