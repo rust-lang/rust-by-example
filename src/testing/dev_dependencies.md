@@ -1,15 +1,15 @@
 # Development dependencies
 
-Sometimes there is a need to have a dependency for tests (examples, benchmarks)
-only. Such dependencies are added to `Cargo.toml` in `[dev-dependencies]`
-section. These dependencies are not propagated to other packages which depend on
-this package.
+Sometimes there is a need to have a dependencies for tests (examples,
+benchmarks) only. Such dependencies are added to `Cargo.toml` in
+`[dev-dependencies]` section. These dependencies are not propagated to other
+packages which depend on this package.
 
-One such example is some crate that extends standard `assert!` macros.  
+One such example is using a crate that extends standard `assert!` macros.  
 File `Cargo.toml`:
 
 ```ignore
-# crate data left out
+# standard crate data is left out
 [dev-dependencies]
 pretty_assertions = "0.4.0"
 ```
