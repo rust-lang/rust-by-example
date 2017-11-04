@@ -187,6 +187,7 @@
 - [Testing](testing.md)
     - [Unit testing](testing/unit_testing.md)
     - [Documentation testing](testing/doc_testing.md)
+    - [Integration testing](testing/integration_testing.md)
 
 - [Meta](meta.md)
     - [Documentation](meta/doc.md)
