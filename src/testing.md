@@ -10,7 +10,7 @@ Testing comes in three "tastes":
 * [Integration][integration] testing.
 
 Also Rust has support for spectifying additional dependencies for tests:
-* Dev-dependencies.
+* [Dev-dependencies][dev-dependencies]
 
 ## See Also
 
@@ -20,5 +20,6 @@ Also Rust has support for spectifying additional dependencies for tests:
 [unit]: ./testing/unit_testing.html
 [doc]: ./testing/doc_testing.html
 [integration]: ./testing/integration_testing.html
+[dev-dependencies]: ./testing/dev_dependencies.html
 [doc-testing]: https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html
 [doc-nursery]: https://rust-lang-nursery.github.io/api-guidelines/documentation.html
