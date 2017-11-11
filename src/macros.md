@@ -30,7 +30,7 @@ So why are macros useful?
 
 1. Don't repeat yourself. There are many cases where you may need similar
    functionality in multiple places but with different types. Often, writing a
-   macro is a useful wait to avoid repeating code. (More on this later)
+   macro is a useful way to avoid repeating code. (More on this later)
 
 2. Domain-specific languages. Macros allow you to define special syntax for a
    specific purpose. (More on this later)
