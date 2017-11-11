@@ -11,7 +11,7 @@ cargo test
 
 You should see output like this:
 
-```
+```txt
 $ cargo test
    Compiling blah v0.1.0 (file:///nobackup/blah)
     Finished dev [unoptimized + debuginfo] target(s) in 0.89 secs
@@ -32,7 +32,7 @@ You can also run tests whose name matches a pattern:
 cargo test test_foo
 ```
 
-```
+```txt
 $ cargo test test_foo
    Compiling blah v0.1.0 (file:///nobackup/blah)
     Finished dev [unoptimized + debuginfo] target(s) in 0.35 secs
