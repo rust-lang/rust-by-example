@@ -96,7 +96,10 @@
                 <div id="content" class="content">
                     <a class="header" href="crates/lib.html#library" id="library"><h1>Library</h1></a>
 <p>Let's create a library, and then see how to link it to another crate.</p>
-<pre><pre class="playpen"><code class="language-rust editable">pub fn public_function() {
+<pre><pre class="playpen"><code class="language-rust editable">
+# #![allow(unused_variables)]
+#fn main() {
+pub fn public_function() {
     println!(&quot;called rary's `public_function()`&quot;);
 }
 
@@ -109,7 +112,7 @@ pub fn indirect_access() {
 
     private_function();
 }
-</code></pre></pre>
+#}</code></pre></pre>
 <pre><code class="language-bash">$ rustc --crate-type=lib rary.rs
 $ ls lib*
 library.rlib
@@ -168,12 +171,6 @@ attribute</a>.</p>
 
         
 
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         

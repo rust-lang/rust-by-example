@@ -98,7 +98,10 @@
 <p>The <code>crate_type</code> attribute can be used to tell the compiler whether a crate is
 a binary or a library (and even which type of library), and the <code>crate_name</code>
 attribute can be used to set the name of the crate.</p>
-<pre><pre class="playpen"><code class="language-rust editable">// This crate is a library
+<pre><pre class="playpen"><code class="language-rust editable">
+# #![allow(unused_variables)]
+#fn main() {
+// This crate is a library
 #![crate_type = &quot;lib&quot;]
 // The library is named &quot;rary&quot;
 #![crate_name = &quot;rary&quot;]
@@ -116,7 +119,7 @@ pub fn indirect_access() {
 
     private_function();
 }
-</code></pre></pre>
+#}</code></pre></pre>
 <p>When the <code>crate_type</code> attribute is used, we no longer need to pass the
 <code>--crate-type</code> flag to <code>rustc</code>.</p>
 <pre><code class="language-bash">$ rustc lib.rs
@@ -174,12 +177,6 @@ library.rlib
 
         
 
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         

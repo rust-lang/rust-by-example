@@ -98,7 +98,10 @@
 <p>Macros allow writing DRY code by factoring out the common parts of functions
 and/or test suites. Here is an example that implements and tests the <code>+=</code>, <code>*=</code>
 and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>:</p>
-<pre><pre class="playpen"><code class="language-rust editable">use std::ops::{Add, Mul, Sub};
+<pre><pre class="playpen"><code class="language-rust editable">
+# #![allow(unused_variables)]
+#fn main() {
+use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
     // The `tt` (token tree) designator is used for
@@ -155,7 +158,7 @@ mod test {
     test!(mul_assign, 2u32, 3u32, 6u32);
     test!(sub_assign, 3u32, 2u32, 1u32);
 }
-</code></pre></pre>
+#}</code></pre></pre>
 <pre><code class="language-bash">$ rustc --test dry.rs &amp;&amp; ./dry
 running 3 tests
 test test::mul_assign ... ok
@@ -215,12 +218,6 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured
 
         
 
-        
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         
