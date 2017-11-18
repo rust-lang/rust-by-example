@@ -4,8 +4,10 @@ Printing is handled by a series of [`macros`][macros] defined in [`std::fmt`][fm
 some of which include:
 
 * `format!`: write formatted text to [`String`][string]
-* `print!`: same as `format!` but the text is printed to the console.
+* `print!`: same as `format!` but the text is printed to the console (io::stdout).
 * `println!`: same as `print!` but a newline is appended.
+* `eprint!`: same as `format!` but the text is printed to the standard error (io::stderr).
+* `eprintln!`: sames as `eprint!`but a newline is appended.
 
 All parse text in the same fashion. A plus is that the formatting correctness will
 be checked at compile time.
