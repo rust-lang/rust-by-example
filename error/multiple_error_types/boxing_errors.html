@@ -97,7 +97,7 @@
                     <a class="header" href="error/multiple_error_types/boxing_errors.html#boxing-errors" id="boxing-errors"><h1><code>Box</code>ing errors</h1></a>
 <p>A way to write simple code while preserving the original errors is to <a href="https://doc.rust-lang.org/std/boxed/struct.Box.html"><code>Box</code></a>
 them.  The drawback is that the underlying error type is only known at runtime and not
-<a href="https://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch">statically determined</a>.</p>
+<a href="https://doc.rust-lang.org/book/second-edition/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch">statically determined</a>.</p>
 <p>The stdlib helps in boxing our errors by having <code>Box</code> implement conversion from
 any type that implements the <code>Error</code> trait into the trait object <code>Box&lt;Error&gt;</code>,
 via <a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From</code></a>.</p>
@@ -154,7 +154,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="error/multiple_error_types/boxing_errors.html#see-also" id="see-also"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/book/trait-objects.html#dynamic-dispatch">Dynamic dispatch</a> and <a href="https://doc.rust-lang.org/std/error/trait.Error.html"><code>Error</code> trait</a></p>
+<p><a href="https://doc.rust-lang.org/book/second-edition/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch">Dynamic dispatch</a> and <a href="https://doc.rust-lang.org/std/error/trait.Error.html"><code>Error</code> trait</a></p>
 
                 </div>
 
