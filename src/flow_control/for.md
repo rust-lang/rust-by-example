@@ -44,12 +44,12 @@ collection.
 ```rust, editable
 let names = vec!["Bob", "Frank", "Ferris"];
 
-    for name in names.iter() {
-        match name {
-            &"Ferris" => println!("There is a rustacean among us!"),
-            _ => println!("Hello {}", name),
-        }
+for name in names.iter() {
+    match name {
+        &"Ferris" => println!("There is a rustacean among us!"),
+        _ => println!("Hello {}", name),
     }
+}
 ```
 
 * `into_iter` - This consumes the collection so that on each iteration the exact
@@ -60,11 +60,11 @@ let names = vec!["Bob", "Frank", "Ferris"];
 let names = vec!["Bob", "Frank", "Ferris"];
 
 for name in names.into_iter() {
-        match name {
-            "Ferris" => println!("There is a rustacean among us!"),
-            _ => println!("Hello {}", name),
-        }
+    match name {
+        "Ferris" => println!("There is a rustacean among us!"),
+        _ => println!("Hello {}", name),
     }
+}
 ```
 
 * `iter_mut` - This mutably borrows each element of the collection, allowing for
@@ -74,11 +74,11 @@ for name in names.into_iter() {
 let mut names = vec!["Bob", "Frank", "Ferris"];
 
 for name in names.iter_mut() {
-        match name {
-            &mut "Ferris" => println!("There is a rustacean among us!"),
-            _ => println!("Hello {}", name),
-        }
+    match name {
+        &mut "Ferris" => println!("There is a rustacean among us!"),
+        _ => println!("Hello {}", name),
     }
+}
 ```
 
 In the above snippets note the type of `match` branch, that is the key
