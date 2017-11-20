@@ -257,8 +257,10 @@ a few different varieties:</p>
 some of which include:</p>
 <ul>
 <li><code>format!</code>: write formatted text to <a href="/std/str.html"><code>String</code></a></li>
-<li><code>print!</code>: same as <code>format!</code> but the text is printed to the console.</li>
+<li><code>print!</code>: same as <code>format!</code> but the text is printed to the console (io::stdout).</li>
 <li><code>println!</code>: same as <code>print!</code> but a newline is appended.</li>
+<li><code>eprint!</code>: same as <code>format!</code> but the text is printed to the standard error (io::stderr).</li>
+<li><code>eprintln!</code>: sames as <code>eprint!</code>but a newline is appended.</li>
 </ul>
 <p>All parse text in the same fashion. A plus is that the formatting correctness will
 be checked at compile time.</p>
@@ -3189,6 +3191,10 @@ examples.</p>
 <p>The <code>crate_type</code> attribute can be used to tell the compiler whether a crate is
 a binary or a library (and even which type of library), and the <code>crate_name</code>
 attribute can be used to set the name of the crate.</p>
+<p>However, it is important to note that both the <code>crate_type</code> and <code>crate_name</code>
+attributes have <strong>no</strong> effect whatsoever when using Cargo, the Rust package
+manager. Since Cargo is used for the majority of Rust projects, this means
+real-world uses of <code>crate-type</code> and <code>crate_name</code> are relatively limited.</p>
 <pre><pre class="playpen"><code class="language-rust editable">
 # #![allow(unused_variables)]
 #fn main() {
@@ -6429,6 +6435,95 @@ can be used to view into a <code>String</code>, just like <code>&amp;[T]</code> 
 <a href="https://doc.rust-lang.org/std/str/">std::str</a> and
 <a href="https://doc.rust-lang.org/std/string/">std::string</a>
 modules</p>
+<a class="header" href="print.html#literals-and-escapes" id="literals-and-escapes"><h2>Literals and escapes</h2></a>
+<p>There are multiple ways to write string literals with special characters in them.
+All result in a similar <code>&amp;str</code> so it's best to use the form that is the most
+convenient to write. Similarly there are multiple ways to write byte string literals,
+which all result in <code>&amp;[u8; N]</code>.</p>
+<p>Generally special characters are escaped with a backslash character: <code>\</code>.
+This way you can add any character to your string, even unprintable ones
+and ones that you don't know how to type. If you want a literal backslash,
+escape it with another one: <code>\\</code></p>
+<p>String or character literal delimiters occuring within a literal must be escaped: <code>&quot;\&quot;&quot;</code>, <code>'\''</code>.</p>
+<pre><pre class="playpen"><code class="language-rust editable">fn main() {
+    // You can use escapes to write bytes by their hexadecimal values...
+    let byte_escape = &quot;I'm writing \x52\x75\x73\x74!&quot;;
+    println!(&quot;What are you doing\x3F (\\x3F means ?) {}&quot;, byte_escape);
+
+    // ...or Unicode code points.
+    let unicode_codepoint = &quot;\u{211D}&quot;;
+    let character_name = &quot;\&quot;DOUBLE-STRUCK CAPITAL R\&quot;&quot;;
+
+    println!(&quot;Unicode character {} (U+211D) is called {}&quot;,
+                unicode_codepoint, character_name );
+
+
+    let long_string = &quot;String literals
+                        can span multiple lines.
+                        The linebreak and indentation here -&gt;\
+                        &lt;- can be escaped too!&quot;;
+    println!(&quot;{}&quot;, long_string);
+}
+</code></pre></pre>
+<p>Sometimes there are just too many characters that need to be escaped or it's just
+much more convenient to write a string out as-is. This is where raw string literals come into play.</p>
+<pre><pre class="playpen"><code class="language-rust editable">fn main() {
+    let raw_str = r&quot;Escapes don't work here: \x3F \u{211D}&quot;;
+    println!(&quot;{}&quot;, raw_str);
+
+    // If you need quotes in a raw string, add a pair of #s
+    let quotes = r#&quot;And then I said: &quot;There is no escape!&quot;&quot;#;
+    println!(&quot;{}&quot;, quotes);
+
+    // If you need &quot;# in your string, just use more #s in the delimiter.
+    // There is no limit for the number of #s you can use.
+    let longer_delimiter = r###&quot;A string with &quot;# in it. And even &quot;##!&quot;###;
+    println!(&quot;{}&quot;, longer_delimiter);
+}
+</code></pre></pre>
+<p>Want a string that's not UTF-8? (Remember, <code>str</code> and <code>String</code> must be valid UTF-8)
+Or maybe you want an array of bytes that's mostly text? Byte strings to the rescue!</p>
+<pre><pre class="playpen"><code class="language-rust editable">use std::str;
+
+fn main() {
+    // Note that this is not actually a &amp;str
+    let bytestring: &amp;[u8; 20] = b&quot;this is a bytestring&quot;;
+
+    // Byte arrays don't have Display so printing them is a bit limited
+    println!(&quot;A bytestring: {:?}&quot;, bytestring);
+
+    // Bytestrings can have byte escapes...
+    let escaped = b&quot;\x52\x75\x73\x74 as bytes&quot;;
+    // ...but no unicode escapes
+    // let escaped = b&quot;\u{211D} is not allowed&quot;;
+    println!(&quot;Some escaped bytes: {:?}&quot;, escaped);
+
+
+    // Raw bytestrings work just like raw strings
+    let raw_bytestring = br&quot;\u{211D} is not escaped here&quot;;
+    println!(&quot;{:?}&quot;, raw_bytestring);
+
+    // Converting a byte array to str can fail
+    if let Ok(my_str) = str::from_utf8(raw_bytestring) {
+        println!(&quot;And the same as text: '{}'&quot;, my_str);
+    }
+
+    let quotes = br#&quot;You can also use &quot;fancier&quot; formatting, \
+                    like with normal raw strings&quot;#;
+
+    // Bytestrings don't have to be UTF-8
+    let shift_jis = b&quot;\x82\xe6\x82\xa8\x82\xb1\x82&quot;; // &quot;ようこそ&quot; in SHIFT-JIS
+
+    // But then they can't always be converted to str
+    match str::from_utf8(shift_jis) {
+        Ok(my_str) =&gt; println!(&quot;Conversion successful: '{}'&quot;, my_str),
+        Err(e) =&gt; println!(&quot;Conversion failed: {:?}&quot;, e),
+    };
+}
+</code></pre></pre>
+<p>For conversions between character encodings check out the <a href="https://crates.io/crates/encoding">enconding</a> crate.</p>
+<p>A more detailed listing of the ways to write string literals and escape characters
+is given in the <a href="https://doc.rust-lang.org/reference/tokens.html">'Tokens' chapter</a> of the Rust Reference.</p>
 <a class="header" href="print.html#option" id="option"><h1><code>Option</code></h1></a>
 <p>Sometimes it's desirable to catch the failure of some parts of a program
 instead of calling <code>panic!</code>; this can be accomplished using the <code>Option</code> enum.</p>

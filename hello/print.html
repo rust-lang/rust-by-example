@@ -99,8 +99,10 @@
 some of which include:</p>
 <ul>
 <li><code>format!</code>: write formatted text to <a href="/std/str.html"><code>String</code></a></li>
-<li><code>print!</code>: same as <code>format!</code> but the text is printed to the console.</li>
+<li><code>print!</code>: same as <code>format!</code> but the text is printed to the console (io::stdout).</li>
 <li><code>println!</code>: same as <code>print!</code> but a newline is appended.</li>
+<li><code>eprint!</code>: same as <code>format!</code> but the text is printed to the standard error (io::stderr).</li>
+<li><code>eprintln!</code>: sames as <code>eprint!</code>but a newline is appended.</li>
 </ul>
 <p>All parse text in the same fashion. A plus is that the formatting correctness will
 be checked at compile time.</p>

@@ -98,6 +98,10 @@
 <p>The <code>crate_type</code> attribute can be used to tell the compiler whether a crate is
 a binary or a library (and even which type of library), and the <code>crate_name</code>
 attribute can be used to set the name of the crate.</p>
+<p>However, it is important to note that both the <code>crate_type</code> and <code>crate_name</code>
+attributes have <strong>no</strong> effect whatsoever when using Cargo, the Rust package
+manager. Since Cargo is used for the majority of Rust projects, this means
+real-world uses of <code>crate-type</code> and <code>crate_name</code> are relatively limited.</p>
 <pre><pre class="playpen"><code class="language-rust editable">
 # #![allow(unused_variables)]
 #fn main() {
