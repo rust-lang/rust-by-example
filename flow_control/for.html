@@ -134,12 +134,12 @@ Thus leaving the collection untouched and available for reuse after the loop.</l
 #fn main() {
 let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
-    for name in names.iter() {
-        match name {
-            &amp;&quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
-            _ =&gt; println!(&quot;Hello {}&quot;, name),
-        }
+for name in names.iter() {
+    match name {
+        &amp;&quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+        _ =&gt; println!(&quot;Hello {}&quot;, name),
     }
+}
 #}</code></pre></pre>
 <ul>
 <li><code>into_iter</code> - This consumes the collection so that on each iteration the exact
@@ -152,11 +152,11 @@ available for reuse as it has been 'moved' within the loop.</li>
 let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
 for name in names.into_iter() {
-        match name {
-            &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
-            _ =&gt; println!(&quot;Hello {}&quot;, name),
-        }
+    match name {
+        &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+        _ =&gt; println!(&quot;Hello {}&quot;, name),
     }
+}
 #}</code></pre></pre>
 <ul>
 <li><code>iter_mut</code> - This mutably borrows each element of the collection, allowing for
@@ -168,11 +168,11 @@ the collection to be modified in place.</li>
 let mut names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
 for name in names.iter_mut() {
-        match name {
-            &amp;mut &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
-            _ =&gt; println!(&quot;Hello {}&quot;, name),
-        }
+    match name {
+        &amp;mut &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+        _ =&gt; println!(&quot;Hello {}&quot;, name),
     }
+}
 #}</code></pre></pre>
 <p>In the above snippets note the type of <code>match</code> branch, that is the key
 difference in the types or iteration. The difference in type then of course
