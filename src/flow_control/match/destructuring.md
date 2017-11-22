@@ -4,7 +4,7 @@ A `match` block can destructure items in a variety of ways.
 
 * [Destructuring Enums][enum]
 * [Destructuring Pointers][refs]
-* [Destructuring Structutures][struct]
+* [Destructuring Structures][struct]
 * [Destructuring Tuples][tuple]
 
 
