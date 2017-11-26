@@ -5,9 +5,8 @@ the expected manner. The bodies of test functions typically perform some setup,
 run the code we want to test, then assert whether the results are what we
 expect.
 
-Typical scenario for grouping tests - adding `tests` [mod][mod] under with
-[attribute][attribute] `#[cfg(test)]`. Test functions are marked with `#[test]`
-attribute.
+Most unit tests go into a `tests` [mod][mod] with the `#[cfg(test)]` [attribute][attribute].
+Test functions are marked with the `#[test]` attribute.
 
 Tests fail when something in the test function [panics][panic]. There are some
 helper [macros][macros]:
@@ -30,7 +29,7 @@ fn bad_add(a: i32, b: i32) -> i32 {
 
 #[cfg(test)]
 mod tests {
-    // Note as useful idiom: importing names from outer (for mod tests) scope.
+    // Note this useful idiom: importing names from outer (for mod tests) scope.
     use super::*;
 
     #[test]
@@ -75,8 +74,8 @@ test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 
 To check functions that should panic under certain circumstances, use attribute
 `#[should_panic]`. This attribute accepts optional parameter `expected = ` with
-text of panic message: it helps making checks if function may panic in multiple
-ways.
+the text of the panic message. If your function can panic in multiple ways, it helps
+make sure your test is testing the correct panic.
 
 ```rust,ignore
 pub fn divide_non_zero_result(a: u32, b: u32) -> u32 {
@@ -132,7 +131,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 ## Running specific tests
 
-To run specific tests one may specify test name to `cargo test` command.
+To run specific tests one may specify the test name to `cargo test` command.
 
 ```bash
 $ cargo test test_any_panic
@@ -168,7 +167,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 ## Ignoring tests
 
-Tests can be marked with `#[ignore]` attribute to exclude some tests. Or to run
+Tests can be marked with the`#[ignore]` attribute to exclude some tests. Or to run
 them with command `cargo test -- --ignored`
 
 ```rust

@@ -3,13 +3,14 @@
 Rust is a programming language that cares a lot about correctness and it
 includes support for writing software tests within the language itself.
 
-Testing comes in three "tastes":
+Testing comes in three styles:
 
 * [Unit][unit] testing.
 * [Doc][doc] testing.
 * [Integration][integration] testing.
 
-Also Rust has support for spectifying additional dependencies for tests:
+Also Rust has support for specifying additional dependencies for tests:
+
 * [Dev-dependencies][dev-dependencies]
 
 ## See Also

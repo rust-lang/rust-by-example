@@ -1,16 +1,14 @@
 # Documentation testing
 
 The primary way of documenting a Rust project is through annotating the source
-code. Documentation comments are writen in [markdown][markdown] and support code
-blocks in them. Rust takes care about correctnes, so these code blocks are
+code. Documentation comments are written in [markdown][markdown] and support code
+blocks in them. Rust takes care about correctness, so these code blocks are
 compiled and used as tests.
 
 ```rust,ignore
-#![crate_name = "doccomments"]
-
 /// First line is a short summary describing function.
 ///
-/// The next lineas present detailed documentation. Code blocks start with
+/// The next lines present detailed documentation. Code blocks start with
 /// triple backquotes and have implicit `fn main()` inside
 /// and `extern crate <cratename>`. Assume we're testing `doccomments` crate:
 ///
@@ -22,7 +20,7 @@ pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 
-/// Usually doc comments may include sections Examples, Panics and Failures.
+/// Usually doc comments may include sections "Examples", "Panics" and "Failures".
 ///
 /// The next function divides two numbers.
 ///
@@ -45,6 +43,7 @@ pub fn div(a: i32, b: i32) -> i32 {
     if b == 0 {
         panic!("Divide-by-zero error");
     }
+
     a / b
 }
 ```
@@ -70,11 +69,11 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ## Motivation behind documentation tests
 
 The main prupose of documentation tests is to serve as an examples that exercise
-the functionality. One of the most important
+the functionality, which is one of the most important
 [guidelines][question-instead-of-unwrap]. It allows using examples from docs as
-a complete code snippets. But using `?` makes compilation fail since `main`
+complete code snippets. But using `?` makes compilation fail since `main`
 returns `unit`. The ability to hide some source lines from documentation comes
-as a rescue: one may write `fn try_main() -> Result<(), ErrorType>`, hide it and
+to the rescue: one may write `fn try_main() -> Result<(), ErrorType>`, hide it and
 `unwrap` it in hidden `main`. Sounds complicated? Here's an example:
 
 ```rust,ignore
