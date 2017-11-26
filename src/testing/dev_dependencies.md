@@ -38,6 +38,6 @@ mod tests {
 ```
 
 ## See Also
-[Cargo][cargo] docs on sepcifying dependencies.
+[Cargo][cargo] docs on specifying dependencies.
 
 [cargo]: http://doc.crates.io/specifying-dependencies.html

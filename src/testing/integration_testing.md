@@ -1,7 +1,7 @@
 # Integration testing
 
 [Unit tests][unit] are testing one module in isolation at a time: they're small
-and can test private code. Integration tests are etxernal to your crate and use
+and can test private code. Integration tests are external to your crate and use
 only its public interface in the same way any other code would. Their purpose is
 to test that many parts of your library work correctly together.
 

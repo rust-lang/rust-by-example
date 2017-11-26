@@ -11,7 +11,7 @@ Test functions are marked with the `#[test]` attribute.
 Tests fail when something in the test function [panics][panic]. There are some
 helper [macros][macros]:
 
-* `assert!(expession)` - panics if expression evaluates to `false`.
+* `assert!(expression)` - panics if expression evaluates to `false`.
 * `assert_eq!(left, right)` and `assert_ne!(left, right)` - testing left and
   right expressions for equality and inequality respectively.
 

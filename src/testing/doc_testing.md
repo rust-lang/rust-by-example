@@ -68,7 +68,7 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 ## Motivation behind documentation tests
 
-The main prupose of documentation tests is to serve as an examples that exercise
+The main purpose of documentation tests is to serve as an examples that exercise
 the functionality, which is one of the most important
 [guidelines][question-instead-of-unwrap]. It allows using examples from docs as
 complete code snippets. But using `?` makes compilation fail since `main`
@@ -87,7 +87,7 @@ to the rescue: one may write `fn try_main() -> Result<(), ErrorType>`, hide it a
 /// # }
 /// # fn main() { // starting main that'll unwrap()
 /// #    try_main().unwrap(); // calling try_main and unwrapping
-/// #                         // so that test'll panic in case of error
+/// #                         // so that test will panic in case of error
 /// # }
 pub fn try_div(a: i32, b: i32) -> Result<i32, String> {
     if b == 0 {
