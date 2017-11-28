@@ -11,7 +11,7 @@ There are three types of structures ("structs") that can be created using the
 #[derive(Debug)]
 struct Person<'a> {
     name: &'a str,
-    age: u8
+    age: u8,
 }
 
 // A unit struct
