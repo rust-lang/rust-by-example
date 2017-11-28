@@ -27,7 +27,7 @@ enum WebEvent {
 // returns nothing.
 fn inspect(event: WebEvent) {
     match event {
-        WebEvent::PageLoad  => println!("page loaded"),
+        WebEvent::PageLoad => println!("page loaded"),
         WebEvent::PageUnload => println!("page unloaded"),
         // Destructure `c` from inside the `enum`.
         WebEvent::KeyPress(c) => println!("pressed '{}'.", c),
