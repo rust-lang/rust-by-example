@@ -111,7 +111,7 @@ fn main() {
     rary::indirect_access();
 }
 </code></pre>
-<pre><code class="language-bash"># Where library.rlib is the path to to the compiled library, assumed that it's
+<pre><code class="language-bash"># Where library.rlib is the path to the compiled library, assumed that it's
 # in the same directory here:
 $ rustc executable.rs --extern rary=library.rlib &amp;&amp; ./executable
 called rary's `public_function()`
