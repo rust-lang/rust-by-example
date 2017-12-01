@@ -7326,7 +7326,7 @@ modes like: read+write, append, etc.</p>
 <a class="header" href="print.html#child-processes" id="child-processes"><h1>Child processes</h1></a>
 <p>The <code>process::Output</code> struct represents the output of a finished child process,
 and the <code>process::Command</code> struct is a process builder.</p>
-<pre><pre class="playpen"><code class="language-rust editable">use std::process::Command;
+<pre><code class="language-rust editable ignore">use std::process::Command;
 
 fn main() {
     let output = Command::new(&quot;rustc&quot;)
@@ -7345,7 +7345,7 @@ fn main() {
         print!(&quot;rustc failed and stderr was:\n{}&quot;, s);
     }
 }
-</code></pre></pre>
+</code></pre>
 <p>(You are encouraged to try the previous example with an incorrect flag passed
 to <code>rustc</code>)</p>
 <a class="header" href="print.html#pipes" id="pipes"><h1>Pipes</h1></a>
