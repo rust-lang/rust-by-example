@@ -53,7 +53,7 @@ fn main() {
 
 ### See also:
 
-[functions][fn] and [`struct`s][structs]
+[functions][fn] and [`structs`][structs]
 
 [fn]: /fn.html
 [structs]: /custom_types/structs.html
