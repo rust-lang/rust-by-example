@@ -155,7 +155,7 @@ fn main() {
 }
 ```
 
-For conversions between character encodings check out the [enconding][encoding-crate] crate.
+For conversions between character encodings check out the [encoding][encoding-crate] crate.
 
 A more detailed listing of the ways to write string literals and escape characters
 is given in the ['Tokens' chapter][tokens] of the Rust Reference.
