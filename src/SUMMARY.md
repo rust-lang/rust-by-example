@@ -130,7 +130,7 @@
     - [Clone](trait/clone.md)
 
 - [macro_rules!](macros.md)
-    - [Syntax](macro/syntax.md)
+    - [Syntax](macros/syntax.md)
         - [Designators](macros/designators.md)
         - [Overload](macros/overload.md)
         - [Repeat](macros/repeat.md)
