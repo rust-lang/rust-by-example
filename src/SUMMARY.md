@@ -84,6 +84,7 @@
 
 - [Cargo](cargo.md)
     - [Dependencies](cargo/deps.md)
+    - [Conventions](cargo/conventions.md)
     - [Tests](cargo/test.md)
 
 - [Attributes](attribute.md)

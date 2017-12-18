@@ -1,0 +1,36 @@
+# Conventions
+
+In the previous chapter, we saw the following directory heirarcy:
+
+```txt
+foo
+├── Cargo.toml
+└── src
+    └── main.rs
+```
+
+Suppose that we wanted to have two binaries in the same project, though. What
+then?
+
+It turns out that cargo supports this. The default binary name is `main.rs`, as
+we saw before, but you can add additional binaries by placing them in a `bin/`
+directory:
+
+```txt
+foo
+├── Cargo.toml
+└── src
+    ├── main.rs
+    └── bin
+        └── my_other_bin.rs
+```
+
+To tell cargo to compile or run this binary as opposed to the default or other
+binaries, we just pass cargo the `--bin my_other_bin` flag, where `my_other_bin`
+is the name of the binary we want to work with.
+
+In addition to extra binaries, there is support for benchmarks, tests, and
+examples. The full capaibilities are documented
+[here](http://doc.crates.io/book/guide/project-layout.html).
+
+In the next chapter, we will look more closely at tests.

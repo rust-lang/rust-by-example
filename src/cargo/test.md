@@ -2,8 +2,27 @@
 
 As we know testing is integral to any piece of software! Rust has first-class
 support for unit and integration testing ([see that chapter for
-more](https://rustbyexample.com/meta/test.html)). `cargo` naturally provides an
-easy way to run all of your tests!
+more](https://rustbyexample.com/meta/test.html); or [this
+chapter](https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html) in
+TRPL).
+
+From the testing chapters linked above, we see how to write unit tests and
+integration tests. Organizationally, we can place unit tests in the modules they
+test and integration tests in their own `tests/` directory:
+
+```txt
+foo
+├── Cargo.toml
+├── src
+│   └── main.rs
+└── tests
+    ├── my_test.rs
+    └── my_other_test.rs
+```
+
+Each file in `tests` is a separate integration test.
+
+`cargo` naturally provides an easy way to run all of your tests!
 
 ```sh
 cargo test
