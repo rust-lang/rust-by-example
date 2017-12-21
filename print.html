@@ -1766,10 +1766,7 @@ collection.</p>
 <li><code>iter</code> - This borrows each element of the collection through each iteration.
 Thus leaving the collection untouched and available for reuse after the loop.</li>
 </ul>
-<pre><pre class="playpen"><code class="language-rust editable">
-# #![allow(unused_variables)]
-#fn main() {
-let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+<pre><pre class="playpen"><code class="language-rust editable">let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
 for name in names.iter() {
     match name {
@@ -1777,16 +1774,13 @@ for name in names.iter() {
         _ =&gt; println!(&quot;Hello {}&quot;, name),
     }
 }
-#}</code></pre></pre>
+</code></pre></pre>
 <ul>
 <li><code>into_iter</code> - This consumes the collection so that on each iteration the exact
 data is provided. Once the collection has been consumed it is no longer
 available for reuse as it has been 'moved' within the loop.</li>
 </ul>
-<pre><pre class="playpen"><code class="language-rust editable">
-# #![allow(unused_variables)]
-#fn main() {
-let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+<pre><pre class="playpen"><code class="language-rust editable">let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
 for name in names.into_iter() {
     match name {
@@ -1794,15 +1788,12 @@ for name in names.into_iter() {
         _ =&gt; println!(&quot;Hello {}&quot;, name),
     }
 }
-#}</code></pre></pre>
+</code></pre></pre>
 <ul>
 <li><code>iter_mut</code> - This mutably borrows each element of the collection, allowing for
 the collection to be modified in place.</li>
 </ul>
-<pre><pre class="playpen"><code class="language-rust editable">
-# #![allow(unused_variables)]
-#fn main() {
-let mut names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+<pre><pre class="playpen"><code class="language-rust editable">let mut names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
 for name in names.iter_mut() {
     match name {
@@ -1810,7 +1801,7 @@ for name in names.iter_mut() {
         _ =&gt; println!(&quot;Hello {}&quot;, name),
     }
 }
-#}</code></pre></pre>
+</code></pre></pre>
 <p>In the above snippets note the type of <code>match</code> branch, that is the key
 difference in the types or iteration. The difference in type then of course
 implies differing actions that are able to be performed.</p>
@@ -3089,10 +3080,7 @@ will produce a binary from a crate. This behavior can be overridden by passing
 the <code>--crate-type</code> flag to <code>rustc</code>.</p>
 <a class="header" href="print.html#library" id="library"><h1>Library</h1></a>
 <p>Let's create a library, and then see how to link it to another crate.</p>
-<pre><pre class="playpen"><code class="language-rust editable">
-# #![allow(unused_variables)]
-#fn main() {
-pub fn public_function() {
+<pre><pre class="playpen"><code class="language-rust editable">pub fn public_function() {
     println!(&quot;called rary's `public_function()`&quot;);
 }
 
@@ -3105,7 +3093,7 @@ pub fn indirect_access() {
 
     private_function();
 }
-#}</code></pre></pre>
+</code></pre></pre>
 <pre><code class="language-bash">$ rustc --crate-type=lib rary.rs
 $ ls lib*
 library.rlib
@@ -3187,10 +3175,7 @@ attribute can be used to set the name of the crate.</p>
 attributes have <strong>no</strong> effect whatsoever when using Cargo, the Rust package
 manager. Since Cargo is used for the majority of Rust projects, this means
 real-world uses of <code>crate-type</code> and <code>crate_name</code> are relatively limited.</p>
-<pre><pre class="playpen"><code class="language-rust editable">
-# #![allow(unused_variables)]
-#fn main() {
-// This crate is a library
+<pre><pre class="playpen"><code class="language-rust editable">// This crate is a library
 #![crate_type = &quot;lib&quot;]
 // The library is named &quot;rary&quot;
 #![crate_name = &quot;rary&quot;]
@@ -3208,7 +3193,7 @@ pub fn indirect_access() {
 
     private_function();
 }
-#}</code></pre></pre>
+</code></pre></pre>
 <p>When the <code>crate_type</code> attribute is used, we no longer need to pass the
 <code>--crate-type</code> flag to <code>rustc</code>.</p>
 <pre><code class="language-bash">$ rustc lib.rs
@@ -5180,10 +5165,7 @@ fn main() {
 <p>Macros allow writing DRY code by factoring out the common parts of functions
 and/or test suites. Here is an example that implements and tests the <code>+=</code>, <code>*=</code>
 and <code>-=</code> operators on <code>Vec&lt;T&gt;</code>:</p>
-<pre><pre class="playpen"><code class="language-rust editable">
-# #![allow(unused_variables)]
-#fn main() {
-use std::ops::{Add, Mul, Sub};
+<pre><pre class="playpen"><code class="language-rust editable">use std::ops::{Add, Mul, Sub};
 
 macro_rules! assert_equal_len {
     // The `tt` (token tree) designator is used for
@@ -5240,7 +5222,7 @@ mod test {
     test!(mul_assign, 2u32, 3u32, 6u32);
     test!(sub_assign, 3u32, 2u32, 1u32);
 }
-#}</code></pre></pre>
+</code></pre></pre>
 <pre><code class="language-bash">$ rustc --test dry.rs &amp;&amp; ./dry
 running 3 tests
 test test::mul_assign ... ok
@@ -7926,6 +7908,12 @@ the same size and alignment:</p>
 
         
 
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         
