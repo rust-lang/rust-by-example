@@ -57,9 +57,10 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script type="text/javascript">
-            var sidebar = store.get('mdbook-sidebar');
-            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
-            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080)
+                sidebar = store.get('mdbook-sidebar') || 'visible';
+            $("html").addClass("sidebar-" + sidebar);
         </script>
 
         <div id="sidebar" class="sidebar">
@@ -165,30 +166,24 @@ RGB (0, 0, 0) 0x000000
 <a class="header" href="hello/print/fmt.html#see-also" id="see-also"><h3>See also</h3></a>
 <p><a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a></p>
 
+
+                    <div class="nav-wrapper">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="hello/print/print_display/testcase_list.html" class="mobile-nav-chapters previous" title="Previous chapter">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="primitives.html" class="mobile-nav-chapters next" title="Next chapter">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </div>
                 </div>
-
-                <!--
-                Constrain the space between buttons on small screen so the total
-                width of the buttons group will not exceed the main content
-                above.
-                -->
-                <div class="nav-wrapper">
-                    <!-- Mobile navigation buttons -->
-                    
-                        <a rel="prev" href="hello/print/print_display/testcase_list.html" class="mobile-nav-chapters previous" title="Previous chapter">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                    
-
-                    
-                        <a rel="next" href="primitives.html" class="mobile-nav-chapters next" title="Next chapter">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    
-
-                    <div style="clear: both"></div>
-                </div>
-
             </div>
 
             

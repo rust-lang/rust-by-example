@@ -57,9 +57,10 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script type="text/javascript">
-            var sidebar = store.get('mdbook-sidebar');
-            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
-            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080)
+                sidebar = store.get('mdbook-sidebar') || 'visible';
+            $("html").addClass("sidebar-" + sidebar);
         </script>
 
         <div id="sidebar" class="sidebar">
@@ -124,30 +125,24 @@ unpleasant error message.</p>
 <p>To improve the quality of our error message, we should be more specific
 about the return type and consider explicitly handling the error.</p>
 
+
+                    <div class="nav-wrapper">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="error/option_unwrap/and_then.html" class="mobile-nav-chapters previous" title="Previous chapter">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="error/result/result_map.html" class="mobile-nav-chapters next" title="Next chapter">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </div>
                 </div>
-
-                <!--
-                Constrain the space between buttons on small screen so the total
-                width of the buttons group will not exceed the main content
-                above.
-                -->
-                <div class="nav-wrapper">
-                    <!-- Mobile navigation buttons -->
-                    
-                        <a rel="prev" href="error/option_unwrap/and_then.html" class="mobile-nav-chapters previous" title="Previous chapter">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                    
-
-                    
-                        <a rel="next" href="error/result/result_map.html" class="mobile-nav-chapters next" title="Next chapter">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    
-
-                    <div style="clear: both"></div>
-                </div>
-
             </div>
 
             
