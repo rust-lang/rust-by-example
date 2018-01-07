@@ -7,7 +7,7 @@ attribute can be used to set the name of the crate.
 However, it is important to note that both the `crate_type` and `crate_name`
 attributes have **no** effect whatsoever when using Cargo, the Rust package
 manager. Since Cargo is used for the majority of Rust projects, this means
-real-world uses of `crate-type` and `crate_name` are relatively limited.
+real-world uses of `crate_type` and `crate_name` are relatively limited.
 
 ```rust,editable
 // This crate is a library
