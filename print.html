@@ -2726,10 +2726,10 @@ fn main() {
 
     // Functional approach
     let sum_of_squared_odd_numbers: u32 =
-        (0..).map(|n| n * n)             // All natural numbers squared
-             .take_while(|&amp;n| n &lt; upper) // Below upper limit
-             .filter(|&amp;n| is_odd(n))     // That are odd
-             .fold(0, |sum, i| sum + i); // Sum them
+        (0..).map(|n| n * n)                             // All natural numbers squared
+             .take_while(|&amp;n_squared| n_squared &lt; upper) // Below upper limit
+             .filter(|&amp;n_squared| is_odd(n_squared))     // That are odd
+             .fold(0, |acc, n_squared| acc + n_squared); // Sum them
     println!(&quot;functional style: {}&quot;, sum_of_squared_odd_numbers);
 }
 </code></pre></pre>
@@ -3179,7 +3179,7 @@ attribute can be used to set the name of the crate.</p>
 <p>However, it is important to note that both the <code>crate_type</code> and <code>crate_name</code>
 attributes have <strong>no</strong> effect whatsoever when using Cargo, the Rust package
 manager. Since Cargo is used for the majority of Rust projects, this means
-real-world uses of <code>crate-type</code> and <code>crate_name</code> are relatively limited.</p>
+real-world uses of <code>crate_type</code> and <code>crate_name</code> are relatively limited.</p>
 <pre><pre class="playpen"><code class="language-rust editable">// This crate is a library
 #![crate_type = &quot;lib&quot;]
 // The library is named &quot;rary&quot;
