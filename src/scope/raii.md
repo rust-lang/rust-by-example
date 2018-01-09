@@ -69,7 +69,7 @@ required to be implemented for every type, only implement it for your type if
 you require its own destructor logic.
 
 Run the below example to see how the [`Drop`] trait works. When the variable in
-the `main` function goes out of scope the custom destructor wil be invoked.
+the `main` function goes out of scope the custom destructor will be invoked.
 
 ```rust,editable
 struct ToDrop;
