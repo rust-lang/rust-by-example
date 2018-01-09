@@ -151,7 +151,7 @@ destructor is called when the resource goes out of scope. This trait is not
 required to be implemented for every type, only implement it for your type if
 you require its own destructor logic.</p>
 <p>Run the below example to see how the <a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a> trait works. When the variable in
-the <code>main</code> function goes out of scope the custom destructor wil be invoked.</p>
+the <code>main</code> function goes out of scope the custom destructor will be invoked.</p>
 <pre><pre class="playpen"><code class="language-rust editable">struct ToDrop;
 
 impl Drop for ToDrop {
