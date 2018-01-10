@@ -1,6 +1,6 @@
 # if let
 
-For some use cases, `match` is awkward. For example:
+For some use cases, when matching enums, `match` is awkward. For example:
 
 ```rust
 // Make `optional` of type `Option<i32>`
