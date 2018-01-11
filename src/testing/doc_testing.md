@@ -1,7 +1,7 @@
 # Documentation testing
 
 The primary way of documenting a Rust project is through annotating the source
-code. Documentation comments are written in [markdown][markdown] and support code
+code. Documentation comments are written in [markdown] and support code
 blocks in them. Rust takes care about correctness, so these code blocks are
 compiled and used as tests.
 
