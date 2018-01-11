@@ -18,9 +18,9 @@ Also Rust has support for specifying additional dependencies for tests:
 * [The Book][doc-testing] chapter on testing
 * [API Guidelines][doc-nursery] on doc-testing
 
-[unit]: ./testing/unit_testing.html
-[doc]: ./testing/doc_testing.html
-[integration]: ./testing/integration_testing.html
-[dev-dependencies]: ./testing/dev_dependencies.html
+[unit]: testing/unit_testing.html
+[doc]: testing/doc_testing.html
+[integration]: testing/integration_testing.html
+[dev-dependencies]: testing/dev_dependencies.html
 [doc-testing]: https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html
 [doc-nursery]: https://rust-lang-nursery.github.io/api-guidelines/documentation.html

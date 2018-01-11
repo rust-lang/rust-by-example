@@ -47,5 +47,5 @@ Uncomment the last print statement to observe that the type supplied must be `Ye
 
 [`structs`][struct]
 
-[struct]: /custom_types/structs.html
+[struct]: custom_types/structs.html
 

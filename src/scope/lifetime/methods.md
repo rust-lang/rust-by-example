@@ -23,6 +23,6 @@ fn main() {
 
 ### See also:
 
-[methods][methods]
+[methods]
 
-[methods]: /fn/methods.html
+[methods]: fn/methods.html

@@ -69,4 +69,4 @@ fn main() {
 
 [^1]: See [re-enter ?][re_enter_?] for more details.
 
-[re_enter_?]: /error/multiple_error_types/reenter_question_mark.html
+[re_enter_?]: error/multiple_error_types/reenter_question_mark.html

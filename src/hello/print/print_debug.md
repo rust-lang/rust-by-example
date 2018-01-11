@@ -78,7 +78,7 @@ One can manually implement `fmt::Display` to control the display.
 and [`struct`][structs]
 
 [attributes]: https://doc.rust-lang.org/reference/attributes.html
-[derive]: /trait/derive.html
+[derive]: trait/derive.html
 [fmt]: https://doc.rust-lang.org/std/fmt/
-[structs]: /custom_types/structs.html
+[structs]: custom_types/structs.html
 

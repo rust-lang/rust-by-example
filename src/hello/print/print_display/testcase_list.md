@@ -71,9 +71,9 @@ Try changing the program so that the index of each element in the vector is also
 [`for`][for], [`ref`][ref], [`Result`][result], [`struct`][struct],
 [`?`][q_mark], and [`vec!`][vec]
 
-[for]: /flow_control/for.html
-[result]: /std/result.html
-[ref]: /scope/borrow/ref.html
-[struct]: /custom_types/structs.html
-[q_mark]: /std/result/question_mark.html
-[vec]: /std/vec.html
+[for]: flow_control/for.html
+[result]: std/result.html
+[ref]: scope/borrow/ref.html
+[struct]: custom_types/structs.html
+[q_mark]: std/result/question_mark.html
+[vec]: std/vec.html
