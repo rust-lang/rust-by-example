@@ -27,6 +27,6 @@ fn main() {
 ```
 
 ### See also:
-[functions][functions]
+[functions]
 
-[functions]: /fn.html
+[functions]: fn.html

@@ -43,4 +43,4 @@ fn main() {
 https://github.com/rust-lang/rfcs/blob/master/text/0246-const-vs-static.md),
 [`'static` lifetime][static]
 
-[static]: /scope/lifetime/static_lifetime.html
+[static]: scope/lifetime/static_lifetime.html

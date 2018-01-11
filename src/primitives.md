@@ -57,6 +57,6 @@ fn main() {
 [the `std` library][std], [`mut`][mut], [inference], and [shadowing]
 
 [std]: https://doc.rust-lang.org/std/
-[mut]: https://rustbyexample.com/variable_bindings/mut.html
-[inference]: https://rustbyexample.com/cast/inference.html
-[shadowing]: https://rustbyexample.com/variable_bindings/scope.html
+[mut]: variable_bindings/mut.html
+[inference]: types/inference.html
+[shadowing]: variable_bindings/scope.html

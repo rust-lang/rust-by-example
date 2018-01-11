@@ -11,7 +11,7 @@ the `primitives`. Some of these include:
 
 ### See also:
 
-[primitives][primitives] and [the std library][std]
+[primitives] and [the std library][std]
 
-[primitives]: /primitives.html
+[primitives]: primitives.html
 [std]: https://doc.rust-lang.org/std/

@@ -46,7 +46,7 @@ fn main() {
 [functions returning references][fn], [`impl`][methods], and [`struct`][structs]
 
 
-[fn]: /scope/lifetime/fn.html
-[methods]: /fn/methods.html
+[fn]: scope/lifetime/fn.html
+[methods]: fn/methods.html
 [specialization_plans]: https://blog.rust-lang.org/2015/05/11/traits.html#the-future
-[structs]: /custom_types/structs.html
+[structs]: custom_types/structs.html

@@ -83,7 +83,7 @@ for these types. To print text for custom types, more steps are required.
 and [`traits`][traits]
 
 [fmt]: https://doc.rust-lang.org/std/fmt/
-[macros]: /macros.html
-[string]: /std/str.html
-[structs]: /custom_types/structs.html
-[traits]: /trait.html
+[macros]: macros.html
+[string]: std/str.html
+[structs]: custom_types/structs.html
+[traits]: trait.html

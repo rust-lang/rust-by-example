@@ -56,4 +56,4 @@ fn main() {
 ### See also:
 [`static`][static]
 
-[static]: ../lifetime/static_lifetime.html
+[static]: scope/lifetime/static_lifetime.html
