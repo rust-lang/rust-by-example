@@ -96,10 +96,10 @@
 the expected manner. The bodies of test functions typically perform some setup,
 run the code we want to test, then assert whether the results are what we
 expect.</p>
-<p>Most unit tests go into a <code>tests</code> <a href="../mod.html">mod</a> with the <code>#[cfg(test)]</code> <a href="../attribute.html">attribute</a>.
+<p>Most unit tests go into a <code>tests</code> <a href="mod.html">mod</a> with the <code>#[cfg(test)]</code> <a href="attribute.html">attribute</a>.
 Test functions are marked with the <code>#[test]</code> attribute.</p>
-<p>Tests fail when something in the test function <a href="../std/panic.html">panics</a>. There are some
-helper <a href="../macros.html">macros</a>:</p>
+<p>Tests fail when something in the test function <a href="std/panic.html">panics</a>. There are some
+helper <a href="macros.html">macros</a>:</p>
 <ul>
 <li><code>assert!(expression)</code> - panics if expression evaluates to <code>false</code>.</li>
 <li><code>assert_eq!(left, right)</code> and <code>assert_ne!(left, right)</code> - testing left and

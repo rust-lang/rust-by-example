@@ -185,7 +185,7 @@ fn main() {
     println!(&quot;Hello World!&quot;);
 }
 </code></pre></pre>
-<p><code>println!</code> is a <a href="./macros.html"><em>macro</em></a> that prints text to the
+<p><code>println!</code> is a <a href="macros.html"><em>macro</em></a> that prints text to the
 console.</p>
 <p>A binary can be generated using the Rust compiler: <code>rustc</code>.</p>
 <pre><code class="language-bash">$ rustc hello.rs
@@ -213,7 +213,7 @@ a few different varieties:</p>
 </ul>
 <ul>
 <li><em>Doc comments</em> which are parsed into HTML library
-<a href="/meta/doc.html">documentation</a>:</li>
+<a href="meta/doc.html">documentation</a>:</li>
 </ul>
 <ul>
 <li><code>/// Generate library docs for the following item.</code></li>
@@ -251,12 +251,12 @@ a few different varieties:</p>
 
 </code></pre></pre>
 <a class="header" href="print.html#see-also" id="see-also"><h3>See also:</h3></a>
-<p><a href="/meta/doc.html">Library documentation</a></p>
+<p><a href="meta/doc.html">Library documentation</a></p>
 <a class="header" href="print.html#formatted-print" id="formatted-print"><h1>Formatted print</h1></a>
-<p>Printing is handled by a series of <a href="/macros.html"><code>macros</code></a> defined in <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>
+<p>Printing is handled by a series of <a href="macros.html"><code>macros</code></a> defined in <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>
 some of which include:</p>
 <ul>
-<li><code>format!</code>: write formatted text to <a href="/std/str.html"><code>String</code></a></li>
+<li><code>format!</code>: write formatted text to <a href="std/str.html"><code>String</code></a></li>
 <li><code>print!</code>: same as <code>format!</code> but the text is printed to the console (io::stdout).</li>
 <li><code>println!</code>: same as <code>print!</code> but a newline is appended.</li>
 <li><code>eprint!</code>: same as <code>format!</code> but the text is printed to the standard error (io::stderr).</li>
@@ -307,7 +307,7 @@ be checked at compile time.</p>
     // FIXME ^ Comment out this line.
 }
 </code></pre></pre>
-<p><a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a> contains many <a href="/trait.html"><code>traits</code></a> which govern the display
+<p><a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a> contains many <a href="trait.html"><code>traits</code></a> which govern the display
 of text. The base form of two important ones are listed below:</p>
 <ul>
 <li><code>fmt::Debug</code>: Uses the <code>{:?}</code> marker. Format text for debugging purposes.</li>
@@ -327,8 +327,8 @@ check the <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>
 decimals to display)</li>
 </ul>
 <a class="header" href="print.html#see-also-1" id="see-also-1"><h3>See also</h3></a>
-<p><a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>, <a href="/macros.html"><code>macros</code></a>, <a href="/custom_types/structs.html"><code>struct</code></a>,
-and <a href="/trait.html"><code>traits</code></a></p>
+<p><a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>, <a href="macros.html"><code>macros</code></a>, <a href="custom_types/structs.html"><code>struct</code></a>,
+and <a href="trait.html"><code>traits</code></a></p>
 <a class="header" href="print.html#debug" id="debug"><h1>Debug</h1></a>
 <p>All types which want to use <code>std::fmt</code> formatting <code>traits</code> require an
 implementation to be printable. Automatic implementations are only provided
@@ -395,8 +395,8 @@ fn main() {
 </code></pre></pre>
 <p>One can manually implement <code>fmt::Display</code> to control the display.</p>
 <a class="header" href="print.html#see-also-2" id="see-also-2"><h3>See also</h3></a>
-<p><a href="https://doc.rust-lang.org/reference/attributes.html">attributes</a>, <a href="/trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>,
-and <a href="/custom_types/structs.html"><code>struct</code></a></p>
+<p><a href="https://doc.rust-lang.org/reference/attributes.html">attributes</a>, <a href="trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>,
+and <a href="custom_types/structs.html"><code>struct</code></a></p>
 <a class="header" href="print.html#display" id="display"><h1>Display</h1></a>
 <p><code>fmt::Debug</code> hardly looks compact and clean, so it is often advantageous to
 customize the output appearance. This is done by manually implementing
@@ -495,7 +495,7 @@ fn main() {
 }
 </code></pre></pre>
 <p>So, <code>fmt::Display</code> has been implemented but <code>fmt::Binary</code> has not, and
-therefore cannot be used. <code>std::fmt</code> has many such <a href="/trait.html"><code>traits</code></a> and
+therefore cannot be used. <code>std::fmt</code> has many such <a href="trait.html"><code>traits</code></a> and
 each requires its own implementation. This is detailed further in
 <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>.</p>
 <a class="header" href="print.html#activity-1" id="activity-1"><h3>Activity</h3></a>
@@ -506,8 +506,8 @@ way, the output should be:</p>
 Debug: Complex { real: 3.3, imag: 7.2 }
 </code></pre>
 <a class="header" href="print.html#see-also-3" id="see-also-3"><h3>See also</h3></a>
-<p><a href="/trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>, <a href="/macros.html">macros</a>, <a href="/custom_types/structs.html"><code>struct</code></a>,
-<a href="/trait.html"><code>trait</code></a>, and <a href="/mod/use.html">use</a></p>
+<p><a href="trait/derive.html"><code>derive</code></a>, <a href="https://doc.rust-lang.org/std/fmt/"><code>std::fmt</code></a>, <a href="macros.html">macros</a>, <a href="custom_types/structs.html"><code>struct</code></a>,
+<a href="trait.html"><code>trait</code></a>, and <a href="mod/use.html">use</a></p>
 <a class="header" href="print.html#testcase-list" id="testcase-list"><h1>Testcase: List</h1></a>
 <p>Implementing <code>fmt::Display</code> for a structure where the elements must each be
 handled sequentially is tricky. The problem is that each <code>write!</code> generates a
@@ -562,8 +562,8 @@ fn main() {
 <pre><code class="language-rust ignore">[0: 1, 1: 2, 2: 3]
 </code></pre>
 <a class="header" href="print.html#see-also-4" id="see-also-4"><h3>See also</h3></a>
-<p><a href="/flow_control/for.html"><code>for</code></a>, <a href="/scope/borrow/ref.html"><code>ref</code></a>, <a href="/std/result.html"><code>Result</code></a>, <a href="/custom_types/structs.html"><code>struct</code></a>,
-<a href="/std/result/question_mark.html"><code>?</code></a>, and <a href="/std/vec.html"><code>vec!</code></a></p>
+<p><a href="flow_control/for.html"><code>for</code></a>, <a href="scope/borrow/ref.html"><code>ref</code></a>, <a href="std/result.html"><code>Result</code></a>, <a href="custom_types/structs.html"><code>struct</code></a>,
+<a href="std/result/question_mark.html"><code>?</code></a>, and <a href="std/vec.html"><code>vec!</code></a></p>
 <a class="header" href="print.html#formatting" id="formatting"><h1>Formatting</h1></a>
 <p>We've seen that formatting is specified via a <em>format string</em>:</p>
 <ul>
@@ -690,7 +690,7 @@ floats to <code>f64</code>. Note that Rust can also infer types from context.</p
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-6" id="see-also-6"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/std/">the <code>std</code> library</a>, <a href="https://rustbyexample.com/variable_bindings/mut.html"><code>mut</code></a>, <a href="https://rustbyexample.com/cast/inference.html">inference</a>, and <a href="https://rustbyexample.com/variable_bindings/scope.html">shadowing</a></p>
+<p><a href="https://doc.rust-lang.org/std/">the <code>std</code> library</a>, <a href="variable_bindings/mut.html"><code>mut</code></a>, <a href="types/inference.html">inference</a>, and <a href="variable_bindings/scope.html">shadowing</a></p>
 <a class="header" href="print.html#literals-and-operators" id="literals-and-operators"><h1>Literals and operators</h1></a>
 <p>Integers <code>1</code>, floats <code>1.2</code>, characters <code>'a'</code>, strings <code>&quot;abc&quot;</code>, booleans <code>true</code>
 and the unit type <code>()</code> can be expressed using literals.</p>
@@ -701,7 +701,7 @@ notation using either of these prefixes: <code>0x</code>, <code>0o</code> or <co
 <p>We need to tell the compiler the type of the literals we use. For now,
 we'll use the <code>u32</code> suffix to indicate that the literal is an unsigned 32-bit
 integer, and the <code>i32</code> suffix to indicate that it's a signed 32-bit integer.</p>
-<p>The operators available and their precedence <a href="https://doc.rust-lang.org/reference/expressions.html#operator-precedence">in Rust</a> are similar to other
+<p>The operators available and their precedence <a href="https://doc.rust-lang.org/reference/expressions.html#expression-precedence">in Rust</a> are similar to other
 <a href="https://en.wikipedia.org/wiki/Operator_precedence#Programming_languages">C-like languages</a>.</p>
 <pre><pre class="playpen"><code class="language-rust editable">fn main() {
     // Integer addition
@@ -796,7 +796,7 @@ format <code>{}</code>, you see the following output:</p>
 <pre><code class="language-text">( 1.1 1.2 )
 ( 2.1 2.2 )
 </code></pre>
-<p>You may want to refer back to the example for <a href="/hello/print/print_display.html">print display</a>.</p>
+<p>You may want to refer back to the example for <a href="hello/print/print_display.html">print display</a>.</p>
 </li>
 <li>
 <p>Add a <code>transpose</code> function using the <code>reverse</code> function as a template, which
@@ -949,7 +949,7 @@ using nested destructuring).</li>
 <li>Add a function <code>square</code> which takes a <code>Point</code> and a <code>f32</code> as arguments, and returns a <code>Rectangle</code> with its lower left corner on the point, and a width and height corresponding to the <code>f32</code>.</li>
 </ol>
 <a class="header" href="print.html#see-also-7" id="see-also-7"><h3>See also:</h3></a>
-<p><a href="/attribute.html"><code>attributes</code></a> and <a href="/flow_control/match/destructuring.html">destructuring</a></p>
+<p><a href="attribute.html"><code>attributes</code></a> and <a href="flow_control/match/destructuring.html">destructuring</a></p>
 <a class="header" href="print.html#enums" id="enums"><h1>Enums</h1></a>
 <p>The <code>enum</code> keyword allows the creation of a type which may be one of a few
 different variants. Any variant which is valid as a <code>struct</code> is also valid as
@@ -1005,7 +1005,7 @@ fn main() {
 
 </code></pre></pre>
 <a class="header" href="print.html#see-also-8" id="see-also-8"><h3>See also:</h3></a>
-<p><a href="/attribute.html"><code>attributes</code></a>, <a href="/flow_control/match.html"><code>match</code></a>, <a href="/fn.html"><code>fn</code></a>, and <a href="/std/str.html"><code>String</code></a></p>
+<p><a href="attribute.html"><code>attributes</code></a>, <a href="flow_control/match.html"><code>match</code></a>, <a href="fn.html"><code>fn</code></a>, and <a href="std/str.html"><code>String</code></a></p>
 <a class="header" href="print.html#use" id="use"><h1>use</h1></a>
 <p>The <code>use</code> declaration can be used so manual scoping isn't needed:</p>
 <pre><pre class="playpen"><code class="language-rust editable">// An attribute to hide warnings for unused code.
@@ -1047,7 +1047,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-9" id="see-also-9"><h3>See also:</h3></a>
-<p><a href="/flow_control/match.html"><code>match</code></a> and <a href="/mod/use.html"><code>use</code></a></p>
+<p><a href="flow_control/match.html"><code>match</code></a> and <a href="mod/use.html"><code>use</code></a></p>
 <a class="header" href="print.html#c-like" id="c-like"><h1>C-like</h1></a>
 <p><code>enum</code> can also be used as C-like enums.</p>
 <pre><pre class="playpen"><code class="language-rust editable">// An attribute to hide warnings for unused code.
@@ -1077,7 +1077,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-10" id="see-also-10"><h3>See also:</h3></a>
-<p><a href="/types/cast.html">casting</a></p>
+<p><a href="types/cast.html">casting</a></p>
 <a class="header" href="print.html#testcase-linked-list" id="testcase-linked-list"><h1>Testcase: linked-list</h1></a>
 <p>A common use for <code>enums</code> is to create a linked-list:</p>
 <pre><pre class="playpen"><code class="language-rust editable">use List::*;
@@ -1148,13 +1148,13 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-11" id="see-also-11"><h3>See also:</h3></a>
-<p><a href="/std/box.html"><code>Box</code></a> and <a href="/fn/methods.html">methods</a></p>
+<p><a href="std/box.html"><code>Box</code></a> and <a href="fn/methods.html">methods</a></p>
 <a class="header" href="print.html#constants" id="constants"><h1>constants</h1></a>
 <p>Rust has two different types of constants which can be declared in any scope
 including global. Both require explicit type annotation:</p>
 <ul>
 <li><code>const</code>: An unchangeable value (the common case).</li>
-<li><code>static</code>: A possibly <code>mut</code>able variable with <a href="/scope/lifetime/static_lifetime.html"><code>'static</code></a> lifetime.</li>
+<li><code>static</code>: A possibly <code>mut</code>able variable with <a href="scope/lifetime/static_lifetime.html"><code>'static</code></a> lifetime.</li>
 </ul>
 <p>One special case is the <code>&quot;string&quot;</code> literal. It can be assigned directly to a
 <code>static</code> variable without modification because its type signature:
@@ -1186,7 +1186,7 @@ fn main() {
 </code></pre></pre>
 <a class="header" href="print.html#see-also-12" id="see-also-12"><h3>See also:</h3></a>
 <p><a href="https://github.com/rust-lang/rfcs/blob/master/text/0246-const-vs-static.md">The <code>const</code>/<code>static</code> RFC</a>,
-<a href="/scope/lifetime/static_lifetime.html"><code>'static</code> lifetime</a></p>
+<a href="scope/lifetime/static_lifetime.html"><code>'static</code> lifetime</a></p>
 <a class="header" href="print.html#variable-bindings" id="variable-bindings"><h1>Variable Bindings</h1></a>
 <p>Rust provides type safety via static typing. Variable bindings can be type
 annotated when declared. However, in most cases, the compiler will be able
@@ -1389,12 +1389,12 @@ floating-point numbers.</p>
 yet, here's a brief explanation for the impatient readers:</p>
 <ul>
 <li><code>fun(&amp;foo)</code> is used to pass an argument to a function <em>by reference</em>, rather
-than by value (<code>fun(foo)</code>). For more details see <a href="/scope/borrow.html">borrowing</a>.</li>
+than by value (<code>fun(foo)</code>). For more details see <a href="scope/borrow.html">borrowing</a>.</li>
 <li><code>std::mem::size_of_val</code> is a function, but called with its <em>full path</em>. Code
 can be split in logical units called <em>modules</em>. In this case, the
 <code>size_of_val</code> function is defined in the <code>mem</code> module, and the <code>mem</code> module
 is defined in the <code>std</code> <em>crate</em>. For more details, see
-<a href="/mod.html">modules</a> and <a href="/crates.html">crates</a>.</li>
+<a href="mod.html">modules</a> and <a href="crates.html">crates</a>.</li>
 </ul>
 <a class="header" href="print.html#inference" id="inference"><h1>Inference</h1></a>
 <p>The type inference engine is pretty smart. It does more than looking at the
@@ -1450,7 +1450,7 @@ fn main() {
 <p>The main use of aliases is to reduce boilerplate; for example the <code>IoResult&lt;T&gt;</code> type
 is an alias for the <code>Result&lt;T, IoError&gt;</code> type.</p>
 <a class="header" href="print.html#see-also-13" id="see-also-13"><h3>See also:</h3></a>
-<p><a href="/attribute.html">Attributes</a></p>
+<p><a href="attribute.html">Attributes</a></p>
 <a class="header" href="print.html#conversion" id="conversion"><h1>Conversion</h1></a>
 <p>Rust addresses conversion between types by the use of <a href="trait.html">traits</a>. The generic
 conversions will use the <a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From</code></a> and <a href="https://doc.rust-lang.org/std/convert/trait.Into.html"><code>Into</code></a> traits. However there are more
@@ -1763,7 +1763,7 @@ notation <code>a..b</code>. This yields values from <code>a</code> (inclusive) t
 </code></pre></pre>
 <a class="header" href="print.html#for-and-iterators" id="for-and-iterators"><h2>for and iterators</h2></a>
 <p>The <code>for in</code> construct is able to interact with an <code>Iterator</code> in several ways.
-As discussed in with the <a href="/trait/iter.html">Iterator</a> trait, if not specified, the <code>for</code>
+As discussed in with the <a href="trait/iter.html">Iterator</a> trait, if not specified, the <code>for</code>
 loop will apply the <code>into_iter</code> function on the collection provided to convert
 the collection into an iterator. This is not the only means to convert a
 collection into an iterator however, the other functions available include
@@ -1814,7 +1814,7 @@ for name in names.iter_mut() {
 difference in the types or iteration. The difference in type then of course
 implies differing actions that are able to be performed.</p>
 <a class="header" href="print.html#see-also-14" id="see-also-14"><h3>See also</h3></a>
-<p><a href="/trait/iter.html">Iterator</a></p>
+<p><a href="trait/iter.html">Iterator</a></p>
 <a class="header" href="print.html#match" id="match"><h1>match</h1></a>
 <p>Rust provides pattern matching via the <code>match</code> keyword, which can be used like
 a C <code>switch</code>.</p>
@@ -1849,10 +1849,10 @@ a C <code>switch</code>.</p>
 <a class="header" href="print.html#destructuring" id="destructuring"><h1>Destructuring</h1></a>
 <p>A <code>match</code> block can destructure items in a variety of ways.</p>
 <ul>
-<li><a href="/flow_control/match/destructuring/destructure_enum.html">Destructuring Enums</a></li>
-<li><a href="/flow_control/match/destructuring/destructure_pointers.html">Destructuring Pointers</a></li>
-<li><a href="/flow_control/match/destructuring/destructure_structures.html">Destructuring Structures</a></li>
-<li><a href="/flow_control/match/destructuring/destructure_tuple.html">Destructuring Tuples</a></li>
+<li><a href="flow_control/match/destructuring/destructure_enum.html">Destructuring Enums</a></li>
+<li><a href="flow_control/match/destructuring/destructure_pointers.html">Destructuring Pointers</a></li>
+<li><a href="flow_control/match/destructuring/destructure_structures.html">Destructuring Structures</a></li>
+<li><a href="flow_control/match/destructuring/destructure_tuple.html">Destructuring Tuples</a></li>
 </ul>
 <a class="header" href="print.html#tuples-1" id="tuples-1"><h1>tuples</h1></a>
 <p>Tuples can be destructured in a <code>match</code> as follows:</p>
@@ -2021,7 +2021,7 @@ differently from a language like <code>C</code>.</p>
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-18" id="see-also-18"><h3>See also:</h3></a>
-<p><a href="/primitives/tuples.html">Tuples</a></p>
+<p><a href="primitives/tuples.html">Tuples</a></p>
 <a class="header" href="print.html#binding" id="binding"><h1>Binding</h1></a>
 <p>Indirectly accessing a variable makes it impossible to branch and use that
 variable without re-binding. <code>match</code> provides the <code>@</code> sigil for binding values to
@@ -2047,7 +2047,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-19" id="see-also-19"><h3>See also:</h3></a>
-<p><a href="/fn.html">functions</a></p>
+<p><a href="fn.html">functions</a></p>
 <a class="header" href="print.html#if-let" id="if-let"><h1>if let</h1></a>
 <p>For some use cases, <code>match</code> is awkward. For example:</p>
 <pre><pre class="playpen"><code class="language-rust">
@@ -2106,7 +2106,7 @@ failure options to be specified:</p>
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-20" id="see-also-20"><h3>See also:</h3></a>
-<p><a href="/custom_types/enum.html"><code>enum</code></a>, <a href="/std/option.html"><code>Option</code></a>, and the <a href="https://github.com/rust-lang/rfcs/pull/160">RFC</a></p>
+<p><a href="custom_types/enum.html"><code>enum</code></a>, <a href="std/option.html"><code>Option</code></a>, and the <a href="https://github.com/rust-lang/rfcs/pull/160">RFC</a></p>
 <a class="header" href="print.html#while-let" id="while-let"><h1>while let</h1></a>
 <p>Similar to <code>if let</code>, <code>while let</code> can make awkward <code>match</code> sequences
 more tolerable. Consider the following sequence that increments <code>i</code>:</p>
@@ -2159,7 +2159,7 @@ loop {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-21" id="see-also-21"><h3>See also:</h3></a>
-<p><a href="/custom_types/enum.html"><code>enum</code></a>, <a href="/std/option.html"><code>Option</code></a>, and the <a href="https://github.com/rust-lang/rfcs/pull/214">RFC</a></p>
+<p><a href="custom_types/enum.html"><code>enum</code></a>, <a href="std/option.html"><code>Option</code></a>, and the <a href="https://github.com/rust-lang/rfcs/pull/214">RFC</a></p>
 <a class="header" href="print.html#functions" id="functions"><h1>Functions</h1></a>
 <p>Functions are declared using the <code>fn</code> keyword. Its arguments are type
 annotated, just like variables, and, if the function returns a value, the
@@ -2426,7 +2426,7 @@ required.</p>
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-22" id="see-also-22"><h3>See also:</h3></a>
-<p><a href="/std/box.html"><code>Box</code></a> and <a href="https://doc.rust-lang.org/std/mem/fn.drop.html"><code>std::mem::drop</code></a></p>
+<p><a href="std/box.html"><code>Box</code></a> and <a href="https://doc.rust-lang.org/std/mem/fn.drop.html"><code>std::mem::drop</code></a></p>
 <a class="header" href="print.html#as-input-parameters" id="as-input-parameters"><h1>As input parameters</h1></a>
 <p>While Rust chooses how to capture variables on the fly mostly without type
 annotation, this ambiguity is not allowed when writing functions. When
@@ -2506,7 +2506,7 @@ fn main() {
 <a class="header" href="print.html#type-anonymity" id="type-anonymity"><h1>Type anonymity</h1></a>
 <p>Closures succinctly capture variables from enclosing scopes. Does this have
 any consequences? It surely does. Observe how using a closure as a function
-parameter requires <a href="/generics.html">generics</a>, which is necessary because of how they are
+parameter requires <a href="generics.html">generics</a>, which is necessary because of how they are
 defined:</p>
 <pre><pre class="playpen"><code class="language-rust">
 # #![allow(unused_variables)]
@@ -2615,7 +2615,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-26" id="see-also-26"><h3>See also:</h3></a>
-<p><a href="/std/box.html">Boxing</a>, <a href="https://doc.rust-lang.org/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="https://doc.rust-lang.org/std/ops/trait.FnMut.html"><code>FnMut</code></a>, and <a href="/generics.html">Generics</a>.</p>
+<p><a href="std/box.html">Boxing</a>, <a href="https://doc.rust-lang.org/std/ops/trait.Fn.html"><code>Fn</code></a>, <a href="https://doc.rust-lang.org/std/ops/trait.FnMut.html"><code>FnMut</code></a>, and <a href="generics.html">Generics</a>.</p>
 <a class="header" href="print.html#examples-in-std" id="examples-in-std"><h1>Examples in <code>std</code></h1></a>
 <p>This section contains a few examples of using closures from the <code>std</code> library.</p>
 <a class="header" href="print.html#iteratorany" id="iteratorany"><h1>Iterator::any</h1></a>
@@ -2910,7 +2910,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-29" id="see-also-29"><h3>See also:</h3></a>
-<p><a href="/generics.html">generics</a> and <a href="/fn/methods.html">methods</a></p>
+<p><a href="generics.html">generics</a> and <a href="fn/methods.html">methods</a></p>
 <a class="header" href="print.html#the-use-declaration" id="the-use-declaration"><h1>The <code>use</code> declaration</h1></a>
 <p>The <code>use</code> declaration can be used to bind a full path to a new name, for easier
 access.</p>
@@ -3003,7 +3003,7 @@ fn main() {
 </code></pre></pre>
 <a class="header" href="print.html#file-hierarchy" id="file-hierarchy"><h1>File hierarchy</h1></a>
 <p>Modules can be mapped to a file/directory hierarchy. Let's break down the
-<a href="/mod/visibility.html">visibility example</a> in files:</p>
+<a href="mod/visibility.html">visibility example</a> in files:</p>
 <pre><code class="language-bash">$ tree .
 .
 |-- my
@@ -3107,7 +3107,7 @@ $ ls lib*
 library.rlib
 </code></pre>
 <p>Libraries get prefixed with &quot;lib&quot;, and by default they get named after their
-crate file, but this default name can be overridden using the <a href="/attribute/crate.html"><code>crate_name</code>
+crate file, but this default name can be overridden using the <a href="attribute/crate.html"><code>crate_name</code>
 attribute</a>.</p>
 <a class="header" href="print.html#extern-crate" id="extern-crate"><h1><code>extern crate</code></h1></a>
 <p>To link a crate to this new library, the <code>extern crate</code> declaration must be
@@ -3237,7 +3237,7 @@ examples. The full capaibilities are documented
 <p>In the next chapter, we will look more closely at tests.</p>
 <a class="header" href="print.html#testing" id="testing"><h1>Testing</h1></a>
 <p>As we know testing is integral to any piece of software! Rust has first-class
-support for unit and integration testing (<a href="https://rustbyexample.com/meta/test.html">see that chapter for
+support for unit and integration testing (<a href="meta/test.html">see that chapter for
 more</a>; or <a href="https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html">this
 chapter</a> in
 TRPL).</p>
@@ -3292,8 +3292,8 @@ file, you should make them write to different files.</p>
 can be used to/for:</p>
 <!-- TODO: Link these to their respective examples -->
 <ul>
-<li><a href="/attribute/cfg.html">conditional compilation of code</a></li>
-<li><a href="/attribute/crate.html">set crate name, version and type (binary or library)</a></li>
+<li><a href="attribute/cfg.html">conditional compilation of code</a></li>
+<li><a href="attribute/crate.html">set crate name, version and type (binary or library)</a></li>
 <li>disable <a href="https://en.wikipedia.org/wiki/Lint_%28software%29">lints</a> (warnings)</li>
 <li>enable compiler features (macros, glob imports, etc.)</li>
 <li>link to a foreign library</li>
@@ -3393,7 +3393,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-30" id="see-also-30"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/reference/attributes.html#conditional-compilation">the reference</a>, <a href="https://doc.rust-lang.org/std/macro.cfg!.html"><code>cfg!</code></a>, and <a href="/macros.html">macros</a>.</p>
+<p><a href="https://doc.rust-lang.org/reference/attributes.html#conditional-compilation">the reference</a>, <a href="https://doc.rust-lang.org/std/macro.cfg!.html"><code>cfg!</code></a>, and <a href="macros.html">macros</a>.</p>
 <a class="header" href="print.html#custom" id="custom"><h1>Custom</h1></a>
 <p>Some conditionals like <code>target_os</code> are implicitly provided by <code>rustc</code>, but
 custom conditionals must be passed to <code>rustc</code> using the <code>--cfg</code> flag.</p>
@@ -3460,7 +3460,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-31" id="see-also-31"><h3>See also:</h3></a>
-<p><a href="/custom_types/structs.html"><code>struct</code>s</a></p>
+<p><a href="custom_types/structs.html"><code>struct</code>s</a></p>
 <a class="header" href="print.html#functions-1" id="functions-1"><h1>Functions</h1></a>
 <p>The same set of rules can be applied to functions: a type <code>T</code> becomes
 generic when preceded by <code>&lt;T&gt;</code>.</p>
@@ -3509,7 +3509,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-32" id="see-also-32"><h3>See also:</h3></a>
-<p><a href="/fn.html">functions</a> and <a href="/custom_types/structs.html"><code>struct</code>s</a></p>
+<p><a href="fn.html">functions</a> and <a href="custom_types/structs.html"><code>struct</code>s</a></p>
 <a class="header" href="print.html#implementation" id="implementation"><h1>Implementation</h1></a>
 <p>Similar to functions, implementations require care to remain generic.</p>
 <pre><pre class="playpen"><code class="language-rust">
@@ -3551,7 +3551,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-33" id="see-also-33"><h3>See also:</h3></a>
-<p><a href="/scope/lifetime/fn.html">functions returning references</a>, <a href="/fn/methods.html"><code>impl</code></a>, and <a href="/custom_types/structs.html"><code>struct</code></a></p>
+<p><a href="scope/lifetime/fn.html">functions returning references</a>, <a href="fn/methods.html"><code>impl</code></a>, and <a href="custom_types/structs.html"><code>struct</code></a></p>
 <a class="header" href="print.html#traits" id="traits"><h1>Traits</h1></a>
 <p>Of course <code>trait</code>s can also be generic. Here we define one which reimplements
 the <code>Drop</code> <code>trait</code> as a generic method to <code>drop</code> itself and an input.</p>
@@ -3587,7 +3587,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-34" id="see-also-34"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a>, <a href="/custom_types/structs.html"><code>struct</code></a>, and <a href="/trait.html"><code>trait</code></a></p>
+<p><a href="https://doc.rust-lang.org/std/ops/trait.Drop.html"><code>Drop</code></a>, <a href="custom_types/structs.html"><code>struct</code></a>, and <a href="trait.html"><code>trait</code></a></p>
 <a class="header" href="print.html#bounds" id="bounds"><h1>Bounds</h1></a>
 <p>When working with generics, the type parameters often must use traits as <em>bounds</em> to
 stipulate what functionality a type implements. For example, the following
@@ -3607,7 +3607,7 @@ fn printer&lt;T: Display&gt;(t: T) {
 let s = S(vec![1]);
 </code></pre>
 <p>Another effect of bounding is that generic instances are allowed to access the
-<a href="/fn/methods.html">methods</a> of traits specified in the bounds. For example:</p>
+<a href="fn/methods.html">methods</a> of traits specified in the bounds. For example:</p>
 <pre><pre class="playpen"><code class="language-rust editable">// A trait which implements the print marker: `{:?}`.
 use std::fmt::Debug;
 
@@ -3647,10 +3647,10 @@ fn main() {
     // | Error: Does not implement either `Debug` or `HasArea`. 
 }
 </code></pre></pre>
-<p>As an additional note, <a href="/generics/where.html"><code>where</code></a> clauses can also be used to apply bounds in
+<p>As an additional note, <a href="generics/where.html"><code>where</code></a> clauses can also be used to apply bounds in
 some cases to be more expressive.</p>
 <a class="header" href="print.html#see-also-35" id="see-also-35"><h3>See also:</h3></a>
-<p><a href="/hello/print.html"><code>std::fmt</code></a>, <a href="/custom_types/structs.html"><code>struct</code>s</a>, and <a href="/trait.html"><code>trait</code>s</a></p>
+<p><a href="hello/print.html"><code>std::fmt</code></a>, <a href="custom_types/structs.html"><code>struct</code>s</a>, and <a href="trait.html"><code>trait</code>s</a></p>
 <a class="header" href="print.html#testcase-empty-bounds" id="testcase-empty-bounds"><h1>Testcase: empty bounds</h1></a>
 <p>A consequence of how bounds work is that even if a <code>trait</code> doesn't
 include any functionality, you can still use it as a bound. <code>Eq</code> and
@@ -3684,7 +3684,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-36" id="see-also-36"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/std/cmp/trait.Eq.html"><code>std::cmp::Eq</code></a>, <a href="https://doc.rust-lang.org/std/cmp/trait.Ord.html"><code>std::cmp::Ord</code>s</a>, and <a href="/trait.html"><code>trait</code>s</a></p>
+<p><a href="https://doc.rust-lang.org/std/cmp/trait.Eq.html"><code>std::cmp::Eq</code></a>, <a href="https://doc.rust-lang.org/std/cmp/trait.Ord.html"><code>std::cmp::Ord</code>s</a>, and <a href="trait.html"><code>trait</code>s</a></p>
 <a class="header" href="print.html#multiple-bounds" id="multiple-bounds"><h1>Multiple bounds</h1></a>
 <p>Multiple bounds can be applied with a <code>+</code>. Like normal, different types are
 separated with <code>,</code>.</p>
@@ -3713,7 +3713,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-37" id="see-also-37"><h3>See also:</h3></a>
-<p><a href="/hello/print.html"><code>std::fmt</code></a> and <a href="/trait.html"><code>trait</code>s</a></p>
+<p><a href="hello/print.html"><code>std::fmt</code></a> and <a href="trait.html"><code>trait</code>s</a></p>
 <a class="header" href="print.html#where-clauses" id="where-clauses"><h1>Where clauses</h1></a>
 <p>A bound can also be expressed using a <code>where</code> clause immediately
 before the opening <code>{</code>, rather than at the type's first mention.
@@ -3758,7 +3758,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-38" id="see-also-38"><h3>See also:</h3></a>
-<p><a href="https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md">RFC</a>, <a href="/custom_types/structs.html"><code>struct</code></a>, and <a href="/trait.html"><code>trait</code></a></p>
+<p><a href="https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md">RFC</a>, <a href="custom_types/structs.html"><code>struct</code></a>, and <a href="trait.html"><code>trait</code></a></p>
 <a class="header" href="print.html#new-type-idiom" id="new-type-idiom"><h1>New Type Idiom</h1></a>
 <p>The <code>newtype</code> idiom gives compile time guarantees that the right type of value is supplied
 to a program.</p>
@@ -3799,7 +3799,7 @@ fn main() {
 </code></pre></pre>
 <p>Uncomment the last print statement to observe that the type supplied must be <code>Years</code>.</p>
 <a class="header" href="print.html#see-also-39" id="see-also-39"><h3>See also:</h3></a>
-<p><a href="/custom_types/structs.html"><code>structs</code></a></p>
+<p><a href="custom_types/structs.html"><code>structs</code></a></p>
 <a class="header" href="print.html#associated-items" id="associated-items"><h1>Associated items</h1></a>
 <p>&quot;Associated Items&quot; refers to a set of rules pertaining to <a href="https://doc.rust-lang.org/reference/items.html"><code>item</code></a>s
 of various types. It is an extension to <code>trait</code> generics, and allows
@@ -3864,7 +3864,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-41" id="see-also-41"><h3>See also:</h3></a>
-<p><a href="/custom_types/structs.html"><code>struct</code>s</a>, and <a href="/trait.html"><code>trait</code>s</a></p>
+<p><a href="custom_types/structs.html"><code>struct</code>s</a>, and <a href="trait.html"><code>trait</code>s</a></p>
 <a class="header" href="print.html#associated-types" id="associated-types"><h1>Associated types</h1></a>
 <p>The use of &quot;Associated types&quot; improves the overall readability of code
 by moving inner types locally into a trait as <em>output</em> types. Syntax
@@ -3994,7 +3994,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-42" id="see-also-42"><h3>See also:</h3></a>
-<p><a href="/trait/derive.html">Derive</a>, <a href="/custom_types/structs.html">struct</a>, and <a href="/custom_types/structs.html">TupleStructs</a></p>
+<p><a href="trait/derive.html">Derive</a>, <a href="custom_types/structs.html">struct</a>, and <a href="custom_types/structs.html">TupleStructs</a></p>
 <a class="header" href="print.html#testcase-unit-clarification" id="testcase-unit-clarification"><h1>Testcase: unit clarification</h1></a>
 <p>A useful method of unit conversions can be examined by implementing <code>Add</code>
 with a phantom type parameter. The <code>Add</code> <code>trait</code> is examined below:</p>
@@ -4063,8 +4063,8 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-43" id="see-also-43"><h3>See also:</h3></a>
-<p><a href="/scope/borrow.html">Borrowing (<code>&amp;</code>)</a>, <a href="/generics/bounds.html">Bounds (<code>X: Y</code>)</a>, <a href="/custom_types/enum.html">enum</a>, <a href="/fn/methods.html">impl &amp; self</a>,
-<a href="/trait/ops.html">Overloading</a>, <a href="/scope/borrow/ref.html">ref</a>, <a href="/trait.html">Traits (<code>X for Y</code>)</a>, and <a href="/custom_types/structs.html">TupleStructs</a>.</p>
+<p><a href="scope/borrow.html">Borrowing (<code>&amp;</code>)</a>, <a href="generics/bounds.html">Bounds (<code>X: Y</code>)</a>, <a href="custom_types/enum.html">enum</a>, <a href="fn/methods.html">impl &amp; self</a>,
+<a href="trait/ops.html">Overloading</a>, <a href="scope/borrow/ref.html">ref</a>, <a href="trait.html">Traits (<code>X for Y</code>)</a>, and <a href="custom_types/structs.html">TupleStructs</a>.</p>
 <a class="header" href="print.html#scoping-rules" id="scoping-rules"><h1>Scoping rules</h1></a>
 <p>Scopes play an important part in ownership, borrowing, and lifetimes.
 That is, they indicate to the compiler when borrows are valid, when
@@ -4144,12 +4144,12 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-44" id="see-also-44"><h3>See also:</h3></a>
-<p><a href="/std/box.html">Box</a></p>
+<p><a href="std/box.html">Box</a></p>
 <a class="header" href="print.html#ownership-and-moves" id="ownership-and-moves"><h1>Ownership and moves</h1></a>
 <p>Because variables are in charge of freeing their own resources,
 <strong>resources can only have one owner</strong>. This also prevents resources
 from being freed more than once. Note that not all variables own
-resources (e.g. <a href="/flow_control/match/destructuring/destructure_pointers.html">references</a>).</p>
+resources (e.g. <a href="flow_control/match/destructuring/destructure_pointers.html">references</a>).</p>
 <p>When doing assignments (<code>let x = y</code>) or passing function arguments by value
 (<code>foo(x)</code>), the <em>ownership</em> of the resources is transferred. In Rust-speak,
 this is known as a <em>move</em>.</p>
@@ -4314,7 +4314,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-45" id="see-also-45"><h3>See also:</h3></a>
-<p><a href="../lifetime/static_lifetime.html"><code>static</code></a></p>
+<p><a href="scope/lifetime/static_lifetime.html"><code>static</code></a></p>
 <a class="header" href="print.html#freezing" id="freezing"><h1>Freezing</h1></a>
 <p>When data is immutably borrowed, it also <em>freezes</em>. <em>Frozen</em> data can't be
 modified via the original object until all references to it go out of scope:</p>
@@ -4491,7 +4491,7 @@ a lifetime uses an apostrophe character as follows:</p>
 <pre><code class="language-rust ignore">foo&lt;'a&gt;
 // `foo` has a lifetime parameter `'a`
 </code></pre>
-<p>Similar to <a href="/fn/closures/anonymity.html">closures</a>, using lifetimes requires generics.
+<p>Similar to <a href="fn/closures/anonymity.html">closures</a>, using lifetimes requires generics.
 Additionally, this lifetime syntax indicates that the lifetime of <code>foo</code>
 may not exceed that of <code>'a</code>. Explicit annotation of a type has the form
 <code>&amp;'a T</code> where <code>'a</code> has already been introduced.</p>
@@ -4536,12 +4536,12 @@ fn main() {
 }
 </code></pre></pre>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p><a href="/scope/lifetime/elision.html">elision</a> implicitly annotates lifetimes and so is different.</p>
+<p><a href="scope/lifetime/elision.html">elision</a> implicitly annotates lifetimes and so is different.</p>
 </div>
 <a class="header" href="print.html#see-also-46" id="see-also-46"><h3>See also:</h3></a>
-<p><a href="/generics.html">generics</a> and <a href="/fn/closures.html">closures</a></p>
+<p><a href="generics.html">generics</a> and <a href="fn/closures.html">closures</a></p>
 <a class="header" href="print.html#functions-2" id="functions-2"><h1>Functions</h1></a>
-<p>Ignoring <a href="/scope/lifetime/elision.html">elision</a>, function signatures with lifetimes have a few constraints:</p>
+<p>Ignoring <a href="scope/lifetime/elision.html">elision</a>, function signatures with lifetimes have a few constraints:</p>
 <ul>
 <li>any reference <em>must</em> have an annotated lifetime.</li>
 <li>any reference being returned <em>must</em> have the same lifetime as an input or
@@ -4594,7 +4594,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-47" id="see-also-47"><h3>See also:</h3></a>
-<p><a href="/fn.html">functions</a></p>
+<p><a href="fn.html">functions</a></p>
 <a class="header" href="print.html#methods-1" id="methods-1"><h1>Methods</h1></a>
 <p>Methods are annotated similarly to functions:</p>
 <pre><pre class="playpen"><code class="language-rust editable">struct Owner(i32);
@@ -4615,7 +4615,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-48" id="see-also-48"><h3>See also:</h3></a>
-<p><a href="/fn/methods.html">methods</a></p>
+<p><a href="fn/methods.html">methods</a></p>
 <a class="header" href="print.html#structs-1" id="structs-1"><h1>Structs</h1></a>
 <p>Annotation of lifetimes in structures are also similar to functions:</p>
 <pre><pre class="playpen"><code class="language-rust editable">// A type `Borrowed` which houses a reference to an
@@ -4653,7 +4653,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-49" id="see-also-49"><h3>See also:</h3></a>
-<p><a href="/custom_types/structs.html"><code>structs</code></a></p>
+<p><a href="custom_types/structs.html"><code>structs</code></a></p>
 <a class="header" href="print.html#bounds-1" id="bounds-1"><h1>Bounds</h1></a>
 <p>Just like generic types can be bounded, lifetimes (themselves generic)
 use bounds as well. The <code>:</code> character has a slightly different meaning here,
@@ -4696,8 +4696,8 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-50" id="see-also-50"><h3>See also:</h3></a>
-<p><a href="/generics.html">generics</a>, <a href="/generics/bounds.html">bounds in generics</a>, and
-<a href="/generics/multi_bounds.html">multiple bounds in generics</a></p>
+<p><a href="generics.html">generics</a>, <a href="generics/bounds.html">bounds in generics</a>, and
+<a href="generics/multi_bounds.html">multiple bounds in generics</a></p>
 <a class="header" href="print.html#coercion" id="coercion"><h1>Coercion</h1></a>
 <p>A longer lifetime can be coerced into a shorter one
 so that it works inside a scope it normally wouldn't work in.
@@ -4770,7 +4770,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-51" id="see-also-51"><h3>See also:</h3></a>
-<p><a href="/custom_types/constants.html"><code>'static</code> constants</a></p>
+<p><a href="custom_types/constants.html"><code>'static</code> constants</a></p>
 <a class="header" href="print.html#elision" id="elision"><h1>elision</h1></a>
 <p>Some lifetime patterns are overwelmingly common and so the borrow checker
 will implicitly add them to save typing and to improve readability.
@@ -4884,7 +4884,7 @@ fn main() {
 </code></pre></pre>
 <a class="header" href="print.html#derive" id="derive"><h1>Derive</h1></a>
 <p>The compiler is capable of providing basic implementations for some traits via
-the <code>#[derive]</code> <a href="/attribute.html">attribute</a>. These traits can still be
+the <code>#[derive]</code> <a href="attribute.html">attribute</a>. These traits can still be
 manually implemented if a more complex behavior is required.</p>
 <p>The following is a list of derivable traits:</p>
 <ul>
@@ -5216,9 +5216,9 @@ number of arguments, depending on the format string!. (More on this later)</p>
 <p>In following subsections, we will show how to define macros in Rust.
 There are three basic ideas:</p>
 <ul>
-<li><a href="designators.md">Patterns and Designators</a></li>
-<li><a href="overload.md">Overloading</a></li>
-<li><a href="repeat.md">Repetition</a></li>
+<li><a href="macros/designators.md">Patterns and Designators</a></li>
+<li><a href="macros/overload.md">Overloading</a></li>
+<li><a href="macros/repeat.md">Repetition</a></li>
 </ul>
 <a class="header" href="print.html#designators" id="designators"><h1>Designators</h1></a>
 <p>The arguments of a macro are prefixed by a dollar sign <code>$</code> and type annotated
@@ -5636,7 +5636,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-55" id="see-also-55"><h3>See also:</h3></a>
-<p><a href="/fn/closures.html">closures</a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.map"><code>Option::map()</code></a></p>
+<p><a href="fn/closures.html">closures</a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.map"><code>Option::map()</code></a></p>
 <a class="header" href="print.html#combinators-and_then" id="combinators-and_then"><h1>Combinators: <code>and_then</code></h1></a>
 <p><code>map()</code> was described as a chainable way to simplify <code>match</code> statements.
 However, using <code>map()</code> on a function that returns an <code>Option&lt;T&gt;</code> results
@@ -5701,7 +5701,7 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#see-also-56" id="see-also-56"><h3>See also:</h3></a>
-<p><a href="/fn/closures.html">closures</a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a>, and <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then"><code>Option::and_then()</code></a></p>
+<p><a href="fn/closures.html">closures</a>, <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a>, and <a href="https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then"><code>Option::and_then()</code></a></p>
 <a class="header" href="print.html#result" id="result"><h1><code>Result</code></h1></a>
 <p><a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a> is a richer version of the <a href="https://doc.rust-lang.org/std/option/enum.Option.html"><code>Option</code></a> type that
 describes possible <em>error</em> instead of possible <em>absence</em>.</p>
@@ -5815,7 +5815,7 @@ fn main() {
 </code></pre></pre>
 <a class="header" href="print.html#aliases-for-result" id="aliases-for-result"><h1>aliases for <code>Result</code></h1></a>
 <p>How about when we want to reuse a specific <code>Result</code> type many times?
-Recall that Rust allows us to create <a href="/types/alias.html">aliases</a>. Conveniently,
+Recall that Rust allows us to create <a href="types/alias.html">aliases</a>. Conveniently,
 we can define one for the specific <code>Result</code> in question.</p>
 <p>At a module level, creating aliases can be particularly helpful. Errors
 found in a specific module often have the same <code>Err</code> type, so a single alias
@@ -5949,7 +5949,7 @@ fn main() {
 }
 </code></pre></pre>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
-<p>See <a href="/error/multiple_error_types/reenter_question_mark.html">re-enter ?</a> for more details.</p>
+<p>See <a href="error/multiple_error_types/reenter_question_mark.html">re-enter ?</a> for more details.</p>
 </div>
 <a class="header" href="print.html#multiple-error-types" id="multiple-error-types"><h1>Multiple error types</h1></a>
 <p>The previous examples have always been very convenient; <code>Result</code>s interact
@@ -6007,7 +6007,7 @@ fn main() {
 }
 </code></pre></pre>
 <p>There are times when we'll want to stop processing on errors (like with
-<a href="/error/result/enter_question_mark.html"><code>?</code></a>) but keep going when the <code>Option</code> is <code>None</code>. A
+<a href="error/result/enter_question_mark.html"><code>?</code></a>) but keep going when the <code>Option</code> is <code>None</code>. A
 couple of combinators come in handy to swap the <code>Result</code> and <code>Option</code>.</p>
 <pre><pre class="playpen"><code class="language-rust editable">use std::num::ParseIntError;
 
@@ -6249,7 +6249,7 @@ is very similar to replacing the <code>unwrap</code> calls with <code>?</code> e
 return types are <code>Result</code>. As a result, they must be destructured at the
 top level.</p>
 <a class="header" href="print.html#see-also-59" id="see-also-59"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From::from</code></a> and <a href="https://doc.rust-lang.org/reference/expressions.html#the--operator"><code>?</code></a></p>
+<p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From::from</code></a> and <a href="https://doc.rust-lang.org/reference/expressions/operator-expr.html#the--operator"><code>?</code></a></p>
 <a class="header" href="print.html#wrapping-errors" id="wrapping-errors"><h1>Wrapping errors</h1></a>
 <p>An alternative to boxing errors is to wrap them in your own error type.</p>
 <pre><pre class="playpen"><code class="language-rust editable">use std::error;
@@ -6334,7 +6334,7 @@ fn main() {
 all applications. There are some libraries that can take care of the boiler
 plate for you.</p>
 <a class="header" href="print.html#see-also-60" id="see-also-60"><h3>See also:</h3></a>
-<p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From::from</code></a> and <a href="/custom_types/enum.html"><code>Enums</code></a></p>
+<p><a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From::from</code></a> and <a href="custom_types/enum.html"><code>Enums</code></a></p>
 <a class="header" href="print.html#iterating-over-results" id="iterating-over-results"><h1>Iterating over <code>Result</code>s</h1></a>
 <p>An <code>Iter::map</code> operation might fail, for example:</p>
 <pre><pre class="playpen"><code class="language-rust editable">fn main() {
@@ -6409,7 +6409,7 @@ the <code>primitives</code>. Some of these include:</p>
 <li>heap allocated pointers: <code>Box&lt;i32&gt;</code></li>
 </ul>
 <a class="header" href="print.html#see-also-61" id="see-also-61"><h3>See also:</h3></a>
-<p><a href="/primitives.html">primitives</a> and <a href="https://doc.rust-lang.org/std/">the std library</a></p>
+<p><a href="primitives.html">primitives</a> and <a href="https://doc.rust-lang.org/std/">the std library</a></p>
 <a class="header" href="print.html#box-stack-and-heap" id="box-stack-and-heap"><h1>Box, stack and heap</h1></a>
 <p>All values in Rust are stack allocated by default. Values can be <em>boxed</em>
 (allocated in the heap) by creating a <code>Box&lt;T&gt;</code>. A box is a smart pointer to a
@@ -7131,9 +7131,9 @@ things such as:</p>
 <li>Channels</li>
 <li>File I/O</li>
 </ul>
-<p>These expand beyond what the <a href="/primitives.html">primitives</a> provide.</p>
+<p>These expand beyond what the <a href="primitives.html">primitives</a> provide.</p>
 <a class="header" href="print.html#see-also-62" id="see-also-62"><h3>See also:</h3></a>
-<p><a href="/primitives.html">primitives</a> and <a href="https://doc.rust-lang.org/std/">the std library</a></p>
+<p><a href="primitives.html">primitives</a> and <a href="https://doc.rust-lang.org/std/">the std library</a></p>
 <a class="header" href="print.html#threads" id="threads"><h1>Threads</h1></a>
 <p>Rust provides a mechanism for spawning native OS threads via the <code>spawn</code>
 function, the argument of this function is a moving closure.</p>
@@ -7699,7 +7699,7 @@ a
 }
 </code></pre>
 <a class="header" href="print.html#see-also-65" id="see-also-65"><h3>See also:</h3></a>
-<p><a href="/attribute/cfg.html"><code>cfg!</code></a></p>
+<p><a href="attribute/cfg.html"><code>cfg!</code></a></p>
 <a class="header" href="print.html#program-arguments" id="program-arguments"><h1>Program arguments</h1></a>
 <a class="header" href="print.html#standard-library" id="standard-library"><h2>Standard Library</h2></a>
 <p>The command line arguments can be accessed using <code>std::env::args</code>, which
@@ -7904,13 +7904,13 @@ impl fmt::Debug for Complex {
 includes support for writing software tests within the language itself.</p>
 <p>Testing comes in three styles:</p>
 <ul>
-<li><a href="./testing/unit_testing.html">Unit</a> testing.</li>
-<li><a href="./testing/doc_testing.html">Doc</a> testing.</li>
-<li><a href="./testing/integration_testing.html">Integration</a> testing.</li>
+<li><a href="testing/unit_testing.html">Unit</a> testing.</li>
+<li><a href="testing/doc_testing.html">Doc</a> testing.</li>
+<li><a href="testing/integration_testing.html">Integration</a> testing.</li>
 </ul>
 <p>Also Rust has support for specifying additional dependencies for tests:</p>
 <ul>
-<li><a href="./testing/dev_dependencies.html">Dev-dependencies</a></li>
+<li><a href="testing/dev_dependencies.html">Dev-dependencies</a></li>
 </ul>
 <a class="header" href="print.html#see-also-66" id="see-also-66"><h2>See Also</h2></a>
 <ul>
@@ -7922,10 +7922,10 @@ includes support for writing software tests within the language itself.</p>
 the expected manner. The bodies of test functions typically perform some setup,
 run the code we want to test, then assert whether the results are what we
 expect.</p>
-<p>Most unit tests go into a <code>tests</code> <a href="../mod.html">mod</a> with the <code>#[cfg(test)]</code> <a href="../attribute.html">attribute</a>.
+<p>Most unit tests go into a <code>tests</code> <a href="mod.html">mod</a> with the <code>#[cfg(test)]</code> <a href="attribute.html">attribute</a>.
 Test functions are marked with the <code>#[test]</code> attribute.</p>
-<p>Tests fail when something in the test function <a href="../std/panic.html">panics</a>. There are some
-helper <a href="../macros.html">macros</a>:</p>
+<p>Tests fail when something in the test function <a href="std/panic.html">panics</a>. There are some
+helper <a href="macros.html">macros</a>:</p>
 <ul>
 <li><code>assert!(expression)</code> - panics if expression evaluates to <code>false</code>.</li>
 <li><code>assert_eq!(left, right)</code> and <code>assert_ne!(left, right)</code> - testing left and
@@ -8213,7 +8213,7 @@ pub fn try_div(a: i32, b: i32) -&gt; Result&lt;i32, String&gt; {
 <li><a href="https://rust-lang-nursery.github.io/api-guidelines/documentation.html">API Guidelines</a> on documentation guidelines</li>
 </ul>
 <a class="header" href="print.html#integration-testing" id="integration-testing"><h1>Integration testing</h1></a>
-<p><a href="./testing/unit_testing.html">Unit tests</a> are testing one module in isolation at a time: they're small
+<p><a href="testing/unit_testing.html">Unit tests</a> are testing one module in isolation at a time: they're small
 and can test private code. Integration tests are external to your crate and use
 only its public interface in the same way any other code would. Their purpose is
 to test that many parts of your library work correctly together.</p>
@@ -8275,7 +8275,7 @@ fn test_add() {
     assert_eq!(adder::add(3, 2), 5);
 }
 </code></pre>
-<p>Modules with common code follow the ordinary <a href="./mod.html">modules</a> rules, so it's ok to
+<p>Modules with common code follow the ordinary <a href="mod.html">modules</a> rules, so it's ok to
 create common module as <code>tests/common/mod.rs</code>.</p>
 <a class="header" href="print.html#development-dependencies" id="development-dependencies"><h1>Development dependencies</h1></a>
 <p>Sometimes there is a need to have a dependencies for tests (examples,

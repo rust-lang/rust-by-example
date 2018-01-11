@@ -92,7 +92,7 @@
 
                 <div id="content" class="content">
                     <a class="header" href="testing/integration_testing.html#integration-testing" id="integration-testing"><h1>Integration testing</h1></a>
-<p><a href="./testing/unit_testing.html">Unit tests</a> are testing one module in isolation at a time: they're small
+<p><a href="testing/unit_testing.html">Unit tests</a> are testing one module in isolation at a time: they're small
 and can test private code. Integration tests are external to your crate and use
 only its public interface in the same way any other code would. Their purpose is
 to test that many parts of your library work correctly together.</p>
@@ -154,7 +154,7 @@ fn test_add() {
     assert_eq!(adder::add(3, 2), 5);
 }
 </code></pre>
-<p>Modules with common code follow the ordinary <a href="./mod.html">modules</a> rules, so it's ok to
+<p>Modules with common code follow the ordinary <a href="mod.html">modules</a> rules, so it's ok to
 create common module as <code>tests/common/mod.rs</code>.</p>
 
 
