@@ -8,7 +8,7 @@ unsafe blocks are used for:
 
 * dereferencing raw pointers
 * calling a function over FFI (but this is covered in [a previous
-  chapter](/std_misc/ffi.html) of the book)
+  chapter](std_misc/ffi.html) of the book)
 * changing types through `std::mem::transmute`
 * inline assembly
 

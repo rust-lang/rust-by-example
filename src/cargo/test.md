@@ -1,8 +1,7 @@
 # Testing
 
 As we know testing is integral to any piece of software! Rust has first-class
-support for unit and integration testing ([see that chapter for
-more](meta/test.html); or [this
+support for unit and integration testing ([see this
 chapter](https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html) in
 TRPL).
 
