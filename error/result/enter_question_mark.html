@@ -100,7 +100,7 @@ what we really wanted was to get the variable <em>out</em>. This is exactly the 
 <li><code>panic!</code> which we already decided to try to avoid if possible</li>
 <li><code>return</code> because an <code>Err</code> means it cannot be handled</li>
 </ol>
-<p><code>?</code> is <em>almost</em><sup class="footnote-reference"><a href="error/result/enter_question_mark.html#1">1</a></sup> exactly equivalent to an <code>unwrap</code> which <code>return</code>s
+<p><code>?</code> is <em>almost</em><sup class="footnote-reference"><a href="error/result/enter_question_mark.html#†">1</a></sup> exactly equivalent to an <code>unwrap</code> which <code>return</code>s
 instead of <code>panic</code>s on <code>Err</code>s. Let's see how we can simplify the earlier
 example that used combinators:</p>
 <pre><pre class="playpen"><code class="language-rust editable">use std::num::ParseIntError;
@@ -150,7 +150,7 @@ fn main() {
     print(multiply(&quot;t&quot;, &quot;2&quot;));
 }
 </code></pre></pre>
-<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<div class="footnote-definition" id="†"><sup class="footnote-definition-label">1</sup>
 <p>See <a href="error/multiple_error_types/reenter_question_mark.html">re-enter ?</a> for more details.</p>
 </div>
 
