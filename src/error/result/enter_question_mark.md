@@ -9,7 +9,7 @@ Upon finding an `Err`, there are two valid actions to take:
 1. `panic!` which we already decided to try to avoid if possible
 2. `return` because an `Err` means it cannot be handled
 
-`?` is *almost*[^1] exactly equivalent to an `unwrap` which `return`s
+`?` is *almost*[^†] exactly equivalent to an `unwrap` which `return`s
 instead of `panic`s on `Err`s. Let's see how we can simplify the earlier
 example that used combinators:
 
@@ -67,6 +67,6 @@ fn main() {
 ```
 
 
-[^1]: See [re-enter ?][re_enter_?] for more details.
+[^†]: See [re-enter ?][re_enter_?] for more details.
 
 [re_enter_?]: error/multiple_error_types/reenter_question_mark.html

@@ -140,13 +140,13 @@ defined by a static constant at the beginning of the program.
 * [unwrap vs. expect][unwrap]
 * [enumerate][enumerate]
 
-[thread]: /std_misc/threads.html
-[vectors]: /std/vec.html
-[iterators]: /trait/iter.html
+[thread]: std_misc/threads.html
+[vectors]: std/vec.html
+[iterators]: trait/iter.html
 [destructuring]: https://doc.rust-lang.org/book/second-edition/ch18-03-pattern-syntax.html#destructuring-to-break-apart-values
-[closures]: /fn/closures.html
-[move]: /scope/move.html
+[closures]: fn/closures.html
+[move]: scope/move.html
 [move_closure]: https://doc.rust-lang.org/book/second-edition/ch13-01-closures.html#closures-can-capture-their-environment
 [turbofish]: https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.collect
-[unwrap]: /error/option_unwrap.html
+[unwrap]: error/option_unwrap.html
 [enumerate]: https://doc.rust-lang.org/book/loops.html#enumerate
