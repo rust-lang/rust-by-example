@@ -30,7 +30,7 @@ binaries, we just pass cargo the `--bin my_other_bin` flag, where `my_other_bin`
 is the name of the binary we want to work with.
 
 In addition to extra binaries, there is support for benchmarks, tests, and
-examples. The full capaibilities are documented
+examples. The full capabilities are documented
 [here](http://doc.crates.io/book/guide/project-layout.html).
 
 In the next chapter, we will look more closely at tests.
