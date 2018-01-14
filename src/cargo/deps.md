@@ -85,4 +85,4 @@ run. Notice that these commands will resolve all dependencies, download crates
 if needed, and build everything, including your crate. (Note that it only
 rebuilds what it has not already built, similar to `make`).
 
-Voila! That's all there is too it!
+Voila! That's all there is to it!
