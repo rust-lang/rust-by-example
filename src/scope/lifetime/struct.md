@@ -40,7 +40,7 @@ fn main() {
 
 ### See also:
 
-[`structs`][structs]
+[`struct`s][structs]
 
 
 [structs]: custom_types/structs.html
