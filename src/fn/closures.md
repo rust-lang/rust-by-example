@@ -1,6 +1,6 @@
 # Closures
 
-Closures in Rust, also called lambdas, are functions that can capture 
+Closures in Rust, also called lambda expressions or lambdas, are functions that can capture 
 the enclosing environment. For example, a closure that captures the x 
 variable:
 ```Rust
