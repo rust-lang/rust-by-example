@@ -48,7 +48,7 @@ implementation for free.
 
 Using the `Into` trait will typically require specification of the type to
 convert into as the compiler is unable to determine this most of the time.
-However this is a small trade off considering we get the functionality for free.
+However this is a small trade-off considering we get the functionality for free.
 
 ```rust,editable
 use std::convert::From;
