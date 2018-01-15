@@ -3127,9 +3127,10 @@ called `my::nested::function()`
 <a class="header" href="print.html#crates" id="crates"><h1>Crates</h1></a>
 <p>A crate is a compilation unit in Rust. Whenever <code>rustc some_file.rs</code> is called,
 <code>some_file.rs</code> is treated as the <em>crate file</em>. If <code>some_file.rs</code> has <code>mod</code>
-declarations in it, then the contents of the module files will get merged with
-the crate file <em>before</em> running the compiler over it. In other words, modules
-do <em>not</em> get compiled individually, only crates get compiled.</p>
+declarations in it, then the contents of the module files would be inserted in
+places where <code>mod</code> declarations in the crate file are found, <em>before</em> running
+the compiler over it. In other words, modules do <em>not</em> get compiled
+individually, only crates get compiled.</p>
 <p>A crate can be compiled into a binary or into a library. By default, <code>rustc</code>
 will produce a binary from a crate. This behavior can be overridden by passing
 the <code>--crate-type</code> flag to <code>rustc</code>.</p>
@@ -3265,7 +3266,7 @@ rebuilds what it has not already built, similar to <code>make</code>).</p>
 </code></pre>
 <p>Suppose that we wanted to have two binaries in the same project, though. What
 then?</p>
-<p>It turns out that cargo supports this. The default binary name is <code>main.rs</code>, as
+<p>It turns out that <code>cargo</code> supports this. The default binary name is <code>main.rs</code>, as
 we saw before, but you can add additional binaries by placing them in a <code>bin/</code>
 directory:</p>
 <pre><code class="language-txt">foo
@@ -3275,8 +3276,8 @@ directory:</p>
     └── bin
         └── my_other_bin.rs
 </code></pre>
-<p>To tell cargo to compile or run this binary as opposed to the default or other
-binaries, we just pass cargo the <code>--bin my_other_bin</code> flag, where <code>my_other_bin</code>
+<p>To tell <code>cargo</code> to compile or run this binary as opposed to the default or other
+binaries, we just pass <code>cargo</code> the <code>--bin my_other_bin</code> flag, where <code>my_other_bin</code>
 is the name of the binary we want to work with.</p>
 <p>In addition to extra binaries, there is support for benchmarks, tests, and
 examples. The full capabilities are documented

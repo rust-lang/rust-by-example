@@ -115,7 +115,7 @@
 </code></pre>
 <p>Suppose that we wanted to have two binaries in the same project, though. What
 then?</p>
-<p>It turns out that cargo supports this. The default binary name is <code>main.rs</code>, as
+<p>It turns out that <code>cargo</code> supports this. The default binary name is <code>main.rs</code>, as
 we saw before, but you can add additional binaries by placing them in a <code>bin/</code>
 directory:</p>
 <pre><code class="language-txt">foo
@@ -125,8 +125,8 @@ directory:</p>
     └── bin
         └── my_other_bin.rs
 </code></pre>
-<p>To tell cargo to compile or run this binary as opposed to the default or other
-binaries, we just pass cargo the <code>--bin my_other_bin</code> flag, where <code>my_other_bin</code>
+<p>To tell <code>cargo</code> to compile or run this binary as opposed to the default or other
+binaries, we just pass <code>cargo</code> the <code>--bin my_other_bin</code> flag, where <code>my_other_bin</code>
 is the name of the binary we want to work with.</p>
 <p>In addition to extra binaries, there is support for benchmarks, tests, and
 examples. The full capabilities are documented
