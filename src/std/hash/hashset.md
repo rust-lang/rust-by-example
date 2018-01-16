@@ -30,7 +30,7 @@ Sets have 4 primary operations (all of the following calls return an iterator):
 * `symmetric_difference`: 
 get all the elements that are in one set or the other, but *not* both.
 
-Try all of these in the following example.
+Try all of these in the following example:
 
 ```rust,editable,ignore,mdbook-runnable
 use std::collections::HashSet;
