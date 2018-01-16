@@ -2473,6 +2473,27 @@ required.</p>
     // ^ TODO: Try uncommenting this line.
 }
 </code></pre></pre>
+<p>Using <code>move</code> before vertical pipes forces closure
+to take ownership of captured variables:</p>
+<pre><pre class="playpen"><code class="language-rust editable">fn main() {
+    // `Vec` has non-copy semantics.
+    let haystack = vec![1, 2, 3];
+
+    let contains = move |needle| haystack.contains(needle);
+
+    println!(&quot;{}&quot;, contains(&amp;1));
+    println!(&quot;{}&quot;, contains(&amp;4));
+
+    // `println!(&quot;There're {} elements in vec&quot;, haystack.len());`
+    // ^ Uncommenting above line will result in compile-time error
+    // because borrow checker doesn't allow re-using variable after it
+    // has been moved.
+    
+    // Removing `move` from closure's signature will cause closure
+    // to borrow _haystack_ variable immutably, hence _haystack_ is still
+    // available and uncommenting above line will not cause an error.
+}
+</code></pre></pre>
 <a class="header" href="print.html#see-also-22" id="see-also-22"><h3>See also:</h3></a>
 <p><a href="std/box.html"><code>Box</code></a> and <a href="https://doc.rust-lang.org/std/mem/fn.drop.html"><code>std::mem::drop</code></a></p>
 <a class="header" href="print.html#as-input-parameters" id="as-input-parameters"><h1>As input parameters</h1></a>
