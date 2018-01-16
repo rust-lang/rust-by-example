@@ -70,7 +70,7 @@ fn main() {
 }
 ```
 
-(Examples adapted from the [documentation.][hash-set])
+(Examples are adapted from the [documentation.][hash-set])
 
 [treeset]: https://doc.rust-lang.org/std/collections/struct.BTreeSet.html
 [hash-set]: https://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference
