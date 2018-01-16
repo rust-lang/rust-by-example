@@ -46,7 +46,7 @@ fn main() {
                     n
                 },
                 Err(_) => {
-                    println!("error: second argument not an integer");
+                    eprintln!("error: second argument not an integer");
                     help();
                     return;
                 },
@@ -56,7 +56,7 @@ fn main() {
                 "increase" => increase(number),
                 "decrease" => decrease(number),
                 _ => {
-                    println!("error: invalid command");
+                    eprintln!("error: invalid command");
                     help();
                 },
             }
