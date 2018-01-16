@@ -7841,7 +7841,7 @@ fn main() {
                     n
                 },
                 Err(_) =&gt; {
-                    println!(&quot;error: second argument not an integer&quot;);
+                    eprintln!(&quot;error: second argument not an integer&quot;);
                     help();
                     return;
                 },
@@ -7851,7 +7851,7 @@ fn main() {
                 &quot;increase&quot; =&gt; increase(number),
                 &quot;decrease&quot; =&gt; decrease(number),
                 _ =&gt; {
-                    println!(&quot;error: invalid command&quot;);
+                    eprintln!(&quot;error: invalid command&quot;);
                     help();
                 },
             }
