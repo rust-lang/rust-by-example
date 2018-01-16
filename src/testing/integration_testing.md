@@ -50,7 +50,7 @@ running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-Each rust source file in `tests` directory is compiled as a separate crate. One
+Each Rust source file in `tests` directory is compiled as a separate crate. One
 way of sharing some code between integration tests is making module with public
 functions, importing and using it within tests.
 
