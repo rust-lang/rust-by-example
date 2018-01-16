@@ -74,6 +74,26 @@ fn main() {
 }
 ```
 
+A `struct` can include `..` to indicate that you want to use a copy of some other struct for some of the values.
+This gives `Triplet` a new `third`, but keeps the old `first` and `second` values. It doesn’t have to be the same struct either, you can use this syntax when making new ones, and it will copy the values you don’t specify, For example:
+
+```rust,editable
+#[derive(Debug)]
+struct Triplet {
+    first: i32,
+    second: i32,
+    third: i32,
+}
+
+fn main() {
+    let t = Triplet { first: 0, second: 1, third: 2 };
+    let u = Triplet { first: 3, .. t };
+
+    println!("{:?}", t);
+    println!("{:?}", u);
+}
+```
+
 ### Activity
 
 1. Add a function `rect_area` which calculates the area of a rectangle (try 
