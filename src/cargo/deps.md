@@ -1,8 +1,8 @@
 # Dependencies
 
 Most programs have dependencies on some libraries. If you have ever managed
-dependencies by hand, you know how much of a pain this. Luckily, the Rust
-ecosystem comes standard with `cargo`! `cargo` can manage dependcies for a
+dependencies by hand, you know how much of a pain this can be. Luckily, the Rust
+ecosystem comes standard with `cargo`! `cargo` can manage dependencies for a
 project.
 
 To create a new Rust project,
