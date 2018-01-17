@@ -30,16 +30,16 @@ fn main() {
      * in this main() function. /*/*/* Try it yourself! */*/*/
      */
 
-     /*
-     Note, the previous column of `*` was entirely for style. There's
-     no actual need for it.
-     */
+    /*
+    Note, the previous column of `*` was entirely for style. There's
+    no actual need for it.
+    */
 
-     // Observe how block comments allow easy expression manipulation
-     // which line comments do not. Deleting the comment delimiters
-     // will change the result:
-     let x = 5 + /* 90 + */ 5;
-     println!("Is `x` 10 or 100? x = {}", x);
+    // Observe how block comments allow easy expression manipulation
+    // which line comments do not. Deleting the comment delimiters
+    // will change the result:
+    let x = 5 + /* 90 + */ 5;
+    println!("Is `x` 10 or 100? x = {}", x);
 }
 
 ```
