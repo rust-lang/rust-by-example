@@ -86,8 +86,8 @@ struct Triplet {
 }
 
 fn main() {
-    let t = Triplet { first: 0, second: 1, third: 2 };
-    let u = Triplet { first: 3, .. t };
+    let t = Triplet { first: 1, second: 2, third: 2 };
+    let u = Triplet { third: 3, .. t };
 
     println!("{:?}", t);
     println!("{:?}", u);
