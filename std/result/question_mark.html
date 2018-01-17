@@ -111,8 +111,8 @@
 <p>Chaining results using match can get pretty untidy; luckily, the <code>?</code> operator
 can be used to make things pretty again. <code>?</code> is used at the end of an expression
 returning a <code>Result</code>, and is equivalent to a match expression, where the
-<code>Err(err)</code> branch expands to an early <code>return Err(err)</code>, and the <code>Ok(ok)</code> branch
-expands to an <code>ok</code> expression.</p>
+<code>Err(err)</code> branch expands to an early <code>Err(From::from(err))</code>, and the <code>Ok(ok)</code>
+branch expands to an <code>ok</code> expression.</p>
 <pre><pre class="playpen"><code class="language-rust editable ignore mdbook-runnable">mod checked {
     #[derive(Debug)]
     enum MathError {
