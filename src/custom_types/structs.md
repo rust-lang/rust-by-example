@@ -38,16 +38,21 @@ fn main() {
     let name = "Peter";
     let age = 27;
     let peter = Person { name, age };
-    
+
     // Print debug struct
     println!("{:?}", peter);
-    
-    
+
+
     // Instantiate a `Point`
     let point: Point = Point { x: 0.3, y: 0.4 };
 
     // Access the fields of the point
     println!("point coordinates: ({}, {})", point.x, point.y);
+
+    // Make a new point by using struct update syntax to use the fields of our other one
+    let new_point = Point { x: 0.1, ..point };
+    // `new_point.y` will be the same as `point.y` because we used that field from `point`
+    println!("second point: ({}, {})", new_point.x, new_point.y);
 
     // Destructure the point using a `let` binding
     let Point { x: my_x, y: my_y } = point;
@@ -71,26 +76,6 @@ fn main() {
     let Pair(integer, decimal) = pair;
 
     println!("pair contains {:?} and {:?}", integer, decimal);
-}
-```
-
-A `struct` can include `..` to indicate that you want to use a copy of some other struct for some of the values.
-This gives `Triplet` a new `third`, but keeps the old `first` and `second` values. It doesn’t have to be the same struct either, you can use this syntax when making new ones, and it will copy the values you don’t specify, For example:
-
-```rust,editable
-#[derive(Debug)]
-struct Triplet {
-    first: i32,
-    second: i32,
-    third: i32,
-}
-
-fn main() {
-    let t = Triplet { first: 1, second: 2, third: 2 };
-    let u = Triplet { third: 3, .. t };
-
-    println!("{:?}", t);
-    println!("{:?}", u);
 }
 ```
 
