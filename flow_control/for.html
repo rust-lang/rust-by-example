@@ -138,12 +138,14 @@ collection.</p>
 <li><code>iter</code> - This borrows each element of the collection through each iteration.
 Thus leaving the collection untouched and available for reuse after the loop.</li>
 </ul>
-<pre><pre class="playpen"><code class="language-rust editable">let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+<pre><pre class="playpen"><code class="language-rust editable">fn main() {
+    let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
-for name in names.iter() {
-    match name {
-        &amp;&quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
-        _ =&gt; println!(&quot;Hello {}&quot;, name),
+    for name in names.iter() {
+        match name {
+            &amp;&quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+            _ =&gt; println!(&quot;Hello {}&quot;, name),
+        }
     }
 }
 </code></pre></pre>
@@ -152,12 +154,14 @@ for name in names.iter() {
 data is provided. Once the collection has been consumed it is no longer
 available for reuse as it has been 'moved' within the loop.</li>
 </ul>
-<pre><pre class="playpen"><code class="language-rust editable">let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+<pre><pre class="playpen"><code class="language-rust editable">fn main() {
+    let names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
-for name in names.into_iter() {
-    match name {
-        &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
-        _ =&gt; println!(&quot;Hello {}&quot;, name),
+    for name in names.into_iter() {
+        match name {
+            &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+            _ =&gt; println!(&quot;Hello {}&quot;, name),
+        }
     }
 }
 </code></pre></pre>
@@ -165,12 +169,14 @@ for name in names.into_iter() {
 <li><code>iter_mut</code> - This mutably borrows each element of the collection, allowing for
 the collection to be modified in place.</li>
 </ul>
-<pre><pre class="playpen"><code class="language-rust editable">let mut names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
+<pre><pre class="playpen"><code class="language-rust editable">fn main() {
+    let mut names = vec![&quot;Bob&quot;, &quot;Frank&quot;, &quot;Ferris&quot;];
 
-for name in names.iter_mut() {
-    match name {
-        &amp;mut &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
-        _ =&gt; println!(&quot;Hello {}&quot;, name),
+    for name in names.iter_mut() {
+        match name {
+            &amp;mut &quot;Ferris&quot; =&gt; println!(&quot;There is a rustacean among us!&quot;),
+            _ =&gt; println!(&quot;Hello {}&quot;, name),
+        }
     }
 }
 </code></pre></pre>
