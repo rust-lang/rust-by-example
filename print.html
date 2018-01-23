@@ -7904,6 +7904,14 @@ extern {
     // this is a foreign function
     // that computes the square root of a single precision complex number
     fn csqrtf(z: Complex) -&gt; Complex;
+
+    fn ccosf(z: Complex) -&gt; Complex;
+}
+
+// Since calling foreign functions is considered unsafe,
+// it's common to write safe wrappers around them.
+fn cos(z: Complex) -&gt; Complex {
+    unsafe { ccosf(z) }
 }
 
 fn main() {
@@ -7911,49 +7919,11 @@ fn main() {
     let z = Complex { re: -1., im: 0. };
 
     // calling a foreign function is an unsafe operation
-    let z_sqrt = unsafe {
-        csqrtf(z)
-    };
+    let z_sqrt = unsafe { csqrtf(z) };
 
     println!(&quot;the square root of {:?} is {:?}&quot;, z, z_sqrt);
-}
 
-// Minimal implementation of single precision complex numbers
-#[repr(C)]
-#[derive(Clone, Copy)]
-struct Complex {
-    re: f32,
-    im: f32,
-}
-
-impl fmt::Debug for Complex {
-    fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
-        if self.im &lt; 0. {
-            write!(f, &quot;{}-{}i&quot;, self.re, -self.im)
-        } else {
-            write!(f, &quot;{}+{}i&quot;, self.re, self.im)
-        }
-    }
-}
-</code></pre>
-<p>Since calling foreign functions is considered unsafe, it's common to write safe
-wrappers around them.</p>
-<pre><code class="language-rust ignore">use std::fmt;
-
-#[link(name = &quot;m&quot;)]
-extern {
-    fn ccosf(z: Complex) -&gt; Complex;
-}
-
-// safe wrapper
-fn cos(z: Complex) -&gt; Complex {
-    unsafe { ccosf(z) }
-}
-
-fn main() {
-    // z = 0 + 1i
-    let z = Complex { re: 0., im: 1. };
-
+    // calling safe API wrapped around unsafe operation
     println!(&quot;cos({:?}) = {:?}&quot;, z, cos(z));
 }
 
