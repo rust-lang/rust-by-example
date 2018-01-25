@@ -3875,10 +3875,7 @@ impl Days {
 }
 
 fn old_enough(age: &amp;Years) -&gt; bool {
-    if age.0 &gt;= 18 {
-        return true
-    }
-    false
+    age.0 &gt;= 18
 }
 
 fn main() {
