@@ -7,7 +7,7 @@ Rules for converting between integral types follow C conventions generally,
 except in cases where C has undefined behavior. The behavior of all casts
 between integral types is well defined in Rust.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 // Suppress all warnings from casts which overflow.
 #![allow(overflowing_literals)]
 

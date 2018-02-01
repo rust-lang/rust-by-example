@@ -21,7 +21,7 @@ be possible to parse a string into the other type, so `parse()` returns a
 
 Let's see what happens when we successfully and unsuccessfully `parse()` a string:
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn multiply(first_number_str: &str, second_number_str: &str) -> i32 {
     // Let's try using `unwrap()` to get the number out. Will it bite us?
     let first_number = first_number_str.parse::<i32>().unwrap();

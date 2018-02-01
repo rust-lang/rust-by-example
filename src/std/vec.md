@@ -7,7 +7,7 @@ indicates how much memory is reserved for the vector. The vector can grow as
 long as the length is smaller than the capacity. When this threshold needs to
 be surpassed, the vector is reallocated with a larger capacity.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn main() {
     // Iterators can be collected into vectors
     let collected_iterator: Vec<i32> = (0..10).collect();

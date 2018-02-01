@@ -5,7 +5,7 @@ any consequences? It surely does. Observe how using a closure as a function
 parameter requires [generics], which is necessary because of how they are
 defined:
 
-```rust
+```rust,ignore
 // `F` must be generic.
 fn apply<F>(f: F) where
     F: FnOnce() {

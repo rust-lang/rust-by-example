@@ -12,7 +12,7 @@ In the following code, two instances of `unwrap` generate different error
 types. `Vec::first` returns an `Option`, while `parse::<i32>` returns a
 `Result<i32, ParseIntError>`:
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn double_first(vec: Vec<&str>) -> i32 {
     let first = vec.first().unwrap(); // Generate error 1
     2 * first.parse::<i32>().unwrap() // Generate error 2

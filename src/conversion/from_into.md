@@ -13,7 +13,7 @@ library for conversion of primitive and common types.
 
 For example we can easily convert a `str` into a `String`
 
-```rust
+```rust,ignore
 let my_str = "hello";
 let my_string = String::from(my_str);
 ```

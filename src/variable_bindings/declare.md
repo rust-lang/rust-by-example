@@ -4,7 +4,7 @@ It's possible to declare variable bindings first, and initialize them later.
 However, this form is seldom used, as it may lead to the use of uninitialized
 variables.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn main() {
     // Declare a variable binding
     let a_binding;

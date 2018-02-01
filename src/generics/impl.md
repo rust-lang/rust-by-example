@@ -2,7 +2,7 @@
 
 Similar to functions, implementations require care to remain generic.
 
-```rust
+```rust,ignore
 struct S; // Concrete type `S`
 struct GenericVal<T>(T,); // Generic type `GenericVal`
 

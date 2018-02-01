@@ -96,7 +96,7 @@ fn main() {
 Sometimes there are just too many characters that need to be escaped or it's just
 much more convenient to write a string out as-is. This is where raw string literals come into play.
 
-```rust, editable
+```rust,editable
 fn main() {
     let raw_str = r"Escapes don't work here: \x3F \u{211D}";
     println!("{}", raw_str);
@@ -115,7 +115,7 @@ fn main() {
 Want a string that's not UTF-8? (Remember, `str` and `String` must be valid UTF-8)
 Or maybe you want an array of bytes that's mostly text? Byte strings to the rescue!
 
-```rust, editable
+```rust,editable
 use std::str;
 
 fn main() {

@@ -4,7 +4,7 @@ The use of "Associated types" improves the overall readability of code
 by moving inner types locally into a trait as *output* types. Syntax
 for the `trait` definition is as follows:
 
-```rust
+```rust,ignore
 // `A` and `B` are defined in the trait via the `type` keyword.
 // (Note: `type` in this context is different from `type` when used for
 // aliases).

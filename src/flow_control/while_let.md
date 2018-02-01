@@ -3,7 +3,7 @@
 Similar to `if let`, `while let` can make awkward `match` sequences
 more tolerable. Consider the following sequence that increments `i`:
 
-```rust
+```rust,editable
 // Make `optional` of type `Option<i32>`
 let mut optional = Some(0);
 

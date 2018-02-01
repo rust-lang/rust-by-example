@@ -9,7 +9,7 @@ The `fmt::Debug` `trait` makes this very straightforward. *All* types can
 `derive` (automatically create) the `fmt::Debug` implementation. This is
 not true for `fmt::Display` which must be manually implemented.
 
-```rust
+```rust,ignore
 // This structure cannot be printed either with `fmt::Display` or
 // with `fmt::Debug`
 struct UnPrintable(i32);

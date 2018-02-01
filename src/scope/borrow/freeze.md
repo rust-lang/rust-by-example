@@ -1,9 +1,9 @@
 # Freezing
 
-When data is immutably borrowed, it also *freezes*. *Frozen* data can't be 
+When data is immutably borrowed, it also *freezes*. *Frozen* data can't be
 modified via the original object until all references to it go out of scope:
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn main() {
     let mut _mutable_integer = 7i32;
 
