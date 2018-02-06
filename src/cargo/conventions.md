@@ -1,6 +1,6 @@
 # Conventions
 
-In the previous chapter, we saw the following directory heirarcy:
+In the previous chapter, we saw the following directory hierarchy:
 
 ```txt
 foo
