@@ -3304,7 +3304,7 @@ if needed, and build everything, including your crate. (Note that it only
 rebuilds what it has not already built, similar to <code>make</code>).</p>
 <p>Voila! That's all there is to it!</p>
 <a class="header" href="print.html#conventions" id="conventions"><h1>Conventions</h1></a>
-<p>In the previous chapter, we saw the following directory heirarcy:</p>
+<p>In the previous chapter, we saw the following directory hierarchy:</p>
 <pre><code class="language-txt">foo
 ├── Cargo.toml
 └── src
@@ -3402,6 +3402,13 @@ and when they apply to a module or item, the syntax is <code>#[item_attribute]</
 <li><code>#[attribute(key = &quot;value&quot;)]</code></li>
 <li><code>#[attribute(value)]</code></li>
 </ul>
+<p>Attributes can have multiple values and can be separated over multiple lines, too:</p>
+<pre><code class="language-rust ignore">#[attribute(value, value2)]
+
+
+#[attribute(value, value2, value3,
+            value4, value5)]
+</code></pre>
 <a class="header" href="print.html#dead_code" id="dead_code"><h1><code>dead_code</code></h1></a>
 <p>The compiler provides a <code>dead_code</code>
 <a href="https://en.wikipedia.org/wiki/Lint_%28software%29"><em>lint</em></a> that will warn

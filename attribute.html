@@ -142,6 +142,13 @@ and when they apply to a module or item, the syntax is <code>#[item_attribute]</
 <li><code>#[attribute(key = &quot;value&quot;)]</code></li>
 <li><code>#[attribute(value)]</code></li>
 </ul>
+<p>Attributes can have multiple values and can be separated over multiple lines, too:</p>
+<pre><code class="language-rust ignore">#[attribute(value, value2)]
+
+
+#[attribute(value, value2, value3,
+            value4, value5)]
+</code></pre>
 
                     </main>
 
