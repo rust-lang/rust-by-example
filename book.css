@@ -71,6 +71,7 @@ table thead td {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   -webkit-transition: -webkit-transform 0.5s;
   -moz-transition: -moz-transform 0.5s;
   -o-transition: -o-transform 0.5s;
@@ -94,8 +95,13 @@ table thead td {
 }
 .chapter li a {
   display: block;
-  padding: 5px 0;
+  padding: 0;
   text-decoration: none;
+}
+@media (-moz-touch-enabled: 1), (pointer: coarse) {
+  .chapter li a {
+    padding: 5px 0;
+  }
 }
 .chapter li a:hover {
   text-decoration: none;
@@ -103,7 +109,12 @@ table thead td {
 .chapter .spacer {
   width: 100%;
   height: 3px;
-  margin: 10px 0px;
+  margin: 5px 0px;
+}
+@media (-moz-touch-enabled: 1), (pointer: coarse) {
+  .chapter .spacer {
+    margin: 10px 0;
+  }
 }
 .section {
   list-style: none outside none;
@@ -220,6 +231,7 @@ html:not(.sidebar-visible) #menu-bar:not(:hover).folded > #menu-bar-sticky-conta
   overflow: hidden;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
+  cursor: pointer;
 }
 .nav-chapters {
   font-size: 2.5em;
