@@ -11,7 +11,7 @@ before_script:
     LATEST=$(cargo search mdbook | grep "^mdbook =" | cut -d '"' -f 2)
     INSTALLED=$(cargo install --list | grep "^mdbook " | cut -d v -f 2 | tr -d :)
     if [ "$INSTALLED" != "$LATEST" ]; then
-      if [ "INSTALLED" != "" ]; then
+      if [ "$INSTALLED" != "" ]; then
         echo "mdbook '$INSTALLED' is already installed"
       fi
       echo "Installing mdbook '$LATEST'"
