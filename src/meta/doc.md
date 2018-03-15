@@ -42,6 +42,7 @@ impl Person {
     }
 }
 
+#[allow(dead_code)]
 fn main() {
     let john = Person::new("John");
 
