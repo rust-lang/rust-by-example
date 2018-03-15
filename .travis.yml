@@ -7,7 +7,16 @@ branches:
   only:
   - master
 before_script:
-  - (cargo install mdbook --git https://github.com/azerupi/mdBook.git --force || true)
+  - |
+    LATEST=$(cargo search mdbook | grep "^mdbook =" | cut -d '"' -f 2)
+    INSTALLED=$(cargo install --list | grep "^mdbook " | cut -d v -f 2 | tr -d :)
+    if [ "$INSTALLED" != "$LATEST" ]; then
+      if [ "$INSTALLED" != "" ]; then
+        echo "mdbook '$INSTALLED' is already installed"
+      fi
+      echo "Installing mdbook '$LATEST'"
+      cargo install mdbook --force --vers "$LATEST"
+    fi
 script:
   - mdbook build
   - mdbook test
