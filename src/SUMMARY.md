@@ -70,6 +70,7 @@
             - [Iterator::any](fn/closures/closure_examples/iter_any.md)
             - [Iterator::find](fn/closures/closure_examples/iter_find.md)
     - [Higher Order Functions](fn/hof.md)
+    - [Diverging functions](fn/diverging.md)
 
 - [Modules](mod.md)
     - [Visibility](mod/visibility.md)
