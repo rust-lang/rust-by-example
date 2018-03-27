@@ -1,4 +1,4 @@
-# elision
+# Elision
 
 Some lifetime patterns are overwelmingly common and so the borrow checker
 will implicitly add them to save typing and to improve readability.
