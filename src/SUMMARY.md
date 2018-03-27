@@ -36,7 +36,7 @@
 
 - [Conversion](conversion.md)
     - [From and Into](conversion/from_into.md)
-    - [To and From String](conversion/string.md)
+    - [To and from Strings](conversion/string.md)
 
 - [Expressions](expression.md)
 

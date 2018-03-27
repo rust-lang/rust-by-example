@@ -1,4 +1,4 @@
-# To and From String
+# To and from Strings
 
 ## `ToString`
 
