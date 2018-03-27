@@ -1,4 +1,4 @@
-# static
+# Static
 
 A `'static` lifetime is the longest possible lifetime, and lasts for 
 the lifetime of the running program. A `'static` lifetime may also be 
