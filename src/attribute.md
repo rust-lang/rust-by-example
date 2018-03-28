@@ -23,6 +23,16 @@ Attributes can take arguments with different syntaxes:
 * `#[attribute(key = "value")]`
 * `#[attribute(value)]`
 
+Attributes can have multiple values and can be separated over multiple lines, too:
+
+```rust,ignore
+#[attribute(value, value2)]
+
+
+#[attribute(value, value2, value3,
+            value4, value5)]
+```
+
 [cfg]: attribute/cfg.html
 [crate]: attribute/crate.html
 [lint]: https://en.wikipedia.org/wiki/Lint_%28software%29

@@ -60,7 +60,7 @@ fn main() {
     // Create an empty linked list
     let mut list = List::new();
 
-    // Append some elements
+    // Prepend some elements
     list = list.prepend(1);
     list = list.prepend(2);
     list = list.prepend(3);
