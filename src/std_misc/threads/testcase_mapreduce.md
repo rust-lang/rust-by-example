@@ -116,7 +116,7 @@ fn main() {
     // we use the "turbofish" ::<> to provide sum() with a type hint.
     //
     // TODO: try without the turbofish, by instead explicitly
-    // specifying the type of intermediate_sums
+    // specifying the type of final_result
     let final_result = intermediate_sums.iter().sum::<u32>();
 
     println!("Final sum result: {}", final_result);
