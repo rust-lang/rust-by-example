@@ -169,6 +169,23 @@ notation <code>a..b</code>. This yields values from <code>a</code> (inclusive) t
     }
 }
 </code></pre></pre>
+<p>Alternatively, <code>a..=b</code> can be used for a range that is inclusive on both ends.
+The above can be written as:</p>
+<pre><pre class="playpen"><code class="language-rust editable">fn main() {
+    // `n` will take the values: 1, 2, ..., 100 in each iteration
+    for n in 1..=100 {
+        if n % 15 == 0 {
+            println!(&quot;fizzbuzz&quot;);
+        } else if n % 3 == 0 {
+            println!(&quot;fizz&quot;);
+        } else if n % 5 == 0 {
+            println!(&quot;buzz&quot;);
+        } else {
+            println!(&quot;{}&quot;, n);
+        }
+    }
+}
+</code></pre></pre>
 <a class="header" href="flow_control/for.html#for-and-iterators" id="for-and-iterators"><h2>for and iterators</h2></a>
 <p>The <code>for in</code> construct is able to interact with an <code>Iterator</code> in several ways.
 As discussed in with the <a href="trait/iter.html">Iterator</a> trait, if not specified, the <code>for</code>
