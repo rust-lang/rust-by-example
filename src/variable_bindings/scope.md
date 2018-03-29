@@ -4,7 +4,7 @@ Variable bindings have a scope, and are constrained to live in a *block*. A
 block is a collection of statements enclosed by braces `{}`. Also, [variable
 shadowing][variable-shadow] is allowed.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn main() {
     // This binding lives in the main function
     let long_lived_binding = 1;
@@ -28,10 +28,10 @@ fn main() {
     // FIXME ^ Comment out this line
 
     println!("outer long: {}", long_lived_binding);
-    
+
     // This binding also *shadows* the previous binding
     let long_lived_binding = 'a';
-    
+
     println!("outer long: {}", long_lived_binding);
 }
 ```

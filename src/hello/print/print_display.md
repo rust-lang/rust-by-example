@@ -5,7 +5,7 @@ customize the output appearance. This is done by manually implementing
 [`fmt::Display`][fmt], which uses the `{}` print marker. Implementing it
 looks like this:
 
-```rust
+```rust,ignore
 // Import (via `use`) the `fmt` module to make it available.
 use std::fmt;
 

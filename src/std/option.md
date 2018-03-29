@@ -8,7 +8,7 @@ The `Option<T>` enum has two variants:
 * `None`, to indicate failure or lack of value, and
 * `Some(value)`, a tuple struct that wraps a `value` with type `T`.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 // An integer division that doesn't `panic!`
 fn checked_division(dividend: i32, divisor: i32) -> Option<i32> {
     if divisor == 0 {

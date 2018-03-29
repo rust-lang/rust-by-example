@@ -3,7 +3,7 @@
 The `process::Output` struct represents the output of a finished child process,
 and the `process::Command` struct is a process builder.
 
-```rust,editable,ignore
+```rust,editable
 use std::process::Command;
 
 fn main() {

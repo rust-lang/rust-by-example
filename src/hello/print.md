@@ -12,7 +12,7 @@ some of which include:
 All parse text in the same fashion. A plus is that the formatting correctness will
 be checked at compile time.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn main() {
     // In general, the `{}` will be automatically replaced with any
     // arguments. These will be stringified.
@@ -45,7 +45,7 @@ fn main() {
     // used.
     println!("My name is {0}, {1} {0}", "Bond");
     // FIXME ^ Add the missing argument: "James"
-    
+
     // Create a structure which contains an `i32`. Name it `Structure`.
     #[allow(dead_code)]
     struct Structure(i32);

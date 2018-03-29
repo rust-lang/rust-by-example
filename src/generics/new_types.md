@@ -6,7 +6,7 @@ to a program.
 For example, an age verification function that checks age in years, *must* be given
 a value of type `Years`.
 
-```rust, editable
+```rust,editable
 struct Years(i64);
 
 struct Days(i64);

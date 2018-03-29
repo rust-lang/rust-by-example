@@ -3,7 +3,7 @@
 Variable bindings are immutable by default, but this can be overridden using
 the `mut` modifier.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn main() {
     let _immutable_binding = 1;
     let mut mutable_binding = 1;

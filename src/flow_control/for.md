@@ -61,7 +61,7 @@ collection.
 * `iter` - This borrows each element of the collection through each iteration.
   Thus leaving the collection untouched and available for reuse after the loop.
 
-```rust, editable
+```rust,editable
 fn main() {
     let names = vec!["Bob", "Frank", "Ferris"];
 
@@ -78,7 +78,7 @@ fn main() {
   data is provided. Once the collection has been consumed it is no longer
   available for reuse as it has been 'moved' within the loop.
 
-```rust, editable
+```rust,editable
 fn main() {
     let names = vec!["Bob", "Frank", "Ferris"];
 
@@ -94,7 +94,7 @@ fn main() {
 * `iter_mut` - This mutably borrows each element of the collection, allowing for
   the collection to be modified in place.
 
-```rust, editable
+```rust,editable
 fn main() {
     let mut names = vec!["Bob", "Frank", "Ferris"];
 
