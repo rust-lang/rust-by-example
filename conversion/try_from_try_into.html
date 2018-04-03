@@ -148,8 +148,14 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="conversion/try_from_try_into.html#tryfrom-and-tryinto" id="tryfrom-and-tryinto"><h1><code>TryFrom</code> and <code>TryInto</code></h1></a>
-<p>Similar to <a href="conversion/from_into.html"><code>From</code> and <code>Into</code></a>, <a href="https://doc.rust-lang.org/std/convert/trait.TryFrom.html"><code>TryFrom</code></a> and <a href="https://doc.rust-lang.org/std/convert/trait.TryInto.html"><code>TryInto</code></a> are generic traits for converting between types. Unlike <code>From</code>/<code>Into</code>, the <code>TryFrom</code>/<code>TryInto</code> traits are used for fallible conversions, and as such, return <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a>s.</p>
-<pre><pre class="playpen"><code class="language-rust">#[derive(Debug, PartialEq)]
+<p>Similar to <a href="conversion/from_into.html"><code>From</code> and <code>Into</code></a>, <a href="https://doc.rust-lang.org/std/convert/trait.TryFrom.html"><code>TryFrom</code></a> and <a href="https://doc.rust-lang.org/std/convert/trait.TryInto.html"><code>TryInto</code></a> are
+generic traits for converting between types. Unlike <code>From</code>/<code>Into</code>, the
+<code>TryFrom</code>/<code>TryInto</code> traits are used for fallible conversions, and as such,
+return <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a>s.</p>
+<pre><pre class="playpen"><code class="language-rust">use std::convert::TryFrom;
+use std::convert::TryInto;
+
+#[derive(Debug, PartialEq)]
 struct EvenNumber(i32);
 
 impl TryFrom&lt;i32&gt; for EvenNumber {

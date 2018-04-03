@@ -179,10 +179,10 @@ fn print_multi&lt;'a, 'b&gt;(x: &amp;'a i32, y: &amp;'b i32) {
 // However, the correct lifetime must be returned.
 fn pass_x&lt;'a, 'b&gt;(x: &amp;'a i32, _: &amp;'b i32) -&gt; &amp;'a i32 { x }
 
-//fn invalid_output&lt;'a&gt;() -&gt; &amp;'a i32 { &amp;7 }
+//fn invalid_output&lt;'a&gt;() -&gt; &amp;'a String { &amp;String::from(&quot;foo&quot;) }
 // The above is invalid: `'a` must live longer than the function.
-// Here, `&amp;7` would create an `i32`, followed by a reference.
-// Then the data is dropped upon exiting the scope, leaving 
+// Here, `&amp;String::from(&quot;foo&quot;)` would create a `String`, followed by a
+// reference. Then the data is dropped upon exiting the scope, leaving
 // a reference to invalid data to be returned.
 
 fn main() {

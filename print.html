@@ -1580,8 +1580,14 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#tryfrom-and-tryinto" id="tryfrom-and-tryinto"><h1><code>TryFrom</code> and <code>TryInto</code></h1></a>
-<p>Similar to <a href="conversion/from_into.html"><code>From</code> and <code>Into</code></a>, <a href="https://doc.rust-lang.org/std/convert/trait.TryFrom.html"><code>TryFrom</code></a> and <a href="https://doc.rust-lang.org/std/convert/trait.TryInto.html"><code>TryInto</code></a> are generic traits for converting between types. Unlike <code>From</code>/<code>Into</code>, the <code>TryFrom</code>/<code>TryInto</code> traits are used for fallible conversions, and as such, return <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a>s.</p>
-<pre><pre class="playpen"><code class="language-rust">#[derive(Debug, PartialEq)]
+<p>Similar to <a href="conversion/from_into.html"><code>From</code> and <code>Into</code></a>, <a href="https://doc.rust-lang.org/std/convert/trait.TryFrom.html"><code>TryFrom</code></a> and <a href="https://doc.rust-lang.org/std/convert/trait.TryInto.html"><code>TryInto</code></a> are
+generic traits for converting between types. Unlike <code>From</code>/<code>Into</code>, the
+<code>TryFrom</code>/<code>TryInto</code> traits are used for fallible conversions, and as such,
+return <a href="https://doc.rust-lang.org/std/result/enum.Result.html"><code>Result</code></a>s.</p>
+<pre><pre class="playpen"><code class="language-rust">use std::convert::TryFrom;
+use std::convert::TryInto;
+
+#[derive(Debug, PartialEq)]
 struct EvenNumber(i32);
 
 impl TryFrom&lt;i32&gt; for EvenNumber {
@@ -3378,10 +3384,10 @@ ecosystem comes standard with <code>cargo</code>! <code>cargo</code> can manage 
 project.</p>
 <p>To create a new Rust project,</p>
 <pre><code class="language-sh"># A binary
-cargo new --bin foo
+cargo new foo
 
 # OR A library
-cargo new foo
+cargo new --lib foo
 </code></pre>
 <p>For the rest of this chapter, I will assume we are making a binary, rather than
 a library, but all of the concepts are the same.</p>
@@ -4802,10 +4808,10 @@ fn print_multi&lt;'a, 'b&gt;(x: &amp;'a i32, y: &amp;'b i32) {
 // However, the correct lifetime must be returned.
 fn pass_x&lt;'a, 'b&gt;(x: &amp;'a i32, _: &amp;'b i32) -&gt; &amp;'a i32 { x }
 
-//fn invalid_output&lt;'a&gt;() -&gt; &amp;'a i32 { &amp;7 }
+//fn invalid_output&lt;'a&gt;() -&gt; &amp;'a String { &amp;String::from(&quot;foo&quot;) }
 // The above is invalid: `'a` must live longer than the function.
-// Here, `&amp;7` would create an `i32`, followed by a reference.
-// Then the data is dropped upon exiting the scope, leaving 
+// Here, `&amp;String::from(&quot;foo&quot;)` would create a `String`, followed by a
+// reference. Then the data is dropped upon exiting the scope, leaving
 // a reference to invalid data to be returned.
 
 fn main() {
