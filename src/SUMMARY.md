@@ -5,6 +5,7 @@
 - [Getting Started](getting-started/index.md)
     - [Installation](getting-started/installation.md)
     - [Hello, World!](getting-started/hello-world.md)
+        - [`Debug` and `Display`](getting-started/debug-and-display.md)
     - [Hello, Cargo!](getting-started/hello-cargo.md)
 
 - [Common Programming Concepts](common-programming-concepts/index.md)
