@@ -9,10 +9,10 @@ To create a new Rust project,
 
 ```sh
 # A binary
-cargo new --bin foo
+cargo new foo
 
 # OR A library
-cargo new foo
+cargo new --lib foo
 ```
 
 For the rest of this chapter, I will assume we are making a binary, rather than
