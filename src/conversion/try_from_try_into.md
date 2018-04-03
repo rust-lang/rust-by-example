@@ -1,6 +1,9 @@
 # `TryFrom` and `TryInto`
 
-Similar to [`From` and `Into`][from-into], [`TryFrom`] and [`TryInto`] are generic traits for converting between types. Unlike `From`/`Into`, the `TryFrom`/`TryInto` traits are used for fallible conversions, and as such, return [`Result`]s.
+Similar to [`From` and `Into`][from-into], [`TryFrom`] and [`TryInto`] are
+generic traits for converting between types. Unlike `From`/`Into`, the
+`TryFrom`/`TryInto` traits are used for fallible conversions, and as such,
+return [`Result`]s.
 
 [from-into]: conversion/from_into.html
 [`TryFrom`]: https://doc.rust-lang.org/std/convert/trait.TryFrom.html
@@ -8,6 +11,9 @@ Similar to [`From` and `Into`][from-into], [`TryFrom`] and [`TryInto`] are gener
 [`Result`]: https://doc.rust-lang.org/std/result/enum.Result.html
 
 ```rust
+use std::convert::TryFrom;
+use std::convert::TryInto;
+
 #[derive(Debug, PartialEq)]
 struct EvenNumber(i32);
 
