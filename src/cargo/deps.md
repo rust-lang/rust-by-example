@@ -40,9 +40,6 @@ authors = ["mark"]
 [dependencies]
 ```
 
-You can read more extensively about all of the available configuration options
-[here](http://doc.crates.io/manifest.html).
-
 The `name` field under `package` determines the name of the project. This is
 used by `crates.io` if you publish the crate (more later). It is also the name
 of the output binary when you compile.
@@ -63,9 +60,8 @@ add a dependency to our program, we can simply add the following to our
 crate clap` in `main.rs`, just like normal. And that's it! You can start using
 `clap` in your program.
 
-`cargo` also supports other types of dependencies. Here is just a small
-sampling. You can find out more
-[here](http://doc.crates.io/specifying-dependencies.html).
+`cargo` also supports [other types of dependencies][dependencies]. Here is just
+a small sampling:
 
 ```toml
 [package]
@@ -79,6 +75,10 @@ rand = { git = "https://github.com/rust-lang-nursery/rand" } # from online repo
 bar = { path = "../bar" } # from a path in the local filesystem
 ```
 
+`cargo` is more than a dependency manager. All all of the available
+configuration options are listed in the [format specification][manifest] of
+`Cargo.toml`.
+
 To build our project we can execute `cargo build` anywhere in the project
 directory (including subdirectories!). We can also do `cargo run` to build and
 run. Notice that these commands will resolve all dependencies, download crates
@@ -86,3 +86,7 @@ if needed, and build everything, including your crate. (Note that it only
 rebuilds what it has not already built, similar to `make`).
 
 Voila! That's all there is to it!
+
+
+[manifest]: https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]: https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html
