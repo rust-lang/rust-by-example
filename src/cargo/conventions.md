@@ -34,4 +34,4 @@ benchmarks, tests, and examples.
 
 In the next chapter, we will look more closely at tests.
 
-[support]: http://doc.crates.io/book/guide/project-layout.html
+[more features]: https://doc.rust-lang.org/cargo/guide/project-layout.html
