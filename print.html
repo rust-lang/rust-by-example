@@ -3376,7 +3376,7 @@ official Rust package registry)</li>
 <li>Awareness of benchmarks</li>
 </ul>
 <p>This chapter will go through some quick basics, but you can find the
-comprehensive docs <a href="http://doc.crates.io/index.html">here</a>.</p>
+comprehensive docs in <a href="https://doc.rust-lang.org/cargo/">The Cargo Book</a>.</p>
 <a class="header" href="print.html#dependencies" id="dependencies"><h1>Dependencies</h1></a>
 <p>Most programs have dependencies on some libraries. If you have ever managed
 dependencies by hand, you know how much of a pain this can be. Luckily, the Rust
@@ -3407,8 +3407,6 @@ authors = [&quot;mark&quot;]
 
 [dependencies]
 </code></pre>
-<p>You can read more extensively about all of the available configuration options
-<a href="http://doc.crates.io/manifest.html">here</a>.</p>
 <p>The <code>name</code> field under <code>package</code> determines the name of the project. This is
 used by <code>crates.io</code> if you publish the crate (more later). It is also the name
 of the output binary when you compile.</p>
@@ -3423,9 +3421,8 @@ As of this writing, the most recent published version of <code>clap</code> is <c
 add a dependency to our program, we can simply add the following to our
 <code>Cargo.toml</code> under <code>dependencies</code>: <code>clap = &quot;2.27.1&quot;</code>.  And of course, <code>extern crate clap</code> in <code>main.rs</code>, just like normal. And that's it! You can start using
 <code>clap</code> in your program.</p>
-<p><code>cargo</code> also supports other types of dependencies. Here is just a small
-sampling. You can find out more
-<a href="http://doc.crates.io/specifying-dependencies.html">here</a>.</p>
+<p><code>cargo</code> also supports <a href="https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html">other types of dependencies</a>. Here is just
+a small sampling:</p>
 <pre><code class="language-toml">[package]
 name = &quot;foo&quot;
 version = &quot;0.1.0&quot;
@@ -3436,6 +3433,9 @@ clap = &quot;2.27.1&quot; # from crates.io
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand&quot; } # from online repo
 bar = { path = &quot;../bar&quot; } # from a path in the local filesystem
 </code></pre>
+<p><code>cargo</code> is more than a dependency manager. All of the available
+configuration options are listed in the <a href="https://doc.rust-lang.org/cargo/reference/manifest.html">format specification</a> of
+<code>Cargo.toml</code>.</p>
 <p>To build our project we can execute <code>cargo build</code> anywhere in the project
 directory (including subdirectories!). We can also do <code>cargo run</code> to build and
 run. Notice that these commands will resolve all dependencies, download crates
@@ -3464,9 +3464,8 @@ directory:</p>
 <p>To tell <code>cargo</code> to compile or run this binary as opposed to the default or other
 binaries, we just pass <code>cargo</code> the <code>--bin my_other_bin</code> flag, where <code>my_other_bin</code>
 is the name of the binary we want to work with.</p>
-<p>In addition to extra binaries, there is support for benchmarks, tests, and
-examples. The full capabilities are documented
-<a href="http://doc.crates.io/book/guide/project-layout.html">here</a>.</p>
+<p>In addition to extra binaries, <code>cargo</code> supports <a href="https://doc.rust-lang.org/cargo/guide/project-layout.html">more features</a> such as
+benchmarks, tests, and examples.</p>
 <p>In the next chapter, we will look more closely at tests.</p>
 <a class="header" href="print.html#testing" id="testing"><h1>Testing</h1></a>
 <p>As we know testing is integral to any piece of software! Rust has first-class
@@ -5186,7 +5185,7 @@ be used to accomplish different tasks based on their input arguments. This is po
 because operators are syntactic sugar for method calls. For example, the <code>+</code> operator in
 <code>a + b</code> calls the <code>add</code> method (as in <code>a.add(b)</code>). This <code>add</code> method is part of the <code>Add</code>
 trait. Hence, the <code>+</code> operator can be used by any implementor of the <code>Add</code> trait.</p>
-<p>A list of the traits, such as <code>Add</code>, that overload operators is available <a href="https://doc.rust-lang.org/core/ops/">here</a>.</p>
+<p>A list of the traits, such as <code>Add</code>, that overload operators can be found in <a href="https://doc.rust-lang.org/core/ops/"><code>core::ops</code></a>.</p>
 <pre><pre class="playpen"><code class="language-rust editable">use std::ops;
 
 struct Foo;
@@ -5282,14 +5281,12 @@ fn main() {
 }
 </code></pre></pre>
 <a class="header" href="print.html#iterators" id="iterators"><h1>Iterators</h1></a>
-<p>The <code>Iterator</code> trait is used to implement iterators over collections such as arrays.</p>
+<p>The <a href="https://doc.rust-lang.org/core/iter/trait.Iterator.html"><code>Iterator</code></a> trait is used to implement iterators over collections such as arrays.</p>
 <p>The trait requires only a method to be defined for the <code>next</code> element,
 which may be manually defined in an <code>impl</code> block or automatically
 defined (as in arrays and ranges).</p>
 <p>As a point of convenience for common situations, the <code>for</code> construct
 turns some collections into iterators using the <a href="https://doc.rust-lang.org/std/iter/trait.IntoIterator.html"><code>.into_iterator()</code></a> method.</p>
-<p>Methods that can be accessed using the <code>Iterator</code> trait in addition
-to those shown in the example below can be found <a href="https://doc.rust-lang.org/core/iter/trait.Iterator.html">here</a>.</p>
 <pre><pre class="playpen"><code class="language-rust editable">struct Fibonacci {
     curr: u32,
     next: u32,

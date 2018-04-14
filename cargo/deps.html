@@ -177,8 +177,6 @@ authors = [&quot;mark&quot;]
 
 [dependencies]
 </code></pre>
-<p>You can read more extensively about all of the available configuration options
-<a href="http://doc.crates.io/manifest.html">here</a>.</p>
 <p>The <code>name</code> field under <code>package</code> determines the name of the project. This is
 used by <code>crates.io</code> if you publish the crate (more later). It is also the name
 of the output binary when you compile.</p>
@@ -193,9 +191,8 @@ As of this writing, the most recent published version of <code>clap</code> is <c
 add a dependency to our program, we can simply add the following to our
 <code>Cargo.toml</code> under <code>dependencies</code>: <code>clap = &quot;2.27.1&quot;</code>.  And of course, <code>extern crate clap</code> in <code>main.rs</code>, just like normal. And that's it! You can start using
 <code>clap</code> in your program.</p>
-<p><code>cargo</code> also supports other types of dependencies. Here is just a small
-sampling. You can find out more
-<a href="http://doc.crates.io/specifying-dependencies.html">here</a>.</p>
+<p><code>cargo</code> also supports <a href="https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html">other types of dependencies</a>. Here is just
+a small sampling:</p>
 <pre><code class="language-toml">[package]
 name = &quot;foo&quot;
 version = &quot;0.1.0&quot;
@@ -206,6 +203,9 @@ clap = &quot;2.27.1&quot; # from crates.io
 rand = { git = &quot;https://github.com/rust-lang-nursery/rand&quot; } # from online repo
 bar = { path = &quot;../bar&quot; } # from a path in the local filesystem
 </code></pre>
+<p><code>cargo</code> is more than a dependency manager. All of the available
+configuration options are listed in the <a href="https://doc.rust-lang.org/cargo/reference/manifest.html">format specification</a> of
+<code>Cargo.toml</code>.</p>
 <p>To build our project we can execute <code>cargo build</code> anywhere in the project
 directory (including subdirectories!). We can also do <code>cargo run</code> to build and
 run. Notice that these commands will resolve all dependencies, download crates
