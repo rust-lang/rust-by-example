@@ -29,8 +29,9 @@ To tell `cargo` to compile or run this binary as opposed to the default or other
 binaries, we just pass `cargo` the `--bin my_other_bin` flag, where `my_other_bin`
 is the name of the binary we want to work with.
 
-In addition to extra binaries, there is support for benchmarks, tests, and
-examples. The full capabilities are documented
-[here](http://doc.crates.io/book/guide/project-layout.html).
+In addition to extra binaries, `cargo` supports [more features] such as
+benchmarks, tests, and examples.
 
 In the next chapter, we will look more closely at tests.
+
+[more features]: https://doc.rust-lang.org/cargo/guide/project-layout.html

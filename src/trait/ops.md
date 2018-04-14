@@ -6,7 +6,7 @@ because operators are syntactic sugar for method calls. For example, the `+` ope
 `a + b` calls the `add` method (as in `a.add(b)`). This `add` method is part of the `Add`
 trait. Hence, the `+` operator can be used by any implementor of the `Add` trait.
 
-A list of the traits, such as `Add`, that overload operators is available [here][ops].
+A list of the traits, such as `Add`, that overload operators can be found in [`core::ops`][ops].
 
 ```rust,editable
 use std::ops;

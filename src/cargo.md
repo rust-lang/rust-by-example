@@ -9,4 +9,4 @@ useful features to improve code quality and developer velocity! These include
 - Awareness of benchmarks
 
 This chapter will go through some quick basics, but you can find the
-comprehensive docs [here](http://doc.crates.io/index.html).
+comprehensive docs in [The Cargo Book](https://doc.rust-lang.org/cargo/).
