@@ -75,7 +75,7 @@ rand = { git = "https://github.com/rust-lang-nursery/rand" } # from online repo
 bar = { path = "../bar" } # from a path in the local filesystem
 ```
 
-`cargo` is more than a dependency manager. All all of the available
+`cargo` is more than a dependency manager. All of the available
 configuration options are listed in the [format specification][manifest] of
 `Cargo.toml`.
 
