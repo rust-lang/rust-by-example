@@ -20,5 +20,3 @@ before_script:
 script:
   - mdbook build
   - mdbook test
-after_success:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
