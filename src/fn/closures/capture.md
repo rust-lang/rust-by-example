@@ -47,7 +47,7 @@ fn main() {
     inc();
     inc();
 
-    //let reborrow = &mut count;
+    //let _reborrow = &mut count;
     // ^ TODO: try uncommenting this line.
     
     // A non-copy type.
