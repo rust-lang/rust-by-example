@@ -1,7 +1,6 @@
 # Filesystem Operations
 
-The `std::io::fs` module contains several functions that deal with the
-filesystem.
+The `std::fs` module contains several functions that deal with the filesystem.
 
 ```rust,ignore
 use std::fs;
