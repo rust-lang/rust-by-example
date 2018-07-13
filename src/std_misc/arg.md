@@ -34,4 +34,4 @@ when creating command-line applications. The [Rust Cookbook] exhibits best
 practices on how to use one of the more popular command line argument crates,
 `clap`.
 
-[Rust Cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/app.html#ex-clap-basic
+[Rust Cookbook]: https://rust-lang-nursery.github.io/rust-cookbook/cli/arguments.html
