@@ -91,5 +91,4 @@ for you.
 [`From::from`][from] and [`Enums`][enums]
 
 [from]: https://doc.rust-lang.org/std/convert/trait.From.html
-[q_mark]: https://doc.rust-lang.org/reference/expressions/operator-expr.html#the--operator
 [enums]: custom_types/enum.html

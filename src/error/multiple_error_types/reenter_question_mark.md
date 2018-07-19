@@ -86,4 +86,4 @@ top level.
 [`From::from`][from] and [`?`][q_mark]
 
 [from]: https://doc.rust-lang.org/std/convert/trait.From.html
-[q_mark]: https://doc.rust-lang.org/reference/expressions/operator-expr.html#the--operator
+[q_mark]: https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-question-mark-operator
