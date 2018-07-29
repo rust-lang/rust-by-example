@@ -1,6 +1,6 @@
 # Elision
 
-Some lifetime patterns are overwelmingly common and so the borrow checker
+Some lifetime patterns are overwhelmingly common and so the borrow checker
 will implicitly add them to save typing and to improve readability.
 This process of implicit addition is called elision. Elision exists in Rust
 solely because these patterns are common.
