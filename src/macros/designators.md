@@ -59,3 +59,4 @@ This is a list of all the designators:
 * `stmt` (*statement*)
 * `tt` (*token tree*)
 * `ty` (*type*)
+* `vis` (*visibility qualifier*)
