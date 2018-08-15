@@ -1,7 +1,23 @@
 # The `use` declaration
 
 The `use` declaration can be used to bind a full path to a new name, for easier
-access.
+access. It is often used like this:
+
+```rust,editable
+extern crate deeply;
+
+use deeply::nested::{
+    my_first_function,
+    my_second_function,
+    AndATraitType
+};
+
+fn main() {
+    my_first_function();
+}
+```
+
+Alternatively you can use `as` syntax too:
 
 ```rust,editable
 // Bind the `deeply::nested::function` path to `other_function`.
