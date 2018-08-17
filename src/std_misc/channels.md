@@ -43,13 +43,13 @@ fn main() {
         // `recv` will block the current thread if there are no messages available
         ids.push(rx.recv());
     }
-
-    // Show the order in which the messages were sent
-    println!("{:?}", ids);
-
+    
     // Wait for the threads to complete any remaining work
     for child in children {
         child.join().expect("oops! the child thread panicked");
     }
+
+    // Show the order in which the messages were sent
+    println!("{:?}", ids);
 }
 ```
