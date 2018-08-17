@@ -49,7 +49,7 @@ fn main() {
 
     // Wait for the threads to complete any remaining work
     for child in children {
-      child.join().expect("oops! the child thread panicked");
+        child.join().expect("oops! the child thread panicked");
     }
 }
 ```
