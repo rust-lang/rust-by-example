@@ -16,13 +16,14 @@ fn main() {
     // where `T` is the type of the message to be transferred
     // (type annotation is superfluous)
     let (tx, rx): (Sender<i32>, Receiver<i32>) = mpsc::channel();
+    let mut children = Vec::new();
 
     for id in 0..NTHREADS {
         // The sender endpoint can be copied
         let thread_tx = tx.clone();
 
         // Each thread will send its id via the channel
-        thread::spawn(move || {
+        let child = thread::spawn(move || {
             // The thread takes ownership over `thread_tx`
             // Each thread queues a message in the channel
             thread_tx.send(id).unwrap();
@@ -31,6 +32,8 @@ fn main() {
             // immediately after sending its message
             println!("thread {} finished", id);
         });
+
+        children.push(child);
     }
 
     // Here, all the messages are collected
@@ -39,6 +42,11 @@ fn main() {
         // The `recv` method picks a message from the channel
         // `recv` will block the current thread if there are no messages available
         ids.push(rx.recv());
+    }
+    
+    // Wait for the threads to complete any remaining work
+    for child in children {
+        child.join().expect("oops! the child thread panicked");
     }
 
     // Show the order in which the messages were sent
