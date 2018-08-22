@@ -196,7 +196,10 @@
     - [Integration testing](testing/integration_testing.md)
     - [Dev-dependencies](testing/dev_dependencies.md)
 
+- [Unsafe Operations](unsafe.md)
+
+- [Compatibility](compatibility.md)
+    - [Raw identifiers](compatibility/raw_identifiers.md)
+
 - [Meta](meta.md)
     - [Documentation](meta/doc.md)
-
-- [Unsafe Operations](unsafe.md)

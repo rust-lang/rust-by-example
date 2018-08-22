@@ -51,9 +51,11 @@ Now let's begin!
 
 - [Testing](testing.html) - All sorts of testing in Rust.
 
-- [Meta](meta.html) - Documentation, Benchmarking.
-
 - [Unsafe Operations](unsafe.html)
+
+- [Compatibility](compatibility.html)
+
+- [Meta](meta.html) - Documentation, Benchmarking.
 
 
 [rust]: https://www.rust-lang.org/
