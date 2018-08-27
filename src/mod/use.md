@@ -4,7 +4,7 @@ The `use` declaration can be used to bind a full path to a new name, for easier
 access. It is often used like this:
 
 ```rust,editable
-extern crate deeply;
+// extern crate deeply; // normally, this would exist and not be commented out!
 
 use deeply::nested::{
     my_first_function,
@@ -17,7 +17,7 @@ fn main() {
 }
 ```
 
-Alternatively you can use `as` syntax too:
+You can use the `as` keyword to bind imports to a different name:
 
 ```rust,editable
 // Bind the `deeply::nested::function` path to `other_function`.
