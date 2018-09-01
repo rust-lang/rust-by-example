@@ -45,7 +45,7 @@ fn main() {
     println!("borrow a section of the array as a slice");
     analyze_slice(&ys[1 .. 4]);
 
-    // Out of bound indexing yields a panic
+    // Out of bound indexing causes compile error
     println!("{}", xs[5]);
 }
 ```
