@@ -7,10 +7,10 @@ put in place by the compiler; specifically, there are four primary things that
 unsafe blocks are used for:
 
 * dereferencing raw pointers
-* calling a function over FFI (but this is covered in [a previous
-  chapter](std_misc/ffi.html) of the book)
-* calling functions which are `unsafe`
-* inline assembly
+* calling functions or methods which are `unsafe` (including calling a function
+  over FFI, see [a previous chapter](std_misc/ffi.html) of the book) 
+* accessing or modifying static mutable variables
+* implementing unsafe traits
 
 ### Raw Pointers
 Raw pointers `*` and references `&T` function similarly, but references are
