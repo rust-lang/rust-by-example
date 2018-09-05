@@ -5,18 +5,13 @@ including global. Both require explicit type annotation:
 
 * `const`: An unchangeable value (the common case).
 * `static`: A possibly `mut`able variable with [`'static`][static] lifetime.
-
-One special case is the `"string"` literal. It can be assigned directly to a
-`static` variable without modification because its type signature:
-`&'static str` has the required lifetime of `'static`. All other reference
-types must be specifically annotated so that they fulfill the `'static`
-lifetime. This may seem minor though because the required explicit annotation
-hides the distinction.
+  The static lifetime is inferred and does not have to be specified.
+  Accessing or modifying a mutable static variable is [`unsafe`][unsafe].
 
 ```rust,editable,ignore,mdbook-runnable
 // Globals are declared outside all other scopes.
-static LANGUAGE: &'static str = "Rust";
-const  THRESHOLD: i32 = 10;
+static LANGUAGE: &str = "Rust";
+const THRESHOLD: i32 = 10;
 
 fn is_big(n: i32) -> bool {
     // Access constant in some function
@@ -44,3 +39,4 @@ https://github.com/rust-lang/rfcs/blob/master/text/0246-const-vs-static.md),
 [`'static` lifetime][static]
 
 [static]: scope/lifetime/static_lifetime.html
+[unsafe]: unsafe.html
