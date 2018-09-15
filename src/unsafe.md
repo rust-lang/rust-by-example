@@ -2,15 +2,15 @@
 
 As an introduction to this section, to borrow from [the official docs][unsafe],
 "one should try to minimize the amount of unsafe code in a code base." With that
-in mind, let's get started! Unsafe blocks in Rust are used to bypass protections
-put in place by the compiler; specifically, there are four primary things that
-unsafe blocks are used for:
+in mind, let's get started! Unsafe annotations in Rust are used to bypass
+protections put in place by the compiler; specifically, there are four primary
+things that unsafe is used for:
 
 * dereferencing raw pointers
-* calling a function over FFI (but this is covered in [a previous
-  chapter](std_misc/ffi.html) of the book)
-* calling functions which are `unsafe`
-* inline assembly
+* calling functions or methods which are `unsafe` (including calling a function
+  over FFI, see [a previous chapter](std_misc/ffi.html) of the book) 
+* accessing or modifying static mutable variables
+* implementing unsafe traits
 
 ### Raw Pointers
 Raw pointers `*` and references `&T` function similarly, but references are
@@ -45,7 +45,7 @@ fn main() {
 
     unsafe {
         let my_slice: &[u32] = slice::from_raw_parts(pointer, length);
-        
+
         assert_eq!(some_vector.as_slice(), my_slice);
     }
 }
