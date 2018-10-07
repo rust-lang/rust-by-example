@@ -1,7 +1,7 @@
 # Build Scripts
 
 Sometimes a normal build from cargo is not enough. Perhaps your crate needs some
-pre-requites before cargo will successfully compile, things like code
+pre-requisites before cargo will successfully compile, things like code
 generation, or some native code that needs to be compiled. To solve this problem
 we have build scripts that Cargo can run.
 
