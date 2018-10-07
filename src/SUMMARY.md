@@ -87,6 +87,7 @@
     - [Dependencies](cargo/deps.md)
     - [Conventions](cargo/conventions.md)
     - [Tests](cargo/test.md)
+    - [Build Scripts](cargo/build_scripts.md)
 
 - [Attributes](attribute.md)
     - [`dead_code`](attribute/unused.md)
