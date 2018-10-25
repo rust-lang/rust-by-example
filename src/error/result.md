@@ -47,7 +47,7 @@ about the return type and consider explicitly handling the error.
 
 ## Using `Result` in `main`
 
-The `Result` type can also be the return type of of the `main` function if
+The `Result` type can also be the return type of the `main` function if
 specified explicitly. Typically the `main` function will be of the form:
 
 ```rust
