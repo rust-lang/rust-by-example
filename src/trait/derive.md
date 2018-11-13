@@ -13,7 +13,7 @@ The following is a list of derivable traits:
 * [`Default`][default], to create an empty instance of a data type.
 * [`Debug`][debug], to format a value using the `{:?}` formatter.
  
-```rust,example
+```rust,editable
 // `Centimeters`, a tuple struct that can be compared
 #[derive(PartialEq, PartialOrd)]
 struct Centimeters(f64);
