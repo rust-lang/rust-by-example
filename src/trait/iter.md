@@ -7,7 +7,7 @@ which may be manually defined in an `impl` block or automatically
 defined (as in arrays and ranges).
 
 As a point of convenience for common situations, the `for` construct 
-turns some collections into iterators using the [`.into_iterator()`][intoiter] method.
+turns some collections into iterators using the [`.into_iter()`][intoiter] method.
 
 ```rust,editable
 struct Fibonacci {
