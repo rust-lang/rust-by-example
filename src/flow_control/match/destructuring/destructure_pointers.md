@@ -14,7 +14,7 @@ fn main() {
     let reference = &4;
 
     match reference {
-        // If `reference`s is pattern matched against `&val`, it results
+        // If `reference` is pattern matched against `&val`, it results
         // in a comparison like:
         // `&i32`
         // `&val`
