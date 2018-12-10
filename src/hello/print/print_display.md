@@ -112,7 +112,7 @@ guide to add a Complex struct to the example. When printed in the same
 way, the output should be:
 
 ```txt
-Display: 3.3 +7.2i
+Display: 3.3 + 7.2i
 Debug: Complex { real: 3.3, imag: 7.2 }
 ```
 
