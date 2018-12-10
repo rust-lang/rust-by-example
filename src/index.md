@@ -59,6 +59,6 @@ Now let's begin!
 
 
 [rust]: https://www.rust-lang.org/
-[install]: https://www.rust-lang.org/install.html
+[install]: https://www.rust-lang.org/tools/install
 [std]: https://doc.rust-lang.org/std/
 [home]: https://github.com/rust-lang/rust-by-example
