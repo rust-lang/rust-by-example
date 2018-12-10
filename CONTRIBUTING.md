@@ -5,7 +5,7 @@ better! We'd love to have your contribution. We expect all contributors to
 abide by the [Rust code of conduct], which you can find at that link or in the
 [`CODE_OF_CONDUCT.md`] file in this repository.
 
-[Rust code of conduct]: https://www.rust-lang.org/en-US/conduct.html
+[Rust code of conduct]: https://www.rust-lang.org/policies/code-of-conduct
 [`CODE_OF_CONDUCT.md`]: https://github.com/rust-lang/rust-by-example/blob/master/CODE_OF_CONDUCT.md
 
 ## License
