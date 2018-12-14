@@ -68,7 +68,7 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 ## Motivation behind documentation tests
 
-The main purpose of documentation tests is to serve as an examples that exercise
+The main purpose of documentation tests is to serve as examples that exercise
 the functionality, which is one of the most important
 [guidelines][question-instead-of-unwrap]. It allows using examples from docs as
 complete code snippets. But using `?` makes compilation fail since `main`
