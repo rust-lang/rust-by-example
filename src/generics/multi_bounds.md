@@ -12,8 +12,8 @@ fn compare_prints<T: Debug + Display>(t: &T) {
 }
 
 fn compare_types<T: Debug, U: Debug>(t: &T, u: &U) {
-    println!("t: `{:?}", t);
-    println!("u: `{:?}", u);
+    println!("t: `{:?}`", t);
+    println!("u: `{:?}`", u);
 }
 
 fn main() {
