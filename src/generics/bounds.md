@@ -49,7 +49,7 @@ fn print_debug<T: Debug>(t: &T) {
     println!("{:?}", t);
 }
 
-// `T` must implement `HasArea`. Any function which meets
+// `T` must implement `HasArea`. Any type which meets
 // the bound can access `HasArea`'s function `area`.
 fn area<T: HasArea>(t: &T) -> f64 { t.area() }
 
