@@ -43,7 +43,7 @@ mod my_mod {
         }
 
         // Functions declared using `pub(self)` syntax are only visible within
-        // the current module
+        // the current module, which is the same as leaving them private
         pub(self) fn public_function_in_nested() {
             println!("called `my_mod::nested::public_function_in_nested");
         }
@@ -72,6 +72,13 @@ mod my_mod {
         #[allow(dead_code)]
         pub fn function() {
             println!("called `my_mod::private_nested::function()`");
+        }
+
+        // Private parent items will still restrict the visibility of a child item,
+        // even if it is declared as visible within a bigger scope.
+        #[allow(dead_code)]
+        pub(crate) fn restricted_function() {
+            println!("called `my_mod::private_nested::restricted_function()`");
         }
     }
 }
@@ -112,6 +119,10 @@ fn main() {
 
     // Error! `private_nested` is a private module
     //my_mod::private_nested::function();
+    // TODO ^ Try uncommenting this line
+
+    // Error! `private_nested` is a private module
+    //my_mod::private_nested::restricted_function();
     // TODO ^ Try uncommenting this line
 }
 ```
