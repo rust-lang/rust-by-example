@@ -3,7 +3,7 @@
 A common use for `enums` is to create a linked-list:
 
 ```rust,editable
-crate::use List::*;
+use crate::List::*;
 
 enum List {
     // Cons: Tuple struct that wraps an element and a pointer to the next node
