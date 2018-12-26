@@ -44,7 +44,7 @@ mod my {
         // This will bind to the `cool::function` in the *crate* scope.
         // In this case the crate scope is the outermost scope.
         {
-            use cool::function as root_function;
+            use crate::cool::function as root_function;
             root_function();
         }
     }
