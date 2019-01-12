@@ -19,9 +19,9 @@ enum Work {
 fn main() {
     // Explicitly `use` each name so they are available without
     // manual scoping.
-    use Status::{Poor, Rich};
+    use crate::Status::{Poor, Rich};
     // Automatically `use` each name inside `Work`.
-    use Work::*;
+    use crate::Work::*;
 
     // Equivalent to `Status::Poor`.
     let status = Poor;

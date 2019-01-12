@@ -37,7 +37,7 @@ mod my_mod {
 
         // Functions declared using `pub(in path)` syntax are only visible
         // within the given path. `path` must be a parent or ancestor module
-        pub(in my_mod) fn public_function_in_my_mod() {
+        pub(in crate::my_mod) fn public_function_in_my_mod() {
             print!("called `my_mod::nested::public_function_in_my_mod()`, that\n > ");
             public_function_in_nested()
         }
