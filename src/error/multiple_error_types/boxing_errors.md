@@ -67,6 +67,6 @@ fn main() {
 [Dynamic dispatch][dynamic_dispatch] and [`Error` trait][error]
 
 [box]: https://doc.rust-lang.org/std/boxed/struct.Box.html
-[dynamic_dispatch]: https://doc.rust-lang.org/book/second-edition/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch
+[dynamic_dispatch]: https://doc.rust-lang.org/book/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch
 [error]: https://doc.rust-lang.org/std/error/trait.Error.html
 [from]: https://doc.rust-lang.org/std/convert/trait.From.html

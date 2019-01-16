@@ -2,7 +2,7 @@
 
 As we know testing is integral to any piece of software! Rust has first-class
 support for unit and integration testing ([see this
-chapter](https://doc.rust-lang.org/book/second-edition/ch11-00-testing.html) in
+chapter](https://doc.rust-lang.org/book/ch11-00-testing.html) in
 TRPL).
 
 From the testing chapters linked above, we see how to write unit tests and
