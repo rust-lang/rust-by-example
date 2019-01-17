@@ -67,6 +67,9 @@ friendly fashion.
 Here, `fmt::Display` was used because the std library provides implementations
 for these types. To print text for custom types, more steps are required.
 
+Implementing the `fmt::Display` trait automagically implements the
+[`ToString`] trait which allows us to [convert] the type to [`String`][string].
+
 ### Activities
 
  * Fix the two issues in the above code (see FIXME) so that it runs without
@@ -87,3 +90,5 @@ and [`traits`][traits]
 [string]: std/str.html
 [structs]: custom_types/structs.html
 [traits]: trait.html
+[`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html
+[convert]: /conversion/string.html
