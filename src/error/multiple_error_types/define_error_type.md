@@ -18,14 +18,13 @@ Rust allows us to define our own error types. In general, a "good" error type:
 ```rust,editable
 use std::error;
 use std::fmt;
-use std::num::ParseIntError;
 
 type Result<T> = std::result::Result<T, DoubleError>;
 
-#[derive(Debug, Clone)]
 // Define our error types. These may be customized for our error handling cases.
 // Now we will be able to write our own errors, defer to an underlying error
 // implementation, or do something in between.
+#[derive(Debug, Clone)]
 struct DoubleError;
 
 // Generation of an error is completely separate from how it is displayed.
@@ -53,17 +52,19 @@ impl error::Error for DoubleError {
 
 fn double_first(vec: Vec<&str>) -> Result<i32> {
     vec.first()
-       // Change the error to our new type.
-       .ok_or(DoubleError)
-       .and_then(|s| s.parse::<i32>()
-            // Update to the new error type here also.
-            .map_err(|_| DoubleError)
-            .map(|i| 2 * i))
+        // Change the error to our new type.
+        .ok_or(DoubleError)
+        .and_then(|s| {
+            s.parse::<i32>()
+                // Update to the new error type here also.
+                .map_err(|_| DoubleError)
+                .map(|i| 2 * i)
+        })
 }
 
 fn print(result: Result<i32>) {
     match result {
-        Ok(n)  => println!("The first doubled is {}", n),
+        Ok(n) => println!("The first doubled is {}", n),
         Err(e) => println!("Error: {}", e),
     }
 }
