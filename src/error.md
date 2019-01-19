@@ -28,4 +28,4 @@ do that unless it's a test or quick prototype).
 For a more rigorous discussion of error handling, refer to the error
 handling section in the [official book][book].
 
-[book]: https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html
+[book]: https://doc.rust-lang.org/book/ch09-00-error-handling.html

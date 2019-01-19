@@ -40,4 +40,4 @@ fn main() {
 
 [elision][elision]
 
-[elision]: https://doc.rust-lang.org/book/second-edition/ch10-03-lifetime-syntax.html#lifetime-elision
+[elision]: https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#lifetime-elision

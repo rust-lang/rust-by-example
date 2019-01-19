@@ -57,5 +57,5 @@ is of the correct type. If these invariants aren't upheld then the program's
 behaviour is undefined and there is no knowing what will happen.
 
 
-[unsafe]: https://doc.rust-lang.org/book/second-edition/ch19-01-unsafe-rust.html
+[unsafe]: https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html
 [`std::slice::from_raw_parts`]: https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html

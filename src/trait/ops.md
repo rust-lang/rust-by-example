@@ -58,4 +58,4 @@ fn main() {
 
 [add]: https://doc.rust-lang.org/core/ops/trait.Add.html
 [ops]: https://doc.rust-lang.org/core/ops/
-[syntax]:https://doc.rust-lang.org/book/second-edition/appendix-02-operators.html
+[syntax]:https://doc.rust-lang.org/book/appendix-02-operators.html
