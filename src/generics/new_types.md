@@ -40,6 +40,16 @@ fn main() {
 
 Uncomment the last print statement to observe that the type supplied must be `Years`.
 
+To obtain the `newtype`'s value as the base type, you may use tuple syntax like so:
+```rust, editable
+struct Years(i64);
+
+fn main() {
+    let years = Years(42);
+    let years_as_primitive: i64 = years.0;
+}
+```
+
 ### See also:
 
 [`structs`][struct]
