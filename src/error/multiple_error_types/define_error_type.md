@@ -40,11 +40,7 @@ impl fmt::Display for DoubleError {
 
 // This is important for other errors to wrap this one.
 impl error::Error for DoubleError {
-    fn description(&self) -> &str {
-        "invalid first item to double"
-    }
-
-    fn cause(&self) -> Option<&error::Error> {
+    fn source(&self) -> Option<&(dyn error::Error + 'static)> {
         // Generic error, underlying cause isn't tracked.
         None
     }
