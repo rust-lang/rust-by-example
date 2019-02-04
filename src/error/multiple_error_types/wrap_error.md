@@ -29,7 +29,7 @@ impl fmt::Display for DoubleError {
 }
 
 impl error::Error for DoubleError {
-    fn cause(&self) -> Option<&error::Error> {
+    fn source(&self) -> Option<&(dyn error::Error + 'static)> {
         match *self {
             DoubleError::EmptyVec => None,
             // The cause is the underlying implementation error type. Is implicitly
