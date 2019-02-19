@@ -18,7 +18,7 @@ struct Container(i32, i32);
 // A trait which checks if 2 items are stored inside of container.
 // Also retrieves first or last value.
 trait Contains<A, B> {
-    fn contains(&self, &A, &B) -> bool; // Explicitly requires `A` and `B`.
+    fn contains(&self, _: &A, _: &B) -> bool; // Explicitly requires `A` and `B`.
     fn first(&self) -> i32; // Doesn't explicitly require `A` or `B`.
     fn last(&self) -> i32;  // Doesn't explicitly require `A` or `B`.
 }
