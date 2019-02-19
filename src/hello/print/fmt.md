@@ -79,14 +79,14 @@ RGB (0, 0, 0) 0x000000
 ```
 
 Two hints if you get stuck:
- * You [may need to list each color more than once][argument_types],
+ * You [may need to list each color more than once][named_parameters],
  * You can [pad with zeros to a width of 2][fmt_width] with `:02`.
 
 ### See also
 
 [`std::fmt`][fmt]
 
-[argument_types]: https://doc.rust-lang.org/std/fmt/#argument-types
+[named_parameters]: https://doc.rust-lang.org/std/fmt/#named-parameters
 [deadbeef]: https://en.wikipedia.org/wiki/Deadbeef#Magic_debug_values
 [fmt]: https://doc.rust-lang.org/std/fmt/
 [fmt_traits]: https://doc.rust-lang.org/std/fmt/#formatting-traits
