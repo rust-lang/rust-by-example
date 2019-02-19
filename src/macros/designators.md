@@ -54,6 +54,7 @@ This is a list of all the designators:
 * `expr` is used for expressions
 * `ident` is used for variable/function names
 * `item`
+* `literal` is used for literal constants
 * `pat` (*pattern*)
 * `path`
 * `stmt` (*statement*)
