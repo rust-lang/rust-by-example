@@ -29,15 +29,7 @@ impl fmt::Display for DoubleError {
 }
 
 impl error::Error for DoubleError {
-    fn description(&self) -> &str {
-        match *self {
-            DoubleError::EmptyVec => "empty vectors not allowed",
-            // This already impls `Error`, so defer to its own implementation.
-            DoubleError::Parse(ref e) => e.description(),
-        }
-    }
-
-    fn cause(&self) -> Option<&error::Error> {
+    fn source(&self) -> Option<&(dyn error::Error + 'static)> {
         match *self {
             DoubleError::EmptyVec => None,
             // The cause is the underlying implementation error type. Is implicitly
