@@ -33,6 +33,8 @@ Now let's begin!
 
 - [Crates](crates.html) - A crate is a compilation unit in Rust. Learn to create a library.
 
+- [Cargo](cargo.html) - Go through some basic features of the official Rust package management tool.
+
 - [Attributes](attribute.html) - An attribute is metadata applied to some module, crate or item.
 
 - [Generics](generics.html) - Learn about writing a function or data type which can work for multiple types of arguments.
