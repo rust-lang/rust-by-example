@@ -38,7 +38,7 @@ impl fmt::Display for List {
 
         write!(f, "[")?;
 
-        // Iterate over `vec` in `v` while enumerating the iteration
+        // Iterate over `v` in `vec` while enumerating the iteration
         // count in `count`.
         for (count, v) in vec.iter().enumerate() {
             // For every element except the first, add a comma.
