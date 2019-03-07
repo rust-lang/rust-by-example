@@ -5,8 +5,8 @@ already existed, the old content is destroyed. Otherwise, a new file is
 created.
 
 ```rust,ignore
-static LOREM_IPSUM: &'static str =
-"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+static LOREM_IPSUM: &str =
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -15,8 +15,8 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ";
 
 use std::error::Error;
-use std::io::prelude::*;
 use std::fs::File;
+use std::io::prelude::*;
 use std::path::Path;
 
 fn main() {
@@ -25,18 +25,13 @@ fn main() {
 
     // Open a file in write-only mode, returns `io::Result<File>`
     let mut file = match File::create(&path) {
-        Err(why) => panic!("couldn't create {}: {}",
-                           display,
-                           why.description()),
+        Err(why) => panic!("couldn't create {}: {}", display, why.description()),
         Ok(file) => file,
     };
 
     // Write the `LOREM_IPSUM` string to `file`, returns `io::Result<()>`
     match file.write_all(LOREM_IPSUM.as_bytes()) {
-        Err(why) => {
-            panic!("couldn't write to {}: {}", display,
-                                               why.description())
-        },
+        Err(why) => panic!("couldn't write to {}: {}", display, why.description()),
         Ok(_) => println!("successfully wrote to {}", display),
     }
 }
@@ -60,5 +55,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 (As in the previous example, you are encouraged to test this example under
 failure conditions.)
 
-There is also a more generic `open_mode` method that can open files in other
-modes like: read+write, append, etc.
+There is [`OpenOptions`] struct that can be used to configure how a file is opened.
+
+[`OpenOptions`]: https://doc.rust-lang.org/std/fs/struct.OpenOptions.html
