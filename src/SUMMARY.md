@@ -124,6 +124,7 @@
         - [Functions](scope/lifetime/fn.md)
         - [Methods](scope/lifetime/methods.md)
         - [Structs](scope/lifetime/struct.md)
+        - [Traits](scope/lifetime/trait.md)
         - [Bounds](scope/lifetime/lifetime_bounds.md)
         - [Coercion](scope/lifetime/lifetime_coercion.md)
         - [Static](scope/lifetime/static_lifetime.md)
