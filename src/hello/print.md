@@ -45,7 +45,7 @@ fn main() {
     // used.
     println!("My name is {0}, {1} {0}", "Bond");
     // FIXME ^ Add the missing argument: "James"
-    
+
     // Create a structure which contains an `i32`. Name it `Structure`.
     #[allow(dead_code)]
     struct Structure(i32);
@@ -91,4 +91,4 @@ and [`traits`][traits]
 [structs]: custom_types/structs.html
 [traits]: trait.html
 [`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html
-[convert]: /conversion/string.html
+[convert]: conversion/string.html
