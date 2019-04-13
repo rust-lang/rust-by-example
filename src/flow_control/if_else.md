@@ -24,7 +24,7 @@ fn main() {
             // This expression returns an `i32`.
             10 * n
         } else {
-            println!(", and is a big number, half the number");
+            println!(", and is a big number, halve the number");
 
             // This expression must return an `i32` as well.
             n / 2
