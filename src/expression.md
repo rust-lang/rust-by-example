@@ -25,9 +25,9 @@ fn main() {
 }
 ```
 
-Blocks are expressions too, so they can be used as [r-values][rvalue] in
+Blocks are expressions too, so they can be used as values in
 assignments. The last expression in the block will be assigned to the
-[l-value][lvalue]. However, if the last expression of the block ends with a
+place expression such as a local variable. However, if the last expression of the block ends with a
 semicolon, the return value will be `()`.
 
 ```rust,editable
@@ -52,6 +52,3 @@ fn main() {
     println!("z is {:?}", z);
 }
 ```
-
-[rvalue]: https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue
-[lvalue]: https://en.wikipedia.org/wiki/Value_%28computer_science%29#lrvalue
