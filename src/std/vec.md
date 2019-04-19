@@ -10,7 +10,7 @@ be surpassed, the vector is reallocated with a larger capacity.
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
     // Iterators can be collected into vectors
-    let collected_iterator: Vec<i32> = (0..10).collect();
+    let mut collected_iterator: Vec<i32> = (0..10).collect();
     println!("Collected (0..10) into: {:?}", collected_iterator);
 
     // The `vec!` macro can be used to initialize a vector
