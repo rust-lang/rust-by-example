@@ -8,7 +8,7 @@ but `+` is the same. Note how the following read:
 2. `T: Trait + 'a`: Type `T` must implement trait `Trait` and *all* references
 in `T` must outlive `'a`.
 
-The example below shows the above syntax in action:
+The example below shows the above syntax in action used after keyword `where`:
 
 ```rust,editable
 use std::fmt::Debug; // Trait to bound with.
