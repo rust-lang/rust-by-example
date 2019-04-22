@@ -5,9 +5,6 @@ different variants. Any variant which is valid as a `struct` is also valid as
 an `enum`.
 
 ```rust,editable
-// An attribute to hide warnings for unused code.
-#![allow(dead_code)]
-
 // Create an `enum` to classify a web event. Note how both
 // names and type information together specify the variant:
 // `PageLoad != PageUnload` and `KeyPress(char) != Paste(String)`.
@@ -58,9 +55,8 @@ fn main() {
 
 ### See also:
 
-[`attributes`][attributes], [`match`][match], [`fn`][fn], and [`String`][str]
+[`match`][match], [`fn`][fn], and [`String`][str]
 
-[attributes]: attribute.html
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [match]: flow_control/match.html
 [fn]: fn.html
