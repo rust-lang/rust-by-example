@@ -48,7 +48,7 @@ fn main() {
 }
 ```
 
-This is a list of all the designators:
+These are some of the available designators:
 
 * `block`
 * `expr` is used for expressions
@@ -61,3 +61,7 @@ This is a list of all the designators:
 * `tt` (*token tree*)
 * `ty` (*type*)
 * `vis` (*visibility qualifier*)
+
+For a complete list, see the [Rust Reference].
+
+[Rust Reference]: https://doc.rust-lang.org/reference/macros-by-example.html
