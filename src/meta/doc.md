@@ -1,8 +1,16 @@
 # Documentation
 
+Use `cargo doc` to build documentation in `target/doc`.
+
+Use `cargo test` to run all tests (including documentation tests), and `cargo test --doc` to only run documentation tests.
+
+These commands will appropriately invoke `rustdoc` (and `rustc`) as required.
+
+### Doc comments
+
 Doc comments are very useful for big projects that require documentation. When
-running [Rustdoc][1], these are the comments that get compiled into
-documentation. They are denoted by a `///`, and support [Markdown][2].
+running Rustdoc, these are the comments that get compiled into
+documentation. They are denoted by a `///`, and support [Markdown].
 
 ```rust,editable,ignore
 #![crate_name = "doc"]
@@ -57,8 +65,19 @@ $ rustc doc.rs --crate-type lib
 $ rustdoc --test --extern doc="libdoc.rlib" doc.rs
 ```
 
-(When you run `cargo test` on a library crate, Cargo will automatically
-generate and run the correct rustc and rustdoc commands.)
+### See also:
 
-[1]: https://doc.rust-lang.org/book/documentation.html
-[2]: https://en.wikipedia.org/wiki/Markdown
+* [The Rust Book: Making Useful Documentation Comments][book]
+* [The Rustdoc Book][rustdoc-book]
+* [The Reference: Doc comments][ref-comments]
+* [RFC 1574: API Documentation Conventions][api-conv]
+* [RFC 1946: Relative links to other items from doc comments (intra-rustdoc links)][intra-links]
+* [Is there any documentation style guide for comments? (reddit)][reddit]
+
+[Markdown]: https://en.wikipedia.org/wiki/Markdown
+[book]: https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#making-useful-documentation-comments
+[ref-comments]: https://doc.rust-lang.org/stable/reference/comments.html#doc-comments
+[rustdoc-book]: https://doc.rust-lang.org/rustdoc/index.html
+[api-conv]: https://rust-lang.github.io/rfcs/1574-more-api-documentation-conventions.html#appendix-a-full-conventions-text
+[intra-links]: https://rust-lang.github.io/rfcs/1946-intra-rustdoc-links.html
+[reddit]: https://www.reddit.com/r/rust/comments/ahb50s/is_there_any_documentation_style_guide_for/
