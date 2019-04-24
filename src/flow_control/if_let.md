@@ -98,7 +98,7 @@ Another benefit: `if let` allows to match enum non-parameterized variants, even 
 
 Would you like a challenge? Fix the following example to use `if let`:
 
-```rust,editable
+```rust,editable,ignore
 // This enum purposely doesn't #[derive(PartialEq)],
 // neither we implement PartialEq for it. That's why comparing Foo::Bar==a fails below.
 enum Foo {Bar}
