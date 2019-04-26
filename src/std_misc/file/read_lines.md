@@ -32,7 +32,7 @@ where P: AsRef<Path>, {
 }
 ```
 
-Running this program simply returns the lines individually.
+Running this program simply prints the lines individually.
 ```bash
 $ echo -e "127.0.0.1\n192.168.0.1\n" > hosts
 $ rustc read_lines.rs && ./read_lines
@@ -40,4 +40,5 @@ $ rustc read_lines.rs && ./read_lines
 192.168.0.1
 ```
 
-This process is more efficient that creating a `String` in memory for larger files.
+This process is more efficient than creating a `String` in memory
+especially working with larger files.
