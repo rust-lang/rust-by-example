@@ -184,6 +184,7 @@
     - [File I/O](std_misc/file.md)
         - [`open`](std_misc/file/open.md)
         - [`create`](std_misc/file/create.md)
+        - [`read lines`](std_misc/file/read_lines.md)
     - [Child processes](std_misc/process.md)
         - [Pipes](std_misc/process/pipe.md)
         - [Wait](std_misc/process/wait.md)
