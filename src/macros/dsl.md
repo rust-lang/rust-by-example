@@ -6,7 +6,7 @@ like a small language. This allows you to define concise or intuitive syntax for
 some special functionality (within bounds).
 
 Suppose that I want to define a little calculator API. I would like to supply
-an expression an have the output printed to console.
+an expression and have the output printed to console.
 
 ```rust,editable
 macro_rules! calculate {
