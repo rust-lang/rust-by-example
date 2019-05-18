@@ -56,7 +56,7 @@ mod my_mod {
     }
 
     pub fn call_public_function_in_my_mod() {
-        print!("called `my_mod::call_public_funcion_in_my_mod()`, that\n> ");
+        print!("called `my_mod::call_public_function_in_my_mod()`, that\n> ");
         nested::public_function_in_my_mod();
         print!("> ");
         nested::public_function_in_super_mod();
