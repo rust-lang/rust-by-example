@@ -9,8 +9,8 @@ some of which include:
 * `eprint!`: same as `format!` but the text is printed to the standard error (io::stderr).
 * `eprintln!`: same as `eprint!`but a newline is appended.
 
-All parse text in the same fashion. A plus is that the formatting correctness will
-be checked at compile time.
+All parse text in the same fashion. As a plus, Rust checks formatting 
+correctness at compile time.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -18,8 +18,8 @@ fn main() {
     // arguments. These will be stringified.
     println!("{} days", 31);
 
-    // Without a suffix, 31 becomes an i32. You can change what type 31 is,
-    // with a suffix.
+    // Without a suffix, 31 becomes an i32. You can change what type 31 is
+    // by providing a suffix.
 
     // There are various optional patterns this works with. Positional
     // arguments can be used.
@@ -41,12 +41,12 @@ fn main() {
     // You can pad numbers with extra zeroes. This will output "000001".
     println!("{number:>0width$}", number=1, width=6);
 
-    // It will even check to make sure the correct number of arguments are
+    // Rust even checks to make sure the correct number of arguments are
     // used.
     println!("My name is {0}, {1} {0}", "Bond");
     // FIXME ^ Add the missing argument: "James"
 
-    // Create a structure which contains an `i32`. Name it `Structure`.
+    // Create a structure named `Structure` which contains an `i32`.
     #[allow(dead_code)]
     struct Structure(i32);
 
@@ -64,7 +64,7 @@ of text. The base form of two important ones are listed below:
 * `fmt::Display`: Uses the `{}` marker. Format text in a more elegant, user
 friendly fashion.
 
-Here, `fmt::Display` was used because the std library provides implementations
+Here, we used `fmt::Display `because the std library provides implementations
 for these types. To print text for custom types, more steps are required.
 
 Implementing the `fmt::Display` trait automagically implements the
@@ -76,7 +76,7 @@ Implementing the `fmt::Display` trait automagically implements the
    error.
  * Add a `println!` macro that prints: `Pi is roughly 3.142` by controlling
    the number of decimal places shown. For the purposes of this exercise,
-   use `let pi = 3.141592` as an estimate for Pi. (Hint: you may need to
+   use `let pi = 3.141592` as an estimate for pi. (Hint: you may need to
    check the [`std::fmt`][fmt] documentation for setting the number of
    decimals to display)
 

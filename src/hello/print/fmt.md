@@ -26,7 +26,7 @@ struct City {
 }
 
 impl Display for City {
-    // `f` is a buffer, this method must write the formatted string into it
+    // `f` is a buffer, and this method must write the formatted string into it
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
         let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
@@ -59,7 +59,7 @@ fn main() {
         Color { red: 0, green: 0, blue: 0 },
     ].iter() {
         // Switch this to use {} once you've added an implementation
-        // for fmt::Display
+        // for fmt::Display.
         println!("{:?}", *color);
     }
 }

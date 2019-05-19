@@ -32,7 +32,7 @@ struct List(Vec<i32>);
 
 impl fmt::Display for List {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        // Extract the value using tuple indexing
+        // Extract the value using tuple indexing,
         // and create a reference to `vec`.
         let vec = &self.0;
 
@@ -47,7 +47,7 @@ impl fmt::Display for List {
             write!(f, "{}", v)?;
         }
 
-        // Close the opened bracket and return a fmt::Result value
+        // Close the opened bracket and return a fmt::Result value.
         write!(f, "]")
     }
 }
