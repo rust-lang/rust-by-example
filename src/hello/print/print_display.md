@@ -9,11 +9,11 @@ looks like this:
 // Import (via `use`) the `fmt` module to make it available.
 use std::fmt;
 
-// Define a structure which `fmt::Display` will be implemented for. This is simply
-// a tuple struct containing an `i32` bound to the name `Structure`.
+// Define a structure for which `fmt::Display` will be implemented. This is
+// a tuple struct named `Structure` that contains an `i32`.
 struct Structure(i32);
 
-// In order to use the `{}` marker, the trait `fmt::Display` must be implemented
+// To use the `{}` marker, the trait `fmt::Display` must be implemented
 // manually for the type.
 impl fmt::Display for Structure {
     // This trait requires `fmt` with this exact signature.
@@ -30,7 +30,7 @@ impl fmt::Display for Structure {
 `fmt::Display` may be cleaner than `fmt::Debug` but this presents
 a problem for the `std` library. How should ambiguous types be displayed?
 For example, if the `std` library implemented a single style for all
-`Vec<T>`, what style should it be? Either of these two?
+`Vec<T>`, what style should it be? Would it be either of these two?
 
 * `Vec<path>`: `/:/etc:/home/username:/bin` (split on `:`)
 * `Vec<number>`: `1,2,3` (split on `,`)
@@ -66,7 +66,7 @@ struct Point2D {
     y: f64,
 }
 
-// Similarly, implement for Point2D
+// Similarly, implement `Display` for `Point2D`
 impl fmt::Display for Point2D {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         // Customize so only `x` and `y` are denoted.
@@ -94,7 +94,7 @@ fn main() {
     println!("Display: {}", point);
     println!("Debug: {:?}", point);
 
-    // Error. Both `Debug` and `Display` were implemented but `{:b}`
+    // Error. Both `Debug` and `Display` were implemented, but `{:b}`
     // requires `fmt::Binary` to be implemented. This will not work.
     // println!("What does Point2D look like in binary: {:b}?", point);
 }
@@ -107,7 +107,7 @@ each requires its own implementation. This is detailed further in
 
 ### Activity
 
-After checking the output of the above example, use the `Point2D` struct as
+After checking the output of the above example, use the `Point2D` struct as a
 guide to add a Complex struct to the example. When printed in the same
 way, the output should be:
 

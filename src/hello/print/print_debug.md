@@ -11,7 +11,7 @@ not true for `fmt::Display` which must be manually implemented.
 
 ```rust
 // This structure cannot be printed either with `fmt::Display` or
-// with `fmt::Debug`
+// with `fmt::Debug`.
 struct UnPrintable(i32);
 
 // The `derive` attribute automatically creates the implementation
