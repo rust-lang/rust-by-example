@@ -40,7 +40,7 @@
 
 - [Expressions](expression.md)
 
-- [Flow Control](flow_control.md)
+- [Flow of Control](flow_control.md)
     - [if/else](flow_control/if_else.md)
     - [loop](flow_control/loop.md)
         - [Nesting and labels](flow_control/loop/nested.md)
