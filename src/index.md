@@ -25,7 +25,7 @@ Now let's begin!
 
 - [Expressions](expression.html)
 
-- [Flow Control](flow_control.html) - `if`/`else`, `for`, and others.
+- [Flow of Control](flow_control.html) - `if`/`else`, `for`, and others.
 
 - [Functions](fn.html) - Learn about Methods, Closures and High Order Functions.
 
