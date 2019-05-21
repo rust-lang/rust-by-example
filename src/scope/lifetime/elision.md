@@ -1,16 +1,16 @@
 # Elision
 
 Some lifetime patterns are overwhelmingly common and so the borrow checker
-will implicitly add them to save typing and to improve readability.
-This process of implicit addition is called elision. Elision exists in Rust
-solely because these patterns are common.
+will allow you to omit them to save typing and to improve readability.
+This is known as elision. Elision exists in Rust solely because these patterns
+are common.
 
 The following code shows a few examples of elision. For a more comprehensive
 description of elision, see [lifetime elision][elision] in the book.
 
 ```rust,editable
 // `elided_input` and `annotated_input` essentially have identical signatures
-// because the lifetime of `elided_input` is elided by the compiler:
+// because the lifetime of `elided_input` is inferred by the compiler:
 fn elided_input(x: &i32) {
     println!("`elided_input`: {}", x);
 }
