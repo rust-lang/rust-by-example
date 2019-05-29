@@ -30,7 +30,7 @@ impl Inches {
     }
 }
 
-// `Seconds`, a tuple struct no additional attributes
+// `Seconds`, a tuple struct with no additional attributes
 struct Seconds(i32);
 
 fn main() {
