@@ -29,4 +29,4 @@ fn main() {
 ### See also:
 [functions]
 
-[functions]: fn.html
+[functions]: ../../fn.md

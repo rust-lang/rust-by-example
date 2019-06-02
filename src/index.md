@@ -11,53 +11,53 @@ Additionally for the curious, you can also [check out the source code for this s
 
 Now let's begin!
 
-- [Hello World](hello.html) - Start with a traditional Hello World program.
+- [Hello World](hello.md) - Start with a traditional Hello World program.
 
-- [Primitives](primitives.html) - Learn about signed integers, unsigned integers and other primitives.
+- [Primitives](primitives.md) - Learn about signed integers, unsigned integers and other primitives.
 
-- [Custom Types](custom_types.html) - `struct` and `enum`.
+- [Custom Types](custom_types.md) - `struct` and `enum`.
 
-- [Variable Bindings](variable_bindings.html) - mutable bindings, scope, shadowing.
+- [Variable Bindings](variable_bindings.md) - mutable bindings, scope, shadowing.
 
-- [Types](types.html) - Learn about changing and defining types.
+- [Types](types.md) - Learn about changing and defining types.
 
-- [Conversion](conversion.html)
+- [Conversion](conversion.md)
 
-- [Expressions](expression.html)
+- [Expressions](expression.md)
 
-- [Flow of Control](flow_control.html) - `if`/`else`, `for`, and others.
+- [Flow of Control](flow_control.md) - `if`/`else`, `for`, and others.
 
-- [Functions](fn.html) - Learn about Methods, Closures and High Order Functions.
+- [Functions](fn.md) - Learn about Methods, Closures and High Order Functions.
 
-- [Modules](mod.html) - Organize code using modules
+- [Modules](mod.md) - Organize code using modules
 
-- [Crates](crates.html) - A crate is a compilation unit in Rust. Learn to create a library.
+- [Crates](crates.md) - A crate is a compilation unit in Rust. Learn to create a library.
 
-- [Cargo](cargo.html) - Go through some basic features of the official Rust package management tool.
+- [Cargo](cargo.md) - Go through some basic features of the official Rust package management tool.
 
-- [Attributes](attribute.html) - An attribute is metadata applied to some module, crate or item.
+- [Attributes](attribute.md) - An attribute is metadata applied to some module, crate or item.
 
-- [Generics](generics.html) - Learn about writing a function or data type which can work for multiple types of arguments.
+- [Generics](generics.md) - Learn about writing a function or data type which can work for multiple types of arguments.
 
-- [Scoping rules](scope.html) - Scopes play an important part in ownership, borrowing, and lifetimes.
+- [Scoping rules](scope.md) - Scopes play an important part in ownership, borrowing, and lifetimes.
 
-- [Traits](trait.html) - A trait is a collection of methods defined for an unknown type: `Self`
+- [Traits](trait.md) - A trait is a collection of methods defined for an unknown type: `Self`
 
-- [Macros](macros.html)
+- [Macros](macros.md)
 
-- [Error handling](error.html) - Learn Rust way of handling failures.
+- [Error handling](error.md) - Learn Rust way of handling failures.
 
-- [Std library types](std.html) - Learn about some custom types provided by `std` library.
+- [Std library types](std.md) - Learn about some custom types provided by `std` library.
 
-- [Std misc](std_misc.html) - More custom types for file handling, threads.
+- [Std misc](std_misc.md) - More custom types for file handling, threads.
 
-- [Testing](testing.html) - All sorts of testing in Rust.
+- [Testing](testing.md) - All sorts of testing in Rust.
 
-- [Unsafe Operations](unsafe.html)
+- [Unsafe Operations](unsafe.md)
 
-- [Compatibility](compatibility.html)
+- [Compatibility](compatibility.md)
 
-- [Meta](meta.html) - Documentation, Benchmarking.
+- [Meta](meta.md) - Documentation, Benchmarking.
 
 
 [rust]: https://www.rust-lang.org/

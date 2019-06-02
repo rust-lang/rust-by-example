@@ -46,8 +46,8 @@ fn main() {
 
 [Boxing][box], [`Fn`][fn], [`FnMut`][fnmut], and [Generics][generics].
 
-[box]: std/box.html
+[box]: ../../std/box.md
 [fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
 [fnmut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
 [fnbox]: https://doc.rust-lang.org/std/boxed/trait.FnBox.html 
-[generics]: generics.html
+[generics]: ../../generics.md

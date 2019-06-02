@@ -143,4 +143,4 @@ fn cat(path: &Path) -> io::Result<String> {
 
 [`cfg!`][cfg]
 
-[cfg]: attribute/cfg.html
+[cfg]: ../attribute/cfg.md

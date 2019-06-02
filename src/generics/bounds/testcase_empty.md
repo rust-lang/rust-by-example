@@ -40,4 +40,4 @@ fn main() {
 
 [eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
 [ord]: https://doc.rust-lang.org/std/cmp/trait.Ord.html
-[traits]: trait.html
+[traits]: ../../trait.md

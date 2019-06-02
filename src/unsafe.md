@@ -8,7 +8,7 @@ things that unsafe is used for:
 
 * dereferencing raw pointers
 * calling functions or methods which are `unsafe` (including calling a function
-  over FFI, see [a previous chapter](std_misc/ffi.html) of the book) 
+  over FFI, see [a previous chapter](std_misc/ffi.md) of the book) 
 * accessing or modifying static mutable variables
 * implementing unsafe traits
 

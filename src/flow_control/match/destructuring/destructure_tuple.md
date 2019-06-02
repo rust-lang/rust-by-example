@@ -21,4 +21,4 @@ fn main() {
 
 ### See also:
 
-[Tuples](primitives/tuples.html)
+[Tuples](../../../primitives/tuples.md)

@@ -33,6 +33,6 @@ Attributes can have multiple values and can be separated over multiple lines, to
             value4, value5)]
 ```
 
-[cfg]: attribute/cfg.html
-[crate]: attribute/crate.html
+[cfg]: attribute/cfg.md
+[crate]: attribute/crate.md
 [lint]: https://en.wikipedia.org/wiki/Lint_%28software%29

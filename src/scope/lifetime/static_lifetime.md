@@ -49,4 +49,4 @@ fn main() {
 
 [`'static` constants][static_const]
 
-[static_const]: custom_types/constants.html
+[static_const]: ../../custom_types/constants.md

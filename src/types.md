@@ -7,7 +7,7 @@ user defined types. The following sections cover:
 * Using [type inference]
 * [Aliasing] types
 
-[Casting]: types/cast.html
-[literals]: types/literals.html
-[type inference]: types/inference.html
-[Aliasing]: types/alias.html
+[Casting]: types/cast.md
+[literals]: types/literals.md
+[type inference]: types/inference.md
+[Aliasing]: types/alias.md

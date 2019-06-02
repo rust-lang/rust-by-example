@@ -50,6 +50,6 @@ fn main() {
 
 [`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html
 [Display]: https://doc.rust-lang.org/std/fmt/trait.Display.html
-[print]: hello/print.html
+[print]: ../hello/print.md
 [`parse`]: https://doc.rust-lang.org/std/primitive.str.html#method.parse
 [`FromStr`]: https://doc.rust-lang.org/std/str/trait.FromStr.html

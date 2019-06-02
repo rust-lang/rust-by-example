@@ -91,6 +91,6 @@ fn main() {
 [Box][box]
 
 [raii]: https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization
-[box]: std/box.html
+[box]: ../std/box.md
 [valgrind]: http://valgrind.org/info/
 [`Drop`]: https://doc.rust-lang.org/std/ops/trait.Drop.html

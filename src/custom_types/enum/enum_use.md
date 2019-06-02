@@ -46,5 +46,5 @@ fn main() {
 
 [`match`][match] and [`use`][use] 
 
-[use]: mod/use.html
-[match]: flow_control/match.html
+[use]: ../../mod/use.md
+[match]: ../../flow_control/match.md

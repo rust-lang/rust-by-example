@@ -71,6 +71,6 @@ fn main() {
 
 [closures][closures], [`Option`][option], and [`Option::and_then()`][and_then]
 
-[closures]: fn/closures.html
+[closures]: ../../fn/closures.md
 [option]: https://doc.rust-lang.org/std/option/enum.Option.html
 [and_then]: https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then

@@ -58,6 +58,6 @@ fn main() {
 [`match`][match], [`fn`][fn], and [`String`][str]
 
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
-[match]: flow_control/match.html
-[fn]: fn.html
-[str]: std/str.html
+[match]: ../flow_control/match.md
+[fn]: ../fn.md
+[str]: ../std/str.md

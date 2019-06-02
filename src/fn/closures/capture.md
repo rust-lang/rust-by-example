@@ -97,5 +97,5 @@ fn main() {
 
 [`Box`][box] and [`std::mem::drop`][drop]
 
-[box]: std/box.html
+[box]: ../../std/box.md
 [drop]: https://doc.rust-lang.org/std/mem/fn.drop.html

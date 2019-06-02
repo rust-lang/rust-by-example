@@ -48,4 +48,4 @@ fn main() {
 
 [Library documentation][docs]
 
-[docs]: meta/doc.html
+[docs]: ../meta/doc.md

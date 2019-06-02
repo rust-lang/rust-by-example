@@ -59,5 +59,5 @@ fn main() {
 
 [functions][fn]
 
-[elision]: scope/lifetime/elision.html
-[fn]: fn.html
+[elision]: elision.md
+[fn]: fn.md

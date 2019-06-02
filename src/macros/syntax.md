@@ -7,6 +7,6 @@ There are three basic ideas:
 - [Overloading][overloading]
 - [Repetition][repetition]
 
-[designators]: macros/designators.html
-[overloading]: macros/overload.html
-[repetition]: macros/repeat.html
+[designators]: designators.md
+[overloading]: overload.md
+[repetition]: repeat.md

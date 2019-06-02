@@ -38,6 +38,6 @@ yet, here's a brief explanation for the impatient readers:
   is defined in the `std` *crate*. For more details, see
   [modules][mod] and [crates][crate].
 
-[borrow]: scope/borrow.html
-[mod]: mod.html
-[crate]: crates.html
+[borrow]: ../scope/borrow.md
+[mod]: ../mod.md
+[crate]: ../crates.md

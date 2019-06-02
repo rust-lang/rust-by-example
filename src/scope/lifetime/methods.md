@@ -25,4 +25,4 @@ fn main() {
 
 [methods]
 
-[methods]: fn/methods.html
+[methods]: ../../fn/methods.md

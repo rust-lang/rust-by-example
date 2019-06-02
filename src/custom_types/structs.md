@@ -89,6 +89,6 @@ fn main() {
 
 [`attributes`][attributes] and [destructuring][destructuring]
 
-[attributes]: attribute.html
+[attributes]: ../attribute.md
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
-[destructuring]: flow_control/match/destructuring.html
+[destructuring]: ../flow_control/match/destructuring.md

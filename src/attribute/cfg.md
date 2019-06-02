@@ -37,5 +37,5 @@ fn main() {
 [the reference][ref], [`cfg!`][cfg], and [macros][macros].
 
 [cfg]: https://doc.rust-lang.org/std/macro.cfg!.html
-[macros]: macros.html
+[macros]: ../macros.md
 [ref]: https://doc.rust-lang.org/reference/attributes.html#conditional-compilation

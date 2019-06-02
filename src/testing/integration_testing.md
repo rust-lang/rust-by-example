@@ -83,5 +83,5 @@ fn test_add() {
 Modules with common code follow the ordinary [modules][mod] rules, so it's ok to
 create common module as `tests/common/mod.rs`.
 
-[unit]: testing/unit_testing.html
-[mod]: mod.html
+[unit]: unit_testing.md
+[mod]: ../mod.md

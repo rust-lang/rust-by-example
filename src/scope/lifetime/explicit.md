@@ -69,7 +69,7 @@ fn main() {
 
 [generics][generics] and [closures][closures]
 
-[anonymity]: fn/closures/anonymity.html
-[closures]: fn/closures.html
-[elision]: scope/lifetime/elision.html
-[generics]: generics.html
+[anonymity]: ../../fn/closures/anonymity.md
+[closures]: ../../fn/closures.md
+[elision]: elision.md
+[generics]: ../../generics.md

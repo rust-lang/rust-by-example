@@ -60,5 +60,5 @@ fn main() {
 
 [`struct`s][structs]
 
-[structs]: custom_types/structs.html
+[structs]: custom_types/structs.md
 [camelcase]: https://en.wikipedia.org/wiki/CamelCase

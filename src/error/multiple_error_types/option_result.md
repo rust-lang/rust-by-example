@@ -55,4 +55,4 @@ fn main() {
 }
 ```
 
-[enter_question_mark]: error/result/enter_question_mark.html
+[enter_question_mark]: ../result/enter_question_mark.md

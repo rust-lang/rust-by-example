@@ -75,5 +75,5 @@ fn main() {
 
 [`Box`][box] and [methods][methods]
 
-[box]: std/box.html
-[methods]: fn/methods.html
+[box]: ../../std/box.md
+[methods]: ../../fn/methods.md

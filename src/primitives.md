@@ -58,6 +58,6 @@ fn main() {
 [the `std` library][std], [`mut`][mut], [inference], and [shadowing]
 
 [std]: https://doc.rust-lang.org/std/
-[mut]: variable_bindings/mut.html
-[inference]: types/inference.html
-[shadowing]: variable_bindings/scope.html
+[mut]: variable_bindings/mut.md
+[inference]: types/inference.md
+[shadowing]: variable_bindings/scope.md
