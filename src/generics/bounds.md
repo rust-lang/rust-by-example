@@ -74,8 +74,8 @@ some cases to be more expressive.
 
 [`std::fmt`][fmt], [`struct`s][structs], and [`trait`s][traits]
 
-[fmt]: hello/print.html
-[methods]: fn/methods.html
-[structs]: custom_types/structs.html
-[traits]: trait.html
-[where]: generics/where.html
+[fmt]: ../hello/print.md
+[methods]: ../fn/methods.md
+[structs]: ../custom_types/structs.md
+[traits]: ../trait.md
+[where]: ../generics/where.md

@@ -29,4 +29,4 @@ fn main() {
 
 ### See also:
 
-[Structs](custom_types/structs.html), [The ref pattern](scope/borrow/ref.html)
+[Structs](../../../custom_types/structs.md), [The ref pattern](../../../scope/borrow/ref.md)

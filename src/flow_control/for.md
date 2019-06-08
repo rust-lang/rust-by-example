@@ -117,4 +117,4 @@ implies differing actions that are able to be performed.
 
 [Iterator][iter]
 
-[iter]: trait/iter.html
+[iter]: ../trait/iter.md

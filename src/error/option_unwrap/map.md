@@ -81,6 +81,6 @@ fn main() {
 [closures][closures], [`Option`][option], [`Option::map()`][map]
 
 [combinators]: https://doc.rust-lang.org/book/glossary.html#combinators
-[closures]: fn/closures.html
+[closures]: ../../fn/closures.md
 [option]: https://doc.rust-lang.org/std/option/enum.Option.html
 [map]: https://doc.rust-lang.org/std/option/enum.Option.html#method.map

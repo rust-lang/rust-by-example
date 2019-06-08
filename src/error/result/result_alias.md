@@ -42,5 +42,5 @@ fn main() {
 
 [`io::Result`][io_result]
 
-[typealias]: types/alias.html
+[typealias]: ../../types/alias.md
 [io_result]: https://doc.rust-lang.org/std/io/type.Result.html

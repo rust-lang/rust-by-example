@@ -55,5 +55,5 @@ fn main() {
 
 [functions][fn] and [`struct`s][structs]
 
-[fn]: fn.html
-[structs]: custom_types/structs.html
+[fn]: ../fn.md
+[structs]: ../custom_types/structs.md

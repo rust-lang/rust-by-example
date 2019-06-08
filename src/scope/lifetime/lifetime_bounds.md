@@ -48,6 +48,6 @@ fn main() {
 [generics][generics], [bounds in generics][bounds], and 
 [multiple bounds in generics][multibounds]
 
-[generics]: generics.html
-[bounds]: generics/bounds.html
-[multibounds]: generics/multi_bounds.html
+[generics]: ../../generics.md
+[bounds]: ../../generics/bounds.md
+[multibounds]: ../../generics/multi_bounds.md

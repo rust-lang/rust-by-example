@@ -86,9 +86,9 @@ Implementing the `fmt::Display` trait automagically implements the
 and [`traits`][traits]
 
 [fmt]: https://doc.rust-lang.org/std/fmt/
-[macros]: macros.html
-[string]: std/str.html
-[structs]: custom_types/structs.html
-[traits]: trait.html
+[macros]: ../macros.md
+[string]: ../std/str.md
+[structs]: ../custom_types/structs.md
+[traits]: ../trait.md
 [`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html
-[convert]: conversion/string.html
+[convert]: ../conversion/string.md

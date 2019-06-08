@@ -33,4 +33,4 @@ is an alias for the `Result<T, IoError>` type.
 
 ### See also:
 
-[Attributes](attribute.html)
+[Attributes](../attribute.md)

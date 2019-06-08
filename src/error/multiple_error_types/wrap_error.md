@@ -83,4 +83,4 @@ for you.
 [`From::from`][from] and [`Enums`][enums]
 
 [from]: https://doc.rust-lang.org/std/convert/trait.From.html
-[enums]: custom_types/enum.html
+[enums]: ../../custom_types/enum.md

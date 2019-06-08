@@ -54,5 +54,5 @@ fn main() {
 
 [`structs`][struct]
 
-[struct]: custom_types/structs.html
+[struct]: ../custom_types/structs.md
 

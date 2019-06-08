@@ -41,5 +41,5 @@ fn main() {
 [`Drop`][Drop], [`struct`][structs], and [`trait`][traits]
 
 [Drop]: https://doc.rust-lang.org/std/ops/trait.Drop.html
-[structs]: custom_types/structs.html
-[traits]: trait.html
+[structs]: ../custom_types/structs.md
+[traits]: ../trait.md

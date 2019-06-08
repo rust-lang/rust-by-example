@@ -55,5 +55,5 @@ fn main() {
 
 [generics][generics] and [methods][methods]
 
-[generics]: generics.html
-[methods]: fn/methods.html
+[generics]: ../generics.md
+[methods]: ../fn/methods.md

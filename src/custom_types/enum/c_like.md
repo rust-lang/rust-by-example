@@ -34,4 +34,4 @@ fn main() {
 
 [casting][cast]
 
-[cast]: types/cast.html
+[cast]: ../../types/cast.md
