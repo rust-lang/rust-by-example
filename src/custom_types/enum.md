@@ -16,7 +16,7 @@ enum WebEvent {
     // like tuple structs,
     KeyPress(char),
     Paste(String),
-    // or like structures.
+    // or c-like structures.
     Click { x: i64, y: i64 },
 }
 
