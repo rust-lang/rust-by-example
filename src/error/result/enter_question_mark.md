@@ -44,6 +44,9 @@ at older code. The same `multiply` function from the previous example
 would look like this using `try!`:
 
 ```rust,editable
+// To compile and run this example without errors, while using Cargo, change the value 
+// of the `edition` field, in the `[package]` section of the `Cargo.toml` file, to "2015".
+
 use std::num::ParseIntError;
 
 fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {

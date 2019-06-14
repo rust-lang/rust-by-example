@@ -25,7 +25,6 @@ Here, we rewrite the previous example using `?`. As a result, the
 ```rust,editable
 use std::error;
 use std::fmt;
-use std::num::ParseIntError;
 
 // Change the alias to `Box<error::Error>`.
 type Result<T> = std::result::Result<T, Box<error::Error>>;
