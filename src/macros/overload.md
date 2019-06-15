@@ -9,19 +9,19 @@ In that regard, `macro_rules!` can work similarly to a match block:
 macro_rules! test {
     // Arguments don't need to be separated by a comma.
     // Any template can be used!
-    ($left:expr; and $right:expr) => (
+    ($left:expr; and $right:expr) => {
         println!("{:?} and {:?} is {:?}",
                  stringify!($left),
                  stringify!($right),
                  $left && $right)
-    );
+    };
     // ^ each arm must end with a semicolon.
-    ($left:expr; or $right:expr) => (
+    ($left:expr; or $right:expr) => {
         println!("{:?} or {:?} is {:?}",
                  stringify!($left),
                  stringify!($right),
                  $left || $right)
-    );
+    };
 }
 
 fn main() {
