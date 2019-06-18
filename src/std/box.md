@@ -59,7 +59,7 @@ fn main() {
     println!("Rectangle occupies {} bytes on the stack",
              mem::size_of_val(&rectangle));
 
-    // box size = pointer size
+    // box size == pointer size
     println!("Boxed point occupies {} bytes on the stack",
              mem::size_of_val(&boxed_point));
     println!("Boxed rectangle occupies {} bytes on the stack",
