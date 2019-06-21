@@ -9,7 +9,7 @@ fn foo() -> ! {
 ```
 
 As opposed to all the other types, this one cannot be instantiated, because the
-set of all possible values this type can have is empty. Note, that it is
+set of all possible values this type can have is empty. Note that, it is
 different from the `()` type, which has exactly one possible value.
 
 For example, this function returns as usual, although there is no information
