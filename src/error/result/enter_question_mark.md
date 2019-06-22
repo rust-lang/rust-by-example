@@ -10,7 +10,7 @@ Upon finding an `Err`, there are two valid actions to take:
 2. `return` because an `Err` means it cannot be handled
 
 `?` is *almost*[^†] exactly equivalent to an `unwrap` which `return`s
-instead of `panic`s on `Err`s. Let's see how we can simplify the earlier
+instead of `panic`king on `Err`s. Let's see how we can simplify the earlier
 example that used combinators:
 
 ```rust,editable
