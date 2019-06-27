@@ -50,8 +50,8 @@ fn try_logon<'a>(accounts: &Accounts<'a>,
     println!("Attempting logon...");
 
     let logon = Account {
-        username: username,
-        password: password,
+        username,
+        password,
     };
 
     match accounts.get(&logon) {
