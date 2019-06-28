@@ -112,7 +112,7 @@ fn main() {
 }
 ```
 
-Want a string that's not UTF-8? (Remember, `str` and `String` must be valid UTF-8)
+Want a string that's not UTF-8? (Remember, `str` and `String` must be valid UTF-8).
 Or maybe you want an array of bytes that's mostly text? Byte strings to the rescue!
 
 ```rust, editable
