@@ -122,7 +122,7 @@ fn main() {
     // Note that this is not actually a &str
     let bytestring: &[u8; 20] = b"this is a bytestring";
 
-    // Byte arrays don't have Display so printing them is a bit limited
+    // Byte arrays don't have the `Display` trait, so printing them is a bit limited
     println!("A bytestring: {:?}", bytestring);
 
     // Bytestrings can have byte escapes...
