@@ -120,7 +120,7 @@ use std::str;
 
 fn main() {
     // Note that this is not actually a `&str`
-    let bytestring: &[u8; 20] = b"this is a byte string";
+    let bytestring: &[u8; 21] = b"this is a byte string";
 
     // Byte arrays don't have the `Display` trait, so printing them is a bit limited
     println!("A byte string: {:?}", bytestring);
