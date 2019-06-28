@@ -141,7 +141,7 @@ fn main() {
         println!("And the same as text: '{}'", my_str);
     }
 
-    let quotes = br#"You can also use "fancier" formatting, \
+    let _quotes = br#"You can also use "fancier" formatting, \
                     like with normal raw strings"#;
 
     // Byte strings don't have to be UTF-8
