@@ -67,7 +67,7 @@ friendly fashion.
 Here, we used `fmt::Display `because the std library provides implementations
 for these types. To print text for custom types, more steps are required.
 
-Implementing the `fmt::Display` trait automagically implements the
+Implementing the `fmt::Display` trait automatically implements the
 [`ToString`] trait which allows us to [convert] the type to [`String`][string].
 
 ### Activities
