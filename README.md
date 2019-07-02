@@ -38,6 +38,7 @@ Please see the [CONTRIBUTING.md] file for more details.
 * [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
 * [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
 * [French](https://github.com/Songbird0/FR_RBE)
+* [Russian](https://github.com/ruRust/rust-by-example-ru)
 
 ## License
 
