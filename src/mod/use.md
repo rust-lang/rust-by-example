@@ -19,7 +19,7 @@ fn main() {
 
 You can use the `as` keyword to bind imports to a different name:
 
-```rust,editable,ignore
+```rust,editable
 // Bind the `deeply::nested::function` path to `other_function`.
 use deeply::nested::function as other_function;
 
