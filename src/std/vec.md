@@ -30,8 +30,8 @@ fn main() {
     collected_iterator.push(0);
     // FIXME ^ Comment out this line
 
-    // The `len` method yields the current size of the vector
-    println!("Vector size: {}", xs.len());
+    // The `len` method yields the number of elements currently stored in a vector
+    println!("Vector length: {}", xs.len());
 
     // Indexing is done using the square brackets (indexing starts at 0)
     println!("Second element: {}", xs[1]);
