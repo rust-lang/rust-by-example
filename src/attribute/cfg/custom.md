@@ -18,7 +18,7 @@ Try to run this to see what happens without the custom `cfg` flag.
 
 With the custom `cfg` flag:
 
-```bash
+```shell
 $ rustc --cfg some_condition custom.rs && ./custom
 condition met!
 ```

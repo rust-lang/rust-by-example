@@ -8,7 +8,7 @@ packages which depend on this package.
 One such example is using a crate that extends standard `assert!` macros.  
 File `Cargo.toml`:
 
-```ignore
+```toml
 # standard crate data is left out
 [dev-dependencies]
 pretty_assertions = "0.4.0"

@@ -48,7 +48,7 @@ mod tests {
 
 Tests can be run with `cargo test`.
 
-```bash
+```shell
 $ cargo test
 
 running 2 tests
@@ -112,7 +112,7 @@ mod tests {
 
 Running these tests gives us:
 
-```bash
+```shell
 $ cargo test
 
 running 3 tests
@@ -133,7 +133,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 To run specific tests one may specify the test name to `cargo test` command.
 
-```bash
+```shell
 $ cargo test test_any_panic
 running 1 test
 test tests::test_any_panic ... ok
@@ -150,7 +150,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 To run multiple tests one may specify part of a test name that matches all the
 tests that should be run.
 
-```bash
+```shell
 $ cargo test panic
 running 2 tests
 test tests::test_any_panic ... ok
@@ -198,7 +198,7 @@ mod tests {
 }
 ```
 
-```bash
+```shell
 $ cargo test
 running 1 test
 test tests::ignored_test ... ignored

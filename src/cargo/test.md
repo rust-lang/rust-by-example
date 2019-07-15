@@ -23,13 +23,13 @@ Each file in `tests` is a separate integration test.
 
 `cargo` naturally provides an easy way to run all of your tests!
 
-```sh
-cargo test
+```shell
+$ cargo test
 ```
 
 You should see output like this:
 
-```txt
+```shell
 $ cargo test
    Compiling blah v0.1.0 (file:///nobackup/blah)
     Finished dev [unoptimized + debuginfo] target(s) in 0.89 secs
@@ -46,11 +46,11 @@ test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 You can also run tests whose name matches a pattern:
 
-```sh
-cargo test test_foo
+```shell
+$ cargo test test_foo
 ```
 
-```txt
+```shell
 $ cargo test test_foo
    Compiling blah v0.1.0 (file:///nobackup/blah)
     Finished dev [unoptimized + debuginfo] target(s) in 0.35 secs

@@ -39,7 +39,7 @@ fn main() {
 
 Here's the expected successful output:
 
-```bash
+```shell
 $ mkdir out
 $ rustc create.rs && ./create
 successfully wrote to out/lorem_ipsum.txt

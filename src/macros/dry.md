@@ -64,7 +64,7 @@ mod test {
 }
 ```
 
-```bash
+```shell
 $ rustc --test dry.rs && ./dry
 running 3 tests
 test test::mul_assign ... ok

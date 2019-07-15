@@ -41,7 +41,7 @@ fn main() {
 
 Of course, we can double check for memory errors using [`valgrind`][valgrind]:
 
-```bash
+```shell
 $ rustc raii.rs && valgrind ./raii
 ==26873== Memcheck, a memory error detector
 ==26873== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.

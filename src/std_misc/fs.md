@@ -100,7 +100,7 @@ fn main() {
 
 Here's the expected successful output:
 
-```bash
+```shell
 $ rustc fs.rs && ./fs
 `mkdir a`
 `echo hello > a/b.txt`
@@ -118,7 +118,7 @@ $ rustc fs.rs && ./fs
 
 And the final state of the `a` directory is:
 
-```text
+```shell
 $ tree a
 a
 |-- b.txt

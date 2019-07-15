@@ -70,7 +70,7 @@ fn main() {
 }
 ```
 
-```bash
+```shell
 $ ./match_args Rust
 This is not the answer.
 $ ./match_args 42

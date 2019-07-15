@@ -30,7 +30,7 @@ fn test_add() {
 
 Running tests with `cargo test` command:
 
-```bash
+```shell
 $ cargo test
 running 0 tests
 
