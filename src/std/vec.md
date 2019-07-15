@@ -2,10 +2,14 @@
 
 Vectors are re-sizable arrays. Like slices, their size is not known at compile
 time, but they can grow or shrink at any time. A vector is represented using
-3 words: a pointer to the data, its length, and its capacity. The capacity
-indicates how much memory is reserved for the vector. The vector can grow as
-long as the length is smaller than the capacity. When this threshold needs to
-be surpassed, the vector is reallocated with a larger capacity.
+3 parameters: 
+- pointer to the data
+- length
+- capacity 
+
+The capacity indicates how much memory is reserved for the vector. The vector 
+can grow as long as the length is smaller than the capacity. When this threshold 
+needs to be surpassed, the vector is reallocated with a larger capacity.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -26,8 +30,8 @@ fn main() {
     collected_iterator.push(0);
     // FIXME ^ Comment out this line
 
-    // The `len` method yields the current size of the vector
-    println!("Vector size: {}", xs.len());
+    // The `len` method yields the number of elements currently stored in a vector
+    println!("Vector length: {}", xs.len());
 
     // Indexing is done using the square brackets (indexing starts at 0)
     println!("Second element: {}", xs[1]);
