@@ -33,7 +33,7 @@ where P: AsRef<Path>, {
 ```
 
 Running this program simply prints the lines individually.
-```bash
+```shell
 $ echo -e "127.0.0.1\n192.168.0.1\n" > hosts
 $ rustc read_lines.rs && ./read_lines
 127.0.0.1

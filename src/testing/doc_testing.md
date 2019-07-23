@@ -50,7 +50,7 @@ pub fn div(a: i32, b: i32) -> i32 {
 
 Tests can be run with `cargo test`:
 
-```bash
+```shell
 $ cargo test
 running 0 tests
 

@@ -33,7 +33,7 @@ pub fn indirect_access() {
 When the `crate_type` attribute is used, we no longer need to pass the
 `--crate-type` flag to `rustc`.
 
-```bash
+```shell
 $ rustc lib.rs
 $ ls lib*
 library.rlib

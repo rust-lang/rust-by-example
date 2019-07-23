@@ -40,7 +40,7 @@ fn main() {
 
 Here's the expected successful output:
 
-```bash
+```shell
 $ echo "Hello World!" > hello.txt
 $ rustc open.rs && ./open
 hello.txt contains:

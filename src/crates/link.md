@@ -19,7 +19,7 @@ fn main() {
 }
 ```
 
-```bash
+```txt
 # Where library.rlib is the path to the compiled library, assumed that it's
 # in the same directory here:
 $ rustc executable.rs --extern rary=library.rlib && ./executable

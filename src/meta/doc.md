@@ -60,7 +60,7 @@ fn main() {
 To run the tests, first build the code as a library, then tell rustdoc where
 to find the library so it can link it into each doctest program:
 
-```bash
+```shell
 $ rustc doc.rs --crate-type lib
 $ rustdoc --test --extern doc="libdoc.rlib" doc.rs
 ```

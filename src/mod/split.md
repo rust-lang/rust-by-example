@@ -3,7 +3,7 @@
 Modules can be mapped to a file/directory hierarchy. Let's break down the
 [visibility example][visibility] in files:
 
-```bash
+```shell
 $ tree .
 .
 |-- my
@@ -84,7 +84,7 @@ pub fn public_function() {
 
 Let's check that things still work as before:
 
-```bash
+```shell
 $ rustc split.rs && ./split
 called `my::function()`
 called `function()`
