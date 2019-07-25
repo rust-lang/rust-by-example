@@ -29,7 +29,7 @@ controlled result while retaining the option to `panic` if desired.
 fn give_commoner(gift: Option<&str>) {
     // Specify a course of action for each case.
     match gift {
-        Some("snake") => println!("Yuck! I'm throwing that snake in a fire."),
+        Some("snake") => println!("Yuck! I'm putting this snake back in the forest."),
         Some(inner)   => println!("{}? How nice.", inner),
         None          => println!("No gift? Oh well."),
     }
