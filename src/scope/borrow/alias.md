@@ -19,7 +19,7 @@ fn main() {
         println!("Point has coordinates: ({}, {}, {})",
                  borrowed_point.x, another_borrow.y, point.z);
 
-        // Error! Can't borrow point as mutable because it's currently
+        // Error! Can't borrow `point` as mutable because it's currently
         // borrowed as immutable.
         //let mutable_borrow = &mut point;
         // TODO ^ Try uncommenting this line
@@ -51,7 +51,7 @@ fn main() {
         // Mutable reference goes out of scope
     }
 
-    // Immutable references to point are allowed again
+    // Immutable references to `point` are allowed again
     let borrowed_point = &point;
     println!("Point now has coordinates: ({}, {}, {})",
              borrowed_point.x, borrowed_point.y, borrowed_point.z);
