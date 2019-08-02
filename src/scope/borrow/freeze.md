@@ -9,13 +9,15 @@ fn main() {
 
     {
         // Borrow `_mutable_integer`
-        let _large_integer = &_mutable_integer;
+        let large_integer = &_mutable_integer;
 
         // Error! `_mutable_integer` is frozen in this scope
         _mutable_integer = 50;
         // FIXME ^ Comment out this line
 
-        // `_large_integer` goes out of scope
+        println!("Immutably borrowed {}", large_integer);
+
+        // `large_integer` goes out of scope
     }
 
     // Ok! `_mutable_integer` is not frozen in this scope
