@@ -17,7 +17,7 @@ fn main() {
 
         println!("Immutably borrowed {}", large_integer);
 
-        // `_large_integer` goes out of scope
+        // `large_integer` goes out of scope
     }
 
     // Ok! `_mutable_integer` is not frozen in this scope
