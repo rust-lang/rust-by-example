@@ -1,7 +1,7 @@
-# Read Lines
+# `read_lines`
 
 The method `lines()` returns an iterator over the lines
-of a file.  
+of a file.
 
 `File::open` expects a generic, `AsRef<Path>`.  That's what
 `read_lines()` expects as input.
@@ -18,8 +18,8 @@ fn main() {
         for line in lines {
             if let Ok(ip) = line {
                 println!("{}", ip);
-            }      
-        }   
+            }
+        }
     }
 }
 
