@@ -200,10 +200,12 @@ mod tests {
 
 ```shell
 $ cargo test
-running 1 test
+running 3 tests
 test tests::ignored_test ... ignored
+test tests::test_add ... ok
+test tests::test_add_hundred ... ok
 
-test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out
+test result: ok. 2 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out
 
    Doc-tests tmp-ignore
 
