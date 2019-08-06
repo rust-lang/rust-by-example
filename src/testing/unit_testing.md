@@ -167,7 +167,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 ## Ignoring tests
 
-Tests can be marked with the`#[ignore]` attribute to exclude some tests. Or to run
+Tests can be marked with the `#[ignore]` attribute to exclude some tests. Or to run
 them with command `cargo test -- --ignored`
 
 ```rust
