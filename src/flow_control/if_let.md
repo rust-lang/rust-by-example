@@ -41,7 +41,7 @@ fn main() {
     } else {
         // Destructure failed. Change to the failure case.
         println!("Didn't match a number. Let's go with a letter!");
-    };
+    }
 
     // Provide an altered failing condition.
     let i_like_letters = false;
@@ -55,7 +55,7 @@ fn main() {
     } else {
         // The condition evaluated false. This branch is the default:
         println!("I don't like letters. Let's go with an emoticon :)!");
-    };
+    }
 }
 ```
 
