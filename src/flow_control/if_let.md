@@ -91,6 +91,11 @@ fn main() {
     if let Foo::Qux(value) = c {
         println!("c is {}", value);
     }
+
+    // Binding also works with `if let`
+    if let Foo::Qux(value @ 100) = c {
+        println!("c is one hundred");
+    }
 }
 ```
 
