@@ -38,7 +38,7 @@ impl Iterator for Fibonacci {
 
 // Returns a Fibonacci sequence generator
 fn fibonacci() -> Fibonacci {
-    Fibonacci { curr: 1, next: 1 }
+    Fibonacci { curr: 0, next: 1 }
 }
 
 fn main() {
