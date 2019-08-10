@@ -72,7 +72,7 @@ fn main() {
 
 One can manually implement `fmt::Display` to control the display.
 
-### See also
+### See also:
 
 [attributes][attributes], [`derive`][derive], [`std::fmt`][fmt],
 and [`struct`][structs]

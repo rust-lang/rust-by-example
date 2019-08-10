@@ -38,7 +38,7 @@ fn main() {
 Be sure to check at other `Path` methods (`posix::Path` or `windows::Path`) and
 the `Metadata` struct.
 
-### See also
+### See also:
 
 [OsStr][1] and [Metadata][2].
 
