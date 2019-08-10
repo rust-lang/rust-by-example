@@ -113,7 +113,7 @@ In the above snippets note the type of `match` branch, that is the key
 difference in the types of iteration. The difference in type then of course
 implies differing actions that are able to be performed.
 
-### See also
+### See also:
 
 [Iterator][iter]
 

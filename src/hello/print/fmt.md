@@ -82,7 +82,7 @@ Two hints if you get stuck:
  * You [may need to list each color more than once][named_parameters],
  * You can [pad with zeros to a width of 2][fmt_width] with `:02`.
 
-### See also
+### See also:
 
 [`std::fmt`][fmt]
 
