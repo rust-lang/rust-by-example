@@ -35,6 +35,6 @@ So why are macros useful?
 2. Domain-specific languages. Macros allow you to define special syntax for a
    specific purpose. (More on this later)
 
-3. Variadic interfaces. Sometime you want to define an interface that takes a
+3. Variadic interfaces. Sometimes you want to define an interface that takes a
    variable number of arguments. An example is `println!` which could take any
    number of arguments, depending on the format string!. (More on this later)
