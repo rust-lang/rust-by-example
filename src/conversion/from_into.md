@@ -43,7 +43,12 @@ fn main() {
 ## `Into`
 
 The [`Into`] trait is derived from the `From` trait and is a syntactically
-different way to perform the same conversion.
+different way to perform the same conversion. If you have implemented the `From`
+trait for your type you get the `Into` implementation for free.
+
+Using the `Into` trait will typically require specification of the type to
+convert into as the compiler is unable to determine this most of the time.
+However this is a small trade-off considering we get the functionality for free.
 
 ```rust,editable
 use std::convert::From;
