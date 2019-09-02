@@ -9,7 +9,7 @@ Learn Rust with examples (Live code editor included)
 
 ## Using
 
-If you'd like to read Rust by Example, you can visit https://doc.rust-lang.org/rust-by-example/ 
+If you'd like to read Rust by Example, you can visit https://doc.rust-lang.org/rust-by-example/
 to read it online.
 
 If you'd like to read it locally, [install Rust], and then:
@@ -38,7 +38,7 @@ Please see the [CONTRIBUTING.md] file for more details.
 * [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
 * [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
 * [French](https://github.com/Songbird0/FR_RBE)
-* [Russian](https://github.com/ruRust/rust-by-example-ru)
+* [Russian](https://github.com/ruRust/rust-by-example)
 
 ## License
 
