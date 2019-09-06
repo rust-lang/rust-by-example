@@ -36,6 +36,7 @@
 
 - [Conversion](conversion.md)
     - [`From` and `Into`](conversion/from_into.md)
+    - [`TryFrom` and `TryInto`](conversion/try_from_try_into.md)
     - [To and from `String`s](conversion/string.md)
 
 - [Expressions](expression.md)
