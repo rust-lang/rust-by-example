@@ -150,6 +150,7 @@
 - [Error handling](error.md)
     - [`panic`](error/panic.md)
     - [`Option` & `unwrap`](error/option_unwrap.md)
+        - [Unpacking options with ?](error/option_unwrap/question_mark.md)
         - [Combinators: `map`](error/option_unwrap/map.md)
         - [Combinators: `and_then`](error/option_unwrap/and_then.md)
     - [`Result`](error/result.md)
