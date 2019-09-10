@@ -137,6 +137,7 @@
     - [Operator Overloading](trait/ops.md)
     - [Drop](trait/drop.md)
     - [Iterators](trait/iter.md)
+    - [impl Trait](trait/impl_trait.md)
     - [Clone](trait/clone.md)
 
 - [macro_rules!](macros.md)
