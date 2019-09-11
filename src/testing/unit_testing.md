@@ -70,6 +70,33 @@ failures:
 test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
+## Tests and ?
+None of the previous unit test examples had a return type. But in Rust 2018, your unit tests can return Result<()>, which lets you use `?` in them! This can make them much more concise. 
+
+```rust,editable
+fn sqrt(number: f64) -> Result<f64, String> {
+    if number >= 0.0 {
+        Ok(number.powf(0.5))
+    } else {
+        Err("negative floats don't have square roots".to_owned())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_sqrt() -> Result<(), String> {
+        let x = 4.0;
+        assert_eq!(sqrt(x)?.powf(2.0), x);
+        Ok(())
+    }
+}
+```
+
+See [The Edition Guide][editionguide] for more details.
+
 ## Testing panics
 
 To check functions that should panic under certain circumstances, use attribute
@@ -230,3 +257,4 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 [panic]: ../std/panic.md
 [macros]: ../macros.md
 [mod]: ../mod.md
+[editionguide]: https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/question-mark-in-main-and-tests.html
