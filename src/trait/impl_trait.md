@@ -1,12 +1,13 @@
-# impl Trait
+# `impl Trait`
 
-If your function returns a type that implements `MyTrait`, you can write its return type as `-> impl MyTrait`. This can help simplify your type signatures quite a lot!
+If your function returns a type that implements `MyTrait`, you can write its
+return type as `-> impl MyTrait`. This can help simplify your type signatures quite a lot!
 
 ```rust,editable
 use std::iter;
 use std::vec::IntoIter;
 
-// This function combines two Vec<i32> and returns an iterator over it.
+// This function combines two `Vec<i32>` and returns an iterator over it.
 // Look how complicated its return type is!
 fn combine_vecs_explicit_return_type<'a>(
     v: Vec<i32>,
@@ -25,7 +26,10 @@ fn combine_vecs<'a>(
 }
 ```
 
-More importantly, some Rust types can't be written out. For example, every closure has its own unnamed concrete type. Before `impl Trait` syntax, you had to allocate on the heap in order to return a closure. But now you can do it all statically, like this:
+More importantly, some Rust types can't be written out. For example, every
+closure has its own unnamed concrete type. Before `impl Trait` syntax, you had
+to allocate on the heap in order to return a closure. But now you can do it all
+statically, like this:
 
 ```rust,editable
 // Returns a function that adds `y` to its input
@@ -40,7 +44,10 @@ fn main() {
 }
 ```
 
-You can also use `impl Trait` to return an iterator that uses `map` or `filter` closures! This makes using `map` and `filter` easier. Because closure types don't have names, you can't write out an explicit return type if your function returns iterators with closures. But with `impl Trait` you can do this easily:
+You can also use `impl Trait` to return an iterator that uses `map` or `filter`
+closures! This makes using `map` and `filter` easier. Because closure types don't
+have names, you can't write out an explicit return type if your function returns
+iterators with closures. But with `impl Trait` you can do this easily:
 
 ```rust,editable
 fn double_positives<'a>(numbers: &'a Vec<i32>) -> impl Iterator<Item = i32> + 'a {
