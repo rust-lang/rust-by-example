@@ -1,8 +1,8 @@
 # As output parameters
 
-Closures as input parameters are possible, so returning closures as 
-output parameters should also be possible. However, anonymous 
-closure types are, by definition, unknown, so we have to use 
+Closures as input parameters are possible, so returning closures as
+output parameters should also be possible. However, anonymous
+closure types are, by definition, unknown, so we have to use
 `impl Trait` to return them.
 
 The valid traits for returns are slightly different than before:
@@ -46,6 +46,6 @@ fn main() {
 
 [fn]: https://doc.rust-lang.org/std/ops/trait.Fn.html
 [fnmut]: https://doc.rust-lang.org/std/ops/trait.FnMut.html
-[fnbox]: https://doc.rust-lang.org/std/boxed/trait.FnBox.html 
+[fnbox]: https://doc.rust-lang.org/std/boxed/trait.FnBox.html
 [generics]: ../../generics.md
-[impltrait]: ../../traits/impl_trait.md
+[impltrait]: ../../trait/impl_trait.md
