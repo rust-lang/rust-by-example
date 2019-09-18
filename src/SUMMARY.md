@@ -69,7 +69,7 @@
         - [As output parameters](fn/closures/output_parameters.md)
         - [Examples in `std`](fn/closures/closure_examples.md)
             - [Iterator::any](fn/closures/closure_examples/iter_any.md)
-            - [Iterator::find](fn/closures/closure_examples/iter_find.md)
+            - [Searching through iterators](fn/closures/closure_examples/iter_find.md)
     - [Higher Order Functions](fn/hof.md)
     - [Diverging functions](fn/diverging.md)
 
