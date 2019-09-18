@@ -5,7 +5,7 @@ generic traits for converting between types. Unlike `From`/`Into`, the
 `TryFrom`/`TryInto` traits are used for fallible conversions, and as such,
 return [`Result`]s.
 
-[from-into]: conversion/from_into.html
+[from-into]: from_into.html
 [`TryFrom`]: https://doc.rust-lang.org/std/convert/trait.TryFrom.html
 [`TryInto`]: https://doc.rust-lang.org/std/convert/trait.TryInto.html
 [`Result`]: https://doc.rust-lang.org/std/result/enum.Result.html
