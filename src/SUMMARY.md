@@ -139,6 +139,8 @@
     - [Iterators](trait/iter.md)
     - [`impl Trait`](trait/impl_trait.md)
     - [Clone](trait/clone.md)
+    - [Supertraits](traits/supertraits.md)
+    - [Disambiguating overlapping traits](traits/disambiguating.md)
 
 - [macro_rules!](macros.md)
     - [Syntax](macros/syntax.md)
