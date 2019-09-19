@@ -29,7 +29,7 @@ fn main() {
     // Call the closure using the borrow.
     print();
 
-    // `color` can be borrowed immutably again, becuase the closure only holds
+    // `color` can be borrowed immutably again, because the closure only holds
     // an immutable reference to `color`. 
     let _reborrow = &color;
     print();
