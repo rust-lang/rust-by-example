@@ -53,14 +53,14 @@ fn main() {
     // Call the closure using a mutable borrow.
     inc();
 
-    // The closure still mutably borrows an `count` because it is called later.
+    // The closure still mutably borrows `count` because it is called later.
     // An attempt to reborrow will lead to an error.
     // let _reborrow = &count; 
     // ^ TODO: try uncommenting this line.
     inc();
 
-    // The closure is no longer in use and no longer needs to borrow `&mut
-    // count`. Therefore, it is possible to reborrow without an error
+    // The closure no longer needs to borrow `&mut count`. Therefore, it is
+    // possible to reborrow without an error
     let _count_reborrowed = &mut count; 
 
     
