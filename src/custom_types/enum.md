@@ -55,7 +55,7 @@ fn main() {
 
 ## Type aliases
 
-If you use a type alias, you can refer to each enum variant via its alias. 
+If you use a type alias, you can refer to each enum variant via its alias.
 This might be useful if the enum's name is too long or too generic, and you
 want to rename it.
 
@@ -93,16 +93,17 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
 }
 ```
 
-To learn more about enums and type aliases, you can read the 
+To learn more about enums and type aliases, you can read the
 [stabilization report][aliasreport] from when this feature was stabilized into
-Rust. 
+Rust.
 
 ### See also:
 
-[`match`][match], [`fn`][fn], and [`String`][str], []
+[`match`][match], [`fn`][fn], and [`String`][str], ["Type alias enum variants" RFC][type_alias_rfc]
 
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [match]: ../flow_control/match.md
 [fn]: ../fn.md
 [str]: ../std/str.md
 [aliasreport]: https://github.com/rust-lang/rust/pull/61682/#issuecomment-502472847
+[type_alias_rfc]: https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html
