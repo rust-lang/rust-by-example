@@ -38,7 +38,7 @@ trait is implemented for that type. This is implemented for numerous types
 within the standard library. To obtain this functionality on a user defined type
 simply implement the [`FromStr`] trait for that type.
 
-```rust
+```rust,editable
 fn main() {
     let parsed: i32 = "5".parse().unwrap();
     let turbo_parsed = "10".parse::<i32>().unwrap();
