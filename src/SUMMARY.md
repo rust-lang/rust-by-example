@@ -69,7 +69,7 @@
         - [As output parameters](fn/closures/output_parameters.md)
         - [Examples in `std`](fn/closures/closure_examples.md)
             - [Iterator::any](fn/closures/closure_examples/iter_any.md)
-            - [Iterator::find](fn/closures/closure_examples/iter_find.md)
+            - [Searching through iterators](fn/closures/closure_examples/iter_find.md)
     - [Higher Order Functions](fn/hof.md)
     - [Diverging functions](fn/diverging.md)
 
@@ -139,8 +139,8 @@
     - [Iterators](trait/iter.md)
     - [`impl Trait`](trait/impl_trait.md)
     - [Clone](trait/clone.md)
-    - [Supertraits](traits/supertraits.md)
-    - [Disambiguating overlapping traits](traits/disambiguating.md)
+    - [Supertraits](trait/supertraits.md)
+    - [Disambiguating overlapping traits](trait/disambiguating.md)
 
 - [macro_rules!](macros.md)
     - [Syntax](macros/syntax.md)
