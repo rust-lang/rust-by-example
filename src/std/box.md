@@ -18,10 +18,12 @@ struct Point {
     y: f64,
 }
 
+// A Rectangle can be specified by where its top left and bottom right 
+// corners are in space
 #[allow(dead_code)]
 struct Rectangle {
-    p1: Point,
-    p2: Point,
+    top_left: Point,
+    bottom_right: Point,
 }
 
 fn origin() -> Point {
@@ -38,14 +40,14 @@ fn main() {
     // Stack allocated variables
     let point: Point = origin();
     let rectangle: Rectangle = Rectangle {
-        p1: origin(),
-        p2: Point { x: 3.0, y: 4.0 }
+        top_left: origin(),
+        bottom_right: Point { x: 3.0, y: -4.0 }
     };
 
     // Heap allocated rectangle
     let boxed_rectangle: Box<Rectangle> = Box::new(Rectangle {
-        p1: origin(),
-        p2: origin()
+        top_left: origin(),
+        bottom_right: Point { x: 3.0, y: -4.0 },
     });
 
     // The output of functions can be boxed
