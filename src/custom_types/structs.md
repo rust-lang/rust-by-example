@@ -10,6 +10,7 @@ There are three types of structures ("structs") that can be created using the
 ```rust,editable
 #[derive(Debug)]
 struct Person<'a> {
+    // The 'a defines a lifetime
     name: &'a str,
     age: u8,
 }
@@ -54,7 +55,7 @@ fn main() {
     // Make a new point by using struct update syntax to use the fields of our
     // other one
     let bottom_right = Point { x: 5.2, ..point };
-    
+
     // `bottom_right.y` will be the same as `point.y` because we used that field
     // from `point`
     println!("second point: ({}, {})", bottom_right.x, bottom_right.y);
@@ -86,14 +87,15 @@ fn main() {
 
 ### Activity
 
-1. Add a function `rect_area` which calculates the area of a rectangle (try 
-   using nested destructuring). 
+1. Add a function `rect_area` which calculates the area of a rectangle (try
+   using nested destructuring).
 2. Add a function `square` which takes a `Point` and a `f32` as arguments, and returns a `Rectangle` with its lower left corner on the point, and a width and height corresponding to the `f32`.
 
 ### See also:
 
-[`attributes`][attributes] and [destructuring][destructuring]
+[`attributes`][attributes], [lifetime][lifetime] and [destructuring][destructuring]
 
 [attributes]: ../attribute.md
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [destructuring]: ../flow_control/match/destructuring.md
+[lifetime]: ../scope/lifetime.md
