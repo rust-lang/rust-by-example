@@ -28,7 +28,7 @@ fn main() {
                 borrowed_point.x, another_borrow.y, point.z);
 
     // The immutable references are no longer used for the rest of the code so
-    // it is possible to reborrow with a mutbale reference.
+    // it is possible to reborrow with a mutable reference.
     let mutable_borrow = &mut point;
 
     // Change data via mutable reference
@@ -50,9 +50,7 @@ fn main() {
                 mutable_borrow.x, mutable_borrow.y, mutable_borrow.z);
 
     // The mutable reference is no longer used for the rest of the code so it
-    // is possible to reborrow.
-
-    // Immutable references to `point` are allowed again
+    // is possible to reborrow
     let new_borrowed_point = &point;
     println!("Point now has coordinates: ({}, {}, {})",
              new_borrowed_point.x, new_borrowed_point.y, new_borrowed_point.z);
