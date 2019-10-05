@@ -42,6 +42,9 @@ fn main() {
     analyze_slice(&xs);
 
     // Slices can point to a section of an array
+    // They are of the form [starting_index..ending_index]
+    // starting_index is the first position in the slice
+    // ending_index is one more than the last position in the slice
     println!("borrow a section of the array as a slice");
     analyze_slice(&ys[1 .. 4]);
 
