@@ -29,9 +29,9 @@ fn main() {
 ## Parsing a String
 
 One of the more common types to convert a string into is a number. The idiomatic
-approach to this is to use the [`parse`] function and either to arrange for
-type inference or to specify the type to parse using the 'turbofish' syntax.
-Both alternatives are shown in the following example.
+approach to this is to use the [`parse`] function and provide the type for the
+function to parse the string value into, this can be done either without type
+inference or using the 'turbofish' syntax.
 
 This will convert the string into the type specified so long as the [`FromStr`]
 trait is implemented for that type. This is implemented for numerous types
