@@ -10,7 +10,7 @@ use std::ops::{Add, Mul, Sub};
 macro_rules! assert_equal_len {
     // The `tt` (token tree) designator is used for
     // operators and tokens.
-    ($a:ident, $b:ident, $func:ident, $op:tt) => {
+    ($a:expr, $b:expr, $func:ident, $op:tt) => {
         assert!($a.len() == $b.len(),
                 "{:?}: dimension mismatch: {:?} {:?} {:?}",
                 stringify!($func),
