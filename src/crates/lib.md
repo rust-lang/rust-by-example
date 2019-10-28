@@ -1,4 +1,4 @@
-# Library
+# Libraries
 
 Let's create a library, and then see how to link it to another crate.
 
