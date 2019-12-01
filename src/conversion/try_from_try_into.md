@@ -10,7 +10,7 @@ return [`Result`]s.
 [`TryInto`]: https://doc.rust-lang.org/std/convert/trait.TryInto.html
 [`Result`]: https://doc.rust-lang.org/std/result/enum.Result.html
 
-```rust
+```rust,editable
 use std::convert::TryFrom;
 use std::convert::TryInto;
 
