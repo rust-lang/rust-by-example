@@ -49,14 +49,13 @@ fn main() {
 ## for and iterators
 
 The `for in` construct is able to interact with an `Iterator` in several ways.
-As discussed in with the [Iterator][iter] trait, if not specified, the `for`
-loop will apply the `into_iter` function on the collection provided to convert
-the collection into an iterator. This is not the only means to convert a
-collection into an iterator however, the other functions available include
-`iter` and `iter_mut`.
+As discussed in the section on the [Iterator][iter] trait, by default the `for`
+loop will apply the `into_iter` function to the collection. However, this is
+not the only means of converting collections into iterators.
 
-These 3 functions will return different views of the data within your
-collection.
+`into_iter`, `iter` and `iter_mut` all handle the conversion of a collection
+into an iterator in different ways, by providing different views on the data
+within.
 
 * `iter` - This borrows each element of the collection through each iteration.
   Thus leaving the collection untouched and available for reuse after the loop.

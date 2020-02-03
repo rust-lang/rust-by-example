@@ -99,7 +99,7 @@ fn main() {
 }
 ```
 
-Another benefit: `if let` allows to match enum non-parameterized variants, even if the enum doesn't `#[derive(PartialEq)]`, neither we implement `PartialEq` for it. In such case, classic `if Foo::Bar==a` fails, because instances of such enum are not comparable for equality. However, `if let` works.
+Another benefit is that `if let` allows us to match non-parameterized enum variants. This is true even in cases where the enum doesn't implement or derive `PartialEq`. In such cases `if Foo::Bar == a` would fail to compile, because instances of the enum cannot be equated, however `if let` will continue to work.
 
 Would you like a challenge? Fix the following example to use `if let`:
 
