@@ -104,8 +104,8 @@ Another benefit is that `if let` allows us to match non-parameterized enum varia
 Would you like a challenge? Fix the following example to use `if let`:
 
 ```rust,editable,ignore,mdbook-runnable
-// This enum purposely doesn't #[derive(PartialEq)],
-// neither we implement PartialEq for it. That's why comparing Foo::Bar==a fails below.
+// This enum purposely neither implements nor derives PartialEq).
+// That is why comparing Foo::Bar == a fails below.
 enum Foo {Bar}
 
 fn main() {
