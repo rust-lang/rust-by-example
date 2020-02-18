@@ -43,8 +43,8 @@ fn main() {
 ## `Into`
 
 The [`Into`] trait is simply the reciprocal of the `From` trait. That is, if you
-have implemented the `From` trait for your type you get the `Into`
-implementation for free.
+have implemented the `From` trait for your type, `Into` will call it when
+necessary.
 
 Using the `Into` trait will typically require specification of the type to
 convert into as the compiler is unable to determine this most of the time.
