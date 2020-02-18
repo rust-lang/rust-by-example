@@ -101,7 +101,7 @@ fn main() {
     // pub(crate) items can be called from anywhere in the same crate
     my_mod::public_function_in_crate();
 
-    // pub(in path) items can only be called from within the mode specified
+    // pub(in path) items can only be called from within the module specified
     // Error! function `public_function_in_my_mod` is private
     //my_mod::nested::public_function_in_my_mod();
     // TODO ^ Try uncommenting this line
