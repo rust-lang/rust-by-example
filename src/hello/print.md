@@ -9,7 +9,7 @@ some of which include:
 * `eprint!`: same as `format!` but the text is printed to the standard error (io::stderr).
 * `eprintln!`: same as `eprint!`but a newline is appended.
 
-All parse text in the same fashion. As a plus, Rust checks formatting 
+All parse text in the same fashion. As a plus, Rust checks formatting
 correctness at compile time.
 
 ```rust,editable,ignore,mdbook-runnable
@@ -19,7 +19,7 @@ fn main() {
     println!("{} days", 31);
 
     // Without a suffix, 31 becomes an i32. You can change what type 31 is
-    // by providing a suffix.
+    // by providing a suffix. The number 31i64 for example has the type i64.
 
     // There are various optional patterns this works with. Positional
     // arguments can be used.
