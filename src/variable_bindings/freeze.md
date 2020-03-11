@@ -1,23 +1,21 @@
 # Freezing
 
-When data is immutably borrowed, it also *freezes*. *Frozen* data can't be 
-modified via the original object until all references to it go out of scope:
+When data is bound by the same name immutably, it also *freezes*. *Frozen* data can't be 
+modified until the immutable binding goes out of scope:
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
     let mut _mutable_integer = 7i32;
 
     {
-        // Borrow `_mutable_integer`
-        let large_integer = &_mutable_integer;
+        // Shadowing by immutable `_mutable_integer`
+        let _mutable_integer = _mutable_integer;
 
         // Error! `_mutable_integer` is frozen in this scope
         _mutable_integer = 50;
         // FIXME ^ Comment out this line
 
-        println!("Immutably borrowed {}", large_integer);
-
-        // `large_integer` goes out of scope
+        // `_mutable_integer` goes out of scope
     }
 
     // Ok! `_mutable_integer` is not frozen in this scope
