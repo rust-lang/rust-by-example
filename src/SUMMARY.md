@@ -27,6 +27,7 @@
     - [Mutability](variable_bindings/mut.md)
     - [Scope and Shadowing](variable_bindings/scope.md)
     - [Declare first](variable_bindings/declare.md)
+    - [Freezing](variable_bindings/freeze.md)
 
 - [Types](types.md)
     - [Casting](types/cast.md)
@@ -117,7 +118,6 @@
         - [Mutability](scope/move/mut.md)
     - [Borrowing](scope/borrow.md)
         - [Mutability](scope/borrow/mut.md)
-        - [Freezing](scope/borrow/freeze.md)
         - [Aliasing](scope/borrow/alias.md)
         - [The ref pattern](scope/borrow/ref.md)
     - [Lifetimes](scope/lifetime.md)
