@@ -1,6 +1,6 @@
 # Static
 
-`'static` is one of the reserved lifetime names. It has a special meaning
+`'static` is one of the reserved lifetime specifiers. It has a special meaning
 in Rust. A __reference__ that has a `'static` lifetime is guaranteed to be 
 valid for the entire lifetime of the running program. 
 
@@ -51,7 +51,7 @@ error[E0597]: `i` does not live long enough
 A bound on `'static` means that the callee does not have to worry
 about their variable binding becoming invalid after some time.
 They can use it as long as they want. In contrast to a `'static` 
-__reference__, it is unrelated to the runtime of the entire program.
+__reference__, this is unrelated to the runtime of the entire program.
 
 A `'static` lifetime may also be coerced to a shorter lifetime. 
 
