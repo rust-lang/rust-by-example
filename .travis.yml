@@ -1,6 +1,5 @@
 sudo: false
 language: rust
-cache: cargo
 rust:
   - nightly
 branches:
@@ -8,15 +7,17 @@ branches:
   - master
 before_script:
   - |
-    LATEST=$(cargo search mdbook | grep "^mdbook =" | cut -d '"' -f 2)
-    INSTALLED=$(cargo install --list | grep "^mdbook " | cut -d v -f 2 | tr -d :)
-    if [ "$INSTALLED" != "$LATEST" ]; then
-      if [ "$INSTALLED" != "" ]; then
-        echo "mdbook '$INSTALLED' is already installed"
-      fi
-      echo "Installing mdbook '$LATEST'"
-      cargo install mdbook --force --vers "$LATEST"
-    fi
+    set -ex
+    rustup --version
+    rustc -Vv
+    curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.3.5/mdbook-v0.3.5-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=$HOME/.cargo/bin
+    mdbook --version
+    rustup toolchain update nightly -c rust-docs
 script:
   - mdbook build
   - mdbook test
+  - |
+    set -e
+    curl -sSLo linkcheck.sh \
+        https://raw.githubusercontent.com/rust-lang/rust/master/src/tools/linkchecker/linkcheck.sh
+    sh linkcheck.sh --all rust-by-example
