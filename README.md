@@ -17,7 +17,7 @@ If you'd like to read it locally, [install Rust], and then:
 ```bash
 $ git clone https://github.com/rust-lang/rust-by-example
 $ cd rust-by-example
-$ cargo install mdbook --version 0.2 --force
+$ cargo install mdbook
 $ mdbook build
 $ mdbook serve
 ```
