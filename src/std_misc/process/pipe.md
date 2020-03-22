@@ -5,7 +5,6 @@ The `std::Child` struct represents a running child process, and exposes the
 process via pipes.
 
 ```rust,ignore
-use std::error::Error;
 use std::io::prelude::*;
 use std::process::{Command, Stdio};
 
@@ -18,7 +17,7 @@ fn main() {
                                 .stdin(Stdio::piped())
                                 .stdout(Stdio::piped())
                                 .spawn() {
-        Err(why) => panic!("couldn't spawn wc: {}", why.description()),
+        Err(why) => panic!("couldn't spawn wc: {}", why),
         Ok(process) => process,
     };
 
@@ -27,8 +26,7 @@ fn main() {
     // `stdin` has type `Option<ChildStdin>`, but since we know this instance
     // must have one, we can directly `unwrap` it.
     match process.stdin.unwrap().write_all(PANGRAM.as_bytes()) {
-        Err(why) => panic!("couldn't write to wc stdin: {}",
-                           why.description()),
+        Err(why) => panic!("couldn't write to wc stdin: {}", why),
         Ok(_) => println!("sent pangram to wc"),
     }
 
@@ -41,8 +39,7 @@ fn main() {
     // The `stdout` field also has type `Option<ChildStdout>` so must be unwrapped.
     let mut s = String::new();
     match process.stdout.unwrap().read_to_string(&mut s) {
-        Err(why) => panic!("couldn't read wc stdout: {}",
-                           why.description()),
+        Err(why) => panic!("couldn't read wc stdout: {}", why),
         Ok(_) => print!("wc responded with:\n{}", s),
     }
 }
