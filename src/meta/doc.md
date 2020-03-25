@@ -85,6 +85,7 @@ mod bar {
 ```
 
 ### `no_inline`
+
 Used to prevent linking out to separate page or anywhere.
 
 ```rust
