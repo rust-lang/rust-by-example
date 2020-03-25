@@ -6,7 +6,7 @@ Use `cargo test` to run all tests (including documentation tests), and `cargo te
 
 These commands will appropriately invoke `rustdoc` (and `rustc`) as required.
 
-### Doc comments
+## Doc comments
 
 Doc comments are very useful for big projects that require documentation. When
 running Rustdoc, these are the comments that get compiled into
@@ -63,6 +63,43 @@ to find the library so it can link it into each doctest program:
 ```shell
 $ rustc doc.rs --crate-type lib
 $ rustdoc --test --extern doc="libdoc.rlib" doc.rs
+```
+
+## Doc attributes
+
+Below are a few examples of the most common `#[doc]` attributes used with `rustdoc`. 
+
+### `inline`
+
+Used to inline docs, instead of linking out to separate page. 
+
+```rust
+#[doc(inline)]
+pub use bar::Bar;
+
+/// bar docs
+mod bar {
+    /// the docs for Bar
+    pub struct Bar;
+}
+```
+
+### `no_inline`
+Used to prevent linking out to separate page or anywhere.
+
+```rust
+// Example from libcore/prelude
+#[doc(no_inline)]
+pub use crate::mem::drop;
+```
+
+### `hidden`
+
+Using this tells `rustdoc` not to include this in documentation:
+```rust,editable
+// Example from the futures-rs library 
+#[doc(hidden)]
+pub use self::async_await::*;
 ```
 
 ### See also:
