@@ -16,7 +16,6 @@ Rust allows us to define our own error types. In general, a "good" error type:
 * Composes well with other errors
 
 ```rust,editable
-use std::error;
 use std::fmt;
 
 type Result<T> = std::result::Result<T, DoubleError>;
@@ -35,14 +34,6 @@ struct DoubleError;
 impl fmt::Display for DoubleError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "invalid first item to double")
-    }
-}
-
-// This is important for other errors to wrap this one.
-impl error::Error for DoubleError {
-    fn source(&self) -> Option<&(dyn error::Error + 'static)> {
-        // Generic error, underlying cause isn't tracked.
-        None
     }
 }
 
