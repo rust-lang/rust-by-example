@@ -65,6 +65,8 @@ $ rustc doc.rs --crate-type lib
 $ rustdoc --test --extern doc="libdoc.rlib" doc.rs
 ```
 
+For documentation, `rustdoc` is widely used by the community. It's what is used to generate the [std library docs](https://doc.rust-lang.org/std/).
+
 ### See also:
 
 * [The Rust Book: Making Useful Documentation Comments][book]
