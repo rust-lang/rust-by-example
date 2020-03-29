@@ -20,6 +20,14 @@ This allows the reader to both run your code sample, but also modify and tweak i
 ```
 ````
 
+Additionally, you can add `ignore` if you want `mdbook` to skip your code when it builds and tests.
+
+````markdown
+```rust,editable,ignore
+//...place your code here
+```
+````
+
 ## Using it with docs
 
 You may have noticed in some of the [official Rust docs][official-rust-docs] a button that says "Run", which opens the code sample up in a new tab in Rust Playground. This feature is enabled if you use the #[doc] attribute called [`html_playground_url`][html-playground-url].
