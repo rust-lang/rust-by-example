@@ -73,7 +73,7 @@ Below are a few examples of the most common `#[doc]` attributes used with `rustd
 
 Used to inline docs, instead of linking out to separate page.
 
-```rust
+```rust,ignore
 #[doc(inline)]
 pub use bar::Bar;
 
@@ -88,7 +88,7 @@ mod bar {
 
 Used to prevent linking out to separate page or anywhere.
 
-```rust
+```rust,ignore
 // Example from libcore/prelude
 #[doc(no_inline)]
 pub use crate::mem::drop;
@@ -98,7 +98,7 @@ pub use crate::mem::drop;
 
 Using this tells `rustdoc` not to include this in documentation:
 
-```rust,editable
+```rust,editable,ignore
 // Example from the futures-rs library
 #[doc(hidden)]
 pub use self::async_await::*;
