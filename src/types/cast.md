@@ -25,7 +25,7 @@ fn main() {
     println!("Casting: {} -> {} -> {}", decimal, integer, character);
 
     // when casting any value to an unsigned type, T,
-    // std::T::MAX + 1 is added or subtracted until the value
+    // T::MAX + 1 is added or subtracted until the value
     // fits into the new type
 
     // 1000 already fits in a u16
