@@ -16,7 +16,7 @@ struct Person<'a> {
 }
 
 // A unit struct
-struct Nil;
+struct Unit;
 
 // A tuple struct
 struct Pair(i32, f32);
@@ -70,7 +70,7 @@ fn main() {
     };
 
     // Instantiate a unit struct
-    let _nil = Nil;
+    let _unit = Unit;
 
     // Instantiate a tuple struct
     let pair = Pair(1, 0.1);
