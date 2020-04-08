@@ -1,0 +1,33 @@
+name: Build and Publish
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Install mdbook
+      run: cargo install mdbook
+      
+    - name: Build
+      run: mdbook build
+      
+    - name: Publish
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./book
+        
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: rust-by-example
+        path: book
