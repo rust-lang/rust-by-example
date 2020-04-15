@@ -14,7 +14,7 @@ fn main() {
     let y = 2u32;
     let z = 3f32;
 
-    // Unsuffixed literal, their types depend on how they are used
+    // Unsuffixed literals, their types depend on how they are used
     let i = 1;
     let f = 1.0;
 
