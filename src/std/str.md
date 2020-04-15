@@ -145,7 +145,7 @@ fn main() {
                     like with normal raw strings"#;
 
     // Byte strings don't have to be UTF-8
-    let shift_jis = b"\x82\xe6\x82\xa8\x82\xb1\x82"; // "ようこそ" in SHIFT-JIS
+    let shift_jis = b"\x82\xe6\x82\xa8\x82\xb1\x82\xbb"; // "ようこそ" in SHIFT-JIS
 
     // But then they can't always be converted to `str`
     match str::from_utf8(shift_jis) {
