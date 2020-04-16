@@ -58,7 +58,7 @@ fn main() {
 
 ### See also:
 
-[`struct`s][structs]
+[`structs`][structs]
 
 [structs]: custom_types/structs.md
 [camelcase]: https://en.wikipedia.org/wiki/CamelCase
