@@ -25,7 +25,8 @@ library.rlib
 ```
 
 Libraries get prefixed with "lib", and by default they get named after their
-crate file, but this default name can be overridden using the [`crate_name`
+crate file, but this default name can be overridden by passing
+the `--crate-name` option to `rustc` or by using the [`crate_name`
 attribute][crate-name].
 
 [crate-name]: ../attribute/crate.md
