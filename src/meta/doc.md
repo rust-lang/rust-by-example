@@ -28,7 +28,7 @@ impl Person {
     ///
     /// * `name` - A string slice that holds the name of the person
     ///
-    /// # Example
+    /// # Examples
     ///
     /// ```
     /// // You can have rust code between fences inside the comments
