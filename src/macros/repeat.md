@@ -9,7 +9,7 @@ match one or more expression, separated by commas.
 Also note that the semicolon is optional on the last case.
 
 ```rust,editable
-// `min!` will calculate the minimum of any number of arguments.
+// `find_min!` will calculate the minimum of any number of arguments.
 macro_rules! find_min {
     // Base case:
     ($x:expr) => ($x);
