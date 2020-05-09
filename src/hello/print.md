@@ -89,6 +89,6 @@ and [`traits`][traits]
 [macros]: ../macros.md
 [string]: ../std/str.md
 [structs]: ../custom_types/structs.md
-[traits]: ../trait.md
+[traits]: https://doc.rust-lang.org/std/fmt/#formatting-traits
 [`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html
 [convert]: ../conversion/string.md
