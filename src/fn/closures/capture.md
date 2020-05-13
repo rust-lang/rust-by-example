@@ -16,7 +16,7 @@ required.
 fn main() {
     use std::mem;
     
-    let color = "green";
+    let color = String::from("green");
 
     // A closure to print `color` which immediately borrows (`&`) `color` and
     // stores the borrow and closure in the `print` variable. It will remain
