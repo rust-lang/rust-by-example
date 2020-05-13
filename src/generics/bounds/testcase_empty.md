@@ -2,7 +2,7 @@
 
 A consequence of how bounds work is that even if a `trait` doesn't
 include any functionality, you can still use it as a bound. `Eq` and
-`Ord` are examples of such `trait`s from the `std` library.
+`Copy` are examples of such `trait`s from the `std` library.
 
 ```rust,editable
 struct Cardinal;
@@ -36,8 +36,8 @@ fn main() {
 
 ### See also:
 
-[`std::cmp::Eq`][eq], [`std::cmp::Ord`s][ord], and [`trait`s][traits]
+[`std::cmp::Eq`][eq], [`std::marker::Copy`][copy], and [`trait`s][traits]
 
 [eq]: https://doc.rust-lang.org/std/cmp/trait.Eq.html
-[ord]: https://doc.rust-lang.org/std/cmp/trait.Ord.html
+[copy]: https://doc.rust-lang.org/std/marker/trait.Copy.html
 [traits]: ../../trait.md
