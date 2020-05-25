@@ -14,7 +14,7 @@ fn main() {
     println!("Tell me what type of person you are");
 
     match age() {
-        0             => println!("I'm not born yet I guess"),
+        0             => println!("I haven't celebrated my first birthday yet"),
         // Could `match` 1 ..= 12 directly but then what age
         // would the child be? Instead, bind to `n` for the
         // sequence of 1 ..= 12. Now the age can be reported.
