@@ -64,7 +64,7 @@ of text. The base form of two important ones are listed below:
 * `fmt::Display`: Uses the `{}` marker. Format text in a more elegant, user
 friendly fashion.
 
-Here, we used `fmt::Display `because the std library provides implementations
+Here, we used `fmt::Display` because the std library provides implementations
 for these types. To print text for custom types, more steps are required.
 
 Implementing the `fmt::Display` trait automatically implements the
