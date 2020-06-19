@@ -6,7 +6,7 @@ return type must be specified after an arrow `->`.
 
 The final expression in the function will be used as return value.
 Alternatively, the `return` statement can be used to return a value earlier
-from within the function, even from inside loops or `if`s.
+from within the function, even from inside loops or `if` statements.
 
 Let's rewrite FizzBuzz using functions!
 
