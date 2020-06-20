@@ -10,7 +10,7 @@ before_script:
     set -ex
     rustup --version
     rustc -Vv
-    curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.3.5/mdbook-v0.3.5-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=$HOME/.cargo/bin
+    curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.3.7/mdbook-v0.3.7-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=$HOME/.cargo/bin
     mdbook --version
     rustup toolchain update nightly -c rust-docs
 script:
