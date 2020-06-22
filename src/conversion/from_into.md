@@ -51,15 +51,15 @@ convert into as the compiler is unable to determine this most of the time.
 However this is a small trade-off considering we get the functionality for free.
 
 ```rust,editable
-use std::convert::From;
+use std::convert::Into;
 
 #[derive(Debug)]
 struct Number {
     value: i32,
 }
 
-impl From<i32> for Number {
-    fn from(item: i32) -> Self {
+impl Into<i32> for Number {
+    fn into(item: i32) -> Self {
         Number { value: item }
     }
 }
