@@ -13,14 +13,6 @@ Using `?` on `write!` looks like this:
 write!(f, "{}", value)?;
 ```
 
-Alternatively, you can also use the `try!` macro, which works the same way. 
-This is a bit more verbose and no longer recommended, but you may still see it in
-older Rust code. Using `try!` looks like this:
-
-```rust,ignore
-try!(write!(f, "{}", value));
-```
-
 With `?` available, implementing `fmt::Display` for a `Vec` is
 straightforward:
 
@@ -42,7 +34,7 @@ impl fmt::Display for List {
         // count in `count`.
         for (count, v) in vec.iter().enumerate() {
             // For every element except the first, add a comma.
-            // Use the ? operator, or try!, to return on errors.
+            // Use the ? operator to return on errors.
             if count != 0 { write!(f, ", ")?; }
             write!(f, "{}", v)?;
         }
