@@ -1,26 +1,26 @@
 # `Option` & `unwrap`
 
-In the last example, we showed that we can induce program failure at will. 
-We told our program to `panic` if the princess received an inappropriate 
-gift - a snake. But what if the princess expected a gift and didn't receive 
+In the last example, we showed that we can induce program failure at will.
+We told our program to `panic` if the royal received an inappropriate
+gift - a snake. But what if the royal expected a gift and didn't receive
 one? That case would be just as bad, so it needs to be handled!
 
-We *could* test this against the null string (`""`) as we do with a snake. 
-Since we're using Rust, let's instead have the compiler point out cases 
+We *could* test this against the null string (`""`) as we do with a snake.
+Since we're using Rust, let's instead have the compiler point out cases
 where there's no gift.
 
-An `enum` called `Option<T>` in the `std` library is used when absence is a 
+An `enum` called `Option<T>` in the `std` library is used when absence is a
 possibility. It manifests itself as one of two "options":
 
 * `Some(T)`: An element of type `T` was found
 * `None`: No element was found
 
-These cases can either be explicitly handled via `match` or implicitly with 
+These cases can either be explicitly handled via `match` or implicitly with
 `unwrap`. Implicit handling will either return the inner element or `panic`.
 
-Note that it's possible to manually customize `panic` with [expect][expect], 
-but `unwrap` otherwise leaves us with a less meaningful output than explicit 
-handling. In the following example, explicit handling yields a more 
+Note that it's possible to manually customize `panic` with [expect][expect],
+but `unwrap` otherwise leaves us with a less meaningful output than explicit
+handling. In the following example, explicit handling yields a more
 controlled result while retaining the option to `panic` if desired.
 
 ```rust,editable,ignore,mdbook-runnable
@@ -35,9 +35,9 @@ fn give_commoner(gift: Option<&str>) {
     }
 }
 
-// Our sheltered princess will `panic` at the sight of snakes.
+// Our sheltered royal will `panic` at the sight of snakes.
 // All gifts are handled implicitly using `unwrap`.
-fn give_princess(gift: Option<&str>) {
+fn give_royal(gift: Option<&str>) {
     // `unwrap` returns a `panic` when it receives a `None`.
     let inside = gift.unwrap();
     if inside == "snake" { panic!("AAAaaaaa!!!!"); }
@@ -57,8 +57,8 @@ fn main() {
     let bird = Some("robin");
     let nothing = None;
 
-    give_princess(bird);
-    give_princess(nothing);
+    give_royal(bird);
+    give_royal(nothing);
 }
 ```
 
