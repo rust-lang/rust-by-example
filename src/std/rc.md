@@ -51,5 +51,4 @@ fn main() {
 [std::rc][1] and [std::sync::arc][2].
 
 [1]: https://doc.rust-lang.org/std/rc/index.html
-
 [2]: https://doc.rust-lang.org/std/sync/struct.Arc.html
