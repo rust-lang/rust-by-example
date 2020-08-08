@@ -1,7 +1,7 @@
 # Development dependencies
 
-Sometimes there is a need to have dependencies for tests (examples,
-benchmarks) only. Such dependencies are added to `Cargo.toml` in the
+Sometimes there is a need to have dependencies for tests (or examples,
+or benchmarks) only. Such dependencies are added to `Cargo.toml` in the
 `[dev-dependencies]` section. These dependencies are not propagated to other
 packages which depend on this package.
 
