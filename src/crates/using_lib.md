@@ -5,7 +5,7 @@ of its items will then be imported under a module named the same as the library.
 This module generally behaves the same way as any other module.
 
 ```rust,ignore
-use rary;
+// extern crate rary; // May be required for Rust 2015 edition or earlier
 
 fn main() {
     rary::public_function();
@@ -24,15 +24,4 @@ $ rustc executable.rs --extern rary=library.rlib --edition=2018 && ./executable
 called rary's `public_function()`
 called rary's `indirect_access()`, that
 > called rary's `private_function()`
-```
-
-## `extern crate`
-
-In rare cases, an explicit `extern crate` declaration is also required for older
-Rust editions (2015 or earlier). It may also be required for certain libraries
-such as `proc_macro` or `test` (which are shipped with `rustc`).
-```rust,ignore
-extern crate rary;
-use rary::public_function;
-// ...
 ```
