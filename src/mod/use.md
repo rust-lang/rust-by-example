@@ -4,7 +4,7 @@ The `use` declaration can be used to bind a full path to a new name, for easier
 access. It is often used like this:
 
 ```rust,editable,ignore
-// extern crate deeply; // normally, this would exist and not be commented out!
+// extern crate deeply; // May be required for Rust edition 2015 or earlier.
 
 use crate::deeply::nested::{
     my_first_function,

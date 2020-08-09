@@ -82,8 +82,8 @@
     - [File hierarchy](mod/split.md)
 
 - [Crates](crates.md)
-    - [Library](crates/lib.md)
-    - [`extern crate`](crates/link.md)
+    - [Creating a Library](crates/lib.md)
+    - [Using a Library](crates/using_lib.md)
 
 - [Cargo](cargo.md)
     - [Dependencies](cargo/deps.md)
