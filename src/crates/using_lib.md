@@ -5,10 +5,10 @@ of its items will then be imported under a module named the same as the library.
 This module generally behaves the same way as any other module.
 
 ```rust,ignore
-use rary::public_function;
+use rary;
 
 fn main() {
-    public_function();
+    rary::public_function();
 
     // Error! `private_function` is private
     //rary::private_function();
