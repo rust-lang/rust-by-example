@@ -23,8 +23,7 @@ fn main() {
     println!("outer long: {}", long_lived_binding);
 }
 ```
-Also, a binding may have the same name as a binding from an outer block. This is
-known as [variable shadowing][variable-shadow].
+Also, [variable shadowing][variable-shadow] is allowed.
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
     let shadowed_binding = 1;
@@ -33,11 +32,15 @@ fn main() {
         println!("before being shadowed: {}", shadowed_binding);
 
         // This binding *shadows* the outer one
-        let shadowed_binding = "a";
+        let shadowed_binding = "abc";
 
-        println!("after being shadowed: {}", shadowed_binding);
+        println!("shadowed in inner block: {}", shadowed_binding);
     }
+    println!("outside inner block: {}", shadowed_binding);
 
+    // This binding *shadows* the previous binding
+    let shadowed_binding = 2;
+    println!("shadowed in outer block: {}", shadowed_binding);
 }
 ```
 [variable-shadow]: https://en.wikipedia.org/wiki/Variable_shadowing
