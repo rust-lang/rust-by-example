@@ -1,10 +1,10 @@
 # Arrays and Slices
 
 An array is a collection of objects of the same type `T`, stored in contiguous
-memory. Arrays are created using brackets `[]`, and their size, which is known
-at compile time, is part of their type signature `[T; size]`.
+memory. Arrays are created using brackets `[]`, and their length, which is known
+at compile time, is part of their type signature `[T; length]`.
 
-Slices are similar to arrays, but their size is not known at compile time.
+Slices are similar to arrays, but their length is not known at compile time.
 Instead, a slice is a two-word object, the first word is a pointer to the data,
 and the second word is the length of the slice. The word size is the same as 
 usize, determined by the processor architecture eg 64 bits on an x86-64. 
@@ -31,8 +31,8 @@ fn main() {
     println!("first element of the array: {}", xs[0]);
     println!("second element of the array: {}", xs[1]);
 
-    // `len` returns the size of the array
-    println!("array size: {}", xs.len());
+    // `len` returns the count of elements in the array
+    println!("number of elements in array: {}", xs.len());
 
     // Arrays are stack allocated
     println!("array occupies {} bytes", mem::size_of_val(&xs));
