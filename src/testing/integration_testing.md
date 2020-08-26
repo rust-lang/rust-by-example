@@ -10,7 +10,7 @@ Cargo looks for integration tests in `tests` directory next to `src`.
 File `src/lib.rs`:
 
 ```rust,ignore
-// Assume that crate is called adder, will have to extern it in integration test.
+// Define this in a crate called `adder`.
 pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
@@ -19,9 +19,6 @@ pub fn add(a: i32, b: i32) -> i32 {
 File with test: `tests/integration_test.rs`:
 
 ```rust,ignore
-// extern crate we're testing, same as any other code would do.
-extern crate adder;
-
 #[test]
 fn test_add() {
     assert_eq!(adder::add(3, 2), 5);
@@ -66,9 +63,6 @@ pub fn setup() {
 File with test: `tests/integration_test.rs`
 
 ```rust,ignore
-// extern crate we're testing, same as any other code will do.
-extern crate adder;
-
 // importing common module.
 mod common;
 
