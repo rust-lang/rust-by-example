@@ -116,6 +116,7 @@
     - [RAII](scope/raii.md)
     - [Ownership and moves](scope/move.md)
         - [Mutability](scope/move/mut.md)
+        - [Partial moves](scope/move/partial_move.md)
     - [Borrowing](scope/borrow.md)
         - [Mutability](scope/borrow/mut.md)
         - [Aliasing](scope/borrow/alias.md)
