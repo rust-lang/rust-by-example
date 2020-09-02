@@ -9,9 +9,8 @@ There are three types of structures ("structs") that can be created using the
 
 ```rust,editable
 #[derive(Debug)]
-struct Person<'a> {
-    // The 'a defines a lifetime
-    name: &'a str,
+struct Person {
+    name: String,
     age: u8,
 }
 
@@ -38,7 +37,7 @@ struct Rectangle {
 
 fn main() {
     // Create struct with field init shorthand
-    let name = "Peter";
+    let name = String::from("Peter");
     let age = 27;
     let peter = Person { name, age };
 
@@ -93,9 +92,8 @@ fn main() {
 
 ### See also:
 
-[`attributes`][attributes], [lifetime][lifetime] and [destructuring][destructuring]
+[`attributes`][attributes], and [destructuring][destructuring]
 
 [attributes]: ../attribute.md
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [destructuring]: ../flow_control/match/destructuring.md
-[lifetime]: ../scope/lifetime.md
