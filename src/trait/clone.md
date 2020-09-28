@@ -30,9 +30,9 @@ fn main() {
     let pair = Pair(Box::new(1), Box::new(2));
     println!("original: {:?}", pair);
 
-    // Copy `pair` into `moved_pair`, moves resources
+    // Move `pair` into `moved_pair`, moves resources
     let moved_pair = pair;
-    println!("copy: {:?}", moved_pair);
+    println!("moved: {:?}", moved_pair);
 
     // Error! `pair` has lost its resources
     //println!("original: {:?}", pair);
