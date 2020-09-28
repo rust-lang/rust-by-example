@@ -6,7 +6,7 @@ function, the argument of this function is a moving closure.
 ```rust,editable
 use std::thread;
 
-static NTHREADS: i32 = 10;
+const NTHREADS: u32 = 10;
 
 // This is the `main` thread
 fn main() {
