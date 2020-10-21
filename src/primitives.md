@@ -55,7 +55,7 @@ fn main() {
 
 ### See also:
 
-[the `std` library][std], [`mut`][mut], [inference], and [shadowing]
+[the `std` library][std], [`mut`][mut], [`inference`][inference], and [`shadowing`][shadowing]
 
 [std]: https://doc.rust-lang.org/std/
 [mut]: variable_bindings/mut.md
