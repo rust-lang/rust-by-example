@@ -20,7 +20,7 @@ struct UnPrintable(i32);
 struct DebugPrintable(i32);
 ```
 
-All `std` library types automatically are printable with `{:?}` too:
+All `std` library types are automatically printable with `{:?}` too:
 
 ```rust,editable
 // Derive the `fmt::Debug` implementation for `Structure`. `Structure`
