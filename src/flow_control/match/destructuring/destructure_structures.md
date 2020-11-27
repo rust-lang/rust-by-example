@@ -29,4 +29,4 @@ fn main() {
 
 ### See also:
 
-[Structs](../../../custom_types/structs.md), [The ref pattern](../../../scope/borrow/ref.md)
+[Structs](../../../custom_types/structs.md)
