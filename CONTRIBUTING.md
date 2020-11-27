@@ -27,7 +27,6 @@ If you make additions or other changes to a pull request, feel free to either am
 previous commits or only add new ones, however you prefer. We may ask you to squash
 your commits before merging, depending.
 
-
 ## Issue Tracker
 
 You can find the issue tracker [on

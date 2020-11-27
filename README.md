@@ -9,7 +9,7 @@ Learn Rust with examples (Live code editor included)
 
 ## Using
 
-If you'd like to read Rust by Example, you can visit https://doc.rust-lang.org/rust-by-example/
+If you'd like to read Rust by Example, you can visit <https://doc.rust-lang.org/rust-by-example/>
 to read it online.
 
 If you'd like to read it locally, [install Rust], and then:
@@ -44,10 +44,10 @@ Please see the [CONTRIBUTING.md] file for more details.
 
 Rust by Example is licensed under either of
 
- * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or
-   http://www.apache.org/licenses/LICENSE-2.0)
- * MIT license ([LICENSE-MIT](LICENSE-MIT) or
-   http://opensource.org/licenses/MIT)
+* Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or
+  <http://www.apache.org/licenses/LICENSE-2.0>)
+* MIT license ([LICENSE-MIT](LICENSE-MIT) or
+  <http://opensource.org/licenses/MIT>)
 
 at your option.
 
