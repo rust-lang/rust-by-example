@@ -88,9 +88,11 @@ fn main() {
 
 1. Add a function `rect_area` which calculates the area of a rectangle (try
    using nested destructuring).
-2. Add a function `square` which takes a `Point` and a `f32` as arguments, and returns a `Rectangle` with its lower left corner on the point, and a width and height corresponding to the `f32`.
+2. Add a function `square` which takes a `Point` and a `f32` as arguments, and
+   returns a `Rectangle` with its lower left corner on the point, and a width and
+   height corresponding to the `f32`.
 
-### See also:
+### See also
 
 [`attributes`][attributes], and [destructuring][destructuring]
 
