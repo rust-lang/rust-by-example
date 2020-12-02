@@ -56,8 +56,7 @@ lots of great packages on [crates.io](https://crates.io) (the official Rust
 package registry). One popular choice is [clap](https://crates.io/crates/clap).
 As of this writing, the most recent published version of `clap` is `2.27.1`. To
 add a dependency to our program, we can simply add the following to our
-`Cargo.toml` under `[dependencies]`: `clap = "2.27.1"`.  And of course, `extern
-crate clap` in `main.rs`, just like normal. And that's it! You can start using
+`Cargo.toml` under `[dependencies]`: `clap = "2.27.1"`. And that's it! You can start using
 `clap` in your program.
 
 `cargo` also supports [other types of dependencies][dependencies]. Here is just
