@@ -67,9 +67,12 @@ fn main() {
     for name in names.iter() {
         match name {
             &"Ferris" => println!("There is a rustacean among us!"),
+            // TODO ^ Try deleting the & and matching just "Ferris"
             _ => println!("Hello {}", name),
         }
     }
+    
+    println!("names: {:?}", names);
 }
 ```
 
@@ -87,6 +90,9 @@ fn main() {
             _ => println!("Hello {}", name),
         }
     }
+    
+    println!("names: {:?}", names);
+    // FIXME ^ Comment out this line
 }
 ```
 
