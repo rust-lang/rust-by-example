@@ -80,7 +80,7 @@ fn main() {
   data is provided. Once the collection has been consumed it is no longer
   available for reuse as it has been 'moved' within the loop.
 
-```rust, editable
+```rust, editable, ignore
 fn main() {
     let names = vec!["Bob", "Frank", "Ferris"];
 
