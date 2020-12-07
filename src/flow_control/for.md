@@ -67,9 +67,12 @@ fn main() {
     for name in names.iter() {
         match name {
             &"Ferris" => println!("There is a rustacean among us!"),
+            // TODO ^ Try deleting the & and matching just "Ferris"
             _ => println!("Hello {}", name),
         }
     }
+    
+    println!("names: {:?}", names);
 }
 ```
 
@@ -77,7 +80,7 @@ fn main() {
   data is provided. Once the collection has been consumed it is no longer
   available for reuse as it has been 'moved' within the loop.
 
-```rust, editable
+```rust, editable, ignore
 fn main() {
     let names = vec!["Bob", "Frank", "Ferris"];
 
@@ -87,6 +90,9 @@ fn main() {
             _ => println!("Hello {}", name),
         }
     }
+    
+    println!("names: {:?}", names);
+    // FIXME ^ Comment out this line
 }
 ```
 
