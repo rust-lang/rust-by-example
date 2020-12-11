@@ -1,18 +1,18 @@
-# Rust By Example
+# Örneklerle Rust
 
 [![Build Status][travis-badge]][travis-repo]
 
 [travis-badge]: https://travis-ci.com/rust-lang/rust-by-example.svg?branch=master
 [travis-repo]: https://travis-ci.com/rust-lang/rust-by-example
 
-Learn Rust with examples (Live code editor included)
+Örneklerle Rust öğrenin (Canlı kod editörü içerikte bulunmakta)
 
-## Using
+## Kullanım
 
-If you'd like to read Rust by Example, you can visit <https://doc.rust-lang.org/rust-by-example/>
-to read it online.
+Eğer örneklerle çevrimiçi okuyarak Rust öğrenmek istiyorsanız, <https://doc.rust-lang.org/rust-by-example/> adresini
+ziyaret edebilirsiniz.
 
-If you'd like to read it locally, [install Rust], and then:
+Yerel dosya olarak okumayı tercih ederseniz, buradan Rust'ı yükleyebilirsiniz:[Rust'ı yükle], ve ardından:
 
 ```bash
 $ git clone https://github.com/rust-lang/rust-by-example
@@ -22,35 +22,33 @@ $ mdbook build
 $ mdbook serve
 ```
 
-[install Rust]: https://www.rust-lang.org/tools/install
+[Rust'ı yükle]: https://www.rust-lang.org/tools/install
 
-To be able to run the examples, you must be connected to the internet; you can
-read all content offline, however!
+Örnekleri çalıştırabilmek için internete bağlı olmalısınız; bununla birlikte
+tüm içeriği çevrimdışı okuyabilirsiniz!
 
-## Contributing
+## Katkıda Bulunmak
 
-Please see the [CONTRIBUTING.md] file for more details.
+Lütfen detaylar için [CONTRIBUTING.md] dosyasına bakın.
 
-[CONTRIBUTING.md]: https://github.com/rust-lang/rust-by-example/blob/master/CONTRIBUTING.md
+[CONTRIBUTING.md]: https://github.com/rustturkey/rust-by-example-tr/blob/master/CONTRIBUTING.md
+## Diğer Dillere Çeviri
 
-## Translations to other languages
+* [Çince](https://github.com/rust-lang-cn/rust-by-example-cn)
+* [Japonca](https://github.com/rust-lang-ja/rust-by-example-ja)
+* [Fransızca](https://github.com/Songbird0/FR_RBE)
+* [Rusça](https://github.com/ruRust/rust-by-example)
 
-* [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
-* [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
-* [French](https://github.com/Songbird0/FR_RBE)
-* [Russian](https://github.com/ruRust/rust-by-example)
+## Lisans
 
-## License
+Örneklerle Rust herhangi biri tarafından lisanslıdır
 
-Rust by Example is licensed under either of
-
-* Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or
+* Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) ya da
   <http://www.apache.org/licenses/LICENSE-2.0>)
-* MIT license ([LICENSE-MIT](LICENSE-MIT) or
+* MIT license ([LICENSE-MIT](LICENSE-MIT) ya da
   <http://opensource.org/licenses/MIT>)
 
-at your option.
+sizin seçiminiz.
 
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in Rust by Example by you, as defined in the Apache-2.0 license, shall be
-dually licensed as above, without any additional terms or conditions.
+Siz aksini belirtmedikçe, Örneklerle Rust'a yapılan her katkı, Apache-2.0 lisansında tanımlandığı gibi, 
+ek anlaşma veya koşulsuz yukarıdaki gibi ikili bir şekilde lisanslanır.
