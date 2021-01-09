@@ -103,21 +103,13 @@ fn main() {
      * Collect our intermediate results, and combine them into a final result
      ************************************************************************/
 
-    // collect each thread's intermediate results into a new Vec
-    let mut intermediate_sums = vec![];
-    for child in children {
-        // collect each child thread's return-value
-        let intermediate_sum = child.join().unwrap();
-        intermediate_sums.push(intermediate_sum);
-    }
-
-    // combine all intermediate sums into a single final sum.
+    // combine each thread's intermediate results into a single final sum.
     //
     // we use the "turbofish" ::<> to provide sum() with a type hint.
     //
     // TODO: try without the turbofish, by instead explicitly
     // specifying the type of final_result
-    let final_result = intermediate_sums.iter().sum::<u32>();
+    let final_result = children.into_iter().map(|c| c.join().unwrap()).sum::<u32>();
 
     println!("Final sum result: {}", final_result);
 }
