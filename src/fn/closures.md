@@ -7,9 +7,9 @@ example, a closure that captures the x variable:
 |val| val + x
 ```
 
-The syntax and capabilities of closures make them very convenient for 
+The syntax and capabilities of closures make them very convenient for
 on the fly usage. Calling a closure is exactly like calling a function.
-However, both input and return types *can* be inferred and input 
+However, both input and return types *can* be inferred and input
 variable names *must* be specified.
 
 Other characteristics of closures include:
@@ -20,7 +20,7 @@ Other characteristics of closures include:
 ```rust,editable
 fn main() {
     // Increment via closures and functions.
-    fn  function            (i: i32) -> i32 { i + 1 }
+    fn function(i: i32) -> i32 { i + 1 }
 
     // Closures are anonymous, here we are binding them to references
     // Annotation is identical to function annotation but is optional
