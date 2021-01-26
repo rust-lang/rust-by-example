@@ -8,7 +8,7 @@ fn main() {
 use std::sync::Arc;
 use std::thread;
 
-// This variable declaration is where it's value is specified.
+// This variable declaration is where its value is specified.
 let apple = Arc::new("the same apple");
 
 for _ in 0..10 {
