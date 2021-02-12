@@ -79,3 +79,26 @@ fn main() {
     println!("Errors: {:?}", errors);
 }
 ```
+
+## Process valid values using `itertools::process_results`
+
+Use [`process_results`](https://docs.rs/itertools/*/itertools/fn.process_results.html) from
+[`itertools`](https://docs.rs/itertools/), which lifts the errors from the iterator
+so the valid values can be processed in a new iterator.
+
+If the original iterator produces an error at any point, the adapted iterator ends and
+the `process_results` function will return the error itself.
+
+Otherwise, the return value from the closure is returned wrapped inside `Ok`.
+
+```rust,editable
+use itertools::process_results;
+
+fn main() {
+    let strings = vec!["tofu", "93", "18"];
+    let numbers = strings.into_iter().map(|s| s.parse::<i32>());
+
+    let max_number = process_results(numbers, |iter| iter.max().unwrap_or(0));
+    println!("Max number: {:?}", max_number);
+}
+```
