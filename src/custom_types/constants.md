@@ -1,4 +1,4 @@
-# constants
+# Constants
 
 Rust has two different types of constants which can be declared in any scope
 including global. Both require explicit type annotation:
