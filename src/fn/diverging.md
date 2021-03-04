@@ -66,4 +66,4 @@ fn main() {
 ```
 
 It is also the return type of functions that loop forever (e.g. `loop {}`) like
-network servers or functions that terminates the process (e.g. `exit()`).
+network servers or functions that terminate the process (e.g. `exit()`).
