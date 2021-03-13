@@ -24,7 +24,7 @@ impl Iterator for Fibonacci {
     // The return type is `Option<T>`:
     //     * When the `Iterator` is finished, `None` is returned.
     //     * Otherwise, the next value is wrapped in `Some` and returned.
-    fn next(&mut self) -> Option<u32> {
+    fn next(&mut self) -> Option<Self::Item> {
         let new_next = self.curr + self.next;
 
         self.curr = self.next;
