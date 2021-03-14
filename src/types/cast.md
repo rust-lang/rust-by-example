@@ -70,7 +70,7 @@ fn main() {
     // nan as u8 is 0
     println!("nan as u8 is {}", f32::NAN as u8);
     
-    // This behavior incures a small runtime cost and can be avoided with unsafe methods, however the results might overflow and return **unsound values**. Use these methods wisely:
+    // This behavior incurs a small runtime cost and can be avoided with unsafe methods, however the results might overflow and return **unsound values**. Use these methods wisely:
     unsafe {
         // 300.0 is 44
         println!("300.0 is {}", 300.0_f32.to_int_unchecked::<u8>());
