@@ -64,7 +64,7 @@ fn main() {
 
 ### Activity
 
- 1. *Recap*: Add the `fmt::Display` trait to the Matrix `struct` in the above example,
+ 1. *Recap*: Add the `fmt::Display` trait to the `Matrix` struct in the above example,
     so that if you switch from printing the debug format `{:?}` to the display
     format `{}`, you see the following output:
 
