@@ -2,7 +2,7 @@
 
 A Rust program is (mostly) made up of a series of statements:
 
-```
+```rust,editable
 fn main() {
     // statement
     // statement
@@ -13,7 +13,7 @@ fn main() {
 There are a few kinds of statements in Rust. The most common two are declaring
 a variable binding, and using a `;` with an expression:
 
-```
+```rust,editable
 fn main() {
     // variable binding
     let x = 5;
