@@ -1,11 +1,12 @@
 # Partial moves
 
-Pattern bindings can have `by-move` and `by-reference` bindings at
-the same time which is used in [destructuring]. Using these pattern
-will result in partial move for the variable, which means that part
-of the variable is moved while other parts stayed. In this case, the
-parent variable cannot be used afterwards as a whole. However, parts
-of it that are referenced and not moved can be used.
+Within the [destructuring] of a single variable, both `by-move` and 
+`by-reference` pattern bindings can be used at the same time. Doing 
+this will result in a _partial move_ of the variable, which means 
+that parts of the variable will be moved while other parts stay. In 
+such a case, the parent variable cannot be used afterwards as a 
+whole, however the parts that are only referenced (and not moved) 
+can still be used.
 
 ```rust,editable
 fn main() {
