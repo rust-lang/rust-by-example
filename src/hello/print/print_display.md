@@ -108,7 +108,7 @@ each requires its own implementation. This is detailed further in
 ### Activity
 
 After checking the output of the above example, use the `Point2D` struct as a
-guide to add a Complex struct to the example. When printed in the same
+guide to add a `Complex` struct to the example. When printed in the same
 way, the output should be:
 
 ```txt
