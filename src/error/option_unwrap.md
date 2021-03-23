@@ -1,13 +1,13 @@
 # `Option` & `unwrap`
 
 In the last example, we showed that we can induce program failure at will.
-We told our program to `panic` if the royal received an inappropriate
-gift - a snake. But what if the royal expected a gift and didn't receive
-one? That case would be just as bad, so it needs to be handled!
+We told our program to `panic` if we drink a sugary lemonade.
+But what if we expect _some_ drink but don't receive one?
+That case would be just as bad, so it needs to be handled!
 
-We *could* test this against the null string (`""`) as we do with a snake.
+We *could* test this against the null string (`""`) as we do with a lemonade.
 Since we're using Rust, let's instead have the compiler point out cases
-where there's no gift.
+where there's no drink.
 
 An `enum` called `Option<T>` in the `std` library is used when absence is a
 possibility. It manifests itself as one of two "options":
@@ -24,41 +24,41 @@ handling. In the following example, explicit handling yields a more
 controlled result while retaining the option to `panic` if desired.
 
 ```rust,editable,ignore,mdbook-runnable
-// The commoner has seen it all, and can handle any gift well.
-// All gifts are handled explicitly using `match`.
-fn give_commoner(gift: Option<&str>) {
+// The adult has seen it all, and can handle any drink well.
+// All drinks are handled explicitly using `match`.
+fn give_adult(drink: Option<&str>) {
     // Specify a course of action for each case.
-    match gift {
-        Some("snake") => println!("Yuck! I'm putting this snake back in the forest."),
+    match drink {
+        Some("lemonade") => println!("Yuck! Too sugary."),
         Some(inner)   => println!("{}? How nice.", inner),
-        None          => println!("No gift? Oh well."),
+        None          => println!("No drink? Oh well."),
     }
 }
 
-// Our sheltered royal will `panic` at the sight of snakes.
-// All gifts are handled implicitly using `unwrap`.
-fn give_royal(gift: Option<&str>) {
+// Others will `panic` before drinking sugary drinks.
+// All drinks are handled implicitly using `unwrap`.
+fn drink(drink: Option<&str>) {
     // `unwrap` returns a `panic` when it receives a `None`.
-    let inside = gift.unwrap();
-    if inside == "snake" { panic!("AAAaaaaa!!!!"); }
+    let inside = drink.unwrap();
+    if inside == "lemonade" { panic!("AAAaaaaa!!!!"); }
 
     println!("I love {}s!!!!!", inside);
 }
 
 fn main() {
-    let food  = Some("cabbage");
-    let snake = Some("snake");
+    let water  = Some("water");
+    let lemonade = Some("lemonade");
     let void  = None;
 
-    give_commoner(food);
-    give_commoner(snake);
-    give_commoner(void);
+    give_adult(water);
+    give_adult(lemonade);
+    give_adult(void);
 
-    let bird = Some("robin");
+    let coffee = Some("coffee");
     let nothing = None;
 
-    give_royal(bird);
-    give_royal(nothing);
+    drink(coffee);
+    drink(nothing);
 }
 ```
 
