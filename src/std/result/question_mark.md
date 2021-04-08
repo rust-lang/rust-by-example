@@ -54,7 +54,7 @@ mod checked {
 
     pub fn op(x: f64, y: f64) {
         match op_(x, y) {
-            Err(why) => panic!(match why {
+            Err(why) => panic!("{}", match why {
                 MathError::NonPositiveLogarithm
                     => "logarithm of non-positive number",
                 MathError::DivisionByZero
