@@ -73,7 +73,6 @@ fn main() {
     // nan as u8 is 0
     println!("nan as u8 is {}", f32::NAN as u8);
     
-
     // This behavior incurs a small runtime cost and can be avoided 
     // with unsafe methods, however the results might overflow and 
     // return **unsound values**. Use these methods wisely:
