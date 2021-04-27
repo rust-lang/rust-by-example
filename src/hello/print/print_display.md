@@ -125,5 +125,5 @@ Debug: Complex { real: 3.3, imag: 7.2 }
 [fmt]: https://doc.rust-lang.org/std/fmt/
 [macros]: ../../macros.md
 [structs]: ../../custom_types/structs.md
-[traits]: ../../trait.md
+[traits]: https://doc.rust-lang.org/std/fmt/#formatting-traits
 [use]: ../../mod/use.md
