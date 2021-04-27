@@ -22,7 +22,8 @@ fn main() {
     let integer = decimal as u8;
     let character = integer as char;
 
-    // Error! There are limitations in conversion rules. A float cannot be directly converted to a char.
+    // Error! There are limitations in conversion rules. 
+    // A float cannot be directly converted to a char.
     let character = decimal as char;
     // FIXME ^ Comment out this line
 
@@ -60,8 +61,10 @@ fn main() {
     // and the two's complement of 232 is -24
     println!(" 232 as a i8 is : {}", 232 as i8);
     
-    // Since Rust 1.45, the `as` keyword performs a *saturating cast* when casting from float to int.  
-    // If the floating point value exceeds the upper bound or is less than the lower bound, the returned value will be equal to the bound crossed.
+    // Since Rust 1.45, the `as` keyword performs a *saturating cast* 
+    // when casting from float to int. If the floating point value exceeds 
+    // the upper bound or is less than the lower bound, the returned value 
+    // will be equal to the bound crossed.
     
     // 300.0 is 255
     println!("300.0 is {}", 300.0_f32 as u8);
@@ -70,7 +73,9 @@ fn main() {
     // nan as u8 is 0
     println!("nan as u8 is {}", f32::NAN as u8);
     
-    // This behavior incurs a small runtime cost and can be avoided with unsafe methods, however the results might overflow and return **unsound values**. Use these methods wisely:
+    // This behavior incurs a small runtime cost and can be avoided 
+    // with unsafe methods, however the results might overflow and 
+    // return **unsound values**. Use these methods wisely:
     unsafe {
         // 300.0 is 44
         println!("300.0 is {}", 300.0_f32.to_int_unchecked::<u8>());
