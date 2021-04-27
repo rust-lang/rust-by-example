@@ -108,7 +108,7 @@ each requires its own implementation. This is detailed further in
 ### Activity
 
 After checking the output of the above example, use the `Point2D` struct as a
-guide to add a Complex struct to the example. When printed in the same
+guide to add a `Complex` struct to the example. When printed in the same
 way, the output should be:
 
 ```txt
@@ -125,5 +125,5 @@ Debug: Complex { real: 3.3, imag: 7.2 }
 [fmt]: https://doc.rust-lang.org/std/fmt/
 [macros]: ../../macros.md
 [structs]: ../../custom_types/structs.md
-[traits]: ../../trait.md
+[traits]: https://doc.rust-lang.org/std/fmt/#formatting-traits
 [use]: ../../mod/use.md

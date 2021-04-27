@@ -18,13 +18,16 @@ struct Fibonacci {
 // Implement `Iterator` for `Fibonacci`.
 // The `Iterator` trait only requires a method to be defined for the `next` element.
 impl Iterator for Fibonacci {
+    // We can refer to this type using Self::Item
     type Item = u32;
     
     // Here, we define the sequence using `.curr` and `.next`.
     // The return type is `Option<T>`:
     //     * When the `Iterator` is finished, `None` is returned.
     //     * Otherwise, the next value is wrapped in `Some` and returned.
-    fn next(&mut self) -> Option<u32> {
+    // We use Self::Item in the return type, so we can change
+    // the type without having to update the function signatures.
+    fn next(&mut self) -> Option<Self::Item> {
         let new_next = self.curr + self.next;
 
         self.curr = self.next;

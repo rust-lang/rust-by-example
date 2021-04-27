@@ -32,6 +32,9 @@ impl List {
         // depends on the variant of `self`
         // `self` has type `&List`, and `*self` has type `List`, matching on a
         // concrete type `T` is preferred over a match on a reference `&T`
+        // after Rust 2018 you can use self here and tail (with no ref) below as well,
+        // rust will infer &s and ref tail. 
+        // See https://doc.rust-lang.org/edition-guide/rust-2018/ownership-and-lifetimes/default-match-bindings.html
         match *self {
             // Can't take ownership of the tail, because `self` is borrowed;
             // instead take a reference to the tail

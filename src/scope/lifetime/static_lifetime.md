@@ -85,7 +85,7 @@ fn main() {
     print_it(i);
 
     // oops, &i only has the lifetime defined by the scope of
-    // use_it(), so it's not 'static:
+    // main(), so it's not 'static:
     print_it(&i);
 }
 ```
