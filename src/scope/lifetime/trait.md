@@ -6,9 +6,9 @@ Note that `impl` may have annotation of lifetimes too.
 ```rust,editable
 // A struct with annotation of lifetimes.
 #[derive(Debug)]
- struct Borrowed<'a> {
-     x: &'a i32,
- }
+struct Borrowed<'a> {
+    x: &'a i32,
+}
 
 // Annotate lifetimes to impl.
 impl<'a> Default for Borrowed<'a> {
