@@ -120,7 +120,8 @@ mod tests {
 ```
 
 Although the intent is to get the following:
-```
+```shell
+$ cat ferris.txt
 Ferris
 Ferris
 Ferris
@@ -133,7 +134,8 @@ Corro
 Corro
 ```
 What actually gets put into `ferris.txt` is this:
-```
+```shell
+$ cargo test test_foo
 Corro
 Ferris
 Corro
