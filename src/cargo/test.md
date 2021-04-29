@@ -25,8 +25,8 @@ Each file in `tests` is a separate
 i.e. a test that is meant to test your library as if it were being called from a dependent
 crate.
 
-The [Testing](testing.md) chapter elaborates on the three different testing styles: 
-[Unit](testing/unit_testing.md), [Doc](testing/doc_testing.md), and [Integration](testing/integration_testing.md). 
+The [Testing][testing] chapter elaborates on the three different testing styles: 
+[Unit][unit_testing], [Doc][doc_testing], and [Integration][integration_testing]. 
 
 `cargo` naturally provides an easy way to run all of your tests!
 
@@ -147,3 +147,8 @@ Ferris
 Corro
 Ferris
 ```
+
+[testing]: ../testing.md
+[unit_testing]: ../testing/unit_testing.md
+[integration_testing]: ../testing/unit_testing.md
+[doc_testing]: ../testing/doc_testing.md
