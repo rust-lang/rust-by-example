@@ -14,12 +14,19 @@ foo
 ├── Cargo.toml
 ├── src
 │   └── main.rs
+│   └── lib.rs
 └── tests
     ├── my_test.rs
     └── my_other_test.rs
 ```
 
-Each file in `tests` is a separate integration test.
+Each file in `tests` is a separate 
+[integration test](https://doc.rust-lang.org/book/ch11-03-test-organization.html#integration-tests),
+i.e. a test that is meant to test your library as if it were being called from a dependent
+crate.
+
+The [Testing](testing.md) chapter elaborates on the three different testing styles: 
+[Unit](testing/unit_testing.md), [Doc](testing/doc_testing.md), and [Integration](testing/integration_testing.md). 
 
 `cargo` naturally provides an easy way to run all of your tests!
 
@@ -64,5 +71,77 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out
 ```
 
 One word of caution: Cargo may run multiple tests concurrently, so make sure
-that they don't race with each other. For example, if they all output to a
-file, you should make them write to different files.
+that they don't race with each other. 
+
+One example of this concurrency causing issues is if two tests output to a
+file, such as below:
+
+```rust
+#[cfg(test)]
+mod tests {
+    // Import the necessary modules
+    use std::fs::OpenOptions;
+    use std::io::Write;
+
+    // This test writes to a file
+    #[test]
+    fn test_file() {
+        // Opens the file ferris.txt or creates one if it doesn't exist.
+        let mut file = OpenOptions::new()
+            .append(true)
+            .create(true)
+            .open("ferris.txt")
+            .expect("Failed to open ferris.txt");
+
+        // Print "Ferris" 5 times.
+        for _ in 0..5 {
+            file.write_all("Ferris\n".as_bytes())
+                .expect("Could not write to ferris.txt");
+        }
+    }
+
+    // This test tries to write to the same file
+    #[test]
+    fn test_file_also() {
+        // Opens the file ferris.txt or creates one if it doesn't exist.
+        let mut file = OpenOptions::new()
+            .append(true)
+            .create(true)
+            .open("ferris.txt")
+            .expect("Failed to open ferris.txt");
+
+        // Print "Corro" 5 times.
+        for _ in 0..5 {
+            file.write_all("Corro\n".as_bytes())
+                .expect("Could not write to ferris.txt");
+        }
+    }
+}
+```
+
+Although the intent is to get the following:
+```
+Ferris
+Ferris
+Ferris
+Ferris
+Ferris
+Corro
+Corro
+Corro
+Corro
+Corro
+```
+What actually gets put into `ferris.txt` is this:
+```
+Corro
+Ferris
+Corro
+Ferris
+Corro
+Ferris
+Corro
+Ferris
+Corro
+Ferris
+```
