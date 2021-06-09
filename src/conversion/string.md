@@ -40,7 +40,7 @@ simply implement the [`FromStr`] trait for that type.
 
 ```rust,editable
 fn main() {
-    let parsed: i32 = "5".parse().unwrap();
+    let parsed = "5".parse().unwrap();
     let turbo_parsed = "10".parse::<i32>().unwrap();
 
     let sum = parsed + turbo_parsed;
