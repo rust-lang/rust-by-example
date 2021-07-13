@@ -19,7 +19,7 @@ fn main() {
     // Create a `Path` from an `&'static str`
     let path = Path::new(".");
 
-    // The `display` method returns a `Show`able structure
+    // The `display` method returns a `Display`able structure
     let _display = path.display();
 
     // `join` merges a path with a byte container using the OS specific
