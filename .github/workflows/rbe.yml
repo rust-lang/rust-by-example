@@ -20,12 +20,6 @@ jobs:
     - name: Build
       run: mdbook build
       
-    - name: Publish
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./book
-        
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
