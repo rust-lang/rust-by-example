@@ -1,8 +1,9 @@
-# Methods
+# Associated functions & Methods
 
-Methods are functions attached to objects. These methods have access to the
-data of the object and its other methods via the `self` keyword. Methods are
-defined under an `impl` block.
+Some functions are connected to a particular type. These come in two forms:
+associated functions, and methods. Associated functions are functions that
+are defined on a type generally, while methods are associated functions that are
+called on a particular instance of a type.
 
 ```rust,editable
 struct Point {
@@ -10,16 +11,18 @@ struct Point {
     y: f64,
 }
 
-// Implementation block, all `Point` methods go in here
+// Implementation block, all `Point` associated functions & methods go in here
 impl Point {
-    // This is a static method
-    // Static methods don't need to be called by an instance
-    // These methods are generally used as constructors
+    // This is an "associated function" because this function is associated with
+    // a particular type, that is, Point.
+    //
+    // Associated functions don't need to be called with an instance.
+    // These functions are generally used like constructors.
     fn origin() -> Point {
         Point { x: 0.0, y: 0.0 }
     }
 
-    // Another static method, taking two arguments:
+    // Another associated function, taking two arguments:
     fn new(x: f64, y: f64) -> Point {
         Point { x: x, y: y }
     }
@@ -31,7 +34,7 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    // This is an instance method
+    // This is a method
     // `&self` is sugar for `self: &Self`, where `Self` is the type of the
     // caller object. In this case `Self` = `Rectangle`
     fn area(&self) -> f64 {
@@ -80,12 +83,12 @@ impl Pair {
 
 fn main() {
     let rectangle = Rectangle {
-        // Static methods are called using double colons
+        // Associated functions are called using double colons
         p1: Point::origin(),
         p2: Point::new(3.0, 4.0),
     };
 
-    // Instance methods are called using the dot operator
+    // Methods are called using the dot operator
     // Note that the first argument `&self` is implicitly passed, i.e.
     // `rectangle.perimeter()` === `Rectangle::perimeter(&rectangle)`
     println!("Rectangle perimeter: {}", rectangle.perimeter());

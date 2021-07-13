@@ -12,10 +12,10 @@ methods from `Animal` with a `Sheep`.
 struct Sheep { naked: bool, name: &'static str }
 
 trait Animal {
-    // Static method signature; `Self` refers to the implementor type.
+    // Associated function signature; `Self` refers to the implementor type.
     fn new(name: &'static str) -> Self;
 
-    // Instance method signatures; these will return a string.
+    // Method signatures; these will return a string.
     fn name(&self) -> &'static str;
     fn noise(&self) -> &'static str;
 
