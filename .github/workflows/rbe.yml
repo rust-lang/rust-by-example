@@ -1,25 +1,40 @@
-name: Build and Publish
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+name: CI
+on: [push, pull_request]
 
 jobs:
-  build:
-
+  test:
+    name: Run tests
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-      
+    - uses: actions/checkout@master
+
+    - name: Update rustup
+      run: rustup self update
+
+    - name: Install Rust
+      run: |
+        rustup set profile minimal
+        rustup toolchain install stable -c rust-docs
+        rustup default stable
+
     - name: Install mdbook
-      run: cargo install mdbook
-      
-    - name: Build
+      run: |
+        mkdir bin
+        curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.5/mdbook-v0.4.5-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=bin
+        echo "$(pwd)/bin" >> ${GITHUB_PATH}
+
+    - name: Report versions
+      run: |
+        rustup --version
+        rustc -Vv
+        mdbook --version
+
+    - name: Run tests
+      run: mdbook test
+
+    - name: Build HTML
       run: mdbook build
-      
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
