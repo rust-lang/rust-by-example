@@ -150,5 +150,5 @@ Ferris
 
 [testing]: ../testing.md
 [unit_testing]: ../testing/unit_testing.md
-[integration_testing]: ../testing/unit_testing.md
+[integration_testing]: ../testing/integration_testing.md
 [doc_testing]: ../testing/doc_testing.md
