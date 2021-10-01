@@ -80,7 +80,7 @@ RGB (0, 0, 0) 0x000000
 
 Two hints if you get stuck:
  * You [may need to list each color more than once][named_parameters],
- * You can [pad with zeros to a width of 2][fmt_width] with `:02`.
+ * You can [pad with zeros to a width of 2][fmt_width] with `:0>2`.
 
 ### See also:
 
