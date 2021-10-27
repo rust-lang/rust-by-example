@@ -1,6 +1,6 @@
 # Testcase: linked-list
 
-A common use for `enums` is to create a linked-list:
+A common way to implement a linked-list is via `enums`:
 
 ```rust,editable
 use crate::List::*;
