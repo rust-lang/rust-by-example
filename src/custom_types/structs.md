@@ -44,7 +44,6 @@ fn main() {
     // Print debug struct
     println!("{:?}", peter);
 
-
     // Instantiate a `Point`
     let point: Point = Point { x: 10.3, y: 0.4 };
 
