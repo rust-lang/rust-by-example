@@ -9,3 +9,6 @@ editor = "ace"
 
 [output.html.fold]
 enable = true
+
+[output.html]
+git-repository-url = "https://github.com/rust-lang/rust-by-example"
