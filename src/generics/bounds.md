@@ -58,10 +58,10 @@ fn main() {
     let _triangle = Triangle  { length: 3.0, height: 4.0 };
 
     print_debug(&rectangle);
-    println!("Area: {}", area(&rectangle));
+    println!("Area: {}", rectangle.area());
 
     //print_debug(&_triangle);
-    //println!("Area: {}", area(&_triangle));
+    //println!("Area: {}", _triangle.area());
     // ^ TODO: Try uncommenting these.
     // | Error: Does not implement either `Debug` or `HasArea`. 
 }
