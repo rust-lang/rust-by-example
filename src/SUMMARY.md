@@ -209,6 +209,7 @@
     - [Dev-dependencies](testing/dev_dependencies.md)
 
 - [Unsafe Operations](unsafe.md)
+    - [Inline assembly](unsafe/asm.md)
 
 - [Compatibility](compatibility.md)
     - [Raw identifiers](compatibility/raw_identifiers.md)
