@@ -206,28 +206,39 @@ This state is generally referred to as being "clobbered".
 We need to tell the compiler about this since it may need to save and restore this state around the inline assembly block.
 
 ```rust
-let ebx: u32;
-let ecx: u32;
-
+let mut ebx: u32;
+let mut edx: u32;
+let mut ecx: u32;
 unsafe {
     asm!(
+        "push rbx",
         "cpuid",
-        // EAX 4 selects the "Deterministic Cache Parameters" CPUID leaf
-        inout("eax") 4 => _,
-        // ECX 0 selects the L0 cache information.
-        inout("ecx") 0 => ecx,
-        lateout("ebx") ebx,
-        lateout("edx") _,
+        "mov {0:e}, ebx",
+        "pop rbx",
+        // String is stored as ascii in ebx, edx, ecx in order
+        // Because ebx is reserved, we get a scratch register and move from
+        // ebx into it in the asm.  The asm needs to preserve the value of
+        // that register though, so it is pushed and popped around the main asm
+        // (in 64 bit mode for 64 bit processors, 32 bit processors would use ebx)
+        out(reg) ebx,
+        out("edx") edx,
+        out("ecx") ecx,
+        // EAX 0 selects CPUID parameter and manufacturer ID
+        inout("eax") 0 => _,
     );
 }
 
-println!(
-    "L0 Cache: {}",
-    ((ebx >> 22) + 1) * (((ebx >> 12) & 0x3ff) + 1) * ((ebx & 0xfff) + 1) * (ecx + 1)
-);
+// Turn the resulting values into a string
+let mut s = Vec::new();
+for val in [ebx, edx, ecx] {
+    for b in val.to_ne_bytes() {
+        s.push(b);
+    }
+}
+println!("CPU Manufacturer ID: {}", std::str::from_utf8(&s).unwrap());
 ```
 
-In the example above we use the `cpuid` instruction to get the L1 cache size.
+In the example above we use the `cpuid` instruction to read the CPU manufacturer ID.
 This instruction writes to `eax`, `ebx`, `ecx`, and `edx`, but for the cache size we only care about the contents of `ebx` and `ecx`.
 
 However we still need to tell the compiler that `eax` and `edx` have been modified so that it can save any values that were in these registers before the asm. This is done by declaring these as outputs but with `_` instead of a variable name, which indicates that the output value is to be discarded.
