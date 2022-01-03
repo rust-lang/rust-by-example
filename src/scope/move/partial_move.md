@@ -13,12 +13,12 @@ fn main() {
     #[derive(Debug)]
     struct Person {
         name: String,
-        age: u8,
+        age: Box<u8>,
     }
 
     let person = Person {
         name: String::from("Alice"),
-        age: 20,
+        age: Box::new(20),
     };
 
     // `name` is moved out of person, but `age` is referenced
@@ -35,6 +35,13 @@ fn main() {
     println!("The person's age from person struct is {}", person.age);
 }
 ```
+(In this example, we store the `age` variable on the heap to 
+illustrate the partial move: deleting `ref` in the above code would 
+give an error as the ownership of `person.age` would be moved to the 
+variable `age`. If `Person.age` were stored on the stack, `ref`would 
+not be required as the definition of `age` would copy the data from 
+`person.age` without moving it.)
+
 ### See also:
 [destructuring][destructuring]
 
