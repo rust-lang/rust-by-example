@@ -1,6 +1,6 @@
 # Associated types
 
-The use of "Associated types" improves the overall readability of code 
+The use of "Associated types" improves the overall readability of code
 by moving inner types locally into a trait as *output* types. Syntax
 for the `trait` definition is as follows:
 
@@ -13,7 +13,7 @@ trait Contains {
     type B;
 
     // Updated syntax to refer to these new types generically.
-    fn contains(&self, &Self::A, &Self::B) -> bool;
+    fn contains(&self, _: &Self::A, _: &Self::B) -> bool;
 }
 ```
 
