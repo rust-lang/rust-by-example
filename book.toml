@@ -3,6 +3,9 @@ title = "Rust By Example"
 description = "Rust by Example (RBE) is a collection of runnable examples that illustrate various Rust concepts and standard libraries."
 author = "The Rust Community"
 
+[rust]
+edition = "2021"
+
 [output.html.playpen]
 editable = true
 editor = "ace"
