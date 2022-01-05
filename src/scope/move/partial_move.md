@@ -38,7 +38,7 @@ fn main() {
 (In this example, we store the `age` variable on the heap to 
 illustrate the partial move: deleting `ref` in the above code would 
 give an error as the ownership of `person.age` would be moved to the 
-variable `age`. If `Person.age` were stored on the stack, `ref`would 
+variable `age`. If `Person.age` were stored on the stack, `ref` would 
 not be required as the definition of `age` would copy the data from 
 `person.age` without moving it.)
 
