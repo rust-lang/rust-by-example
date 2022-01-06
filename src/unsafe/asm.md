@@ -18,6 +18,8 @@ Inline assembly is currently supported on the following architectures:
 Let us start with the simplest possible example:
 
 ```rust
+use std::arch::asm;
+
 unsafe {
     asm!("nop");
 }
@@ -34,6 +36,8 @@ Now inserting an instruction that does nothing is rather boring. Let us do somet
 actually acts on data:
 
 ```rust
+use std::arch::asm;
+
 let x: u64;
 unsafe {
     asm!("mov {}, 5", out(reg) x);
@@ -55,6 +59,8 @@ the template and will read the variable from there after the inline assembly fin
 Let us see another example that also uses an input:
 
 ```rust
+use std::arch::asm;
+
 let i: u64 = 3;
 let o: u64;
 unsafe {
@@ -89,6 +95,8 @@ readability, and allows reordering instructions without changing the argument or
 We can further refine the above example to avoid the `mov` instruction:
 
 ```rust
+use std::arch::asm;
+
 let mut x: u64 = 3;
 unsafe {
     asm!("add {0}, 5", inout(reg) x);
@@ -102,6 +110,8 @@ This is different from specifying an input and output separately in that it is g
 It is also possible to specify different variables for the input and output parts of an `inout` operand:
 
 ```rust
+use std::arch::asm;
+
 let x: u64 = 3;
 let y: u64;
 unsafe {
@@ -123,6 +133,8 @@ There is also a `inlateout` variant of this specifier.
 Here is an example where `inlateout` *cannot* be used:
 
 ```rust
+use std::arch::asm;
+
 let mut a: u64 = 4;
 let b: u64 = 4;
 let c: u64 = 4;
@@ -143,6 +155,8 @@ Here the compiler is free to allocate the same register for inputs `b` and `c` s
 However the following example can use `inlateout` since the output is only modified after all input registers have been read:
 
 ```rust
+use std::arch::asm;
+
 let mut a: u64 = 4;
 let b: u64 = 4;
 unsafe {
@@ -160,6 +174,8 @@ Therefore, Rust inline assembly provides some more specific constraint specifier
 While `reg` is generally available on any architecture, explicit registers are highly architecture specific. E.g. for x86 the general purpose registers `eax`, `ebx`, `ecx`, `edx`, `ebp`, `esi`, and `edi` among others can be addressed by their name.
 
 ```rust,no_run
+use std::arch::asm;
+
 let cmd = 0xd1;
 unsafe {
     asm!("out 0x64, eax", in("eax") cmd);
@@ -173,6 +189,8 @@ In this example we call the `out` instruction to output the content of the `cmd`
 Consider this example which uses the x86 `mul` instruction:
 
 ```rust
+use std::arch::asm;
+
 fn mul(a: u64, b: u64) -> u128 {
     let lo: u64;
     let hi: u64;
@@ -206,6 +224,8 @@ This state is generally referred to as being "clobbered".
 We need to tell the compiler about this since it may need to save and restore this state around the inline assembly block.
 
 ```rust
+use std::arch::asm;
+
 let mut ebx: u32;
 let mut edx: u32;
 let mut ecx: u32;
@@ -246,6 +266,8 @@ However we still need to tell the compiler that `eax` and `edx` have been modifi
 This can also be used with a general register class (e.g. `reg`) to obtain a scratch register for use inside the asm code:
 
 ```rust
+use std::arch::asm;
+
 // Multiply x by 6 using shifts and adds
 let mut x: u64 = 4;
 unsafe {
@@ -266,6 +288,8 @@ assert_eq!(x, 4 * 6);
 By default, `asm!` assumes that any register not specified as an output will have its contents preserved by the assembly code. The [`clobber_abi`](#abi-clobbers) argument to `asm!` tells the compiler to automatically insert the necessary clobber operands according to the given calling convention ABI: any register which is not fully preserved in that ABI will be treated as clobbered.  Multiple `clobber_abi` arguments may be provided and all clobbers from all specified ABIs will be inserted.
 
 ```rust
+use std::arch::asm;
+
 extern "C" fn foo(arg: i32) -> i32 {
     println!("arg = {}", arg);
     arg * 2
@@ -300,6 +324,8 @@ By default the compiler will always choose the name that refers to the full regi
 This default can be overriden by using modifiers on the template string operands, just like you would with format strings:
 
 ```rust
+use std::arch::asm;
+
 let mut x: u16 = 0xab;
 
 unsafe {
@@ -323,6 +349,8 @@ You have to manually use the memory address syntax specified by the target archi
 For example, on x86/x86_64 using Intel assembly syntax, you should wrap inputs/outputs in `[]` to indicate they are memory operands:
 
 ```rust
+use std::arch::asm;
+
 fn load_fpu_control_word(control: u16) {
     unsafe {
         asm!("fldcw [{}]", in(reg) &control, options(nostack));
@@ -343,6 +371,8 @@ As a consequence, you should only use GNU assembler **numeric** [local labels] i
 Moreover, on x86 when using the default Intel syntax, due to [an LLVM bug], you shouldn't use labels exclusively made of `0` and `1` digits, e.g. `0`, `11` or `101010`, as they may end up being interpreted as binary values. Using `options(att_syntax)` will avoid any ambiguity, but that affects the syntax of the _entire_ `asm!` block. (See [Options](#options), below, for more on `options`.)
 
 ```rust
+use std::arch::asm;
+
 let mut a = 0;
 unsafe {
     asm!(
@@ -381,6 +411,8 @@ By default, an inline assembly block is treated the same way as an external FFI 
 Let's take our previous example of an `add` instruction:
 
 ```rust
+use std::arch::asm;
+
 let mut a: u64 = 4;
 let b: u64 = 4;
 unsafe {
@@ -400,4 +432,4 @@ Options can be provided as an optional final argument to the `asm!` macro. We sp
 
 These allow the compiler to better optimize code using `asm!`, for example by eliminating pure `asm!` blocks whose outputs are not needed.
 
-See the [reference](../../reference/asm.htmt) for the full list of available options and their effects.
+See the [reference](../../reference/inline-assembly.html) for the full list of available options and their effects.
