@@ -70,7 +70,7 @@ fn main() {
 }
 ```
 
-One can manually implement `fmt::Display` to control the display.
+One can manually implement `fmt::Debug` to control the display.
 
 ### See also:
 
