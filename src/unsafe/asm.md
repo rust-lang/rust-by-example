@@ -249,19 +249,19 @@ unsafe {
 }
 
 // Turn the resulting values into a string
-let mut s = Vec::new();
-for val in [ebx, edx, ecx] {
-    for b in val.to_ne_bytes() {
-        s.push(b);
-    }
-}
-println!("CPU Manufacturer ID: {}", std::str::from_utf8(&s).unwrap());
+let mut s = String::with_capacity(12);
+ebx.to_ne_bytes().map(|b| s.push(char::from(b)));
+edx.to_ne_bytes().map(|b| s.push(char::from(b)));
+ecx.to_ne_bytes().map(|b| s.push(char::from(b)));
+println!("CPU Manufacturer ID: {}", s);
 ```
 
 In the example above we use the `cpuid` instruction to read the CPU manufacturer ID.
-This instruction writes to `eax`, `ebx`, `ecx`, and `edx`, but for the cache size we only care about the contents of `ebx` and `ecx`.
+This instruction writes to `eax` with the maximum supported `cpuid` argument and `ebx`, `esx`, and `ecx` with the CPU manufacturer ID as ASCII bytes in that order.
 
-However we still need to tell the compiler that `eax` and `edx` have been modified so that it can save any values that were in these registers before the asm. This is done by declaring these as outputs but with `_` instead of a variable name, which indicates that the output value is to be discarded.
+Even though `eax` is never read we still need to tell the compiler that the register has been modified so that the compiler can save any values that were in these registers before the asm. This is done by declaring it as an output but with `_` instead of a variable name, which indicates that the output value is to be discarded.
+
+This code also works around the limitation that `ebx` is a reserved register by LLVM. That means that LLVM assumes that it has full control over the register and it must be restored to its original state before exiting the asm block, so it cannot be used as an output. To work around this we save the register via `push`, read from `ebx` inside the asm block into a temporary register allocated with `out(reg)` and then restoring `ebx` to its original state via `pop`. The `push` and `pop` use the full 64-bit `rbx` version of the register to ensure that the entire register is saved. On 32 bit targets the code would instead use `ebx` in the `push`/`pop`.
 
 This can also be used with a general register class (e.g. `reg`) to obtain a scratch register for use inside the asm code:
 
