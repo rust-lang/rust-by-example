@@ -3,12 +3,13 @@
 While Rust chooses how to capture variables on the fly mostly without type
 annotation, this ambiguity is not allowed when writing functions. When
 taking a closure as an input parameter, the closure's complete type must be
-annotated using one of a few `traits`. In order of decreasing restriction,
+annotated using one of a few `traits`, and they're determined by what the
+closure does with captured value. In order of decreasing restriction,
 they are:
 
-* `Fn`: the closure captures by reference (`&T`)
-* `FnMut`: the closure captures by mutable reference (`&mut T`)
-* `FnOnce`: the closure captures by value (`T`)
+* `Fn`: the closure uses the captured value by reference (`&T`)
+* `FnMut`: the closure uses the captured value by mutable reference (`&mut T`)
+* `FnOnce`: the closure uses the captured value by value (`T`)
 
 On a variable-by-variable basis, the compiler will capture variables in the
 least restrictive manner possible.
