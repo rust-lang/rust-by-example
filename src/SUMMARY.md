@@ -52,6 +52,7 @@
     - [match](flow_control/match.md)
         - [Destructuring](flow_control/match/destructuring.md)
             - [tuples](flow_control/match/destructuring/destructure_tuple.md)
+            - [arrays/slices](flow_control/match/destructuring/destructure_slice.md)
             - [enums](flow_control/match/destructuring/destructure_enum.md)
             - [pointers/ref](flow_control/match/destructuring/destructure_pointers.md)
             - [structs](flow_control/match/destructuring/destructure_structures.md)
