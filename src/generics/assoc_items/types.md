@@ -13,7 +13,7 @@ trait Contains {
     type B;
 
     // Updated syntax to refer to these new types generically.
-    fn contains(&self, &Self::A, &Self::B) -> bool;
+    fn contains(&self, _: &Self::A, _: &Self::B) -> bool;
 }
 ```
 
