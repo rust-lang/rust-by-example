@@ -224,36 +224,42 @@ This state is generally referred to as being "clobbered".
 We need to tell the compiler about this since it may need to save and restore this state around the inline assembly block.
 
 ```rust
-use std::arch::asm;
+use core::arch::asm;
 
-let mut ebx: u32;
-let mut edx: u32;
-let mut ecx: u32;
-unsafe {
-    asm!(
-        "push rbx",
-        "cpuid",
-        "mov {0:e}, ebx",
-        "pop rbx",
-        // String is stored as ascii in ebx, edx, ecx in order
-        // Because ebx is reserved, we get a scratch register and move from
-        // ebx into it in the asm.  The asm needs to preserve the value of
-        // that register though, so it is pushed and popped around the main asm
-        // (in 64 bit mode for 64 bit processors, 32 bit processors would use ebx)
-        out(reg) ebx,
-        out("edx") edx,
-        out("ecx") ecx,
-        // EAX 0 selects CPUID parameter and manufacturer ID
-        inout("eax") 0 => _,
-    );
+fn main() {
+    // three entries of four bytes each
+    let mut name_buf = [0_u8; 12];
+    // String is stored as ascii in ebx, edx, ecx in order
+    // Because ebx is reserved, we get a scratch register and move from
+    // ebx into it in the asm.  The asm needs to preserve the value of
+    // that register though, so it is pushed and popped around the main asm
+    // (in 64 bit mode for 64 bit processors, 32 bit processors would use ebx)
+
+    unsafe {
+        asm!(
+            "push rbx",
+            "cpuid",
+            "mov [{0}], ebx",
+            "mov [{0} + 4], edx",
+            "mov [{0} + 8], ecx",
+            "pop rbx",
+            // We use a pointer to an array for storing the values to simplify
+            // the Rust code at the cost of a couple more asm instructions
+            // This is more explicit with how the asm works however, as opposed
+            // to explicit register outputs such as `out("ecx") val`
+            // The *pointer itself* is only an input even though it's written behind
+            in(reg) name_buf.as_mut_ptr(),
+            // select cpuid 0, also specify eax as clobbered
+            inout("eax") 0 => _,
+            // cpuid clobbers these registers too
+            out("ecx") _,
+            out("edx") _,
+        );
+    }
+
+    let name = core::str::from_utf8(&name_buf).unwrap();
+    println!("CPU Manufacturer ID: {}", name);
 }
-
-// Turn the resulting values into a string
-let mut s = String::with_capacity(12);
-ebx.to_ne_bytes().map(|b| s.push(char::from(b)));
-edx.to_ne_bytes().map(|b| s.push(char::from(b)));
-ecx.to_ne_bytes().map(|b| s.push(char::from(b)));
-println!("CPU Manufacturer ID: {}", s);
 ```
 
 In the example above we use the `cpuid` instruction to read the CPU manufacturer ID.
