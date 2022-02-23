@@ -1,11 +1,11 @@
 # `abort` and `unwind`
 
-The previous section illustrates the error handling mechanism `panic`.  The `cfg_panic` feature makes it possible to execute different code depending on the panic strategy. The current values available are `unwind` and `abort`. 
+The previous section illustrates the error handling mechanism `panic`.  Different code paths can be conditionally compiled based on the panic setting. The current values available are `unwind` and `abort`. 
 
 
 Building on the prior lemonade example, we explicitly use the panic strategy to execise different lines of code.  
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable,mdbook-runnable
 
 fn drink(beverage: &str) {
    // You shouldn't drink too much sugary beverages.
@@ -24,7 +24,7 @@ fn main() {
 
 Here is another example focusing on rewriting `drink()` and explicitly use the `unwind` keyword.
 
-```rust,editable,ignore
+```rust,editable
 
 #[cfg(panic = "unwind")]
 fn ah(){ println!("Spit it out!!!!");}
@@ -45,7 +45,7 @@ fn main() {
 
 The panic strategy can be set from the command line by using `abort` or `unwind`.
 
-```rust,editable,ignore
-rustc  lemonade.rc -C panic=abort
+```console
+rustc  lemonade.rs -C panic=abort
 ```
 
