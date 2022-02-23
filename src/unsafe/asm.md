@@ -56,6 +56,8 @@ In this case we put it in an arbitrary general purpose register by specifying `r
 The compiler will choose an appropriate register to insert into
 the template and will read the variable from there after the inline assembly finishes executing.
 
+[format-syntax]: https://doc.rust-lang.org/std/fmt/#syntax
+
 Let us see another example that also uses an input:
 
 ```rust
