@@ -1,6 +1,6 @@
 # arrays/slices
 
-In like manner to tuples, arrays and slices can be destructured this way:
+Like tuples, arrays and slices can be destructured this way:
 
 ```rust,editable
 fn main() {
