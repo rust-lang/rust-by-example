@@ -265,7 +265,7 @@ fn main() {
 ```
 
 In the example above we use the `cpuid` instruction to read the CPU manufacturer ID.
-This instruction writes to `eax` with the maximum supported `cpuid` argument and `ebx`, `esx`, and `ecx` with the CPU manufacturer ID as ASCII bytes in that order.
+This instruction writes to `eax` with the maximum supported `cpuid` argument and `ebx`, `edx`, and `ecx` with the CPU manufacturer ID as ASCII bytes in that order.
 
 Even though `eax` is never read we still need to tell the compiler that the register has been modified so that the compiler can save any values that were in these registers before the asm. This is done by declaring it as an output but with `_` instead of a variable name, which indicates that the output value is to be discarded.
 
