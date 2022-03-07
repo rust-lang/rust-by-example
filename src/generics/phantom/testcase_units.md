@@ -40,7 +40,7 @@ struct Length<Unit>(f64, PhantomData<Unit>);
 
 /// The `Add` trait defines the behavior of the `+` operator.
 impl<Unit> Add for Length<Unit> {
-     type Output = Length<Unit>;
+    type Output = Length<Unit>;
 
     // add() returns a new `Length` struct containing the sum.
     fn add(self, rhs: Length<Unit>) -> Length<Unit> {
