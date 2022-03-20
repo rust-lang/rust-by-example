@@ -8,6 +8,9 @@ There are three types of structures ("structs") that can be created using the
 * Unit structs, which are field-less, are useful for generics.
 
 ```rust,editable
+// An attribute to hide warnings for unused code.
+#![allow(dead_code)]
+
 #[derive(Debug)]
 struct Person {
     name: String,
@@ -27,7 +30,6 @@ struct Point {
 }
 
 // Structs can be reused as fields of another struct
-#[allow(dead_code)]
 struct Rectangle {
     // A rectangle can be specified by where the top left and bottom right
     // corners are in space.
