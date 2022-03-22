@@ -8,6 +8,10 @@ platform-specific `Path` variant.
 A `Path` can be created from an `OsStr`, and provides several methods to get
 information from the file/directory the path points to.
 
+A `Path` is immutable. The owned version of `Path` is `PathBuf`. The relation 
+between `Path` and `PathBuf` is similar to that of `str` and `String`: 
+a `PathBuf` can be mutated in-place, and can be dereferenced to a `Path`.
+
 Note that a `Path` is *not* internally represented as an UTF-8 string, but
 instead is stored as a vector of bytes (`Vec<u8>`). Therefore, converting a
 `Path` to a `&str` is *not* free and may fail (an `Option` is returned).
@@ -23,10 +27,17 @@ fn main() {
     let _display = path.display();
 
     // `join` merges a path with a byte container using the OS specific
-    // separator, and returns the new path
-    let new_path = path.join("a").join("b");
+    // separator, and returns a `PathBuf`
+    let mut new_path = path.join("a").join("b");
 
-    // Convert the path into a string slice
+    // `push` extends the `PathBuf` with a `&Path`
+    new_path.push("c");
+    new_path.push("myfile.tar.gz");
+
+    // `set_file_name` updates the file name of the `PathBuf`
+    new_path.set_file_name("package.tgz");
+
+    // Convert the `PathBuf` into a string slice
     match new_path.to_str() {
         None => panic!("new path is not a valid UTF-8 sequence"),
         Some(s) => println!("new path is {}", s),
