@@ -26,5 +26,6 @@ fn main() {
 
     let noisy_unused_variable = 2u32;
     // FIXME ^ Prefix with an underscore to suppress the warning
+    // Please note that warnings may not be shown in a browser
 }
 ```
