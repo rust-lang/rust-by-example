@@ -1,7 +1,7 @@
 # Closures
 
 Closures are functions that can capture the enclosing environment. For
-example, a closure that captures the x variable:
+example, a closure that captures the `x` variable:
 
 ```Rust
 |val| val + x
