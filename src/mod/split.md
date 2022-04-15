@@ -6,17 +6,17 @@ Modules can be mapped to a file/directory hierarchy. Let's break down the
 ```shell
 $ tree .
 .
-|-- my
-|   |-- inaccessible.rs
-|   |-- mod.rs
-|   `-- nested.rs
-`-- split.rs
+├── my
+│   ├── inaccessible.rs
+│   └── nested.rs
+├── my.rs
+└── split.rs
 ```
 
 In `split.rs`:
 
 ```rust,ignore
-// This declaration will look for a file named `my.rs` or `my/mod.rs` and will
+// This declaration will look for a file named `my.rs` and will
 // insert its contents inside a module named `my` under this scope
 mod my;
 
@@ -36,7 +36,7 @@ fn main() {
 
 ```
 
-In `my/mod.rs`:
+In `my.rs`:
 
 ```rust,ignore
 // Similarly `mod inaccessible` and `mod nested` will locate the `nested.rs`
