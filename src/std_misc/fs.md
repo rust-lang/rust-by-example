@@ -64,7 +64,7 @@ fn main() {
     // Create a symbolic link, returns `io::Result<()>`
     if cfg!(target_family = "unix") {
         unix::fs::symlink("../b.txt", "a/c/b.txt").unwrap_or_else(|why| {
-        println!("! {:?}", why.kind());
+            println!("! {:?}", why.kind());
         });
     }
 
