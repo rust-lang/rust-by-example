@@ -29,8 +29,13 @@ fn main() {
              subject="the quick brown fox",
              verb="jumps over");
 
-    // Special formatting can be specified after a `:`.
-    println!("{} of {:b} people know binary, the other half doesn't", 1, 2);
+    // Different formatting can invoked by specified format character after a
+    // `:`.
+    println!("Base 10 repr:               {}",   69420);
+    println!("Base 2 (binary) repr:       {:b}", 69420);
+    println!("Base 8 (octal) repr:        {:o}", 69420);
+    println!("Base 16 (hexadecimal) repr: {:x}", 69420);
+    println!("Base 16 (hexadecimal) repr: {:X}", 69420);
 
     // You can right-align text with a specified width. This will output
     // "     1". 5 white spaces and a "1".
