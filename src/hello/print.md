@@ -39,10 +39,14 @@ fn main() {
 
     // You can right-align text with a specified width. This will output
     // "     1". 5 white spaces and a "1".
-    println!("{number:>width$}", number=1, width=6);
+    println!("{number:>5}", number=1);
 
     // You can pad numbers with extra zeroes. This will output "000001".
-    println!("{number:0>width$}", number=1, width=6);
+    println!("{number:0>5}", number=1);
+
+    // You can use named arguments in the format specifier by appending a `$`
+    println!("{number:0>width$}", number=1, width=5);
+
 
     // Rust even checks to make sure the correct number of arguments are
     // used.
