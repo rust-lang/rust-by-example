@@ -53,12 +53,14 @@ fn main() {
     println!("My name is {0}, {1} {0}", "Bond");
     // FIXME ^ Add the missing argument: "James"
 
-    // Create a structure named `Structure` which contains an `i32`.
+    // Only types that implement fmt::Display can be formatted with `{}`. User-
+    // defined types to not implement fmt::Display by default
+
     #[allow(dead_code)]
     struct Structure(i32);
 
-    // However, custom types such as this structure require more complicated
-    // handling. This will not work.
+    // This will not compile because `Structure` does not implement
+    // fmt::Display
     println!("This struct `{}` won't print...", Structure(3));
     // FIXME ^ Comment out this line.
 
