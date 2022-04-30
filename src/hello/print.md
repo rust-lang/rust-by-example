@@ -18,11 +18,9 @@ fn main() {
     // arguments. These will be stringified.
     println!("{} days", 31);
 
-    // Without a suffix, 31 becomes an i32. You can change what type 31 is
-    // by providing a suffix. The number 31i64 for example has the type i64.
-
-    // There are various optional patterns this works with. Positional
-    // arguments can be used.
+    // Positional arguments can be used. Specifying an integer inside `{}`
+    // determines which additional argument will be replaced. Arguments start
+    // at 0 immediately after the format string
     println!("{0}, this is {1}. {1}, this is {0}", "Alice", "Bob");
 
     // As can named arguments.
@@ -31,27 +29,38 @@ fn main() {
              subject="the quick brown fox",
              verb="jumps over");
 
-    // Special formatting can be specified after a `:`.
-    println!("{} of {:b} people know binary, the other half doesn't", 1, 2);
+    // Different formatting can invoked by specified format character after a
+    // `:`.
+    println!("Base 10 repr:               {}",   69420);
+    println!("Base 2 (binary) repr:       {:b}", 69420);
+    println!("Base 8 (octal) repr:        {:o}", 69420);
+    println!("Base 16 (hexadecimal) repr: {:x}", 69420);
+    println!("Base 16 (hexadecimal) repr: {:X}", 69420);
 
     // You can right-align text with a specified width. This will output
     // "     1". 5 white spaces and a "1".
-    println!("{number:>width$}", number=1, width=6);
+    println!("{number:>5}", number=1);
 
     // You can pad numbers with extra zeroes. This will output "000001".
-    println!("{number:0>width$}", number=1, width=6);
+    println!("{number:0>5}", number=1);
+
+    // You can use named arguments in the format specifier by appending a `$`
+    println!("{number:0>width$}", number=1, width=5);
+
 
     // Rust even checks to make sure the correct number of arguments are
     // used.
     println!("My name is {0}, {1} {0}", "Bond");
     // FIXME ^ Add the missing argument: "James"
 
-    // Create a structure named `Structure` which contains an `i32`.
+    // Only types that implement fmt::Display can be formatted with `{}`. User-
+    // defined types to not implement fmt::Display by default
+
     #[allow(dead_code)]
     struct Structure(i32);
 
-    // However, custom types such as this structure require more complicated
-    // handling. This will not work.
+    // This will not compile because `Structure` does not implement
+    // fmt::Display
     println!("This struct `{}` won't print...", Structure(3));
     // FIXME ^ Comment out this line.
 
