@@ -16,8 +16,8 @@ use std::mem;
 
 // This function borrows a slice
 fn analyze_slice(slice: &[i32]) {
-    println!("first element of the slice: {}", slice[0]);
-    println!("the slice has {} elements", slice.len());
+    println!(" first element of the slice: {}", slice[0]);
+    println!(" the slice has {} elements", slice.len());
 }
 
 fn main() {
@@ -48,7 +48,12 @@ fn main() {
     println!("borrow a section of the array as a slice");
     analyze_slice(&ys[1 .. 4]);
 
+    // Example of empty slice `&[]`
+    let empty_array: [u32; 0] = [];
+    assert_eq!(&empty_array, &[]);
+    assert_eq!(&empty_array, &[][..]); // same but more verbose
+
     // Out of bound indexing causes compile error
-    println!("{}", xs[5]);
+    //println!("{}", xs[5]);
 }
 ```
