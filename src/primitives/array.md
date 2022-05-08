@@ -48,7 +48,12 @@ fn main() {
     println!("borrow a section of the array as a slice");
     analyze_slice(&ys[1 .. 4]);
 
+    // Example of empty slice `&[]`
+    let empty_array: [u32; 0] = [];
+    assert_eq!(&empty_array, &[]);
+    assert_eq!(&empty_array, &[][..]); // same but more verbose
+
     // Out of bound indexing causes compile error
-    println!("{}", xs[5]);
+    //println!("{}", xs[5]);
 }
 ```
