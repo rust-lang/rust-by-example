@@ -16,8 +16,8 @@ use std::mem;
 
 // This function borrows a slice
 fn analyze_slice(slice: &[i32]) {
-    println!(" first element of the slice: {}", slice[0]);
-    println!(" the slice has {} elements", slice.len());
+    println!("first element of the slice: {}", slice[0]);
+    println!("the slice has {} elements", slice.len());
 }
 
 fn main() {
