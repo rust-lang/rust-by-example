@@ -151,7 +151,7 @@ unsafe {
 }
 assert_eq!(a, 12);
 ```
-The above could work well in unoptimized case (`Debug` mode), but if you want optimized performance(`release` mode or other optimized cases), it could not work.
+The above could work well in unoptimized cases (`Debug` mode), but if you want optimized performance (`release` mode or other optimized cases), it could not work.
 
 That is because in optimized cases, the compiler is free to allocate the same register for inputs `b` and `c` since it knows they have the same value. However it must allocate a separate register for `a` since it uses `inout` and not `inlateout`. If `inlateout` was used, then `a` and `c` could be allocated to the same register, in which case the first instruction to overwrite the value of `c` and cause the assembly code to produce the wrong result.
 
