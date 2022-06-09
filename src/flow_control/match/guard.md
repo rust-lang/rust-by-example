@@ -26,14 +26,15 @@ fn main() {
 Note that the compiler won't take guard conditions into account when checking
 if all patterns are covered by the match expression.
 
-```rust,editable
+```rust,editable,ignore,mdbook-runnable
 fn main() {
     let number: u8 = 4;
 
     match number {
         i if i == 0 => println!("Zero"),
         i if i > 0 => println!("Greater than zero"),
-        // _ => unreachable!("Should never happen."), // uncomment to fix compilation
+        // _ => unreachable!("Should never happen."),
+        // TODO ^ uncomment to fix compilation
     }
 }
 ```
