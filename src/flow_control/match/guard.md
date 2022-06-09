@@ -9,7 +9,7 @@ enum Temperature {
 }
 
 fn main() {
-    let temperature = Temperature::C(35);
+    let temperature = Temperature::Celsius(35);
     // ^ TODO try different values for `temperature`
 
     match temperature {
