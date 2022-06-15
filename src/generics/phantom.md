@@ -4,7 +4,7 @@ A phantom type parameter is one that doesn't show up at runtime,
 but is checked statically (and only) at compile time.
 
 Data types can use extra generic type parameters to act as markers
-or to perform type checking at compile time. These extra parameters 
+or to perform type checking at compile time. These extra parameters
 hold no storage values, and have no runtime behavior.
 
 In the following example, we combine [std::marker::PhantomData]
@@ -16,7 +16,7 @@ use std::marker::PhantomData;
 
 // A phantom tuple struct which is generic over `A` with hidden parameter `B`.
 #[derive(PartialEq)] // Allow equality test for this type.
-struct PhantomTuple<A, B>(A,PhantomData<B>);
+struct PhantomTuple<A, B>(A, PhantomData<B>);
 
 // A phantom type struct which is generic over `A` with hidden parameter `B`.
 #[derive(PartialEq)] // Allow equality test for this type.
@@ -42,14 +42,14 @@ fn main() {
         first: 'Q',
         phantom: PhantomData,
     };
-    
+
     // Compile-time Error! Type mismatch so these cannot be compared:
-    //println!("_tuple1 == _tuple2 yields: {}",
-    //          _tuple1 == _tuple2);
-    
+    // println!("_tuple1 == _tuple2 yields: {}",
+    //           _tuple1 == _tuple2);
+
     // Compile-time Error! Type mismatch so these cannot be compared:
-    //println!("_struct1 == _struct2 yields: {}",
-    //          _struct1 == _struct2);
+    // println!("_struct1 == _struct2 yields: {}",
+    //           _struct1 == _struct2);
 }
 ```
 
