@@ -1,9 +1,11 @@
 # Disambiguating overlapping traits
 
-A type can implement many different traits. What if two traits both require the same name? For example, many traits might have a method named `get()`. They might even have different return types! 
+A type can implement many different traits. What if two traits both require
+the same name? For example, many traits might have a method named `get()`.
+They might even have different return types!
 
-Good news: because each trait implementation gets its own `impl` block, it's 
-clear which trait's `get` method you're implementing. 
+Good news: because each trait implementation gets its own `impl` block, it's
+clear which trait's `get` method you're implementing.
 
 What about when it comes time to _call_ those methods? To disambiguate between
 them, we have to use Fully Qualified Syntax.
@@ -38,12 +40,12 @@ impl AgeWidget for Form {
 }
 
 fn main() {
-    let form = Form{
+    let form = Form {
         username: "rustacean".to_owned(),
         age: 28,
     };
 
-    // If you uncomment this line, you'll get an error saying 
+    // If you uncomment this line, you'll get an error saying
     // "multiple `get` found". Because, after all, there are multiple methods
     // named `get`.
     // println!("{}", form.get());
