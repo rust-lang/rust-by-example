@@ -1,8 +1,13 @@
 # Arc
 
-When shared ownership between threads is needed, `Arc`(Atomic Reference Counted) can be used. This struct, via the `Clone` implementation can create a reference pointer for the location of a value in the memory heap while increasing the reference counter. As it shares ownership between threads, when the last reference pointer to a value is out of scope, the variable is dropped.
+When shared ownership between threads is needed, `Arc`(Atomically Reference
+Counted) can be used. This struct, via the `Clone` implementation can create
+a reference pointer for the location of a value in the memory heap while
+increasing the reference counter. As it shares ownership between threads, when
+the last reference pointer to a value is out of scope, the variable is dropped.
 
 ```rust,editable
+use std::time::Duration;
 use std::sync::Arc;
 use std::thread;
 
@@ -11,8 +16,8 @@ fn main() {
     let apple = Arc::new("the same apple");
 
     for _ in 0..10 {
-        // Here there is no value specification as it is a pointer to a reference
-        // in the memory heap.
+        // Here there is no value specification as it is a pointer to a
+        // reference in the memory heap.
         let apple = Arc::clone(&apple);
 
         thread::spawn(move || {
@@ -21,6 +26,8 @@ fn main() {
             println!("{:?}", apple);
         });
     }
-}
 
+    // Make sure all Arc instances are printed from spawned threads.
+    thread::sleep(Duration::from_secs(1));
+}
 ```
