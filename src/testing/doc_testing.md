@@ -81,7 +81,7 @@ and `unwrap` it in hidden `main`. Sounds complicated? Here's an example:
 /// Using hidden `try_main` in doc tests.
 ///
 /// ```
-/// # // hidden lines start with `#` symbol, but they're still compileable!
+/// # // hidden lines start with `#` symbol, but they're still compilable!
 /// # fn try_main() -> Result<(), String> { // line that wraps the body shown in doc
 /// let res = try::try_div(10, 2)?;
 /// # Ok(()) // returning from try_main
