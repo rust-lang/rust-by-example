@@ -3,7 +3,7 @@
 The previous section illustrates the error handling mechanism `panic`.  Different code paths can be conditionally compiled based on the panic setting. The current values available are `unwind` and `abort`. 
 
 
-Building on the prior lemonade example, we explicitly use the panic strategy to execise different lines of code.  
+Building on the prior lemonade example, we explicitly use the panic strategy to exercise different lines of code.  
 
 ```rust,editable,mdbook-runnable
 
