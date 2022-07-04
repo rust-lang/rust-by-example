@@ -34,6 +34,9 @@ fn main() {
     println!("function: {}", function(i));
     println!("closure_annotated: {}", closure_annotated(i));
     println!("closure_inferred: {}", closure_inferred(i));
+    // Once inferred, cannot infer another type.
+    // Uncomment the line below to get a compiler error.
+    //println!("closure_inferred, but another type: {}", closure_inferred(42i64));
 
     // A closure taking no arguments which returns an `i32`.
     // The return type is inferred.
