@@ -68,7 +68,7 @@ fn main() {
     // surrounding variable. Just like the above, this will output
     // "     1". 5 white spaces and a "1".
     let number: f64 = 1.0;
-    let width: usize = 5;
+    let width: usize = 6;
     println!("{number:>width$}");
 }
 ```
