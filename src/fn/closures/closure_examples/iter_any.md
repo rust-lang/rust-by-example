@@ -29,12 +29,13 @@ fn main() {
     // `into_iter()` for vecs yields `i32`. No destructuring required.
     println!("2 in vec2: {}", vec2.into_iter().any(| x| x == 2));
 
-    // `iter()` does not move `vec1` or its elements, so it can be used again
+    // `iter()` only borrows `vec1` and its elements, so they can be used again
     println!("vec1 len: {}", vec1.len());
-    // `into_iter()` does move `vec2`, so it cannot be used again
-    // Try uncommenting the lines below to see the compiler complaining:
+    println!("First element of vec1 is: {}", vec1[0]);
+    // `into_iter()` does move `vec2` and its elements, so they cannot be used again
     // println!("First element of vec2 is: {}", vec2[0]);
-    //println!("vec2 len: {}", vec2.len());
+    // println!("vec2 len: {}", vec2.len());
+    // TODO: uncomment two lines above and see compiler errors.
 
     let array1 = [1, 2, 3];
     let array2 = [4, 5, 6];
