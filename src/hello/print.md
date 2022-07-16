@@ -54,7 +54,7 @@ fn main() {
     // FIXME ^ Add the missing argument: "James"
 
     // Only types that implement fmt::Display can be formatted with `{}`. User-
-    // defined types to not implement fmt::Display by default
+    // defined types do not implement fmt::Display by default
 
     #[allow(dead_code)]
     struct Structure(i32);
@@ -65,7 +65,7 @@ fn main() {
     // FIXME ^ Comment out this line.
 
     // For Rust 1.58 and above, you can directly capture the argument from
-    // surrounding variable. Just like the above, this will output
+    // surrounding variables. Just like the above, this will output
     // "     1". 5 white spaces and a "1".
     let number: f64 = 1.0;
     let width: usize = 6;
