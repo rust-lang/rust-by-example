@@ -54,7 +54,7 @@ fn main() {
     // FIXME ^ Add the missing argument: "James"
 
     // Only types that implement fmt::Display can be formatted with `{}`. User-
-    // defined types to not implement fmt::Display by default
+    // defined types do not implement fmt::Display by default
 
     #[allow(dead_code)]
     struct Structure(i32);
