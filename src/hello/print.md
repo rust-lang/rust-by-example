@@ -64,7 +64,7 @@ fn main() {
     println!("This struct `{}` won't print...", Structure(3));
     // FIXME ^ Comment out this line.
 
-    // For Rust 1.58 and above, you can directly capture the argument from
+    // For Rust 1.58 and above, you can directly capture the argument from a
     // surrounding variable. Just like the above, this will output
     // "     1". 5 white spaces and a "1".
     let number: f64 = 1.0;
