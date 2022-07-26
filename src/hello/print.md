@@ -29,7 +29,7 @@ fn main() {
              subject="the quick brown fox",
              verb="jumps over");
 
-    // Different formatting can invoked by specified format character after a
+    // Different formatting can be invoked by specifying the format character after a
     // `:`.
     println!("Base 10 repr:               {}",   69420);
     println!("Base 2 (binary) repr:       {:b}", 69420);
