@@ -311,7 +311,7 @@ fn call_foo(arg: i32) -> i32 {
     unsafe {
         let result;
         asm!(
-            "call *{}",
+            "call {}",
             // Function pointer to call
             in(reg) foo,
             // 1st argument in rdi
