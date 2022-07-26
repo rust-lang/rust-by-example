@@ -352,7 +352,7 @@ In this example, we use the `reg_abcd` register class to restrict the register a
 Let us assume that the register allocator has chosen to allocate `x` in the `ax` register.
 The `h` modifier will emit the register name for the high byte of that register and the `l` modifier will emit the register name for the low byte. The asm code will therefore be expanded as `mov ah, al` which copies the low byte of the value into the high byte.
 
-If you use a smaller data type (e.g. `u16`) with an operand and forget the use template modifiers, the compiler will emit a warning and suggest the correct modifier to use.
+If you use a smaller data type (e.g. `u16`) with an operand and forget to use template modifiers, the compiler will emit a warning and suggest the correct modifier to use.
 
 ## Memory address operands
 
