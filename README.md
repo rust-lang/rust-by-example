@@ -39,6 +39,7 @@ Please see the [CONTRIBUTING.md] file for more details.
 * [Japanese](https://github.com/rust-lang-ja/rust-by-example-ja)
 * [French](https://github.com/Songbird0/FR_RBE)
 * [Russian](https://github.com/ruRust/rust-by-example)
+* [Vietnamese](https://github.com/EyesCrypto-Insights/rust-by-example-vn)
 
 ## License
 

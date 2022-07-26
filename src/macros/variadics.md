@@ -9,12 +9,12 @@ We can extend our `calculate!` macro from the previous section to be variadic:
 ```rust,editable
 macro_rules! calculate {
     // The pattern for a single `eval`
-    (eval $e:expr) => {{
+    (eval $e:expr) => {
         {
             let val: usize = $e; // Force types to be integers
             println!("{} = {}", stringify!{$e}, val);
         }
-    }};
+    };
 
     // Decompose multiple `eval`s recursively
     (eval $e:expr, $(eval $es:expr),+) => {{
