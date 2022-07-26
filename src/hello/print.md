@@ -38,10 +38,10 @@ fn main() {
     println!("Base 16 (hexadecimal) repr: {:X}", 69420);
 
     // You can right-align text with a specified width. This will output
-    // "     1". 5 white spaces and a "1".
+    // "    1". 4 white spaces and a "1", for a total width of 5.
     println!("{number:>5}", number=1);
 
-    // You can pad numbers with extra zeroes. This will output "000001".
+    // You can pad numbers with extra zeroes. This will output "00001".
     println!("{number:0>5}", number=1);
 
     // You can use named arguments in the format specifier by appending a `$`
