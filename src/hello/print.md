@@ -61,8 +61,8 @@ fn main() {
 
     // This will not compile because `Structure` does not implement
     // fmt::Display
-    println!("This struct `{}` won't print...", Structure(3));
-    // FIXME ^ Comment out this line.
+    //println!("This struct `{}` won't print...", Structure(3));
+    // TODO ^ Try uncommenting this line
 
     // For Rust 1.58 and above, you can directly capture the argument from a
     // surrounding variable. Just like the above, this will output
@@ -88,8 +88,9 @@ Implementing the `fmt::Display` trait automatically implements the
 
 ### Activities
 
- * Fix the two issues in the above code (see FIXME) so that it runs without
+ * Fix the issue in the above code (see FIXME) so that it runs without
    error.
+ * Try uncommenting the line that attempts to format the `Structure` struct (see TODO)
  * Add a `println!` macro call that prints: `Pi is roughly 3.142` by controlling
    the number of decimal places shown. For the purposes of this exercise,
    use `let pi = 3.141592` as an estimate for pi. (Hint: you may need to
