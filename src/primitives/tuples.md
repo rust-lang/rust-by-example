@@ -9,9 +9,9 @@ use tuples to return multiple values, as tuples can hold any number of values.
 // Tuples can be used as function arguments and as return values
 fn reverse(pair: (i32, bool)) -> (bool, i32) {
     // `let` can be used to bind the members of a tuple to variables
-    let (integer, boolean) = pair;
+    let (int_param, bool_param) = pair;
 
-    (boolean, integer)
+    (bool_param, int_param)
 }
 
 // The following struct is for the activity.

@@ -29,7 +29,7 @@ fn main() {
              subject="the quick brown fox",
              verb="jumps over");
 
-    // Different formatting can invoked by specified format character after a
+    // Different formatting can be invoked by specifying the format character after a
     // `:`.
     println!("Base 10 repr:               {}",   69420);
     println!("Base 2 (binary) repr:       {:b}", 69420);
@@ -38,10 +38,10 @@ fn main() {
     println!("Base 16 (hexadecimal) repr: {:X}", 69420);
 
     // You can right-align text with a specified width. This will output
-    // "     1". 5 white spaces and a "1".
+    // "    1". 4 white spaces and a "1", for a total width of 5.
     println!("{number:>5}", number=1);
 
-    // You can pad numbers with extra zeroes. This will output "000001".
+    // You can pad numbers with extra zeroes. This will output "00001".
     println!("{number:0>5}", number=1);
 
     // You can use named arguments in the format specifier by appending a `$`
@@ -54,21 +54,21 @@ fn main() {
     // FIXME ^ Add the missing argument: "James"
 
     // Only types that implement fmt::Display can be formatted with `{}`. User-
-    // defined types to not implement fmt::Display by default
+    // defined types do not implement fmt::Display by default
 
     #[allow(dead_code)]
     struct Structure(i32);
 
     // This will not compile because `Structure` does not implement
     // fmt::Display
-    println!("This struct `{}` won't print...", Structure(3));
-    // FIXME ^ Comment out this line.
+    //println!("This struct `{}` won't print...", Structure(3));
+    // TODO ^ Try uncommenting this line
 
-    // For Rust 1.58 and above, you can directly capture the argument from
+    // For Rust 1.58 and above, you can directly capture the argument from a
     // surrounding variable. Just like the above, this will output
     // "     1". 5 white spaces and a "1".
     let number: f64 = 1.0;
-    let width: usize = 6;
+    let width: usize = 5;
     println!("{number:>width$}");
 }
 ```
@@ -88,8 +88,9 @@ Implementing the `fmt::Display` trait automatically implements the
 
 ### Activities
 
- * Fix the two issues in the above code (see FIXME) so that it runs without
+ * Fix the issue in the above code (see FIXME) so that it runs without
    error.
+ * Try uncommenting the line that attempts to format the `Structure` struct (see TODO)
  * Add a `println!` macro call that prints: `Pi is roughly 3.142` by controlling
    the number of decimal places shown. For the purposes of this exercise,
    use `let pi = 3.141592` as an estimate for pi. (Hint: you may need to

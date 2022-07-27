@@ -12,6 +12,7 @@ can be used to/for:
 * link to a foreign library
 * mark functions as unit tests
 * mark functions that will be part of a benchmark
+* [attribute like macros][macros]
 
 When attributes apply to a whole crate, their syntax is `#![crate_attribute]`,
 and when they apply to a module or item, the syntax is `#[item_attribute]`
@@ -36,3 +37,4 @@ Attributes can have multiple values and can be separated over multiple lines, to
 [cfg]: attribute/cfg.md
 [crate]: attribute/crate.md
 [lint]: https://en.wikipedia.org/wiki/Lint_%28software%29
+[macros]: https://doc.rust-lang.org/book/ch19-06-macros.html#attribute-like-macros
