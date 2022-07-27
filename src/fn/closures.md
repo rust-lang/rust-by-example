@@ -34,7 +34,7 @@ fn main() {
     println!("function: {}", function(i));
     println!("closure_annotated: {}", closure_annotated(i));
     println!("closure_inferred: {}", closure_inferred(i));
-    // Once closure's type has been inferred, another type cannot be infered.
+    // Once closure's type has been inferred, it cannot be inferred again with another type.
     //println!("cannot reuse closure_inferred with another type: {}", closure_inferred(42i64));
     // TODO: uncomment the line above and see the compiler error.
 
