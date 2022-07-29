@@ -58,7 +58,7 @@ fn main() {
 }
 ```
 
-##  `get_or_insert()` evaluates eagerly, modifies empty value im place
+##  `get_or_insert()` evaluates eagerly, modifies empty value in place
 
 To make sure that an `Option` contains a value, we can use `get_or_insert` to modify it in place with a fallback value, as is shown in the following example. Note that `get_or_insert` eagerly evaluaes its parameter, so variable `apple` is moved:
 
@@ -79,7 +79,7 @@ fn main() {
 }
 ```
 
-##  `get_or_insert_with()` evaluates lazily, modifies empty value im place
+##  `get_or_insert_with()` evaluates lazily, modifies empty value in place
 
 Instead of explicitly providing a value to fall back on, we can pass a closure to `get_or_insert_with`, as follows:
 ```rust,editable
