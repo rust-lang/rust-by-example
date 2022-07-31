@@ -6,6 +6,7 @@ author = "The Rust Community"
 [output.html.playpen]
 editable = true
 editor = "ace"
+line-numbers = true
 
 [output.html.fold]
 enable = true
