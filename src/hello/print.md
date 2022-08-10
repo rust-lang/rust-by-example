@@ -35,7 +35,6 @@ fn main() {
     println!("Base 2 (binary) repr:       {:b}", 69420);
     println!("Base 8 (octal) repr:        {:o}", 69420);
     println!("Base 16 (hexadecimal) repr: {:x}", 69420);
-    println!("Base 16 (hexadecimal) repr: {:X}", 69420);
 
     // You can right-align text with a specified width. This will output
     // "    1". 4 white spaces and a "1", for a total width of 5.
