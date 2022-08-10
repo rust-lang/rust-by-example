@@ -1,6 +1,6 @@
-# Playpen
+# Playground
 
-The [Rust Playpen](https://github.com/rust-lang/rust-playpen) is a way to experiment with Rust code through a web interface. This project is now commonly referred to as [Rust Playground](https://play.rust-lang.org/).
+The [Rust Playground](https://play.rust-lang.org/) is a way to experiment with Rust code through a web interface.
 
 ## Using it with `mdbook`
 
@@ -35,11 +35,11 @@ You may have noticed in some of the [official Rust docs][official-rust-docs] a b
 ### See also:
 
 - [The Rust Playground][rust-playground]
-- [The next-gen playpen][next-gen-playpen]
+- [rust-playground][rust-playground]
 - [The rustdoc Book][rustdoc-book]
 
 [rust-playground]: https://play.rust-lang.org/
-[next-gen-playpen]: https://github.com/integer32llc/rust-playground/
+[rust-playground]: https://github.com/integer32llc/rust-playground/
 [mdbook]: https://github.com/rust-lang/mdBook
 [official-rust-docs]: https://doc.rust-lang.org/core/
 [rustdoc-book]: https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html
