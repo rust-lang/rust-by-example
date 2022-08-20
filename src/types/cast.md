@@ -67,23 +67,23 @@ fn main() {
     // the upper bound or is less than the lower bound, the returned value 
     // will be equal to the bound crossed.
     
-    // 300.0 is 255
-    println!("300.0 is {}", 300.0_f32 as u8);
+    // 300.0 as u8 is 255
+    println!(" 300.0 as u8 is : {}", 300.0_f32 as u8);
     // -100.0 as u8 is 0
-    println!("-100.0 as u8 is {}", -100.0_f32 as u8);
+    println!("-100.0 as u8 is : {}", -100.0_f32 as u8);
     // nan as u8 is 0
-    println!("nan as u8 is {}", f32::NAN as u8);
+    println!("   nan as u8 is : {}", f32::NAN as u8);
     
     // This behavior incurs a small runtime cost and can be avoided 
     // with unsafe methods, however the results might overflow and 
     // return **unsound values**. Use these methods wisely:
     unsafe {
-        // 300.0 is 44
-        println!("300.0 is {}", 300.0_f32.to_int_unchecked::<u8>());
+        // 300.0 as u8 is 44
+        println!(" 300.0 as u8 is : {}", 300.0_f32.to_int_unchecked::<u8>());
         // -100.0 as u8 is 156
-        println!("-100.0 as u8 is {}", (-100.0_f32).to_int_unchecked::<u8>());
+        println!("-100.0 as u8 is : {}", (-100.0_f32).to_int_unchecked::<u8>());
         // nan as u8 is 0
-        println!("nan as u8 is {}", f32::NAN.to_int_unchecked::<u8>());
+        println!("   nan as u8 is : {}", f32::NAN.to_int_unchecked::<u8>());
     }
 }
 ```
