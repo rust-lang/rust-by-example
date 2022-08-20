@@ -53,13 +53,13 @@ fn main() {
     // Unless it already fits, of course.
     println!(" 128 as a i16 is: {}", 128 as i16);
     
-    // 128 as i8 -> -128, whose two's complement in eight bits is:
+    // 128 as u8 -> 128, whose value in 8-bit two's complement representation is:
     println!(" 128 as a i8 is : {}", 128 as i8);
 
     // repeating the example above
     // 1000 as u8 -> 232
     println!("1000 as a u8 is : {}", 1000 as u8);
-    // and the two's complement of 232 is -24
+    // and the value of 232 in 8-bit two's complement representation is -24
     println!(" 232 as a i8 is : {}", 232 as i8);
     
     // Since Rust 1.45, the `as` keyword performs a *saturating cast* 
