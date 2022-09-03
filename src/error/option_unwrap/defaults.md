@@ -60,7 +60,7 @@ fn main() {
 
 ##  `get_or_insert()` evaluates eagerly, modifies empty value in place
 
-To make sure that an `Option` contains a value, we can use `get_or_insert` to modify it in place with a fallback value, as is shown in the following example. Note that `get_or_insert` eagerly evaluaes its parameter, so variable `apple` is moved:
+To make sure that an `Option` contains a value, we can use `get_or_insert` to modify it in place with a fallback value, as is shown in the following example. Note that `get_or_insert` eagerly evaluates its parameter, so variable `apple` is moved:
 
 ```rust,editable
 #[derive(Debug)] 
@@ -75,7 +75,7 @@ fn main() {
     // my_fruit is: Apple
     // first_available_fruit is: Apple
     //println!("Variable named `apple` is moved: {:?}", apple);
-    // TODO: uncomment the line above to see the compliler error
+    // TODO: uncomment the line above to see the compiler error
 }
 ```
 
