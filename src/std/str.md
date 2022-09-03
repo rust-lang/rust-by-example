@@ -69,7 +69,7 @@ This way you can add any character to your string, even unprintable ones
 and ones that you don't know how to type. If you want a literal backslash,
 escape it with another one: `\\`
 
-String or character literal delimiters occuring within a literal must be escaped: `"\""`, `'\''`.
+String or character literal delimiters occurring within a literal must be escaped: `"\""`, `'\''`.
 
 ```rust,editable
 fn main() {

@@ -5,7 +5,7 @@ A `match` *guard* can be added to filter the arm.
 ```rust,editable
 enum Temperature {
     Celsius(i32),
-    Farenheit(i32),
+    Fahrenheit(i32),
 }
 
 fn main() {
@@ -17,8 +17,8 @@ fn main() {
         // The `if condition` part ^ is a guard
         Temperature::Celsius(t) => println!("{}C is below 30 Celsius", t),
 
-        Temperature::Farenheit(t) if t > 86 => println!("{}F is above 86 Farenheit", t),
-        Temperature::Farenheit(t) => println!("{}F is below 86 Farenheit", t),
+        Temperature::Fahrenheit(t) if t > 86 => println!("{}F is above 86 Fahrenheit", t),
+        Temperature::Fahrenheit(t) => println!("{}F is below 86 Fahrenheit", t),
     }
 }
 ```
