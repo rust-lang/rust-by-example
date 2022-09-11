@@ -25,9 +25,9 @@ foo
         └── my_other_bin.rs
 ```
 
-To tell `cargo` to compile or run this binary as opposed to the default or other
-binaries, we just pass `cargo` the `--bin my_other_bin` flag, where `my_other_bin`
-is the name of the binary we want to work with.
+To tell `cargo` to only compile or run this binary, we just pass `cargo` the
+`--bin my_other_bin` flag, where `my_other_bin` is the name of the binary we
+want to work with.
 
 In addition to extra binaries, `cargo` supports [more features] such as
 benchmarks, tests, and examples.
