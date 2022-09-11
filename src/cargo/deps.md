@@ -11,8 +11,8 @@ To create a new Rust project,
 # A binary
 cargo new foo
 
-# OR A library
-cargo new --lib foo
+# A library
+cargo new --lib bar
 ```
 
 For the rest of this chapter, let's assume we are making a binary, rather than
@@ -21,14 +21,19 @@ a library, but all of the concepts are the same.
 After the above commands, you should see a file hierarchy like this:
 
 ```txt
-foo
-├── Cargo.toml
-└── src
-    └── main.rs
+.
+├── bar
+│   ├── Cargo.toml
+│   └── src
+│       └── lib.rs
+└── foo
+    ├── Cargo.toml
+    └── src
+        └── main.rs
 ```
 
-The `main.rs` is the root source file for your new project -- nothing new there.
-The `Cargo.toml` is the config file for `cargo` for this project (`foo`). If you
+The `main.rs` is the root source file for your new `foo` project -- nothing new there.
+The `Cargo.toml` is the config file for `cargo` for this project. If you
 look inside it, you should see something like this:
 
 ```toml
