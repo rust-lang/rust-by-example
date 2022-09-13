@@ -13,7 +13,6 @@ mod my {
     }
 
     // A public struct with a private field of generic type `T`
-    #[allow(dead_code)]
     pub struct ClosedBox<T> {
         contents: T,
     }
