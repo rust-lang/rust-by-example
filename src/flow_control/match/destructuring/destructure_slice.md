@@ -45,4 +45,4 @@ fn main() {
 
 ### See also:
 
-[Arrays and Slices](../../../primitives/array.md)
+[Arrays and Slices](../../../primitives/array.md) and [Binding](../binding.md) for `@` sigil
