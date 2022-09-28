@@ -26,6 +26,7 @@ if let ("Ham", b) = dish {
 if let _ = 5 {
     println!("Irrefutable patterns are always true");
 }
+```
 
 if and if let expressions can be intermixed:
 ```rust,editable
@@ -40,6 +41,7 @@ let a = if let Some(1) = x {
     -1
 };
 assert_eq!(a, 3);
+```
 An if let expression is equivalent to a match expression as follows:
 
 ```rust,editable
@@ -48,6 +50,7 @@ if let PATS = EXPR {
 } else {
     /*else */
 }
+```
 is equivalent to
 
 ```rust,editable
@@ -67,6 +70,7 @@ let v = E::Y(12);
 if let E::X(n) | E::Y(n) = v {
     assert_eq!(n, 12);
 }
+```
 The expression cannot be a lazy boolean operator expression. Use of a lazy boolean operator is ambiguous with a planned feature change of the language (the implementation of if-let chains - see eRFC 2947). When lazy boolean operator expression is desired, this can be achieved by using parenthesis as below:
 
 ```rust,editable
@@ -81,6 +85,7 @@ if let PAT = EXPR || EXPR { .. }
 
 // After...
 if let PAT = ( EXPR || EXPR ) { .. }
+```
 
 
 ### See also:
