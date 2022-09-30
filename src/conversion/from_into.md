@@ -66,7 +66,7 @@ impl From<i32> for Number {
 
 fn main() {
     let int = 5;
-    // Try removing the type declaration
+    // Try removing the type annotation
     let num: Number = int.into();
     println!("My number is {:?}", num);
 }
