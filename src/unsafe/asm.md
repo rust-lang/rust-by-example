@@ -227,7 +227,7 @@ This state is generally referred to as being "clobbered".
 We need to tell the compiler about this since it may need to save and restore this state around the inline assembly block.
 
 ```rust
-use core::arch::asm;
+use std::arch::asm;
 
 fn main() {
     // three entries of four bytes each
