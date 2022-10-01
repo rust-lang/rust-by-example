@@ -83,7 +83,7 @@ and `unwrap` it in hidden `main`. Sounds complicated? Here's an example:
 /// ```
 /// # // hidden lines start with `#` symbol, but they're still compilable!
 /// # fn try_main() -> Result<(), String> { // line that wraps the body shown in doc
-/// let res = try::try_div(10, 2)?;
+/// let res = doccomments::try_div(10, 2)?;
 /// # Ok(()) // returning from try_main
 /// # }
 /// # fn main() { // starting main that'll unwrap()
