@@ -1,9 +1,10 @@
 # Documentation testing
 
 The primary way of documenting a Rust project is through annotating the source
-code. Documentation comments are written in [markdown] and support code
-blocks in them. Rust takes care about correctness, so these code blocks are
-compiled and used as documentation tests.
+code. Documentation comments are written in 
+[CommonMark Markdown specification][commonmark] and support code blocks in them.
+Rust takes care about correctness, so these code blocks are compiled and used 
+as documentation tests.
 
 ```rust,ignore
 /// First line is a short summary describing function.
@@ -106,6 +107,6 @@ pub fn try_div(a: i32, b: i32) -> Result<i32, String> {
 * [API Guidelines][doc-nursery] on documentation guidelines
 
 [doc-nursery]: https://rust-lang-nursery.github.io/api-guidelines/documentation.html
-[markdown]: https://daringfireball.net/projects/markdown/
+[commonmark]: https://commonmark.org/
 [RFC505]: https://github.com/rust-lang/rfcs/blob/master/text/0505-api-comment-conventions.md
 [question-instead-of-unwrap]: https://rust-lang-nursery.github.io/api-guidelines/documentation.html#examples-use--not-try-not-unwrap-c-question-mark
