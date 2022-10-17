@@ -13,8 +13,10 @@ between `Path` and `PathBuf` is similar to that of `str` and `String`:
 a `PathBuf` can be mutated in-place, and can be dereferenced to a `Path`.
 
 Note that a `Path` is *not* internally represented as an UTF-8 string, but
-instead is stored as a vector of bytes (`Vec<u8>`). Therefore, converting a
-`Path` to a `&str` is *not* free and may fail (an `Option` is returned).
+instead is stored as an `OsString`. Therefore, converting a `Path` to a `&str`
+is *not* free and may fail (an `Option` is returned). However, a `Path` can be 
+freely converted to an `OsString` or `&OsStr` using `into_os_string` and
+`as_os_str`, respectively.
 
 ```rust,editable
 use std::path::Path;
