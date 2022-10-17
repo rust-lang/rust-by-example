@@ -64,7 +64,7 @@ fn main() {
         }
     }
 
-    // Out of bound indexing causes compile error
+    // Out of bound indexing causes runtime error
     //println!("{}", xs[5]);
 }
 ```
