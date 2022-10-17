@@ -51,7 +51,7 @@ fn main() {
 
 ## Fail the entire operation with `collect()`
 
-`Result` implements `FromIter` so that a vector of results (`Vec<Result<T, E>>`)
+`Result` implements `FromIterator` so that a vector of results (`Vec<Result<T, E>>`)
 can be turned into a result with a vector (`Result<Vec<T>, E>`). Once an
 `Result::Err` is found, the iteration will terminate.
 
