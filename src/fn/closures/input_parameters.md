@@ -22,7 +22,7 @@ closure.
 This is because if a move is possible, then any type of borrow should also
 be possible. Note that the reverse is not true. If the parameter is
 annotated as `Fn`, then capturing variables by `&mut T` or `T` are not
-allowed.
+allowed. However, `&T` is allowed.
 
 In the following example, try swapping the usage of `Fn`, `FnMut`, and
 `FnOnce` to see what happens:
