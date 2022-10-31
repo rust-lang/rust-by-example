@@ -42,7 +42,7 @@ jobs:
         sh linkcheck.sh --all rust-by-example
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       with:
         name: rust-by-example
         path: book
