@@ -68,7 +68,7 @@ fn main() {
 
     // For Rust 1.58 and above, you can directly capture the argument from a
     // surrounding variable. Just like the above, this will output
-    // "     1". 5 white spaces and a "1".
+    // "    1". 4 white spaces and a "1".
     let number: f64 = 1.0;
     let width: usize = 5;
     println!("{number:>width$}");
