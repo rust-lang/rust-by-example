@@ -1,5 +1,39 @@
 # `read_lines`
 
+## Beginner friendly method
+This method is NOT efficient. It's here for beginners
+who can't understand the efficient method yet.
+
+```rust,no_run
+use std::fs::File;
+use std::io::{ self, BufRead, BufReader };
+
+fn read_lines(filename: String) -> io::Lines<BufReader<File>> {
+    // Open the file in read-only mode.
+    let file = File::open(filename).unwrap(); 
+    // Read the file line by line, and return an iterator of the lines of the file.
+    return io::BufReader::new(file).lines(); 
+}
+
+fn main() {
+    // Stores the iterator of lines of the file in lines variable.
+    let lines = read_lines("./hosts".to_string());
+    // Iterate over the lines of the file, and in this case print them.
+    for line in lines {
+        println!("{}", line.unwrap());
+    }
+}
+```
+
+Running this program simply prints the lines individually.
+```shell
+$ echo -e "127.0.0.1\n192.168.0.1\n" > hosts
+$ rustc read_lines.rs && ./read_lines
+127.0.0.1
+192.168.0.1
+```
+
+## Efficient method
 The method `lines()` returns an iterator over the lines
 of a file.
 
