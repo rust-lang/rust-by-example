@@ -26,7 +26,7 @@ fn main() {
         let borrow1 = &i; // `borrow1` lifetime starts. ──┐│
         //                                                ││
         println!("borrow1: {}", borrow1); //              ││
-    } // `borrow1 ends. ──────────────────────────────────┘│
+    } // `borrow1` ends. ─────────────────────────────────┘│
     //                                                     │
     //                                                     │
     { //                                                   │
