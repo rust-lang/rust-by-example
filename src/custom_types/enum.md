@@ -1,7 +1,7 @@
 # Enums
 
 The `enum` keyword allows the creation of a type which may be one of a few
-different variants. Any variant which is valid as a `struct` is also valid as
+different variants. Any variant which is valid as a `struct` is also valid in
 an `enum`.
 
 ```rust,editable
@@ -10,7 +10,7 @@ an `enum`.
 // `PageLoad != PageUnload` and `KeyPress(char) != Paste(String)`.
 // Each is different and independent.
 enum WebEvent {
-    // An `enum` may either be `unit-like`,
+    // An `enum` variant may either be `unit-like`,
     PageLoad,
     PageUnload,
     // like tuple structs,
@@ -26,7 +26,7 @@ fn inspect(event: WebEvent) {
     match event {
         WebEvent::PageLoad => println!("page loaded"),
         WebEvent::PageUnload => println!("page unloaded"),
-        // Destructure `c` from inside the `enum`.
+        // Destructure `c` from inside the `enum` variant.
         WebEvent::KeyPress(c) => println!("pressed '{}'.", c),
         WebEvent::Paste(s) => println!("pasted \"{}\".", s),
         // Destructure `Click` into `x` and `y`.
