@@ -43,15 +43,15 @@ fn main() {
 
     // `Structure` is printable!
     println!("Now {:?} will print!", Structure(3));
-    
+
     // The problem with `derive` is there is no control over how
     // the results look. What if I want this to just show a `7`?
     println!("Now {:?} will print!", Deep(Structure(7)));
 }
 ```
 
-So `fmt::Debug` definitely makes this printable but sacrifices some
-elegance. Rust also provides "pretty printing" with `{:#?}`.
+So `fmt::Debug` definitely makes this printable but sacrifices some elegance.
+Rust also provides "pretty printing" with `{:#?}`.
 
 ```rust,editable
 #[derive(Debug)]
