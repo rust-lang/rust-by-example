@@ -3,8 +3,7 @@
 We've seen that formatting is specified via a *format string*:
 
 * `format!("{}", foo)` -> `"3735928559"`
-* `format!("0x{:X}", foo)` ->
-  [`"0xDEADBEEF"`][deadbeef]
+* `format!("0x{:X}", foo)` -> [`"0xDEADBEEF"`][deadbeef]
 * `format!("0o{:o}", foo)` -> `"0o33653337357"`
 
 The same variable (`foo`) can be formatted differently depending on which
@@ -26,13 +25,13 @@ struct City {
 }
 
 impl Display for City {
-    // `f` is a buffer, and this method must write the formatted string into it
+    // `f` is a buffer, and this method must write the formatted string into it.
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         let lat_c = if self.lat >= 0.0 { 'N' } else { 'S' };
         let lon_c = if self.lon >= 0.0 { 'E' } else { 'W' };
 
         // `write!` is like `format!`, but it will write the formatted string
-        // into a buffer (the first argument)
+        // into a buffer (the first argument).
         write!(f, "{}: {:.3}°{} {:.3}°{}",
                self.name, self.lat.abs(), lat_c, self.lon.abs(), lon_c)
     }
@@ -69,6 +68,7 @@ You can view a [full list of formatting traits][fmt_traits] and their argument
 types in the [`std::fmt`][fmt] documentation.
 
 ### Activity
+
 Add an implementation of the `fmt::Display` trait for the `Color` struct above
 so that the output displays as:
 
@@ -79,8 +79,9 @@ RGB (0, 0, 0) 0x000000
 ```
 
 Two hints if you get stuck:
- * You [may need to list each color more than once][named_parameters],
- * You can [pad with zeros to a width of 2][fmt_width] with `:0>2`.
+
+* You [may need to list each color more than once][named_parameters].
+* You can [pad with zeros to a width of 2][fmt_width] with `:0>2`.
 
 ### See also:
 

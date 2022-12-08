@@ -52,7 +52,8 @@ fn main() {
 
 ### Activity
 
-Try changing the program so that the index of each element in the vector is also printed. The new output should look like this:
+Try changing the program so that the index of each element in the vector is also
+printed. The new output should look like this:
 
 ```rust,ignore
 [0: 1, 1: 2, 2: 3]
