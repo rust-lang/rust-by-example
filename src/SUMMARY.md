@@ -59,6 +59,7 @@
         - [Guards](flow_control/match/guard.md)
         - [Binding](flow_control/match/binding.md)
     - [if let](flow_control/if_let.md)
+    - [let-else](flow_control/let_else.md)
     - [while let](flow_control/while_let.md)
 
 - [Functions](fn.md)
