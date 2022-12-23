@@ -27,7 +27,7 @@ fn main() {
     // `iter()` for vecs yields `&i32`. Destructure to `i32`.
     println!("2 in vec1: {}", vec1.iter()     .any(|&x| x == 2));
     // `into_iter()` for vecs yields `i32`. No destructuring required.
-    println!("2 in vec2: {}", vec2.into_iter().any(| x| x == 2));
+    println!("2 in vec2: {}", vec2.into_iter().any(|x| x == 2));
 
     // `iter()` only borrows `vec1` and its elements, so they can be used again
     println!("vec1 len: {}", vec1.len());
