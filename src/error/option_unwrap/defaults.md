@@ -98,7 +98,7 @@ fn main() {
     println!("my_fruit is: {:?}", my_fruit);
     // Providing lemon as fallback
     // first_available_fruit is: Lemon
-    // my_fruit is: Lemon
+    // my_fruit is: Some(Lemon)
 
     // If the Option has a value, it is left unchanged, and the closure is not invoked
     let mut my_apple = Some(Fruit::Apple);
