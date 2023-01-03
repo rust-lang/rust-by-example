@@ -35,7 +35,7 @@ fn main() {
         println!("borrow2: {}", borrow2); //              ││
     } // `borrow2` ends. ─────────────────────────────────┘│
     //                                                     │
-}   // Lifetime ends. ─────────────────────────────────────┘
+}   // `i` lifetime ends. ─────────────────────────────────┘
 ```
 
 Note that no names or types are assigned to label lifetimes.
