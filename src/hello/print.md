@@ -59,7 +59,7 @@ fn main() {
     // Only types that implement fmt::Display can be formatted with `{}`. User-
     // defined types do not implement fmt::Display by default.
 
-    #[allow(dead_code)]
+    #[allow(dead_code)] // disable `dead_code` which warn against unused module
     struct Structure(i32);
 
     // This will not compile because `Structure` does not implement
@@ -89,6 +89,8 @@ for these types. To print text for custom types, more steps are required.
 Implementing the `fmt::Display` trait automatically implements the
 [`ToString`] trait which allows us to [convert] the type to [`String`][string].
 
+In *line 46*, `#[allow(dead_code)]` is an [attribute] which only apply to the module after it.
+
 ### Activities
 
 * Fix the issue in the above code (see FIXME) so that it runs without
@@ -102,8 +104,7 @@ Implementing the `fmt::Display` trait automatically implements the
 
 ### See also:
 
-[`std::fmt`][fmt], [`macros`][macros], [`struct`][structs],
-and [`traits`][traits]
+[`std::fmt`][fmt], [`macros`][macros], [`struct`][structs], [`traits`][traits], and [`dead_code`][dead_code]
 
 [fmt]: https://doc.rust-lang.org/std/fmt/
 [macros]: ../macros.md
@@ -112,3 +113,5 @@ and [`traits`][traits]
 [traits]: https://doc.rust-lang.org/std/fmt/#formatting-traits
 [`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html
 [convert]: ../conversion/string.md
+[attribute]: ../attribute.md
+[dead_code]: ../attribute/unused.md
