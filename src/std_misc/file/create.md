@@ -53,6 +53,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 (As in the previous example, you are encouraged to test this example under
 failure conditions.)
 
-There is [`OpenOptions`] struct that can be used to configure how a file is opened.
+The [`OpenOptions`] struct can be used to configure how a file is opened.
 
 [`OpenOptions`]: https://doc.rust-lang.org/std/fs/struct.OpenOptions.html
