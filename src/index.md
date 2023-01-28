@@ -27,7 +27,7 @@ Now let's begin!
 
 - [Flow of Control](flow_control.md) - `if`/`else`, `for`, and others.
 
-- [Functions](fn.md) - Learn about Methods, Closures and High Order Functions.
+- [Functions](fn.md) - Learn about Methods, Closures and Higher Order Functions.
 
 - [Modules](mod.md) - Organize code using modules
 
