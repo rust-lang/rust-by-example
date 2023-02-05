@@ -39,10 +39,7 @@ fn have_recipe(food: Food) -> Option<Food> {
 fn cookable_v1(food: Food) -> Option<Food> {
     match have_recipe(food) {
         None       => None,
-        Some(food) => match have_ingredients(food) {
-            None       => None,
-            Some(food) => Some(food),
-        },
+        Some(food) => have_ingredients(food),
     }
 }
 
