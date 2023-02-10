@@ -42,9 +42,7 @@ and `String::from` respectively.
 ## A more efficient approach
 
 Here we use the `BufRead` class to read the file. `BufRead` uses an internal
-readahead buffer to performantly reduce the number of times the underlying
-file storage layer must be queried per line read. The intermediary buffer
-is much faster to access.
+buffer to reduce intermediate allocations.
 
 We also update `read_lines` to return an iterator instead of allocating new
 `String` objects in memory for each line.
