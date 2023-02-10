@@ -41,10 +41,13 @@ and `String::from` respectively.
 
 ## A more efficient approach
 
-We use the `BufRead` class to read the file. `BufRead` uses an internal
+Here we use the `BufRead` class to read the file. `BufRead` uses an internal
 readahead buffer to performantly reduce the number of times the underlying
 file storage layer must be queried per line read. The intermediary buffer
 is much faster to access.
+
+We also update `read_lines` to return an iterator instead of allocating new
+`String` objects in memory for each line.
 
 ```rust,no_run
 use std::fs::File;
@@ -80,8 +83,8 @@ $ rustc read_lines.rs && ./read_lines
 192.168.0.1
 ```
 
-Note that since `File::open` expects a generic `AsRef<Path>` as argument, we define our
-generic `read_lines()` method with the same generic constraint, using the `where` keyword.
+(Note that since `File::open` expects a generic `AsRef<Path>` as argument, we define our
+generic `read_lines()` method with the same generic constraint, using the `where` keyword.)
 
 This process is more efficient than creating a `String` in memory with all of the file's
 contents. This can especially cause performance issues when working with larger files.
