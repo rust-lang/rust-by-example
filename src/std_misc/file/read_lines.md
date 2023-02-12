@@ -12,9 +12,11 @@ use std::io::Read;
 fn read_lines(filename: String) -> Vec<String> {
     // Open the file in read-only mode.
     let mut file = File::open(filename).unwrap();
+
     // Read file contents into a String buffer.
     let mut buffer = String::new();
     file.read_to_string(&mut buffer).unwrap();
+
     // Parse the buffer line by line, and collect into a `Vec<String>`
     buffer.lines().map(|line| line.to_owned()).collect()
 }
