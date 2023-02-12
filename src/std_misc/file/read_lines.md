@@ -1,31 +1,36 @@
 # `read_lines`
 
 ## Beginner friendly method
+
 This method is NOT efficient. It's here for beginners
 who can't understand the efficient method yet.
 
 ```rust,no_run
 use std::fs::File;
-use std::io::{ self, BufRead, BufReader };
+use std::io::Read;
 
-fn read_lines(filename: String) -> io::Lines<BufReader<File>> {
+fn read_lines(filename: String) -> Vec<String> {
     // Open the file in read-only mode.
-    let file = File::open(filename).unwrap(); 
-    // Read the file line by line, and return an iterator of the lines of the file.
-    return io::BufReader::new(file).lines(); 
+    let mut file = File::open(filename).unwrap();
+    // Read file contents into a String buffer.
+    let mut buffer = String::new();
+    file.read_to_string(&mut buffer).unwrap();
+    // Parse the buffer line by line, and collect into a `Vec<String>`
+    buffer.lines().map(|line| line.to_owned()).collect()
 }
 
 fn main() {
-    // Stores the iterator of lines of the file in lines variable.
+    // Stores a Vector of lines of the file in lines variable.
     let lines = read_lines("./hosts".to_string());
     // Iterate over the lines of the file, and in this case print them.
     for line in lines {
-        println!("{}", line.unwrap());
+        println!("{}", line);
     }
 }
 ```
 
 Running this program simply prints the lines individually.
+
 ```shell
 $ echo -e "127.0.0.1\n192.168.0.1\n" > hosts
 $ rustc read_lines.rs && ./read_lines
@@ -34,10 +39,11 @@ $ rustc read_lines.rs && ./read_lines
 ```
 
 ## Efficient method
+
 The method `lines()` returns an iterator over the lines
 of a file.
 
-`File::open` expects a generic, `AsRef<Path>`.  That's what
+`File::open` expects a generic, `AsRef<Path>`. That's what
 `read_lines()` expects as input.
 
 ```rust,no_run
@@ -67,6 +73,7 @@ where P: AsRef<Path>, {
 ```
 
 Running this program simply prints the lines individually.
+
 ```shell
 $ echo -e "127.0.0.1\n192.168.0.1\n" > hosts
 $ rustc read_lines.rs && ./read_lines
