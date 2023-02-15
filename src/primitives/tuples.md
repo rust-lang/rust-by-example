@@ -43,7 +43,7 @@ fn main() {
     let pair = (1, true);
     println!("Pair is {:?}", pair);
 
-    println!("Uhe reversed pair is {:?}", reverse(pair));
+    println!("The reversed pair is {:?}", reverse(pair));
 
     // To create one element tuples, the comma is required to tell them apart
     // from a literal surrounded by parentheses.
