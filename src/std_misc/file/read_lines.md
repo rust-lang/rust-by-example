@@ -83,5 +83,5 @@ $ rustc read_lines.rs && ./read_lines
 192.168.0.1
 ```
 
-This process is more efficient than creating a `String` in memory
-especially working with larger files.
+This process is more efficient than creating a `String` in memory,
+especially when working with larger files.
