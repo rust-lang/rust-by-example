@@ -3,6 +3,7 @@
 A `match` *guard* can be added to filter the arm.
 
 ```rust,editable
+#[allow(dead_code)]
 enum Temperature {
     Celsius(i32),
     Fahrenheit(i32),
