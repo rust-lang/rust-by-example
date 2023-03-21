@@ -1,44 +1,51 @@
 # `read_lines`
 
-## Beginner friendly method
-This method is NOT efficient. It's here for beginners
-who can't understand the efficient method yet.
+## A naive approach
 
-```rust,no_run
-use std::fs::File;
-use std::io::{ self, BufRead, BufReader };
+This might be a reasonable first attempt for a beginner's first
+implementation for reading lines from a file.
 
-fn read_lines(filename: String) -> io::Lines<BufReader<File>> {
-    // Open the file in read-only mode.
-    let file = File::open(filename).unwrap(); 
-    // Read the file line by line, and return an iterator of the lines of the file.
-    return io::BufReader::new(file).lines(); 
-}
+```rust,norun
+use std::fs::read_to_string;
 
-fn main() {
-    // Stores the iterator of lines of the file in lines variable.
-    let lines = read_lines("./hosts".to_string());
-    // Iterate over the lines of the file, and in this case print them.
-    for line in lines {
-        println!("{}", line.unwrap());
+fn read_lines(filename: &str) -> Vec<String> {
+    let mut result = Vec::new();
+
+    for line in read_to_string(filename).unwrap().lines() {
+        result.push(line.to_string())
     }
+
+    result
 }
 ```
 
-Running this program simply prints the lines individually.
-```shell
-$ echo -e "127.0.0.1\n192.168.0.1\n" > hosts
-$ rustc read_lines.rs && ./read_lines
-127.0.0.1
-192.168.0.1
+Since the method `lines()` returns an iterator over the lines in the file,
+we can also perform a map inline and collect the results, yielding a more
+concise and fluent expression.
+
+```rust,norun
+use std::fs::read_to_string;
+
+fn read_lines(filename: &str) -> Vec<String> {
+    read_to_string(filename) 
+        .unwrap()  // panic on possible file-reading errors
+        .lines()  // split the string into an iterator of string slices
+        .map(String::from)  // make each slice into a string
+        .collect()  // gather them together into a vector
+}
 ```
 
-## Efficient method
-The method `lines()` returns an iterator over the lines
-of a file.
+Note that in both examples above, we must convert the `&str` reference
+returned from `lines()` to the owned type `String`, using `.to_string()`
+and `String::from` respectively.
 
-`File::open` expects a generic, `AsRef<Path>`.  That's what
-`read_lines()` expects as input.
+## A more efficient approach
+
+Here we pass ownership of the open `File` to a `BufReader` struct. `BufReader` uses an internal
+buffer to reduce intermediate allocations.
+
+We also update `read_lines` to return an iterator instead of allocating new
+`String` objects in memory for each line.
 
 ```rust,no_run
 use std::fs::File;
@@ -46,8 +53,8 @@ use std::io::{self, BufRead};
 use std::path::Path;
 
 fn main() {
-    // File hosts must exist in current path before this produces output
-    if let Ok(lines) = read_lines("./hosts") {
+    // File hosts.txt must exist in the current path
+    if let Ok(lines) = read_lines("./hosts.txt") {
         // Consumes the iterator, returns an (Optional) String
         for line in lines {
             if let Ok(ip) = line {
@@ -68,11 +75,15 @@ where P: AsRef<Path>, {
 
 Running this program simply prints the lines individually.
 ```shell
-$ echo -e "127.0.0.1\n192.168.0.1\n" > hosts
+$ echo -e "127.0.0.1\n192.168.0.1\n" > hosts.txt
 $ rustc read_lines.rs && ./read_lines
 127.0.0.1
 192.168.0.1
 ```
 
-This process is more efficient than creating a `String` in memory
-especially working with larger files.
+(Note that since `File::open` expects a generic `AsRef<Path>` as argument, we define our
+generic `read_lines()` method with the same generic constraint, using the `where` keyword.)
+
+This process is more efficient than creating a `String` in memory with all of the file's
+contents. This can especially cause performance issues when working with larger files.
+
