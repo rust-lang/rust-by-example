@@ -39,7 +39,6 @@ fn main() {
     println!("Base 16 (hexadecimal): {:x}", 69420); // 10f2c
     println!("Base 16 (hexadecimal): {:X}", 69420); // 10F2C
 
-
     // You can right-justify text with a specified width. This will
     // output "    1". (Four white spaces and a "1", for a total width of 5.)
     println!("{number:>5}", number=1);
@@ -50,7 +49,6 @@ fn main() {
 
     // You can use named arguments in the format specifier by appending a `$`.
     println!("{number:0>width$}", number=1, width=5);
-
 
     // Rust even checks to make sure the correct number of arguments are used.
     println!("My name is {0}, {1} {0}", "Bond");
