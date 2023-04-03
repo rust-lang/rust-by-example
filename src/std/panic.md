@@ -34,6 +34,8 @@ fn main() {
 
 Let's check that `panic!` doesn't leak memory.
 
+<!-- REUSE-IgnoreStart -->
+<!-- Prevent REUSE from parsing the copyright statement in the sample code -->
 ```shell
 $ rustc panic.rs && valgrind ./panic
 ==4401== Memcheck, a memory error detector
@@ -52,3 +54,4 @@ thread '<main>' panicked at 'division by zero', panic.rs:5
 ==4401== For counts of detected and suppressed errors, rerun with: -v
 ==4401== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
+<!-- REUSE-IgnoreEnd -->
