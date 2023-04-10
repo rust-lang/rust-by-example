@@ -2,6 +2,8 @@
 
 Let's create a library, and then see how to link it to another crate.
 
+In `rary.rs`:
+
 ```rust,ignore
 pub fn public_function() {
     println!("called rary's `public_function()`");
