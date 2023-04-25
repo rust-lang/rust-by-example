@@ -15,11 +15,11 @@ to read it online.
 If you'd like to read it locally, [install Rust], and then:
 
 ```bash
-$ git clone https://github.com/rust-lang/rust-by-example
-$ cd rust-by-example
-$ cargo install mdbook
-$ mdbook build
-$ mdbook serve
+git clone https://github.com/rust-lang/rust-by-example
+cd rust-by-example
+cargo install mdbook
+mdbook build
+mdbook serve
 ```
 
 [install Rust]: https://www.rust-lang.org/tools/install
