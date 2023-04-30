@@ -44,8 +44,9 @@ fn main() {
     println!("{number:>5}", number=1);
 
     // You can pad numbers with extra zeroes,
+    println!("{number:0>5}", number=1); // 00001
     // and left-adjust by flipping the sign. This will output "10000".
-    println!("{number:0<5}", number=1);
+    println!("{number:0<5}", number=1); // 10000
 
     // You can use named arguments in the format specifier by appending a `$`.
     println!("{number:0>width$}", number=1, width=5);
@@ -62,7 +63,7 @@ fn main() {
 
     // This will not compile because `Structure` does not implement
     // fmt::Display.
-    //println!("This struct `{}` won't print...", Structure(3));
+    // println!("This struct `{}` won't print...", Structure(3));
     // TODO ^ Try uncommenting this line
 
     // For Rust 1.58 and above, you can directly capture the argument from a
