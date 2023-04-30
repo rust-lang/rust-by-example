@@ -5,7 +5,7 @@ Notice in the previous example that our immediate reaction to calling
 error:
 
 ```rust,ignore
-.and_then(|s| s.parse::<i32>()
+.and_then(|s| s.parse::<i32>())
     .map_err(|e| e.into())
 ```
 
