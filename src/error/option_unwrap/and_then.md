@@ -8,7 +8,7 @@ known in some languages as flatmap, comes in.
 
 `and_then()` calls its function input with the wrapped value and returns the result. If the `Option` is `None`, then it returns `None` instead.
 
-In the following example, `cookable_v2()` results in an `Option<Food>`. 
+In the following example, `cookable_v3()` results in an `Option<Food>`. 
 Using `map()` instead of `and_then()` would have given an 
 `Option<Option<Food>>`, which is an invalid type for `eat()`.
 
@@ -44,12 +44,18 @@ fn cookable_v1(food: Food) -> Option<Food> {
 }
 
 // This can conveniently be rewritten more compactly with `and_then()`:
-fn cookable_v2(food: Food) -> Option<Food> {
+fn cookable_v3(food: Food) -> Option<Food> {
     have_recipe(food).and_then(have_ingredients)
 }
 
+// Otherwise we'd need to `flatten()` an `Option<Option<Food>>`
+// to get an `Option<Food>`:
+fn cookable_v2(food: Food) -> Option<Food> {
+    have_recipe(food).map(have_ingredients).flatten()
+}
+
 fn eat(food: Food, day: Day) {
-    match cookable_v2(food) {
+    match cookable_v3(food) {
         Some(food) => println!("Yay! On {:?} we get to eat {:?}.", day, food),
         None       => println!("Oh no. We don't get to eat on {:?}?", day),
     }
@@ -66,8 +72,9 @@ fn main() {
 
 ### See also:
 
-[closures][closures], [`Option`][option], and [`Option::and_then()`][and_then]
+[closures][closures], [`Option`][option], [`Option::and_then()`][and_then], and [`Option::flatten()`][flatten]
 
 [closures]: ../../fn/closures.md
 [option]: https://doc.rust-lang.org/std/option/enum.Option.html
 [and_then]: https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then
+[flatten]: https://doc.rust-lang.org/std/option/enum.Option.html#method.flatten
