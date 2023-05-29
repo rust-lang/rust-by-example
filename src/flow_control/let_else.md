@@ -2,6 +2,9 @@
 
 
 > 🛈 stable since: rust 1.65
+>
+> 🛈 you can target specific edition by compiling like this
+> `rustc --edition=2021 main.rs`
 
 
 With `let`-`else`, a refutable pattern can match and bind variables
@@ -22,7 +25,9 @@ fn get_count_item(s: &str) -> (u64, &str) {
     (count, item)
 }
 
-assert_eq!(get_count_item("3 chairs"), (3, "chairs"));
+fn main() {
+    assert_eq!(get_count_item("3 chairs"), (3, "chairs"));
+}
 ```
 
 The scope of name bindings is the main thing that makes this different from
