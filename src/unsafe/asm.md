@@ -474,4 +474,4 @@ Options can be provided as an optional final argument to the `asm!` macro. We sp
 
 These allow the compiler to better optimize code using `asm!`, for example by eliminating pure `asm!` blocks whose outputs are not needed.
 
-See the [reference](../../reference/inline-assembly.html) for the full list of available options and their effects.
+See the [reference](https://doc.rust-lang.org/stable/reference/inline-assembly.html) for the full list of available options and their effects.
