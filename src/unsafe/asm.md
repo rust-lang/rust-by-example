@@ -254,7 +254,8 @@ fn main() {
     // String is stored as ascii in ebx, edx, ecx in order
     // Because ebx is reserved, the asm needs to preserve the value of it.
     // So we push and pop it around the main asm.
-    // (in 64 bit mode for 64 bit processors, 32 bit processors would use ebx)
+    // 64 bit mode on 64 bit processors does not allow pushing/popping of
+    // 32 bit registers (like ebx), so we have to use the extended rbx register instead.
 
     unsafe {
         asm!(
