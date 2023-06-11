@@ -53,7 +53,7 @@ fn main() {
     // Unless it already fits, of course.
     println!(" 128 as a i16 is: {}", 128 as i16);
 
-    // 128 as u8 -> 128, whose value in 8-bit two's complement representation is:
+    // In boundary case 128 value in 8-bit two's complement representation is -128
     println!(" 128 as a i8 is : {}", 128 as i8);
 
     // repeating the example above
