@@ -4,7 +4,7 @@ While Rust chooses how to capture variables on the fly mostly without type
 annotation, this ambiguity is not allowed when writing functions. When
 taking a closure as an input parameter, the closure's complete type must be
 annotated using one of a few `traits`, and they're determined by what the
-closure does with captured value. In order of decreasing restriction,
+closure does with captured value. In order of increasing restriction,
 they are:
 
 * `Fn`: the closure uses the captured value by reference (`&T`)
