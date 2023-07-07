@@ -78,8 +78,11 @@ RGB (0, 3, 254) 0x0003FE
 RGB (0, 0, 0) 0x000000
 ```
 
-Two hints if you get stuck:
+Three hints if you get stuck:
 
+* The formula for calculating a color in the RGB color space is:
+`RGB = (R*65536)+(G*256)+B , (when R is RED, G is GREEN and B is BLUE)`.
+For more see [RGB color format & calculation][rgb_color].
 * You [may need to list each color more than once][named_parameters].
 * You can [pad with zeros to a width of 2][fmt_width] with `:0>2`.
 
@@ -87,6 +90,7 @@ Two hints if you get stuck:
 
 [`std::fmt`][fmt]
 
+[rgb_color]: https://www.rapidtables.com/web/color/RGB_Color.html#rgb-format
 [named_parameters]: https://doc.rust-lang.org/std/fmt/#named-parameters
 [deadbeef]: https://en.wikipedia.org/wiki/Deadbeef#Magic_debug_values
 [fmt]: https://doc.rust-lang.org/std/fmt/
