@@ -15,5 +15,8 @@ fn drink(beverage: &str) {
 fn main() {
     drink("water");
     drink("lemonade");
+    drink("still water");
 }
 ```
+
+The first call to `drink` works. The second panics and thus the third is never called.
