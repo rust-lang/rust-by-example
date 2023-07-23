@@ -18,7 +18,7 @@ documentation. They are denoted by a `///`, and support [Markdown].
 /// A human being is represented here
 pub struct Person {
     /// A person must have a name, no matter how much Juliet may hate it
-    name: String,
+    pub name: String,
 }
 
 impl Person {
