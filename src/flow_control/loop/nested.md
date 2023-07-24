@@ -5,7 +5,7 @@ loops. In these cases, the loops must be annotated with some `'label`, and the
 label must be passed to the `break`/`continue` statement.
 
 ```rust,editable
-#![allow(unreachable_code)]
+#![allow(unreachable_code, unused_labels)]
 
 fn main() {
     'outer: loop {
