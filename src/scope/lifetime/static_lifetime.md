@@ -70,6 +70,7 @@ to dynamically create `'static` references. In that case it definitely doesn't
 live for the entire duration, but only for the leaking point onward.
 
 ```rust,editable
+extern crate rand;
 use rand::Fill;
 
 fn random_vec() -> &'static [usize; 100] {
