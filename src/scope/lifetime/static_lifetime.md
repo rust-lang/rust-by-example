@@ -69,7 +69,7 @@ demonstrate, the below example uses
 to dynamically create `'static` references. In that case it definitely doesn't
 live for the entire duration, but only for the leaking point onward.
 
-```rust,editable,norun
+```rust,editable,compile_fail
 extern crate rand;
 use rand::Fill;
 
