@@ -63,7 +63,7 @@ fn main() {
 ```
 
 Since `'static` references only need to be valid for the _remainder_ of
-a program's life, they can created while the program is executed. Just to
+a program's life, they can be created while the program is executed. Just to
 demonstrate, the below example uses
 [`Box::leak`](https://doc.rust-lang.org/std/boxed/struct.Box.html#method.leak)
 to dynamically create `'static` references. In that case it definitely doesn't
