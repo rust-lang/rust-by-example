@@ -57,7 +57,8 @@ fn main() {
 
 ### See also:
 
-[functions][fn]
+[Functions][fn]
+
+[fn]: ../../fn.md
 
 [elision]: elision.md
-[fn]: fn.md
