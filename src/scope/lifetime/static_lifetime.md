@@ -17,10 +17,10 @@ confusion when learning Rust. Here are some examples for each situation:
 ## Reference lifetime
 
 As a reference lifetime `'static` indicates that the data pointed to by
-the reference lives for the entire lifetime of the running program.
+the reference lives for the remaining lifetime of the running program.
 It can still be coerced to a shorter lifetime.
 
-There are two ways to make a variable with `'static` lifetime, and both
+There are two common ways to make a variable with `'static` lifetime, and both
 are stored in the read-only memory of the binary:
 
 * Make a constant with the `static` declaration.
@@ -59,6 +59,31 @@ fn main() {
     }
 
     println!("NUM: {} stays accessible!", NUM);
+}
+```
+
+Since `'static` references only need to be valid for the _remainder_ of
+a program's life, they can be created while the program is executed. Just to
+demonstrate, the below example uses
+[`Box::leak`](https://doc.rust-lang.org/std/boxed/struct.Box.html#method.leak)
+to dynamically create `'static` references. In that case it definitely doesn't
+live for the entire duration, but only for the leaking point onward.
+
+```rust,editable,compile_fail
+extern crate rand;
+use rand::Fill;
+
+fn random_vec() -> &'static [usize; 100] {
+    let mut rng = rand::thread_rng();
+    let mut boxed = Box::new([0; 100]);
+    boxed.try_fill(&mut rng).unwrap();
+    Box::leak(boxed)
+}
+
+fn main() {
+    let first: &'static [usize; 100] = random_vec();
+    let second: &'static [usize; 100] = random_vec();
+    assert_ne!(first, second)
 }
 ```
 
