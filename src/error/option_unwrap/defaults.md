@@ -113,7 +113,7 @@ fn main() {
 
 ### See also:
 
-[`closures`][closures], [`get_or_insert`][get_or_insert], [`get_or_insert_with`][get_or_insert_with], ,[`moved variables`][moved], [`or`][or], [`or_else`][or_else]
+[`closures`][closures], [`get_or_insert`][get_or_insert], [`get_or_insert_with`][get_or_insert_with], [`moved variables`][moved], [`or`][or], [`or_else`][or_else]
 
 [closures]: https://doc.rust-lang.org/book/ch13-01-closures.html
 [get_or_insert]: https://doc.rust-lang.org/core/option/enum.Option.html#method.get_or_insert
