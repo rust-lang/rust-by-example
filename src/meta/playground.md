@@ -1,6 +1,7 @@
 # Playground
 
-The [Rust Playground](https://play.rust-lang.org/) is a way to experiment with Rust code through a web interface.
+The [Rust Playground](https://play.rust-lang.org/) is a way to experiment with
+Rust code through a web interface.
 
 ## Using it with `mdbook`
 
@@ -12,7 +13,9 @@ fn main() {
 }
 ```
 
-This allows the reader to both run your code sample, but also modify and tweak it. The key here is the adding the word `editable` to your codefence block separated by a comma.
+This allows the reader to both run your code sample, but also modify and tweak
+it. The key here is the adding the word `editable` to your codefence block
+separated by a comma.
 
 ````markdown
 ```rust,editable
@@ -20,7 +23,8 @@ This allows the reader to both run your code sample, but also modify and tweak i
 ```
 ````
 
-Additionally, you can add `ignore` if you want `mdbook` to skip your code when it builds and tests.
+Additionally, you can add `ignore` if you want `mdbook` to skip your code when
+it builds and tests.
 
 ````markdown
 ```rust,editable,ignore
@@ -30,7 +34,10 @@ Additionally, you can add `ignore` if you want `mdbook` to skip your code when i
 
 ## Using it with docs
 
-You may have noticed in some of the [official Rust docs][official-rust-docs] a button that says "Run", which opens the code sample up in a new tab in Rust Playground. This feature is enabled if you use the #[doc] attribute called [`html_playground_url`][html-playground-url].
+You may have noticed in some of the [official Rust docs][official-rust-docs] a
+button that says "Run", which opens the code sample up in a new tab in Rust
+Playground. This feature is enabled if you use the `#[doc]` attribute called
+[`html_playground_url`][html-playground-url].
 
 ### See also:
 
