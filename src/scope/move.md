@@ -1,7 +1,7 @@
 # Ownership and moves
 
 Because variables are in charge of freeing their own resources, 
-**resources can only have one owner**. This also prevents resources 
+**resources can only have one owner**. This prevents resources 
 from being freed more than once. Note that not all variables own 
 resources (e.g. [references]).
 
