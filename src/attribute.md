@@ -14,9 +14,34 @@ can be used to/for:
 * mark functions that will be part of a benchmark
 * [attribute like macros][macros]
 
-When attributes apply to a whole crate, their syntax is `#![crate_attribute]`,
-and when they apply to a module or item, the syntax is `#[item_attribute]`
-(notice the missing bang `!`).
+Attributes look like `#[outer_attribute]` or `#![inner_attribute]`,
+with the difference between them being where they apply.
+
+- `#[outer_attribute]` applies to the [item][item] immediately
+  following it. Some examples of items are: a function, a module
+  declaration, a constant, a structure, an enum. Here is an example
+  where attribute `#[derive(Debug)]` applies to the struct
+  `Rectangle`:
+  ```rust
+  #[derive(Debug)]
+  struct Rectangle {
+      width: u32,
+      height: u32,
+  }
+  ```
+
+- `#![inner_attribute]` applies to the enclosing [item][item] (typically a
+  module or a crate). In other words, this attribute is intepreted as
+  applying to the entire scope in which it's place. Here is an example
+  where `#![allow(unusude_variables)]` applies to the whole crate (if
+  placed in `main.rs`):
+  ```rust
+  #![allow(unused_variables)]
+
+  fn main() {
+      let x = 3; // This would normally warn about an unused variable.
+  }
+  ```
 
 Attributes can take arguments with different syntaxes:
 
@@ -36,5 +61,6 @@ Attributes can have multiple values and can be separated over multiple lines, to
 
 [cfg]: attribute/cfg.md
 [crate]: attribute/crate.md
+[item]: https://doc.rust-lang.org/stable/reference/items.html
 [lint]: https://en.wikipedia.org/wiki/Lint_%28software%29
 [macros]: https://doc.rust-lang.org/book/ch19-06-macros.html#attribute-like-macros
