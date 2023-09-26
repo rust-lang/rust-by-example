@@ -70,6 +70,9 @@ fn main() {
 }
 ```
 
+If you named your program `match_args.rs` and compile it like this `rustc
+match_args.rs`, you can execute it as follows:
+
 ```shell
 $ ./match_args Rust
 This is not the answer.
