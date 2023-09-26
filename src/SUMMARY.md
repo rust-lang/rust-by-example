@@ -161,7 +161,7 @@
         - [Unpacking options with `?`](error/option_unwrap/question_mark.md)
         - [Combinators: `map`](error/option_unwrap/map.md)
         - [Combinators: `and_then`](error/option_unwrap/and_then.md)
-        - [Defaults: `or`, `or_else`, `get_or_insert`, 'get_or_insert_with`](error/option_unwrap/defaults.md)
+        - [Defaults: `or`, `or_else`, `get_or_insert`, `get_or_insert_with`](error/option_unwrap/defaults.md)
     - [`Result`](error/result.md)
         - [`map` for `Result`](error/result/result_map.md)
         - [aliases for `Result`](error/result/result_alias.md)
