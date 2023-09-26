@@ -2,7 +2,8 @@
 
 Use `cargo doc` to build documentation in `target/doc`.
 
-Use `cargo test` to run all tests (including documentation tests), and `cargo test --doc` to only run documentation tests.
+Use `cargo test` to run all tests (including documentation tests), and `cargo
+test --doc` to only run documentation tests.
 
 These commands will appropriately invoke `rustdoc` (and `rustc`) as required.
 
@@ -67,7 +68,8 @@ $ rustdoc --test --extern doc="libdoc.rlib" doc.rs
 
 ## Doc attributes
 
-Below are a few examples of the most common `#[doc]` attributes used with `rustdoc`.
+Below are a few examples of the most common `#[doc]` attributes used with
+`rustdoc`.
 
 ### `inline`
 
@@ -104,7 +106,8 @@ Using this tells `rustdoc` not to include this in documentation:
 pub use self::async_await::*;
 ```
 
-For documentation, `rustdoc` is widely used by the community. It's what is used to generate the [std library docs](https://doc.rust-lang.org/std/).
+For documentation, `rustdoc` is widely used by the community. It's what is used
+to generate the [std library docs](https://doc.rust-lang.org/std/).
 
 ### See also:
 
