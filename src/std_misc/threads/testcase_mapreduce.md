@@ -30,7 +30,7 @@ use std::thread;
 fn main() {
 
     // This is our data to process.
-    // We will calculate the sum of all digits via a threaded  map-reduce algorithm.
+    // We will calculate the sum of all digits via a threaded map-reduce algorithm.
     // Each whitespace separated chunk will be handled in a different thread.
     //
     // TODO: see what happens to the output if you insert spaces!
