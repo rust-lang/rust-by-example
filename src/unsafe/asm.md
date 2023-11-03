@@ -139,8 +139,8 @@ can be written at any time, and can therefore not share its location with any ot
 However, to guarantee optimal performance it is important to use as few registers as possible,
 so they won't have to be saved and reloaded around the inline assembly block.
 To achieve this Rust provides a `lateout` specifier. This can be used on any output that is
-written only after all inputs have been consumed.
-There is also a `inlateout` variant of this specifier.
+written only after all inputs have been consumed. There is also an `inlateout` variant of this 
+specifier.
 
 Here is an example where `inlateout` *cannot* be used in `release` mode or other optimized cases:
 
@@ -163,11 +163,12 @@ unsafe {
 assert_eq!(a, 12);
 # }
 ```
-The above could work well in unoptimized cases (`Debug` mode), but if you want optimized performance (`release` mode or other optimized cases), it could not work.
 
-That is because in optimized cases, the compiler is free to allocate the same register for inputs `b` and `c` since it knows they have the same value. However it must allocate a separate register for `a` since it uses `inout` and not `inlateout`. If `inlateout` was used, then `a` and `c` could be allocated to the same register, in which case the first instruction to overwrite the value of `c` and cause the assembly code to produce the wrong result.
+In unoptimized cases (e.g. `Debug` mode), replacing `inout(reg) a` with `inlateout(reg) a` in the above example can continue to give the expected result. However, with `release` mode or other optimized cases, using `inlateout(reg) a` can instead lead to the final value `a = 16`, causing the assertion to fail. 
 
-However the following example can use `inlateout` since the output is only modified after all input registers have been read:
+This is because in optimized cases, the compiler is free to allocate the same register for inputs `b` and `c` since it knows that they have the same value. Furthermore, when `inlateout` is used, `a` and `c` could be allocated to the same register, in which case the first `add` instruction would overwrite the initial load from variable `c`. This is in contrast to how using `inout(reg) a` ensures a separate register is allocated for `a`. 
+
+However, the following example can use `inlateout` since the output is only modified after all input registers have been read:
 
 ```rust
 # #[cfg(target_arch = "x86_64")] {
