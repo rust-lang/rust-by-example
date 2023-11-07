@@ -21,9 +21,9 @@ Now let's begin!
 
 - [Types](types.md) - Learn about changing and defining types.
 
-- [Conversion](conversion.md)
+- [Conversion](conversion.md) - Convert between different types, such as strings, integers, and floats.
 
-- [Expressions](expression.md)
+- [Expressions](expression.md) - Learn about Expressions & how to use them.
 
 - [Flow of Control](flow_control.md) - `if`/`else`, `for`, and others.
 
@@ -43,7 +43,7 @@ Now let's begin!
 
 - [Traits](trait.md) - A trait is a collection of methods defined for an unknown type: `Self`
 
-- [Macros](macros.md)
+- [Macros](macros.md) - Macros are a way of writing code that writes other code, which is known as metaprogramming.
 
 - [Error handling](error.md) - Learn Rust way of handling failures.
 
@@ -53,9 +53,9 @@ Now let's begin!
 
 - [Testing](testing.md) - All sorts of testing in Rust.
 
-- [Unsafe Operations](unsafe.md)
+- [Unsafe Operations](unsafe.md) - Learn about entering a block of unsafe operations.
 
-- [Compatibility](compatibility.md)
+- [Compatibility](compatibility.md) - Handling Rust's evolution and potential compatibility issues.
 
 - [Meta](meta.md) - Documentation, Benchmarking.
 
