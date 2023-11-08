@@ -3,7 +3,7 @@
 Any type that implements the `Eq` and `Hash` traits can be a key in `HashMap`. 
 This includes:
 
-* `bool` (though not very useful since there is only two possible keys)
+* `bool` (though not very useful since there are only two possible keys)
 * `int`, `uint`, and all variations thereof
 * `String` and `&str` (protip: you can have a `HashMap` keyed by `String`
 and call `.get()` with an `&str`)

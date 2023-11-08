@@ -26,7 +26,7 @@ fn main() {
     // TODO: uncomment the line above and see the compiler error. The compiler
     // suggests that we define a closure instead.
 
-    // Closures are anonymous, here we are binding them to references
+    // Closures are anonymous, here we are binding them to references.
     // Annotation is identical to function annotation but is optional
     // as are the `{}` wrapping the body. These nameless functions
     // are assigned to appropriately named variables.
