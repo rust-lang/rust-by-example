@@ -12,7 +12,7 @@ via [`From`][from].
 use std::error;
 use std::fmt;
 
-// Change the alias to `Box<error::Error>`.
+// Change the alias to use `Box<dyn error::Error>`.
 type Result<T> = std::result::Result<T, Box<dyn error::Error>>;
 
 #[derive(Debug, Clone)]

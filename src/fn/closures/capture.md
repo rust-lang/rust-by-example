@@ -44,7 +44,7 @@ fn main() {
     // borrows `count`.
     //
     // A `mut` is required on `inc` because a `&mut` is stored inside. Thus,
-    // calling the closure mutates the closure which requires a `mut`.
+    // calling the closure mutates `count` which requires a `mut`.
     let mut inc = || {
         count += 1;
         println!("`count`: {}", count);

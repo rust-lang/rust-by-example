@@ -26,7 +26,7 @@ Here, we rewrite the previous example using `?`. As a result, the
 use std::error;
 use std::fmt;
 
-// Change the alias to `Box<dyn error::Error>`.
+// Change the alias to use `Box<dyn error::Error>`.
 type Result<T> = std::result::Result<T, Box<dyn error::Error>>;
 
 #[derive(Debug)]
