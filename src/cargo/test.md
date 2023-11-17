@@ -42,13 +42,13 @@ $ cargo test
     Finished dev [unoptimized + debuginfo] target(s) in 0.89 secs
      Running target/debug/deps/blah-d3b32b97275ec472
 
-running 3 tests
+running 4 tests
 test test_bar ... ok
 test test_baz ... ok
 test test_foo_bar ... ok
 test test_foo ... ok
 
-test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
 You can also run tests whose name matches a pattern:
