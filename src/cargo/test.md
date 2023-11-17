@@ -135,7 +135,7 @@ Corro
 ```
 What actually gets put into `ferris.txt` is this:
 ```shell
-$ cargo test test_file
+$ cargo test test_file && cat ferris.txt
 Corro
 Ferris
 Corro
