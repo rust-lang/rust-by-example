@@ -40,10 +40,10 @@ fn failed_borrow<'a>() {
     let _x = 12;
 
     // ERROR: `_x` does not live long enough
-    let y: &'a i32 = &_x;
+    let _y: &'a i32 = &_x;
     // Attempting to use the lifetime `'a` as an explicit type annotation 
     // inside the function will fail because the lifetime of `&_x` is shorter
-    // than that of `y`. A short lifetime cannot be coerced into a longer one.
+    // than that of `_y`. A short lifetime cannot be coerced into a longer one.
 }
 
 fn main() {
