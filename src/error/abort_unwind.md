@@ -6,14 +6,17 @@ The previous section illustrates the error handling mechanism `panic`.  Differen
 Building on the prior lemonade example, we explicitly use the panic strategy to exercise different lines of code.  
 
 ```rust,editable,mdbook-runnable
-
 fn drink(beverage: &str) {
-   // You shouldn't drink too much sugary beverages.
+    // You shouldn't drink too much sugary beverages.
     if beverage == "lemonade" {
-        if cfg!(panic="abort"){ println!("This is not your party. Run!!!!");}
-        else{ println!("Spit it out!!!!");}
+        if cfg!(panic = "abort") {
+            println!("This is not your party. Run!!!!");
+        } else {
+            println!("Spit it out!!!!");
+        }
+    } else {
+        println!("Some refreshing {} is all I need.", beverage);
     }
-    else{ println!("Some refreshing {} is all I need.", beverage); }
 }
 
 fn main() {
@@ -25,16 +28,22 @@ fn main() {
 Here is another example focusing on rewriting `drink()` and explicitly use the `unwind` keyword.
 
 ```rust,editable
-
 #[cfg(panic = "unwind")]
-fn ah(){ println!("Spit it out!!!!");}
+fn ah() {
+    println!("Spit it out!!!!");
+}
 
-#[cfg(not(panic="unwind"))]
-fn ah(){ println!("This is not your party. Run!!!!");}
+#[cfg(not(panic = "unwind"))]
+fn ah() {
+    println!("This is not your party. Run!!!!");
+}
 
-fn drink(beverage: &str){
-    if beverage == "lemonade"{ ah();}
-    else{println!("Some refreshing {} is all I need.", beverage);}
+fn drink(beverage: &str) {
+    if beverage == "lemonade" {
+        ah();
+    } else {
+        println!("Some refreshing {} is all I need.", beverage);
+    }
 }
 
 fn main() {

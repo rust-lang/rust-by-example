@@ -14,7 +14,7 @@ fn main() {
 ```
 
 This allows the reader to both run your code sample, but also modify and tweak
-it. The key here is the adding the word `editable` to your codefence block
+it. The key here is the adding of the word `editable` to your codefence block
 separated by a comma.
 
 ````markdown

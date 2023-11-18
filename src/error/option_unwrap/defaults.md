@@ -38,7 +38,6 @@ Another alternative is to use `or_else`, which is also chainable, and evaluates 
 enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
 
 fn main() {
-    let apple = Some(Fruit::Apple);
     let no_fruit: Option<Fruit> = None;
     let get_kiwi_as_fallback = || {
         println!("Providing kiwi as fallback");

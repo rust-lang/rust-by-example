@@ -40,11 +40,11 @@ fn main() {
 
     // Clone `moved_pair` into `cloned_pair` (resources are included)
     let cloned_pair = moved_pair.clone();
-    // Drop the original pair using std::mem::drop
+    // Drop the moved original pair using std::mem::drop
     drop(moved_pair);
 
     // Error! `moved_pair` has been dropped
-    //println!("copy: {:?}", moved_pair);
+    //println!("moved and dropped: {:?}", moved_pair);
     // TODO ^ Try uncommenting this line
 
     // The result from .clone() can still be used!

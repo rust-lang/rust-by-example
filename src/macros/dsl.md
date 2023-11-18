@@ -12,7 +12,7 @@ an expression and have the output printed to console.
 macro_rules! calculate {
     (eval $e:expr) => {
         {
-            let val: usize = $e; // Force types to be integers
+            let val: usize = $e; // Force types to be unsigned integers
             println!("{} = {}", stringify!{$e}, val);
         }
     };
