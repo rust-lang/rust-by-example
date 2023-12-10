@@ -7,7 +7,10 @@ use std::fs;
 use std::fs::{File, OpenOptions};
 use std::io;
 use std::io::prelude::*;
+#[cfg(target_os = "unix")]
 use std::os::unix;
+#[cfg(target_os = "windows")]
+use std::os::windows;
 use std::path::Path;
 
 // A simple implementation of `% cat path`
@@ -62,9 +65,14 @@ fn main() {
 
     println!("`ln -s ../b.txt a/c/b.txt`");
     // Create a symbolic link, returns `io::Result<()>`
-    if cfg!(target_family = "unix") {
+    #[cfg(target_os = "unix")] {
         unix::fs::symlink("../b.txt", "a/c/b.txt").unwrap_or_else(|why| {
             println!("! {:?}", why.kind());
+        });
+    }
+    #[cfg(target_os = "windows")] {
+        windows::fs::symlink_file("../b.txt", "a/c/b.txt").unwrap_or_else(|why| {
+            println!("! {:?}", why.to_string());
         });
     }
 
