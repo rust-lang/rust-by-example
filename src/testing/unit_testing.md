@@ -199,7 +199,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 Tests can be marked with the `#[ignore]` attribute to exclude some tests. Or to run
 them with command `cargo test -- --ignored`
 
-```rust
+```rust,ignore
 pub fn add(a: i32, b: i32) -> i32 {
     a + b
 }
