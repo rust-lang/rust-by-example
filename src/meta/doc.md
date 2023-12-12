@@ -80,7 +80,7 @@ Used to inline docs, instead of linking out to separate page.
 pub use bar::Bar;
 
 /// bar docs
-mod bar {
+pub mod bar {
     /// the docs for Bar
     pub struct Bar;
 }
