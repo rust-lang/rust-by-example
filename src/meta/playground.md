@@ -42,11 +42,11 @@ Playground. This feature is enabled if you use the `#[doc]` attribute called
 ### See also:
 
 - [The Rust Playground][rust-playground]
-- [rust-playground][rust-playground]
+- [The Rust Playground On Github][rust-playground-github]
 - [The rustdoc Book][rustdoc-book]
 
 [rust-playground]: https://play.rust-lang.org/
-[rust-playground]: https://github.com/integer32llc/rust-playground/
+[rust-playground-github]: https://github.com/integer32llc/rust-playground/
 [mdbook]: https://github.com/rust-lang/mdBook
 [official-rust-docs]: https://doc.rust-lang.org/core/
 [rustdoc-book]: https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html
