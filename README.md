@@ -27,11 +27,36 @@ mdbook serve
 To be able to run the examples, you must be connected to the internet; you can
 read all content offline, however!
 
+The following warnings can be ignored safely.
+
+```
+[WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "gettext" preprocessor installed?
+[WARN] (mdbook::preprocess::cmd):   Command: mdbook-gettext
+```
+
+### Using translated version
+
+If there is a translated resource in `po/` directory, it can be specified through `MDBOOK_BOOK__LANGUAGE` like below:
+
+```bash
+git clone https://github.com/rust-lang/rust-by-example
+cd rust-by-example
+cargo install mdbook
+MDBOOK_BOOK__LANGUAGE=ja mdbook build
+MDBOOK_BOOK__LANGUAGE=ja mdbook serve
+```
+
 ## Contributing
 
 Please see the [CONTRIBUTING.md] file for more details.
 
 [CONTRIBUTING.md]: https://github.com/rust-lang/rust-by-example/blob/master/CONTRIBUTING.md
+
+## Translating
+
+Please see the [TRANSLATING.md] file for more details.
+
+[TRANSLATING.md]: https://github.com/rust-lang/rust-by-example/blob/master/TRANSLATING.md
 
 ## Translations to other languages
 

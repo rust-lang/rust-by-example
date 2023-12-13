@@ -6,7 +6,7 @@ process via pipes.
 
 ```rust,ignore
 use std::io::prelude::*;
-use std::process::{Command, Stdio};
+use std::process::Stdio;
 
 static PANGRAM: &'static str =
 "the quick brown fox jumped over the lazy dog\n";

@@ -13,6 +13,15 @@ enable = true
 
 [output.html]
 git-repository-url = "https://github.com/rust-lang/rust-by-example"
+additional-css = [
+  "theme/css/language-picker.css",
+]
 
 [rust]
 edition = "2021"
+
+[build]
+extra-watch-dirs = ["po"]
+
+[preprocessor.gettext]
+after = ["links"]

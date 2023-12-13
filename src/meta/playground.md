@@ -39,15 +39,22 @@ button that says "Run", which opens the code sample up in a new tab in Rust
 Playground. This feature is enabled if you use the `#[doc]` attribute called
 [`html_playground_url`][html-playground-url].
 
+```
+#![doc(html_playground_url = "https://play.rust-lang.org/")]
+//! ```
+//! println!("Hello Wolrd");
+//! ```
+```
+
 ### See also:
 
 - [The Rust Playground][rust-playground]
-- [rust-playground][rust-playground]
+- [The Rust Playground On Github][rust-playground-github]
 - [The rustdoc Book][rustdoc-book]
 
 [rust-playground]: https://play.rust-lang.org/
-[rust-playground]: https://github.com/integer32llc/rust-playground/
+[rust-playground-github]: https://github.com/integer32llc/rust-playground/
 [mdbook]: https://github.com/rust-lang/mdBook
 [official-rust-docs]: https://doc.rust-lang.org/core/
 [rustdoc-book]: https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html
-[html-playground-url]: https://doc.rust-lang.org/rustdoc/the-doc-attribute.html#html_playground_url
+[html-playground-url]: https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html#html_playground_url
