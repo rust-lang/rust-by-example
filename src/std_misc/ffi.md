@@ -8,6 +8,16 @@ attribute containing the name of the foreign library.
 use std::fmt;
 
 // this extern block links to the libm library
+#[cfg(target_family = "windows")]
+#[link(name = "msvcrt")]
+extern {
+    // this is a foreign function
+    // that computes the square root of a single precision complex number
+    fn csqrtf(z: Complex) -> Complex;
+
+    fn ccosf(z: Complex) -> Complex;
+}
+#[cfg(target_family = "unix")]
 #[link(name = "m")]
 extern {
     // this is a foreign function
