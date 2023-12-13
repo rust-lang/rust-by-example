@@ -1,4 +1,6 @@
 book
 
+po/messages.pot
+
 # Auto-generated files from macOS
 .DS_Store
