@@ -13,25 +13,14 @@ static PANGRAM: &'static str =
 
 fn main() {
     // Spawn the `wc` command
-    #[cfg(target_family  = "unix")]
-    mod platform {
-        use std::process::Command;
-        pub fn wc() -> Box<Command> {
-            let process =  Command::new("wc");
-            Box::new(process)
-        }
-    }
-    #[cfg(target_family = "windows")]
-    mod platform {
-        use std::process::Command;
-        pub fn wc() -> Box<Command> {
-            let mut process = Command::new("powershell");
-            process.arg("-Command").arg("$input | Measure-Object -Line -Word -Character");
-             Box::new(process)
-        }
-    }
-
-    let process = match platform::wc()
+    let mut cmd = if cfg!(target_family = "windows") {
+        let mut cmd = Command::new("powershell");
+        cmd.arg("-Command").arg("$input | Measure-Object -Line -Word -Character");
+        cmd
+    } else {
+        Command::new("wc")
+    };
+    let process = match cmd
                                 .stdin(Stdio::piped())
                                 .stdout(Stdio::piped())
                                 .spawn() {
