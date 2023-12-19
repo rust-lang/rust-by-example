@@ -95,8 +95,9 @@ fn main() {
 
 ### See also
 
-[`attributes`][attributes], and [destructuring][destructuring]
+[`attributes`][attributes], [raw identifiers][raw_identifiers] and [destructuring][destructuring]
 
 [attributes]: ../attribute.md
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [destructuring]: ../flow_control/match/destructuring.md
+[raw_identifiers]: ../compatibility/raw_identifiers.md
