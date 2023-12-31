@@ -12,7 +12,7 @@ type U64 = u64;
 
 fn main() {
     // `NanoSecond` = `Inch` = `U64` = `u64`.
-    let nanoseconds: NanoSecond = 5 as U64;
+    let nanoseconds: NanoSecond = 5 as u64;
     let inches: Inch = 2 as U64;
 
     // Note that type aliases *don't* provide any extra type safety, because
