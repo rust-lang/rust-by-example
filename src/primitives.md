@@ -18,7 +18,7 @@ type because it does not contain multiple values.
 ### Compound Types
 
 * Arrays like `[1, 2, 3]`
-* Tuples like `(1, true)`
+* Tuples like `(2, true)`
 
 Variables can always be *type annotated*. Numbers may additionally be annotated
 via a *suffix* or *by default*. Integers default to `i32` and floats to `f64`.
