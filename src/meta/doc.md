@@ -1,6 +1,7 @@
 # Documentation
 
-Use `cargo doc` to build documentation in `target/doc`.
+Use `cargo doc` to build documentation in `target/doc`, `cargo doc --open`
+will automatically open it in your web browser.
 
 Use `cargo test` to run all tests (including documentation tests), and `cargo
 test --doc` to only run documentation tests.
@@ -23,11 +24,7 @@ pub struct Person {
 }
 
 impl Person {
-    /// Returns a person with the name given them
-    ///
-    /// # Arguments
-    ///
-    /// * `name` - A string slice that holds the name of the person
+    /// Creates a person with the given name.
     ///
     /// # Examples
     ///
