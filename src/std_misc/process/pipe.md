@@ -9,7 +9,7 @@ use std::io::prelude::*;
 use std::process::Stdio;
 
 static PANGRAM: &'static str =
-"the quick brown fox jumped over the lazy dog\n";
+"the quick brown fox jumps over the lazy dog\n";
 
 fn main() {
     // Spawn the `wc` command
