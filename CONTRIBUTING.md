@@ -53,6 +53,13 @@ $ cargo install mdbook
 $ mdbook build
 ```
 
+**The following warnings can be ignored safely.**
+
+```
+[WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "gettext" preprocessor installed?
+[WARN] (mdbook::preprocess::cmd):   Command: mdbook-gettext
+```
+
 [install Rust]: http://rust-lang.org/install.html
 
 The files will be in the `book` directory at the top-level; `mdbook serve` will

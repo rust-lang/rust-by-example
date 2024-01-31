@@ -27,7 +27,7 @@ mdbook serve
 To be able to run the examples, you must be connected to the internet; you can
 read all content offline, however!
 
-The following warnings can be ignored safely.
+**The following warnings can be ignored safely.**
 
 ```
 [WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "gettext" preprocessor installed?
