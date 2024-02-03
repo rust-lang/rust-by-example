@@ -18,7 +18,7 @@ fn main() {
     println!("Collected (0..10) into: {:?}", collected_iterator);
 
     // The `vec!` macro can be used to initialize a vector
-    let mut xs = vec![1i32, 2, 3];
+    let mut xs = vec![i32, 2, 3];
     println!("Initial vector: {:?}", xs);
 
     // Insert new element at the end of the vector
