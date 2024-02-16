@@ -58,6 +58,12 @@ Please see the [TRANSLATING.md] file for more details.
 
 [TRANSLATING.md]: https://github.com/rust-lang/rust-by-example/blob/master/TRANSLATING.md
 
+### Translating guide for each languages
+
+* Japanese/日本語: [TRANSLATING_JA.md]
+
+[TRANSLATING_JA.md]: https://github.com/rust-lang/rust-by-example/blob/master/TRANSLATING_JA.md
+
 ## Translations to other languages
 
 * [Bulgarian](https://github.com/kberov/rust-by-example-bg)
