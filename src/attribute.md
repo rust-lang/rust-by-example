@@ -32,7 +32,7 @@ with the difference between them being where they apply.
 
 - `#![inner_attribute]` applies to the enclosing [item][item] (typically a
   module or a crate). In other words, this attribute is interpreted as
-  applying to the entire scope in which it's place. Here is an example
+  applying to the entire scope in which it's placed. Here is an example
   where `#![allow(unused_variables)]` applies to the whole crate (if
   placed in `main.rs`):
   ```rust
