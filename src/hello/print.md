@@ -87,7 +87,7 @@ for these types. To print text for custom types, more steps are required.
 Implementing the `fmt::Display` trait automatically implements the
 [`ToString`] trait which allows us to [convert] the type to [`String`][string].
 
-In *line 43*, `#[allow(dead_code)]` is an [attribute] which only apply to the module after it.
+In *line 43*, `#[allow(dead_code)]` is an [attribute] which only applies to the module after it.
 
 ### Activities
 
