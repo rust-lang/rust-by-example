@@ -6,38 +6,38 @@ The `use` declaration can be used so manual scoping isn't needed:
 // An attribute to hide warnings for unused code.
 #![allow(dead_code)]
 
-enum Status {
-    Rich,
-    Poor,
+enum Stage {
+    Beginner,
+    Advanced,
 }
 
-enum Work {
-    Civilian,
-    Soldier,
+enum Role {
+    Student,
+    Teacher,
 }
 
 fn main() {
     // Explicitly `use` each name so they are available without
     // manual scoping.
-    use crate::Status::{Poor, Rich};
-    // Automatically `use` each name inside `Work`.
-    use crate::Work::*;
+    use crate::Stage::{Beginner, Advanced};
+    // Automatically `use` each name inside `Role`.
+    use crate::Role::*;
 
-    // Equivalent to `Status::Poor`.
-    let status = Poor;
-    // Equivalent to `Work::Civilian`.
-    let work = Civilian;
+    // Equivalent to `Stage::Beginner`.
+    let stage = Beginner;
+    // Equivalent to `Role::Student`.
+    let role = Student;
 
-    match status {
+    match stage {
         // Note the lack of scoping because of the explicit `use` above.
-        Rich => println!("The rich have lots of money!"),
-        Poor => println!("The poor have no money..."),
+        Beginner => println!("Beginners are starting their learning journey!"),
+        Advanced => println!("Advanced learners are mastering their subjects..."),
     }
 
-    match work {
+    match role {
         // Note again the lack of scoping.
-        Civilian => println!("Civilians work!"),
-        Soldier  => println!("Soldiers fight!"),
+        Student => println!("Students are acquiring knowledge!"),
+        Teacher => println!("Teachers are spreading knowledge!"),
     }
 }
 ```
