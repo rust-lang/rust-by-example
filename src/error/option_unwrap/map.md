@@ -15,18 +15,26 @@ while staying compact.
 ```rust,editable
 #![allow(dead_code)]
 
-#[derive(Debug)] enum Food { Apple, Carrot, Potato }
+#[derive(Debug)]
+enum Food {
+    Apple,
+    Carrot,
+    Potato,
+}
 
-#[derive(Debug)] struct Peeled(Food);
-#[derive(Debug)] struct Chopped(Food);
-#[derive(Debug)] struct Cooked(Food);
+#[derive(Debug)]
+struct Peeled(Food);
+#[derive(Debug)]
+struct Chopped(Food);
+#[derive(Debug)]
+struct Cooked(Food);
 
 // Peeling food. If there isn't any, then return `None`.
 // Otherwise, return the peeled food.
 fn peel(food: Option<Food>) -> Option<Peeled> {
     match food {
         Some(food) => Some(Peeled(food)),
-        None       => None,
+        None => None,
     }
 }
 
@@ -35,7 +43,7 @@ fn peel(food: Option<Food>) -> Option<Peeled> {
 fn chop(peeled: Option<Peeled>) -> Option<Chopped> {
     match peeled {
         Some(Peeled(food)) => Some(Chopped(food)),
-        None               => None,
+        None => None,
     }
 }
 
@@ -56,7 +64,7 @@ fn process(food: Option<Food>) -> Option<Cooked> {
 fn eat(food: Option<Cooked>) {
     match food {
         Some(food) => println!("Mmm. I love {:?}", food),
-        None       => println!("Oh no! It wasn't edible."),
+        None => println!("Oh no! It wasn't edible."),
     }
 }
 

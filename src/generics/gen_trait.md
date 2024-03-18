@@ -25,7 +25,7 @@ impl<T, U> DoubleDrop<T> for U {
 
 fn main() {
     let empty = Empty;
-    let null  = Null;
+    let null = Null;
 
     // Deallocate `empty` and `null`.
     empty.double_drop(null);

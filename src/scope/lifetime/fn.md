@@ -31,7 +31,9 @@ fn print_multi<'a, 'b>(x: &'a i32, y: &'b i32) {
 
 // Returning references that have been passed in is acceptable.
 // However, the correct lifetime must be returned.
-fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 { x }
+fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 {
+    x
+}
 
 //fn invalid_output<'a>() -> &'a String { &String::from("foo") }
 // The above is invalid: `'a` must live longer than the function.
@@ -42,10 +44,10 @@ fn pass_x<'a, 'b>(x: &'a i32, _: &'b i32) -> &'a i32 { x }
 fn main() {
     let x = 7;
     let y = 9;
-    
+
     print_one(&x);
     print_multi(&x, &y);
-    
+
     let z = pass_x(&x, &y);
     print_one(z);
 

@@ -62,11 +62,16 @@ fn main() {
     println!("Difference: {:?}", a.difference(&b).collect::<Vec<&i32>>());
 
     // Print [2, 3, 4] in arbitrary order.
-    println!("Intersection: {:?}", a.intersection(&b).collect::<Vec<&i32>>());
+    println!(
+        "Intersection: {:?}",
+        a.intersection(&b).collect::<Vec<&i32>>()
+    );
 
     // Print [1, 5]
-    println!("Symmetric Difference: {:?}",
-             a.symmetric_difference(&b).collect::<Vec<&i32>>());
+    println!(
+        "Symmetric Difference: {:?}",
+        a.symmetric_difference(&b).collect::<Vec<&i32>>()
+    );
 }
 ```
 

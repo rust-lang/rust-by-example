@@ -30,7 +30,6 @@ use std::thread;
 
 // This is the `main` thread
 fn main() {
-
     // This is our data to process.
     // We will calculate the sum of all digits via a threaded map-reduce algorithm.
     // Each whitespace separated chunk will be handled in a different thread.
@@ -83,12 +82,12 @@ fn main() {
         children.push(thread::spawn(move || -> u32 {
             // Calculate the intermediate sum of this segment:
             let result = data_segment
-                        // iterate over the characters of our segment..
-                        .chars()
-                        // .. convert text-characters to their number value..
-                        .map(|c| c.to_digit(10).expect("should be a digit"))
-                        // .. and sum the resulting iterator of numbers
-                        .sum();
+                // iterate over the characters of our segment..
+                .chars()
+                // .. convert text-characters to their number value..
+                .map(|c| c.to_digit(10).expect("should be a digit"))
+                // .. and sum the resulting iterator of numbers
+                .sum();
 
             // println! locks stdout, so no text-interleaving occurs
             println!("processed segment {}, result={}", i, result);
@@ -96,10 +95,8 @@ fn main() {
             // "return" not needed, because Rust is an "expression language", the
             // last evaluated expression in each block is automatically its value.
             result
-
         }));
     }
-
 
     /*************************************************************************
      * "Reduce" phase

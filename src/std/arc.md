@@ -7,9 +7,9 @@ increasing the reference counter. As it shares ownership between threads, when
 the last reference pointer to a value is out of scope, the variable is dropped.
 
 ```rust,editable
-use std::time::Duration;
 use std::sync::Arc;
 use std::thread;
+use std::time::Duration;
 
 fn main() {
     // This variable declaration is where its value is specified.

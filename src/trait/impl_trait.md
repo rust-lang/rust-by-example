@@ -76,10 +76,7 @@ fn combine_vecs_explicit_return_type(
 
 // This is the exact same function, but its return type uses `impl Trait`.
 // Look how much simpler it is!
-fn combine_vecs(
-    v: Vec<i32>,
-    u: Vec<i32>,
-) -> impl Iterator<Item=i32> {
+fn combine_vecs(v: Vec<i32>, u: Vec<i32>) -> impl Iterator<Item = i32> {
     v.into_iter().chain(u.into_iter()).cycle()
 }
 
@@ -104,7 +101,7 @@ statically, like this:
 ```rust,editable
 // Returns a function that adds `y` to its input
 fn make_adder_function(y: i32) -> impl Fn(i32) -> i32 {
-    let closure = move |x: i32| { x + y };
+    let closure = move |x: i32| x + y;
     closure
 }
 
@@ -121,10 +118,7 @@ returns iterators with closures. But with `impl Trait` you can do this easily:
 
 ```rust,editable
 fn double_positives<'a>(numbers: &'a Vec<i32>) -> impl Iterator<Item = i32> + 'a {
-    numbers
-        .iter()
-        .filter(|x| x > &&0)
-        .map(|x| x * 2)
+    numbers.iter().filter(|x| x > &&0).map(|x| x * 2)
 }
 
 fn main() {

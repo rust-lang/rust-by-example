@@ -27,7 +27,7 @@ fn try_division(dividend: i32, divisor: i32) {
         None => println!("{} / {} failed!", dividend, divisor),
         Some(quotient) => {
             println!("{} / {} = {}", dividend, divisor, quotient)
-        },
+        }
     }
 }
 
@@ -42,7 +42,11 @@ fn main() {
     let optional_float = Some(0f32);
 
     // Unwrapping a `Some` variant will extract the value wrapped.
-    println!("{:?} unwraps to {:?}", optional_float, optional_float.unwrap());
+    println!(
+        "{:?} unwraps to {:?}",
+        optional_float,
+        optional_float.unwrap()
+    );
 
     // Unwrapping a `None` variant will `panic!`
     println!("{:?} unwraps to {:?}", none, none.unwrap());

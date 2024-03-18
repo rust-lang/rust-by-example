@@ -5,10 +5,7 @@ An `Iter::map` operation might fail, for example:
 ```rust,editable
 fn main() {
     let strings = vec!["tofu", "93", "18"];
-    let numbers: Vec<_> = strings
-        .into_iter()
-        .map(|s| s.parse::<i32>())
-        .collect();
+    let numbers: Vec<_> = strings.into_iter().map(|s| s.parse::<i32>()).collect();
     println!("Results: {:?}", numbers);
 }
 ```
@@ -59,10 +56,7 @@ terminate.
 ```rust,editable
 fn main() {
     let strings = vec!["tofu", "93", "18"];
-    let numbers: Result<Vec<_>, _> = strings
-        .into_iter()
-        .map(|s| s.parse::<i32>())
-        .collect();
+    let numbers: Result<Vec<_>, _> = strings.into_iter().map(|s| s.parse::<i32>()).collect();
     println!("Results: {:?}", numbers);
 }
 ```

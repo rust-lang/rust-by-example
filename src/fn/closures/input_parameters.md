@@ -28,19 +28,22 @@ to see what happens:
 ```rust,editable
 // A function which takes a closure as an argument and calls it.
 // <F> denotes that F is a "Generic type parameter"
-fn apply<F>(f: F) where
+fn apply<F>(f: F)
+where
     // The closure takes no input and returns nothing.
-    F: FnOnce() {
+    F: FnOnce(),
+{
     // ^ TODO: Try changing this to `Fn` or `FnMut`.
 
     f();
 }
 
 // A function which takes a closure and returns an `i32`.
-fn apply_to_3<F>(f: F) -> i32 where
+fn apply_to_3<F>(f: F) -> i32
+where
     // The closure takes an `i32` and returns an `i32`.
-    F: Fn(i32) -> i32 {
-
+    F: Fn(i32) -> i32,
+{
     f(3)
 }
 

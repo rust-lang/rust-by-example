@@ -54,14 +54,14 @@ mod checked {
 
     pub fn op(x: f64, y: f64) {
         match op_(x, y) {
-            Err(why) => panic!("{}", match why {
-                MathError::NonPositiveLogarithm
-                    => "logarithm of non-positive number",
-                MathError::DivisionByZero
-                    => "division by zero",
-                MathError::NegativeSquareRoot
-                    => "square root of negative number",
-            }),
+            Err(why) => panic!(
+                "{}",
+                match why {
+                    MathError::NonPositiveLogarithm => "logarithm of non-positive number",
+                    MathError::DivisionByZero => "division by zero",
+                    MathError::NegativeSquareRoot => "square root of negative number",
+                }
+            ),
             Ok(value) => println!("{}", value),
         }
     }

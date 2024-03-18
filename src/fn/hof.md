@@ -32,11 +32,11 @@ fn main() {
     println!("imperative style: {}", acc);
 
     // Functional approach
-    let sum_of_squared_odd_numbers: u32 =
-        (0..).map(|n| n * n)                             // All natural numbers squared
-             .take_while(|&n_squared| n_squared < upper) // Below upper limit
-             .filter(|&n_squared| is_odd(n_squared))     // That are odd
-             .sum();                                     // Sum them
+    let sum_of_squared_odd_numbers: u32 = (0..)
+        .map(|n| n * n) // All natural numbers squared
+        .take_while(|&n_squared| n_squared < upper) // Below upper limit
+        .filter(|&n_squared| is_odd(n_squared)) // That are odd
+        .sum(); // Sum them
     println!("functional style: {}", sum_of_squared_odd_numbers);
 }
 ```

@@ -51,7 +51,7 @@ fn main() {
         for i in 0..up_to {
             // Notice that the return type of this match expression must be u32
             // because of the type of the "addition" variable.
-            let addition: u32 = match i%2 == 1 {
+            let addition: u32 = match i % 2 == 1 {
                 // The "i" variable is of type u32, which is perfectly fine.
                 true => i,
                 // On the other hand, the "continue" expression does not return
@@ -63,7 +63,10 @@ fn main() {
         }
         acc
     }
-    println!("Sum of odd numbers up to 9 (excluding): {}", sum_odd_numbers(9));
+    println!(
+        "Sum of odd numbers up to 9 (excluding): {}",
+        sum_odd_numbers(9)
+    );
 }
 ```
 

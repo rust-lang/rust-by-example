@@ -22,8 +22,8 @@ impl<U> Add for T<U> {
 The whole implementation:
 
 ```rust,editable
-use std::ops::Add;
 use std::marker::PhantomData;
+use std::ops::Add;
 
 /// Create void enumerations to define unit types.
 #[derive(Debug, Clone, Copy)]
@@ -51,9 +51,9 @@ impl<Unit> Add for Length<Unit> {
 
 fn main() {
     // Specifies `one_foot` to have phantom type parameter `Inch`.
-    let one_foot:  Length<Inch> = Length(12.0, PhantomData);
+    let one_foot: Length<Inch> = Length(12.0, PhantomData);
     // `one_meter` has phantom type parameter `Mm`.
-    let one_meter: Length<Mm>   = Length(1000.0, PhantomData);
+    let one_meter: Length<Mm> = Length(1000.0, PhantomData);
 
     // `+` calls the `add()` method we implemented for `Length<Unit>`.
     //

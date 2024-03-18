@@ -11,4 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Update rustup
+        run: rustup self update
+
+      - name: Install Rust
+        run: |
+          rustup set profile minimal
+          rustup toolchain install stable -c rustfmt
+          rustup default stable
+
       - uses: dprint/check@v2.2

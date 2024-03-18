@@ -11,7 +11,7 @@ also allows printing the type as discussed in the section on [`print!`][print].
 use std::fmt;
 
 struct Circle {
-    radius: i32
+    radius: i32,
 }
 
 impl fmt::Display for Circle {

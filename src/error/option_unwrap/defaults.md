@@ -14,8 +14,14 @@ following example. Note that because `or`'s arguments are evaluated eagerly, the
 variable passed to `or` is moved.
 
 ```rust,editable
-#[derive(Debug)] 
-enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
+#[derive(Debug)]
+enum Fruit {
+    Apple,
+    Orange,
+    Banana,
+    Kiwi,
+    Lemon,
+}
 
 fn main() {
     let apple = Some(Fruit::Apple);
@@ -31,7 +37,7 @@ fn main() {
     // But the variable named `apple` has been moved regardless, and cannot be used anymore.
     // println!("Variable apple was moved, so this line won't compile: {:?}", apple);
     // TODO: uncomment the line above to see the compiler error
- }
+}
 ```
 
 ## `or_else()` is chainable, evaluates lazily, keeps empty value intact
@@ -40,8 +46,14 @@ Another alternative is to use `or_else`, which is also chainable, and evaluates
 lazily, as is shown in the following example:
 
 ```rust,editable
-#[derive(Debug)] 
-enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
+#[derive(Debug)]
+enum Fruit {
+    Apple,
+    Orange,
+    Banana,
+    Kiwi,
+    Lemon,
+}
 
 fn main() {
     let no_fruit: Option<Fruit> = None;
@@ -72,7 +84,13 @@ is moved:
 
 ```rust,editable
 #[derive(Debug)]
-enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
+enum Fruit {
+    Apple,
+    Orange,
+    Banana,
+    Kiwi,
+    Lemon,
+}
 
 fn main() {
     let mut my_fruit: Option<Fruit> = None;
@@ -93,8 +111,14 @@ Instead of explicitly providing a value to fall back on, we can pass a closure
 to `get_or_insert_with`, as follows:
 
 ```rust,editable
-#[derive(Debug)] 
-enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
+#[derive(Debug)]
+enum Fruit {
+    Apple,
+    Orange,
+    Banana,
+    Kiwi,
+    Lemon,
+}
 
 fn main() {
     let mut my_fruit: Option<Fruit> = None;
@@ -102,8 +126,7 @@ fn main() {
         println!("Providing lemon as fallback");
         Fruit::Lemon
     };
-    let first_available_fruit = my_fruit
-        .get_or_insert_with(get_lemon_as_fallback);
+    let first_available_fruit = my_fruit.get_or_insert_with(get_lemon_as_fallback);
     println!("first_available_fruit is: {:?}", first_available_fruit);
     println!("my_fruit is: {:?}", my_fruit);
     // Providing lemon as fallback

@@ -20,9 +20,13 @@ fn annotated_input<'a>(x: &'a i32) {
 
 // Similarly, `elided_pass` and `annotated_pass` have identical signatures
 // because the lifetime is added implicitly to `elided_pass`:
-fn elided_pass(x: &i32) -> &i32 { x }
+fn elided_pass(x: &i32) -> &i32 {
+    x
+}
 
-fn annotated_pass<'a>(x: &'a i32) -> &'a i32 { x }
+fn annotated_pass<'a>(x: &'a i32) -> &'a i32 {
+    x
+}
 
 fn main() {
     let x = 3;

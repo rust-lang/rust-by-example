@@ -65,7 +65,7 @@ In the same way, `if let` can be used to match any enum value:
 enum Foo {
     Bar,
     Baz,
-    Qux(u32)
+    Qux(u32),
 }
 
 fn main() {
@@ -73,18 +73,18 @@ fn main() {
     let a = Foo::Bar;
     let b = Foo::Baz;
     let c = Foo::Qux(100);
-    
+
     // Variable a matches Foo::Bar
     if let Foo::Bar = a {
         println!("a is foobar");
     }
-    
+
     // Variable b does not match Foo::Bar
     // So this will print nothing
     if let Foo::Bar = b {
         println!("b is foobar");
     }
-    
+
     // Variable c matches Foo::Qux which has a value
     // Similar to Some() in the previous example
     if let Foo::Qux(value) = c {
@@ -108,14 +108,16 @@ Would you like a challenge? Fix the following example to use `if let`:
 ```rust,editable,ignore,mdbook-runnable
 // This enum purposely neither implements nor derives PartialEq.
 // That is why comparing Foo::Bar == a fails below.
-enum Foo {Bar}
+enum Foo {
+    Bar,
+}
 
 fn main() {
     let a = Foo::Bar;
 
     // Variable a matches Foo::Bar
     if Foo::Bar == a {
-    // ^-- this causes a compile-time error. Use `if let` instead.
+        // ^-- this causes a compile-time error. Use `if let` instead.
         println!("a is foobar");
     }
 }

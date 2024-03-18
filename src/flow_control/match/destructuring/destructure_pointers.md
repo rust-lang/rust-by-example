@@ -55,7 +55,7 @@ fn main() {
             // add anything to it.
             *m += 10;
             println!("We added 10. `mut_value`: {:?}", m);
-        },
+        }
     }
 }
 ```

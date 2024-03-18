@@ -7,8 +7,10 @@ defined:
 
 ```rust
 // `F` must be generic.
-fn apply<F>(f: F) where
-    F: FnOnce() {
+fn apply<F>(f: F)
+where
+    F: FnOnce(),
+{
     f();
 }
 ```
@@ -28,8 +30,10 @@ and not be allowed. Thus, bounding by one of the `traits`: `Fn`, `FnMut`, or
 // `F` must implement `Fn` for a closure which takes no
 // inputs and returns nothing - exactly what is required
 // for `print`.
-fn apply<F>(f: F) where
-    F: Fn() {
+fn apply<F>(f: F)
+where
+    F: Fn(),
+{
     f();
 }
 

@@ -19,7 +19,10 @@ struct PhantomTuple<A, B>(A, PhantomData<B>);
 
 // A phantom type struct which is generic over `A` with hidden parameter `B`.
 #[derive(PartialEq)] // Allow equality test for this type.
-struct PhantomStruct<A, B> { first: A, phantom: PhantomData<B> }
+struct PhantomStruct<A, B> {
+    first: A,
+    phantom: PhantomData<B>,
+}
 
 // Note: Storage is allocated for generic type `A`, but not for `B`.
 //       Therefore, `B` cannot be used in computations.

@@ -80,9 +80,10 @@ fn main() {
     let unicode_codepoint = "\u{211D}";
     let character_name = "\"DOUBLE-STRUCK CAPITAL R\"";
 
-    println!("Unicode character {} (U+211D) is called {}",
-                unicode_codepoint, character_name );
-
+    println!(
+        "Unicode character {} (U+211D) is called {}",
+        unicode_codepoint, character_name
+    );
 
     let long_string = "String literals
                         can span multiple lines.
@@ -131,7 +132,6 @@ fn main() {
     // ...but no unicode escapes
     // let escaped = b"\u{211D} is not allowed";
     println!("Some escaped bytes: {:?}", escaped);
-
 
     // Raw byte strings work just like raw strings
     let raw_bytestring = br"\u{211D} is not escaped here";
