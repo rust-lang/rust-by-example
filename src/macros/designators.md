@@ -11,8 +11,7 @@ macro_rules! create_function {
     ($func_name:ident) => {
         fn $func_name() {
             // The `stringify!` macro converts an `ident` into a string.
-            println!("You called {:?}()",
-                     stringify!($func_name));
+            println!("You called {:?}()", stringify!($func_name));
         }
     };
 }
@@ -27,9 +26,7 @@ macro_rules! print_result {
     // The `expr` designator is used for expressions.
     ($expression:expr) => {
         // `stringify!` will convert the expression *as it is* into a string.
-        println!("{:?} = {:?}",
-                 stringify!($expression),
-                 $expression);
+        println!("{:?} = {:?}", stringify!($expression), $expression);
     };
 }
 
@@ -50,17 +47,17 @@ fn main() {
 
 These are some of the available designators:
 
-* `block`
-* `expr` is used for expressions
-* `ident` is used for variable/function names
-* `item`
-* `literal` is used for literal constants
-* `pat` (*pattern*)
-* `path`
-* `stmt` (*statement*)
-* `tt` (*token tree*)
-* `ty` (*type*)
-* `vis` (*visibility qualifier*)
+- `block`
+- `expr` is used for expressions
+- `ident` is used for variable/function names
+- `item`
+- `literal` is used for literal constants
+- `pat` (*pattern*)
+- `path`
+- `stmt` (*statement*)
+- `tt` (*token tree*)
+- `ty` (*type*)
+- `vis` (*visibility qualifier*)
 
 For a complete list, see the [Rust Reference].
 

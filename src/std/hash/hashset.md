@@ -5,30 +5,30 @@ Consider a `HashSet` as a `HashMap` where we just care about the keys (
 
 "What's the point of that?" you ask. "I could just store the keys in a `Vec`."
 
-A `HashSet`'s unique feature is that 
-it is guaranteed to not have duplicate elements. 
-That's the contract that any set collection fulfills. 
-`HashSet` is just one implementation. (see also: [`BTreeSet`][treeset])
+A `HashSet`'s unique feature is that it is guaranteed to not have duplicate
+elements. That's the contract that any set collection fulfills. `HashSet` is
+just one implementation. (see also: [`BTreeSet`][treeset])
 
-If you insert a value that is already present in the `HashSet`, 
-(i.e. the new value is equal to the existing and they both have the same hash), 
-then the new value will replace the old.
+If you insert a value that is already present in the `HashSet`, (i.e. the new
+value is equal to the existing and they both have the same hash), then the new
+value will replace the old.
 
-This is great for when you never want more than one of something, 
-or when you want to know if you've already got something.
+This is great for when you never want more than one of something, or when you
+want to know if you've already got something.
 
-But sets can do more than that. 
+But sets can do more than that.
 
 Sets have 4 primary operations (all of the following calls return an iterator):
 
-* `union`: get all the unique elements in both sets.
+- `union`: get all the unique elements in both sets.
 
-* `difference`: get all the elements that are in the first set but not the second.
+- `difference`: get all the elements that are in the first set but not the
+  second.
 
-* `intersection`: get all the elements that are only in *both* sets.
+- `intersection`: get all the elements that are only in *both* sets.
 
-* `symmetric_difference`: 
-get all the elements that are in one set or the other, but *not* both.
+- `symmetric_difference`: get all the elements that are in one set or the other,
+  but *not* both.
 
 Try all of these in the following example:
 
@@ -62,11 +62,16 @@ fn main() {
     println!("Difference: {:?}", a.difference(&b).collect::<Vec<&i32>>());
 
     // Print [2, 3, 4] in arbitrary order.
-    println!("Intersection: {:?}", a.intersection(&b).collect::<Vec<&i32>>());
+    println!(
+        "Intersection: {:?}",
+        a.intersection(&b).collect::<Vec<&i32>>()
+    );
 
     // Print [1, 5]
-    println!("Symmetric Difference: {:?}",
-             a.symmetric_difference(&b).collect::<Vec<&i32>>());
+    println!(
+        "Symmetric Difference: {:?}",
+        a.symmetric_difference(&b).collect::<Vec<&i32>>()
+    );
 }
 ```
 

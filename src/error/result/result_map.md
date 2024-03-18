@@ -9,8 +9,8 @@ the `Err` type, we look to [`parse()`][parse], which is implemented with the
 [`FromStr`][from_str] trait for [`i32`][i32]. As a result, the `Err` type is
 specified as [`ParseIntError`][parse_int_error].
 
-In the example below, the straightforward `match` statement leads to code
-that is overall more cumbersome.
+In the example below, the straightforward `match` statement leads to code that
+is overall more cumbersome.
 
 ```rust,editable
 use std::num::ParseIntError;
@@ -18,13 +18,9 @@ use std::num::ParseIntError;
 // With the return type rewritten, we use pattern matching without `unwrap()`.
 fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
     match first_number_str.parse::<i32>() {
-        Ok(first_number)  => {
-            match second_number_str.parse::<i32>() {
-                Ok(second_number)  => {
-                    Ok(first_number * second_number)
-                },
-                Err(e) => Err(e),
-            }
+        Ok(first_number) => match second_number_str.parse::<i32>() {
+            Ok(second_number) => Ok(first_number * second_number),
+            Err(e) => Err(e),
         },
         Err(e) => Err(e),
     }
@@ -32,7 +28,7 @@ fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, Pars
 
 fn print(result: Result<i32, ParseIntError>) {
     match result {
-        Ok(n)  => println!("n is {}", n),
+        Ok(n) => println!("n is {}", n),
         Err(e) => println!("Error: {}", e),
     }
 }
@@ -59,13 +55,15 @@ use std::num::ParseIntError;
 // Multiply if both values can be parsed from str, otherwise pass on the error.
 fn multiply(first_number_str: &str, second_number_str: &str) -> Result<i32, ParseIntError> {
     first_number_str.parse::<i32>().and_then(|first_number| {
-        second_number_str.parse::<i32>().map(|second_number| first_number * second_number)
+        second_number_str
+            .parse::<i32>()
+            .map(|second_number| first_number * second_number)
     })
 }
 
 fn print(result: Result<i32, ParseIntError>) {
     match result {
-        Ok(n)  => println!("n is {}", n),
+        Ok(n) => println!("n is {}", n),
         Err(e) => println!("Error: {}", e),
     }
 }

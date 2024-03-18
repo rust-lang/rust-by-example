@@ -1,32 +1,40 @@
 # Combinators: `map`
 
-`match` is a valid method for handling `Option`s. However, you may 
-eventually find heavy usage tedious, especially with operations only valid 
-with an input. In these cases, [combinators][combinators] can be used to 
-manage control flow in a modular fashion.
+`match` is a valid method for handling `Option`s. However, you may eventually
+find heavy usage tedious, especially with operations only valid with an input.
+In these cases, [combinators][combinators] can be used to manage control flow in
+a modular fashion.
 
-`Option` has a built in method called `map()`, a combinator for the simple 
-mapping of `Some -> Some` and `None -> None`. Multiple `map()` calls can be 
+`Option` has a built in method called `map()`, a combinator for the simple
+mapping of `Some -> Some` and `None -> None`. Multiple `map()` calls can be
 chained together for even more flexibility.
 
-In the following example, `process()` replaces all functions previous
-to it while staying compact.
+In the following example, `process()` replaces all functions previous to it
+while staying compact.
 
 ```rust,editable
 #![allow(dead_code)]
 
-#[derive(Debug)] enum Food { Apple, Carrot, Potato }
+#[derive(Debug)]
+enum Food {
+    Apple,
+    Carrot,
+    Potato,
+}
 
-#[derive(Debug)] struct Peeled(Food);
-#[derive(Debug)] struct Chopped(Food);
-#[derive(Debug)] struct Cooked(Food);
+#[derive(Debug)]
+struct Peeled(Food);
+#[derive(Debug)]
+struct Chopped(Food);
+#[derive(Debug)]
+struct Cooked(Food);
 
 // Peeling food. If there isn't any, then return `None`.
 // Otherwise, return the peeled food.
 fn peel(food: Option<Food>) -> Option<Peeled> {
     match food {
         Some(food) => Some(Peeled(food)),
-        None       => None,
+        None => None,
     }
 }
 
@@ -35,7 +43,7 @@ fn peel(food: Option<Food>) -> Option<Peeled> {
 fn chop(peeled: Option<Peeled>) -> Option<Chopped> {
     match peeled {
         Some(Peeled(food)) => Some(Chopped(food)),
-        None               => None,
+        None => None,
     }
 }
 
@@ -56,7 +64,7 @@ fn process(food: Option<Food>) -> Option<Cooked> {
 fn eat(food: Option<Cooked>) {
     match food {
         Some(food) => println!("Mmm. I love {:?}", food),
-        None       => println!("Oh no! It wasn't edible."),
+        None => println!("Oh no! It wasn't edible."),
     }
 }
 

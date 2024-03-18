@@ -43,6 +43,7 @@ Of course, we can double check for memory errors using [`valgrind`][valgrind]:
 
 <!-- REUSE-IgnoreStart -->
 <!-- Prevent REUSE from parsing the copyright statement in the sample code -->
+
 ```shell
 $ rustc raii.rs && valgrind ./raii
 ==26873== Memcheck, a memory error detector
@@ -60,6 +61,7 @@ $ rustc raii.rs && valgrind ./raii
 ==26873== For counts of detected and suppressed errors, rerun with: -v
 ==26873== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
 ```
+
 <!-- REUSE-IgnoreEnd -->
 
 No leaks here!

@@ -1,8 +1,8 @@
 # Testing
 
 As we know testing is integral to any piece of software! Rust has first-class
-support for unit and integration testing ([see this
-chapter](https://doc.rust-lang.org/book/ch11-00-testing.html) in
+support for unit and integration testing
+([see this chapter](https://doc.rust-lang.org/book/ch11-00-testing.html) in
 TRPL).
 
 From the testing chapters linked above, we see how to write unit tests and
@@ -20,13 +20,14 @@ foo
     └── my_other_test.rs
 ```
 
-Each file in `tests` is a separate 
+Each file in `tests` is a separate
 [integration test](https://doc.rust-lang.org/book/ch11-03-test-organization.html#integration-tests),
-i.e. a test that is meant to test your library as if it were being called from a dependent
-crate.
+i.e. a test that is meant to test your library as if it were being called from a
+dependent crate.
 
-The [Testing][testing] chapter elaborates on the three different testing styles: 
-[Unit][unit_testing], [Doc][doc_testing], and [Integration][integration_testing]. 
+The [Testing][testing] chapter elaborates on the three different testing styles:
+[Unit][unit_testing], [Doc][doc_testing], and
+[Integration][integration_testing].
 
 `cargo` naturally provides an easy way to run all of your tests!
 
@@ -71,10 +72,10 @@ test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out
 ```
 
 One word of caution: Cargo may run multiple tests concurrently, so make sure
-that they don't race with each other. 
+that they don't race with each other.
 
-One example of this concurrency causing issues is if two tests output to a
-file, such as below:
+One example of this concurrency causing issues is if two tests output to a file,
+such as below:
 
 ```rust
 #[cfg(test)]
@@ -120,6 +121,7 @@ mod tests {
 ```
 
 Although the intent is to get the following:
+
 ```shell
 $ cat ferris.txt
 Ferris
@@ -133,7 +135,9 @@ Corro
 Corro
 Corro
 ```
+
 What actually gets put into `ferris.txt` is this:
+
 ```shell
 $ cargo test test_file && cat ferris.txt
 Corro

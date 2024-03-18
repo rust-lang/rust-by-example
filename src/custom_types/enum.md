@@ -1,8 +1,8 @@
 # Enums
 
 The `enum` keyword allows the creation of a type which may be one of a few
-different variants. Any variant which is valid as a `struct` is also valid in
-an `enum`.
+different variants. Any variant which is valid as a `struct` is also valid in an
+`enum`.
 
 ```rust,editable
 // Create an `enum` to classify a web event. Note how both
@@ -32,17 +32,17 @@ fn inspect(event: WebEvent) {
         // Destructure `Click` into `x` and `y`.
         WebEvent::Click { x, y } => {
             println!("clicked at x={}, y={}.", x, y);
-        },
+        }
     }
 }
 
 fn main() {
     let pressed = WebEvent::KeyPress('x');
     // `to_owned()` creates an owned `String` from a string slice.
-    let pasted  = WebEvent::Paste("my text".to_owned());
-    let click   = WebEvent::Click { x: 20, y: 80 };
-    let load    = WebEvent::PageLoad;
-    let unload  = WebEvent::PageUnload;
+    let pasted = WebEvent::Paste("my text".to_owned());
+    let click = WebEvent::Click { x: 20, y: 80 };
+    let load = WebEvent::PageLoad;
+    let unload = WebEvent::PageUnload;
 
     inspect(pressed);
     inspect(pasted);
@@ -50,14 +50,13 @@ fn main() {
     inspect(load);
     inspect(unload);
 }
-
 ```
 
 ## Type aliases
 
-If you use a type alias, you can refer to each enum variant via its alias.
-This might be useful if the enum's name is too long or too generic, and you
-want to rename it.
+If you use a type alias, you can refer to each enum variant via its alias. This
+might be useful if the enum's name is too long or too generic, and you want to
+rename it.
 
 ```rust,editable
 enum VeryVerboseEnumOfThingsToDoWithNumbers {
@@ -75,7 +74,8 @@ fn main() {
 }
 ```
 
-The most common place you'll see this is in `impl` blocks using the `Self` alias.
+The most common place you'll see this is in `impl` blocks using the `Self`
+alias.
 
 ```rust,editable
 enum VeryVerboseEnumOfThingsToDoWithNumbers {
@@ -99,7 +99,8 @@ Rust.
 
 ### See also:
 
-[`match`][match], [`fn`][fn], and [`String`][str], ["Type alias enum variants" RFC][type_alias_rfc]
+[`match`][match], [`fn`][fn], and [`String`][str],
+["Type alias enum variants" RFC][type_alias_rfc]
 
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 [match]: ../flow_control/match.md

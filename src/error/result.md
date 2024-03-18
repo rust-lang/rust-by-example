@@ -5,21 +5,23 @@ describes possible *error* instead of possible *absence*.
 
 That is, `Result<T, E>` could have one of two outcomes:
 
-* `Ok(T)`: An element `T` was found
-* `Err(E)`: An error was found with element `E`
+- `Ok(T)`: An element `T` was found
+- `Err(E)`: An error was found with element `E`
 
-By convention, the expected outcome is `Ok` while the unexpected outcome is `Err`.
+By convention, the expected outcome is `Ok` while the unexpected outcome is
+`Err`.
 
 Like `Option`, `Result` has many methods associated with it. `unwrap()`, for
-example, either yields the element `T` or `panic`s. For case handling,
-there are many combinators between `Result` and `Option` that overlap.
+example, either yields the element `T` or `panic`s. For case handling, there are
+many combinators between `Result` and `Option` that overlap.
 
-In working with Rust, you will likely encounter methods that return the
-`Result` type, such as the [`parse()`][parse] method. It might not always
-be possible to parse a string into the other type, so `parse()` returns a
-`Result` indicating possible failure.
+In working with Rust, you will likely encounter methods that return the `Result`
+type, such as the [`parse()`][parse] method. It might not always be possible to
+parse a string into the other type, so `parse()` returns a `Result` indicating
+possible failure.
 
-Let's see what happens when we successfully and unsuccessfully `parse()` a string:
+Let's see what happens when we successfully and unsuccessfully `parse()` a
+string:
 
 ```rust,editable,ignore,mdbook-runnable
 fn multiply(first_number_str: &str, second_number_str: &str) -> i32 {
@@ -38,12 +40,12 @@ fn main() {
 }
 ```
 
-In the unsuccessful case, `parse()` leaves us with an error for `unwrap()`
-to `panic` on. Additionally, the `panic` exits our program and provides an
+In the unsuccessful case, `parse()` leaves us with an error for `unwrap()` to
+`panic` on. Additionally, the `panic` exits our program and provides an
 unpleasant error message.
 
-To improve the quality of our error message, we should be more specific
-about the return type and consider explicitly handling the error.
+To improve the quality of our error message, we should be more specific about
+the return type and consider explicitly handling the error.
 
 ## Using `Result` in `main`
 
@@ -67,14 +69,13 @@ use std::num::ParseIntError;
 fn main() -> Result<(), ParseIntError> {
     let number_str = "10";
     let number = match number_str.parse::<i32>() {
-        Ok(number)  => number,
+        Ok(number) => number,
         Err(e) => return Err(e),
     };
     println!("{}", number);
     Ok(())
 }
 ```
-
 
 [option]: https://doc.rust-lang.org/std/option/enum.Option.html
 [result]: https://doc.rust-lang.org/std/result/enum.Result.html

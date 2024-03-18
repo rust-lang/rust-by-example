@@ -2,9 +2,9 @@
 
 The two most used string types in Rust are `String` and `&str`.
 
-A `String` is stored as a vector of bytes (`Vec<u8>`), but guaranteed to
-always be a valid UTF-8 sequence. `String` is heap allocated, growable and not
-null terminated.
+A `String` is stored as a vector of bytes (`Vec<u8>`), but guaranteed to always
+be a valid UTF-8 sequence. `String` is heap allocated, growable and not null
+terminated.
 
 `&str` is a slice (`&[u8]`) that always points to a valid UTF-8 sequence, and
 can be used to view into a `String`, just like `&[T]` is a view into `Vec<T>`.
@@ -52,24 +52,23 @@ fn main() {
 }
 ```
 
-More `str`/`String` methods can be found under the
-[std::str][str] and
-[std::string][string]
-modules
+More `str`/`String` methods can be found under the [std::str][str] and
+[std::string][string] modules
 
 ## Literals and escapes
 
-There are multiple ways to write string literals with special characters in them.
-All result in a similar `&str` so it's best to use the form that is the most
-convenient to write. Similarly there are multiple ways to write byte string literals,
-which all result in `&[u8; N]`.
+There are multiple ways to write string literals with special characters in
+them. All result in a similar `&str` so it's best to use the form that is the
+most convenient to write. Similarly there are multiple ways to write byte string
+literals, which all result in `&[u8; N]`.
 
-Generally special characters are escaped with a backslash character: `\`.
-This way you can add any character to your string, even unprintable ones
-and ones that you don't know how to type. If you want a literal backslash,
-escape it with another one: `\\`
+Generally special characters are escaped with a backslash character: `\`. This
+way you can add any character to your string, even unprintable ones and ones
+that you don't know how to type. If you want a literal backslash, escape it with
+another one: `\\`
 
-String or character literal delimiters occurring within a literal must be escaped: `"\""`, `'\''`.
+String or character literal delimiters occurring within a literal must be
+escaped: `"\""`, `'\''`.
 
 ```rust,editable
 fn main() {
@@ -81,9 +80,10 @@ fn main() {
     let unicode_codepoint = "\u{211D}";
     let character_name = "\"DOUBLE-STRUCK CAPITAL R\"";
 
-    println!("Unicode character {} (U+211D) is called {}",
-                unicode_codepoint, character_name );
-
+    println!(
+        "Unicode character {} (U+211D) is called {}",
+        unicode_codepoint, character_name
+    );
 
     let long_string = "String literals
                         can span multiple lines.
@@ -93,8 +93,9 @@ fn main() {
 }
 ```
 
-Sometimes there are just too many characters that need to be escaped or it's just
-much more convenient to write a string out as-is. This is where raw string literals come into play.
+Sometimes there are just too many characters that need to be escaped or it's
+just much more convenient to write a string out as-is. This is where raw string
+literals come into play.
 
 ```rust, editable
 fn main() {
@@ -112,8 +113,9 @@ fn main() {
 }
 ```
 
-Want a string that's not UTF-8? (Remember, `str` and `String` must be valid UTF-8).
-Or maybe you want an array of bytes that's mostly text? Byte strings to the rescue!
+Want a string that's not UTF-8? (Remember, `str` and `String` must be valid
+UTF-8). Or maybe you want an array of bytes that's mostly text? Byte strings to
+the rescue!
 
 ```rust, editable
 use std::str;
@@ -130,7 +132,6 @@ fn main() {
     // ...but no unicode escapes
     // let escaped = b"\u{211D} is not allowed";
     println!("Some escaped bytes: {:?}", escaped);
-
 
     // Raw byte strings work just like raw strings
     let raw_bytestring = br"\u{211D} is not escaped here";
@@ -155,10 +156,11 @@ fn main() {
 }
 ```
 
-For conversions between character encodings check out the [encoding][encoding-crate] crate.
+For conversions between character encodings check out the
+[encoding][encoding-crate] crate.
 
-A more detailed listing of the ways to write string literals and escape characters
-is given in the ['Tokens' chapter][tokens] of the Rust Reference.
+A more detailed listing of the ways to write string literals and escape
+characters is given in the ['Tokens' chapter][tokens] of the Rust Reference.
 
 [str]: https://doc.rust-lang.org/std/str/
 [string]: https://doc.rust-lang.org/std/string/

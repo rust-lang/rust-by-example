@@ -1,7 +1,7 @@
 # Syntax
 
-In following subsections, we will show how to define macros in Rust.
-There are three basic ideas:
+In following subsections, we will show how to define macros in Rust. There are
+three basic ideas:
 
 - [Patterns and Designators][designators]
 - [Overloading][overloading]

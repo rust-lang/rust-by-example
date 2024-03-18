@@ -1,15 +1,14 @@
 # As output parameters
 
-Closures as input parameters are possible, so returning closures as
-output parameters should also be possible. However, anonymous
-closure types are, by definition, unknown, so we have to use
-`impl Trait` to return them.
+Closures as input parameters are possible, so returning closures as output
+parameters should also be possible. However, anonymous closure types are, by
+definition, unknown, so we have to use `impl Trait` to return them.
 
 The valid traits for returning a closure are:
 
-* `Fn`
-* `FnMut`
-* `FnOnce`
+- `Fn`
+- `FnMut`
+- `FnOnce`
 
 Beyond this, the `move` keyword must be used, which signals that all captures
 occur by value. This is required because any captures by reference would be

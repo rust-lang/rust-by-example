@@ -1,12 +1,12 @@
 # Channels
 
-Rust provides asynchronous `channels` for communication between threads. Channels
-allow a unidirectional flow of information between two end-points: the
+Rust provides asynchronous `channels` for communication between threads.
+Channels allow a unidirectional flow of information between two end-points: the
 `Sender` and the `Receiver`.
 
 ```rust,editable
-use std::sync::mpsc::{Sender, Receiver};
 use std::sync::mpsc;
+use std::sync::mpsc::{Receiver, Sender};
 use std::thread;
 
 static NTHREADS: i32 = 3;
@@ -43,7 +43,7 @@ fn main() {
         // `recv` will block the current thread if there are no messages available
         ids.push(rx.recv());
     }
-    
+
     // Wait for the threads to complete any remaining work
     for child in children {
         child.join().expect("oops! the child thread panicked");

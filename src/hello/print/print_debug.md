@@ -1,13 +1,13 @@
 # Debug
 
 All types which want to use `std::fmt` formatting `traits` require an
-implementation to be printable. Automatic implementations are only provided
-for types such as in the `std` library. All others *must* be manually
-implemented somehow.
+implementation to be printable. Automatic implementations are only provided for
+types such as in the `std` library. All others *must* be manually implemented
+somehow.
 
 The `fmt::Debug` `trait` makes this very straightforward. *All* types can
-`derive` (automatically create) the `fmt::Debug` implementation. This is
-not true for `fmt::Display` which must be manually implemented.
+`derive` (automatically create) the `fmt::Debug` implementation. This is not
+true for `fmt::Display` which must be manually implemented.
 
 ```rust
 // This structure cannot be printed either with `fmt::Display` or
@@ -36,10 +36,12 @@ struct Deep(Structure);
 fn main() {
     // Printing with `{:?}` is similar to with `{}`.
     println!("{:?} months in a year.", 12);
-    println!("{1:?} {0:?} is the {actor:?} name.",
-             "Slater",
-             "Christian",
-             actor="actor's");
+    println!(
+        "{1:?} {0:?} is the {actor:?} name.",
+        "Slater",
+        "Christian",
+        actor = "actor's"
+    );
 
     // `Structure` is printable!
     println!("Now {:?} will print!", Structure(3));
@@ -57,7 +59,7 @@ Rust also provides "pretty printing" with `{:#?}`.
 #[derive(Debug)]
 struct Person<'a> {
     name: &'a str,
-    age: u8
+    age: u8,
 }
 
 fn main() {
@@ -74,11 +76,10 @@ One can manually implement `fmt::Display` to control the display.
 
 ### See also:
 
-[`attributes`][attributes], [`derive`][derive], [`std::fmt`][fmt],
-and [`struct`][structs]
+[`attributes`][attributes], [`derive`][derive], [`std::fmt`][fmt], and
+[`struct`][structs]
 
 [attributes]: https://doc.rust-lang.org/reference/attributes.html
 [derive]: ../../trait/derive.md
 [fmt]: https://doc.rust-lang.org/std/fmt/
 [structs]: ../../custom_types/structs.md
-

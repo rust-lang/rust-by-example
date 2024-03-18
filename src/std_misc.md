@@ -1,11 +1,10 @@
 # Std misc
 
-Many other types are provided by the std library to support
-things such as:
+Many other types are provided by the std library to support things such as:
 
-* Threads
-* Channels
-* File I/O
+- Threads
+- Channels
+- File I/O
 
 These expand beyond what the [primitives] provide.
 

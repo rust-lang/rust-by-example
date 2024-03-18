@@ -1,15 +1,13 @@
 # let-else
 
-
 > 🛈 stable since: rust 1.65
 >
 > 🛈 you can target specific edition by compiling like this
 > `rustc --edition=2021 main.rs`
 
-
-With `let`-`else`, a refutable pattern can match and bind variables
-in the surrounding scope like a normal `let`, or else diverge (e.g. `break`,
-`return`, `panic!`) when the pattern doesn't match.
+With `let`-`else`, a refutable pattern can match and bind variables in the
+surrounding scope like a normal `let`, or else diverge (e.g. `break`, `return`,
+`panic!`) when the pattern doesn't match.
 
 ```rust
 use std::str::FromStr;
@@ -56,8 +54,8 @@ patterns with an unfortunate bit of repetition and an outer `let`:
 
 ### See also:
 
-[option][option], [match][match], [if let][if_let] and the [let-else RFC][let_else_rfc].
-
+[option][option], [match][match], [if let][if_let] and the
+[let-else RFC][let_else_rfc].
 
 [match]: ./match.md
 [if_let]: ./if_let.md

@@ -8,22 +8,19 @@ process via pipes.
 use std::io::prelude::*;
 use std::process::Stdio;
 
-static PANGRAM: &'static str =
-"the quick brown fox jumps over the lazy dog\n";
+static PANGRAM: &'static str = "the quick brown fox jumps over the lazy dog\n";
 
 fn main() {
     // Spawn the `wc` command
     let mut cmd = if cfg!(target_family = "windows") {
         let mut cmd = Command::new("powershell");
-        cmd.arg("-Command").arg("$input | Measure-Object -Line -Word -Character");
+        cmd.arg("-Command")
+            .arg("$input | Measure-Object -Line -Word -Character");
         cmd
     } else {
         Command::new("wc")
     };
-    let process = match cmd
-                                .stdin(Stdio::piped())
-                                .stdout(Stdio::piped())
-                                .spawn() {
+    let process = match cmd.stdin(Stdio::piped()).stdout(Stdio::piped()).spawn() {
         Err(why) => panic!("couldn't spawn wc: {}", why),
         Ok(process) => process,
     };

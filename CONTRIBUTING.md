@@ -1,8 +1,8 @@
 # Rust by Example contribution guidelines
 
 Thank you for your interest in making Rust by Example (also known as RBE)
-better! We'd love to have your contribution. We expect all contributors to
-abide by the [Rust code of conduct], which you can find at that link or in the
+better! We'd love to have your contribution. We expect all contributors to abide
+by the [Rust code of conduct], which you can find at that link or in the
 [`CODE_OF_CONDUCT.md`] file in this repository.
 
 [Rust code of conduct]: https://www.rust-lang.org/policies/code-of-conduct
@@ -23,24 +23,24 @@ To make changes to RBE, please send in pull requests on GitHub to the `master`
 branch. We'll review them and either merge or request changes. Travis CI tests
 everything as well, so you may get feedback from it too.
 
-If you make additions or other changes to a pull request, feel free to either amend
-previous commits or only add new ones, however you prefer. We may ask you to squash
-your commits before merging, depending.
+If you make additions or other changes to a pull request, feel free to either
+amend previous commits or only add new ones, however you prefer. We may ask you
+to squash your commits before merging, depending.
 
 ## Issue Tracker
 
-You can find the issue tracker [on
-GitHub](https://github.com/rust-lang/rust-by-example/issues). If you've found a
-problem with RBE, please open an issue there.
+You can find the issue tracker
+[on GitHub](https://github.com/rust-lang/rust-by-example/issues). If you've
+found a problem with RBE, please open an issue there.
 
 We use the following labels:
 
-* `enhancement`: This is for any request for new sections or functionality.
-* `bug`: This is for anything that's in RBE, but incorrect or not working.
-* `discussion`: A discussion about improving something in RBE; this may lead to new
-  enhancement or bug issues.
-* `E-mentor`: This issue has someone dedicated to helping a new contributor fix it!
-  Can apply to both enhancement or bug issues.
+- `enhancement`: This is for any request for new sections or functionality.
+- `bug`: This is for anything that's in RBE, but incorrect or not working.
+- `discussion`: A discussion about improving something in RBE; this may lead to
+  new enhancement or bug issues.
+- `E-mentor`: This issue has someone dedicated to helping a new contributor fix
+  it! Can apply to both enhancement or bug issues.
 
 ## Development workflow
 
@@ -63,7 +63,8 @@ $ mdbook build
 [install Rust]: http://rust-lang.org/install.html
 
 The files will be in the `book` directory at the top-level; `mdbook serve` will
-open the contents in your web browser ([localhost:3000](http://localhost:3000) by default).
+open the contents in your web browser ([localhost:3000](http://localhost:3000)
+by default).
 
 To run the tests:
 
@@ -71,6 +72,6 @@ To run the tests:
 $ mdbook test
 ```
 
-If you're adding a new chapter, you'll need to edit `src\SUMMARY.md` to add it. If
-you're tweaking an existing example, you'll need to edit the corresponding file; check
-`src\SUMMARY.md` to see a mapping of where chapters go to files.
+If you're adding a new chapter, you'll need to edit `src\SUMMARY.md` to add it.
+If you're tweaking an existing example, you'll need to edit the corresponding
+file; check `src\SUMMARY.md` to see a mapping of where chapters go to files.

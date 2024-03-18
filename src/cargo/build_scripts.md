@@ -23,8 +23,8 @@ The build script is simply another Rust file that will be compiled and invoked
 prior to compiling anything else in the package. Hence it can be used to fulfill
 pre-requisites of your crate.
 
-Cargo provides the script with inputs via environment variables [specified
-here] that can be used.
+Cargo provides the script with inputs via environment variables [specified here]
+that can be used.
 
 The script provides output via stdout. All lines printed are written to
 `target/debug/build/<pkg>/output`. Further, lines prefixed with `cargo:` will be
@@ -35,5 +35,4 @@ For further specification and examples have a read of the
 [Cargo specification][cargo_specification].
 
 [specified here]: https://doc.rust-lang.org/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts
-
 [cargo_specification]: https://doc.rust-lang.org/cargo/reference/build-scripts.html

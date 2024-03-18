@@ -2,8 +2,8 @@
 
 Implementing `fmt::Display` for a structure where the elements must each be
 handled sequentially is tricky. The problem is that each `write!` generates a
-`fmt::Result`. Proper handling of this requires dealing with *all* the
-results. Rust provides the `?` operator for exactly this purpose.
+`fmt::Result`. Proper handling of this requires dealing with *all* the results.
+Rust provides the `?` operator for exactly this purpose.
 
 Using `?` on `write!` looks like this:
 
@@ -13,8 +13,7 @@ Using `?` on `write!` looks like this:
 write!(f, "{}", value)?;
 ```
 
-With `?` available, implementing `fmt::Display` for a `Vec` is
-straightforward:
+With `?` available, implementing `fmt::Display` for a `Vec` is straightforward:
 
 ```rust,editable
 use std::fmt; // Import the `fmt` module.
@@ -35,7 +34,9 @@ impl fmt::Display for List {
         for (count, v) in vec.iter().enumerate() {
             // For every element except the first, add a comma.
             // Use the ? operator to return on errors.
-            if count != 0 { write!(f, ", ")?; }
+            if count != 0 {
+                write!(f, ", ")?;
+            }
             write!(f, "{}", v)?;
         }
 

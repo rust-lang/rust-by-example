@@ -1,0 +1,40 @@
+{
+    "lineWidth": 80,
+    "markdown": {
+        "lineWidth": 80,
+        "emphasisKind": "asterisks",
+        "strongKind": "asterisks",
+        "textWrap": "always"
+    },
+    "toml": {
+        "lineWidth": 80
+    },
+    "json": {
+        "lineWidth": 80,
+        "indentWidth": 4
+    },
+    "includes": [
+        "**/*.{md}",
+        "**/*.{toml}",
+        "**/*.{json}",
+        "**/*.{js,ts,tsx,jsx}"
+    ],
+    "excludes": [
+        "book/**/book.js",
+        "theme/book.js",
+        "target/**/*"
+    ],
+    "exec": {
+        "commands": [{
+            "command": "rustfmt --edition 2021",
+            "exts": ["rs"]
+        }]
+    },
+    "plugins": [
+        "https://plugins.dprint.dev/markdown-0.16.4.wasm",
+        "https://plugins.dprint.dev/toml-0.6.1.wasm",
+        "https://plugins.dprint.dev/json-0.19.2.wasm",
+        "https://plugins.dprint.dev/typescript-0.89.3.wasm",
+        "https://plugins.dprint.dev/exec-0.4.4.json@c207bf9b9a4ee1f0ecb75c594f774924baf62e8e53a2ce9d873816a408cecbf7"
+    ]
+}

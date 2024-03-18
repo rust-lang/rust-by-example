@@ -3,9 +3,9 @@
 There are three types of structures ("structs") that can be created using the
 `struct` keyword:
 
-* Tuple structs, which are, basically, named tuples.
-* The classic [C structs][c_struct]
-* Unit structs, which are field-less, are useful for generics.
+- Tuple structs, which are, basically, named tuples.
+- The classic [C structs][c_struct]
+- Unit structs, which are field-less, are useful for generics.
 
 ```rust,editable
 // An attribute to hide warnings for unused code.
@@ -55,18 +55,27 @@ fn main() {
 
     // Make a new point by using struct update syntax to use the fields of our
     // other one
-    let bottom_right = Point { x: 5.2, ..another_point };
+    let bottom_right = Point {
+        x: 5.2,
+        ..another_point
+    };
 
     // `bottom_right.y` will be the same as `point.y` because we used that field
     // from `point`
     println!("second point: ({}, {})", bottom_right.x, bottom_right.y);
 
     // Destructure the point using a `let` binding
-    let Point { x: left_edge, y: top_edge } = point;
+    let Point {
+        x: left_edge,
+        y: top_edge,
+    } = point;
 
     let _rectangle = Rectangle {
         // struct instantiation is an expression too
-        top_left: Point { x: left_edge, y: top_edge },
+        top_left: Point {
+            x: left_edge,
+            y: top_edge,
+        },
         bottom_right: bottom_right,
     };
 
@@ -96,7 +105,8 @@ fn main() {
 
 ### See also
 
-[`attributes`][attributes], [raw identifiers][raw_identifiers] and [destructuring][destructuring]
+[`attributes`][attributes], [raw identifiers][raw_identifiers] and
+[destructuring][destructuring]
 
 [attributes]: ../attribute.md
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)

@@ -1,8 +1,8 @@
 # Associated functions & Methods
 
 Some functions are connected to a particular type. These come in two forms:
-associated functions, and methods. Associated functions are functions that
-are defined on a type generally, while methods are associated functions that are
+associated functions, and methods. Associated functions are functions that are
+defined on a type generally, while methods are associated functions that are
 called on a particular instance of a type.
 
 ```rust,editable

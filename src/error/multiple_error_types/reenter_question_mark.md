@@ -1,26 +1,25 @@
 # Other uses of `?`
 
-Notice in the previous example that our immediate reaction to calling
-`parse` is to `map` the error from a library error into a boxed
-error:
+Notice in the previous example that our immediate reaction to calling `parse` is
+to `map` the error from a library error into a boxed error:
 
 ```rust,ignore
 .and_then(|s| s.parse::<i32>())
     .map_err(|e| e.into())
 ```
 
-Since this is a simple and common operation, it would be convenient if it
-could be elided. Alas, because `and_then` is not sufficiently flexible, it
-cannot. However, we can instead use `?`.
+Since this is a simple and common operation, it would be convenient if it could
+be elided. Alas, because `and_then` is not sufficiently flexible, it cannot.
+However, we can instead use `?`.
 
-`?` was previously explained as either `unwrap` or `return Err(err)`.
-This is only mostly true. It actually means `unwrap` or
-`return Err(From::from(err))`. Since `From::from` is a conversion utility
-between different types, this means that if you `?` where the error is
-convertible to the return type, it will convert automatically.
+`?` was previously explained as either `unwrap` or `return Err(err)`. This is
+only mostly true. It actually means `unwrap` or `return Err(From::from(err))`.
+Since `From::from` is a conversion utility between different types, this means
+that if you `?` where the error is convertible to the return type, it will
+convert automatically.
 
-Here, we rewrite the previous example using `?`. As a result, the
-`map_err` will go away when `From::from` is implemented for our error type:
+Here, we rewrite the previous example using `?`. As a result, the `map_err` will
+go away when `From::from` is implemented for our error type:
 
 ```rust,editable
 use std::error;
@@ -50,7 +49,7 @@ fn double_first(vec: Vec<&str>) -> Result<i32> {
 
 fn print(result: Result<i32>) {
     match result {
-        Ok(n)  => println!("The first doubled is {}", n),
+        Ok(n) => println!("The first doubled is {}", n),
         Err(e) => println!("Error: {}", e),
     }
 }
@@ -66,10 +65,9 @@ fn main() {
 }
 ```
 
-This is actually fairly clean now. Compared with the original `panic`, it
-is very similar to replacing the `unwrap` calls with `?` except that the
-return types are `Result`. As a result, they must be destructured at the
-top level.
+This is actually fairly clean now. Compared with the original `panic`, it is
+very similar to replacing the `unwrap` calls with `?` except that the return
+types are `Result`. As a result, they must be destructured at the top level.
 
 ### See also:
 

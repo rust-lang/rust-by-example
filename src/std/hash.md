@@ -1,30 +1,32 @@
 # HashMap
 
-Where vectors store values by an integer index, `HashMap`s store values by key. 
-`HashMap` keys can be booleans, integers, strings, 
-or any other type that implements the `Eq` and `Hash` traits. 
-More on this in the next section.
+Where vectors store values by an integer index, `HashMap`s store values by key.
+`HashMap` keys can be booleans, integers, strings, or any other type that
+implements the `Eq` and `Hash` traits. More on this in the next section.
 
-Like vectors, `HashMap`s are growable, but HashMaps can also shrink themselves 
-when they have excess space. 
-You can create a HashMap with a certain starting capacity using 
-`HashMap::with_capacity(uint)`, or use `HashMap::new()` to get a HashMap 
-with a default initial capacity (recommended).
+Like vectors, `HashMap`s are growable, but HashMaps can also shrink themselves
+when they have excess space. You can create a HashMap with a certain starting
+capacity using `HashMap::with_capacity(uint)`, or use `HashMap::new()` to get a
+HashMap with a default initial capacity (recommended).
 
 ```rust,editable
 use std::collections::HashMap;
 
 fn call(number: &str) -> &str {
     match number {
-        "798-1364" => "We're sorry, the call cannot be completed as dialed. 
-            Please hang up and try again.",
-        "645-7689" => "Hello, this is Mr. Awesome's Pizza. My name is Fred.
-            What can I get for you today?",
-        _ => "Hi! Who is this again?"
+        "798-1364" => {
+            "We're sorry, the call cannot be completed as dialed. 
+            Please hang up and try again."
+        }
+        "645-7689" => {
+            "Hello, this is Mr. Awesome's Pizza. My name is Fred.
+            What can I get for you today?"
+        }
+        _ => "Hi! Who is this again?",
     }
 }
 
-fn main() { 
+fn main() {
     let mut contacts = HashMap::new();
 
     contacts.insert("Daniel", "798-1364");
@@ -47,18 +49,17 @@ fn main() {
         _ => println!("Don't have Ashley's number."),
     }
 
-    contacts.remove(&"Ashley"); 
+    contacts.remove(&"Ashley");
 
-    // `HashMap::iter()` returns an iterator that yields 
+    // `HashMap::iter()` returns an iterator that yields
     // (&'a key, &'a value) pairs in arbitrary order.
     for (contact, &number) in contacts.iter() {
-        println!("Calling {}: {}", contact, call(number)); 
+        println!("Calling {}: {}", contact, call(number));
     }
 }
 ```
 
-For more information on how hashing and hash maps 
-(sometimes called hash tables) work, have a look at 
-[Hash Table Wikipedia][wiki-hash]
+For more information on how hashing and hash maps (sometimes called hash tables)
+work, have a look at [Hash Table Wikipedia][wiki-hash]
 
 [wiki-hash]: https://en.wikipedia.org/wiki/Hash_table

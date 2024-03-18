@@ -2,9 +2,9 @@
 
 Chaining results using match can get pretty untidy; luckily, the `?` operator
 can be used to make things pretty again. `?` is used at the end of an expression
-returning a `Result`, and is equivalent to a match expression, where the 
-`Err(err)` branch expands to an early `return Err(From::from(err))`, and the `Ok(ok)`
-branch expands to an `ok` expression.
+returning a `Result`, and is equivalent to a match expression, where the
+`Err(err)` branch expands to an early `return Err(From::from(err))`, and the
+`Ok(ok)` branch expands to an `ok` expression.
 
 ```rust,editable,ignore,mdbook-runnable
 mod checked {
@@ -54,14 +54,14 @@ mod checked {
 
     pub fn op(x: f64, y: f64) {
         match op_(x, y) {
-            Err(why) => panic!("{}", match why {
-                MathError::NonPositiveLogarithm
-                    => "logarithm of non-positive number",
-                MathError::DivisionByZero
-                    => "division by zero",
-                MathError::NegativeSquareRoot
-                    => "square root of negative number",
-            }),
+            Err(why) => panic!(
+                "{}",
+                match why {
+                    MathError::NonPositiveLogarithm => "logarithm of non-positive number",
+                    MathError::DivisionByZero => "division by zero",
+                    MathError::NegativeSquareRoot => "square root of negative number",
+                }
+            ),
             Ok(value) => println!("{}", value),
         }
     }
@@ -72,7 +72,7 @@ fn main() {
 }
 ```
 
-Be sure to check the [documentation][docs],
-as there are many methods to map/compose `Result`.
+Be sure to check the [documentation][docs], as there are many methods to
+map/compose `Result`.
 
 [docs]: https://doc.rust-lang.org/std/result/index.html

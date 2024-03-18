@@ -1,6 +1,6 @@
 # Variadic Interfaces
 
-A _variadic_ interface takes an arbitrary number of arguments. For example,
+A *variadic* interface takes an arbitrary number of arguments. For example,
 `println!` can take an arbitrary number of arguments, as determined by the
 format string.
 

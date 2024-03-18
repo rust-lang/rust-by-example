@@ -1,12 +1,12 @@
 # Documentation testing
 
 The primary way of documenting a Rust project is through annotating the source
-code. Documentation comments are written in 
+code. Documentation comments are written in
 [CommonMark Markdown specification][commonmark] and support code blocks in them.
-Rust takes care about correctness, so these code blocks are compiled and used 
-as documentation tests.
+Rust takes care about correctness, so these code blocks are compiled and used as
+documentation tests.
 
-```rust,ignore
+````rust,ignore
 /// First line is a short summary describing function.
 ///
 /// The next lines present detailed documentation. Code blocks start with
@@ -47,10 +47,10 @@ pub fn div(a: i32, b: i32) -> i32 {
 
     a / b
 }
-```
+````
 
-Code blocks in documentation are automatically tested
-when running the regular `cargo test` command:
+Code blocks in documentation are automatically tested when running the regular
+`cargo test` command:
 
 ```shell
 $ cargo test
@@ -78,7 +78,7 @@ returns `unit`. The ability to hide some source lines from documentation comes
 to the rescue: one may write `fn try_main() -> Result<(), ErrorType>`, hide it
 and `unwrap` it in hidden `main`. Sounds complicated? Here's an example:
 
-```rust,ignore
+````rust,ignore
 /// Using hidden `try_main` in doc tests.
 ///
 /// ```
@@ -99,12 +99,12 @@ pub fn try_div(a: i32, b: i32) -> Result<i32, String> {
         Ok(a / b)
     }
 }
-```
+````
 
 ## See Also
 
-* [RFC505][RFC505] on documentation style
-* [API Guidelines][doc-nursery] on documentation guidelines
+- [RFC505][RFC505] on documentation style
+- [API Guidelines][doc-nursery] on documentation guidelines
 
 [doc-nursery]: https://rust-lang-nursery.github.io/api-guidelines/documentation.html
 [commonmark]: https://commonmark.org/

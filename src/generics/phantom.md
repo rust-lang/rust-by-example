@@ -1,15 +1,14 @@
 # Phantom type parameters
 
-A phantom type parameter is one that doesn't show up at runtime,
-but is checked statically (and only) at compile time.
+A phantom type parameter is one that doesn't show up at runtime, but is checked
+statically (and only) at compile time.
 
-Data types can use extra generic type parameters to act as markers
-or to perform type checking at compile time. These extra parameters
-hold no storage values, and have no runtime behavior.
+Data types can use extra generic type parameters to act as markers or to perform
+type checking at compile time. These extra parameters hold no storage values,
+and have no runtime behavior.
 
-In the following example, we combine [std::marker::PhantomData]
-with the phantom type parameter concept to create tuples containing
-different data types.
+In the following example, we combine [std::marker::PhantomData] with the phantom
+type parameter concept to create tuples containing different data types.
 
 ```rust,editable
 use std::marker::PhantomData;
@@ -20,7 +19,10 @@ struct PhantomTuple<A, B>(A, PhantomData<B>);
 
 // A phantom type struct which is generic over `A` with hidden parameter `B`.
 #[derive(PartialEq)] // Allow equality test for this type.
-struct PhantomStruct<A, B> { first: A, phantom: PhantomData<B> }
+struct PhantomStruct<A, B> {
+    first: A,
+    phantom: PhantomData<B>,
+}
 
 // Note: Storage is allocated for generic type `A`, but not for `B`.
 //       Therefore, `B` cannot be used in computations.

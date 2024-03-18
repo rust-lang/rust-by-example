@@ -1,12 +1,12 @@
 # Bounds
 
-Just like generic types can be bounded, lifetimes (themselves generic)
-use bounds as well. The `:` character has a slightly different meaning here, 
-but `+` is the same. Note how the following read:
+Just like generic types can be bounded, lifetimes (themselves generic) use
+bounds as well. The `:` character has a slightly different meaning here, but `+`
+is the same. Note how the following read:
 
 1. `T: 'a`: *All* references in `T` must outlive lifetime `'a`.
 2. `T: Trait + 'a`: Type `T` must implement trait `Trait` and *all* references
-in `T` must outlive `'a`.
+   in `T` must outlive `'a`.
 
 The example below shows the above syntax in action used after keyword `where`:
 
@@ -21,16 +21,20 @@ struct Ref<'a, T: 'a>(&'a T);
 // of `Ref` may not exceed `'a`.
 
 // A generic function which prints using the `Debug` trait.
-fn print<T>(t: T) where
-    T: Debug {
+fn print<T>(t: T)
+where
+    T: Debug,
+{
     println!("`print`: t is {:?}", t);
 }
 
 // Here a reference to `T` is taken where `T` implements
 // `Debug` and all *references* in `T` outlive `'a`. In
 // addition, `'a` must outlive the function.
-fn print_ref<'a, T>(t: &'a T) where
-    T: Debug + 'a {
+fn print_ref<'a, T>(t: &'a T)
+where
+    T: Debug + 'a,
+{
     println!("`print_ref`: t is {:?}", t);
 }
 
@@ -45,7 +49,7 @@ fn main() {
 
 ### See also:
 
-[generics][generics], [bounds in generics][bounds], and 
+[generics][generics], [bounds in generics][bounds], and
 [multiple bounds in generics][multibounds]
 
 [generics]: ../../generics.md

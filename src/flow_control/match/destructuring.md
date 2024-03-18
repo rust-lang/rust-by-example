@@ -2,12 +2,11 @@
 
 A `match` block can destructure items in a variety of ways.
 
-* [Destructuring Tuples][tuple]
-* [Destructuring Arrays and Slices][slice]
-* [Destructuring Enums][enum]
-* [Destructuring Pointers][refs]
-* [Destructuring Structures][struct]
-
+- [Destructuring Tuples][tuple]
+- [Destructuring Arrays and Slices][slice]
+- [Destructuring Enums][enum]
+- [Destructuring Pointers][refs]
+- [Destructuring Structures][struct]
 
 [enum]: destructuring/destructure_enum.md
 [refs]: destructuring/destructure_pointers.md

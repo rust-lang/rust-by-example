@@ -13,9 +13,7 @@ struct Borrowed<'a> {
 // Annotate lifetimes to impl.
 impl<'a> Default for Borrowed<'a> {
     fn default() -> Self {
-        Self {
-            x: &10,
-        }
+        Self { x: &10 }
     }
 }
 
@@ -28,6 +26,5 @@ fn main() {
 ### See also:
 
 [`trait`s][trait]
-
 
 [trait]: ../../trait.md

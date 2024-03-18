@@ -1,15 +1,17 @@
 # Traits
 
-A `trait` is a collection of methods defined for an unknown type:
-`Self`. They can access other methods declared in the same trait.
+A `trait` is a collection of methods defined for an unknown type: `Self`. They
+can access other methods declared in the same trait.
 
-Traits can be implemented for any data type. In the example below,
-we define `Animal`, a group of methods. The `Animal` `trait` is 
-then implemented for the `Sheep` data type, allowing the use of 
-methods from `Animal` with a `Sheep`.
+Traits can be implemented for any data type. In the example below, we define
+`Animal`, a group of methods. The `Animal` `trait` is then implemented for the
+`Sheep` data type, allowing the use of methods from `Animal` with a `Sheep`.
 
 ```rust,editable
-struct Sheep { naked: bool, name: &'static str }
+struct Sheep {
+    naked: bool,
+    name: &'static str,
+}
 
 trait Animal {
     // Associated function signature; `Self` refers to the implementor type.
@@ -46,7 +48,10 @@ impl Sheep {
 impl Animal for Sheep {
     // `Self` is the implementor type: `Sheep`.
     fn new(name: &'static str) -> Sheep {
-        Sheep { name: name, naked: false }
+        Sheep {
+            name: name,
+            naked: false,
+        }
     }
 
     fn name(&self) -> &'static str {
@@ -60,7 +65,7 @@ impl Animal for Sheep {
             "baaaaah!"
         }
     }
-    
+
     // Default trait methods can be overridden.
     fn talk(&self) {
         // For example, we can add some quiet contemplation.

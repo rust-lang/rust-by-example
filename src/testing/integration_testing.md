@@ -47,9 +47,9 @@ running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-Each Rust source file in the `tests` directory is compiled as a separate crate. In
-order to share some code between integration tests we can make a module with public
-functions, importing and using it within tests.
+Each Rust source file in the `tests` directory is compiled as a separate crate.
+In order to share some code between integration tests we can make a module with
+public functions, importing and using it within tests.
 
 File `tests/common/mod.rs`:
 

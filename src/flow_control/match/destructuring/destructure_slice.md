@@ -9,8 +9,7 @@ fn main() {
 
     match array {
         // Binds the second and the third elements to the respective variables
-        [0, second, third] =>
-            println!("array[0] = 0, array[1] = {}, array[2] = {}", second, third),
+        [0, second, third] => println!("array[0] = 0, array[1] = {}, array[2] = {}", second, third),
 
         // Single values can be ignored with _
         [1, _, third] => println!(
@@ -45,4 +44,5 @@ fn main() {
 
 ### See also:
 
-[Arrays and Slices](../../../primitives/array.md) and [Binding](../binding.md) for `@` sigil
+[Arrays and Slices](../../../primitives/array.md) and [Binding](../binding.md)
+for `@` sigil

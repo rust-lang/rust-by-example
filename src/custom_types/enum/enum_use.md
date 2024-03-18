@@ -19,7 +19,7 @@ enum Role {
 fn main() {
     // Explicitly `use` each name so they are available without
     // manual scoping.
-    use crate::Stage::{Beginner, Advanced};
+    use crate::Stage::{Advanced, Beginner};
     // Automatically `use` each name inside `Role`.
     use crate::Role::*;
 
@@ -44,7 +44,7 @@ fn main() {
 
 ### See also:
 
-[`match`][match] and [`use`][use] 
+[`match`][match] and [`use`][use]
 
 [use]: ../../mod/use.md
 [match]: ../../flow_control/match.md

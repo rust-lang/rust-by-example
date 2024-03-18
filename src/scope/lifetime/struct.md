@@ -29,7 +29,7 @@ fn main() {
     let single = Borrowed(&x);
     let double = NamedBorrowed { x: &x, y: &y };
     let reference = Either::Ref(&x);
-    let number    = Either::Num(y);
+    let number = Either::Num(y);
 
     println!("x is borrowed in {:?}", single);
     println!("x and y are borrowed in {:?}", double);
@@ -41,6 +41,5 @@ fn main() {
 ### See also:
 
 [`struct`s][structs]
-
 
 [structs]: ../../custom_types/structs.md

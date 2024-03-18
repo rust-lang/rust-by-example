@@ -12,9 +12,9 @@ Underscores can be inserted in numeric literals to improve readability, e.g.
 Rust also supports scientific [E-notation][enote], e.g. `1e6`, `7.6e-4`. The
 associated type is `f64`.
 
-We need to tell the compiler the type of the literals we use. For now,
-we'll use the `u32` suffix to indicate that the literal is an unsigned 32-bit
-integer, and the `i32` suffix to indicate that it's a signed 32-bit integer.
+We need to tell the compiler the type of the literals we use. For now, we'll use
+the `u32` suffix to indicate that the literal is an unsigned 32-bit integer, and
+the `i32` suffix to indicate that it's a signed 32-bit integer.
 
 The operators available and their precedence [in Rust][rust op-prec] are similar
 to other [C-like languages][op-prec].

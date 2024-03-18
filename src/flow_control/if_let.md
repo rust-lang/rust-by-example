@@ -16,11 +16,10 @@ match optional {
     // ^ Required because `match` is exhaustive. Doesn't it seem
     // like wasted space?
 };
-
 ```
 
-`if let` is cleaner for this use case and in addition allows various
-failure options to be specified:
+`if let` is cleaner for this use case and in addition allows various failure
+options to be specified:
 
 ```rust,editable
 fn main() {
@@ -66,7 +65,7 @@ In the same way, `if let` can be used to match any enum value:
 enum Foo {
     Bar,
     Baz,
-    Qux(u32)
+    Qux(u32),
 }
 
 fn main() {
@@ -74,18 +73,18 @@ fn main() {
     let a = Foo::Bar;
     let b = Foo::Baz;
     let c = Foo::Qux(100);
-    
+
     // Variable a matches Foo::Bar
     if let Foo::Bar = a {
         println!("a is foobar");
     }
-    
+
     // Variable b does not match Foo::Bar
     // So this will print nothing
     if let Foo::Bar = b {
         println!("b is foobar");
     }
-    
+
     // Variable c matches Foo::Qux which has a value
     // Similar to Some() in the previous example
     if let Foo::Qux(value) = c {
@@ -99,21 +98,26 @@ fn main() {
 }
 ```
 
-Another benefit is that `if let` allows us to match non-parameterized enum variants. This is true even in cases where the enum doesn't implement or derive `PartialEq`. In such cases `if Foo::Bar == a` would fail to compile, because instances of the enum cannot be equated, however `if let` will continue to work.
+Another benefit is that `if let` allows us to match non-parameterized enum
+variants. This is true even in cases where the enum doesn't implement or derive
+`PartialEq`. In such cases `if Foo::Bar == a` would fail to compile, because
+instances of the enum cannot be equated, however `if let` will continue to work.
 
 Would you like a challenge? Fix the following example to use `if let`:
 
 ```rust,editable,ignore,mdbook-runnable
 // This enum purposely neither implements nor derives PartialEq.
 // That is why comparing Foo::Bar == a fails below.
-enum Foo {Bar}
+enum Foo {
+    Bar,
+}
 
 fn main() {
     let a = Foo::Bar;
 
     // Variable a matches Foo::Bar
     if Foo::Bar == a {
-    // ^-- this causes a compile-time error. Use `if let` instead.
+        // ^-- this causes a compile-time error. Use `if let` instead.
         println!("a is foobar");
     }
 }

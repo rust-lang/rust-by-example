@@ -1,18 +1,18 @@
 # Documentation
 
-Use `cargo doc` to build documentation in `target/doc`, `cargo doc --open`
-will automatically open it in your web browser.
+Use `cargo doc` to build documentation in `target/doc`, `cargo doc --open` will
+automatically open it in your web browser.
 
-Use `cargo test` to run all tests (including documentation tests), and `cargo
-test --doc` to only run documentation tests.
+Use `cargo test` to run all tests (including documentation tests), and
+`cargo test --doc` to only run documentation tests.
 
 These commands will appropriately invoke `rustdoc` (and `rustc`) as required.
 
 ## Doc comments
 
 Doc comments are very useful for big projects that require documentation. When
-running `rustdoc`, these are the comments that get compiled into
-documentation. They are denoted by a `///`, and support [Markdown].
+running `rustdoc`, these are the comments that get compiled into documentation.
+They are denoted by a `///`, and support [Markdown].
 
 ````rust,editable,ignore
 #![crate_name = "doc"]

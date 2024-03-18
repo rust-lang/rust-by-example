@@ -33,7 +33,6 @@ fn main() {
 
     my::nested::function();
 }
-
 ```
 
 In `my.rs`:

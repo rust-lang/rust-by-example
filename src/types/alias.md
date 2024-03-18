@@ -17,15 +17,17 @@ fn main() {
 
     // Note that type aliases *don't* provide any extra type safety, because
     // aliases are *not* new types
-    println!("{} nanoseconds + {} inches = {} unit?",
-             nanoseconds,
-             inches,
-             nanoseconds + inches);
+    println!(
+        "{} nanoseconds + {} inches = {} unit?",
+        nanoseconds,
+        inches,
+        nanoseconds + inches
+    );
 }
 ```
 
-The main use of aliases is to reduce boilerplate; for example the `io::Result<T>` type
-is an alias for the `Result<T, io::Error>` type.
+The main use of aliases is to reduce boilerplate; for example the
+`io::Result<T>` type is an alias for the `Result<T, io::Error>` type.
 
 ### See also:
 

@@ -7,7 +7,9 @@
 
 ## As an argument type
 
-If your function is generic over a trait but you don't mind the specific type, you can simplify the function declaration using `impl Trait` as the type of the argument.
+If your function is generic over a trait but you don't mind the specific type,
+you can simplify the function declaration using `impl Trait` as the type of the
+argument.
 
 For example, consider the following code:
 
@@ -27,8 +29,10 @@ fn parse_csv_document<R: std::io::BufRead>(src: R) -> std::io::Result<Vec<Vec<St
 }
 ```
 
-`parse_csv_document` is generic, allowing it to take any type which implements BufRead, such as `BufReader<File>` or `[u8]`,
-but it's not important what type `R` is, and `R` is only used to declare the type of `src`, so the function can also be written as:
+`parse_csv_document` is generic, allowing it to take any type which implements
+BufRead, such as `BufReader<File>` or `[u8]`, but it's not important what type
+`R` is, and `R` is only used to declare the type of `src`, so the function can
+also be written as:
 
 ```rust,editable
 fn parse_csv_document(src: impl std::io::BufRead) -> std::io::Result<Vec<Vec<String>>> {
@@ -46,13 +50,16 @@ fn parse_csv_document(src: impl std::io::BufRead) -> std::io::Result<Vec<Vec<Str
 }
 ```
 
-Note that using `impl Trait` as an argument type means that you cannot explicitly state what form of the function you use, i.e. `parse_csv_document::<std::io::Empty>(std::io::empty())` will not work with the second example.
-
+Note that using `impl Trait` as an argument type means that you cannot
+explicitly state what form of the function you use, i.e.
+`parse_csv_document::<std::io::Empty>(std::io::empty())` will not work with the
+second example.
 
 ## As a return type
 
 If your function returns a type that implements `MyTrait`, you can write its
-return type as `-> impl MyTrait`. This can help simplify your type signatures quite a lot!
+return type as `-> impl MyTrait`. This can help simplify your type signatures
+quite a lot!
 
 ```rust,editable
 use std::iter;
@@ -69,10 +76,7 @@ fn combine_vecs_explicit_return_type(
 
 // This is the exact same function, but its return type uses `impl Trait`.
 // Look how much simpler it is!
-fn combine_vecs(
-    v: Vec<i32>,
-    u: Vec<i32>,
-) -> impl Iterator<Item=i32> {
+fn combine_vecs(v: Vec<i32>, u: Vec<i32>) -> impl Iterator<Item = i32> {
     v.into_iter().chain(u.into_iter()).cycle()
 }
 
@@ -97,7 +101,7 @@ statically, like this:
 ```rust,editable
 // Returns a function that adds `y` to its input
 fn make_adder_function(y: i32) -> impl Fn(i32) -> i32 {
-    let closure = move |x: i32| { x + y };
+    let closure = move |x: i32| x + y;
     closure
 }
 
@@ -108,16 +112,13 @@ fn main() {
 ```
 
 You can also use `impl Trait` to return an iterator that uses `map` or `filter`
-closures! This makes using `map` and `filter` easier. Because closure types don't
-have names, you can't write out an explicit return type if your function returns
-iterators with closures. But with `impl Trait` you can do this easily:
+closures! This makes using `map` and `filter` easier. Because closure types
+don't have names, you can't write out an explicit return type if your function
+returns iterators with closures. But with `impl Trait` you can do this easily:
 
 ```rust,editable
 fn double_positives<'a>(numbers: &'a Vec<i32>) -> impl Iterator<Item = i32> + 'a {
-    numbers
-        .iter()
-        .filter(|x| x > &&0)
-        .map(|x| x * 2)
+    numbers.iter().filter(|x| x > &&0).map(|x| x * 2)
 }
 
 fn main() {

@@ -1,6 +1,7 @@
 # Diverging functions
 
-Diverging functions never return. They are marked using `!`, which is an empty type.
+Diverging functions never return. They are marked using `!`, which is an empty
+type.
 
 ```rust
 fn foo() -> ! {
@@ -12,8 +13,8 @@ As opposed to all the other types, this one cannot be instantiated, because the
 set of all possible values this type can have is empty. Note that, it is
 different from the `()` type, which has exactly one possible value.
 
-For example, this function returns as usual, although there is no information
-in the return value.
+For example, this function returns as usual, although there is no information in
+the return value.
 
 ```rust
 fn some_fn() {
@@ -26,7 +27,8 @@ fn main() {
 }
 ```
 
-As opposed to this function, which will never return the control back to the caller.
+As opposed to this function, which will never return the control back to the
+caller.
 
 ```rust,ignore
 #![feature(never_type)]
@@ -49,7 +51,7 @@ fn main() {
         for i in 0..up_to {
             // Notice that the return type of this match expression must be u32
             // because of the type of the "addition" variable.
-            let addition: u32 = match i%2 == 1 {
+            let addition: u32 = match i % 2 == 1 {
                 // The "i" variable is of type u32, which is perfectly fine.
                 true => i,
                 // On the other hand, the "continue" expression does not return
@@ -61,7 +63,10 @@ fn main() {
         }
         acc
     }
-    println!("Sum of odd numbers up to 9 (excluding): {}", sum_odd_numbers(9));
+    println!(
+        "Sum of odd numbers up to 9 (excluding): {}",
+        sum_odd_numbers(9)
+    );
 }
 ```
 

@@ -1,13 +1,12 @@
 # Ownership and moves
 
-Because variables are in charge of freeing their own resources, 
-**resources can only have one owner**. This prevents resources 
-from being freed more than once. Note that not all variables own 
-resources (e.g. [references]).
+Because variables are in charge of freeing their own resources, **resources can
+only have one owner**. This prevents resources from being freed more than once.
+Note that not all variables own resources (e.g. [references]).
 
 When doing assignments (`let x = y`) or passing function arguments by value
-(`foo(x)`), the *ownership* of the resources is transferred. In Rust-speak, 
-this is known as a *move*.
+(`foo(x)`), the *ownership* of the resources is transferred. In Rust-speak, this
+is known as a *move*.
 
 After moving resources, the previous owner can no longer be used. This avoids
 creating dangling pointers.
@@ -40,7 +39,7 @@ fn main() {
     // The pointer address of `a` is copied (not the data) into `b`.
     // Both are now pointers to the same heap allocated data, but
     // `b` now owns it.
-    
+
     // Error! `a` can no longer access the data, because it no longer owns the
     // heap memory
     //println!("a contains: {}", a);

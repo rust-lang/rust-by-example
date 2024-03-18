@@ -14,11 +14,13 @@ fn decrease(number: i32) {
 }
 
 fn help() {
-    println!("usage:
+    println!(
+        "usage:
 match_args <string>
     Check whether given string is the answer.
 match_args {{increase|decrease}} <integer>
-    Increase or decrease given integer by one.");
+    Increase or decrease given integer by one."
+    );
 }
 
 fn main() {
@@ -28,13 +30,11 @@ fn main() {
         // no arguments passed
         1 => {
             println!("My name is 'match_args'. Try passing some arguments!");
-        },
+        }
         // one argument passed
-        2 => {
-            match args[1].parse() {
-                Ok(42) => println!("This is the answer!"),
-                _ => println!("This is not the answer."),
-            }
+        2 => match args[1].parse() {
+            Ok(42) => println!("This is the answer!"),
+            _ => println!("This is not the answer."),
         },
         // one command and one argument passed
         3 => {
@@ -42,14 +42,12 @@ fn main() {
             let num = &args[2];
             // parse the number
             let number: i32 = match num.parse() {
-                Ok(n) => {
-                    n
-                },
+                Ok(n) => n,
                 Err(_) => {
                     eprintln!("error: second argument not an integer");
                     help();
                     return;
-                },
+                }
             };
             // parse the command
             match &cmd[..] {
@@ -58,9 +56,9 @@ fn main() {
                 _ => {
                     eprintln!("error: invalid command");
                     help();
-                },
+                }
             }
-        },
+        }
         // all the other cases
         _ => {
             // show a help message
@@ -70,8 +68,8 @@ fn main() {
 }
 ```
 
-If you named your program `match_args.rs` and compile it like this `rustc
-match_args.rs`, you can execute it as follows:
+If you named your program `match_args.rs` and compile it like this
+`rustc match_args.rs`, you can execute it as follows:
 
 ```shell
 $ ./match_args Rust

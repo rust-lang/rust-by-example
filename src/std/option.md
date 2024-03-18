@@ -1,12 +1,12 @@
 # `Option`
 
-Sometimes it's desirable to catch the failure of some parts of a program
-instead of calling `panic!`; this can be accomplished using the `Option` enum.
+Sometimes it's desirable to catch the failure of some parts of a program instead
+of calling `panic!`; this can be accomplished using the `Option` enum.
 
 The `Option<T>` enum has two variants:
 
-* `None`, to indicate failure or lack of value, and
-* `Some(value)`, a tuple struct that wraps a `value` with type `T`.
+- `None`, to indicate failure or lack of value, and
+- `Some(value)`, a tuple struct that wraps a `value` with type `T`.
 
 ```rust,editable,ignore,mdbook-runnable
 // An integer division that doesn't `panic!`
@@ -27,7 +27,7 @@ fn try_division(dividend: i32, divisor: i32) {
         None => println!("{} / {} failed!", dividend, divisor),
         Some(quotient) => {
             println!("{} / {} = {}", dividend, divisor, quotient)
-        },
+        }
     }
 }
 
@@ -42,7 +42,11 @@ fn main() {
     let optional_float = Some(0f32);
 
     // Unwrapping a `Some` variant will extract the value wrapped.
-    println!("{:?} unwraps to {:?}", optional_float, optional_float.unwrap());
+    println!(
+        "{:?} unwraps to {:?}",
+        optional_float,
+        optional_float.unwrap()
+    );
 
     // Unwrapping a `None` variant will `panic!`
     println!("{:?} unwraps to {:?}", none, none.unwrap());
