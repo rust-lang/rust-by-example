@@ -124,6 +124,9 @@ It is not wise to let our number of threads depend on user inputted data.
 What if the user decides to insert a lot of spaces? Do we _really_ want to spawn 2,000 threads?
 Modify the program so that the data is always chunked into a limited number of chunks,
 defined by a static constant at the beginning of the program.
+#### Answer
+You can find a solution for this assignment
+[here][assignment_solution].
 
 ### See also:
 * [Threads][thread]
@@ -144,3 +147,4 @@ defined by a static constant at the beginning of the program.
 [turbofish]: https://doc.rust-lang.org/book/appendix-02-operators.html?highlight=turbofish
 [unwrap]: ../../error/option_unwrap.md
 [enumerate]: https://doc.rust-lang.org/book/loops.html#enumerate
+[assignment_solution]: https://github.com/HosseinAssaran/Testcase-map-reduce-assignment.git
