@@ -1,7 +1,7 @@
 # `super` and `self`
 
-The `super` and `self` keywords can be used in the path to remove ambiguity
-when accessing items and to prevent unnecessary hardcoding of paths.
+The `super` and `self` keywords can be used in the path to remove ambiguity when
+accessing items and to prevent unnecessary hardcoding of paths.
 
 ```rust,editable
 fn function() {

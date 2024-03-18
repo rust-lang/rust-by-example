@@ -51,9 +51,10 @@ fn main() {
 
 ## Fail the entire operation with `collect()`
 
-`Result` implements `FromIterator` so that a vector of results (`Vec<Result<T, E>>`)
-can be turned into a result with a vector (`Result<Vec<T>, E>`). Once an
-`Result::Err` is found, the iteration will terminate.
+`Result` implements `FromIterator` so that a vector of results
+(`Vec<Result<T, E>>`) can be turned into a result with a vector
+(`Result<Vec<T>, E>`). Once an `Result::Err` is found, the iteration will
+terminate.
 
 ```rust,editable
 fn main() {
@@ -83,7 +84,7 @@ fn main() {
 ```
 
 When you look at the results, you'll note that everything is still wrapped in
-`Result`.  A little more boilerplate is needed for this.
+`Result`. A little more boilerplate is needed for this.
 
 ```rust,editable
 fn main() {

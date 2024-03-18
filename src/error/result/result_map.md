@@ -9,8 +9,8 @@ the `Err` type, we look to [`parse()`][parse], which is implemented with the
 [`FromStr`][from_str] trait for [`i32`][i32]. As a result, the `Err` type is
 specified as [`ParseIntError`][parse_int_error].
 
-In the example below, the straightforward `match` statement leads to code
-that is overall more cumbersome.
+In the example below, the straightforward `match` statement leads to code that
+is overall more cumbersome.
 
 ```rust,editable
 use std::num::ParseIntError;

@@ -1,8 +1,7 @@
 # Iterator::any
 
-`Iterator::any` is a function which when passed an iterator, will return
-`true` if any element satisfies the predicate. Otherwise `false`. Its
-signature:
+`Iterator::any` is a function which when passed an iterator, will return `true`
+if any element satisfies the predicate. Otherwise `false`. Its signature:
 
 ```rust,ignore
 pub trait Iterator {

@@ -16,11 +16,10 @@ match optional {
     // ^ Required because `match` is exhaustive. Doesn't it seem
     // like wasted space?
 };
-
 ```
 
-`if let` is cleaner for this use case and in addition allows various
-failure options to be specified:
+`if let` is cleaner for this use case and in addition allows various failure
+options to be specified:
 
 ```rust,editable
 fn main() {
@@ -99,7 +98,10 @@ fn main() {
 }
 ```
 
-Another benefit is that `if let` allows us to match non-parameterized enum variants. This is true even in cases where the enum doesn't implement or derive `PartialEq`. In such cases `if Foo::Bar == a` would fail to compile, because instances of the enum cannot be equated, however `if let` will continue to work.
+Another benefit is that `if let` allows us to match non-parameterized enum
+variants. This is true even in cases where the enum doesn't implement or derive
+`PartialEq`. In such cases `if Foo::Bar == a` would fail to compile, because
+instances of the enum cannot be equated, however `if let` will continue to work.
 
 Would you like a challenge? Fix the following example to use `if let`:
 

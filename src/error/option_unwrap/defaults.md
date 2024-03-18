@@ -1,12 +1,17 @@
 # Unpacking options and defaults
 
-There is more than one way to unpack an `Option` and fall back on a default if it is `None`. To choose the one that meets our needs, we need to consider the following:
-* do we need eager or lazy evaluation?
-* do we need to keep the original empty value intact, or modify it in place?
+There is more than one way to unpack an `Option` and fall back on a default if
+it is `None`. To choose the one that meets our needs, we need to consider the
+following:
 
-##  `or()` is chainable, evaluates eagerly, keeps empty value intact
+- do we need eager or lazy evaluation?
+- do we need to keep the original empty value intact, or modify it in place?
 
-`or()`is chainable and eagerly evaluates its argument, as is shown in the following example. Note that because `or`'s arguments are evaluated eagerly, the variable passed to `or` is moved.
+## `or()` is chainable, evaluates eagerly, keeps empty value intact
+
+`or()`is chainable and eagerly evaluates its argument, as is shown in the
+following example. Note that because `or`'s arguments are evaluated eagerly, the
+variable passed to `or` is moved.
 
 ```rust,editable
 #[derive(Debug)] 
@@ -29,9 +34,10 @@ fn main() {
  }
 ```
 
-##  `or_else()` is chainable, evaluates lazily, keeps empty value intact
+## `or_else()` is chainable, evaluates lazily, keeps empty value intact
 
-Another alternative is to use `or_else`, which is also chainable, and evaluates lazily, as is shown in the following example:
+Another alternative is to use `or_else`, which is also chainable, and evaluates
+lazily, as is shown in the following example:
 
 ```rust,editable
 #[derive(Debug)] 
@@ -57,9 +63,12 @@ fn main() {
 }
 ```
 
-##  `get_or_insert()` evaluates eagerly, modifies empty value in place
+## `get_or_insert()` evaluates eagerly, modifies empty value in place
 
-To make sure that an `Option` contains a value, we can use `get_or_insert` to modify it in place with a fallback value, as is shown in the following example. Note that `get_or_insert` eagerly evaluates its parameter, so variable `apple` is moved:
+To make sure that an `Option` contains a value, we can use `get_or_insert` to
+modify it in place with a fallback value, as is shown in the following example.
+Note that `get_or_insert` eagerly evaluates its parameter, so variable `apple`
+is moved:
 
 ```rust,editable
 #[derive(Debug)]
@@ -78,9 +87,11 @@ fn main() {
 }
 ```
 
-##  `get_or_insert_with()` evaluates lazily, modifies empty value in place
+## `get_or_insert_with()` evaluates lazily, modifies empty value in place
 
-Instead of explicitly providing a value to fall back on, we can pass a closure to `get_or_insert_with`, as follows:
+Instead of explicitly providing a value to fall back on, we can pass a closure
+to `get_or_insert_with`, as follows:
+
 ```rust,editable
 #[derive(Debug)] 
 enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
@@ -112,7 +123,9 @@ fn main() {
 
 ### See also:
 
-[`closures`][closures], [`get_or_insert`][get_or_insert], [`get_or_insert_with`][get_or_insert_with], [`moved variables`][moved], [`or`][or], [`or_else`][or_else]
+[`closures`][closures], [`get_or_insert`][get_or_insert],
+[`get_or_insert_with`][get_or_insert_with], [`moved variables`][moved],
+[`or`][or], [`or_else`][or_else]
 
 [closures]: https://doc.rust-lang.org/book/ch13-01-closures.html
 [get_or_insert]: https://doc.rust-lang.org/core/option/enum.Option.html#method.get_or_insert

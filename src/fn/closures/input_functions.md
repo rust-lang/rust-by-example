@@ -1,8 +1,8 @@
 # Input functions
 
-Since closures may be used as arguments, you might wonder if the same can be said
-about functions. And indeed they can! If you declare a function that takes a
-closure as parameter, then any function that satisfies the trait bound of that
+Since closures may be used as arguments, you might wonder if the same can be
+said about functions. And indeed they can! If you declare a function that takes
+a closure as parameter, then any function that satisfies the trait bound of that
 closure can be passed as a parameter.
 
 ```rust,editable
@@ -26,8 +26,8 @@ fn main() {
 }
 ```
 
-As an additional note, the `Fn`, `FnMut`, and `FnOnce` `traits` dictate how
-a closure captures variables from the enclosing scope.
+As an additional note, the `Fn`, `FnMut`, and `FnOnce` `traits` dictate how a
+closure captures variables from the enclosing scope.
 
 ### See also:
 

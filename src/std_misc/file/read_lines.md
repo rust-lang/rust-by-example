@@ -2,8 +2,8 @@
 
 ## A naive approach
 
-This might be a reasonable first attempt for a beginner's first
-implementation for reading lines from a file.
+This might be a reasonable first attempt for a beginner's first implementation
+for reading lines from a file.
 
 ```rust,norun
 use std::fs::read_to_string;
@@ -19,9 +19,9 @@ fn read_lines(filename: &str) -> Vec<String> {
 }
 ```
 
-Since the method `lines()` returns an iterator over the lines in the file,
-we can also perform a map inline and collect the results, yielding a more
-concise and fluent expression.
+Since the method `lines()` returns an iterator over the lines in the file, we
+can also perform a map inline and collect the results, yielding a more concise
+and fluent expression.
 
 ```rust,norun
 use std::fs::read_to_string;
@@ -35,14 +35,14 @@ fn read_lines(filename: &str) -> Vec<String> {
 }
 ```
 
-Note that in both examples above, we must convert the `&str` reference
-returned from `lines()` to the owned type `String`, using `.to_string()`
-and `String::from` respectively.
+Note that in both examples above, we must convert the `&str` reference returned
+from `lines()` to the owned type `String`, using `.to_string()` and
+`String::from` respectively.
 
 ## A more efficient approach
 
-Here we pass ownership of the open `File` to a `BufReader` struct. `BufReader` uses an internal
-buffer to reduce intermediate allocations.
+Here we pass ownership of the open `File` to a `BufReader` struct. `BufReader`
+uses an internal buffer to reduce intermediate allocations.
 
 We also update `read_lines` to return an iterator instead of allocating new
 `String` objects in memory for each line.
@@ -72,6 +72,7 @@ where P: AsRef<Path>, {
 ```
 
 Running this program simply prints the lines individually.
+
 ```shell
 $ echo -e "127.0.0.1\n192.168.0.1\n" > hosts.txt
 $ rustc read_lines.rs && ./read_lines
@@ -79,9 +80,10 @@ $ rustc read_lines.rs && ./read_lines
 192.168.0.1
 ```
 
-(Note that since `File::open` expects a generic `AsRef<Path>` as argument, we define our
-generic `read_lines()` method with the same generic constraint, using the `where` keyword.)
+(Note that since `File::open` expects a generic `AsRef<Path>` as argument, we
+define our generic `read_lines()` method with the same generic constraint, using
+the `where` keyword.)
 
-This process is more efficient than creating a `String` in memory with all of the file's
-contents. This can especially cause performance issues when working with larger files.
-
+This process is more efficient than creating a `String` in memory with all of
+the file's contents. This can especially cause performance issues when working
+with larger files.

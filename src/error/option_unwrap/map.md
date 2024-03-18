@@ -1,16 +1,16 @@
 # Combinators: `map`
 
-`match` is a valid method for handling `Option`s. However, you may 
-eventually find heavy usage tedious, especially with operations only valid 
-with an input. In these cases, [combinators][combinators] can be used to 
-manage control flow in a modular fashion.
+`match` is a valid method for handling `Option`s. However, you may eventually
+find heavy usage tedious, especially with operations only valid with an input.
+In these cases, [combinators][combinators] can be used to manage control flow in
+a modular fashion.
 
-`Option` has a built in method called `map()`, a combinator for the simple 
-mapping of `Some -> Some` and `None -> None`. Multiple `map()` calls can be 
+`Option` has a built in method called `map()`, a combinator for the simple
+mapping of `Some -> Some` and `None -> None`. Multiple `map()` calls can be
 chained together for even more flexibility.
 
-In the following example, `process()` replaces all functions previous
-to it while staying compact.
+In the following example, `process()` replaces all functions previous to it
+while staying compact.
 
 ```rust,editable
 #![allow(dead_code)]

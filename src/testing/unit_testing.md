@@ -5,14 +5,14 @@ the expected manner. The bodies of test functions typically perform some setup,
 run the code we want to test, then assert whether the results are what we
 expect.
 
-Most unit tests go into a `tests` [mod][mod] with the `#[cfg(test)]` [attribute][attribute].
-Test functions are marked with the `#[test]` attribute.
+Most unit tests go into a `tests` [mod][mod] with the `#[cfg(test)]`
+[attribute][attribute]. Test functions are marked with the `#[test]` attribute.
 
 Tests fail when something in the test function [panics][panic]. There are some
 helper [macros][macros]:
 
-* `assert!(expression)` - panics if expression evaluates to `false`.
-* `assert_eq!(left, right)` and `assert_ne!(left, right)` - testing left and
+- `assert!(expression)` - panics if expression evaluates to `false`.
+- `assert_eq!(left, right)` and `assert_ne!(left, right)` - testing left and
   right expressions for equality and inequality respectively.
 
 ```rust,ignore
@@ -71,6 +71,7 @@ test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
 ## Tests and `?`
+
 None of the previous unit test examples had a return type. But in Rust 2018,
 your unit tests can return `Result<()>`, which lets you use `?` in them! This
 can make them much more concise.
@@ -102,9 +103,9 @@ See ["The Edition Guide"][editionguide] for more details.
 ## Testing panics
 
 To check functions that should panic under certain circumstances, use attribute
-`#[should_panic]`. This attribute accepts optional parameter `expected = ` with
-the text of the panic message. If your function can panic in multiple ways, it helps
-make sure your test is testing the correct panic.
+`#[should_panic]`. This attribute accepts optional parameter `expected =` with
+the text of the panic message. If your function can panic in multiple ways, it
+helps make sure your test is testing the correct panic.
 
 ```rust,ignore
 pub fn divide_non_zero_result(a: u32, b: u32) -> u32 {
@@ -196,8 +197,8 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 ## Ignoring tests
 
-Tests can be marked with the `#[ignore]` attribute to exclude some tests. Or to run
-them with command `cargo test -- --ignored`
+Tests can be marked with the `#[ignore]` attribute to exclude some tests. Or to
+run them with command `cargo test -- --ignored`
 
 ```rust,ignore
 pub fn add(a: i32, b: i32) -> i32 {

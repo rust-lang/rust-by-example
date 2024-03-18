@@ -1,9 +1,8 @@
 # Coercion
 
-A longer lifetime can be coerced into a shorter one 
-so that it works inside a scope it normally wouldn't work in.
-This comes in the form of inferred coercion by the Rust compiler,
-and also in the form of declaring a lifetime difference:
+A longer lifetime can be coerced into a shorter one so that it works inside a
+scope it normally wouldn't work in. This comes in the form of inferred coercion
+by the Rust compiler, and also in the form of declaring a lifetime difference:
 
 ```rust,editable
 // Here, Rust infers a lifetime that is as short as possible.

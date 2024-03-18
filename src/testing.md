@@ -5,18 +5,18 @@ includes support for writing software tests within the language itself.
 
 Testing comes in three styles:
 
-* [Unit][unit] testing.
-* [Doc][doc] testing.
-* [Integration][integration] testing.
+- [Unit][unit] testing.
+- [Doc][doc] testing.
+- [Integration][integration] testing.
 
 Also Rust has support for specifying additional dependencies for tests:
 
-* [Dev-dependencies][dev-dependencies]
+- [Dev-dependencies][dev-dependencies]
 
 ## See Also
 
-* [The Book][doc-testing] chapter on testing
-* [API Guidelines][doc-nursery] on doc-testing
+- [The Book][doc-testing] chapter on testing
+- [API Guidelines][doc-nursery] on doc-testing
 
 [unit]: testing/unit_testing.md
 [doc]: testing/doc_testing.md

@@ -24,8 +24,8 @@ fn main() {
 }
 ```
 
-Note that the compiler won't take guard conditions into account when checking
-if all patterns are covered by the match expression.
+Note that the compiler won't take guard conditions into account when checking if
+all patterns are covered by the match expression.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -42,5 +42,4 @@ fn main() {
 
 ### See also:
 
-[Tuples](../../primitives/tuples.md)
-[Enums](../../custom_types/enum.md)
+[Tuples](../../primitives/tuples.md) [Enums](../../custom_types/enum.md)

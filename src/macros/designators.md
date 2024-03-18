@@ -50,17 +50,17 @@ fn main() {
 
 These are some of the available designators:
 
-* `block`
-* `expr` is used for expressions
-* `ident` is used for variable/function names
-* `item`
-* `literal` is used for literal constants
-* `pat` (*pattern*)
-* `path`
-* `stmt` (*statement*)
-* `tt` (*token tree*)
-* `ty` (*type*)
-* `vis` (*visibility qualifier*)
+- `block`
+- `expr` is used for expressions
+- `ident` is used for variable/function names
+- `item`
+- `literal` is used for literal constants
+- `pat` (*pattern*)
+- `path`
+- `stmt` (*statement*)
+- `tt` (*token tree*)
+- `ty` (*type*)
+- `vis` (*visibility qualifier*)
 
 For a complete list, see the [Rust Reference].
 

@@ -20,8 +20,7 @@ fn main() {
 }
 ```
 
-`println!` is a [*macro*][macros] that prints text to the
-console.
+`println!` is a [*macro*][macros] that prints text to the console.
 
 A binary can be generated using the Rust compiler: `rustc`.
 
@@ -38,8 +37,8 @@ Hello World!
 
 ### Activity
 
-Click 'Run' above to see the expected output. Next, add a new
-line with a second `println!` macro so that the output shows:
+Click 'Run' above to see the expected output. Next, add a new line with a second
+`println!` macro so that the output shows:
 
 ```text
 Hello World!

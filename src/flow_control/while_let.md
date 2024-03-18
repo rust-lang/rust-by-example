@@ -1,7 +1,7 @@
 # while let
 
-Similar to `if let`, `while let` can make awkward `match` sequences
-more tolerable. Consider the following sequence that increments `i`:
+Similar to `if let`, `while let` can make awkward `match` sequences more
+tolerable. Consider the following sequence that increments `i`:
 
 ```rust
 // Make `optional` of type `Option<i32>`

@@ -3,9 +3,9 @@
 There are three types of structures ("structs") that can be created using the
 `struct` keyword:
 
-* Tuple structs, which are, basically, named tuples.
-* The classic [C structs][c_struct]
-* Unit structs, which are field-less, are useful for generics.
+- Tuple structs, which are, basically, named tuples.
+- The classic [C structs][c_struct]
+- Unit structs, which are field-less, are useful for generics.
 
 ```rust,editable
 // An attribute to hide warnings for unused code.
@@ -96,7 +96,8 @@ fn main() {
 
 ### See also
 
-[`attributes`][attributes], [raw identifiers][raw_identifiers] and [destructuring][destructuring]
+[`attributes`][attributes], [raw identifiers][raw_identifiers] and
+[destructuring][destructuring]
 
 [attributes]: ../attribute.md
 [c_struct]: https://en.wikipedia.org/wiki/Struct_(C_programming_language)

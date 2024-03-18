@@ -42,5 +42,4 @@ fn main() {
 
 [`struct`s][structs]
 
-
 [structs]: ../../custom_types/structs.md

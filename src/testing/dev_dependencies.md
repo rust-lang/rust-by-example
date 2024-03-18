@@ -1,11 +1,14 @@
 # Development dependencies
 
-Sometimes there is a need to have dependencies for tests (or examples,
-or benchmarks) only. Such dependencies are added to `Cargo.toml` in the
+Sometimes there is a need to have dependencies for tests (or examples, or
+benchmarks) only. Such dependencies are added to `Cargo.toml` in the
 `[dev-dependencies]` section. These dependencies are not propagated to other
 packages which depend on this package.
 
-One such example is [`pretty_assertions`](https://docs.rs/pretty_assertions/1.0.0/pretty_assertions/index.html), which extends standard `assert_eq!` and `assert_ne!` macros, to provide colorful diff.  
+One such example is
+[`pretty_assertions`](https://docs.rs/pretty_assertions/1.0.0/pretty_assertions/index.html),
+which extends standard `assert_eq!` and `assert_ne!` macros, to provide colorful
+diff.\
 File `Cargo.toml`:
 
 ```toml
@@ -34,6 +37,7 @@ mod tests {
 ```
 
 ## See Also
+
 [Cargo][cargo] docs on specifying dependencies.
 
 [cargo]: http://doc.crates.io/specifying-dependencies.html

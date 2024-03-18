@@ -2,9 +2,9 @@
 
 We've seen that formatting is specified via a *format string*:
 
-* `format!("{}", foo)` -> `"3735928559"`
-* `format!("0x{:X}", foo)` -> [`"0xDEADBEEF"`][deadbeef]
-* `format!("0o{:o}", foo)` -> `"0o33653337357"`
+- `format!("{}", foo)` -> `"3735928559"`
+- `format!("0x{:X}", foo)` -> [`"0xDEADBEEF"`][deadbeef]
+- `format!("0o{:o}", foo)` -> `"0o33653337357"`
 
 The same variable (`foo`) can be formatted differently depending on which
 *argument type* is used: `X` vs `o` vs *unspecified*.
@@ -80,11 +80,11 @@ RGB (0, 0, 0) 0x000000
 
 Three hints if you get stuck:
 
-* The formula for calculating a color in the RGB color space is:
-`RGB = (R*65536)+(G*256)+B , (when R is RED, G is GREEN and B is BLUE)`.
-For more see [RGB color format & calculation][rgb_color].
-* You [may need to list each color more than once][named_parameters].
-* You can [pad with zeros to a width of 2][fmt_width] with `:0>2`.
+- The formula for calculating a color in the RGB color space is:
+  `RGB = (R*65536)+(G*256)+B , (when R is RED, G is GREEN and B is BLUE)`. For
+  more see [RGB color format & calculation][rgb_color].
+- You [may need to list each color more than once][named_parameters].
+- You can [pad with zeros to a width of 2][fmt_width] with `:0>2`.
 
 ### See also:
 

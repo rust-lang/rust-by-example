@@ -1,10 +1,10 @@
 # New Type Idiom
 
-The `newtype` idiom gives compile time guarantees that the right type of value is supplied
-to a program.
+The `newtype` idiom gives compile time guarantees that the right type of value
+is supplied to a program.
 
-For example, an age verification function that checks age in years, *must* be given
-a value of type `Years`.
+For example, an age verification function that checks age in years, *must* be
+given a value of type `Years`.
 
 ```rust, editable
 struct Years(i64);
@@ -38,9 +38,12 @@ fn main() {
 }
 ```
 
-Uncomment the last print statement to observe that the type supplied must be `Years`.
+Uncomment the last print statement to observe that the type supplied must be
+`Years`.
 
-To obtain the `newtype`'s value as the base type, you may use the tuple or destructuring syntax like so:
+To obtain the `newtype`'s value as the base type, you may use the tuple or
+destructuring syntax like so:
+
 ```rust, editable
 struct Years(i64);
 
@@ -56,4 +59,3 @@ fn main() {
 [`structs`][struct]
 
 [struct]: ../custom_types/structs.md
-

@@ -1,27 +1,29 @@
 # Testcase: map-reduce
 
-Rust makes it very easy to parallelise data processing, without many of the headaches traditionally associated with such an attempt.
+Rust makes it very easy to parallelise data processing, without many of the
+headaches traditionally associated with such an attempt.
 
-The standard library provides great threading primitives out of the box.
-These, combined with Rust's concept of Ownership and aliasing rules, automatically prevent
-data races.
+The standard library provides great threading primitives out of the box. These,
+combined with Rust's concept of Ownership and aliasing rules, automatically
+prevent data races.
 
-The aliasing rules (one writable reference XOR many readable references) automatically prevent
-you from manipulating state that is visible to other threads. (Where synchronisation is needed,
-there are synchronisation
-primitives like `Mutex`es or `Channel`s.)
+The aliasing rules (one writable reference XOR many readable references)
+automatically prevent you from manipulating state that is visible to other
+threads. (Where synchronisation is needed, there are synchronisation primitives
+like `Mutex`es or `Channel`s.)
 
 In this example, we will calculate the sum of all digits in a block of numbers.
-We will do this by parcelling out chunks of the block into different threads. Each thread will sum
-its tiny block of digits, and subsequently we will sum the intermediate sums produced by each
-thread.
+We will do this by parcelling out chunks of the block into different threads.
+Each thread will sum its tiny block of digits, and subsequently we will sum the
+intermediate sums produced by each thread.
 
-Note that, although we're passing references across thread boundaries, Rust understands that we're
-only passing read-only references, and that thus no unsafety or data races can occur. Also because
-the references we're passing have `'static` lifetimes, Rust understands that our data won't be
-destroyed while these threads are still running. (When you need to share non-`static` data between
-threads, you can use a smart pointer like `Arc` to keep the data alive and avoid non-`static`
-lifetimes.)
+Note that, although we're passing references across thread boundaries, Rust
+understands that we're only passing read-only references, and that thus no
+unsafety or data races can occur. Also because the references we're passing have
+`'static` lifetimes, Rust understands that our data won't be destroyed while
+these threads are still running. (When you need to share non-`static` data
+between threads, you can use a smart pointer like `Arc` to keep the data alive
+and avoid non-`static` lifetimes.)
 
 ```rust,editable
 use std::thread;
@@ -115,24 +117,26 @@ fn main() {
 
     println!("Final sum result: {}", final_result);
 }
-
-
 ```
 
 ### Assignments
-It is not wise to let our number of threads depend on user inputted data.
-What if the user decides to insert a lot of spaces? Do we _really_ want to spawn 2,000 threads?
-Modify the program so that the data is always chunked into a limited number of chunks,
-defined by a static constant at the beginning of the program.
+
+It is not wise to let our number of threads depend on user inputted data. What
+if the user decides to insert a lot of spaces? Do we *really* want to spawn
+2,000 threads? Modify the program so that the data is always chunked into a
+limited number of chunks, defined by a static constant at the beginning of the
+program.
 
 ### See also:
-* [Threads][thread]
-* [vectors][vectors] and [iterators][iterators]
-* [closures][closures], [move][move] semantics and [`move` closures][move_closure]
-* [destructuring][destructuring] assignments
-* [turbofish notation][turbofish] to help type inference
-* [unwrap vs. expect][unwrap]
-* [enumerate][enumerate]
+
+- [Threads][thread]
+- [vectors][vectors] and [iterators][iterators]
+- [closures][closures], [move][move] semantics and
+  [`move` closures][move_closure]
+- [destructuring][destructuring] assignments
+- [turbofish notation][turbofish] to help type inference
+- [unwrap vs. expect][unwrap]
+- [enumerate][enumerate]
 
 [thread]: ../threads.md
 [vectors]: ../../std/vec.md

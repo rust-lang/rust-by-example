@@ -1,7 +1,7 @@
 # Mutability
 
-Variable bindings are immutable by default, but this can be overridden using
-the `mut` modifier.
+Variable bindings are immutable by default, but this can be overridden using the
+`mut` modifier.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {

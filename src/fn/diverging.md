@@ -1,6 +1,7 @@
 # Diverging functions
 
-Diverging functions never return. They are marked using `!`, which is an empty type.
+Diverging functions never return. They are marked using `!`, which is an empty
+type.
 
 ```rust
 fn foo() -> ! {
@@ -12,8 +13,8 @@ As opposed to all the other types, this one cannot be instantiated, because the
 set of all possible values this type can have is empty. Note that, it is
 different from the `()` type, which has exactly one possible value.
 
-For example, this function returns as usual, although there is no information
-in the return value.
+For example, this function returns as usual, although there is no information in
+the return value.
 
 ```rust
 fn some_fn() {
@@ -26,7 +27,8 @@ fn main() {
 }
 ```
 
-As opposed to this function, which will never return the control back to the caller.
+As opposed to this function, which will never return the control back to the
+caller.
 
 ```rust,ignore
 #![feature(never_type)]

@@ -1,9 +1,9 @@
 # Bounds
 
-When working with generics, the type parameters often must use traits as *bounds* to
-stipulate what functionality a type implements. For example, the following
-example uses the trait `Display` to print and so it requires `T` to be bound
-by `Display`; that is, `T` *must* implement `Display`.
+When working with generics, the type parameters often must use traits as
+*bounds* to stipulate what functionality a type implements. For example, the
+following example uses the trait `Display` to print and so it requires `T` to be
+bound by `Display`; that is, `T` *must* implement `Display`.
 
 ```rust,ignore
 // Define a function `printer` that takes a generic type `T` which
@@ -23,7 +23,7 @@ struct S<T: Display>(T);
 let s = S(vec![1]);
 ```
 
-Another effect of bounding is that generic instances are allowed to access the 
+Another effect of bounding is that generic instances are allowed to access the
 [methods] of traits specified in the bounds. For example:
 
 ```rust,editable
@@ -67,8 +67,8 @@ fn main() {
 }
 ```
 
-As an additional note, [`where`][where] clauses can also be used to apply bounds in
-some cases to be more expressive.
+As an additional note, [`where`][where] clauses can also be used to apply bounds
+in some cases to be more expressive.
 
 ### See also:
 

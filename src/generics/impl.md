@@ -49,7 +49,6 @@ fn main() {
 
 [functions returning references][fn], [`impl`][methods], and [`struct`][structs]
 
-
 [fn]: ../scope/lifetime/fn.md
 [methods]: ../fn/methods.md
 [specialization_plans]: https://blog.rust-lang.org/2015/05/11/traits.html#the-future

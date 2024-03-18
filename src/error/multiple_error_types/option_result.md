@@ -28,8 +28,8 @@ fn main() {
 ```
 
 There are times when we'll want to stop processing on errors (like with
-[`?`][enter_question_mark]) but keep going when the `Option` is `None`. A
-couple of combinators come in handy to swap the `Result` and `Option`.
+[`?`][enter_question_mark]) but keep going when the `Option` is `None`. A couple
+of combinators come in handy to swap the `Result` and `Option`.
 
 ```rust,editable
 use std::num::ParseIntError;

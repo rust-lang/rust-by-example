@@ -25,5 +25,5 @@ fn main() {
 }
 ```
 
-(You are encouraged to try the previous example with an incorrect flag passed
-to `rustc`)
+(You are encouraged to try the previous example with an incorrect flag passed to
+`rustc`)

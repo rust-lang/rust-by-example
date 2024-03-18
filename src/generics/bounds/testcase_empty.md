@@ -1,8 +1,8 @@
 # Testcase: empty bounds
 
-A consequence of how bounds work is that even if a `trait` doesn't
-include any functionality, you can still use it as a bound. `Eq` and
-`Copy` are examples of such `trait`s from the `std` library.
+A consequence of how bounds work is that even if a `trait` doesn't include any
+functionality, you can still use it as a bound. `Eq` and `Copy` are examples of
+such `trait`s from the `std` library.
 
 ```rust,editable
 struct Cardinal;

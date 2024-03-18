@@ -1,8 +1,8 @@
 # Binding
 
 Indirectly accessing a variable makes it impossible to branch and use that
-variable without re-binding. `match` provides the `@` sigil for binding values to
-names:
+variable without re-binding. `match` provides the `@` sigil for binding values
+to names:
 
 ```rust,editable
 // A function `age` which returns a `u32`.
@@ -47,6 +47,7 @@ fn main() {
 ```
 
 ### See also:
+
 [`functions`][functions], [`enums`][enums] and [`Option`][option]
 
 [functions]: ../../fn.md

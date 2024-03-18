@@ -1,7 +1,7 @@
 # Testcase: unit clarification
 
-A useful method of unit conversions can be examined by implementing `Add`
-with a phantom type parameter. The `Add` `trait` is examined below:
+A useful method of unit conversions can be examined by implementing `Add` with a
+phantom type parameter. The `Add` `trait` is examined below:
 
 ```rust,ignore
 // This construction would impose: `Self + RHS = Output`
@@ -74,8 +74,8 @@ fn main() {
 
 ### See also:
 
-[Borrowing (`&`)], [Bounds (`X: Y`)], [enum], [impl & self],
-[Overloading], [ref], [Traits (`X for Y`)], and [TupleStructs].
+[Borrowing (`&`)], [Bounds (`X: Y`)], [enum], [impl & self], [Overloading],
+[ref], [Traits (`X for Y`)], and [TupleStructs].
 
 [Borrowing (`&`)]: ../../scope/borrow.md
 [Bounds (`X: Y`)]: ../../generics/bounds.md

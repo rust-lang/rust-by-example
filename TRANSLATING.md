@@ -1,7 +1,7 @@
 # Rust by Example translation guidelines
 
-Please see the [CONTRIBUTING.md] file for general contribution guidelines.
-This file describes about the translation workflow.
+Please see the [CONTRIBUTING.md] file for general contribution guidelines. This
+file describes about the translation workflow.
 
 [CONTRIBUTING.md]: https://github.com/rust-lang/rust-by-example/blob/master/CONTRIBUTING.md
 
@@ -9,20 +9,23 @@ This file describes about the translation workflow.
 
 ### Preparation
 
-RBE uses [mdbook-i18n-helpers](https://github.com/google/mdbook-i18n-helpers) as a translation framework.
-The following tools are required.
+RBE uses [mdbook-i18n-helpers](https://github.com/google/mdbook-i18n-helpers) as
+a translation framework. The following tools are required.
 
-* GNU gettext utilities ( `msgmerge` and `msgcat` )
-* mdbook-i18n-helpers ( `cargo install mdbook-i18n-helpers` )
+- GNU gettext utilities ( `msgmerge` and `msgcat` )
+- mdbook-i18n-helpers ( `cargo install mdbook-i18n-helpers` )
 
 ### Creating and Updating Translations
 
-Please see the [mdbook-i18n-helpers USAGE](https://github.com/google/mdbook-i18n-helpers/blob/main/i18n-helpers/USAGE.md) file for the detailed usage of mdbook-i18n-helpers.
-The summarized command list is below:
+Please see the
+[mdbook-i18n-helpers USAGE](https://github.com/google/mdbook-i18n-helpers/blob/main/i18n-helpers/USAGE.md)
+file for the detailed usage of mdbook-i18n-helpers. The summarized command list
+is below:
 
 #### Generating a message template
 
-The generated message templete `po/messages.pot` is required to create or update translations.
+The generated message templete `po/messages.pot` is required to create or update
+translations.
 
 ```bash
 MDBOOK_OUTPUT='{"xgettext": {"pot-file": "messages.pot"}}' \
@@ -31,7 +34,8 @@ MDBOOK_OUTPUT='{"xgettext": {"pot-file": "messages.pot"}}' \
 
 #### Creating a new translation resource
 
-`xx` is [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language code.
+`xx` is [ISO 639](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+language code.
 
 ```bash
 msginit -i po/messages.pot -l xx -o po/xx.po
@@ -45,8 +49,9 @@ msgmerge --update po/xx.po po/messages.pot
 
 ### Editing translation resources
 
-After generating a translation resource `po/xx.po`, you can write translation messages in `msgstr` entry of `po/xx.po`.
-To build a translated book, the following command can be used.
+After generating a translation resource `po/xx.po`, you can write translation
+messages in `msgstr` entry of `po/xx.po`. To build a translated book, the
+following command can be used.
 
 ```bash
 MDBOOK_BOOK__LANGUAGE=xx mdbook build
@@ -55,9 +60,10 @@ MDBOOK_BOOK__LANGUAGE=xx mdbook serve
 
 ### Add a language entry
 
-Please add a language entry in `.github/workflows/rbe.yml` and `theme/index.hbs` like below:
+Please add a language entry in `.github/workflows/rbe.yml` and `theme/index.hbs`
+like below:
 
-* `rbe.yml`
+- `rbe.yml`
 
 ```yml
 env:
@@ -65,7 +71,7 @@ env:
   LANGUAGES: xx yy zz
 ```
 
-* `index.hbs`
+- `index.hbs`
 
 ```html
 <ul id="language-list" class="theme-popup" aria-label="Languages" role="menu">
