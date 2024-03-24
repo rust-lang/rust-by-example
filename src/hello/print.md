@@ -1,7 +1,7 @@
 # Formatted print
 
 Printing is handled by a series of [`macros`][macros] defined in
-[`std::fmt`][fmt] some of which include:
+[`std::fmt`][fmt] some of which are:
 
 * `format!`: write formatted text to [`String`][string]
 * `print!`: same as `format!` but the text is printed to the console
