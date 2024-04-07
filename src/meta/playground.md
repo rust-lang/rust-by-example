@@ -42,7 +42,7 @@ Playground. This feature is enabled if you use the `#[doc]` attribute called
 ```
 #![doc(html_playground_url = "https://play.rust-lang.org/")]
 //! ```
-//! println!("Hello Wolrd");
+//! println!("Hello World");
 //! ```
 ```
 
