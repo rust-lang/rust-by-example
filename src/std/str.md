@@ -106,7 +106,7 @@ fn main() {
     println!("{}", quotes);
 
     // If you need "# in your string, just use more #s in the delimiter.
-    // You can use up to 65535 #s.
+    // You can use up to 255 #s.
     let longer_delimiter = r###"A string with "# in it. And even "##!"###;
     println!("{}", longer_delimiter);
 }
