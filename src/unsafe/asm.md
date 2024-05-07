@@ -323,7 +323,7 @@ assert_eq!(x, 4 * 6);
 
 By default, `asm!` assumes that any register not specified as an output will have its contents preserved by the assembly code. The [`clobber_abi`] argument to `asm!` tells the compiler to automatically insert the necessary clobber operands according to the given calling convention ABI: any register which is not fully preserved in that ABI will be treated as clobbered.  Multiple `clobber_abi` arguments may be provided and all clobbers from all specified ABIs will be inserted.
 
-[`clobber_abi`]: ../../reference/inline-assembly.html#abi-clobbers
+[`clobber_abi`]: https://doc.rust-lang.org/stable/reference/inline-assembly.html#abi-clobbers
 
 ```rust
 # #[cfg(target_arch = "x86_64")] {
