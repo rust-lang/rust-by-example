@@ -446,7 +446,7 @@ This example shows a few things:
 [local labels]: https://sourceware.org/binutils/docs/as/Symbol-Names.html#Local-Labels
 [an LLVM bug]: https://bugs.llvm.org/show_bug.cgi?id=36144
 
-## Options
+## Options {#options}
 
 By default, an inline assembly block is treated the same way as an external FFI function call with a custom calling convention: it may read/write memory, have observable side effects, etc. However, in many cases it is desirable to give the compiler more information about what the assembly code is actually doing so that it can optimize better.
 
