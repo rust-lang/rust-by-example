@@ -77,7 +77,7 @@ If you have implemented the `From` trait for your type, `Into` will call it
 when necessary.  
 
 ```rust,editable
-use std::convert::Into;
+use std::convert::From;
 
 #[derive(Debug)]
 struct Number {
