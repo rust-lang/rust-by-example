@@ -42,13 +42,10 @@ fn main() {
 
 ## `Into`
 
-The [`Into`] trait is simply the reciprocal of the `From` trait. That is, if you
-have implemented the `From` trait for your type, `Into` will call it when
-necessary.
+The [`Into`] trait is simply the reciprocal of the `From` trait. It
+defines how to convert a type into another type.
 
-Using the `Into` trait will typically require specification of the type to
-convert into as the compiler is unable to determine this most of the time.
-However this is a small trade-off considering we get the functionality for free.
+Calling `into()` typically requires us to specify the result type as the compiler is unable to determine this most of the time.
 
 ```rust,editable
 use std::convert::Into;
@@ -67,6 +64,36 @@ impl Into<Number> for i32 {
 fn main() {
     let int = 5;
     // Try removing the type annotation
+    let num: Number = int.into();
+    println!("My number is {:?}", num);
+}
+```
+
+## `From` and `Into` are interchangable
+
+`From` and `Into` are designed to be complementary.
+We do not need to provide an implementation for both traits.
+If you have implemented the `From` trait for your type, `Into` will call it 
+when necessary.  
+
+```rust,editable
+use std::convert::Into;
+
+#[derive(Debug)]
+struct Number {
+    value: i32,
+}
+
+// Define `From`
+impl From<i32> for Number {
+    fn from(item: i32) -> Self {
+        Number { value: item }
+    }
+}
+
+fn main() {
+    let int = 5;
+    // use `Into`
     let num: Number = int.into();
     println!("My number is {:?}", num);
 }
