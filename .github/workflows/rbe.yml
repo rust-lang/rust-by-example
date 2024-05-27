@@ -32,7 +32,8 @@ jobs:
 
     - name: Install mdbook-i18n-helpers
       run: |
-        cargo install mdbook-i18n-helpers --locked --version 0.3.1
+        # cargo install mdbook-i18n-helpers --locked --version 0.3.1
+        cargo install --git https://github.com/google/mdbook-i18n-helpers mdbook-i18n-helpers
 
     - name: Report versions
       run: |
