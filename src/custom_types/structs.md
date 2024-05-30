@@ -55,7 +55,7 @@ fn main() {
 
     // Make a new point by using struct update syntax to use the fields of our
     // other one
-    let bottom_right = Point { x: 5.2, ..another_point };
+    let bottom_right = Point { x: 5.2, ..point };
 
     // `bottom_right.y` will be the same as `point.y` because we used that field
     // from `point`
