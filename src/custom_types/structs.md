@@ -57,8 +57,8 @@ fn main() {
     // other one
     let bottom_right = Point { x: 5.2, ..another_point };
 
-    // `bottom_right.y` will be the same as `point.y` because we used that field
-    // from `point`
+    // `bottom_right.y` will be the same as `another_point.y` because we used that field
+    // from `another_point`
     println!("second point: ({}, {})", bottom_right.x, bottom_right.y);
 
     // Destructure the point using a `let` binding
