@@ -45,7 +45,7 @@ fn main() {
         // `_ref_to_i32` goes out of scope and is no longer borrowed.
     }
 
-    // `boxed_i32` can now give up ownership to `eat_box_32` and be destroyed
+    // `boxed_i32` can now give up ownership to `eat_box_i32` and be destroyed
     eat_box_i32(boxed_i32);
 }
 ```
