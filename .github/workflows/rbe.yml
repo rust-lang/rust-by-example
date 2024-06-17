@@ -32,7 +32,7 @@ jobs:
 
     - name: Install mdbook-i18n-helpers
       run: |
-        cargo install mdbook-i18n-helpers --locked --version 0.3.3
+        cargo install mdbook-i18n-helpers --locked --version 0.3.4
 
     - name: Report versions
       run: |
