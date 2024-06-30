@@ -37,10 +37,10 @@ fn main() {
 }
 ```
 
-Although this might seem like an abstract concept, it is in fact very useful and
-often handy. The main advantage of this type is that it can be cast to any other
-one and therefore used at places where an exact type is required, for instance
-in `match` branches. This allows us to write code like this:
+Although this might seem like an abstract concept, it is actually very useful and
+often handy. The main advantage of this type is that it can be cast to any other 
+type, making it versatile in situations where an exact type is required, such as 
+in match branches. This flexibility allows us to write code like this:
 
 ```rust
 fn main() {
