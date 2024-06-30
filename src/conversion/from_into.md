@@ -18,7 +18,7 @@ let my_str = "hello";
 let my_string = String::from(my_str);
 ```
 
-We can do similar for defining a conversion for our own type.
+We can do something similar for defining a conversion for our own type.
 
 ```rust,editable
 use std::convert::From;
