@@ -28,8 +28,7 @@ fn main() {
 ```
 
 There are times when we'll want to stop processing on errors (like with
-[`?`][enter_question_mark]) but keep going when the `Option` is `None`. A
-couple of combinators come in handy to swap the `Result` and `Option`.
+[`?`][enter_question_mark]) but keep going when the `Option` is `None`. The `transpose` function comes in handy to swap the `Result` and `Option`.
 
 ```rust,editable
 use std::num::ParseIntError;
@@ -39,7 +38,7 @@ fn double_first(vec: Vec<&str>) -> Result<Option<i32>, ParseIntError> {
         first.parse::<i32>().map(|n| 2 * n)
     });
 
-    opt.map_or(Ok(None), |r| r.map(Some))
+    opt.transpose()
 }
 
 fn main() {
