@@ -16,7 +16,7 @@ use std::fmt::Debug; // Trait to bound with.
 #[derive(Debug)]
 struct Ref<'a, T: 'a>(&'a T);
 // `Ref` contains a reference to a generic type `T` that has
-// an unknown lifetime `'a`. `T` is bounded such that any
+// some lifetime `'a` unknown by `Ref`. `T` is bounded such that any
 // *references* in `T` must outlive `'a`. Additionally, the lifetime
 // of `Ref` may not exceed `'a`.
 
