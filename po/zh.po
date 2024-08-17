@@ -922,7 +922,7 @@ msgstr "[补充](meta.md) - 文档，基准测试。"
 
 #: src/hello.md:3
 msgid "This is the source code of the traditional Hello World program."
-msgstr ""
+msgstr "这是传统的 Hello World 程序的源代码。"
 
 #: src/hello.md:6
 msgid ""
@@ -931,6 +931,10 @@ msgid ""
 "// or if you prefer to use your keyboard, you can use the \"Ctrl + Enter\"\n"
 "// shortcut.\n"
 msgstr ""
+"// 这是一个注释，编译器会忽略它。\n"
+"// 你可以通过点击那边的 \"运行\" 按钮来测试这段代码 ->\n"
+"// 或者，如果你更喜欢使用键盘，你可以使用 \"Ctrl + 回车\"\n"
+"// 快捷键。\n"
 
 #: src/hello.md:10
 msgid ""
@@ -938,46 +942,49 @@ msgid ""
 "// You can always return to the original code by clicking the \"Reset\" "
 "button ->\n"
 msgstr ""
+"// 这段代码是可以编辑的，随意地修改它吧！\n"
+"// 你总是可以通过点击 \"重置\" 按钮来恢复原始代码 ->\n"
 
 #: src/hello.md:13
 msgid "// This is the main function.\n"
-msgstr ""
+msgstr "// 这是主函数。\n"
 
 #: src/hello.md:16
 msgid "// Statements here are executed when the compiled binary is called.\n"
-msgstr ""
+msgstr "// 当编译后的二进制文件被调用时，这里的语句将被执行。\n"
 
 #: src/hello.md:18
 msgid "// Print text to the console.\n"
-msgstr ""
+msgstr "// 在控制台打印文本。\n"
 
 #: src/hello.md:19 src/error/result.md:55 src/meta/playground.md:12
 msgid "\"Hello World!\""
-msgstr ""
+msgstr "\"Hello World!\""
 
 #: src/hello.md:23
 msgid "`println!` is a [_macro_](macros.md) that prints text to the console."
-msgstr ""
+msgstr "`println!` 是一个[宏(macro_rule!)](macros.md)，用于在控制台打印文本。"
 
 #: src/hello.md:26
 msgid "A binary can be generated using the Rust compiler: `rustc`."
-msgstr ""
+msgstr "可以使用 Rust 编译器 `rustc` 生成二进制文件。"
 
 #: src/hello.md:32
 msgid "`rustc` will produce a `hello` binary that can be executed."
-msgstr ""
+msgstr "`rustc` 将生成一个可以执行的 `hello` 二进制文件。"
 
 #: src/hello.md:39 src/hello/print/print_display.md:107
 #: src/hello/print/print_display/testcase_list.md:53 src/hello/print/fmt.md:70
 #: src/primitives/tuples.md:64 src/custom_types/structs.md:89
 msgid "Activity"
-msgstr ""
+msgstr "动手试一试"
 
 #: src/hello.md:41
 msgid ""
 "Click 'Run' above to see the expected output. Next, add a new line with a "
 "second `println!` macro so that the output shows:"
 msgstr ""
+"点击上面的 '运行' 查看预期输出。接下来，添加一行新的代码，再次使用 `println!` 宏，输出以下结果："
 
 #: src/hello/comment.md:3
 msgid ""
