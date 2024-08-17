@@ -989,33 +989,33 @@ msgstr ""
 #: src/hello/comment.md:3
 msgid ""
 "Any program requires comments, and Rust supports a few different varieties:"
-msgstr ""
+msgstr "任何程序都需要注释，Rust 支持几种不同的注释类型："
 
 #: src/hello/comment.md:6
 msgid "_Regular comments_ which are ignored by the compiler:"
-msgstr ""
+msgstr "**普通注释**会被编译器会忽略的 ："
 
 #: src/hello/comment.md:7
 msgid "`// Line comments which go to the end of the line.`"
-msgstr ""
+msgstr "`// 行注释，直到行尾。`"
 
 #: src/hello/comment.md:8
 msgid "`/* Block comments which go to the closing delimiter. */`"
-msgstr ""
+msgstr "`/* 块注释，直到闭合分隔符。 */`"
 
 #: src/hello/comment.md:9
 msgid ""
 "_Doc comments_ which are parsed into HTML library [documentation](../meta/doc."
 "md):"
-msgstr ""
+msgstr "**文档注释**会被解析成 HTML 库[文档](../meta/doc.md)："
 
 #: src/hello/comment.md:10
 msgid "`/// Generate library docs for the following item.`"
-msgstr ""
+msgstr "`/// 为下一项生成库文档。`"
 
 #: src/hello/comment.md:11
 msgid "`//! Generate library docs for the enclosing item.`"
-msgstr ""
+msgstr "`//! 为所属项（译注：如 crate、模块或函数）生成库文档。`"
 
 #: src/hello/comment.md:15
 msgid ""
@@ -1023,14 +1023,17 @@ msgid ""
 "    // There are two slashes at the beginning of the line.\n"
 "    // And nothing written after these will be read by the compiler.\n"
 msgstr ""
+"// 这是一个行注释的例子。\n"
+"    // 行首有两个斜杠。\n"
+"    // 这些之后写的内容不会被编译器读取。\n"
 
 #: src/hello/comment.md:19
 msgid "// println!(\"Hello, world!\");\n"
-msgstr ""
+msgstr "// println!(\"Hello, world!\");\n"
 
 #: src/hello/comment.md:21
 msgid "// Run it. See? Now try deleting the two slashes, and run it again.\n"
-msgstr ""
+msgstr "// 运行它。看到了吗？现在尝试删除两个斜杠，再运行一次。\n"
 
 #: src/hello/comment.md:23
 msgid ""
@@ -1040,9 +1043,15 @@ msgid ""
 "     * are extremely useful for temporarily disabling chunks of code.\n"
 "     * /* Block comments can be /* nested, */ */ so it takes only a few\n"
 "     * keystrokes to comment out everything in this main() function.\n"
-"     * /*/*/* Try it yourself! */*/*/\n"
-"     */"
+"     * /*/*/* Try it yourself! */*/*/"
 msgstr ""
+"/*\n"
+"     * 这是另一种注释，块注释。通常，\n"
+"     * 推荐使用行注释风格。但块注释\n"
+"     * 非常适用于临时禁用代码块。\n"
+"     * /* 块注释可以 /* 嵌套， */ */ 所以只需要几个\n"
+"     * 按键就可以注释掉这个 main() 函数中的所有内容。\n"
+"     * /*/*/* 自己试试吧！ */*/*/"
 
 #: src/hello/comment.md:32
 msgid ""
@@ -1051,6 +1060,10 @@ msgid ""
 "    no actual need for it.\n"
 "    */"
 msgstr ""
+"/*\n"
+"    注意：前面的 `*` 列完全是出于风格考虑。实际上\n"
+"    并不需要它。\n"
+"    */"
 
 #: src/hello/comment.md:37
 msgid ""
@@ -1058,14 +1071,17 @@ msgid ""
 "    // than with line comments. Try deleting the comment delimiters\n"
 "    // to change the result:\n"
 msgstr ""
+"// 你可以使用块注释比行注释更容易地操作表达式\n"
+"    // 尝试删除注释分隔符\n"
+"    // 来改变结果：\n"
 
 #: src/hello/comment.md:40
 msgid "/* 90 + */"
-msgstr ""
+msgstr "/* 90 + */"
 
 #: src/hello/comment.md:41
 msgid "\"Is `x` 10 or 100? x = {}\""
-msgstr ""
+msgstr "\"`x` 是 10 还是 100？x = {}\""
 
 #: src/hello/comment.md:45 src/hello/print.md:103
 #: src/hello/print/print_debug.md:75 src/hello/print/print_display.md:118
@@ -1111,11 +1127,11 @@ msgstr ""
 #: src/std_misc/threads/testcase_mapreduce.md:128 src/std_misc/path.md:54
 #: src/std_misc/fs.md:150 src/meta/doc.md:109 src/meta/playground.md:49
 msgid "See also:"
-msgstr ""
+msgstr "另见："
 
 #: src/hello/comment.md:47
 msgid "[Library documentation](../meta/doc.md)"
-msgstr ""
+msgstr "[文档注释](../meta/doc.md)"
 
 #: src/hello/print.md:3
 msgid ""
