@@ -466,7 +466,7 @@ msgstr "派生"
 
 #: src/SUMMARY.md:139 src/trait/dyn.md:1
 msgid "Returning Traits with `dyn`"
-msgstr "使用 `dyn` 返回特性"
+msgstr "使用 `dyn` 返回 trait"
 
 #: src/SUMMARY.md:140 src/trait/ops.md:1
 msgid "Operator Overloading"
@@ -771,7 +771,7 @@ msgstr "Playground"
 
 #: src/index.md:1
 msgid "Rust by Example"
-msgstr ""
+msgstr "通过例子学 Rust"
 
 #: src/index.md:3
 msgid ""
@@ -779,6 +779,7 @@ msgid ""
 "focusing on safety, speed, and concurrency. It accomplishes these goals by "
 "being memory safe without using garbage collection."
 msgstr ""
+"[Rust](https://www.rust-lang.org/) 是一种现代的系统编程语言，专注于安全性、速度和并发性。它通过不使用垃圾回收来实现这些目标，确保了内存安全。"
 
 #: src/index.md:7
 msgid ""
@@ -789,134 +790,135 @@ msgid ""
 "std/). Additionally for the curious, you can also [check out the source code "
 "for this site](https://github.com/rust-lang/rust-by-example)."
 msgstr ""
+"《通过例子学 Rust》（Rust By Example, RBE）是一系列可运行的实例，它们展示了各种 Rust 概念和标准库。为了更好地利用这些实例，请不要忘记[本地安装 Rust](https://www.rust-lang.org/tools/install)并查看[官方文档](https://doc.rust-lang.org/)。此外，对于好奇的人来说，你也可以[查看这个网站的源代码](https://github.com/rust-lang/rust-by-example)。"
 
 #: src/index.md:12
 msgid "Now let's begin!"
-msgstr ""
+msgstr "现在让我们开始吧！"
 
 #: src/index.md:14
 msgid "[Hello World](hello.md) - Start with a traditional Hello World program."
-msgstr ""
+msgstr "[Hello World](hello.md) - 从一个传统的 Hello World 程序开始。"
 
 #: src/index.md:16
 msgid ""
 "[Primitives](primitives.md) - Learn about signed integers, unsigned integers "
 "and other primitives."
-msgstr ""
+msgstr "[Primitives](primitives.md) - 学习有关有符号整数、无符号整数和其他原始类型的信息。"
 
 #: src/index.md:18
 msgid "[Custom Types](custom_types.md) - `struct` and `enum`."
-msgstr ""
+msgstr "[自定义类型](custom_types.md) - 结构体 `struct` 和枚举 `enum`。"
 
 #: src/index.md:20
 msgid ""
 "[Variable Bindings](variable_bindings.md) - mutable bindings, scope, "
 "shadowing."
-msgstr ""
+msgstr "[变量绑定](variable_bindings.md) - 可变绑定、作用域、遮蔽。"
 
 #: src/index.md:22
 msgid "[Types](types.md) - Learn about changing and defining types."
-msgstr ""
+msgstr "[类型](types.md) - 学习如何改变和定义类型。"
 
 #: src/index.md:24
 msgid ""
 "[Conversion](conversion.md) - Convert between different types, such as "
 "strings, integers, and floats."
-msgstr ""
+msgstr "[转换](conversion.md) - 在不同类型的数据之间进行转换，如字符串、整数和浮点数。"
 
 #: src/index.md:26
 msgid ""
 "[Expressions](expression.md) - Learn about Expressions & how to use them."
-msgstr ""
+msgstr "[表达式](expression.md) - 学习表达式及其使用方法。"
 
 #: src/index.md:28
 msgid "[Flow of Control](flow_control.md) - `if`/`else`, `for`, and others."
-msgstr ""
+msgstr "[控制流](flow_control.md) - `if`/`else`、`for` 等。"
 
 #: src/index.md:30
 msgid ""
 "[Functions](fn.md) - Learn about Methods, Closures and Higher Order Functions."
-msgstr ""
+msgstr "[函数](fn.md) - 学习方法、闭包和高阶函数。"
 
 #: src/index.md:32
 msgid "[Modules](mod.md) - Organize code using modules"
-msgstr ""
+msgstr "[模块](mod.md) - 使用模块组织代码"
 
 #: src/index.md:34
 msgid ""
 "[Crates](crates.md) - A crate is a compilation unit in Rust. Learn to create "
 "a library."
-msgstr ""
+msgstr "[Crates](crates.md) - Crate 是 Rust 中的编译单元。学习如何创建库。"
 
 #: src/index.md:36
 msgid ""
 "[Cargo](cargo.md) - Go through some basic features of the official Rust "
 "package management tool."
-msgstr ""
+msgstr "[Cargo](cargo.md) - 了解官方 Rust 包管理工具的一些基本特性。"
 
 #: src/index.md:38
 msgid ""
 "[Attributes](attribute.md) - An attribute is metadata applied to some module, "
 "crate or item."
-msgstr ""
+msgstr "[属性](attribute.md) - 属性是应用于某些模块、crate 或项目项的元数据。"
 
 #: src/index.md:40
 msgid ""
 "[Generics](generics.md) - Learn about writing a function or data type which "
 "can work for multiple types of arguments."
-msgstr ""
+msgstr "[泛型](generics.md) - 学习编写可以适用于多种类型参数的函数或数据类型。"
 
 #: src/index.md:42
 msgid ""
 "[Scoping rules](scope.md) - Scopes play an important part in ownership, "
 "borrowing, and lifetimes."
-msgstr ""
+msgstr "[作用域规则](scope.md) - 作用域在所有权(ownership)、借用(borrowing)和生命周期(lifetime)中扮演重要角色。"
 
 #: src/index.md:44
 msgid ""
 "[Traits](trait.md) - A trait is a collection of methods defined for an "
 "unknown type: `Self`"
-msgstr ""
+msgstr "[特质](trait.md) - 特质(trait)是为未知类型 `Self` 定义的一组方法。"
 
 #: src/index.md:46
 msgid ""
 "[Macros](macros.md) - Macros are a way of writing code that writes other "
 "code, which is known as metaprogramming."
-msgstr ""
+msgstr "[宏](macros.md) - 宏是一种编写代码以生成其他代码的方式，这被称为元编程。"
 
 #: src/index.md:48
 msgid "[Error handling](error.md) - Learn Rust way of handling failures."
-msgstr ""
+msgstr "[错误处理](error.md) - 学习 Rust 处理失败的方式。"
 
 #: src/index.md:50
 msgid ""
 "[Std library types](std.md) - Learn about some custom types provided by `std` "
 "library."
-msgstr ""
+msgstr "[标准库类型](std.md) - 学习 `std` 标准库提供的某些自定义类型。"
 
 #: src/index.md:52
 msgid "[Std misc](std_misc.md) - More custom types for file handling, threads."
-msgstr ""
+msgstr "[标准库中的其他内容](std_misc.md) - 文件处理、线程的更多自定义类型。"
 
 #: src/index.md:54
 msgid "[Testing](testing.md) - All sorts of testing in Rust."
-msgstr ""
+msgstr "[测试](testing.md) - Rust 中的各种测试。"
 
 #: src/index.md:56
 msgid ""
 "[Unsafe Operations](unsafe.md) - Learn about entering a block of unsafe "
 "operations."
-msgstr ""
+msgstr "[不安全操作](unsafe.md) - 学习进入不安全操作块。"
 
 #: src/index.md:58
 msgid ""
 "[Compatibility](compatibility.md) - Handling Rust's evolution and potential "
 "compatibility issues."
-msgstr ""
+msgstr "[兼容性](compatibility.md) - 处理 Rust 的发展和潜在的兼容性问题。"
 
 #: src/index.md:60
 msgid "[Meta](meta.md) - Documentation, Benchmarking."
-msgstr ""
+msgstr "[补充](meta.md) - 文档，基准测试。"
 
 #: src/hello.md:3
 msgid "This is the source code of the traditional Hello World program."
