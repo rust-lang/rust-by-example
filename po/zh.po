@@ -3670,6 +3670,7 @@ msgid ""
 "Primitive types can be converted to each other through [casting](types/cast."
 "md)."
 msgstr ""
+"原始类型可以通过[类型转换](types/cast.md)相互转换。"
 
 #: src/conversion.md:5
 msgid ""
@@ -3680,6 +3681,7 @@ msgid ""
 "specific ones for the more common cases, in particular when converting to and "
 "from `String`s."
 msgstr ""
+"Rust 通过使用[特质](trait.md)来处理自定义类型（即 `struct` 和 `enum`）之间的转换。通用转换将使用 [`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html) 特质。然而，对于更常见的情况，特别是在与 `String` 相互转换时，还有一些更具体的特质。"
 
 #: src/conversion/from_into.md:3
 msgid ""
@@ -3689,10 +3691,11 @@ msgid ""
 "are able to convert type A from type B, then it should be easy to believe "
 "that we should be able to convert type B to type A."
 msgstr ""
+"[`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html) 特质本质上是相互关联的，这实际上是其实现的一部分。如果你能够将类型 A 从类型 B 转换，那么我们应该很容易相信我们也能够将类型 B 转换为类型 A。"
 
 #: src/conversion/from_into.md:7
 msgid "`From`"
-msgstr ""
+msgstr "`From`"
 
 #: src/conversion/from_into.md:9
 msgid ""
@@ -3702,23 +3705,24 @@ msgid ""
 "are numerous implementations of this trait within the standard library for "
 "conversion of primitive and common types."
 msgstr ""
+"[`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 特质允许一个类型定义如何从另一个类型创建自己，从而提供了一种非常简单的机制来在几种类型之间进行转换。标准库中有许多这个特质的实现，用于原始类型和常见类型的转换。"
 
 #: src/conversion/from_into.md:14
 msgid "For example we can easily convert a `str` into a `String`"
-msgstr ""
+msgstr "例如，我们可以轻松地将 `str` 转换为 `String`"
 
 #: src/conversion/from_into.md:21
 msgid "We can do something similar for defining a conversion for our own type."
-msgstr ""
+msgstr "我们可以为自己的类型定义类似的转换。"
 
 #: src/conversion/from_into.md:39 src/conversion/from_into.md:68
 #: src/conversion/from_into.md:98
 msgid "\"My number is {:?}\""
-msgstr ""
+msgstr "\"My number is {:?}\""
 
 #: src/conversion/from_into.md:43
 msgid "`Into`"
-msgstr ""
+msgstr "`Into`"
 
 #: src/conversion/from_into.md:45
 msgid ""
@@ -3726,20 +3730,22 @@ msgid ""
 "simply the reciprocal of the `From` trait. It defines how to convert a type "
 "into another type."
 msgstr ""
+"[`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html) 特质简单来说就是 `From` 特质的反向操作。它定义了如何将一个类型转换为另一个类型。"
 
 #: src/conversion/from_into.md:48
 msgid ""
 "Calling `into()` typically requires us to specify the result type as the "
 "compiler is unable to determine this most of the time."
 msgstr ""
+"调用 `into()` 通常需要我们指定结果类型，因为编译器大多数时候无法确定这一点。"
 
 #: src/conversion/from_into.md:66
 msgid "// Try removing the type annotation\n"
-msgstr ""
+msgstr "// 尝试移除类型注解\n"
 
 #: src/conversion/from_into.md:72
 msgid "`From` and `Into` are interchangable"
-msgstr ""
+msgstr "`From` 和 `Into` 是可互换的"
 
 #: src/conversion/from_into.md:74
 msgid ""
@@ -3749,14 +3755,15 @@ msgid ""
 "converse is not true: implementing `Into` for your type will not "
 "automatically provide it with an implementation of `From`."
 msgstr ""
+"`From` 和 `Into` 被设计为互补的。我们不需要为两个特质都提供实现。如果你为你的类型实现了 `From` 特质，`Into` 会在必要时调用它。但是请注意，反过来并不成立：为你的类型实现 `Into` 不会自动为它提供 `From` 的实现。"
 
 #: src/conversion/from_into.md:86
 msgid "// Define `From`\n"
-msgstr ""
+msgstr "// 定义 `From`\n"
 
 #: src/conversion/from_into.md:96
 msgid "// use `Into`\n"
-msgstr ""
+msgstr "// 使用 `Into`\n"
 
 #: src/conversion/try_from_try_into.md:3
 msgid ""
@@ -3767,22 +3774,23 @@ msgid ""
 "for fallible conversions, and as such, return [`Result`](https://doc.rust-"
 "lang.org/std/result/enum.Result.html)s."
 msgstr ""
+"与 [`From` 和 `Into`](from_into.html) 类似，[`TryFrom`](https://doc.rust-lang.org/std/convert/trait.TryFrom.html) 和 [`TryInto`](https://doc.rust-lang.org/std/convert/trait.TryInto.html) 是用于类型之间转换的泛型特质。与 `From`/`Into` 不同，`TryFrom`/`TryInto` 特质用于可能失败的转换，因此返回 [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)。"
 
 #: src/conversion/try_from_try_into.md:33
 msgid "// TryFrom\n"
-msgstr ""
+msgstr "// TryFrom\n"
 
 #: src/conversion/try_from_try_into.md:38
 msgid "// TryInto\n"
-msgstr ""
+msgstr "// TryInto\n"
 
 #: src/conversion/string.md:1
 msgid "To and from Strings"
-msgstr ""
+msgstr "字符串的相互转换"
 
 #: src/conversion/string.md:3
 msgid "Converting to String"
-msgstr ""
+msgstr "转换为字符串"
 
 #: src/conversion/string.md:5
 msgid ""
@@ -3794,14 +3802,15 @@ msgid ""
 "trait.ToString.html) and also allows printing the type as discussed in the "
 "section on [`print!`](../hello/print.md)."
 msgstr ""
+"将任何类型转换为 `String` 就像为该类型实现 [`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html) 特质一样简单。但是，你应该实现 [`fmt::Display`](https://doc.rust-lang.org/std/fmt/trait.Display.html) 特质，而不是直接实现 `ToString`。`fmt::Display` 会自动提供 [`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html)，并且还允许打印类型，就像在 [`print!`](../hello/print.md) 部分讨论的那样。"
 
 #: src/conversion/string.md:19
 msgid "\"Circle of radius {}\""
-msgstr ""
+msgstr "\"Circle of radius {}\""
 
 #: src/conversion/string.md:29
 msgid "Parsing a String"
-msgstr ""
+msgstr "解析字符串"
 
 #: src/conversion/string.md:31
 msgid ""
@@ -3812,6 +3821,7 @@ msgid ""
 "inference or to specify the type to parse using the 'turbofish' syntax. Both "
 "alternatives are shown in the following example."
 msgstr ""
+"将字符串转换为许多类型是很有用的，但最常见的字符串操作之一是将它们从字符串转换为数字。惯用的方法是使用 [`parse`](https://doc.rust-lang.org/std/primitive.str.html#method.parse) 函数，并通过类型推断或使用 'turbofish' 语法指定要解析的类型。以下示例展示了这两种方法。"
 
 #: src/conversion/string.md:37
 msgid ""
@@ -3820,10 +3830,11 @@ msgid ""
 "implemented for that type. This is implemented for numerous types within the "
 "standard library."
 msgstr ""
+"只要为该类型实现了 [`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html) 特质，这就会将字符串转换为指定的类型。标准库中为许多类型实现了这个特质。"
 
 #: src/conversion/string.md:43 src/std_misc/process/wait.md:10
 msgid "\"5\""
-msgstr ""
+msgstr "\"5\""
 
 #: src/conversion/string.md:44 src/error/result.md:33 src/error/result.md:68
 #: src/error/result/result_map.md:42 src/error/result/result_map.md:75
@@ -3831,11 +3842,11 @@ msgstr ""
 #: src/error/result/enter_question_mark.md:34
 #: src/error/result/enter_question_mark.md:67
 msgid "\"10\""
-msgstr ""
+msgstr "\"10\""
 
 #: src/conversion/string.md:47
 msgid "\"Sum: {:?}\""
-msgstr ""
+msgstr "\"Sum: {:?}\""
 
 #: src/conversion/string.md:51
 msgid ""
@@ -3843,10 +3854,11 @@ msgid ""
 "[`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html) trait for "
 "that type."
 msgstr ""
+"要在用户定义的类型上获得这个功能，只需为该类型实现 [`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html) 特质。"
 
 #: src/conversion/string.md:74
 msgid "\"    3 \""
-msgstr ""
+msgstr "\"    3 \""
 
 #: src/expression.md:3
 msgid "A Rust program is (mostly) made up of a series of statements:"
