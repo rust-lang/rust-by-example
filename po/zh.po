@@ -1784,70 +1784,80 @@ msgid ""
 "`fmt::Result`. Proper handling of this requires dealing with _all_ the "
 "results. Rust provides the `?` operator for exactly this purpose."
 msgstr ""
+"为一个结构体实现 `fmt::Display`，其中的元素必须依次处理，这是很棘手的。"
+"问题在于每个 `write!` 都会生成一个 `fmt::Result`。正确的方式需要处理**所有**结果。"
+"Rust 提供了 `?` 运算符来专门应对这个问题。"
 
 #: src/hello/print/print_display/testcase_list.md:8
 msgid "Using `?` on `write!` looks like this:"
-msgstr ""
+msgstr "在 `write!` 上使用 `?` 看起来像这样："
 
 #: src/hello/print/print_display/testcase_list.md:11
 msgid ""
 "// Try `write!` to see if it errors. If it errors, return\n"
 "// the error. Otherwise continue.\n"
 msgstr ""
+"// 尝试执行 `write!`，看看它是否会报错。如果报错，就返回错误。\n"
+"// 否则继续执行。\n"
 
 #: src/hello/print/print_display/testcase_list.md:16
 msgid ""
 "With `?` available, implementing `fmt::Display` for a `Vec` is "
 "straightforward:"
-msgstr ""
+msgstr "有了 `?` 可用，为 `Vec` 实现 `fmt::Display` 就变得很直观了："
 
 #: src/hello/print/print_display/testcase_list.md:20
 msgid "// Import the `fmt` module.\n"
-msgstr ""
+msgstr "// 导入 `fmt` 模块。\n"
 
 #: src/hello/print/print_display/testcase_list.md:21
 msgid "// Define a structure named `List` containing a `Vec`.\n"
-msgstr ""
+msgstr "// 定义一个包含 `Vec` 的结构体 `List`。\n"
 
 #: src/hello/print/print_display/testcase_list.md:27
 msgid ""
 "// Extract the value using tuple indexing,\n"
 "        // and create a reference to `vec`.\n"
 msgstr ""
+"// 使用元组索引提取值，\n"
+"        // 并创建一个指向 `vec` 的引用。\n"
 
 #: src/hello/print/print_display/testcase_list.md:31
 msgid "\"[\""
-msgstr ""
+msgstr "\"[\""
 
 #: src/hello/print/print_display/testcase_list.md:33
 msgid ""
 "// Iterate over `v` in `vec` while enumerating the iteration\n"
 "        // count in `count`.\n"
 msgstr ""
+"// 遍历 `vec` 中的 `v`，同时在 `count` 中记录迭代次数。\n"
 
 #: src/hello/print/print_display/testcase_list.md:36
 msgid ""
 "// For every element except the first, add a comma.\n"
 "            // Use the ? operator to return on errors.\n"
 msgstr ""
+"// 对除第一个元素外的每个元素，添加一个逗号。\n"
+"            // 使用 ? 运算符在出错时返回。\n"
 
 #: src/hello/print/print_display/testcase_list.md:38 src/std/str.md:36
 msgid "\", \""
-msgstr ""
+msgstr "\", \""
 
 #: src/hello/print/print_display/testcase_list.md:42
 msgid "// Close the opened bracket and return a fmt::Result value.\n"
-msgstr ""
+msgstr "// 关闭开括号并返回一个 fmt::Result 值。\n"
 
 #: src/hello/print/print_display/testcase_list.md:43
 msgid "\"]\""
-msgstr ""
+msgstr "\"]\""
 
 #: src/hello/print/print_display/testcase_list.md:55
 msgid ""
 "Try changing the program so that the index of each element in the vector is "
 "also printed. The new output should look like this:"
-msgstr ""
+msgstr "尝试修改程序，使向量中每个元素的索引也被打印出来。新的输出应该看起来像这样："
 
 #: src/hello/print/print_display/testcase_list.md:64
 msgid ""
@@ -1856,30 +1866,36 @@ msgid ""
 "md), [`?`](../../../std/result/question_mark.md), and [`vec!`](../../../std/"
 "vec.md)"
 msgstr ""
+"[`for`](../../../flow_control/for.md)、[`ref`](../../../scope/borrow/ref.md)、"
+"[`Result`](../../../std/result.md)、[`struct`](../../../custom_types/structs.md)、"
+"[`?`](../../../std/result/question_mark.md) 和 [`vec!`](../../../std/vec.md)"
 
 #: src/hello/print/fmt.md:3
 msgid "We've seen that formatting is specified via a _format string_:"
-msgstr ""
+msgstr "我们已经看到，格式化是通过**格式字符串**指定的："
 
 #: src/hello/print/fmt.md:5
 msgid "`format!(\"{}\", foo)` -> `\"3735928559\"`"
-msgstr ""
+msgstr "`format!(\"{}\", foo)` -> `\"3735928559\"`"
 
 #: src/hello/print/fmt.md:6
 msgid ""
 "`format!(\"0x{:X}\", foo)` -> [`\"0xDEADBEEF\"`](https://en.wikipedia.org/"
 "wiki/Deadbeef#Magic_debug_values)"
 msgstr ""
+"`format!(\"0x{:X}\", foo)` -> [`\"0xDEADBEEF\"`](https://en.wikipedia.org/"
+"wiki/Deadbeef#Magic_debug_values)"
 
 #: src/hello/print/fmt.md:7
 msgid "`format!(\"0o{:o}\", foo)` -> `\"0o33653337357\"`"
-msgstr ""
+msgstr "`format!(\"0o{:o}\", foo)` -> `\"0o33653337357\"`"
 
 #: src/hello/print/fmt.md:9
 msgid ""
 "The same variable (`foo`) can be formatted differently depending on which "
 "_argument type_ is used: `X` vs `o` vs _unspecified_."
 msgstr ""
+"根据使用的**参数类型**是 `X`、`o` 还是**未指定**，同样的变量（`foo`）能够格式化成不同的形式。"
 
 #: src/hello/print/fmt.md:12
 msgid ""
@@ -1888,63 +1904,68 @@ msgid ""
 "which handles cases where the argument type is left unspecified: `{}` for "
 "instance."
 msgstr ""
+"这种格式化功能是通过 trait 实现的，每种参数类型都有一个对应的 trait。"
+"最常见的格式化 trait 是 `Display`，它处理参数类型未指定的情况：例如 `{}`。"
 
 #: src/hello/print/fmt.md:21
 msgid "// Latitude\n"
-msgstr ""
+msgstr "// 纬度\n"
 
 #: src/hello/print/fmt.md:23
 msgid "// Longitude\n"
-msgstr ""
+msgstr "// 经度\n"
 
 #: src/hello/print/fmt.md:28
 msgid ""
 "// `f` is a buffer, and this method must write the formatted string into it.\n"
-msgstr ""
+msgstr "// `f` 是一个缓冲区，这个方法必须将格式化的字符串写入其中。\n"
 
 #: src/hello/print/fmt.md:30
 msgid "'N'"
-msgstr ""
+msgstr "'N'"
 
 #: src/hello/print/fmt.md:30
 msgid "'S'"
-msgstr ""
+msgstr "'S'"
 
 #: src/hello/print/fmt.md:31
 msgid "'E'"
-msgstr ""
+msgstr "'E'"
 
 #: src/hello/print/fmt.md:31
 msgid "'W'"
-msgstr ""
+msgstr "'W'"
 
 #: src/hello/print/fmt.md:33
 msgid ""
 "// `write!` is like `format!`, but it will write the formatted string\n"
 "        // into a buffer (the first argument).\n"
 msgstr ""
+"// `write!` 类似于 `format!`，但它会将格式化后的字符串\n"
+"        // 写入一个缓冲区（第一个参数）。\n"
 
 #: src/hello/print/fmt.md:35
 msgid "\"{}: {:.3}°{} {:.3}°{}\""
-msgstr ""
+msgstr "\"{}: {:.3}°{} {:.3}°{}\""
 
 #: src/hello/print/fmt.md:49
 msgid "\"Dublin\""
-msgstr ""
+msgstr "\"Dublin\""
 
 #: src/hello/print/fmt.md:50
 msgid "\"Oslo\""
-msgstr ""
+msgstr "\"Oslo\""
 
 #: src/hello/print/fmt.md:51
 msgid "\"Vancouver\""
-msgstr ""
+msgstr "\"Vancouver\""
 
 #: src/hello/print/fmt.md:60
 msgid ""
 "// Switch this to use {} once you've added an implementation\n"
 "        // for fmt::Display.\n"
 msgstr ""
+"// 一旦你为 fmt::Display 添加了实现，就把这里改成使用 {}。\n"
 
 #: src/hello/print/fmt.md:62 src/primitives/tuples.md:60
 #: src/custom_types/structs.md:47 src/types/inference.md:23
@@ -1953,7 +1974,7 @@ msgstr ""
 #: src/std/result.md:61 src/std/result.md:63 src/std/arc.md:26
 #: src/std_misc/channels.md:53
 msgid "\"{:?}\""
-msgstr ""
+msgstr "\"{:?}\""
 
 #: src/hello/print/fmt.md:67
 msgid ""
@@ -1961,16 +1982,19 @@ msgid ""
 "fmt/#formatting-traits) and their argument types in the [`std::fmt`](https://"
 "doc.rust-lang.org/std/fmt/) documentation."
 msgstr ""
+"你可以在 [`std::fmt`](https://doc.rust-lang.org/std/fmt/) 文档中查看"
+"[格式化 trait 的完整列表](https://doc.rust-lang.org/std/fmt/#formatting-traits)"
+"及其参数类型。"
 
 #: src/hello/print/fmt.md:72
 msgid ""
 "Add an implementation of the `fmt::Display` trait for the `Color` struct "
 "above so that the output displays as:"
-msgstr ""
+msgstr "为上面的 `Color` 结构体添加 `fmt::Display` trait 的实现，使输出显示为："
 
 #: src/hello/print/fmt.md:81
 msgid "Three hints if you get stuck:"
-msgstr ""
+msgstr "如果你遇到困难，这里有三个提示："
 
 #: src/hello/print/fmt.md:83
 msgid ""
@@ -1979,22 +2003,24 @@ msgid ""
 "see [RGB color format & calculation](https://www.rapidtables.com/web/color/"
 "RGB_Color.html#rgb-format)."
 msgstr ""
+"在 RGB 颜色空间中计算颜色的公式是：`RGB = (R*65536)+(G*256)+B，（其中 R 是红色，G 是绿色，B 是蓝色）`。"
+"更多信息请参见 [RGB 颜色格式和计算](https://www.rapidtables.com/web/color/RGB_Color.html#rgb-format)。"
 
 #: src/hello/print/fmt.md:86
 msgid ""
 "You [may need to list each color more than once](https://doc.rust-lang.org/"
 "std/fmt/#named-parameters)."
-msgstr ""
+msgstr "你[可能需要多次列出每种颜色](https://doc.rust-lang.org/std/fmt/#named-parameters)。"
 
 #: src/hello/print/fmt.md:87
 msgid ""
 "You can [pad with zeros to a width of 2](https://doc.rust-lang.org/std/fmt/"
 "#width) with `:0>2`."
-msgstr ""
+msgstr "你可以使用 `:0>2` [用零填充到宽度为 2](https://doc.rust-lang.org/std/fmt/#width)。"
 
 #: src/hello/print/fmt.md:91
 msgid "[`std::fmt`](https://doc.rust-lang.org/std/fmt/)"
-msgstr ""
+msgstr "[`std::fmt`](https://doc.rust-lang.org/std/fmt/)"
 
 #: src/primitives.md:3
 msgid ""
