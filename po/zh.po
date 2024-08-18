@@ -2552,155 +2552,160 @@ msgstr ""
 
 #: src/custom_types.md:3
 msgid "Rust custom data types are formed mainly through the two keywords:"
-msgstr ""
+msgstr "Rust 自定义数据类型主要通过以下两个关键字来创建："
 
 #: src/custom_types.md:5
 msgid "`struct`: define a structure"
-msgstr ""
+msgstr "`struct`：定义一个结构体"
 
 #: src/custom_types.md:6
 msgid "`enum`: define an enumeration"
-msgstr ""
+msgstr "`enum`：定义一个枚举"
 
 #: src/custom_types.md:8
 msgid "Constants can also be created via the `const` and `static` keywords."
-msgstr ""
+msgstr "常量也可以通过 `const` 和 `static` 关键字来创建。"
 
 #: src/custom_types/structs.md:3
 msgid ""
 "There are three types of structures (\"structs\") that can be created using "
 "the `struct` keyword:"
-msgstr ""
+msgstr "使用 `struct` 关键字可以创建三种类型的结构体（\"structs\"）："
 
 #: src/custom_types/structs.md:6
 msgid "Tuple structs, which are, basically, named tuples."
-msgstr ""
+msgstr "元组结构体，基本上就是具名元组。"
 
 #: src/custom_types/structs.md:7
 msgid ""
 "The classic [C structs](https://en.wikipedia.org/wiki/"
 "Struct_(C_programming_language))"
-msgstr ""
+msgstr "经典的 [C 语言风格结构体](https://en.wikipedia.org/wiki/Struct_(C_programming_language))"
 
 #: src/custom_types/structs.md:8
 msgid "Unit structs, which are field-less, are useful for generics."
-msgstr ""
+msgstr "单元结构体，不带字段，在泛型中很有用。"
 
 #: src/custom_types/structs.md:11 src/custom_types/enum/enum_use.md:6
 #: src/custom_types/enum/c_like.md:6
 msgid "// An attribute to hide warnings for unused code.\n"
-msgstr ""
+msgstr "// 这个属性用于隐藏未使用代码的警告。\n"
 
 #: src/custom_types/structs.md:19
 msgid "// A unit struct\n"
-msgstr ""
+msgstr "// 单元结构体\n"
 
 #: src/custom_types/structs.md:22
 msgid "// A tuple struct\n"
-msgstr ""
+msgstr "// 元组结构体\n"
 
 #: src/custom_types/structs.md:25
 msgid "// A struct with two fields\n"
-msgstr ""
+msgstr "// 一个有两个字段的结构体\n"
 
 #: src/custom_types/structs.md:31
 msgid "// Structs can be reused as fields of another struct\n"
-msgstr ""
+msgstr "// 结构体可以作为另一个结构体的字段来使用\n"
 
 #: src/custom_types/structs.md:34
 msgid ""
 "// A rectangle can be specified by where the top left and bottom right\n"
 "    // corners are in space.\n"
 msgstr ""
+"// 一个矩形可以通过指定它的左上角和右下角\n"
+"    // 在空间中的位置来定义。\n"
 
 #: src/custom_types/structs.md:41
 msgid "// Create struct with field init shorthand\n"
-msgstr ""
+msgstr "// 使用字段初始化简写语法创建结构体\n"
 
 #: src/custom_types/structs.md:46
 msgid "// Print debug struct\n"
-msgstr ""
+msgstr "// 打印调试的结构体\n"
 
 #: src/custom_types/structs.md:49
 msgid "// Instantiate a `Point`\n"
-msgstr ""
+msgstr "// 实例化一个 `Point`\n"
 
 #: src/custom_types/structs.md:53
 msgid "// Access the fields of the point\n"
-msgstr ""
+msgstr "// 访问 point 的字段\n"
 
 #: src/custom_types/structs.md:54
 msgid "\"point coordinates: ({}, {})\""
-msgstr ""
+msgstr "\"point coordinates: ({}, {})\""
 
 #: src/custom_types/structs.md:56
 msgid ""
 "// Make a new point by using struct update syntax to use the fields of our\n"
 "    // other one\n"
 msgstr ""
+"// 使用结构体更新语法创建新的点，\n"
+"    // 这里使用了我们之前创建的 point 的字段\n"
 
 #: src/custom_types/structs.md:60
 msgid ""
-"// `bottom_right.y` will be the same as `another_point.y` because we used "
-"that field\n"
+"// `bottom_right.y` will be the same as `another_point.y` because we used that field\n"
 "    // from `another_point`\n"
 msgstr ""
+"// `bottom_right.y` 与 `another_point.y` 一样\n"
+"    // 因为这个字段就是从 `another_point` 中来的\n"
 
 #: src/custom_types/structs.md:62
 msgid "\"second point: ({}, {})\""
-msgstr ""
+msgstr "\"second point: ({}, {})\""
 
 #: src/custom_types/structs.md:64
 msgid "// Destructure the point using a `let` binding\n"
-msgstr ""
+msgstr "// 使用 `let` 绑定来解构点\n"
 
 #: src/custom_types/structs.md:68
 msgid "// struct instantiation is an expression too\n"
-msgstr ""
+msgstr "// 结构体的实例化也是一个表达式\n"
 
 #: src/custom_types/structs.md:73
 msgid "// Instantiate a unit struct\n"
-msgstr ""
+msgstr "// 实例化一个单元结构体\n"
 
 #: src/custom_types/structs.md:76
 msgid "// Instantiate a tuple struct\n"
-msgstr ""
+msgstr "// 实例化一个元组结构体\n"
 
 #: src/custom_types/structs.md:79
 msgid "// Access the fields of a tuple struct\n"
-msgstr ""
+msgstr "// 访问元组结构体的字段\n"
 
 #: src/custom_types/structs.md:80 src/custom_types/structs.md:85
 msgid "\"pair contains {:?} and {:?}\""
-msgstr ""
+msgstr "\"pair contains {:?} and {:?}\""
 
 #: src/custom_types/structs.md:82
 msgid "// Destructure a tuple struct\n"
-msgstr ""
+msgstr "// 解构一个元组结构体\n"
 
 #: src/custom_types/structs.md:91
 msgid ""
 "Add a function `rect_area` which calculates the area of a `Rectangle` (try "
 "using nested destructuring)."
-msgstr ""
+msgstr "添加一个 `rect_area` 函数来计算 `Rectangle` 的面积（尝试使用嵌套解构）。"
 
 #: src/custom_types/structs.md:93
 msgid ""
 "Add a function `square` which takes a `Point` and a `f32` as arguments, and "
 "returns a `Rectangle` with its top left corner on the point, and a width and "
 "height corresponding to the `f32`."
-msgstr ""
+msgstr "添加一个 `square` 函数，它以一个 `Point` 和一个 `f32` 作为参数，并返回一个 `Rectangle`，其左上角在该点上，宽度和高度都等于 `f32` 参数。"
 
 #: src/custom_types/structs.md:97
 msgid "See also"
-msgstr ""
+msgstr "另见"
 
 #: src/custom_types/structs.md:99
 msgid ""
 "[`attributes`](../attribute.md), [raw identifiers](../compatibility/"
 "raw_identifiers.md) and [destructuring](../flow_control/match/destructuring."
 "md)"
-msgstr ""
+msgstr "[`attributes`](../attribute.md)、[原始标识符](../compatibility/raw_identifiers.md) 和 [解构](../flow_control/match/destructuring.md)"
 
 #: src/custom_types/enum.md:3
 msgid ""
