@@ -2712,7 +2712,7 @@ msgid ""
 "The `enum` keyword allows the creation of a type which may be one of a few "
 "different variants. Any variant which is valid as a `struct` is also valid in "
 "an `enum`."
-msgstr ""
+msgstr "`enum` 关键字允许创建一个可能是几个不同变体之一的类型。任何作为 `struct` 有效的变体在 `enum` 中也是有效的。"
 
 #: src/custom_types/enum.md:8
 msgid ""
@@ -2721,105 +2721,112 @@ msgid ""
 "// `PageLoad != PageUnload` and `KeyPress(char) != Paste(String)`.\n"
 "// Each is different and independent.\n"
 msgstr ""
+"// 创建一个 `enum` 来分类网页事件。注意名称和类型信息如何一起指定变体：\n"
+"// `PageLoad != PageUnload` 且 `KeyPress(char) != Paste(String)`。\n"
+"// 每个都是不同且独立的。\n"
 
 #: src/custom_types/enum.md:13
 msgid "// An `enum` variant may either be `unit-like`,\n"
-msgstr ""
+msgstr "// 一个 `enum` 变体可以是 `unit-like`（类单元结构体），\n"
 
 #: src/custom_types/enum.md:16
 msgid "// like tuple structs,\n"
-msgstr ""
+msgstr "// 像元组结构体，\n"
 
 #: src/custom_types/enum.md:19
 msgid "// or c-like structures.\n"
-msgstr ""
+msgstr "// 或者像 C 语言风格的结构体。\n"
 
 #: src/custom_types/enum.md:22
 msgid ""
 "// A function which takes a `WebEvent` enum as an argument and\n"
 "// returns nothing.\n"
 msgstr ""
+"// 一个接受 `WebEvent` 枚举作为参数并且\n"
+"// 不返回任何值的函数。\n"
 
 #: src/custom_types/enum.md:27
 msgid "\"page loaded\""
-msgstr ""
+msgstr "\"页面已加载\""
 
 #: src/custom_types/enum.md:28
 msgid "\"page unloaded\""
-msgstr ""
+msgstr "\"页面已卸载\""
 
 #: src/custom_types/enum.md:29
 msgid "// Destructure `c` from inside the `enum` variant.\n"
-msgstr ""
+msgstr "// 从 `enum` 变体内部解构 `c`。\n"
 
 #: src/custom_types/enum.md:30
 msgid "\"pressed '{}'.\""
-msgstr ""
+msgstr "\"按下了 '{}'。\""
 
 #: src/custom_types/enum.md:31
 msgid "\"pasted \\\"{}\\\".\""
-msgstr ""
+msgstr "\"粘贴了 \\\"{}\\\"。\""
 
 #: src/custom_types/enum.md:32
 msgid "// Destructure `Click` into `x` and `y`.\n"
-msgstr ""
+msgstr "// 将 `Click` 解构为 `x` 和 `y`。\n"
 
 #: src/custom_types/enum.md:34
 msgid "\"clicked at x={}, y={}.\""
-msgstr ""
+msgstr "\"点击了 x={}, y={}。\""
 
 #: src/custom_types/enum.md:40
 msgid "'x'"
-msgstr ""
+msgstr "'x'"
 
 #: src/custom_types/enum.md:41
 msgid "// `to_owned()` creates an owned `String` from a string slice.\n"
-msgstr ""
+msgstr "// `to_owned()` 从字符串切片创建一个有所有权的 `String`。\n"
 
 #: src/custom_types/enum.md:42
 msgid "\"my text\""
-msgstr ""
+msgstr "\"我的文本\""
 
 #: src/custom_types/enum.md:56
 msgid "Type aliases"
-msgstr ""
+msgstr "类型别名"
 
 #: src/custom_types/enum.md:58
 msgid ""
 "If you use a type alias, you can refer to each enum variant via its alias. "
 "This might be useful if the enum's name is too long or too generic, and you "
 "want to rename it."
-msgstr ""
+msgstr "如果你使用类型别名，你可以通过别名引用每个枚举变体。如果枚举的名称太长或太通用，而你想重命名它时，这可能会很有用。"
 
 #: src/custom_types/enum.md:67
 msgid "// Creates a type alias\n"
-msgstr ""
+msgstr "// 创建一个类型别名\n"
 
 #: src/custom_types/enum.md:72
 msgid ""
 "// We can refer to each variant via its alias, not its long and inconvenient\n"
 "    // name.\n"
 msgstr ""
+"// 我们可以通过别名引用每个变体，而不是它的又长又不方便的\n"
+"    // 名称。\n"
 
 #: src/custom_types/enum.md:78
 msgid ""
 "The most common place you'll see this is in `impl` blocks using the `Self` "
 "alias."
-msgstr ""
+msgstr "你最常见到这种用法的地方是在使用 `Self` 别名的 `impl` 块中。"
 
 #: src/custom_types/enum.md:96
 msgid ""
 "To learn more about enums and type aliases, you can read the [stabilization "
 "report](https://github.com/rust-lang/rust/pull/61682/#issuecomment-502472847) "
 "from when this feature was stabilized into Rust."
-msgstr ""
+msgstr "要了解更多关于枚举和类型别名的信息，你可以阅读这个特性被稳定到 Rust 时的[稳定化报告](https://github.com/rust-lang/rust/pull/61682/#issuecomment-502472847)。"
 
 #: src/custom_types/enum.md:102
 msgid ""
 "[`match`](../flow_control/match.md), [`fn`](../fn.md), and [`String`](../std/"
 "str.md), [\"Type alias enum variants\" RFC](https://rust-lang.github.io/"
 "rfcs/2338-type-alias-enum-variants.html)"
-msgstr ""
+msgstr "[`match`](../flow_control/match.md)、[`fn`](../fn.md) 和 [`String`](../std/str.md)、[\"类型别名枚举变体\" RFC](https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html)"
 
 #: src/custom_types/enum/enum_use.md:3
 msgid "The `use` declaration can be used so manual scoping isn't needed:"
