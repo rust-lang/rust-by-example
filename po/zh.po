@@ -2830,199 +2830,208 @@ msgstr "[`match`](../flow_control/match.md)、[`fn`](../fn.md) 和 [`String`](..
 
 #: src/custom_types/enum/enum_use.md:3
 msgid "The `use` declaration can be used so manual scoping isn't needed:"
-msgstr ""
+msgstr "`use` 声明可以用来避免手动作用域限定："
 
 #: src/custom_types/enum/enum_use.md:20
 msgid ""
 "// Explicitly `use` each name so they are available without\n"
 "    // manual scoping.\n"
 msgstr ""
+"// 显式 `use` 每个名称，这样它们就可以不用\n"
+"    // 手动作用域限定而直接使用。\n"
 
 #: src/custom_types/enum/enum_use.md:23
 msgid "// Automatically `use` each name inside `Role`.\n"
-msgstr ""
+msgstr "// 自动 `use` `Role` 内部的每个名称。\n"
 
 #: src/custom_types/enum/enum_use.md:26
 msgid "// Equivalent to `Stage::Beginner`.\n"
-msgstr ""
+msgstr "// 等同于 `Stage::Beginner`。\n"
 
 #: src/custom_types/enum/enum_use.md:28
 msgid "// Equivalent to `Role::Student`.\n"
-msgstr ""
+msgstr "// 等同于 `Role::Student`。\n"
 
 #: src/custom_types/enum/enum_use.md:32
 msgid "// Note the lack of scoping because of the explicit `use` above.\n"
-msgstr ""
+msgstr "// 注意由于上面的显式 `use`，这里不需要作用域限定。\n"
 
 #: src/custom_types/enum/enum_use.md:33
 msgid "\"Beginners are starting their learning journey!\""
-msgstr ""
+msgstr "\"初学者正在开始他们的学习之旅！\""
 
 #: src/custom_types/enum/enum_use.md:34
 msgid "\"Advanced learners are mastering their subjects...\""
-msgstr ""
+msgstr "\"高级学习者正在掌握他们的科目...\""
 
 #: src/custom_types/enum/enum_use.md:38
 msgid "// Note again the lack of scoping.\n"
-msgstr ""
+msgstr "// 再次注意这里不需要作用域限定。\n"
 
 #: src/custom_types/enum/enum_use.md:39
 msgid "\"Students are acquiring knowledge!\""
-msgstr ""
+msgstr "\"学生正在获取知识！\""
 
 #: src/custom_types/enum/enum_use.md:40
 msgid "\"Teachers are spreading knowledge!\""
-msgstr ""
+msgstr "\"教师正在传播知识！\""
 
 #: src/custom_types/enum/enum_use.md:47
 msgid "[`match`](../../flow_control/match.md) and [`use`](../../mod/use.md)"
-msgstr ""
+msgstr "[`match`](../../flow_control/match.md) 和 [`use`](../../mod/use.md)"
 
 #: src/custom_types/enum/c_like.md:3
 msgid "`enum` can also be used as C-like enums."
-msgstr ""
+msgstr "`enum` 也可以像 C 语言那样使用。"
 
 #: src/custom_types/enum/c_like.md:8
 msgid "// enum with implicit discriminator (starts at 0)\n"
-msgstr ""
+msgstr "// 隐式辨别值（从 0 开始）的枚举\n"
 
 #: src/custom_types/enum/c_like.md:15
 msgid "// enum with explicit discriminator\n"
-msgstr ""
+msgstr "// 显式辨别值的枚举\n"
 
 #: src/custom_types/enum/c_like.md:24
 msgid "// `enums` can be cast as integers.\n"
-msgstr ""
+msgstr "// `enum` 可以转换为整数。\n"
 
 #: src/custom_types/enum/c_like.md:25
 msgid "\"zero is {}\""
-msgstr ""
+msgstr "\"zero 是 {}\""
 
 #: src/custom_types/enum/c_like.md:26
 msgid "\"one is {}\""
-msgstr ""
+msgstr "\"one 是 {}\""
 
 #: src/custom_types/enum/c_like.md:28
 msgid "\"roses are #{:06x}\""
-msgstr ""
+msgstr "\"玫瑰花是 #{:06x}\""
 
 #: src/custom_types/enum/c_like.md:29
 msgid "\"violets are #{:06x}\""
-msgstr ""
+msgstr "\"紫罗兰是 #{:06x}\""
 
 #: src/custom_types/enum/c_like.md:35
 msgid "[casting](../../types/cast.md)"
-msgstr ""
+msgstr "[类型转换](../../types/cast.md)"
 
 #: src/custom_types/enum/testcase_linked_list.md:3
 msgid "A common way to implement a linked-list is via `enums`:"
-msgstr ""
+msgstr "使用 `enum` 实现链表是一种常见的方法："
 
 #: src/custom_types/enum/testcase_linked_list.md:9
 msgid ""
 "// Cons: Tuple struct that wraps an element and a pointer to the next node\n"
-msgstr ""
+msgstr "// Cons：元组结构体包含一个元素和一个指向下一节点的指针\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:11
 msgid "// Nil: A node that signifies the end of the linked list\n"
-msgstr ""
+msgstr "// Nil：表示链表结束的节点\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:14
 msgid "// Methods can be attached to an enum\n"
-msgstr ""
+msgstr "// 可以为枚举实现方法\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:17
 msgid "// Create an empty list\n"
-msgstr ""
+msgstr "// 创建一个空链表\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:19
 msgid "// `Nil` has type `List`\n"
-msgstr ""
+msgstr "// `Nil` 属于 `List` 类型\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:23
 msgid ""
 "// Consume a list, and return the same list with a new element at its front\n"
-msgstr ""
+msgstr "// 处理一个链表，并返回在其头部插入新元素后的同一链表\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:25
 msgid "// `Cons` also has type List\n"
-msgstr ""
+msgstr "// `Cons` 也是 List 类型\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:29
 msgid "// Return the length of the list\n"
-msgstr ""
+msgstr "// 返回链表的长度\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:31
 msgid ""
 "// `self` has to be matched, because the behavior of this method\n"
 "        // depends on the variant of `self`\n"
-"        // `self` has type `&List`, and `*self` has type `List`, matching on "
-"a\n"
+"        // `self` has type `&List`, and `*self` has type `List`, matching on a\n"
 "        // concrete type `T` is preferred over a match on a reference `&T`\n"
-"        // after Rust 2018 you can use self here and tail (with no ref) below "
-"as well,\n"
+"        // after Rust 2018 you can use self here and tail (with no ref) below as well,\n"
 "        // rust will infer &s and ref tail. \n"
-"        // See https://doc.rust-lang.org/edition-guide/rust-2018/ownership-"
-"and-lifetimes/default-match-bindings.html\n"
+"        // See https://doc.rust-lang.org/edition-guide/rust-2018/ownership-and-lifetimes/default-match-bindings.html\n"
 msgstr ""
+"// 必须对 `self` 进行匹配，因为这个方法的行为取决于 `self` 的成员\n"
+"        // `self` 的类型是 `&List`，而 `*self` 的类型是 `List`，匹配一个具体的\n"
+"        // 类型 `T` 要优于匹配一个引用 `&T`\n"
+"        // 在 Rust 2018 之后，你也可以在这里使用 self，在下面使用 tail（不带 ref），\n"
+"        // Rust 会推断出 &s 和 ref tail。\n"
+"        // 参见 https://doc.rust-lang.org/edition-guide/rust-2018/ownership-and-lifetimes/default-match-bindings.html\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:39
 msgid ""
 "// Can't take ownership of the tail, because `self` is borrowed;\n"
 "            // instead take a reference to the tail\n"
 msgstr ""
+"// 不能获取 tail 的所有权，因为 `self` 是借用的；\n"
+"            // 相反，我们获取 tail 的引用\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:42
 msgid "// Base Case: An empty list has zero length\n"
-msgstr ""
+msgstr "// 基本情况：空链表的长度为零\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:47
 msgid "// Return representation of the list as a (heap allocated) string\n"
-msgstr ""
+msgstr "// 返回链表的字符串表示（堆分配）\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:51
 msgid ""
 "// `format!` is similar to `print!`, but returns a heap\n"
 "                // allocated string instead of printing to the console\n"
 msgstr ""
+"// `format!` 类似于 `print!`，但返回一个堆分配的字符串，\n"
+"                // 而不是打印到控制台\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:53 src/generics/impl.md:44
 msgid "\"{}, {}\""
-msgstr ""
+msgstr "\"{}, {}\""
 
 #: src/custom_types/enum/testcase_linked_list.md:56
 msgid "\"Nil\""
-msgstr ""
+msgstr "\"Nil\""
 
 #: src/custom_types/enum/testcase_linked_list.md:63
 msgid "// Create an empty linked list\n"
-msgstr ""
+msgstr "// 创建一个空链表\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:66
 msgid "// Prepend some elements\n"
-msgstr ""
+msgstr "// 在头部添加一些元素\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:71
 msgid "// Show the final state of the list\n"
-msgstr ""
+msgstr "// 显示链表的最终状态\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:72
 msgid "\"linked list has length: {}\""
-msgstr ""
+msgstr "\"链表的长度为：{}\""
 
 #: src/custom_types/enum/testcase_linked_list.md:79
 msgid "[`Box`](../../std/box.md) and [methods](../../fn/methods.md)"
-msgstr ""
+msgstr "[`Box`](../../std/box.md) 和 [方法](../../fn/methods.md)"
 
 #: src/custom_types/constants.md:3
 msgid ""
 "Rust has two different types of constants which can be declared in any scope "
 "including global. Both require explicit type annotation:"
-msgstr ""
+msgstr "Rust 有两种不同类型的常量，可以在包括全局作用域在内的任何作用域中声明。两者都需要显式的类型注解："
 
 #: src/custom_types/constants.md:6
 msgid "`const`: An unchangeable value (the common case)."
-msgstr ""
+msgstr "`const`：不可改变的值（常见用法）。"
 
 #: src/custom_types/constants.md:7
 msgid ""
@@ -3031,46 +3040,48 @@ msgid ""
 "have to be specified. Accessing or modifying a mutable static variable is "
 "[`unsafe`](../unsafe.md)."
 msgstr ""
+"`static`：具有 [`'static`](../scope/lifetime/static_lifetime.md) 生命周期的可能可变的变量。"
+"静态生命周期是自动推断的，不需要明确指定。访问或修改可变静态变量是 [`unsafe`](../unsafe.md) 的。"
 
 #: src/custom_types/constants.md:12
 msgid "// Globals are declared outside all other scopes.\n"
-msgstr ""
+msgstr "// 全局变量在所有其他作用域之外声明。\n"
 
 #: src/custom_types/constants.md:13
 msgid "\"Rust\""
-msgstr ""
+msgstr "\"Rust\""
 
 #: src/custom_types/constants.md:17
 msgid "// Access constant in some function\n"
-msgstr ""
+msgstr "// 在某个函数中访问常量\n"
 
 #: src/custom_types/constants.md:24
 msgid "// Access constant in the main thread\n"
-msgstr ""
+msgstr "// 在主线程中访问常量\n"
 
 #: src/custom_types/constants.md:25
 msgid "\"This is {}\""
-msgstr ""
+msgstr "\"这是 {}\""
 
 #: src/custom_types/constants.md:26
 msgid "\"The threshold is {}\""
-msgstr ""
+msgstr "\"阈值是 {}\""
 
 #: src/custom_types/constants.md:27
 msgid "\"{} is {}\""
-msgstr ""
+msgstr "\"{} 是 {}\""
 
 #: src/custom_types/constants.md:27
 msgid "\"big\""
-msgstr ""
+msgstr "\"大的\""
 
 #: src/custom_types/constants.md:27
 msgid "\"small\""
-msgstr ""
+msgstr "\"小的\""
 
 #: src/custom_types/constants.md:29
 msgid "// Error! Cannot modify a `const`.\n"
-msgstr ""
+msgstr "// 错误！不能修改 `const`。\n"
 
 #: src/custom_types/constants.md:31 src/variable_bindings/scope.md:21
 #: src/variable_bindings/declare.md:25 src/variable_bindings/freeze.md:16
@@ -3078,7 +3089,7 @@ msgstr ""
 #: src/scope/borrow.md:41 src/scope/borrow/mut.md:52 src/std/vec.md:31
 #: src/std/vec.md:44 src/std/hash/hashset.md:48
 msgid "// FIXME ^ Comment out this line\n"
-msgstr ""
+msgstr "// 修复 ^ 注释掉这一行\n"
 
 #: src/custom_types/constants.md:37
 msgid ""
@@ -3086,6 +3097,9 @@ msgid ""
 "text/0246-const-vs-static.md), [`'static` lifetime](../scope/lifetime/"
 "static_lifetime.md)"
 msgstr ""
+"[`const`/`static` RFC](https://github.com/rust-lang/rfcs/blob/master/"
+"text/0246-const-vs-static.md)，[`'static` 生命周期](../scope/lifetime/"
+"static_lifetime.md)"
 
 #: src/variable_bindings.md:3
 msgid ""
