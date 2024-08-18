@@ -3312,22 +3312,23 @@ msgid ""
 "Rust provides several mechanisms to change or define the type of primitive "
 "and user defined types. The following sections cover:"
 msgstr ""
+"Rust 提供了几种机制来更改或定义原始类型和用户定义类型。以下部分涵盖了："
 
 #: src/types.md:5
 msgid "[Casting](types/cast.md) between primitive types"
-msgstr ""
+msgstr "原始类型之间的[转换](types/cast.md)"
 
 #: src/types.md:6
 msgid "Specifying the desired type of [literals](types/literals.md)"
-msgstr ""
+msgstr "指定[字面值](types/literals.md)的所需类型"
 
 #: src/types.md:7
 msgid "Using [type inference](types/inference.md)"
-msgstr ""
+msgstr "使用[类型推断](types/inference.md)"
 
 #: src/types.md:8
 msgid "[Aliasing](types/alias.md) types"
-msgstr ""
+msgstr "[别名化](types/alias.md)类型"
 
 #: src/types/cast.md:3
 msgid ""
@@ -3335,6 +3336,7 @@ msgid ""
 "But, explicit type conversion (casting) can be performed using the `as` "
 "keyword."
 msgstr ""
+"Rust 不提供原始类型之间的隐式类型转换（coercion, 强制转换）。但是，可以使用 `as` 关键字执行显式类型转换（casting）。"
 
 #: src/types/cast.md:6
 msgid ""
@@ -3342,28 +3344,31 @@ msgid ""
 "except in cases where C has undefined behavior. The behavior of all casts "
 "between integral types is well defined in Rust."
 msgstr ""
+"整型类型之间的转换规则通常遵循 C 语言的惯例，除了 C 语言中存在未定义行为的情况。在 Rust 中，所有整型类型之间的转换行为都是明确定义的。"
 
 #: src/types/cast.md:11
 msgid "// Suppress all warnings from casts which overflow.\n"
-msgstr ""
+msgstr "// 抑制所有来自溢出转换的警告。\n"
 
 #: src/types/cast.md:17
 msgid "// Error! No implicit conversion\n"
-msgstr ""
+msgstr "// 错误！没有隐式转换\n"
 
 #: src/types/cast.md:21
 msgid "// Explicit conversion\n"
-msgstr ""
+msgstr "// 显式转换\n"
 
 #: src/types/cast.md:25
 msgid ""
 "// Error! There are limitations in conversion rules.\n"
 "    // A float cannot be directly converted to a char.\n"
 msgstr ""
+"// 错误！转换规则有限制。\n"
+"    // 浮点数不能直接转换为字符。\n"
 
 #: src/types/cast.md:30
 msgid "\"Casting: {} -> {} -> {}\""
-msgstr ""
+msgstr "\"转换：{} -> {} -> {}\""
 
 #: src/types/cast.md:32
 msgid ""
@@ -3371,14 +3376,17 @@ msgid ""
 "    // T::MAX + 1 is added or subtracted until the value\n"
 "    // fits into the new type\n"
 msgstr ""
+"// 当将任何值转换为无符号类型 T 时，\n"
+"    // 会不断加上或减去 T::MAX + 1，直到该值\n"
+"    // 适合新类型\n"
 
 #: src/types/cast.md:36
 msgid "// 1000 already fits in a u16\n"
-msgstr ""
+msgstr "// 1000 已经适合 u16\n"
 
 #: src/types/cast.md:37
 msgid "\"1000 as a u16 is: {}\""
-msgstr ""
+msgstr "\"1000 作为 u16 是：{}\""
 
 #: src/types/cast.md:39
 msgid ""
@@ -3386,26 +3394,29 @@ msgid ""
 "    // Under the hood, the first 8 least significant bits (LSB) are kept,\n"
 "    // while the rest towards the most significant bit (MSB) get truncated.\n"
 msgstr ""
+"// 1000 - 256 - 256 - 256 = 232\n"
+"    // 在底层，保留了最低有效位（LSB）的前 8 位，\n"
+"    // 而朝最高有效位（MSB）方向的其余位被截断。\n"
 
 #: src/types/cast.md:42 src/types/cast.md:61
 msgid "\"1000 as a u8 is : {}\""
-msgstr ""
+msgstr "\"1000 作为 u8 是：{}\""
 
 #: src/types/cast.md:43
 msgid "// -1 + 256 = 255\n"
-msgstr ""
+msgstr "// -1 + 256 = 255\n"
 
 #: src/types/cast.md:44
 msgid "\"  -1 as a u8 is : {}\""
-msgstr ""
+msgstr "\"  -1 作为 u8 是：{}\""
 
 #: src/types/cast.md:46
 msgid "// For positive numbers, this is the same as the modulus\n"
-msgstr ""
+msgstr "// 对于正数，这与取模操作相同\n"
 
 #: src/types/cast.md:47
 msgid "\"1000 mod 256 is : {}\""
-msgstr ""
+msgstr "\"1000 mod 256 是：{}\""
 
 #: src/types/cast.md:49
 msgid ""
@@ -3414,39 +3425,44 @@ msgid ""
 "significant\n"
 "    // bit of that value is 1, then the value is negative.\n"
 msgstr ""
+"// 当转换为有符号类型时，（按位）结果与\n"
+"    // 首先转换为相应的无符号类型相同。如果该值的最高有效位\n"
+"    // 是 1，那么该值为负数。\n"
 
 #: src/types/cast.md:53
 msgid "// Unless it already fits, of course.\n"
-msgstr ""
+msgstr "// 当然，除非它已经适合。\n"
 
 #: src/types/cast.md:54
 msgid "\" 128 as a i16 is: {}\""
-msgstr ""
+msgstr "\" 128 作为 i16 是：{}\""
 
 #: src/types/cast.md:56
 msgid ""
 "// In boundary case 128 value in 8-bit two's complement representation is "
 "-128\n"
-msgstr ""
+msgstr "// 在边界情况下，128 在 8 位二进制补码表示中是 -128\n"
 
 #: src/types/cast.md:57
 msgid "\" 128 as a i8 is : {}\""
-msgstr ""
+msgstr "\" 128 作为 i8 是：{}\""
 
 #: src/types/cast.md:59
 msgid ""
 "// repeating the example above\n"
 "    // 1000 as u8 -> 232\n"
 msgstr ""
+"// 重复上面的例子\n"
+"    // 1000 作为 u8 -> 232\n"
 
 #: src/types/cast.md:62
 msgid ""
 "// and the value of 232 in 8-bit two's complement representation is -24\n"
-msgstr ""
+msgstr "// 而 232 在 8 位二进制补码表示中是 -24\n"
 
 #: src/types/cast.md:63
 msgid "\" 232 as a i8 is : {}\""
-msgstr ""
+msgstr "\" 232 作为 i8 是：{}\""
 
 #: src/types/cast.md:65
 msgid ""
@@ -3455,30 +3471,33 @@ msgid ""
 "    // the upper bound or is less than the lower bound, the returned value\n"
 "    // will be equal to the bound crossed.\n"
 msgstr ""
+"// 从 Rust 1.45 开始，`as` 关键字在从浮点数转换为整数时执行*饱和转换*\n"
+"    // 如果浮点值超过上界或小于下界，返回值\n"
+"    // 将等于所跨越的边界。\n"
 
 #: src/types/cast.md:70
 msgid "// 300.0 as u8 is 255\n"
-msgstr ""
+msgstr "// 300.0 作为 u8 是 255\n"
 
 #: src/types/cast.md:71 src/types/cast.md:82
 msgid "\" 300.0 as u8 is : {}\""
-msgstr ""
+msgstr "\" 300.0 作为 u8 是：{}\""
 
 #: src/types/cast.md:72
 msgid "// -100.0 as u8 is 0\n"
-msgstr ""
+msgstr "// -100.0 作为 u8 是 0\n"
 
 #: src/types/cast.md:73 src/types/cast.md:84
 msgid "\"-100.0 as u8 is : {}\""
-msgstr ""
+msgstr "\"-100.0 作为 u8 是：{}\""
 
 #: src/types/cast.md:74 src/types/cast.md:85
 msgid "// nan as u8 is 0\n"
-msgstr ""
+msgstr "// nan 作为 u8 是 0\n"
 
 #: src/types/cast.md:75 src/types/cast.md:86
 msgid "\"   nan as u8 is : {}\""
-msgstr ""
+msgstr "\"   nan 作为 u8 是：{}\""
 
 #: src/types/cast.md:77
 msgid ""
@@ -3486,14 +3505,17 @@ msgid ""
 "    // with unsafe methods, however the results might overflow and\n"
 "    // return **unsound values**. Use these methods wisely:\n"
 msgstr ""
+"// 这种行为会产生小的运行时开销，可以通过\n"
+"    // 不安全的方法来避免，但是结果可能会溢出并\n"
+"    // 返回**不健全的值**。请谨慎使用这些方法：\n"
 
 #: src/types/cast.md:81
 msgid "// 300.0 as u8 is 44\n"
-msgstr ""
+msgstr "// 300.0 作为 u8 是 44\n"
 
 #: src/types/cast.md:83
 msgid "// -100.0 as u8 is 156\n"
-msgstr ""
+msgstr "// -100.0 作为 u8 是 156\n"
 
 #: src/types/literals.md:3
 msgid ""
@@ -3501,6 +3523,7 @@ msgid ""
 "example, to specify that the literal `42` should have the type `i32`, write "
 "`42i32`."
 msgstr ""
+"数字字面值可以通过添加类型作为后缀来进行类型注解。例如，要指定字面值 `42` 应该具有 `i32` 类型，可以写成 `42i32`。"
 
 #: src/types/literals.md:6
 msgid ""
@@ -3508,44 +3531,46 @@ msgid ""
 "no constraint exists, the compiler will use `i32` for integers, and `f64` for "
 "floating-point numbers."
 msgstr ""
+"无后缀数字字面值的类型将取决于它们的使用方式。如果没有约束，编译器将对整数使用 `i32`，对浮点数使用 `f64`。"
 
 #: src/types/literals.md:12
 msgid "// Suffixed literals, their types are known at initialization\n"
-msgstr ""
+msgstr "// 带后缀的字面值，它们的类型在初始化时就已知\n"
 
 #: src/types/literals.md:17
 msgid "// Unsuffixed literals, their types depend on how they are used\n"
-msgstr ""
+msgstr "// 无后缀的字面值，它们的类型取决于使用方式\n"
 
 #: src/types/literals.md:21
 msgid "// `size_of_val` returns the size of a variable in bytes\n"
-msgstr ""
+msgstr "// `size_of_val` 返回变量的大小（以字节为单位）\n"
 
 #: src/types/literals.md:22
 msgid "\"size of `x` in bytes: {}\""
-msgstr ""
+msgstr "\"x 的大小（字节）：{}\""
 
 #: src/types/literals.md:23
 msgid "\"size of `y` in bytes: {}\""
-msgstr ""
+msgstr "\"y 的大小（字节）：{}\""
 
 #: src/types/literals.md:24
 msgid "\"size of `z` in bytes: {}\""
-msgstr ""
+msgstr "\"z 的大小（字节）：{}\""
 
 #: src/types/literals.md:25
 msgid "\"size of `i` in bytes: {}\""
-msgstr ""
+msgstr "\"i 的大小（字节）：{}\""
 
 #: src/types/literals.md:26
 msgid "\"size of `f` in bytes: {}\""
-msgstr ""
+msgstr "\"f 的大小（字节）：{}\""
 
 #: src/types/literals.md:30
 msgid ""
 "There are some concepts used in the previous code that haven't been explained "
 "yet, here's a brief explanation for the impatient readers:"
 msgstr ""
+"上面的代码中使用了一些尚未解释的概念，这里为急于了解的读者提供一个简短的解释："
 
 #: src/types/literals.md:33
 msgid ""
@@ -3555,6 +3580,7 @@ msgid ""
 "is defined in the `std` _crate_. For more details, see [modules](../mod.md) "
 "and [crates](../crates.md)."
 msgstr ""
+"`std::mem::size_of_val` 是一个函数，但使用其**完整路径**调用。代码可以分割成称为**模块**的逻辑单元。在这种情况下，`size_of_val` 函数定义在 `mem` 模块中，而 `mem` 模块定义在 `std` *crate* 中。更多详情，请参见[模块](../mod.md)和[crate](../crates.md)。"
 
 #: src/types/inference.md:3
 msgid ""
@@ -3563,37 +3589,43 @@ msgid ""
 "the variable is used afterwards to infer its type. Here's an advanced example "
 "of type inference:"
 msgstr ""
+"类型推断引擎非常智能。它不仅在初始化期间查看值表达式的类型，还会查看变量后续如何使用来推断其类型。以下是一个高级的类型推断示例："
 
 #: src/types/inference.md:10
 msgid ""
 "// Because of the annotation, the compiler knows that `elem` has type u8.\n"
 msgstr ""
+"// 由于注解，编译器知道 `elem` 的类型是 u8。\n"
 
 #: src/types/inference.md:13
 msgid "// Create an empty vector (a growable array).\n"
-msgstr ""
+msgstr "// 创建一个空向量（可增长的数组）。\n"
 
 #: src/types/inference.md:15
 msgid ""
 "// At this point the compiler doesn't know the exact type of `vec`, it\n"
 "    // just knows that it's a vector of something (`Vec<_>`).\n"
 msgstr ""
+"// 在这一点上，编译器不知道 `vec` 的确切类型，\n"
+"    // 它只知道这是一个某种类型的向量（`Vec<_>`）。\n"
 
 #: src/types/inference.md:18
 msgid "// Insert `elem` in the vector.\n"
-msgstr ""
+msgstr "// 将 `elem` 插入向量。\n"
 
 #: src/types/inference.md:20
 msgid ""
 "// Aha! Now the compiler knows that `vec` is a vector of `u8`s (`Vec<u8>`)\n"
 "    // TODO ^ Try commenting out the `vec.push(elem)` line\n"
 msgstr ""
+"// 啊哈！现在编译器知道 `vec` 是一个 `u8` 类型的向量（`Vec<u8>`）\n"
+"    // TODO ^ 尝试注释掉 `vec.push(elem)` 这一行\n"
 
 #: src/types/inference.md:27
 msgid ""
 "No type annotation of variables was needed, the compiler is happy and so is "
 "the programmer!"
-msgstr ""
+msgstr "不需要变量的类型注解，编译器很开心，程序员也很开心！"
 
 #: src/types/alias.md:3
 msgid ""
@@ -3601,34 +3633,37 @@ msgid ""
 "Types must have `UpperCamelCase` names, or the compiler will raise a warning. "
 "The exception to this rule are the primitive types: `usize`, `f32`, etc."
 msgstr ""
+"`type` 语句可以用来给一个已存在的类型起一个新名字。类型必须有 `UpperCamelCase`（大驼峰）的名字，否则编译器会发出警告。这个规则的例外是原始类型：`usize`、`f32` 等。"
 
 #: src/types/alias.md:8
 msgid "// `NanoSecond`, `Inch`, and `U64` are new names for `u64`.\n"
-msgstr ""
+msgstr "// `NanoSecond`、`Inch` 和 `U64` 都是 `u64` 的新名字。\n"
 
 #: src/types/alias.md:14
 msgid "// `NanoSecond` = `Inch` = `U64` = `u64`.\n"
-msgstr ""
+msgstr "// `NanoSecond` = `Inch` = `U64` = `u64`。\n"
 
 #: src/types/alias.md:18
 msgid ""
 "// Note that type aliases *don't* provide any extra type safety, because\n"
 "    // aliases are *not* new types\n"
 msgstr ""
+"// 注意类型别名**不**提供任何额外的类型安全性，因为别名**不是**新的类型\n"
 
 #: src/types/alias.md:20
 msgid "\"{} nanoseconds + {} inches = {} unit?\""
-msgstr ""
+msgstr "\"{} 纳秒 + {} 英寸 = {} 单位？\""
 
 #: src/types/alias.md:27
 msgid ""
 "The main use of aliases is to reduce boilerplate; for example the `io::"
 "Result<T>` type is an alias for the `Result<T, io::Error>` type."
 msgstr ""
+"别名的主要用途是减少样板代码；例如，`io::Result<T>` 类型是 `Result<T, io::Error>` 类型的别名。"
 
 #: src/types/alias.md:32
 msgid "[Attributes](../attribute.md)"
-msgstr ""
+msgstr "[属性](../attribute.md)"
 
 #: src/conversion.md:3
 msgid ""
