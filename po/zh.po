@@ -3862,7 +3862,7 @@ msgstr "\"    3 \""
 
 #: src/expression.md:3
 msgid "A Rust program is (mostly) made up of a series of statements:"
-msgstr ""
+msgstr "Rust 程序（大部分）由一系列语句组成:"
 
 #: src/expression.md:7
 msgid ""
@@ -3870,20 +3870,23 @@ msgid ""
 "    // statement\n"
 "    // statement\n"
 msgstr ""
+"// 语句\n"
+"    // 语句\n"
+"    // 语句\n"
 
 #: src/expression.md:13
 msgid ""
 "There are a few kinds of statements in Rust. The most common two are "
 "declaring a variable binding, and using a `;` with an expression:"
-msgstr ""
+msgstr "Rust 中有几种语句。最常见的两种是声明变量绑定，以及在表达式后使用 `;`:"
 
 #: src/expression.md:18
 msgid "// variable binding\n"
-msgstr ""
+msgstr "// 变量绑定\n"
 
 #: src/expression.md:21
 msgid "// expression;\n"
-msgstr ""
+msgstr "// 表达式;\n"
 
 #: src/expression.md:28
 msgid ""
@@ -3891,34 +3894,34 @@ msgid ""
 "last expression in the block will be assigned to the place expression such as "
 "a local variable. However, if the last expression of the block ends with a "
 "semicolon, the return value will be `()`."
-msgstr ""
+msgstr "代码块也是表达式，所以它们可以用作赋值中的值。代码块中的最后一个表达式将被赋值给左值表达式，比如局部变量。但是，如果代码块的最后一个表达式以分号结尾，返回值将是 `()`。"
 
 #: src/expression.md:41
 msgid "// This expression will be assigned to `y`\n"
-msgstr ""
+msgstr "// 这个表达式将被赋值给 `y`\n"
 
 #: src/expression.md:46
 msgid ""
 "// The semicolon suppresses this expression and `()` is assigned to `z`\n"
-msgstr ""
+msgstr "// 分号抑制了这个表达式，`()` 被赋值给 `z`\n"
 
 #: src/expression.md:50
 msgid "\"x is {:?}\""
-msgstr ""
+msgstr "\"x 是 {:?}\""
 
 #: src/expression.md:51
 msgid "\"y is {:?}\""
-msgstr ""
+msgstr "\"y 是 {:?}\""
 
 #: src/expression.md:52
 msgid "\"z is {:?}\""
-msgstr ""
+msgstr "\"z 是 {:?}\""
 
 #: src/flow_control.md:3
 msgid ""
 "An integral part of any programming language are ways to modify control flow: "
 "`if`/`else`, `for`, and others. Let's talk about them in Rust."
-msgstr ""
+msgstr "任何编程语言的一个重要部分是修改控制流的方法：`if`/`else`、`for` 等。让我们来讨论 Rust 中的这些内容。"
 
 #: src/flow_control/if_else.md:3
 msgid ""
@@ -3926,116 +3929,118 @@ msgid ""
 "them, the boolean condition doesn't need to be surrounded by parentheses, and "
 "each condition is followed by a block. `if`\\-`else` conditionals are "
 "expressions, and, all branches must return the same type."
-msgstr ""
+msgstr "使用 `if`\\-`else` 分支和其他语言类似。与许多语言不同的是，布尔条件不需要用括号括起来，每个条件后面都跟着一个代码块。`if`\\-`else` 条件是表达式，并且所有分支必须返回相同的类型。"
 
 #: src/flow_control/if_else.md:13
 msgid "\"{} is negative\""
-msgstr ""
+msgstr "\"{} 是负数\""
 
 #: src/flow_control/if_else.md:15
 msgid "\"{} is positive\""
-msgstr ""
+msgstr "\"{} 是正数\""
 
 #: src/flow_control/if_else.md:17
 msgid "\"{} is zero\""
-msgstr ""
+msgstr "\"{} 是零\""
 
 #: src/flow_control/if_else.md:22
 msgid "\", and is a small number, increase ten-fold\""
-msgstr ""
+msgstr "\"，是一个小数字，扩大十倍\""
 
 #: src/flow_control/if_else.md:24
 msgid "// This expression returns an `i32`.\n"
-msgstr ""
+msgstr "// 这个表达式返回一个 `i32`。\n"
 
 #: src/flow_control/if_else.md:27
 msgid "\", and is a big number, halve the number\""
-msgstr ""
+msgstr "\"，是一个大数字，将数字减半\""
 
 #: src/flow_control/if_else.md:29
 msgid "// This expression must return an `i32` as well.\n"
-msgstr ""
+msgstr "// 这个表达式也必须返回一个 `i32`。\n"
 
 #: src/flow_control/if_else.md:31
 msgid "// TODO ^ Try suppressing this expression with a semicolon.\n"
-msgstr ""
+msgstr "// TODO ^ 尝试用分号结束这个表达式。\n"
 
 #: src/flow_control/if_else.md:33
 msgid ""
 "//   ^ Don't forget to put a semicolon here! All `let` bindings need it.\n"
-msgstr ""
+msgstr "//   ^ 别忘了在这里加分号！所有的 `let` 绑定都需要它。\n"
 
 #: src/flow_control/if_else.md:35 src/flow_control/match.md:35
 msgid "\"{} -> {}\""
-msgstr ""
+msgstr "\"{} -> {}\""
 
 #: src/flow_control/loop.md:3
 msgid "Rust provides a `loop` keyword to indicate an infinite loop."
-msgstr ""
+msgstr "Rust 提供了 `loop` 关键字来表示一个无限循环。"
 
 #: src/flow_control/loop.md:5
 msgid ""
 "The `break` statement can be used to exit a loop at anytime, whereas the "
 "`continue` statement can be used to skip the rest of the iteration and start "
 "a new one."
-msgstr ""
+msgstr "`break` 语句可以随时退出循环，而 `continue` 语句可以用来跳过本次迭代的剩余部分并开始新的迭代。"
 
 #: src/flow_control/loop.md:13
 msgid "\"Let's count until infinity!\""
-msgstr ""
+msgstr "\"让我们数到无穷大！\""
 
 #: src/flow_control/loop.md:15
 msgid "// Infinite loop\n"
-msgstr ""
+msgstr "// 无限循环\n"
 
 #: src/flow_control/loop.md:20
 msgid "\"three\""
-msgstr ""
+msgstr "\"three\""
 
 #: src/flow_control/loop.md:22
 msgid "// Skip the rest of this iteration\n"
-msgstr ""
+msgstr "// 跳过本次迭代的剩余部分\n"
 
 #: src/flow_control/loop.md:29
 msgid "\"OK, that's enough\""
-msgstr ""
+msgstr "\"好了，够了\""
 
 #: src/flow_control/loop.md:31
 msgid "// Exit this loop\n"
-msgstr ""
+msgstr "// 退出这个循环\n"
 
 #: src/flow_control/loop/nested.md:3
 msgid ""
 "It's possible to `break` or `continue` outer loops when dealing with nested "
 "loops. In these cases, the loops must be annotated with some `'label`, and "
 "the label must be passed to the `break`/`continue` statement."
-msgstr ""
+msgstr "在处理嵌套循环时，可以 `break` 或 `continue` 外层循环。在这些情况下，循环必须用某个 `'label` 标记，并且必须将标签传递给 `break`/`continue` 语句。"
 
 #: src/flow_control/loop/nested.md:12
 msgid "\"Entered the outer loop\""
-msgstr ""
+msgstr "\"进入外层循环\""
 
 #: src/flow_control/loop/nested.md:15
 msgid "\"Entered the inner loop\""
-msgstr ""
+msgstr "\"进入内层循环\""
 
 #: src/flow_control/loop/nested.md:17
 msgid ""
 "// This would break only the inner loop\n"
 "            //break;\n"
 msgstr ""
+"// 这只会中断内层循环\n"
+"            //break;\n"
 
 #: src/flow_control/loop/nested.md:20
 msgid "// This breaks the outer loop\n"
-msgstr ""
+msgstr "// 这会中断外层循环\n"
 
 #: src/flow_control/loop/nested.md:24
 msgid "\"This point will never be reached\""
-msgstr ""
+msgstr "\"永远不会到达这一点\""
 
 #: src/flow_control/loop/nested.md:27
 msgid "\"Exited the outer loop\""
-msgstr ""
+msgstr "\"退出外层循环\""
 
 #: src/flow_control/loop/return.md:3
 msgid ""
@@ -4043,73 +4048,73 @@ msgid ""
 "the operation returns a value though, you might need to pass it to the rest "
 "of the code: put it after the `break`, and it will be returned by the `loop` "
 "expression."
-msgstr ""
+msgstr "`loop` 的一个用途是重试一个操作，直到它成功。如果操作返回一个值，你可能需要将它传递给代码的其余部分：将它放在 `break` 之后，它将被 `loop` 表达式返回。"
 
 #: src/flow_control/while.md:3
 msgid "The `while` keyword can be used to run a loop while a condition is true."
-msgstr ""
+msgstr "`while` 关键字可以用来在条件为真时运行循环。"
 
 #: src/flow_control/while.md:5
 msgid ""
 "Let's write the infamous [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) "
 "using a `while` loop."
-msgstr ""
+msgstr "让我们使用 `while` 循环来编写著名的 [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) 程序。"
 
 #: src/flow_control/while.md:9
 msgid "// A counter variable\n"
-msgstr ""
+msgstr "// 一个计数器变量\n"
 
 #: src/flow_control/while.md:12
 msgid "// Loop while `n` is less than 101\n"
-msgstr ""
+msgstr "// 当 `n` 小于 101 时循环\n"
 
 #: src/flow_control/while.md:15 src/flow_control/for.md:17
 #: src/flow_control/for.md:37 src/fn.md:34
 msgid "\"fizzbuzz\""
-msgstr ""
+msgstr "\"fizzbuzz\""
 
 #: src/flow_control/while.md:17 src/flow_control/for.md:19
 #: src/flow_control/for.md:39 src/fn.md:36
 msgid "\"fizz\""
-msgstr ""
+msgstr "\"fizz\""
 
 #: src/flow_control/while.md:19 src/flow_control/for.md:21
 #: src/flow_control/for.md:41 src/fn.md:38
 msgid "\"buzz\""
-msgstr ""
+msgstr "\"buzz\""
 
 #: src/flow_control/while.md:24
 msgid "// Increment counter\n"
-msgstr ""
+msgstr "// 增加计数器\n"
 
 #: src/flow_control/for.md:1
 msgid "for loops"
-msgstr ""
+msgstr "for 循环"
 
 #: src/flow_control/for.md:5
 msgid ""
 "The `for in` construct can be used to iterate through an `Iterator`. One of "
 "the easiest ways to create an iterator is to use the range notation `a..b`. "
 "This yields values from `a` (inclusive) to `b` (exclusive) in steps of one."
-msgstr ""
+msgstr "`for in` 结构可以用来遍历 `Iterator`。创建迭代器最简单的方法之一是使用区间表示法 `a..b`。这会生成从 `a`（包含）到 `b`（不包含）的值，步长为一。"
 
 #: src/flow_control/for.md:10
 msgid "Let's write FizzBuzz using `for` instead of `while`."
-msgstr ""
+msgstr "让我们使用 `for` 而不是 `while` 来编写 FizzBuzz。"
 
 #: src/flow_control/for.md:14 src/flow_control/for.md:34
 msgid "// `n` will take the values: 1, 2, ..., 100 in each iteration\n"
-msgstr ""
+msgstr "// `n` 在每次迭代中将取值：1, 2, ..., 100\n"
 
 #: src/flow_control/for.md:29
 msgid ""
 "Alternatively, `a..=b` can be used for a range that is inclusive on both "
 "ends. The above can be written as:"
-msgstr ""
+msgstr "或者，可以使用 `a..=b` 来表示两端都包含的范围。上面的代码可以写成："
 
 #: src/flow_control/for.md:49
 msgid "for and iterators"
-msgstr ""
+msgstr "for 和迭代器"
 
 #: src/flow_control/for.md:51
 msgid ""
@@ -4118,142 +4123,144 @@ msgid ""
 "by default the `for` loop will apply the `into_iter` function to the "
 "collection. However, this is not the only means of converting collections "
 "into iterators."
-msgstr ""
+msgstr "`for in` 结构能够以多种方式与 `Iterator` 交互。正如在[迭代器](../trait/iter.md)特质一节中讨论的那样，默认情况下 `for` 循环会对集合应用 `into_iter` 函数。然而，这并不是将集合转换为迭代器的唯一方法。"
 
 #: src/flow_control/for.md:56
 msgid ""
 "`into_iter`, `iter` and `iter_mut` all handle the conversion of a collection "
 "into an iterator in different ways, by providing different views on the data "
 "within."
-msgstr ""
+msgstr "`into_iter`、`iter` 和 `iter_mut` 都以不同的方式处理集合到迭代器的转换，通过提供对数据的不同视图。"
 
 #: src/flow_control/for.md:60
 msgid ""
 "`iter` - This borrows each element of the collection through each iteration. "
 "Thus leaving the collection untouched and available for reuse after the loop."
-msgstr ""
+msgstr "`iter` - 这在每次迭代中借用集合的每个元素。因此，集合保持不变，并且在循环之后可以重复使用。"
 
 #: src/flow_control/for.md:65 src/flow_control/for.md:85
 #: src/flow_control/for.md:104
 msgid "\"Frank\""
-msgstr ""
+msgstr "\"Frank\""
 
 #: src/flow_control/for.md:65 src/flow_control/for.md:69
 #: src/flow_control/for.md:85 src/flow_control/for.md:89
 #: src/flow_control/for.md:104 src/flow_control/for.md:108
 msgid "\"Ferris\""
-msgstr ""
+msgstr "\"Ferris\""
 
 #: src/flow_control/for.md:69 src/flow_control/for.md:89
 #: src/flow_control/for.md:108
 msgid "\"There is a rustacean among us!\""
-msgstr ""
+msgstr "\"我们中间有一个 Rustacean！\""
 
 #: src/flow_control/for.md:70
 msgid "// TODO ^ Try deleting the & and matching just \"Ferris\"\n"
-msgstr ""
+msgstr "// TODO ^ 尝试删除 & 并只匹配 \"Ferris\"\n"
 
 #: src/flow_control/for.md:71 src/flow_control/for.md:90
 msgid "\"Hello {}\""
-msgstr ""
+msgstr "\"你好 {}\""
 
 #: src/flow_control/for.md:75 src/flow_control/for.md:94
 #: src/flow_control/for.md:113
 msgid "\"names: {:?}\""
-msgstr ""
+msgstr "\"names: {:?}\""
 
 #: src/flow_control/for.md:79
 msgid ""
 "`into_iter` - This consumes the collection so that on each iteration the "
 "exact data is provided. Once the collection has been consumed it is no longer "
 "available for reuse as it has been 'moved' within the loop."
-msgstr ""
+msgstr "`into_iter` - 这会消耗集合，使得在每次迭代中提供确切的数据。一旦集合被消耗，它就不再可用于重复使用，因为它已经在循环中被'移动'了。"
 
 #: src/flow_control/for.md:99
 msgid ""
 "`iter_mut` - This mutably borrows each element of the collection, allowing "
 "for the collection to be modified in place."
-msgstr ""
+msgstr "`iter_mut` - 这会可变地借用集合的每个元素，允许在原地修改集合。"
 
 #: src/flow_control/for.md:109
 msgid "\"Hello\""
-msgstr ""
+msgstr "\"你好\""
 
 #: src/flow_control/for.md:117
 msgid ""
 "In the above snippets note the type of `match` branch, that is the key "
 "difference in the types of iteration. The difference in type then of course "
 "implies differing actions that are able to be performed."
-msgstr ""
+msgstr "在上面的代码片段中，注意 `match` 分支的类型，这是迭代类型的关键区别。类型的差异意味着可以执行的操作不同。"
 
 #: src/flow_control/for.md:123
 msgid "[Iterator](../trait/iter.md)"
-msgstr ""
+msgstr "[迭代器](../trait/iter.md)"
 
 #: src/flow_control/match.md:3
 msgid ""
 "Rust provides pattern matching via the `match` keyword, which can be used "
 "like a C `switch`. The first matching arm is evaluated and all possible "
 "values must be covered."
-msgstr ""
+msgstr "Rust 通过 `match` 关键字提供模式匹配，它可以像 C 语言的 `switch` 一样使用。第一个匹配的分支会被求值，并且必须覆盖所有可能的值。"
 
 #: src/flow_control/match.md:10
 msgid "// TODO ^ Try different values for `number`\n"
-msgstr ""
+msgstr "// TODO ^ 尝试为 `number` 赋予不同的值\n"
 
 #: src/flow_control/match.md:12
 msgid "\"Tell me about {}\""
-msgstr ""
+msgstr "\"告诉我关于 {} 的信息\""
 
 #: src/flow_control/match.md:14
 msgid "// Match a single value\n"
-msgstr ""
+msgstr "// 匹配单个值\n"
 
 #: src/flow_control/match.md:15
 msgid "\"One!\""
-msgstr ""
+msgstr "\"一！\""
 
 #: src/flow_control/match.md:16
 msgid "// Match several values\n"
-msgstr ""
+msgstr "// 匹配多个值\n"
 
 #: src/flow_control/match.md:17
 msgid "\"This is a prime\""
-msgstr ""
+msgstr "\"这是一个质数\""
 
 #: src/flow_control/match.md:18
 msgid ""
 "// TODO ^ Try adding 13 to the list of prime values\n"
 "        // Match an inclusive range\n"
 msgstr ""
+"// TODO ^ 尝试将 13 添加到质数列表中\n"
+"        // 匹配一个包含的范围\n"
 
 #: src/flow_control/match.md:20
 msgid "\"A teen\""
-msgstr ""
+msgstr "\"一个青少年\""
 
 #: src/flow_control/match.md:21
 msgid "// Handle the rest of cases\n"
-msgstr ""
+msgstr "// 处理剩余的情况\n"
 
 #: src/flow_control/match.md:22
 msgid "\"Ain't special\""
-msgstr ""
+msgstr "\"没什么特别的\""
 
 #: src/flow_control/match.md:23
 msgid "// TODO ^ Try commenting out this catch-all arm\n"
-msgstr ""
+msgstr "// TODO ^ 尝试注释掉这个捕获所有情况的分支\n"
 
 #: src/flow_control/match.md:27
 msgid "// Match is an expression too\n"
-msgstr ""
+msgstr "// match 也是一个表达式\n"
 
 #: src/flow_control/match.md:29
 msgid "// The arms of a match must cover all the possible values\n"
-msgstr ""
+msgstr "// match 的分支必须覆盖所有可能的值\n"
 
 #: src/flow_control/match.md:32
 msgid "// TODO ^ Try commenting out one of these arms\n"
-msgstr ""
+msgstr "// TODO ^ 尝试注释掉其中一个分支\n"
 
 #: src/flow_control/match/destructuring.md:3
 msgid "A `match` block can destructure items in a variety of ways."
