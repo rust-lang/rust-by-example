@@ -4264,215 +4264,227 @@ msgstr "// TODO ^ 尝试注释掉其中一个分支\n"
 
 #: src/flow_control/match/destructuring.md:3
 msgid "A `match` block can destructure items in a variety of ways."
-msgstr ""
+msgstr "`match` 块可以以多种方式解构项。"
 
 #: src/flow_control/match/destructuring.md:5
 msgid "[Destructuring Tuples](destructuring/destructure_tuple.md)"
-msgstr ""
+msgstr "[解构元组](destructuring/destructure_tuple.md)"
 
 #: src/flow_control/match/destructuring.md:6
 msgid "[Destructuring Arrays and Slices](destructuring/destructure_slice.md)"
-msgstr ""
+msgstr "[解构数组和切片](destructuring/destructure_slice.md)"
 
 #: src/flow_control/match/destructuring.md:7
 msgid "[Destructuring Enums](destructuring/destructure_enum.md)"
-msgstr ""
+msgstr "[解构枚举](destructuring/destructure_enum.md)"
 
 #: src/flow_control/match/destructuring.md:8
 msgid "[Destructuring Pointers](destructuring/destructure_pointers.md)"
-msgstr ""
+msgstr "[解构指针](destructuring/destructure_pointers.md)"
 
 #: src/flow_control/match/destructuring.md:9
 msgid "[Destructuring Structures](destructuring/destructure_structures.md)"
-msgstr ""
+msgstr "[解构结构体](destructuring/destructure_structures.md)"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:3
 msgid "Tuples can be destructured in a `match` as follows:"
-msgstr ""
+msgstr "元组可以在 `match` 中按如下方式解构："
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:8
 msgid "// TODO ^ Try different values for `triple`\n"
-msgstr ""
+msgstr "// TODO ^ 尝试为 `triple` 赋予不同的值\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:10
 msgid "\"Tell me about {:?}\""
-msgstr ""
+msgstr "\"Tell me about {:?}\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:11
 msgid "// Match can be used to destructure a tuple\n"
-msgstr ""
+msgstr "// match 可以用来解构一个元组\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:13
 msgid "// Destructure the second and third elements\n"
-msgstr ""
+msgstr "// 解构第二和第三个元素\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:14
 msgid "\"First is `0`, `y` is {:?}, and `z` is {:?}\""
-msgstr ""
+msgstr "\"First is `0`, `y` is {:?}, and `z` is {:?}\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:15
 msgid "\"First is `1` and the rest doesn't matter\""
-msgstr ""
+msgstr "\"First is `1` and the rest doesn't matter\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:16
 msgid "\"last is `2` and the rest doesn't matter\""
-msgstr ""
+msgstr "\"last is `2` and the rest doesn't matter\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:17
 msgid "\"First is `3`, last is `4`, and the rest doesn't matter\""
-msgstr ""
+msgstr "\"First is `3`, last is `4`, and the rest doesn't matter\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:18
 msgid "// `..` can be used to ignore the rest of the tuple\n"
-msgstr ""
+msgstr "// `..` 可以用来忽略元组中的其余部分\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:19
 msgid "\"It doesn't matter what they are\""
-msgstr ""
+msgstr "\"It doesn't matter what they are\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:20
 msgid "// `_` means don't bind the value to a variable\n"
-msgstr ""
+msgstr "// `_` 表示不将值绑定到变量\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:27
 msgid "[Tuples](../../../primitives/tuples.md)"
-msgstr ""
+msgstr "[元组](../../../primitives/tuples.md)"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:3
 msgid "Like tuples, arrays and slices can be destructured this way:"
-msgstr ""
+msgstr "像元组一样，数组和切片也可以用这种方式解构："
 
 #: src/flow_control/match/destructuring/destructure_slice.md:7
 msgid "// Try changing the values in the array, or make it a slice!\n"
-msgstr ""
+msgstr "// 尝试改变数组中的值，或者将其变成一个切片！\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:11
 msgid "// Binds the second and the third elements to the respective variables\n"
-msgstr ""
+msgstr "// 将第二个和第三个元素分别绑定到相应的变量\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:13
 msgid "\"array[0] = 0, array[1] = {}, array[2] = {}\""
-msgstr ""
+msgstr "\"array[0] = 0, array[1] = {}, array[2] = {}\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:15
 msgid "// Single values can be ignored with _\n"
-msgstr ""
+msgstr "// 单个值可以用 _ 忽略\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:17
 msgid "\"array[0] = 1, array[2] = {} and array[1] was ignored\""
-msgstr ""
+msgstr "\"array[0] = 1, array[2] = {} and array[1] was ignored\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:21
 msgid "// You can also bind some and ignore the rest\n"
-msgstr ""
+msgstr "// 你也可以绑定一些值并忽略其余的\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:23
 msgid "\"array[0] = -1, array[1] = {} and all the other ones were ignored\""
-msgstr ""
+msgstr "\"array[0] = -1, array[1] = {} and all the other ones were ignored\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:26
 msgid ""
 "// The code below would not compile\n"
 "        // [-1, second] => ...\n"
 msgstr ""
+"// 下面的代码无法编译\n"
+"        // [-1, second] => ...\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:29
 msgid ""
 "// Or store them in another array/slice (the type depends on\n"
 "        // that of the value that is being matched against)\n"
 msgstr ""
+"// 或者将它们存储在另一个数组/切片中（类型取决于\n"
+"        // 正在匹配的值的类型）\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:32
 msgid "\"array[0] = 3, array[1] = {} and the other elements were {:?}\""
-msgstr ""
+msgstr "\"array[0] = 3, array[1] = {} and the other elements were {:?}\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:36
 msgid ""
 "// Combining these patterns, we can, for example, bind the first and\n"
 "        // last values, and store the rest of them in a single array\n"
 msgstr ""
+"// 结合这些模式，我们可以，例如，绑定第一个和\n"
+"        // 最后一个值，并将其余的存储在一个单独的数组中\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:39
 msgid "\"array[0] = {}, middle = {:?}, array[2] = {}\""
-msgstr ""
+msgstr "\"array[0] = {}, middle = {:?}, array[2] = {}\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:48
 msgid ""
 "[Arrays and Slices](../../../primitives/array.md) and [Binding](../binding."
 "md) for `@` sigil"
 msgstr ""
+"[数组和切片](../../../primitives/array.md) 和 [绑定](../binding."
+"md) 中的 `@` 符号"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:3
 msgid "An `enum` is destructured similarly:"
-msgstr ""
+msgstr "`enum` 的解构方式类似："
 
 #: src/flow_control/match/destructuring/destructure_enum.md:6
 msgid ""
 "// `allow` required to silence warnings because only\n"
 "// one variant is used.\n"
 msgstr ""
+"// 需要 `allow` 来消除警告，因为只使用了\n"
+"// 一个变体。\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:10
 msgid "// These 3 are specified solely by their name.\n"
-msgstr ""
+msgstr "// 这 3 个仅由它们的名称指定。\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:14
 msgid "// These likewise tie `u32` tuples to different names: color models.\n"
-msgstr ""
+msgstr "// 这些同样将 `u32` 元组绑定到不同的名称：颜色模型。\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:24
 msgid "// TODO ^ Try different variants for `color`\n"
-msgstr ""
+msgstr "// TODO ^ 尝试为 `color` 使用不同的变体\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:26
 msgid "\"What color is it?\""
-msgstr ""
+msgstr "\"What color is it?\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:27
 msgid "// An `enum` can be destructured using a `match`.\n"
-msgstr ""
+msgstr "// 可以使用 `match` 来解构 `enum`。\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:29
 msgid "\"The color is Red!\""
-msgstr ""
+msgstr "\"The color is Red!\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:30
 msgid "\"The color is Blue!\""
-msgstr ""
+msgstr "\"The color is Blue!\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:31
 msgid "\"The color is Green!\""
-msgstr ""
+msgstr "\"The color is Green!\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:33
 msgid "\"Red: {}, green: {}, and blue: {}!\""
-msgstr ""
+msgstr "\"Red: {}, green: {}, and blue: {}!\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:35
 msgid "\"Hue: {}, saturation: {}, value: {}!\""
-msgstr ""
+msgstr "\"Hue: {}, saturation: {}, value: {}!\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:37
 msgid "\"Hue: {}, saturation: {}, lightness: {}!\""
-msgstr ""
+msgstr "\"Hue: {}, saturation: {}, lightness: {}!\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:39
 msgid "\"Cyan: {}, magenta: {}, yellow: {}!\""
-msgstr ""
+msgstr "\"Cyan: {}, magenta: {}, yellow: {}!\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:41
 msgid "\"Cyan: {}, magenta: {}, yellow: {}, key (black): {}!\""
-msgstr ""
+msgstr "\"Cyan: {}, magenta: {}, yellow: {}, key (black): {}!\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:43
 msgid "// Don't need another arm because all variants have been examined\n"
-msgstr ""
+msgstr "// 不需要另一个分支，因为所有变体都已经被检查过了\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:50
 msgid ""
 "[`#[allow(...)]`](../../../attribute/unused.md), [color models](https://en."
 "wikipedia.org/wiki/Color_model) and [`enum`](../../../custom_types/enum.md)"
 msgstr ""
+"[`#[allow(...)]`](../../../attribute/unused.md)，[颜色模型](https://en."
+"wikipedia.org/wiki/Color_model) 和 [`enum`](../../../custom_types/enum.md)"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:3
 msgid ""
@@ -4480,20 +4492,23 @@ msgid ""
 "dereferencing as they are different concepts which are used differently from "
 "languages like C/C++."
 msgstr ""
+"对于指针，需要区分解构（destructure）和解引用（dereference），因为它们是不同的概念，其使用方式与 C/C++ 等语言不同。"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:7
 msgid "Dereferencing uses `*`"
-msgstr ""
+msgstr "解引用使用 `*`"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:8
 msgid "Destructuring uses `&`, `ref`, and `ref mut`"
-msgstr ""
+msgstr "解构使用 `&`、`ref` 和 `ref mut`"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:12
 msgid ""
 "// Assign a reference of type `i32`. The `&` signifies there\n"
 "    // is a reference being assigned.\n"
 msgstr ""
+"// 分配一个 `i32` 类型的引用。`&` 表示\n"
+"    // 正在分配一个引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:17
 msgid ""
@@ -4504,18 +4519,24 @@ msgid ""
 "        // ^ We see that if the matching `&`s are dropped, then the `i32`\n"
 "        // should be assigned to `val`.\n"
 msgstr ""
+"// 如果 `reference` 与 `&val` 进行模式匹配，结果\n"
+"        // 就像这样的比较：\n"
+"        // `&i32`\n"
+"        // `&val`\n"
+"        // ^ 我们看到如果匹配的 `&` 被去掉，那么 `i32`\n"
+"        // 应该被赋值给 `val`。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:23
 msgid "\"Got a value via destructuring: {:?}\""
-msgstr ""
+msgstr "\"通过解构获得一个值：{:?}\""
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:26
 msgid "// To avoid the `&`, you dereference before matching.\n"
-msgstr ""
+msgstr "// 为了避免 `&`，你可以在匹配之前解引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:28
 msgid "\"Got a value via dereferencing: {:?}\""
-msgstr ""
+msgstr "\"通过解引用获得一个值：{:?}\""
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:31
 msgid ""
@@ -4523,6 +4544,9 @@ msgid ""
 "    // because the right side was already a reference. This is not\n"
 "    // a reference because the right side is not one.\n"
 msgstr ""
+"// 如果你一开始没有引用怎么办？`reference` 是一个 `&`\n"
+"    // 因为右侧已经是一个引用。这不是\n"
+"    // 一个引用，因为右侧不是引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:36
 msgid ""
@@ -4530,94 +4554,105 @@ msgid ""
 "    // assignment so that a reference is created for the element; this\n"
 "    // reference is assigned.\n"
 msgstr ""
+"// Rust 提供 `ref` 正是为了这个目的。它修改了\n"
+"    // 赋值，使得为元素创建一个引用；这个\n"
+"    // 引用被赋值。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:41
 msgid ""
 "// Accordingly, by defining 2 values without references, references\n"
 "    // can be retrieved via `ref` and `ref mut`.\n"
 msgstr ""
+"// 相应地，通过定义两个没有引用的值，可以\n"
+"    // 通过 `ref` 和 `ref mut` 获取引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:46
 msgid "// Use `ref` keyword to create a reference.\n"
-msgstr ""
+msgstr "// 使用 `ref` 关键字创建一个引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:48
 msgid "\"Got a reference to a value: {:?}\""
-msgstr ""
+msgstr "\"获得一个值的引用：{:?}\""
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:51
 msgid "// Use `ref mut` similarly.\n"
-msgstr ""
+msgstr "// 类似地使用 `ref mut`。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:54
 msgid ""
 "// Got a reference. Gotta dereference it before we can\n"
 "            // add anything to it.\n"
 msgstr ""
+"// 获得一个引用。在我们能够\n"
+"            // 对其进行任何添加操作之前，必须先解引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:57
 msgid "\"We added 10. `mut_value`: {:?}\""
-msgstr ""
+msgstr "\"我们加了 10。`mut_value`：{:?}\""
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:65
 msgid "[The ref pattern](../../../scope/borrow/ref.md)"
-msgstr ""
+msgstr "[ref 模式](../../../scope/borrow/ref.md)"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:3
 msgid "Similarly, a `struct` can be destructured as shown:"
-msgstr ""
+msgstr "类似地，`struct` 可以按如下方式解构："
 
 #: src/flow_control/match/destructuring/destructure_structures.md:12
 msgid "// Try changing the values in the struct to see what happens\n"
-msgstr ""
+msgstr "// 尝试改变结构体中的值，看看会发生什么\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:16
 msgid "\"First of x is 1, b = {},  y = {} \""
-msgstr ""
+msgstr "\"x 的第一个元素是 1，b = {}，y = {} \""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:18
 msgid ""
 "// you can destructure structs and rename the variables,\n"
 "        // the order is not important\n"
 msgstr ""
+"// 你可以解构结构体并重命名变量，\n"
+"        // 顺序并不重要\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:20
 msgid "\"y is 2, i = {:?}\""
-msgstr ""
+msgstr "\"y 是 2，i = {:?}\""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:22
 msgid "// and you can also ignore some variables:\n"
-msgstr ""
+msgstr "// 你也可以忽略一些变量：\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:23
 msgid "\"y = {}, we don't care about x\""
-msgstr ""
+msgstr "\"y = {}，我们不关心 x\""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:24
 msgid ""
 "// this will give an error: pattern does not mention field `x`\n"
 "        //Foo { y } => println!(\"y = {}\", y),\n"
 msgstr ""
+"// 这会产生一个错误：模式没有提到字段 `x`\n"
+"        //Foo { y } => println!(\"y = {}\", y),\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:30
 msgid "// You do not need a match block to destructure structs:\n"
-msgstr ""
+msgstr "// 你不需要 match 块来解构结构体：\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:32
 msgid "\"Outside: x0 = {x0:?}, y0 = {y0}\""
-msgstr ""
+msgstr "\"外部：x0 = {x0:?}，y0 = {y0}\""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:34
 msgid "// Destructuring works with nested structs as well:\n"
-msgstr ""
+msgstr "// 解构也适用于嵌套的结构体：\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:41
 msgid "\"Nested: nested_x = {nested_x:?}, nested_y = {nested_y:?}\""
-msgstr ""
+msgstr "\"嵌套：nested_x = {nested_x:?}，nested_y = {nested_y:?}\""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:47
 msgid "[Structs](../../../custom_types/structs.md)"
-msgstr ""
+msgstr "[结构体](../../../custom_types/structs.md)"
 
 #: src/flow_control/match/guard.md:3
 msgid "A `match` _guard_ can be added to filter the arm."
