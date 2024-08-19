@@ -4656,55 +4656,57 @@ msgstr "[结构体](../../../custom_types/structs.md)"
 
 #: src/flow_control/match/guard.md:3
 msgid "A `match` _guard_ can be added to filter the arm."
-msgstr ""
+msgstr "可以添加 `match` **守卫**来过滤分支。"
 
 #: src/flow_control/match/guard.md:14
 msgid "// ^ TODO try different values for `temperature`\n"
-msgstr ""
+msgstr "// ^ TODO 尝试不同的 `temperature` 值\n"
 
 #: src/flow_control/match/guard.md:17
 msgid "\"{}C is above 30 Celsius\""
-msgstr ""
+msgstr "\"{}摄氏度高于 30 摄氏度\""
 
 #: src/flow_control/match/guard.md:18
 msgid "// The `if condition` part ^ is a guard\n"
-msgstr ""
+msgstr "// `if condition` 部分 ^ 是一个守卫\n"
 
 #: src/flow_control/match/guard.md:19
 msgid "\"{}C is equal to or below 30 Celsius\""
-msgstr ""
+msgstr "\"{}摄氏度等于或低于 30 摄氏度\""
 
 #: src/flow_control/match/guard.md:21
 msgid "\"{}F is above 86 Fahrenheit\""
-msgstr ""
+msgstr "\"{}华氏度高于 86 华氏度\""
 
 #: src/flow_control/match/guard.md:22
 msgid "\"{}F is equal to or below 86 Fahrenheit\""
-msgstr ""
+msgstr "\"{}华氏度等于或低于 86 华氏度\""
 
 #: src/flow_control/match/guard.md:27
 msgid ""
 "Note that the compiler won't take guard conditions into account when checking "
 "if all patterns are covered by the match expression."
-msgstr ""
+msgstr "注意，编译器在检查 match 表达式是否覆盖了所有模式时，不会考虑守卫条件。"
 
 #: src/flow_control/match/guard.md:35
 msgid "\"Zero\""
-msgstr ""
+msgstr "\"零\""
 
 #: src/flow_control/match/guard.md:36
 msgid "\"Greater than zero\""
-msgstr ""
+msgstr "\"大于零\""
 
 #: src/flow_control/match/guard.md:37
 msgid ""
 "// _ => unreachable!(\"Should never happen.\"),\n"
 "        // TODO ^ uncomment to fix compilation\n"
 msgstr ""
+"// _ => unreachable!(\"永远不应该发生。\"),\n"
+"        // TODO ^ 取消注释以修复编译\n"
 
 #: src/flow_control/match/guard.md:45
 msgid "[Tuples](../../primitives/tuples.md) [Enums](../../custom_types/enum.md)"
-msgstr ""
+msgstr "[元组](../../primitives/tuples.md) [枚举](../../custom_types/enum.md)"
 
 #: src/flow_control/match/binding.md:3
 msgid ""
@@ -4712,18 +4714,19 @@ msgid ""
 "variable without re-binding. `match` provides the `@` sigil for binding "
 "values to names:"
 msgstr ""
+"间接访问变量使得无法在分支中使用该变量而不重新绑定。`match` 提供了 `@` 符号用于将值绑定到名称："
 
 #: src/flow_control/match/binding.md:8
 msgid "// A function `age` which returns a `u32`.\n"
-msgstr ""
+msgstr "// 一个返回 `u32` 的 `age` 函数。\n"
 
 #: src/flow_control/match/binding.md:14
 msgid "\"Tell me what type of person you are\""
-msgstr ""
+msgstr "\"告诉我你是什么样的人\""
 
 #: src/flow_control/match/binding.md:17
 msgid "\"I haven't celebrated my first birthday yet\""
-msgstr ""
+msgstr "\"我还没有庆祝过我的第一个生日\""
 
 #: src/flow_control/match/binding.md:18
 msgid ""
@@ -4731,55 +4734,60 @@ msgid ""
 "        // would the child be? Instead, bind to `n` for the\n"
 "        // sequence of 1 ..= 12. Now the age can be reported.\n"
 msgstr ""
+"// 可以直接 `match` 1 ..= 12，但那样孩子的年龄是多少呢？\n"
+"        // 相反，将 1 ..= 12 的序列绑定到 `n`。现在可以报告年龄了。\n"
 
 #: src/flow_control/match/binding.md:21
 msgid "\"I'm a child of age {:?}\""
-msgstr ""
+msgstr "\"我是一个 {:?} 岁的孩子\""
 
 #: src/flow_control/match/binding.md:22
 msgid "\"I'm a teen of age {:?}\""
-msgstr ""
+msgstr "\"我是一个 {:?} 岁的青少年\""
 
 #: src/flow_control/match/binding.md:23
 msgid "// Nothing bound. Return the result.\n"
-msgstr ""
+msgstr "// 没有绑定。返回结果。\n"
 
 #: src/flow_control/match/binding.md:24
 msgid "\"I'm an old person of age {:?}\""
-msgstr ""
+msgstr "\"我是一个 {:?} 岁的老年人\""
 
 #: src/flow_control/match/binding.md:29
 msgid ""
 "You can also use binding to \"destructure\" `enum` variants, such as `Option`:"
-msgstr ""
+msgstr "你也可以使用绑定来"解构" `enum` 变体，比如 `Option`："
 
 #: src/flow_control/match/binding.md:38
 msgid ""
 "// Got `Some` variant, match if its value, bound to `n`,\n"
 "        // is equal to 42.\n"
 msgstr ""
+"// 得到 `Some` 变体，匹配如果它的值等于 42，绑定到 `n`，\n"
 
 #: src/flow_control/match/binding.md:40
 msgid "\"The Answer: {}!\""
-msgstr ""
+msgstr "\"答案是：{}！\""
 
 #: src/flow_control/match/binding.md:41
 msgid "// Match any other number.\n"
-msgstr ""
+msgstr "// 匹配任何其他数字。\n"
 
 #: src/flow_control/match/binding.md:42
 msgid "\"Not interesting... {}\""
-msgstr ""
+msgstr "\"不感兴趣... {}\""
 
 #: src/flow_control/match/binding.md:43
 msgid "// Match anything else (`None` variant).\n"
-msgstr ""
+msgstr "// 匹配其他任何情况（`None` 变体）。\n"
 
 #: src/flow_control/match/binding.md:50
 msgid ""
 "[`functions`](../../fn.md), [`enums`](../../custom_types/enum.md) and "
 "[`Option`](../../std/option.md)"
 msgstr ""
+"[`函数`](../../fn.md)，[`枚举`](../../custom_types/enum.md) 和 "
+"[`Option`](../../std/option.md)"
 
 #: src/flow_control/if_let.md:3
 msgid ""
