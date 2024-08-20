@@ -4793,120 +4793,131 @@ msgstr ""
 msgid ""
 "For some use cases, when matching enums, `match` is awkward. For example:"
 msgstr ""
+"在某些场景中，当匹配枚举时，使用 `match` 会显得很奇怪。例如："
 
 #: src/flow_control/if_let.md:6 src/flow_control/while_let.md:7
 #: src/flow_control/while_let.md:35
 msgid "// Make `optional` of type `Option<i32>`\n"
-msgstr ""
+msgstr "// 创建 `Option<i32>` 类型的 `optional`\n"
 
 #: src/flow_control/if_let.md:10
 msgid "\"This is a really long string and `{:?}`\""
-msgstr ""
+msgstr "\"这是一个非常长的字符串和 `{:?}`\""
 
 #: src/flow_control/if_let.md:12
 msgid ""
 "// ^ Required because `match` is exhaustive. Doesn't it seem\n"
 "    // like wasted space?\n"
 msgstr ""
+"// ^ 这是必要的，因为 `match` 需要穷举。不觉得这行很多余吗？\n"
 
 #: src/flow_control/if_let.md:18
 msgid ""
 "`if let` is cleaner for this use case and in addition allows various failure "
 "options to be specified:"
 msgstr ""
+"`if let` 对于这种场景更加简洁，而且还允许指定各种失败的选项："
 
 #: src/flow_control/if_let.md:23
 msgid "// All have type `Option<i32>`\n"
-msgstr ""
+msgstr "// 全都是 `Option<i32>` 类型\n"
 
 #: src/flow_control/if_let.md:28
 msgid ""
 "// The `if let` construct reads: \"if `let` destructures `number` into\n"
 "    // `Some(i)`, evaluate the block (`{}`).\n"
 msgstr ""
+"// `if let` 结构读作：如果 `let` 将 `number` 解构成 `Some(i)`，\n"
+"    // 则执行语句块（`{}`）。\n"
 
 #: src/flow_control/if_let.md:31 src/flow_control/if_let.md:36
 #: src/flow_control/if_let.md:46
 msgid "\"Matched {:?}!\""
-msgstr ""
+msgstr "\"匹配 {:?}！\""
 
 #: src/flow_control/if_let.md:34
 msgid "// If you need to specify a failure, use an else:\n"
-msgstr ""
+msgstr "// 如果需要指定一个失败的情况，使用 else：\n"
 
 #: src/flow_control/if_let.md:38
 msgid "// Destructure failed. Change to the failure case.\n"
-msgstr ""
+msgstr "// 解构失败。切换到失败情况。\n"
 
 #: src/flow_control/if_let.md:39 src/flow_control/if_let.md:50
 msgid "\"Didn't match a number. Let's go with a letter!\""
-msgstr ""
+msgstr "\"没有匹配到数字。我们用一个字母吧！\""
 
 #: src/flow_control/if_let.md:42
 msgid "// Provide an altered failing condition.\n"
-msgstr ""
+msgstr "// 提供一个改变的失败条件。\n"
 
 #: src/flow_control/if_let.md:47
 msgid ""
 "// Destructure failed. Evaluate an `else if` condition to see if the\n"
 "    // alternate failure branch should be taken:\n"
 msgstr ""
+"// 解构失败。评估 `else if` 条件，看看是否应该执行\n"
+"    // 替代的失败分支：\n"
 
 #: src/flow_control/if_let.md:52
 msgid "// The condition evaluated false. This branch is the default:\n"
-msgstr ""
+msgstr "// 条件判断为假。这个分支是默认情况：\n"
 
 #: src/flow_control/if_let.md:53
 msgid "\"I don't like letters. Let's go with an emoticon :)!\""
-msgstr ""
+msgstr "\"我不喜欢字母。我们用个表情符号吧 :)！\""
 
 #: src/flow_control/if_let.md:58
 msgid "In the same way, `if let` can be used to match any enum value:"
-msgstr ""
+msgstr "同样地，`if let` 可以用来匹配任何枚举值："
 
 #: src/flow_control/if_let.md:61
 msgid "// Our example enum\n"
-msgstr ""
+msgstr "// 我们的示例枚举\n"
 
 #: src/flow_control/if_let.md:69
 msgid "// Create example variables\n"
-msgstr ""
+msgstr "// 创建示例变量\n"
 
 #: src/flow_control/if_let.md:74 src/flow_control/if_let.md:110
 msgid "// Variable a matches Foo::Bar\n"
-msgstr ""
+msgstr "// 变量 a 匹配 Foo::Bar\n"
 
 #: src/flow_control/if_let.md:76 src/flow_control/if_let.md:113
 msgid "\"a is foobar\""
-msgstr ""
+msgstr "\"a 是 foobar\""
 
 #: src/flow_control/if_let.md:79
 msgid ""
 "// Variable b does not match Foo::Bar\n"
 "    // So this will print nothing\n"
 msgstr ""
+"// 变量 b 不匹配 Foo::Bar\n"
+"    // 所以这里不会打印任何东西\n"
 
 #: src/flow_control/if_let.md:82
 msgid "\"b is foobar\""
-msgstr ""
+msgstr "\"b 是 foobar\""
 
 #: src/flow_control/if_let.md:85
 msgid ""
 "// Variable c matches Foo::Qux which has a value\n"
 "    // Similar to Some() in the previous example\n"
 msgstr ""
+"// 变量 c 匹配 Foo::Qux，它有一个值\n"
+"    // 类似于前面例子中的 Some()\n"
 
 #: src/flow_control/if_let.md:88
 msgid "\"c is {}\""
-msgstr ""
+msgstr "\"c 是 {}\""
 
 #: src/flow_control/if_let.md:91
 msgid "// Binding also works with `if let`\n"
-msgstr ""
+msgstr "// 绑定也可以用于 `if let`\n"
 
 #: src/flow_control/if_let.md:93
 msgid "\"c is one hundred\""
-msgstr ""
+msgstr "\"c 是一百\""
 
 #: src/flow_control/if_let.md:98
 msgid ""
@@ -4916,36 +4927,42 @@ msgid ""
 "because instances of the enum cannot be equated, however `if let` will "
 "continue to work."
 msgstr ""
+"`if let` 的另一个好处是它允许我们匹配非参数化的枚举变体。即使在枚举没有实现或派生 `PartialEq` 的情况下也是如此。在这种情况下，`if Foo::Bar == a` 将无法编译，因为枚举的实例无法进行相等比较，但 `if let` 仍然可以正常工作。"
 
 #: src/flow_control/if_let.md:100
 msgid "Would you like a challenge? Fix the following example to use `if let`:"
-msgstr ""
+msgstr "想要一个挑战吗？修复下面的例子，使用 `if let`："
 
 #: src/flow_control/if_let.md:103
 msgid ""
 "// This enum purposely neither implements nor derives PartialEq.\n"
 "// That is why comparing Foo::Bar == a fails below.\n"
 msgstr ""
+"// 这个枚举故意既不实现也不派生 PartialEq。\n"
+"// 这就是为什么下面比较 Foo::Bar == a 会失败。\n"
 
 #: src/flow_control/if_let.md:112
 msgid "// ^-- this causes a compile-time error. Use `if let` instead.\n"
-msgstr ""
+msgstr "// ^-- 这会导致编译时错误。使用 `if let` 来替代。\n"
 
 #: src/flow_control/if_let.md:120
 msgid ""
 "[`enum`](../custom_types/enum.md), [`Option`](../std/option.md), and the [RFC]"
 "(https://github.com/rust-lang/rfcs/pull/160)"
 msgstr ""
+"[`枚举`](../custom_types/enum.md)，[`Option`](../std/option.md)，以及 [RFC]"
+"(https://github.com/rust-lang/rfcs/pull/160)"
 
 #: src/flow_control/let_else.md:4
 msgid "🛈 stable since: rust 1.65"
-msgstr ""
+msgstr "🛈 自 rust 1.65 版本起稳定"
 
 #: src/flow_control/let_else.md:6
 msgid ""
 "🛈 you can target specific edition by compiling like this `rustc --"
 "edition=2021 main.rs`"
 msgstr ""
+"🛈 你可以通过这样编译来指定特定版本 `rustc --edition=2021 main.rs`"
 
 #: src/flow_control/let_else.md:10
 msgid ""
@@ -4953,27 +4970,28 @@ msgid ""
 "surrounding scope like a normal `let`, or else diverge (e.g. `break`, "
 "`return`, `panic!`) when the pattern doesn't match."
 msgstr ""
+"使用 `let`\\-`else`，可反驳模式可以像普通的 `let` 一样匹配并绑定周围作用域中的变量，或者在模式不匹配时发散（例如 `break`、`return`、`panic!`）。"
 
 #: src/flow_control/let_else.md:18 src/flow_control/let_else.md:41
 #: src/std/str.md:41
 msgid "' '"
-msgstr ""
+msgstr "' '"
 
 #: src/flow_control/let_else.md:20 src/flow_control/let_else.md:44
 msgid "\"Can't segment count item pair: '{s}'\""
-msgstr ""
+msgstr "\"无法分割计数项对：'{s}'\""
 
 #: src/flow_control/let_else.md:23 src/flow_control/let_else.md:49
 msgid "\"Can't parse integer: '{count_str}'\""
-msgstr ""
+msgstr "\"无法解析整数：'{count_str}'\""
 
 #: src/flow_control/let_else.md:29 src/flow_control/let_else.md:54
 msgid "\"3 chairs\""
-msgstr ""
+msgstr "\"3 chairs\""
 
 #: src/flow_control/let_else.md:29 src/flow_control/let_else.md:54
 msgid "\"chairs\""
-msgstr ""
+msgstr "\"chairs\""
 
 #: src/flow_control/let_else.md:33
 msgid ""
@@ -4981,56 +4999,62 @@ msgid ""
 "`match` or `if let`\\-`else` expressions. You could previously approximate "
 "these patterns with an unfortunate bit of repetition and an outer `let`:"
 msgstr ""
+"名称绑定的作用域是使其与 `match` 或 `if let`\\-`else` 表达式不同的主要原因。你之前可以通过一些冗余的重复和外部的 `let` 来近似这些模式："
 
 #: src/flow_control/let_else.md:59
 msgid ""
 "[option](../std/option.md), [match](./match.md), [if let](./if_let.md) and "
 "the [let-else RFC](https://rust-lang.github.io/rfcs/3137-let-else.html)."
 msgstr ""
+"[option](../std/option.md)，[match](./match.md)，[if let](./if_let.md) 和 "
+"[let-else RFC](https://rust-lang.github.io/rfcs/3137-let-else.html)。"
 
 #: src/flow_control/while_let.md:3
 msgid ""
 "Similar to `if let`, `while let` can make awkward `match` sequences more "
 "tolerable. Consider the following sequence that increments `i`:"
 msgstr ""
+"与 `if let` 类似，`while let` 可以使别扭的 `match` 序列更易于处理。考虑下面这个递增 `i` 的序列："
 
 #: src/flow_control/while_let.md:9
 msgid "// Repeatedly try this test.\n"
-msgstr ""
+msgstr "// 重复尝试这个测试。\n"
 
 #: src/flow_control/while_let.md:13
 msgid "// If `optional` destructures, evaluate the block.\n"
-msgstr ""
+msgstr "// 如果 `optional` 解构成功，就执行语句块。\n"
 
 #: src/flow_control/while_let.md:16 src/flow_control/while_let.md:42
 msgid "\"Greater than 9, quit!\""
-msgstr ""
+msgstr "\"大于 9，退出！\""
 
 #: src/flow_control/while_let.md:19 src/flow_control/while_let.md:45
 msgid "\"`i` is `{:?}`. Try again.\""
-msgstr ""
+msgstr "\"`i` 是 `{:?}`。再试一次。\""
 
 #: src/flow_control/while_let.md:22
 msgid "// ^ Requires 3 indentations!\n"
-msgstr ""
+msgstr "// ^ 需要 3 层缩进！\n"
 
 #: src/flow_control/while_let.md:24
 msgid "// Quit the loop when the destructure fails:\n"
-msgstr ""
+msgstr "// 当解构失败时退出循环：\n"
 
 #: src/flow_control/while_let.md:26
 msgid "// ^ Why should this be required? There must be a better way!\n"
-msgstr ""
+msgstr "// ^ 为什么这是必需的？一定有更好的方法！\n"
 
 #: src/flow_control/while_let.md:31
 msgid "Using `while let` makes this sequence much nicer:"
-msgstr ""
+msgstr "使用 `while let` 使这个序列更加优雅："
 
 #: src/flow_control/while_let.md:38
 msgid ""
 "// This reads: \"while `let` destructures `optional` into\n"
 "    // `Some(i)`, evaluate the block (`{}`). Else `break`.\n"
 msgstr ""
+"// 这读作：当 `let` 把 `optional` 解构成 `Some(i)` 时，\n"
+"    // 执行语句块（`{}`）。否则 `break`。\n"
 
 #: src/flow_control/while_let.md:48
 msgid ""
