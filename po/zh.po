@@ -6820,26 +6820,29 @@ msgid ""
 "`cargo` is the official Rust package management tool. It has lots of really "
 "useful features to improve code quality and developer velocity! These include"
 msgstr ""
+"`cargo` 是 Rust 的官方包管理工具。它有许多非常有用的功能来提高代码质量和开发效率！这些功能包括"
 
 #: src/cargo.md:6
 msgid ""
 "Dependency management and integration with [crates.io](https://crates.io) "
 "(the official Rust package registry)"
 msgstr ""
+"依赖管理和与 [crates.io](https://crates.io)（官方 Rust 包注册中心）的集成"
 
 #: src/cargo.md:8
 msgid "Awareness of unit tests"
-msgstr ""
+msgstr "支持单元测试"
 
 #: src/cargo.md:9
 msgid "Awareness of benchmarks"
-msgstr ""
+msgstr "支持基准测试"
 
 #: src/cargo.md:11
 msgid ""
 "This chapter will go through some quick basics, but you can find the "
 "comprehensive docs in [The Cargo Book](https://doc.rust-lang.org/cargo/)."
 msgstr ""
+"本章将快速介绍一些基础知识，不过你可以在 [Cargo 手册](https://doc.rust-lang.org/cargo/) 中找到更全面的文档。"
 
 #: src/cargo/deps.md:3
 msgid ""
@@ -6848,28 +6851,30 @@ msgid ""
 "Rust ecosystem comes standard with `cargo`! `cargo` can manage dependencies "
 "for a project."
 msgstr ""
+"大多数程序都依赖于一些库。如果你曾经手动管理过依赖，你就知道这有多痛苦。幸运的是，Rust 生态系统标配了 `cargo` 工具！`cargo` 可以为项目管理依赖。"
 
 #: src/cargo/deps.md:8
 msgid "To create a new Rust project,"
-msgstr ""
+msgstr "创建一个新的 Rust 项目，"
 
 #: src/cargo/deps.md:11
 msgid "# A binary\n"
-msgstr ""
+msgstr "# 二进制程序\n"
 
 #: src/cargo/deps.md:13
 msgid "# A library\n"
-msgstr ""
+msgstr "# 库\n"
 
 #: src/cargo/deps.md:18
 msgid ""
 "For the rest of this chapter, let's assume we are making a binary, rather "
 "than a library, but all of the concepts are the same."
 msgstr ""
+"在本章的剩余部分，我们假设我们正在创建一个二进制程序，而不是一个库，但所有的概念都是相同的。"
 
 #: src/cargo/deps.md:21
 msgid "After the above commands, you should see a file hierarchy like this:"
-msgstr ""
+msgstr "执行上述命令后，应该会得到这样的文件层次结构："
 
 #: src/cargo/deps.md:35
 msgid ""
@@ -6877,6 +6882,7 @@ msgid ""
 "new there. The `Cargo.toml` is the config file for `cargo` for this project. "
 "If you look inside it, you should see something like this:"
 msgstr ""
+"`main.rs` 是新的 `foo` 项目的入口源文件 —— 这没什么新鲜的。`Cargo.toml` 是这个项目的 `cargo` 配置文件。如果你查看它的内容，你应该看到类似这样的内容："
 
 #: src/cargo/deps.md:39
 msgid ""
@@ -6889,6 +6895,14 @@ msgid ""
 "[dependencies]\n"
 "```"
 msgstr ""
+"```toml\n"
+"[package]\n"
+"name = \"foo\"\n"
+"version = \"0.1.0\"\n"
+"authors = [\"mark\"]\n"
+"\n"
+"[dependencies]\n"
+"```"
 
 #: src/cargo/deps.md:48
 msgid ""
@@ -6896,20 +6910,22 @@ msgid ""
 "is used by `crates.io` if you publish the crate (more later). It is also the "
 "name of the output binary when you compile."
 msgstr ""
+"`[package]` 下的 `name` 字段决定了项目的名称。如果你发布 crate（稍后会详细介绍），这个名称将被 `crates.io` 使用。这也是编译时输出的二进制文件的名称。"
 
 #: src/cargo/deps.md:52
 msgid ""
 "The `version` field is a crate version number using [Semantic Versioning]"
 "(http://semver.org/)."
 msgstr ""
+"`version` 字段是使用 [语义化版本控制](http://semver.org/) 的 crate 版本号。"
 
 #: src/cargo/deps.md:55
 msgid "The `authors` field is a list of authors used when publishing the crate."
-msgstr ""
+msgstr "`authors` 字段是发布 crate 时使用的作者列表。"
 
 #: src/cargo/deps.md:57
 msgid "The `[dependencies]` section lets you add dependencies for your project."
-msgstr ""
+msgstr "`[dependencies]` 部分用来为项目添加依赖。"
 
 #: src/cargo/deps.md:59
 msgid ""
@@ -6921,12 +6937,14 @@ msgid ""
 "to our `Cargo.toml` under `[dependencies]`: `clap = \"2.27.1\"`. And that's "
 "it! You can start using `clap` in your program."
 msgstr ""
+"例如，假设我们希望我们的程序有一个出色的命令行界面（CLI）。你可以在 [crates.io](https://crates.io)（官方的 Rust 包注册中心）上找到许多优秀的包。一个受欢迎的选择是 [clap](https://crates.io/crates/clap)。在撰写本文时，`clap` 最新发布的版本是 `2.27.1`。要在我们的程序中添加依赖，我们只需在 `Cargo.toml` 的 `[dependencies]` 下添加以下内容：`clap = \"2.27.1\"`。就是这样！你现在可以在你的程序中开始使用 `clap` 了。"
 
 #: src/cargo/deps.md:67
 msgid ""
 "`cargo` also supports [other types of dependencies](https://doc.rust-lang.org/"
 "cargo/reference/specifying-dependencies.html). Here is just a small sampling:"
 msgstr ""
+"`cargo` 还支持 [其他类型的依赖](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html)。这里只是一个小示例："
 
 #: src/cargo/deps.md:70
 msgid ""
@@ -6943,6 +6961,17 @@ msgid ""
 "bar = { path = \"../bar\" } # from a path in the local filesystem\n"
 "```"
 msgstr ""
+"```toml\n"
+"[package]\n"
+"name = \"foo\"\n"
+"version = \"0.1.0\"\n"
+"authors = [\"mark\"]\n"
+"\n"
+"[dependencies]\n"
+"clap = \"2.27.1\" # 来自 crates.io\n"
+"rand = { git = \"https://github.com/rust-lang-nursery/rand\" } # 来自在线仓库\n"
+"bar = { path = \"../bar\" } # 来自本地文件系统中的路径\n"
+"```"
 
 #: src/cargo/deps.md:82
 msgid ""
@@ -6950,6 +6979,7 @@ msgid ""
 "options are listed in the [format specification](https://doc.rust-lang.org/"
 "cargo/reference/manifest.html) of `Cargo.toml`."
 msgstr ""
+"`cargo` 不仅仅是一个依赖管理器。所有可用的配置选项都列在 `Cargo.toml` 的 [格式规范](https://doc.rust-lang.org/cargo/reference/manifest.html) 中。"
 
 #: src/cargo/deps.md:86
 msgid ""
@@ -6959,20 +6989,22 @@ msgid ""
 "crates if needed, and build everything, including your crate. (Note that it "
 "only rebuilds what it has not already built, similar to `make`)."
 msgstr ""
+"要构建我们的项目，我们可以在项目目录的任何位置（包括子目录！）执行 `cargo build`。我们也可以使用 `cargo run` 来构建并运行。注意，这些命令会解析所有依赖，如果需要的话下载 crate，并构建所有内容，包括你的 crate。（注意，它只会重新构建尚未构建的部分，类似于 `make`）。"
 
 #: src/cargo/deps.md:92
 msgid "Voila! That's all there is to it!"
-msgstr ""
+msgstr "瞧！就是这么简单！"
 
 #: src/cargo/conventions.md:3
 msgid "In the previous chapter, we saw the following directory hierarchy:"
-msgstr ""
+msgstr "在上一章中，我们看到了以下目录层次结构："
 
 #: src/cargo/conventions.md:12
 msgid ""
 "Suppose that we wanted to have two binaries in the same project, though. What "
 "then?"
 msgstr ""
+"假设我们想在同一个项目中有两个二进制文件。那该怎么办呢？"
 
 #: src/cargo/conventions.md:15
 msgid ""
@@ -6980,6 +7012,7 @@ msgid ""
 "as we saw before, but you can add additional binaries by placing them in a "
 "`bin/` directory:"
 msgstr ""
+"事实证明，`cargo` 支持这一点。默认的二进制文件名是 `main`，就像我们之前看到的那样，但你可以通过将额外的二进制文件放在 `bin/` 目录中来添加它们："
 
 #: src/cargo/conventions.md:28
 msgid ""
@@ -6987,6 +7020,7 @@ msgid ""
 "`--bin my_other_bin` flag, where `my_other_bin` is the name of the binary we "
 "want to work with."
 msgstr ""
+"要告诉 `cargo` 只编译或运行这个二进制文件，我们只需要给 `cargo` 传递 `--bin my_other_bin` 标志，其中 `my_other_bin` 是我们想要处理的二进制文件的名称。"
 
 #: src/cargo/conventions.md:32
 msgid ""
@@ -6994,10 +7028,11 @@ msgid ""
 "rust-lang.org/cargo/guide/project-layout.html) such as benchmarks, tests, and "
 "examples."
 msgstr ""
+"除了额外的二进制文件，`cargo` 还支持 [更多功能](https://doc.rust-lang.org/cargo/guide/project-layout.html)，如基准测试、测试和示例。"
 
 #: src/cargo/conventions.md:35
 msgid "In the next chapter, we will look more closely at tests."
-msgstr ""
+msgstr "在下一章中，我们将更仔细地看看测试。"
 
 #: src/cargo/test.md:3
 msgid ""
