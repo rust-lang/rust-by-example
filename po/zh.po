@@ -5062,17 +5062,29 @@ msgid ""
 "        // explicitly handling the failing case.\n"
 msgstr ""
 
+#: src/flow_control/while_let.md:48
+msgid ""
+"// ^ Less rightward drift and doesn't require\n"
+"        // explicitly handling the failing case.\n"
+msgstr ""
+"// ^ 减少了向右偏移，并且不需要\n"
+"        // 显式处理失败的情况。\n"
+
 #: src/flow_control/while_let.md:51
 msgid ""
 "// ^ `if let` had additional optional `else`/`else if`\n"
 "    // clauses. `while let` does not have these.\n"
 msgstr ""
+"// ^ `if let` 有额外的可选 `else`/`else if`\n"
+"    // 子句。`while let` 没有这些。\n"
 
 #: src/flow_control/while_let.md:58
 msgid ""
 "[`enum`](../custom_types/enum.md), [`Option`](../std/option.md), and the [RFC]"
 "(https://github.com/rust-lang/rfcs/pull/214)"
 msgstr ""
+"[`enum`](../custom_types/enum.md)、[`Option`](../std/option.md) 和 [RFC]"
+"(https://github.com/rust-lang/rfcs/pull/214)"
 
 #: src/fn.md:3
 msgid ""
@@ -5080,6 +5092,8 @@ msgid ""
 "annotated, just like variables, and, if the function returns a value, the "
 "return type must be specified after an arrow `->`."
 msgstr ""
+"函数使用 `fn` 关键字声明。它的参数需要标注类型，就像变量一样，如果函数返回一个值，"
+"返回类型必须在箭头 `->` 之后指定。"
 
 #: src/fn.md:7
 msgid ""
@@ -5087,47 +5101,52 @@ msgid ""
 "Alternatively, the `return` statement can be used to return a value earlier "
 "from within the function, even from inside loops or `if` statements."
 msgstr ""
+"函数中的最后一个表达式将被用作返回值。或者，可以使用 `return` 语句从函数内部提前返回一个值，"
+"甚至可以从循环或 `if` 语句内部返回。"
 
 #: src/fn.md:11
 msgid "Let's rewrite FizzBuzz using functions!"
-msgstr ""
+msgstr "让我们用函数重写 FizzBuzz！"
 
 #: src/fn.md:14
 msgid ""
 "// Unlike C/C++, there's no restriction on the order of function definitions\n"
 msgstr ""
+"// 与 C/C++ 不同，函数定义的顺序没有限制\n"
 
 #: src/fn.md:16
 msgid "// We can use this function here, and define it somewhere later\n"
-msgstr ""
+msgstr "// 我们可以在这里使用这个函数，并在稍后的某个地方定义它\n"
 
 #: src/fn.md:19
 msgid "// Function that returns a boolean value\n"
-msgstr ""
+msgstr "// 返回布尔值的函数\n"
 
 #: src/fn.md:22
 msgid "// Corner case, early return\n"
-msgstr ""
+msgstr "// 特殊情况，提前返回\n"
 
 #: src/fn.md:27
 msgid "// This is an expression, the `return` keyword is not necessary here\n"
-msgstr ""
+msgstr "// 这是一个表达式，这里不需要 `return` 关键字\n"
 
 #: src/fn.md:30
 msgid ""
 "// Functions that \"don't\" return a value, actually return the unit type "
 "`()`\n"
 msgstr ""
+"// \"不\"返回值的函数实际上返回单元类型 `()`\n"
 
 #: src/fn.md:43
 msgid ""
 "// When a function returns `()`, the return type can be omitted from the\n"
 "// signature\n"
 msgstr ""
+"// 当函数返回 `()` 时，可以在函数签名中省略返回类型\n"
 
 #: src/fn/methods.md:1
 msgid "Associated functions & Methods"
-msgstr ""
+msgstr "关联函数和方法"
 
 #: src/fn/methods.md:3
 msgid ""
@@ -5136,12 +5155,15 @@ msgid ""
 "are defined on a type generally, while methods are associated functions that "
 "are called on a particular instance of a type."
 msgstr ""
+"有些函数与特定类型相关联。这些函数有两种形式：关联函数和方法。关联函数是在类型上定义的函数，"
+"而方法是在类型的特定实例上调用的关联函数。"
 
 #: src/fn/methods.md:13
 msgid ""
 "// Implementation block, all `Point` associated functions & methods go in "
 "here\n"
 msgstr ""
+"// 实现块，所有 `Point` 的关联函数和方法都在这里\n"
 
 #: src/fn/methods.md:16
 msgid ""
@@ -5152,10 +5174,14 @@ msgid ""
 "    // Associated functions don't need to be called with an instance.\n"
 "    // These functions are generally used like constructors.\n"
 msgstr ""
+"// 这是一个"关联函数"，因为这个函数与特定类型 Point 相关联。\n"
+"    //\n"
+"    // 关联函数不需要通过实例来调用。\n"
+"    // 这些函数通常用作构造函数。\n"
 
 #: src/fn/methods.md:25
 msgid "// Another associated function, taking two arguments:\n"
-msgstr ""
+msgstr "// 另一个关联函数，接受两个参数：\n"
 
 #: src/fn/methods.md:37
 msgid ""
@@ -5163,48 +5189,56 @@ msgid ""
 "    // `&self` is sugar for `self: &Self`, where `Self` is the type of the\n"
 "    // caller object. In this case `Self` = `Rectangle`\n"
 msgstr ""
+"// 这是一个方法\n"
+"    // `&self` 是 `self: &Self` 的语法糖，其中 `Self` 是调用者对象的类型。\n"
+"    // 在这个例子中 `Self` = `Rectangle`\n"
 
 #: src/fn/methods.md:41
 msgid "// `self` gives access to the struct fields via the dot operator\n"
-msgstr ""
+msgstr "// `self` 通过点运算符访问结构体字段\n"
 
 #: src/fn/methods.md:45
 msgid ""
 "// `abs` is a `f64` method that returns the absolute value of the\n"
 "        // caller\n"
 msgstr ""
+"// `abs` 是 `f64` 类型的方法，返回调用者的绝对值\n"
 
 #: src/fn/methods.md:57
 msgid ""
 "// This method requires the caller object to be mutable\n"
 "    // `&mut self` desugars to `self: &mut Self`\n"
 msgstr ""
+"// 这个方法要求调用者对象是可变的\n"
+"    // `&mut self` 是 `self: &mut Self` 的语法糖\n"
 
 #: src/fn/methods.md:67
 msgid "// `Pair` owns resources: two heap allocated integers\n"
-msgstr ""
+msgstr "// `Pair` 拥有资源：两个堆分配的整数\n"
 
 #: src/fn/methods.md:72
 msgid ""
 "// This method \"consumes\" the resources of the caller object\n"
 "    // `self` desugars to `self: Self`\n"
 msgstr ""
+"// 这个方法"消耗"调用者对象的资源\n"
+"    // `self` 是 `self: Self` 的语法糖\n"
 
 #: src/fn/methods.md:75
 msgid "// Destructure `self`\n"
-msgstr ""
+msgstr "// 解构 `self`\n"
 
 #: src/fn/methods.md:78
 msgid "\"Destroying Pair({}, {})\""
-msgstr ""
+msgstr "\"销毁 Pair({}, {})\""
 
 #: src/fn/methods.md:80
 msgid "// `first` and `second` go out of scope and get freed\n"
-msgstr ""
+msgstr "// `first` 和 `second` 超出作用域并被释放\n"
 
 #: src/fn/methods.md:86
 msgid "// Associated functions are called using double colons\n"
-msgstr ""
+msgstr "// 使用双冒号调用关联函数\n"
 
 #: src/fn/methods.md:91
 msgid ""
@@ -5212,14 +5246,17 @@ msgid ""
 "    // Note that the first argument `&self` is implicitly passed, i.e.\n"
 "    // `rectangle.perimeter()` === `Rectangle::perimeter(&rectangle)`\n"
 msgstr ""
+"// 使用点运算符调用方法\n"
+"    // 注意，第一个参数 `&self` 是隐式传递的，即\n"
+"    // `rectangle.perimeter()` === `Rectangle::perimeter(&rectangle)`\n"
 
 #: src/fn/methods.md:94
 msgid "\"Rectangle perimeter: {}\""
-msgstr ""
+msgstr "\"矩形周长：{}\""
 
 #: src/fn/methods.md:95
 msgid "\"Rectangle area: {}\""
-msgstr ""
+msgstr "\"矩形面积：{}\""
 
 #: src/fn/methods.md:102
 msgid ""
@@ -5228,10 +5265,13 @@ msgid ""
 "    //rectangle.translate(1.0, 0.0);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！`rectangle` 是不可变的，但这个方法需要一个可变对象\n"
+"    //rectangle.translate(1.0, 0.0);\n"
+"    // TODO ^ 尝试取消注释这一行\n"
 
 #: src/fn/methods.md:107
 msgid "// Okay! Mutable objects can call mutable methods\n"
-msgstr ""
+msgstr "// 没问题！可变对象可以调用可变方法\n"
 
 #: src/fn/methods.md:114
 msgid ""
@@ -5239,12 +5279,16 @@ msgid ""
 "    //pair.destroy();\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！之前的 `destroy` 调用已经"消耗"了 `pair`\n"
+"    //pair.destroy();\n"
+"    // TODO ^ 尝试取消注释这一行\n"
 
 #: src/fn/closures.md:3
 msgid ""
 "Closures are functions that can capture the enclosing environment. For "
 "example, a closure that captures the `x` variable:"
 msgstr ""
+"闭包是可以捕获周围环境的函数。例如，一个捕获 `x` 变量的闭包："
 
 #: src/fn/closures.md:10
 msgid ""
@@ -5253,24 +5297,27 @@ msgid ""
 "both input and return types _can_ be inferred and input variable names _must_ "
 "be specified."
 msgstr ""
+"闭包的语法和功能使它们非常适合即时使用。调用闭包与调用函数完全相同。然而，"
+"输入和返回类型**可以**被推断，而输入变量名**必须**被指定。"
 
 #: src/fn/closures.md:15
 msgid "Other characteristics of closures include:"
-msgstr ""
+msgstr "闭包的其他特征包括："
 
 #: src/fn/closures.md:16
 msgid "using `||` instead of `()` around input variables."
-msgstr ""
+msgstr "使用 `||` 而不是 `()` 来包围输入变量。"
 
 #: src/fn/closures.md:17
 msgid ""
 "optional body delimitation (`{}`) for a single line expression (mandatory "
 "otherwise)."
 msgstr ""
+"对于单行表达式，可以省略函数体定界符（`{}`）（其他情况是必需的）。"
 
 #: src/fn/closures.md:18
 msgid "the ability to capture the outer environment variables."
-msgstr ""
+msgstr "能够捕获外部环境的变量。"
 
 #: src/fn/closures.md:24
 msgid ""
@@ -5280,6 +5327,10 @@ msgid ""
 "compiler\n"
 "    // suggests that we define a closure instead.\n"
 msgstr ""
+"// 常规函数不能引用封闭环境中的变量\n"
+"    //fn function(i: i32) -> i32 { i + outer_var }\n"
+"    // TODO：取消上面这行的注释，看看编译器错误。编译器\n"
+"    // 建议我们定义一个闭包来代替。\n"
 
 #: src/fn/closures.md:29
 msgid ""
@@ -5288,18 +5339,22 @@ msgid ""
 "    // as are the `{}` wrapping the body. These nameless functions\n"
 "    // are assigned to appropriately named variables.\n"
 msgstr ""
+"// 闭包是匿名的，这里我们将它们绑定到引用。\n"
+"    // 注解与函数注解相同，但是可选的\n"
+"    // 包裹函数体的 `{}` 也是可选的。这些无名函数\n"
+"    // 被赋值给适当命名的变量。\n"
 
 #: src/fn/closures.md:36
 msgid "// Call the closures.\n"
-msgstr ""
+msgstr "// 调用闭包。\n"
 
 #: src/fn/closures.md:37
 msgid "\"closure_annotated: {}\""
-msgstr ""
+msgstr "\"closure_annotated: {}\""
 
 #: src/fn/closures.md:38
 msgid "\"closure_inferred: {}\""
-msgstr ""
+msgstr "\"closure_inferred: {}\""
 
 #: src/fn/closures.md:39
 msgid ""
@@ -5309,16 +5364,21 @@ msgid ""
 "closure_inferred(42i64));\n"
 "    // TODO: uncomment the line above and see the compiler error.\n"
 msgstr ""
+"// 一旦闭包的类型被推断出来，就不能再用另一种类型进行推断。\n"
+"    //println!(\"不能用另一种类型重用 closure_inferred：{}\", "
+"closure_inferred(42i64));\n"
 
 #: src/fn/closures.md:43
 msgid ""
 "// A closure taking no arguments which returns an `i32`.\n"
 "    // The return type is inferred.\n"
 msgstr ""
+"// 一个不接受参数并返回 `i32` 的闭包。\n"
+"    // 返回类型是推断出来的。\n"
 
 #: src/fn/closures.md:46
 msgid "\"closure returning one: {}\""
-msgstr ""
+msgstr "\"返回 1 的闭包：{}\""
 
 #: src/fn/closures/capture.md:3
 msgid ""
@@ -5327,28 +5387,29 @@ msgid ""
 "flexibly adapt to the use case, sometimes moving and sometimes borrowing. "
 "Closures can capture variables:"
 msgstr ""
+"闭包本质上是灵活的，它们会根据功能需求自动适应，无需注解就能正常工作。这种灵活性使得捕获可以根据使用场景进行调整，有时是移动，有时是借用。闭包可以通过以下方式捕获变量："
 
 #: src/fn/closures/capture.md:8
 msgid "by reference: `&T`"
-msgstr ""
+msgstr "通过引用：`&T`"
 
 #: src/fn/closures/capture.md:9
 msgid "by mutable reference: `&mut T`"
-msgstr ""
+msgstr "通过可变引用：`&mut T`"
 
 #: src/fn/closures/capture.md:10
 msgid "by value: `T`"
-msgstr ""
+msgstr "通过值：`T`"
 
 #: src/fn/closures/capture.md:12
 msgid ""
 "They preferentially capture variables by reference and only go lower when "
 "required."
-msgstr ""
+msgstr "它们优先通过引用捕获变量，只有在必要时才会使用更低级别的捕获方式。"
 
 #: src/fn/closures/capture.md:19
 msgid "\"green\""
-msgstr ""
+msgstr "\"green\""
 
 #: src/fn/closures/capture.md:21
 msgid ""
@@ -5360,24 +5421,32 @@ msgid ""
 "doesn't\n"
 "    // impose anything more restrictive.\n"
 msgstr ""
+"// 一个打印 `color` 的闭包，它立即借用（`&`）`color` 并\n"
+"    // 将借用和闭包存储在 `print` 变量中。它将保持\n"
+"    // 借用状态直到 `print` 最后一次被使用。\n"
+"    //\n"
+"    // `println!` 只需要通过不可变引用传递参数，所以它\n"
+"    // 不会施加任何更严格的限制。\n"
 
 #: src/fn/closures/capture.md:27
 msgid "\"`color`: {}\""
-msgstr ""
+msgstr "\"`color`: {}\""
 
 #: src/fn/closures/capture.md:29
 msgid "// Call the closure using the borrow.\n"
-msgstr ""
+msgstr "// 使用借用调用闭包。\n"
 
 #: src/fn/closures/capture.md:32
 msgid ""
 "// `color` can be borrowed immutably again, because the closure only holds\n"
 "    // an immutable reference to `color`. \n"
 msgstr ""
+"// `color` 可以再次被不可变借用，因为闭包只持有\n"
+"    // `color` 的不可变引用。\n"
 
 #: src/fn/closures/capture.md:37
 msgid "// A move or reborrow is allowed after the final use of `print`\n"
-msgstr ""
+msgstr "// 在 `print` 的最后一次使用之后，可以移动或重新借用\n"
 
 #: src/fn/closures/capture.md:42
 msgid ""
@@ -5388,14 +5457,20 @@ msgid ""
 "    // A `mut` is required on `inc` because a `&mut` is stored inside. Thus,\n"
 "    // calling the closure mutates `count` which requires a `mut`.\n"
 msgstr ""
+"// 一个用于增加 `count` 的闭包可以接受 `&mut count` 或 `count`\n"
+"    // 但 `&mut count` 限制更少，所以选择它。立即\n"
+"    // 借用 `count`。\n"
+"    //\n"
+"    // `inc` 需要 `mut` 因为内部存储了一个 `&mut`。因此，\n"
+"    // 调用闭包会改变 `count`，这需要一个 `mut`。\n"
 
 #: src/fn/closures/capture.md:50
 msgid "\"`count`: {}\""
-msgstr ""
+msgstr "\"`count`: {}\""
 
 #: src/fn/closures/capture.md:53
 msgid "// Call the closure using a mutable borrow.\n"
-msgstr ""
+msgstr "// 使用可变借用调用闭包。\n"
 
 #: src/fn/closures/capture.md:56
 msgid ""
@@ -5404,16 +5479,22 @@ msgid ""
 "    // let _reborrow = &count; \n"
 "    // ^ TODO: try uncommenting this line.\n"
 msgstr ""
+"// 闭包仍然可变地借用 `count`，因为它稍后会被调用。\n"
+"    // 尝试重新借用会导致错误。\n"
+"    // let _reborrow = &count; \n"
+"    // ^ TODO：尝试取消注释这一行。\n"
 
 #: src/fn/closures/capture.md:62
 msgid ""
 "// The closure no longer needs to borrow `&mut count`. Therefore, it is\n"
 "    // possible to reborrow without an error\n"
 msgstr ""
+"// 闭包不再需要借用 `&mut count`。因此，可以\n"
+"    // 在没有错误的情况下重新借用\n"
 
 #: src/fn/closures/capture.md:67
 msgid "// A non-copy type.\n"
-msgstr ""
+msgstr "// 一个不可复制类型。\n"
 
 #: src/fn/closures/capture.md:70
 msgid ""
@@ -5422,30 +5503,36 @@ msgid ""
 "    // A non-copy must move and so `movable` immediately moves into\n"
 "    // the closure.\n"
 msgstr ""
+"// `mem::drop` 需要 `T`，所以这里必须通过值获取。可复制类型\n"
+"    // 会被复制到闭包中，原始值保持不变。\n"
+"    // 不可复制类型必须移动，所以 `movable` 立即移动到\n"
+"    // 闭包中。\n"
 
 #: src/fn/closures/capture.md:75
 msgid "\"`movable`: {:?}\""
-msgstr ""
+msgstr "\"`movable`: {:?}\""
 
 #: src/fn/closures/capture.md:79
 msgid "// `consume` consumes the variable so this can only be called once.\n"
-msgstr ""
+msgstr "// `consume` 消耗了变量，所以这只能被调用一次。\n"
 
 #: src/fn/closures/capture.md:81
 msgid ""
 "// consume();\n"
 "    // ^ TODO: Try uncommenting this line.\n"
 msgstr ""
+"// consume();\n"
+"    // ^ TODO：尝试取消注释这一行。\n"
 
 #: src/fn/closures/capture.md:86
 msgid ""
 "Using `move` before vertical pipes forces closure to take ownership of "
 "captured variables:"
-msgstr ""
+msgstr "在竖线前使用 `move` 强制闭包获取捕获变量的所有权："
 
 #: src/fn/closures/capture.md:91
 msgid "// `Vec` has non-copy semantics.\n"
-msgstr ""
+msgstr "// `Vec` 具有非复制语义。\n"
 
 #: src/fn/closures/capture.md:99
 msgid ""
@@ -5454,6 +5541,10 @@ msgid ""
 "    // because borrow checker doesn't allow re-using variable after it\n"
 "    // has been moved.\n"
 msgstr ""
+"// println!(\"vec 中有 {} 个元素\", haystack.len());\n"
+"    // ^ 取消上面这行的注释会导致编译时错误\n"
+"    // 因为借用检查器不允许在变量被移动后重新使用。\n"
+"    \n"
 
 #: src/fn/closures/capture.md:104
 msgid ""
@@ -5461,12 +5552,17 @@ msgid ""
 "    // to borrow _haystack_ variable immutably, hence _haystack_ is still\n"
 "    // available and uncommenting above line will not cause an error.\n"
 msgstr ""
+"// 从闭包的签名中移除 `move` 将导致闭包\n"
+"    // 不可变地借用 _haystack_ 变量，因此 _haystack_ 仍然\n"
+"    // 可用，取消注释上面的行不会导致错误。\n"
 
 #: src/fn/closures/capture.md:112
 msgid ""
 "[`Box`](../../std/box.md) and [`std::mem::drop`](https://doc.rust-lang.org/"
 "std/mem/fn.drop.html)"
 msgstr ""
+"[`Box`](../../std/box.md) 和 [`std::mem::drop`](https://doc.rust-lang.org/"
+"std/mem/fn.drop.html)"
 
 #: src/fn/closures/input_parameters.md:3
 msgid ""
@@ -5477,25 +5573,26 @@ msgid ""
 "closure does with captured value. In order of decreasing restriction, they "
 "are:"
 msgstr ""
+"虽然 Rust 在大多数情况下可以自动选择如何捕获变量而无需类型注解，但在编写函数时不允许这种模糊性。当将闭包作为输入参数时，必须使用以下 `traits` 中的一个来注解闭包的完整类型，这些 traits 由闭包对捕获值的处理方式决定。按限制程度递减的顺序，它们是："
 
 #: src/fn/closures/input_parameters.md:10
 msgid "`Fn`: the closure uses the captured value by reference (`&T`)"
-msgstr ""
+msgstr "`Fn`：闭包通过引用使用捕获的值（`&T`）"
 
 #: src/fn/closures/input_parameters.md:11
 msgid ""
 "`FnMut`: the closure uses the captured value by mutable reference (`&mut T`)"
-msgstr ""
+msgstr "`FnMut`：闭包通过可变引用使用捕获的值（`&mut T`）"
 
 #: src/fn/closures/input_parameters.md:12
 msgid "`FnOnce`: the closure uses the captured value by value (`T`)"
-msgstr ""
+msgstr "`FnOnce`：闭包通过值使用捕获的值（`T`）"
 
 #: src/fn/closures/input_parameters.md:14
 msgid ""
 "On a variable-by-variable basis, the compiler will capture variables in the "
 "least restrictive manner possible."
-msgstr ""
+msgstr "编译器会以尽可能最少限制的方式逐个捕获变量。"
 
 #: src/fn/closures/input_parameters.md:17
 msgid ""
@@ -5503,6 +5600,7 @@ msgid ""
 "the closure _may_ capture by `&T`, `&mut T`, or `T`, but the compiler will "
 "ultimately choose based on how the captured variables are used in the closure."
 msgstr ""
+"例如，考虑一个注解为 `FnOnce` 的参数。这指定闭包**可能**通过 `&T`、`&mut T` 或 `T` 进行捕获，但编译器最终会根据捕获变量在闭包中的使用方式来选择。"
 
 #: src/fn/closures/input_parameters.md:22
 msgid ""
@@ -5511,94 +5609,105 @@ msgid ""
 "`Fn`, then capturing variables by `&mut T` or `T` are not allowed. However, "
 "`&T` is allowed."
 msgstr ""
+"这是因为如果可以移动，那么任何类型的借用也应该是可能的。注意反过来并不成立。如果参数被注解为 `Fn`，那么通过 `&mut T` 或 `T` 捕获变量是不允许的。然而，`&T` 是允许的。"
 
 #: src/fn/closures/input_parameters.md:27
 msgid ""
 "In the following example, try swapping the usage of `Fn`, `FnMut`, and "
 "`FnOnce` to see what happens:"
-msgstr ""
+msgstr "在下面的例子中，尝试交换 `Fn`、`FnMut` 和 `FnOnce` 的用法，看看会发生什么："
 
 #: src/fn/closures/input_parameters.md:31
 msgid ""
 "// A function which takes a closure as an argument and calls it.\n"
 "// <F> denotes that F is a \"Generic type parameter\"\n"
 msgstr ""
+"// 一个接受闭包作为参数并调用它的函数。\n"
+"// <F> 表示 F 是一个"泛型类型参数"\n"
 
 #: src/fn/closures/input_parameters.md:34
 msgid "// The closure takes no input and returns nothing.\n"
-msgstr ""
+msgstr "// 这个闭包不接受输入也不返回任何值。\n"
 
 #: src/fn/closures/input_parameters.md:36
 msgid "// ^ TODO: Try changing this to `Fn` or `FnMut`.\n"
-msgstr ""
+msgstr "// ^ TODO：尝试将其改为 `Fn` 或 `FnMut`。\n"
 
 #: src/fn/closures/input_parameters.md:40
 msgid "// A function which takes a closure and returns an `i32`.\n"
-msgstr ""
+msgstr "// 一个接受闭包并返回 `i32` 的函数。\n"
 
 #: src/fn/closures/input_parameters.md:43
 msgid "// The closure takes an `i32` and returns an `i32`.\n"
-msgstr ""
+msgstr "// 这个闭包接受一个 `i32` 并返回一个 `i32`。\n"
 
 #: src/fn/closures/input_parameters.md:53
 msgid ""
 "// A non-copy type.\n"
 "    // `to_owned` creates owned data from borrowed one\n"
 msgstr ""
+"// 一个非复制类型。\n"
+"    // `to_owned` 从借用的数据创建所有权数据\n"
 
 #: src/fn/closures/input_parameters.md:55
 msgid "\"goodbye\""
-msgstr ""
+msgstr "\"goodbye\""
 
 #: src/fn/closures/input_parameters.md:57
 msgid ""
 "// Capture 2 variables: `greeting` by reference and\n"
 "    // `farewell` by value.\n"
 msgstr ""
+"// 捕获两个变量：通过引用捕获 `greeting`，\n"
+"    // 通过值捕获 `farewell`。\n"
 
 #: src/fn/closures/input_parameters.md:60
 msgid "// `greeting` is by reference: requires `Fn`.\n"
-msgstr ""
+msgstr "// `greeting` 是通过引用：需要 `Fn`。\n"
 
 #: src/fn/closures/input_parameters.md:61
 msgid "\"I said {}.\""
-msgstr ""
+msgstr "\"I said {}.\""
 
 #: src/fn/closures/input_parameters.md:63
 msgid ""
 "// Mutation forces `farewell` to be captured by\n"
 "        // mutable reference. Now requires `FnMut`.\n"
 msgstr ""
+"// 修改强制 `farewell` 通过可变引用捕获。\n"
+"        // 现在需要 `FnMut`。\n"
 
 #: src/fn/closures/input_parameters.md:65
 msgid "\"!!!\""
-msgstr ""
+msgstr "\"!!!\""
 
 #: src/fn/closures/input_parameters.md:66
 msgid "\"Then I screamed {}.\""
-msgstr ""
+msgstr "\"Then I screamed {}.\""
 
 #: src/fn/closures/input_parameters.md:67
 msgid "\"Now I can sleep. zzzzz\""
-msgstr ""
+msgstr "\"Now I can sleep. zzzzz\""
 
 #: src/fn/closures/input_parameters.md:69
 msgid ""
 "// Manually calling drop forces `farewell` to\n"
 "        // be captured by value. Now requires `FnOnce`.\n"
 msgstr ""
+"// 手动调用 drop 强制 `farewell` 通过值捕获。\n"
+"        // 现在需要 `FnOnce`。\n"
 
 #: src/fn/closures/input_parameters.md:74
 msgid "// Call the function which applies the closure.\n"
-msgstr ""
+msgstr "// 调用应用闭包的函数。\n"
 
 #: src/fn/closures/input_parameters.md:77
 msgid "// `double` satisfies `apply_to_3`'s trait bound\n"
-msgstr ""
+msgstr "// `double` 满足 `apply_to_3` 的 trait 约束\n"
 
 #: src/fn/closures/input_parameters.md:80
 msgid "\"3 doubled: {}\""
-msgstr ""
+msgstr "\"3 doubled: {}\""
 
 #: src/fn/closures/input_parameters.md:86
 msgid ""
@@ -5608,6 +5717,11 @@ msgid ""
 "(../../generics/where.md) and [`FnOnce`](https://doc.rust-lang.org/std/ops/"
 "trait.FnOnce.html)"
 msgstr ""
+"[`std::mem::drop`](https://doc.rust-lang.org/std/mem/fn.drop.html)、[`Fn`]"
+"(https://doc.rust-lang.org/std/ops/trait.Fn.html)、[`FnMut`](https://doc.rust-"
+"lang.org/std/ops/trait.FnMut.html)、[泛型](../../generics.md)、[where]"
+"(../../generics/where.md) 和 [`FnOnce`](https://doc.rust-lang.org/std/ops/"
+"trait.FnOnce.html)"
 
 #: src/fn/closures/anonymity.md:3
 msgid ""
@@ -5616,10 +5730,11 @@ msgid ""
 "parameter requires [generics](../../generics.md), which is necessary because "
 "of how they are defined:"
 msgstr ""
+"闭包简洁地从封闭作用域中捕获变量。这会有什么后果吗？当然会有。观察一下如何将闭包作为函数参数使用需要[泛型](../../generics.md)，这是因为它们的定义方式所必需的："
 
 #: src/fn/closures/anonymity.md:9
 msgid "// `F` must be generic.\n"
-msgstr ""
+msgstr "// `F` 必须是泛型。\n"
 
 #: src/fn/closures/anonymity.md:16
 msgid ""
@@ -5629,6 +5744,7 @@ msgid ""
 "unknown type. This type is assigned to the variable which is stored until "
 "calling."
 msgstr ""
+"当定义一个闭包时，编译器会隐式创建一个新的匿名结构来存储内部捕获的变量，同时通过 `traits` 之一：`Fn`、`FnMut` 或 `FnOnce` 为这个未知类型实现功能。这个类型被分配给变量，并存储直到调用。"
 
 #: src/fn/closures/anonymity.md:22
 msgid ""
@@ -5637,6 +5753,7 @@ msgid ""
 "and not be allowed. Thus, bounding by one of the `traits`: `Fn`, `FnMut`, or "
 "`FnOnce` (which it implements) is sufficient to specify its type."
 msgstr ""
+"由于这个新类型是未知类型，在函数中的任何使用都需要泛型。然而，一个无界的类型参数 `<T>` 仍然会是模糊的，不被允许。因此，通过 `traits` 之一：`Fn`、`FnMut` 或 `FnOnce`（它实现的）来约束就足以指定其类型。"
 
 #: src/fn/closures/anonymity.md:28
 msgid ""
@@ -5644,12 +5761,17 @@ msgid ""
 "// inputs and returns nothing - exactly what is required\n"
 "// for `print`.\n"
 msgstr ""
+"// `F` 必须实现 `Fn` 用于一个不接受输入且不返回任何内容的闭包\n"
+"// - 这正是 `print` 所需要的。\n"
+"\n"
 
 #: src/fn/closures/anonymity.md:39
 msgid ""
 "// Capture `x` into an anonymous type and implement\n"
 "    // `Fn` for it. Store it in `print`.\n"
 msgstr ""
+"// 将 `x` 捕获到一个匿名类型中并为其实现\n"
+"    // `Fn`。将其存储在 `print` 中。\n"
 
 #: src/fn/closures/anonymity.md:49
 msgid ""
@@ -5658,6 +5780,10 @@ msgid ""
 "(https://doc.rust-lang.org/std/ops/trait.FnMut.html), and [`FnOnce`](https://"
 "doc.rust-lang.org/std/ops/trait.FnOnce.html)"
 msgstr ""
+"[深入分析](https://huonw.github.io/blog/2015/05/finding-closure-in-"rust/)、"
+"[`Fn`](https://doc.rust-lang.org/std/ops/trait.Fn.html)、[`FnMut`]"
+"(https://doc.rust-lang.org/std/ops/trait.FnMut.html) 和 [`FnOnce`](https://"
+"doc.rust-lang.org/std/ops/trait.FnOnce.html)"
 
 #: src/fn/closures/input_functions.md:3
 msgid ""
@@ -5666,34 +5792,37 @@ msgid ""
 "takes a closure as parameter, then any function that satisfies the trait "
 "bound of that closure can be passed as a parameter."
 msgstr ""
+"既然闭包可以作为参数使用，你可能会想知道函数是否也可以这样。确实可以！如果你声明一个函数，它接受一个闭包作为参数，那么任何满足该闭包 trait 约束的函数都可以作为参数传递。"
 
 #: src/fn/closures/input_functions.md:9
 msgid ""
 "// Define a function which takes a generic `F` argument\n"
 "// bounded by `Fn`, and calls it\n"
 msgstr ""
+"// 定义一个函数，它接受一个由 `Fn` 约束的泛型参数 `F` ，并调用它\n"
 
 #: src/fn/closures/input_functions.md:14
 msgid "// Define a wrapper function satisfying the `Fn` bound\n"
-msgstr ""
+msgstr "// 定义一个满足 `Fn` 约束的包装函数\n"
 
 #: src/fn/closures/input_functions.md:17
 msgid "\"I'm a function!\""
-msgstr ""
+msgstr "\"I'm a function!\""
 
 #: src/fn/closures/input_functions.md:21
 msgid "// Define a closure satisfying the `Fn` bound\n"
-msgstr ""
+msgstr "// 定义一个满足 `Fn` 约束的闭包\n"
 
 #: src/fn/closures/input_functions.md:22
 msgid "\"I'm a closure!\""
-msgstr ""
+msgstr "\"I'm a closure!\""
 
 #: src/fn/closures/input_functions.md:29
 msgid ""
 "As an additional note, the `Fn`, `FnMut`, and `FnOnce` `traits` dictate how a "
 "closure captures variables from the enclosing scope."
 msgstr ""
+"作为附加说明，`Fn`、`FnMut` 和 `FnOnce` `traits` 决定了闭包如何从封闭作用域中捕获变量。"
 
 #: src/fn/closures/input_functions.md:34
 msgid ""
@@ -5701,6 +5830,9 @@ msgid ""
 "doc.rust-lang.org/std/ops/trait.FnMut.html), and [`FnOnce`](https://doc.rust-"
 "lang.org/std/ops/trait.FnOnce.html)"
 msgstr ""
+"[`Fn`](https://doc.rust-lang.org/std/ops/trait.Fn.html)、[`FnMut`](https://"
+"doc.rust-lang.org/std/ops/trait.FnMut.html) 和 [`FnOnce`](https://doc.rust-"
+"lang.org/std/ops/trait.FnOnce.html)"
 
 #: src/fn/closures/output_parameters.md:3
 msgid ""
@@ -5708,22 +5840,23 @@ msgid ""
 "parameters should also be possible. However, anonymous closure types are, by "
 "definition, unknown, so we have to use `impl Trait` to return them."
 msgstr ""
+"闭包既然可以作为输入参数，那么将闭包作为输出参数返回也应该是可以的。然而，匿名闭包类型根据定义是未知的，所以我们必须使用 `impl Trait` 来返回它们。"
 
 #: src/fn/closures/output_parameters.md:8
 msgid "The valid traits for returning a closure are:"
-msgstr ""
+msgstr "返回闭包的有效 traits 是："
 
 #: src/fn/closures/output_parameters.md:10
 msgid "`Fn`"
-msgstr ""
+msgstr "`Fn`"
 
 #: src/fn/closures/output_parameters.md:11
 msgid "`FnMut`"
-msgstr ""
+msgstr "`FnMut`"
 
 #: src/fn/closures/output_parameters.md:12
 msgid "`FnOnce`"
-msgstr ""
+msgstr "`FnOnce`"
 
 #: src/fn/closures/output_parameters.md:14
 msgid ""
@@ -5732,24 +5865,25 @@ msgid ""
 "dropped as soon as the function exited, leaving invalid references in the "
 "closure."
 msgstr ""
+"除此之外，必须使用 `move` 关键字，它表示所有捕获都通过值进行。这是必需的，因为任何通过引用的捕获都会在函数退出时立即被丢弃，在闭包中留下无效的引用。"
 
 #: src/fn/closures/output_parameters.md:21
 msgid "\"Fn\""
-msgstr ""
+msgstr "\"Fn\""
 
 #: src/fn/closures/output_parameters.md:23
 #: src/fn/closures/output_parameters.md:29
 #: src/fn/closures/output_parameters.md:35
 msgid "\"This is a: {}\""
-msgstr ""
+msgstr "\"这是一个：{}\""
 
 #: src/fn/closures/output_parameters.md:27
 msgid "\"FnMut\""
-msgstr ""
+msgstr "\"FnMut\""
 
 #: src/fn/closures/output_parameters.md:33
 msgid "\"FnOnce\""
-msgstr ""
+msgstr "\"FnOnce\""
 
 #: src/fn/closures/output_parameters.md:51
 msgid ""
@@ -5757,11 +5891,14 @@ msgid ""
 "doc.rust-lang.org/std/ops/trait.FnMut.html), [Generics](../../generics.md) "
 "and [impl Trait](../../trait/impl_trait.md)."
 msgstr ""
+"[`Fn`](https://doc.rust-lang.org/std/ops/trait.Fn.html)、[`FnMut`](https://"
+"doc.rust-lang.org/std/ops/trait.FnMut.html)、[泛型](../../generics.md)"
+"和 [impl Trait](../../trait/impl_trait.md)。"
 
 #: src/fn/closures/closure_examples.md:3
 msgid ""
 "This section contains a few examples of using closures from the `std` library."
-msgstr ""
+msgstr "本节包含一些使用 `std` 库中闭包的示例。"
 
 #: src/fn/closures/closure_examples/iter_any.md:3
 msgid ""
@@ -5769,17 +5906,21 @@ msgid ""
 "`true` if any element satisfies the predicate. Otherwise `false`. Its "
 "signature:"
 msgstr ""
+"`Iterator::any` 是一个函数，当传入一个迭代器时，如果任何元素满足谓词，则返回 "
+"`true`。否则返回 `false`。它的签名如下："
 
 #: src/fn/closures/closure_examples/iter_any.md:9
 #: src/fn/closures/closure_examples/iter_find.md:9
 msgid "// The type being iterated over.\n"
-msgstr ""
+msgstr "// 被迭代的类型。\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:12
 msgid ""
 "// `any` takes `&mut self` meaning the caller may be borrowed\n"
 "    // and modified, but not consumed.\n"
 msgstr ""
+"// `any` 接受 `&mut self`，意味着调用者可能被借用\n"
+"    // 和修改，但不会被消耗。\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:15
 msgid ""
@@ -5787,35 +5928,37 @@ msgid ""
 "        // modified, not consumed. `Self::Item` states it takes\n"
 "        // arguments to the closure by value.\n"
 msgstr ""
+"// `FnMut` 意味着任何捕获的变量最多可以被修改，而不是被消耗。\n"
+"        // `Self::Item` 表示它通过值将参数传递给闭包。\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:27
 msgid "// `iter()` for vecs yields `&i32`. Destructure to `i32`.\n"
-msgstr ""
+msgstr "// 对 vec 使用 `iter()` 产生 `&i32`。解构为 `i32`。\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:28
 msgid "\"2 in vec1: {}\""
-msgstr ""
+msgstr "\"2 在 vec1 中：{}\""
 
 #: src/fn/closures/closure_examples/iter_any.md:29
 msgid "// `into_iter()` for vecs yields `i32`. No destructuring required.\n"
-msgstr ""
+msgstr "// 对 vec 使用 `into_iter()` 产生 `i32`。不需要解构。\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:30
 msgid "\"2 in vec2: {}\""
-msgstr ""
+msgstr "\"2 在 vec2 中：{}\""
 
 #: src/fn/closures/closure_examples/iter_any.md:32
 msgid ""
 "// `iter()` only borrows `vec1` and its elements, so they can be used again\n"
-msgstr ""
+msgstr "// `iter()` 只借用 `vec1` 及其元素，所以它们可以再次使用\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:33
 msgid "\"vec1 len: {}\""
-msgstr ""
+msgstr "\"vec1 长度：{}\""
 
 #: src/fn/closures/closure_examples/iter_any.md:34
 msgid "\"First element of vec1 is: {}\""
-msgstr ""
+msgstr "\"vec1 的第一个元素是：{}\""
 
 #: src/fn/closures/closure_examples/iter_any.md:35
 msgid ""
@@ -5825,28 +5968,34 @@ msgid ""
 "    // println!(\"vec2 len: {}\", vec2.len());\n"
 "    // TODO: uncomment two lines above and see compiler errors.\n"
 msgstr ""
+"// `into_iter()` 会移动 `vec2` 及其元素，所以它们不能再次使用\n"
+"    // println!(\"vec2 的第一个元素是：{}\", vec2[0]);\n"
+"    // println!(\"vec2 长度：{}\", vec2.len());\n"
+"    // TODO：取消上面两行的注释，查看编译器错误。\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:43
 msgid "// `iter()` for arrays yields `&i32`.\n"
-msgstr ""
+msgstr "// 对数组使用 `iter()` 产生 `&i32`。\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:44
 msgid "\"2 in array1: {}\""
-msgstr ""
+msgstr "\"2 在 array1 中：{}\""
 
 #: src/fn/closures/closure_examples/iter_any.md:45
 msgid "// `into_iter()` for arrays yields `i32`.\n"
-msgstr ""
+msgstr "// 对数组使用 `into_iter()` 产生 `i32`。\n"
 
 #: src/fn/closures/closure_examples/iter_any.md:46
 msgid "\"2 in array2: {}\""
-msgstr ""
+msgstr "\"2 在 array2 中：{}\""
 
 #: src/fn/closures/closure_examples/iter_any.md:52
 msgid ""
 "[`std::iter::Iterator::any`](https://doc.rust-lang.org/std/iter/trait."
 "Iterator.html#method.any)"
 msgstr ""
+"[`std::iter::Iterator::any`](https://doc.rust-lang.org/std/iter/trait."
+"Iterator.html#method.any)"
 
 #: src/fn/closures/closure_examples/iter_find.md:3
 msgid ""
@@ -5854,12 +6003,16 @@ msgid ""
 "for the first value which satisfies some condition. If none of the values "
 "satisfy the condition, it returns `None`. Its signature:"
 msgstr ""
+"`Iterator::find` 是一个函数，它遍历一个迭代器并搜索满足某个条件的第一个值。"
+"如果没有值满足条件，它返回 `None`。它的签名如下："
 
 #: src/fn/closures/closure_examples/iter_find.md:12
 msgid ""
 "// `find` takes `&mut self` meaning the caller may be borrowed\n"
 "    // and modified, but not consumed.\n"
 msgstr ""
+"// `find` 接受 `&mut self`，意味着调用者可能被借用\n"
+"    // 和修改，但不会被消耗。\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:15
 msgid ""
@@ -5867,56 +6020,63 @@ msgid ""
 "        // modified, not consumed. `&Self::Item` states it takes\n"
 "        // arguments to the closure by reference.\n"
 msgstr ""
+"// `FnMut` 意味着任何捕获的变量最多可以被修改，而不是被消耗。\n"
+"        // `&Self::Item` 表示它通过引用将参数传递给闭包。\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:27
 msgid "// `iter()` for vecs yields `&i32`.\n"
-msgstr ""
+msgstr "// 对 vec 使用 `iter()` 产生 `&i32`。\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:29
 msgid "// `into_iter()` for vecs yields `i32`.\n"
-msgstr ""
+msgstr "// 对 vec 使用 `into_iter()` 产生 `i32`。\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:32
 msgid ""
 "// `iter()` for vecs yields `&i32`, and we want to reference one of its\n"
 "    // items, so we have to destructure `&&i32` to `i32`\n"
 msgstr ""
+"// 对 vec 使用 `iter()` 产生 `&i32`，我们想要引用其中的一个\n"
+"    // 项，所以我们必须将 `&&i32` 解构为 `i32`\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:34
 msgid "\"Find 2 in vec1: {:?}\""
-msgstr ""
+msgstr "\"在 vec1 中查找 2：{:?}\""
 
 #: src/fn/closures/closure_examples/iter_find.md:35
 msgid ""
 "// `into_iter()` for vecs yields `i32`, and we want to reference one of\n"
 "    // its items, so we have to destructure `&i32` to `i32`\n"
 msgstr ""
+"// 对 vec 使用 `into_iter()` 产生 `i32`，我们想要引用其中的\n"
+"    // 一个项，所以我们必须将 `&i32` 解构为 `i32`\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:37
 msgid "\"Find 2 in vec2: {:?}\""
-msgstr ""
+msgstr "\"在 vec2 中查找 2：{:?}\""
 
 #: src/fn/closures/closure_examples/iter_find.md:42
 msgid "// `iter()` for arrays yields `&&i32`\n"
-msgstr ""
+msgstr "// 对数组使用 `iter()` 产生 `&&i32`\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:43
 msgid "\"Find 2 in array1: {:?}\""
-msgstr ""
+msgstr "\"在 array1 中查找 2：{:?}\""
 
 #: src/fn/closures/closure_examples/iter_find.md:44
 msgid "// `into_iter()` for arrays yields `&i32`\n"
-msgstr ""
+msgstr "// 对数组使用 `into_iter()` 产生 `&i32`\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:45
 msgid "\"Find 2 in array2: {:?}\""
-msgstr ""
+msgstr "\"在 array2 中查找 2：{:?}\""
 
 #: src/fn/closures/closure_examples/iter_find.md:49
 msgid ""
 "`Iterator::find` gives you a reference to the item. But if you want the "
 "_index_ of the item, use `Iterator::position`."
 msgstr ""
+"`Iterator::find` 给你一个项的引用。但如果你想要项的**索引**，使用 `Iterator::position`。"
 
 #: src/fn/closures/closure_examples/iter_find.md:56
 msgid ""
@@ -5924,6 +6084,8 @@ msgid ""
 "reference, so\n"
 "    // we have to destructure `&i32` to `i32`\n"
 msgstr ""
+"// 对 vec 使用 `iter()` 产生 `&i32`，而 `position()` 不接受引用，所以\n"
+"    // 我们必须将 `&i32` 解构为 `i32`\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:61
 msgid ""
@@ -5931,30 +6093,40 @@ msgid ""
 "reference, so\n"
 "    // we do not have to destructure    \n"
 msgstr ""
+"// 对 vec 使用 `into_iter()` 产生 `i32`，而 `position()` 不接受引用，所以\n"
+"    // 我们不需要解构\n"
 
 #: src/fn/closures/closure_examples/iter_find.md:70
 msgid ""
 "[`std::iter::Iterator::find`](https://doc.rust-lang.org/std/iter/trait."
 "Iterator.html#method.find)"
 msgstr ""
+"[`std::iter::Iterator::find`](https://doc.rust-lang.org/std/iter/trait."
+"Iterator.html#method.find)"
 
 #: src/fn/closures/closure_examples/iter_find.md:72
 msgid ""
 "[`std::iter::Iterator::find_map`](https://doc.rust-lang.org/std/iter/trait."
 "Iterator.html#method.find_map)"
 msgstr ""
+"[`std::iter::Iterator::find_map`](https://doc.rust-lang.org/std/iter/trait."
+"Iterator.html#method.find_map)"
 
 #: src/fn/closures/closure_examples/iter_find.md:74
 msgid ""
 "[`std::iter::Iterator::position`](https://doc.rust-lang.org/std/iter/trait."
 "Iterator.html#method.position)"
 msgstr ""
+"[`std::iter::Iterator::position`](https://doc.rust-lang.org/std/iter/trait."
+"Iterator.html#method.position)"
 
 #: src/fn/closures/closure_examples/iter_find.md:76
 msgid ""
 "[`std::iter::Iterator::rposition`](https://doc.rust-lang.org/std/iter/trait."
 "Iterator.html#method.rposition)"
 msgstr ""
+"[`std::iter::Iterator::rposition`](https://doc.rust-lang.org/std/iter/trait."
+"Iterator.html#method.rposition)"
 
 #: src/fn/hof.md:3
 msgid ""
@@ -5962,60 +6134,63 @@ msgid ""
 "or more functions and/or produce a more useful function. HOFs and lazy "
 "iterators give Rust its functional flavor."
 msgstr ""
+"Rust 提供了高阶函数（Higher Order Functions, HOF）。这些函数接受一个或多个函数作为参数，并且/或者产生一个更有用的函数。HOF 和惰性迭代器赋予了 Rust 函数式编程的风格。"
 
 #: src/fn/hof.md:13
 msgid "\"Find the sum of all the numbers with odd squares under 1000\""
-msgstr ""
+msgstr "\"找出所有平方为奇数且小于 1000 的数字之和\""
 
 #: src/fn/hof.md:16
 msgid ""
 "// Imperative approach\n"
 "    // Declare accumulator variable\n"
 msgstr ""
+"// 命令式方法\n"
+"    // 声明累加器变量\n"
 
 #: src/fn/hof.md:19
 msgid "// Iterate: 0, 1, 2, ... to infinity\n"
-msgstr ""
+msgstr "// 迭代：0, 1, 2, ... 直到无穷大\n"
 
 #: src/fn/hof.md:21
 msgid "// Square the number\n"
-msgstr ""
+msgstr "// 对数字求平方\n"
 
 #: src/fn/hof.md:25
 msgid "// Break loop if exceeded the upper limit\n"
-msgstr ""
+msgstr "// 如果超过上限则跳出循环\n"
 
 #: src/fn/hof.md:28
 msgid "// Accumulate value, if it's odd\n"
-msgstr ""
+msgstr "// 如果是奇数，则累加值\n"
 
 #: src/fn/hof.md:32
 msgid "\"imperative style: {}\""
-msgstr ""
+msgstr "\"命令式风格：{}\""
 
 #: src/fn/hof.md:34
 msgid "// Functional approach\n"
-msgstr ""
+msgstr "// 函数式方法\n"
 
 #: src/fn/hof.md:36
 msgid "// All natural numbers squared\n"
-msgstr ""
+msgstr "// 所有自然数的平方\n"
 
 #: src/fn/hof.md:37
 msgid "// Below upper limit\n"
-msgstr ""
+msgstr "// 低于上限\n"
 
 #: src/fn/hof.md:38
 msgid "// That are odd\n"
-msgstr ""
+msgstr "// 是奇数\n"
 
 #: src/fn/hof.md:39
 msgid "// Sum them\n"
-msgstr ""
+msgstr "// 求和\n"
 
 #: src/fn/hof.md:40
 msgid "\"functional style: {}\""
-msgstr ""
+msgstr "\"函数式风格：{}\""
 
 #: src/fn/hof.md:44
 msgid ""
@@ -6023,16 +6198,19 @@ msgid ""
 "[Iterator](https://doc.rust-lang.org/core/iter/trait.Iterator.html) implement "
 "their fair share of HOFs."
 msgstr ""
+"[Option](https://doc.rust-lang.org/core/option/enum.Option.html) 和 "
+"[Iterator](https://doc.rust-lang.org/core/iter/trait.Iterator.html) 实现了相当多的高阶函数。"
 
 #: src/fn/diverging.md:3
 msgid ""
 "Diverging functions never return. They are marked using `!`, which is an "
 "empty type."
 msgstr ""
+"发散函数永不返回。它们使用 `!` 标记，这是一个空类型。"
 
 #: src/fn/diverging.md:7 src/fn/diverging.md:35
 msgid "\"This call never returns.\""
-msgstr ""
+msgstr "\"这个调用永不返回。\""
 
 #: src/fn/diverging.md:11
 msgid ""
@@ -6040,26 +6218,29 @@ msgid ""
 "the set of all possible values this type can have is empty. Note that, it is "
 "different from the `()` type, which has exactly one possible value."
 msgstr ""
+"与所有其他类型相反，这个类型不能被实例化，因为这个类型可能拥有的所有可能值的集合是空的。注意，它与 `()` 类型不同，后者恰好有一个可能的值。"
 
 #: src/fn/diverging.md:15
 msgid ""
 "For example, this function returns as usual, although there is no information "
 "in the return value."
 msgstr ""
+"例如，这个函数像往常一样返回，尽管返回值中没有信息。"
 
 #: src/fn/diverging.md:25
 msgid "\"This function returns and you can see this line.\""
-msgstr ""
+msgstr "\"这个函数返回，你可以看到这一行。\""
 
 #: src/fn/diverging.md:29
 msgid ""
 "As opposed to this function, which will never return the control back to the "
 "caller."
 msgstr ""
+"与之相对的是这个函数，它永远不会将控制权返回给调用者。"
 
 #: src/fn/diverging.md:36
 msgid "\"You will never see this line!\""
-msgstr ""
+msgstr "\"你永远不会看到这一行！\""
 
 #: src/fn/diverging.md:40
 msgid ""
@@ -6069,16 +6250,19 @@ msgid ""
 "required, such as in match branches. This flexibility allows us to write code "
 "like this:"
 msgstr ""
+"虽然这看起来像是一个抽象的概念，但它实际上非常有用且经常派上用场。这种类型的主要优势是它可以被转换为任何其他类型，这使得它在需要精确类型的情况下非常灵活，比如在 match 分支中。这种灵活性允许我们编写如下代码："
 
 #: src/fn/diverging.md:50
 msgid ""
 "// Notice that the return type of this match expression must be u32\n"
 "            // because of the type of the \"addition\" variable.\n"
 msgstr ""
+"// 注意这个 match 表达式的返回类型必须是 u32\n"
+"            // 因为 \"addition\" 变量的类型。\n"
 
 #: src/fn/diverging.md:53
 msgid "// The \"i\" variable is of type u32, which is perfectly fine.\n"
-msgstr ""
+msgstr "// \"i\" 变量的类型是 u32，这完全没问题。\n"
 
 #: src/fn/diverging.md:55
 msgid ""
@@ -6088,16 +6272,20 @@ msgid ""
 "                // does not violate the type requirements of the match "
 "expression.\n"
 msgstr ""
+"// 另一方面，\"continue\" 表达式不返回\n"
+"                // u32，但这仍然可以，因为它永远不会返回，因此\n"
+"                // 不违反 match 表达式的类型要求。\n"
 
 #: src/fn/diverging.md:64
 msgid "\"Sum of odd numbers up to 9 (excluding): {}\""
-msgstr ""
+msgstr "\"9 以下（不包括 9）的奇数之和：{}\""
 
 #: src/fn/diverging.md:68
 msgid ""
 "It is also the return type of functions that loop forever (e.g. `loop {}`) "
 "like network servers or functions that terminate the process (e.g. `exit()`)."
 msgstr ""
+"它也是永远循环的函数（例如 `loop {}`）的返回类型，比如网络服务器或终止进程的函数（例如 `exit()`）。"
 
 #: src/mod.md:3
 msgid ""
