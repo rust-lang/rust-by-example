@@ -2127,7 +2127,7 @@ msgstr "// 可变的 `i32`\n"
 
 #: src/primitives.md:47
 msgid "// Error! The type of a variable can't be changed.\n"
-msgstr "// 错误！变量的类型不能改变。\n"
+msgstr "// 报错！变量的类型不能改变。\n"
 
 #: src/primitives.md:50
 msgid "// Variables can be overwritten with shadowing.\n"
@@ -3081,7 +3081,7 @@ msgstr "\"小的\""
 
 #: src/custom_types/constants.md:29
 msgid "// Error! Cannot modify a `const`.\n"
-msgstr "// 错误！不能修改 `const`。\n"
+msgstr "// 报错！不能修改 `const`。\n"
 
 #: src/custom_types/constants.md:31 src/variable_bindings/scope.md:21
 #: src/variable_bindings/declare.md:25 src/variable_bindings/freeze.md:16
@@ -3169,7 +3169,7 @@ msgstr "\"修改后：{}\""
 
 #: src/variable_bindings/mut.md:18
 msgid "// Error! Cannot assign a new value to an immutable variable\n"
-msgstr "// 错误！不能对不可变变量赋新值\n"
+msgstr "// 报错！不能对不可变变量赋新值\n"
 
 #: src/variable_bindings/mut.md:23
 msgid "The compiler will throw a detailed diagnostic about mutability errors."
@@ -3204,7 +3204,7 @@ msgstr "// 代码块结束\n"
 
 #: src/variable_bindings/scope.md:19
 msgid "// Error! `short_lived_binding` doesn't exist in this scope\n"
-msgstr "// 错误！`short_lived_binding` 在这个作用域中不存在\n"
+msgstr "// 报错！`short_lived_binding` 在这个作用域中不存在\n"
 
 #: src/variable_bindings/scope.md:20
 msgid "\"outer short: {}\""
@@ -3271,7 +3271,7 @@ msgstr "\"一个绑定：{}\""
 
 #: src/variable_bindings/declare.md:23
 msgid "// Error! Use of uninitialized binding\n"
-msgstr "// 错误！使用未初始化的绑定\n"
+msgstr "// 报错！使用未初始化的绑定\n"
 
 #: src/variable_bindings/declare.md:24 src/variable_bindings/declare.md:29
 msgid "\"another binding: {}\""
@@ -3297,7 +3297,7 @@ msgstr "// 通过不可变的 `_mutable_integer` 进行遮蔽\n"
 
 #: src/variable_bindings/freeze.md:14
 msgid "// Error! `_mutable_integer` is frozen in this scope\n"
-msgstr "// 错误！`_mutable_integer` 在这个作用域中被冻结\n"
+msgstr "// 报错！`_mutable_integer` 在这个作用域中被冻结\n"
 
 #: src/variable_bindings/freeze.md:18
 msgid "// `_mutable_integer` goes out of scope\n"
@@ -3352,7 +3352,7 @@ msgstr "// 抑制所有来自溢出转换的警告。\n"
 
 #: src/types/cast.md:17
 msgid "// Error! No implicit conversion\n"
-msgstr "// 错误！没有隐式转换\n"
+msgstr "// 报错！没有隐式转换\n"
 
 #: src/types/cast.md:21
 msgid "// Explicit conversion\n"
@@ -3363,7 +3363,7 @@ msgid ""
 "// Error! There are limitations in conversion rules.\n"
 "    // A float cannot be directly converted to a char.\n"
 msgstr ""
-"// 错误！转换规则有限制。\n"
+"// 报错！转换规则有限制。\n"
 "    // 浮点数不能直接转换为字符。\n"
 
 #: src/types/cast.md:30
@@ -5265,7 +5265,7 @@ msgid ""
 "    //rectangle.translate(1.0, 0.0);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
-"// 错误！`rectangle` 是不可变的，但这个方法需要一个可变对象\n"
+"// 报错！`rectangle` 是不可变的，但这个方法需要一个可变对象\n"
 "    //rectangle.translate(1.0, 0.0);\n"
 "    // TODO ^ 尝试取消注释这一行\n"
 
@@ -5279,7 +5279,7 @@ msgid ""
 "    //pair.destroy();\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
-"// 错误！之前的 `destroy` 调用已经"消耗"了 `pair`\n"
+"// 报错！之前的 `destroy` 调用已经"消耗"了 `pair`\n"
 "    //pair.destroy();\n"
 "    // TODO ^ 尝试取消注释这一行\n"
 
@@ -6293,12 +6293,14 @@ msgid ""
 "split code in logical units (modules), and manage visibility (public/private) "
 "between them."
 msgstr ""
+"Rust 提供了一个强大的模块系统，可以用来将代码分层地拆分成逻辑单元（模块），并管理它们之间的可见性（公有/私有）。"
 
 #: src/mod.md:7
 msgid ""
 "A module is a collection of items: functions, structs, traits, `impl` blocks, "
 "and even other modules."
 msgstr ""
+"一个模块是一系列项的集合：函数、结构体、trait、`impl` 块，甚至其他模块。"
 
 #: src/mod/visibility.md:3
 msgid ""
@@ -6306,131 +6308,143 @@ msgid ""
 "overridden with the `pub` modifier. Only the public items of a module can be "
 "accessed from outside the module scope."
 msgstr ""
+"默认情况下，模块中的项具有私有可见性，但可以使用 `pub` 修饰符来覆盖这一默认行为。只有模块中的公有项可以从模块作用域外部访问。"
 
 #: src/mod/visibility.md:8
 msgid "// A module named `my_mod`\n"
-msgstr ""
+msgstr "// 一个名为 `my_mod` 的模块\n"
 
 #: src/mod/visibility.md:10
 msgid "// Items in modules default to private visibility.\n"
-msgstr ""
+msgstr "// 模块中的项默认为私有可见性。\n"
 
 #: src/mod/visibility.md:12
 msgid "\"called `my_mod::private_function()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::private_function()`\""
 
 #: src/mod/visibility.md:15
 msgid "// Use the `pub` modifier to override default visibility.\n"
-msgstr ""
+msgstr "// 使用 `pub` 修饰符来覆盖默认的可见性。\n"
 
 #: src/mod/visibility.md:17
 msgid "\"called `my_mod::function()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::function()`\""
 
 #: src/mod/visibility.md:20
 msgid ""
 "// Items can access other items in the same module,\n"
 "    // even when private.\n"
 msgstr ""
+"// 项可以访问同一模块中的其他项，即使是私有的。\n"
 
 #: src/mod/visibility.md:23
 msgid "\"called `my_mod::indirect_access()`, that\\n> \""
-msgstr ""
+msgstr "\"调用了 `my_mod::indirect_access()`，它\\n> \""
 
 #: src/mod/visibility.md:27
 msgid "// Modules can also be nested\n"
-msgstr ""
+msgstr "// 模块也可以嵌套\n"
 
 #: src/mod/visibility.md:30
 msgid "\"called `my_mod::nested::function()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::nested::function()`\""
 
 #: src/mod/visibility.md:35
 msgid "\"called `my_mod::nested::private_function()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::nested::private_function()`\""
 
 #: src/mod/visibility.md:38
 msgid ""
 "// Functions declared using `pub(in path)` syntax are only visible\n"
 "        // within the given path. `path` must be a parent or ancestor module\n"
 msgstr ""
+"// 使用 `pub(in path)` 语法声明的函数只在给定的路径中可见\n"
+"        // `path` 必须是父模块或祖先模块\n"
 
 #: src/mod/visibility.md:41
 msgid "\"called `my_mod::nested::public_function_in_my_mod()`, that\\n> \""
-msgstr ""
+msgstr "\"调用了 `my_mod::nested::public_function_in_my_mod()`，它\\n> \""
 
 #: src/mod/visibility.md:45
 msgid ""
 "// Functions declared using `pub(self)` syntax are only visible within\n"
 "        // the current module, which is the same as leaving them private\n"
 msgstr ""
+"// 使用 `pub(self)` 语法声明的函数只在当前模块中可见\n"
+"        // 这与将它们保持为私有是一样的\n"
 
 #: src/mod/visibility.md:48
 msgid "\"called `my_mod::nested::public_function_in_nested()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::nested::public_function_in_nested()`\""
 
 #: src/mod/visibility.md:51
 msgid ""
 "// Functions declared using `pub(super)` syntax are only visible within\n"
 "        // the parent module\n"
 msgstr ""
+"// 使用 `pub(super)` 语法声明的函数只在父模块中可见\n"
+"        \n"
 
 #: src/mod/visibility.md:54
 msgid "\"called `my_mod::nested::public_function_in_super_mod()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::nested::public_function_in_super_mod()`\""
 
 #: src/mod/visibility.md:59
 msgid "\"called `my_mod::call_public_function_in_my_mod()`, that\\n> \""
-msgstr ""
+msgstr "\"调用了 `my_mod::call_public_function_in_my_mod()`，它\\n> \""
 
 #: src/mod/visibility.md:61
 msgid "\"> \""
-msgstr ""
+msgstr "\"> \""
 
 #: src/mod/visibility.md:65
 msgid "// pub(crate) makes functions visible only within the current crate\n"
-msgstr ""
+msgstr "// pub(crate) 使函数只在当前 crate 中可见\n"
 
 #: src/mod/visibility.md:67
 msgid "\"called `my_mod::public_function_in_crate()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::public_function_in_crate()`\""
 
 #: src/mod/visibility.md:70
 msgid "// Nested modules follow the same rules for visibility\n"
-msgstr ""
+msgstr "// 嵌套模块遵循相同的可见性规则\n"
 
 #: src/mod/visibility.md:74
 msgid "\"called `my_mod::private_nested::function()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::private_nested::function()`\""
 
 #: src/mod/visibility.md:77
 msgid ""
 "// Private parent items will still restrict the visibility of a child item,\n"
 "        // even if it is declared as visible within a bigger scope.\n"
 msgstr ""
+"// 私有的父项仍然会限制子项的可见性，\n"
+"        // 即使它被声明为在更大范围内可见。\n"
 
 #: src/mod/visibility.md:81
 msgid "\"called `my_mod::private_nested::restricted_function()`\""
-msgstr ""
+msgstr "\"调用了 `my_mod::private_nested::restricted_function()`\""
 
 #: src/mod/visibility.md:87 src/mod/use.md:25 src/mod/super.md:8
 #: src/mod/split.md:24
 msgid "\"called `function()`\""
-msgstr ""
+msgstr "\"调用了 `function()`\""
 
 #: src/mod/visibility.md:91
 msgid "// Modules allow disambiguation between items that have the same name.\n"
-msgstr ""
+msgstr "// 模块允许消除具有相同名称的项之间的歧义。\n"
 
 #: src/mod/visibility.md:95
 msgid ""
 "// Public items, including those inside nested modules, can be\n"
 "    // accessed from outside the parent module.\n"
 msgstr ""
+"// 公有项，包括那些在嵌套模块内的，可以\n"
+"    // 从父模块外部访问。\n"
 
 #: src/mod/visibility.md:101
 msgid "// pub(crate) items can be called from anywhere in the same crate\n"
-msgstr ""
+msgstr "// pub(crate) 项可以从同一个 crate 中的任何地方调用\n"
 
 #: src/mod/visibility.md:104
 msgid ""
@@ -6439,12 +6453,17 @@ msgid ""
 "    //my_mod::nested::public_function_in_my_mod();\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// pub(in path) 条目只能从指定的模块内部调用\n"
+"    // 报错！函数 `public_function_in_my_mod` 是私有的\n"
+"    //my_mod::nested::public_function_in_my_mod();\n"
+"    // TODO ^ 尝试取消这一行的注释\n"
 
 #: src/mod/visibility.md:109
 msgid ""
 "// Private items of a module cannot be directly accessed, even if\n"
 "    // nested in a public module:\n"
 msgstr ""
+"// 模块的私有条目不能被直接访问，即使嵌套在一个公有模块中：\n"
 
 #: src/mod/visibility.md:112
 msgid ""
@@ -6452,6 +6471,9 @@ msgid ""
 "    //my_mod::private_function();\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 报错！`private_function` 是私有的\n"
+"    //my_mod::private_function();\n"
+"    // TODO ^ 尝试取消这一行的注释\n"
 
 #: src/mod/visibility.md:116
 msgid ""
@@ -6459,6 +6481,9 @@ msgid ""
 "    //my_mod::nested::private_function();\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 报错！`private_function` 是私有的\n"
+"    //my_mod::nested::private_function();\n"
+"    // TODO ^ 尝试取消这一行的注释\n"
 
 #: src/mod/visibility.md:120
 msgid ""
@@ -6466,6 +6491,9 @@ msgid ""
 "    //my_mod::private_nested::function();\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 报错！`private_nested` 是一个私有模块\n"
+"    //my_mod::private_nested::function();\n"
+"    // TODO ^ 尝试取消这一行的注释\n"
 
 #: src/mod/visibility.md:124
 msgid ""
@@ -6473,6 +6501,9 @@ msgid ""
 "    //my_mod::private_nested::restricted_function();\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 报错！`private_nested` 是一个私有模块\n"
+"    //my_mod::private_nested::restricted_function();\n"
+"    // TODO ^ 尝试取消这一行的注释\n"
 
 #: src/mod/struct_visibility.md:3
 msgid ""
@@ -6481,34 +6512,35 @@ msgid ""
 "visibility only matters when a struct is accessed from outside the module "
 "where it is defined, and has the goal of hiding information (encapsulation)."
 msgstr ""
+"结构体的字段有额外的可见性级别。可见性默认为私有，可以使用 `pub` 修饰符来覆盖。这种可见性只在从定义结构体的模块外部访问结构体时才有意义，其目的是隐藏信息（封装）。"
 
 #: src/mod/struct_visibility.md:10
 msgid "// A public struct with a public field of generic type `T`\n"
-msgstr ""
+msgstr "// 一个带有泛型类型 `T` 的公有字段的公有结构体\n"
 
 #: src/mod/struct_visibility.md:15
 msgid "// A public struct with a private field of generic type `T`\n"
-msgstr ""
+msgstr "// 一个带有泛型类型 `T` 的私有字段的公有结构体\n"
 
 #: src/mod/struct_visibility.md:21
 msgid "// A public constructor method\n"
-msgstr ""
+msgstr "// 一个公有的构造方法\n"
 
 #: src/mod/struct_visibility.md:31
 msgid "// Public structs with public fields can be constructed as usual\n"
-msgstr ""
+msgstr "// 带有公有字段的公有结构体可以像往常一样构造\n"
 
 #: src/mod/struct_visibility.md:32
 msgid "\"public information\""
-msgstr ""
+msgstr "\"公开信息\""
 
 #: src/mod/struct_visibility.md:34
 msgid "// and their fields can be normally accessed.\n"
-msgstr ""
+msgstr "// 并且可以正常访问它们的字段。\n"
 
 #: src/mod/struct_visibility.md:35
 msgid "\"The open box contains: {}\""
-msgstr ""
+msgstr "\"打开的盒子包含：{}\""
 
 #: src/mod/struct_visibility.md:37
 msgid ""
@@ -6519,16 +6551,21 @@ msgid ""
 "information\" };\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 带有私有字段的公有结构体不能使用字段名来构造。\n"
+"    // 报错！`ClosedBox` 有私有字段\n"
+"    //let closed_box = my::ClosedBox { contents: \"机密信息\" };\n"
+"    // TODO ^ 尝试取消这一行的注释\n"
 
 #: src/mod/struct_visibility.md:42
 msgid ""
 "// However, structs with private fields can be created using\n"
 "    // public constructors\n"
 msgstr ""
+"// 然而，带有私有字段的结构体可以使用公有构造函数来创建\n"
 
 #: src/mod/struct_visibility.md:44
 msgid "\"classified information\""
-msgstr ""
+msgstr "\"机密信息\""
 
 #: src/mod/struct_visibility.md:46
 msgid ""
@@ -6537,122 +6574,135 @@ msgid ""
 "    //println!(\"The closed box contains: {}\", _closed_box.contents);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 并且不能访问公有结构体的私有字段。\n"
+"    // 错误！`contents` 字段是私有的\n"
+"    //println!(\"封闭的盒子包含：{}\", _closed_box.contents);\n"
+"    // TODO ^ 尝试取消这一行的注释\n"
 
 #: src/mod/struct_visibility.md:55
 msgid "[generics](../generics.md) and [methods](../fn/methods.md)"
-msgstr ""
+msgstr "[泛型](../generics.md)和[方法](../fn/methods.md)"
 
 #: src/mod/use.md:3
 msgid ""
 "The `use` declaration can be used to bind a full path to a new name, for "
 "easier access. It is often used like this:"
-msgstr ""
+msgstr "`use` 声明可以将完整路径绑定到一个新的名称，以便更容易访问。它通常像这样使用："
 
 #: src/mod/use.md:18
 msgid "You can use the `as` keyword to bind imports to a different name:"
-msgstr ""
+msgstr "你可以使用 `as` 关键字将导入绑定到不同的名称："
 
 #: src/mod/use.md:21
 msgid "// Bind the `deeply::nested::function` path to `other_function`.\n"
-msgstr ""
+msgstr "// 将 `deeply::nested::function` 路径绑定到 `other_function`。\n"
 
 #: src/mod/use.md:31
 msgid "\"called `deeply::nested::function()`\""
-msgstr ""
+msgstr "\"调用 `deeply::nested::function()`\""
 
 #: src/mod/use.md:37
 msgid "// Easier access to `deeply::nested::function`\n"
-msgstr ""
+msgstr "// 更容易访问 `deeply::nested::function`\n"
 
 #: src/mod/use.md:40
 msgid "\"Entering block\""
-msgstr ""
+msgstr "\"进入块\""
 
 #: src/mod/use.md:42
 msgid ""
 "// This is equivalent to `use deeply::nested::function as function`.\n"
 "        // This `function()` will shadow the outer one.\n"
 msgstr ""
+"// 这等同于 `use deeply::nested::function as function`。\n"
+"        // 这个 `function()` 将遮蔽外部的同名函数。\n"
 
 #: src/mod/use.md:46
 msgid ""
 "// `use` bindings have a local scope. In this case, the\n"
 "        // shadowing of `function()` is only in this block.\n"
 msgstr ""
+"// `use` 绑定具有局部作用域。在这种情况下，\n"
+"        // `function()` 的遮蔽仅在此块内有效。\n"
 
 #: src/mod/use.md:50
 msgid "\"Leaving block\""
-msgstr ""
+msgstr "\"离开块\""
 
 #: src/mod/super.md:3
 msgid ""
 "The `super` and `self` keywords can be used in the path to remove ambiguity "
 "when accessing items and to prevent unnecessary hardcoding of paths."
-msgstr ""
+msgstr "`super` 和 `self` 关键字可以在路径中使用，以消除访问项目时的歧义，并防止不必要的路径硬编码。"
 
 #: src/mod/super.md:13
 msgid "\"called `cool::function()`\""
-msgstr ""
+msgstr "\"调用 `cool::function()`\""
 
 #: src/mod/super.md:19 src/mod/split.md:49
 msgid "\"called `my::function()`\""
-msgstr ""
+msgstr "\"调用 `my::function()`\""
 
 #: src/mod/super.md:24
 msgid "\"called `my::cool::function()`\""
-msgstr ""
+msgstr "\"调用 `my::cool::function()`\""
 
 #: src/mod/super.md:29
 msgid "// Let's access all the functions named `function` from this scope!\n"
-msgstr ""
+msgstr "// 让我们从这个作用域访问所有名为 `function` 的函数！\n"
 
 #: src/mod/super.md:30
 msgid "\"called `my::indirect_call()`, that\\n> \""
-msgstr ""
+msgstr "\"调用 `my::indirect_call()`，它\\n> \""
 
 #: src/mod/super.md:32
 msgid ""
-"// The `self` keyword refers to the current module scope - in this case "
-"`my`.\n"
+"// The `self` keyword refers to the current module scope - in this case `my`.\n"
 "        // Calling `self::function()` and calling `function()` directly both "
 "give\n"
 "        // the same result, because they refer to the same function.\n"
 msgstr ""
+"// `self` 关键字指的是当前模块作用域 - 在这种情况下是 `my`。\n"
+"        // 调用 `self::function()` 和直接调用 `function()` 都会\n"
+"        // 得到相同的结果，因为它们指的是同一个函数。\n"
 
 #: src/mod/super.md:38
 msgid "// We can also use `self` to access another module inside `my`:\n"
-msgstr ""
+msgstr "// 我们也可以使用 `self` 来访问 `my` 内的另一个模块：\n"
 
 #: src/mod/super.md:41
 msgid ""
 "// The `super` keyword refers to the parent scope (outside the `my` module).\n"
-msgstr ""
+msgstr "// `super` 关键字指的是父作用域（`my` 模块之外）。\n"
 
 #: src/mod/super.md:44
 msgid ""
 "// This will bind to the `cool::function` in the *crate* scope.\n"
 "        // In this case the crate scope is the outermost scope.\n"
 msgstr ""
+"// 这将绑定到 *crate* 作用域中的 `cool::function`。\n"
+"        // 在这种情况下，crate 作用域是最外层作用域。\n"
 
 #: src/mod/split.md:3
 msgid ""
 "Modules can be mapped to a file/directory hierarchy. Let's break down the "
 "[visibility example](visibility.md) in files:"
-msgstr ""
+msgstr "模块可以映射到文件/目录层次结构。让我们将[可见性示例](visibility.md)拆分到多个文件中："
 
 #: src/mod/split.md:16
 msgid "In `split.rs`:"
-msgstr ""
+msgstr "在 `split.rs` 中："
 
 #: src/mod/split.md:19
 msgid ""
 "// This declaration will look for a file named `my.rs` and will\n"
 "// insert its contents inside a module named `my` under this scope\n"
 msgstr ""
+"// 这个声明会查找一个名为 `my.rs` 的文件，并将其内容插入到这个作用域下名为 `my` 的模块中\n"
 
 #: src/mod/split.md:39
 msgid "In `my.rs`:"
-msgstr ""
+msgstr "在 `my.rs` 中："
 
 #: src/mod/split.md:42
 msgid ""
@@ -6660,38 +6710,40 @@ msgid ""
 "// and `inaccessible.rs` files and insert them here under their respective\n"
 "// modules\n"
 msgstr ""
+"// 类似地，`mod inaccessible` 和 `mod nested` 将定位 `nested.rs` \n"
+"// 和 `inaccessible.rs` 文件，并将它们插入到这里各自的模块下\n"
 
 #: src/mod/split.md:53
 msgid "\"called `my::private_function()`\""
-msgstr ""
+msgstr "\"调用 `my::private_function()`\""
 
 #: src/mod/split.md:57
 msgid "\"called `my::indirect_access()`, that\\n> \""
-msgstr ""
+msgstr "\"调用 `my::indirect_access()`，它\\n> \""
 
 #: src/mod/split.md:63
 msgid "In `my/nested.rs`:"
-msgstr ""
+msgstr "在 `my/nested.rs` 中："
 
 #: src/mod/split.md:67
 msgid "\"called `my::nested::function()`\""
-msgstr ""
+msgstr "\"调用 `my::nested::function()`\""
 
 #: src/mod/split.md:72
 msgid "\"called `my::nested::private_function()`\""
-msgstr ""
+msgstr "\"调用 `my::nested::private_function()`\""
 
 #: src/mod/split.md:76
 msgid "In `my/inaccessible.rs`:"
-msgstr ""
+msgstr "在 `my/inaccessible.rs` 中："
 
 #: src/mod/split.md:81
 msgid "\"called `my::inaccessible::public_function()`\""
-msgstr ""
+msgstr "\"调用 `my::inaccessible::public_function()`\""
 
 #: src/mod/split.md:85
 msgid "Let's check that things still work as before:"
-msgstr ""
+msgstr "让我们检查一下是否一切仍然像之前一样工作："
 
 #: src/crates.md:3
 msgid ""
