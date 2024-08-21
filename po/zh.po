@@ -6575,7 +6575,7 @@ msgid ""
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
 "// 并且不能访问公有结构体的私有字段。\n"
-"    // 错误！`contents` 字段是私有的\n"
+"    // 报错！`contents` 字段是私有的\n"
 "    //println!(\"封闭的盒子包含：{}\", _closed_box.contents);\n"
 "    // TODO ^ 尝试取消这一行的注释\n"
 
@@ -6754,6 +6754,7 @@ msgid ""
 "_before_ running the compiler over it. In other words, modules do _not_ get "
 "compiled individually, only crates get compiled."
 msgstr ""
+"crate 是 Rust 中的编译单元。每当调用 `rustc some_file.rs` 时，`some_file.rs` 就被视为**crate 文件**。如果 `some_file.rs` 中有 `mod` 声明，那么模块文件的内容会在编译器运行之前被插入到 crate 文件中 `mod` 声明的位置。换句话说，模块**不会**被单独编译，只有 crate 才会被编译。"
 
 #: src/crates.md:10
 msgid ""
@@ -6761,26 +6762,27 @@ msgid ""
 "will produce a binary from a crate. This behavior can be overridden by "
 "passing the `--crate-type` flag to `lib`."
 msgstr ""
+"一个 crate 可以被编译成二进制文件或库。默认情况下，`rustc` 会从 crate 生成二进制文件。这个行为可以通过向 `lib` 传递 `--crate-type` 标志来改变。"
 
 #: src/crates/lib.md:3
 msgid "Let's create a library, and then see how to link it to another crate."
-msgstr ""
+msgstr "让我们创建一个库，然后看看如何将它链接到另一个 crate。"
 
 #: src/crates/lib.md:5
 msgid "In `rary.rs`:"
-msgstr ""
+msgstr "在 `rary.rs` 中："
 
 #: src/crates/lib.md:9 src/attribute/crate.md:19
 msgid "\"called rary's `public_function()`\""
-msgstr ""
+msgstr "\"调用了 rary 的 `public_function()`\""
 
 #: src/crates/lib.md:13 src/attribute/crate.md:23
 msgid "\"called rary's `private_function()`\""
-msgstr ""
+msgstr "\"调用了 rary 的 `private_function()`\""
 
 #: src/crates/lib.md:17 src/attribute/crate.md:27
 msgid "\"called rary's `indirect_access()`, that\\n> \""
-msgstr ""
+msgstr "\"调用了 rary 的 `indirect_access()`，它\\n> \""
 
 #: src/crates/lib.md:29
 msgid ""
@@ -6789,6 +6791,7 @@ msgid ""
 "crate-name` option to `rustc` or by using the [`crate_name` attribute](../"
 "attribute/crate.md)."
 msgstr ""
+"库的名称前缀为 \"lib\"，默认情况下它们以 crate 文件命名，但这个默认名称可以通过向 `rustc` 传递 `--crate-name` 选项或使用 [`crate_name` 属性](../attribute/crate.md) 来覆盖。"
 
 #: src/crates/using_lib.md:3
 msgid ""
@@ -6796,17 +6799,21 @@ msgid ""
 "All of its items will then be imported under a module named the same as the "
 "library. This module generally behaves the same way as any other module."
 msgstr ""
+"要将一个 crate 链接到这个新库，你可以使用 `rustc` 的 `--extern` 标志。然后，它的所有项目都会被导入到一个与库同名的模块下。这个模块通常的行为与任何其他模块相同。"
 
 #: src/crates/using_lib.md:8
 msgid ""
 "// extern crate rary; // May be required for Rust 2015 edition or earlier\n"
 msgstr ""
+"// extern crate rary; // 可能在 Rust 2015 版本或更早版本中需要\n"
 
 #: src/crates/using_lib.md:13
 msgid ""
 "// Error! `private_function` is private\n"
 "    //rary::private_function();\n"
 msgstr ""
+"// 报错！`private_function` 是私有的\n"
+"    //rary::private_function();\n"
 
 #: src/cargo.md:3
 msgid ""
