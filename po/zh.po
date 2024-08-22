@@ -3145,7 +3145,7 @@ msgid ""
 "// FIXME ^ Prefix with an underscore to suppress the warning\n"
 "    // Please note that warnings may not be shown in a browser\n"
 msgstr ""
-"// 修复 ^ 在变量名前加上下划线以抑制警告\n"
+"// 修复 ^ 在变量名前加上下划线以消除警告\n"
 "    // 请注意，在浏览器中可能不会显示警告\n"
 
 #: src/variable_bindings/mut.md:3
@@ -6453,7 +6453,7 @@ msgid ""
 "    //my_mod::nested::public_function_in_my_mod();\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
-"// pub(in path) 条目只能从指定的模块内部调用\n"
+"// pub(in path) 项只能从指定的模块内部调用\n"
 "    // 报错！函数 `public_function_in_my_mod` 是私有的\n"
 "    //my_mod::nested::public_function_in_my_mod();\n"
 "    // TODO ^ 尝试取消这一行的注释\n"
@@ -6463,7 +6463,7 @@ msgid ""
 "// Private items of a module cannot be directly accessed, even if\n"
 "    // nested in a public module:\n"
 msgstr ""
-"// 模块的私有条目不能被直接访问，即使嵌套在一个公有模块中：\n"
+"// 模块的私有项不能被直接访问，即使嵌套在一个公有模块中：\n"
 
 #: src/mod/visibility.md:112
 msgid ""
@@ -7283,48 +7283,51 @@ msgid ""
 "An attribute is metadata applied to some module, crate or item. This metadata "
 "can be used to/for:"
 msgstr ""
+"属性是应用于某个模块、crate 或项的元数据。这些元数据可以用于以下目的："
 
 #: src/attribute.md:8
 msgid "[conditional compilation of code](attribute/cfg.md)"
-msgstr ""
+msgstr "[代码的条件编译](attribute/cfg.md)"
 
 #: src/attribute.md:9
 msgid ""
 "[set crate name, version and type (binary or library)](attribute/crate.md)"
-msgstr ""
+msgstr "[设置 crate 名称、版本和类型（二进制或库）](attribute/crate.md)"
 
 #: src/attribute.md:10
 msgid ""
 "disable [lints](https://en.wikipedia.org/wiki/Lint_%28software%29) (warnings)"
-msgstr ""
+msgstr "禁用 [lints](https://en.wikipedia.org/wiki/Lint_%28software%29)（警告）"
 
 #: src/attribute.md:11
 msgid "enable compiler features (macros, glob imports, etc.)"
-msgstr ""
+msgstr "启用编译器特性（宏、全局导入等）"
 
 #: src/attribute.md:12
 msgid "link to a foreign library"
-msgstr ""
+msgstr "链接到外部库"
 
 #: src/attribute.md:13
 msgid "mark functions as unit tests"
-msgstr ""
+msgstr "将函数标记为单元测试"
 
 #: src/attribute.md:14
 msgid "mark functions that will be part of a benchmark"
-msgstr ""
+msgstr "将函数标记成为基准测试的一部分"
 
 #: src/attribute.md:15
 msgid ""
 "[attribute like macros](https://doc.rust-lang.org/book/ch19-06-macros."
 "html#attribute-like-macros)"
 msgstr ""
+"[类似属性的宏](https://doc.rust-lang.org/book/ch19-06-macros.html#attribute-like-macros)"
 
 #: src/attribute.md:17
 msgid ""
 "Attributes look like `#[outer_attribute]` or `#![inner_attribute]`, with the "
 "difference between them being where they apply."
 msgstr ""
+"属性看起来像 `#[outer_attribute]` 或 `#![inner_attribute]`，它们之间的区别在于应用的位置。"
 
 #: src/attribute.md:20
 msgid ""
@@ -7333,6 +7336,7 @@ msgid ""
 "function, a module declaration, a constant, a structure, an enum. Here is an "
 "example where attribute `#[derive(Debug)]` applies to the struct `Rectangle`:"
 msgstr ""
+"`#[outer_attribute]` 应用于紧随其后的[项](https://doc.rust-lang.org/stable/reference/items.html)。项的一些例子包括：函数、模块声明、常量、结构体、枚举。这里是一个例子，其中属性 `#[derive(Debug)]` 应用于结构体 `Rectangle`："
 
 #: src/attribute.md:33
 msgid ""
@@ -7342,32 +7346,33 @@ msgid ""
 "it's placed. Here is an example where `#![allow(unused_variables)]` applies "
 "to the whole crate (if placed in `main.rs`):"
 msgstr ""
+"`#![inner_attribute]` 应用于包围它的[项](https://doc.rust-lang.org/stable/reference/items.html)（通常是模块或 crate）。换句话说，这个属性被解释为应用于它所在的整个作用域。这里是一个例子，其中 `#![allow(unused_variables)]` 应用于整个 crate（如果放在 `main.rs` 中）："
 
 #: src/attribute.md:42
 msgid "// This would normally warn about an unused variable.\n"
-msgstr ""
+msgstr "// 这通常会警告未使用的变量。\n"
 
 #: src/attribute.md:46
 msgid "Attributes can take arguments with different syntaxes:"
-msgstr ""
+msgstr "属性可以使用不同的语法接受参数："
 
 #: src/attribute.md:48
 msgid "`#[attribute = \"value\"]`"
-msgstr ""
+msgstr "`#[attribute = \"value\"]`"
 
 #: src/attribute.md:49
 msgid "`#[attribute(key = \"value\")]`"
-msgstr ""
+msgstr "`#[attribute(key = \"value\")]`"
 
 #: src/attribute.md:50
 msgid "`#[attribute(value)]`"
-msgstr ""
+msgstr "`#[attribute(value)]`"
 
 #: src/attribute.md:52
 msgid ""
 "Attributes can have multiple values and can be separated over multiple lines, "
 "too:"
-msgstr ""
+msgstr "属性可以有多个值，也可以分成多行："
 
 #: src/attribute/unused.md:3
 msgid ""
@@ -7375,15 +7380,16 @@ msgid ""
 "Lint_%28software%29) that will warn about unused functions. An _attribute_ "
 "can be used to disable the lint."
 msgstr ""
+"编译器提供了一个 `dead_code` [_lint_](https://en.wikipedia.org/wiki/Lint_%28software%29)，它会对未使用的函数发出警告。可以使用**属性**来禁用这个 lint。"
 
 #: src/attribute/unused.md:9
 msgid ""
 "// `#[allow(dead_code)]` is an attribute that disables the `dead_code` lint\n"
-msgstr ""
+msgstr "// `#[allow(dead_code)]` 是一个禁用 `dead_code` lint 的属性\n"
 
 #: src/attribute/unused.md:14
 msgid "// FIXME ^ Add an attribute to suppress the warning\n"
-msgstr ""
+msgstr "// FIXME ^ 添加一个属性来消除警告\n"
 
 #: src/attribute/unused.md:22
 msgid ""
@@ -7391,6 +7397,7 @@ msgid ""
 "we'll allow dead code in some places because of the interactive nature of the "
 "examples."
 msgstr ""
+"注意，在实际程序中，你应该消除死代码。在这些例子中，我们会在某些地方允许死代码，这是因为这些例子的交互性质。"
 
 #: src/attribute/crate.md:3
 msgid ""
@@ -7398,6 +7405,7 @@ msgid ""
 "is a binary or a library (and even which type of library), and the "
 "`crate_name` attribute can be used to set the name of the crate."
 msgstr ""
+"`crate_type` 属性可以用来告诉编译器一个 crate 是二进制文件还是库（甚至是哪种类型的库），而 `crate_name` 属性可以用来设置 crate 的名称。"
 
 #: src/attribute/crate.md:7
 msgid ""
@@ -7406,41 +7414,43 @@ msgid ""
 "manager. Since Cargo is used for the majority of Rust projects, this means "
 "real-world uses of `crate_type` and `crate_name` are relatively limited."
 msgstr ""
+"然而，需要注意的是，当使用 Cargo（Rust 的包管理器）时，`crate_type` 和 `crate_name` 属性**完全没有**效果。由于大多数 Rust 项目都使用 Cargo，这意味着 `crate_type` 和 `crate_name` 在实际使用中相对有限。"
 
 #: src/attribute/crate.md:13
 msgid "// This crate is a library\n"
-msgstr ""
+msgstr "// 这个 crate 是一个库\n"
 
 #: src/attribute/crate.md:14
 msgid "\"lib\""
-msgstr ""
+msgstr "\"lib\""
 
 #: src/attribute/crate.md:14
 msgid "// The library is named \"rary\"\n"
-msgstr ""
+msgstr "// 这个库的名称是 \"rary\"\n"
 
 #: src/attribute/crate.md:16
 msgid "\"rary\""
-msgstr ""
+msgstr "\"rary\""
 
 #: src/attribute/crate.md:33
 msgid ""
 "When the `crate_type` attribute is used, we no longer need to pass the `--"
 "crate-type` flag to `rustc`."
 msgstr ""
+"当使用 `crate_type` 属性时，我们不再需要向 `rustc` 传递 `--crate-type` 标志。"
 
 #: src/attribute/cfg.md:3
 msgid ""
 "Configuration conditional checks are possible through two different operators:"
-msgstr ""
+msgstr "配置条件检查可以通过两种不同的操作符实现："
 
 #: src/attribute/cfg.md:5
 msgid "the `cfg` attribute: `#[cfg(...)]` in attribute position"
-msgstr ""
+msgstr "`cfg` 属性：在属性位置使用 `#[cfg(...)]`"
 
 #: src/attribute/cfg.md:6
 msgid "the `cfg!` macro: `cfg!(...)` in boolean expressions"
-msgstr ""
+msgstr "`cfg!` 宏：在布尔表达式中使用 `cfg!(...)`"
 
 #: src/attribute/cfg.md:8
 msgid ""
@@ -7448,6 +7458,7 @@ msgid ""
 "evaluates to `true` or `false` literals allowing for checks at run-time. Both "
 "utilize identical argument syntax."
 msgstr ""
+"前者启用条件编译，后者在运行时条件性地求值为 `true` 或 `false` 字面量，允许在运行时进行检查。两者使用相同的参数语法。"
 
 #: src/attribute/cfg.md:12
 msgid ""
@@ -7456,39 +7467,40 @@ msgid ""
 "when `cfg!` is used for the condition, regardless of what `cfg!` is "
 "evaluating."
 msgstr ""
+"`cfg!` 与 `#[cfg]` 不同，它不会移除任何代码，只会求值为 true 或 false。例如，当 `cfg!` 用于条件时，if/else 表达式中的所有块都需要是有效的，无论 `cfg!` 正在评估什么。"
 
 #: src/attribute/cfg.md:15
 msgid "// This function only gets compiled if the target OS is linux\n"
-msgstr ""
+msgstr "// 这个函数只有在目标操作系统是 linux 时才会被编译\n"
 
 #: src/attribute/cfg.md:16 src/attribute/cfg.md:22 src/attribute/cfg.md:31
 msgid "\"linux\""
-msgstr ""
+msgstr "\"linux\""
 
 #: src/attribute/cfg.md:18
 msgid "\"You are running linux!\""
-msgstr ""
+msgstr "\"你正在运行 linux！\""
 
 #: src/attribute/cfg.md:20
 msgid ""
 "// And this function only gets compiled if the target OS is *not* linux\n"
-msgstr ""
+msgstr "// 而这个函数只有在目标操作系统*不是* linux 时才会被编译\n"
 
 #: src/attribute/cfg.md:24
 msgid "\"You are *not* running linux!\""
-msgstr ""
+msgstr "\"你*不是*在运行 linux！\""
 
 #: src/attribute/cfg.md:30
 msgid "\"Are you sure?\""
-msgstr ""
+msgstr "\"你确定吗？\""
 
 #: src/attribute/cfg.md:32
 msgid "\"Yes. It's definitely linux!\""
-msgstr ""
+msgstr "\"是的。这绝对是 linux！\""
 
 #: src/attribute/cfg.md:34
 msgid "\"Yes. It's definitely *not* linux!\""
-msgstr ""
+msgstr "\"是的。这绝对**不是** linux！\""
 
 #: src/attribute/cfg.md:41
 msgid ""
@@ -7496,24 +7508,26 @@ msgid ""
 "html#conditional-compilation), [`cfg!`](https://doc.rust-lang.org/std/macro."
 "cfg!.html), and [macros](../macros.md)."
 msgstr ""
+"[参考](https://doc.rust-lang.org/reference/attributes.html#conditional-compilation)、[`cfg!`](https://doc.rust-lang.org/std/macro.cfg!.html) 和 [宏](../macros.md)。"
 
 #: src/attribute/cfg/custom.md:3
 msgid ""
 "Some conditionals like `target_os` are implicitly provided by `rustc`, but "
 "custom conditionals must be passed to `rustc` using the `--cfg` flag."
 msgstr ""
+"一些条件如 `target_os` 是由 `rustc` 隐式提供的，但自定义条件必须使用 `--cfg` 标志传递给 `rustc`。"
 
 #: src/attribute/cfg/custom.md:9
 msgid "\"condition met!\""
-msgstr ""
+msgstr "\"条件满足！\""
 
 #: src/attribute/cfg/custom.md:17
 msgid "Try to run this to see what happens without the custom `cfg` flag."
-msgstr ""
+msgstr "尝试运行这个，看看没有自定义 `cfg` 标志会发生什么。"
 
 #: src/attribute/cfg/custom.md:19
 msgid "With the custom `cfg` flag:"
-msgstr ""
+msgstr "使用自定义 `cfg` 标志："
 
 #: src/generics.md:3
 msgid ""
