@@ -7040,6 +7040,7 @@ msgid ""
 "support for unit and integration testing ([see this chapter](https://doc.rust-"
 "lang.org/book/ch11-00-testing.html) in TRPL)."
 msgstr ""
+"我们知道测试对于任何软件都是不可或缺的！Rust 对单元测试和集成测试有一流的支持（参见《Rust 程序设计语言》中的[这一章](https://doc.rust-lang.org/book/ch11-00-testing.html)）。"
 
 #: src/cargo/test.md:8
 msgid ""
@@ -7047,6 +7048,7 @@ msgid ""
 "integration tests. Organizationally, we can place unit tests in the modules "
 "they test and integration tests in their own `tests/` directory:"
 msgstr ""
+"从上面链接的测试章节中，我们可以看到如何编写单元测试和集成测试。在组织上，我们可以将单元测试放在它们所测试的模块中，而将集成测试放在它们自己的 `tests/` 目录中："
 
 #: src/cargo/test.md:23
 msgid ""
@@ -7055,6 +7057,7 @@ msgid ""
 "is meant to test your library as if it were being called from a dependent "
 "crate."
 msgstr ""
+"`tests` 中的每个文件都是一个单独的[集成测试](https://doc.rust-lang.org/book/ch11-03-test-organization.html#integration-tests)，即旨在测试你的库，就像它被依赖的 crate 调用一样。"
 
 #: src/cargo/test.md:28
 msgid ""
@@ -7062,14 +7065,15 @@ msgid ""
 "testing styles: [Unit](../testing/unit_testing.md), [Doc](../testing/"
 "doc_testing.md), and [Integration](../testing/integration_testing.md)."
 msgstr ""
+"[测试](../testing.md)章节详细阐述了三种不同的测试风格：[单元](../testing/unit_testing.md)、[文档](../testing/doc_testing.md)和[集成](../testing/integration_testing.md)。"
 
 #: src/cargo/test.md:31
 msgid "`cargo` naturally provides an easy way to run all of your tests!"
-msgstr ""
+msgstr "`cargo` 提供了一个简单的方式运行所有测试！"
 
 #: src/cargo/test.md:37
 msgid "You should see output like this:"
-msgstr ""
+msgstr "你应该会看到类似这样的输出："
 
 #: src/cargo/test.md:39
 msgid ""
@@ -7088,10 +7092,24 @@ msgid ""
 "test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out\n"
 "```"
 msgstr ""
+"```shell\n"
+"$ cargo test\n"
+"   Compiling blah v0.1.0 (file:///nobackup/blah)\n"
+"    Finished dev [unoptimized + debuginfo] target(s) in 0.89 secs\n"
+"     Running target/debug/deps/blah-d3b32b97275ec472\n"
+"\n"
+"running 4 tests\n"
+"test test_bar ... ok\n"
+"test test_baz ... ok\n"
+"test test_foo_bar ... ok\n"
+"test test_foo ... ok\n"
+"\n"
+"test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out\n"
+"```"
 
 #: src/cargo/test.md:54
 msgid "You can also run tests whose name matches a pattern:"
-msgstr ""
+msgstr "你也可以运行名称匹配某个模式的测试："
 
 #: src/cargo/test.md:60
 msgid ""
@@ -7108,70 +7126,84 @@ msgid ""
 "test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out\n"
 "```"
 msgstr ""
+"```shell\n"
+"$ cargo test test_foo\n"
+"   Compiling blah v0.1.0 (file:///nobackup/blah)\n"
+"    Finished dev [unoptimized + debuginfo] target(s) in 0.35 secs\n"
+"     Running target/debug/deps/blah-d3b32b97275ec472\n"
+"\n"
+"running 2 tests\n"
+"test test_foo ... ok\n"
+"test test_foo_bar ... ok\n"
+"\n"
+"test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out\n"
+"```"
 
 #: src/cargo/test.md:73
 msgid ""
 "One word of caution: Cargo may run multiple tests concurrently, so make sure "
 "that they don't race with each other."
 msgstr ""
+"需要注意的是：Cargo 可能会并发运行多个测试，所以要确保它们之间不会相互竞争。"
 
 #: src/cargo/test.md:76
 msgid ""
 "One example of this concurrency causing issues is if two tests output to a "
 "file, such as below:"
 msgstr ""
+"这种并发可能导致问题的一个例子是，如果两个测试输出到同一个文件，比如下面这样："
 
 #: src/cargo/test.md:82
 msgid "// Import the necessary modules\n"
-msgstr ""
+msgstr "// 导入必要的模块\n"
 
 #: src/cargo/test.md:86
 msgid "// This test writes to a file\n"
-msgstr ""
+msgstr "// 这个测试写入一个文件\n"
 
 #: src/cargo/test.md:89 src/cargo/test.md:106
 msgid "// Opens the file ferris.txt or creates one if it doesn't exist.\n"
-msgstr ""
+msgstr "// 打开 ferris.txt 文件，如果不存在则创建一个。\n"
 
 #: src/cargo/test.md:93 src/cargo/test.md:110
 msgid "\"ferris.txt\""
-msgstr ""
+msgstr "\"ferris.txt\""
 
 #: src/cargo/test.md:94 src/cargo/test.md:111
 msgid "\"Failed to open ferris.txt\""
-msgstr ""
+msgstr "\"Failed to open ferris.txt\""
 
 #: src/cargo/test.md:96
 msgid "// Print \"Ferris\" 5 times.\n"
-msgstr ""
+msgstr "// 打印 \"Ferris\" 5 次。\n"
 
 #: src/cargo/test.md:98
 msgid "\"Ferris\\n\""
-msgstr ""
+msgstr "\"Ferris\\n\""
 
 #: src/cargo/test.md:99 src/cargo/test.md:116
 msgid "\"Could not write to ferris.txt\""
-msgstr ""
+msgstr "\"Could not write to ferris.txt\""
 
 #: src/cargo/test.md:103
 msgid "// This test tries to write to the same file\n"
-msgstr ""
+msgstr "// 这个测试尝试写入同一个文件\n"
 
 #: src/cargo/test.md:113
 msgid "// Print \"Corro\" 5 times.\n"
-msgstr ""
+msgstr "// 打印 \"Corro\" 5 次。\n"
 
 #: src/cargo/test.md:115
 msgid "\"Corro\\n\""
-msgstr ""
+msgstr "\"Corro\\n\""
 
 #: src/cargo/test.md:122
 msgid "Although the intent is to get the following:"
-msgstr ""
+msgstr "尽管预期的结果是得到以下内容："
 
 #: src/cargo/test.md:136
 msgid "What actually gets put into `ferris.txt` is this:"
-msgstr ""
+msgstr "实际上 `ferris.txt` 中的内容可能是这样的："
 
 #: src/cargo/build_scripts.md:3
 msgid ""
@@ -7180,12 +7212,14 @@ msgid ""
 "code generation, or some native code that needs to be compiled. To solve this "
 "problem we have build scripts that Cargo can run."
 msgstr ""
+"有时候常规的 `cargo` 构建是不够的。也许你的 crate 在 `cargo` 成功编译之前需要一些先决条件，比如代码生成，或者需要编译一些本地代码。为了解决这个问题，我们有 Cargo 可以运行的构建脚本。"
 
 #: src/cargo/build_scripts.md:8
 msgid ""
 "To add a build script to your package it can either be specified in the "
 "`Cargo.toml` as follows:"
 msgstr ""
+"要为你的包添加构建脚本，可以在 `Cargo.toml` 中指定，如下所示："
 
 #: src/cargo/build_scripts.md:11
 msgid ""
@@ -7195,16 +7229,22 @@ msgid ""
 "build = \"build.rs\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[package]\n"
+"...\n"
+"build = \"build.rs\"\n"
+"```"
 
 #: src/cargo/build_scripts.md:17
 msgid ""
 "Otherwise Cargo will look for a `build.rs` file in the project directory by "
 "default."
 msgstr ""
+"否则，Cargo 默认会在项目目录中寻找 `build.rs` 文件。"
 
 #: src/cargo/build_scripts.md:20
 msgid "How to use a build script"
-msgstr ""
+msgstr "如何使用构建脚本"
 
 #: src/cargo/build_scripts.md:22
 msgid ""
@@ -7212,6 +7252,7 @@ msgid ""
 "invoked prior to compiling anything else in the package. Hence it can be used "
 "to fulfill pre-requisites of your crate."
 msgstr ""
+"构建脚本只是另一个 Rust 文件，它会在编译包中的其他内容之前被编译和调用。因此，它可以用来满足你的 crate 的先决条件。"
 
 #: src/cargo/build_scripts.md:26
 msgid ""
@@ -7219,6 +7260,7 @@ msgid ""
 "here](https://doc.rust-lang.org/cargo/reference/environment-variables."
 "html#environment-variables-cargo-sets-for-build-scripts) that can be used."
 msgstr ""
+"Cargo 通过环境变量为脚本提供输入，这些环境变量[在这里指定](https://doc.rust-lang.org/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts)，可以被使用。"
 
 #: src/cargo/build_scripts.md:29
 msgid ""
@@ -7227,12 +7269,14 @@ msgid ""
 "be interpreted by Cargo directly and hence can be used to define parameters "
 "for the package's compilation."
 msgstr ""
+"脚本通过标准输出提供输出。所有打印的行都被写入 `target/debug/build/<pkg>/output`。此外，以 `cargo:` 为前缀的行将被 Cargo 直接解释，因此可以用来为包的编译定义参数。"
 
 #: src/cargo/build_scripts.md:34
 msgid ""
 "For further specification and examples have a read of the [Cargo "
 "specification](https://doc.rust-lang.org/cargo/reference/build-scripts.html)."
 msgstr ""
+"有关更多规范和示例，请阅读 [Cargo 规范](https://doc.rust-lang.org/cargo/reference/build-scripts.html)。"
 
 #: src/attribute.md:3
 msgid ""
