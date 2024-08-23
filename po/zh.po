@@ -7538,6 +7538,9 @@ msgid ""
 "considered valid. The simplest and most common use of generics is for type "
 "parameters."
 msgstr ""
+"**泛型** 是关于将类型和函数扩展使其更通用的主题。这对于减少代码重复非常有用，"
+"但需要相对复杂的语法。也就是说，使用泛型需要非常小心地指定泛型类型在什么类型上实际有效。"
+"泛型最简单和最常见的用法是类型参数。"
 
 #: src/generics.md:10
 msgid ""
@@ -7548,12 +7551,16 @@ msgid ""
 "parameters `<T>`. Any type specified as a generic type parameter is generic, "
 "and everything else is concrete (non-generic)."
 msgstr ""
+"类型参数通过使用尖括号和大写 [驼峰命名法](https://en.wikipedia.org/wiki/CamelCase) 指定为泛型：`<Aaa, Bbb, ...>`。"
+"“泛型类型参数”通常表示为 `<T>`。在 Rust 中，“泛型”也描述了任何接受一个或多个泛型类型参数 `<T>` 的任何内容。"
+"任何指定为泛型类型参数的类型都是泛型的，其他所有类型都是具体的（非泛型）。"
 
 #: src/generics.md:16
 msgid ""
 "For example, defining a _generic function_ named `foo` that takes an argument "
 "`T` of any type:"
 msgstr ""
+"例如，定义一个名为 `foo` 的**泛型函数**，它接受一个任意类型的参数 `T`："
 
 #: src/generics.md:23
 msgid ""
@@ -7561,14 +7568,16 @@ msgid ""
 "considered generic when used here as `(arg: T)`. This is the case even if `T` "
 "has previously been defined as a `struct`."
 msgstr ""
+"因为 `T` 已经使用 `<T>` 指定为泛型类型参数，所以在这里用作 `(arg: T)` 时被认为是泛型的。"
+"即使 `T` 之前已被定义为 `struct`，也是如此。"
 
 #: src/generics.md:27
 msgid "This example shows some of the syntax in action:"
-msgstr ""
+msgstr "这个例子展示了泛型语法的使用："
 
 #: src/generics.md:30
 msgid "// A concrete type `A`.\n"
-msgstr ""
+msgstr "// 一个具体类型 `A`。\n"
 
 #: src/generics.md:32
 msgid ""
@@ -7576,10 +7585,12 @@ msgid ""
 "`<A>`.\n"
 "// Therefore, `Single` is a concrete type, and `A` is defined as above.\n"
 msgstr ""
+"// 在定义类型 `Single` 时，第一次使用 `A` 时没有前置 `<A>`。\n"
+"// 因此，`Single` 是一个具体类型，`A` 如上所述定义。\n"
 
 #: src/generics.md:35
 msgid "//            ^ Here is `Single`s first use of the type `A`.\n"
-msgstr ""
+msgstr "//            ^ 这里是 `Single` 第一次使用类型 `A`。\n"
 
 #: src/generics.md:37
 msgid ""
@@ -7589,10 +7600,13 @@ msgid ""
 "including\n"
 "// the concrete type `A` defined at the top.\n"
 msgstr ""
+"// 这里，`<T>` 在第一次使用 `T` 之前，因此 `SingleGen` 是一个泛型类型。\n"
+"// 因为类型参数 `T` 是泛型的，它可以是任何东西，包括\n"
+"// 上面定义的具体类型 `A`。\n"
 
 #: src/generics.md:44
 msgid "// `Single` is concrete and explicitly takes `A`.\n"
-msgstr ""
+msgstr "// `Single` 是具体的，并且明确地接受 `A`。\n"
 
 #: src/generics.md:47
 msgid ""
@@ -7600,32 +7614,36 @@ msgid ""
 "    // and give it the value `SingleGen('a')`.\n"
 "    // Here, `SingleGen` has a type parameter explicitly specified.\n"
 msgstr ""
+"// 创建一个类型为 `SingleGen<char>` 的变量 `_char`\n"
+"    // 并赋予它值 `SingleGen('a')`。\n"
+"    // 这里，`SingleGen` 有一个明确指定的类型参数。\n"
 
 #: src/generics.md:52
 msgid "// `SingleGen` can also have a type parameter implicitly specified:\n"
-msgstr ""
+msgstr "// `SingleGen` 也可以有一个隐式指定的类型参数：\n"
 
 #: src/generics.md:53
 msgid "// Uses `A` defined at the top.\n"
-msgstr ""
+msgstr "// 使用上面定义的 `A`。\n"
 
 #: src/generics.md:54
 msgid "// Uses `i32`.\n"
-msgstr ""
+msgstr "// 使用 `i32`。\n"
 
 #: src/generics.md:55
 msgid "// Uses `char`.\n"
-msgstr ""
+msgstr "// 使用 `char`。\n"
 
 #: src/generics.md:61
 msgid "[`structs`](custom_types/structs.md)"
-msgstr ""
+msgstr "[`结构体`](custom_types/structs.md)"
 
 #: src/generics/gen_fn.md:3
 msgid ""
 "The same set of rules can be applied to functions: a type `T` becomes generic "
 "when preceded by `<T>`."
 msgstr ""
+"同样的规则也适用于函数：当类型 `T` 前置 `<T>` 时，那么它就变成了泛型。"
 
 #: src/generics/gen_fn.md:6
 msgid ""
@@ -7634,36 +7652,42 @@ msgid ""
 "type is generic, or if the compiler doesn't have enough information to infer "
 "the necessary type parameters."
 msgstr ""
+"使用泛型函数有时需要明确指定类型参数。如果函数调用时返回类型是泛型，"
+"或者编译器没有足够的信息来推断必要的类型参数，可能会出现这种情况。"
 
 #: src/generics/gen_fn.md:11
 msgid ""
 "A function call with explicitly specified type parameters looks like: `fun::"
 "<A, B, ...>()`."
 msgstr ""
+"一个明确指定类型参数的函数调用看起来像这样：`fun::<A, B, ...>()`。"
 
 #: src/generics/gen_fn.md:15
 msgid "// Concrete type `A`.\n"
-msgstr ""
+msgstr "// 具体类型 `A`。\n"
 
 #: src/generics/gen_fn.md:16
 msgid "// Concrete type `S`.\n"
-msgstr ""
+msgstr "// 具体类型 `S`。\n"
 
 #: src/generics/gen_fn.md:17
 msgid "// Generic type `SGen`.\n"
-msgstr ""
+msgstr "// 泛型类型 `SGen`。\n"
 
 #: src/generics/gen_fn.md:18
 msgid ""
 "// The following functions all take ownership of the variable passed into\n"
 "// them and immediately go out of scope, freeing the variable.\n"
 msgstr ""
+"// 以下函数都获取传入的变量的所有权，并立即超出作用域，释放变量。\n"
 
 #: src/generics/gen_fn.md:21
 msgid ""
 "// Define a function `reg_fn` that takes an argument `_s` of type `S`.\n"
 "// This has no `<T>` so this is not a generic function.\n"
 msgstr ""
+"// 定义一个函数 `reg_fn`，它接受一个类型为 `S` 的参数 `_s`。\n"
+"// 这没有 `<T>`，所以这不是一个泛型函数。\n"
 
 #: src/generics/gen_fn.md:25
 msgid ""
@@ -7674,6 +7698,9 @@ msgid ""
 "// been specified as a generic type parameter for `gen_spec_t`, it is not "
 "generic.\n"
 msgstr ""
+"// 定义一个函数 `gen_spec_t`，它接受一个类型为 `SGen<T>` 的参数 `_s`。\n"
+"// 它被明确地赋予了类型参数 `A`，但因为 `A` 没有\n"
+"// 被指定为 `gen_spec_t` 的泛型类型参数，所以它不是泛型的。\n"
 
 #: src/generics/gen_fn.md:30
 msgid ""
@@ -7683,6 +7710,9 @@ msgid ""
 "type.\n"
 "// Because `i32` is not a generic type, this function is also not generic.\n"
 msgstr ""
+"// 定义一个函数 `gen_spec_i32`，它接受一个类型为 `SGen<i32>` 的参数 `_s`。\n"
+"// 它被明确地赋予了类型参数 `i32`，这是一个具体类型。\n"
+"// 因为 `i32` 不是泛型类型，所以这个函数也不是泛型的。\n"
 
 #: src/generics/gen_fn.md:35
 msgid ""
@@ -7691,116 +7721,125 @@ msgid ""
 "// Because `SGen<T>` is preceded by `<T>`, this function is generic over "
 "`T`.\n"
 msgstr ""
+"// 定义一个函数 `generic`，它接受一个类型为 `SGen<T>` 的参数 `_s`。\n"
+"// 因为 `SGen<T>` 前置 `<T>`，所以这个函数是泛型的。\n"
 
 #: src/generics/gen_fn.md:41
 msgid "// Using the non-generic functions\n"
-msgstr ""
+msgstr "// 使用非泛型函数\n"
 
 #: src/generics/gen_fn.md:42
 msgid "// Concrete type.\n"
-msgstr ""
+msgstr "// 具体类型。\n"
 
 #: src/generics/gen_fn.md:43
 msgid "// Implicitly specified type parameter `A`.\n"
-msgstr ""
+msgstr "// 隐式指定的类型参数 `A`。\n"
 
 #: src/generics/gen_fn.md:44
 msgid "// Implicitly specified type parameter `i32`.\n"
-msgstr ""
+msgstr "// 隐式指定的类型参数 `i32`。\n"
 
 #: src/generics/gen_fn.md:46
 msgid "// Explicitly specified type parameter `char` to `generic()`.\n"
-msgstr ""
+msgstr "// 明确指定的类型参数 `char` 给 `generic()`。\n"
 
 #: src/generics/gen_fn.md:49
 msgid "// Implicitly specified type parameter `char` to `generic()`.\n"
-msgstr ""
+msgstr "// 隐式指定的类型参数 `char` 给 `generic()`。\n"
 
 #: src/generics/gen_fn.md:50
 msgid "'c'"
-msgstr ""
+msgstr "'c'"
 
 #: src/generics/gen_fn.md:56
 msgid "[functions](../fn.md) and [`struct`s](../custom_types/structs.md)"
-msgstr ""
+msgstr "[函数](../fn.md) 和 [`结构体`](../custom_types/structs.md)"
 
 #: src/generics/impl.md:3
 msgid "Similar to functions, implementations require care to remain generic."
-msgstr ""
+msgstr "与函数类似，`impl` 实现部分使用泛型，也需要很仔细。"
 
 #: src/generics/impl.md:6
 msgid "// Concrete type `S`\n"
-msgstr ""
+msgstr "// 具体类型 `S`\n"
 
 #: src/generics/impl.md:7
 msgid "// Generic type `GenericVal`\n"
-msgstr ""
+msgstr "// 泛型类型 `GenericVal`\n"
 
 #: src/generics/impl.md:8
 msgid "// impl of GenericVal where we explicitly specify type parameters:\n"
-msgstr ""
+msgstr "// GenericVal 的实现，我们在这里显式指定类型参数：\n"
 
 #: src/generics/impl.md:10
 msgid "// Specify `f32`\n"
-msgstr ""
+msgstr "// 指定 `f32`\n"
 
 #: src/generics/impl.md:11
 msgid "// Specify `S` as defined above\n"
-msgstr ""
+msgstr "// 指定上面定义的 `S`\n"
 
 #: src/generics/impl.md:12
 msgid "// `<T>` Must precede the type to remain generic\n"
-msgstr ""
+msgstr "// `<T>` 必须在类型之前以保持泛型\n"
 
 #: src/generics/impl.md:25
 msgid "// impl of Val\n"
-msgstr ""
+msgstr "// Val 的实现\n"
 
 #: src/generics/impl.md:32
 msgid "// impl of GenVal for a generic type `T`\n"
-msgstr ""
+msgstr "// 为泛型类型 `T` 实现 GenVal\n"
 
 #: src/generics/impl.md:50
 msgid ""
 "[functions returning references](../scope/lifetime/fn.md), [`impl`](../fn/"
 "methods.md), and [`struct`](../custom_types/structs.md)"
 msgstr ""
+"[返回引用的函数](../scope/lifetime/fn.md)、[`impl`](../fn/methods.md) 和 [`结构体`](../custom_types/structs.md)"
 
 #: src/generics/gen_trait.md:3
 msgid ""
 "Of course `trait`s can also be generic. Here we define one which reimplements "
 "the `Drop` `trait` as a generic method to `drop` itself and an input."
 msgstr ""
+"当然 `trait` 也可以是泛型的。这里我们定义了一个重新实现 `Drop` `trait` 的泛型方法，用于 `drop` 自身和一个输入。"
 
 #: src/generics/gen_trait.md:7
 msgid "// Non-copyable types.\n"
-msgstr ""
+msgstr "// 不可复制的类型。\n"
 
 #: src/generics/gen_trait.md:10
 msgid "// A trait generic over `T`.\n"
-msgstr ""
+msgstr "// 一个泛型 `T` 的 trait。\n"
 
 #: src/generics/gen_trait.md:13
 msgid ""
 "// Define a method on the caller type which takes an\n"
 "    // additional single parameter `T` and does nothing with it.\n"
 msgstr ""
+"// 在调用者类型上定义一个方法，该方法接受一个\n"
+"    // 额外的单一参数 `T`，并且不对其做任何操作。\n"
 
 #: src/generics/gen_trait.md:17
 msgid ""
 "// Implement `DoubleDrop<T>` for any generic parameter `T` and\n"
 "// caller `U`.\n"
 msgstr ""
+"// 为任何泛型参数 `T` 和调用者 `U` 实现 `DoubleDrop<T>`。\n"
 
 #: src/generics/gen_trait.md:21
 msgid ""
 "// This method takes ownership of both passed arguments,\n"
 "    // deallocating both.\n"
 msgstr ""
+"// 此方法获取两个传入参数的所有权，\n"
+"    // 释放两者的内存。\n"
 
 #: src/generics/gen_trait.md:30
 msgid "// Deallocate `empty` and `null`.\n"
-msgstr ""
+msgstr "// 释放 `empty` 和 `null`。\n"
 
 #: src/generics/gen_trait.md:33
 msgid ""
@@ -7808,12 +7847,16 @@ msgid ""
 "    //null;\n"
 "    // ^ TODO: Try uncommenting these lines.\n"
 msgstr ""
+"//empty;\n"
+"    //null;\n"
+"    // ^ TODO：尝试取消这些行的注释。\n"
 
 #: src/generics/gen_trait.md:41
 msgid ""
 "[`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html), [`struct`](../"
 "custom_types/structs.md), and [`trait`](../trait.md)"
 msgstr ""
+"[`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html)、[`结构体`](../custom_types/structs.md) 和 [`trait`](../trait.md)"
 
 #: src/generics/bounds.md:3
 msgid ""
@@ -7822,23 +7865,27 @@ msgid ""
 "following example uses the trait `Display` to print and so it requires `T` to "
 "be bound by `Display`; that is, `T` _must_ implement `Display`."
 msgstr ""
+"在使用泛型时，类型参数常常必须使用 trait 作为**约束**来规定类型实现了什么功能。例如，下面的例子使用 trait `Display` 来打印，因此它要求 `T` 被 `Display` 约束；也就是说，`T` **必须**实现 `Display`。"
 
 #: src/generics/bounds.md:9
 msgid ""
 "// Define a function `printer` that takes a generic type `T` which\n"
 "// must implement trait `Display`.\n"
 msgstr ""
+"// 定义一个函数 `printer`，它接受一个泛型类型 `T`，\n"
+"// 该类型必须实现 `Display` trait。\n"
 
 #: src/generics/bounds.md:16
 msgid ""
 "Bounding restricts the generic to types that conform to the bounds. That is:"
-msgstr ""
+msgstr "约束将泛型限制为符合约束的类型。也就是说："
 
 #: src/generics/bounds.md:20
 msgid ""
 "// Error! `Vec<T>` does not implement `Display`. This\n"
 "// specialization will fail.\n"
 msgstr ""
+"// 错误！`Vec<T>` 没有实现 `Display`。泛型特化失败。\n"
 
 #: src/generics/bounds.md:26
 msgid ""
@@ -7846,26 +7893,31 @@ msgid ""
 "the [methods](../fn/methods.md) of traits specified in the bounds. For "
 "example:"
 msgstr ""
+"约束的另一个作用是允许泛型实例访问在约束中指定的 trait 的[方法](../fn/methods.md)。例如："
 
 #: src/generics/bounds.md:30
 msgid "// A trait which implements the print marker: `{:?}`.\n"
-msgstr ""
+msgstr "// 这个 trait 用来实现打印标记：`{:?}`。\n"
 
 #: src/generics/bounds.md:45
 msgid ""
 "// The generic `T` must implement `Debug`. Regardless\n"
 "// of the type, this will work properly.\n"
 msgstr ""
+"// 泛型 `T` 必须实现 `Debug`。这样，无论是什么类型，\n"
+"// 都可以让下面函数正常工作。\n"
 
 #: src/generics/bounds.md:51
 msgid ""
 "// `T` must implement `HasArea`. Any type which meets\n"
 "// the bound can access `HasArea`'s function `area`.\n"
 msgstr ""
+"// `T` 必须实现 `HasArea`。任何符合这个约束的类型\n"
+"// 都可以访问 `HasArea` 的函数 `area`。\n"
 
 #: src/generics/bounds.md:61
 msgid "\"Area: {}\""
-msgstr ""
+msgstr "\"面积：{}\""
 
 #: src/generics/bounds.md:63
 msgid ""
@@ -7874,18 +7926,24 @@ msgid ""
 "    // ^ TODO: Try uncommenting these.\n"
 "    // | Error: Does not implement either `Debug` or `HasArea`. \n"
 msgstr ""
+"//print_debug(&_triangle);\n"
+"    //println!(\"面积：{}\", area(&_triangle));\n"
+"    // ^ TODO：尝试取消这些注释。\n"
+"    // | 错误：未实现 `Debug` 或 `HasArea`。\n"
 
 #: src/generics/bounds.md:70
 msgid ""
 "As an additional note, [`where`](../generics/where.md) clauses can also be "
 "used to apply bounds in some cases to be more expressive."
 msgstr ""
+"另外需要注意的是，在某些情况下可以使用 [`where`](../generics/where.md) 子句来应用约束，以使表达更加清晰。"
 
 #: src/generics/bounds.md:75
 msgid ""
 "[`std::fmt`](../hello/print.md), [`struct`s](../custom_types/structs.md), and "
 "[`trait`s](../trait.md)"
 msgstr ""
+"[`std::fmt`](../hello/print.md)、[`结构体`](../custom_types/structs.md) 和 [`trait`](../trait.md)"
 
 #: src/generics/bounds/testcase_empty.md:3
 msgid ""
@@ -7893,40 +7951,46 @@ msgid ""
 "any functionality, you can still use it as a bound. `Eq` and `Copy` are "
 "examples of such `trait`s from the `std` library."
 msgstr ""
+"约束的工作机制会产生这样的效果，即使一个 `trait` 不包含任何功能，你仍然可以将其用作约束。`Eq` 和 `Copy` 是 `std` 库中这类 `trait` 的例子。"
 
 #: src/generics/bounds/testcase_empty.md:17
 msgid ""
 "// These functions are only valid for types which implement these\n"
 "// traits. The fact that the traits are empty is irrelevant.\n"
 msgstr ""
+"// 这些函数只对实现了这些 trait 的类型有效。\n"
+"// 事实上这些 trait 内部是空的，但这没有关系。\n"
 
 #: src/generics/bounds/testcase_empty.md:20
 msgid "\"red\""
-msgstr ""
+msgstr "\"红色\""
 
 #: src/generics/bounds/testcase_empty.md:21
 msgid "\"blue\""
-msgstr ""
+msgstr "\"蓝色\""
 
 #: src/generics/bounds/testcase_empty.md:28
 msgid ""
 "// `red()` won't work on a blue jay nor vice versa\n"
 "    // because of the bounds.\n"
 msgstr ""
+"// 由于约束的存在，`red()` 不能用于蓝松鸟，反之亦然。\n"
 
 #: src/generics/bounds/testcase_empty.md:30
 msgid "\"A cardinal is {}\""
-msgstr ""
+msgstr "\"红雀是 {}\""
 
 #: src/generics/bounds/testcase_empty.md:31
 msgid "\"A blue jay is {}\""
-msgstr ""
+msgstr "\"蓝松鸟是 {}\""
 
 #: src/generics/bounds/testcase_empty.md:32
 msgid ""
 "//println!(\"A turkey is {}\", red(&_turkey));\n"
 "    // ^ TODO: Try uncommenting this line.\n"
 msgstr ""
+"//println!(\"火鸡是 {}\", red(&_turkey));\n"
+"    // ^ TODO：尝试取消这行的注释。\n"
 
 #: src/generics/bounds/testcase_empty.md:39
 msgid ""
@@ -7934,6 +7998,7 @@ msgid ""
 "marker::Copy`](https://doc.rust-lang.org/std/marker/trait.Copy.html), and "
 "[`trait`s](../../trait.md)"
 msgstr ""
+"[`std::cmp::Eq`](https://doc.rust-lang.org/std/cmp/trait.Eq.html)、[`std::marker::Copy`](https://doc.rust-lang.org/std/marker/trait.Copy.html) 和 [`trait`](../../trait.md)"
 
 #: src/generics/multi_bounds.md:3
 msgid ""
