@@ -8005,36 +8005,39 @@ msgid ""
 "Multiple bounds for a single type can be applied with a `+`. Like normal, "
 "different types are separated with `,`."
 msgstr ""
+"可以使用 `+` 来为单个类型指定多个约束。依照惯例，不同的类型用 `,` 分隔。"
 
 #: src/generics/multi_bounds.md:10
 msgid "\"Debug: `{:?}`\""
-msgstr ""
+msgstr "\"Debug: `{:?}`\""
 
 #: src/generics/multi_bounds.md:11
 msgid "\"Display: `{}`\""
-msgstr ""
+msgstr "\"Display: `{}`\""
 
 #: src/generics/multi_bounds.md:15
 msgid "\"t: `{:?}`\""
-msgstr ""
+msgstr "\"t: `{:?}`\""
 
 #: src/generics/multi_bounds.md:16
 msgid "\"u: `{:?}`\""
-msgstr ""
+msgstr "\"u: `{:?}`\""
 
 #: src/generics/multi_bounds.md:20
 msgid "\"words\""
-msgstr ""
+msgstr "\"words\""
 
 #: src/generics/multi_bounds.md:25
 msgid ""
 "//compare_prints(&array);\n"
 "    // TODO ^ Try uncommenting this.\n"
 msgstr ""
+"//compare_prints(&array);\n"
+"    // TODO ^ 尝试取消这行的注释。\n"
 
 #: src/generics/multi_bounds.md:34
 msgid "[`std::fmt`](../hello/print.md) and [`trait`s](../trait.md)"
-msgstr ""
+msgstr "[`std::fmt`](../hello/print.md) 和 [`trait`](../trait.md)"
 
 #: src/generics/where.md:3
 msgid ""
@@ -8043,90 +8046,101 @@ msgid ""
 "clauses can apply bounds to arbitrary types, rather than just to type "
 "parameters."
 msgstr ""
+"约束也可以使用 `where` 分句来表达，它紧接在开括号 `{` 之前，而不是在类型首次提及时。此外，`where` 分句可以将约束应用于任意类型，而不仅限于类型参数。"
 
 #: src/generics/where.md:8
 msgid "Some cases that a `where` clause is useful:"
-msgstr ""
+msgstr "`where` 分句在以下情况下很有用："
 
 #: src/generics/where.md:10
 msgid "When specifying generic types and bounds separately is clearer:"
-msgstr ""
+msgstr "当单独指定泛型类型和约束更清晰时："
 
 #: src/generics/where.md:14
 msgid "// Expressing bounds with a `where` clause\n"
-msgstr ""
+msgstr "// 使用 `where` 分句表达约束\n"
 
 #: src/generics/where.md:21
 msgid ""
 "When using a `where` clause is more expressive than using normal syntax. The "
 "`impl` in this example cannot be directly expressed without a `where` clause:"
 msgstr ""
+"当使用 `where` 分句比使用普通语法更具表现力时。这个例子中的 `impl` 如果不使用 `where` 分句就无法直接表达："
 
 #: src/generics/where.md:30
 msgid ""
 "// Because we would otherwise have to express this as `T: Debug` or \n"
 "// use another method of indirect approach, this requires a `where` clause:\n"
 msgstr ""
+"// 这里需要一个 `where` 分句：否则就必须将其表达为 `T: Debug` 或\n"
+"// 使用另一种间接方法，\n"
 
 #: src/generics/where.md:35
 msgid ""
 "// We want `Option<T>: Debug` as our bound because that is what's\n"
 "    // being printed. Doing otherwise would be using the wrong bound.\n"
 msgstr ""
+"// 我们想要 `Option<T>: Debug` 作为我们的约束，因为这是\n"
+"    // 正在被打印的内容。否则就会使用错误的约束。\n"
 
 #: src/generics/where.md:51
 msgid ""
 "[RFC](https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md), "
 "[`struct`](../custom_types/structs.md), and [`trait`](../trait.md)"
 msgstr ""
+"[RFC](https://github.com/rust-lang/rfcs/blob/master/text/0135-where.md)、[`struct`](../custom_types/structs.md) 和 [`trait`](../trait.md)"
 
 #: src/generics/new_types.md:3
 msgid ""
 "The `newtype` idiom gives compile time guarantees that the right type of "
 "value is supplied to a program."
 msgstr ""
+"`newtype` 惯用法在编译时保证了向程序提供了正确类型的值。"
 
 #: src/generics/new_types.md:6
 msgid ""
 "For example, an age verification function that checks age in years, _must_ be "
 "given a value of type `Years`."
 msgstr ""
+"例如，一个检查年龄（以年为单位）的年龄验证函数，**必须**给定 `Years` 类型的值。"
 
 #: src/generics/new_types.md:22
 msgid "/// truncates partial years\n"
-msgstr ""
+msgstr "/// 截断不足一年的部分\n"
 
 #: src/generics/new_types.md:35 src/generics/new_types.md:36
 msgid "\"Is an adult? {}\""
-msgstr ""
+msgstr "\"是成年人吗？{}\""
 
 #: src/generics/new_types.md:37
 msgid "// println!(\"Is an adult? {}\", is_adult(&age_days));\n"
-msgstr ""
+msgstr "// println!(\"是成年人吗？{}\", is_adult(&age_days));\n"
 
 #: src/generics/new_types.md:41
 msgid ""
 "Uncomment the last print statement to observe that the type supplied must be "
 "`Years`."
 msgstr ""
+"取消最后一个 print 语句的注释，观察所提供的类型必须是 `Years`。"
 
 #: src/generics/new_types.md:43
 msgid ""
 "To obtain the `newtype`'s value as the base type, you may use the tuple or "
 "destructuring syntax like so:"
 msgstr ""
+"要获取 `newtype` 的值作为基本类型，你可以使用元组或解构语法，如下所示："
 
 #: src/generics/new_types.md:49
 msgid "// Tuple\n"
-msgstr ""
+msgstr "// 元组\n"
 
 #: src/generics/new_types.md:50
 msgid "// Destructuring\n"
-msgstr ""
+msgstr "// 解构\n"
 
 #: src/generics/new_types.md:56
 msgid "[`structs`](../custom_types/structs.md)"
-msgstr ""
+msgstr "[`struct`](../custom_types/structs.md)"
 
 #: src/generics/assoc_items.md:3
 msgid ""
@@ -8134,24 +8148,28 @@ msgid ""
 "doc.rust-lang.org/reference/items.html)s of various types. It is an extension "
 "to `trait` generics, and allows `trait`s to internally define new items."
 msgstr ""
+"\"关联项\"指的是与各种类型的 [`item`](https://doc.rust-lang.org/reference/items.html) 相关的一组规则。它是 `trait` 泛型的扩展，允许 `trait` 在内部定义新的项。"
 
 #: src/generics/assoc_items.md:7
 msgid ""
 "One such item is called an _associated type_, providing simpler usage "
 "patterns when the `trait` is generic over its container type."
 msgstr ""
+"其中一种项被称为**关联类型**，当 `trait` 对其容器类型是泛型时，它提供了更简单的使用模式。"
 
 #: src/generics/assoc_items.md:12
 msgid ""
 "[RFC](https://github.com/rust-lang/rfcs/blob/master/text/0195-associated-"
 "items.md)"
 msgstr ""
+"[RFC](https://github.com/rust-lang/rfcs/blob/master/text/0195-associated-items.md)"
 
 #: src/generics/assoc_items/the_problem.md:3
 msgid ""
 "A `trait` that is generic over its container type has type specification "
 "requirements - users of the `trait` _must_ specify all of its generic types."
 msgstr ""
+"对于容器类型是泛型的 `trait`，须遵守类型规范要求 - `trait` 的使用者**必须**指定所有泛型类型。"
 
 #: src/generics/assoc_items/the_problem.md:6
 msgid ""
@@ -8160,6 +8178,7 @@ msgid ""
 "specifying `i32` for `A` and `B` so that it can be used with `fn "
 "difference()`."
 msgstr ""
+"在下面的例子中，`Contains` `trait` 允许使用泛型类型 `A` 和 `B`。然后为 `Container` 类型实现该 trait，为 `A` 和 `B` 指定 `i32`，以便可以与 `fn difference()` 一起使用。"
 
 #: src/generics/assoc_items/the_problem.md:10
 msgid ""
@@ -8168,6 +8187,7 @@ msgid ""
 "that `A` and `B` are determined by the _input_ `C`. As you will see in the "
 "next section, associated types provide exactly that capability."
 msgstr ""
+"因为 `Contains` 是泛型的，我们必须为 `fn difference()` 显式声明**所有**泛型类型。在实践中，我们希望有一种方法来表达 `A` 和 `B` 是由**输入** `C` 决定的。你将在下一节中看到，关联类型恰好提供了这种能力。"
 
 #: src/generics/assoc_items/the_problem.md:17
 #: src/generics/assoc_items/types.md:36
@@ -8175,60 +8195,64 @@ msgid ""
 "// A trait which checks if 2 items are stored inside of container.\n"
 "// Also retrieves first or last value.\n"
 msgstr ""
+"// 一个检查容器内是否存储了 2 个项的 trait。\n"
+"// 还可以检索第一个或最后一个值。\n"
 
 #: src/generics/assoc_items/the_problem.md:21
 msgid "// Explicitly requires `A` and `B`.\n"
-msgstr ""
+msgstr "// 显式要求 `A` 和 `B`。\n"
 
 #: src/generics/assoc_items/the_problem.md:22
 #: src/generics/assoc_items/the_problem.md:23
 msgid "// Doesn't explicitly require `A` or `B`.\n"
-msgstr ""
+msgstr "// 不显式要求 `A` 或 `B`。\n"
 
 #: src/generics/assoc_items/the_problem.md:27
 msgid "// True if the numbers stored are equal.\n"
-msgstr ""
+msgstr "// 如果存储的数字相等则为 true。\n"
 
 #: src/generics/assoc_items/the_problem.md:32
 #: src/generics/assoc_items/types.md:60
 msgid "// Grab the first number.\n"
-msgstr ""
+msgstr "// 获取第一个数字。\n"
 
 #: src/generics/assoc_items/the_problem.md:35
 #: src/generics/assoc_items/types.md:63
 msgid "// Grab the last number.\n"
-msgstr ""
+msgstr "// 获取最后一个数字。\n"
 
 #: src/generics/assoc_items/the_problem.md:38
 msgid ""
 "// `C` contains `A` and `B`. In light of that, having to express `A` and\n"
 "// `B` again is a nuisance.\n"
 msgstr ""
+"// `C` 包含了 `A` 和 `B`。鉴于此，还要指定 `A` 和 `B` 就显得很麻烦。\n"
 
 #: src/generics/assoc_items/the_problem.md:52
 #: src/generics/assoc_items/types.md:77
 msgid "\"Does container contain {} and {}: {}\""
-msgstr ""
+msgstr "\"容器是否包含 {} 和 {}：{}\""
 
 #: src/generics/assoc_items/the_problem.md:55
 #: src/generics/assoc_items/types.md:80
 msgid "\"First number: {}\""
-msgstr ""
+msgstr "\"第一个数字：{}\""
 
 #: src/generics/assoc_items/the_problem.md:56
 #: src/generics/assoc_items/types.md:81
 msgid "\"Last number: {}\""
-msgstr ""
+msgstr "\"最后一个数字：{}\""
 
 #: src/generics/assoc_items/the_problem.md:58
 #: src/generics/assoc_items/types.md:83
 msgid "\"The difference is: {}\""
-msgstr ""
+msgstr "\"差值是：{}\""
 
 #: src/generics/assoc_items/the_problem.md:64
 msgid ""
 "[`struct`s](../../custom_types/structs.md), and [`trait`s](../../trait.md)"
 msgstr ""
+"[`struct`](../../custom_types/structs.md) 和 [`trait`](../../trait.md)"
 
 #: src/generics/assoc_items/types.md:3
 msgid ""
@@ -8236,6 +8260,7 @@ msgid ""
 "moving inner types locally into a trait as _output_ types. Syntax for the "
 "`trait` definition is as follows:"
 msgstr ""
+"通过将内部类型移动到 trait 中作为**输出**类型，使用\"关联类型\"提高了代码的整体可读性。这种 `trait` 定义的语法如下："
 
 #: src/generics/assoc_items/types.md:8
 msgid ""
@@ -8243,33 +8268,35 @@ msgid ""
 "// (Note: `type` in this context is different from `type` when used for\n"
 "// aliases).\n"
 msgstr ""
+"// `A` 和 `B` 在 trait 中通过 `type` 关键字定义。\n"
+"// （注意：这里的 `type` 与用于别名的 `type` 不同）。\n"
 
 #: src/generics/assoc_items/types.md:15
 msgid "// Updated syntax to refer to these new types generically.\n"
-msgstr ""
+msgstr "// 这种新语法，能够泛型地表示这些新类型。\n"
 
 #: src/generics/assoc_items/types.md:20
 msgid ""
 "Note that functions that use the `trait` `Contains` are no longer required to "
 "express `A` or `B` at all:"
-msgstr ""
+msgstr "注意，使用 `Contains` 这个 `trait` 的函数不再需要明确表示 `A` 或 `B`："
 
 #: src/generics/assoc_items/types.md:24
 msgid "// Without using associated types\n"
-msgstr ""
+msgstr "// 不使用关联类型\n"
 
 #: src/generics/assoc_items/types.md:27
 msgid "// Using associated types\n"
-msgstr ""
+msgstr "// 使用关联类型\n"
 
 #: src/generics/assoc_items/types.md:32
 msgid ""
 "Let's rewrite the example from the previous section using associated types:"
-msgstr ""
+msgstr "让我们使用关联类型重写上一节的例子："
 
 #: src/generics/assoc_items/types.md:40
 msgid "// Define generic types here which methods will be able to utilize.\n"
-msgstr ""
+msgstr "// 在这里定义泛型类型，方法将能够使用这些类型。\n"
 
 #: src/generics/assoc_items/types.md:50
 msgid ""
@@ -8277,76 +8304,83 @@ msgid ""
 "    // is `Container(i32, i32)`, the `output` types are determined\n"
 "    // as `i32` and `i32`.\n"
 msgstr ""
+"// 指定 `A` 和 `B` 的类型。如果 `input` 类型\n"
+"    // 是 `Container(i32, i32)`，那么 `output` 类型就被确定\n"
+"    // 为 `i32` 和 `i32`。\n"
 
 #: src/generics/assoc_items/types.md:56
 msgid "// `&Self::A` and `&Self::B` are also valid here.\n"
-msgstr ""
+msgstr "// 这里 `&Self::A` 和 `&Self::B` 也是有效的。\n"
 
 #: src/generics/phantom.md:3
 msgid ""
 "A phantom type parameter is one that doesn't show up at runtime, but is "
 "checked statically (and only) at compile time."
-msgstr ""
+msgstr "虚类型参数是一种在运行时不会出现，但在（且仅在）编译时会被静态检查编译时检查的类型参数。"
 
 #: src/generics/phantom.md:6
 msgid ""
 "Data types can use extra generic type parameters to act as markers or to "
 "perform type checking at compile time. These extra parameters hold no storage "
 "values, and have no runtime behavior."
-msgstr ""
+msgstr "数据类型可以使用额外的泛型类型参数作为标记，或在编译时执行类型检查。这些额外的参数不占用存储空间，也没有运行时行为。"
 
 #: src/generics/phantom.md:10
 msgid ""
 "In the following example, we combine [std::marker::PhantomData](https://doc."
 "rust-lang.org/std/marker/struct.PhantomData.html) with the phantom type "
 "parameter concept to create tuples containing different data types."
-msgstr ""
+msgstr "在下面的例子中，我们将 [std::marker::PhantomData](https://doc.rust-lang.org/std/marker/struct.PhantomData.html) 与虚类型参数的概念结合起来，创建包含不同数据类型的元组。"
 
 #: src/generics/phantom.md:16
 msgid ""
 "// A phantom tuple struct which is generic over `A` with hidden parameter "
 "`B`.\n"
-msgstr ""
+msgstr "// 一个虚元组结构体，它在 `A` 上是泛型的，带有隐藏参数 `B`。\n"
 
 #: src/generics/phantom.md:18 src/generics/phantom.md:22
 msgid "// Allow equality test for this type.\n"
-msgstr ""
+msgstr "// 允许对这个类型进行相等性测试。\n"
 
 #: src/generics/phantom.md:20
 msgid ""
 "// A phantom type struct which is generic over `A` with hidden parameter "
 "`B`.\n"
-msgstr ""
+msgstr "// 一个虚类型结构体，它在 `A` 上是泛型的，带有隐藏参数 `B`。\n"
 
 #: src/generics/phantom.md:24
 msgid ""
 "// Note: Storage is allocated for generic type `A`, but not for `B`.\n"
 "//       Therefore, `B` cannot be used in computations.\n"
 msgstr ""
+"// 注意：为泛型类型 `A` 分配了存储空间，但没有为 `B` 分配。\n"
+"//       因此，`B` 不能参与运算。\n"
 
 #: src/generics/phantom.md:29
 msgid ""
 "// Here, `f32` and `f64` are the hidden parameters.\n"
 "    // PhantomTuple type specified as `<char, f32>`.\n"
 msgstr ""
+"// 这里，`f32` 和 `f64` 是隐藏参数。\n"
+"    // PhantomTuple 类型指定为 `<char, f32>`。\n"
 
 #: src/generics/phantom.md:31 src/generics/phantom.md:33
 #: src/generics/phantom.md:37 src/generics/phantom.md:42
 #: src/scope/borrow/ref.md:12
 msgid "'Q'"
-msgstr ""
+msgstr "'Q'"
 
 #: src/generics/phantom.md:32
 msgid "// PhantomTuple type specified as `<char, f64>`.\n"
-msgstr ""
+msgstr "// PhantomTuple 类型指定为 `<char, f64>`。\n"
 
 #: src/generics/phantom.md:35
 msgid "// Type specified as `<char, f32>`.\n"
-msgstr ""
+msgstr "// 类型指定为 `<char, f32>`。\n"
 
 #: src/generics/phantom.md:40
 msgid "// Type specified as `<char, f64>`.\n"
-msgstr ""
+msgstr "// 类型指定为 `<char, f64>`。\n"
 
 #: src/generics/phantom.md:46
 msgid ""
@@ -8354,6 +8388,9 @@ msgid ""
 "    // println!(\"_tuple1 == _tuple2 yields: {}\",\n"
 "    //           _tuple1 == _tuple2);\n"
 msgstr ""
+"// 编译时错误！类型不匹配，所以这些不能比较：\n"
+"    // println!(\"_tuple1 == _tuple2 yields: {}\",\n"
+"    //           _tuple1 == _tuple2);\n"
 
 #: src/generics/phantom.md:50
 msgid ""
@@ -8361,36 +8398,41 @@ msgid ""
 "    // println!(\"_struct1 == _struct2 yields: {}\",\n"
 "    //           _struct1 == _struct2);\n"
 msgstr ""
+"// 编译时错误！类型不匹配，所以这些不能比较：\n"
+"    // println!(\"_struct1 == _struct2 yields: {}\",\n"
+"    //           _struct1 == _struct2);\n"
 
 #: src/generics/phantom.md:58
 msgid ""
 "[Derive](../trait/derive.md), [struct](../custom_types/structs.md), and "
 "[TupleStructs](../custom_types/structs.md)"
-msgstr ""
+msgstr "[Derive](../trait/derive.md)、[struct](../custom_types/structs.md) 和 [TupleStructs](../custom_types/structs.md)"
 
 #: src/generics/phantom/testcase_units.md:3
 msgid ""
 "A useful method of unit conversions can be examined by implementing `Add` "
 "with a phantom type parameter. The `Add` `trait` is examined below:"
-msgstr ""
+msgstr "通过使用虚类型参数实现 `Add` 可以研究一种有用的单位转换方法。下面我们来看看 `Add` 这个 `trait`："
 
 #: src/generics/phantom/testcase_units.md:7
 msgid ""
 "// This construction would impose: `Self + RHS = Output`\n"
 "// where RHS defaults to Self if not specified in the implementation.\n"
 msgstr ""
+"// 这个结构会强制要求：`Self + RHS = Output`\n"
+"// 其中如果在实现中没有指定 RHS，它会默认为 Self。\n"
 
 #: src/generics/phantom/testcase_units.md:14
 msgid "// `Output` must be `T<U>` so that `T<U> + T<U> = T<U>`.\n"
-msgstr ""
+msgstr "// `Output` 必须是 `T<U>`，这样 `T<U> + T<U> = T<U>`。\n"
 
 #: src/generics/phantom/testcase_units.md:22
 msgid "The whole implementation:"
-msgstr ""
+msgstr "完整的实现："
 
 #: src/generics/phantom/testcase_units.md:27
 msgid "/// Create void enumerations to define unit types.\n"
-msgstr ""
+msgstr "/// 创建空枚举来定义单位类型。\n"
 
 #: src/generics/phantom/testcase_units.md:33
 msgid ""
@@ -8399,26 +8441,30 @@ msgid ""
 "///\n"
 "/// `f64` already implements the `Clone` and `Copy` traits.\n"
 msgstr ""
+"/// `Length` 是一个带有虚类型参数 `Unit` 的类型，\n"
+"/// 它对长度类型（即 `f64`）并不是泛型的。\n"
+"///\n"
+"/// `f64` 已经实现了 `Clone` 和 `Copy` trait。\n"
 
 #: src/generics/phantom/testcase_units.md:40
 msgid "/// The `Add` trait defines the behavior of the `+` operator.\n"
-msgstr ""
+msgstr "/// `Add` trait 定义了 `+` 运算符的行为。\n"
 
 #: src/generics/phantom/testcase_units.md:45
 msgid "// add() returns a new `Length` struct containing the sum.\n"
-msgstr ""
+msgstr "// add() 返回一个包含和的新 `Length` 结构体。\n"
 
 #: src/generics/phantom/testcase_units.md:47
 msgid "// `+` calls the `Add` implementation for `f64`.\n"
-msgstr ""
+msgstr "// `+` 调用 `f64` 的 `Add` 实现。\n"
 
 #: src/generics/phantom/testcase_units.md:53
 msgid "// Specifies `one_foot` to have phantom type parameter `Inch`.\n"
-msgstr ""
+msgstr "// 指定 `one_foot` 具有虚类型参数 `Inch`。\n"
 
 #: src/generics/phantom/testcase_units.md:55
 msgid "// `one_meter` has phantom type parameter `Mm`.\n"
-msgstr ""
+msgstr "// `one_meter` 具有虚类型参数 `Mm`。\n"
 
 #: src/generics/phantom/testcase_units.md:58
 msgid ""
@@ -8427,18 +8473,22 @@ msgid ""
 "    // Since `Length` implements `Copy`, `add()` does not consume\n"
 "    // `one_foot` and `one_meter` but copies them into `self` and `rhs`.\n"
 msgstr ""
+"// `+` 调用我们为 `Length<Unit>` 实现的 `add()` 方法。\n"
+"    //\n"
+"    // 由于 `Length` 实现了 `Copy`，`add()` 不会消耗\n"
+"    // `one_foot` 和 `one_meter`，而是将它们复制到 `self` 和 `rhs` 中。\n"
 
 #: src/generics/phantom/testcase_units.md:65
 msgid "// Addition works.\n"
-msgstr ""
+msgstr "// 加法可以正常工作。\n"
 
 #: src/generics/phantom/testcase_units.md:66
 msgid "\"one foot + one_foot = {:?} in\""
-msgstr ""
+msgstr "\"一英尺 + 一英尺 = {:?} 英寸\""
 
 #: src/generics/phantom/testcase_units.md:67
 msgid "\"one meter + one_meter = {:?} mm\""
-msgstr ""
+msgstr "\"一米 + 一米 = {:?} 毫米\""
 
 #: src/generics/phantom/testcase_units.md:69
 msgid ""
@@ -8446,6 +8496,9 @@ msgid ""
 "    // Compile-time Error: type mismatch.\n"
 "    //let one_feter = one_foot + one_meter;\n"
 msgstr ""
+"// 无意义的操作会如预期那样失败：\n"
+"    // 编译时错误：类型不匹配。\n"
+"    //let one_feter = one_foot + one_meter;\n"
 
 #: src/generics/phantom/testcase_units.md:77
 msgid ""
@@ -8454,7 +8507,7 @@ msgid ""
 "methods.md), [Overloading](../../trait/ops.md), [ref](../../scope/borrow/ref."
 "md), [Traits (`X for Y`)](../../trait.md), and [TupleStructs](../../"
 "custom_types/structs.md)."
-msgstr ""
+msgstr "[借用 (`&`)](../../scope/borrow.md)、[约束 (`X: Y`)](../../generics/bounds.md)、[enum](../../custom_types/enum.md)、[impl 和 self](../../fn/methods.md)、[重载](../../trait/ops.md)、[ref](../../scope/borrow/ref.md)、[Traits (`X for Y`)](../../trait.md) 和 [元组结构体](../../custom_types/structs.md)。"
 
 #: src/scope.md:3
 msgid ""
