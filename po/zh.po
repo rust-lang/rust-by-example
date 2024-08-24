@@ -5214,7 +5214,7 @@ msgstr ""
 
 #: src/fn/methods.md:67
 msgid "// `Pair` owns resources: two heap allocated integers\n"
-msgstr "// `Pair` 拥有资源：两个堆分配的整数\n"
+msgstr "// `Pair` 持有资源：两个堆分配的整数\n"
 
 #: src/fn/methods.md:72
 msgid ""
@@ -8515,6 +8515,7 @@ msgid ""
 "is, they indicate to the compiler when borrows are valid, when resources can "
 "be freed, and when variables are created or destroyed."
 msgstr ""
+"作用域在所有权、借用和生命周期中扮演着重要的角色。它们向编译器指示何时借用是有效的，何时资源可以被释放，以及何时变量被创建或销毁。"
 
 #: src/scope/raii.md:3
 msgid ""
@@ -8524,6 +8525,7 @@ msgid ""
 "(Resource Acquisition Is Initialization), so whenever an object goes out of "
 "scope, its destructor is called and its owned resources are freed."
 msgstr ""
+"Rust 中的变量不只是在栈上保存数据：它们还**持有**资源，例如 `Box<T>` 持有堆上的内存。Rust 强制执行 [RAII](https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization)（资源获取即初始化），因此每当一个对象离开作用域时，它的析构函数就会被调用，它持有的资源就会被释放。"
 
 #: src/scope/raii.md:8
 msgid ""
@@ -8531,50 +8533,54 @@ msgid ""
 "manually free memory or worry about memory leaks again! Here's a quick "
 "showcase:"
 msgstr ""
+"这种行为可以防止**资源泄漏**的错误，所以你再也不用手动释放内存或担心内存泄漏了！这是一个简单示例："
 
 #: src/scope/raii.md:12
 msgid "// raii.rs\n"
-msgstr ""
+msgstr "// raii.rs\n"
 
 #: src/scope/raii.md:14 src/scope/raii.md:21 src/scope/raii.md:26
 msgid "// Allocate an integer on the heap\n"
-msgstr ""
+msgstr "// 在堆上分配一个整数\n"
 
 #: src/scope/raii.md:17
 msgid "// `_box1` is destroyed here, and memory gets freed\n"
-msgstr ""
+msgstr "// `_box1` 在这里被销毁，内存被释放\n"
 
 #: src/scope/raii.md:24
 msgid "// A nested scope:\n"
-msgstr ""
+msgstr "// 一个嵌套的作用域：\n"
 
 #: src/scope/raii.md:29
 msgid "// `_box3` is destroyed here, and memory gets freed\n"
-msgstr ""
+msgstr "// `_box3` 在这里被销毁，内存被释放\n"
 
 #: src/scope/raii.md:32
 msgid ""
 "// Creating lots of boxes just for fun\n"
 "    // There's no need to manually free memory!\n"
 msgstr ""
+"// 创建很多 box（只是为了好玩）\n"
+"    // 不需要手动释放内存！\n"
 
 #: src/scope/raii.md:38
 msgid "// `_box2` is destroyed here, and memory gets freed\n"
-msgstr ""
+msgstr "// `_box2` 在这里被销毁，内存被释放\n"
 
 #: src/scope/raii.md:42
 msgid ""
 "Of course, we can double check for memory errors using [`valgrind`](http://"
 "valgrind.org/info/):"
 msgstr ""
+"当然，我们可以使用 [`valgrind`](http://valgrind.org/info/) 来再次检查内存错误："
 
 #: src/scope/raii.md:65
 msgid "No leaks here!"
-msgstr ""
+msgstr "没有泄漏！"
 
 #: src/scope/raii.md:67
 msgid "Destructor"
-msgstr ""
+msgstr "析构函数"
 
 #: src/scope/raii.md:69
 msgid ""
@@ -8584,6 +8590,7 @@ msgid ""
 "implemented for every type, only implement it for your type if you require "
 "its own destructor logic."
 msgstr ""
+"Rust 中析构函数的概念是通过 [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait 提供的。当资源离开作用域时，析构函数被调用。并不是每种类型都需要实现这个 trait，只有当你需要为自己的类型实现析构函数逻辑时才需要实现它。"
 
 #: src/scope/raii.md:74
 msgid ""
@@ -8591,18 +8598,19 @@ msgid ""
 "ops/trait.Drop.html) trait works. When the variable in the `main` function "
 "goes out of scope the custom destructor will be invoked."
 msgstr ""
+"运行下面的例子来看看 [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait 是如何工作的。当 `main` 函数中的变量离开作用域时，自定义的析构函数将被调用。"
 
 #: src/scope/raii.md:82
 msgid "\"ToDrop is being dropped\""
-msgstr ""
+msgstr "\"ToDrop 被丢弃了\""
 
 #: src/scope/raii.md:88
 msgid "\"Made a ToDrop!\""
-msgstr ""
+msgstr "\"创建了一个 ToDrop！\""
 
 #: src/scope/raii.md:94
 msgid "[Box](../std/box.md)"
-msgstr ""
+msgstr "[Box](../std/box.md)"
 
 #: src/scope/move.md:3
 msgid ""
@@ -8611,6 +8619,7 @@ msgid ""
 "once. Note that not all variables own resources (e.g. [references](../"
 "flow_control/match/destructuring/destructure_pointers.md))."
 msgstr ""
+"因为变量负责释放它们持有的资源，**资源只能有一个所有者**。这可以防止资源被多次释放。注意并不是所有的变量都持有资源（例如 [引用](../flow_control/match/destructuring/destructure_pointers.md)）。"
 
 #: src/scope/move.md:8
 msgid ""
@@ -8618,52 +8627,54 @@ msgid ""
 "(`foo(x)`), the _ownership_ of the resources is transferred. In Rust-speak, "
 "this is known as a _move_."
 msgstr ""
+"当进行赋值（`let x = y`）或按值传递函数参数（`foo(x)`）时，资源的**所有权**会被转移。在 Rust 中，这被称为**移动**（move）。"
 
 #: src/scope/move.md:12
 msgid ""
 "After moving resources, the previous owner can no longer be used. This avoids "
 "creating dangling pointers."
 msgstr ""
+"在移动资源之后，之前的所有者就不能再被使用了。这避免了悬垂指针的产生。"
 
 #: src/scope/move.md:16
 msgid "// This function takes ownership of the heap allocated memory\n"
-msgstr ""
+msgstr "// 这个函数获取堆分配内存的所有权\n"
 
 #: src/scope/move.md:18
 msgid "\"Destroying a box that contains {}\""
-msgstr ""
+msgstr "\"销毁一个包含 {} 的 box\""
 
 #: src/scope/move.md:20
 msgid "// `c` is destroyed and the memory freed\n"
-msgstr ""
+msgstr "// `c` 被销毁并且内存被释放\n"
 
 #: src/scope/move.md:24
 msgid "// _Stack_ allocated integer\n"
-msgstr ""
+msgstr "// 「栈」分配的整数\n"
 
 #: src/scope/move.md:27
 msgid "// *Copy* `x` into `y` - no resources are moved\n"
-msgstr ""
+msgstr "// 将 `x` *复制*到 `y` - 没有资源被移动\n"
 
 #: src/scope/move.md:30
 msgid "// Both values can be independently used\n"
-msgstr ""
+msgstr "// 两个值可以独立使用\n"
 
 #: src/scope/move.md:31
 msgid "\"x is {}, and y is {}\""
-msgstr ""
+msgstr "\"x 是 {}，y 是 {}\""
 
 #: src/scope/move.md:33
 msgid "// `a` is a pointer to a _heap_ allocated integer\n"
-msgstr ""
+msgstr "// `a` 是一个指向「堆」分配的整数的指针\n"
 
 #: src/scope/move.md:36
 msgid "\"a contains: {}\""
-msgstr ""
+msgstr "\"a 包含：{}\""
 
 #: src/scope/move.md:38
 msgid "// *Move* `a` into `b`\n"
-msgstr ""
+msgstr "// 将 `a` *移动* 到 `b`\n"
 
 #: src/scope/move.md:40
 msgid ""
@@ -8671,6 +8682,9 @@ msgid ""
 "    // Both are now pointers to the same heap allocated data, but\n"
 "    // `b` now owns it.\n"
 msgstr ""
+"// 把 `a` 的指针地址（而不是数据）复制到 `b`。\n"
+"    // 现在两者都是指向同一个堆分配数据的指针，但是\n"
+"    // `b` 现在持有它。\n"
 
 #: src/scope/move.md:44
 msgid ""
@@ -8679,10 +8693,13 @@ msgid ""
 "    //println!(\"a contains: {}\", a);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！`a` 不能再访问数据，因为它不再持有堆内存\n"
+"    //println!(\"a contains: {}\", a);\n"
+"    // TODO ^ 试着取消注释这一行\n"
 
 #: src/scope/move.md:49
 msgid "// This function takes ownership of the heap allocated memory from `b`\n"
-msgstr ""
+msgstr "// 这个函数从 `b` 获取堆分配内存的所有权\n"
 
 #: src/scope/move.md:52
 msgid ""
@@ -8693,36 +8710,43 @@ msgid ""
 "    //println!(\"b contains: {}\", b);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 由于堆内存在这一点已经被释放，这个操作会导致解引用已释放的内存，\n"
+"    // 但这被编译器禁止\n"
+"    // 错误！原因与前面的错误相同\n"
+"    //println!(\"b contains: {}\", b);\n"
+"    // TODO ^ 试着取消注释这一行\n"
 
 #: src/scope/move/mut.md:3
 msgid "Mutability of data can be changed when ownership is transferred."
-msgstr ""
+msgstr "当所有权被转移时，数据的可变性可以被改变。"
 
 #: src/scope/move/mut.md:9
 msgid "\"immutable_box contains {}\""
-msgstr ""
+msgstr "\"immutable_box 包含 {}\""
 
 #: src/scope/move/mut.md:11
 msgid ""
 "// Mutability error\n"
 "    //*immutable_box = 4;\n"
 msgstr ""
+"// 可变性错误\n"
+"    //*immutable_box = 4;\n"
 
 #: src/scope/move/mut.md:14
 msgid "// *Move* the box, changing the ownership (and mutability)\n"
-msgstr ""
+msgstr "// *移动* box，改变所有权（和可变性）\n"
 
 #: src/scope/move/mut.md:17
 msgid "\"mutable_box contains {}\""
-msgstr ""
+msgstr "\"mutable_box 包含 {}\""
 
 #: src/scope/move/mut.md:19
 msgid "// Modify the contents of the box\n"
-msgstr ""
+msgstr "// 修改 box 的内容\n"
 
 #: src/scope/move/mut.md:22
 msgid "\"mutable_box now contains {}\""
-msgstr ""
+msgstr "\"mutable_box 现在包含 {}\""
 
 #: src/scope/move/partial_move.md:3
 msgid ""
@@ -8734,33 +8758,37 @@ msgid ""
 "a whole, however the parts that are only referenced (and not moved) can still "
 "be used."
 msgstr ""
+"在对单个变量进行[解构](../../flow_control/match/destructuring.md)时，可以同时使用 `by-move` 和 `by-reference` 模式绑定。这样做会导致变量的**部分移动**，这意味着变量的一部分会被移动，而其他部分保持不变。在这种情况下，父级变量之后不能作为一个整体使用，但是仍然可以使用只被引用（而不是被移动）的部分。"
 
 #: src/scope/move/partial_move.md:24
 msgid "// `name` is moved out of person, but `age` is referenced\n"
-msgstr ""
+msgstr "// `name` 从 person 中被移出，但 `age` 只是被引用\n"
 
 #: src/scope/move/partial_move.md:27
 msgid "\"The person's age is {}\""
-msgstr ""
+msgstr "\"此人的年龄是 {}\""
 
 #: src/scope/move/partial_move.md:29
 msgid "\"The person's name is {}\""
-msgstr ""
+msgstr "\"此人的名字是 {}\""
 
 #: src/scope/move/partial_move.md:31
 msgid ""
 "// Error! borrow of partially moved value: `person` partial move occurs\n"
 "    //println!(\"The person struct is {:?}\", person);\n"
 msgstr ""
+"// 错误！借用了部分移动的值：`person` 发生了部分移动\n"
+"    //println!(\"此人的结构体是 {:?}\", person);\n"
 
 #: src/scope/move/partial_move.md:34
 msgid ""
 "// `person` cannot be used but `person.age` can be used as it is not moved\n"
 msgstr ""
+"// `person` 不能被使用，但 `person.age` 可以使用，因为它没有被移动\n"
 
 #: src/scope/move/partial_move.md:35
 msgid "\"The person's age from person struct is {}\""
-msgstr ""
+msgstr "\"从 person 结构体中获取的此人年龄是 {}\""
 
 #: src/scope/move/partial_move.md:38
 msgid ""
@@ -8770,10 +8798,11 @@ msgid ""
 "age` were stored on the stack, `ref` would not be required as the definition "
 "of `age` would copy the data from `person.age` without moving it.)"
 msgstr ""
+"（在这个例子中，我们将 `age` 变量存储在堆上以说明部分移动：删除上面代码中的 `ref` 会导致错误，因为 `person.age` 的所有权会被移动到变量 `age`。如果 `Person.age` 存储在栈上，就不需要 `ref`，因为 `age` 的定义会从 `person.age` 复制数据而不是移动它。）"
 
 #: src/scope/move/partial_move.md:46
 msgid "[destructuring](../../flow_control/match/destructuring.md)"
-msgstr ""
+msgstr "[解构](../../flow_control/match/destructuring.md)"
 
 #: src/scope/borrow.md:3
 msgid ""
@@ -8781,6 +8810,7 @@ msgid ""
 "To accomplish this, Rust uses a _borrowing_ mechanism. Instead of passing "
 "objects by value (`T`), objects can be passed by reference (`&T`)."
 msgstr ""
+"大多数情况下，我们希望访问数据而不获取其所有权。为了实现这一点，Rust 使用了**借用**机制。对象可以通过引用（`&T`）传递，而不是按值（`T`）传递。"
 
 #: src/scope/borrow.md:7
 msgid ""
@@ -8788,22 +8818,23 @@ msgid ""
 "_always_ point to valid objects. That is, while references to an object "
 "exist, the object cannot be destroyed."
 msgstr ""
+"编译器通过其借用检查器静态地保证引用**始终**指向有效的对象。也就是说，当存在引用指向一个对象时，该对象就不能被销毁。"
 
 #: src/scope/borrow.md:12
 msgid "// This function takes ownership of a box and destroys it\n"
-msgstr ""
+msgstr "// 这个函数获取一个 box 的所有权并销毁它\n"
 
 #: src/scope/borrow.md:14
 msgid "\"Destroying box that contains {}\""
-msgstr ""
+msgstr "\"销毁包含 {} 的 box\""
 
 #: src/scope/borrow.md:16
 msgid "// This function borrows an i32\n"
-msgstr ""
+msgstr "// 这个函数借用一个 i32\n"
 
 #: src/scope/borrow.md:19
 msgid "\"This int is: {}\""
-msgstr ""
+msgstr "\"这个整数是：{}\""
 
 #: src/scope/borrow.md:23
 msgid ""
@@ -8812,16 +8843,21 @@ msgid ""
 "readability\n"
 "    // 5_i32 is the same as 5i32\n"
 msgstr ""
+"// 在堆上创建一个装箱的 i32，在栈上创建一个 i32\n"
+"    // 注：数字可以添加任意下划线以提高可读性\n"
+"    // 5_i32 与 5i32 相同\n"
 
 #: src/scope/borrow.md:29
 msgid ""
 "// Borrow the contents of the box. Ownership is not taken,\n"
 "    // so the contents can be borrowed again.\n"
 msgstr ""
+"// 借用 box 的数据。所有权未被获取，\n"
+"    // 所以数据可以再次被借用。\n"
 
 #: src/scope/borrow.md:35
 msgid "// Take a reference to the data contained inside the box\n"
-msgstr ""
+msgstr "// 获取 box 内数据的引用\n"
 
 #: src/scope/borrow.md:38
 msgid ""
@@ -8829,19 +8865,22 @@ msgid ""
 "        // Can't destroy `boxed_i32` while the inner value is borrowed later "
 "in scope.\n"
 msgstr ""
+"// 错误！\n"
+"        // 当内部值在作用域内稍后被借用时，不能销毁 `boxed_i32`。\n"
 
 #: src/scope/borrow.md:43
 msgid "// Attempt to borrow `_ref_to_i32` after inner value is destroyed\n"
-msgstr ""
+msgstr "// 尝试在内部值被销毁后借用 `_ref_to_i32`\n"
 
 #: src/scope/borrow.md:45
 msgid "// `_ref_to_i32` goes out of scope and is no longer borrowed.\n"
-msgstr ""
+msgstr "// `_ref_to_i32` 超出作用域，不再被借用。\n"
 
 #: src/scope/borrow.md:48
 msgid ""
 "// `boxed_i32` can now give up ownership to `eat_box_i32` and be destroyed\n"
 msgstr ""
+"// `boxed_i32` 现在可以将所有权交给 `eat_box_i32` 并被销毁\n"
 
 #: src/scope/borrow/mut.md:3
 msgid ""
@@ -8850,69 +8889,72 @@ msgid ""
 "`&T` borrows the data via an immutable reference, and the borrower can read "
 "the data but not modify it:"
 msgstr ""
+"可变数据可以使用 `&mut T` 进行可变借用。这被称为**可变引用**，并给予借用者读/写访问权。相比之下，`&T` 通过不可变引用借用数据，借用者可以读取数据但不能修改它："
 
 #: src/scope/borrow/mut.md:12
 msgid ""
 "// `&'static str` is a reference to a string allocated in read only memory\n"
 msgstr ""
+"// `&'static str` 是对分配在只读内存中的字符串的引用\n"
 
 #: src/scope/borrow/mut.md:17
 msgid "// This function takes a reference to a book\n"
-msgstr ""
+msgstr "// 这个函数接受一个对 Book 类型数据的引用\n"
 
 #: src/scope/borrow/mut.md:20
 msgid "\"I immutably borrowed {} - {} edition\""
-msgstr ""
+msgstr "\"我不可变地借用了 {} - {} 版\""
 
 #: src/scope/borrow/mut.md:22
 msgid ""
 "// This function takes a reference to a mutable book and changes `year` to "
 "2014\n"
 msgstr ""
+"// 这个函数接受一个对可变书的引用，并将 `year` 改为 2014\n"
 
 #: src/scope/borrow/mut.md:26
 msgid "\"I mutably borrowed {} - {} edition\""
-msgstr ""
+msgstr "\"我可变地借用了 {} - {} 版\""
 
 #: src/scope/borrow/mut.md:30
 msgid "// Create an immutable Book named `immutabook`\n"
-msgstr ""
+msgstr "// 创建一个名为 `immutabook` 的不可变 Book\n"
 
 #: src/scope/borrow/mut.md:32
 msgid "// string literals have type `&'static str`\n"
-msgstr ""
+msgstr "// 字符串字面量的类型是 `&'static str`\n"
 
 #: src/scope/borrow/mut.md:33
 msgid "\"Douglas Hofstadter\""
-msgstr ""
+msgstr "\"Douglas Hofstadter\""
 
 #: src/scope/borrow/mut.md:34
 msgid "\"Gödel, Escher, Bach\""
-msgstr ""
+msgstr "\"Gödel, Escher, Bach\""
 
 #: src/scope/borrow/mut.md:38
 msgid "// Create a mutable copy of `immutabook` and call it `mutabook`\n"
-msgstr ""
+msgstr "// 创建 `immutabook` 的一个可变副本，并将其命名为 `mutabook`\n"
 
 #: src/scope/borrow/mut.md:41
 msgid "// Immutably borrow an immutable object\n"
-msgstr ""
+msgstr "// 不可变地借用一个不可变对象\n"
 
 #: src/scope/borrow/mut.md:44
 msgid "// Immutably borrow a mutable object\n"
-msgstr ""
+msgstr "// 不可变地借用一个可变对象\n"
 
 #: src/scope/borrow/mut.md:47
 msgid "// Borrow a mutable object as mutable\n"
-msgstr ""
+msgstr "// 可变地借用一个可变对象\n"
 
 #: src/scope/borrow/mut.md:50
 msgid "// Error! Cannot borrow an immutable object as mutable\n"
-msgstr ""
+msgstr "// 错误！不能可变地借用一个不可变对象\n"
 
 #: src/scope/borrow/mut.md:57
 msgid "[`static`](../lifetime/static_lifetime.md)"
-msgstr ""
+msgstr "[`static`](../lifetime/static_lifetime.md)"
 
 #: src/scope/borrow/alias.md:3
 msgid ""
@@ -8922,15 +8964,16 @@ msgid ""
 "borrowed again only _after_ the mutable reference has been used for the last "
 "time."
 msgstr ""
+"数据可以被不可变地借用任意次数，但在不可变借用期间，原始数据不能被可变地借用。另一方面，同一时间只允许**一个**可变借用。只有在可变引用最后一次使用之后，原始数据才能再次被借用。"
 
 #: src/scope/borrow/alias.md:17
 msgid "// Data can be accessed via the references and the original owner\n"
-msgstr ""
+msgstr "// 可以通过引用和原始所有者访问数据\n"
 
 #: src/scope/borrow/alias.md:18 src/scope/borrow/alias.md:27
 #: src/scope/borrow/alias.md:49
 msgid "\"Point has coordinates: ({}, {}, {})\""
-msgstr ""
+msgstr "\"Point has coordinates: ({}, {}, {})\""
 
 #: src/scope/borrow/alias.md:21
 msgid ""
@@ -8939,20 +8982,25 @@ msgid ""
 "    // let mutable_borrow = &mut point;\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！不能将 `point` 作为可变借用，因为它当前被不可变借用。\n"
+"    // let mutable_borrow = &mut point;\n"
+"    // TODO ^ 尝试取消注释此行\n"
 
 #: src/scope/borrow/alias.md:26
 msgid "// The borrowed values are used again here\n"
-msgstr ""
+msgstr "// 这里再次使用了借用的值\n"
 
 #: src/scope/borrow/alias.md:30
 msgid ""
 "// The immutable references are no longer used for the rest of the code so\n"
 "    // it is possible to reborrow with a mutable reference.\n"
 msgstr ""
+"// 不可变引用在代码的剩余部分不再使用\n"
+"    // 所以可以用可变引用重新借用。\n"
 
 #: src/scope/borrow/alias.md:34
 msgid "// Change data via mutable reference\n"
-msgstr ""
+msgstr "// 通过可变引用改变数据\n"
 
 #: src/scope/borrow/alias.md:39
 msgid ""
@@ -8961,6 +9009,9 @@ msgid ""
 "    // let y = &point.y;\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！不能将 `point` 作为不可变借用，因为它当前被可变借用。\n"
+"    // let y = &point.y;\n"
+"    // TODO ^ 尝试取消注释此行\n"
 
 #: src/scope/borrow/alias.md:44
 msgid ""
@@ -8968,20 +9019,24 @@ msgid ""
 "    // println!(\"Point Z coordinate is {}\", point.z);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！不能打印，因为 `println!` 用到了一个不可变引用。\n"
+"    // println!(\"Point Z coordinate is {}\", point.z);\n"
+"    // TODO ^ 尝试取消注释此行\n"
 
 #: src/scope/borrow/alias.md:48
 msgid "// Ok! Mutable references can be passed as immutable to `println!`\n"
-msgstr ""
+msgstr "// 可以！可变引用可以作为不可变引用传递给 `println!`\n"
 
 #: src/scope/borrow/alias.md:52
 msgid ""
 "// The mutable reference is no longer used for the rest of the code so it\n"
 "    // is possible to reborrow\n"
 msgstr ""
+"// 可变引用在代码的剩余部分不再使用，所以可以重新借用\n"
 
 #: src/scope/borrow/alias.md:55
 msgid "\"Point now has coordinates: ({}, {}, {})\""
-msgstr ""
+msgstr "\"Point now has coordinates: ({}, {}, {})\""
 
 #: src/scope/borrow/ref.md:3
 msgid ""
@@ -8989,60 +9044,62 @@ msgid ""
 "keyword can be used to take references to the fields of a struct/tuple. The "
 "example below shows a few instances where this can be useful:"
 msgstr ""
+"在通过 `let` 绑定进行模式匹配或解构时，可以使用 `ref` 关键字来获取结构体/元组字段的引用。下面的例子展示了几个这种用法有用的情况："
 
 #: src/scope/borrow/ref.md:14
 msgid ""
 "// A `ref` borrow on the left side of an assignment is equivalent to\n"
 "    // an `&` borrow on the right side.\n"
 msgstr ""
+"// 赋值左侧的 `ref` 借用等同于右侧的 `&` 借用。\n"
 
 #: src/scope/borrow/ref.md:19
 msgid "\"ref_c1 equals ref_c2: {}\""
-msgstr ""
+msgstr "\"ref_c1 equals ref_c2: {}\""
 
 #: src/scope/borrow/ref.md:23
 msgid "// `ref` is also valid when destructuring a struct.\n"
-msgstr ""
+msgstr "// 在解构结构体时，`ref` 也是有效的。\n"
 
 #: src/scope/borrow/ref.md:25
 msgid "// `ref_to_x` is a reference to the `x` field of `point`.\n"
-msgstr ""
+msgstr "// `ref_to_x` 是 `point` 的 `x` 字段的引用。\n"
 
 #: src/scope/borrow/ref.md:28
 msgid "// Return a copy of the `x` field of `point`.\n"
-msgstr ""
+msgstr "// 返回 `point` 的 `x` 字段的拷贝。\n"
 
 #: src/scope/borrow/ref.md:32
 msgid "// A mutable copy of `point`\n"
-msgstr ""
+msgstr "// `point` 的可变拷贝\n"
 
 #: src/scope/borrow/ref.md:36
 msgid "// `ref` can be paired with `mut` to take mutable references.\n"
-msgstr ""
+msgstr "// `ref` 可以与 `mut` 配对来获取可变引用。\n"
 
 #: src/scope/borrow/ref.md:39
 msgid "// Mutate the `y` field of `mutable_point` via a mutable reference.\n"
-msgstr ""
+msgstr "// 通过可变引用修改 `mutable_point` 的 `y` 字段。\n"
 
 #: src/scope/borrow/ref.md:43
 msgid "\"point is ({}, {})\""
-msgstr ""
+msgstr "\"point is ({}, {})\""
 
 #: src/scope/borrow/ref.md:44
 msgid "\"mutable_point is ({}, {})\""
-msgstr ""
+msgstr "\"mutable_point is ({}, {})\""
 
 #: src/scope/borrow/ref.md:46
 msgid "// A mutable tuple that includes a pointer\n"
-msgstr ""
+msgstr "// 包含指针的可变元组\n"
 
 #: src/scope/borrow/ref.md:50
 msgid "// Destructure `mutable_tuple` to change the value of `last`.\n"
-msgstr ""
+msgstr "// 解构 `mutable_tuple` 以改变 `last` 的值。\n"
 
 #: src/scope/borrow/ref.md:55
 msgid "\"tuple is {:?}\""
-msgstr ""
+msgstr "\"tuple is {:?}\""
 
 #: src/scope/lifetime.md:3
 msgid ""
@@ -9051,6 +9108,7 @@ msgid ""
 "lifetime begins when it is created and ends when it is destroyed. While "
 "lifetimes and scopes are often referred to together, they are not the same."
 msgstr ""
+"**生命周期**是编译器（更具体地说是其**借用检查器**）用来确保所有借用都是有效的一个构造。具体来说，变量的生命周期从创建时开始，到销毁时结束。虽然生命周期和作用域经常被一起提到，但它们并不相同。"
 
 #: src/scope/lifetime.md:8
 msgid ""
@@ -9059,12 +9117,14 @@ msgid ""
 "borrow is valid as long as it ends before the lender is destroyed. However, "
 "the scope of the borrow is determined by where the reference is used."
 msgstr ""
+"例如，考虑我们通过 `&` 借用一个变量的情况。借用的生命周期由其声明的位置决定。因此，只要借用在出借者被销毁之前结束，它就是有效的。然而，借用的作用域由引用使用的位置决定。"
 
 #: src/scope/lifetime.md:13
 msgid ""
 "In the following example and in the rest of this section, we will see how "
 "lifetimes relate to scopes, as well as how the two differ."
 msgstr ""
+"在下面的例子和本节的其余部分中，我们将看到生命周期如何与作用域相关，以及两者有何不同。"
 
 #: src/scope/lifetime.md:17
 msgid ""
@@ -9074,30 +9134,38 @@ msgid ""
 "// both `borrow1` and `borrow2`. The duration of `borrow1` compared \n"
 "// to `borrow2` is irrelevant since they are disjoint.\n"
 msgstr ""
+"// 下面用线条标注了每个变量的创建和销毁，以表示生命周期。\n"
+"// `i` 的生命周期最长，因为它的作用域完全包含了 `borrow1` 和 `borrow2`。\n"
+"// `borrow1` 相对于 `borrow2` 的持续时间是无关紧要的，因为它们是不相交的。\n"
+"// （译注：为避免中文的宽度显示问题，下面注释没有翻译） \n"
 
 #: src/scope/lifetime.md:23
 msgid ""
 "// Lifetime for `i` starts. ────────────────┐\n"
 "    //                                                     │\n"
 msgstr ""
+"// Lifetime for `i` starts. ────────────────┐\n"
+"    //                                                     │\n"
 
 #: src/scope/lifetime.md:25 src/scope/lifetime.md:32
 msgid "//                                                   │\n"
-msgstr ""
+msgstr "//                                                   │\n"
 
 #: src/scope/lifetime.md:26
 msgid ""
 "// `borrow1` lifetime starts. ──┐│\n"
 "        //                                                ││\n"
 msgstr ""
+"// `borrow1` lifetime starts. ──┐│\n"
+"        //                                                ││\n"
 
 #: src/scope/lifetime.md:28
 msgid "\"borrow1: {}\""
-msgstr ""
+msgstr "\"borrow1: {}\""
 
 #: src/scope/lifetime.md:28 src/scope/lifetime.md:35
 msgid "//              ││\n"
-msgstr ""
+msgstr "//              ││\n"
 
 #: src/scope/lifetime.md:29
 msgid ""
@@ -9105,32 +9173,40 @@ msgid ""
 "    //                                                     │\n"
 "    //                                                     │\n"
 msgstr ""
+"// `borrow1` ends. ─────────────────────────────────┘│\n"
+"    //                                                     │\n"
+"    //                                                     │\n"
 
 #: src/scope/lifetime.md:33
 msgid ""
 "// `borrow2` lifetime starts. ──┐│\n"
 "        //                                                ││\n"
 msgstr ""
+"// `borrow2` lifetime starts. ──┐│\n"
+"        //                                                ││\n"
 
 #: src/scope/lifetime.md:35
 msgid "\"borrow2: {}\""
-msgstr ""
+msgstr "\"borrow2: {}\""
 
 #: src/scope/lifetime.md:36
 msgid ""
 "// `borrow2` ends. ─────────────────────────────────┘│\n"
 "    //                                                     │\n"
 msgstr ""
+"// `borrow2` ends. ─────────────────────────────────┘│\n"
+"    //                                                     │\n"
 
 #: src/scope/lifetime.md:38
 msgid "// Lifetime ends. ─────────────────────────────────────┘\n"
-msgstr ""
+msgstr "// Lifetime ends. ─────────────────────────────────────┘\n"
 
 #: src/scope/lifetime.md:41
 msgid ""
 "Note that no names or types are assigned to label lifetimes. This restricts "
 "how lifetimes will be able to be used as we will see."
 msgstr ""
+"请注意，没有名称或类型被分配给标记生命周期。这限制了生命周期的使用方式，我们将在后面看到。"
 
 #: src/scope/lifetime/explicit.md:3
 msgid ""
@@ -9140,10 +9216,11 @@ msgid ""
 "should be. The syntax for explicitly annotating a lifetime uses an apostrophe "
 "character as follows:"
 msgstr ""
+"借用检查器使用显式生命周期注解来确定引用应该有效多长时间。在生命周期没有被省略[^1]的情况下，Rust 需要显式注解来确定引用的生命周期应该是怎样的。显式注解生命周期的语法使用撇号字符，如下所示："
 
 #: src/scope/lifetime/explicit.md:10
 msgid "// `foo` has a lifetime parameter `'a`\n"
-msgstr ""
+msgstr "// `foo` 有一个生命周期参数 `'a`\n"
 
 #: src/scope/lifetime/explicit.md:14
 msgid ""
@@ -9152,24 +9229,25 @@ msgid ""
 "lifetime of `foo` may not exceed that of `'a`. Explicit annotation of a type "
 "has the form `&'a T` where `'a` has already been introduced."
 msgstr ""
+"类似于[闭包](../../fn/closures/anonymity.md)，使用生命周期需要泛型。此外，这种生命周期语法表示 `foo` 的生命周期不能超过 `'a` 的生命周期。类型的显式注解形式为 `&'a T`，其中 `'a` 已经被引入。"
 
 #: src/scope/lifetime/explicit.md:19
 msgid "In cases with multiple lifetimes, the syntax is similar:"
-msgstr ""
+msgstr "在有多个生命周期的情况下，语法类似："
 
 #: src/scope/lifetime/explicit.md:22
 msgid "// `foo` has lifetime parameters `'a` and `'b`\n"
-msgstr ""
+msgstr "// `foo` 有生命周期参数 `'a` 和 `'b`\n"
 
 #: src/scope/lifetime/explicit.md:26
 msgid ""
 "In this case, the lifetime of `foo` cannot exceed that of either `'a` _or_ "
 "`'b`."
-msgstr ""
+msgstr "在这种情况下，`foo` 的生命周期不能超过 `'a` **或** `'b` 的生命周期。"
 
 #: src/scope/lifetime/explicit.md:28
 msgid "See the following example for explicit lifetime annotation in use:"
-msgstr ""
+msgstr "请看下面的例子，展示了显式生命周期注解的使用："
 
 #: src/scope/lifetime/explicit.md:31
 msgid ""
@@ -9177,19 +9255,22 @@ msgid ""
 "// lifetimes `'a` and `'b`. These two lifetimes must both be at\n"
 "// least as long as the function `print_refs`.\n"
 msgstr ""
+"// `print_refs` 接受两个 `i32` 的引用，它们有不同的\n"
+"// 生命周期 `'a` 和 `'b`。这两个生命周期都必须\n"
+"// 至少和函数 `print_refs` 一样长。\n"
 
 #: src/scope/lifetime/explicit.md:35
 msgid "\"x is {} and y is {}\""
-msgstr ""
+msgstr "\"x is {} and y is {}\""
 
 #: src/scope/lifetime/explicit.md:37
 msgid ""
 "// A function which takes no arguments, but has a lifetime parameter `'a`.\n"
-msgstr ""
+msgstr "// 一个没有参数但有生命周期参数 `'a` 的函数。\n"
 
 #: src/scope/lifetime/explicit.md:42
 msgid "// ERROR: `_x` does not live long enough\n"
-msgstr ""
+msgstr "// 错误：`_x` 的生命周期不够长\n"
 
 #: src/scope/lifetime/explicit.md:44
 msgid ""
@@ -9199,14 +9280,17 @@ msgid ""
 "    // than that of `_y`. A short lifetime cannot be coerced into a longer "
 "one.\n"
 msgstr ""
+"// 尝试在函数内部使用生命周期 `'a` 作为显式类型注解\n"
+"    // 会失败，因为 `&_x` 的生命周期比 `_y` 的短。\n"
+"    // 短生命周期不能被强制转换为长生命周期。\n"
 
 #: src/scope/lifetime/explicit.md:50
 msgid "// Create variables to be borrowed below.\n"
-msgstr ""
+msgstr "// 创建将要被借用的变量。\n"
 
 #: src/scope/lifetime/explicit.md:53
 msgid "// Borrows (`&`) of both variables are passed into the function.\n"
-msgstr ""
+msgstr "// 两个变量的借用（`&`）被传递给函数。\n"
 
 #: src/scope/lifetime/explicit.md:55
 msgid ""
@@ -9214,6 +9298,9 @@ msgid ""
 "    // In other words, the lifetime of `four` and `nine` must \n"
 "    // be longer than that of `print_refs`.\n"
 msgstr ""
+"// 任何被借用的输入必须比借用者存活更久。\n"
+"    // 换句话说，`four` 和 `nine` 的生命周期必须\n"
+"    // 比 `print_refs` 的生命周期更长。\n"
 
 #: src/scope/lifetime/explicit.md:60
 msgid ""
@@ -9221,31 +9308,34 @@ msgid ""
 "    // longer than the lifetime of the function, but `'a` is longer.\n"
 "    // Because the lifetime is never constrained, it defaults to `'static`.\n"
 msgstr ""
+"// `failed_borrow` 不包含任何引用来强制 `'a` 比\n"
+"    // 函数的生命周期更长，但 `'a` 确实更长。\n"
+"    // 因为生命周期从未被约束，它默认为 `'static`。\n"
 
 #: src/scope/lifetime/explicit.md:66
 msgid ""
 "[elision](elision.md) implicitly annotates lifetimes and so is different."
-msgstr ""
+msgstr "[省略](elision.md)隐式地注解生命周期，因此是不同的。"
 
 #: src/scope/lifetime/explicit.md:70
 msgid "[generics](../../generics.md) and [closures](../../fn/closures.md)"
-msgstr ""
+msgstr "[泛型](../../generics.md)和[闭包](../../fn/closures.md)"
 
 #: src/scope/lifetime/fn.md:3
 msgid ""
 "Ignoring [elision](elision.md), function signatures with lifetimes have a few "
 "constraints:"
-msgstr ""
+msgstr "排除[省略](elision.md)的情况，带有生命周期的函数签名有一些限制："
 
 #: src/scope/lifetime/fn.md:5
 msgid "any reference _must_ have an annotated lifetime."
-msgstr ""
+msgstr "任何引用**必须**有一个标注了的生命周期。"
 
 #: src/scope/lifetime/fn.md:6
 msgid ""
 "any reference being returned _must_ have the same lifetime as an input or be "
 "`static`."
-msgstr ""
+msgstr "任何被返回的引用**必须**具有与输入相同的生命周期或者是 `static`。"
 
 #: src/scope/lifetime/fn.md:9
 msgid ""
@@ -9253,20 +9343,22 @@ msgid ""
 "would result in returning references to invalid data. The following example "
 "shows off some valid forms of functions with lifetimes:"
 msgstr ""
+"此外，请注意，如果返回引用却没有输入，会导致返回无效数据的引用，这是被禁止的。以下示例展示了一些带有生命周期的函数："
 
 #: src/scope/lifetime/fn.md:14
 msgid ""
 "// One input reference with lifetime `'a` which must live\n"
 "// at least as long as the function.\n"
 msgstr ""
+"// 一个具有生命周期 `'a` 的输入引用，它的存活至少和函数一样长。\n"
 
 #: src/scope/lifetime/fn.md:17
 msgid "\"`print_one`: x is {}\""
-msgstr ""
+msgstr "\"`print_one`: x is {}\""
 
 #: src/scope/lifetime/fn.md:19
 msgid "// Mutable references are possible with lifetimes as well.\n"
-msgstr ""
+msgstr "// 可变引用也可以有生命周期。\n"
 
 #: src/scope/lifetime/fn.md:24
 msgid ""
@@ -9274,16 +9366,21 @@ msgid ""
 "// would be fine for both to have the same lifetime `'a`, but\n"
 "// in more complex cases, different lifetimes may be required.\n"
 msgstr ""
+"// 多个具有不同生命周期的元素。在这种情况下，\n"
+"// 两者都有相同的生命周期 `'a` 是可以的，但\n"
+"// 在更复杂的情况下，可能需要不同的生命周期。\n"
 
 #: src/scope/lifetime/fn.md:29
 msgid "\"`print_multi`: x is {}, y is {}\""
-msgstr ""
+msgstr "\"`print_multi`: x is {}, y is {}\""
 
 #: src/scope/lifetime/fn.md:31
 msgid ""
 "// Returning references that have been passed in is acceptable.\n"
 "// However, the correct lifetime must be returned.\n"
 msgstr ""
+"// 返回已传入的引用是可以接受的。\n"
+"// 但是，必须返回正确的生命周期。\n"
 
 #: src/scope/lifetime/fn.md:35
 msgid ""
@@ -9293,108 +9390,114 @@ msgid ""
 "// reference. Then the data is dropped upon exiting the scope, leaving\n"
 "// a reference to invalid data to be returned.\n"
 msgstr ""
+"//fn invalid_output<'a>() -> &'a String { &String::from(\"foo\") }\n"
+"// 上面的代码是无效的：`'a` 的存活时间必须比函数更长。\n"
+"// 这里的 `&String::from(\"foo\")` 会创建一个 `String`，再引用它。 \n"
+"// 然后在退出作用域时数据被丢弃，返回一个指向无效数据的引用"
 
 #: src/scope/lifetime/fn.md:60
 msgid "[Functions](../../fn.md)"
-msgstr ""
+msgstr "[函数](../../fn.md)"
 
 #: src/scope/lifetime/methods.md:3
 msgid "Methods are annotated similarly to functions:"
-msgstr ""
+msgstr "方法的注解和函数类似："
 
 #: src/scope/lifetime/methods.md:9
 msgid "// Annotate lifetimes as in a standalone function.\n"
-msgstr ""
+msgstr "// 像独立函数一样注解生命周期。\n"
 
 #: src/scope/lifetime/methods.md:12
 msgid "\"`print`: {}\""
-msgstr ""
+msgstr "\"`print`: {}\""
 
 #: src/scope/lifetime/methods.md:26
 msgid "[methods](../../fn/methods.md)"
-msgstr ""
+msgstr "[方法](../../fn/methods.md)"
 
 #: src/scope/lifetime/struct.md:3
 msgid "Annotation of lifetimes in structures are also similar to functions:"
-msgstr ""
+msgstr "结构体中生命周期的注解也和函数类似："
 
 #: src/scope/lifetime/struct.md:6
 msgid ""
 "// A type `Borrowed` which houses a reference to an\n"
 "// `i32`. The reference to `i32` must outlive `Borrowed`.\n"
 msgstr ""
+"// 一个包含 `i32` 引用的 `Borrowed` 类型。\n"
+"// 对 `i32` 的引用必须比 `Borrowed` 存活更久。\n"
 
 #: src/scope/lifetime/struct.md:10
 msgid "// Similarly, both references here must outlive this structure.\n"
-msgstr ""
+msgstr "// 同样，这里的两个引用都必须比这个结构体存活更久。\n"
 
 #: src/scope/lifetime/struct.md:17
 msgid "// An enum which is either an `i32` or a reference to one.\n"
-msgstr ""
+msgstr "// 一个枚举，表示 `i32`，或者 `i32` 的引用。\n"
 
 #: src/scope/lifetime/struct.md:34 src/scope/lifetime/struct.md:36
 msgid "\"x is borrowed in {:?}\""
-msgstr ""
+msgstr "\"x 在 {:?} 中被借用\""
 
 #: src/scope/lifetime/struct.md:35
 msgid "\"x and y are borrowed in {:?}\""
-msgstr ""
+msgstr "\"x 和 y 在 {:?} 中被借用\""
 
 #: src/scope/lifetime/struct.md:37
 msgid "\"y is *not* borrowed in {:?}\""
-msgstr ""
+msgstr "\"y 在 {:?} 中**没有**被借用\""
 
 #: src/scope/lifetime/struct.md:43
 msgid "[`struct`s](../../custom_types/structs.md)"
-msgstr ""
+msgstr "[`struct`](../../custom_types/structs.md)"
 
 #: src/scope/lifetime/trait.md:3
 msgid ""
 "Annotation of lifetimes in trait methods basically are similar to functions. "
 "Note that `impl` may have annotation of lifetimes too."
-msgstr ""
+msgstr "trait 方法中的生命周期注解基本上与函数类似。注意 `impl` 也可能有生命周期注解。"
 
 #: src/scope/lifetime/trait.md:7
 msgid "// A struct with annotation of lifetimes.\n"
-msgstr ""
+msgstr "// 一个带有生命周期注解的结构体。\n"
 
 #: src/scope/lifetime/trait.md:12
 msgid "// Annotate lifetimes to impl.\n"
-msgstr ""
+msgstr "// 为 impl 注解生命周期。\n"
 
 #: src/scope/lifetime/trait.md:24
 msgid "\"b is {:?}\""
-msgstr ""
+msgstr "\"b 是 {:?}\""
 
 #: src/scope/lifetime/trait.md:30
 msgid "[`trait`s](../../trait.md)"
-msgstr ""
+msgstr "[`trait`](../../trait.md)"
 
 #: src/scope/lifetime/lifetime_bounds.md:3
 msgid ""
 "Just like generic types can be bounded, lifetimes (themselves generic) use "
 "bounds as well. The `:` character has a slightly different meaning here, but "
 "`+` is the same. Note how the following read:"
-msgstr ""
+msgstr "就像泛型类型可以被约束一样，生命周期（本身就是泛型）也可以使用约束。这里 `:` 字符的含义略有不同，但 `+` 是相同的。注意下面说明："
 
 #: src/scope/lifetime/lifetime_bounds.md:7
 msgid "`T: 'a`: _All_ references in `T` must outlive lifetime `'a`."
-msgstr ""
+msgstr "`T: 'a`：`T` 中的**所有**引用必须比生命周期 `'a` 存活更久。"
 
 #: src/scope/lifetime/lifetime_bounds.md:8
 msgid ""
 "`T: Trait + 'a`: Type `T` must implement trait `Trait` and _all_ references "
 "in `T` must outlive `'a`."
-msgstr ""
+msgstr "`T: Trait + 'a`：类型 `T` 必须实现 trait `Trait`，并且 `T` 中的**所有**引用必须比 `'a` 存活更久。"
 
 #: src/scope/lifetime/lifetime_bounds.md:11
 msgid ""
 "The example below shows the above syntax in action used after keyword `where`:"
-msgstr ""
+msgstr "下面的例子展示了上述语法在 `where` 关键字之后的实际应用："
 
 #: src/scope/lifetime/lifetime_bounds.md:14
 msgid "// Trait to bound with.\n"
-msgstr ""
+msgstr "// 用于约束的 trait。\n"
 
 #: src/scope/lifetime/lifetime_bounds.md:17
 msgid ""
@@ -9403,14 +9506,17 @@ msgid ""
 "// *references* in `T` must outlive `'a`. Additionally, the lifetime\n"
 "// of `Ref` may not exceed `'a`.\n"
 msgstr ""
+"// `Ref` 包含一个指向泛型类型 `T` 的引用，其中 `T` 拥有一个未知的\n"
+"// 生命周期 `'a`。`T` 被约束，使得 `T` 中的任何*引用*必须\n"
+"// 比 `'a` 存活更久。此外，`Ref` 的生命周期不能超过 `'a`。\n"
 
 #: src/scope/lifetime/lifetime_bounds.md:22
 msgid "// A generic function which prints using the `Debug` trait.\n"
-msgstr ""
+msgstr "// 一个使用 `Debug` trait 进行打印的泛型函数。\n"
 
 #: src/scope/lifetime/lifetime_bounds.md:26
 msgid "\"`print`: t is {:?}\""
-msgstr ""
+msgstr "\"`print`: t 是 {:?}\""
 
 #: src/scope/lifetime/lifetime_bounds.md:28
 msgid ""
@@ -9418,16 +9524,19 @@ msgid ""
 "// `Debug` and all *references* in `T` outlive `'a`. In\n"
 "// addition, `'a` must outlive the function.\n"
 msgstr ""
+"// 这里取了一个 `T` 的引用，其中 `T` 实现了\n"
+"// `Debug` 并且 `T` 中的所有*引用*都比 `'a` 存活更久。\n"
+"// 此外，`'a` 必须比函数存活更久。\n"
 
 #: src/scope/lifetime/lifetime_bounds.md:34
 msgid "\"`print_ref`: t is {:?}\""
-msgstr ""
+msgstr "\"`print_ref`: t 是 {:?}\""
 
 #: src/scope/lifetime/lifetime_bounds.md:48
 msgid ""
 "[generics](../../generics.md), [bounds in generics](../../generics/bounds."
 "md), and [multiple bounds in generics](../../generics/multi_bounds.md)"
-msgstr ""
+msgstr "[泛型](../../generics.md)，[泛型中的约束](../../generics/bounds.md)，以及[泛型中的多重约束](../../generics/multi_bounds.md)"
 
 #: src/scope/lifetime/lifetime_coercion.md:3
 msgid ""
@@ -9435,13 +9544,15 @@ msgid ""
 "scope it normally wouldn't work in. This comes in the form of inferred "
 "coercion by the Rust compiler, and also in the form of declaring a lifetime "
 "difference:"
-msgstr ""
+msgstr "一个较长的生命周期可以被强制转换为一个较短的生命周期，以便它在通常不能工作的作用域内工作。强制转换可由编译器隐式地推导并执行，也可以通过声明不同的生命周期的形式实现："
 
 #: src/scope/lifetime/lifetime_coercion.md:9
 msgid ""
 "// Here, Rust infers a lifetime that is as short as possible.\n"
 "// The two references are then coerced to that lifetime.\n"
 msgstr ""
+"// 在这里，Rust 推断出一个尽可能短的生命周期。\n"
+"// 然后两个引用被强制转换为该生命周期。\n"
 
 #: src/scope/lifetime/lifetime_coercion.md:14
 msgid ""
@@ -9449,119 +9560,125 @@ msgid ""
 "// Here, we take in an `&'a i32` and return a `&'b i32` as a result of "
 "coercion.\n"
 msgstr ""
+"// `<'a: 'b, 'b>` 表示生命周期 `'a` 至少和 `'b` 一样长。\n"
+"// 这里，我们接收一个 `&'a i32` 并返回一个 `&'b i32` 作为强制转换的结果。\n"
 
 #: src/scope/lifetime/lifetime_coercion.md:22
 msgid "// Longer lifetime\n"
-msgstr ""
+msgstr "// 较长的生命周期\n"
 
 #: src/scope/lifetime/lifetime_coercion.md:25
 msgid "// Shorter lifetime\n"
-msgstr ""
+msgstr "// 较短的生命周期\n"
 
 #: src/scope/lifetime/lifetime_coercion.md:27
 msgid "\"The product is {}\""
-msgstr ""
+msgstr "\"乘积是 {}\""
 
 #: src/scope/lifetime/lifetime_coercion.md:28
 msgid "\"{} is the first\""
-msgstr ""
+msgstr "\"{} 是第一个\""
 
 #: src/scope/lifetime/static_lifetime.md:3
 msgid ""
 "Rust has a few reserved lifetime names. One of those is `'static`. You might "
 "encounter it in two situations:"
-msgstr ""
+msgstr "Rust 有几个保留的生命周期名称。其中之一是 `'static`。你可能在两种情况下遇到它："
 
 #: src/scope/lifetime/static_lifetime.md:7
 msgid "// A reference with 'static lifetime:\n"
-msgstr ""
+msgstr "// 一个带有 'static 生命周期的引用：\n"
 
 #: src/scope/lifetime/static_lifetime.md:8
 msgid "\"hello world\""
-msgstr ""
+msgstr "\"hello world\""
 
 #: src/scope/lifetime/static_lifetime.md:9
 msgid "// 'static as part of a trait bound:\n"
-msgstr ""
+msgstr "// 'static 作为 trait 约束的一部分：\n"
 
 #: src/scope/lifetime/static_lifetime.md:14
 msgid ""
 "Both are related but subtly different and this is a common source for "
 "confusion when learning Rust. Here are some examples for each situation:"
-msgstr ""
+msgstr "两者相关但有微妙的区别，这是学习 Rust 时常见的困惑来源。以下是每种情况的一些例子："
 
 #: src/scope/lifetime/static_lifetime.md:17
 msgid "Reference lifetime"
-msgstr ""
+msgstr "引用生命周期"
 
 #: src/scope/lifetime/static_lifetime.md:19
 msgid ""
 "As a reference lifetime `'static` indicates that the data pointed to by the "
 "reference lives for the remaining lifetime of the running program. It can "
 "still be coerced to a shorter lifetime."
-msgstr ""
+msgstr "作为引用生命周期，`'static` 表示该引用指向的数据在程序的剩余生命周期内都存在。它仍然可以被强制转换为更短的生命周期。"
 
 #: src/scope/lifetime/static_lifetime.md:23
 msgid ""
 "There are two common ways to make a variable with `'static` lifetime, and "
 "both are stored in the read-only memory of the binary:"
-msgstr ""
+msgstr "有两种常见的方法可以创建具有 `'static` 生命周期的变量，它们都存储在二进制文件的只读内存中："
 
 #: src/scope/lifetime/static_lifetime.md:26
 msgid "Make a constant with the `static` declaration."
-msgstr ""
+msgstr "使用 `static` 声明创建一个常量。"
 
 #: src/scope/lifetime/static_lifetime.md:27
 msgid "Make a `string` literal which has type: `&'static str`."
-msgstr ""
+msgstr "创建一个 `string` 字面量，类型为：`&'static str`。"
 
 #: src/scope/lifetime/static_lifetime.md:29
 msgid "See the following example for a display of each method:"
-msgstr ""
+msgstr "请看下面的例子，展示了这些方法："
 
 #: src/scope/lifetime/static_lifetime.md:32
 msgid "// Make a constant with `'static` lifetime.\n"
-msgstr ""
+msgstr "// 创建一个具有 `'static` 生命周期的常量。\n"
 
 #: src/scope/lifetime/static_lifetime.md:34
 msgid ""
 "// Returns a reference to `NUM` where its `'static`\n"
 "// lifetime is coerced to that of the input argument.\n"
 msgstr ""
+"// 返回一个对 `NUM` 的引用，其中它的 `'static`\n"
+"// 生命周期被强制转换为输入参数的生命周期。\n"
 
 #: src/scope/lifetime/static_lifetime.md:43
 msgid "// Make a `string` literal and print it:\n"
-msgstr ""
+msgstr "// 创建一个 `string` 字面量并打印它：\n"
 
 #: src/scope/lifetime/static_lifetime.md:44
 msgid "\"I'm in read-only memory\""
-msgstr ""
+msgstr "\"我在只读内存中\""
 
 #: src/scope/lifetime/static_lifetime.md:45
 msgid "\"static_string: {}\""
-msgstr ""
+msgstr "\"static_string: {}\""
 
 #: src/scope/lifetime/static_lifetime.md:47
 msgid ""
 "// When `static_string` goes out of scope, the reference\n"
 "        // can no longer be used, but the data remains in the binary.\n"
 msgstr ""
+"// 当 `static_string` 离开作用域时，该引用\n"
+"        // 不能再被使用，但数据仍然保留在二进制文件中。\n"
 
 #: src/scope/lifetime/static_lifetime.md:52
 msgid "// Make an integer to use for `coerce_static`:\n"
-msgstr ""
+msgstr "// 创建一个整数用于 `coerce_static`：\n"
 
 #: src/scope/lifetime/static_lifetime.md:55
 msgid "// Coerce `NUM` to lifetime of `lifetime_num`:\n"
-msgstr ""
+msgstr "// 将 `NUM` 强制转换为 `lifetime_num` 的生命周期：\n"
 
 #: src/scope/lifetime/static_lifetime.md:58
 msgid "\"coerced_static: {}\""
-msgstr ""
+msgstr "\"coerced_static: {}\""
 
 #: src/scope/lifetime/static_lifetime.md:61
 msgid "\"NUM: {} stays accessible!\""
-msgstr ""
+msgstr "\"NUM: {} 仍然可访问！\""
 
 #: src/scope/lifetime/static_lifetime.md:65
 msgid ""
@@ -9572,10 +9689,11 @@ msgid ""
 "references. In that case it definitely doesn't live for the entire duration, "
 "but only for the leaking point onward."
 msgstr ""
+"由于 `'static` 引用只需要在程序生命周期的**剩余部分**有效，它们可以在程序执行过程中创建。为了演示，下面的例子使用 [`Box::leak`](https://doc.rust-lang.org/std/boxed/struct.Box.html#method.leak) 动态创建 `'static` 引用。在这种情况下，它肯定不会存活整个程序的生命周期，而只是从泄漏点开始存在。"
 
 #: src/scope/lifetime/static_lifetime.md:90
 msgid "Trait bound"
-msgstr ""
+msgstr "Trait 约束"
 
 #: src/scope/lifetime/static_lifetime.md:92
 msgid ""
@@ -9583,6 +9701,7 @@ msgid ""
 "references. Eg. the receiver can hold on to the type for as long as they want "
 "and it will never become invalid until they drop it."
 msgstr ""
+"作为 trait 约束，它表示该类型不包含任何非静态引用。例如，接收者可以随意保留该类型，并且它永远不会失效，直到他们放弃它为止。。"
 
 #: src/scope/lifetime/static_lifetime.md:96
 msgid ""
@@ -9590,28 +9709,31 @@ msgid ""
 "`'static` lifetime bound, but a reference to that owned data generally does "
 "not:"
 msgstr ""
+"理解这一点很重要：任何拥有所有权的数据总是满足 `'static` 生命周期约束，但对该拥有所有权数据的引用通常不满足："
 
 #: src/scope/lifetime/static_lifetime.md:104
 msgid "\"'static value passed in is: {:?}\""
-msgstr ""
+msgstr "\"传入的 'static 值是：{:?}\""
 
 #: src/scope/lifetime/static_lifetime.md:108
 msgid "// i is owned and contains no references, thus it's 'static:\n"
-msgstr ""
+msgstr "// i 是拥有所有权的，不包含任何引用，因此它是 'static 的：\n"
 
 #: src/scope/lifetime/static_lifetime.md:112
 msgid ""
 "// oops, &i only has the lifetime defined by the scope of\n"
 "    // main(), so it's not 'static:\n"
 msgstr ""
+"// 糟糕，&i 只有 main() 作用域定义的生命周期，\n"
+"    // 所以它不是 'static 的：\n"
 
 #: src/scope/lifetime/static_lifetime.md:117
 msgid "The compiler will tell you:"
-msgstr ""
+msgstr "编译器会告诉你："
 
 #: src/scope/lifetime/static_lifetime.md:133
 msgid "[`'static` constants](../../custom_types/constants.md)"
-msgstr ""
+msgstr "[`'static` 常量](../../custom_types/constants.md)"
 
 #: src/scope/lifetime/elision.md:3
 msgid ""
@@ -9620,6 +9742,7 @@ msgid ""
 "is known as elision. Elision exists in Rust solely because these patterns are "
 "common."
 msgstr ""
+"有些生命周期模式非常常见，因此借用检查器允许你省略它们以减少代码并提高可读性。这被称为省略。Rust 中存在省略仅仅是因为这些模式很常见。"
 
 #: src/scope/lifetime/elision.md:8
 msgid ""
@@ -9627,6 +9750,7 @@ msgid ""
 "description of elision, see [lifetime elision](https://doc.rust-lang.org/book/"
 "ch10-03-lifetime-syntax.html#lifetime-elision) in the book."
 msgstr ""
+"以下代码展示了一些省略的例子。要更全面地了解省略，请参阅 Rust 程序设计语言中的[生命周期省略](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html#lifetime-elision)。"
 
 #: src/scope/lifetime/elision.md:12
 msgid ""
@@ -9634,34 +9758,40 @@ msgid ""
 "signatures\n"
 "// because the lifetime of `elided_input` is inferred by the compiler:\n"
 msgstr ""
+"// `elided_input` 和 `annotated_input` 本质上具有相同的签名\n"
+"// 因为 `elided_input` 的生命周期是由编译器推断的：\n"
 
 #: src/scope/lifetime/elision.md:15
 msgid "\"`elided_input`: {}\""
-msgstr ""
+msgstr "\"`elided_input`: {}\""
 
 #: src/scope/lifetime/elision.md:19
 msgid "\"`annotated_input`: {}\""
-msgstr ""
+msgstr "\"`annotated_input`: {}\""
 
 #: src/scope/lifetime/elision.md:21
 msgid ""
 "// Similarly, `elided_pass` and `annotated_pass` have identical signatures\n"
 "// because the lifetime is added implicitly to `elided_pass`:\n"
 msgstr ""
+"// 同样，`elided_pass` 和 `annotated_pass` 具有相同的签名\n"
+"// 因为生命周期被隐式地添加到 `elided_pass`：\n"
 
 #: src/scope/lifetime/elision.md:34
 msgid "\"`elided_pass`: {}\""
-msgstr ""
+msgstr "\"`elided_pass`: {}\""
 
 #: src/scope/lifetime/elision.md:35
 msgid "\"`annotated_pass`: {}\""
-msgstr ""
+msgstr "\"`annotated_pass`: {}\""
 
 #: src/scope/lifetime/elision.md:41
 msgid ""
 "[elision](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax."
 "html#lifetime-elision)"
 msgstr ""
+"[省略](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax."
+"html#lifetime-elision)"
 
 #: src/trait.md:3
 msgid ""
