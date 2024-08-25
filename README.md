@@ -1,9 +1,6 @@
 # Rust By Example
 
-[![Build Status][travis-badge]][travis-repo]
-
-[travis-badge]: https://travis-ci.com/rust-lang/rust-by-example.svg?branch=master
-[travis-repo]: https://travis-ci.com/rust-lang/rust-by-example
+[![Build Status](https://github.com/rust-lang/rust-by-example/actions/workflows/rbe.yml/badge.svg)](https://github.com/rust-lang/rust-by-example/actions)
 
 Learn Rust with examples (Live code editor included)
 
