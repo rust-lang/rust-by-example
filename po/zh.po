@@ -10646,34 +10646,35 @@ msgid ""
 "into abstract syntax trees, rather than string preprocessing, so you don't "
 "get unexpected precedence bugs."
 msgstr ""
+"Rust 提供了一个强大的宏系统，允许元编程。正如你在前面章节中看到的，宏看起来像函数，除了它们的名字以感叹号 `!` 结尾，但是宏不是生成函数调用，而是展开成源代码，然后与程序的其余部分一起编译。然而，与 C 和其他语言中的宏不同，Rust 宏被展开成抽象语法树，而不是字符串预处理，所以你不会遇到意外的优先级错误。"
 
 #: src/macros.md:11
 msgid "Macros are created using the `macro_rules!` macro."
-msgstr ""
+msgstr "宏是使用 `macro_rules!` 宏创建的。"
 
 #: src/macros.md:14
 msgid "// This is a simple macro named `say_hello`.\n"
-msgstr ""
+msgstr "// 这是一个名为 `say_hello` 的简单宏。\n"
 
 #: src/macros.md:16
 msgid "// `()` indicates that the macro takes no argument.\n"
-msgstr ""
+msgstr "// `()` 表示该宏不接受任何参数。\n"
 
 #: src/macros.md:18
 msgid "// The macro will expand into the contents of this block.\n"
-msgstr ""
+msgstr "// 宏将展开成这个块的内容。\n"
 
 #: src/macros.md:19
 msgid "\"Hello!\""
-msgstr ""
+msgstr "\"Hello!\""
 
 #: src/macros.md:24
 msgid "// This call will expand into `println!(\"Hello!\")`\n"
-msgstr ""
+msgstr "// 这个调用将展开成 `println!(\"Hello!\")`\n"
 
 #: src/macros.md:29
 msgid "So why are macros useful?"
-msgstr ""
+msgstr "那么为什么宏是有用的呢？"
 
 #: src/macros.md:31
 msgid ""
@@ -10681,12 +10682,14 @@ msgid ""
 "functionality in multiple places but with different types. Often, writing a "
 "macro is a useful way to avoid repeating code. (More on this later)"
 msgstr ""
+"不要重复自己。在许多情况下，你可能需要在多个地方使用类似的功能，但类型不同。通常，编写宏是避免重复代码的有用方法。（稍后会详细介绍）"
 
 #: src/macros.md:35
 msgid ""
 "Domain-specific languages. Macros allow you to define special syntax for a "
 "specific purpose. (More on this later)"
 msgstr ""
+"领域特定语言。宏允许你为特定目的定义特殊语法。（稍后会详细介绍）"
 
 #: src/macros.md:38
 msgid ""
@@ -10694,30 +10697,33 @@ msgid ""
 "variable number of arguments. An example is `println!` which could take any "
 "number of arguments, depending on the format string. (More on this later)"
 msgstr ""
+"可变参数接口。有时你想定义一个接受可变数量参数的接口。一个例子是 `println!`，它可以根据格式字符串接受任意数量的参数。（稍后会详细介绍）"
 
 #: src/macros/syntax.md:3
 msgid ""
 "In following subsections, we will show how to define macros in Rust. There "
 "are three basic ideas:"
 msgstr ""
+"在接下来的小节中，我们将展示如何在 Rust 中定义宏。有三个基本概念："
 
 #: src/macros/syntax.md:6
 msgid "[Patterns and Designators](designators.md)"
-msgstr ""
+msgstr "[模式和指示符](designators.md)"
 
 #: src/macros/syntax.md:7
 msgid "[Overloading](overload.md)"
-msgstr ""
+msgstr "[重载](overload.md)"
 
 #: src/macros/syntax.md:8
 msgid "[Repetition](repeat.md)"
-msgstr ""
+msgstr "[重复](repeat.md)"
 
 #: src/macros/designators.md:3
 msgid ""
 "The arguments of a macro are prefixed by a dollar sign `$` and type annotated "
 "with a _designator_:"
 msgstr ""
+"宏的参数以美元符号 `$` 为前缀，并用**指示符**来标注类型："
 
 #: src/macros/designators.md:8
 msgid ""
@@ -10725,18 +10731,21 @@ msgid ""
 "    // creates a function named `$func_name`.\n"
 "    // The `ident` designator is used for variable/function names.\n"
 msgstr ""
+"// 这个宏接受一个 `ident` 指示符的参数，\n"
+"    // 并创建一个名为 `$func_name` 的函数。\n"
+"    // `ident` 指示符用于变量/函数名。\n"
 
 #: src/macros/designators.md:13
 msgid "// The `stringify!` macro converts an `ident` into a string.\n"
-msgstr ""
+msgstr "// `stringify!` 宏将 `ident` 转换为字符串。\n"
 
 #: src/macros/designators.md:14
 msgid "\"You called {:?}()\""
-msgstr ""
+msgstr "\"You called {:?}()\""
 
 #: src/macros/designators.md:19
 msgid "// Create functions named `foo` and `bar` with the above macro.\n"
-msgstr ""
+msgstr "// 使用上面的宏创建名为 `foo` 和 `bar` 的函数。\n"
 
 #: src/macros/designators.md:25
 msgid ""
@@ -10744,102 +10753,111 @@ msgid ""
 "    // it as a string along with its result.\n"
 "    // The `expr` designator is used for expressions.\n"
 msgstr ""
+"// 这个宏接受一个 `expr` 类型的表达式，\n"
+"    // 并将其作为字符串打印出来，同时打印其结果。\n"
+"    // `expr` 指示符用于表达式。\n"
 
 #: src/macros/designators.md:29
 msgid "// `stringify!` will convert the expression *as it is* into a string.\n"
-msgstr ""
+msgstr "// `stringify!` 将表达式**原样**转换为字符串。\n"
 
 #: src/macros/designators.md:30
 msgid "\"{:?} = {:?}\""
-msgstr ""
+msgstr "\"{:?} = {:?}\""
 
 #: src/macros/designators.md:42
 msgid "// Recall that blocks are expressions too!\n"
-msgstr ""
+msgstr "// 回想一下，代码块也是表达式！\n"
 
 #: src/macros/designators.md:51
 msgid "These are some of the available designators:"
-msgstr ""
+msgstr "以下是一些可用的指示符："
 
 #: src/macros/designators.md:53
 msgid "`block`"
-msgstr ""
+msgstr "`block`"
 
 #: src/macros/designators.md:54
 msgid "`expr` is used for expressions"
-msgstr ""
+msgstr "`expr` 用于表达式"
 
 #: src/macros/designators.md:55
 msgid "`ident` is used for variable/function names"
-msgstr ""
+msgstr "`ident` 用于变量/函数名"
 
 #: src/macros/designators.md:56
 msgid "`item`"
-msgstr ""
+msgstr "`item`"
 
 #: src/macros/designators.md:57
 msgid "`literal` is used for literal constants"
-msgstr ""
+msgstr "`literal` 用于字面常量"
 
 #: src/macros/designators.md:58
 msgid "`pat` (_pattern_)"
-msgstr ""
+msgstr "`pat`（**模式** _pattern_）"
 
 #: src/macros/designators.md:59
 msgid "`path`"
-msgstr ""
+msgstr "`path`"
 
 #: src/macros/designators.md:60
 msgid "`stmt` (_statement_)"
-msgstr ""
+msgstr "`stmt`（**语句** _statement_）"
 
 #: src/macros/designators.md:61
 msgid "`tt` (_token tree_)"
-msgstr ""
+msgstr "`tt`（**标记树** _token tree_）"
 
 #: src/macros/designators.md:62
 msgid "`ty` (_type_)"
-msgstr ""
+msgstr "`ty`（**类型** _type_）"
 
 #: src/macros/designators.md:63
 msgid "`vis` (_visibility qualifier_)"
-msgstr ""
+msgstr "`vis`（**可见性限定符** _visibility qualifier_）"
 
 #: src/macros/designators.md:65
 msgid ""
 "For a complete list, see the [Rust Reference](https://doc.rust-lang.org/"
 "reference/macros-by-example.html)."
 msgstr ""
+"完整列表详见 [Rust 参考](https://doc.rust-lang.org/reference/macros-by-example.html)。"
 
 #: src/macros/overload.md:3
 msgid ""
 "Macros can be overloaded to accept different combinations of arguments. In "
 "that regard, `macro_rules!` can work similarly to a match block:"
 msgstr ""
+"宏可以被重载以接受不同的参数组合。在这方面，`macro_rules!` 的作用类似于 match 块："
 
 #: src/macros/overload.md:7
 msgid ""
 "// `test!` will compare `$left` and `$right`\n"
 "// in different ways depending on how you invoke it:\n"
 msgstr ""
+"// `test!` 将以不同的方式比较 `$left` 和 `$right`\n"
+"// 取决于你如何调用它：\n"
 
 #: src/macros/overload.md:10
 msgid ""
 "// Arguments don't need to be separated by a comma.\n"
 "    // Any template can be used!\n"
 msgstr ""
+"// 参数不需要用逗号分隔。\n"
+"    // 可以使用任何模板！\n"
 
 #: src/macros/overload.md:13
 msgid "\"{:?} and {:?} is {:?}\""
-msgstr ""
+msgstr "\"{:?} and {:?} is {:?}\""
 
 #: src/macros/overload.md:18
 msgid "// ^ each arm must end with a semicolon.\n"
-msgstr ""
+msgstr "// ^ 每个分支必须以分号结束。\n"
 
 #: src/macros/overload.md:20
 msgid "\"{:?} or {:?} is {:?}\""
-msgstr ""
+msgstr "\"{:?} 或 {:?} 是 {:?}\""
 
 #: src/macros/repeat.md:3
 msgid ""
@@ -10847,6 +10865,7 @@ msgid ""
 "repeat at least once, or `*`, to indicate that the argument may repeat zero "
 "or more times."
 msgstr ""
+"宏可以在参数列表中使用 `+` 来表示一个参数可能重复至少一次，或使用 `*` 来表示一个参数可能重复零次或多次。"
 
 #: src/macros/repeat.md:7
 msgid ""
@@ -10854,22 +10873,23 @@ msgid ""
 "one or more expression, separated by commas. Also note that the semicolon is "
 "optional on the last case."
 msgstr ""
+"在下面的例子中，用 `$(...),+` 包围匹配器将匹配一个或多个由逗号分隔的表达式。还要注意，最后一个情况的分号是可选的。"
 
 #: src/macros/repeat.md:12
 msgid "// `find_min!` will calculate the minimum of any number of arguments.\n"
-msgstr ""
+msgstr "// `find_min!` 将计算任意数量参数的最小值。\n"
 
 #: src/macros/repeat.md:14
 msgid "// Base case:\n"
-msgstr ""
+msgstr "// 基本情况：\n"
 
 #: src/macros/repeat.md:16
 msgid "// `$x` followed by at least one `$y,`\n"
-msgstr ""
+msgstr "// `$x` 后面至少跟着一个 `$y,`\n"
 
 #: src/macros/repeat.md:18
 msgid "// Call `find_min!` on the tail `$y`\n"
-msgstr ""
+msgstr "// 对尾部 `$y` 调用 `find_min!`\n"
 
 #: src/macros/dry.md:3
 msgid ""
@@ -10877,32 +10897,34 @@ msgid ""
 "and/or test suites. Here is an example that implements and tests the `+=`, "
 "`*=` and `-=` operators on `Vec<T>`:"
 msgstr ""
+"宏允许通过提取函数和/或测试套件的公共部分来编写 DRY（Don't Repeat Yourself）代码。这里有一个在 `Vec<T>` 上实现和测试 `+=`、`*=` 和 `-=` 运算符的例子："
 
 #: src/macros/dry.md:11
 msgid ""
 "// The `tt` (token tree) designator is used for\n"
 "    // operators and tokens.\n"
 msgstr ""
+"// `tt`（标记树, token tree）指示符用于运算符和标记。\n"
 
 #: src/macros/dry.md:15
 msgid "\"{:?}: dimension mismatch: {:?} {:?} {:?}\""
-msgstr ""
+msgstr "\"{:?}：维度不匹配：{:?} {:?} {:?}\""
 
 #: src/macros/dry.md:30
 msgid "// *x = x.$method(*y);\n"
-msgstr ""
+msgstr "// *x = x.$method(*y);\n"
 
 #: src/macros/dry.md:35
 msgid "// Implement `add_assign`, `mul_assign`, and `sub_assign` functions.\n"
-msgstr ""
+msgstr "// 实现 `add_assign`、`mul_assign` 和 `sub_assign` 函数。\n"
 
 #: src/macros/dry.md:60
 msgid "// Test `add_assign`, `mul_assign`, and `sub_assign`.\n"
-msgstr ""
+msgstr "// 测试 `add_assign`、`mul_assign` 和 `sub_assign`。\n"
 
 #: src/macros/dsl.md:1
 msgid "Domain Specific Languages (DSLs)"
-msgstr ""
+msgstr "领域特定语言（DSLs）"
 
 #: src/macros/dsl.md:3
 msgid ""
@@ -10911,28 +10933,30 @@ msgid ""
 "looks like a small language. This allows you to define concise or intuitive "
 "syntax for some special functionality (within bounds)."
 msgstr ""
+"DSL 是嵌入在 Rust 宏中的一种小型"语言"。它是完全有效的 Rust，因为宏系统会展开为普通的 Rust 结构，但它看起来像一种小型语言。这允许你为一些特殊功能定义简洁或直观的语法（在一定范围内）。"
 
 #: src/macros/dsl.md:8
 msgid ""
 "Suppose that I want to define a little calculator API. I would like to supply "
 "an expression and have the output printed to console."
 msgstr ""
+"假设我想定义一个小型计算器 API。我希望提供一个表达式，并将输出打印到控制台。"
 
 #: src/macros/dsl.md:15
 msgid "// Force types to be unsigned integers\n"
-msgstr ""
+msgstr "// 强制类型为无符号整数\n"
 
 #: src/macros/dsl.md:16 src/macros/variadics.md:15
 msgid "\"{} = {}\""
-msgstr ""
+msgstr "\"{} = {}\""
 
 #: src/macros/dsl.md:23
 msgid "// hehehe `eval` is _not_ a Rust keyword!\n"
-msgstr ""
+msgstr "// 看到了吧，`eval` 可并不是 Rust 的关键字！\n"
 
 #: src/macros/dsl.md:32 src/macros/variadics.md:35
 msgid "Output:"
-msgstr ""
+msgstr "输出："
 
 #: src/macros/dsl.md:39
 msgid ""
@@ -10940,16 +10964,18 @@ msgid ""
 "developed, such as [`lazy_static`](https://crates.io/crates/lazy_static) or "
 "[`clap`](https://crates.io/crates/clap)."
 msgstr ""
+"这个例子非常简单，但已经有很多利用宏开发的复杂接口，比如 [`lazy_static`](https://crates.io/crates/lazy_static) 或 [`clap`](https://crates.io/crates/clap)。"
 
 #: src/macros/dsl.md:43
 msgid ""
 "Also, note the two pairs of braces in the macro. The outer ones are part of "
 "the syntax of `macro_rules!`, in addition to `()` or `[]`."
 msgstr ""
+"另外，注意宏中的两对大括号。外层的大括号是 `macro_rules!` 语法的一部分，除此之外还可以使用 `()` 或 `[]`。"
 
 #: src/macros/variadics.md:1
 msgid "Variadic Interfaces"
-msgstr ""
+msgstr "可变参数接口"
 
 #: src/macros/variadics.md:3
 msgid ""
@@ -10957,27 +10983,29 @@ msgid ""
 "`println!` can take an arbitrary number of arguments, as determined by the "
 "format string."
 msgstr ""
+"**可变参数**接口可以接受任意数量的参数。例如，`println!` 可以接受任意数量的参数，这由格式字符串决定。"
 
 #: src/macros/variadics.md:7
 msgid ""
 "We can extend our `calculate!` macro from the previous section to be variadic:"
 msgstr ""
+"我们可以扩展前一节的 `calculate!` 宏，使其成为可变参数的："
 
 #: src/macros/variadics.md:11
 msgid "// The pattern for a single `eval`\n"
-msgstr ""
+msgstr "// 单个 `eval` 的模式\n"
 
 #: src/macros/variadics.md:14
 msgid "// Force types to be integers\n"
-msgstr ""
+msgstr "// 强制类型为整数\n"
 
 #: src/macros/variadics.md:19
 msgid "// Decompose multiple `eval`s recursively\n"
-msgstr ""
+msgstr "// 递归分解多个 `eval`\n"
 
 #: src/macros/variadics.md:27
 msgid "// Look ma! Variadic `calculate!`!\n"
-msgstr ""
+msgstr "// 妈妈快看！可变参数的 `calculate!`！\n"
 
 #: src/error.md:3
 msgid ""
@@ -10986,6 +11014,7 @@ msgid ""
 "would clearly be problematic. Noticing and explicitly managing those errors "
 "saves the rest of the program from various pitfalls."
 msgstr ""
+"错误处理是处理可能失败情况的过程。例如，读取文件失败然后继续使用那个**错误的**输入显然会有问题。注意并明确管理这些错误可以使程序的其余部分避免各种陷阱。"
 
 #: src/error.md:8
 msgid ""
@@ -10993,6 +11022,7 @@ msgid ""
 "the following subchapters. They all have more or less subtle differences and "
 "different use cases. As a rule of thumb:"
 msgstr ""
+"Rust 中有多种处理错误的方法，在接下来的小节中会一一介绍。它们或多或少都有些细微差别和不同的使用场景。总的来说："
 
 #: src/error.md:12
 msgid ""
@@ -11002,6 +11032,7 @@ msgid ""
 "descriptive `unimplemented` is better. In tests `panic` is a reasonable way "
 "to explicitly fail."
 msgstr ""
+"显式的 `panic` 主要用于测试和处理不可恢复的错误。在原型开发中这可能有用，例如在处理尚未实现的函数时，但在这些情况下，更具描述性的 `unimplemented` 更好。在测试中，`panic` 是一种合理的显式失败方式。"
 
 #: src/error.md:17
 msgid ""
@@ -11012,6 +11043,7 @@ msgid ""
 "to be a value. However `expect` is more useful since it lets you specify an "
 "error message in case something goes wrong anyway."
 msgstr ""
+"`Option` 类型用于值是可选的情况，或者缺少值不是错误条件的情况。例如目录的父目录 - `/` 和 `C:` 就没有父目录。在处理 `Option` 时，对于原型设计和绝对确定有值的情况，使用 `unwrap` 是可以的。然而，`expect` 更有用，因为它允许你指定一个错误消息，以防万一出错。"
 
 #: src/error.md:24
 msgid ""
@@ -11019,6 +11051,7 @@ msgid ""
 "with the problem, use `Result`. You can `unwrap` and `expect` them as well "
 "(please don't do that unless it's a test or quick prototype)."
 msgstr ""
+"当有可能出错且调用者必须处理问题时，使用 `Result`。你也可以对它们使用 `unwrap` 和 `expect`（除非是测试或快速原型，否则请不要这样做）。"
 
 #: src/error.md:28
 msgid ""
@@ -11026,6 +11059,7 @@ msgid ""
 "section in the [official book](https://doc.rust-lang.org/book/ch09-00-error-"
 "handling.html)."
 msgstr ""
+"关于错误处理更详尽的内容，请参阅[官方文档](https://doc.rust-lang.org/book/ch09-00-error-handling.html)中的错误处理章节。"
 
 #: src/error/panic.md:3
 msgid ""
@@ -11033,86 +11067,87 @@ msgid ""
 "error message, starts unwinding the stack, and usually exits the program. "
 "Here, we explicitly call `panic` on our error condition:"
 msgstr ""
+"我们将看到的最简单的错误处理机制是 `panic`。它会打印一条错误消息，开始展开栈，并通常会退出程序。在这里，我们在错误条件下显式调用 `panic`："
 
 #: src/error/panic.md:9 src/error/abort_unwind.md:10
 msgid "// You shouldn't drink too much sugary beverages.\n"
-msgstr ""
+msgstr "// 你不应该喝太多含糖饮料。\n"
 
 #: src/error/panic.md:10 src/error/panic.md:17 src/error/abort_unwind.md:11
 #: src/error/abort_unwind.md:24 src/error/abort_unwind.md:42
 #: src/error/abort_unwind.md:51 src/error/option_unwrap.md:32
 #: src/error/option_unwrap.md:43 src/error/option_unwrap.md:50
 msgid "\"lemonade\""
-msgstr ""
+msgstr "\"lemonade\""
 
 #: src/error/panic.md:10 src/error/option_unwrap.md:43
 msgid "\"AAAaaaaa!!!!\""
-msgstr ""
+msgstr "\"AAAaaaaa!!!!\""
 
 #: src/error/panic.md:12 src/error/abort_unwind.md:18
 #: src/error/abort_unwind.md:45
 msgid "\"Some refreshing {} is all I need.\""
-msgstr ""
+msgstr "\"{} 就是我所需要的。\""
 
 #: src/error/panic.md:16 src/error/abort_unwind.md:23
 #: src/error/abort_unwind.md:50 src/error/option_unwrap.md:49
 msgid "\"water\""
-msgstr ""
+msgstr "\"water\""
 
 #: src/error/panic.md:18
 msgid "\"still water\""
-msgstr ""
+msgstr "\"still water\""
 
 #: src/error/panic.md:22
 msgid ""
 "The first call to `drink` works. The second panics and thus the third is "
 "never called."
-msgstr ""
+msgstr "第一次调用 `drink` 正常工作。第二次调用会 panic，因此第三次调用永远不会被执行。"
 
 #: src/error/abort_unwind.md:1
 msgid "`abort` and `unwind`"
-msgstr ""
+msgstr "`abort` 和 `unwind`"
 
 #: src/error/abort_unwind.md:3
 msgid ""
 "The previous section illustrates the error handling mechanism `panic`.  "
 "Different code paths can be conditionally compiled based on the panic "
 "setting. The current values available are `unwind` and `abort`."
-msgstr ""
+msgstr "上一节说明了错误处理机制 `panic`。不同的代码路径可以根据 panic 设置进行条件编译。当前可用的值是 `unwind` 和 `abort`。"
 
 #: src/error/abort_unwind.md:6
 msgid ""
 "Building on the prior lemonade example, we explicitly use the panic strategy "
 "to exercise different lines of code."
-msgstr ""
+msgstr "基于之前的柠檬水示例，我们显式使用 panic 策略来执行不同的代码行。"
 
 #: src/error/abort_unwind.md:12
 msgid "\"abort\""
-msgstr ""
+msgstr "\"abort\""
 
 #: src/error/abort_unwind.md:13 src/error/abort_unwind.md:38
 msgid "\"This is not your party. Run!!!!\""
-msgstr ""
+msgstr "\"这不是你的派对。快跑！！！！\""
 
 #: src/error/abort_unwind.md:15 src/error/abort_unwind.md:33
 msgid "\"Spit it out!!!!\""
-msgstr ""
+msgstr "\"吐出来！！！！\""
 
 #: src/error/abort_unwind.md:28
 msgid ""
 "Here is another example focusing on rewriting `drink()` and explicitly use "
 "the `unwind` keyword."
-msgstr ""
+msgstr "这里是另一个示例，重点是重写 `drink()` 并显式使用 `unwind` 关键字。"
 
 #: src/error/abort_unwind.md:31 src/error/abort_unwind.md:36
 msgid "\"unwind\""
-msgstr ""
+msgstr "\"unwind\""
 
 #: src/error/abort_unwind.md:55
 msgid ""
 "The panic strategy can be set from the command line by using `abort` or "
 "`unwind`."
-msgstr ""
+msgstr "可以通过命令行使用 `abort` 或 `unwind` 来设置 panic 策略。"
 
 #: src/error/option_unwrap.md:3
 msgid ""
@@ -11120,34 +11155,34 @@ msgid ""
 "told our program to `panic` if we drink a sugary lemonade. But what if we "
 "expect _some_ drink but don't receive one? That case would be just as bad, so "
 "it needs to be handled!"
-msgstr ""
+msgstr "在上一个例子中，我们展示了如何主动引发程序失败。我们告诉程序在喝含糖柠檬水时 `panic`。但如果我们期望得到**某种**饮料却没有收到呢？这种情况同样糟糕，所以需要处理！"
 
 #: src/error/option_unwrap.md:8
 msgid ""
 "We _could_ test this against the null string (`\"\"`) as we do with a "
 "lemonade. Since we're using Rust, let's instead have the compiler point out "
 "cases where there's no drink."
-msgstr ""
+msgstr "我们**可以**像处理柠檬水那样对空字符串（`\"\"`）进行测试。但既然我们使用的是 Rust，不如让编译器指出没有饮料的情况。"
 
 #: src/error/option_unwrap.md:12
 msgid ""
 "An `enum` called `Option<T>` in the `std` library is used when absence is a "
 "possibility. It manifests itself as one of two \"options\":"
-msgstr ""
+msgstr "`std` 库中名为 `Option<T>` 的 `enum` 用于处理可能存在缺失的情况。它表现为两个"选项"之一："
 
 #: src/error/option_unwrap.md:15
 msgid "`Some(T)`: An element of type `T` was found"
-msgstr ""
+msgstr "`Some(T)`：找到了一个 `T` 类型的元素"
 
 #: src/error/option_unwrap.md:16
 msgid "`None`: No element was found"
-msgstr ""
+msgstr "`None`：没有找到元素"
 
 #: src/error/option_unwrap.md:18
 msgid ""
 "These cases can either be explicitly handled via `match` or implicitly with "
 "`unwrap`. Implicit handling will either return the inner element or `panic`."
-msgstr ""
+msgstr "这些情况可以通过 `match` 显式处理，也可以用 `unwrap` 隐式处理。隐式处理要么返回内部元素，要么 `panic`。"
 
 #: src/error/option_unwrap.md:21
 msgid ""
@@ -11156,47 +11191,51 @@ msgid ""
 "otherwise leaves us with a less meaningful output than explicit handling. In "
 "the following example, explicit handling yields a more controlled result "
 "while retaining the option to `panic` if desired."
-msgstr ""
+msgstr "注意，可以使用 [expect](https://doc.rust-lang.org/std/option/enum.Option.html#method.expect) 手动自定义 `panic`，但 `unwrap` 相比显式处理会留下一个不太有意义的输出。在下面的例子中，显式处理产生了一个更可控的结果，同时保留了在需要时 `panic` 的选项。"
 
 #: src/error/option_unwrap.md:27
 msgid ""
 "// The adult has seen it all, and can handle any drink well.\n"
 "// All drinks are handled explicitly using `match`.\n"
 msgstr ""
+"// 成年人见多识广，可以很好地处理任何饮料。\n"
+"// 所有饮料都使用 `match` 显式处理。\n"
 
 #: src/error/option_unwrap.md:30
 msgid "// Specify a course of action for each case.\n"
-msgstr ""
+msgstr "// 为每种情况指定一个行动方案。\n"
 
 #: src/error/option_unwrap.md:32
 msgid "\"Yuck! Too sugary.\""
-msgstr ""
+msgstr "\"呸！太甜了。\""
 
 #: src/error/option_unwrap.md:33
 msgid "\"{}? How nice.\""
-msgstr ""
+msgstr "\"{}？真不错。\""
 
 #: src/error/option_unwrap.md:34
 msgid "\"No drink? Oh well.\""
-msgstr ""
+msgstr "\"没有饮料？好吧。\""
 
 #: src/error/option_unwrap.md:37
 msgid ""
 "// Others will `panic` before drinking sugary drinks.\n"
 "// All drinks are handled implicitly using `unwrap`.\n"
 msgstr ""
+"// 其他人在喝含糖饮料前会 `panic`。\n"
+"// 所有饮料都使用 `unwrap` 隐式处理。\n"
 
 #: src/error/option_unwrap.md:41
 msgid "// `unwrap` returns a `panic` when it receives a `None`.\n"
-msgstr ""
+msgstr "// 当 `unwrap` 收到 `None` 时会返回一个 `panic`。\n"
 
 #: src/error/option_unwrap.md:45
 msgid "\"I love {}s!!!!!\""
-msgstr ""
+msgstr "\"我爱 {}！！！！！\""
 
 #: src/error/option_unwrap.md:57
 msgid "\"coffee\""
-msgstr ""
+msgstr "\"coffee\""
 
 #: src/error/option_unwrap/question_mark.md:3
 msgid ""
@@ -11204,7 +11243,7 @@ msgid ""
 "to use the `?` operator. If `x` is an `Option`, then evaluating `x?` will "
 "return the underlying value if `x` is `Some`, otherwise it will terminate "
 "whatever function is being executed and return `None`."
-msgstr ""
+msgstr "你可以使用 `match` 语句来解包 `Option`，但使用 `?` 运算符通常更容易。如果 `x` 是一个 `Option`，那么求值 `x?` 将在 `x` 是 `Some` 时返回底层值，否则它将终止正在执行的函数并返回 `None`。"
 
 #: src/error/option_unwrap/question_mark.md:10
 msgid ""
@@ -11212,19 +11251,22 @@ msgid ""
 "\t// If `current_age` is `Some`, the inner `u8` value + 1\n"
 "    // gets assigned to `next_age`\n"
 msgstr ""
+"// 如果 `current_age` 是 `None`，这将返回 `None`。\n"
+"\t// 如果 `current_age` 是 `Some`，内部的 `u8` 值 + 1\n"
+"    // 被赋值给 `next_age`\n"
 
 #: src/error/option_unwrap/question_mark.md:14
 msgid "\"Next year I will be {}\""
-msgstr ""
+msgstr "\"明年我将会 {} 岁\""
 
 #: src/error/option_unwrap/question_mark.md:18
 msgid "You can chain many `?`s together to make your code much more readable."
-msgstr ""
+msgstr "你可以将多个 `?` 链接在一起，使你的代码更易读。"
 
 #: src/error/option_unwrap/question_mark.md:38
 msgid ""
 "// Gets the area code of the phone number of the person's job, if it exists.\n"
-msgstr ""
+msgstr "// 如果存在，获取此人工作电话号码的区号。\n"
 
 #: src/error/option_unwrap/question_mark.md:40
 msgid ""
@@ -11233,6 +11275,8 @@ msgid ""
 "which\n"
 "        // is easier.\n"
 msgstr ""
+"// 如果没有 `?` 运算符，这将需要许多嵌套的 `match` 语句。\n"
+"        // 这将需要更多的代码 - 试着自己写一下，看看哪个更容易。\n"
 
 #: src/error/option_unwrap/map.md:3
 msgid ""
@@ -11241,67 +11285,73 @@ msgid ""
 "input. In these cases, [combinators](https://doc.rust-lang.org/reference/"
 "glossary.html#combinator) can be used to manage control flow in a modular "
 "fashion."
-msgstr ""
+msgstr "`match` 是处理 `Option` 的有效方法。然而，你最终可能会发现大量使用它会变得乏味，特别是对于只在有输入时才有效的操作。在这些情况下，可以使用[组合器](https://doc.rust-lang.org/reference/glossary.html#combinator)以模块化的方式管理控制流。"
 
 #: src/error/option_unwrap/map.md:8
 msgid ""
 "`Option` has a built in method called `map()`, a combinator for the simple "
 "mapping of `Some -> Some` and `None -> None`. Multiple `map()` calls can be "
 "chained together for even more flexibility."
-msgstr ""
+msgstr "`Option` 有一个内置方法叫做 `map()`，它是一个组合器，用于简单地将 `Some -> Some` 和 `None -> None` 进行映射。多个 `map()` 调用可以链接在一起，以获得更大的灵活性。"
 
 #: src/error/option_unwrap/map.md:12
 msgid ""
 "In the following example, `process()` replaces all functions previous to it "
 "while staying compact."
-msgstr ""
+msgstr "在下面的例子中，`process()` 替换了之前的所有函数，同时保持代码简洁。"
 
 #: src/error/option_unwrap/map.md:23
 msgid ""
 "// Peeling food. If there isn't any, then return `None`.\n"
 "// Otherwise, return the peeled food.\n"
 msgstr ""
+"// 剥皮食物。如果没有食物，则返回 `None`。\n"
+"// 否则，返回剥皮后的食物。\n"
 
 #: src/error/option_unwrap/map.md:32
 msgid ""
 "// Chopping food. If there isn't any, then return `None`.\n"
 "// Otherwise, return the chopped food.\n"
 msgstr ""
+"// 切碎食物。如果没有食物，则返回 `None`。\n"
+"// 否则，返回切碎后的食物。\n"
 
 #: src/error/option_unwrap/map.md:41
 msgid ""
 "// Cooking food. Here, we showcase `map()` instead of `match` for case "
 "handling.\n"
-msgstr ""
+msgstr "// 烹饪食物。这里，我们展示了使用 `map()` 而不是 `match` 来处理情况。\n"
 
 #: src/error/option_unwrap/map.md:46
 msgid ""
 "// A function to peel, chop, and cook food all in sequence.\n"
 "// We chain multiple uses of `map()` to simplify the code.\n"
 msgstr ""
+"// 一个按顺序剥皮、切碎和烹饪食物的函数。\n"
+"// 我们链接多个 `map()` 的使用来简化代码。\n"
 
 #: src/error/option_unwrap/map.md:54
 msgid "// Check whether there's food or not before trying to eat it!\n"
-msgstr ""
+msgstr "// 在尝试吃之前检查是否有食物！\n"
 
 #: src/error/option_unwrap/map.md:58
 msgid "\"Mmm. I love {:?}\""
-msgstr ""
+msgstr "\"嗯。我喜欢 {:?}\""
 
 #: src/error/option_unwrap/map.md:59
 msgid "\"Oh no! It wasn't edible.\""
-msgstr ""
+msgstr "\"哦不！这不能吃。\""
 
 #: src/error/option_unwrap/map.md:70
 msgid "// Let's try the simpler looking `process()` now.\n"
-msgstr ""
+msgstr "// 现在让我们试试看起来更简单的 `process()`。\n"
 
 #: src/error/option_unwrap/map.md:81
 msgid ""
 "[closures](../../fn/closures.md), [`Option`](https://doc.rust-lang.org/std/"
 "option/enum.Option.html), [`Option::map()`](https://doc.rust-lang.org/std/"
 "option/enum.Option.html#method.map)"
-msgstr ""
+msgstr "[闭包](../../fn/closures.md)，[`Option`](https://doc.rust-lang.org/std/option/enum.Option.html)，[`Option::map()`](https://doc.rust-lang.org/std/option/enum.Option.html#method.map)"
 
 #: src/error/option_unwrap/and_then.md:3
 msgid ""
@@ -11310,53 +11360,57 @@ msgid ""
 "the nested `Option<Option<T>>`. Chaining multiple calls together can then "
 "become confusing. That's where another combinator called `and_then()`, known "
 "in some languages as flatmap, comes in."
-msgstr ""
+msgstr "`map()` 被描述为一种可链式调用的方式来简化 `match` 语句。然而，在返回 `Option<T>` 的函数上使用 `map()` 会导致嵌套的 `Option<Option<T>>`。链接多个调用可能会变得令人困惑。这就是另一个称为 `and_then()` 的组合器（在一些语言中称为 flatmap）发挥作用的地方。"
 
 #: src/error/option_unwrap/and_then.md:9
 msgid ""
 "`and_then()` calls its function input with the wrapped value and returns the "
 "result. If the `Option` is `None`, then it returns `None` instead."
-msgstr ""
+msgstr "`and_then()` 使用包装的值调用其函数输入并返回结果。如果 `Option` 是 `None`，则返回 `None`。"
 
 #: src/error/option_unwrap/and_then.md:11
 msgid ""
 "In the following example, `cookable_v3()` results in an `Option<Food>`. Using "
 "`map()` instead of `and_then()` would have given an `Option<Option<Food>>`, "
 "which is an invalid type for `eat()`."
-msgstr ""
+msgstr "在下面的例子中，`cookable_v3()` 的结果是一个 `Option<Food>`。如果使用 `map()` 而不是 `and_then()`，将会得到一个 `Option<Option<Food>>`，这对于 `eat()` 来说是一个无效的类型。"
 
 #: src/error/option_unwrap/and_then.md:20
 msgid "// We don't have the ingredients to make Sushi.\n"
-msgstr ""
+msgstr "// 我们没有制作寿司的原料。\n"
 
 #: src/error/option_unwrap/and_then.md:28
 msgid "// We have the recipe for everything except Cordon Bleu.\n"
-msgstr ""
+msgstr "// 我们有除了蓝带猪排以外所有菜的食谱。\n"
 
 #: src/error/option_unwrap/and_then.md:36
 msgid ""
 "// To make a dish, we need both the recipe and the ingredients.\n"
 "// We can represent the logic with a chain of `match`es:\n"
 msgstr ""
+"// 要做一道菜，我们需要食谱和原料。\n"
+"// 我们可以用一系列的 `match` 来表示这个逻辑：\n"
 
 #: src/error/option_unwrap/and_then.md:45
 msgid ""
 "// This can conveniently be rewritten more compactly with `and_then()`:\n"
-msgstr ""
+msgstr "// 这可以方便地用 `and_then()` 更紧凑地重写：\n"
 
 #: src/error/option_unwrap/and_then.md:50
 msgid ""
 "// Otherwise we'd need to `flatten()` an `Option<Option<Food>>`\n"
 "// to get an `Option<Food>`:\n"
 msgstr ""
+"// 否则我们需要 `flatten()` 一个 `Option<Option<Food>>`\n"
+"// 来获得一个 `Option<Food>`：\n"
 
 #: src/error/option_unwrap/and_then.md:59
 msgid "\"Yay! On {:?} we get to eat {:?}.\""
-msgstr ""
+msgstr "\"太好了！在 {:?} 我们可以吃 {:?}。\""
 
 #: src/error/option_unwrap/and_then.md:60
 msgid "\"Oh no. We don't get to eat on {:?}?\""
-msgstr ""
+msgstr "\"哦不。我们在 {:?} 没有东西吃吗？\""
 
 #: src/error/option_unwrap/and_then.md:75
 msgid ""
@@ -11364,46 +11418,46 @@ msgid ""
 "option/enum.Option.html), [`Option::and_then()`](https://doc.rust-lang.org/"
 "std/option/enum.Option.html#method.and_then), and [`Option::flatten()`]"
 "(https://doc.rust-lang.org/std/option/enum.Option.html#method.flatten)"
-msgstr ""
+msgstr "[闭包](../../fn/closures.md)，[`Option`](https://doc.rust-lang.org/std/option/enum.Option.html)，[`Option::and_then()`](https://doc.rust-lang.org/std/option/enum.Option.html#method.and_then)，以及 [`Option::flatten()`](https://doc.rust-lang.org/std/option/enum.Option.html#method.flatten)"
 
 #: src/error/option_unwrap/defaults.md:1
 msgid "Unpacking options and defaults"
-msgstr ""
+msgstr "解包 Option 和默认值"
 
 #: src/error/option_unwrap/defaults.md:3
 msgid ""
 "There is more than one way to unpack an `Option` and fall back on a default "
 "if it is `None`. To choose the one that meets our needs, we need to consider "
 "the following:"
-msgstr ""
+msgstr "有多种方法可以解包 `Option` 并在其为 `None` 时回退到默认值。为了选择满足我们需求的方法，我们需要考虑以下几点："
 
 #: src/error/option_unwrap/defaults.md:4
 msgid "do we need eager or lazy evaluation?"
-msgstr ""
+msgstr "我们需要立即求值还是惰性求值？"
 
 #: src/error/option_unwrap/defaults.md:5
 msgid ""
 "do we need to keep the original empty value intact, or modify it in place?"
-msgstr ""
+msgstr "我们需要保持原始的空值不变，还是就地修改它？"
 
 #: src/error/option_unwrap/defaults.md:7
 msgid "`or()` is chainable, evaluates eagerly, keeps empty value intact"
-msgstr ""
+msgstr "`or()` 可链式调用，立即求值，保持空值不变"
 
 #: src/error/option_unwrap/defaults.md:9
 msgid ""
 "`or()`is chainable and eagerly evaluates its argument, as is shown in the "
 "following example. Note that because `or`'s arguments are evaluated eagerly, "
 "the variable passed to `or` is moved."
-msgstr ""
+msgstr "`or()` 可链式调用，并且立即地求值其参数，如下例所示。注意，由于 `or` 的参数是立即求值的，传递给 `or` 的变量会被移动。"
 
 #: src/error/option_unwrap/defaults.md:21 src/error/option_unwrap/defaults.md:54
 msgid "\"first_available_fruit: {:?}\""
-msgstr ""
+msgstr "\"第一个可用的水果：{:?}\""
 
 #: src/error/option_unwrap/defaults.md:22
 msgid "// first_available_fruit: Some(Orange)\n"
-msgstr ""
+msgstr "// first_available_fruit: Some(Orange)\n"
 
 #: src/error/option_unwrap/defaults.md:24
 msgid ""
@@ -11416,34 +11470,41 @@ msgid ""
 "{:?}\", apple);\n"
 "    // TODO: uncomment the line above to see the compiler error\n"
 msgstr ""
+"// `or` 移动了它的参数。\n"
+"    // 在上面的例子中，`or(orange)` 返回了一个 `Some`，所以 `or(apple)` 没有被调用。\n"
+"    // 但是名为 `apple` 的变量无论如何都被移动了，不能再使用。\n"
+"    // println!(\"变量 apple 被移动了，所以这行不会编译：{:?}\", apple);\n"
+"    // TODO: 取消上面这行的注释来查看编译器错误\n"
 
 #: src/error/option_unwrap/defaults.md:32
 msgid "`or_else()` is chainable, evaluates lazily, keeps empty value intact"
-msgstr ""
+msgstr "`or_else()` 可链式调用，惰性求值，保持空值不变"
 
 #: src/error/option_unwrap/defaults.md:34
 msgid ""
 "Another alternative is to use `or_else`, which is also chainable, and "
 "evaluates lazily, as is shown in the following example:"
-msgstr ""
+msgstr "另一种选择是使用 `or_else`，它也是可链式调用的，并且是惰性求值的，如下例所示："
 
 #: src/error/option_unwrap/defaults.md:43
 msgid "\"Providing kiwi as fallback\""
-msgstr ""
+msgstr "\"提供猕猴桃作为后备\""
 
 #: src/error/option_unwrap/defaults.md:47 src/error/option_unwrap/defaults.md:91
 msgid "\"Providing lemon as fallback\""
-msgstr ""
+msgstr "\"提供柠檬作为后备\""
 
 #: src/error/option_unwrap/defaults.md:55
 msgid ""
 "// Providing kiwi as fallback\n"
 "    // first_available_fruit: Some(Kiwi)\n"
 msgstr ""
+"// 提供猕猴桃作为后备\n"
+"    // first_available_fruit: Some(Kiwi)\n"
 
 #: src/error/option_unwrap/defaults.md:60
 msgid "`get_or_insert()` evaluates eagerly, modifies empty value in place"
-msgstr ""
+msgstr "`get_or_insert()` 立即求值，就地修改空值"
 
 #: src/error/option_unwrap/defaults.md:62
 msgid ""
@@ -11452,14 +11513,15 @@ msgid ""
 "example. Note that `get_or_insert` eagerly evaluates its parameter, so "
 "variable `apple` is moved:"
 msgstr ""
+"为了确保 `Option` 包含一个值，我们可以使用 `get_or_insert` 来就地修改它，使用一个后备值，如下例所示。注意 `get_or_insert` 会立即求值其参数，所以变量 `apple` 被移动了："
 
 #: src/error/option_unwrap/defaults.md:72 src/error/option_unwrap/defaults.md:96
 msgid "\"first_available_fruit is: {:?}\""
-msgstr ""
+msgstr "\"first_available_fruit is: {:?}\""
 
 #: src/error/option_unwrap/defaults.md:73 src/error/option_unwrap/defaults.md:97
 msgid "\"my_fruit is: {:?}\""
-msgstr ""
+msgstr "\"my_fruit is: {:?}\""
 
 #: src/error/option_unwrap/defaults.md:74
 msgid ""
@@ -11468,16 +11530,20 @@ msgid ""
 "    //println!(\"Variable named `apple` is moved: {:?}\", apple);\n"
 "    // TODO: uncomment the line above to see the compiler error\n"
 msgstr ""
+"// first_available_fruit is: Apple\n"
+"    // my_fruit is: Some(Apple)\n"
+"    //println!(\"名为 `apple` 的变量被移动了：{:?}\", apple);\n"
+"    // TODO：取消上面这行的注释来查看编译器错误\n"
 
 #: src/error/option_unwrap/defaults.md:81
 msgid "`get_or_insert_with()` evaluates lazily, modifies empty value in place"
-msgstr ""
+msgstr "`get_or_insert_with()` 惰性求值，就地修改空值"
 
 #: src/error/option_unwrap/defaults.md:83
 msgid ""
 "Instead of explicitly providing a value to fall back on, we can pass a "
 "closure to `get_or_insert_with`, as follows:"
-msgstr ""
+msgstr "我们可以传递一个闭包给 `get_or_insert_with`，而不是显式提供一个后备值，如下所示："
 
 #: src/error/option_unwrap/defaults.md:98
 msgid ""
@@ -11485,20 +11551,23 @@ msgid ""
 "    // first_available_fruit is: Lemon\n"
 "    // my_fruit is: Some(Lemon)\n"
 msgstr ""
+"// 提供柠檬作为后备\n"
+"    // first_available_fruit is: Lemon\n"
+"    // my_fruit is: Some(Lemon)\n"
 
 #: src/error/option_unwrap/defaults.md:102
 msgid ""
 "// If the Option has a value, it is left unchanged, and the closure is not "
 "invoked\n"
-msgstr ""
+msgstr "// 如果 Option 有值，它保持不变，闭包不会被调用\n"
 
 #: src/error/option_unwrap/defaults.md:105
 msgid "\"should_be_apple is: {:?}\""
-msgstr ""
+msgstr "\"should_be_apple is: {:?}\""
 
 #: src/error/option_unwrap/defaults.md:106
 msgid "\"my_apple is unchanged: {:?}\""
-msgstr ""
+msgstr "\"my_apple is unchanged: {:?}\""
 
 #: src/error/option_unwrap/defaults.md:107
 msgid ""
@@ -11507,6 +11576,9 @@ msgid ""
 "    // should_be_apple is: Apple\n"
 "    // my_apple is unchanged: Some(Apple)\n"
 msgstr ""
+"// 输出如下。注意闭包 `get_lemon_as_fallback` 没有被调用\n"
+"    // should_be_apple is: Apple\n"
+"    // my_apple is unchanged: Some(Apple)\n"
 
 #: src/error/option_unwrap/defaults.md:115
 msgid ""
@@ -11519,6 +11591,14 @@ msgid ""
 "[`or_else`](https://doc.rust-lang.org/core/option/enum.Option.html#method."
 "or_else)"
 msgstr ""
+"[`闭包`](https://doc.rust-lang.org/book/ch13-01-closures.html), "
+"[`get_or_insert`](https://doc.rust-lang.org/core/option/enum.Option."
+"html#method.get_or_insert), [`get_or_insert_with`](https://doc.rust-lang.org/"
+"core/option/enum.Option.html#method.get_or_insert_with), [`移动变量`]"
+"(https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html), [`or`]"
+"(https://doc.rust-lang.org/core/option/enum.Option.html#method.or), "
+"[`or_else`](https://doc.rust-lang.org/core/option/enum.Option.html#method."
+"or_else)"
 
 #: src/error/result.md:3
 msgid ""
@@ -11526,24 +11606,26 @@ msgid ""
 "version of the [`Option`](https://doc.rust-lang.org/std/option/enum.Option."
 "html) type that describes possible _error_ instead of possible _absence_."
 msgstr ""
+"[`Result`](https://doc.rust-lang.org/std/result/enum.Result.html) 是 [`Option`](https://doc.rust-lang.org/std/option/enum.Option."
+"html) 类型的更丰富版本，它描述可能的**错误**而不是可能的**缺失**。"
 
 #: src/error/result.md:6
 msgid "That is, `Result<T, E>` could have one of two outcomes:"
-msgstr ""
+msgstr "也就是说，`Result<T, E>` 可能有两种结果之一："
 
 #: src/error/result.md:8
 msgid "`Ok(T)`: An element `T` was found"
-msgstr ""
+msgstr "`Ok(T)`：找到了一个元素 `T`"
 
 #: src/error/result.md:9
 msgid "`Err(E)`: An error was found with element `E`"
-msgstr ""
+msgstr "`Err(E)`：找到了一个错误，错误类型为 `E`"
 
 #: src/error/result.md:11
 msgid ""
 "By convention, the expected outcome is `Ok` while the unexpected outcome is "
 "`Err`."
-msgstr ""
+msgstr "按照惯例，预期的结果是 `Ok`，而意外的结果是 `Err`。"
 
 #: src/error/result.md:13
 msgid ""
@@ -11551,6 +11633,7 @@ msgid ""
 "example, either yields the element `T` or `panic`s. For case handling, there "
 "are many combinators between `Result` and `Option` that overlap."
 msgstr ""
+"与 `Option` 类似，`Result` 也有许多与之关联的方法。例如，`unwrap()` 要么产生元素 `T`，要么 `panic`。对于情况处理，`Result` 和 `Option` 之间有许多重叠的组合子。"
 
 #: src/error/result.md:17
 msgid ""
@@ -11560,16 +11643,19 @@ msgid ""
 "parse a string into the other type, so `parse()` returns a `Result` "
 "indicating possible failure."
 msgstr ""
+"在使用 Rust 时，你可能会遇到返回 `Result` 类型的方法，比如 [`parse()`](https://doc.rust-lang.org/std/"
+"primitive.str.html#method.parse) 方法。将字符串解析为其他类型并不总是可能的，所以 `parse()` 返回一个 `Result` "
+"来表示可能的失败。"
 
 #: src/error/result.md:22
 msgid ""
 "Let's see what happens when we successfully and unsuccessfully `parse()` a "
 "string:"
-msgstr ""
+msgstr "让我们看看成功和失败地 `parse()` 一个字符串会发生什么："
 
 #: src/error/result.md:26
 msgid "// Let's try using `unwrap()` to get the number out. Will it bite us?\n"
-msgstr ""
+msgstr "// 让我们尝试使用 `unwrap()` 来获取数字。它会咬我们吗？\n"
 
 #: src/error/result.md:33 src/error/result.md:36
 #: src/error/result/result_map.md:42 src/error/result/result_map.md:46
@@ -11581,11 +11667,11 @@ msgstr ""
 #: src/error/result/enter_question_mark.md:67
 #: src/error/result/enter_question_mark.md:68
 msgid "\"2\""
-msgstr ""
+msgstr "\"2\""
 
 #: src/error/result.md:34 src/error/result.md:37
 msgid "\"double is {}\""
-msgstr ""
+msgstr "\"double is {}\""
 
 #: src/error/result.md:36 src/error/result/result_map.md:46
 #: src/error/result/result_map.md:79 src/error/result/result_alias.md:37
@@ -11593,7 +11679,7 @@ msgstr ""
 #: src/error/result/enter_question_mark.md:35
 #: src/error/result/enter_question_mark.md:68
 msgid "\"t\""
-msgstr ""
+msgstr "\"t\""
 
 #: src/error/result.md:41
 msgid ""
@@ -11601,22 +11687,25 @@ msgid ""
 "`panic` on. Additionally, the `panic` exits our program and provides an "
 "unpleasant error message."
 msgstr ""
+"在失败的情况下，`parse()` 给我们留下了一个错误，`unwrap()` 会在这个错误上 `panic`。此外，`panic` 会退出我们的程序并提供一个令人不愉快的错误消息。"
 
 #: src/error/result.md:45
 msgid ""
 "To improve the quality of our error message, we should be more specific about "
 "the return type and consider explicitly handling the error."
 msgstr ""
+"为了改善我们的错误消息的质量，我们应该更具体地指定返回类型，并考虑显式地处理错误。"
 
 #: src/error/result.md:48
 msgid "Using `Result` in `main`"
-msgstr ""
+msgstr "在 `main` 中使用 `Result`"
 
 #: src/error/result.md:50
 msgid ""
 "The `Result` type can also be the return type of the `main` function if "
 "specified explicitly. Typically the `main` function will be of the form:"
 msgstr ""
+"`Result` 类型也可以是 `main` 函数的返回类型，如果显式指定的话。通常，`main` 函数的形式如下："
 
 #: src/error/result.md:59
 msgid ""
@@ -11627,6 +11716,7 @@ msgid ""
 "scenario and touches on aspects covered in [the following section](result/"
 "early_returns.md)."
 msgstr ""
+"然而，`main` 函数也可以有 `Result` 的返回类型。如果在 `main` 函数内发生错误，它将返回一个错误代码并打印错误的调试表示（使用 [`Debug`](https://doc.rust-lang.org/std/fmt/trait.Debug.html) trait）。以下示例展示了这样一个场景，并涉及了[下一节](result/early_returns.md)中涵盖的方面。"
 
 #: src/error/result/result_map.md:3
 msgid ""
@@ -11634,6 +11724,7 @@ msgid ""
 "Generally, we want to return the error to the caller so it can decide what is "
 "the right way to respond to errors."
 msgstr ""
+"在前面示例的 `multiply` 中使用 panic 并不能产生健壮的代码。通常，我们希望将错误返回给调用者，以便它可以决定如何正确地响应错误。"
 
 #: src/error/result/result_map.md:7
 msgid ""
@@ -11645,25 +11736,28 @@ msgid ""
 "`Err` type is specified as [`ParseIntError`](https://doc.rust-lang.org/std/"
 "num/struct.ParseIntError.html)."
 msgstr ""
+"首先，我们需要知道我们正在处理的错误类型。为了确定 `Err` 类型，我们查看 [`parse()`](https://doc.rust-lang.org/std/primitive.str.html#method.parse)，它是通过 [`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html) trait 为 [`i32`](https://doc.rust-lang.org/std/primitive.i32.html) 实现的。因此，`Err` 类型被指定为 [`ParseIntError`](https://doc.rust-lang.org/std/num/struct.ParseIntError.html)。"
 
 #: src/error/result/result_map.md:12
 msgid ""
 "In the example below, the straightforward `match` statement leads to code "
 "that is overall more cumbersome."
 msgstr ""
+"在下面的示例中，直接使用 `match` 语句会导致整体代码更加繁琐。"
 
 #: src/error/result/result_map.md:17
 msgid ""
 "// With the return type rewritten, we use pattern matching without "
 "`unwrap()`.\n"
 msgstr ""
+"// 重写返回类型后，我们使用模式匹配而不是 `unwrap()`。\n"
 
 #: src/error/result/result_map.md:35 src/error/result/result_map.md:68
 #: src/error/result/result_alias.md:30 src/error/result/early_returns.md:30
 #: src/error/result/enter_question_mark.md:28
 #: src/error/result/enter_question_mark.md:61
 msgid "\"n is {}\""
-msgstr ""
+msgstr "\"n is {}\""
 
 #: src/error/result/result_map.md:36 src/error/result/result_map.md:69
 #: src/error/result/result_alias.md:31 src/error/result/early_returns.md:31
@@ -11674,15 +11768,15 @@ msgstr ""
 #: src/error/multiple_error_types/reenter_question_mark.md:54
 #: src/error/multiple_error_types/wrap_error.md:68
 msgid "\"Error: {}\""
-msgstr ""
+msgstr "\"Error: {}\""
 
 #: src/error/result/result_map.md:41 src/error/result/result_map.md:74
 msgid "// This still presents a reasonable answer.\n"
-msgstr ""
+msgstr "// 这仍然给出了一个合理的答案。\n"
 
 #: src/error/result/result_map.md:45 src/error/result/result_map.md:78
 msgid "// The following now provides a much more helpful error message.\n"
-msgstr ""
+msgstr "// 以下现在提供了一个更有帮助的错误消息。\n"
 
 #: src/error/result/result_map.md:51
 msgid ""
@@ -11690,6 +11784,8 @@ msgid ""
 "implemented for `Result`. [`Result`](https://doc.rust-lang.org/std/result/"
 "enum.Result.html) contains a complete listing."
 msgstr ""
+"幸运的是，`Option` 的 `map`、`and_then` 和许多其他组合器也为 `Result` 实现了。[`Result`](https://doc.rust-lang.org/std/result/"
+"enum.Result.html) 包含了完整的列表。"
 
 #: src/error/result/result_map.md:56
 msgid ""
@@ -11698,6 +11794,9 @@ msgid ""
 "// Multiply if both values can be parsed from str, otherwise pass on the "
 "error.\n"
 msgstr ""
+"// 与 `Option` 一样，我们可以使用诸如 `map()` 之类的组合器。\n"
+"// 这个函数除此之外与上面的函数相同，其含义为：\n"
+"// 如果两个值都可以从字符串解析，则相乘，否则传递错误。\n"
 
 #: src/error/result/result_alias.md:3
 msgid ""
@@ -11705,6 +11804,8 @@ msgid ""
 "that Rust allows us to create [aliases](../../types/alias.md). Conveniently, "
 "we can define one for the specific `Result` in question."
 msgstr ""
+"当我们想多次重用特定的 `Result` 类型时该怎么办？回想一下，Rust 允许我们创建[别名](../../types/alias.md)。方便的是，"
+"我们可以为特定的 `Result` 定义一个别名。"
 
 #: src/error/result/result_alias.md:7
 msgid ""
@@ -11714,28 +11815,32 @@ msgid ""
 "`std` library even supplies one: [`io::Result`](https://doc.rust-lang.org/std/"
 "io/type.Result.html)!"
 msgstr ""
+"在模块级别，创建别名可能特别有用。在特定模块中发现的错误通常具有相同的 `Err` 类型，因此单个别名可以简洁地定义**所有**相关的 `Results`。这非常有用，以至于 "
+"`std` 库甚至提供了一个：[`io::Result`](https://doc.rust-lang.org/std/"
+"io/type.Result.html)！"
 
 #: src/error/result/result_alias.md:12
 msgid "Here's a quick example to show off the syntax:"
-msgstr ""
+msgstr "这里有一个快速示例来展示语法："
 
 #: src/error/result/result_alias.md:16
 msgid ""
 "// Define a generic alias for a `Result` with the error type "
 "`ParseIntError`.\n"
 msgstr ""
+"// 为错误类型为 `ParseIntError` 的 `Result` 定义一个泛型别名。\n"
 
 #: src/error/result/result_alias.md:19
 msgid "// Use the above alias to refer to our specific `Result` type.\n"
-msgstr ""
+msgstr "// 使用上面的别名来引用我们特定的 `Result` 类型。\n"
 
 #: src/error/result/result_alias.md:26
 msgid "// Here, the alias again allows us to save some space.\n"
-msgstr ""
+msgstr "// 在这里，别名再次让我们节省了一些空间。\n"
 
 #: src/error/result/result_alias.md:43
 msgid "[`io::Result`](https://doc.rust-lang.org/std/io/type.Result.html)"
-msgstr ""
+msgstr "[`io::Result`](https://doc.rust-lang.org/std/io/type.Result.html)"
 
 #: src/error/result/early_returns.md:3
 msgid ""
@@ -11743,6 +11848,7 @@ msgid ""
 "Another way to deal with this case analysis is to use a combination of "
 "`match` statements and _early returns_."
 msgstr ""
+"在前面的例子中，我们使用组合器显式地处理了错误。处理这种情况分析的另一种方法是使用 `match` 语句和**提前返回**的组合。"
 
 #: src/error/result/early_returns.md:7
 msgid ""
@@ -11750,6 +11856,8 @@ msgid ""
 "one occurs. For some, this form of code can be easier to both read and write. "
 "Consider this version of the previous example, rewritten using early returns:"
 msgstr ""
+"也就是说，如果发生错误，我们可以简单地停止执行函数并返回错误。对某些人来说，这种形式的代码可能更容易阅读和编写。"
+"考虑使用提前返回重写的前面示例的这个版本："
 
 #: src/error/result/early_returns.md:41
 msgid ""
@@ -11757,12 +11865,14 @@ msgid ""
 "and early returns. While we generally want to avoid panicking, explicitly "
 "handling all of our errors is cumbersome."
 msgstr ""
+"到目前为止，我们已经学会了使用组合器和提前返回来显式处理错误。虽然我们通常想避免 panic，但显式处理所有错误是很麻烦的。"
 
 #: src/error/result/early_returns.md:45
 msgid ""
 "In the next section, we'll introduce `?` for the cases where we simply need "
 "to `unwrap` without possibly inducing `panic`."
 msgstr ""
+"在下一节中，我们将介绍 `?`，用于我们只需要 `unwrap` 而不可能引发 `panic` 的情况。"
 
 #: src/error/result/enter_question_mark.md:3
 msgid ""
@@ -11771,18 +11881,20 @@ msgid ""
 "what we really wanted was to get the variable _out_. This is exactly the "
 "purpose of `?`."
 msgstr ""
+"有时我们只想要 `unwrap` 的简单性，而不希望有 `panic` 的可能性。到目前为止，当我们真正想要的是获取变量**出来**时，`unwrap` 迫使我们不断地嵌套。"
+"这正是 `?` 的目的。"
 
 #: src/error/result/enter_question_mark.md:7
 msgid "Upon finding an `Err`, there are two valid actions to take:"
-msgstr ""
+msgstr "在发现 `Err` 时，有两种有效的行动："
 
 #: src/error/result/enter_question_mark.md:9
 msgid "`panic!` which we already decided to try to avoid if possible"
-msgstr ""
+msgstr "`panic!`，我们已经决定尽可能避免"
 
 #: src/error/result/enter_question_mark.md:10
 msgid "`return` because an `Err` means it cannot be handled"
-msgstr ""
+msgstr "`return`，因为 `Err` 意味着它无法被处理"
 
 #: src/error/result/enter_question_mark.md:12
 msgid ""
@@ -11790,10 +11902,11 @@ msgid ""
 "of `panic`king on `Err`s. Let's see how we can simplify the earlier example "
 "that used combinators:"
 msgstr ""
+"`?` **几乎**[^†]完全等同于在 `Err` 上 `return` 而不是 `panic` 的 `unwrap`。让我们看看如何简化之前使用组合器的例子："
 
 #: src/error/result/enter_question_mark.md:39
 msgid "The `try!` macro"
-msgstr ""
+msgstr "`try!` 宏"
 
 #: src/error/result/enter_question_mark.md:41
 msgid ""
@@ -11802,6 +11915,8 @@ msgid ""
 "when looking at older code. The same `multiply` function from the previous "
 "example would look like this using `try!`:"
 msgstr ""
+"在有 `?` 之前，相同的功能是通过 `try!` 宏实现的。现在推荐使用 `?` 运算符，但在查看旧代码时，你可能仍会看到 `try!`。"
+"前面例子中的相同 `multiply` 函数使用 `try!` 看起来像这样："
 
 #: src/error/result/enter_question_mark.md:47
 msgid ""
@@ -11810,18 +11925,22 @@ msgid ""
 "// of the `edition` field, in the `[package]` section of the `Cargo.toml` "
 "file, to \"2015\".\n"
 msgstr ""
+"// 要在使用 Cargo 时编译并运行此示例而不出错，请更改\n"
+"// `Cargo.toml` 文件的 `[package]` 部分中 `edition` 字段的值为 \"2015\"。\n"
 
 #: src/error/result/enter_question_mark.md:73
 msgid ""
 "See [re-enter ?](../multiple_error_types/reenter_question_mark.md) for more "
 "details."
 msgstr ""
+"更多详情请 [重新回顾 ?](../multiple_error_types/reenter_question_mark.md)。"
 
 #: src/error/multiple_error_types.md:3
 msgid ""
 "The previous examples have always been very convenient; `Result`s interact "
 "with other `Result`s and `Option`s interact with other `Option`s."
 msgstr ""
+"前面的例子一直都很方便；`Result` 与其他 `Result` 交互，`Option` 与其他 `Option` 交互。"
 
 #: src/error/multiple_error_types.md:6
 msgid ""
@@ -11830,6 +11949,8 @@ msgid ""
 "want to manage our different error types in a way that makes them composable "
 "and easy to interact with."
 msgstr ""
+"有时 `Option` 需要与 `Result` 交互，或者 `Result<T, Error1>` 需要与 `Result<T, Error2>` 交互。在这些情况下，"
+"我们希望以一种使它们可组合且易于交互的方式来管理不同的错误类型。"
 
 #: src/error/multiple_error_types.md:11
 msgid ""
@@ -11837,14 +11958,16 @@ msgid ""
 "types. `Vec::first` returns an `Option`, while `parse::<i32>` returns a "
 "`Result<i32, ParseIntError>`:"
 msgstr ""
+"在下面的代码中，两个 `unwrap` 实例生成不同的错误类型。`Vec::first` 返回一个 `Option`，而 `parse::<i32>` 返回一个 "
+"`Result<i32, ParseIntError>`："
 
 #: src/error/multiple_error_types.md:17
 msgid "// Generate error 1\n"
-msgstr ""
+msgstr "// 生成错误 1\n"
 
 #: src/error/multiple_error_types.md:18
 msgid "// Generate error 2\n"
-msgstr ""
+msgstr "// 生成错误 2\n"
 
 #: src/error/multiple_error_types.md:22
 #: src/error/multiple_error_types/option_result.md:16
@@ -11854,7 +11977,7 @@ msgstr ""
 #: src/error/multiple_error_types/reenter_question_mark.md:59
 #: src/error/multiple_error_types/wrap_error.md:77 src/error/iter_result.md:40
 msgid "\"42\""
-msgstr ""
+msgstr "\"42\""
 
 #: src/error/multiple_error_types.md:22 src/error/multiple_error_types.md:24
 #: src/error/multiple_error_types/option_result.md:16
@@ -11873,7 +11996,7 @@ msgstr ""
 #: src/error/iter_result.md:60 src/error/iter_result.md:75
 #: src/error/iter_result.md:90
 msgid "\"93\""
-msgstr ""
+msgstr "\"93\""
 
 #: src/error/multiple_error_types.md:22 src/error/multiple_error_types.md:24
 #: src/error/multiple_error_types/option_result.md:16
@@ -11892,7 +12015,7 @@ msgstr ""
 #: src/error/iter_result.md:60 src/error/iter_result.md:75
 #: src/error/iter_result.md:90
 msgid "\"18\""
-msgstr ""
+msgstr "\"18\""
 
 #: src/error/multiple_error_types.md:24
 #: src/error/multiple_error_types/option_result.md:18
@@ -11905,7 +12028,7 @@ msgstr ""
 #: src/error/iter_result.md:60 src/error/iter_result.md:75
 #: src/error/iter_result.md:90
 msgid "\"tofu\""
-msgstr ""
+msgstr "\"tofu\""
 
 #: src/error/multiple_error_types.md:26 src/error/multiple_error_types.md:28
 #: src/error/multiple_error_types.md:31
@@ -11914,29 +12037,29 @@ msgstr ""
 #: src/error/multiple_error_types/reenter_question_mark.md:53
 #: src/error/multiple_error_types/wrap_error.md:66
 msgid "\"The first doubled is {}\""
-msgstr ""
+msgstr "\"第一个数的两倍是 {}\""
 
 #: src/error/multiple_error_types.md:29
 #: src/error/multiple_error_types/option_result.md:23
 msgid "// Error 1: the input vector is empty\n"
-msgstr ""
+msgstr "// 错误 1：输入向量为空\n"
 
 #: src/error/multiple_error_types.md:32
 #: src/error/multiple_error_types/option_result.md:26
 msgid "// Error 2: the element doesn't parse to a number\n"
-msgstr ""
+msgstr "// 错误 2：元素无法解析为数字\n"
 
 #: src/error/multiple_error_types.md:36
 msgid ""
 "Over the next sections, we'll see several strategies for handling these kind "
 "of problems."
-msgstr ""
+msgstr "在接下来的章节中，我们将看到几种处理这类问题的策略。"
 
 #: src/error/multiple_error_types/option_result.md:3
 msgid ""
 "The most basic way of handling mixed error types is to just embed them in "
 "each other."
-msgstr ""
+msgstr "处理混合错误类型最基本的方法就是将它们相互嵌套。"
 
 #: src/error/multiple_error_types/option_result.md:20
 #: src/error/multiple_error_types/option_result.md:22
@@ -11945,7 +12068,7 @@ msgstr ""
 #: src/error/multiple_error_types/option_result.md:50
 #: src/error/multiple_error_types/option_result.md:51
 msgid "\"The first doubled is {:?}\""
-msgstr ""
+msgstr "\"第一个数的两倍是 {:?}\""
 
 #: src/error/multiple_error_types/option_result.md:30
 msgid ""
@@ -11954,54 +12077,56 @@ msgid ""
 "`None`. The `transpose` function comes in handy to swap the `Result` and "
 "`Option`."
 msgstr ""
+"有时我们希望在遇到错误时停止处理（就像使用 [`?`](../result/enter_question_mark.md) 一样），但在 `Option` 为 `None` 时继续执行。"
+"`transpose` 函数在交换 `Result` 和 `Option` 时非常有用。"
 
 #: src/error/multiple_error_types/define_error_type.md:3
 msgid ""
 "Sometimes it simplifies the code to mask all of the different errors with a "
 "single type of error.  We'll show this with a custom error."
-msgstr ""
+msgstr "有时，用单一类型的错误来掩盖所有不同的错误可以简化代码。我们将通过自定义错误来展示这一点。"
 
 #: src/error/multiple_error_types/define_error_type.md:6
 msgid ""
 "Rust allows us to define our own error types. In general, a \"good\" error "
 "type:"
-msgstr ""
+msgstr "Rust 允许我们定义自己的错误类型。通常，一个"好的"错误类型："
 
 #: src/error/multiple_error_types/define_error_type.md:8
 msgid "Represents different errors with the same type"
-msgstr ""
+msgstr "用相同的类型表示不同的错误"
 
 #: src/error/multiple_error_types/define_error_type.md:9
 msgid "Presents nice error messages to the user"
-msgstr ""
+msgstr "向用户呈现友好的错误消息"
 
 #: src/error/multiple_error_types/define_error_type.md:10
 msgid "Is easy to compare with other types"
-msgstr ""
+msgstr "易于与其他类型进行比较"
 
 #: src/error/multiple_error_types/define_error_type.md:11
 msgid "Good: `Err(EmptyVec)`"
-msgstr ""
+msgstr "示例：`Err(EmptyVec)`"
 
 #: src/error/multiple_error_types/define_error_type.md:12
 msgid "Bad: `Err(\"Please use a vector with at least one element\".to_owned())`"
-msgstr ""
+msgstr "反例：`Err(\"Please use a vector with at least one element\".to_owned())`"
 
 #: src/error/multiple_error_types/define_error_type.md:13
 msgid "Can hold information about the error"
-msgstr ""
+msgstr "可以保存有关错误的信息"
 
 #: src/error/multiple_error_types/define_error_type.md:14
 msgid "Good: `Err(BadChar(c, position))`"
-msgstr ""
+msgstr "示例：`Err(BadChar(c, position))`"
 
 #: src/error/multiple_error_types/define_error_type.md:15
 msgid "Bad: `Err(\"+ cannot be used here\".to_owned())`"
-msgstr ""
+msgstr "反例：`Err(\"+ cannot be used here\".to_owned())`"
 
 #: src/error/multiple_error_types/define_error_type.md:16
 msgid "Composes well with other errors"
-msgstr ""
+msgstr "能够与其他错误很好地组合"
 
 #: src/error/multiple_error_types/define_error_type.md:22
 msgid ""
@@ -12010,6 +12135,9 @@ msgid ""
 "// Now we will be able to write our own errors, defer to an underlying error\n"
 "// implementation, or do something in between.\n"
 msgstr ""
+"// 定义我们的错误类型。这些可以根据我们的错误处理情况进行自定义。\n"
+"// 现在我们将能够编写自己的错误，依赖于底层的错误实现，\n"
+"// 或者在两者之间做些处理。\n"
 
 #: src/error/multiple_error_types/define_error_type.md:28
 msgid ""
@@ -12022,20 +12150,25 @@ msgid ""
 "// which string failed to parse without modifying our types to carry that "
 "information.\n"
 msgstr ""
+"// 错误的生成与其显示方式完全分离。\n"
+"// 不需要担心用显示样式使复杂的逻辑变得混乱。\n"
+"//\n"
+"// 注意，我们没有存储关于错误的任何额外信息。这意味着我们无法说明\n"
+"// 哪个字符串解析失败，除非修改我们的类型以携带该信息。\n"
 
 #: src/error/multiple_error_types/define_error_type.md:36
 #: src/error/multiple_error_types/boxing_errors.md:23
 #: src/error/multiple_error_types/reenter_question_mark.md:37
 msgid "\"invalid first item to double\""
-msgstr ""
+msgstr "\"无效的第一个要加倍的项\""
 
 #: src/error/multiple_error_types/define_error_type.md:42
 msgid "// Change the error to our new type.\n"
-msgstr ""
+msgstr "// 将错误改为我们的新类型。\n"
 
 #: src/error/multiple_error_types/define_error_type.md:46
 msgid "// Update to the new error type here also.\n"
-msgstr ""
+msgstr "// 这里也更新为新的错误类型。\n"
 
 #: src/error/multiple_error_types/boxing_errors.md:3
 msgid ""
@@ -12045,6 +12178,8 @@ msgid ""
 "determined](https://doc.rust-lang.org/book/ch17-02-trait-objects.html#trait-"
 "objects-perform-dynamic-dispatch)."
 msgstr ""
+"如果又想写简单的代码，又想保存原始错误信息，一个方法是把它们装箱（[`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html)）。"
+"缺点是底层错误类型只在运行时才知道，而不是[静态确定的](https://doc.rust-lang.org/book/ch17-02-trait-objects.html#trait-objects-perform-dynamic-dispatch)。"
 
 #: src/error/multiple_error_types/boxing_errors.md:7
 msgid ""
@@ -12053,16 +12188,18 @@ msgid ""
 "`Box<Error>`, via [`From`](https://doc.rust-lang.org/std/convert/trait.From."
 "html)."
 msgstr ""
+"标准库通过让 `Box` 实现从任何实现 `Error` trait 的类型到 trait 对象 `Box<Error>` 的转换，来帮助我们将错误装箱，"
+"这是通过 [`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 实现的。"
 
 #: src/error/multiple_error_types/boxing_errors.md:14
 #: src/error/multiple_error_types/reenter_question_mark.md:28
 msgid "// Change the alias to use `Box<dyn error::Error>`.\n"
-msgstr ""
+msgstr "// 更改别名以使用 `Box<dyn error::Error>`。\n"
 
 #: src/error/multiple_error_types/boxing_errors.md:31
 #: src/error/multiple_error_types/boxing_errors.md:34
 msgid "// Converts to Box\n"
-msgstr ""
+msgstr "// 转换为 Box\n"
 
 #: src/error/multiple_error_types/boxing_errors.md:59
 msgid ""
@@ -12070,12 +12207,16 @@ msgid ""
 "html#trait-objects-perform-dynamic-dispatch) and [`Error` trait](https://doc."
 "rust-lang.org/std/error/trait.Error.html)"
 msgstr ""
+"[动态分发](https://doc.rust-lang.org/book/ch17-02-trait-objects."
+"html#trait-objects-perform-dynamic-dispatch)和 [`Error` trait](https://doc."
+"rust-lang.org/std/error/trait.Error.html)"
 
 #: src/error/multiple_error_types/reenter_question_mark.md:3
 msgid ""
 "Notice in the previous example that our immediate reaction to calling `parse` "
 "is to `map` the error from a library error into a boxed error:"
 msgstr ""
+"注意在前面的例子中，我们对调用 `parse` 的直接反应是将库错误 `map` 到一个装箱的错误中："
 
 #: src/error/multiple_error_types/reenter_question_mark.md:12
 msgid ""
@@ -12083,6 +12224,8 @@ msgid ""
 "could be elided. Alas, because `and_then` is not sufficiently flexible, it "
 "cannot. However, we can instead use `?`."
 msgstr ""
+"因为这个操作很简单常见，如果有省略写法就好了。可惜的是，因为 `and_then` 不够灵活，所以实现不了。"
+"不过，我们可以使用 `?` 来代替。"
 
 #: src/error/multiple_error_types/reenter_question_mark.md:16
 msgid ""
@@ -12092,18 +12235,24 @@ msgid ""
 "types, this means that if you `?` where the error is convertible to the "
 "return type, it will convert automatically."
 msgstr ""
+"`?` 之前被解释为 `unwrap` 或 `return Err(err)`。这只是大部分正确。它实际上意味着 `unwrap` 或 "
+"`return Err(From::from(err))`。由于 `From::from` 是不同类型之间的转换工具，这意味着如果你在错误可转换为返回类型的地方使用 `?`，"
+"它将自动转换。"
 
 #: src/error/multiple_error_types/reenter_question_mark.md:22
 msgid ""
 "Here, we rewrite the previous example using `?`. As a result, the `map_err` "
 "will go away when `From::from` is implemented for our error type:"
 msgstr ""
+"在这里，我们使用 `?` 重写了前面的例子。因此，当为我们的错误类型实现 `From::from` 时，`map_err` 将会消失："
 
 #: src/error/multiple_error_types/reenter_question_mark.md:42
 msgid ""
 "// The same structure as before but rather than chain all `Results`\n"
 "// and `Options` along, we `?` to get the inner value out immediately.\n"
 msgstr ""
+"// 结构与之前相同，但我们不再链接所有的 `Results` 和 `Options`，\n"
+"// 而是使用 `?` 来立即获取内部值。\n"
 
 #: src/error/multiple_error_types/reenter_question_mark.md:69
 msgid ""
@@ -12111,6 +12260,8 @@ msgid ""
 "very similar to replacing the `unwrap` calls with `?` except that the return "
 "types are `Result`. As a result, they must be destructured at the top level."
 msgstr ""
+"这段代码已经相当清晰了。与原始的 `panic` 相比，它非常类似于用 `?` 替换 `unwrap` 调用，"
+"只是返回类型是 `Result`。因此，它们必须在顶层进行解构。"
 
 #: src/error/multiple_error_types/reenter_question_mark.md:76
 msgid ""
@@ -12118,30 +12269,36 @@ msgid ""
 "`](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-"
 "question-mark-operator)"
 msgstr ""
+"[`From::from`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 [`?"
+"`](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-"
+"question-mark-operator)"
 
 #: src/error/multiple_error_types/wrap_error.md:3
 msgid "An alternative to boxing errors is to wrap them in your own error type."
-msgstr ""
+msgstr "另一种替代装箱错误的方法是将它们包装在你自己的错误类型中。"
 
 #: src/error/multiple_error_types/wrap_error.md:16
 msgid ""
 "// We will defer to the parse error implementation for their error.\n"
 "    // Supplying extra info requires adding more data to the type.\n"
 msgstr ""
+"// 我们将延迟到解析错误实现中处理它们的错误。\n"
+"    // 提供额外信息需要向类型添加更多数据。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:25
 msgid "\"please use a vector with at least one element\""
-msgstr ""
+msgstr "\"请使用至少包含一个元素的向量\""
 
 #: src/error/multiple_error_types/wrap_error.md:26
 msgid ""
 "// The wrapped error contains additional information and is available\n"
 "            // via the source() method.\n"
 msgstr ""
+"// 包装的错误包含额外信息，可以通过 source() 方法获取。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:29
 msgid "\"the provided string could not be parsed as int\""
-msgstr ""
+msgstr "\"提供的字符串无法解析为整数\""
 
 #: src/error/multiple_error_types/wrap_error.md:38
 msgid ""
@@ -12150,6 +12307,9 @@ msgid ""
 "the\n"
 "            // underlying type already implements the `Error` trait.\n"
 msgstr ""
+"// 原因是底层实现的错误类型。它被隐式地\n"
+"            // 转换为 trait 对象 `&error::Error`。这是可行的，因为\n"
+"            // 底层类型已经实现了 `Error` trait。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:45
 msgid ""
@@ -12157,17 +12317,21 @@ msgid ""
 "// This will be automatically called by `?` if a `ParseIntError`\n"
 "// needs to be converted into a `DoubleError`.\n"
 msgstr ""
+"// 实现从 `ParseIntError` 到 `DoubleError` 的转换。\n"
+"// 如果需要将 `ParseIntError` 转换为 `DoubleError`，\n"
+"// 这将被 `?` 自动调用。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:57
 msgid ""
-"// Here we implicitly use the `ParseIntError` implementation of `From` "
-"(which\n"
+"// Here we implicitly use the `ParseIntError` implementation of `From` (which\n"
 "    // we defined above) in order to create a `DoubleError`.\n"
 msgstr ""
+"// 这里我们隐式使用 `ParseIntError` 的 `From` 实现（我们在上面定义的）\n"
+"    // 来创建一个 `DoubleError`。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:70
 msgid "\"  Caused by: {}\""
-msgstr ""
+msgstr "\"  原因：{}\""
 
 #: src/error/multiple_error_types/wrap_error.md:87
 msgid ""
@@ -12175,67 +12339,73 @@ msgid ""
 "in all applications. There are some libraries that can take care of the "
 "boilerplate for you."
 msgstr ""
+"这增加了一些处理错误的样板代码，可能并不是所有应用程序都需要。有一些库可以为你处理这些样板代码。"
 
 #: src/error/multiple_error_types/wrap_error.md:93
 msgid ""
 "[`From::from`](https://doc.rust-lang.org/std/convert/trait.From.html) and "
 "[`Enums`](../../custom_types/enum.md)"
 msgstr ""
+"[`From::from`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 "
+"[`枚举`](../../custom_types/enum.md)"
 
 #: src/error/multiple_error_types/wrap_error.md:96
 msgid ""
 "[`Crates for handling errors`](https://crates.io/keywords/error-handling)"
 msgstr ""
+"[`处理错误的 crate`](https://crates.io/keywords/error-handling)"
 
 #: src/error/iter_result.md:3
 msgid "An `Iter::map` operation might fail, for example:"
-msgstr ""
+msgstr "`Iter::map` 操作可能会失败，例如："
 
 #: src/error/iter_result.md:12 src/error/iter_result.md:29
 #: src/error/iter_result.md:65
 msgid "\"Results: {:?}\""
-msgstr ""
+msgstr "\"结果：{:?}\""
 
 #: src/error/iter_result.md:16
 msgid "Let's step through strategies for handling this."
-msgstr ""
+msgstr "让我们逐步介绍处理这种情况的策略。"
 
 #: src/error/iter_result.md:18
 msgid "Ignore the failed items with `filter_map()`"
-msgstr ""
+msgstr "使用 `filter_map()` 忽略失败的项"
 
 #: src/error/iter_result.md:20
 msgid ""
 "`filter_map` calls a function and filters out the results that are `None`."
-msgstr ""
+msgstr "`filter_map` 调用一个函数并过滤掉结果为 `None` 的项。"
 
 #: src/error/iter_result.md:33
 msgid "Collect the failed items with `map_err()` and `filter_map()`"
-msgstr ""
+msgstr "使用 `map_err()` 和 `filter_map()` 收集失败的项"
 
 #: src/error/iter_result.md:35
 msgid ""
 "`map_err` calls a function with the error, so by adding that to the previous "
 "`filter_map` solution we can save them off to the side while iterating."
 msgstr ""
+"`map_err` 使用错误调用一个函数，所以通过将其添加到之前的 `filter_map` 解决方案中，"
+"我们可以在迭代时将它们保存到一边。"
 
 #: src/error/iter_result.md:40
 msgid "\"999\""
-msgstr ""
+msgstr "\"999\""
 
 #: src/error/iter_result.md:47 src/error/iter_result.md:80
 #: src/error/iter_result.md:97
 msgid "\"Numbers: {:?}\""
-msgstr ""
+msgstr "\"数字：{:?}\""
 
 #: src/error/iter_result.md:48 src/error/iter_result.md:81
 #: src/error/iter_result.md:98
 msgid "\"Errors: {:?}\""
-msgstr ""
+msgstr "\"错误：{:?}\""
 
 #: src/error/iter_result.md:52
 msgid "Fail the entire operation with `collect()`"
-msgstr ""
+msgstr "使用 `collect()` 使整个操作失败"
 
 #: src/error/iter_result.md:54
 msgid ""
@@ -12244,20 +12414,23 @@ msgid ""
 "(`Result<Vec<T>, E>`). Once an `Result::Err` is found, the iteration will "
 "terminate."
 msgstr ""
+"`Result` 实现了 `FromIterator`，因此结果的向量（`Vec<Result<T, E>>`）可以转换为包裹着向量的结果"
+"（`Result<Vec<T>, E>`）。一旦找到 `Result::Err`，迭代将终止。"
 
 #: src/error/iter_result.md:69
 msgid "This same technique can be used with `Option`."
-msgstr ""
+msgstr "这种方式也可以用于 `Option`。"
 
 #: src/error/iter_result.md:71
 msgid "Collect all valid values and failures with `partition()`"
-msgstr ""
+msgstr "使用 `partition()` 收集所有有效值和错误"
 
 #: src/error/iter_result.md:85
 msgid ""
 "When you look at the results, you'll note that everything is still wrapped in "
 "`Result`.  A little more boilerplate is needed for this."
 msgstr ""
+"当你查看结果时，你会注意到所有内容仍然被包装在 `Result` 中。这需要一些额外的样板代码。"
 
 #: src/std.md:3
 msgid ""
