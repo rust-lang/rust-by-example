@@ -3027,7 +3027,7 @@ msgstr "[`Box`](../../std/box.md) 和 [方法](../../fn/methods.md)"
 msgid ""
 "Rust has two different types of constants which can be declared in any scope "
 "including global. Both require explicit type annotation:"
-msgstr "Rust 有两种不同类型的常量，可以在包括全局作用域在内的任何作用域中声明。两者都需要显式的类型注解："
+msgstr "Rust 有两种不同类型的常量，可以在包括全局作用域在内的任何作用域中声明。两者都需要显式的类型标注："
 
 #: src/custom_types/constants.md:6
 msgid "`const`: An unchangeable value (the common case)."
@@ -3108,7 +3108,7 @@ msgid ""
 "infer the type of the variable from the context, heavily reducing the "
 "annotation burden."
 msgstr ""
-"Rust 通过静态类型提供类型安全。变量绑定在声明时可以进行类型注解。然而，在大多数情况下，编译器能够从上下文中推断出变量的类型，大大减少了注解的负担。"
+"Rust 通过静态类型提供类型安全。变量绑定在声明时可以进行类型标注。然而，在大多数情况下，编译器能够从上下文中推断出变量的类型，大大减少了注解的负担。"
 
 #: src/variable_bindings.md:8
 msgid ""
@@ -3523,7 +3523,7 @@ msgid ""
 "example, to specify that the literal `42` should have the type `i32`, write "
 "`42i32`."
 msgstr ""
-"数字字面值可以通过添加类型作为后缀来进行类型注解。例如，要指定字面值 `42` 应该具有 `i32` 类型，可以写成 `42i32`。"
+"数字字面值可以通过添加类型作为后缀来进行类型标注。例如，要指定字面值 `42` 应该具有 `i32` 类型，可以写成 `42i32`。"
 
 #: src/types/literals.md:6
 msgid ""
@@ -3625,7 +3625,7 @@ msgstr ""
 msgid ""
 "No type annotation of variables was needed, the compiler is happy and so is "
 "the programmer!"
-msgstr "不需要变量的类型注解，编译器很开心，程序员也很开心！"
+msgstr "不需要变量的类型标注，编译器很开心，程序员也很开心！"
 
 #: src/types/alias.md:3
 msgid ""
@@ -3741,7 +3741,7 @@ msgstr ""
 
 #: src/conversion/from_into.md:66
 msgid "// Try removing the type annotation\n"
-msgstr "// 尝试移除类型注解\n"
+msgstr "// 尝试移除类型标注\n"
 
 #: src/conversion/from_into.md:72
 msgid "`From` and `Into` are interchangable"
@@ -5573,7 +5573,7 @@ msgid ""
 "closure does with captured value. In order of decreasing restriction, they "
 "are:"
 msgstr ""
-"虽然 Rust 在大多数情况下可以自动选择如何捕获变量而无需类型注解，但在编写函数时不允许这种模糊性。当将闭包作为输入参数时，必须使用以下 `traits` 中的一个来注解闭包的完整类型，这些 traits 由闭包对捕获值的处理方式决定。按限制程度递减的顺序，它们是："
+"虽然 Rust 在大多数情况下可以自动选择如何捕获变量而无需类型标注，但在编写函数时不允许这种模糊性。当将闭包作为输入参数时，必须使用以下 `traits` 中的一个来注解闭包的完整类型，这些 traits 由闭包对捕获值的处理方式决定。按限制程度递减的顺序，它们是："
 
 #: src/fn/closures/input_parameters.md:10
 msgid "`Fn`: the closure uses the captured value by reference (`&T`)"
@@ -9280,7 +9280,7 @@ msgid ""
 "    // than that of `_y`. A short lifetime cannot be coerced into a longer "
 "one.\n"
 msgstr ""
-"// 尝试在函数内部使用生命周期 `'a` 作为显式类型注解\n"
+"// 尝试在函数内部使用生命周期 `'a` 作为显式类型标注\n"
 "    // 会失败，因为 `&_x` 的生命周期比 `_y` 的短。\n"
 "    // 短生命周期不能被强制转换为长生命周期。\n"
 
@@ -9798,6 +9798,7 @@ msgid ""
 "A `trait` is a collection of methods defined for an unknown type: `Self`. "
 "They can access other methods declared in the same trait."
 msgstr ""
+"`trait` 是为未知类型 `Self` 定义的一组方法的集合。它们可以访问在同一个 trait 中声明的其他方法。"
 
 #: src/trait.md:6
 msgid ""
@@ -9806,75 +9807,77 @@ msgid ""
 "the `Sheep` data type, allowing the use of methods from `Animal` with a "
 "`Sheep`."
 msgstr ""
+"trait 可以为任何数据类型实现。在下面的例子中，我们定义了 `Animal`，一组方法的集合。然后为 `Sheep` 数据类型实现 `Animal` `trait`，这样就可以对 `Sheep` 使用 `Animal` 中的方法。"
 
 #: src/trait.md:15
 msgid ""
 "// Associated function signature; `Self` refers to the implementor type.\n"
 msgstr ""
+"// 关联函数签名；`Self` 指代实现者类型。\n"
 
 #: src/trait.md:18
 msgid "// Method signatures; these will return a string.\n"
-msgstr ""
+msgstr "// 方法签名；这些方法将返回一个字符串。\n"
 
 #: src/trait.md:22
 msgid "// Traits can provide default method definitions.\n"
-msgstr ""
+msgstr "// trait 可以提供默认的方法定义。\n"
 
 #: src/trait.md:24
 msgid "\"{} says {}\""
-msgstr ""
+msgstr "\"{} 说 {}\""
 
 #: src/trait.md:35
 msgid "// Implementor methods can use the implementor's trait methods.\n"
-msgstr ""
+msgstr "// 实现者的方法可以使用实现者的 trait 方法。\n"
 
 #: src/trait.md:36
 msgid "\"{} is already naked...\""
-msgstr ""
+msgstr "\"{} 已经剃过毛了...\""
 
 #: src/trait.md:38
 msgid "\"{} gets a haircut!\""
-msgstr ""
+msgstr "\"{} 剃了个毛！\""
 
 #: src/trait.md:44 src/trait/dyn.md:17
 msgid "// Implement the `Animal` trait for `Sheep`.\n"
-msgstr ""
+msgstr "// 为 `Sheep` 实现 `Animal` trait。\n"
 
 #: src/trait.md:47
 msgid "// `Self` is the implementor type: `Sheep`.\n"
-msgstr ""
+msgstr "// `Self` 是实现者类型：`Sheep`。\n"
 
 #: src/trait.md:58
 msgid "\"baaaaah?\""
-msgstr ""
+msgstr "\"咩~?\""
 
 #: src/trait.md:60 src/trait/dyn.md:21
 msgid "\"baaaaah!\""
-msgstr ""
+msgstr "\"咩~！\""
 
 #: src/trait.md:64
 msgid "// Default trait methods can be overridden.\n"
-msgstr ""
+msgstr "// 默认的 trait 方法可以被重写。\n"
 
 #: src/trait.md:66
 msgid "// For example, we can add some quiet contemplation.\n"
-msgstr ""
+msgstr "// 例如，我们可以添加一些安静的沉思。\n"
 
 #: src/trait.md:67
 msgid "\"{} pauses briefly... {}\""
-msgstr ""
+msgstr "\"{} 短暂停顿... {}\""
 
 #: src/trait.md:72
 msgid "// Type annotation is necessary in this case.\n"
-msgstr ""
+msgstr "// 在这种情况下类型标注是必要的。\n"
 
 #: src/trait.md:73
 msgid "\"Dolly\""
-msgstr ""
+msgstr "\"多莉\""
 
 #: src/trait.md:74
 msgid "// TODO ^ Try removing the type annotations.\n"
-msgstr ""
+msgstr "// TODO ^ 尝试移除类型标注。\n"
 
 #: src/trait/derive.md:3
 msgid ""
@@ -9882,10 +9885,11 @@ msgid ""
 "via the `#[derive]` [attribute](../attribute.md). These traits can still be "
 "manually implemented if a more complex behavior is required."
 msgstr ""
+"编译器能够通过 `#[derive]` [属性](../attribute.md)为一些 trait 提供基本实现。如果需要更复杂的行为，这些 trait 仍然可以手动实现。"
 
 #: src/trait/derive.md:7
 msgid "The following is a list of derivable traits:"
-msgstr ""
+msgstr "以下是可派生 trait 的列表："
 
 #: src/trait/derive.md:8
 msgid ""
@@ -9894,48 +9898,57 @@ msgid ""
 "(https://doc.rust-lang.org/std/cmp/trait.Ord.html), [`PartialOrd`](https://"
 "doc.rust-lang.org/std/cmp/trait.PartialOrd.html)."
 msgstr ""
+"比较 trait：[`Eq`](https://doc.rust-lang.org/std/cmp/trait.Eq.html)、"
+"[`PartialEq`](https://doc.rust-lang.org/std/cmp/trait.PartialEq.html)、[`Ord`]"
+"(https://doc.rust-lang.org/std/cmp/trait.Ord.html)、[`PartialOrd`](https://"
+"doc.rust-lang.org/std/cmp/trait.PartialOrd.html)。"
 
 #: src/trait/derive.md:10
 msgid ""
 "[`Clone`](https://doc.rust-lang.org/std/clone/trait.Clone.html), to create "
 "`T` from `&T` via a copy."
 msgstr ""
+"[`Clone`](https://doc.rust-lang.org/std/clone/trait.Clone.html)，通过复制 `&T` 创建 `T`。"
 
 #: src/trait/derive.md:11
 msgid ""
 "[`Copy`](https://doc.rust-lang.org/core/marker/trait.Copy.html), to give a "
 "type 'copy semantics' instead of 'move semantics'."
 msgstr ""
+"[`Copy`](https://doc.rust-lang.org/core/marker/trait.Copy.html)，使类型具备"复制语义"而不是"移动语义"。"
 
 #: src/trait/derive.md:12
 msgid ""
 "[`Hash`](https://doc.rust-lang.org/std/hash/trait.Hash.html), to compute a "
 "hash from `&T`."
 msgstr ""
+"[`Hash`](https://doc.rust-lang.org/std/hash/trait.Hash.html)，从 `&T` 计算哈希值。"
 
 #: src/trait/derive.md:13
 msgid ""
 "[`Default`](https://doc.rust-lang.org/std/default/trait.Default.html), to "
 "create an empty instance of a data type."
 msgstr ""
+"[`Default`](https://doc.rust-lang.org/std/default/trait.Default.html)，创建一个数据类型的空实例。"
 
 #: src/trait/derive.md:14
 msgid ""
 "[`Debug`](https://doc.rust-lang.org/std/fmt/trait.Debug.html), to format a "
 "value using the `{:?}` formatter."
 msgstr ""
+"[`Debug`](https://doc.rust-lang.org/std/fmt/trait.Debug.html)，使用 `{:?}` 格式化器来格式化一个值。"
 
 #: src/trait/derive.md:17
 msgid "// `Centimeters`, a tuple struct that can be compared\n"
-msgstr ""
+msgstr "// `Centimeters`，一个可以比较的元组结构体\n"
 
 #: src/trait/derive.md:20
 msgid "// `Inches`, a tuple struct that can be printed\n"
-msgstr ""
+msgstr "// `Inches`，一个可以打印的元组结构体\n"
 
 #: src/trait/derive.md:32
 msgid "// `Seconds`, a tuple struct with no additional attributes\n"
-msgstr ""
+msgstr "// `Seconds`，一个没有额外属性的元组结构体\n"
 
 #: src/trait/derive.md:39
 msgid ""
@@ -9943,6 +9956,9 @@ msgid ""
 "    //println!(\"One second looks like: {:?}\", _one_second);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误：`Seconds` 不能被打印；它没有实现 `Debug` trait\n"
+"    //println!(\"One second looks like: {:?}\", _one_second);\n"
+"    // TODO ^ 尝试取消这行的注释\n"
 
 #: src/trait/derive.md:43
 msgid ""
@@ -9951,26 +9967,29 @@ msgid ""
 "    //let _this_is_true = (_one_second == _one_second);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误：`Seconds` 不能被比较；它没有实现 `PartialEq` trait\n"
+"    //let _this_is_true = (_one_second == _one_second);\n"
+"    // TODO ^ 尝试取消这行的注释\n"
 
 #: src/trait/derive.md:49
 msgid "\"One foot equals {:?}\""
-msgstr ""
+msgstr "\"一英尺等于 {:?}\""
 
 #: src/trait/derive.md:55
 msgid "\"smaller\""
-msgstr ""
+msgstr "\"更小\""
 
 #: src/trait/derive.md:57
 msgid "\"bigger\""
-msgstr ""
+msgstr "\"更大\""
 
 #: src/trait/derive.md:60
 msgid "\"One foot is {} than one meter.\""
-msgstr ""
+msgstr "\"一英尺比一米 {}。\""
 
 #: src/trait/derive.md:65
 msgid "[`derive`](https://doc.rust-lang.org/reference/attributes.html#derive)"
-msgstr ""
+msgstr "[`derive`](https://doc.rust-lang.org/reference/attributes.html#derive)"
 
 #: src/trait/dyn.md:3
 msgid ""
@@ -9980,6 +9999,7 @@ msgid ""
 "function that returns `Animal`, because its different implementations will "
 "need different amounts of memory."
 msgstr ""
+"Rust 编译器需要知道每个函数的返回类型需要多少空间。这意味着所有的函数都必须返回一个具体的类型。与其他语言不同，如果你有一个像 `Animal` 这样的 trait，你不能编写一个返回 `Animal` 的函数，因为它的不同实现需要不同的内存量。"
 
 #: src/trait/dyn.md:5
 msgid ""
@@ -9989,6 +10009,7 @@ msgid ""
 "a statically-known size, and the compiler can guarantee it points to a heap-"
 "allocated `Animal`, we can return a trait from our function!"
 msgstr ""
+"然而，有一个简单的解决方法。我们的函数不直接返回一个 trait 对象，而是返回一个**包含**某个 `Animal` 的 `Box`。`box` 只是一个指向堆上某些内存的引用。因为引用有一个静态已知的大小，并且编译器可以保证它指向一个堆分配的 `Animal`，因此我们可以从函数中返回一个 trait！"
 
 #: src/trait/dyn.md:7
 msgid ""
@@ -9996,28 +10017,29 @@ msgid ""
 "heap. So if your function returns a pointer-to-trait-on-heap in this way, you "
 "need to write the return type with the `dyn` keyword, e.g. `Box<dyn Animal>`."
 msgstr ""
+"Rust 在堆上分配内存时尽可能地明确。所以如果你的函数以这种方式返回一个指向堆上 trait 的指针，则需要使用 `dyn` 关键字来写返回类型，例如 `Box<dyn Animal>`。"
 
 #: src/trait/dyn.md:14
 msgid "// Instance method signature\n"
-msgstr ""
+msgstr "// 实例方法签名\n"
 
 #: src/trait/dyn.md:24
 msgid "// Implement the `Animal` trait for `Cow`.\n"
-msgstr ""
+msgstr "// 为 `Cow` 实现 `Animal` trait。\n"
 
 #: src/trait/dyn.md:28
 msgid "\"moooooo!\""
-msgstr ""
+msgstr "\"哞哞哞！\""
 
 #: src/trait/dyn.md:31
 msgid ""
 "// Returns some struct that implements Animal, but we don't know which one at "
 "compile time.\n"
-msgstr ""
+msgstr "// 返回某个实现了 Animal 的结构体，但在编译时我们并不知道是哪一个。\n"
 
 #: src/trait/dyn.md:44
 msgid "\"You've randomly chosen an animal, and it says {}\""
-msgstr ""
+msgstr "\"你随机选择了一个动物，它说 {}\""
 
 #: src/trait/ops.md:3
 msgid ""
@@ -10028,12 +10050,14 @@ msgid ""
 "`a.add(b)`). This `add` method is part of the `Add` trait. Hence, the `+` "
 "operator can be used by any implementor of the `Add` trait."
 msgstr ""
+"在 Rust 中，许多运算符可以通过 trait 来重载。也就是说，一些运算符可以根据其输入参数来完成不同的任务。这是可能的，因为运算符是方法调用的语法糖。例如，`a + b` 中的 `+` 运算符调用 `add` 方法（如 `a.add(b)`）。这个 `add` 方法是 `Add` trait 的一部分。因此，`+` 运算符可以被任何实现了 `Add` trait 的类型使用。"
 
 #: src/trait/ops.md:9
 msgid ""
 "A list of the traits, such as `Add`, that overload operators can be found in "
 "[`core::ops`](https://doc.rust-lang.org/core/ops/)."
 msgstr ""
+"可以在 [`core::ops`](https://doc.rust-lang.org/core/ops/) 中找到重载运算符的 trait 列表，如 `Add`。"
 
 #: src/trait/ops.md:22
 msgid ""
@@ -10042,10 +10066,13 @@ msgid ""
 "`Bar`.\n"
 "// The following block implements the operation: Foo + Bar = FooBar\n"
 msgstr ""
+"// `std::ops::Add` trait 用于指定 `+` 的功能。\n"
+"// 这里，我们创建 `Add<Bar>` - 这个 trait 用于与 `Bar` 类型的右操作数相加。\n"
+"// 下面的代码块实现了操作：Foo + Bar = FooBar\n"
 
 #: src/trait/ops.md:30
 msgid "\"> Foo.add(Bar) was called\""
-msgstr ""
+msgstr "\"> 调用了 Foo.add(Bar)\""
 
 #: src/trait/ops.md:35
 msgid ""
@@ -10054,29 +10081,34 @@ msgid ""
 "`Foo`.\n"
 "// This block implements the operation: Bar + Foo = BarFoo\n"
 msgstr ""
+"// 通过颠倒类型，我们最终实现了非交换加法。\n"
+"// 这里，我们创建 `Add<Foo>` - 这个 trait 用于与 `Foo` 类型的右操作数相加。\n"
+"// 这个代码块实现了操作：Bar + Foo = BarFoo\n"
 
 #: src/trait/ops.md:43
 msgid "\"> Bar.add(Foo) was called\""
-msgstr ""
+msgstr "\"> 调用了 Bar.add(Foo)\""
 
 #: src/trait/ops.md:50
 msgid "\"Foo + Bar = {:?}\""
-msgstr ""
+msgstr "\"Foo + Bar = {:?}\""
 
 #: src/trait/ops.md:51
 msgid "\"Bar + Foo = {:?}\""
-msgstr ""
+msgstr "\"Bar + Foo = {:?}\""
 
 #: src/trait/ops.md:55 src/testing.md:16 src/testing/doc_testing.md:104
 #: src/testing/dev_dependencies.md:36
 msgid "See Also"
-msgstr ""
+msgstr "另见"
 
 #: src/trait/ops.md:57
 msgid ""
 "[Add](https://doc.rust-lang.org/core/ops/trait.Add.html), [Syntax Index]"
 "(https://doc.rust-lang.org/book/appendix-02-operators.html)"
 msgstr ""
+"[Add](https://doc.rust-lang.org/core/ops/trait.Add.html)，[语法索引]"
+"(https://doc.rust-lang.org/book/appendix-02-operators.html)"
 
 #: src/trait/drop.md:3
 msgid ""
@@ -10085,6 +10117,7 @@ msgid ""
 "of scope. The main use of the `Drop` trait is to free the resources that the "
 "implementor instance owns."
 msgstr ""
+"[`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait 只有一个方法：`drop`，当对象离开作用域时会自动调用该方法。`Drop` trait 的主要用途是释放实现者实例拥有的资源。"
 
 #: src/trait/drop.md:7
 msgid ""
@@ -10092,85 +10125,90 @@ msgid ""
 "implement the `Drop` trait to free resources. The `Drop` trait can also be "
 "manually implemented for any custom data type."
 msgstr ""
+"`Box`、`Vec`、`String`、`File` 和 `Process` 是一些实现了 `Drop` trait 以释放资源的类型例子。`Drop` trait 也可以为任何自定义数据类型手动实现。"
 
 #: src/trait/drop.md:11
 msgid ""
 "The following example adds a print to console to the `drop` function to "
 "announce when it is called."
 msgstr ""
+"下面的例子在 `drop` 函数中添加了一个控制台打印，以宣告它何时被调用。"
 
 #: src/trait/drop.md:18
 msgid "// This trivial implementation of `drop` adds a print to console.\n"
-msgstr ""
+msgstr "// 这个简单的 `drop` 实现添加了一个控制台打印。\n"
 
 #: src/trait/drop.md:22
 msgid "\"> Dropping {}\""
-msgstr ""
+msgstr "\"> 正在丢弃 {}\""
 
 #: src/trait/drop.md:27 src/std_misc/path.md:33 src/std_misc/fs.md:44
 #: src/std_misc/fs.md:87
 msgid "\"a\""
-msgstr ""
+msgstr "\"a\""
 
 #: src/trait/drop.md:29
 msgid "// block A\n"
-msgstr ""
+msgstr "// 块 A\n"
 
 #: src/trait/drop.md:31 src/std_misc/path.md:33
 msgid "\"b\""
-msgstr ""
+msgstr "\"b\""
 
 #: src/trait/drop.md:33
 msgid "// block B\n"
-msgstr ""
+msgstr "// 块 B\n"
 
 #: src/trait/drop.md:35 src/std_misc/path.md:36
 msgid "\"c\""
-msgstr ""
+msgstr "\"c\""
 
 #: src/trait/drop.md:36
 msgid "\"d\""
-msgstr ""
+msgstr "\"d\""
 
 #: src/trait/drop.md:38
 msgid "\"Exiting block B\""
-msgstr ""
+msgstr "\"正在退出块 B\""
 
 #: src/trait/drop.md:40
 msgid "\"Just exited block B\""
-msgstr ""
+msgstr "\"刚刚退出了块 B\""
 
 #: src/trait/drop.md:42
 msgid "\"Exiting block A\""
-msgstr ""
+msgstr "\"正在退出块 A\""
 
 #: src/trait/drop.md:44
 msgid "\"Just exited block A\""
-msgstr ""
+msgstr "\"刚刚退出了块 A\""
 
 #: src/trait/drop.md:46
 msgid "// Variable can be manually dropped using the `drop` function\n"
-msgstr ""
+msgstr "// 变量可以使用 `drop` 函数手动丢弃\n"
 
 #: src/trait/drop.md:48
 msgid "// TODO ^ Try commenting this line\n"
-msgstr ""
+msgstr "// TODO ^ 尝试注释掉这一行\n"
 
 #: src/trait/drop.md:50
 msgid "\"end of the main function\""
-msgstr ""
+msgstr "\"main 函数结束\""
 
 #: src/trait/drop.md:52
 msgid ""
 "// `_a` *won't* be `drop`ed again here, because it already has been\n"
 "    // (manually) `drop`ed\n"
 msgstr ""
+"// `_a` 在这里**不会**被再次 `drop`，因为它已经被\n"
+"    // （手动）`drop` 过了\n"
 
 #: src/trait/iter.md:3
 msgid ""
 "The [`Iterator`](https://doc.rust-lang.org/core/iter/trait.Iterator.html) "
 "trait is used to implement iterators over collections such as arrays."
 msgstr ""
+"[`Iterator`](https://doc.rust-lang.org/core/iter/trait.Iterator.html) trait 用于实现对诸如数组等集合的迭代器。"
 
 #: src/trait/iter.md:6
 msgid ""
@@ -10178,6 +10216,7 @@ msgid ""
 "may be manually defined in an `impl` block or automatically defined (as in "
 "arrays and ranges)."
 msgstr ""
+"该 trait 只要求为 `next` 元素定义一个方法，这个方法可以在 `impl` 块中手动定义，也可以自动定义（如在数组和区间中）。"
 
 #: src/trait/iter.md:10
 msgid ""
@@ -10185,6 +10224,7 @@ msgid ""
 "some collections into iterators using the [`.into_iter()`](https://doc.rust-"
 "lang.org/std/iter/trait.IntoIterator.html) method."
 msgstr ""
+"为方便起见, `for` 结构使用 [`.into_iter()`](https://doc.rust-lang.org/std/iter/trait.IntoIterator.html) 方法将一些集合转换为迭代器。"
 
 #: src/trait/iter.md:18
 msgid ""
@@ -10192,10 +10232,12 @@ msgid ""
 "// The `Iterator` trait only requires a method to be defined for the `next` "
 "element.\n"
 msgstr ""
+"// 为 `Fibonacci` 实现 `Iterator`。\n"
+"// `Iterator` trait 只要求为 `next` 元素定义一个方法。\n"
 
 #: src/trait/iter.md:22
 msgid "// We can refer to this type using Self::Item\n"
-msgstr ""
+msgstr "// 我们可以使用 Self::Item 引用这个类型\n"
 
 #: src/trait/iter.md:25
 msgid ""
@@ -10206,127 +10248,137 @@ msgid ""
 "    // We use Self::Item in the return type, so we can change\n"
 "    // the type without having to update the function signatures.\n"
 msgstr ""
+"// 这里，我们使用 `.curr` 和 `.next` 定义序列。\n"
+"    // 返回类型是 `Option<T>`：\n"
+"    //     * 当 `Iterator` 结束时，返回 `None`。\n"
+"    //     * 否则，下一个值被包装在 `Some` 中并返回。\n"
+"    // 我们在返回类型中使用 Self::Item，这样我们可以更改\n"
+"    // 类型而不必更新函数签名。\n"
 
 #: src/trait/iter.md:37
 msgid ""
 "// Since there's no endpoint to a Fibonacci sequence, the `Iterator` \n"
 "        // will never return `None`, and `Some` is always returned.\n"
 msgstr ""
+"// 由于斐波那契序列没有终点，`Iterator` \n"
+"        // 永远不会返回 `None`，总是返回 `Some`。\n"
 
 #: src/trait/iter.md:42
 msgid "// Returns a Fibonacci sequence generator\n"
-msgstr ""
+msgstr "// 返回一个斐波那契序列生成器\n"
 
 #: src/trait/iter.md:49
 msgid "// `0..3` is an `Iterator` that generates: 0, 1, and 2.\n"
-msgstr ""
+msgstr "// `0..3` 是一个生成：0、1 和 2 的 `Iterator`。\n"
 
 #: src/trait/iter.md:52
 msgid "\"Four consecutive `next` calls on 0..3\""
-msgstr ""
+msgstr "\"对 0..3 连续调用四次 `next`\""
 
 #: src/trait/iter.md:53 src/trait/iter.md:54 src/trait/iter.md:55
 #: src/trait/iter.md:56 src/std_misc/fs.md:90
 msgid "\"> {:?}\""
-msgstr ""
+msgstr "\"> {:?}\""
 
 #: src/trait/iter.md:58
 msgid ""
 "// `for` works through an `Iterator` until it returns `None`.\n"
 "    // Each `Some` value is unwrapped and bound to a variable (here, `i`).\n"
 msgstr ""
+"// `for` 遍历 `Iterator` 直到它返回 `None`。\n"
+"    // 每个 `Some` 值被解包并绑定到一个变量（这里是 `i`）。\n"
 
 #: src/trait/iter.md:60
 msgid "\"Iterate through 0..3 using `for`\""
-msgstr ""
+msgstr "\"使用 `for` 遍历 0..3\""
 
 #: src/trait/iter.md:62 src/trait/iter.md:68 src/trait/iter.md:74
 #: src/trait/iter.md:82 src/std/vec.md:49 src/std/str.md:22
 #: src/std_misc/fs.md:82
 msgid "\"> {}\""
-msgstr ""
+msgstr "\"> {}\""
 
 #: src/trait/iter.md:65
 msgid "// The `take(n)` method reduces an `Iterator` to its first `n` terms.\n"
-msgstr ""
+msgstr "// `take(n)` 方法将 `Iterator` 缩减为其前 `n` 项。\n"
 
 #: src/trait/iter.md:66
 msgid "\"The first four terms of the Fibonacci sequence are: \""
-msgstr ""
+msgstr "\"斐波那契序列的前四项是：\""
 
 #: src/trait/iter.md:71
 msgid ""
 "// The `skip(n)` method shortens an `Iterator` by dropping its first `n` "
 "terms.\n"
-msgstr ""
+msgstr "// `skip(n)` 方法通过丢弃前 `n` 项来缩短 `Iterator`。\n"
 
 #: src/trait/iter.md:72
 msgid "\"The next four terms of the Fibonacci sequence are: \""
-msgstr ""
+msgstr "\"斐波那契序列的接下来四项是：\""
 
 #: src/trait/iter.md:79
 msgid "// The `iter` method produces an `Iterator` over an array/slice.\n"
-msgstr ""
+msgstr "// `iter` 方法在数组/切片上产生一个 `Iterator`。\n"
 
 #: src/trait/iter.md:80
 msgid "\"Iterate the following array {:?}\""
-msgstr ""
+msgstr "\"遍历以下数组 {:?}\""
 
 #: src/trait/impl_trait.md:3
 msgid "`impl Trait` can be used in two locations:"
-msgstr ""
+msgstr "`impl Trait` 可以在两个位置使用："
 
 #: src/trait/impl_trait.md:5
 msgid "as an argument type"
-msgstr ""
+msgstr "作为参数类型"
 
 #: src/trait/impl_trait.md:6
 msgid "as a return type"
-msgstr ""
+msgstr "作为返回类型"
 
 #: src/trait/impl_trait.md:8
 msgid "As an argument type"
-msgstr ""
+msgstr "作为参数类型"
 
 #: src/trait/impl_trait.md:10
 msgid ""
 "If your function is generic over a trait but you don't mind the specific "
 "type, you can simplify the function declaration using `impl Trait` as the "
 "type of the argument."
-msgstr ""
+msgstr "如果函数对某个 trait 是泛型的，但与具体类型无关，你可以使用 `impl Trait` 作为参数的类型来简化函数声明。"
 
 #: src/trait/impl_trait.md:12
 msgid "For example, consider the following code:"
-msgstr ""
+msgstr "例如，想想以下代码："
 
 #: src/trait/impl_trait.md:18 src/trait/impl_trait.md:37
 msgid "// For each line in the source\n"
-msgstr ""
+msgstr "// 对于数据源中的每一行\n"
 
 #: src/trait/impl_trait.md:20 src/trait/impl_trait.md:39
 msgid ""
 "// If the line was read successfully, process it, if not, return the error\n"
-msgstr ""
+msgstr "// 如果行读取成功，处理它，如果不成功，返回错误\n"
 
 #: src/trait/impl_trait.md:21 src/trait/impl_trait.md:40 src/std/str.md:41
 msgid "','"
-msgstr ""
+msgstr "','"
 
 #: src/trait/impl_trait.md:21 src/trait/impl_trait.md:40
 msgid "// Split the line separated by commas\n"
-msgstr ""
+msgstr "// 按逗号分割行\n"
 
 #: src/trait/impl_trait.md:22 src/trait/impl_trait.md:41
 msgid "// Remove leading and trailing whitespace\n"
-msgstr ""
+msgstr "// 移除首尾的空白\n"
 
 #: src/trait/impl_trait.md:23 src/trait/impl_trait.md:42
 msgid "// Collect all strings in a row into a Vec<String>\n"
-msgstr ""
+msgstr "// 将一行中的所有字符串收集到 Vec<String> 中\n"
 
 #: src/trait/impl_trait.md:26 src/trait/impl_trait.md:45
 msgid "// Collect all lines into a Vec<Vec<String>>\n"
-msgstr ""
+msgstr "// 将所有行收集到 Vec<Vec<String>> 中\n"
 
 #: src/trait/impl_trait.md:30
 msgid ""
@@ -10334,41 +10386,41 @@ msgid ""
 "implements BufRead, such as `BufReader<File>` or `[u8]`, but it's not "
 "important what type `R` is, and `R` is only used to declare the type of "
 "`src`, so the function can also be written as:"
-msgstr ""
+msgstr "`parse_csv_document` 是泛型的，允许它接受任何实现了 BufRead 的类型，比如 `BufReader<File>` 或 `[u8]`，但 `R` 的具体类型并不重要，`R` 只用于声明 `src` 的类型，所以这个函数也可以写成："
 
 #: src/trait/impl_trait.md:49
 msgid ""
 "Note that using `impl Trait` as an argument type means that you cannot "
 "explicitly state what form of the function you use, i.e. `parse_csv_document::"
 "<std::io::Empty>(std::io::empty())` will not work with the second example."
-msgstr ""
+msgstr "注意，使用 `impl Trait` 作为参数类型意味着你不能显式地声明你使用的函数形式，例如 `parse_csv_document::<std::io::Empty>(std::io::empty())` 在第二个例子中将不起作用。"
 
 #: src/trait/impl_trait.md:52
 msgid "As a return type"
-msgstr ""
+msgstr "作为返回类型"
 
 #: src/trait/impl_trait.md:54
 msgid ""
 "If your function returns a type that implements `MyTrait`, you can write its "
 "return type as `-> impl MyTrait`. This can help simplify your type signatures "
 "quite a lot!"
-msgstr ""
+msgstr "如果函数返回一个实现了 `MyTrait` 的类型，你可以将其返回类型写为 `-> impl MyTrait`。这可以大大简化类型签名！"
 
 #: src/trait/impl_trait.md:60
 msgid ""
 "// This function combines two `Vec<i32>` and returns an iterator over it.\n"
 "// Look how complicated its return type is!\n"
-msgstr ""
+msgstr "// 这个函数组合两个 `Vec<i32>` 并返回一个迭代器。\n// 看看它的返回类型有多复杂！\n"
 
 #: src/trait/impl_trait.md:69
 msgid ""
 "// This is the exact same function, but its return type uses `impl Trait`.\n"
 "// Look how much simpler it is!\n"
-msgstr ""
+msgstr "// 这是完全相同的函数，但它的返回类型使用了 `impl Trait`。\n// 看看它有多简单！\n"
 
 #: src/trait/impl_trait.md:88
 msgid "\"all done\""
-msgstr ""
+msgstr "\"全部完成\""
 
 #: src/trait/impl_trait.md:92
 msgid ""
@@ -10376,11 +10428,11 @@ msgid ""
 "closure has its own unnamed concrete type. Before `impl Trait` syntax, you "
 "had to allocate on the heap in order to return a closure. But now you can do "
 "it all statically, like this:"
-msgstr ""
+msgstr "更重要的是，某些 Rust 类型无法写出来。例如，每个闭包都有自己的未命名具体类型。在 `impl Trait` 语法之前，你必须在堆上分配才能返回一个闭包。但现在你可以完全静态地做到这一点，像这样："
 
 #: src/trait/impl_trait.md:98
 msgid "// Returns a function that adds `y` to its input\n"
-msgstr ""
+msgstr "// 返回一个将 `y` 加到其输入的函数\n"
 
 #: src/trait/impl_trait.md:110
 msgid ""
@@ -10389,61 +10441,61 @@ msgid ""
 "closure types don't have names, you can't write out an explicit return type "
 "if your function returns iterators with closures. But with `impl Trait` you "
 "can do this easily:"
-msgstr ""
+msgstr "你还可以使用 `impl Trait` 来返回使用 `map` 或 `filter` 闭包的迭代器！这使得使用 `map` 和 `filter` 更加容易。因为闭包类型没有名称，如果你的函数返回带有闭包的迭代器，你就无法写出显式的返回类型。但使用 `impl Trait`，你可以轻松做到这一点："
 
 #: src/trait/clone.md:3
 msgid ""
 "When dealing with resources, the default behavior is to transfer them during "
 "assignments or function calls. However, sometimes we need to make a copy of "
 "the resource as well."
-msgstr ""
+msgstr "在处理资源时，默认行为是在赋值或函数调用期间转移它们。然而，有时我们也需要复制资源。"
 
 #: src/trait/clone.md:7
 msgid ""
 "The [`Clone`](https://doc.rust-lang.org/std/clone/trait.Clone.html) trait "
 "helps us do exactly this. Most commonly, we can use the `.clone()` method "
 "defined by the `Clone` trait."
-msgstr ""
+msgstr "[`Clone`](https://doc.rust-lang.org/std/clone/trait.Clone.html) trait 帮助我们实现这一点。最常见的是，我们可以使用 `Clone` trait 定义的 `.clone()` 方法。"
 
 #: src/trait/clone.md:11
 msgid "// A unit struct without resources\n"
-msgstr ""
+msgstr "// 一个没有资源的单元结构体\n"
 
 #: src/trait/clone.md:14
 msgid "// A tuple struct with resources that implements the `Clone` trait\n"
-msgstr ""
+msgstr "// 一个带有资源并实现了 `Clone` trait 的元组结构体\n"
 
 #: src/trait/clone.md:20
 msgid "// Instantiate `Unit`\n"
-msgstr ""
+msgstr "// 实例化 `Unit`\n"
 
 #: src/trait/clone.md:22
 msgid "// Copy `Unit`, there are no resources to move\n"
-msgstr ""
+msgstr "// 复制 `Unit`，没有资源需要移动\n"
 
 #: src/trait/clone.md:25
 msgid "// Both `Unit`s can be used independently\n"
-msgstr ""
+msgstr "// 两个 `Unit` 可以独立使用\n"
 
 #: src/trait/clone.md:26 src/trait/clone.md:31
 msgid "\"original: {:?}\""
-msgstr ""
+msgstr "\"原始: {:?}\""
 
 #: src/trait/clone.md:27
 msgid "\"copy: {:?}\""
-msgstr ""
+msgstr "\"复制: {:?}\""
 
 #: src/trait/clone.md:29
 msgid "// Instantiate `Pair`\n"
-msgstr ""
+msgstr "// 实例化 `Pair`\n"
 
 #: src/trait/clone.md:33
 msgid "// Move `pair` into `moved_pair`, moves resources\n"
-msgstr ""
+msgstr "// 将 `pair` 移动到 `moved_pair`，移动资源\n"
 
 #: src/trait/clone.md:35
 msgid "\"moved: {:?}\""
-msgstr ""
+msgstr "\"移动: {:?}\""
 
 #: src/trait/clone.md:37
 msgid ""
@@ -10451,14 +10503,17 @@ msgid ""
 "    //println!(\"original: {:?}\", pair);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！`pair` 已失去其资源\n"
+"    //println!(\"原始: {:?}\", pair);\n"
+"    // TODO ^ 尝试取消注释此行\n"
 
 #: src/trait/clone.md:41
 msgid "// Clone `moved_pair` into `cloned_pair` (resources are included)\n"
-msgstr ""
+msgstr "// 将 `moved_pair` 克隆到 `cloned_pair`（包括资源）\n"
 
 #: src/trait/clone.md:43
 msgid "// Drop the moved original pair using std::mem::drop\n"
-msgstr ""
+msgstr "// 使用 std::mem::drop 丢弃移动的原始对\n"
 
 #: src/trait/clone.md:46
 msgid ""
@@ -10466,26 +10521,31 @@ msgid ""
 "    //println!(\"moved and dropped: {:?}\", moved_pair);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！`moved_pair` 已被丢弃\n"
+"    //println!(\"移动并丢弃: {:?}\", moved_pair);\n"
+"    // TODO ^ 尝试取消注释此行\n"
 
 #: src/trait/clone.md:50
 msgid "// The result from .clone() can still be used!\n"
-msgstr ""
+msgstr "// .clone() 的结果仍然可以使用！\n"
 
 #: src/trait/clone.md:51
 msgid "\"clone: {:?}\""
-msgstr ""
+msgstr "\"克隆: {:?}\""
 
 #: src/trait/supertraits.md:3
 msgid ""
 "Rust doesn't have \"inheritance\", but you can define a trait as being a "
 "superset of another trait. For example:"
-msgstr ""
+msgstr "Rust 没有"继承"，但你可以将一个 trait 定义为另一个 trait 的超集。例如："
 
 #: src/trait/supertraits.md:10
 msgid ""
 "// Person is a supertrait of Student.\n"
 "// Implementing Student requires you to also impl Person.\n"
 msgstr ""
+"// Person 是 Student 的超级 trait。\n"
+"// 实现 Student 需要你同时实现 Person。\n"
 
 #: src/trait/supertraits.md:20
 msgid ""
@@ -10494,12 +10554,15 @@ msgid ""
 "// and Student. Implementing CompSciStudent requires you to impl both "
 "supertraits.\n"
 msgstr ""
+"// CompSciStudent（计算机科学学生）是 Programmer \n"
+"// 和 Student 的子 trait。实现 CompSciStudent 需要你实现两个超级 trait。\n"
 
 #: src/trait/supertraits.md:29
 msgid ""
 "\"My name is {} and I attend {}. My favorite language is {}. My Git username "
 "is {}\""
 msgstr ""
+"\"我的名字是 {}，我就读于 {}。我最喜欢的语言是 {}。我的 Git 用户名是 {}\""
 
 #: src/trait/supertraits.md:42
 msgid ""
@@ -10507,6 +10570,9 @@ msgid ""
 "org/book/ch19-03-advanced-traits.html#using-supertraits-to-require-one-traits-"
 "functionality-within-another-trait)"
 msgstr ""
+"[《Rust 程序设计语言》中关于父级 trait 的章节](https://doc.rust-lang."
+"org/book/ch19-03-advanced-traits.html#using-supertraits-to-require-one-traits-"
+"functionality-within-another-trait)"
 
 #: src/trait/disambiguating.md:3
 msgid ""
@@ -10514,34 +10580,38 @@ msgid ""
 "the same name for a function? For example, many traits might have a method "
 "named `get()`. They might even have different return types!"
 msgstr ""
+"一个类型可以实现许多不同的 trait。如果两个 trait 都要求函数使用相同的名称怎么办？"
+"例如，许多 trait 可能都有一个名为 `get()` 的方法。它们甚至可能有不同的返回类型！"
 
 #: src/trait/disambiguating.md:7
 msgid ""
 "Good news: because each trait implementation gets its own `impl` block, it's "
 "clear which trait's `get` method you're implementing."
 msgstr ""
+"好消息是：因为每个 trait 实现都有自己的 `impl` 块，所以很清楚你正在实现哪个 trait 的 `get` 方法。"
 
 #: src/trait/disambiguating.md:10
 msgid ""
 "What about when it comes time to _call_ those methods? To disambiguate "
 "between them, we have to use Fully Qualified Syntax."
 msgstr ""
+"那么当需要**调用**这些方法时呢？为了消除它们之间的歧义，我们必须使用完全限定语法。"
 
 #: src/trait/disambiguating.md:15
 msgid "// Get the selected username out of this widget\n"
-msgstr ""
+msgstr "// 从这个小部件中获取选定的用户名\n"
 
 #: src/trait/disambiguating.md:20
 msgid "// Get the selected age out of this widget\n"
-msgstr ""
+msgstr "// 从这个小部件中获取选定的年龄\n"
 
 #: src/trait/disambiguating.md:23
 msgid "// A form with both a UsernameWidget and an AgeWidget\n"
-msgstr ""
+msgstr "// 一个同时包含 UsernameWidget 和 AgeWidget 的表单\n"
 
 #: src/trait/disambiguating.md:44 src/trait/disambiguating.md:54
 msgid "\"rustacean\""
-msgstr ""
+msgstr "\"rustacean\""
 
 #: src/trait/disambiguating.md:48
 msgid ""
@@ -10551,6 +10621,10 @@ msgid ""
 "    // named `get`.\n"
 "    // println!(\"{}\", form.get());\n"
 msgstr ""
+"// 如果你取消注释这一行，你会得到一个错误，说\n"
+"    // \"找到多个 `get`\"。因为毕竟有多个\n"
+"    // 名为 `get` 的方法。\n"
+"    // println!(\"{}\", form.get());\n"
 
 #: src/trait/disambiguating.md:62
 msgid ""
@@ -10558,6 +10632,9 @@ msgid ""
 "rust-lang.org/book/ch19-03-advanced-traits.html#fully-qualified-syntax-for-"
 "disambiguation-calling-methods-with-the-same-name)"
 msgstr ""
+"[《Rust 程序设计语言》中关于完全限定语法的章节](https://doc."
+"rust-lang.org/book/ch19-03-advanced-traits.html#fully-qualified-syntax-for-"
+"disambiguation-calling-methods-with-the-same-name)"
 
 #: src/macros.md:3
 msgid ""
