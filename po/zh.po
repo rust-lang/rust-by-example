@@ -12437,32 +12437,34 @@ msgid ""
 "The `std` library provides many custom types which expands drastically on the "
 "`primitives`. Some of these include:"
 msgstr ""
+"`std` 库提供了许多自定义类型，这些类型大大扩展了`原始类型`。其中包括："
 
 #: src/std.md:6
 msgid "growable `String`s like: `\"hello world\"`"
-msgstr ""
+msgstr "可增长的 `String`，如：`\"hello world\"`"
 
 #: src/std.md:7
 msgid "growable vectors: `[1, 2, 3]`"
-msgstr ""
+msgstr "可增长的向量：`[1, 2, 3]`"
 
 #: src/std.md:8
 msgid "optional types: `Option<i32>`"
-msgstr ""
+msgstr "可选类型：`Option<i32>`"
 
 #: src/std.md:9
 msgid "error handling types: `Result<i32, i32>`"
-msgstr ""
+msgstr "错误处理类型：`Result<i32, i32>`"
 
 #: src/std.md:10
 msgid "heap allocated pointers: `Box<i32>`"
-msgstr ""
+msgstr "堆分配的指针：`Box<i32>`"
 
 #: src/std.md:14 src/std_misc.md:14
 msgid ""
 "[primitives](primitives.md) and [the std library](https://doc.rust-lang.org/"
 "std/)"
 msgstr ""
+"[原始类型](primitives.md) 和 [std 库](https://doc.rust-lang.org/std/)"
 
 #: src/std/box.md:3
 msgid ""
@@ -12472,72 +12474,79 @@ msgid ""
 "destructor is called, the inner object is destroyed, and the memory on the "
 "heap is freed."
 msgstr ""
+"在 Rust 中，所有值默认都是栈分配的。通过创建 `Box<T>`，可以将值**装箱**（在堆上分配）。"
+"Box 是指向堆分配的 `T` 类型值的智能指针。当 box 离开作用域时，它的析构函数被调用，"
+"内部对象被销毁，堆上的内存被释放。"
 
 #: src/std/box.md:8
 msgid ""
 "Boxed values can be dereferenced using the `*` operator; this removes one "
 "layer of indirection."
 msgstr ""
+"可以使用 `*` 运算符解引用装箱的值；这会移除一层间接引用。"
 
 #: src/std/box.md:20
 msgid ""
 "// A Rectangle can be specified by where its top left and bottom right \n"
 "// corners are in space\n"
 msgstr ""
+"// 可以通过指定左上角和右下角在空间中的位置来定义一个矩形\n"
 
 #: src/std/box.md:34
 msgid "// Allocate this point on the heap, and return a pointer to it\n"
-msgstr ""
+msgstr "// 在堆上分配这个点，并返回指向它的指针\n"
 
 #: src/std/box.md:39
 msgid ""
 "// (all the type annotations are superfluous)\n"
 "    // Stack allocated variables\n"
 msgstr ""
+"// （所有的类型注解都不是必须的）\n"
+"    // 栈分配的变量\n"
 
 #: src/std/box.md:47
 msgid "// Heap allocated rectangle\n"
-msgstr ""
+msgstr "// 堆分配的矩形\n"
 
 #: src/std/box.md:53
 msgid "// The output of functions can be boxed\n"
-msgstr ""
+msgstr "// 函数的输出可以被装箱\n"
 
 #: src/std/box.md:56
 msgid "// Double indirection\n"
-msgstr ""
+msgstr "// 两层装箱\n"
 
 #: src/std/box.md:59
 msgid "\"Point occupies {} bytes on the stack\""
-msgstr ""
+msgstr "\"Point 在栈上占用 {} 字节\""
 
 #: src/std/box.md:61
 msgid "\"Rectangle occupies {} bytes on the stack\""
-msgstr ""
+msgstr "\"Rectangle 在栈上占用 {} 字节\""
 
 #: src/std/box.md:64
 msgid "// box size == pointer size\n"
-msgstr ""
+msgstr "// box 大小 == 指针大小\n"
 
 #: src/std/box.md:65
 msgid "\"Boxed point occupies {} bytes on the stack\""
-msgstr ""
+msgstr "\"装箱的 point 在栈上占用 {} 字节\""
 
 #: src/std/box.md:67
 msgid "\"Boxed rectangle occupies {} bytes on the stack\""
-msgstr ""
+msgstr "\"装箱的 rectangle 在栈上占用 {} 字节\""
 
 #: src/std/box.md:69
 msgid "\"Boxed box occupies {} bytes on the stack\""
-msgstr ""
+msgstr "\"装箱的 box 在栈上占用 {} 字节\""
 
 #: src/std/box.md:72
 msgid "// Copy the data contained in `boxed_point` into `unboxed_point`\n"
-msgstr ""
+msgstr "// 将 `boxed_point` 中包含的数据复制到 `unboxed_point`\n"
 
 #: src/std/box.md:74
 msgid "\"Unboxed point occupies {} bytes on the stack\""
-msgstr ""
+msgstr "\"未装箱的 point 在栈上占用 {} 字节\""
 
 #: src/std/vec.md:3
 msgid ""
@@ -12545,18 +12554,20 @@ msgid ""
 "compile time, but they can grow or shrink at any time. A vector is "
 "represented using 3 parameters:"
 msgstr ""
+"向量（Vector）是可调整大小的数组。和切片（Slice）类似，它们的大小在编译时是未知的，但可以随时增长或缩小。"
+"向量使用 3 个参数表示："
 
 #: src/std/vec.md:6
 msgid "pointer to the data"
-msgstr ""
+msgstr "指向数据的指针"
 
 #: src/std/vec.md:7
 msgid "length"
-msgstr ""
+msgstr "长度"
 
 #: src/std/vec.md:8
 msgid "capacity"
-msgstr ""
+msgstr "容量"
 
 #: src/std/vec.md:10
 msgid ""
@@ -12565,110 +12576,117 @@ msgid ""
 "threshold needs to be surpassed, the vector is reallocated with a larger "
 "capacity."
 msgstr ""
+"容量表示为向量保留了多少内存。只要长度小于容量，向量就可以增长。当需要超过这个阈值时，"
+"向量会被重新分配更大的容量。"
 
 #: src/std/vec.md:16
 msgid "// Iterators can be collected into vectors\n"
-msgstr ""
+msgstr "// 迭代器可以被收集到向量中\n"
 
 #: src/std/vec.md:18
 msgid "\"Collected (0..10) into: {:?}\""
-msgstr ""
+msgstr "\"收集 (0..10) 到：{:?}\""
 
 #: src/std/vec.md:20
 msgid "// The `vec!` macro can be used to initialize a vector\n"
-msgstr ""
+msgstr "// `vec!` 宏可以用来初始化一个向量\n"
 
 #: src/std/vec.md:22
 msgid "\"Initial vector: {:?}\""
-msgstr ""
+msgstr "\"初始向量：{:?}\""
 
 #: src/std/vec.md:24
 msgid "// Insert new element at the end of the vector\n"
-msgstr ""
+msgstr "// 在向量的末尾插入新元素\n"
 
 #: src/std/vec.md:25
 msgid "\"Push 4 into the vector\""
-msgstr ""
+msgstr "\"将 4 推入向量\""
 
 #: src/std/vec.md:27
 msgid "\"Vector: {:?}\""
-msgstr ""
+msgstr "\"向量：{:?}\""
 
 #: src/std/vec.md:29
 msgid "// Error! Immutable vectors can't grow\n"
-msgstr ""
+msgstr "// 错误！不可变向量不能增长\n"
 
 #: src/std/vec.md:33
 msgid ""
 "// The `len` method yields the number of elements currently stored in a "
 "vector\n"
-msgstr ""
+msgstr "// `len` 方法返回当前存储在向量中的元素数量\n"
 
 #: src/std/vec.md:34
 msgid "\"Vector length: {}\""
-msgstr ""
+msgstr "\"向量长度：{}\""
 
 #: src/std/vec.md:36
 msgid "// Indexing is done using the square brackets (indexing starts at 0)\n"
-msgstr ""
+msgstr "// 使用方括号进行索引（索引从 0 开始）\n"
 
 #: src/std/vec.md:37
 msgid "\"Second element: {}\""
-msgstr ""
+msgstr "\"第二个元素：{}\""
 
 #: src/std/vec.md:39
 msgid "// `pop` removes the last element from the vector and returns it\n"
-msgstr ""
+msgstr "// `pop` 移除向量的最后一个元素并返回它\n"
 
 #: src/std/vec.md:40
 msgid "\"Pop last element: {:?}\""
-msgstr ""
+msgstr "\"弹出最后一个元素：{:?}\""
 
 #: src/std/vec.md:42
 msgid "// Out of bounds indexing yields a panic\n"
-msgstr ""
+msgstr "// 越界索引会导致 panic\n"
 
 #: src/std/vec.md:43
 msgid "\"Fourth element: {}\""
-msgstr ""
+msgstr "\"第四个元素：{}\""
 
 #: src/std/vec.md:46
 msgid "// `Vector`s can be easily iterated over\n"
-msgstr ""
+msgstr "// `Vector` 可以很容易地被迭代\n"
 
 #: src/std/vec.md:47
 msgid "\"Contents of xs:\""
-msgstr ""
+msgstr "\"xs 的内容：\""
 
 #: src/std/vec.md:52
 msgid ""
 "// A `Vector` can also be iterated over while the iteration\n"
 "    // count is enumerated in a separate variable (`i`)\n"
 msgstr ""
+"// `Vector` 也可以被迭代，同时迭代计数\n"
+"    // 被枚举在一个单独的变量中（`i`）\n"
 
 #: src/std/vec.md:55
 msgid "\"In position {} we have value {}\""
-msgstr ""
+msgstr "\"在位置 {} 我们有值 {}\""
 
 #: src/std/vec.md:58
 msgid ""
 "// Thanks to `iter_mut`, mutable `Vector`s can also be iterated\n"
 "    // over in a way that allows modifying each value\n"
 msgstr ""
+"// 多亏了 `iter_mut`，可变的 `Vector` 也可以被迭代\n"
+"    // 以一种允许修改每个值的方式\n"
 
 #: src/std/vec.md:63
 msgid "\"Updated vector: {:?}\""
-msgstr ""
+msgstr "\"更新后的向量：{:?}\""
 
 #: src/std/vec.md:67
 msgid ""
 "More `Vec` methods can be found under the [std::vec](https://doc.rust-lang."
 "org/std/vec/) module"
 msgstr ""
+"更多 `Vec` 方法可以在 [std::vec](https://doc.rust-lang.org/std/vec/) 模块中找到"
 
 #: src/std/str.md:3
 msgid "The two most used string types in Rust are `String` and `&str`."
-msgstr ""
+msgstr "Rust 中最常用的两种字符串类型是 `String` 和 `&str`。"
 
 #: src/std/str.md:5
 msgid ""
@@ -12676,88 +12694,93 @@ msgid ""
 "always be a valid UTF-8 sequence. `String` is heap allocated, growable and "
 "not null terminated."
 msgstr ""
+"`String` 存储为字节向量（`Vec<u8>`），但保证了是有效的 UTF-8 序列。`String` 是堆分配的，可增长的，且不以 null 结尾。"
 
 #: src/std/str.md:9
 msgid ""
 "`&str` is a slice (`&[u8]`) that always points to a valid UTF-8 sequence, and "
 "can be used to view into a `String`, just like `&[T]` is a view into `Vec<T>`."
 msgstr ""
+"`&str` 是一个切片（`&[u8]`），它始终指向一个有效的 UTF-8 序列，可以用来查看 `String`，就像 `&[T]` 是 `Vec<T>` 的一个视图一样。"
 
 #: src/std/str.md:14
 msgid ""
 "// (all the type annotations are superfluous)\n"
 "    // A reference to a string allocated in read only memory\n"
 msgstr ""
+"// （所有的类型注解都是多余的）\n"
+"    // 一个指向只读内存中分配的字符串的引用\n"
 
 #: src/std/str.md:16
 msgid "\"the quick brown fox jumps over the lazy dog\""
-msgstr ""
+msgstr "\"the quick brown fox jumps over the lazy dog\""
 
 #: src/std/str.md:17
 msgid "\"Pangram: {}\""
-msgstr ""
+msgstr "\"Pangram: {}\""
 
 #: src/std/str.md:19
 msgid "// Iterate over words in reverse, no new string is allocated\n"
-msgstr ""
+msgstr "// 逆序迭代单词，不会分配新的字符串\n"
 
 #: src/std/str.md:20
 msgid "\"Words in reverse\""
-msgstr ""
+msgstr "\"反向的单词\""
 
 #: src/std/str.md:25
 msgid "// Copy chars into a vector, sort and remove duplicates\n"
-msgstr ""
+msgstr "// 将字符复制到向量中，排序并移除重复项\n"
 
 #: src/std/str.md:30
 msgid "// Create an empty and growable `String`\n"
-msgstr ""
+msgstr "// 创建一个空的可增长的 `String`\n"
 
 #: src/std/str.md:33
 msgid "// Insert a char at the end of string\n"
-msgstr ""
+msgstr "// 在字符串末尾插入一个字符\n"
 
 #: src/std/str.md:35
 msgid "// Insert a string at the end of string\n"
-msgstr ""
+msgstr "// 在字符串末尾插入一个字符串\n"
 
 #: src/std/str.md:39
 msgid ""
 "// The trimmed string is a slice to the original string, hence no new\n"
 "    // allocation is performed\n"
 msgstr ""
+"// 修剪后的字符串是原始字符串的一个切片，因此不会进行新的分配\n"
 
 #: src/std/str.md:43
 msgid "\"Used characters: {}\""
-msgstr ""
+msgstr "\"使用的字符：{}\""
 
 #: src/std/str.md:45
 msgid "// Heap allocate a string\n"
-msgstr ""
+msgstr "// 在堆上分配一个字符串\n"
 
 #: src/std/str.md:46
 msgid "\"I like dogs\""
-msgstr ""
+msgstr "\"I like dogs\""
 
 #: src/std/str.md:47
 msgid "// Allocate new memory and store the modified string there\n"
-msgstr ""
+msgstr "// 分配新的内存并在那里存储修改后的字符串\n"
 
 #: src/std/str.md:48
 msgid "\"dog\""
-msgstr ""
+msgstr "\"dog\""
 
 #: src/std/str.md:48
 msgid "\"cat\""
-msgstr ""
+msgstr "\"cat\""
 
 #: src/std/str.md:50
 msgid "\"Alice says: {}\""
-msgstr ""
+msgstr "\"Alice 说：{}\""
 
 #: src/std/str.md:51
 msgid "\"Bob says: {}\""
-msgstr ""
+msgstr "\"Bob 说：{}\""
 
 #: src/std/str.md:55
 msgid ""
@@ -12765,10 +12788,11 @@ msgid ""
 "rust-lang.org/std/str/) and [std::string](https://doc.rust-lang.org/std/"
 "string/) modules"
 msgstr ""
+"更多 `str`/`String` 方法可以在 [std::str](https://doc.rust-lang.org/std/str/) 和 [std::string](https://doc.rust-lang.org/std/string/) 模块中找到"
 
 #: src/std/str.md:60
 msgid "Literals and escapes"
-msgstr ""
+msgstr "字面值和转义"
 
 #: src/std/str.md:62
 msgid ""
@@ -12777,6 +12801,7 @@ msgid ""
 "most convenient to write. Similarly there are multiple ways to write byte "
 "string literals, which all result in `&[u8; N]`."
 msgstr ""
+"有多种方式可以编写包含特殊字符的字符串字面值。所有方式都会产生类似的 `&str`，所以最好使用最方便编写的形式。同样，也有多种方式可以编写字节字符串字面值，它们都会产生 `&[u8; N]`。"
 
 #: src/std/str.md:67
 msgid ""
@@ -12785,40 +12810,42 @@ msgid ""
 "ones that you don't know how to type. If you want a literal backslash, escape "
 "it with another one: `\\\\`"
 msgstr ""
+"通常特殊字符用反斜杠字符转义：`\\`。这样你可以在字符串中添加任何字符，甚至是不可打印的字符和你不知道如何输入的字符。如果你想要一个字面的反斜杠，用另一个反斜杠转义它：`\\\\`"
 
 #: src/std/str.md:72
 msgid ""
 "String or character literal delimiters occurring within a literal must be "
 "escaped: `\"\\\"\"`, `'\\''`."
 msgstr ""
+"出现在字面值内的字符串或字符字面值分隔符必须被转义：`\"\\\"\"`, `'\\''`。"
 
 #: src/std/str.md:76
 msgid "// You can use escapes to write bytes by their hexadecimal values...\n"
-msgstr ""
+msgstr "// 你可以使用转义来通过它们的十六进制值写入字节...\n"
 
 #: src/std/str.md:77
 msgid "\"I'm writing \\x52\\x75\\x73\\x74!\""
-msgstr ""
+msgstr "\"I'm writing \\x52\\x75\\x73\\x74!\""
 
 #: src/std/str.md:78
 msgid "\"What are you doing\\x3F (\\\\x3F means ?) {}\""
-msgstr ""
+msgstr "\"What are you doing\\x3F (\\\\x3F 表示 ?) {}\""
 
 #: src/std/str.md:80
 msgid "// ...or Unicode code points.\n"
-msgstr ""
+msgstr "// ...或 Unicode 码点。\n"
 
 #: src/std/str.md:81
 msgid "\"\\u{211D}\""
-msgstr ""
+msgstr "\"\\u{211D}\""
 
 #: src/std/str.md:82
 msgid "\"\\\"DOUBLE-STRUCK CAPITAL R\\\"\""
-msgstr ""
+msgstr "\"\\\"DOUBLE-STRUCK CAPITAL R\\\"\""
 
 #: src/std/str.md:84
 msgid "\"Unicode character {} (U+211D) is called {}\""
-msgstr ""
+msgstr "\"Unicode 字符 {} (U+211D) 被称为 {}\""
 
 #: src/std/str.md:88
 msgid ""
@@ -12827,6 +12854,10 @@ msgid ""
 "                        The linebreak and indentation here ->\\\n"
 "                        <- can be escaped too!\""
 msgstr ""
+"\"字符串字面值\n"
+"                        可以跨越多行。\n"
+"                        这里的换行和缩进 ->\\\n"
+"                        <- 也可以被转义！\""
 
 #: src/std/str.md:96
 msgid ""
@@ -12834,28 +12865,31 @@ msgid ""
 "just much more convenient to write a string out as-is. This is where raw "
 "string literals come into play."
 msgstr ""
+"有时需要转义的字符太多，或者直接按原样写出字符串会更方便。这就是原始字符串字面值发挥作用的地方。"
 
 #: src/std/str.md:101
 msgid "r\"Escapes don't work here: \\x3F \\u{211D}\""
-msgstr ""
+msgstr "r\"转义在这里不起作用：\\x3F \\u{211D}\""
 
 #: src/std/str.md:104
 msgid "// If you need quotes in a raw string, add a pair of #s\n"
-msgstr ""
+msgstr "// 如果你需要在原始字符串中使用引号，添加一对 #\n"
 
 #: src/std/str.md:105
 msgid "r#\"And then I said: \"There is no escape!\"\"#"
-msgstr ""
+msgstr "r#\"然后我说：\"没有转义！\"\"#"
 
 #: src/std/str.md:108
 msgid ""
 "// If you need \"# in your string, just use more #s in the delimiter.\n"
 "    // You can use up to 255 #s.\n"
 msgstr ""
+"// 如果你需要在字符串中使用 \"#，只需在分隔符中使用更多的 #。\n"
+"    // 你可以使用最多 255 个 #。\n"
 
 #: src/std/str.md:110
 msgid "r###\"A string with \"# in it. And even \"##!\"###"
-msgstr ""
+msgstr "r###\"一个包含 \"# 的字符串。甚至还有 \"##！\"###"
 
 #: src/std/str.md:115
 msgid ""
@@ -12863,94 +12897,101 @@ msgid ""
 "UTF-8). Or maybe you want an array of bytes that's mostly text? Byte strings "
 "to the rescue!"
 msgstr ""
+"想要一个非 UTF-8 的字符串？（记住，`str` 和 `String` 必须是有效的 UTF-8）。或者你想要一个主要是文本的字节数组？字节字符串来救场！"
 
 #: src/std/str.md:122
 msgid "// Note that this is not actually a `&str`\n"
-msgstr ""
+msgstr "// 注意这实际上不是一个 `&str`\n"
 
 #: src/std/str.md:123
 msgid "b\"this is a byte string\""
-msgstr ""
+msgstr "b\"this is a byte string\""
 
 #: src/std/str.md:125
 msgid ""
 "// Byte arrays don't have the `Display` trait, so printing them is a bit "
 "limited\n"
 msgstr ""
+"// 字节数组没有 `Display` trait，所以打印它们有一些限制\n"
 
 #: src/std/str.md:126
 msgid "\"A byte string: {:?}\""
-msgstr ""
+msgstr "\"一个字节字符串：{:?}\""
 
 #: src/std/str.md:128
 msgid "// Byte strings can have byte escapes...\n"
-msgstr ""
+msgstr "// 字节字符串可以有字节转义...\n"
 
 #: src/std/str.md:129
 msgid "b\"\\x52\\x75\\x73\\x74 as bytes\""
-msgstr ""
+msgstr "b\"\\x52\\x75\\x73\\x74 as bytes\""
 
 #: src/std/str.md:130
 msgid ""
 "// ...but no unicode escapes\n"
 "    // let escaped = b\"\\u{211D} is not allowed\";\n"
 msgstr ""
+"// ...但不允许 unicode 转义\n"
+"    // let escaped = b\"\\u{211D} is not allowed\";\n"
 
 #: src/std/str.md:132
 msgid "\"Some escaped bytes: {:?}\""
-msgstr ""
+msgstr "\"一些转义的字节：{:?}\""
 
 #: src/std/str.md:135
 msgid "// Raw byte strings work just like raw strings\n"
-msgstr ""
+msgstr "// 原始字节字符串的工作方式就像原始字符串\n"
 
 #: src/std/str.md:136
 msgid "br\"\\u{211D} is not escaped here\""
-msgstr ""
+msgstr "br\"\\u{211D} is not escaped here\""
 
 #: src/std/str.md:139
 msgid "// Converting a byte array to `str` can fail\n"
-msgstr ""
+msgstr "// 将字节数组转换为 `str` 可能会失败\n"
 
 #: src/std/str.md:141
 msgid "\"And the same as text: '{}'\""
-msgstr ""
+msgstr "\"同样作为文本：'{}'\""
 
 #: src/std/str.md:144
 msgid ""
 "br#\"You can also use \"fancier\" formatting, \\\n"
 "                    like with normal raw strings\"#"
 msgstr ""
+"br#\"你也可以使用"更花哨的"格式化，\\\n"
+"                    就像普通的原始字符串一样\"#"
 
 #: src/std/str.md:147
 msgid "// Byte strings don't have to be UTF-8\n"
-msgstr ""
+msgstr "// 字节字符串不必是 UTF-8\n"
 
 #: src/std/str.md:148
 msgid "b\"\\x82\\xe6\\x82\\xa8\\x82\\xb1\\x82\\xbb\""
-msgstr ""
+msgstr "b\"\\x82\\xe6\\x82\\xa8\\x82\\xb1\\x82\\xbb\""
 
 #: src/std/str.md:148
 msgid "// \"ようこそ\" in SHIFT-JIS\n"
-msgstr ""
+msgstr "// SHIFT-JIS 编码的 \"ようこそ\"\n"
 
 #: src/std/str.md:150
 msgid "// But then they can't always be converted to `str`\n"
-msgstr ""
+msgstr "// 但是它们并不总是能被转换为 `str`\n"
 
 #: src/std/str.md:152
 msgid "\"Conversion successful: '{}'\""
-msgstr ""
+msgstr "\"转换成功：'{}'\""
 
 #: src/std/str.md:153
 msgid "\"Conversion failed: {:?}\""
-msgstr ""
+msgstr "\"转换失败：{:?}\""
 
 #: src/std/str.md:158
 msgid ""
 "For conversions between character encodings check out the [encoding](https://"
 "crates.io/crates/encoding) crate."
 msgstr ""
+"对于字符编码之间的转换，请查看 [encoding](https://crates.io/crates/encoding) crate。"
 
 #: src/std/str.md:160
 msgid ""
@@ -12958,6 +12999,8 @@ msgid ""
 "characters is given in the ['Tokens' chapter](https://doc.rust-lang.org/"
 "reference/tokens.html) of the Rust Reference."
 msgstr ""
+"关于编写字符串字面量和转义字符的更详细列表，请参阅 Rust 参考手册的 ['Tokens' 章节](https://doc.rust-lang.org/"
+"reference/tokens.html)。"
 
 #: src/std/option.md:3
 msgid ""
