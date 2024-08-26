@@ -49,6 +49,15 @@ fn main() {
 
     // Variables can be overwritten with shadowing.
     let mutable = true;
+
+    /* Compound types - Array and Tuple */
+
+    // Array signature consists of Type T and length as [T; length].
+    let my_array: [i32; 5] = [1, 2, 3, 4, 5];
+
+    // Tuple is a collection of values of different types 
+    // and is constructed using parentheses ().
+    let my_tuple = (5u32, 1u8, true, -5.04f32);
 }
 ```
 
