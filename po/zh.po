@@ -12501,7 +12501,7 @@ msgid ""
 "// (all the type annotations are superfluous)\n"
 "    // Stack allocated variables\n"
 msgstr ""
-"// （所有的类型注解都不是必须的）\n"
+"// （所有的类型标注都不是必须的）\n"
 "    // 栈分配的变量\n"
 
 #: src/std/box.md:47
@@ -12708,7 +12708,7 @@ msgid ""
 "// (all the type annotations are superfluous)\n"
 "    // A reference to a string allocated in read only memory\n"
 msgstr ""
-"// （所有的类型注解都是多余的）\n"
+"// （所有的类型标注都是多余的）\n"
 "    // 一个指向只读内存中分配的字符串的引用\n"
 
 #: src/std/str.md:16
@@ -12940,7 +12940,7 @@ msgstr "\"一些转义的字节：{:?}\""
 
 #: src/std/str.md:135
 msgid "// Raw byte strings work just like raw strings\n"
-msgstr "// 原始字节字符串的工作方式就像原始字符串\n"
+msgstr "// 原始字节字符串和原始字符串的写法一样\n"
 
 #: src/std/str.md:136
 msgid "br\"\\u{211D} is not escaped here\""
@@ -12959,8 +12959,9 @@ msgid ""
 "br#\"You can also use \"fancier\" formatting, \\\n"
 "                    like with normal raw strings\"#"
 msgstr ""
-"br#\"你也可以使用"更花哨的"格式化，\\\n"
-"                    就像普通的原始字符串一样\"#"
+"br#\"You can also use \"fancier\" formatting, \\\n"
+"                    like with normal raw strings\"#"
+"/*你也可以使用"更花哨的"格式，就像普通的原始字符串一样*/"
 
 #: src/std/str.md:147
 msgid "// Byte strings don't have to be UTF-8\n"
@@ -13007,62 +13008,63 @@ msgid ""
 "Sometimes it's desirable to catch the failure of some parts of a program "
 "instead of calling `panic!`; this can be accomplished using the `Option` enum."
 msgstr ""
+"有时我们希望捕获程序某些部分的失败，而不是调用 `panic!`；这可以通过使用 `Option` 枚举来实现。"
 
 #: src/std/option.md:6
 msgid "The `Option<T>` enum has two variants:"
-msgstr ""
+msgstr "`Option<T>` 枚举有两个变体："
 
 #: src/std/option.md:8
 msgid "`None`, to indicate failure or lack of value, and"
-msgstr ""
+msgstr "`None`，表示失败或缺少值，以及"
 
 #: src/std/option.md:9
 msgid "`Some(value)`, a tuple struct that wraps a `value` with type `T`."
-msgstr ""
+msgstr "`Some(value)`，一个包装了类型为 `T` 的 `value` 的元组结构体。"
 
 #: src/std/option.md:12
 msgid "// An integer division that doesn't `panic!`\n"
-msgstr ""
+msgstr "// 一个不会 `panic!` 的整数除法\n"
 
 #: src/std/option.md:15
 msgid "// Failure is represented as the `None` variant\n"
-msgstr ""
+msgstr "// 失败表示为 `None` 变体\n"
 
 #: src/std/option.md:18
 msgid "// Result is wrapped in a `Some` variant\n"
-msgstr ""
+msgstr "// 结果被包装在 `Some` 变体中\n"
 
 #: src/std/option.md:22
 msgid "// This function handles a division that may not succeed\n"
-msgstr ""
+msgstr "// 这个函数处理可能不成功的除法\n"
 
 #: src/std/option.md:25
 msgid "// `Option` values can be pattern matched, just like other enums\n"
-msgstr ""
+msgstr "// `Option` 值可以被模式匹配，就像其他枚举一样\n"
 
 #: src/std/option.md:27
 msgid "\"{} / {} failed!\""
-msgstr ""
+msgstr "\"{} / {} 失败！\""
 
 #: src/std/option.md:29
 msgid "\"{} / {} = {}\""
-msgstr ""
+msgstr "\"{} / {} = {}\""
 
 #: src/std/option.md:38
 msgid "// Binding `None` to a variable needs to be type annotated\n"
-msgstr ""
+msgstr "// 将 `None` 绑定到变量需要类型标注\n"
 
 #: src/std/option.md:44
 msgid "// Unwrapping a `Some` variant will extract the value wrapped.\n"
-msgstr ""
+msgstr "// 解包 `Some` 变体将提取被包装的值。\n"
 
 #: src/std/option.md:45 src/std/option.md:48
 msgid "\"{:?} unwraps to {:?}\""
-msgstr ""
+msgstr "\"{:?} 解包为 {:?}\""
 
 #: src/std/option.md:47
 msgid "// Unwrapping a `None` variant will `panic!`\n"
-msgstr ""
+msgstr "// 解包 `None` 变体将会 `panic!`\n"
 
 #: src/std/result.md:3
 msgid ""
@@ -13071,48 +13073,53 @@ msgid ""
 "However, sometimes it is important to express _why_ an operation failed. To "
 "do this we have the `Result` enum."
 msgstr ""
+"我们已经看到 `Option` 枚举可以用作可能失败的函数的返回值，其中 `None` 可以用来表示失败。"
+"然而，有时表达操作**为什么**失败很重要。为此，我们有 `Result` 枚举。"
 
 #: src/std/result.md:8
 msgid "The `Result<T, E>` enum has two variants:"
-msgstr ""
+msgstr "`Result<T, E>` 枚举有两个变体："
 
 #: src/std/result.md:10
 msgid ""
 "`Ok(value)` which indicates that the operation succeeded, and wraps the "
 "`value` returned by the operation. (`value` has type `T`)"
 msgstr ""
+"`Ok(value)` 表示操作成功，并包装了操作返回的 `value`。（`value` 的类型为 `T`）"
 
 #: src/std/result.md:12
 msgid ""
 "`Err(why)`, which indicates that the operation failed, and wraps `why`, which "
 "(hopefully) explains the cause of the failure. (`why` has type `E`)"
 msgstr ""
+"`Err(why)`，表示操作失败，并包装了 `why`，它解释了失败的原因（但愿如此）。（`why` 的类型为 `E`）"
 
 #: src/std/result.md:17
 msgid "// Mathematical \"errors\" we want to catch\n"
-msgstr ""
+msgstr "// 我们想要捕获的数学"错误"\n"
 
 #: src/std/result.md:29
 msgid ""
 "// This operation would `fail`, instead let's return the reason of\n"
 "            // the failure wrapped in `Err`\n"
 msgstr ""
+"// 这个操作会"失败"，那么（与其让程序崩溃）不如让我们把失败原因包装在 `Err` 中返回\n"
 
 #: src/std/result.md:33
 msgid "// This operation is valid, return the result wrapped in `Ok`\n"
-msgstr ""
+msgstr "// 这个操作是有效的，返回包装在 `Ok` 中的结果\n"
 
 #: src/std/result.md:54
 msgid "// `op(x, y)` === `sqrt(ln(x / y))`\n"
-msgstr ""
+msgstr "// `op(x, y)` === `sqrt(ln(x / y))`\n"
 
 #: src/std/result.md:57
 msgid "// This is a three level match pyramid!\n"
-msgstr ""
+msgstr "// 这是一个三层的匹配金字塔！\n"
 
 #: src/std/result.md:71
 msgid "// Will this fail?\n"
-msgstr ""
+msgstr "// 这会失败吗？\n"
 
 #: src/std/result/question_mark.md:3
 msgid ""
@@ -13122,36 +13129,42 @@ msgid ""
 "where the `Err(err)` branch expands to an early `return Err(From::"
 "from(err))`, and the `Ok(ok)` branch expands to an `ok` expression."
 msgstr ""
+"嵌套使用 match 处理 result 可能会变得相当混乱；幸运的是，`?` 运算符可以让代码变得整洁。"
+"`?` 用在返回 `Result` 的表达式的末尾，相当于一个 match 表达式，"
+"其中 `Err(err)` 分支展开为提前返回的 `return Err(From::from(err))`，"
+"而 `Ok(ok)` 分支展开为 `ok` 表达式。"
 
 #: src/std/result/question_mark.md:44
 msgid "// Intermediate function\n"
-msgstr ""
+msgstr "// 中间函数\n"
 
 #: src/std/result/question_mark.md:46
 msgid "// if `div` \"fails\", then `DivisionByZero` will be `return`ed\n"
-msgstr ""
+msgstr "// 如果 `div` "失败"，那么 `DivisionByZero` 将被 `return`\n"
 
 #: src/std/result/question_mark.md:49
 msgid "// if `ln` \"fails\", then `NonPositiveLogarithm` will be `return`ed\n"
-msgstr ""
+msgstr "// 如果 `ln` "失败"，那么 `NonPositiveLogarithm` 将被 `return`\n"
 
 #: src/std/result/question_mark.md:59
 msgid "\"logarithm of non-positive number\""
-msgstr ""
+msgstr "\"非正数的对数\""
 
 #: src/std/result/question_mark.md:61 src/std/panic.md:15
 msgid "\"division by zero\""
-msgstr ""
+msgstr "\"除以零\""
 
 #: src/std/result/question_mark.md:63
 msgid "\"square root of negative number\""
-msgstr ""
+msgstr "\"负数的平方根\""
 
 #: src/std/result/question_mark.md:75
 msgid ""
 "Be sure to check the [documentation](https://doc.rust-lang.org/std/result/"
 "index.html), as there are many methods to map/compose `Result`."
 msgstr ""
+"记得查看[文档](https://doc.rust-lang.org/std/result/index.html)，"
+"因为其中有许多方法可以映射/组合 `Result`。"
 
 #: src/std/panic.md:3
 msgid ""
@@ -13159,44 +13172,47 @@ msgid ""
 "stack. While unwinding, the runtime will take care of freeing all the "
 "resources _owned_ by the thread by calling the destructor of all its objects."
 msgstr ""
+"`panic!` 宏可以用来产生一个 panic 并开始展开（unwind）栈。在展开过程中，"
+"运行时将通过调用所有对象的析构函数来释放线程**拥有**的所有资源。"
 
 #: src/std/panic.md:7
 msgid ""
 "Since we are dealing with programs with only one thread, `panic!` will cause "
 "the program to report the panic message and exit."
 msgstr ""
+"由于我们处理的是只有一个线程的程序，`panic!` 将导致程序报告 panic 消息并退出。"
 
 #: src/std/panic.md:11
 msgid "// Re-implementation of integer division (/)\n"
-msgstr ""
+msgstr "// 重新实现整数除法 (/)\n"
 
 #: src/std/panic.md:14
 msgid "// Division by zero triggers a panic\n"
-msgstr ""
+msgstr "// 除以零触发 panic\n"
 
 #: src/std/panic.md:20
 msgid "// The `main` task\n"
-msgstr ""
+msgstr "// `main` 任务\n"
 
 #: src/std/panic.md:23
 msgid "// Heap allocated integer\n"
-msgstr ""
+msgstr "// 堆分配的整数\n"
 
 #: src/std/panic.md:26
 msgid "// This operation will trigger a task failure\n"
-msgstr ""
+msgstr "// 这个操作将触发任务失败\n"
 
 #: src/std/panic.md:29
 msgid "\"This point won't be reached!\""
-msgstr ""
+msgstr "\"这个点不会被达到！\""
 
 #: src/std/panic.md:31
 msgid "// `_x` should get destroyed at this point\n"
-msgstr ""
+msgstr "// `_x` 应该在这一点被销毁\n"
 
 #: src/std/panic.md:35
 msgid "Let's check that `panic!` doesn't leak memory."
-msgstr ""
+msgstr "让我们检查 `panic!` 是否不会泄漏内存。"
 
 #: src/std/hash.md:3
 msgid ""
@@ -13204,6 +13220,8 @@ msgid ""
 "key. `HashMap` keys can be booleans, integers, strings, or any other type "
 "that implements the `Eq` and `Hash` traits. More on this in the next section."
 msgstr ""
+"动态数组（Vector）通过整数索引存储值，而 `HashMap` 通过键存储值。`HashMap` 的键可以是布尔值、"
+"整数、字符串，或任何其他实现了 `Eq` 和 `Hash` trait 的类型。下一节将详细介绍这一点。"
 
 #: src/std/hash.md:8
 msgid ""
@@ -13213,94 +13231,105 @@ msgid ""
 "`HashMap::new()` to get a HashMap with a default initial capacity "
 "(recommended)."
 msgstr ""
+"与动态数组类似，`HashMap` 也是可增长的，但 HashMap 在有多余空间时也可以自行收缩。"
+"你可以使用 `HashMap::with_capacity(uint)` 创建一个具有特定初始容量的 HashMap，"
+"或者使用 `HashMap::new()` 来获得一个具有默认初始容量的 HashMap（推荐）。"
 
 #: src/std/hash.md:19 src/std/hash.md:30
 msgid "\"798-1364\""
-msgstr ""
+msgstr "\"798-1364\""
 
 #: src/std/hash.md:19
 msgid ""
 "\"We're sorry, the call cannot be completed as dialed. \n"
 "            Please hang up and try again.\""
 msgstr ""
+"\"很抱歉，无法完成您拨打的电话。\n"
+"            请挂机后重试。\""
 
 #: src/std/hash.md:21 src/std/hash.md:31
 msgid "\"645-7689\""
-msgstr ""
+msgstr "\"645-7689\""
 
 #: src/std/hash.md:21
 msgid ""
 "\"Hello, this is Mr. Awesome's Pizza. My name is Fred.\n"
 "            What can I get for you today?\""
 msgstr ""
+"\"你好，这里是 Awesome 先生的披萨店。我是 Fred。\n"
+"            今天您想点些什么？\""
 
 #: src/std/hash.md:23
 msgid "\"Hi! Who is this again?\""
-msgstr ""
+msgstr "\"嗨！请问是哪位？\""
 
 #: src/std/hash.md:30 src/std/hash.md:36 src/std/hash.md:43
 msgid "\"Daniel\""
-msgstr ""
+msgstr "\"Daniel\""
 
 #: src/std/hash.md:31 src/std/hash.md:45 src/std/hash.md:50
 msgid "\"Ashley\""
-msgstr ""
+msgstr "\"Ashley\""
 
 #: src/std/hash.md:32
 msgid "\"Katie\""
-msgstr ""
+msgstr "\"Katie\""
 
 #: src/std/hash.md:32
 msgid "\"435-8291\""
-msgstr ""
+msgstr "\"435-8291\""
 
 #: src/std/hash.md:33
 msgid "\"Robert\""
-msgstr ""
+msgstr "\"Robert\""
 
 #: src/std/hash.md:33
 msgid "\"956-1745\""
-msgstr ""
+msgstr "\"956-1745\""
 
 #: src/std/hash.md:35
 msgid "// Takes a reference and returns Option<&V>\n"
-msgstr ""
+msgstr "// 接受一个引用并返回 Option<&V>\n"
 
 #: src/std/hash.md:37
 msgid "\"Calling Daniel: {}\""
-msgstr ""
+msgstr "\"正在呼叫 Daniel：{}\""
 
 #: src/std/hash.md:38
 msgid "\"Don't have Daniel's number.\""
-msgstr ""
+msgstr "\"没有 Daniel 的号码。\""
 
 #: src/std/hash.md:41
 msgid ""
 "// `HashMap::insert()` returns `None`\n"
 "    // if the inserted value is new, `Some(value)` otherwise\n"
 msgstr ""
+"// `HashMap::insert()` 在插入新值时返回 `None`\n"
+"    // 否则返回 `Some(value)`\n"
 
 #: src/std/hash.md:43
 msgid "\"164-6743\""
-msgstr ""
+msgstr "\"164-6743\""
 
 #: src/std/hash.md:46
 msgid "\"Calling Ashley: {}\""
-msgstr ""
+msgstr "\"正在呼叫 Ashley：{}\""
 
 #: src/std/hash.md:47
 msgid "\"Don't have Ashley's number.\""
-msgstr ""
+msgstr "\"没有 Ashley 的号码。\""
 
 #: src/std/hash.md:52
 msgid ""
 "// `HashMap::iter()` returns an iterator that yields \n"
 "    // (&'a key, &'a value) pairs in arbitrary order.\n"
 msgstr ""
+"// `HashMap::iter()` 返回一个迭代器，该迭代器以任意顺序产生\n"
+"    // (&'a key, &'a value) 对。\n"
 
 #: src/std/hash.md:55
 msgid "\"Calling {}: {}\""
-msgstr ""
+msgstr "\"正在呼叫 {}：{}\""
 
 #: src/std/hash.md:60
 msgid ""
@@ -13308,26 +13337,31 @@ msgid ""
 "tables) work, have a look at [Hash Table Wikipedia](https://en.wikipedia.org/"
 "wiki/Hash_table)"
 msgstr ""
+"要了解更多关于哈希和哈希映射（有时称为哈希表）的工作原理，可以查看 "
+"[哈希表维基百科](https://en.wikipedia.org/wiki/Hash_table)"
 
 #: src/std/hash/alt_key_types.md:3
 msgid ""
 "Any type that implements the `Eq` and `Hash` traits can be a key in "
 "`HashMap`. This includes:"
 msgstr ""
+"任何实现了 `Eq` 和 `Hash` trait 的类型都可以作为 `HashMap` 的键。这包括："
 
 #: src/std/hash/alt_key_types.md:6
 msgid "`bool` (though not very useful since there are only two possible keys)"
-msgstr ""
+msgstr "`bool`（虽然不是很有用，因为只有两个可能的键）"
 
 #: src/std/hash/alt_key_types.md:7
 msgid "`int`, `uint`, and all variations thereof"
-msgstr ""
+msgstr "`int`、`uint` 及其所有变体"
 
 #: src/std/hash/alt_key_types.md:8
 msgid ""
 "`String` and `&str` (protip: you can have a `HashMap` keyed by `String` and "
 "call `.get()` with an `&str`)"
 msgstr ""
+"`String` 和 `&str`（专业提示：你可以使用 `String` 作为 `HashMap` 的键，"
+"并用 `&str` 调用 `.get()`）"
 
 #: src/std/hash/alt_key_types.md:11
 msgid ""
@@ -13336,6 +13370,9 @@ msgid ""
 "Floating_point#Accuracy_problems) would make using them as hashmap keys "
 "horribly error-prone."
 msgstr ""
+"注意，`f32` 和 `f64` **没有**实现 `Hash`，这很大程度上是由于"
+"[浮点精度误差](https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems)，"
+"因此使用它们作为哈希映射键容易出错。"
 
 #: src/std/hash/alt_key_types.md:15
 msgid ""
@@ -13343,12 +13380,15 @@ msgid ""
 "respectively implements `Eq` and `Hash`. For example, `Vec<T>` will implement "
 "`Hash` if `T` implements `Hash`."
 msgstr ""
+"如果集合类中包含的类型分别实现了 `Eq` 和 `Hash`，那么这些集合类也就实现了 `Eq` 和 `Hash`。"
+"例如，如果 `T` 实现了 `Hash`，那么 `Vec<T>` 也实现了 `Hash`。"
 
 #: src/std/hash/alt_key_types.md:19
 msgid ""
 "You can easily implement `Eq` and `Hash` for a custom type with just one "
 "line: `#[derive(PartialEq, Eq, Hash)]`"
 msgstr ""
+"你可以通过一行代码轻松地为自定义类型实现 `Eq` 和 `Hash`：`#[derive(PartialEq, Eq, Hash)]`"
 
 #: src/std/hash/alt_key_types.md:22
 msgid ""
@@ -13356,77 +13396,82 @@ msgid ""
 "can implement `Eq` and/or `Hash` yourself. This guide will not cover the "
 "specifics of implementing `Hash`."
 msgstr ""
+"编译器会完成剩下的工作。如果你想对细节有更多控制，可以自己实现 `Eq` 和/或 `Hash`。"
+"本指南不会涉及实现 `Hash` 的具体细节。"
 
 #: src/std/hash/alt_key_types.md:26
 msgid ""
 "To play around with using a `struct` in `HashMap`, let's try making a very "
 "simple user logon system:"
 msgstr ""
+"为了尝试在 `HashMap` 中使用 `struct`，让我们试着制作一个非常简单的用户登录系统："
 
 #: src/std/hash/alt_key_types.md:31
 msgid "// Eq requires that you derive PartialEq on the type.\n"
-msgstr ""
+msgstr "// Eq 要求你在类型上派生 PartialEq。\n"
 
 #: src/std/hash/alt_key_types.md:48
 msgid "\"Username: {}\""
-msgstr ""
+msgstr "\"用户名：{}\""
 
 #: src/std/hash/alt_key_types.md:49
 msgid "\"Password: {}\""
-msgstr ""
+msgstr "\"密码：{}\""
 
 #: src/std/hash/alt_key_types.md:50
 msgid "\"Attempting logon...\""
-msgstr ""
+msgstr "\"尝试登录...\""
 
 #: src/std/hash/alt_key_types.md:59
 msgid "\"Successful logon!\""
-msgstr ""
+msgstr "\"登录成功！\""
 
 #: src/std/hash/alt_key_types.md:60
 msgid "\"Name: {}\""
-msgstr ""
+msgstr "\"姓名：{}\""
 
 #: src/std/hash/alt_key_types.md:61
 msgid "\"Email: {}\""
-msgstr ""
+msgstr "\"邮箱：{}\""
 
 #: src/std/hash/alt_key_types.md:63
 msgid "\"Login failed!\""
-msgstr ""
+msgstr "\"登录失败！\""
 
 #: src/std/hash/alt_key_types.md:71 src/std/hash/alt_key_types.md:82
 #: src/std/hash/alt_key_types.md:84
 msgid "\"j.everyman\""
-msgstr ""
+msgstr "\"j.everyman\""
 
 #: src/std/hash/alt_key_types.md:72 src/std/hash/alt_key_types.md:84
 msgid "\"password123\""
-msgstr ""
+msgstr "\"password123\""
 
 #: src/std/hash/alt_key_types.md:76
 msgid "\"John Everyman\""
-msgstr ""
+msgstr "\"John Everyman\""
 
 #: src/std/hash/alt_key_types.md:77
 msgid "\"j.everyman@email.com\""
-msgstr ""
+msgstr "\"j.everyman@email.com\""
 
 #: src/std/hash/alt_key_types.md:82
 msgid "\"psasword123\""
-msgstr ""
+msgstr "\"psasword123\""
 
 #: src/std/hash/hashset.md:3
 msgid ""
 "Consider a `HashSet` as a `HashMap` where we just care about the keys "
 "( `HashSet<T>` is, in actuality, just a wrapper around `HashMap<T, ()>`)."
 msgstr ""
+"可以将 `HashSet` 视为一个只关心键的 `HashMap`（实际上，`HashSet<T>` 只是 `HashMap<T, ()>` 的一个封装）。"
 
 #: src/std/hash/hashset.md:6
 msgid ""
 "\"What's the point of that?\" you ask. \"I could just store the keys in a "
 "`Vec`.\""
 msgstr ""
+"你可能会问："这有什么意义？我可以直接把键存储在 `Vec` 中。""
 
 #: src/std/hash/hashset.md:8
 msgid ""
@@ -13435,6 +13480,7 @@ msgid ""
 "just one implementation. (see also: [`BTreeSet`](https://doc.rust-lang.org/"
 "std/collections/struct.BTreeSet.html))"
 msgstr ""
+"`HashSet` 的独特之处在于它保证不会有重复的元素。这是任何集合类型都应该满足的契约。`HashSet` 只是其中一种实现。（另见：[`BTreeSet`](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html)）"
 
 #: src/std/hash/hashset.md:13
 msgid ""
@@ -13442,56 +13488,60 @@ msgid ""
 "value is equal to the existing and they both have the same hash), then the "
 "new value will replace the old."
 msgstr ""
+"如果你插入一个已经存在于 `HashSet` 中的值（即新值等于现有值，且它们的哈希值相同），那么新值将替换旧值。"
 
 #: src/std/hash/hashset.md:17
 msgid ""
 "This is great for when you never want more than one of something, or when you "
 "want to know if you've already got something."
 msgstr ""
+"当你不希望某样东西出现多次，或者想知道是否已经拥有某样东西时，这非常有用。"
 
 #: src/std/hash/hashset.md:20
 msgid "But sets can do more than that."
-msgstr ""
+msgstr "但是集合的功能不仅限于此。"
 
 #: src/std/hash/hashset.md:22
 msgid ""
 "Sets have 4 primary operations (all of the following calls return an "
 "iterator):"
 msgstr ""
+"集合有 4 种主要操作（以下所有调用都返回一个迭代器）："
 
 #: src/std/hash/hashset.md:24
 msgid "`union`: get all the unique elements in both sets."
-msgstr ""
+msgstr "`union`：获取两个集合中的所有唯一元素。"
 
 #: src/std/hash/hashset.md:26
 msgid ""
 "`difference`: get all the elements that are in the first set but not the "
 "second."
-msgstr ""
+msgstr "`difference`：获取存在于第一个集合但不在第二个集合中的所有元素。"
 
 #: src/std/hash/hashset.md:28
 msgid "`intersection`: get all the elements that are only in _both_ sets."
-msgstr ""
+msgstr "`intersection`：获取**同时**存在于两个集合中的所有元素。"
 
 #: src/std/hash/hashset.md:30
 msgid ""
 "`symmetric_difference`: get all the elements that are in one set or the "
 "other, but _not_ both."
-msgstr ""
+msgstr "`symmetric_difference`：获取存在于其中一个集合中，但**不**同时存在于两个集合中的所有元素。"
 
 #: src/std/hash/hashset.md:33
 msgid "Try all of these in the following example:"
-msgstr ""
+msgstr "在下面的例子中尝试所有这些操作："
 
 #: src/std/hash/hashset.md:45
 msgid ""
 "// `HashSet::insert()` returns false if\n"
 "    // there was a value already present.\n"
 msgstr ""
+"// 如果值已经存在，`HashSet::insert()` 返回 false。\n"
 
 #: src/std/hash/hashset.md:47
 msgid "\"Value 4 is already in set B!\""
-msgstr ""
+msgstr "\"值 4 已经在集合 B 中！\""
 
 #: src/std/hash/hashset.md:52
 msgid ""
@@ -13499,52 +13549,56 @@ msgid ""
 "    // then the collection implements `Debug`.\n"
 "    // It usually prints its elements in the format `[elem1, elem2, ...]`\n"
 msgstr ""
+"// 如果集合的元素类型实现了 `Debug`，\n"
+"    // 那么该集合也实现了 `Debug`。\n"
+"    // 它通常以 `[elem1, elem2, ...]` 的格式打印其元素\n"
 
 #: src/std/hash/hashset.md:55
 msgid "\"A: {:?}\""
-msgstr ""
+msgstr "\"A: {:?}\""
 
 #: src/std/hash/hashset.md:56
 msgid "\"B: {:?}\""
-msgstr ""
+msgstr "\"B: {:?}\""
 
 #: src/std/hash/hashset.md:58
 msgid "// Print [1, 2, 3, 4, 5] in arbitrary order\n"
-msgstr ""
+msgstr "// 以任意顺序打印 [1, 2, 3, 4, 5]\n"
 
 #: src/std/hash/hashset.md:59
 msgid "\"Union: {:?}\""
-msgstr ""
+msgstr "\"并集：{:?}\""
 
 #: src/std/hash/hashset.md:61
 msgid "// This should print [1]\n"
-msgstr ""
+msgstr "// 这应该打印 [1]\n"
 
 #: src/std/hash/hashset.md:62
 msgid "\"Difference: {:?}\""
-msgstr ""
+msgstr "\"差集：{:?}\""
 
 #: src/std/hash/hashset.md:64
 msgid "// Print [2, 3, 4] in arbitrary order.\n"
-msgstr ""
+msgstr "// 以任意顺序打印 [2, 3, 4]。\n"
 
 #: src/std/hash/hashset.md:65
 msgid "\"Intersection: {:?}\""
-msgstr ""
+msgstr "\"交集：{:?}\""
 
 #: src/std/hash/hashset.md:67
 msgid "// Print [1, 5]\n"
-msgstr ""
+msgstr "// 打印 [1, 5]\n"
 
 #: src/std/hash/hashset.md:68
 msgid "\"Symmetric Difference: {:?}\""
-msgstr ""
+msgstr "\"对称差：{:?}\""
 
 #: src/std/hash/hashset.md:73
 msgid ""
 "(Examples are adapted from the [documentation.](https://doc.rust-lang.org/std/"
 "collections/struct.HashSet.html#method.difference))"
 msgstr ""
+"（示例改编自[文档。](https://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference)）"
 
 #: src/std/rc.md:3
 msgid ""
@@ -13552,6 +13606,7 @@ msgid ""
 "keeps track of the number of the references which means the number of owners "
 "of the value wrapped inside an `Rc`."
 msgstr ""
+"当需要多重所有权时，可以使用 `Rc`（引用计数）。`Rc` 会跟踪引用的数量，也就是包裹在 `Rc` 内部的值的所有者数量。"
 
 #: src/std/rc.md:5
 msgid ""
@@ -13560,60 +13615,62 @@ msgid ""
 "`Rc`'s reference count becomes zero (which means there are no remaining "
 "owners), both the `Rc` and the value are all dropped."
 msgstr ""
+"每当克隆一个 `Rc` 时，引用计数就会增加 1，每当一个克隆的 `Rc` 离开作用域时，引用计数就会减少 1。当 `Rc` 的引用计数变为零（这意味着没有剩余的所有者）时，`Rc` 和其中的值都会被丢弃。"
 
 #: src/std/rc.md:7
 msgid ""
 "Cloning an `Rc` never performs a deep copy. Cloning creates just another "
 "pointer to the wrapped value, and increments the count."
 msgstr ""
+"克隆 `Rc` 从不执行深拷贝。克隆只是创建另一个指向包裹值的指针，并增加计数。"
 
 #: src/std/rc.md:13
 msgid "\"Rc examples\""
-msgstr ""
+msgstr "\"Rc 示例\""
 
 #: src/std/rc.md:15
 msgid "\"--- rc_a is created ---\""
-msgstr ""
+msgstr "\"--- rc_a 被创建 ---\""
 
 #: src/std/rc.md:18 src/std/rc.md:25 src/std/rc.md:37
 msgid "\"Reference Count of rc_a: {}\""
-msgstr ""
+msgstr "\"rc_a 的引用计数：{}\""
 
 #: src/std/rc.md:21
 msgid "\"--- rc_a is cloned to rc_b ---\""
-msgstr ""
+msgstr "\"--- rc_a 被克隆到 rc_b ---\""
 
 #: src/std/rc.md:24
 msgid "\"Reference Count of rc_b: {}\""
-msgstr ""
+msgstr "\"rc_b 的引用计数：{}\""
 
 #: src/std/rc.md:27
 msgid "// Two `Rc`s are equal if their inner values are equal\n"
-msgstr ""
+msgstr "// 如果两个 `Rc` 的内部值相等，则它们相等\n"
 
 #: src/std/rc.md:28
 msgid "\"rc_a and rc_b are equal: {}\""
-msgstr ""
+msgstr "\"rc_a 和 rc_b 相等：{}\""
 
 #: src/std/rc.md:30
 msgid "// We can use methods of a value directly\n"
-msgstr ""
+msgstr "// 我们可以直接使用值的方法\n"
 
 #: src/std/rc.md:31
 msgid "\"Length of the value inside rc_a: {}\""
-msgstr ""
+msgstr "\"rc_a 内部值的长度：{}\""
 
 #: src/std/rc.md:32
 msgid "\"Value of rc_b: {}\""
-msgstr ""
+msgstr "\"rc_b 的值：{}\""
 
 #: src/std/rc.md:34
 msgid "\"--- rc_b is dropped out of scope ---\""
-msgstr ""
+msgstr "\"--- rc_b 离开作用域 ---\""
 
 #: src/std/rc.md:39
 msgid "\"--- rc_a is dropped out of scope ---\""
-msgstr ""
+msgstr "\"--- rc_a 离开作用域 ---\""
 
 #: src/std/rc.md:42
 msgid ""
@@ -13622,16 +13679,22 @@ msgid ""
 "    // println!(\"rc_examples: {}\", rc_examples);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// 错误！`rc_examples` 已经被移动到 `rc_a` 中\n"
+"    // 当 `rc_a` 被丢弃时，`rc_examples` 也会一起被丢弃\n"
+"    // println!(\"rc_examples: {}\", rc_examples);\n"
+"    // TODO ^ 尝试取消注释这一行\n"
 
 #: src/std/rc.md:51
 msgid ""
 "[std::rc](https://doc.rust-lang.org/std/rc/index.html) and [std::sync::arc]"
 "(https://doc.rust-lang.org/std/sync/struct.Arc.html)."
 msgstr ""
+"[std::rc](https://doc.rust-lang.org/std/rc/index.html) 和 [std::sync::arc]"
+"(https://doc.rust-lang.org/std/sync/struct.Arc.html)。"
 
 #: src/std/arc.md:1
 msgid "Arc"
-msgstr ""
+msgstr "Arc"
 
 #: src/std/arc.md:3
 msgid ""
@@ -13642,75 +13705,82 @@ msgid ""
 "when the last reference pointer to a value is out of scope, the variable is "
 "dropped."
 msgstr ""
+"当需要在线程间共享所有权时，可以使用 `Arc`（原子引用计数）。这个结构体通过 `Clone` 实现可以为内存堆中值的位置创建一个引用指针，同时增加引用计数。由于它在线程间共享所有权，当最后一个指向某个值的引用指针离开作用域时，该变量就会被丢弃。"
 
 #: src/std/arc.md:15
 msgid "// This variable declaration is where its value is specified.\n"
-msgstr ""
+msgstr "// 这个变量声明指定了它的值。\n"
 
 #: src/std/arc.md:16
 msgid "\"the same apple\""
-msgstr ""
+msgstr "\"同一个苹果\""
 
 #: src/std/arc.md:19
 msgid ""
 "// Here there is no value specification as it is a pointer to a\n"
 "        // reference in the memory heap.\n"
 msgstr ""
+"// 这里没有值的指定，因为它是指向内存堆中引用的指针。\n"
+"        // \n"
 
 #: src/std/arc.md:24
 msgid ""
 "// As Arc was used, threads can be spawned using the value allocated\n"
 "            // in the Arc variable pointer's location.\n"
 msgstr ""
+"// 由于使用了 Arc，可以使用 Arc 变量指针位置中分配的值来生成线程。\n"
+"            // \n"
 
 #: src/std/arc.md:30
 msgid "// Make sure all Arc instances are printed from spawned threads.\n"
-msgstr ""
+msgstr "// 确保所有 Arc 实例都从生成的线程中打印出来。\n"
 
 #: src/std_misc.md:3
 msgid ""
 "Many other types are provided by the std library to support things such as:"
-msgstr ""
+msgstr "标准库提供了许多其他类型来支持诸如以下功能："
 
 #: src/std_misc.md:10
 msgid "These expand beyond what the [primitives](primitives.md) provide."
-msgstr ""
+msgstr "这些扩展了[原生类型](primitives.md)所提供的功能。"
 
 #: src/std_misc/threads.md:3
 msgid ""
 "Rust provides a mechanism for spawning native OS threads via the `spawn` "
 "function, the argument of this function is a moving closure."
 msgstr ""
+"Rust 通过 `spawn` 函数提供了一种生成本地操作系统线程的机制，这个函数的参数是一个移动（moving）闭包。"
 
 #: src/std_misc/threads.md:10 src/std_misc/threads/testcase_mapreduce.md:28
 msgid "// This is the `main` thread\n"
-msgstr ""
+msgstr "// 这是 `main` 线程\n"
 
 #: src/std_misc/threads.md:13
 msgid "// Make a vector to hold the children which are spawned.\n"
-msgstr ""
+msgstr "// 创建一个动态数组来保存生成的子线程。\n"
 
 #: src/std_misc/threads.md:17
 msgid "// Spin up another thread\n"
-msgstr ""
+msgstr "// 启动另一个线程\n"
 
 #: src/std_misc/threads.md:19
 msgid "\"this is thread number {}\""
-msgstr ""
+msgstr "\"这是线程 {}\""
 
 #: src/std_misc/threads.md:24
 msgid "// Wait for the thread to finish. Returns a result.\n"
-msgstr ""
+msgstr "// 等待线程结束。返回一个结果。\n"
 
 #: src/std_misc/threads.md:30
 msgid "These threads will be scheduled by the OS."
-msgstr ""
+msgstr "这些线程将由操作系统调度。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:3
 msgid ""
 "Rust makes it very easy to parallelise data processing, without many of the "
 "headaches traditionally associated with such an attempt."
 msgstr ""
+"Rust 使得并行化数据处理变得非常容易，避免了传统上与此类尝试相关的许多麻烦。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:5
 msgid ""
@@ -13718,6 +13788,7 @@ msgid ""
 "These, combined with Rust's concept of Ownership and aliasing rules, "
 "automatically prevent data races."
 msgstr ""
+"标准库提供了现成的优秀线程原语。这些原语结合 Rust 的所有权概念和别名规则，自动防止了数据竞争。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:9
 msgid ""
@@ -13726,6 +13797,7 @@ msgid ""
 "threads. (Where synchronisation is needed, there are synchronisation "
 "primitives like `Mutex`es or `Channel`s.)"
 msgstr ""
+"别名规则（一个可写引用或多个可读引用）自动防止你操作对其他线程可见的状态。（在需要同步的地方，有像 `Mutex` 或 `Channel` 这样的同步原语。）"
 
 #: src/std_misc/threads/testcase_mapreduce.md:14
 msgid ""
@@ -13734,6 +13806,7 @@ msgid ""
 "threads. Each thread will sum its tiny block of digits, and subsequently we "
 "will sum the intermediate sums produced by each thread."
 msgstr ""
+"在这个例子中，我们将计算一个数字块中所有数字的总和。我们将通过将块的不同部分分配给不同的线程来完成这个任务。每个线程将计算其小块数字的总和，随后我们将汇总每个线程产生的中间总和。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:19
 msgid ""
@@ -13745,6 +13818,7 @@ msgid ""
 "data between threads, you can use a smart pointer like `Arc` to keep the data "
 "alive and avoid non-`static` lifetimes.)"
 msgstr ""
+"注意，尽管我们在线程边界之间传递引用，Rust 理解我们只是传递只读引用，因此不会发生不安全或数据竞争的情况。此外，因为我们传递的引用具有 `'static` 生命周期，Rust 理解我们的数据在这些线程仍在运行时不会被销毁。（当你需要在线程之间共享非 `static` 数据时，你可以使用像 `Arc` 这样的智能指针来保持数据的存活并避免非 `static` 生命周期。）"
 
 #: src/std_misc/threads/testcase_mapreduce.md:32
 msgid ""
@@ -13756,6 +13830,11 @@ msgid ""
 "    //\n"
 "    // TODO: see what happens to the output if you insert spaces!\n"
 msgstr ""
+"// 这是我们要处理的数据。\n"
+"    // 我们将通过一个线程化的 map-reduce 算法计算所有数字的总和。\n"
+"    // 每个由空格分隔的块将在不同的线程中处理。\n"
+"    //\n"
+"    // TODO：看看如果你插入空格会发生什么！\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:37
 msgid ""
@@ -13768,10 +13847,18 @@ msgid ""
 "69920216438980873548808413720956532\n"
 "16278424637452589860345374828574668\""
 msgstr ""
+"\"86967897737416471853297327050364959\n"
+"11861322575564723963297542624962850\n"
+"70856234701860851907960690014725639\n"
+"38397966707106094172783238747669219\n"
+"52380795257888236525459303330302837\n"
+"58495327135744041048897885734297812\n"
+"69920216438980873548808413720956532\n"
+"16278424637452589860345374828574668\""
 
 #: src/std_misc/threads/testcase_mapreduce.md:46
 msgid "// Make a vector to hold the child-threads which we will spawn.\n"
-msgstr ""
+msgstr "// 创建一个动态数组来保存我们将要生成的子线程。\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:49
 msgid ""
@@ -13781,12 +13868,19 @@ msgid ""
 "     * Divide our data into segments, and apply initial processing\n"
 "     ************************************************************************/"
 msgstr ""
+"/*************************************************************************\n"
+"     * \"Map\" 阶段\n"
+"     *\n"
+"     * 将我们的数据分成段，并进行初始处理\n"
+"     ************************************************************************/"
 
 #: src/std_misc/threads/testcase_mapreduce.md:55
 msgid ""
 "// split our data into segments for individual calculation\n"
 "    // each chunk will be a reference (&str) into the actual data\n"
 msgstr ""
+"// 将我们的数据分成段以进行单独计算\n"
+"    // 每个块将是对实际数据的引用 (&str)\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:59
 msgid ""
@@ -13797,10 +13891,15 @@ msgid ""
 "a\n"
 "    // \"destructuring assignment\"\n"
 msgstr ""
+"// 遍历数据段。\n"
+"    // .enumerate() 为迭代的每个元素添加当前循环索引\n"
+"    // 结果元组 \"(index, element)\" 然后立即\n"
+"    // 通过 \"解构赋值\" 被 \"解构\" 为两个变量，\"i\" 和 \"data_segment\"\n"
+"    // \n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:65
 msgid "\"data segment {} is \\\"{}\\\"\""
-msgstr ""
+msgstr "\"数据段 {} 是 \\\"{}\\\"\""
 
 #: src/std_misc/threads/testcase_mapreduce.md:67
 msgid ""
@@ -13819,6 +13918,19 @@ msgid ""
 "        //\n"
 "        // TODO: try removing the 'move' and see what happens\n"
 msgstr ""
+"// 在单独的线程中处理每个数据段\n"
+"        //\n"
+"        // spawn() 返回新线程的句柄，\n"
+"        // 我们必须保留它以访问返回值\n"
+"        //\n"
+"        // 'move || -> u32' 是一个闭包的语法，它：\n"
+"        // * 不接受参数（'||'）\n"
+"        // * 获取其捕获变量的所有权（'move'）并\n"
+"        // * 返回一个无符号 32 位整数（'-> u32'）\n"
+"        //\n"
+"        // Rust 足够聪明，能从闭包本身推断出 '-> u32'，\n"
+"        // 所以我们可以省略它。\n"
+"        //\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:82
 msgid "// Calculate the intermediate sum of this segment:\n"
