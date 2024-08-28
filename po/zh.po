@@ -49,7 +49,7 @@ msgstr "格式化"
 
 #: src/SUMMARY.md:13 src/primitives.md:1
 msgid "Primitives"
-msgstr "原始类型"
+msgstr "原生类型"
 
 #: src/SUMMARY.md:14 src/primitives/literals.md:1
 msgid "Literals and operators"
@@ -671,7 +671,7 @@ msgstr "测试实例：map-reduce"
 
 #: src/SUMMARY.md:195 src/std_misc.md:7 src/std_misc/channels.md:1
 msgid "Channels"
-msgstr "通道"
+msgstr "信道"
 
 #: src/SUMMARY.md:196 src/std_misc/path.md:1
 msgid "Path"
@@ -804,7 +804,7 @@ msgstr "[Hello World](hello.md) - 从一个传统的 Hello World 程序开始。
 msgid ""
 "[Primitives](primitives.md) - Learn about signed integers, unsigned integers "
 "and other primitives."
-msgstr "[Primitives](primitives.md) - 学习有关有符号整数、无符号整数和其他原始类型的信息。"
+msgstr "[Primitives](primitives.md) - 学习有关有符号整数、无符号整数和其他原生类型的信息。"
 
 #: src/index.md:18
 msgid "[Custom Types](custom_types.md) - `struct` and `enum`."
@@ -3312,11 +3312,11 @@ msgid ""
 "Rust provides several mechanisms to change or define the type of primitive "
 "and user defined types. The following sections cover:"
 msgstr ""
-"Rust 提供了几种机制来更改或定义原始类型和用户定义类型。以下部分涵盖了："
+"Rust 提供了几种机制来更改或定义原生类型和用户定义类型。以下部分涵盖了："
 
 #: src/types.md:5
 msgid "[Casting](types/cast.md) between primitive types"
-msgstr "原始类型之间的[转换](types/cast.md)"
+msgstr "原生类型之间的[转换](types/cast.md)"
 
 #: src/types.md:6
 msgid "Specifying the desired type of [literals](types/literals.md)"
@@ -3336,7 +3336,7 @@ msgid ""
 "But, explicit type conversion (casting) can be performed using the `as` "
 "keyword."
 msgstr ""
-"Rust 不提供原始类型之间的隐式类型转换（coercion, 强制转换）。但是，可以使用 `as` 关键字执行显式类型转换（casting）。"
+"Rust 不提供原生类型之间的隐式类型转换（coercion, 强制转换）。但是，可以使用 `as` 关键字执行显式类型转换（casting）。"
 
 #: src/types/cast.md:6
 msgid ""
@@ -3633,7 +3633,7 @@ msgid ""
 "Types must have `UpperCamelCase` names, or the compiler will raise a warning. "
 "The exception to this rule are the primitive types: `usize`, `f32`, etc."
 msgstr ""
-"`type` 语句可以用来给一个已存在的类型起一个新名字。类型必须有 `UpperCamelCase`（大驼峰）的名字，否则编译器会发出警告。这个规则的例外是原始类型：`usize`、`f32` 等。"
+"`type` 语句可以用来给一个已存在的类型起一个新名字。类型必须有 `UpperCamelCase`（大驼峰）的名字，否则编译器会发出警告。这个规则的例外是原生类型：`usize`、`f32` 等。"
 
 #: src/types/alias.md:8
 msgid "// `NanoSecond`, `Inch`, and `U64` are new names for `u64`.\n"
@@ -3670,7 +3670,7 @@ msgid ""
 "Primitive types can be converted to each other through [casting](types/cast."
 "md)."
 msgstr ""
-"原始类型可以通过[类型转换](types/cast.md)相互转换。"
+"原生类型可以通过[类型转换](types/cast.md)相互转换。"
 
 #: src/conversion.md:5
 msgid ""
@@ -3705,7 +3705,7 @@ msgid ""
 "are numerous implementations of this trait within the standard library for "
 "conversion of primitive and common types."
 msgstr ""
-"[`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 特质允许一个类型定义如何从另一个类型创建自己，从而提供了一种非常简单的机制来在几种类型之间进行转换。标准库中有许多这个特质的实现，用于原始类型和常见类型的转换。"
+"[`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 特质允许一个类型定义如何从另一个类型创建自己，从而提供了一种非常简单的机制来在几种类型之间进行转换。标准库中有许多这个特质的实现，用于原生类型和常见类型的转换。"
 
 #: src/conversion/from_into.md:14
 msgid "For example we can easily convert a `str` into a `String`"
@@ -12437,7 +12437,7 @@ msgid ""
 "The `std` library provides many custom types which expands drastically on the "
 "`primitives`. Some of these include:"
 msgstr ""
-"`std` 库提供了许多自定义类型，这些类型大大扩展了`原始类型`。其中包括："
+"`std` 库提供了许多自定义类型，这些类型大大扩展了`原生类型`。其中包括："
 
 #: src/std.md:6
 msgid "growable `String`s like: `\"hello world\"`"
@@ -12464,7 +12464,7 @@ msgid ""
 "[primitives](primitives.md) and [the std library](https://doc.rust-lang.org/"
 "std/)"
 msgstr ""
-"[原始类型](primitives.md) 和 [std 库](https://doc.rust-lang.org/std/)"
+"[原生类型](primitives.md) 和 [标准库](https://doc.rust-lang.org/std/)"
 
 #: src/std/box.md:3
 msgid ""
@@ -13749,7 +13749,7 @@ msgid ""
 "Rust provides a mechanism for spawning native OS threads via the `spawn` "
 "function, the argument of this function is a moving closure."
 msgstr ""
-"Rust 通过 `spawn` 函数提供了一种生成本地操作系统线程的机制，这个函数的参数是一个移动（moving）闭包。"
+"Rust 通过 `spawn` 函数提供了一种生成原生操作系统线程的机制，这个函数的参数是一个移动（moving）闭包。"
 
 #: src/std_misc/threads.md:10 src/std_misc/threads/testcase_mapreduce.md:28
 msgid "// This is the `main` thread\n"
@@ -13780,7 +13780,7 @@ msgid ""
 "Rust makes it very easy to parallelise data processing, without many of the "
 "headaches traditionally associated with such an attempt."
 msgstr ""
-"Rust 使得并行化数据处理变得非常容易，避免了传统上与此类尝试相关的许多麻烦。"
+"Rust 使得并行化数据处理变得非常容易，避免了并行处理的很多传统难题。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:5
 msgid ""
