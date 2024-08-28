@@ -13464,7 +13464,7 @@ msgid ""
 "Consider a `HashSet` as a `HashMap` where we just care about the keys "
 "( `HashSet<T>` is, in actuality, just a wrapper around `HashMap<T, ()>`)."
 msgstr ""
-"可以将 `HashSet` 视为一个只关心键的 `HashMap`（实际上，`HashSet<T>` 只是 `HashMap<T, ()>` 的一个封装）。"
+"可以将 `HashSet` 当作一个只关心键的 `HashMap`（实际上，`HashSet<T>` 只是 `HashMap<T, ()>` 的一个封装）。"
 
 #: src/std/hash/hashset.md:6
 msgid ""
@@ -13480,7 +13480,7 @@ msgid ""
 "just one implementation. (see also: [`BTreeSet`](https://doc.rust-lang.org/"
 "std/collections/struct.BTreeSet.html))"
 msgstr ""
-"`HashSet` 的独特之处在于它保证不会有重复的元素。这是任何集合类型都应该满足的契约。`HashSet` 只是其中一种实现。（另见：[`BTreeSet`](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html)）"
+"`HashSet` 的独特之处在于它保证不会有重复的元素。这是任何集合（Set）类型都应该满足的契约。`HashSet` 只是其中一种实现。（另见：[`BTreeSet`](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html)）"
 
 #: src/std/hash/hashset.md:13
 msgid ""
@@ -13510,27 +13510,27 @@ msgstr ""
 
 #: src/std/hash/hashset.md:24
 msgid "`union`: get all the unique elements in both sets."
-msgstr "`union`：获取两个集合中的所有唯一元素。"
+msgstr "并集（`union`）：获取两个集合中的所有唯一元素。"
 
 #: src/std/hash/hashset.md:26
 msgid ""
 "`difference`: get all the elements that are in the first set but not the "
 "second."
-msgstr "`difference`：获取存在于第一个集合但不在第二个集合中的所有元素。"
+msgstr "差集（`difference`）：获取存在于第一个集合但不在第二个集合中的所有元素。"
 
 #: src/std/hash/hashset.md:28
 msgid "`intersection`: get all the elements that are only in _both_ sets."
-msgstr "`intersection`：获取**同时**存在于两个集合中的所有元素。"
+msgstr "交集（`intersection`）：获取**同时**存在于两个集合中的所有元素。"
 
 #: src/std/hash/hashset.md:30
 msgid ""
 "`symmetric_difference`: get all the elements that are in one set or the "
 "other, but _not_ both."
-msgstr "`symmetric_difference`：获取存在于其中一个集合中，但**不**同时存在于两个集合中的所有元素。"
+msgstr "对称差（`symmetric_difference`）：获取存在于其中一个集合中，但**不**同时存在于两个集合中的所有元素。"
 
 #: src/std/hash/hashset.md:33
 msgid "Try all of these in the following example:"
-msgstr "在下面的例子中尝试所有这些操作："
+msgstr "在下面的例子中尝试这些操作："
 
 #: src/std/hash/hashset.md:45
 msgid ""
@@ -13606,7 +13606,7 @@ msgid ""
 "keeps track of the number of the references which means the number of owners "
 "of the value wrapped inside an `Rc`."
 msgstr ""
-"当需要多重所有权时，可以使用 `Rc`（引用计数）。`Rc` 会跟踪引用的数量，也就是包裹在 `Rc` 内部的值的所有者数量。"
+"当需要多个所有权时，可以使用 `Rc`（Reference Counting, 引用计数）。`Rc` 会跟踪引用的数量，也就是包裹在 `Rc` 内部的值的所有者数量。"
 
 #: src/std/rc.md:5
 msgid ""
@@ -13615,7 +13615,7 @@ msgid ""
 "`Rc`'s reference count becomes zero (which means there are no remaining "
 "owners), both the `Rc` and the value are all dropped."
 msgstr ""
-"每当克隆一个 `Rc` 时，引用计数就会增加 1，每当一个克隆的 `Rc` 离开作用域时，引用计数就会减少 1。当 `Rc` 的引用计数变为零（这意味着没有剩余的所有者）时，`Rc` 和其中的值都会被丢弃。"
+"每当克隆一个 `Rc` 时，引用计数就会增加 1，每当一个克隆的 `Rc` 离开作用域时，引用计数就会减少 1。当 `Rc` 的引用计数变为零（这意味着已经没有所有者了）时，`Rc` 和其中的值都会被丢弃。"
 
 #: src/std/rc.md:7
 msgid ""
@@ -13705,7 +13705,7 @@ msgid ""
 "when the last reference pointer to a value is out of scope, the variable is "
 "dropped."
 msgstr ""
-"当需要在线程间共享所有权时，可以使用 `Arc`（原子引用计数）。这个结构体通过 `Clone` 实现可以为内存堆中值的位置创建一个引用指针，同时增加引用计数。由于它在线程间共享所有权，当最后一个指向某个值的引用指针离开作用域时，该变量就会被丢弃。"
+"当需要在线程间共享所有权时，可以使用 `Arc`（Atomically Reference Counted，原子引用计数）。这个结构体通过 `Clone` 实现可以为内存堆中值的位置创建一个引用指针，同时增加引用计数。由于它在线程间共享所有权，当最后一个指向某个值的引用指针离开作用域时，该变量就会被释放。"
 
 #: src/std/arc.md:15
 msgid "// This variable declaration is where its value is specified.\n"
