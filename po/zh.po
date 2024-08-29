@@ -13788,7 +13788,7 @@ msgid ""
 "These, combined with Rust's concept of Ownership and aliasing rules, "
 "automatically prevent data races."
 msgstr ""
-"标准库提供了现成的优秀线程原语。这些原语结合 Rust 的所有权概念和别名规则，自动防止了数据竞争。"
+"标准库提供了开箱即用的出色线程原语，它们与 Rust 的所有权概念和别名规则相结合，可以自动防止数据竞争。。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:9
 msgid ""
@@ -13797,7 +13797,7 @@ msgid ""
 "threads. (Where synchronisation is needed, there are synchronisation "
 "primitives like `Mutex`es or `Channel`s.)"
 msgstr ""
-"别名规则（一个可写引用或多个可读引用）自动防止你操作对其他线程可见的状态。（在需要同步的地方，有像 `Mutex` 或 `Channel` 这样的同步原语。）"
+"别名规则（一个可写引用或多个可读引用）自动防止你操作对其他线程可见的状态。（在需要同步处理时，有像 `Mutex` 或 `Channel` 这样的同步原语。）"
 
 #: src/std_misc/threads/testcase_mapreduce.md:14
 msgid ""
@@ -13818,7 +13818,7 @@ msgid ""
 "data between threads, you can use a smart pointer like `Arc` to keep the data "
 "alive and avoid non-`static` lifetimes.)"
 msgstr ""
-"注意，尽管我们在线程边界之间传递引用，Rust 理解我们只是传递只读引用，因此不会发生不安全或数据竞争的情况。此外，因为我们传递的引用具有 `'static` 生命周期，Rust 理解我们的数据在这些线程仍在运行时不会被销毁。（当你需要在线程之间共享非 `static` 数据时，你可以使用像 `Arc` 这样的智能指针来保持数据的存活并避免非 `static` 生命周期。）"
+"注意，尽管我们在线程之间传递引用，但是 Rust 理解我们只是传递只读引用，因此不会造成不安全或数据竞争的情况。此外，因为我们传递的引用具有 `'static` 生命周期，Rust 会确保被引用的数据在这些线程仍在运行时不会被销毁。（当你需要在线程之间共享非 `static` 数据时，你可以使用像 `Arc` 这样的智能指针来确保数据的存活。）"
 
 #: src/std_misc/threads/testcase_mapreduce.md:32
 msgid ""
@@ -13934,31 +13934,31 @@ msgstr ""
 
 #: src/std_misc/threads/testcase_mapreduce.md:82
 msgid "// Calculate the intermediate sum of this segment:\n"
-msgstr ""
+msgstr "// 计算这个段的中间和：\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:84
 msgid "// iterate over the characters of our segment..\n"
-msgstr ""
+msgstr "// 遍历我们段中的字符..\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:86
 msgid "// .. convert text-characters to their number value..\n"
-msgstr ""
+msgstr "// .. 将文本字符转换为它们的数值..\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:87
 msgid "\"should be a digit\""
-msgstr ""
+msgstr "\"应该是一个数字\""
 
 #: src/std_misc/threads/testcase_mapreduce.md:88
 msgid "// .. and sum the resulting iterator of numbers\n"
-msgstr ""
+msgstr "// .. 并对结果数字迭代器求和\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:91
 msgid "// println! locks stdout, so no text-interleaving occurs\n"
-msgstr ""
+msgstr "// println! 锁定 stdout，所以不会发生文本交错\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:92
 msgid "\"processed segment {}, result={}\""
-msgstr ""
+msgstr "\"处理段 {}，结果={}\""
 
 #: src/std_misc/threads/testcase_mapreduce.md:94
 msgid ""
@@ -13966,6 +13966,8 @@ msgid ""
 "            // last evaluated expression in each block is automatically its "
 "value.\n"
 msgstr ""
+"// 不需要 \"return\"，因为 Rust 是一种 \"表达式语言\"，\n"
+"            // 每个块中最后求值的表达式自动成为其值。\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:102
 msgid ""
@@ -13976,6 +13978,11 @@ msgid ""
 "result\n"
 "     ************************************************************************/"
 msgstr ""
+"/*************************************************************************\n"
+"     * \"归约\"阶段\n"
+"     *\n"
+"     * 收集我们的中间结果，并将它们合并成最终结果\n"
+"     ************************************************************************/"
 
 #: src/std_misc/threads/testcase_mapreduce.md:108
 msgid ""
@@ -13986,14 +13993,20 @@ msgid ""
 "    // TODO: try without the turbofish, by instead explicitly\n"
 "    // specifying the type of final_result\n"
 msgstr ""
+"// 将每个线程的中间结果合并成一个最终总和。\n"
+"    //\n"
+"    // 我们使用 \"turbofish\" ::<> 为 sum() 提供类型提示。\n"
+"    //\n"
+"    // TODO：尝试不使用 turbofish，而是显式\n"
+"    // 指定 final_result 的类型\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:116
 msgid "\"Final sum result: {}\""
-msgstr ""
+msgstr "\"最终求和结果：{}\""
 
 #: src/std_misc/threads/testcase_mapreduce.md:122
 msgid "Assignments"
-msgstr ""
+msgstr "练习"
 
 #: src/std_misc/threads/testcase_mapreduce.md:123
 msgid ""
@@ -14003,14 +14016,15 @@ msgid ""
 "into a limited number of chunks, defined by a static constant at the "
 "beginning of the program."
 msgstr ""
+"让线程数量依赖于用户输入的数据并不明智。如果用户决定插入大量空格怎么办？我们真的想要生成 2,000 个线程吗？修改程序，使数据始终被分割成有限数量的块，这个数量由程序开头的静态常量定义。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:129
 msgid "[Threads](../threads.md)"
-msgstr ""
+msgstr "[线程](../threads.md)"
 
 #: src/std_misc/threads/testcase_mapreduce.md:130
 msgid "[vectors](../../std/vec.md) and [iterators](../../trait/iter.md)"
-msgstr ""
+msgstr "[向量](../../std/vec.md)和[迭代器](../../trait/iter.md)"
 
 #: src/std_misc/threads/testcase_mapreduce.md:131
 msgid ""
@@ -14018,26 +14032,29 @@ msgid ""
 "[`move` closures](https://doc.rust-lang.org/book/ch13-01-closures."
 "html#closures-can-capture-their-environment)"
 msgstr ""
+"[闭包](../../fn/closures.md)、[move](../../scope/move.md) 语义和 [`move` 闭包](https://doc.rust-lang.org/book/ch13-01-closures.html#closures-can-capture-their-environment)"
 
 #: src/std_misc/threads/testcase_mapreduce.md:132
 msgid ""
 "[destructuring](https://doc.rust-lang.org/book/ch18-03-pattern-syntax."
 "html#destructuring-to-break-apart-values) assignments"
 msgstr ""
+"[解构](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html#destructuring-to-break-apart-values)赋值"
 
 #: src/std_misc/threads/testcase_mapreduce.md:133
 msgid ""
 "[turbofish notation](https://doc.rust-lang.org/book/appendix-02-operators."
 "html?highlight=turbofish) to help type inference"
 msgstr ""
+"[turbofish 符号](https://doc.rust-lang.org/book/appendix-02-operators.html?highlight=turbofish)以帮助类型推断"
 
 #: src/std_misc/threads/testcase_mapreduce.md:134
 msgid "[unwrap vs. expect](../../error/option_unwrap.md)"
-msgstr ""
+msgstr "[unwrap vs. expect](../../error/option_unwrap.md)"
 
 #: src/std_misc/threads/testcase_mapreduce.md:135
 msgid "[enumerate](https://doc.rust-lang.org/book/loops.html#enumerate)"
-msgstr ""
+msgstr "[enumerate](https://doc.rust-lang.org/book/loops.html#enumerate)"
 
 #: src/std_misc/channels.md:3
 msgid ""
@@ -14045,6 +14062,7 @@ msgid ""
 "Channels allow a unidirectional flow of information between two end-points: "
 "the `Sender` and the `Receiver`."
 msgstr ""
+"Rust 提供异步 `channels`（信道）用于线程间通信。信道允许信息在两个端点之间单向流动：`Sender`（发送端）和 `Receiver`（接收端）。"
 
 #: src/std_misc/channels.md:15
 msgid ""
@@ -14052,34 +14070,41 @@ msgid ""
 "    // where `T` is the type of the message to be transferred\n"
 "    // (type annotation is superfluous)\n"
 msgstr ""
+"// 信道有两个端点：`Sender<T>` 和 `Receiver<T>`，\n"
+"    // 其中 `T` 是要传输的消息的类型\n"
+"    // （类型标注是多余的）\n"
 
 #: src/std_misc/channels.md:22
 msgid "// The sender endpoint can be copied\n"
-msgstr ""
+msgstr "// 发送端可以被复制\n"
 
 #: src/std_misc/channels.md:25
 msgid "// Each thread will send its id via the channel\n"
-msgstr ""
+msgstr "// 每个线程将通过信道发送其 id\n"
 
 #: src/std_misc/channels.md:27
 msgid ""
 "// The thread takes ownership over `thread_tx`\n"
 "            // Each thread queues a message in the channel\n"
 msgstr ""
+"// 线程获取 `thread_tx` 的所有权\n"
+"            // 每个线程在信道中排队一条消息\n"
 
 #: src/std_misc/channels.md:31
 msgid ""
 "// Sending is a non-blocking operation, the thread will continue\n"
 "            // immediately after sending its message\n"
 msgstr ""
+"// 发送是非阻塞操作，线程将在发送消息后\n"
+"            // 立即继续执行\n"
 
 #: src/std_misc/channels.md:33
 msgid "\"thread {} finished\""
-msgstr ""
+msgstr "\"线程 {} 完成\""
 
 #: src/std_misc/channels.md:39
 msgid "// Here, all the messages are collected\n"
-msgstr ""
+msgstr "// 在这里，所有消息都被收集\n"
 
 #: src/std_misc/channels.md:42
 msgid ""
@@ -14087,18 +14112,20 @@ msgid ""
 "        // `recv` will block the current thread if there are no messages "
 "available\n"
 msgstr ""
+"// `recv` 方法从信道中获取一条消息\n"
+"        // 如果没有可用的消息，`recv` 将阻塞当前线程\n"
 
 #: src/std_misc/channels.md:47
 msgid "// Wait for the threads to complete any remaining work\n"
-msgstr ""
+msgstr "// 等待线程完成任何剩余工作\n"
 
 #: src/std_misc/channels.md:49
 msgid "\"oops! the child thread panicked\""
-msgstr ""
+msgstr "\"糟糕！子线程发生了 panic\""
 
 #: src/std_misc/channels.md:52
 msgid "// Show the order in which the messages were sent\n"
-msgstr ""
+msgstr "// 显示消息发送的顺序\n"
 
 #: src/std_misc/path.md:3
 msgid ""
@@ -14107,12 +14134,14 @@ msgid ""
 "`windows::Path`, for Windows. The prelude exports the appropriate platform-"
 "specific `Path` variant."
 msgstr ""
+"`Path` 结构体表示底层文件系统中的文件路径。`Path` 有两种风格：用于类 UNIX 系统的 `posix::Path` 和用于 Windows 的 `windows::Path`。prelude 导出了适合特定平台的 `Path` 变体。"
 
 #: src/std_misc/path.md:8
 msgid ""
 "A `Path` can be created from an `OsStr`, and provides several methods to get "
 "information from the file/directory the path points to."
 msgstr ""
+"`Path` 可以从 `OsStr` 创建，并提供几种方法来获取路径指向的文件/目录的信息。"
 
 #: src/std_misc/path.md:11
 msgid ""
@@ -14120,6 +14149,7 @@ msgid ""
 "between `Path` and `PathBuf` is similar to that of `str` and `String`: a "
 "`PathBuf` can be mutated in-place, and can be dereferenced to a `Path`."
 msgstr ""
+"`Path` 是不可变的。`Path` 的所有权版本是 `PathBuf`。`Path` 和 `PathBuf` 之间的关系类似于 `str` 和 `String`：`PathBuf` 可以就地修改，并且可以解引用为 `Path`。"
 
 #: src/std_misc/path.md:15
 msgid ""
@@ -14129,76 +14159,84 @@ msgid ""
 "`Path` can be freely converted to an `OsString` or `&OsStr` using "
 "`into_os_string` and `as_os_str`, respectively."
 msgstr ""
+"注意，`Path` 在内部**不是**表示为 UTF-8 字符串，而是存储为 `OsString`。因此，将 `Path` 转换为 `&str` **不是**免费的，并且可能失败（返回一个 `Option`）。然而，`Path` 可以自由地转换为 `OsString` 或 `&OsStr`，分别使用 `into_os_string` 和 `as_os_str`。"
 
 #: src/std_misc/path.md:25
 msgid "// Create a `Path` from an `&'static str`\n"
-msgstr ""
+msgstr "// 从 `&'static str` 创建一个 `Path`\n"
 
 #: src/std_misc/path.md:26
-msgid "\".\""
-msgstr ""
+msgid "\".\"" 
+msgstr "\".\"" 
 
 #: src/std_misc/path.md:28
 msgid "// The `display` method returns a `Display`able structure\n"
-msgstr ""
+msgstr "// `display` 方法返回一个可 `Display` 的结构体\n"
 
 #: src/std_misc/path.md:31
 msgid ""
 "// `join` merges a path with a byte container using the OS specific\n"
 "    // separator, and returns a `PathBuf`\n"
 msgstr ""
+"// `join` 使用操作系统特定的分隔符将路径与字节容器合并，\n"
+"    // 并返回一个 `PathBuf`\n"
 
 #: src/std_misc/path.md:35
 msgid "// `push` extends the `PathBuf` with a `&Path`\n"
-msgstr ""
+msgstr "// `push` 使用 `&Path` 扩展 `PathBuf`\n"
 
 #: src/std_misc/path.md:37
 msgid "\"myfile.tar.gz\""
-msgstr ""
+msgstr "\"myfile.tar.gz\""
 
 #: src/std_misc/path.md:39
 msgid "// `set_file_name` updates the file name of the `PathBuf`\n"
-msgstr ""
+msgstr "// `set_file_name` 更新 `PathBuf` 的文件名\n"
 
 #: src/std_misc/path.md:40
 msgid "\"package.tgz\""
-msgstr ""
+msgstr "\"package.tgz\""
 
 #: src/std_misc/path.md:42
 msgid "// Convert the `PathBuf` into a string slice\n"
-msgstr ""
+msgstr "// 将 `PathBuf` 转换为字符串切片\n"
 
 #: src/std_misc/path.md:44
 msgid "\"new path is not a valid UTF-8 sequence\""
-msgstr ""
+msgstr "\"新路径不是有效的 UTF-8 序列\""
 
 #: src/std_misc/path.md:45
 msgid "\"new path is {}\""
-msgstr ""
+msgstr "\"新路径是 {}\""
 
 #: src/std_misc/path.md:51
 msgid ""
 "Be sure to check at other `Path` methods (`posix::Path` or `windows::Path`) "
 "and the `Metadata` struct."
 msgstr ""
+"请务必查看其他 `Path` 方法（`posix::Path` 或 `windows::Path`）和 `Metadata` 结构体。"
 
 #: src/std_misc/path.md:56
 msgid ""
 "[OsStr](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) and [Metadata]"
 "(https://doc.rust-lang.org/std/fs/struct.Metadata.html)."
 msgstr ""
+"[OsStr](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) 和 [Metadata]"
+"(https://doc.rust-lang.org/std/fs/struct.Metadata.html)。"
 
 #: src/std_misc/file.md:3
 msgid ""
 "The `File` struct represents a file that has been opened (it wraps a file "
 "descriptor), and gives read and/or write access to the underlying file."
 msgstr ""
+"`File` 结构体表示一个已打开的文件（它包装了一个文件描述符），并提供对底层文件的读取和/或写入访问。"
 
 #: src/std_misc/file.md:6
 msgid ""
 "Since many things can go wrong when doing file I/O, all the `File` methods "
 "return the `io::Result<T>` type, which is an alias for `Result<T, io::Error>`."
 msgstr ""
+"由于在进行文件 I/O 时可能会出现许多问题，所有的 `File` 方法都返回 `io::Result<T>` 类型，这是 `Result<T, io::Error>` 的别名。"
 
 #: src/std_misc/file.md:9
 msgid ""
@@ -14206,53 +14244,55 @@ msgid ""
 "programmer can see all the failure paths, and is encouraged to handle them in "
 "a proactive manner."
 msgstr ""
+"这使得所有 I/O 操作的失败变得**明确**。得益于此，程序员可以看到所有的失败路径，并被鼓励以主动的方式处理它们。"
 
 #: src/std_misc/file/open.md:3
 msgid "The `open` function can be used to open a file in read-only mode."
-msgstr ""
+msgstr "`open` 函数可用于以只读模式打开文件。"
 
 #: src/std_misc/file/open.md:5
 msgid ""
 "A `File` owns a resource, the file descriptor and takes care of closing the "
 "file when it is `drop`ed."
 msgstr ""
+"`File` 拥有一个资源，即文件描述符，并在被 `drop` 时负责关闭文件。"
 
 #: src/std_misc/file/open.md:14
 msgid "// Create a path to the desired file\n"
-msgstr ""
+msgstr "// 创建指向所需文件的路径\n"
 
 #: src/std_misc/file/open.md:15
 msgid "\"hello.txt\""
-msgstr ""
+msgstr "\"hello.txt\""
 
 #: src/std_misc/file/open.md:18
 msgid "// Open the path in read-only mode, returns `io::Result<File>`\n"
-msgstr ""
+msgstr "// 以只读模式打开路径，返回 `io::Result<File>`\n"
 
 #: src/std_misc/file/open.md:20
 msgid "\"couldn't open {}: {}\""
-msgstr ""
+msgstr "\"无法打开 {}: {}\""
 
 #: src/std_misc/file/open.md:24
 msgid "// Read the file contents into a string, returns `io::Result<usize>`\n"
-msgstr ""
+msgstr "// 将文件内容读入字符串，返回 `io::Result<usize>`\n"
 
 #: src/std_misc/file/open.md:27
 msgid "\"couldn't read {}: {}\""
-msgstr ""
+msgstr "\"无法读取 {}: {}\""
 
 #: src/std_misc/file/open.md:28
 msgid "\"{} contains:\\n{}\""
-msgstr ""
+msgstr "\"{} 包含：\\n{}\""
 
 #: src/std_misc/file/open.md:31
 msgid "// `file` goes out of scope, and the \"hello.txt\" file gets closed\n"
-msgstr ""
+msgstr "// `file` 超出作用域，\"hello.txt\" 文件被关闭\n"
 
 #: src/std_misc/file/open.md:35 src/std_misc/file/create.md:39
 #: src/std_misc/fs.md:109
 msgid "Here's the expected successful output:"
-msgstr ""
+msgstr "这是预期的成功输出："
 
 #: src/std_misc/file/open.md:37
 msgid ""
@@ -14263,18 +14303,26 @@ msgid ""
 "Hello World!\n"
 "```"
 msgstr ""
+"```shell\n"
+"$ echo \"Hello World!\" > hello.txt\n"
+"$ rustc open.rs && ./open\n"
+"hello.txt 包含：\n"
+"Hello World!\n"
+"```"
 
 #: src/std_misc/file/open.md:44
 msgid ""
 "(You are encouraged to test the previous example under different failure "
 "conditions: `hello.txt` doesn't exist, or `hello.txt` is not readable, etc.)"
 msgstr ""
+"（我们鼓励你在不同的失败条件下测试前面的例子：`hello.txt` 不存在，或 `hello.txt` 不可读等。）"
 
 #: src/std_misc/file/create.md:3
 msgid ""
 "The `create` function opens a file in write-only mode. If the file already "
 "existed, the old content is destroyed. Otherwise, a new file is created."
 msgstr ""
+"`create` 函数以只写模式打开文件。如果文件已经存在，旧内容会被销毁。否则，会创建一个新文件。"
 
 #: src/std_misc/file/create.md:9
 msgid ""
@@ -14287,52 +14335,64 @@ msgid ""
 "proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n"
 "\""
 msgstr ""
+"\"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n"
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n"
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n"
+"consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n"
+"cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat "
+"non\n"
+"proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n"
+"\""
 
 #: src/std_misc/file/create.md:22
 msgid "\"lorem_ipsum.txt\""
-msgstr ""
+msgstr "\"lorem_ipsum.txt\""
 
 #: src/std_misc/file/create.md:25
 msgid "// Open a file in write-only mode, returns `io::Result<File>`\n"
-msgstr ""
+msgstr "// 以只写模式打开文件，返回 `io::Result<File>`\n"
 
 #: src/std_misc/file/create.md:27
 msgid "\"couldn't create {}: {}\""
-msgstr ""
+msgstr "\"无法创建 {}: {}\""
 
 #: src/std_misc/file/create.md:31
 msgid "// Write the `LOREM_IPSUM` string to `file`, returns `io::Result<()>`\n"
-msgstr ""
+msgstr "// 将 `LOREM_IPSUM` 字符串写入 `file`，返回 `io::Result<()>`\n"
 
 #: src/std_misc/file/create.md:33
 msgid "\"couldn't write to {}: {}\""
-msgstr ""
+msgstr "\"无法写入 {}: {}\""
 
 #: src/std_misc/file/create.md:34
 msgid "\"successfully wrote to {}\""
-msgstr ""
+msgstr "\"成功写入 {}\""
 
 #: src/std_misc/file/create.md:53
 msgid ""
 "(As in the previous example, you are encouraged to test this example under "
 "failure conditions.)"
 msgstr ""
+"（和前面的例子一样，我们鼓励你在失败条件下测试这个例子。）"
 
 #: src/std_misc/file/create.md:56
 msgid ""
 "The [`OpenOptions`](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html) "
 "struct can be used to configure how a file is opened."
 msgstr ""
+"[`OpenOptions`](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html) "
+"结构体可用于配置如何打开文件。"
 
 #: src/std_misc/file/read_lines.md:3
 msgid "A naive approach"
-msgstr ""
+msgstr "一种简单的方法"
 
 #: src/std_misc/file/read_lines.md:5
 msgid ""
 "This might be a reasonable first attempt for a beginner's first "
 "implementation for reading lines from a file."
 msgstr ""
+"对于初学者来说，这可能是从文件中读取行的第一个合理尝试。"
 
 #: src/std_misc/file/read_lines.md:22
 msgid ""
@@ -14340,22 +14400,23 @@ msgid ""
 "can also perform a map inline and collect the results, yielding a more "
 "concise and fluent expression."
 msgstr ""
+"由于 `lines()` 方法返回文件中各行的迭代器，我们也可以内联执行 map 并收集结果，从而得到一个更简洁流畅的表达式。"
 
 #: src/std_misc/file/read_lines.md:31
 msgid "// panic on possible file-reading errors\n"
-msgstr ""
+msgstr "// 在可能的文件读取错误时 panic\n"
 
 #: src/std_misc/file/read_lines.md:32
 msgid "// split the string into an iterator of string slices\n"
-msgstr ""
+msgstr "// 将字符串分割成字符串切片的迭代器\n"
 
 #: src/std_misc/file/read_lines.md:33
 msgid "// make each slice into a string\n"
-msgstr ""
+msgstr "// 将每个切片转换成字符串\n"
 
 #: src/std_misc/file/read_lines.md:34
 msgid "// gather them together into a vector\n"
-msgstr ""
+msgstr "// 将它们收集到一个向量中\n"
 
 #: src/std_misc/file/read_lines.md:38
 msgid ""
@@ -14363,44 +14424,49 @@ msgid ""
 "returned from `lines()` to the owned type `String`, using `.to_string()` and "
 "`String::from` respectively."
 msgstr ""
+"注意，在上面的两个例子中，我们都必须将 `lines()` 返回的 `&str` 引用转换为拥有所有权的 `String` 类型，分别使用 `.to_string()` 和 `String::from`。"
 
 #: src/std_misc/file/read_lines.md:42
 msgid "A more efficient approach"
-msgstr ""
+msgstr "一种更高效的方法"
 
 #: src/std_misc/file/read_lines.md:44
 msgid ""
 "Here we pass ownership of the open `File` to a `BufReader` struct. "
 "`BufReader` uses an internal buffer to reduce intermediate allocations."
 msgstr ""
+"这里我们将打开的 `File` 的所有权传递给 `BufReader` 结构体。`BufReader` 使用内部缓冲区来减少中间分配。"
 
 #: src/std_misc/file/read_lines.md:47
 msgid ""
 "We also update `read_lines` to return an iterator instead of allocating new "
 "`String` objects in memory for each line."
 msgstr ""
+"我们还更新了 `read_lines` 函数，使其返回一个迭代器，而不是为每一行在内存中分配新的 `String` 对象。"
 
 #: src/std_misc/file/read_lines.md:56
 msgid "// File hosts.txt must exist in the current path\n"
-msgstr ""
+msgstr "// 文件 hosts.txt 必须存在于当前路径\n"
 
 #: src/std_misc/file/read_lines.md:57
 msgid "\"./hosts.txt\""
-msgstr ""
+msgstr "\"./hosts.txt\""
 
 #: src/std_misc/file/read_lines.md:58
 msgid "// Consumes the iterator, returns an (Optional) String\n"
-msgstr ""
+msgstr "// 消耗迭代器，返回一个（可选的）String\n"
 
 #: src/std_misc/file/read_lines.md:64
 msgid ""
 "// The output is wrapped in a Result to allow matching on errors.\n"
 "// Returns an Iterator to the Reader of the lines of the file.\n"
 msgstr ""
+"// 输出被包装在一个 Result 中以允许匹配错误。\n"
+"// 返回一个指向文件行的 Reader 的迭代器。\n"
 
 #: src/std_misc/file/read_lines.md:74
 msgid "Running this program simply prints the lines individually."
-msgstr ""
+msgstr "运行这个程序只是简单地逐行打印。"
 
 #: src/std_misc/file/read_lines.md:75
 msgid ""
@@ -14411,6 +14477,12 @@ msgid ""
 "192.168.0.1\n"
 "```"
 msgstr ""
+"```shell\n"
+"$ echo -e \"127.0.0.1\\n192.168.0.1\\n\" > hosts.txt\n"
+"$ rustc read_lines.rs && ./read_lines\n"
+"127.0.0.1\n"
+"192.168.0.1\n"
+"```"
 
 #: src/std_misc/file/read_lines.md:82
 msgid ""
@@ -14418,6 +14490,7 @@ msgid ""
 "define our generic `read_lines()` method with the same generic constraint, "
 "using the `where` keyword.)"
 msgstr ""
+"（注意，由于 `File::open` 期望一个泛型 `AsRef<Path>` 作为参数，我们使用 `where` 关键字定义了具有相同泛型约束的 `read_lines()` 方法。）"
 
 #: src/std_misc/file/read_lines.md:85
 msgid ""
@@ -14425,38 +14498,41 @@ msgid ""
 "the file's contents. This can especially cause performance issues when "
 "working with larger files."
 msgstr ""
+"这个过程比在内存中创建包含文件所有内容的 `String` 更高效。特别是在处理较大的文件时，这可以避免性能问题。"
 
 #: src/std_misc/process.md:3
 msgid ""
 "The `process::Output` struct represents the output of a finished child "
 "process, and the `process::Command` struct is a process builder."
 msgstr ""
+"`process::Output` 结构体表示已完成的子进程的输出，而 `process::Command` 结构体是一个进程构建器。"
 
 #: src/std_misc/process.md:10
 msgid "\"rustc\""
-msgstr ""
+msgstr "\"rustc\""
 
 #: src/std_misc/process.md:11
 msgid "\"--version\""
-msgstr ""
+msgstr "\"--version\""
 
 #: src/std_misc/process.md:13
 msgid "\"failed to execute process: {}\""
-msgstr ""
+msgstr "\"执行进程失败：{}\""
 
 #: src/std_misc/process.md:19
 msgid "\"rustc succeeded and stdout was:\\n{}\""
-msgstr ""
+msgstr "\"rustc 成功执行，stdout 输出为：\\n{}\""
 
 #: src/std_misc/process.md:23
 msgid "\"rustc failed and stderr was:\\n{}\""
-msgstr ""
+msgstr "\"rustc 执行失败，stderr 输出为：\\n{}\""
 
 #: src/std_misc/process.md:28
 msgid ""
 "(You are encouraged to try the previous example with an incorrect flag passed "
 "to `rustc`)"
 msgstr ""
+"（我们鼓励你尝试在前面的例子中向 `rustc` 传递一个错误的标志）"
 
 #: src/std_misc/process/pipe.md:3
 msgid ""
@@ -14464,39 +14540,40 @@ msgid ""
 "`stdin`, `stdout` and `stderr` handles for interaction with the underlying "
 "process via pipes."
 msgstr ""
+"`std::Child` 结构体表示一个正在运行的子进程，并暴露 `stdin`、`stdout` 和 `stderr` 句柄，以通过管道与底层进程进行交互。"
 
 #: src/std_misc/process/pipe.md:11
 msgid "\"the quick brown fox jumps over the lazy dog\\n\""
-msgstr ""
+msgstr "\"the quick brown fox jumps over the lazy dog\\n\""
 
 #: src/std_misc/process/pipe.md:15
 msgid "// Spawn the `wc` command\n"
-msgstr ""
+msgstr "// 生成 `wc` 命令\n"
 
 #: src/std_misc/process/pipe.md:16 src/std_misc/fs.md:12 src/std_misc/fs.md:73
 #: src/std_misc/ffi.md:11
 msgid "\"windows\""
-msgstr ""
+msgstr "\"windows\""
 
 #: src/std_misc/process/pipe.md:17
 msgid "\"powershell\""
-msgstr ""
+msgstr "\"powershell\""
 
 #: src/std_misc/process/pipe.md:18
 msgid "\"-Command\""
-msgstr ""
+msgstr "\"-Command\""
 
 #: src/std_misc/process/pipe.md:18
 msgid "\"$input | Measure-Object -Line -Word -Character\""
-msgstr ""
+msgstr "\"$input | Measure-Object -Line -Word -Character\""
 
 #: src/std_misc/process/pipe.md:21
 msgid "\"wc\""
-msgstr ""
+msgstr "\"wc\""
 
 #: src/std_misc/process/pipe.md:27
 msgid "\"couldn't spawn wc: {}\""
-msgstr ""
+msgstr "\"无法生成 wc：{}\""
 
 #: src/std_misc/process/pipe.md:31
 msgid ""
@@ -14506,14 +14583,18 @@ msgid ""
 "instance\n"
 "    // must have one, we can directly `unwrap` it.\n"
 msgstr ""
+"// 向 `wc` 的 `stdin` 写入一个字符串。\n"
+"    //\n"
+"    // `stdin` 的类型是 `Option<ChildStdin>`，但由于我们知道这个实例\n"
+"    // 必定有一个，我们可以直接 `unwrap` 它。\n"
 
 #: src/std_misc/process/pipe.md:36
 msgid "\"couldn't write to wc stdin: {}\""
-msgstr ""
+msgstr "\"无法写入 wc 的 stdin：{}\""
 
 #: src/std_misc/process/pipe.md:37
 msgid "\"sent pangram to wc\""
-msgstr ""
+msgstr "\"已发送 pangram 到 wc\""
 
 #: src/std_misc/process/pipe.md:40
 msgid ""
@@ -14523,16 +14604,22 @@ msgid ""
 "    // This is very important, otherwise `wc` wouldn't start processing the\n"
 "    // input we just sent.\n"
 msgstr ""
+"// 因为 `stdin` 在上述调用后不再存活，它被 `drop` 了，\n"
+"    // 管道也被关闭。\n"
+"    //\n"
+"    // 这非常重要，否则 `wc` 不会开始处理\n"
+"    // 我们刚刚发送的输入。\n"
 
 #: src/std_misc/process/pipe.md:46
 msgid ""
 "// The `stdout` field also has type `Option<ChildStdout>` so must be "
 "unwrapped.\n"
 msgstr ""
+"// `stdout` 字段的类型也是 `Option<ChildStdout>`，所以必须被解包。\n"
 
 #: src/std_misc/process/pipe.md:49
 msgid "\"couldn't read wc stdout: {}\""
-msgstr ""
+msgstr "\"无法读取 wc 的 stdout：{}\""
 
 #: src/std_misc/process/pipe.md:50
 msgid "\"wc responded with:\\n{}\""
