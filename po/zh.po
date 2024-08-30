@@ -14159,7 +14159,7 @@ msgid ""
 "`Path` can be freely converted to an `OsString` or `&OsStr` using "
 "`into_os_string` and `as_os_str`, respectively."
 msgstr ""
-"注意，`Path` 在内部**不是**表示为 UTF-8 字符串，而是存储为 `OsString`。因此，将 `Path` 转换为 `&str` **不是**免费的，并且可能失败（返回一个 `Option`）。然而，`Path` 可以自由地转换为 `OsString` 或 `&OsStr`，分别使用 `into_os_string` 和 `as_os_str`。"
+"注意，`Path` 在内部**不是**表示为 UTF-8 字符串，而是存储为 `OsString`。因此，将 `Path` 转换为 `&str` **不是**零开销的，并且可能失败（返回一个 `Option`）。然而，`Path` 可以自由地转换为 `OsString` 或 `&OsStr`，分别使用 `into_os_string` 和 `as_os_str`。"
 
 #: src/std_misc/path.md:25
 msgid "// Create a `Path` from an `&'static str`\n"
@@ -14214,7 +14214,7 @@ msgid ""
 "Be sure to check at other `Path` methods (`posix::Path` or `windows::Path`) "
 "and the `Metadata` struct."
 msgstr ""
-"请务必查看其他 `Path` 方法（`posix::Path` 或 `windows::Path`）和 `Metadata` 结构体。"
+"记得看看其他 `Path` 方法（`posix::Path` 或 `windows::Path`）和 `Metadata` 结构体。"
 
 #: src/std_misc/path.md:56
 msgid ""
@@ -14236,7 +14236,7 @@ msgid ""
 "Since many things can go wrong when doing file I/O, all the `File` methods "
 "return the `io::Result<T>` type, which is an alias for `Result<T, io::Error>`."
 msgstr ""
-"由于在进行文件 I/O 时可能会出现许多问题，所有的 `File` 方法都返回 `io::Result<T>` 类型，这是 `Result<T, io::Error>` 的别名。"
+"由于在进行文件 I/O 时可能会出现各种错误，因此所有的 `File` 方法都返回 `io::Result<T>` 类型，这是 `Result<T, io::Error>` 的别名。"
 
 #: src/std_misc/file.md:9
 msgid ""
@@ -14244,7 +14244,7 @@ msgid ""
 "programmer can see all the failure paths, and is encouraged to handle them in "
 "a proactive manner."
 msgstr ""
-"这使得所有 I/O 操作的失败变得**明确**。得益于此，程序员可以看到所有的失败路径，并被鼓励以主动的方式处理它们。"
+"这让所有 I/O 操作的失败都是**显性的**。得益于此，程序员可以看到所有的失败路径，并被鼓励主动处理它们。"
 
 #: src/std_misc/file/open.md:3
 msgid "The `open` function can be used to open a file in read-only mode."
@@ -14623,139 +14623,143 @@ msgstr "\"无法读取 wc 的 stdout：{}\""
 
 #: src/std_misc/process/pipe.md:50
 msgid "\"wc responded with:\\n{}\""
-msgstr ""
+msgstr "\"wc 响应为：\\n{}\""
 
 #: src/std_misc/process/wait.md:3
 msgid ""
 "If you'd like to wait for a `process::Child` to finish, you must call `Child::"
 "wait`, which will return a `process::ExitStatus`."
 msgstr ""
+"如果你想等待一个 `process::Child` 完成，你必须调用 `Child::wait`，它将返回一个 `process::ExitStatus`。"
 
 #: src/std_misc/process/wait.md:10
 msgid "\"sleep\""
-msgstr ""
+msgstr "\"sleep\""
 
 #: src/std_misc/process/wait.md:13
 msgid "\"reached end of main\""
-msgstr ""
+msgstr "\"到达 main 的末尾\""
 
 #: src/std_misc/process/wait.md:18
 msgid ""
 "# `wait` keeps running for 5 seconds until the `sleep 5` command finishes\n"
 msgstr ""
+"# `wait` 持续运行 5 秒，直到 `sleep 5` 命令完成\n"
 
 #: src/std_misc/fs.md:3
 msgid ""
 "The `std::fs` module contains several functions that deal with the filesystem."
 msgstr ""
+"`std::fs` 模块包含几个处理文件系统的函数。"
 
 #: src/std_misc/fs.md:10 src/std_misc/fs.md:68 src/std_misc/ffi.md:20
 msgid "\"unix\""
-msgstr ""
+msgstr "\"unix\""
 
 #: src/std_misc/fs.md:15
 msgid "// A simple implementation of `% cat path`\n"
-msgstr ""
+msgstr "// `% cat path` 的简单实现\n"
 
 #: src/std_misc/fs.md:25
 msgid "// A simple implementation of `% echo s > path`\n"
-msgstr ""
+msgstr "// `% echo s > path` 的简单实现\n"
 
 #: src/std_misc/fs.md:32
 msgid "// A simple implementation of `% touch path` (ignores existing files)\n"
-msgstr ""
+msgstr "// `% touch path` 的简单实现（忽略已存在的文件）\n"
 
 #: src/std_misc/fs.md:42
 msgid "\"`mkdir a`\""
-msgstr ""
+msgstr "\"`mkdir a`\""
 
 #: src/std_misc/fs.md:43
 msgid "// Create a directory, returns `io::Result<()>`\n"
-msgstr ""
+msgstr "// 创建一个目录，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:45 src/std_misc/fs.md:52 src/std_misc/fs.md:58
 #: src/std_misc/fs.md:63 src/std_misc/fs.md:70 src/std_misc/fs.md:75
 #: src/std_misc/fs.md:81 src/std_misc/fs.md:88 src/std_misc/fs.md:97
 #: src/std_misc/fs.md:103
 msgid "\"! {:?}\""
-msgstr ""
+msgstr "\"! {:?}\""
 
 #: src/std_misc/fs.md:49
 msgid "\"`echo hello > a/b.txt`\""
-msgstr ""
+msgstr "\"`echo hello > a/b.txt`\""
 
 #: src/std_misc/fs.md:50
 msgid ""
 "// The previous match can be simplified using the `unwrap_or_else` method\n"
 msgstr ""
+"// 前面的匹配可以使用 `unwrap_or_else` 方法简化\n"
 
 #: src/std_misc/fs.md:51
 msgid "\"a/b.txt\""
-msgstr ""
+msgstr "\"a/b.txt\""
 
 #: src/std_misc/fs.md:55
 msgid "\"`mkdir -p a/c/d`\""
-msgstr ""
+msgstr "\"`mkdir -p a/c/d`\""
 
 #: src/std_misc/fs.md:56
 msgid "// Recursively create a directory, returns `io::Result<()>`\n"
-msgstr ""
+msgstr "// 递归创建目录，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:57 src/std_misc/fs.md:102
 msgid "\"a/c/d\""
-msgstr ""
+msgstr "\"a/c/d\""
 
 #: src/std_misc/fs.md:61
 msgid "\"`touch a/c/e.txt`\""
-msgstr ""
+msgstr "\"`touch a/c/e.txt`\""
 
 #: src/std_misc/fs.md:62 src/std_misc/fs.md:96
 msgid "\"a/c/e.txt\""
-msgstr ""
+msgstr "\"a/c/e.txt\""
 
 #: src/std_misc/fs.md:66
 msgid "\"`ln -s ../b.txt a/c/b.txt`\""
-msgstr ""
+msgstr "\"`ln -s ../b.txt a/c/b.txt`\""
 
 #: src/std_misc/fs.md:67
 msgid "// Create a symbolic link, returns `io::Result<()>`\n"
-msgstr ""
+msgstr "// 创建一个符号链接，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:69 src/std_misc/fs.md:74
 msgid "\"../b.txt\""
-msgstr ""
+msgstr "\"../b.txt\""
 
 #: src/std_misc/fs.md:69 src/std_misc/fs.md:74 src/std_misc/fs.md:80
 msgid "\"a/c/b.txt\""
-msgstr ""
+msgstr "\"a/c/b.txt\""
 
 #: src/std_misc/fs.md:79
 msgid "\"`cat a/c/b.txt`\""
-msgstr ""
+msgstr "\"`cat a/c/b.txt`\""
 
 #: src/std_misc/fs.md:85
 msgid "\"`ls a`\""
-msgstr ""
+msgstr "\"`ls a`\""
 
 #: src/std_misc/fs.md:86
 msgid "// Read the contents of a directory, returns `io::Result<Vec<Path>>`\n"
-msgstr ""
+msgstr "// 读取目录的内容，返回 `io::Result<Vec<Path>>`\n"
 
 #: src/std_misc/fs.md:94
 msgid "\"`rm a/c/e.txt`\""
-msgstr ""
+msgstr "\"`rm a/c/e.txt`\""
 
 #: src/std_misc/fs.md:95
 msgid "// Remove a file, returns `io::Result<()>`\n"
-msgstr ""
+msgstr "// 删除一个文件，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:100
 msgid "\"`rmdir a/c/d`\""
-msgstr ""
+msgstr "\"`rmdir a/c/d`\""
 
 #: src/std_misc/fs.md:101
 msgid "// Remove an empty directory, returns `io::Result<()>`\n"
-msgstr ""
+msgstr "// 删除一个空目录，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:111
 msgid ""
@@ -14775,36 +14779,52 @@ msgid ""
 "`rmdir a/c/d`\n"
 "```"
 msgstr ""
+"```shell\n"
+"$ rustc fs.rs && ./fs\n"
+"`mkdir a`\n"
+"`echo hello > a/b.txt`\n"
+"`mkdir -p a/c/d`\n"
+"`touch a/c/e.txt`\n"
+"`ln -s ../b.txt a/c/b.txt`\n"
+"`cat a/c/b.txt`\n"
+"> hello\n"
+"`ls a`\n"
+"> \"a/b.txt\"\n"
+"> \"a/c\"\n"
+"`rm a/c/e.txt`\n"
+"`rmdir a/c/d`\n"
+"```"
 
 #: src/std_misc/fs.md:127
 msgid "And the final state of the `a` directory is:"
-msgstr ""
+msgstr "最终 `a` 目录的状态是："
 
 #: src/std_misc/fs.md:139
 msgid "An alternative way to define the function `cat` is with `?` notation:"
-msgstr ""
+msgstr "定义 `cat` 函数的另一种方式是使用 `?` 符号："
 
 #: src/std_misc/fs.md:152
 msgid "[`cfg!`](../attribute/cfg.md)"
-msgstr ""
+msgstr "[`cfg!`](../attribute/cfg.md)"
 
 #: src/std_misc/arg.md:3
 msgid "Standard Library"
-msgstr ""
+msgstr "标准库"
 
 #: src/std_misc/arg.md:5
 msgid ""
 "The command line arguments can be accessed using `std::env::args`, which "
 "returns an iterator that yields a `String` for each argument:"
 msgstr ""
+"命令行参数可以使用 `std::env::args` 访问，它返回一个迭代器，为每个参数生成一个 `String`："
 
 #: src/std_misc/arg.md:14
 msgid "// The first argument is the path that was used to call the program.\n"
-msgstr ""
+msgstr "// 第一个参数是用于调用程序的路径。\n"
 
 #: src/std_misc/arg.md:15
 msgid "\"My path is {}.\""
-msgstr ""
+msgstr "\"我的路径是 {}。\""
 
 #: src/std_misc/arg.md:17
 msgid ""
@@ -14812,10 +14832,13 @@ msgid ""
 "    // Call the program like this:\n"
 "    //   $ ./args arg1 arg2\n"
 msgstr ""
+"// 剩余的参数是传递的命令行参数。\n"
+"    // 像这样调用程序：\n"
+"    //   $ ./args arg1 arg2\n"
 
 #: src/std_misc/arg.md:20
 msgid "\"I got {:?} arguments: {:?}.\""
-msgstr ""
+msgstr "\"我得到了 {:?} 个参数：{:?}。\""
 
 #: src/std_misc/arg.md:24
 msgid ""
@@ -14825,6 +14848,11 @@ msgid ""
 "I got 3 arguments: [\"1\", \"2\", \"3\"].\n"
 "```"
 msgstr ""
+"```shell\n"
+"$ ./args 1 2 3\n"
+"我的路径是 ./args。\n"
+"我得到了 3 个参数：[\"1\", \"2\", \"3\"]。\n"
+"```"
 
 #: src/std_misc/arg.md:32
 msgid ""
@@ -14833,10 +14861,11 @@ msgid ""
 "argument crates being [`clap`](https://rust-cli.github.io/book/tutorial/cli-"
 "args.html#parsing-cli-arguments-with-clap)."
 msgstr ""
+"另外，在创建命令行应用程序时，有许多 crate 可以提供额外的功能。其中一个比较流行的命令行参数 crate 是 [`clap`](https://rust-cli.github.io/book/tutorial/cli-args.html#parsing-cli-arguments-with-clap)。"
 
 #: src/std_misc/arg/matching.md:3
 msgid "Matching can be used to parse simple arguments:"
-msgstr ""
+msgstr "匹配可以用于解析简单的参数："
 
 #: src/std_misc/arg/matching.md:17
 msgid ""
@@ -14846,68 +14875,74 @@ msgid ""
 "match_args {{increase|decrease}} <integer>\n"
 "    Increase or decrease given integer by one.\""
 msgstr ""
+"\"用法：\n"
+"match_args <字符串>\n"
+"    检查给定的字符串是否是答案。\n"
+"match_args {{increase|decrease}} <整数>\n"
+"    将给定的整数增加或减少一。\""
 
 #: src/std_misc/arg/matching.md:28
 msgid "// no arguments passed\n"
-msgstr ""
+msgstr "// 没有传递参数\n"
 
 #: src/std_misc/arg/matching.md:30
 msgid "\"My name is 'match_args'. Try passing some arguments!\""
-msgstr ""
+msgstr "\"我的名字是 'match_args'。试试传递一些参数！\""
 
 #: src/std_misc/arg/matching.md:32
 msgid "// one argument passed\n"
-msgstr ""
+msgstr "// 传递了一个参数\n"
 
 #: src/std_misc/arg/matching.md:35
 msgid "\"This is the answer!\""
-msgstr ""
+msgstr "\"这就是答案！\""
 
 #: src/std_misc/arg/matching.md:36
 msgid "\"This is not the answer.\""
-msgstr ""
+msgstr "\"这不是答案。\""
 
 #: src/std_misc/arg/matching.md:39
 msgid "// one command and one argument passed\n"
-msgstr ""
+msgstr "// 传递了一个命令和一个参数\n"
 
 #: src/std_misc/arg/matching.md:43
 msgid "// parse the number\n"
-msgstr ""
+msgstr "// 解析数字\n"
 
 #: src/std_misc/arg/matching.md:49
 msgid "\"error: second argument not an integer\""
-msgstr ""
+msgstr "\"错误：第二个参数不是整数\""
 
 #: src/std_misc/arg/matching.md:54
 msgid "// parse the command\n"
-msgstr ""
+msgstr "// 解析命令\n"
 
 #: src/std_misc/arg/matching.md:56
 msgid "\"increase\""
-msgstr ""
+msgstr "\"increase\""
 
 #: src/std_misc/arg/matching.md:57
 msgid "\"decrease\""
-msgstr ""
+msgstr "\"decrease\""
 
 #: src/std_misc/arg/matching.md:59
 msgid "\"error: invalid command\""
-msgstr ""
+msgstr "\"错误：无效的命令\""
 
 #: src/std_misc/arg/matching.md:64
 msgid "// all the other cases\n"
-msgstr ""
+msgstr "// 所有其他情况\n"
 
 #: src/std_misc/arg/matching.md:66
 msgid "// show a help message\n"
-msgstr ""
+msgstr "// 显示帮助信息\n"
 
 #: src/std_misc/arg/matching.md:73
 msgid ""
 "If you named your program `match_args.rs` and compile it like this `rustc "
 "match_args.rs`, you can execute it as follows:"
 msgstr ""
+"如果你将程序命名为 `match_args.rs` 并像这样编译它 `rustc match_args.rs`，你可以按如下方式执行它："
 
 #: src/std_misc/ffi.md:3
 msgid ""
@@ -14915,104 +14950,112 @@ msgid ""
 "functions must be declared inside an `extern` block annotated with a "
 "`#[link]` attribute containing the name of the foreign library."
 msgstr ""
+"Rust 为 C 库提供了外部函数接口（FFI）。外部函数必须在 `extern` 块内声明，并使用 `#[link]` 属性注解，其中包含外部库的名称。"
 
 #: src/std_misc/ffi.md:9
 msgid "// this extern block links to the libm library\n"
-msgstr ""
+msgstr "// 这个 extern 块链接到 libm 库\n"
 
 #: src/std_misc/ffi.md:12
 msgid "\"msvcrt\""
-msgstr ""
+msgstr "\"msvcrt\""
 
 #: src/std_misc/ffi.md:14 src/std_misc/ffi.md:23
 msgid ""
 "// this is a foreign function\n"
 "    // that computes the square root of a single precision complex number\n"
 msgstr ""
+"// 这是一个外部函数\n"
+"    // 用于计算单精度复数的平方根\n"
 
 #: src/std_misc/ffi.md:21
 msgid "\"m\""
-msgstr ""
+msgstr "\"m\""
 
 #: src/std_misc/ffi.md:29
 msgid ""
 "// Since calling foreign functions is considered unsafe,\n"
 "// it's common to write safe wrappers around them.\n"
 msgstr ""
+"// 由于调用外部函数被认为是不安全的，\n"
+"// 通常会编写安全的包装函数。\n"
 
 #: src/std_misc/ffi.md:37
 msgid "// z = -1 + 0i\n"
-msgstr ""
+msgstr "// z = -1 + 0i\n"
 
 #: src/std_misc/ffi.md:40
 msgid "// calling a foreign function is an unsafe operation\n"
-msgstr ""
+msgstr "// 调用外部函数是一个不安全的操作\n"
 
 #: src/std_misc/ffi.md:43
 msgid "\"the square root of {:?} is {:?}\""
-msgstr ""
+msgstr "\"{:?} 的平方根是 {:?}\""
 
 #: src/std_misc/ffi.md:45
 msgid "// calling safe API wrapped around unsafe operation\n"
-msgstr ""
+msgstr "// 调用包装了不安全操作的安全 API\n"
 
 #: src/std_misc/ffi.md:46
 msgid "\"cos({:?}) = {:?}\""
-msgstr ""
+msgstr "\"cos({:?}) = {:?}\""
 
 #: src/std_misc/ffi.md:48
 msgid "// Minimal implementation of single precision complex numbers\n"
-msgstr ""
+msgstr "// 单精度复数的最小实现\n"
 
 #: src/std_misc/ffi.md:60
 msgid "\"{}-{}i\""
-msgstr ""
+msgstr "\"{}-{}i\""
 
 #: src/std_misc/ffi.md:62
 msgid "\"{}+{}i\""
-msgstr ""
+msgstr "\"{}+{}i\""
 
 #: src/testing.md:3
 msgid ""
 "Rust is a programming language that cares a lot about correctness and it "
 "includes support for writing software tests within the language itself."
 msgstr ""
+"Rust 是一种非常注重正确性的编程语言，它包含了在语言本身中编写软件测试的支持。"
 
 #: src/testing.md:6
 msgid "Testing comes in three styles:"
-msgstr ""
+msgstr "测试有三种风格："
 
 #: src/testing.md:8
 msgid "[Unit](testing/unit_testing.md) testing."
-msgstr ""
+msgstr "[单元](testing/unit_testing.md)测试。"
 
 #: src/testing.md:9
 msgid "[Doc](testing/doc_testing.md) testing."
-msgstr ""
+msgstr "[文档](testing/doc_testing.md)测试。"
 
 #: src/testing.md:10
 msgid "[Integration](testing/integration_testing.md) testing."
-msgstr ""
+msgstr "[集成](testing/integration_testing.md)测试。"
 
 #: src/testing.md:12
 msgid "Also Rust has support for specifying additional dependencies for tests:"
-msgstr ""
+msgstr "Rust 还支持为测试指定额外的依赖项："
 
 #: src/testing.md:14
 msgid "[Dev-dependencies](testing/dev_dependencies.md)"
-msgstr ""
+msgstr "[开发依赖](testing/dev_dependencies.md)"
 
 #: src/testing.md:18
 msgid ""
 "[The Book](https://doc.rust-lang.org/book/ch11-00-testing.html) chapter on "
 "testing"
 msgstr ""
+"[《Rust 程序设计语言》](https://doc.rust-lang.org/book/ch11-00-testing.html)中关于测试的章节"
 
 #: src/testing.md:19
 msgid ""
 "[API Guidelines](https://rust-lang-nursery.github.io/api-guidelines/"
 "documentation.html) on doc-testing"
 msgstr ""
+"[API 指南](https://rust-lang-nursery.github.io/api-guidelines/documentation.html)中关于文档测试的内容"
 
 #: src/testing/unit_testing.md:3
 msgid ""
