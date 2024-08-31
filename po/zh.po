@@ -1127,7 +1127,7 @@ msgstr "\"`x` 是 10 还是 100？x = {}\""
 #: src/std_misc/threads/testcase_mapreduce.md:128 src/std_misc/path.md:54
 #: src/std_misc/fs.md:150 src/meta/doc.md:109 src/meta/playground.md:49
 msgid "See also:"
-msgstr "另见："
+msgstr "参见："
 
 #: src/hello/comment.md:47
 msgid "[Library documentation](../meta/doc.md)"
@@ -2698,7 +2698,7 @@ msgstr "添加一个 `square` 函数，它以一个 `Point` 和一个 `f32` 作�
 
 #: src/custom_types/structs.md:97
 msgid "See also"
-msgstr "另见"
+msgstr "参见"
 
 #: src/custom_types/structs.md:99
 msgid ""
@@ -10100,7 +10100,7 @@ msgstr "\"Bar + Foo = {:?}\""
 #: src/trait/ops.md:55 src/testing.md:16 src/testing/doc_testing.md:104
 #: src/testing/dev_dependencies.md:36
 msgid "See Also"
-msgstr "另见"
+msgstr "参见"
 
 #: src/trait/ops.md:57
 msgid ""
@@ -13480,7 +13480,7 @@ msgid ""
 "just one implementation. (see also: [`BTreeSet`](https://doc.rust-lang.org/"
 "std/collections/struct.BTreeSet.html))"
 msgstr ""
-"`HashSet` 的独特之处在于它保证不会有重复的元素。这是任何集合（Set）类型都应该满足的契约。`HashSet` 只是其中一种实现。（另见：[`BTreeSet`](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html)）"
+"`HashSet` 的独特之处在于它保证不会有重复的元素。这是任何集合（Set）类型都应该满足的契约。`HashSet` 只是其中一种实现。（参见：[`BTreeSet`](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html)）"
 
 #: src/std/hash/hashset.md:13
 msgid ""
