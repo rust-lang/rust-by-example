@@ -15014,7 +15014,7 @@ msgid ""
 "Rust is a programming language that cares a lot about correctness and it "
 "includes support for writing software tests within the language itself."
 msgstr ""
-"Rust 是一种非常注重正确性的编程语言，它包含了在语言本身中编写软件测试的支持。"
+"Rust 是一种非常注重正确性的编程语言，它支持在语言本身内编写软件测试。"
 
 #: src/testing.md:6
 msgid "Testing comes in three styles:"
@@ -15038,7 +15038,7 @@ msgstr "Rust 还支持为测试指定额外的依赖项："
 
 #: src/testing.md:14
 msgid "[Dev-dependencies](testing/dev_dependencies.md)"
-msgstr "[开发依赖](testing/dev_dependencies.md)"
+msgstr "[开发依赖（dev-dependencies）](testing/dev_dependencies.md)"
 
 #: src/testing.md:18
 msgid ""
@@ -15076,7 +15076,7 @@ msgid ""
 "Tests fail when something in the test function [panics](../std/panic.md). "
 "There are some helper [macros](../macros.md):"
 msgstr ""
-"当测试函数中的某些内容[panic](../std/panic.md)时，测试就会失败。有一些辅助[宏](../macros.md)："
+"当测试函数中的某些内容[panic](../std/panic.md)时，测试就会失败。这是一些辅助[宏](../macros.md)："
 
 #: src/testing/unit_testing.md:14
 msgid "`assert!(expression)` - panics if expression evaluates to `false`."
@@ -15100,7 +15100,7 @@ msgstr ""
 msgid ""
 "// Note this useful idiom: importing names from outer (for mod tests) scope.\n"
 msgstr ""
-"// 注意这个有用的习惯用法：从外部（对于 mod tests）作用域导入名称。\n"
+"// 注意这个惯用法：从外部（对于 mod tests 而言）作用域导入所有可用项名称。\n"
 
 #: src/testing/unit_testing.md:42
 msgid ""
@@ -15124,7 +15124,7 @@ msgid ""
 "your unit tests can return `Result<()>`, which lets you use `?` in them! This "
 "can make them much more concise."
 msgstr ""
-"之前的单元测试示例都没有返回类型。但在 Rust 2018 中，你的单元测试可以返回 `Result<()>`，这让你可以在其中使用 `?`！这可以使它们变得更加简洁。"
+"之前的单元测试示例都没有返回类型。但在 Rust 2018 中，单元测试可以返回 `Result<()>`，这让你可以在其中使用 `?`！这可以使它们变得更加简洁。"
 
 #: src/testing/unit_testing.md:83
 msgid "\"negative floats don't have square roots\""
@@ -15136,7 +15136,7 @@ msgid ""
 "error-handling-and-panics/question-mark-in-main-and-tests.html) for more "
 "details."
 msgstr ""
-"更多详情请参见[《版本指南》](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/question-mark-in-main-and-tests.html)。"
+"更多详情可参考[《版本指南》](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/question-mark-in-main-and-tests.html)。"
 
 #: src/testing/unit_testing.md:102
 msgid "Testing panics"
@@ -15149,15 +15149,15 @@ msgid ""
 "`expected = ` with the text of the panic message. If your function can panic "
 "in multiple ways, it helps make sure your test is testing the correct panic."
 msgstr ""
-"要检查在某些情况下应该 panic 的函数，请使用 `#[should_panic]` 属性。这个属性接受可选参数 `expected = `，其中包含 panic 消息的文本。如果你的函数可能以多种方式 panic，这有助于确保你的测试正在测试正确的 panic。"
+"要测试在某些情况下应该 panic 的函数，可以使用 `#[should_panic]` 属性。这个属性接受可选参数 `expected = `，其中包含 panic 消息的文本。如果你的函数可能以多种方式 panic，这有助于确保正在测试对应的 panic。"
 
 #: src/testing/unit_testing.md:112 src/testing/doc_testing.md:45
 msgid "\"Divide-by-zero error\""
-msgstr "\"除以零错误\""
+msgstr "\"Divide-by-zero error\""
 
 #: src/testing/unit_testing.md:114 src/testing/unit_testing.md:135
 msgid "\"Divide result is zero\""
-msgstr "\"除法结果为零\""
+msgstr "\"Divide result is zero\""
 
 #: src/testing/unit_testing.md:142
 msgid "Running these tests gives us:"
@@ -15199,7 +15199,7 @@ msgid ""
 "takes care about correctness, so these code blocks are compiled and used as "
 "documentation tests."
 msgstr ""
-"Rust 项目的主要文档方式是通过注释源代码。文档注释使用 [CommonMark Markdown 规范](https://commonmark.org/)编写，并支持其中的代码块。Rust 注重正确性，因此这些代码块会被编译并用作文档测试。"
+"为 Rust 项目的编写文档的主要方式是通过在源代码中添加注释。文档注释使用 [CommonMark Markdown 规范](https://commonmark.org/)编写，并支持其中的代码块。Rust 注重正确性，因此这些代码块会被编译并用作文档测试。"
 
 #: src/testing/doc_testing.md:10
 msgid ""
@@ -15253,7 +15253,7 @@ msgstr ""
 "///\n"
 "/// 下面的函数用于除法运算。\n"
 "///\n"
-"/// # 示例\n"
+"/// # Examples\n"
 "///\n"
 "/// ```\n"
 "/// let result = doccomments::div(10, 2);\n"
@@ -15278,7 +15278,7 @@ msgstr ""
 
 #: src/testing/doc_testing.md:71
 msgid "Motivation behind documentation tests"
-msgstr "文档测试的动机"
+msgstr "文档测试的目的"
 
 #: src/testing/doc_testing.md:73
 msgid ""
@@ -15292,7 +15292,7 @@ msgid ""
 "hide it and `unwrap` it in hidden `main`. Sounds complicated? Here's an "
 "example:"
 msgstr ""
-"文档测试的主要目的是作为练习功能的示例，这是最重要的[指南](https://rust-lang-nursery.github.io/api-guidelines/documentation.html#examples-use--not-try-not-unwrap-c-question-mark)之一。它允许将文档中的示例作为完整的代码片段使用。但是使用 `?` 会导致编译失败，因为 `main` 返回 `unit`。隐藏文档中的某些源代码行可以解决这个问题：可以编写 `fn try_main() -> Result<(), ErrorType>`，隐藏它并在隐藏的 `main` 中 `unwrap` 它。听起来很复杂？这里有一个例子："
+"文档测试的主要目的是作为如何使用的示例，这是最重要的[指导原则](https://rust-lang-nursery.github.io/api-guidelines/documentation.html#examples-use--not-try-not-unwrap-c-question-mark)之一。它允许将文档中的示例作为完整的代码片段使用。但是使用 `?` 会导致编译失败，因为 `main` 返回 `unit`。隐藏文档中的某些源代码行可以解决这个问题：可以编写 `fn try_main() -> Result<(), ErrorType>`，隐藏并在 `main` 中 `unwrap`。听起来很复杂？这里有一个例子："
 
 #: src/testing/doc_testing.md:82
 msgid ""
@@ -15311,22 +15311,37 @@ msgid ""
 "/// # }\n"
 "/// ```\n"
 msgstr ""
+"/// 在文档测试中使用隐藏的 `try_main`。\n"
+"///\n"
+"/// ```\n"
+"/// # // 以 `#` 符号开头的行是隐藏的，但它们仍然可以编译！\n"
+"/// # fn try_main() -> Result<(), String> { // 文档中显示的包装函数体的行\n"
+"/// let res = doccomments::try_div(10, 2)?;\n"
+"/// # Ok(()) // 从 try_main 返回\n"
+"/// # }\n"
+"/// # fn main() { // 开始将要 unwrap() 的 main\n"
+"/// #    try_main().unwrap(); // 调用 try_main 并 unwrap\n"
+"/// #                         // 这样在出错时测试会 panic\n"
+"/// # }\n"
+"/// ```\n"
 
 #: src/testing/doc_testing.md:97
 msgid "\"Divide-by-zero\""
-msgstr ""
+msgstr "\"除以零\""
 
 #: src/testing/doc_testing.md:106
 msgid ""
 "[RFC505](https://github.com/rust-lang/rfcs/blob/master/text/0505-api-comment-"
 "conventions.md) on documentation style"
 msgstr ""
+"关于文档风格的 [RFC505](https://github.com/rust-lang/rfcs/blob/master/text/0505-api-comment-conventions.md)"
 
 #: src/testing/doc_testing.md:107
 msgid ""
 "[API Guidelines](https://rust-lang-nursery.github.io/api-guidelines/"
 "documentation.html) on documentation guidelines"
 msgstr ""
+"关于文档指南的 [API 指南](https://rust-lang-nursery.github.io/api-guidelines/documentation.html)"
 
 #: src/testing/integration_testing.md:3
 msgid ""
@@ -15336,26 +15351,27 @@ msgid ""
 "would. Their purpose is to test that many parts of your library work "
 "correctly together."
 msgstr ""
+"[单元测试](unit_testing.md)一次单独测试一个模块：它们很小，可以测试私有代码。集成测试位于 crate 外部，并且仅使用公开接口，就像其他使用该 crate 的代码一样。集成测试的目的是测试库的各个部分是否能正确地协同工作。"
 
 #: src/testing/integration_testing.md:8
 msgid "Cargo looks for integration tests in `tests` directory next to `src`."
-msgstr ""
+msgstr "Cargo 在 `src` 目录旁边的 `tests` 目录中寻找集成测试。"
 
 #: src/testing/integration_testing.md:10 src/testing/dev_dependencies.md:17
 msgid "File `src/lib.rs`:"
-msgstr ""
+msgstr "文件 `src/lib.rs`："
 
 #: src/testing/integration_testing.md:13
 msgid "// Define this in a crate called `adder`.\n"
-msgstr ""
+msgstr "// 在一个名为 `adder` 的 crate 中定义这个。\n"
 
 #: src/testing/integration_testing.md:19
 msgid "File with test: `tests/integration_test.rs`:"
-msgstr ""
+msgstr "测试文件：`tests/integration_test.rs`："
 
 #: src/testing/integration_testing.md:28
 msgid "Running tests with `cargo test` command:"
-msgstr ""
+msgstr "使用 `cargo test` 命令运行测试："
 
 #: src/testing/integration_testing.md:50
 msgid ""
@@ -15363,28 +15379,31 @@ msgid ""
 "crate. In order to share some code between integration tests we can make a "
 "module with public functions, importing and using it within tests."
 msgstr ""
+"`tests` 目录中的每个 Rust 源文件都被编译为一个单独的 crate。为了在集成测试之间共享一些代码，我们可以创建一个带有公共函数的模块，然后在测试中导入和使用它。"
 
 #: src/testing/integration_testing.md:54
 msgid "File `tests/common/mod.rs`:"
-msgstr ""
+msgstr "文件 `tests/common/mod.rs`："
 
 #: src/testing/integration_testing.md:58
 msgid ""
 "// some setup code, like creating required files/directories, starting\n"
 "    // servers, etc.\n"
 msgstr ""
+"// 一些设置代码，比如创建所需的文件/目录，启动\n"
+"    // 服务器等。\n"
 
 #: src/testing/integration_testing.md:63
 msgid "File with test: `tests/integration_test.rs`"
-msgstr ""
+msgstr "测试文件：`tests/integration_test.rs`"
 
 #: src/testing/integration_testing.md:66
 msgid "// importing common module.\n"
-msgstr ""
+msgstr "// 导入 common 模块。\n"
 
 #: src/testing/integration_testing.md:71
 msgid "// using common code.\n"
-msgstr ""
+msgstr "// 使用公共代码。\n"
 
 #: src/testing/integration_testing.md:77
 msgid ""
@@ -15392,10 +15411,11 @@ msgid ""
 "because the test runner will treat the file as a test crate and try to run "
 "tests inside it."
 msgstr ""
+"将模块创建为 `tests/common.rs` 也可以，但不推荐这样做，因为测试执行时会将该文件视为测试 crate 并尝试运行其中的测试。"
 
 #: src/testing/dev_dependencies.md:1
 msgid "Development dependencies"
-msgstr ""
+msgstr "开发依赖"
 
 #: src/testing/dev_dependencies.md:3
 msgid ""
@@ -15404,6 +15424,7 @@ msgid ""
 "dependencies]` section. These dependencies are not propagated to other "
 "packages which depend on this package."
 msgstr ""
+"有时候我们需要仅用于测试（或示例、基准测试）的依赖项。这些依赖项被添加到 `Cargo.toml` 的 `[dev-dependencies]` 部分。这些依赖项不会被传播到依赖于这个包的其他包。"
 
 #: src/testing/dev_dependencies.md:8
 msgid ""
@@ -15412,6 +15433,8 @@ msgid ""
 "`assert_eq!` and `assert_ne!` macros, to provide colorful diff.  \n"
 "File `Cargo.toml`:"
 msgstr ""
+"例如 [`pretty_assertions`](https://docs.rs/pretty_assertions/1.0.0/pretty_assertions/index.html)，它扩展了标准的 `assert_eq!` 和 `assert_ne!` 宏，提供彩色差异。  \n"
+"文件 `Cargo.toml`："
 
 #: src/testing/dev_dependencies.md:11
 msgid ""
@@ -15421,16 +15444,22 @@ msgid ""
 "pretty_assertions = \"1\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"# 标准的 crate 数据省略\n"
+"[dev-dependencies]\n"
+"pretty_assertions = \"1\"\n"
+"```"
 
 #: src/testing/dev_dependencies.md:27
 msgid "// crate for test-only use. Cannot be used in non-test code.\n"
-msgstr ""
+msgstr "// 仅用于测试的 crate。不能在非测试代码中使用。\n"
 
 #: src/testing/dev_dependencies.md:37
 msgid ""
 "[Cargo](http://doc.crates.io/specifying-dependencies.html) docs on specifying "
 "dependencies."
 msgstr ""
+"[Cargo](http://doc.crates.io/specifying-dependencies.html) 文档中关于指定依赖项的内容。"
 
 #: src/unsafe.md:3
 msgid ""
@@ -15441,28 +15470,30 @@ msgid ""
 "put in place by the compiler; specifically, there are four primary things "
 "that unsafe is used for:"
 msgstr ""
+"作为本节的介绍，借用[官方文档](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html)的话说，\"应该尽量减少代码库中不安全代码的数量。\" 记住这一点，让我们开始吧！Rust 中的不安全标注用于绕过编译器设置的保护；具体来说，不安全主要用于以下四个方面："
 
 #: src/unsafe.md:9
 msgid "dereferencing raw pointers"
-msgstr ""
+msgstr "解引用裸指针"
 
 #: src/unsafe.md:10
 msgid ""
 "calling functions or methods which are `unsafe` (including calling a function "
 "over FFI, see [a previous chapter](std_misc/ffi.md) of the book)"
 msgstr ""
+"调用 `unsafe` 的函数或方法（包括通过 FFI 调用函数，参见本书的[前面的一章](std_misc/ffi.md)）"
 
 #: src/unsafe.md:12
 msgid "accessing or modifying static mutable variables"
-msgstr ""
+msgstr "访问或修改静态可变变量"
 
 #: src/unsafe.md:13
 msgid "implementing unsafe traits"
-msgstr ""
+msgstr "实现不安全特征"
 
 #: src/unsafe.md:15
 msgid "Raw Pointers"
-msgstr ""
+msgstr "裸指针"
 
 #: src/unsafe.md:16
 msgid ""
@@ -15471,10 +15502,11 @@ msgid ""
 "borrow checker. Dereferencing a raw pointer can only be done through an "
 "unsafe block."
 msgstr ""
+"裸指针 `*` 和引用 `&T` 的功能类似，但引用总是安全的，因为借用检查器保证它们指向有效数据。解引用裸指针只能在不安全块中进行。"
 
 #: src/unsafe.md:31
 msgid "Calling Unsafe Functions"
-msgstr ""
+msgstr "调用不安全函数"
 
 #: src/unsafe.md:32
 msgid ""
@@ -15484,6 +15516,7 @@ msgid ""
 "fn.from_raw_parts.html) which will create a slice given a pointer to the "
 "first element and a length."
 msgstr ""
+"一些函数可以被声明为 `unsafe`，这意味着确保正确性是程序员的责任，而不再是编译器的责任。一个例子是 [`std::slice::from_raw_parts`](https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html)，它会根据指向第一个元素的指针和长度创建一个切片。"
 
 #: src/unsafe.md:54
 msgid ""
@@ -15492,6 +15525,7 @@ msgid ""
 "to is of the correct type. If these invariants aren't upheld then the "
 "program's behaviour is undefined and there is no knowing what will happen."
 msgstr ""
+"对于 `slice::from_raw_parts`，**必须**遵守的假设之一是传入的指针指向有效的内存，并且指向的内存类型正确。如果这些假设没有被遵守，那么程序的行为是未定义的，无法预知会发生什么。"
 
 #: src/unsafe/asm.md:3
 msgid ""
@@ -15502,40 +15536,42 @@ msgid ""
 "level hardware primitives, e.g. in kernel code, may also demand this "
 "functionality."
 msgstr ""
+"Rust 通过 `asm!` 宏提供了内联汇编支持。它可以用于在编译器生成的汇编输出中嵌入手写的汇编代码。通常这不是必需的，但在需要特定的性能或时序且无法通过其他方式实现时可能会用到。访问低级硬件原语，例如在内核代码中，也可能需要这个功能。"
 
 #: src/unsafe/asm.md:8
 msgid ""
 "**Note**: the examples here are given in x86/x86-64 assembly, but other "
 "architectures are also supported."
 msgstr ""
+"**注意**：这里的例子使用的是 x86/x86-64 汇编，但也支持其他架构。"
 
 #: src/unsafe/asm.md:10
 msgid "Inline assembly is currently supported on the following architectures:"
-msgstr ""
+msgstr "内联汇编目前支持以下架构："
 
 #: src/unsafe/asm.md:11
 msgid "x86 and x86-64"
-msgstr ""
+msgstr "x86 和 x86-64"
 
 #: src/unsafe/asm.md:12
 msgid "ARM"
-msgstr ""
+msgstr "ARM"
 
 #: src/unsafe/asm.md:13
 msgid "AArch64"
-msgstr ""
+msgstr "AArch64"
 
 #: src/unsafe/asm.md:14
 msgid "RISC-V"
-msgstr ""
+msgstr "RISC-V"
 
 #: src/unsafe/asm.md:16
 msgid "Basic usage"
-msgstr ""
+msgstr "基本用法"
 
 #: src/unsafe/asm.md:18
 msgid "Let us start with the simplest possible example:"
-msgstr ""
+msgstr "让我们从最简单的例子开始："
 
 #: src/unsafe/asm.md:21 src/unsafe/asm.md:41 src/unsafe/asm.md:68
 #: src/unsafe/asm.md:106 src/unsafe/asm.md:123 src/unsafe/asm.md:148
@@ -15544,11 +15580,11 @@ msgstr ""
 #: src/unsafe/asm.md:329 src/unsafe/asm.md:367 src/unsafe/asm.md:394
 #: src/unsafe/asm.md:418 src/unsafe/asm.md:456
 msgid "\"x86_64\""
-msgstr ""
+msgstr "\"x86_64\""
 
 #: src/unsafe/asm.md:25
 msgid "\"nop\""
-msgstr ""
+msgstr "\"nop\""
 
 #: src/unsafe/asm.md:30
 msgid ""
@@ -15558,20 +15594,22 @@ msgid ""
 "invariants. The instructions to be inserted are listed in the first argument "
 "of the `asm!` macro as a string literal."
 msgstr ""
+"这将在编译器生成的汇编中插入一条 NOP（无操作）指令。注意，所有 `asm!` 调用都必须在 `unsafe` 块内，因为它们可能插入任意指令并破坏各种不变量。要插入的指令作为字符串字面量列在 `asm!` 宏的第一个参数中。"
 
 #: src/unsafe/asm.md:35
 msgid "Inputs and outputs"
-msgstr ""
+msgstr "输入和输出"
 
 #: src/unsafe/asm.md:37
 msgid ""
 "Now inserting an instruction that does nothing is rather boring. Let us do "
 "something that actually acts on data:"
 msgstr ""
+"现在插入一个什么都不做的指令相当无聊。让我们做一些实际操作数据的事情："
 
 #: src/unsafe/asm.md:46
 msgid "\"mov {}, 5\""
-msgstr ""
+msgstr "\"mov {}, 5\""
 
 #: src/unsafe/asm.md:52
 msgid ""
@@ -15588,18 +15626,19 @@ msgid ""
 "into the template and will read the variable from there after the inline "
 "assembly finishes executing."
 msgstr ""
+"这将把值 `5` 写入 `u64` 变量 `x`。你可以看到，我们用来指定指令的字符串字面量实际上是一个模板字符串。它遵循与 Rust [格式化字符串](https://doc.rust-lang.org/std/fmt/#syntax)相同的规则。然而，插入到模板中的参数看起来可能与你熟悉的有些不同。首先，我们需要指定变量是内联汇编的输入还是输出。在这种情况下，它是一个输出。我们通过写 `out` 来声明这一点。我们还需要指定汇编期望变量在什么类型的寄存器中。在这种情况下，我们通过指定 `reg` 将其放在任意通用寄存器中。编译器将选择一个适当的寄存器插入到模板中，并在内联汇编执行完成后从那里读取变量。"
 
 #: src/unsafe/asm.md:65
 msgid "Let us see another example that also uses an input:"
-msgstr ""
+msgstr "让我们看另一个也使用输入的例子："
 
 #: src/unsafe/asm.md:75
 msgid "\"mov {0}, {1}\""
-msgstr ""
+msgstr "\"mov {0}, {1}\""
 
 #: src/unsafe/asm.md:76 src/unsafe/asm.md:111 src/unsafe/asm.md:129
 msgid "\"add {0}, 5\""
-msgstr ""
+msgstr "\"add {0}, 5\""
 
 #: src/unsafe/asm.md:85
 msgid ""
@@ -15607,10 +15646,11 @@ msgid ""
 "variable `o`. The particular way this assembly does this is first copying the "
 "value from `i` to the output, and then adding `5` to it."
 msgstr ""
+"这将把 `5` 加到变量 `i` 的输入上，并将结果写入变量 `o`。这段汇编的具体做法是先将 `i` 的值复制到输出，然后加上 `5`。"
 
 #: src/unsafe/asm.md:89
 msgid "The example shows a few things:"
-msgstr ""
+msgstr "这个例子展示了几点："
 
 #: src/unsafe/asm.md:91
 msgid ""
@@ -15619,11 +15659,13 @@ msgid ""
 "joined together with newlines between them. This makes it easy to format "
 "assembly code."
 msgstr ""
+"首先，我们可以看到 `asm!` 允许多个模板字符串参数；每个参数都被视为单独的一行汇编代码，就好像它们都用换行符连接在一起。这使得格式化汇编代码变得容易。"
 
 #: src/unsafe/asm.md:96
 msgid ""
 "Second, we can see that inputs are declared by writing `in` instead of `out`."
 msgstr ""
+"其次，我们可以看到输入是通过写 `in` 而不是 `out` 来声明的。"
 
 #: src/unsafe/asm.md:98
 msgid ""
@@ -15633,10 +15675,11 @@ msgid ""
 "using this facility is generally recommended, as it improves readability, and "
 "allows reordering instructions without changing the argument order."
 msgstr ""
+"第三，我们可以看到我们可以指定参数编号或名称，就像在任何格式字符串中一样。对于内联汇编模板，这特别有用，因为参数经常被多次使用。对于更复杂的内联汇编，通常建议使用这种方式，因为它提高了可读性，并允许在不改变参数顺序的情况下重新排序指令。"
 
 #: src/unsafe/asm.md:103
 msgid "We can further refine the above example to avoid the `mov` instruction:"
-msgstr ""
+msgstr "我们可以进一步优化上面的例子以避免 `mov` 指令："
 
 #: src/unsafe/asm.md:117
 msgid ""
@@ -15644,16 +15687,18 @@ msgid ""
 "output. This is different from specifying an input and output separately in "
 "that it is guaranteed to assign both to the same register."
 msgstr ""
+"我们可以看到 `inout` 用于指定既是输入又是输出的参数。这与分别指定输入和输出不同，它保证将两者分配到同一个寄存器。"
 
 #: src/unsafe/asm.md:120
 msgid ""
 "It is also possible to specify different variables for the input and output "
 "parts of an `inout` operand:"
 msgstr ""
+"也可以为 `inout` 操作数的输入和输出部分指定不同的变量："
 
 #: src/unsafe/asm.md:135
 msgid "Late output operands"
-msgstr ""
+msgstr "延迟输出操作数"
 
 #: src/unsafe/asm.md:137
 msgid ""
@@ -15666,20 +15711,22 @@ msgid ""
 "output that is written only after all inputs have been consumed. There is "
 "also an `inlateout` variant of this specifier."
 msgstr ""
+"Rust 编译器在分配操作数时比较保守。它假设 `out` 可以在任何时候被写入，因此不能与任何其他参数共享其位置。然而，为了保证最佳性能，使用尽可能少的寄存器很重要，这样它们就不必在内联汇编块周围保存和重新加载。为了实现这一点，Rust 提供了一个 `lateout` 说明符。这可以用于任何只在所有输入被消耗后才写入的输出。这个说明符还有一个 `inlateout` 变体。"
 
 #: src/unsafe/asm.md:145
 msgid ""
 "Here is an example where `inlateout` _cannot_ be used in `release` mode or "
 "other optimized cases:"
 msgstr ""
+"这里有一个例子，在 `release` 模式或其他优化情况下 _不能_ 使用 `inlateout`："
 
 #: src/unsafe/asm.md:156 src/unsafe/asm.md:180 src/unsafe/asm.md:463
 msgid "\"add {0}, {1}\""
-msgstr ""
+msgstr "\"add {0}, {1}\""
 
 #: src/unsafe/asm.md:157
 msgid "\"add {0}, {2}\""
-msgstr ""
+msgstr "\"add {0}, {2}\""
 
 #: src/unsafe/asm.md:167
 msgid ""
@@ -15689,6 +15736,7 @@ msgid ""
 "`inlateout(reg) a` can instead lead to the final value `a = 16`, causing the "
 "assertion to fail."
 msgstr ""
+"在未优化的情况下（例如 `Debug` 模式），在上面的例子中将 `inout(reg) a` 替换为 `inlateout(reg) a` 可以继续给出预期的结果。然而，在 `release` 模式或其他优化情况下，使用 `inlateout(reg) a` 可能会导致最终值 `a = 16`，使断言失败。"
 
 #: src/unsafe/asm.md:169
 msgid ""
