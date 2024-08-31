@@ -1638,9 +1638,9 @@ msgid ""
 "if the `std` library implemented a single style for all `Vec<T>`, what style "
 "should it be? Would it be either of these two?"
 msgstr ""
-"`fmt::Display` 可能比 `fmt::Debug` 更整洁，但这给 `std` 库带来了一个问题。"
-"应该如何显示含糊不清的类型？例如，如果 `std` 库为所有的 `Vec<T>` 实现了一种风格，"
-"那应该是什么风格？是下面两种中的哪一个？"
+"`fmt::Display` 可能比 `fmt::Debug` 更简洁，但这给 `std` 库带来了一个问题："
+"如何显示歧义类型？例如，如果 `std` 库为所有 `Vec<T>` 实现统一的样式，"
+"应该采用哪种样式？是以下两种之一吗？"
 
 #: src/hello/print/print_display.md:35
 msgid "`Vec<path>`: `/:/etc:/home/username:/bin` (split on `:`)"
@@ -1657,16 +1657,16 @@ msgid ""
 "`Vec<T>` or for any other generic containers. `fmt::Debug` must then be used "
 "for these generic cases."
 msgstr ""
-"答案是否定的，因为对于所有类型来说没有一种理想的风格，而且 `std` 库也不应该擅自规定一种风格。"
-"`fmt::Display` 没有为 `Vec<T>` 或其他任何泛型容器实现。"
-"因此，这些泛型的情况必须使用 `fmt::Debug`。"
+"答案是否定的。因为不存在适用于所有类型的理想样式，`std` 库也不应擅自规定一种。"
+"因此，`fmt::Display` 并未为 `Vec<T>` 或其他泛型容器实现。"
+"在这些泛型情况下，必须使用 `fmt::Debug`。"
 
 #: src/hello/print/print_display.md:43
 msgid ""
 "This is not a problem though because for any new _container_ type which is "
 "_not_ generic, `fmt::Display` can be implemented."
 msgstr ""
-"不过这不是问题，因为对于任何新的非泛型的容器类型，都可以实现 `fmt::Display`。"
+"不过，这不是问题。对于任何新的非泛型容器类型，都可以实现 `fmt::Display`。"
 
 #: src/hello/print/print_display.md:47
 msgid "// Import `fmt`\n"
@@ -1678,16 +1678,16 @@ msgid ""
 "can\n"
 "// be contrasted with `Display`.\n"
 msgstr ""
-"// 带有两个数字的结构体。推导出 `Debug`，以便\n"
-"// 与 `Display` 的输出进行比较。\n"
+"// 定义一个包含两个数字的结构体。派生 `Debug` 特性，\n"
+"// 以便与 `Display` 的结果进行对比。\n"
 
 #: src/hello/print/print_display.md:53
 msgid "// Implement `Display` for `MinMax`.\n"
-msgstr "// 为 `MinMax` 实现 `Display`。\n"
+msgstr "// 为 `MinMax` 实现 `Display` 特性。\n"
 
 #: src/hello/print/print_display.md:57
 msgid "// Use `self.number` to refer to each positional data point.\n"
-msgstr "// 使用 `self.number` 来表示每个数据点。\n"
+msgstr "// 使用 `self.number` 引用每个位置的数据点。\n"
 
 #: src/hello/print/print_display.md:58
 msgid "\"({}, {})\""
@@ -1695,15 +1695,15 @@ msgstr "\"({}, {})\""
 
 #: src/hello/print/print_display.md:61
 msgid "// Define a structure where the fields are nameable for comparison.\n"
-msgstr "// 定义一个结构体，使其字段可命名以进行比较。\n"
+msgstr "// 定义一个结构体，其字段可命名以便比较。\n"
 
 #: src/hello/print/print_display.md:68
 msgid "// Similarly, implement `Display` for `Point2D`.\n"
-msgstr "// 类似地，为 `Point2D` 实现 `Display`。\n"
+msgstr "// 同样，为 `Point2D` 实现 `Display` 特性。\n"
 
 #: src/hello/print/print_display.md:72
 msgid "// Customize so only `x` and `y` are denoted.\n"
-msgstr "// 自定义，使得只有 `x` 和 `y` 被表示。\n"
+msgstr "// 自定义实现，只显示 `x` 和 `y`。\n"
 
 #: src/hello/print/print_display.md:73
 msgid "\"x: {}, y: {}\""
@@ -1711,23 +1711,23 @@ msgstr "\"x: {}, y: {}\""
 
 #: src/hello/print/print_display.md:80
 msgid "\"Compare structures:\""
-msgstr "\"Compare structures:\""
+msgstr "\"比较结构体：\""
 
 #: src/hello/print/print_display.md:81 src/hello/print/print_display.md:94
 msgid "\"Display: {}\""
-msgstr "\"Display: {}\""
+msgstr "\"Display：{}\""
 
 #: src/hello/print/print_display.md:82 src/hello/print/print_display.md:95
 msgid "\"Debug: {:?}\""
-msgstr "\"Debug: {:?}\""
+msgstr "\"Debug：{:?}\""
 
 #: src/hello/print/print_display.md:87
 msgid "\"The big range is {big} and the small is {small}\""
-msgstr "\"The big range is {big} and the small is {small}\""
+msgstr "\"大范围是 {big}，小范围是 {small}\""
 
 #: src/hello/print/print_display.md:93
 msgid "\"Compare points:\""
-msgstr "\"Compare points:\""
+msgstr "\"比较点：\""
 
 #: src/hello/print/print_display.md:97
 msgid ""
@@ -1735,9 +1735,9 @@ msgid ""
 "    // requires `fmt::Binary` to be implemented. This will not work.\n"
 "    // println!(\"What does Point2D look like in binary: {:b}?\", point);\n"
 msgstr ""
-"// 报错。`Debug` 和 `Display` 都已经实现，但 `{:b}` 需要\n"
-"    // `fmt::Binary` 得到实现。这行不通。\n"
-"    // println!(\"What does Point2D look like in binary: {:b}?\", point);\n"
+"// 错误。虽然实现了 `Debug` 和 `Display`，但 `{:b}` 需要\n"
+"    // 实现 `fmt::Binary`。这行代码无法工作。\n"
+"    // println!(\"Point2D 的二进制表示是什么：{:b}？\", point);\n"
 
 #: src/hello/print/print_display.md:103
 msgid ""
@@ -1747,9 +1747,9 @@ msgid ""
 "implementation. This is detailed further in [`std::fmt`](https://doc.rust-"
 "lang.org/std/fmt/)."
 msgstr ""
-"因此，`fmt::Display` 已经实现，但 `fmt::Binary` 没有，所以不能使用。"
-"`std::fmt` 中有很多这样的 [`traits`](https://doc.rust-lang.org/std/fmt/#formatting-traits)，"
-"每个都需要自己的实现。这在 [`std::fmt`](https://doc.rust-lang.org/std/fmt/) 中有更详细的说明。"
+"因此，虽然实现了 `fmt::Display`，但未实现 `fmt::Binary`，所以无法使用。"
+"`std::fmt` 包含许多这样的[`traits`](https://doc.rust-lang.org/std/fmt/#formatting-traits)，"
+"每个都需要单独实现。更多详情请参阅 [`std::fmt`](https://doc.rust-lang.org/std/fmt/)。"
 
 #: src/hello/print/print_display.md:109
 msgid ""
@@ -1757,8 +1757,8 @@ msgid ""
 "guide to add a `Complex` struct to the example. When printed in the same way, "
 "the output should be:"
 msgstr ""
-"在检查了上面例子的输出后，以 `Point2D` 结构体为示例，向例子中添加一个 `Complex` 结构体。"
-"当以相同方式打印时，输出应该是："
+"查看上述示例的输出后，参考 `Point2D` 结构体，向示例中添加一个 `Complex` 结构体。"
+"以相同方式打印时，输出应为："
 
 #: src/hello/print/print_display.md:120
 msgid ""
@@ -1778,27 +1778,28 @@ msgid ""
 "`fmt::Result`. Proper handling of this requires dealing with _all_ the "
 "results. Rust provides the `?` operator for exactly this purpose."
 msgstr ""
-"为一个结构体实现 `fmt::Display`，其中的元素必须依次处理，这是很棘手的。"
-"问题在于每个 `write!` 都会生成一个 `fmt::Result`。正确的方式需要处理**所有**结果。"
-"Rust 提供了 `?` 运算符来专门应对这个问题。"
+"为一个需要顺序处理元素的结构体实现 `fmt::Display` 是棘手的。"
+"问题在于每个 `write!` 都会生成一个 `fmt::Result`。"
+"正确处理这种情况需要处理所有的结果。"
+"Rust 提供了 `?` 运算符专门用于此目的。"
 
 #: src/hello/print/print_display/testcase_list.md:8
 msgid "Using `?` on `write!` looks like this:"
-msgstr "在 `write!` 上使用 `?` 看起来像这样："
+msgstr "在 `write!` 上使用 `?` 的示例如下："
 
 #: src/hello/print/print_display/testcase_list.md:11
 msgid ""
 "// Try `write!` to see if it errors. If it errors, return\n"
 "// the error. Otherwise continue.\n"
 msgstr ""
-"// 尝试执行 `write!`，看看它是否会报错。如果报错，就返回错误。\n"
+"// 尝试执行 `write!`，检查是否出错。如果出错，返回错误。\n"
 "// 否则继续执行。\n"
 
 #: src/hello/print/print_display/testcase_list.md:16
 msgid ""
 "With `?` available, implementing `fmt::Display` for a `Vec` is "
 "straightforward:"
-msgstr "有了 `?` 可用，为 `Vec` 实现 `fmt::Display` 就变得很直观了："
+msgstr "有了 `?` 运算符，为 `Vec` 实现 `fmt::Display` 就变得简单明了："
 
 #: src/hello/print/print_display/testcase_list.md:20
 msgid "// Import the `fmt` module.\n"
@@ -1806,7 +1807,7 @@ msgstr "// 导入 `fmt` 模块。\n"
 
 #: src/hello/print/print_display/testcase_list.md:21
 msgid "// Define a structure named `List` containing a `Vec`.\n"
-msgstr "// 定义一个包含 `Vec` 的结构体 `List`。\n"
+msgstr "// 定义一个名为 `List` 的结构体，包含一个 `Vec`。\n"
 
 #: src/hello/print/print_display/testcase_list.md:27
 msgid ""
@@ -1825,14 +1826,14 @@ msgid ""
 "// Iterate over `v` in `vec` while enumerating the iteration\n"
 "        // count in `count`.\n"
 msgstr ""
-"// 遍历 `vec` 中的 `v`，同时在 `count` 中记录迭代次数。\n"
+"// 遍历 `vec` 中的 `v`，同时用 `count` 记录迭代次数。\n"
 
 #: src/hello/print/print_display/testcase_list.md:36
 msgid ""
 "// For every element except the first, add a comma.\n"
 "            // Use the ? operator to return on errors.\n"
 msgstr ""
-"// 对除第一个元素外的每个元素，添加一个逗号。\n"
+"// 除第一个元素外，为每个元素添加逗号。\n"
 "            // 使用 ? 运算符在出错时返回。\n"
 
 #: src/hello/print/print_display/testcase_list.md:38 src/std/str.md:36
@@ -1841,7 +1842,7 @@ msgstr "\", \""
 
 #: src/hello/print/print_display/testcase_list.md:42
 msgid "// Close the opened bracket and return a fmt::Result value.\n"
-msgstr "// 关闭开括号并返回一个 fmt::Result 值。\n"
+msgstr "// 闭合左括号并返回 fmt::Result 值\n"
 
 #: src/hello/print/print_display/testcase_list.md:43
 msgid "\"]\""
@@ -1851,7 +1852,7 @@ msgstr "\"]\""
 msgid ""
 "Try changing the program so that the index of each element in the vector is "
 "also printed. The new output should look like this:"
-msgstr "尝试修改程序，使向量中每个元素的索引也被打印出来。新的输出应该看起来像这样："
+msgstr "尝试修改程序，使向量中每个元素的索引也被打印出来。新的输出应该如下所示："
 
 #: src/hello/print/print_display/testcase_list.md:64
 msgid ""
@@ -1866,7 +1867,7 @@ msgstr ""
 
 #: src/hello/print/fmt.md:3
 msgid "We've seen that formatting is specified via a _format string_:"
-msgstr "我们已经看到，格式化是通过**格式字符串**指定的："
+msgstr "我们已经看到，格式化是通过一个_格式字符串_来指定的："
 
 #: src/hello/print/fmt.md:5
 msgid "`format!(\"{}\", foo)` -> `\"3735928559\"`"
@@ -1889,7 +1890,7 @@ msgid ""
 "The same variable (`foo`) can be formatted differently depending on which "
 "_argument type_ is used: `X` vs `o` vs _unspecified_."
 msgstr ""
-"根据使用的**参数类型**是 `X`、`o` 还是**未指定**，同样的变量（`foo`）能够格式化成不同的形式。"
+"同一个变量（`foo`）可以根据使用的**参数类型**而有不同的格式化方式：`X`、`o` 或**未指定**。"
 
 #: src/hello/print/fmt.md:12
 msgid ""
@@ -1898,8 +1899,8 @@ msgid ""
 "which handles cases where the argument type is left unspecified: `{}` for "
 "instance."
 msgstr ""
-"这种格式化功能是通过 trait 实现的，每种参数类型都有一个对应的 trait。"
-"最常见的格式化 trait 是 `Display`，它处理参数类型未指定的情况：例如 `{}`。"
+"这种格式化功能是通过 trait 实现的，每种参数类型都对应一个 trait。"
+"最常用的格式化 trait 是 `Display`，它处理参数类型未指定的情况，例如 `{}`。"
 
 #: src/hello/print/fmt.md:21
 msgid "// Latitude\n"
@@ -1912,7 +1913,7 @@ msgstr "// 经度\n"
 #: src/hello/print/fmt.md:28
 msgid ""
 "// `f` is a buffer, and this method must write the formatted string into it.\n"
-msgstr "// `f` 是一个缓冲区，这个方法必须将格式化的字符串写入其中。\n"
+msgstr "// `f` 是一个缓冲区，此方法必须将格式化的字符串写入其中。\n"
 
 #: src/hello/print/fmt.md:30
 msgid "'N'"
@@ -1984,7 +1985,7 @@ msgstr ""
 msgid ""
 "Add an implementation of the `fmt::Display` trait for the `Color` struct "
 "above so that the output displays as:"
-msgstr "为上面的 `Color` 结构体添加 `fmt::Display` trait 的实现，使输出显示为："
+msgstr "为上面的 `Color` 结构体实现 `fmt::Display` trait，使输出显示如下："
 
 #: src/hello/print/fmt.md:81
 msgid "Three hints if you get stuck:"
@@ -1997,7 +1998,7 @@ msgid ""
 "see [RGB color format & calculation](https://www.rapidtables.com/web/color/"
 "RGB_Color.html#rgb-format)."
 msgstr ""
-"在 RGB 颜色空间中计算颜色的公式是：`RGB = (R*65536)+(G*256)+B，（其中 R 是红色，G 是绿色，B 是蓝色）`。"
+"RGB 颜色空间中颜色的计算公式是：`RGB = (R*65536)+(G*256)+B，（其中 R 是红色，G 是绿色，B 是蓝色）`。"
 "更多信息请参见 [RGB 颜色格式和计算](https://www.rapidtables.com/web/color/RGB_Color.html#rgb-format)。"
 
 #: src/hello/print/fmt.md:86
@@ -2019,7 +2020,7 @@ msgstr "[`std::fmt`](https://doc.rust-lang.org/std/fmt/)"
 #: src/primitives.md:3
 msgid ""
 "Rust provides access to a wide variety of `primitives`. A sample includes:"
-msgstr "Rust 提供了多种 `原生类型`（primitive）。以下是一些示例："
+msgstr "Rust 提供了多种`原生类型`。以下是一些示例："
 
 #: src/primitives.md:5
 msgid "Scalar Types"
@@ -2076,7 +2077,7 @@ msgid ""
 "annotated via a _suffix_ or _by default_. Integers default to `i32` and "
 "floats to `f64`. Note that Rust can also infer types from context."
 msgstr ""
-"变量总是可以进行_类型标注_。数字还可以通过_后缀_或_默认方式_来标注。"
+"变量总是可以进行**类型标注**。数字还可以通过**后缀**或**默认方式**来标注。"
 "整数默认为 `i32` 类型，浮点数默认为 `f64` 类型。请注意，Rust 也可以从上下文中推断类型。"
 
 #: src/primitives.md:29
@@ -2304,11 +2305,11 @@ msgstr "// 可以使用元组索引来提取元组中的值。\n"
 
 #: src/primitives/tuples.md:29
 msgid "\"Long tuple first value: {}\""
-msgstr "\"Long tuple first value: {}\""
+msgstr "\"长元组的第一个值：{}\""
 
 #: src/primitives/tuples.md:30
 msgid "\"Long tuple second value: {}\""
-msgstr "\"Long tuple second value: {}\""
+msgstr "\"长元组的第二个值：{}\""
 
 #: src/primitives/tuples.md:32
 msgid "// Tuples can be tuple members.\n"
@@ -2320,7 +2321,7 @@ msgstr "// 元组是可打印的。\n"
 
 #: src/primitives/tuples.md:36
 msgid "\"tuple of tuples: {:?}\""
-msgstr "\"tuple of tuples: {:?}\""
+msgstr "\"元组的元组：{:?}\""
 
 #: src/primitives/tuples.md:38
 msgid ""
@@ -2329,37 +2330,38 @@ msgid ""
 "    //println!(\"Too long tuple: {:?}\", too_long_tuple);\n"
 "    // TODO ^ Uncomment the above 2 lines to see the compiler error\n"
 msgstr ""
-"// 但是长元组（超过 12 个元素）不能被打印。\n"
+"// 但长元组（超过 12 个元素）无法打印。\n"
 "    //let too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);\n"
-"    //println!(\"Too long tuple: {:?}\", too_long_tuple);\n"
-"    // TODO ^ 取消上面两行的注释，查看编译器错误\n"
+"    //println!(\"过长的元组：{:?}\", too_long_tuple);\n"
+"    // TODO ^ 取消上面两行的注释以查看编译器错误\n"
 
 #: src/primitives/tuples.md:44
 msgid "\"Pair is {:?}\""
-msgstr "\"Pair is {:?}\""
+msgstr "\"对组是 {:?}\""
 
 #: src/primitives/tuples.md:46
 msgid "\"The reversed pair is {:?}\""
-msgstr "\"The reversed pair is {:?}\""
+msgstr "\"反转后的对组是 {:?}\""
 
 #: src/primitives/tuples.md:48
 msgid ""
 "// To create one element tuples, the comma is required to tell them apart\n"
 "    // from a literal surrounded by parentheses.\n"
 msgstr ""
-"// 创建单元素元组需要一个逗号，以区别被括号包围的字面量。\n"
+"// 创建单元素元组时，需要使用逗号来区分它们\n"
+"    // 与被括号包围的字面量。\n"
 
 #: src/primitives/tuples.md:50
 msgid "\"One element tuple: {:?}\""
-msgstr "\"One element tuple: {:?}\""
+msgstr "\"单元素元组：{:?}\""
 
 #: src/primitives/tuples.md:51
 msgid "\"Just an integer: {:?}\""
-msgstr "\"Just an integer: {:?}\""
+msgstr "\"仅是一个整数：{:?}\""
 
 #: src/primitives/tuples.md:53
 msgid "// Tuples can be destructured to create bindings.\n"
-msgstr "// 元组可以被解构，以创建绑定。\n"
+msgstr "// 可以通过解构元组来创建绑定。\n"
 
 #: src/primitives/tuples.md:54 src/conversion/from_into.md:17
 #: src/fn/closures/input_parameters.md:52 src/std_misc/fs.md:51
@@ -2368,7 +2370,7 @@ msgstr "\"hello\""
 
 #: src/primitives/tuples.md:57
 msgid "\"{:?}, {:?}, {:?}, {:?}\""
-msgstr "\"{:?}, {:?}, {:?}, {:?}\""
+msgstr "\"{:?}、{:?}、{:?}、{:?}\""
 
 #: src/primitives/tuples.md:66
 msgid ""
@@ -2376,15 +2378,16 @@ msgid ""
 "example, so that if you switch from printing the debug format `{:?}` to the "
 "display format `{}`, you see the following output:"
 msgstr ""
-"**复习**：在上面的例子中为 `Matrix` 结构体添加 `fmt::Display` trait，这样当你从打印调试格式 `{:?}` "
-"切换到显示格式 `{}` 时，你会看到以下输出："
+"**复习**：为上面示例中的 `Matrix` 结构体添加 `fmt::Display` trait，\n"
+"这样当你从打印调试格式 `{:?}` 切换到显示格式 `{}` 时，\n"
+"你会看到以下输出："
 
 #: src/primitives/tuples.md:75
 msgid ""
 "You may want to refer back to the example for [print display](../hello/print/"
 "print_display.md)."
 msgstr ""
-"你可能想回顾一下[输出显示（Display）](../hello/print/print_display.md) 的例子。"
+"你可能需要回顾一下 [打印显示](../hello/print/print_display.md) 的示例。"
 
 #: src/primitives/tuples.md:76
 msgid ""
@@ -2392,8 +2395,8 @@ msgid ""
 "accepts a matrix as an argument, and returns a matrix in which two elements "
 "have been swapped. For example:"
 msgstr ""
-"添加一个 `transpose` 函数，使用 `reverse` 函数作为模板，该函数接受一个矩阵作为参数，"
-"并返回一个两个元素已交换的矩阵。例如："
+"参考 `reverse` 函数的模板，添加一个 `transpose` 函数。\n"
+"该函数接受一个矩阵作为参数，并返回一个交换了两个元素的矩阵。例如："
 
 #: src/primitives/tuples.md:81
 msgid "\"Matrix:\\n{}\""
@@ -2405,7 +2408,7 @@ msgstr "\"转置：\\n{}\""
 
 #: src/primitives/tuples.md:85
 msgid "Results in the output:"
-msgstr "得到的输出为："
+msgstr "输出结果为："
 
 #: src/primitives/array.md:3
 msgid ""
@@ -2413,8 +2416,9 @@ msgid ""
 "contiguous memory. Arrays are created using brackets `[]`, and their length, "
 "which is known at compile time, is part of their type signature `[T; length]`."
 msgstr ""
-"数组（array）是一个存储在连续内存中的相同类型 `T` 的对象集合。数组使用方括号 `[]` 来创建，"
-"其长度在编译时是已知的，是它们类型签名 `[T; length]` 的一部分。"
+"数组是一种存储在连续内存中的相同类型 `T` 的对象集合。\n"
+"数组使用方括号 `[]` 创建，其长度在编译时已知，\n"
+"是其类型签名 `[T; length]` 的一部分。"
 
 #: src/primitives/array.md:7
 msgid ""
@@ -2425,21 +2429,22 @@ msgid ""
 "x86-64. Slices can be used to borrow a section of an array and have the type "
 "signature `&[T]`."
 msgstr ""
-"切片（slice）与数组类似，但其长度在编译时是未知的。实际上，切片是一个双字对象（two-word object）；第一个字是指向数据的指针，"
-"第二个字是切片的长度。字的大小与 usize 相同，由处理器架构决定，例如在 x86-64 上是 64 位。"
-"切片可以用来借用数组的一部分，其类型签名为 `&[T]`。"
+"切片类似于数组，但其长度在编译时未知。切片是一个双字对象：\n"
+"第一个字是指向数据的指针，第二个字是切片的长度。字的大小与 usize 相同，\n"
+"由处理器架构决定，例如在 x86-64 上是 64 位。切片可用于借用数组的一部分，\n"
+"其类型签名为 `&[T]`。"
 
 #: src/primitives/array.md:15
 msgid "// This function borrows a slice.\n"
-msgstr "// 这个函数借用一个切片。\n"
+msgstr "// 此函数借用一个切片。\n"
 
 #: src/primitives/array.md:18
 msgid "\"First element of the slice: {}\""
-msgstr "\"First element of the slice: {}\""
+msgstr "\"切片的第一个元素：{}\""
 
 #: src/primitives/array.md:19
 msgid "\"The slice has {} elements\""
-msgstr "\"The slice has {} elements\""
+msgstr "\"切片有 {} 个元素\""
 
 #: src/primitives/array.md:23
 msgid "// Fixed-size array (type signature is superfluous).\n"
@@ -2447,7 +2452,7 @@ msgstr "// 固定大小的数组（类型签名是多余的）。\n"
 
 #: src/primitives/array.md:26
 msgid "// All elements can be initialized to the same value.\n"
-msgstr "// 所有元素可以被初始化为相同的值。\n"
+msgstr "// 所有元素可以初始化为相同的值。\n"
 
 #: src/primitives/array.md:29
 msgid "// Indexing starts at 0.\n"
@@ -2455,11 +2460,11 @@ msgstr "// 索引从 0 开始。\n"
 
 #: src/primitives/array.md:30
 msgid "\"First element of the array: {}\""
-msgstr "\"First element of the array: {}\""
+msgstr "\"数组的第一个元素：{}\""
 
 #: src/primitives/array.md:31
 msgid "\"Second element of the array: {}\""
-msgstr "\"Second element of the array: {}\""
+msgstr "\"数组的第二个元素：{}\""
 
 #: src/primitives/array.md:33
 msgid "// `len` returns the count of elements in the array.\n"
@@ -2467,7 +2472,7 @@ msgstr "// `len` 返回数组中元素的数量。\n"
 
 #: src/primitives/array.md:34
 msgid "\"Number of elements in array: {}\""
-msgstr "\"Number of elements in array: {}\""
+msgstr "\"数组中的元素数量：{}\""
 
 #: src/primitives/array.md:36
 msgid "// Arrays are stack allocated.\n"
@@ -2475,7 +2480,7 @@ msgstr "// 数组是栈分配的。\n"
 
 #: src/primitives/array.md:37
 msgid "\"Array occupies {} bytes\""
-msgstr "\"Array occupies {} bytes\""
+msgstr "\"数组占用 {} 字节\""
 
 #: src/primitives/array.md:39
 msgid "// Arrays can be automatically borrowed as slices.\n"
@@ -2483,7 +2488,7 @@ msgstr "// 数组可以自动借用为切片。\n"
 
 #: src/primitives/array.md:40
 msgid "\"Borrow the whole array as a slice.\""
-msgstr "\"Borrow the whole array as a slice.\""
+msgstr "\"将整个数组借用为切片。\""
 
 #: src/primitives/array.md:43
 msgid ""
@@ -2493,21 +2498,21 @@ msgid ""
 "    // `ending_index` is one more than the last position in the slice.\n"
 msgstr ""
 "// 切片可以指向数组的一部分。\n"
-"    // 它们的形式是 [starting_index..ending_index]。\n"
-"    // `starting_index` 是切片中的第一个位置。\n"
-"    // `ending_index` 是切片中最后一个位置的后一个位置。\n"
+"    // 它们的形式是 [起始索引..结束索引]。\n"
+"    // `起始索引` 是切片中的第一个位置。\n"
+"    // `结束索引` 是切片中最后一个位置的后一个位置。\n"
 
 #: src/primitives/array.md:47
 msgid "\"Borrow a section of the array as a slice.\""
-msgstr "\"Borrow a section of the array as a slice.\""
+msgstr "\"借用数组的一部分作为切片。\""
 
 #: src/primitives/array.md:50
 msgid "// Example of empty slice `&[]`:\n"
-msgstr "// 空切片 `&[]` 的例子：\n"
+msgstr "// 空切片 `&[]` 的示例：\n"
 
 #: src/primitives/array.md:53
 msgid "// Same but more verbose\n"
-msgstr "// 同样的操作，但更冗长\n"
+msgstr "// 同样的操作，但更详细\n"
 
 #: src/primitives/array.md:55
 msgid ""
@@ -2517,12 +2522,13 @@ msgid ""
 "    // message instead of happily continue.\n"
 msgstr ""
 "// 可以使用 `.get` 安全地访问数组，它返回一个 `Option`。\n"
-"    // 可以像下面这样对其进行匹配，或者使用 `.expect()`，\n"
-"    // 如果你希望程序在访问越界时适当地退出，而不是继续执行。\n"
+"    // 可以像下面这样对其进行匹配，或者使用 `.expect()`。\n"
+"    // 如果你希望程序在访问越界时优雅地退出而不是继续执行，\n"
+"    // 可以使用 `.expect()`。\n"
 
 #: src/primitives/array.md:59
 msgid "// Oops, one element too far!\n"
-msgstr "// 哎呀，越界访问了元素！\n"
+msgstr "// 糟糕，访问超出了数组范围！\n"
 
 #: src/primitives/array.md:61
 msgid "\"{}: {}\""
@@ -2530,7 +2536,7 @@ msgstr "\"{}: {}\""
 
 #: src/primitives/array.md:62
 msgid "\"Slow down! {} is too far!\""
-msgstr "\"Slow down! {} is too far!\""
+msgstr "\"慢着！{} 超出范围了！\""
 
 #: src/primitives/array.md:66
 msgid ""
@@ -2546,15 +2552,15 @@ msgstr ""
 
 #: src/custom_types.md:3
 msgid "Rust custom data types are formed mainly through the two keywords:"
-msgstr "Rust 自定义数据类型主要通过以下两个关键字来创建："
+msgstr "Rust 的自定义数据类型主要通过以下两个关键字来创建："
 
 #: src/custom_types.md:5
 msgid "`struct`: define a structure"
-msgstr "`struct`：定义一个结构体"
+msgstr "`struct`：定义结构体"
 
 #: src/custom_types.md:6
 msgid "`enum`: define an enumeration"
-msgstr "`enum`：定义一个枚举"
+msgstr "`enum`：定义枚举"
 
 #: src/custom_types.md:8
 msgid "Constants can also be created via the `const` and `static` keywords."
@@ -2568,7 +2574,7 @@ msgstr "使用 `struct` 关键字可以创建三种类型的结构体（\"struct
 
 #: src/custom_types/structs.md:6
 msgid "Tuple structs, which are, basically, named tuples."
-msgstr "元组结构体，基本上就是具名元组。"
+msgstr "元组结构体：本质上是具名元组。"
 
 #: src/custom_types/structs.md:7
 msgid ""
@@ -2578,7 +2584,7 @@ msgstr "经典的 [C 语言风格结构体](https://en.wikipedia.org/wiki/Struct
 
 #: src/custom_types/structs.md:8
 msgid "Unit structs, which are field-less, are useful for generics."
-msgstr "单元结构体，不带字段，在泛型中很有用。"
+msgstr "单元结构体：没有字段，在泛型中很有用。"
 
 #: src/custom_types/structs.md:11 src/custom_types/enum/enum_use.md:6
 #: src/custom_types/enum/c_like.md:6
@@ -2595,19 +2601,19 @@ msgstr "// 元组结构体\n"
 
 #: src/custom_types/structs.md:25
 msgid "// A struct with two fields\n"
-msgstr "// 一个有两个字段的结构体\n"
+msgstr "// 带有两个字段的结构体\n"
 
 #: src/custom_types/structs.md:31
 msgid "// Structs can be reused as fields of another struct\n"
-msgstr "// 结构体可以作为另一个结构体的字段来使用\n"
+msgstr "// 结构体可以作为另一个结构体的字段\n"
 
 #: src/custom_types/structs.md:34
 msgid ""
 "// A rectangle can be specified by where the top left and bottom right\n"
 "    // corners are in space.\n"
 msgstr ""
-"// 一个矩形可以通过指定它的左上角和右下角\n"
-"    // 在空间中的位置来定义。\n"
+"// 可以通过指定左上角和右下角的位置\n"
+"    // 来定义一个矩形。\n"
 
 #: src/custom_types/structs.md:41
 msgid "// Create struct with field init shorthand\n"
@@ -2615,7 +2621,7 @@ msgstr "// 使用字段初始化简写语法创建结构体\n"
 
 #: src/custom_types/structs.md:46
 msgid "// Print debug struct\n"
-msgstr "// 打印调试的结构体\n"
+msgstr "// 打印结构体的调试信息\n"
 
 #: src/custom_types/structs.md:49
 msgid "// Instantiate a `Point`\n"
@@ -2623,11 +2629,11 @@ msgstr "// 实例化一个 `Point`\n"
 
 #: src/custom_types/structs.md:53
 msgid "// Access the fields of the point\n"
-msgstr "// 访问 point 的字段\n"
+msgstr "// 访问点的字段\n"
 
 #: src/custom_types/structs.md:54
 msgid "\"point coordinates: ({}, {})\""
-msgstr "\"point coordinates: ({}, {})\""
+msgstr "\"点的坐标：({}, {})\""
 
 #: src/custom_types/structs.md:56
 msgid ""
@@ -2635,27 +2641,27 @@ msgid ""
 "    // other one\n"
 msgstr ""
 "// 使用结构体更新语法创建新的点，\n"
-"    // 这里使用了我们之前创建的 point 的字段\n"
+"    // 复用之前创建的点的字段\n"
 
 #: src/custom_types/structs.md:60
 msgid ""
 "// `bottom_right.y` will be the same as `another_point.y` because we used that field\n"
 "    // from `another_point`\n"
 msgstr ""
-"// `bottom_right.y` 与 `another_point.y` 一样\n"
-"    // 因为这个字段就是从 `another_point` 中来的\n"
+"// `bottom_right.y` 与 `another_point.y` 相同，\n"
+"    // 因为我们使用了 `another_point` 的该字段\n"
 
 #: src/custom_types/structs.md:62
 msgid "\"second point: ({}, {})\""
-msgstr "\"second point: ({}, {})\""
+msgstr "\"第二个点：({}, {})\""
 
 #: src/custom_types/structs.md:64
 msgid "// Destructure the point using a `let` binding\n"
-msgstr "// 使用 `let` 绑定来解构点\n"
+msgstr "// 使用 `let` 绑定解构点\n"
 
 #: src/custom_types/structs.md:68
 msgid "// struct instantiation is an expression too\n"
-msgstr "// 结构体的实例化也是一个表达式\n"
+msgstr "// 结构体实例化也是一个表达式\n"
 
 #: src/custom_types/structs.md:73
 msgid "// Instantiate a unit struct\n"
@@ -2671,7 +2677,7 @@ msgstr "// 访问元组结构体的字段\n"
 
 #: src/custom_types/structs.md:80 src/custom_types/structs.md:85
 msgid "\"pair contains {:?} and {:?}\""
-msgstr "\"pair contains {:?} and {:?}\""
+msgstr "\"pair 包含 {:?} 和 {:?}\""
 
 #: src/custom_types/structs.md:82
 msgid "// Destructure a tuple struct\n"
@@ -2688,25 +2694,25 @@ msgid ""
 "Add a function `square` which takes a `Point` and a `f32` as arguments, and "
 "returns a `Rectangle` with its top left corner on the point, and a width and "
 "height corresponding to the `f32`."
-msgstr "添加一个 `square` 函数，它以一个 `Point` 和一个 `f32` 作为参数，并返回一个 `Rectangle`，其左上角在该点上，宽度和高度都等于 `f32` 参数。"
+msgstr "添加一个 `square` 函数，它接受一个 `Point` 和一个 `f32` 作为参数，返回一个 `Rectangle`，其左上角在该点上，宽度和高度都等于 `f32` 参数。"
 
 #: src/custom_types/structs.md:97
 msgid "See also"
-msgstr "参见"
+msgstr "另请参阅"
 
 #: src/custom_types/structs.md:99
 msgid ""
 "[`attributes`](../attribute.md), [raw identifiers](../compatibility/"
 "raw_identifiers.md) and [destructuring](../flow_control/match/destructuring."
 "md)"
-msgstr "[`attributes`](../attribute.md)、[原始标识符](../compatibility/raw_identifiers.md) 和 [解构](../flow_control/match/destructuring.md)"
+msgstr "[`属性`](../attribute.md)、[原始标识符](../compatibility/raw_identifiers.md)和[解构](../flow_control/match/destructuring.md)"
 
 #: src/custom_types/enum.md:3
 msgid ""
 "The `enum` keyword allows the creation of a type which may be one of a few "
 "different variants. Any variant which is valid as a `struct` is also valid in "
 "an `enum`."
-msgstr "`enum` 关键字允许创建一个可能是几个不同变体之一的类型。任何作为 `struct` 有效的变体在 `enum` 中也是有效的。"
+msgstr "`enum` 关键字允许创建一个可能是几种不同变体之一的类型。任何作为 `struct` 有效的变体在 `enum` 中也是有效的。"
 
 #: src/custom_types/enum.md:8
 msgid ""
@@ -2715,29 +2721,28 @@ msgid ""
 "// `PageLoad != PageUnload` and `KeyPress(char) != Paste(String)`.\n"
 "// Each is different and independent.\n"
 msgstr ""
-"// 创建一个 `enum` 来分类网页事件。注意名称和类型信息如何一起指定变体：\n"
+"// 创建一个 `enum` 来分类网页事件。注意名称和类型信息如何共同指定变体：\n"
 "// `PageLoad != PageUnload` 且 `KeyPress(char) != Paste(String)`。\n"
-"// 每个都是不同且独立的。\n"
+"// 每个变体都是不同且独立的。\n"
 
 #: src/custom_types/enum.md:13
 msgid "// An `enum` variant may either be `unit-like`,\n"
-msgstr "// 一个 `enum` 变体可以是 `unit-like`（类单元结构体），\n"
+msgstr "// `enum` 变体可以类似单元结构体（`unit-like`），\n"
 
 #: src/custom_types/enum.md:16
 msgid "// like tuple structs,\n"
-msgstr "// 像元组结构体，\n"
+msgstr "// 类似元组结构体，\n"
 
 #: src/custom_types/enum.md:19
 msgid "// or c-like structures.\n"
-msgstr "// 或者像 C 语言风格的结构体。\n"
+msgstr "// 或类似 C 语言的结构体。\n"
 
 #: src/custom_types/enum.md:22
 msgid ""
 "// A function which takes a `WebEvent` enum as an argument and\n"
 "// returns nothing.\n"
 msgstr ""
-"// 一个接受 `WebEvent` 枚举作为参数并且\n"
-"// 不返回任何值的函数。\n"
+"// 一个接受 `WebEvent` 枚举作为参数且不返回任何值的函数。\n"
 
 #: src/custom_types/enum.md:27
 msgid "\"page loaded\""
@@ -2753,11 +2758,11 @@ msgstr "// 从 `enum` 变体内部解构 `c`。\n"
 
 #: src/custom_types/enum.md:30
 msgid "\"pressed '{}'.\""
-msgstr "\"按下了 '{}'。\""
+msgstr "\"按下了'{}'键。\""
 
 #: src/custom_types/enum.md:31
 msgid "\"pasted \\\"{}\\\".\""
-msgstr "\"粘贴了 \\\"{}\\\"。\""
+msgstr "\"粘贴了\\\"{}\\\"。\""
 
 #: src/custom_types/enum.md:32
 msgid "// Destructure `Click` into `x` and `y`.\n"
@@ -2765,7 +2770,7 @@ msgstr "// 将 `Click` 解构为 `x` 和 `y`。\n"
 
 #: src/custom_types/enum.md:34
 msgid "\"clicked at x={}, y={}.\""
-msgstr "\"点击了 x={}, y={}。\""
+msgstr "\"点击坐标：x={}, y={}。\""
 
 #: src/custom_types/enum.md:40
 msgid "'x'"
@@ -2773,7 +2778,7 @@ msgstr "'x'"
 
 #: src/custom_types/enum.md:41
 msgid "// `to_owned()` creates an owned `String` from a string slice.\n"
-msgstr "// `to_owned()` 从字符串切片创建一个有所有权的 `String`。\n"
+msgstr "// `to_owned()` 从字符串切片创建一个拥有所有权的 `String`。\n"
 
 #: src/custom_types/enum.md:42
 msgid "\"my text\""
@@ -2788,19 +2793,18 @@ msgid ""
 "If you use a type alias, you can refer to each enum variant via its alias. "
 "This might be useful if the enum's name is too long or too generic, and you "
 "want to rename it."
-msgstr "如果你使用类型别名，你可以通过别名引用每个枚举变体。如果枚举的名称太长或太通用，而你想重命名它时，这可能会很有用。"
+msgstr "使用类型别名可以通过别名引用每个枚举变体。当枚举名称过长或过于泛化，而你想重命名它时，这会很有用。"
 
 #: src/custom_types/enum.md:67
 msgid "// Creates a type alias\n"
-msgstr "// 创建一个类型别名\n"
+msgstr "// 创建类型别名\n"
 
 #: src/custom_types/enum.md:72
 msgid ""
 "// We can refer to each variant via its alias, not its long and inconvenient\n"
 "    // name.\n"
 msgstr ""
-"// 我们可以通过别名引用每个变体，而不是它的又长又不方便的\n"
-"    // 名称。\n"
+"// 我们可以通过别名引用每个变体，而不是使用又长又不便的名称。\n"
 
 #: src/custom_types/enum.md:78
 msgid ""
@@ -2820,7 +2824,7 @@ msgid ""
 "[`match`](../flow_control/match.md), [`fn`](../fn.md), and [`String`](../std/"
 "str.md), [\"Type alias enum variants\" RFC](https://rust-lang.github.io/"
 "rfcs/2338-type-alias-enum-variants.html)"
-msgstr "[`match`](../flow_control/match.md)、[`fn`](../fn.md) 和 [`String`](../std/str.md)、[\"类型别名枚举变体\" RFC](https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html)"
+msgstr "[`match`](../flow_control/match.md)、[`fn`](../fn.md)、[`String`](../std/str.md) 和 [\"类型别名枚举变体\" RFC](https://rust-lang.github.io/rfcs/2338-type-alias-enum-variants.html)"
 
 #: src/custom_types/enum/enum_use.md:3
 msgid "The `use` declaration can be used so manual scoping isn't needed:"
@@ -2831,12 +2835,12 @@ msgid ""
 "// Explicitly `use` each name so they are available without\n"
 "    // manual scoping.\n"
 msgstr ""
-"// 显式 `use` 每个名称，这样它们就可以不用\n"
-"    // 手动作用域限定而直接使用。\n"
+"// 显式 `use` 每个名称，使它们可以不需要\n"
+"    // 手动作用域限定就能使用。\n"
 
 #: src/custom_types/enum/enum_use.md:23
 msgid "// Automatically `use` each name inside `Role`.\n"
-msgstr "// 自动 `use` `Role` 内部的每个名称。\n"
+msgstr "// 自动 `use` `Role` 内的每个名称。\n"
 
 #: src/custom_types/enum/enum_use.md:26
 msgid "// Equivalent to `Stage::Beginner`.\n"
@@ -2880,11 +2884,11 @@ msgstr "`enum` 也可以像 C 语言那样使用。"
 
 #: src/custom_types/enum/c_like.md:8
 msgid "// enum with implicit discriminator (starts at 0)\n"
-msgstr "// 隐式辨别值（从 0 开始）的枚举\n"
+msgstr "// 带隐式判别值的枚举（从 0 开始）\n"
 
 #: src/custom_types/enum/c_like.md:15
 msgid "// enum with explicit discriminator\n"
-msgstr "// 显式辨别值的枚举\n"
+msgstr "// 带显式判别值的枚举\n"
 
 #: src/custom_types/enum/c_like.md:24
 msgid "// `enums` can be cast as integers.\n"
@@ -2892,19 +2896,19 @@ msgstr "// `enum` 可以转换为整数。\n"
 
 #: src/custom_types/enum/c_like.md:25
 msgid "\"zero is {}\""
-msgstr "\"zero 是 {}\""
+msgstr "\"zero 的值是 {}\""
 
 #: src/custom_types/enum/c_like.md:26
 msgid "\"one is {}\""
-msgstr "\"one 是 {}\""
+msgstr "\"one 的值是 {}\""
 
 #: src/custom_types/enum/c_like.md:28
 msgid "\"roses are #{:06x}\""
-msgstr "\"玫瑰花是 #{:06x}\""
+msgstr "\"玫瑰的颜色是 #{:06x}\""
 
 #: src/custom_types/enum/c_like.md:29
 msgid "\"violets are #{:06x}\""
-msgstr "\"紫罗兰是 #{:06x}\""
+msgstr "\"紫罗兰的颜色是 #{:06x}\""
 
 #: src/custom_types/enum/c_like.md:35
 msgid "[casting](../../types/cast.md)"
@@ -13067,8 +13071,8 @@ msgid ""
 "However, sometimes it is important to express _why_ an operation failed. To "
 "do this we have the `Result` enum."
 msgstr ""
-"我们已经看到 `Option` 枚举可以用作可能失败的函数的返回值，其中 `None` 可以用来表示失败。"
-"然而，有时表达操作**为什么**失败很重要。为此，我们有 `Result` 枚举。"
+"我们已经了解到 `Option` 枚举可以作为可能失败的函数的返回值，其中 `None` 用于表示失败。\n"
+"然而，有时表达操作失败的**原因**很重要。为此，我们有 `Result` 枚举。"
 
 #: src/std/result.md:8
 msgid "The `Result<T, E>` enum has two variants:"
