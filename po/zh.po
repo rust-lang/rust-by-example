@@ -15594,7 +15594,7 @@ msgid ""
 "invariants. The instructions to be inserted are listed in the first argument "
 "of the `asm!` macro as a string literal."
 msgstr ""
-"这将在编译器生成的汇编中插入一条 NOP（无操作）指令。注意，所有 `asm!` 调用都必须在 `unsafe` 块内，因为它们可能插入任意指令并破坏各种不变量。要插入的指令作为字符串字面量列在 `asm!` 宏的第一个参数中。"
+"这将在编译器生成的汇编中插入一条 NOP（无操作）指令。注意，所有 `asm!` 调用都必须在 `unsafe` 块内，因为它们可能插入任意指令并破坏各种假设。要插入的指令作为字符串字面量列在 `asm!` 宏的第一个参数中。"
 
 #: src/unsafe/asm.md:35
 msgid "Inputs and outputs"
@@ -15605,7 +15605,7 @@ msgid ""
 "Now inserting an instruction that does nothing is rather boring. Let us do "
 "something that actually acts on data:"
 msgstr ""
-"现在插入一个什么都不做的指令相当无聊。让我们做一些实际操作数据的事情："
+"插入一个什么都不做的指令相当无聊。现在让我们做一些实际操作数据的事情："
 
 #: src/unsafe/asm.md:46
 msgid "\"mov {}, 5\""
@@ -15747,22 +15747,25 @@ msgid ""
 "initial load from variable `c`. This is in contrast to how using `inout(reg) "
 "a` ensures a separate register is allocated for `a`."
 msgstr ""
+"这是因为在优化情况下，编译器可以自由地为输入 `b` 和 `c` 分配相同的寄存器，因为它知道它们具有相同的值。此外，当使用 `inlateout` 时，`a` 和 `c` 可能被分配到同一个寄存器，在这种情况下，第一条 `add` 指令会覆盖从变量 `c` 初始加载的值。这与使用 `inout(reg) a` 确保为 `a` 分配单独的寄存器形成对比。"
 
 #: src/unsafe/asm.md:171
 msgid ""
 "However, the following example can use `inlateout` since the output is only "
 "modified after all input registers have been read:"
 msgstr ""
+"然而，以下示例可以使用 `inlateout`，因为输出仅在所有输入寄存器被读取后才被修改："
 
 #: src/unsafe/asm.md:186
 msgid ""
 "As you can see, this assembly fragment will still work correctly if `a` and "
 "`b` are assigned to the same register."
 msgstr ""
+"如你所见，即使 `a` 和 `b` 被分配到同一个寄存器，这段汇编代码片段仍然能正确工作。"
 
 #: src/unsafe/asm.md:188
 msgid "Explicit register operands"
-msgstr ""
+msgstr "显式寄存器操作数"
 
 #: src/unsafe/asm.md:190
 msgid ""
@@ -15773,14 +15776,15 @@ msgid ""
 "registers `eax`, `ebx`, `ecx`, `edx`, `ebp`, `esi`, and `edi` among others "
 "can be addressed by their name."
 msgstr ""
+"某些指令要求操作数必须在特定的寄存器中。因此，Rust 内联汇编提供了一些更具体的约束说明符。虽然 `reg` 通常在任何架构上都可用，但显式寄存器是高度特定于架构的。例如，对于 x86，通用寄存器 `eax`、`ebx`、`ecx`、`edx`、`ebp`、`esi` 和 `edi` 等可以通过它们的名称来寻址。"
 
 #: src/unsafe/asm.md:200
 msgid "\"out 0x64, eax\""
-msgstr ""
+msgstr "\"out 0x64, eax\""
 
 #: src/unsafe/asm.md:200 src/unsafe/asm.md:276
 msgid "\"eax\""
-msgstr ""
+msgstr "\"eax\""
 
 #: src/unsafe/asm.md:205
 msgid ""
@@ -15789,6 +15793,7 @@ msgid ""
 "(and its sub registers) as operand we had to use the `eax` constraint "
 "specifier."
 msgstr ""
+"在这个例子中，我们调用 `out` 指令将 `cmd` 变量的内容输出到端口 `0x64`。由于 `out` 指令只接受 `eax`（及其子寄存器）作为操作数，我们必须使用 `eax` 约束说明符。"
 
 #: src/unsafe/asm.md:207
 msgid ""
@@ -15797,10 +15802,11 @@ msgid ""
 "name directly instead. Also, they must appear at the end of the operand list "
 "after all other operand types."
 msgstr ""
+"**注意**：与其他操作数类型不同，显式寄存器操作数不能在模板字符串中使用：你不能使用 `{}`，而应该直接写寄存器名称。此外，它们必须出现在操作数列表的末尾，在所有其他操作数类型之后。"
 
 #: src/unsafe/asm.md:209
 msgid "Consider this example which uses the x86 `mul` instruction:"
-msgstr ""
+msgstr "考虑这个使用 x86 `mul` 指令的例子："
 
 #: src/unsafe/asm.md:221
 msgid ""
@@ -15808,14 +15814,17 @@ msgid ""
 "            // the 128-bit result of the multiplication to rax:rdx.\n"
 "            \"mul {}\""
 msgstr ""
+"// x86 mul 指令将 rax 作为隐式输入，并将\n"
+"            // 乘法的 128 位结果写入 rax:rdx。\n"
+"            \"mul {}\""
 
 #: src/unsafe/asm.md:225 src/unsafe/asm.md:347
 msgid "\"rax\""
-msgstr ""
+msgstr "\"rax\""
 
 #: src/unsafe/asm.md:226
 msgid "\"rdx\""
-msgstr ""
+msgstr "\"rdx\""
 
 #: src/unsafe/asm.md:235
 msgid ""
@@ -15826,10 +15835,11 @@ msgid ""
 "stored in `rax` from which we fill the variable `lo`. The higher 64 bits are "
 "stored in `rdx` from which we fill the variable `hi`."
 msgstr ""
+"这里使用 `mul` 指令将两个 64 位输入相乘，得到一个 128 位的结果。唯一的显式操作数是一个寄存器，我们用变量 `a` 填充它。第二个操作数是隐式的，必须是 `rax` 寄存器，我们用变量 `b` 填充它。结果的低 64 位存储在 `rax` 中，我们用它填充变量 `lo`。高 64 位存储在 `rdx` 中，我们用它填充变量 `hi`。"
 
 #: src/unsafe/asm.md:241
 msgid "Clobbered registers"
-msgstr ""
+msgstr "被破坏的寄存器"
 
 #: src/unsafe/asm.md:243
 msgid ""
@@ -15840,10 +15850,11 @@ msgid ""
 "We need to tell the compiler about this since it may need to save and restore "
 "this state around the inline assembly block."
 msgstr ""
+"在许多情况下，内联汇编会修改不需要作为输出的状态。通常这是因为我们必须在汇编中使用临时寄存器，或者因为指令修改了我们不需要进一步检查的状态。这种状态通常被称为"被破坏"。我们需要告诉编译器这一点，因为它可能需要在内联汇编块周围保存和恢复这种状态。"
 
 #: src/unsafe/asm.md:253
 msgid "// three entries of four bytes each\n"
-msgstr ""
+msgstr "// 三个条目，每个四字节\n"
 
 #: src/unsafe/asm.md:255
 msgid ""
@@ -15854,30 +15865,35 @@ msgid ""
 "    // 32 bit registers (like ebx), so we have to use the extended rbx "
 "register instead.\n"
 msgstr ""
+"// 字符串按顺序以 ASCII 格式存储在 ebx、edx、ecx 中\n"
+"    // 因为 ebx 是保留的，汇编需要保留它的值。\n"
+"    // 所以我们在主要汇编代码前后进行 push 和 pop 操作。\n"
+"    // 64 位处理器的 64 位模式不允许推入/弹出 32 位寄存器（如 ebx），\n"
+"    // 所以我们必须使用扩展的 rbx 寄存器。\n"
 
 #: src/unsafe/asm.md:263
 msgid "\"push rbx\""
-msgstr ""
+msgstr "\"push rbx\""
 
 #: src/unsafe/asm.md:264
 msgid "\"cpuid\""
-msgstr ""
+msgstr "\"cpuid\""
 
 #: src/unsafe/asm.md:265
 msgid "\"mov [rdi], ebx\""
-msgstr ""
+msgstr "\"mov [rdi], ebx\""
 
 #: src/unsafe/asm.md:266
 msgid "\"mov [rdi + 4], edx\""
-msgstr ""
+msgstr "\"mov [rdi + 4], edx\""
 
 #: src/unsafe/asm.md:267
 msgid "\"mov [rdi + 8], ecx\""
-msgstr ""
+msgstr "\"mov [rdi + 8], ecx\""
 
 #: src/unsafe/asm.md:268
 msgid "\"pop rbx\""
-msgstr ""
+msgstr "\"pop rbx\""
 
 #: src/unsafe/asm.md:269
 msgid ""
@@ -15889,30 +15905,35 @@ msgid ""
 "            // The *pointer itself* is only an input even though it's written "
 "behind\n"
 msgstr ""
+"// 我们使用指向数组的指针来存储值，以简化\n"
+"            // Rust 代码，代价是多了几条汇编指令\n"
+"            // 然而，这更明确地展示了汇编的工作方式，与\n"
+"            // 显式寄存器输出（如 `out(\"ecx\") val`）相比\n"
+"            // *指针本身*只是一个输入，尽管它在背后被写入\n"
 
 #: src/unsafe/asm.md:274 src/unsafe/asm.md:345
 msgid "\"rdi\""
-msgstr ""
+msgstr "\"rdi\""
 
 #: src/unsafe/asm.md:275
 msgid "// select cpuid 0, also specify eax as clobbered\n"
-msgstr ""
+msgstr "// 选择 cpuid 0，同时指定 eax 为被破坏\n"
 
 #: src/unsafe/asm.md:277
 msgid "// cpuid clobbers these registers too\n"
-msgstr ""
+msgstr "// cpuid 也破坏这些寄存器\n"
 
 #: src/unsafe/asm.md:278
 msgid "\"ecx\""
-msgstr ""
+msgstr "\"ecx\""
 
 #: src/unsafe/asm.md:279
 msgid "\"edx\""
-msgstr ""
+msgstr "\"edx\""
 
 #: src/unsafe/asm.md:284
 msgid "\"CPU Manufacturer ID: {}\""
-msgstr ""
+msgstr "\"CPU 制造商 ID：{}\""
 
 #: src/unsafe/asm.md:291
 msgid ""
@@ -15921,6 +15942,7 @@ msgid ""
 "`cpuid` argument and `ebx`, `edx`, and `ecx` with the CPU manufacturer ID as "
 "ASCII bytes in that order."
 msgstr ""
+"在上面的例子中，我们使用 `cpuid` 指令来读取 CPU 制造商 ID。这条指令将最大支持的 `cpuid` 参数写入 `eax`，并按顺序将 CPU 制造商 ID 作为 ASCII 字节写入 `ebx`、`edx` 和 `ecx`。"
 
 #: src/unsafe/asm.md:294
 msgid ""
@@ -15930,6 +15952,7 @@ msgid ""
 "but with `_` instead of a variable name, which indicates that the output "
 "value is to be discarded."
 msgstr ""
+"尽管 `eax` 从未被读取，我们仍然需要告诉编译器该寄存器已被修改，这样编译器就可以保存在汇编之前这些寄存器中的任何值。这是通过将其声明为输出来完成的，但使用 `_` 而不是变量名，这表示输出值将被丢弃。"
 
 #: src/unsafe/asm.md:296
 msgid ""
@@ -15941,6 +15964,7 @@ msgid ""
 "`reg` operands dangerous when using reserved registers as we could "
 "unknowingly corrupt our input or output because they share the same register."
 msgstr ""
+"这段代码还解决了 `ebx` 是 LLVM 保留寄存器的限制。这意味着 LLVM 假定它对该寄存器有完全控制权，并且必须在退出汇编块之前将其恢复到原始状态，所以它不能用作输入或输出，**除非**编译器使用它来满足通用寄存器类（例如 `in(reg)`）。这使得在使用保留寄存器时，`reg` 操作数变得危险，因为我们可能会在不知情的情况下破坏我们的输入或输出，因为它们共享同一个寄存器。"
 
 #: src/unsafe/asm.md:298
 msgid ""
@@ -15951,36 +15975,38 @@ msgid ""
 "register is saved. On 32 bit targets the code would instead use `ebx` in the "
 "`push`/`pop`."
 msgstr ""
+"为了解决这个问题，我们使用 `rdi` 来存储输出数组的指针，通过 `push` 保存 `ebx`，在汇编块内从 `ebx` 读取到数组中，然后通过 `pop` 将 `ebx` 恢复到原始状态。`push` 和 `pop` 使用完整的 64 位 `rbx` 版本的寄存器，以确保整个寄存器被保存。在 32 位目标上，代码会在 `push`/`pop` 中使用 `ebx`。"
 
 #: src/unsafe/asm.md:300
 msgid ""
 "This can also be used with a general register class to obtain a scratch "
 "register for use inside the asm code:"
 msgstr ""
+"这也可以与通用寄存器类一起使用，以获得一个临时寄存器在汇编代码内使用："
 
 #: src/unsafe/asm.md:305
 msgid "// Multiply x by 6 using shifts and adds\n"
-msgstr ""
+msgstr "// 使用移位和加法将 x 乘以 6\n"
 
 #: src/unsafe/asm.md:310
 msgid "\"mov {tmp}, {x}\""
-msgstr ""
+msgstr "\"mov {tmp}, {x}\""
 
 #: src/unsafe/asm.md:311
 msgid "\"shl {tmp}, 1\""
-msgstr ""
+msgstr "\"shl {tmp}, 1\""
 
 #: src/unsafe/asm.md:312
 msgid "\"shl {x}, 2\""
-msgstr ""
+msgstr "\"shl {x}, 2\""
 
 #: src/unsafe/asm.md:313
 msgid "\"add {x}, {tmp}\""
-msgstr ""
+msgstr "\"add {x}, {tmp}\""
 
 #: src/unsafe/asm.md:322
 msgid "Symbol operands and ABI clobbers"
-msgstr ""
+msgstr "符号操作数和 ABI 破坏"
 
 #: src/unsafe/asm.md:324
 msgid ""
@@ -15993,40 +16019,43 @@ msgid ""
 "Multiple `clobber_abi` arguments may be provided and all clobbers from all "
 "specified ABIs will be inserted."
 msgstr ""
+"默认情况下，`asm!` 假定任何未指定为输出的寄存器的内容都将被汇编代码保留。`asm!` 的 [`clobber_abi`](https://doc.rust-lang.org/stable/reference/inline-assembly.html#abi-clobbers) 参数告诉编译器根据给定的调用约定 ABI 自动插入必要的破坏操作数：任何在该 ABI 中未完全保留的寄存器都将被视为被破坏。可以提供多个 `clobber_abi` 参数，所有指定 ABI 的所有破坏都将被插入。"
 
 #: src/unsafe/asm.md:332 src/unsafe/asm.md:350
 msgid "\"C\""
-msgstr ""
+msgstr "\"C\""
 
 #: src/unsafe/asm.md:333
 msgid "\"arg = {}\""
-msgstr ""
+msgstr "\"arg = {}\""
 
 #: src/unsafe/asm.md:341
 msgid "\"call {}\""
-msgstr ""
+msgstr "\"call {}\""
 
 #: src/unsafe/asm.md:342
 msgid "// Function pointer to call\n"
-msgstr ""
+msgstr "// 要调用的函数指针\n"
 
 #: src/unsafe/asm.md:344
 msgid "// 1st argument in rdi\n"
-msgstr ""
+msgstr "// 第一个参数在 rdi 中\n"
 
 #: src/unsafe/asm.md:346
 msgid "// Return value in rax\n"
-msgstr ""
+msgstr "// 返回值在 rax 中\n"
 
 #: src/unsafe/asm.md:348
 msgid ""
 "// Mark all registers which are not preserved by the \"C\" calling\n"
 "            // convention as clobbered.\n"
 msgstr ""
+"// 将所有不被 \"C\" 调用约定保留的寄存器\n"
+"            // 标记为被破坏。\n"
 
 #: src/unsafe/asm.md:358
 msgid "Register template modifiers"
-msgstr ""
+msgstr "寄存器模板修饰符"
 
 #: src/unsafe/asm.md:360
 msgid ""
@@ -16036,22 +16065,25 @@ msgid ""
 "each typically being a \"view\" over a subset of the register (e.g. the low "
 "32 bits of a 64-bit register)."
 msgstr ""
+"在某些情况下，需要对寄存器名称插入模板字符串时的格式进行精细控制。当一个架构的汇编语言对同一个寄存器有几个名称时，这是必要的，每个名称通常是寄存器子集的一个"视图"（例如，64 位寄存器的低 32 位）。"
 
 #: src/unsafe/asm.md:362
 msgid ""
 "By default the compiler will always choose the name that refers to the full "
 "register size (e.g. `rax` on x86-64, `eax` on x86, etc)."
 msgstr ""
+"默认情况下，编译器总是会选择引用完整寄存器大小的名称（例如，在 x86-64 上是 `rax`，在 x86 上是 `eax` 等）。"
 
 #: src/unsafe/asm.md:364
 msgid ""
 "This default can be overridden by using modifiers on the template string "
 "operands, just like you would with format strings:"
 msgstr ""
+"这个默认设置可以通过在模板字符串操作数上使用修饰符来覆盖，就像你在格式字符串中使用的那样："
 
 #: src/unsafe/asm.md:373
 msgid "\"mov {0:h}, {0:l}\""
-msgstr ""
+msgstr "\"mov {0:h}, {0:l}\""
 
 #: src/unsafe/asm.md:380
 msgid ""
@@ -16059,6 +16091,7 @@ msgid ""
 "register allocator to the 4 legacy x86 registers (`ax`, `bx`, `cx`, `dx`) of "
 "which the first two bytes can be addressed independently."
 msgstr ""
+"在这个例子中，我们使用 `reg_abcd` 寄存器类来限制寄存器分配器使用 4 个传统的 x86 寄存器（`ax`、`bx`、`cx`、`dx`），其中前两个字节可以独立寻址。"
 
 #: src/unsafe/asm.md:382
 msgid ""
@@ -16068,6 +16101,7 @@ msgid ""
 "byte. The asm code will therefore be expanded as `mov ah, al` which copies "
 "the low byte of the value into the high byte."
 msgstr ""
+"假设寄存器分配器选择将 `x` 分配在 `ax` 寄存器中。`h` 修饰符将发出该寄存器高字节的寄存器名称，而 `l` 修饰符将发出低字节的寄存器名称。因此，汇编代码将被展开为 `mov ah, al`，这将值的低字节复制到高字节。"
 
 #: src/unsafe/asm.md:385
 msgid ""
@@ -16075,10 +16109,11 @@ msgid ""
 "template modifiers, the compiler will emit a warning and suggest the correct "
 "modifier to use."
 msgstr ""
+"如果你对操作数使用较小的数据类型（例如 `u16`）并忘记使用模板修饰符，编译器将发出警告并建议使用正确的修饰符。"
 
 #: src/unsafe/asm.md:387
 msgid "Memory address operands"
-msgstr ""
+msgstr "内存地址操作数"
 
 #: src/unsafe/asm.md:389
 msgid ""
@@ -16088,14 +16123,15 @@ msgid ""
 "assembly syntax, you should wrap inputs/outputs in `[]` to indicate they are "
 "memory operands:"
 msgstr ""
+"有时汇编指令需要通过内存地址/内存位置传递操作数。你必须手动使用目标架构指定的内存地址语法。例如，在使用 Intel 汇编语法的 x86/x86_64 上，你应该将输入/输出用 `[]` 包裹，以表明它们是内存操作数："
 
 #: src/unsafe/asm.md:399
 msgid "\"fldcw [{}]\""
-msgstr ""
+msgstr "\"fldcw [{}]\""
 
 #: src/unsafe/asm.md:405
 msgid "Labels"
-msgstr ""
+msgstr "标签"
 
 #: src/unsafe/asm.md:407
 msgid ""
@@ -16103,12 +16139,14 @@ msgid ""
 "linker error or may cause other strange behavior. Reuse of a named label can "
 "happen in a variety of ways including:"
 msgstr ""
+"任何命名标签的重用，无论是局部的还是其他的，都可能导致汇编器或链接器错误，或可能引起其他奇怪的行为。命名标签的重用可能以多种方式发生，包括："
 
 #: src/unsafe/asm.md:409
 msgid ""
 "explicitly: using a label more than once in one `asm!` block, or multiple "
 "times across blocks."
 msgstr ""
+"显式：在一个 `asm!` 块中多次使用一个标签，或在多个块之间多次使用。"
 
 #: src/unsafe/asm.md:410
 msgid ""
@@ -16116,12 +16154,14 @@ msgid ""
 "copies of an `asm!` block, for example when the function containing it is "
 "inlined in multiple places."
 msgstr ""
+"通过内联隐式：编译器允许实例化 `asm!` 块的多个副本，例如当包含它的函数在多个地方内联时。"
 
 #: src/unsafe/asm.md:411
 msgid ""
 "implicitly via LTO: LTO can cause code from _other crates_ to be placed in "
 "the same codegen unit, and so could bring in arbitrary labels."
 msgstr ""
+"通过 LTO 隐式：LTO 可能导致**其他 crate** 的代码被放置在同一个代码生成单元中，因此可能引入任意标签。"
 
 #: src/unsafe/asm.md:413
 msgid ""
@@ -16130,6 +16170,7 @@ msgid ""
 "inside inline assembly code. Defining symbols in assembly code may lead to "
 "assembler and/or linker errors due to duplicate symbol definitions."
 msgstr ""
+"因此，你应该只在内联汇编代码中使用 GNU 汇编器的**数字**[局部标签](https://sourceware.org/binutils/docs/as/Symbol-Names.html#Local-Labels)。在汇编代码中定义符号可能会由于重复的符号定义导致汇编器和/或链接器错误。"
 
 #: src/unsafe/asm.md:415
 msgid ""
@@ -16140,50 +16181,52 @@ msgid ""
 "will avoid any ambiguity, but that affects the syntax of the _entire_ `asm!` "
 "block. (See [Options](#options), below, for more on `options`.)"
 msgstr ""
+"此外，在 x86 上使用默认的 Intel 语法时，由于[一个 LLVM 的 bug](https://bugs.llvm.org/show_bug.cgi?id=36144)，你不应该使用仅由 `0` 和 `1` 数字组成的标签，例如 `0`、`11` 或 `101010`，因为它们可能最终被解释为二进制值。使用 `options(att_syntax)` 可以避免任何歧义，但这会影响**整个** `asm!` 块的语法。（有关 `options` 的更多信息，请参见下面的[选项](#options)。）"
 
 #: src/unsafe/asm.md:424
 msgid "\"mov {0}, 10\""
-msgstr ""
+msgstr "\"mov {0}, 10\""
 
 #: src/unsafe/asm.md:425 src/unsafe/asm.md:430
 msgid "\"2:\""
-msgstr ""
+msgstr "\"2:\""
 
 #: src/unsafe/asm.md:426
 msgid "\"sub {0}, 1\""
-msgstr ""
+msgstr "\"sub {0}, 1\""
 
 #: src/unsafe/asm.md:427
 msgid "\"cmp {0}, 3\""
-msgstr ""
+msgstr "\"cmp {0}, 3\""
 
 #: src/unsafe/asm.md:428
 msgid "\"jle 2f\""
-msgstr ""
+msgstr "\"jle 2f\""
 
 #: src/unsafe/asm.md:429
 msgid "\"jmp 2b\""
-msgstr ""
+msgstr "\"jmp 2b\""
 
 #: src/unsafe/asm.md:431
 msgid "\"add {0}, 2\""
-msgstr ""
+msgstr "\"add {0}, 2\""
 
 #: src/unsafe/asm.md:439
 msgid ""
 "This will decrement the `{0}` register value from 10 to 3, then add 2 and "
 "store it in `a`."
 msgstr ""
+"这将把 `{0}` 寄存器的值从 10 递减到 3，然后加 2 并存储在 `a` 中。"
 
 #: src/unsafe/asm.md:441
 msgid "This example shows a few things:"
-msgstr ""
+msgstr "这个例子展示了几点："
 
 #: src/unsafe/asm.md:443
 msgid ""
 "First, that the same number can be used as a label multiple times in the same "
 "inline block."
-msgstr ""
+msgstr "首先，同一个数字可以在同一个内联块中多次用作标签。"
 
 #: src/unsafe/asm.md:444
 msgid ""
@@ -16192,10 +16235,12 @@ msgid ""
 "should be added to the numeric label. It will then refer to the nearest label "
 "defined by this number in this direction."
 msgstr ""
+"其次，当数字标签被用作引用（例如作为指令操作数）时，应该在数字标签后添加后缀 "b"（"backward"，向后）或 "f"（"forward"，向前）。"
+"它将引用该方向上由这个数字定义的最近的标签。"
 
 #: src/unsafe/asm.md:449
 msgid "Options"
-msgstr ""
+msgstr "选项"
 
 #: src/unsafe/asm.md:451
 msgid ""
@@ -16205,16 +16250,18 @@ msgid ""
 "give the compiler more information about what the assembly code is actually "
 "doing so that it can optimize better."
 msgstr ""
+"默认情况下，内联汇编块的处理方式与具有自定义调用约定的外部 FFI 函数调用相同：它可能读/写内存，有可观察的副作用等。"
+"然而，在许多情况下，我们希望给编译器提供更多关于汇编代码实际在做什么的信息，以便它可以更好地优化。"
 
 #: src/unsafe/asm.md:453
 msgid "Let's take our previous example of an `add` instruction:"
-msgstr ""
+msgstr "让我们看看之前 `add` 指令的例子："
 
 #: src/unsafe/asm.md:472
 msgid ""
 "Options can be provided as an optional final argument to the `asm!` macro. We "
 "specified three options here:"
-msgstr ""
+msgstr "选项可以作为 `asm!` 宏的可选最终参数提供。我们在这里指定了三个选项："
 
 #: src/unsafe/asm.md:473
 msgid ""
@@ -16222,6 +16269,7 @@ msgid ""
 "output depends only on its inputs. This allows the compiler optimizer to call "
 "the inline asm fewer times or even eliminate it entirely."
 msgstr ""
+"`pure` 表示汇编代码没有可观察的副作用，其输出仅依赖于其输入。这允许编译器优化器减少调用内联汇编的次数，甚至完全消除它。"
 
 #: src/unsafe/asm.md:474
 msgid ""
@@ -16230,6 +16278,7 @@ msgid ""
 "address that is accessible to it (e.g. through a pointer passed as an "
 "operand, or a global)."
 msgstr ""
+"`nomem` 表示汇编代码不读取或写入内存。默认情况下，编译器会假设内联汇编可以读取或写入任何它可以访问的内存地址（例如，通过作为操作数传递的指针，或全局变量）。"
 
 #: src/unsafe/asm.md:475
 msgid ""
@@ -16237,18 +16286,21 @@ msgid ""
 "allows the compiler to use optimizations such as the stack red zone on x86-64 "
 "to avoid stack pointer adjustments."
 msgstr ""
+"`nostack` 表示汇编代码不会将任何数据压入栈中。这允许编译器使用诸如 x86-64 上的栈红区等优化来避免栈指针调整。"
 
 #: src/unsafe/asm.md:477
 msgid ""
 "These allow the compiler to better optimize code using `asm!`, for example by "
 "eliminating pure `asm!` blocks whose outputs are not needed."
 msgstr ""
+"这些选项允许编译器更好地优化使用 `asm!` 的代码，例如通过消除那些输出不被需要的纯 `asm!` 块。"
 
 #: src/unsafe/asm.md:479
 msgid ""
 "See the [reference](https://doc.rust-lang.org/stable/reference/inline-"
 "assembly.html) for the full list of available options and their effects."
 msgstr ""
+"查看[参考文档](https://doc.rust-lang.org/stable/reference/inline-assembly.html)以获取可用选项的完整列表及其效果。"
 
 #: src/compatibility.md:3
 msgid ""
@@ -16256,10 +16308,11 @@ msgid ""
 "compatibility issues can arise, despite efforts to ensure forwards-"
 "compatibility wherever possible."
 msgstr ""
+"Rust 语言正在快速发展，因此尽管努力确保尽可能的向前兼容性，某些兼容性问题仍可能出现。"
 
 #: src/compatibility.md:7
 msgid "[Raw identifiers](compatibility/raw_identifiers.md)"
-msgstr ""
+msgstr "[原始标识符](compatibility/raw_identifiers.md)"
 
 #: src/compatibility/raw_identifiers.md:3
 msgid ""
@@ -16271,6 +16324,8 @@ msgid ""
 "older edition of Rust has a variable or function with the same name as a "
 "keyword introduced in a newer edition."
 msgstr ""
+"Rust，像许多编程语言一样，有"关键字"的概念。这些标识符对语言来说有特殊含义，因此你不能在变量名、函数名和其他地方使用它们。"
+"原始标识符允许你在通常不允许使用关键字的地方使用它们。这在 Rust 引入新关键字，而使用旧版本 Rust 的库有一个与新版本中引入的关键字同名的变量或函数时特别有用。"
 
 #: src/compatibility/raw_identifiers.md:11
 msgid ""
@@ -16279,14 +16334,16 @@ msgid ""
 "feature in the 2018 edition, so without raw identifiers, we would have no way "
 "to name the function."
 msgstr ""
+"例如，设想一个使用 2015 版 Rust 编译的 crate `foo`，它导出了一个名为 `try` 的函数。这个关键字在 2018 版中被保留用于新特性，"
+"所以如果没有原始标识符，我们就无法命名这个函数。"
 
 #: src/compatibility/raw_identifiers.md:24
 msgid "You'll get this error:"
-msgstr ""
+msgstr "得到这个错误："
 
 #: src/compatibility/raw_identifiers.md:34
 msgid "You can write this with a raw identifier:"
-msgstr ""
+msgstr "可以使用原始标识符这样写："
 
 #: src/meta.md:3
 msgid ""
@@ -16294,39 +16351,45 @@ msgid ""
 "tooling or infrastructure support which just makes things better for "
 "everyone. These topics include:"
 msgstr ""
+"有些主题与程序本身如何运行并不直接相关，但它们提供了工具或基础设施支持，使得整个软件生态都变得更好。这些主题包括："
 
 #: src/meta.md:7
 msgid ""
 "[Documentation](meta/doc.md): Generate library documentation for users via "
 "the included `rustdoc`."
 msgstr ""
+"[文档](meta/doc.md)：通过包含的 `rustdoc` 为用户生成库文档。"
 
 #: src/meta.md:9
 msgid ""
 "[Playground](meta/playground.md): Integrate the Rust Playground in your "
 "documentation."
 msgstr ""
+"[Playground](meta/playground.md)：在你的文档中集成 Rust Playground。"
 
 #: src/meta/doc.md:3
 msgid ""
 "Use `cargo doc` to build documentation in `target/doc`, `cargo doc --open` "
 "will automatically open it in your web browser."
 msgstr ""
+"使用 `cargo doc` 在 `target/doc` 中构建文档，`cargo doc --open` 将在浏览器中自动打开。"
 
 #: src/meta/doc.md:6
 msgid ""
 "Use `cargo test` to run all tests (including documentation tests), and `cargo "
 "test --doc` to only run documentation tests."
 msgstr ""
+"使用 `cargo test` 运行所有测试（包括文档测试），使用 `cargo test --doc` 只运行文档测试。"
 
 #: src/meta/doc.md:9
 msgid ""
 "These commands will appropriately invoke `rustdoc` (and `rustc`) as required."
 msgstr ""
+"这些命令将根据需要适当地调用 `rustdoc`（和 `rustc`）。"
 
 #: src/meta/doc.md:11
 msgid "Doc comments"
-msgstr ""
+msgstr "文档注释"
 
 #: src/meta/doc.md:13
 msgid ""
@@ -16335,18 +16398,19 @@ msgid ""
 "documentation. They are denoted by a `///`, and support [Markdown](https://en."
 "wikipedia.org/wiki/Markdown)."
 msgstr ""
+"文档注释对于需要文档的大型项目非常有用。当运行 `rustdoc` 时，这些注释会被编译成文档。它们由 `///` 表示，并支持 [Markdown](https://en.wikipedia.org/wiki/Markdown)。"
 
 #: src/meta/doc.md:18
 msgid "\"doc\""
-msgstr ""
+msgstr "\"doc\""
 
 #: src/meta/doc.md:19
 msgid "/// A human being is represented here\n"
-msgstr ""
+msgstr "/// 这里表示一个人类\n"
 
 #: src/meta/doc.md:22
 msgid "/// A person must have a name, no matter how much Juliet may hate it\n"
-msgstr ""
+msgstr "/// 一个人必须有一个名字，不管朱丽叶有多讨厌它\n"
 
 #: src/meta/doc.md:27
 msgid ""
@@ -16361,6 +16425,16 @@ msgid ""
 "    /// let person = Person::new(\"name\");\n"
 "    /// ```\n"
 msgstr ""
+"/// 创建一个具有给定名字的人。\n"
+"    ///\n"
+"    /// # 示例\n"
+"    ///\n"
+"    /// ```\n"
+"    /// // 你可以在注释中的围栏之间放置 rust 代码\n"
+"    /// // 如果你向 `rustdoc` 传递 --test 参数，它甚至会为你测试这段代码！\n"
+"    /// use doc::Person;\n"
+"    /// let person = Person::new(\"name\");\n"
+"    /// ```\n"
 
 #: src/meta/doc.md:43
 msgid ""
@@ -16369,20 +16443,24 @@ msgid ""
 "    /// Says \"Hello, [name](Person::name)\" to the `Person` it is called "
 "on.\n"
 msgstr ""
+"/// 给出一个友好的问候！\n"
+"    ///\n"
+"    /// 对调用它的 `Person` 说 \"Hello, [name](Person::name)\"。\n"
 
 #: src/meta/doc.md:47
 msgid "\"Hello, {}!\""
-msgstr ""
+msgstr "\"Hello, {}!\""
 
 #: src/meta/doc.md:52
 msgid "\"John\""
-msgstr ""
+msgstr "\"John\""
 
 #: src/meta/doc.md:58
 msgid ""
 "To run the tests, first build the code as a library, then tell `rustdoc` "
 "where to find the library so it can link it into each doctest program:"
 msgstr ""
+"要运行测试，首先将代码构建为库，然后告诉 `rustdoc` 在哪里找到库，以便它可以将其链接到每个文档测试程序中："
 
 #: src/meta/doc.md:61
 msgid ""
@@ -16391,62 +16469,67 @@ msgid ""
 "$ rustdoc --test --extern doc=\"libdoc.rlib\" doc.rs\n"
 "```"
 msgstr ""
+"```shell\n"
+"$ rustc doc.rs --crate-type lib\n"
+"$ rustdoc --test --extern doc=\"libdoc.rlib\" doc.rs\n"
+"```"
 
 #: src/meta/doc.md:66
 msgid "Doc attributes"
-msgstr ""
+msgstr "文档属性"
 
 #: src/meta/doc.md:68
 msgid ""
 "Below are a few examples of the most common `#[doc]` attributes used with "
 "`rustdoc`."
-msgstr ""
+msgstr "以下是与 `rustdoc` 一起使用的最常见的 `#[doc]` 属性的几个例子。"
 
 #: src/meta/doc.md:71
 msgid "`inline`"
-msgstr ""
+msgstr "`inline`"
 
 #: src/meta/doc.md:73
 msgid "Used to inline docs, instead of linking out to separate page."
-msgstr ""
+msgstr "用于内联文档，而不是链接到单独的页面。"
 
 #: src/meta/doc.md:78
 msgid "/// bar docs\n"
-msgstr ""
+msgstr "/// bar 文档\n"
 
 #: src/meta/doc.md:81
 msgid "/// the docs for Bar\n"
-msgstr ""
+msgstr "/// Bar 的文档\n"
 
 #: src/meta/doc.md:86
 msgid "`no_inline`"
-msgstr ""
+msgstr "`no_inline`"
 
 #: src/meta/doc.md:88
 msgid "Used to prevent linking out to separate page or anywhere."
-msgstr ""
+msgstr "用于防止链接到单独的页面或任何地方。"
 
 #: src/meta/doc.md:91
 msgid "// Example from libcore/prelude\n"
-msgstr ""
+msgstr "// libcore/prelude 中的示例\n"
 
 #: src/meta/doc.md:96
 msgid "`hidden`"
-msgstr ""
+msgstr "`hidden`"
 
 #: src/meta/doc.md:98
 msgid "Using this tells `rustdoc` not to include this in documentation:"
-msgstr ""
+msgstr "使用这个属性告诉 `rustdoc` 不要包含在文档中："
 
 #: src/meta/doc.md:101
 msgid "// Example from the futures-rs library\n"
-msgstr ""
+msgstr "// futures-rs 库中的示例\n"
 
 #: src/meta/doc.md:106
 msgid ""
 "For documentation, `rustdoc` is widely used by the community. It's what is "
 "used to generate the [std library docs](https://doc.rust-lang.org/std/)."
 msgstr ""
+"针对文档，`rustdoc` 被社区广泛使用。[标准库文档](https://doc.rust-lang.org/std/)就是用它来生成的。"
 
 #: src/meta/doc.md:111
 msgid ""
@@ -16454,16 +16537,18 @@ msgid ""
 "org/book/ch14-02-publishing-to-crates-io.html#making-useful-documentation-"
 "comments)"
 msgstr ""
+"[Rust 程序设计语言: 编写有用的文档注释](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#making-useful-documentation-comments)"
 
 #: src/meta/doc.md:112
 msgid "[The rustdoc Book](https://doc.rust-lang.org/rustdoc/index.html)"
-msgstr ""
+msgstr "[rustdoc 手册](https://doc.rust-lang.org/rustdoc/index.html)"
 
 #: src/meta/doc.md:113
 msgid ""
 "[The Reference: Doc comments](https://doc.rust-lang.org/stable/reference/"
 "comments.html#doc-comments)"
 msgstr ""
+"[参考手册: 文档注释](https://doc.rust-lang.org/stable/reference/comments.html#doc-comments)"
 
 #: src/meta/doc.md:114
 msgid ""
@@ -16471,34 +16556,39 @@ msgid ""
 "rfcs/1574-more-api-documentation-conventions.html#appendix-a-full-conventions-"
 "text)"
 msgstr ""
+"[RFC 1574: API 文档约定](https://rust-lang.github.io/rfcs/1574-more-api-documentation-conventions.html#appendix-a-full-conventions-text)"
 
 #: src/meta/doc.md:115
 msgid ""
 "[RFC 1946: Relative links to other items from doc comments (intra-rustdoc "
 "links)](https://rust-lang.github.io/rfcs/1946-intra-rustdoc-links.html)"
 msgstr ""
+"[RFC 1946: 从文档注释到其他项目的相对链接（rustdoc 内部链接）](https://rust-lang.github.io/rfcs/1946-intra-rustdoc-links.html)"
 
 #: src/meta/doc.md:116
 msgid ""
 "[Is there any documentation style guide for comments? (reddit)](https://www."
 "reddit.com/r/rust/comments/ahb50s/is_there_any_documentation_style_guide_for/)"
 msgstr ""
+"[有没有关于注释的文档风格指南？（reddit）](https://www.reddit.com/r/rust/comments/ahb50s/is_there_any_documentation_style_guide_for/)"
 
 #: src/meta/playground.md:3
 msgid ""
 "The [Rust Playground](https://play.rust-lang.org/) is a way to experiment "
 "with Rust code through a web interface."
 msgstr ""
+"[Rust Playground](https://play.rust-lang.org/) 是一种在线运行验证 Rust 代码的方式。"
 
 #: src/meta/playground.md:6
 msgid "Using it with `mdbook`"
-msgstr ""
+msgstr "在 `mdbook` 中使用"
 
 #: src/meta/playground.md:8
 msgid ""
 "In [`mdbook`](https://github.com/rust-lang/mdBook), you can make code "
 "examples playable and editable."
 msgstr ""
+"在 [`mdbook`](https://github.com/rust-lang/mdBook) 中，你可以使代码示例可运行和可编辑。"
 
 #: src/meta/playground.md:16
 msgid ""
@@ -16506,16 +16596,18 @@ msgid ""
 "tweak it. The key here is the adding of the word `editable` to your codefence "
 "block separated by a comma."
 msgstr ""
+"这允许读者既可以运行你的代码示例，也可以修改和调整它。这里的关键是在你的代码块标注中添加 `editable` 这个词，用逗号分隔。"
 
 #: src/meta/playground.md:26
 msgid ""
 "Additionally, you can add `ignore` if you want `mdbook` to skip your code "
 "when it builds and tests."
 msgstr ""
+"此外，如果你希望 `mdbook` 在构建和测试时跳过你的代码，你可以添加 `ignore`。"
 
 #: src/meta/playground.md:35
 msgid "Using it with docs"
-msgstr ""
+msgstr "在文档中使用"
 
 #: src/meta/playground.md:37
 msgid ""
@@ -16525,6 +16617,7 @@ msgid ""
 "attribute called [`html_playground_url`](https://doc.rust-lang.org/rustdoc/"
 "write-documentation/the-doc-attribute.html#html_playground_url)."
 msgstr ""
+"你可能已经注意到在一些 [官方 Rust 文档](https://doc.rust-lang.org/core/) 中有一个写着 \"Run\" 的按钮，它会在 Rust Playground 的新标签页中打开代码示例。使用名为 [`html_playground_url`](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html#html_playground_url) 的 `#[doc]` 属性，就可以启用这个功能。"
 
 #: src/meta/playground.md:42
 msgid ""
@@ -16535,18 +16628,26 @@ msgid ""
 "//! ```\n"
 "````"
 msgstr ""
+"````\n"
+"#![doc(html_playground_url = \"https://play.rust-lang.org/\")]\n"
+"//! ```\n"
+"//! println!(\"Hello World\");\n"
+"//! ```\n"
+"````"
 
 #: src/meta/playground.md:51
 msgid "[The Rust Playground](https://play.rust-lang.org/)"
-msgstr ""
+msgstr "[Rust Playground](https://play.rust-lang.org/)"
 
 #: src/meta/playground.md:52
 msgid ""
 "[The Rust Playground On Github](https://github.com/integer32llc/rust-"
 "playground/)"
 msgstr ""
+"[GitHub 上的 Rust Playground](https://github.com/integer32llc/rust-playground/)"
 
 #: src/meta/playground.md:53
 msgid ""
 "[The rustdoc Book](https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html)"
 msgstr ""
+"[rustdoc 手册](https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html)"
