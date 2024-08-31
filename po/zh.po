@@ -922,7 +922,7 @@ msgstr "[补充](meta.md) - 文档，基准测试。"
 
 #: src/hello.md:3
 msgid "This is the source code of the traditional Hello World program."
-msgstr "这是传统的 Hello World 程序的源代码。"
+msgstr "这是经典的 Hello World 程序的源代码。"
 
 #: src/hello.md:6
 msgid ""
@@ -931,10 +931,9 @@ msgid ""
 "// or if you prefer to use your keyboard, you can use the \"Ctrl + Enter\"\n"
 "// shortcut.\n"
 msgstr ""
-"// 这是一个注释，编译器会忽略它。\n"
-"// 你可以通过点击那边的 \"运行\" 按钮来测试这段代码 ->\n"
-"// 或者，如果你更喜欢使用键盘，你可以使用 \"Ctrl + 回车\"\n"
-"// 快捷键。\n"
+"// 这是一行注释，编译器会忽略它。\n"
+"// 你可以点击右侧的 \"Run\" 按钮来测试这段代码 ->\n"
+"// 如果你更习惯使用键盘，也可以使用"Ctrl + Enter"快捷键来运行。\n"
 
 #: src/hello.md:10
 msgid ""
@@ -942,8 +941,8 @@ msgid ""
 "// You can always return to the original code by clicking the \"Reset\" "
 "button ->\n"
 msgstr ""
-"// 这段代码是可以编辑的，随意地修改它吧！\n"
-"// 你总是可以通过点击 \"重置\" 按钮来恢复原始代码 ->\n"
+"// 这段代码是可以编辑的，请随意修改！\n"
+"// 你可以随时点击 \"Reset\" 按钮恢复到初始代码 ->\n"
 
 #: src/hello.md:13
 msgid "// This is the main function.\n"
@@ -951,7 +950,7 @@ msgstr "// 这是主函数。\n"
 
 #: src/hello.md:16
 msgid "// Statements here are executed when the compiled binary is called.\n"
-msgstr "// 当编译后的二进制文件被调用时，这里的语句将被执行。\n"
+msgstr "// 当运行编译后的程序时，这里的语句会被执行。\n"
 
 #: src/hello.md:18
 msgid "// Print text to the console.\n"
@@ -963,59 +962,59 @@ msgstr "\"Hello World!\""
 
 #: src/hello.md:23
 msgid "`println!` is a [_macro_](macros.md) that prints text to the console."
-msgstr "`println!` 是一个[宏(macro_rule!)](macros.md)，用于在控制台打印文本。"
+msgstr "`println!` 是一个用于在控制台打印文本的[宏](macros.md)。"
 
 #: src/hello.md:26
 msgid "A binary can be generated using the Rust compiler: `rustc`."
-msgstr "可以使用 Rust 编译器 `rustc` 生成二进制文件。"
+msgstr "可以使用 Rust 编译器 `rustc` 来生成可执行文件。"
 
 #: src/hello.md:32
 msgid "`rustc` will produce a `hello` binary that can be executed."
-msgstr "`rustc` 将生成一个可以执行的 `hello` 二进制文件。"
+msgstr "`rustc` 将生成一个名为 `hello` 的可执行文件。"
 
 #: src/hello.md:39 src/hello/print/print_display.md:107
 #: src/hello/print/print_display/testcase_list.md:53 src/hello/print/fmt.md:70
 #: src/primitives/tuples.md:64 src/custom_types/structs.md:89
 msgid "Activity"
-msgstr "动手试一试"
+msgstr "练习"
 
 #: src/hello.md:41
 msgid ""
 "Click 'Run' above to see the expected output. Next, add a new line with a "
 "second `println!` macro so that the output shows:"
 msgstr ""
-"点击上面的 '运行' 查看预期输出。接下来，添加一行新的代码，再次使用 `println!` 宏，输出以下结果："
+"点击上方的"运行"按钮查看预期输出。接下来，添加一行新代码，再次使用 `println!` 宏，输出显示如下内容："
 
 #: src/hello/comment.md:3
 msgid ""
 "Any program requires comments, and Rust supports a few different varieties:"
-msgstr "任何程序都需要注释，Rust 支持几种不同的注释类型："
+msgstr "每个程序都需要注释，Rust 支持几种不同类型的注释："
 
 #: src/hello/comment.md:6
 msgid "_Regular comments_ which are ignored by the compiler:"
-msgstr "**普通注释**会被编译器会忽略的 ："
+msgstr "**普通注释**：编译器会忽略这些注释"
 
 #: src/hello/comment.md:7
 msgid "`// Line comments which go to the end of the line.`"
-msgstr "`// 行注释，直到行尾。`"
+msgstr "`// 行注释，从双斜杠开始到行尾。`"
 
 #: src/hello/comment.md:8
 msgid "`/* Block comments which go to the closing delimiter. */`"
-msgstr "`/* 块注释，直到闭合分隔符。 */`"
+msgstr "`/* 块注释，从开始符号到结束符号。 */`"
 
 #: src/hello/comment.md:9
 msgid ""
 "_Doc comments_ which are parsed into HTML library [documentation](../meta/doc."
 "md):"
-msgstr "**文档注释**会被解析成 HTML 库[文档](../meta/doc.md)："
+msgstr "**文档注释**：这些注释会被解析成 HTML 格式的[库文档](../meta/doc.md)"
 
 #: src/hello/comment.md:10
 msgid "`/// Generate library docs for the following item.`"
-msgstr "`/// 为下一项生成库文档。`"
+msgstr "`/// 为接下来的项生成库文档。`"
 
 #: src/hello/comment.md:11
 msgid "`//! Generate library docs for the enclosing item.`"
-msgstr "`//! 为所属项（译注：如 crate、模块或函数）生成库文档。`"
+msgstr "`//! 为当前项（如 crate、模块或函数）生成库文档。`"
 
 #: src/hello/comment.md:15
 msgid ""
@@ -1023,9 +1022,9 @@ msgid ""
 "    // There are two slashes at the beginning of the line.\n"
 "    // And nothing written after these will be read by the compiler.\n"
 msgstr ""
-"// 这是一个行注释的例子。\n"
-"    // 行首有两个斜杠。\n"
-"    // 这些之后写的内容不会被编译器读取。\n"
+"// 这是行注释的一个例子。\n"
+"    // 在行首有两个斜杠。\n"
+"    // 斜杠后面的内容编译器不会读取。\n"
 
 #: src/hello/comment.md:19
 msgid "// println!(\"Hello, world!\");\n"
@@ -1033,7 +1032,7 @@ msgstr "// println!(\"Hello, world!\");\n"
 
 #: src/hello/comment.md:21
 msgid "// Run it. See? Now try deleting the two slashes, and run it again.\n"
-msgstr "// 运行它。看到了吗？现在尝试删除两个斜杠，再运行一次。\n"
+msgstr "// 运行看看。明白了吗？现在试着删除这两个斜杠，再运行一次。\n"
 
 #: src/hello/comment.md:23
 msgid ""
@@ -1043,15 +1042,16 @@ msgid ""
 "     * are extremely useful for temporarily disabling chunks of code.\n"
 "     * /* Block comments can be /* nested, */ */ so it takes only a few\n"
 "     * keystrokes to comment out everything in this main() function.\n"
-"     * /*/*/* Try it yourself! */*/*/"
+"     * /*/*/* Try it yourself! */*/*/\n"
+"     */"
 msgstr ""
 "/*\n"
-"     * 这是另一种注释，块注释。通常，\n"
-"     * 推荐使用行注释风格。但块注释\n"
-"     * 非常适用于临时禁用代码块。\n"
-"     * /* 块注释可以 /* 嵌套， */ */ 所以只需要几个\n"
-"     * 按键就可以注释掉这个 main() 函数中的所有内容。\n"
-"     * /*/*/* 自己试试吧！ */*/*/"
+"     * 这是另一种类型的注释，称为块注释。一般来说，推荐使用行注释。\n"
+"     * 但是块注释在临时禁用大段代码时非常有用。\n"
+"     * /* 块注释可以 /* 嵌套， */ */ 因此只需几次按键就能\n"
+"     * 注释掉 main() 函数中的所有内容。\n"
+"     * /*/*/* 你可以自己试试！ */*/*/\n"
+"     */"
 
 #: src/hello/comment.md:32
 msgid ""
@@ -1061,8 +1061,7 @@ msgid ""
 "    */"
 msgstr ""
 "/*\n"
-"    注意：前面的 `*` 列完全是出于风格考虑。实际上\n"
-"    并不需要它。\n"
+"    注意：前面的 `*` 列纯粹是为了样式美观。实际上并不需要。\n"
 "    */"
 
 #: src/hello/comment.md:37
@@ -1071,9 +1070,8 @@ msgid ""
 "    // than with line comments. Try deleting the comment delimiters\n"
 "    // to change the result:\n"
 msgstr ""
-"// 你可以使用块注释比行注释更容易地操作表达式\n"
-"    // 尝试删除注释分隔符\n"
-"    // 来改变结果：\n"
+"// 块注释比行注释更方便地操作表达式\n"
+"    // 试试删除注释符号，看看结果会有什么变化：\n"
 
 #: src/hello/comment.md:40
 msgid "/* 90 + */"
@@ -1081,7 +1079,7 @@ msgstr "/* 90 + */"
 
 #: src/hello/comment.md:41
 msgid "\"Is `x` 10 or 100? x = {}\""
-msgstr "\"`x` 是 10 还是 100？x = {}\""
+msgstr ""`x` 是 10 还是 100？x = {}\""
 
 #: src/hello/comment.md:45 src/hello/print.md:103
 #: src/hello/print/print_debug.md:75 src/hello/print/print_display.md:118
@@ -1127,55 +1125,55 @@ msgstr "\"`x` 是 10 还是 100？x = {}\""
 #: src/std_misc/threads/testcase_mapreduce.md:128 src/std_misc/path.md:54
 #: src/std_misc/fs.md:150 src/meta/doc.md:109 src/meta/playground.md:49
 msgid "See also:"
-msgstr "参见："
+msgstr "另请参阅："
 
 #: src/hello/comment.md:47
 msgid "[Library documentation](../meta/doc.md)"
-msgstr "[文档注释](../meta/doc.md)"
+msgstr "[库文档](../meta/doc.md)"
 
 #: src/hello/print.md:3
 msgid ""
 "Printing is handled by a series of [`macros`](../macros.md) defined in [`std::"
 "fmt`](https://doc.rust-lang.org/std/fmt/) some of which are:"
-msgstr "打印功能由定义在 [`std::fmt`](https://doc.rust-lang.org/std/fmt/) 中的一系列 [`macros`](../macros.md) 处理，其中包括："
+msgstr "打印功能由 [`std::fmt`](https://doc.rust-lang.org/std/fmt/) 中定义的一系列[`宏`](../macros.md)处理，其中包括："
 
 #: src/hello/print.md:6
 msgid "`format!`: write formatted text to [`String`](../std/str.md)"
-msgstr "`format!`: 将格式化文本写入 [`String`](../std/str.md)"
+msgstr "`format!`：将格式化文本写入 [`String`](../std/str.md)"
 
 #: src/hello/print.md:7
 msgid ""
 "`print!`: same as `format!` but the text is printed to the console (io::"
 "stdout)."
-msgstr "`print!`: 与 `format!` 相同，但文本将被打印到控制台（io::stdout）."
+msgstr "`print!`：与 `format!` 类似，但文本会打印到控制台（io::stdout）"
 
 #: src/hello/print.md:9
 msgid "`println!`: same as `print!` but a newline is appended."
-msgstr "`println!`: 与 `print!` 相同，但会追加一个新行。"
+msgstr "`println!`：与 `print!` 类似，但会在末尾添加换行符"
 
 #: src/hello/print.md:10
 msgid ""
 "`eprint!`: same as `print!` but the text is printed to the standard error "
 "(io::stderr)."
-msgstr "`eprint!`: 与 `print!` 相同，但文本将被打印到标准错误输出（io::stderr）."
+msgstr "`eprint!`：与 `print!` 类似，但文本会打印到标准错误输出（io::stderr）"
 
 #: src/hello/print.md:12
 msgid "`eprintln!`: same as `eprint!` but a newline is appended."
-msgstr "`eprintln!`: 与 `eprint!` 相同，但会追加一个新行。"
+msgstr "`eprintln!`：与 `eprint!` 类似，但会在末尾添加换行符"
 
 #: src/hello/print.md:14
 msgid ""
 "All parse text in the same fashion. As a plus, Rust checks formatting "
 "correctness at compile time."
-msgstr "所有这些都以相同的方式解析文本。此外，Rust 会在编译时检查格式化的正确性。"
+msgstr "所有这些宏都以相同的方式解析文本。此外，Rust 会在编译时检查格式化的正确性。"
 
 #: src/hello/print.md:19
 msgid ""
 "// In general, the `{}` will be automatically replaced with any\n"
 "    // arguments. These will be stringified.\n"
 msgstr ""
-"// 通常，`{}` 将自动替换为任何\n"
-"    // 参数。这些将被转换为字符串。\n"
+"// 通常，`{}` 会被自动替换为任何参数。\n"
+"    // 这些参数会被转换为字符串。\n"
 
 #: src/hello/print.md:21
 msgid "\"{} days\""
@@ -1189,8 +1187,8 @@ msgid ""
 "    // at 0 immediately after the format string.\n"
 msgstr ""
 "// 可以使用位置参数。在 `{}` 中指定一个整数\n"
-"    // 决定了哪个附加参数将被替换。参数\n"
-"    // 在格式字符串之后立即从 0 开始。\n"
+"    // 来决定替换哪个额外的参数。参数编号\n"
+"    // 从格式字符串后立即开始，从 0 开始。\n"
 
 #: src/hello/print.md:26
 msgid "\"{0}, this is {1}. {1}, this is {0}\""
@@ -1207,7 +1205,7 @@ msgstr "\"Bob\""
 
 #: src/hello/print.md:28
 msgid "// As can named arguments.\n"
-msgstr "// 也可以使用命名参数。\n"
+msgstr "// 还可以使用命名参数。\n"
 
 #: src/hello/print.md:29
 msgid "\"{subject} {verb} {object}\""
@@ -1215,11 +1213,11 @@ msgstr "\"{subject} {verb} {object}\""
 
 #: src/hello/print.md:30
 msgid "\"the lazy dog\""
-msgstr "\"懒惰的狗\""
+msgstr "\"那只懒惰的狗\""
 
 #: src/hello/print.md:31
 msgid "\"the quick brown fox\""
-msgstr "\"快速的棕色狐狸\""
+msgstr "\"那只敏捷的棕色狐狸\""
 
 #: src/hello/print.md:32
 msgid "\"jumps over\""
@@ -1230,40 +1228,40 @@ msgid ""
 "// Different formatting can be invoked by specifying the format character\n"
 "    // after a `:`.\n"
 msgstr ""
-"// 通过在 `:` 后指定格式字符，可以调用不同的格式化\n"
-"    // 方式。\n"
+"// 在 `:` 后指定格式字符，\n"
+"    // 可以调用不同的格式化方式。\n"
 
 #: src/hello/print.md:36
 msgid "\"Base 10:               {}\""
-msgstr "\"10 进制：               {}\""
+msgstr "\"十进制：               {}\""
 
 #: src/hello/print.md:36
 msgid "// 69420\n"
-msgstr ""
+msgstr "// 69420\n"
 
 #: src/hello/print.md:37
 msgid "\"Base 2 (binary):       {:b}\""
-msgstr "\"2 进制（二进制）：    {:b}\""
+msgstr "\"二进制：               {:b}\""
 
 #: src/hello/print.md:37
 msgid "// 10000111100101100\n"
-msgstr ""
+msgstr "// 10000111100101100\n"
 
 #: src/hello/print.md:38
 msgid "\"Base 8 (octal):        {:o}\""
-msgstr "\"8 进制（八进制）：     {:o}\""
+msgstr "\"八进制：               {:o}\""
 
 #: src/hello/print.md:38
 msgid "// 207454\n"
-msgstr ""
+msgstr "// 207454\n"
 
 #: src/hello/print.md:39
 msgid "\"Base 16 (hexadecimal): {:x}\""
-msgstr "\"16 进制（十六进制）：   {:x}\""
+msgstr "\"十六进制：             {:x}\""
 
 #: src/hello/print.md:39
 msgid "// 10f2c\n"
-msgstr ""
+msgstr "// 10f2c\n"
 
 #: src/hello/print.md:41
 msgid ""
@@ -1271,8 +1269,8 @@ msgid ""
 "    // output \"    1\". (Four white spaces and a \"1\", for a total width of "
 "5.)\n"
 msgstr ""
-"// 你可以使用指定的宽度对文本进行右对齐。这将\n"
-"    // 输出 \"    1\"。（四个空格和一个 \"1\"，总宽度为 5。）\n"
+"// 可以指定宽度来右对齐文本。这将输出\n"
+"    // \"    1\"。（四个空格和一个 \"1\"，总宽度为 5。）\n"
 
 #: src/hello/print.md:43
 msgid "\"{number:>5}\""
@@ -1280,7 +1278,7 @@ msgstr "\"{number:>5}\""
 
 #: src/hello/print.md:45
 msgid "// You can pad numbers with extra zeroes,\n"
-msgstr "// 你可以用额外的零来填充数字，\n"
+msgstr "// 可以用额外的零来填充数字，\n"
 
 #: src/hello/print.md:46
 msgid "\"{number:0>5}\""
@@ -1292,7 +1290,7 @@ msgid ""
 "    // and left-adjust by flipping the sign. This will output \"10000\".\n"
 msgstr ""
 "// 00001\n"
-"    // 并通过翻转符号进行左对齐。这将输出 \"10000\"。\n"
+"    // 通过翻转符号来左对齐。这将输出 \"10000\"。\n"
 
 #: src/hello/print.md:48
 msgid "\"{number:0<5}\""
@@ -1300,13 +1298,13 @@ msgstr "\"{number:0<5}\""
 
 #: src/hello/print.md:48
 msgid "// 10000\n"
-msgstr ""
+msgstr "// 10000\n"
 
 #: src/hello/print.md:50
 msgid ""
 "// You can use named arguments in the format specifier by appending a `$`.\n"
 msgstr ""
-"// 你可以通过在格式说明符后附加 `$` 来使用命名参数。\n"
+"// 在格式说明符后添加 `$` 可以使用命名参数。\n"
 
 #: src/hello/print.md:51
 msgid "\"{number:0>width$}\""
@@ -1315,7 +1313,7 @@ msgstr "\"{number:0>width$}\""
 #: src/hello/print.md:53
 msgid ""
 "// Rust even checks to make sure the correct number of arguments are used.\n"
-msgstr "// Rust 甚至会检查使用的正确参数数量。\n"
+msgstr "// Rust 甚至会检查使用的参数数量是否正确。\n"
 
 #: src/hello/print.md:54
 msgid "\"My name is {0}, {1} {0}\""
@@ -1334,12 +1332,12 @@ msgid ""
 "// Only types that implement fmt::Display can be formatted with `{}`. User-\n"
 "    // defined types do not implement fmt::Display by default.\n"
 msgstr ""
-"// 只有实现了 fmt::Display 的类型才能使用 `{}` 进行格式化。用户\n"
-"    // 定义的类型默认不会实现 fmt::Display。\n"
+"// 只有实现了 fmt::Display 的类型才能用 `{}` 格式化。\n"
+"    // 用户定义的类型默认不实现 fmt::Display。\n"
 
 #: src/hello/print.md:60
 msgid "// disable `dead_code` which warn against unused module\n"
-msgstr "// 禁用 `dead_code`，它用于警告未使用的模块\n"
+msgstr "// 禁用 `dead_code`，它会警告未使用的模块\n"
 
 #: src/hello/print.md:63
 msgid ""
@@ -1348,10 +1346,9 @@ msgid ""
 "    // println!(\"This struct `{}` won't print...\", Structure(3));\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
-"// 这将无法编译，因为 `Structure` 没有实现\n"
-"    // fmt::Display。\n"
+"// 这无法编译，因为 `Structure` 没有实现 fmt::Display。\n"
 "    // println!(\"这个结构体 `{}` 无法打印...\", Structure(3));\n"
-"    // TODO ^ 尝试取消注释这行\n"
+"    // TODO ^ 尝试取消注释这一行\n"
 
 #: src/hello/print.md:68
 msgid ""
@@ -1359,8 +1356,8 @@ msgid ""
 "    // surrounding variable. Just like the above, this will output\n"
 "    // \"    1\", 4 white spaces and a \"1\".\n"
 msgstr ""
-"// 对于 Rust 1.58 及以上版本，你可以直接从周围的变量捕获参数。就像上面一样，这将输出\n"
-"    // \"    1\"，4个空格和一个 \"1\"。\n"
+"// 在 Rust 1.58 及以上版本，你可以直接从周围的变量捕获参数。\n"
+"    // 就像上面一样，这将输出 \"    1\"，4 个空格和一个 \"1\"。\n"
 
 #: src/hello/print.md:73
 msgid "\"{number:>width$}\""
@@ -1372,13 +1369,13 @@ msgid ""
 "(https://doc.rust-lang.org/std/fmt/#formatting-traits) which govern the "
 "display of text. The base form of two important ones are listed below:"
 msgstr ""
-"[`std::fmt`](https://doc.rust-lang.org/std/fmt/) 包含许多 [`traits`]"
-"(https://doc.rust-lang.org/std/fmt/#formatting-traits)，它们控制文本的显示。下面列出了两个重要的基本形式："
+"[`std::fmt`](https://doc.rust-lang.org/std/fmt/) 包含许多控制文本显示的 [`traits`]"
+"(https://doc.rust-lang.org/std/fmt/#formatting-traits)。下面列出了两个重要的基本形式："
 
 #: src/hello/print.md:80
 msgid ""
 "`fmt::Debug`: Uses the `{:?}` marker. Format text for debugging purposes."
-msgstr "`fmt::Debug`: 使用 `{:?}` 标记。为了调试目的格式化文本。"
+msgstr "`fmt::Debug`: 使用 `{:?}` 标记。用于调试目的的文本格式化。"
 
 #: src/hello/print.md:81
 msgid ""
@@ -1390,7 +1387,7 @@ msgstr "`fmt::Display`: 使用 `{}` 标记。以更优雅、用户友好的方�
 msgid ""
 "Here, we used `fmt::Display` because the std library provides implementations "
 "for these types. To print text for custom types, more steps are required."
-msgstr "这里我们使用 `fmt::Display`，因为标准库为这些类型提供了实现。要打印自定义类型的文本，需要更多的步骤。"
+msgstr "这里我们使用 `fmt::Display`，因为标准库为这些类型提供了实现。要打印自定义类型的文本，需要额外的步骤。"
 
 #: src/hello/print.md:87
 msgid ""
@@ -1410,18 +1407,18 @@ msgstr "在 _43 行_，`#[allow(dead_code)]`是一个 [属性(attribute)](../att
 
 #: src/hello/print.md:92
 msgid "Activities"
-msgstr "动手试一试"
+msgstr "练习"
 
 #: src/hello/print.md:94
 msgid ""
 "Fix the issue in the above code (see FIXME) so that it runs without error."
-msgstr "修复上述代码中的问题（见 FIXME），以便它能无误运行。"
+msgstr "修复上述代码中的问题（参见 FIXME 注释），使其能够正常运行。"
 
 #: src/hello/print.md:96
 msgid ""
 "Try uncommenting the line that attempts to format the `Structure` struct (see "
 "TODO)"
-msgstr "尝试取消注释尝试格式化 `Structure` 结构体的行（见 TODO）"
+msgstr "尝试取消注释那行尝试格式化 `Structure` 结构体的代码（参见 TODO 注释）"
 
 #: src/hello/print.md:98
 msgid ""
@@ -1431,9 +1428,9 @@ msgid ""
 "[`std::fmt`](https://doc.rust-lang.org/std/fmt/) documentation for setting "
 "the number of decimals to display)"
 msgstr ""
-"添加一个 `println!` 宏调用，打印：`Pi 大约为 3.142`，通过控制显示的小数位数。为了这个练习的目的，使用 "
-"`let pi = 3.141592` 作为 pi 的近似值。（提示：你可能需要查看 [`std::fmt`](https://doc.rust-lang.org/std/fmt/) "
-"文档以设置显示的小数位数）"
+"添加一个 `println!` 宏调用，打印：`Pi 约等于 3.142`，通过控制显示的小数位数来实现。\n"
+"在本练习中，使用 `let pi = 3.141592` 作为 pi 的近似值。（提示：你可能需要查阅\n"
+"[`std::fmt`](https://doc.rust-lang.org/std/fmt/) 文档来了解如何设置显示的小数位数）"
 
 #: src/hello/print.md:105
 msgid ""
@@ -1441,8 +1438,9 @@ msgid ""
 "[`struct`](../custom_types/structs.md), [`traits`](https://doc.rust-lang.org/"
 "std/fmt/#formatting-traits), and [`dead_code`](../attribute/unused.md)"
 msgstr ""
-"[`std::fmt`](https://doc.rust-lang.org/std/fmt/),  [`macros`](../macros.md), "
-"[`struct`](../custom_types/structs.md), [`traits`](https://doc.rust-lang.org/std/fmt/#formatting-traits), 和 [`dead_code`](../attribute/unused.md)"
+"[`std::fmt`](https://doc.rust-lang.org/std/fmt/)、[`macros`](../macros.md)、\n"
+"[`struct`](../custom_types/structs.md)、[`traits`](https://doc.rust-lang.org/std/fmt/#formatting-traits) "
+"和 [`dead_code`](../attribute/unused.md)"
 
 #: src/hello/print/print_debug.md:3
 msgid ""
@@ -1451,8 +1449,8 @@ msgid ""
 "for types such as in the `std` library. All others _must_ be manually "
 "implemented somehow."
 msgstr ""
-"所有的类型，若想用 `std::fmt` 的格式化打印，都要实现至少一个可打印的 `traits`。"
-"自动实现只为 `std` 库中的类型提供。所有其他类型都**必须**以某种方式手动实现。"
+"所有想要使用 `std::fmt` 格式化 `traits` 的类型都需要实现才能打印。\n"
+"自动实现仅为 `std` 库中的类型提供。所有其他类型都**必须**以某种方式手动实现。"
 
 #: src/hello/print/print_debug.md:8
 msgid ""
@@ -1460,7 +1458,7 @@ msgid ""
 "`derive` (automatically create) the `fmt::Debug` implementation. This is not "
 "true for `fmt::Display` which must be manually implemented."
 msgstr ""
-"`fmt::Debug` `trait` 使这变得非常简单。**所有**类型都可以 `derive`（自动创建）"
+"`fmt::Debug` trait 使这变得非常简单。**所有**类型都可以 `derive`（自动创建）\n"
 "`fmt::Debug` 实现。但这对 `fmt::Display` 不适用，后者必须手动实现。"
 
 #: src/hello/print/print_debug.md:13
@@ -1468,48 +1466,44 @@ msgid ""
 "// This structure cannot be printed either with `fmt::Display` or\n"
 "// with `fmt::Debug`.\n"
 msgstr ""
-"// 这个结构体既不能用 `fmt::Display` 打印\n"
-"// 也不能用 `fmt::Debug` 打印。\n"
+"// 这个结构体无法通过 `fmt::Display` 或 `fmt::Debug` 打印。\n"
 
 #: src/hello/print/print_debug.md:16
 msgid ""
 "// The `derive` attribute automatically creates the implementation\n"
 "// required to make this `struct` printable with `fmt::Debug`.\n"
 msgstr ""
-"// `derive` 属性自动创建所需的实现\n"
-"// 使这个 `struct` 可以用 `fmt::Debug` 打印。\n"
+"// `derive` 属性自动创建使这个 `struct` 可以用 `fmt::Debug` 打印的实现。\n"
 
 #: src/hello/print/print_debug.md:23
 msgid "All `std` library types are automatically printable with `{:?}` too:"
-msgstr "所有 `std` 库类型也可以自动用 `{:?}` 打印："
+msgstr "所有 `std` 库类型也可以自动使用 `{:?}` 打印："
 
 #: src/hello/print/print_debug.md:26
 msgid ""
 "// Derive the `fmt::Debug` implementation for `Structure`. `Structure`\n"
 "// is a structure which contains a single `i32`.\n"
 msgstr ""
-"// 为 `Structure` 派生 `fmt::Debug` 实现。`Structure`\n"
-"// 是一个包含单个 `i32` 的结构体。\n"
+"// 为 `Structure` 派生 `fmt::Debug` 实现。`Structure` 是一个包含单个 `i32` 的结构体。\n"
 
 #: src/hello/print/print_debug.md:30
 msgid ""
 "// Put a `Structure` inside of the structure `Deep`. Make it printable\n"
 "// also.\n"
 msgstr ""
-"// 将一个 `Structure` 放在 `Deep` 结构体内。也让它可打印。\n"
-"\n"
+"// 在 `Deep` 结构体中放入一个 `Structure`。使其也可打印。\n"
 
 #: src/hello/print/print_debug.md:37
 msgid "// Printing with `{:?}` is similar to with `{}`.\n"
-msgstr "// 用 `{:?}` 打印类似于用 `{}`。\n"
+msgstr "// 使用 `{:?}` 打印类似于使用 `{}`。\n"
 
 #: src/hello/print/print_debug.md:38
 msgid "\"{:?} months in a year.\""
-msgstr "\"{:?} months in a year.\""
+msgstr "\"{:?} 个月在一年中。\""
 
 #: src/hello/print/print_debug.md:39
 msgid "\"{1:?} {0:?} is the {actor:?} name.\""
-msgstr "\"{1:?} {0:?} is the {actor:?} name.\""
+msgstr "\"{1:?} {0:?} 是这个 {actor:?} 的名字。\""
 
 #: src/hello/print/print_debug.md:40
 msgid "\"Slater\""
@@ -1521,31 +1515,31 @@ msgstr "\"Christian\""
 
 #: src/hello/print/print_debug.md:42
 msgid "\"actor's\""
-msgstr "\"actor's\""
+msgstr "\"演员\""
 
 #: src/hello/print/print_debug.md:44
 msgid "// `Structure` is printable!\n"
-msgstr "// `Structure` is printable!\n"
+msgstr "// `Structure` 现在可以打印了！\n"
 
 #: src/hello/print/print_debug.md:45 src/hello/print/print_debug.md:49
 msgid "\"Now {:?} will print!\""
-msgstr "\"Now {:?} will print!\""
+msgstr "\"现在 {:?} 将会打印！\""
 
 #: src/hello/print/print_debug.md:47
 msgid ""
 "// The problem with `derive` is there is no control over how\n"
 "    // the results look. What if I want this to just show a `7`?\n"
 msgstr ""
-"// `derive` 的问题是无法控制输出的形式\n"
-"    // 假如我只想显示一个 `7` 怎么办？\n"
+"// `derive` 的问题是无法控制输出的样式。\n"
+"    // 如果我只想显示一个 `7` 怎么办？\n"
 
 #: src/hello/print/print_debug.md:53
 msgid ""
 "So `fmt::Debug` definitely makes this printable but sacrifices some elegance. "
 "Rust also provides \"pretty printing\" with `{:#?}`."
 msgstr ""
-"所以 `fmt::Debug` 确实使其可打印，但牺牲了一些优雅。"
-"Rust 还提供了使用 `{:#?}` 的"美化打印"。"
+"所以 `fmt::Debug` 确实使其可打印，但牺牲了一些优雅。\n"
+"Rust 还提供了使用 `{:#?}` 进行"美化打印"的功能。"
 
 #: src/hello/print/print_debug.md:64 src/custom_types/structs.md:42
 msgid "\"Peter\""
@@ -1561,7 +1555,7 @@ msgstr "\"{:#?}\""
 
 #: src/hello/print/print_debug.md:73
 msgid "One can manually implement `fmt::Display` to control the display."
-msgstr "可以手动实现 `fmt::Display` 来控制显示。"
+msgstr "可以手动实现 `fmt::Display` 来控制显示方式。"
 
 #: src/hello/print/print_debug.md:77
 msgid ""
@@ -1569,8 +1563,8 @@ msgid ""
 "[`derive`](../../trait/derive.md), [`std::fmt`](https://doc.rust-lang.org/std/"
 "fmt/), and [`struct`](../../custom_types/structs.md)"
 msgstr ""
-"[`attributes`](https://doc.rust-lang.org/reference/attributes.html)、"
-"[`derive`](../../trait/derive.md)、[`std::fmt`](https://doc.rust-lang.org/std/fmt/) "
+"[`attributes`](https://doc.rust-lang.org/reference/attributes.html)、\n"
+"[`derive`](../../trait/derive.md)、[`std::fmt`](https://doc.rust-lang.org/std/fmt/) \n"
 "和 [`struct`](../../custom_types/structs.md)"
 
 #: src/hello/print/print_display.md:3
@@ -1580,32 +1574,32 @@ msgid ""
 "Display`](https://doc.rust-lang.org/std/fmt/), which uses the `{}` print "
 "marker. Implementing it looks like this:"
 msgstr ""
-"`fmt::Debug` 看起来并不简洁美观，因此通常需要进一步自定义输出的形式。"
-"这可以通过手动实现 [`fmt::Display`](https://doc.rust-lang.org/std/fmt/) 来完成，"
-"它使用 `{}` 打印标记。实现方式看起来像这样："
+"`fmt::Debug` 的输出往往不够简洁清晰，因此自定义输出外观通常更有优势。\n"
+"这可以通过手动实现 [`fmt::Display`](https://doc.rust-lang.org/std/fmt/) 来完成，\n"
+"它使用 `{}` 打印标记。实现方式如下："
 
 #: src/hello/print/print_display.md:9
 msgid "// Import (via `use`) the `fmt` module to make it available.\n"
-msgstr "// 导入（通过 `use`）`fmt` 模块使其可用。\n"
+msgstr "// 通过 `use` 导入 `fmt` 模块使其可用。\n"
 
 #: src/hello/print/print_display.md:11
 msgid ""
 "// Define a structure for which `fmt::Display` will be implemented. This is\n"
 "// a tuple struct named `Structure` that contains an `i32`.\n"
 msgstr ""
-"// 定义一个结构体，我们将为它实现 `fmt::Display`。这是一个包含\n"
-"// 单个 `i32` 的元组结构体，名为 `Structure`。\n"
+"// 定义一个结构体，我们将为其实现 `fmt::Display`。\n"
+"// 这是一个名为 `Structure` 的元组结构体，包含一个 `i32`。\n"
 
 #: src/hello/print/print_display.md:15
 msgid ""
 "// To use the `{}` marker, the trait `fmt::Display` must be implemented\n"
 "// manually for the type.\n"
 msgstr ""
-"// 为了使用 `{}` 标记，必须手动为类型实现 `fmt::Display` trait。\n"
+"// 要使用 `{}` 标记，必须为该类型手动实现 `fmt::Display` trait。\n"
 
 #: src/hello/print/print_display.md:19
 msgid "// This trait requires `fmt` with this exact signature.\n"
-msgstr "// 这个 trait 要求 `fmt` 使用与此完全一致的函数签名。\n"
+msgstr "// 这个 trait 要求 `fmt` 方法具有确切的签名。\n"
 
 #: src/hello/print/print_display.md:21
 msgid ""
@@ -1615,9 +1609,9 @@ msgid ""
 "which\n"
 "        // is very similar to `println!`.\n"
 msgstr ""
-"// 将第一个元素写入到提供的输出流 `f` 中。\n"
-"        // 返回 `fmt::Result`，指示操作是否成功。\n"
-"        // 注意 `write!` 的用法和 `println!` 非常相似。\n"
+"// 将第一个元素严格写入提供的输出流 `f`。\n"
+"        // 返回 `fmt::Result`，表示操作是否成功。\n"
+"        // 注意 `write!` 的语法与 `println!` 非常相似。\n"
 
 #: src/hello/print/print_display.md:25
 #: src/hello/print/print_display/testcase_list.md:13
@@ -2293,7 +2287,7 @@ msgstr "// `let` 可以用来把元组的成员绑定到变量。\n"
 
 #: src/primitives/tuples.md:16
 msgid "// The following struct is for the activity.\n"
-msgstr "// 在 “动手试一试” 的练习中要用到下面这个结构体。\n"
+msgstr "// 以下结构体将用于后续练习。\n"
 
 #: src/primitives/tuples.md:22
 msgid "// A tuple with a bunch of different types.\n"
