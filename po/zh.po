@@ -14315,7 +14315,7 @@ msgid ""
 "(You are encouraged to test the previous example under different failure "
 "conditions: `hello.txt` doesn't exist, or `hello.txt` is not readable, etc.)"
 msgstr ""
-"（我们鼓励你在不同的失败条件下测试前面的例子：`hello.txt` 不存在，或 `hello.txt` 不可读等。）"
+"（再试试在不同的失败条件下测试前面的例子：`hello.txt` 不存在，或 `hello.txt` 不可读等。）"
 
 #: src/std_misc/file/create.md:3
 msgid ""
@@ -14354,7 +14354,7 @@ msgstr "// 以只写模式打开文件，返回 `io::Result<File>`\n"
 
 #: src/std_misc/file/create.md:27
 msgid "\"couldn't create {}: {}\""
-msgstr "\"无法创建 {}: {}\""
+msgstr "\"couldn't create {}: {}\""
 
 #: src/std_misc/file/create.md:31
 msgid "// Write the `LOREM_IPSUM` string to `file`, returns `io::Result<()>`\n"
@@ -14362,18 +14362,18 @@ msgstr "// 将 `LOREM_IPSUM` 字符串写入 `file`，返回 `io::Result<()>`\n"
 
 #: src/std_misc/file/create.md:33
 msgid "\"couldn't write to {}: {}\""
-msgstr "\"无法写入 {}: {}\""
+msgstr "\"couldn't write to {}: {}\""
 
 #: src/std_misc/file/create.md:34
 msgid "\"successfully wrote to {}\""
-msgstr "\"成功写入 {}\""
+msgstr "\"successfully wrote to {}\""
 
 #: src/std_misc/file/create.md:53
 msgid ""
 "(As in the previous example, you are encouraged to test this example under "
 "failure conditions.)"
 msgstr ""
-"（和前面的例子一样，我们鼓励你在失败条件下测试这个例子。）"
+"（和前面的例子一样，再试试在失败条件下测试这个例子。）"
 
 #: src/std_misc/file/create.md:56
 msgid ""
@@ -14392,7 +14392,7 @@ msgid ""
 "This might be a reasonable first attempt for a beginner's first "
 "implementation for reading lines from a file."
 msgstr ""
-"对于初学者来说，这可能是从文件中读取行的第一个合理尝试。"
+"对于初学者来说，这可能是从文件中读取行的第一个尝试。"
 
 #: src/std_misc/file/read_lines.md:22
 msgid ""
@@ -14532,7 +14532,7 @@ msgid ""
 "(You are encouraged to try the previous example with an incorrect flag passed "
 "to `rustc`)"
 msgstr ""
-"（我们鼓励你尝试在前面的例子中向 `rustc` 传递一个错误的标志）"
+"（试试在这个例子中向 `rustc` 传一个错误的参数）"
 
 #: src/std_misc/process/pipe.md:3
 msgid ""
@@ -14540,7 +14540,7 @@ msgid ""
 "`stdin`, `stdout` and `stderr` handles for interaction with the underlying "
 "process via pipes."
 msgstr ""
-"`std::Child` 结构体表示一个正在运行的子进程，并暴露 `stdin`、`stdout` 和 `stderr` 句柄，以通过管道与底层进程进行交互。"
+"`std::Child` 结构体表示一个正在运行的子进程，并暴露 `stdin`、`stdout` 和 `stderr` 句柄，从而通过管道与底层进程进行交互。"
 
 #: src/std_misc/process/pipe.md:11
 msgid "\"the quick brown fox jumps over the lazy dog\\n\""
@@ -14585,8 +14585,8 @@ msgid ""
 msgstr ""
 "// 向 `wc` 的 `stdin` 写入一个字符串。\n"
 "    //\n"
-"    // `stdin` 的类型是 `Option<ChildStdin>`，但由于我们知道这个实例\n"
-"    // 必定有一个，我们可以直接 `unwrap` 它。\n"
+"    // `stdin` 的类型是 `Option<ChildStdin>`，不过我们已经知道这个实例不为空值\n"
+"    // 因此我们可以直接 `unwrap` 它。\n"
 
 #: src/std_misc/process/pipe.md:36
 msgid "\"couldn't write to wc stdin: {}\""
@@ -14604,11 +14604,9 @@ msgid ""
 "    // This is very important, otherwise `wc` wouldn't start processing the\n"
 "    // input we just sent.\n"
 msgstr ""
-"// 因为 `stdin` 在上述调用后不再存活，它被 `drop` 了，\n"
-"    // 管道也被关闭。\n"
+"// 因为 `stdin` 在上述调用后不再存活，被 `drop` 了，管道也被关闭。\n"
 "    //\n"
-"    // 这非常重要，否则 `wc` 不会开始处理\n"
-"    // 我们刚刚发送的输入。\n"
+"    // 这点非常重要，否则 `wc` 就不会开始处理我们刚刚发送的输入。\n"
 
 #: src/std_misc/process/pipe.md:46
 msgid ""
@@ -14638,7 +14636,7 @@ msgstr "\"sleep\""
 
 #: src/std_misc/process/wait.md:13
 msgid "\"reached end of main\""
-msgstr "\"到达 main 的末尾\""
+msgid "\"reached end of main\""
 
 #: src/std_misc/process/wait.md:18
 msgid ""
@@ -14691,7 +14689,7 @@ msgstr "\"`echo hello > a/b.txt`\""
 msgid ""
 "// The previous match can be simplified using the `unwrap_or_else` method\n"
 msgstr ""
-"// 前面的匹配可以使用 `unwrap_or_else` 方法简化\n"
+"// 之前的匹配可以使用 `unwrap_or_else` 方法简化\n"
 
 #: src/std_misc/fs.md:51
 msgid "\"a/b.txt\""
@@ -14703,7 +14701,7 @@ msgstr "\"`mkdir -p a/c/d`\""
 
 #: src/std_misc/fs.md:56
 msgid "// Recursively create a directory, returns `io::Result<()>`\n"
-msgstr "// 递归创建目录，返回 `io::Result<()>`\n"
+msgstr "// 逐层创建目录，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:57 src/std_misc/fs.md:102
 msgid "\"a/c/d\""
@@ -14865,7 +14863,7 @@ msgstr ""
 
 #: src/std_misc/arg/matching.md:3
 msgid "Matching can be used to parse simple arguments:"
-msgstr "匹配可以用于解析简单的参数："
+msgstr "可以用匹配来解析简单的参数："
 
 #: src/std_misc/arg/matching.md:17
 msgid ""
@@ -14875,11 +14873,11 @@ msgid ""
 "match_args {{increase|decrease}} <integer>\n"
 "    Increase or decrease given integer by one.\""
 msgstr ""
-"\"用法：\n"
-"match_args <字符串>\n"
-"    检查给定的字符串是否是答案。\n"
-"match_args {{increase|decrease}} <整数>\n"
-"    将给定的整数增加或减少一。\""
+"\"usage:\n"
+"match_args <string>\n"
+"    Check whether given string is the answer.\n"
+"match_args {{increase|decrease}} <integer>\n"
+"    Increase or decrease given integer by one.\""
 
 #: src/std_misc/arg/matching.md:28
 msgid "// no arguments passed\n"
@@ -14887,7 +14885,7 @@ msgstr "// 没有传递参数\n"
 
 #: src/std_misc/arg/matching.md:30
 msgid "\"My name is 'match_args'. Try passing some arguments!\""
-msgstr "\"我的名字是 'match_args'。试试传递一些参数！\""
+msgstr "\"My name is 'match_args'. Try passing some arguments!\""
 
 #: src/std_misc/arg/matching.md:32
 msgid "// one argument passed\n"
@@ -14895,11 +14893,11 @@ msgstr "// 传递了一个参数\n"
 
 #: src/std_misc/arg/matching.md:35
 msgid "\"This is the answer!\""
-msgstr "\"这就是答案！\""
+msgstr "\"This is the answer!\""
 
 #: src/std_misc/arg/matching.md:36
 msgid "\"This is not the answer.\""
-msgstr "\"这不是答案。\""
+msgstr "\"This is not the answer.\""
 
 #: src/std_misc/arg/matching.md:39
 msgid "// one command and one argument passed\n"
@@ -14911,7 +14909,7 @@ msgstr "// 解析数字\n"
 
 #: src/std_misc/arg/matching.md:49
 msgid "\"error: second argument not an integer\""
-msgstr "\"错误：第二个参数不是整数\""
+msgstr "\"error: second argument not an integer\""
 
 #: src/std_misc/arg/matching.md:54
 msgid "// parse the command\n"
@@ -14927,7 +14925,7 @@ msgstr "\"decrease\""
 
 #: src/std_misc/arg/matching.md:59
 msgid "\"error: invalid command\""
-msgstr "\"错误：无效的命令\""
+msgstr "\"error: invalid command\""
 
 #: src/std_misc/arg/matching.md:64
 msgid "// all the other cases\n"
@@ -14950,7 +14948,7 @@ msgid ""
 "functions must be declared inside an `extern` block annotated with a "
 "`#[link]` attribute containing the name of the foreign library."
 msgstr ""
-"Rust 为 C 库提供了外部函数接口（FFI）。外部函数必须在 `extern` 块内声明，并使用 `#[link]` 属性注解，其中包含外部库的名称。"
+"Rust 为 C 库提供了外部函数接口（FFI）。外部函数必须在 `extern` 块内声明，并使用 `#[link]` 属性标注外部库的名称。"
 
 #: src/std_misc/ffi.md:9
 msgid "// this extern block links to the libm library\n"
@@ -14977,8 +14975,7 @@ msgid ""
 "// Since calling foreign functions is considered unsafe,\n"
 "// it's common to write safe wrappers around them.\n"
 msgstr ""
-"// 由于调用外部函数被认为是不安全的，\n"
-"// 通常会编写安全的包装函数。\n"
+"// 由于调用外部函数被认为是不安全的，通常会封装一层安全的包装函数。\n"
 
 #: src/std_misc/ffi.md:37
 msgid "// z = -1 + 0i\n"
@@ -14994,7 +14991,7 @@ msgstr "\"{:?} 的平方根是 {:?}\""
 
 #: src/std_misc/ffi.md:45
 msgid "// calling safe API wrapped around unsafe operation\n"
-msgstr "// 调用包装了不安全操作的安全 API\n"
+msgstr "// 调用封装了不安全操作的安全 API \n"
 
 #: src/std_misc/ffi.md:46
 msgid "\"cos({:?}) = {:?}\""
@@ -15064,6 +15061,7 @@ msgid ""
 "setup, run the code we want to test, then assert whether the results are what "
 "we expect."
 msgstr ""
+"测试是用于验证非测试代码是否按预期方式运行的 Rust 函数。测试函数的主体通常执行一些设置，运行我们想要测试的代码，然后断言结果是否符合我们的预期。"
 
 #: src/testing/unit_testing.md:8
 msgid ""
@@ -15071,47 +15069,54 @@ msgid ""
 "[attribute](../attribute.md). Test functions are marked with the `#[test]` "
 "attribute."
 msgstr ""
+"大多数单元测试都放在带有 `#[cfg(test)]` [属性](../attribute.md)的 `tests` [mod](../mod.md) 中。测试函数用 `#[test]` 属性标记。"
 
 #: src/testing/unit_testing.md:11
 msgid ""
 "Tests fail when something in the test function [panics](../std/panic.md). "
 "There are some helper [macros](../macros.md):"
 msgstr ""
+"当测试函数中的某些内容[panic](../std/panic.md)时，测试就会失败。有一些辅助[宏](../macros.md)："
 
 #: src/testing/unit_testing.md:14
 msgid "`assert!(expression)` - panics if expression evaluates to `false`."
-msgstr ""
+msgstr "`assert!(expression)` - 如果表达式计算结果为 `false`，则会 panic。"
 
 #: src/testing/unit_testing.md:15
 msgid ""
 "`assert_eq!(left, right)` and `assert_ne!(left, right)` - testing left and "
 "right expressions for equality and inequality respectively."
 msgstr ""
+"`assert_eq!(left, right)` 和 `assert_ne!(left, right)` - 分别测试左右表达式的相等性和不相等性。"
 
 #: src/testing/unit_testing.md:22
 msgid ""
 "// This is a really bad adding function, its purpose is to fail in this\n"
 "// example.\n"
 msgstr ""
+"// 这是一个非常糟糕的加法函数，它的目的是在这个例子中失败。\n"
 
 #: src/testing/unit_testing.md:32
 msgid ""
 "// Note this useful idiom: importing names from outer (for mod tests) scope.\n"
 msgstr ""
+"// 注意这个有用的习惯用法：从外部（对于 mod tests）作用域导入名称。\n"
 
 #: src/testing/unit_testing.md:42
 msgid ""
 "// This assert would fire and test will fail.\n"
 "        // Please note, that private functions can be tested too!\n"
 msgstr ""
+"// 这个断言会触发，测试将失败。\n"
+"        // 请注意，私有函数也可以被测试！\n"
 
 #: src/testing/unit_testing.md:49
 msgid "Tests can be run with `cargo test`."
-msgstr ""
+msgstr "可以使用 `cargo test` 运行测试。"
 
 #: src/testing/unit_testing.md:73
 msgid "Tests and `?`"
-msgstr ""
+msgstr "测试和 `?`"
 
 #: src/testing/unit_testing.md:74
 msgid ""
@@ -15119,10 +15124,11 @@ msgid ""
 "your unit tests can return `Result<()>`, which lets you use `?` in them! This "
 "can make them much more concise."
 msgstr ""
+"之前的单元测试示例都没有返回类型。但在 Rust 2018 中，你的单元测试可以返回 `Result<()>`，这让你可以在其中使用 `?`！这可以使它们变得更加简洁。"
 
 #: src/testing/unit_testing.md:83
 msgid "\"negative floats don't have square roots\""
-msgstr ""
+msgstr "\"负浮点数没有平方根\""
 
 #: src/testing/unit_testing.md:100
 msgid ""
@@ -15130,10 +15136,11 @@ msgid ""
 "error-handling-and-panics/question-mark-in-main-and-tests.html) for more "
 "details."
 msgstr ""
+"更多详情请参见[《版本指南》](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/question-mark-in-main-and-tests.html)。"
 
 #: src/testing/unit_testing.md:102
 msgid "Testing panics"
-msgstr ""
+msgstr "测试 panic"
 
 #: src/testing/unit_testing.md:104
 msgid ""
@@ -15142,43 +15149,47 @@ msgid ""
 "`expected = ` with the text of the panic message. If your function can panic "
 "in multiple ways, it helps make sure your test is testing the correct panic."
 msgstr ""
+"要检查在某些情况下应该 panic 的函数，请使用 `#[should_panic]` 属性。这个属性接受可选参数 `expected = `，其中包含 panic 消息的文本。如果你的函数可能以多种方式 panic，这有助于确保你的测试正在测试正确的 panic。"
 
 #: src/testing/unit_testing.md:112 src/testing/doc_testing.md:45
 msgid "\"Divide-by-zero error\""
-msgstr ""
+msgstr "\"除以零错误\""
 
 #: src/testing/unit_testing.md:114 src/testing/unit_testing.md:135
 msgid "\"Divide result is zero\""
-msgstr ""
+msgstr "\"除法结果为零\""
 
 #: src/testing/unit_testing.md:142
 msgid "Running these tests gives us:"
-msgstr ""
+msgstr "运行这些测试会得到："
 
 #: src/testing/unit_testing.md:161
 msgid "Running specific tests"
-msgstr ""
+msgstr "运行特定测试"
 
 #: src/testing/unit_testing.md:163
 msgid ""
 "To run specific tests one may specify the test name to `cargo test` command."
 msgstr ""
+"要运行特定的测试，可以在 `cargo test` 命令中指定测试名称。"
 
 #: src/testing/unit_testing.md:179
 msgid ""
 "To run multiple tests one may specify part of a test name that matches all "
 "the tests that should be run."
 msgstr ""
+"要运行多个测试，可以指定测试名称的一部分，该部分匹配所有应该运行的测试。"
 
 #: src/testing/unit_testing.md:197
 msgid "Ignoring tests"
-msgstr ""
+msgstr "忽略测试"
 
 #: src/testing/unit_testing.md:199
 msgid ""
 "Tests can be marked with the `#[ignore]` attribute to exclude some tests. Or "
 "to run them with command `cargo test -- --ignored`"
 msgstr ""
+"可以使用 `#[ignore]` 属性标记测试以排除某些测试。或者使用命令 `cargo test -- --ignored` 运行它们"
 
 #: src/testing/doc_testing.md:3
 msgid ""
@@ -15188,6 +15199,7 @@ msgid ""
 "takes care about correctness, so these code blocks are compiled and used as "
 "documentation tests."
 msgstr ""
+"Rust 项目的主要文档方式是通过注释源代码。文档注释使用 [CommonMark Markdown 规范](https://commonmark.org/)编写，并支持其中的代码块。Rust 注重正确性，因此这些代码块会被编译并用作文档测试。"
 
 #: src/testing/doc_testing.md:10
 msgid ""
@@ -15203,6 +15215,16 @@ msgid ""
 "/// assert_eq!(result, 5);\n"
 "/// ```\n"
 msgstr ""
+"/// 第一行是描述函数的简短摘要。\n"
+"///\n"
+"/// 接下来的几行是详细文档。代码块以三个反引号开始，\n"
+"/// 并且隐含了 `fn main()` 和 `extern crate <cratename>`。\n"
+"/// 假设我们正在测试 `doccomments` crate：\n"
+"///\n"
+"/// ```\n"
+"/// let result = doccomments::add(2, 3);\n"
+"/// assert_eq!(result, 5);\n"
+"/// ```\n"
 
 #: src/testing/doc_testing.md:23
 msgid ""
@@ -15227,16 +15249,36 @@ msgid ""
 "/// doccomments::div(10, 0);\n"
 "/// ```\n"
 msgstr ""
+"/// 通常文档注释可能包括 \"Examples\"、\"Panics\" 和 \"Failures\" 部分。\n"
+"///\n"
+"/// 下面的函数用于除法运算。\n"
+"///\n"
+"/// # 示例\n"
+"///\n"
+"/// ```\n"
+"/// let result = doccomments::div(10, 2);\n"
+"/// assert_eq!(result, 5);\n"
+"/// ```\n"
+"///\n"
+"/// # Panics\n"
+"///\n"
+"/// 如果第二个参数为零，函数会 panic。\n"
+"///\n"
+"/// ```rust,should_panic\n"
+"/// // 除以零会导致 panic\n"
+"/// doccomments::div(10, 0);\n"
+"/// ```\n"
 
 #: src/testing/doc_testing.md:52
 msgid ""
 "Code blocks in documentation are automatically tested when running the "
 "regular `cargo test` command:"
 msgstr ""
+"在运行常规的 `cargo test` 命令时，文档中的代码块会自动进行测试："
 
 #: src/testing/doc_testing.md:71
 msgid "Motivation behind documentation tests"
-msgstr ""
+msgstr "文档测试的动机"
 
 #: src/testing/doc_testing.md:73
 msgid ""
@@ -15250,6 +15292,7 @@ msgid ""
 "hide it and `unwrap` it in hidden `main`. Sounds complicated? Here's an "
 "example:"
 msgstr ""
+"文档测试的主要目的是作为练习功能的示例，这是最重要的[指南](https://rust-lang-nursery.github.io/api-guidelines/documentation.html#examples-use--not-try-not-unwrap-c-question-mark)之一。它允许将文档中的示例作为完整的代码片段使用。但是使用 `?` 会导致编译失败，因为 `main` 返回 `unit`。隐藏文档中的某些源代码行可以解决这个问题：可以编写 `fn try_main() -> Result<(), ErrorType>`，隐藏它并在隐藏的 `main` 中 `unwrap` 它。听起来很复杂？这里有一个例子："
 
 #: src/testing/doc_testing.md:82
 msgid ""
