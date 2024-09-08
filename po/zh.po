@@ -2916,16 +2916,16 @@ msgstr "[类型转换](../../types/cast.md)"
 
 #: src/custom_types/enum/testcase_linked_list.md:3
 msgid "A common way to implement a linked-list is via `enums`:"
-msgstr "使用 `enum` 实现链表是一种常见的方法："
+msgstr "使用 `enum` 是实现链表的常见方法："
 
 #: src/custom_types/enum/testcase_linked_list.md:9
 msgid ""
 "// Cons: Tuple struct that wraps an element and a pointer to the next node\n"
-msgstr "// Cons：元组结构体包含一个元素和一个指向下一节点的指针\n"
+msgstr "// Cons：包含一个元素和指向下一节点指针的元组结构体\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:11
 msgid "// Nil: A node that signifies the end of the linked list\n"
-msgstr "// Nil：表示链表结束的节点\n"
+msgstr "// Nil：表示链表末尾的节点\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:14
 msgid "// Methods can be attached to an enum\n"
@@ -2933,24 +2933,24 @@ msgstr "// 可以为枚举实现方法\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:17
 msgid "// Create an empty list\n"
-msgstr "// 创建一个空链表\n"
+msgstr "// 创建空链表\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:19
 msgid "// `Nil` has type `List`\n"
-msgstr "// `Nil` 属于 `List` 类型\n"
+msgstr "// `Nil` 的类型是 `List`\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:23
 msgid ""
 "// Consume a list, and return the same list with a new element at its front\n"
-msgstr "// 处理一个链表，并返回在其头部插入新元素后的同一链表\n"
+msgstr "// 消耗一个链表，并返回在其头部添加新元素后的链表\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:25
 msgid "// `Cons` also has type List\n"
-msgstr "// `Cons` 也是 List 类型\n"
+msgstr "// `Cons` 的类型也是 List\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:29
 msgid "// Return the length of the list\n"
-msgstr "// 返回链表的长度\n"
+msgstr "// 返回链表长度\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:31
 msgid ""
@@ -2962,11 +2962,11 @@ msgid ""
 "        // rust will infer &s and ref tail. \n"
 "        // See https://doc.rust-lang.org/edition-guide/rust-2018/ownership-and-lifetimes/default-match-bindings.html\n"
 msgstr ""
-"// 必须对 `self` 进行匹配，因为这个方法的行为取决于 `self` 的成员\n"
-"        // `self` 的类型是 `&List`，而 `*self` 的类型是 `List`，匹配一个具体的\n"
-"        // 类型 `T` 要优于匹配一个引用 `&T`\n"
-"        // 在 Rust 2018 之后，你也可以在这里使用 self，在下面使用 tail（不带 ref），\n"
-"        // Rust 会推断出 &s 和 ref tail。\n"
+"// 需要对 `self` 进行匹配，因为方法的行为取决于 `self` 的变体\n"
+"        // `self` 的类型是 `&List`，而 `*self` 的类型是 `List`\n"
+"        // 匹配具体类型 `T` 优于匹配引用 `&T`\n"
+"        // 在 Rust 2018 版本后，这里可以直接使用 self，下面可以使用 tail（无需 ref）\n"
+"        // Rust 会自动推断为 &s 和 ref tail\n"
 "        // 参见 https://doc.rust-lang.org/edition-guide/rust-2018/ownership-and-lifetimes/default-match-bindings.html\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:39
@@ -2974,12 +2974,12 @@ msgid ""
 "// Can't take ownership of the tail, because `self` is borrowed;\n"
 "            // instead take a reference to the tail\n"
 msgstr ""
-"// 不能获取 tail 的所有权，因为 `self` 是借用的；\n"
-"            // 相反，我们获取 tail 的引用\n"
+"// 无法获取 tail 的所有权，因为 `self` 是借用的；\n"
+"            // 所以取 tail 的引用\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:42
 msgid "// Base Case: An empty list has zero length\n"
-msgstr "// 基本情况：空链表的长度为零\n"
+msgstr "// 基本情况：空链表长度为零\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:47
 msgid "// Return representation of the list as a (heap allocated) string\n"
@@ -2990,7 +2990,7 @@ msgid ""
 "// `format!` is similar to `print!`, but returns a heap\n"
 "                // allocated string instead of printing to the console\n"
 msgstr ""
-"// `format!` 类似于 `print!`，但返回一个堆分配的字符串，\n"
+"// `format!` 类似于 `print!`，但返回堆分配的字符串，\n"
 "                // 而不是打印到控制台\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:53 src/generics/impl.md:44
@@ -3003,7 +3003,7 @@ msgstr "\"Nil\""
 
 #: src/custom_types/enum/testcase_linked_list.md:63
 msgid "// Create an empty linked list\n"
-msgstr "// 创建一个空链表\n"
+msgstr "// 创建空链表\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:66
 msgid "// Prepend some elements\n"
@@ -3015,21 +3015,21 @@ msgstr "// 显示链表的最终状态\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:72
 msgid "\"linked list has length: {}\""
-msgstr "\"链表的长度为：{}\""
+msgstr "\"链表长度为：{}\""
 
 #: src/custom_types/enum/testcase_linked_list.md:79
 msgid "[`Box`](../../std/box.md) and [methods](../../fn/methods.md)"
-msgstr "[`Box`](../../std/box.md) 和 [方法](../../fn/methods.md)"
+msgstr "[`Box`](../../std/box.md) 和[方法](../../fn/methods.md)"
 
 #: src/custom_types/constants.md:3
 msgid ""
 "Rust has two different types of constants which can be declared in any scope "
 "including global. Both require explicit type annotation:"
-msgstr "Rust 有两种不同类型的常量，可以在包括全局作用域在内的任何作用域中声明。两者都需要显式的类型标注："
+msgstr "Rust 有两种常量类型，可以在任何作用域（包括全局作用域）中声明。两者都需要显式类型标注："
 
 #: src/custom_types/constants.md:6
 msgid "`const`: An unchangeable value (the common case)."
-msgstr "`const`：不可改变的值（常见用法）。"
+msgstr "`const`：不可变值（常见用法）。"
 
 #: src/custom_types/constants.md:7
 msgid ""
@@ -3038,8 +3038,8 @@ msgid ""
 "have to be specified. Accessing or modifying a mutable static variable is "
 "[`unsafe`](../unsafe.md)."
 msgstr ""
-"`static`：具有 [`'static`](../scope/lifetime/static_lifetime.md) 生命周期的可能可变的变量。"
-"静态生命周期是自动推断的，不需要明确指定。访问或修改可变静态变量是 [`unsafe`](../unsafe.md) 的。"
+"`static`：具有 [`'static`](../scope/lifetime/static_lifetime.md) 生命周期的可能可变变量。"
+"静态生命周期会被自动推断，无需明确指定。访问或修改可变静态变量是 [`unsafe`](../unsafe.md) 的。"
 
 #: src/custom_types/constants.md:12
 msgid "// Globals are declared outside all other scopes.\n"
@@ -3051,7 +3051,7 @@ msgstr "\"Rust\""
 
 #: src/custom_types/constants.md:17
 msgid "// Access constant in some function\n"
-msgstr "// 在某个函数中访问常量\n"
+msgstr "// 在函数中访问常量\n"
 
 #: src/custom_types/constants.md:24
 msgid "// Access constant in the main thread\n"
@@ -3063,7 +3063,7 @@ msgstr "\"这是 {}\""
 
 #: src/custom_types/constants.md:26
 msgid "\"The threshold is {}\""
-msgstr "\"阈值是 {}\""
+msgstr "\"阈值为 {}\""
 
 #: src/custom_types/constants.md:27
 msgid "\"{} is {}\""
@@ -3079,7 +3079,7 @@ msgstr "\"小的\""
 
 #: src/custom_types/constants.md:29
 msgid "// Error! Cannot modify a `const`.\n"
-msgstr "// 报错！不能修改 `const`。\n"
+msgstr "// 错误！不能修改 `const`。\n"
 
 #: src/custom_types/constants.md:31 src/variable_bindings/scope.md:21
 #: src/variable_bindings/declare.md:25 src/variable_bindings/freeze.md:16
@@ -3087,7 +3087,7 @@ msgstr "// 报错！不能修改 `const`。\n"
 #: src/scope/borrow.md:41 src/scope/borrow/mut.md:52 src/std/vec.md:31
 #: src/std/vec.md:44 src/std/hash/hashset.md:48
 msgid "// FIXME ^ Comment out this line\n"
-msgstr "// 修复 ^ 注释掉这一行\n"
+msgstr "// 修复：^ 注释掉此行\n"
 
 #: src/custom_types/constants.md:37
 msgid ""
@@ -3106,13 +3106,14 @@ msgid ""
 "infer the type of the variable from the context, heavily reducing the "
 "annotation burden."
 msgstr ""
-"Rust 通过静态类型提供类型安全。变量绑定在声明时可以进行类型标注。然而，在大多数情况下，编译器能够从上下文中推断出变量的类型，大大减少了注解的负担。"
+"Rust 通过静态类型提供类型安全。变量绑定在声明时可以添加类型注解。然而，在大多数情况下，"
+"编译器能够从上下文推断出变量类型，大大减少了类型注解的负担。"
 
 #: src/variable_bindings.md:8
 msgid ""
 "Values (like literals) can be bound to variables, using the `let` binding."
 msgstr ""
-"值（如字面量）可以使用 `let` 绑定到变量。"
+"可以使用 `let` 关键字将值（如字面量）绑定到变量。"
 
 #: src/variable_bindings.md:16
 msgid "// copy `an_integer` into `copied_integer`\n"
@@ -3120,38 +3121,38 @@ msgstr "// 将 `an_integer` 复制到 `copied_integer`\n"
 
 #: src/variable_bindings.md:19
 msgid "\"An integer: {:?}\""
-msgstr "\"一个整数：{:?}\""
+msgstr "\"整数：{:?}\""
 
 #: src/variable_bindings.md:20
 msgid "\"A boolean: {:?}\""
-msgstr "\"一个布尔值：{:?}\""
+msgstr "\"布尔值：{:?}\""
 
 #: src/variable_bindings.md:21
 msgid "\"Meet the unit value: {:?}\""
-msgstr "\"遇见单元值：{:?}\""
+msgstr "\"单元值：{:?}\""
 
 #: src/variable_bindings.md:23
 msgid ""
 "// The compiler warns about unused variable bindings; these warnings can\n"
 "    // be silenced by prefixing the variable name with an underscore\n"
 msgstr ""
-"// 编译器会对未使用的变量绑定发出警告；这些警告可以\n"
-"    // 通过在变量名前加上下划线来消除\n"
+"// 编译器会对未使用的变量绑定发出警告\n"
+"    // 可以通过在变量名前加下划线来消除这些警告\n"
 
 #: src/variable_bindings.md:28
 msgid ""
 "// FIXME ^ Prefix with an underscore to suppress the warning\n"
 "    // Please note that warnings may not be shown in a browser\n"
 msgstr ""
-"// 修复 ^ 在变量名前加上下划线以消除警告\n"
-"    // 请注意，在浏览器中可能不会显示警告\n"
+"// 修复：^ 在变量名前加下划线以消除警告\n"
+"    // 注意：在浏览器中可能不会显示警告\n"
 
 #: src/variable_bindings/mut.md:3
 msgid ""
 "Variable bindings are immutable by default, but this can be overridden using "
 "the `mut` modifier."
 msgstr ""
-"变量绑定默认是不可变的，但可以使用 `mut` 修饰符来覆盖这一行为。"
+"变量绑定默认是不可变的，但可以使用 `mut` 修饰符来改变这一行为。"
 
 #: src/variable_bindings/mut.md:11
 msgid "\"Before mutation: {}\""
@@ -3167,7 +3168,7 @@ msgstr "\"修改后：{}\""
 
 #: src/variable_bindings/mut.md:18
 msgid "// Error! Cannot assign a new value to an immutable variable\n"
-msgstr "// 报错！不能对不可变变量赋新值\n"
+msgstr "// 错误！不能给不可变变量赋新值\n"
 
 #: src/variable_bindings/mut.md:23
 msgid "The compiler will throw a detailed diagnostic about mutability errors."
@@ -3178,7 +3179,7 @@ msgid ""
 "Variable bindings have a scope, and are constrained to live in a _block_. A "
 "block is a collection of statements enclosed by braces `{}`."
 msgstr ""
-"变量绑定有作用域，它们被限制在一个**代码块**中存在。代码块是由花括号 `{}` 包围的一系列语句。"
+"变量绑定有作用域，它们被限制在一个**代码块**中生存。代码块是由花括号 `{}` 包围的一系列语句。"
 
 #: src/variable_bindings/scope.md:7
 msgid "// This binding lives in the main function\n"
@@ -3190,11 +3191,11 @@ msgstr "// 这是一个代码块，它的作用域比 main 函数小\n"
 
 #: src/variable_bindings/scope.md:12
 msgid "// This binding only exists in this block\n"
-msgstr "// 这个绑定只存在于这个代码块中\n"
+msgstr "// 这个绑定只存在于此代码块中\n"
 
 #: src/variable_bindings/scope.md:15
 msgid "\"inner short: {}\""
-msgstr "\"内部的 short：{}\""
+msgstr "\"内部 short：{}\""
 
 #: src/variable_bindings/scope.md:17
 msgid "// End of the block\n"
@@ -3202,26 +3203,26 @@ msgstr "// 代码块结束\n"
 
 #: src/variable_bindings/scope.md:19
 msgid "// Error! `short_lived_binding` doesn't exist in this scope\n"
-msgstr "// 报错！`short_lived_binding` 在这个作用域中不存在\n"
+msgstr "// 错误！`short_lived_binding` 在此作用域中不存在\n"
 
 #: src/variable_bindings/scope.md:20
 msgid "\"outer short: {}\""
-msgstr "\"外部的 short：{}\""
+msgstr "\"外部 short：{}\""
 
 #: src/variable_bindings/scope.md:23
 msgid "\"outer long: {}\""
-msgstr "\"外部的 long：{}\""
+msgstr "\"外部 long：{}\""
 
 #: src/variable_bindings/scope.md:26
 msgid ""
 "Also, [variable shadowing](https://en.wikipedia.org/wiki/Variable_shadowing) "
 "is allowed."
 msgstr ""
-"此外，允许[变量遮蔽](https://en.wikipedia.org/wiki/Variable_shadowing)。"
+"此外，Rust 允许[变量遮蔽](https://en.wikipedia.org/wiki/Variable_shadowing)。"
 
 #: src/variable_bindings/scope.md:32
 msgid "\"before being shadowed: {}\""
-msgstr "\"被遮蔽之前：{}\""
+msgstr "\"被遮蔽前：{}\""
 
 #: src/variable_bindings/scope.md:34
 msgid "// This binding *shadows* the outer one\n"
@@ -3233,11 +3234,11 @@ msgstr "\"abc\""
 
 #: src/variable_bindings/scope.md:37
 msgid "\"shadowed in inner block: {}\""
-msgstr "\"在内部代码块中被遮蔽：{}\""
+msgstr "\"内部代码块中被遮蔽：{}\""
 
 #: src/variable_bindings/scope.md:39
 msgid "\"outside inner block: {}\""
-msgstr "\"在内部代码块外：{}\""
+msgstr "\"内部代码块外：{}\""
 
 #: src/variable_bindings/scope.md:41
 msgid "// This binding *shadows* the previous binding\n"
@@ -3245,7 +3246,7 @@ msgstr "// 这个绑定*遮蔽*了之前的绑定\n"
 
 #: src/variable_bindings/scope.md:43
 msgid "\"shadowed in outer block: {}\""
-msgstr "\"在外部代码块中被遮蔽：{}\""
+msgstr "\"外部代码块中被遮蔽：{}\""
 
 #: src/variable_bindings/declare.md:3
 msgid ""
@@ -3253,7 +3254,7 @@ msgid ""
 "However, this form is seldom used, as it may lead to the use of uninitialized "
 "variables."
 msgstr ""
-"可以先声明变量绑定，然后再初始化它们。然而，这种形式很少使用，因为它可能导致使用未初始化的变量。"
+"可以先声明变量绑定，然后再初始化。但这种形式很少使用，因为它可能导致使用未初始化的变量。"
 
 #: src/variable_bindings/declare.md:9
 msgid "// Declare a variable binding\n"
@@ -3265,11 +3266,11 @@ msgstr "// 初始化绑定\n"
 
 #: src/variable_bindings/declare.md:19
 msgid "\"a binding: {}\""
-msgstr "\"一个绑定：{}\""
+msgstr "\"绑定：{}\""
 
 #: src/variable_bindings/declare.md:23
 msgid "// Error! Use of uninitialized binding\n"
-msgstr "// 报错！使用未初始化的绑定\n"
+msgstr "// 错误！使用未初始化的绑定\n"
 
 #: src/variable_bindings/declare.md:24 src/variable_bindings/declare.md:29
 msgid "\"another binding: {}\""
@@ -3287,7 +3288,7 @@ msgid ""
 "When data is bound by the same name immutably, it also _freezes_. _Frozen_ "
 "data can't be modified until the immutable binding goes out of scope:"
 msgstr ""
-"当数据以相同的名称被不可变地绑定时，它也会**冻结**。被冻结的数据在不可变绑定离开作用域之前不能被修改："
+"当数据以相同名称被不可变地绑定时，它也会**冻结**。被冻结的数据在不可变绑定离开作用域之前不能被修改："
 
 #: src/variable_bindings/freeze.md:11
 msgid "// Shadowing by immutable `_mutable_integer`\n"
@@ -3295,7 +3296,7 @@ msgstr "// 通过不可变的 `_mutable_integer` 进行遮蔽\n"
 
 #: src/variable_bindings/freeze.md:14
 msgid "// Error! `_mutable_integer` is frozen in this scope\n"
-msgstr "// 报错！`_mutable_integer` 在这个作用域中被冻结\n"
+msgstr "// 错误！`_mutable_integer` 在此作用域中被冻结\n"
 
 #: src/variable_bindings/freeze.md:18
 msgid "// `_mutable_integer` goes out of scope\n"
@@ -3303,22 +3304,22 @@ msgstr "// `_mutable_integer` 离开作用域\n"
 
 #: src/variable_bindings/freeze.md:21
 msgid "// Ok! `_mutable_integer` is not frozen in this scope\n"
-msgstr "// 正确！`_mutable_integer` 在这个作用域中没有被冻结\n"
+msgstr "// 正确！`_mutable_integer` 在此作用域中未被冻结\n"
 
 #: src/types.md:3
 msgid ""
 "Rust provides several mechanisms to change or define the type of primitive "
 "and user defined types. The following sections cover:"
 msgstr ""
-"Rust 提供了几种机制来更改或定义原生类型和用户定义类型。以下部分涵盖了："
+"Rust 提供了几种机制来更改或定义原生类型和用户定义类型。以下部分将介绍："
 
 #: src/types.md:5
 msgid "[Casting](types/cast.md) between primitive types"
-msgstr "原生类型之间的[转换](types/cast.md)"
+msgstr "原生类型之间的[类型转换](types/cast.md)"
 
 #: src/types.md:6
 msgid "Specifying the desired type of [literals](types/literals.md)"
-msgstr "指定[字面值](types/literals.md)的所需类型"
+msgstr "指定[字面量](types/literals.md)的类型"
 
 #: src/types.md:7
 msgid "Using [type inference](types/inference.md)"
@@ -3326,7 +3327,7 @@ msgstr "使用[类型推断](types/inference.md)"
 
 #: src/types.md:8
 msgid "[Aliasing](types/alias.md) types"
-msgstr "[别名化](types/alias.md)类型"
+msgstr "类型[别名](types/alias.md)"
 
 #: src/types/cast.md:3
 msgid ""
