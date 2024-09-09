@@ -3335,7 +3335,7 @@ msgid ""
 "But, explicit type conversion (casting) can be performed using the `as` "
 "keyword."
 msgstr ""
-"Rust 不提供原生类型之间的隐式类型转换（coercion, 强制转换）。但是，可以使用 `as` 关键字执行显式类型转换（casting）。"
+"Rust 不支持原始类型之间的隐式类型转换（强制转换）。但可以使用 `as` 关键字进行显式类型转换（转型）。"
 
 #: src/types/cast.md:6
 msgid ""
@@ -3343,15 +3343,15 @@ msgid ""
 "except in cases where C has undefined behavior. The behavior of all casts "
 "between integral types is well defined in Rust."
 msgstr ""
-"整型类型之间的转换规则通常遵循 C 语言的惯例，除了 C 语言中存在未定义行为的情况。在 Rust 中，所有整型类型之间的转换行为都是明确定义的。"
+"整数类型之间的转换规则通常遵循 C 语言惯例，但 C 中存在未定义行为的情况除外。在 Rust 中，所有整数类型之间的转换行为都有明确定义。"
 
 #: src/types/cast.md:11
 msgid "// Suppress all warnings from casts which overflow.\n"
-msgstr "// 抑制所有来自溢出转换的警告。\n"
+msgstr "// 抑制所有由溢出转换引起的警告。\n"
 
 #: src/types/cast.md:17
 msgid "// Error! No implicit conversion\n"
-msgstr "// 报错！没有隐式转换\n"
+msgstr "// 错误！不允许隐式转换\n"
 
 #: src/types/cast.md:21
 msgid "// Explicit conversion\n"
@@ -3362,12 +3362,12 @@ msgid ""
 "// Error! There are limitations in conversion rules.\n"
 "    // A float cannot be directly converted to a char.\n"
 msgstr ""
-"// 报错！转换规则有限制。\n"
+"// 错误！转换规则有限制。\n"
 "    // 浮点数不能直接转换为字符。\n"
 
 #: src/types/cast.md:30
 msgid "\"Casting: {} -> {} -> {}\""
-msgstr "\"转换：{} -> {} -> {}\""
+msgstr "\"类型转换：{} -> {} -> {}\""
 
 #: src/types/cast.md:32
 msgid ""
@@ -3376,7 +3376,7 @@ msgid ""
 "    // fits into the new type\n"
 msgstr ""
 "// 当将任何值转换为无符号类型 T 时，\n"
-"    // 会不断加上或减去 T::MAX + 1，直到该值\n"
+"    // 会反复加上或减去 T::MAX + 1，直到该值\n"
 "    // 适合新类型\n"
 
 #: src/types/cast.md:36
@@ -3385,7 +3385,7 @@ msgstr "// 1000 已经适合 u16\n"
 
 #: src/types/cast.md:37
 msgid "\"1000 as a u16 is: {}\""
-msgstr "\"1000 作为 u16 是：{}\""
+msgstr "\"1000 转换为 u16 是：{}\""
 
 #: src/types/cast.md:39
 msgid ""
@@ -3394,12 +3394,12 @@ msgid ""
 "    // while the rest towards the most significant bit (MSB) get truncated.\n"
 msgstr ""
 "// 1000 - 256 - 256 - 256 = 232\n"
-"    // 在底层，保留了最低有效位（LSB）的前 8 位，\n"
+"    // 实际上，保留了最低有效位（LSB）的前 8 位，\n"
 "    // 而朝最高有效位（MSB）方向的其余位被截断。\n"
 
 #: src/types/cast.md:42 src/types/cast.md:61
 msgid "\"1000 as a u8 is : {}\""
-msgstr "\"1000 作为 u8 是：{}\""
+msgstr "\"1000 转换为 u8 是：{}\""
 
 #: src/types/cast.md:43
 msgid "// -1 + 256 = 255\n"
@@ -3407,15 +3407,15 @@ msgstr "// -1 + 256 = 255\n"
 
 #: src/types/cast.md:44
 msgid "\"  -1 as a u8 is : {}\""
-msgstr "\"  -1 作为 u8 是：{}\""
+msgstr "\"  -1 转换为 u8 是：{}\""
 
 #: src/types/cast.md:46
 msgid "// For positive numbers, this is the same as the modulus\n"
-msgstr "// 对于正数，这与取模操作相同\n"
+msgstr "// 对于正数，这等同于取模运算\n"
 
 #: src/types/cast.md:47
 msgid "\"1000 mod 256 is : {}\""
-msgstr "\"1000 mod 256 是：{}\""
+msgstr "\"1000 对 256 取模是：{}\""
 
 #: src/types/cast.md:49
 msgid ""
@@ -3424,9 +3424,9 @@ msgid ""
 "significant\n"
 "    // bit of that value is 1, then the value is negative.\n"
 msgstr ""
-"// 当转换为有符号类型时，（按位）结果与\n"
-"    // 首先转换为相应的无符号类型相同。如果该值的最高有效位\n"
-"    // 是 1，那么该值为负数。\n"
+"// 当转换为有符号类型时，（按位）结果等同于\n"
+"    // 先转换为对应的无符号类型。如果该值的最高有效位\n"
+"    // 为 1，则该值为负数。\n"
 
 #: src/types/cast.md:53
 msgid "// Unless it already fits, of course.\n"
