@@ -3632,11 +3632,11 @@ msgid ""
 "Types must have `UpperCamelCase` names, or the compiler will raise a warning. "
 "The exception to this rule are the primitive types: `usize`, `f32`, etc."
 msgstr ""
-"`type` 语句可以用来给一个已存在的类型起一个新名字。类型必须有 `UpperCamelCase`（大驼峰）的名字，否则编译器会发出警告。这个规则的例外是原生类型：`usize`、`f32` 等。"
+"`type` 语句用于为现有类型创建新名称。类型名必须使用 `UpperCamelCase`（大驼峰）命名，否则编译器会发出警告。此规则的例外是原始类型，如 `usize`、`f32` 等。"
 
 #: src/types/alias.md:8
 msgid "// `NanoSecond`, `Inch`, and `U64` are new names for `u64`.\n"
-msgstr "// `NanoSecond`、`Inch` 和 `U64` 都是 `u64` 的新名字。\n"
+msgstr "// `NanoSecond`、`Inch` 和 `U64` 都是 `u64` 的新名称。\n"
 
 #: src/types/alias.md:14
 msgid "// `NanoSecond` = `Inch` = `U64` = `u64`.\n"
@@ -3647,7 +3647,7 @@ msgid ""
 "// Note that type aliases *don't* provide any extra type safety, because\n"
 "    // aliases are *not* new types\n"
 msgstr ""
-"// 注意类型别名**不**提供任何额外的类型安全性，因为别名**不是**新的类型\n"
+"// 注意，类型别名*不会*提供额外的类型安全性，因为别名*不是*新类型\n"
 
 #: src/types/alias.md:20
 msgid "\"{} nanoseconds + {} inches = {} unit?\""
@@ -3658,7 +3658,7 @@ msgid ""
 "The main use of aliases is to reduce boilerplate; for example the `io::"
 "Result<T>` type is an alias for the `Result<T, io::Error>` type."
 msgstr ""
-"别名的主要用途是减少样板代码；例如，`io::Result<T>` 类型是 `Result<T, io::Error>` 类型的别名。"
+"别名的主要用途是减少重复代码。例如，`io::Result<T>` 类型是 `Result<T, io::Error>` 类型的别名。"
 
 #: src/types/alias.md:32
 msgid "[Attributes](../attribute.md)"
@@ -3669,7 +3669,7 @@ msgid ""
 "Primitive types can be converted to each other through [casting](types/cast."
 "md)."
 msgstr ""
-"原生类型可以通过[类型转换](types/cast.md)相互转换。"
+"原始类型可以通过[类型转换](types/cast.md)相互转换。"
 
 #: src/conversion.md:5
 msgid ""
@@ -3680,7 +3680,7 @@ msgid ""
 "specific ones for the more common cases, in particular when converting to and "
 "from `String`s."
 msgstr ""
-"Rust 通过使用[特质](trait.md)来处理自定义类型（即 `struct` 和 `enum`）之间的转换。通用转换将使用 [`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html) 特质。然而，对于更常见的情况，特别是在与 `String` 相互转换时，还有一些更具体的特质。"
+"Rust 通过使用[特质](trait.md)来处理自定义类型（如 `struct` 和 `enum`）之间的转换。通用转换使用 [`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html) 特质。然而，对于更常见的情况，特别是与 `String` 相互转换时，还有一些更具体的特质。"
 
 #: src/conversion/from_into.md:3
 msgid ""
@@ -3690,7 +3690,7 @@ msgid ""
 "are able to convert type A from type B, then it should be easy to believe "
 "that we should be able to convert type B to type A."
 msgstr ""
-"[`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html) 特质本质上是相互关联的，这实际上是其实现的一部分。如果你能够将类型 A 从类型 B 转换，那么我们应该很容易相信我们也能够将类型 B 转换为类型 A。"
+"[`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 [`Into`](https://doc.rust-lang.org/std/convert/trait.Into.html) 特质本质上是相互关联的，这实际上是其实现的一部分。如果你能将类型 A 从类型 B 转换，那么我们也应该能够将类型 B 转换为类型 A。"
 
 #: src/conversion/from_into.md:7
 msgid "`From`"
@@ -3704,7 +3704,7 @@ msgid ""
 "are numerous implementations of this trait within the standard library for "
 "conversion of primitive and common types."
 msgstr ""
-"[`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 特质允许一个类型定义如何从另一个类型创建自己，从而提供了一种非常简单的机制来在几种类型之间进行转换。标准库中有许多这个特质的实现，用于原生类型和常见类型的转换。"
+"[`From`](https://doc.rust-lang.org/std/convert/trait.From.html) 特质允许一个类型定义如何从另一个类型创建自身，从而提供了一种非常简单的机制来在多种类型之间进行转换。标准库中有许多这个特质的实现，用于原始类型和常见类型的转换。"
 
 #: src/conversion/from_into.md:14
 msgid "For example we can easily convert a `str` into a `String`"
@@ -3717,7 +3717,7 @@ msgstr "我们可以为自己的类型定义类似的转换。"
 #: src/conversion/from_into.md:39 src/conversion/from_into.md:68
 #: src/conversion/from_into.md:98
 msgid "\"My number is {:?}\""
-msgstr "\"My number is {:?}\""
+msgstr "\"我的数字是 {:?}\""
 
 #: src/conversion/from_into.md:43
 msgid "`Into`"
@@ -3754,7 +3754,7 @@ msgid ""
 "converse is not true: implementing `Into` for your type will not "
 "automatically provide it with an implementation of `From`."
 msgstr ""
-"`From` 和 `Into` 被设计为互补的。我们不需要为两个特质都提供实现。如果你为你的类型实现了 `From` 特质，`Into` 会在必要时调用它。但是请注意，反过来并不成立：为你的类型实现 `Into` 不会自动为它提供 `From` 的实现。"
+"`From` 和 `Into` 被设计为互补的。我们不需要为两个特质都提供实现。如果你为你的类型实现了 `From` 特质，`Into` 会在必要时调用它。但请注意，反过来并不成立：为你的类型实现 `Into` 不会自动为它提供 `From` 的实现。"
 
 #: src/conversion/from_into.md:86
 msgid "// Define `From`\n"
@@ -3773,7 +3773,11 @@ msgid ""
 "for fallible conversions, and as such, return [`Result`](https://doc.rust-"
 "lang.org/std/result/enum.Result.html)s."
 msgstr ""
-"与 [`From` 和 `Into`](from_into.html) 类似，[`TryFrom`](https://doc.rust-lang.org/std/convert/trait.TryFrom.html) 和 [`TryInto`](https://doc.rust-lang.org/std/convert/trait.TryInto.html) 是用于类型之间转换的泛型特质。与 `From`/`Into` 不同，`TryFrom`/`TryInto` 特质用于可能失败的转换，因此返回 [`Result`](https://doc.rust-lang.org/std/result/enum.Result.html)。"
+"与 [`From` 和 `Into`](from_into.html) 类似，[`TryFrom`] 和 [`TryInto`] 是用于类型转换的泛型特质。与 `From`/`Into` 不同，`TryFrom`/`TryInto` 特质用于可能失败的转换，因此返回 [`Result`]。\n"
+"\n"
+"[`TryFrom`]: https://doc.rust-lang.org/std/convert/trait.TryFrom.html\n"
+"[`TryInto`]: https://doc.rust-lang.org/std/convert/trait.TryInto.html\n"
+"[`Result`]: https://doc.rust-lang.org/std/result/enum.Result.html"
 
 #: src/conversion/try_from_try_into.md:33
 msgid "// TryFrom\n"
@@ -3785,7 +3789,7 @@ msgstr "// TryInto\n"
 
 #: src/conversion/string.md:1
 msgid "To and from Strings"
-msgstr "字符串的相互转换"
+msgstr "字符串的转换"
 
 #: src/conversion/string.md:3
 msgid "Converting to String"
@@ -3801,11 +3805,15 @@ msgid ""
 "trait.ToString.html) and also allows printing the type as discussed in the "
 "section on [`print!`](../hello/print.md)."
 msgstr ""
-"将任何类型转换为 `String` 就像为该类型实现 [`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html) 特质一样简单。但是，你应该实现 [`fmt::Display`](https://doc.rust-lang.org/std/fmt/trait.Display.html) 特质，而不是直接实现 `ToString`。`fmt::Display` 会自动提供 [`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html)，并且还允许打印类型，就像在 [`print!`](../hello/print.md) 部分讨论的那样。"
+"要将任何类型转换为 `String`，只需为该类型实现 [`ToString`] 特质即可。但更好的做法是实现 [`fmt::Display`] 特质，它不仅会自动提供 [`ToString`]，还允许打印该类型，就像在 [`print!`] 部分讨论的那样。\n"
+"\n"
+"[`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html\n"
+"[`fmt::Display`]: https://doc.rust-lang.org/std/fmt/trait.Display.html\n"
+"[`print!`]: ../hello/print.md"
 
 #: src/conversion/string.md:19
 msgid "\"Circle of radius {}\""
-msgstr "\"Circle of radius {}\""
+msgstr "\"半径为 {} 的圆\""
 
 #: src/conversion/string.md:29
 msgid "Parsing a String"
@@ -3820,7 +3828,9 @@ msgid ""
 "inference or to specify the type to parse using the 'turbofish' syntax. Both "
 "alternatives are shown in the following example."
 msgstr ""
-"将字符串转换为许多类型是很有用的，但最常见的字符串操作之一是将它们从字符串转换为数字。惯用的方法是使用 [`parse`](https://doc.rust-lang.org/std/primitive.str.html#method.parse) 函数，并通过类型推断或使用 'turbofish' 语法指定要解析的类型。以下示例展示了这两种方法。"
+"将字符串转换为其他类型很有用，其中最常见的操作之一是将字符串转换为数字。惯用的方法是使用 [`parse`] 函数，可以通过类型推断或使用"涡轮鱼"语法指定要解析的类型。以下示例展示了这两种方法。\n"
+"\n"
+"[`parse`]: https://doc.rust-lang.org/std/primitive.str.html#method.parse"
 
 #: src/conversion/string.md:37
 msgid ""
@@ -3829,7 +3839,9 @@ msgid ""
 "implemented for that type. This is implemented for numerous types within the "
 "standard library."
 msgstr ""
-"只要为该类型实现了 [`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html) 特质，这就会将字符串转换为指定的类型。标准库中为许多类型实现了这个特质。"
+"只要为目标类型实现了 [`FromStr`] 特质，就可以将字符串转换为指定的类型。标准库中为许多类型实现了这个特质。\n"
+"\n"
+"[`FromStr`]: https://doc.rust-lang.org/std/str/trait.FromStr.html"
 
 #: src/conversion/string.md:43 src/std_misc/process/wait.md:10
 msgid "\"5\""
@@ -3845,7 +3857,7 @@ msgstr "\"10\""
 
 #: src/conversion/string.md:47
 msgid "\"Sum: {:?}\""
-msgstr "\"Sum: {:?}\""
+msgstr "\"总和：{:?}\""
 
 #: src/conversion/string.md:51
 msgid ""
@@ -3853,7 +3865,9 @@ msgid ""
 "[`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html) trait for "
 "that type."
 msgstr ""
-"要在用户定义的类型上获得这个功能，只需为该类型实现 [`FromStr`](https://doc.rust-lang.org/std/str/trait.FromStr.html) 特质。"
+"要在自定义类型上获得这个功能，只需为该类型实现 [`FromStr`] 特质。\n"
+"\n"
+"[`FromStr`]: https://doc.rust-lang.org/std/str/trait.FromStr.html"
 
 #: src/conversion/string.md:74
 msgid "\"    3 \""
@@ -3861,7 +3875,7 @@ msgstr "\"    3 \""
 
 #: src/expression.md:3
 msgid "A Rust program is (mostly) made up of a series of statements:"
-msgstr "Rust 程序（大部分）由一系列语句组成:"
+msgstr "Rust 程序（主要）由一系列语句组成："
 
 #: src/expression.md:7
 msgid ""
@@ -3877,7 +3891,7 @@ msgstr ""
 msgid ""
 "There are a few kinds of statements in Rust. The most common two are "
 "declaring a variable binding, and using a `;` with an expression:"
-msgstr "Rust 中有几种语句。最常见的两种是声明变量绑定，以及在表达式后使用 `;`:"
+msgstr "Rust 中有几种语句。最常见的两种是声明变量绑定，以及在表达式后使用分号 `;`："
 
 #: src/expression.md:18
 msgid "// variable binding\n"
@@ -3893,7 +3907,9 @@ msgid ""
 "last expression in the block will be assigned to the place expression such as "
 "a local variable. However, if the last expression of the block ends with a "
 "semicolon, the return value will be `()`."
-msgstr "代码块也是表达式，所以它们可以用作赋值中的值。代码块中的最后一个表达式将被赋值给左值表达式，比如局部变量。但是，如果代码块的最后一个表达式以分号结尾，返回值将是 `()`。"
+msgstr ""
+"代码块也是表达式，因此可以在赋值中作为值使用。代码块中的最后一个表达式会被赋值给左值表达式（如局部变量）。"
+"但是，如果代码块的最后一个表达式以分号结尾，返回值将是 `()`。"
 
 #: src/expression.md:41
 msgid "// This expression will be assigned to `y`\n"
@@ -3920,7 +3936,8 @@ msgstr "\"z 是 {:?}\""
 msgid ""
 "An integral part of any programming language are ways to modify control flow: "
 "`if`/`else`, `for`, and others. Let's talk about them in Rust."
-msgstr "任何编程语言的一个重要部分是修改控制流的方法：`if`/`else`、`for` 等。让我们来讨论 Rust 中的这些内容。"
+msgstr ""
+"控制流是任何编程语言的重要组成部分，如 `if`/`else`、`for` 等。让我们来讨论 Rust 中的这些内容。"
 
 #: src/flow_control/if_else.md:3
 msgid ""
@@ -3928,7 +3945,9 @@ msgid ""
 "them, the boolean condition doesn't need to be surrounded by parentheses, and "
 "each condition is followed by a block. `if`\\-`else` conditionals are "
 "expressions, and, all branches must return the same type."
-msgstr "使用 `if`\\-`else` 分支和其他语言类似。与许多语言不同的是，布尔条件不需要用括号括起来，每个条件后面都跟着一个代码块。`if`\\-`else` 条件是表达式，并且所有分支必须返回相同的类型。"
+msgstr ""
+"`if`-`else` 分支结构与其他语言类似。不同之处在于，布尔条件不需要用括号括起来，每个条件后面都跟着一个代码块。"
+"`if`-`else` 条件是表达式，所有分支必须返回相同的类型。"
 
 #: src/flow_control/if_else.md:13
 msgid "\"{} is negative\""
@@ -3948,7 +3967,7 @@ msgstr "\"，是一个小数字，扩大十倍\""
 
 #: src/flow_control/if_else.md:24
 msgid "// This expression returns an `i32`.\n"
-msgstr "// 这个表达式返回一个 `i32`。\n"
+msgstr "// 这个表达式返回 `i32` 类型。\n"
 
 #: src/flow_control/if_else.md:27
 msgid "\", and is a big number, halve the number\""
@@ -3956,7 +3975,7 @@ msgstr "\"，是一个大数字，将数字减半\""
 
 #: src/flow_control/if_else.md:29
 msgid "// This expression must return an `i32` as well.\n"
-msgstr "// 这个表达式也必须返回一个 `i32`。\n"
+msgstr "// 这个表达式也必须返回 `i32` 类型。\n"
 
 #: src/flow_control/if_else.md:31
 msgid "// TODO ^ Try suppressing this expression with a semicolon.\n"
@@ -3965,7 +3984,7 @@ msgstr "// TODO ^ 尝试用分号结束这个表达式。\n"
 #: src/flow_control/if_else.md:33
 msgid ""
 "//   ^ Don't forget to put a semicolon here! All `let` bindings need it.\n"
-msgstr "//   ^ 别忘了在这里加分号！所有的 `let` 绑定都需要它。\n"
+msgstr "//   ^ 别忘了在这里加分号！所有 `let` 绑定都需要它。\n"
 
 #: src/flow_control/if_else.md:35 src/flow_control/match.md:35
 msgid "\"{} -> {}\""
@@ -3973,14 +3992,15 @@ msgstr "\"{} -> {}\""
 
 #: src/flow_control/loop.md:3
 msgid "Rust provides a `loop` keyword to indicate an infinite loop."
-msgstr "Rust 提供了 `loop` 关键字来表示一个无限循环。"
+msgstr "Rust 提供 `loop` 关键字来表示无限循环。"
 
 #: src/flow_control/loop.md:5
 msgid ""
 "The `break` statement can be used to exit a loop at anytime, whereas the "
 "`continue` statement can be used to skip the rest of the iteration and start "
 "a new one."
-msgstr "`break` 语句可以随时退出循环，而 `continue` 语句可以用来跳过本次迭代的剩余部分并开始新的迭代。"
+msgstr ""
+"`break` 语句可以随时退出循环，而 `continue` 语句可以跳过当前迭代的剩余部分并开始下一次迭代。"
 
 #: src/flow_control/loop.md:13
 msgid "\"Let's count until infinity!\""
@@ -4011,7 +4031,9 @@ msgid ""
 "It's possible to `break` or `continue` outer loops when dealing with nested "
 "loops. In these cases, the loops must be annotated with some `'label`, and "
 "the label must be passed to the `break`/`continue` statement."
-msgstr "在处理嵌套循环时，可以 `break` 或 `continue` 外层循环。在这些情况下，循环必须用某个 `'label` 标记，并且必须将标签传递给 `break`/`continue` 语句。"
+msgstr ""
+"在处理嵌套循环时，可以 `break` 或 `continue` 外层循环。这种情况下，循环必须用 `'label` 标记，"
+"并且必须将标签传递给 `break`/`continue` 语句。"
 
 #: src/flow_control/loop/nested.md:12
 msgid "\"Entered the outer loop\""
@@ -4035,7 +4057,7 @@ msgstr "// 这会中断外层循环\n"
 
 #: src/flow_control/loop/nested.md:24
 msgid "\"This point will never be reached\""
-msgstr "\"永远不会到达这一点\""
+msgstr "\"这一点永远不会到达\""
 
 #: src/flow_control/loop/nested.md:27
 msgid "\"Exited the outer loop\""
@@ -4047,25 +4069,27 @@ msgid ""
 "the operation returns a value though, you might need to pass it to the rest "
 "of the code: put it after the `break`, and it will be returned by the `loop` "
 "expression."
-msgstr "`loop` 的一个用途是重试一个操作，直到它成功。如果操作返回一个值，你可能需要将它传递给代码的其余部分：将它放在 `break` 之后，它将被 `loop` 表达式返回。"
+msgstr ""
+"`loop` 的一个用途是重试操作直到成功。如果操作返回一个值，你可能需要将它传递给代码的其余部分："
+"将它放在 `break` 之后，它将被 `loop` 表达式返回。"
 
 #: src/flow_control/while.md:3
 msgid "The `while` keyword can be used to run a loop while a condition is true."
-msgstr "`while` 关键字可以用来在条件为真时运行循环。"
+msgstr "`while` 关键字用于在条件为真时运行循环。"
 
 #: src/flow_control/while.md:5
 msgid ""
 "Let's write the infamous [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) "
 "using a `while` loop."
-msgstr "让我们使用 `while` 循环来编写著名的 [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) 程序。"
+msgstr "让我们用 `while` 循环来编写著名的 [FizzBuzz](https://en.wikipedia.org/wiki/Fizz_buzz) 程序。"
 
 #: src/flow_control/while.md:9
 msgid "// A counter variable\n"
-msgstr "// 一个计数器变量\n"
+msgstr "// 计数器变量\n"
 
 #: src/flow_control/while.md:12
 msgid "// Loop while `n` is less than 101\n"
-msgstr "// 当 `n` 小于 101 时循环\n"
+msgstr "// 当 `n` 小于 101 时继续循环\n"
 
 #: src/flow_control/while.md:15 src/flow_control/for.md:17
 #: src/flow_control/for.md:37 src/fn.md:34
@@ -4084,7 +4108,7 @@ msgstr "\"buzz\""
 
 #: src/flow_control/while.md:24
 msgid "// Increment counter\n"
-msgstr "// 增加计数器\n"
+msgstr "// 计数器递增\n"
 
 #: src/flow_control/for.md:1
 msgid "for loops"
@@ -4095,11 +4119,13 @@ msgid ""
 "The `for in` construct can be used to iterate through an `Iterator`. One of "
 "the easiest ways to create an iterator is to use the range notation `a..b`. "
 "This yields values from `a` (inclusive) to `b` (exclusive) in steps of one."
-msgstr "`for in` 结构可以用来遍历 `Iterator`。创建迭代器最简单的方法之一是使用区间表示法 `a..b`。这会生成从 `a`（包含）到 `b`（不包含）的值，步长为一。"
+msgstr ""
+"`for in` 结构可用于遍历 `Iterator`。创建迭代器最简单的方法之一是使用区间表示法 `a..b`。"
+"这会生成从 `a`（包含）到 `b`（不包含）的值，步长为 1。"
 
 #: src/flow_control/for.md:10
 msgid "Let's write FizzBuzz using `for` instead of `while`."
-msgstr "让我们使用 `for` 而不是 `while` 来编写 FizzBuzz。"
+msgstr "让我们用 `for` 而不是 `while` 来编写 FizzBuzz。"
 
 #: src/flow_control/for.md:14 src/flow_control/for.md:34
 msgid "// `n` will take the values: 1, 2, ..., 100 in each iteration\n"
@@ -4109,11 +4135,11 @@ msgstr "// `n` 在每次迭代中将取值：1, 2, ..., 100\n"
 msgid ""
 "Alternatively, `a..=b` can be used for a range that is inclusive on both "
 "ends. The above can be written as:"
-msgstr "或者，可以使用 `a..=b` 来表示两端都包含的范围。上面的代码可以写成："
+msgstr "另外，可以使用 `a..=b` 表示两端都包含的范围。上面的代码可以改写为："
 
 #: src/flow_control/for.md:49
 msgid "for and iterators"
-msgstr "for 和迭代器"
+msgstr "for 与迭代器"
 
 #: src/flow_control/for.md:51
 msgid ""
@@ -4122,20 +4148,27 @@ msgid ""
 "by default the `for` loop will apply the `into_iter` function to the "
 "collection. However, this is not the only means of converting collections "
 "into iterators."
-msgstr "`for in` 结构能够以多种方式与 `Iterator` 交互。正如在[迭代器](../trait/iter.md)特质一节中讨论的那样，默认情况下 `for` 循环会对集合应用 `into_iter` 函数。然而，这并不是将集合转换为迭代器的唯一方法。"
+msgstr ""
+"`for in` 结构能以多种方式与 `Iterator` 交互。正如在 [Iterator](../trait/iter.md) "
+"特质一节中讨论的那样，默认情况下 `for` 循环会对集合应用 `into_iter` 函数。"
+"然而，这并不是将集合转换为迭代器的唯一方法。"
 
 #: src/flow_control/for.md:56
 msgid ""
 "`into_iter`, `iter` and `iter_mut` all handle the conversion of a collection "
 "into an iterator in different ways, by providing different views on the data "
 "within."
-msgstr "`into_iter`、`iter` 和 `iter_mut` 都以不同的方式处理集合到迭代器的转换，通过提供对数据的不同视图。"
+msgstr ""
+"`into_iter`、`iter` 和 `iter_mut` 都以不同的方式处理集合到迭代器的转换，"
+"通过提供对数据的不同视图。"
 
 #: src/flow_control/for.md:60
 msgid ""
 "`iter` - This borrows each element of the collection through each iteration. "
 "Thus leaving the collection untouched and available for reuse after the loop."
-msgstr "`iter` - 这在每次迭代中借用集合的每个元素。因此，集合保持不变，并且在循环之后可以重复使用。"
+msgstr ""
+"`iter` - 在每次迭代中借用集合的每个元素。"
+"因此，集合保持不变，并且在循环之后可以重复使用。"
 
 #: src/flow_control/for.md:65 src/flow_control/for.md:85
 #: src/flow_control/for.md:104
@@ -4171,13 +4204,16 @@ msgid ""
 "`into_iter` - This consumes the collection so that on each iteration the "
 "exact data is provided. Once the collection has been consumed it is no longer "
 "available for reuse as it has been 'moved' within the loop."
-msgstr "`into_iter` - 这会消耗集合，使得在每次迭代中提供确切的数据。一旦集合被消耗，它就不再可用于重复使用，因为它已经在循环中被'移动'了。"
+msgstr ""
+"`into_iter` - 这会消耗集合，使得在每次迭代中提供确切的数据。"
+"一旦集合被消耗，它就不再可用于重复使用，因为它已经在循环中被"移动"了。"
 
 #: src/flow_control/for.md:99
 msgid ""
 "`iter_mut` - This mutably borrows each element of the collection, allowing "
 "for the collection to be modified in place."
-msgstr "`iter_mut` - 这会可变地借用集合的每个元素，允许在原地修改集合。"
+msgstr ""
+"`iter_mut` - 这会可变地借用集合的每个元素，允许在原地修改集合。"
 
 #: src/flow_control/for.md:109
 msgid "\"Hello\""
@@ -4188,7 +4224,9 @@ msgid ""
 "In the above snippets note the type of `match` branch, that is the key "
 "difference in the types of iteration. The difference in type then of course "
 "implies differing actions that are able to be performed."
-msgstr "在上面的代码片段中，注意 `match` 分支的类型，这是迭代类型的关键区别。类型的差异意味着可以执行的操作不同。"
+msgstr ""
+"在上面的代码片段中，注意 `match` 分支的类型，这是迭代类型的关键区别。"
+"类型的差异意味着可以执行不同的操作。"
 
 #: src/flow_control/for.md:123
 msgid "[Iterator](../trait/iter.md)"
@@ -4199,11 +4237,13 @@ msgid ""
 "Rust provides pattern matching via the `match` keyword, which can be used "
 "like a C `switch`. The first matching arm is evaluated and all possible "
 "values must be covered."
-msgstr "Rust 通过 `match` 关键字提供模式匹配，它可以像 C 语言的 `switch` 一样使用。第一个匹配的分支会被求值，并且必须覆盖所有可能的值。"
+msgstr ""
+"Rust 通过 `match` 关键字提供模式匹配，类似于 C 语言的 `switch`。"
+"第一个匹配的分支会被求值，并且必须覆盖所有可能的值。"
 
 #: src/flow_control/match.md:10
 msgid "// TODO ^ Try different values for `number`\n"
-msgstr "// TODO ^ 尝试为 `number` 赋予不同的值\n"
+msgstr "// TODO ^ 尝试为 `number` 赋不同的值\n"
 
 #: src/flow_control/match.md:12
 msgid "\"Tell me about {}\""
@@ -4223,7 +4263,7 @@ msgstr "// 匹配多个值\n"
 
 #: src/flow_control/match.md:17
 msgid "\"This is a prime\""
-msgstr "\"这是一个质数\""
+msgstr "\"这是个质数\""
 
 #: src/flow_control/match.md:18
 msgid ""
@@ -4231,7 +4271,7 @@ msgid ""
 "        // Match an inclusive range\n"
 msgstr ""
 "// TODO ^ 尝试将 13 添加到质数列表中\n"
-"        // 匹配一个包含的范围\n"
+"        // 匹配一个闭区间范围\n"
 
 #: src/flow_control/match.md:20
 msgid "\"A teen\""
@@ -4239,7 +4279,7 @@ msgstr "\"一个青少年\""
 
 #: src/flow_control/match.md:21
 msgid "// Handle the rest of cases\n"
-msgstr "// 处理剩余的情况\n"
+msgstr "// 处理其余情况\n"
 
 #: src/flow_control/match.md:22
 msgid "\"Ain't special\""
@@ -4247,7 +4287,7 @@ msgstr "\"没什么特别的\""
 
 #: src/flow_control/match.md:23
 msgid "// TODO ^ Try commenting out this catch-all arm\n"
-msgstr "// TODO ^ 尝试注释掉这个捕获所有情况的分支\n"
+msgstr "// TODO ^ 尝试注释掉这个匹配所有情况的分支\n"
 
 #: src/flow_control/match.md:27
 msgid "// Match is an expression too\n"
@@ -4291,15 +4331,15 @@ msgstr "元组可以在 `match` 中按如下方式解构："
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:8
 msgid "// TODO ^ Try different values for `triple`\n"
-msgstr "// TODO ^ 尝试为 `triple` 赋予不同的值\n"
+msgstr "// TODO ^ 尝试为 `triple` 赋不同的值\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:10
 msgid "\"Tell me about {:?}\""
-msgstr "\"Tell me about {:?}\""
+msgstr "\"告诉我关于 {:?} 的信息\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:11
 msgid "// Match can be used to destructure a tuple\n"
-msgstr "// match 可以用来解构一个元组\n"
+msgstr "// match 可用于解构元组\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:13
 msgid "// Destructure the second and third elements\n"
@@ -4307,27 +4347,27 @@ msgstr "// 解构第二和第三个元素\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:14
 msgid "\"First is `0`, `y` is {:?}, and `z` is {:?}\""
-msgstr "\"First is `0`, `y` is {:?}, and `z` is {:?}\""
+msgstr "\"第一个是 `0`，`y` 是 {:?}，`z` 是 {:?}\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:15
 msgid "\"First is `1` and the rest doesn't matter\""
-msgstr "\"First is `1` and the rest doesn't matter\""
+msgstr "\"第一个是 `1`，其余的不重要\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:16
 msgid "\"last is `2` and the rest doesn't matter\""
-msgstr "\"last is `2` and the rest doesn't matter\""
+msgstr "\"最后一个是 `2`，其余的不重要\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:17
 msgid "\"First is `3`, last is `4`, and the rest doesn't matter\""
-msgstr "\"First is `3`, last is `4`, and the rest doesn't matter\""
+msgstr "\"第一个是 `3`，最后一个是 `4`，其余的不重要\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:18
 msgid "// `..` can be used to ignore the rest of the tuple\n"
-msgstr "// `..` 可以用来忽略元组中的其余部分\n"
+msgstr "// `..` 可用于忽略元组中的其余部分\n"
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:19
 msgid "\"It doesn't matter what they are\""
-msgstr "\"It doesn't matter what they are\""
+msgstr "\"它们是什么并不重要\""
 
 #: src/flow_control/match/destructuring/destructure_tuple.md:20
 msgid "// `_` means don't bind the value to a variable\n"
@@ -4339,11 +4379,11 @@ msgstr "[元组](../../../primitives/tuples.md)"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:3
 msgid "Like tuples, arrays and slices can be destructured this way:"
-msgstr "像元组一样，数组和切片也可以用这种方式解构："
+msgstr "与元组类似，数组和切片也可以用这种方式解构："
 
 #: src/flow_control/match/destructuring/destructure_slice.md:7
 msgid "// Try changing the values in the array, or make it a slice!\n"
-msgstr "// 尝试改变数组中的值，或者将其变成一个切片！\n"
+msgstr "// 尝试改变数组中的值，或将其变成切片！\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:11
 msgid "// Binds the second and the third elements to the respective variables\n"
@@ -4351,7 +4391,7 @@ msgstr "// 将第二个和第三个元素分别绑定到相应的变量\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:13
 msgid "\"array[0] = 0, array[1] = {}, array[2] = {}\""
-msgstr "\"array[0] = 0, array[1] = {}, array[2] = {}\""
+msgstr "\"array[0] = 0，array[1] = {}，array[2] = {}\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:15
 msgid "// Single values can be ignored with _\n"
@@ -4359,15 +4399,15 @@ msgstr "// 单个值可以用 _ 忽略\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:17
 msgid "\"array[0] = 1, array[2] = {} and array[1] was ignored\""
-msgstr "\"array[0] = 1, array[2] = {} and array[1] was ignored\""
+msgstr "\"array[0] = 1，array[2] = {}，array[1] 被忽略了\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:21
 msgid "// You can also bind some and ignore the rest\n"
-msgstr "// 你也可以绑定一些值并忽略其余的\n"
+msgstr "// 你也可以绑定一部分值并忽略其余的\n"
 
 #: src/flow_control/match/destructuring/destructure_slice.md:23
 msgid "\"array[0] = -1, array[1] = {} and all the other ones were ignored\""
-msgstr "\"array[0] = -1, array[1] = {} and all the other ones were ignored\""
+msgstr "\"array[0] = -1，array[1] = {}，其他所有的都被忽略了\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:26
 msgid ""
@@ -4387,7 +4427,7 @@ msgstr ""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:32
 msgid "\"array[0] = 3, array[1] = {} and the other elements were {:?}\""
-msgstr "\"array[0] = 3, array[1] = {} and the other elements were {:?}\""
+msgstr "\"array[0] = 3，array[1] = {}，其他元素是 {:?}\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:36
 msgid ""
@@ -4399,15 +4439,14 @@ msgstr ""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:39
 msgid "\"array[0] = {}, middle = {:?}, array[2] = {}\""
-msgstr "\"array[0] = {}, middle = {:?}, array[2] = {}\""
+msgstr "\"array[0] = {}，中间部分 = {:?}，array[2] = {}\""
 
 #: src/flow_control/match/destructuring/destructure_slice.md:48
 msgid ""
 "[Arrays and Slices](../../../primitives/array.md) and [Binding](../binding."
 "md) for `@` sigil"
 msgstr ""
-"[数组和切片](../../../primitives/array.md) 和 [绑定](../binding."
-"md) 中的 `@` 符号"
+"关于 `@` 符号的更多信息，请参阅[数组和切片](../../../primitives/array.md)和[绑定](../binding.md)"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:3
 msgid "An `enum` is destructured similarly:"
@@ -4418,16 +4457,15 @@ msgid ""
 "// `allow` required to silence warnings because only\n"
 "// one variant is used.\n"
 msgstr ""
-"// 需要 `allow` 来消除警告，因为只使用了\n"
-"// 一个变体。\n"
+"// 使用 `allow` 来抑制警告，因为只使用了一个变体。\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:10
 msgid "// These 3 are specified solely by their name.\n"
-msgstr "// 这 3 个仅由它们的名称指定。\n"
+msgstr "// 这 3 个仅通过名称指定。\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:14
 msgid "// These likewise tie `u32` tuples to different names: color models.\n"
-msgstr "// 这些同样将 `u32` 元组绑定到不同的名称：颜色模型。\n"
+msgstr "// 这些同样将 `u32` 元组与不同的名称（颜色模型）关联。\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:24
 msgid "// TODO ^ Try different variants for `color`\n"
@@ -4435,7 +4473,7 @@ msgstr "// TODO ^ 尝试为 `color` 使用不同的变体\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:26
 msgid "\"What color is it?\""
-msgstr "\"What color is it?\""
+msgstr "\"这是什么颜色？\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:27
 msgid "// An `enum` can be destructured using a `match`.\n"
@@ -4443,47 +4481,47 @@ msgstr "// 可以使用 `match` 来解构 `enum`。\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:29
 msgid "\"The color is Red!\""
-msgstr "\"The color is Red!\""
+msgstr "\"颜色是红色！\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:30
 msgid "\"The color is Blue!\""
-msgstr "\"The color is Blue!\""
+msgstr "\"颜色是蓝色！\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:31
 msgid "\"The color is Green!\""
-msgstr "\"The color is Green!\""
+msgstr "\"颜色是绿色！\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:33
 msgid "\"Red: {}, green: {}, and blue: {}!\""
-msgstr "\"Red: {}, green: {}, and blue: {}!\""
+msgstr "\"红：{}，绿：{}，蓝：{}！\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:35
 msgid "\"Hue: {}, saturation: {}, value: {}!\""
-msgstr "\"Hue: {}, saturation: {}, value: {}!\""
+msgstr "\"色相：{}，饱和度：{}，明度：{}！\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:37
 msgid "\"Hue: {}, saturation: {}, lightness: {}!\""
-msgstr "\"Hue: {}, saturation: {}, lightness: {}!\""
+msgstr "\"色相：{}，饱和度：{}，亮度：{}！\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:39
 msgid "\"Cyan: {}, magenta: {}, yellow: {}!\""
-msgstr "\"Cyan: {}, magenta: {}, yellow: {}!\""
+msgstr "\"青：{}，品红：{}，黄：{}！\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:41
 msgid "\"Cyan: {}, magenta: {}, yellow: {}, key (black): {}!\""
-msgstr "\"Cyan: {}, magenta: {}, yellow: {}, key (black): {}!\""
+msgstr "\"青：{}，品红：{}，黄：{}，黑（K）：{}！\""
 
 #: src/flow_control/match/destructuring/destructure_enum.md:43
 msgid "// Don't need another arm because all variants have been examined\n"
-msgstr "// 不需要另一个分支，因为所有变体都已经被检查过了\n"
+msgstr "// 不需要其他分支，因为所有变体都已检查\n"
 
 #: src/flow_control/match/destructuring/destructure_enum.md:50
 msgid ""
 "[`#[allow(...)]`](../../../attribute/unused.md), [color models](https://en."
 "wikipedia.org/wiki/Color_model) and [`enum`](../../../custom_types/enum.md)"
 msgstr ""
-"[`#[allow(...)]`](../../../attribute/unused.md)，[颜色模型](https://en."
-"wikipedia.org/wiki/Color_model) 和 [`enum`](../../../custom_types/enum.md)"
+"[`#[allow(...)]`](../../../attribute/unused.md)、[颜色模型](https://en."
+"wikipedia.org/wiki/Color_model)和[`enum`](../../../custom_types/enum.md)"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:3
 msgid ""
@@ -4491,7 +4529,7 @@ msgid ""
 "dereferencing as they are different concepts which are used differently from "
 "languages like C/C++."
 msgstr ""
-"对于指针，需要区分解构（destructure）和解引用（dereference），因为它们是不同的概念，其使用方式与 C/C++ 等语言不同。"
+"对于指针，需要区分解构和解引用，因为它们是不同的概念，其用法与 C/C++ 等语言不同。"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:7
 msgid "Dereferencing uses `*`"
@@ -4522,20 +4560,20 @@ msgstr ""
 "        // 就像这样的比较：\n"
 "        // `&i32`\n"
 "        // `&val`\n"
-"        // ^ 我们看到如果匹配的 `&` 被去掉，那么 `i32`\n"
+"        // ^ 我们可以看到，如果去掉匹配的 `&`，那么 `i32`\n"
 "        // 应该被赋值给 `val`。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:23
 msgid "\"Got a value via destructuring: {:?}\""
-msgstr "\"通过解构获得一个值：{:?}\""
+msgstr "\"通过解构获得的值：{:?}\""
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:26
 msgid "// To avoid the `&`, you dereference before matching.\n"
-msgstr "// 为了避免 `&`，你可以在匹配之前解引用。\n"
+msgstr "// 为了避免 `&`，你可以在匹配前解引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:28
 msgid "\"Got a value via dereferencing: {:?}\""
-msgstr "\"通过解引用获得一个值：{:?}\""
+msgstr "\"通过解引用获得的值：{:?}\""
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:31
 msgid ""
@@ -4554,24 +4592,24 @@ msgid ""
 "    // reference is assigned.\n"
 msgstr ""
 "// Rust 提供 `ref` 正是为了这个目的。它修改了\n"
-"    // 赋值，使得为元素创建一个引用；这个\n"
-"    // 引用被赋值。\n"
+"    // 赋值，为元素创建一个引用；\n"
+"    // 这个引用被赋值。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:41
 msgid ""
 "// Accordingly, by defining 2 values without references, references\n"
 "    // can be retrieved via `ref` and `ref mut`.\n"
 msgstr ""
-"// 相应地，通过定义两个没有引用的值，可以\n"
-"    // 通过 `ref` 和 `ref mut` 获取引用。\n"
+"// 相应地，通过定义两个没有引用的值，\n"
+"    // 可以通过 `ref` 和 `ref mut` 获取引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:46
 msgid "// Use `ref` keyword to create a reference.\n"
-msgstr "// 使用 `ref` 关键字创建一个引用。\n"
+msgstr "// 使用 `ref` 关键字创建引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:48
 msgid "\"Got a reference to a value: {:?}\""
-msgstr "\"获得一个值的引用：{:?}\""
+msgstr "\"获得了一个值的引用：{:?}\""
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:51
 msgid "// Use `ref mut` similarly.\n"
@@ -4582,7 +4620,7 @@ msgid ""
 "// Got a reference. Gotta dereference it before we can\n"
 "            // add anything to it.\n"
 msgstr ""
-"// 获得一个引用。在我们能够\n"
+"// 获得了一个引用。在我们能够\n"
 "            // 对其进行任何添加操作之前，必须先解引用。\n"
 
 #: src/flow_control/match/destructuring/destructure_pointers.md:57
@@ -4595,15 +4633,15 @@ msgstr "[ref 模式](../../../scope/borrow/ref.md)"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:3
 msgid "Similarly, a `struct` can be destructured as shown:"
-msgstr "类似地，`struct` 可以按如下方式解构："
+msgstr "同样，`struct` 可以按如下方式解构："
 
 #: src/flow_control/match/destructuring/destructure_structures.md:12
 msgid "// Try changing the values in the struct to see what happens\n"
-msgstr "// 尝试改变结构体中的值，看看会发生什么\n"
+msgstr "// 尝试更改结构体中的值，看看会发生什么\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:16
 msgid "\"First of x is 1, b = {},  y = {} \""
-msgstr "\"x 的第一个元素是 1，b = {}，y = {} \""
+msgstr "\"x 的第一个元素是 1，b = {}，y = {}\""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:18
 msgid ""
@@ -4615,27 +4653,27 @@ msgstr ""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:20
 msgid "\"y is 2, i = {:?}\""
-msgstr "\"y 是 2，i = {:?}\""
+msgstr "\"y 为 2，i = {:?}\""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:22
 msgid "// and you can also ignore some variables:\n"
-msgstr "// 你也可以忽略一些变量：\n"
+msgstr "// 你也可以忽略某些变量：\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:23
 msgid "\"y = {}, we don't care about x\""
-msgstr "\"y = {}，我们不关心 x\""
+msgstr "\"y = {}，我们不关心 x 的值\""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:24
 msgid ""
 "// this will give an error: pattern does not mention field `x`\n"
 "        //Foo { y } => println!(\"y = {}\", y),\n"
 msgstr ""
-"// 这会产生一个错误：模式没有提到字段 `x`\n"
+"// 这会导致错误：模式中未提及字段 `x`\n"
 "        //Foo { y } => println!(\"y = {}\", y),\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:30
 msgid "// You do not need a match block to destructure structs:\n"
-msgstr "// 你不需要 match 块来解构结构体：\n"
+msgstr "// 解构结构体不一定需要 match 块：\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:32
 msgid "\"Outside: x0 = {x0:?}, y0 = {y0}\""
@@ -4643,7 +4681,7 @@ msgstr "\"外部：x0 = {x0:?}，y0 = {y0}\""
 
 #: src/flow_control/match/destructuring/destructure_structures.md:34
 msgid "// Destructuring works with nested structs as well:\n"
-msgstr "// 解构也适用于嵌套的结构体：\n"
+msgstr "// 解构也适用于嵌套结构体：\n"
 
 #: src/flow_control/match/destructuring/destructure_structures.md:41
 msgid "\"Nested: nested_x = {nested_x:?}, nested_y = {nested_y:?}\""
@@ -4655,37 +4693,38 @@ msgstr "[结构体](../../../custom_types/structs.md)"
 
 #: src/flow_control/match/guard.md:3
 msgid "A `match` _guard_ can be added to filter the arm."
-msgstr "可以添加 `match` **守卫**来过滤分支。"
+msgstr "`match` 分支可以使用**守卫**进行额外的筛选。"
 
 #: src/flow_control/match/guard.md:14
 msgid "// ^ TODO try different values for `temperature`\n"
-msgstr "// ^ TODO 尝试不同的 `temperature` 值\n"
+msgstr "// ^ TODO：尝试为 `temperature` 赋予不同的值\n"
 
 #: src/flow_control/match/guard.md:17
 msgid "\"{}C is above 30 Celsius\""
-msgstr "\"{}摄氏度高于 30 摄氏度\""
+msgstr "\"{}°C 高于 30°C\""
 
 #: src/flow_control/match/guard.md:18
 msgid "// The `if condition` part ^ is a guard\n"
-msgstr "// `if condition` 部分 ^ 是一个守卫\n"
+msgstr "// `if condition` 部分 ^ 就是守卫\n"
 
 #: src/flow_control/match/guard.md:19
 msgid "\"{}C is equal to or below 30 Celsius\""
-msgstr "\"{}摄氏度等于或低于 30 摄氏度\""
+msgstr "\"{}°C 不高于 30°C\""
 
 #: src/flow_control/match/guard.md:21
 msgid "\"{}F is above 86 Fahrenheit\""
-msgstr "\"{}华氏度高于 86 华氏度\""
+msgstr "\"{}°F 高于 86°F\""
 
 #: src/flow_control/match/guard.md:22
 msgid "\"{}F is equal to or below 86 Fahrenheit\""
-msgstr "\"{}华氏度等于或低于 86 华氏度\""
+msgstr "\"{}°F 不高于 86°F\""
 
 #: src/flow_control/match/guard.md:27
 msgid ""
 "Note that the compiler won't take guard conditions into account when checking "
 "if all patterns are covered by the match expression."
-msgstr "注意，编译器在检查 match 表达式是否覆盖了所有模式时，不会考虑守卫条件。"
+msgstr ""
+"注意，编译器在检查 match 表达式是否涵盖了所有模式时，不会考虑守卫条件。"
 
 #: src/flow_control/match/guard.md:35
 msgid "\"Zero\""
@@ -4700,8 +4739,8 @@ msgid ""
 "// _ => unreachable!(\"Should never happen.\"),\n"
 "        // TODO ^ uncomment to fix compilation\n"
 msgstr ""
-"// _ => unreachable!(\"永远不应该发生。\"),\n"
-"        // TODO ^ 取消注释以修复编译\n"
+"// _ => unreachable!(\"不应该发生。\"),\n"
+"        // TODO ^ 取消注释以修复编译错误\n"
 
 #: src/flow_control/match/guard.md:45
 msgid "[Tuples](../../primitives/tuples.md) [Enums](../../custom_types/enum.md)"
@@ -4713,7 +4752,7 @@ msgid ""
 "variable without re-binding. `match` provides the `@` sigil for binding "
 "values to names:"
 msgstr ""
-"间接访问变量使得无法在分支中使用该变量而不重新绑定。`match` 提供了 `@` 符号用于将值绑定到名称："
+"间接访问变量时，无法在分支中使用该变量而不重新绑定。`match` 提供了 `@` 符号，用于将值绑定到名称："
 
 #: src/flow_control/match/binding.md:8
 msgid "// A function `age` which returns a `u32`.\n"
@@ -4721,11 +4760,11 @@ msgstr "// 一个返回 `u32` 的 `age` 函数。\n"
 
 #: src/flow_control/match/binding.md:14
 msgid "\"Tell me what type of person you are\""
-msgstr "\"告诉我你是什么样的人\""
+msgstr "\"告诉我你是什么类型的人\""
 
 #: src/flow_control/match/binding.md:17
 msgid "\"I haven't celebrated my first birthday yet\""
-msgstr "\"我还没有庆祝过我的第一个生日\""
+msgstr "\"我还没有过第一个生日\""
 
 #: src/flow_control/match/binding.md:18
 msgid ""
@@ -4733,36 +4772,37 @@ msgid ""
 "        // would the child be? Instead, bind to `n` for the\n"
 "        // sequence of 1 ..= 12. Now the age can be reported.\n"
 msgstr ""
-"// 可以直接 `match` 1 ..= 12，但那样孩子的年龄是多少呢？\n"
-"        // 相反，将 1 ..= 12 的序列绑定到 `n`。现在可以报告年龄了。\n"
+"// 可以直接匹配 1 ..= 12，但那样无法知道具体年龄\n"
+"        // 相反，我们将 1 ..= 12 的序列绑定到 `n`\n"
+"        // 现在就可以报告具体年龄了\n"
 
 #: src/flow_control/match/binding.md:21
 msgid "\"I'm a child of age {:?}\""
-msgstr "\"我是一个 {:?} 岁的孩子\""
+msgstr "\"我是 {:?} 岁的儿童\""
 
 #: src/flow_control/match/binding.md:22
 msgid "\"I'm a teen of age {:?}\""
-msgstr "\"我是一个 {:?} 岁的青少年\""
+msgstr "\"我是 {:?} 岁的青少年\""
 
 #: src/flow_control/match/binding.md:23
 msgid "// Nothing bound. Return the result.\n"
-msgstr "// 没有绑定。返回结果。\n"
+msgstr "// 没有绑定。直接返回结果。\n"
 
 #: src/flow_control/match/binding.md:24
 msgid "\"I'm an old person of age {:?}\""
-msgstr "\"我是一个 {:?} 岁的老年人\""
+msgstr "\"我是 {:?} 岁的老年人\""
 
 #: src/flow_control/match/binding.md:29
 msgid ""
 "You can also use binding to \"destructure\" `enum` variants, such as `Option`:"
-msgstr "你也可以使用绑定来"解构" `enum` 变体，比如 `Option`："
+msgstr "你也可以使用绑定来"解构" `enum` 变体，例如 `Option`："
 
 #: src/flow_control/match/binding.md:38
 msgid ""
 "// Got `Some` variant, match if its value, bound to `n`,\n"
 "        // is equal to 42.\n"
 msgstr ""
-"// 得到 `Some` 变体，匹配如果它的值等于 42，绑定到 `n`，\n"
+"// 获得 `Some` 变体，检查其值（绑定到 `n`）是否等于 42\n"
 
 #: src/flow_control/match/binding.md:40
 msgid "\"The Answer: {}!\""
@@ -4770,7 +4810,7 @@ msgstr "\"答案是：{}！\""
 
 #: src/flow_control/match/binding.md:41
 msgid "// Match any other number.\n"
-msgstr "// 匹配任何其他数字。\n"
+msgstr "// 匹配任何其他数字\n"
 
 #: src/flow_control/match/binding.md:42
 msgid "\"Not interesting... {}\""
@@ -4778,21 +4818,21 @@ msgstr "\"不感兴趣... {}\""
 
 #: src/flow_control/match/binding.md:43
 msgid "// Match anything else (`None` variant).\n"
-msgstr "// 匹配其他任何情况（`None` 变体）。\n"
+msgstr "// 匹配其他任何情况（`None` 变体）\n"
 
 #: src/flow_control/match/binding.md:50
 msgid ""
 "[`functions`](../../fn.md), [`enums`](../../custom_types/enum.md) and "
 "[`Option`](../../std/option.md)"
 msgstr ""
-"[`函数`](../../fn.md)，[`枚举`](../../custom_types/enum.md) 和 "
+"[`函数`](../../fn.md)、[`枚举`](../../custom_types/enum.md) 和 "
 "[`Option`](../../std/option.md)"
 
 #: src/flow_control/if_let.md:3
 msgid ""
 "For some use cases, when matching enums, `match` is awkward. For example:"
 msgstr ""
-"在某些场景中，当匹配枚举时，使用 `match` 会显得很奇怪。例如："
+"在某些情况下，使用 `match` 匹配枚举可能会显得繁琐。例如："
 
 #: src/flow_control/if_let.md:6 src/flow_control/while_let.md:7
 #: src/flow_control/while_let.md:35
@@ -4801,62 +4841,62 @@ msgstr "// 创建 `Option<i32>` 类型的 `optional`\n"
 
 #: src/flow_control/if_let.md:10
 msgid "\"This is a really long string and `{:?}`\""
-msgstr "\"这是一个非常长的字符串和 `{:?}`\""
+msgstr "\"这是一个很长的字符串，其中包含 `{:?}`\""
 
 #: src/flow_control/if_let.md:12
 msgid ""
 "// ^ Required because `match` is exhaustive. Doesn't it seem\n"
 "    // like wasted space?\n"
 msgstr ""
-"// ^ 这是必要的，因为 `match` 需要穷举。不觉得这行很多余吗？\n"
+"// ^ 这是必需的，因为 `match` 要求穷举所有情况。\n"
+"    // 是不是觉得有些浪费空间？\n"
 
 #: src/flow_control/if_let.md:18
 msgid ""
 "`if let` is cleaner for this use case and in addition allows various failure "
 "options to be specified:"
 msgstr ""
-"`if let` 对于这种场景更加简洁，而且还允许指定各种失败的选项："
+"对于这种情况，`if let` 更加简洁，而且还允许指定各种失败时的处理选项："
 
 #: src/flow_control/if_let.md:23
 msgid "// All have type `Option<i32>`\n"
-msgstr "// 全都是 `Option<i32>` 类型\n"
+msgstr "// 以下都是 `Option<i32>` 类型\n"
 
 #: src/flow_control/if_let.md:28
 msgid ""
 "// The `if let` construct reads: \"if `let` destructures `number` into\n"
 "    // `Some(i)`, evaluate the block (`{}`).\n"
 msgstr ""
-"// `if let` 结构读作：如果 `let` 将 `number` 解构成 `Some(i)`，\n"
-"    // 则执行语句块（`{}`）。\n"
+"// `if let` 结构的含义是：如果 `let` 能将 `number` 解构为\n"
+"    // `Some(i)`，则执行代码块（`{}`）。\n"
 
 #: src/flow_control/if_let.md:31 src/flow_control/if_let.md:36
 #: src/flow_control/if_let.md:46
 msgid "\"Matched {:?}!\""
-msgstr "\"匹配 {:?}！\""
+msgstr "\"匹配到 {:?}！\""
 
 #: src/flow_control/if_let.md:34
 msgid "// If you need to specify a failure, use an else:\n"
-msgstr "// 如果需要指定一个失败的情况，使用 else：\n"
+msgstr "// 如果需要指定匹配失败的情况，可以使用 else：\n"
 
 #: src/flow_control/if_let.md:38
 msgid "// Destructure failed. Change to the failure case.\n"
-msgstr "// 解构失败。切换到失败情况。\n"
+msgstr "// 解构失败。转到失败处理的情况。\n"
 
 #: src/flow_control/if_let.md:39 src/flow_control/if_let.md:50
 msgid "\"Didn't match a number. Let's go with a letter!\""
-msgstr "\"没有匹配到数字。我们用一个字母吧！\""
+msgstr "\"没有匹配到数字。那就用一个字母吧！\""
 
 #: src/flow_control/if_let.md:42
 msgid "// Provide an altered failing condition.\n"
-msgstr "// 提供一个改变的失败条件。\n"
+msgstr "// 提供一个修改后的失败条件。\n"
 
 #: src/flow_control/if_let.md:47
 msgid ""
 "// Destructure failed. Evaluate an `else if` condition to see if the\n"
 "    // alternate failure branch should be taken:\n"
 msgstr ""
-"// 解构失败。评估 `else if` 条件，看看是否应该执行\n"
-"    // 替代的失败分支：\n"
+"// 解构失败。评估 `else if` 条件，看是否应该执行替代的失败分支：\n"
 
 #: src/flow_control/if_let.md:52
 msgid "// The condition evaluated false. This branch is the default:\n"
@@ -4864,7 +4904,7 @@ msgstr "// 条件判断为假。这个分支是默认情况：\n"
 
 #: src/flow_control/if_let.md:53
 msgid "\"I don't like letters. Let's go with an emoticon :)!\""
-msgstr "\"我不喜欢字母。我们用个表情符号吧 :)！\""
+msgstr "\"我不喜欢字母。那就用个表情符号吧 :)！\""
 
 #: src/flow_control/if_let.md:58
 msgid "In the same way, `if let` can be used to match any enum value:"
@@ -4892,7 +4932,7 @@ msgid ""
 "    // So this will print nothing\n"
 msgstr ""
 "// 变量 b 不匹配 Foo::Bar\n"
-"    // 所以这里不会打印任何东西\n"
+"    // 所以这里不会打印任何内容\n"
 
 #: src/flow_control/if_let.md:82
 msgid "\"b is foobar\""
@@ -4903,7 +4943,7 @@ msgid ""
 "// Variable c matches Foo::Qux which has a value\n"
 "    // Similar to Some() in the previous example\n"
 msgstr ""
-"// 变量 c 匹配 Foo::Qux，它有一个值\n"
+"// 变量 c 匹配 Foo::Qux，它包含一个值\n"
 "    // 类似于前面例子中的 Some()\n"
 
 #: src/flow_control/if_let.md:88
@@ -4912,7 +4952,7 @@ msgstr "\"c 是 {}\""
 
 #: src/flow_control/if_let.md:91
 msgid "// Binding also works with `if let`\n"
-msgstr "// 绑定也可以用于 `if let`\n"
+msgstr "// `if let` 也可以进行绑定\n"
 
 #: src/flow_control/if_let.md:93
 msgid "\"c is one hundred\""
@@ -4926,11 +4966,11 @@ msgid ""
 "because instances of the enum cannot be equated, however `if let` will "
 "continue to work."
 msgstr ""
-"`if let` 的另一个好处是它允许我们匹配非参数化的枚举变体。即使在枚举没有实现或派生 `PartialEq` 的情况下也是如此。在这种情况下，`if Foo::Bar == a` 将无法编译，因为枚举的实例无法进行相等比较，但 `if let` 仍然可以正常工作。"
+"`if let` 的另一个优点是它允许我们匹配非参数化的枚举变体。即使在枚举没有实现或派生 `PartialEq` 的情况下也是如此。在这种情况下，`if Foo::Bar == a` 将无法编译，因为枚举的实例无法进行相等比较，但 `if let` 仍然可以正常工作。"
 
 #: src/flow_control/if_let.md:100
 msgid "Would you like a challenge? Fix the following example to use `if let`:"
-msgstr "想要一个挑战吗？修复下面的例子，使用 `if let`："
+msgstr "想要挑战一下吗？请修改以下示例，使用 `if let`："
 
 #: src/flow_control/if_let.md:103
 msgid ""
@@ -4942,14 +4982,14 @@ msgstr ""
 
 #: src/flow_control/if_let.md:112
 msgid "// ^-- this causes a compile-time error. Use `if let` instead.\n"
-msgstr "// ^-- 这会导致编译时错误。使用 `if let` 来替代。\n"
+msgstr "// ^-- 这会导致编译时错误。请改用 `if let`。\n"
 
 #: src/flow_control/if_let.md:120
 msgid ""
 "[`enum`](../custom_types/enum.md), [`Option`](../std/option.md), and the [RFC]"
 "(https://github.com/rust-lang/rfcs/pull/160)"
 msgstr ""
-"[`枚举`](../custom_types/enum.md)，[`Option`](../std/option.md)，以及 [RFC]"
+"[`枚举`](../custom_types/enum.md)、[`Option`](../std/option.md) 和 [RFC]"
 "(https://github.com/rust-lang/rfcs/pull/160)"
 
 #: src/flow_control/let_else.md:4
