@@ -4994,14 +4994,14 @@ msgstr ""
 
 #: src/flow_control/let_else.md:4
 msgid "🛈 stable since: rust 1.65"
-msgstr "🛈 自 rust 1.65 版本起稳定"
+msgstr "🛈 自 Rust 1.65 版本起稳定"
 
 #: src/flow_control/let_else.md:6
 msgid ""
 "🛈 you can target specific edition by compiling like this `rustc --"
 "edition=2021 main.rs`"
 msgstr ""
-"🛈 你可以通过这样编译来指定特定版本 `rustc --edition=2021 main.rs`"
+"🛈 你可以通过这种方式编译来指定特定版本：`rustc --edition=2021 main.rs`"
 
 #: src/flow_control/let_else.md:10
 msgid ""
@@ -5009,7 +5009,8 @@ msgid ""
 "surrounding scope like a normal `let`, or else diverge (e.g. `break`, "
 "`return`, `panic!`) when the pattern doesn't match."
 msgstr ""
-"使用 `let`\\-`else`，可反驳模式可以像普通的 `let` 一样匹配并绑定周围作用域中的变量，或者在模式不匹配时发散（例如 `break`、`return`、`panic!`）。"
+"`let`-`else` 语法允许可能失败的模式匹配像普通 `let` 一样绑定变量到当前作用域，"
+"或在匹配失败时执行中断操作（如 `break`、`return`、`panic!`）。"
 
 #: src/flow_control/let_else.md:18 src/flow_control/let_else.md:41
 #: src/std/str.md:41
@@ -5038,14 +5039,15 @@ msgid ""
 "`match` or `if let`\\-`else` expressions. You could previously approximate "
 "these patterns with an unfortunate bit of repetition and an outer `let`:"
 msgstr ""
-"名称绑定的作用域是使其与 `match` 或 `if let`\\-`else` 表达式不同的主要原因。你之前可以通过一些冗余的重复和外部的 `let` 来近似这些模式："
+"名称绑定的作用域是使其区别于 `match` 或 `if let`-`else` 表达式的主要特点。"
+"在此之前，你可能需要通过一些冗余的重复和外部 `let` 来近似实现这些模式："
 
 #: src/flow_control/let_else.md:59
 msgid ""
 "[option](../std/option.md), [match](./match.md), [if let](./if_let.md) and "
 "the [let-else RFC](https://rust-lang.github.io/rfcs/3137-let-else.html)."
 msgstr ""
-"[option](../std/option.md)，[match](./match.md)，[if let](./if_let.md) 和 "
+"[Option](../std/option.md)、[match](./match.md)、[if let](./if_let.md) 和 "
 "[let-else RFC](https://rust-lang.github.io/rfcs/3137-let-else.html)。"
 
 #: src/flow_control/while_let.md:3
@@ -5053,15 +5055,16 @@ msgid ""
 "Similar to `if let`, `while let` can make awkward `match` sequences more "
 "tolerable. Consider the following sequence that increments `i`:"
 msgstr ""
-"与 `if let` 类似，`while let` 可以使别扭的 `match` 序列更易于处理。考虑下面这个递增 `i` 的序列："
+"与 `if let` 类似，`while let` 可以简化繁琐的 `match` 序列。"
+"让我们来看一个递增 `i` 的例子："
 
 #: src/flow_control/while_let.md:9
 msgid "// Repeatedly try this test.\n"
-msgstr "// 重复尝试这个测试。\n"
+msgstr "// 重复执行此测试。\n"
 
 #: src/flow_control/while_let.md:13
 msgid "// If `optional` destructures, evaluate the block.\n"
-msgstr "// 如果 `optional` 解构成功，就执行语句块。\n"
+msgstr "// 如果 `optional` 解构成功，则执行代码块。\n"
 
 #: src/flow_control/while_let.md:16 src/flow_control/while_let.md:42
 msgid "\"Greater than 9, quit!\""
@@ -5081,41 +5084,33 @@ msgstr "// 当解构失败时退出循环：\n"
 
 #: src/flow_control/while_let.md:26
 msgid "// ^ Why should this be required? There must be a better way!\n"
-msgstr "// ^ 为什么这是必需的？一定有更好的方法！\n"
+msgstr "// ^ 为什么需要这样？一定有更好的方法！\n"
 
 #: src/flow_control/while_let.md:31
 msgid "Using `while let` makes this sequence much nicer:"
-msgstr "使用 `while let` 使这个序列更加优雅："
+msgstr "使用 `while let` 可以让这个序列更加简洁："
 
 #: src/flow_control/while_let.md:38
 msgid ""
 "// This reads: \"while `let` destructures `optional` into\n"
 "    // `Some(i)`, evaluate the block (`{}`). Else `break`.\n"
 msgstr ""
-"// 这读作：当 `let` 把 `optional` 解构成 `Some(i)` 时，\n"
-"    // 执行语句块（`{}`）。否则 `break`。\n"
+"// 这段代码的含义是：当 `let` 将 `optional` 解构为 `Some(i)` 时，\n"
+"    // 执行代码块 `{}`，否则 `break`。\n"
 
 #: src/flow_control/while_let.md:48
 msgid ""
 "// ^ Less rightward drift and doesn't require\n"
 "        // explicitly handling the failing case.\n"
 msgstr ""
-
-#: src/flow_control/while_let.md:48
-msgid ""
-"// ^ Less rightward drift and doesn't require\n"
-"        // explicitly handling the failing case.\n"
-msgstr ""
-"// ^ 减少了向右偏移，并且不需要\n"
-"        // 显式处理失败的情况。\n"
+"// ^ 减少了代码缩进右移，无需显式处理失败情况\n"
 
 #: src/flow_control/while_let.md:51
 msgid ""
 "// ^ `if let` had additional optional `else`/`else if`\n"
 "    // clauses. `while let` does not have these.\n"
 msgstr ""
-"// ^ `if let` 有额外的可选 `else`/`else if`\n"
-"    // 子句。`while let` 没有这些。\n"
+"// ^ `if let` 可以有额外的 `else`/`else if` 子句，`while let` 则没有。\n"
 
 #: src/flow_control/while_let.md:58
 msgid ""
@@ -5131,8 +5126,8 @@ msgid ""
 "annotated, just like variables, and, if the function returns a value, the "
 "return type must be specified after an arrow `->`."
 msgstr ""
-"函数使用 `fn` 关键字声明。它的参数需要标注类型，就像变量一样，如果函数返回一个值，"
-"返回类型必须在箭头 `->` 之后指定。"
+"函数使用 `fn` 关键字声明。函数参数需要标注类型，就像变量一样。"
+"如果函数返回值，则必须在箭头 `->` 后指定返回类型。"
 
 #: src/fn.md:7
 msgid ""
@@ -5140,22 +5135,22 @@ msgid ""
 "Alternatively, the `return` statement can be used to return a value earlier "
 "from within the function, even from inside loops or `if` statements."
 msgstr ""
-"函数中的最后一个表达式将被用作返回值。或者，可以使用 `return` 语句从函数内部提前返回一个值，"
-"甚至可以从循环或 `if` 语句内部返回。"
+"函数的最后一个表达式将作为返回值。另外，可以使用 `return` 语句在函数内部提前返回值，"
+"甚至可以在循环或 `if` 语句内部使用。"
 
 #: src/fn.md:11
 msgid "Let's rewrite FizzBuzz using functions!"
-msgstr "让我们用函数重写 FizzBuzz！"
+msgstr "让我们用函数重写 FizzBuzz 吧！"
 
 #: src/fn.md:14
 msgid ""
 "// Unlike C/C++, there's no restriction on the order of function definitions\n"
 msgstr ""
-"// 与 C/C++ 不同，函数定义的顺序没有限制\n"
+"// 与 C/C++ 不同，Rust 中函数定义的顺序没有限制\n"
 
 #: src/fn.md:16
 msgid "// We can use this function here, and define it somewhere later\n"
-msgstr "// 我们可以在这里使用这个函数，并在稍后的某个地方定义它\n"
+msgstr "// 我们可以在这里使用函数，并在稍后的某处定义它\n"
 
 #: src/fn.md:19
 msgid "// Function that returns a boolean value\n"
@@ -5167,14 +5162,14 @@ msgstr "// 特殊情况，提前返回\n"
 
 #: src/fn.md:27
 msgid "// This is an expression, the `return` keyword is not necessary here\n"
-msgstr "// 这是一个表达式，这里不需要 `return` 关键字\n"
+msgstr "// 这是一个表达式，此处不需要 `return` 关键字\n"
 
 #: src/fn.md:30
 msgid ""
 "// Functions that \"don't\" return a value, actually return the unit type "
 "`()`\n"
 msgstr ""
-"// \"不\"返回值的函数实际上返回单元类型 `()`\n"
+"// \"无返回值\"的函数实际上返回单元类型 `()`\n"
 
 #: src/fn.md:43
 msgid ""
@@ -5194,8 +5189,8 @@ msgid ""
 "are defined on a type generally, while methods are associated functions that "
 "are called on a particular instance of a type."
 msgstr ""
-"有些函数与特定类型相关联。这些函数有两种形式：关联函数和方法。关联函数是在类型上定义的函数，"
-"而方法是在类型的特定实例上调用的关联函数。"
+"某些函数与特定类型相关联。这些函数有两种形式：关联函数和方法。"
+"关联函数是在类型上定义的函数，而方法是在类型的特定实例上调用的关联函数。"
 
 #: src/fn/methods.md:13
 msgid ""
