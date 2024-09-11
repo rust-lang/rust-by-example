@@ -6735,11 +6735,11 @@ msgid ""
 "Modules can be mapped to a file/directory hierarchy. Let's break down the "
 "[visibility example](visibility.md) in files:"
 msgstr ""
-"模块可以映射到文件/目录层次结构。让我们将[可见性示例](visibility.md)拆分到多个文件中："
+"模块可以映射到文件/目录层次结构。让我们将[可见性示例](visibility.md)拆分成多个文件："
 
 #: src/mod/split.md:16
 msgid "In `split.rs`:"
-msgstr "在 `split.rs` 中："
+msgstr "在 `split.rs` 文件中："
 
 #: src/mod/split.md:19
 msgid ""
@@ -6747,11 +6747,11 @@ msgid ""
 "// insert its contents inside a module named `my` under this scope\n"
 msgstr ""
 "// 这个声明会查找名为 `my.rs` 的文件，并将其内容\n"
-"// 插入到这个作用域下名为 `my` 的模块中\n"
+"// 插入到当前作用域下名为 `my` 的模块中\n"
 
 #: src/mod/split.md:39
 msgid "In `my.rs`:"
-msgstr "在 `my.rs` 中："
+msgstr "在 `my.rs` 文件中："
 
 #: src/mod/split.md:42
 msgid ""
@@ -6759,40 +6759,41 @@ msgid ""
 "// and `inaccessible.rs` files and insert them here under their respective\n"
 "// modules\n"
 msgstr ""
-"// 类似地，`mod inaccessible` 和 `mod nested` 将定位 `nested.rs` \n"
-"// 和 `inaccessible.rs` 文件，并将它们插入到这里各自的模块下\n"
+"// 同样，`mod inaccessible` 和 `mod nested` 会分别定位到\n"
+"// `nested.rs` 和 `inaccessible.rs` 文件，\n"
+"// 并将它们的内容插入到这里对应的模块中\n"
 
 #: src/mod/split.md:53
 msgid "\"called `my::private_function()`\""
-msgstr "\"调用 `my::private_function()`\""
+msgstr "\"调用了 `my::private_function()`\""
 
 #: src/mod/split.md:57
 msgid "\"called `my::indirect_access()`, that\\n> \""
-msgstr "\"调用 `my::indirect_access()`，它\\n> \""
+msgstr "\"调用了 `my::indirect_access()`，它\\n> \""
 
 #: src/mod/split.md:63
 msgid "In `my/nested.rs`:"
-msgstr "在 `my/nested.rs` 中："
+msgstr "在 `my/nested.rs` 文件中："
 
 #: src/mod/split.md:67
 msgid "\"called `my::nested::function()`\""
-msgstr "\"调用 `my::nested::function()`\""
+msgstr "\"调用了 `my::nested::function()`\""
 
 #: src/mod/split.md:72
 msgid "\"called `my::nested::private_function()`\""
-msgstr "\"调用 `my::nested::private_function()`\""
+msgstr "\"调用了 `my::nested::private_function()`\""
 
 #: src/mod/split.md:76
 msgid "In `my/inaccessible.rs`:"
-msgstr "在 `my/inaccessible.rs` 中："
+msgstr "在 `my/inaccessible.rs` 文件中："
 
 #: src/mod/split.md:81
 msgid "\"called `my::inaccessible::public_function()`\""
-msgstr "\"调用 `my::inaccessible::public_function()`\""
+msgstr "\"调用了 `my::inaccessible::public_function()`\""
 
 #: src/mod/split.md:85
 msgid "Let's check that things still work as before:"
-msgstr "让我们检查一下是否一切仍然像之前一样工作："
+msgstr "让我们检查一下是否一切仍然如之前一样正常运行："
 
 #: src/crates.md:3
 msgid ""
@@ -6803,7 +6804,7 @@ msgid ""
 "_before_ running the compiler over it. In other words, modules do _not_ get "
 "compiled individually, only crates get compiled."
 msgstr ""
-"crate 是 Rust 中的编译单元。每当调用 `rustc some_file.rs` 时，`some_file.rs` 就被视为**crate 文件**。如果 `some_file.rs` 中有 `mod` 声明，那么模块文件的内容会在编译器运行之前被插入到 crate 文件中 `mod` 声明的位置。换句话说，模块**不会**被单独编译，只有 crate 才会被编译。"
+"在 Rust 中，crate 是一个编译单元。每当执行 `rustc some_file.rs` 时，`some_file.rs` 就被视为**crate 文件**。如果 `some_file.rs` 中包含 `mod` 声明，那么模块文件的内容会在编译器处理之前被插入到 crate 文件中 `mod` 声明的位置。换句话说，模块**不会**被单独编译，只有 crate 才会被编译。"
 
 #: src/crates.md:10
 msgid ""
@@ -6811,7 +6812,7 @@ msgid ""
 "will produce a binary from a crate. This behavior can be overridden by "
 "passing the `--crate-type` flag to `lib`."
 msgstr ""
-"一个 crate 可以被编译成二进制文件或库。默认情况下，`rustc` 会从 crate 生成二进制文件。这个行为可以通过向 `lib` 传递 `--crate-type` 标志来改变。"
+"一个 crate 可以被编译成二进制文件或库。默认情况下，`rustc` 会将 crate 编译成二进制文件。通过向 `rustc` 传递 `--crate-type` 标志并指定 `lib`，可以改变这一默认行为。"
 
 #: src/crates/lib.md:3
 msgid "Let's create a library, and then see how to link it to another crate."
@@ -6819,7 +6820,7 @@ msgstr "让我们创建一个库，然后看看如何将它链接到另一个 cr
 
 #: src/crates/lib.md:5
 msgid "In `rary.rs`:"
-msgstr "在 `rary.rs` 中："
+msgstr "在 `rary.rs` 文件中："
 
 #: src/crates/lib.md:9 src/attribute/crate.md:19
 msgid "\"called rary's `public_function()`\""
@@ -6840,7 +6841,7 @@ msgid ""
 "crate-name` option to `rustc` or by using the [`crate_name` attribute](../"
 "attribute/crate.md)."
 msgstr ""
-"库的名称前缀为 \"lib\"，默认情况下它们以 crate 文件命名，但这个默认名称可以通过向 `rustc` 传递 `--crate-name` 选项或使用 [`crate_name` 属性](../attribute/crate.md) 来覆盖。"
+"库文件名会自动添加 \"lib\" 前缀，默认使用 crate 文件的名称。但可以通过向 `rustc` 传递 `--crate-name` 选项或使用 [`crate_name` 属性](../attribute/crate.md) 来覆盖这个默认名称。"
 
 #: src/crates/using_lib.md:3
 msgid ""
@@ -6848,20 +6849,20 @@ msgid ""
 "All of its items will then be imported under a module named the same as the "
 "library. This module generally behaves the same way as any other module."
 msgstr ""
-"要将一个 crate 链接到这个新库，你可以使用 `rustc` 的 `--extern` 标志。然后，它的所有项目都会被导入到一个与库同名的模块下。这个模块通常的行为与任何其他模块相同。"
+"要将 crate 链接到这个新库，可以使用 `rustc` 的 `--extern` 标志。库中的所有项目都会被导入到一个与库同名的模块下。这个模块的行为通常与其他模块相同。"
 
 #: src/crates/using_lib.md:8
 msgid ""
 "// extern crate rary; // May be required for Rust 2015 edition or earlier\n"
 msgstr ""
-"// extern crate rary; // 可能在 Rust 2015 版本或更早版本中需要\n"
+"// extern crate rary; // Rust 2015 版本或更早版本可能需要此声明\n"
 
 #: src/crates/using_lib.md:13
 msgid ""
 "// Error! `private_function` is private\n"
 "    //rary::private_function();\n"
 msgstr ""
-"// 报错！`private_function` 是私有的\n"
+"// 错误！`private_function` 是私有的\n"
 "    //rary::private_function();\n"
 
 #: src/cargo.md:3
@@ -6869,14 +6870,14 @@ msgid ""
 "`cargo` is the official Rust package management tool. It has lots of really "
 "useful features to improve code quality and developer velocity! These include"
 msgstr ""
-"`cargo` 是 Rust 的官方包管理工具。它有许多非常有用的功能来提高代码质量和开发效率！这些功能包括"
+"`cargo` 是 Rust 的官方包管理工具。它提供了许多非常有用的功能，可以提高代码质量和开发效率！这些功能包括："
 
 #: src/cargo.md:6
 msgid ""
 "Dependency management and integration with [crates.io](https://crates.io) "
 "(the official Rust package registry)"
 msgstr ""
-"依赖管理和与 [crates.io](https://crates.io)（官方 Rust 包注册中心）的集成"
+"依赖管理和与 [crates.io](https://crates.io)（Rust 官方包注册中心）的集成"
 
 #: src/cargo.md:8
 msgid "Awareness of unit tests"
@@ -6891,7 +6892,7 @@ msgid ""
 "This chapter will go through some quick basics, but you can find the "
 "comprehensive docs in [The Cargo Book](https://doc.rust-lang.org/cargo/)."
 msgstr ""
-"本章将快速介绍一些基础知识，不过你可以在 [Cargo 手册](https://doc.rust-lang.org/cargo/) 中找到更全面的文档。"
+"本章将快速介绍一些基础知识，更全面的文档可以在 [Cargo 手册](https://doc.rust-lang.org/cargo/) 中找到。"
 
 #: src/cargo/deps.md:3
 msgid ""
@@ -6900,30 +6901,30 @@ msgid ""
 "Rust ecosystem comes standard with `cargo`! `cargo` can manage dependencies "
 "for a project."
 msgstr ""
-"大多数程序都依赖于一些库。如果你曾经手动管理过依赖，你就知道这有多痛苦。幸运的是，Rust 生态系统标配了 `cargo` 工具！`cargo` 可以为项目管理依赖。"
+"大多数程序都依赖于一些库。如果你曾经手动管理过依赖，你就知道这有多么痛苦。幸运的是，Rust 生态系统标配了 `cargo`！`cargo` 可以为项目管理依赖。"
 
 #: src/cargo/deps.md:8
 msgid "To create a new Rust project,"
-msgstr "创建一个新的 Rust 项目，"
+msgstr "要创建一个新的 Rust 项目，可以使用以下命令："
 
 #: src/cargo/deps.md:11
 msgid "# A binary\n"
-msgstr "# 二进制程序\n"
+msgstr "# 创建二进制项目\n"
 
 #: src/cargo/deps.md:13
 msgid "# A library\n"
-msgstr "# 库\n"
+msgstr "# 创建库项目\n"
 
 #: src/cargo/deps.md:18
 msgid ""
 "For the rest of this chapter, let's assume we are making a binary, rather "
 "than a library, but all of the concepts are the same."
 msgstr ""
-"在本章的剩余部分，我们假设我们正在创建一个二进制程序，而不是一个库，但所有的概念都是相同的。"
+"在本章的剩余部分，我们假设我们正在创建一个二进制项目，而不是一个库项目，但所有的概念都是相同的。"
 
 #: src/cargo/deps.md:21
 msgid "After the above commands, you should see a file hierarchy like this:"
-msgstr "执行上述命令后，应该会得到这样的文件层次结构："
+msgstr "执行上述命令后，你应该会看到如下的文件结构："
 
 #: src/cargo/deps.md:35
 msgid ""
@@ -6931,7 +6932,7 @@ msgid ""
 "new there. The `Cargo.toml` is the config file for `cargo` for this project. "
 "If you look inside it, you should see something like this:"
 msgstr ""
-"`main.rs` 是新的 `foo` 项目的入口源文件 —— 这没什么新鲜的。`Cargo.toml` 是这个项目的 `cargo` 配置文件。如果你查看它的内容，你应该看到类似这样的内容："
+"`main.rs` 是你新建的 `foo` 项目的主源文件 —— 这一点没什么新鲜的。`Cargo.toml` 则是这个项目的 `cargo` 配置文件。如果你查看它的内容，应该会看到类似这样的内容："
 
 #: src/cargo/deps.md:39
 msgid ""
@@ -6959,14 +6960,14 @@ msgid ""
 "is used by `crates.io` if you publish the crate (more later). It is also the "
 "name of the output binary when you compile."
 msgstr ""
-"`[package]` 下的 `name` 字段决定了项目的名称。如果你发布 crate（稍后会详细介绍），这个名称将被 `crates.io` 使用。这也是编译时输出的二进制文件的名称。"
+"`[package]` 下的 `name` 字段决定了项目的名称。如果你将 crate 发布到 `crates.io`（稍后会详细介绍），这个名称将被使用。同时，它也是编译时生成的二进制文件的名称。"
 
 #: src/cargo/deps.md:52
 msgid ""
 "The `version` field is a crate version number using [Semantic Versioning]"
 "(http://semver.org/)."
 msgstr ""
-"`version` 字段是使用 [语义化版本控制](http://semver.org/) 的 crate 版本号。"
+"`version` 字段是使用[语义化版本控制](http://semver.org/)的 crate 版本号。"
 
 #: src/cargo/deps.md:55
 msgid "The `authors` field is a list of authors used when publishing the crate."
@@ -6974,7 +6975,7 @@ msgstr "`authors` 字段是发布 crate 时使用的作者列表。"
 
 #: src/cargo/deps.md:57
 msgid "The `[dependencies]` section lets you add dependencies for your project."
-msgstr "`[dependencies]` 部分用来为项目添加依赖。"
+msgstr "`[dependencies]` 部分允许你为项目添加依赖。"
 
 #: src/cargo/deps.md:59
 msgid ""
@@ -6986,14 +6987,14 @@ msgid ""
 "to our `Cargo.toml` under `[dependencies]`: `clap = \"2.27.1\"`. And that's "
 "it! You can start using `clap` in your program."
 msgstr ""
-"例如，假设我们希望我们的程序有一个出色的命令行界面（CLI）。你可以在 [crates.io](https://crates.io)（官方的 Rust 包注册中心）上找到许多优秀的包。一个受欢迎的选择是 [clap](https://crates.io/crates/clap)。在撰写本文时，`clap` 最新发布的版本是 `2.27.1`。要在我们的程序中添加依赖，我们只需在 `Cargo.toml` 的 `[dependencies]` 下添加以下内容：`clap = \"2.27.1\"`。就是这样！你现在可以在你的程序中开始使用 `clap` 了。"
+"举个例子，假设我们想让程序拥有一个出色的命令行界面（CLI）。你可以在 [crates.io](https://crates.io)（Rust 官方包注册中心）上找到许多优秀的包。其中，[clap](https://crates.io/crates/clap) 是一个广受欢迎的选择。在撰写本文时，`clap` 的最新发布版本是 `2.27.1`。要在我们的程序中添加这个依赖，只需在 `Cargo.toml` 的 `[dependencies]` 下添加：`clap = \"2.27.1\"`。就这么简单！现在你就可以在程序中使用 `clap` 了。"
 
 #: src/cargo/deps.md:67
 msgid ""
 "`cargo` also supports [other types of dependencies](https://doc.rust-lang.org/"
 "cargo/reference/specifying-dependencies.html). Here is just a small sampling:"
 msgstr ""
-"`cargo` 还支持 [其他类型的依赖](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html)。这里只是一个小示例："
+"`cargo` 还支持[其他类型的依赖](https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html)。这里给出一个简单的示例："
 
 #: src/cargo/deps.md:70
 msgid ""
@@ -7019,7 +7020,7 @@ msgstr ""
 "[dependencies]\n"
 "clap = \"2.27.1\" # 来自 crates.io\n"
 "rand = { git = \"https://github.com/rust-lang-nursery/rand\" } # 来自在线仓库\n"
-"bar = { path = \"../bar\" } # 来自本地文件系统中的路径\n"
+"bar = { path = \"../bar\" } # 来自本地文件系统的路径\n"
 "```"
 
 #: src/cargo/deps.md:82
@@ -7028,7 +7029,7 @@ msgid ""
 "options are listed in the [format specification](https://doc.rust-lang.org/"
 "cargo/reference/manifest.html) of `Cargo.toml`."
 msgstr ""
-"`cargo` 不仅仅是一个依赖管理器。所有可用的配置选项都列在 `Cargo.toml` 的 [格式规范](https://doc.rust-lang.org/cargo/reference/manifest.html) 中。"
+"`cargo` 不仅仅是一个依赖管理器。`Cargo.toml` 的[格式规范](https://doc.rust-lang.org/cargo/reference/manifest.html)中列出了所有可用的配置选项。"
 
 #: src/cargo/deps.md:86
 msgid ""
@@ -7038,7 +7039,7 @@ msgid ""
 "crates if needed, and build everything, including your crate. (Note that it "
 "only rebuilds what it has not already built, similar to `make`)."
 msgstr ""
-"要构建我们的项目，我们可以在项目目录的任何位置（包括子目录！）执行 `cargo build`。我们也可以使用 `cargo run` 来构建并运行。注意，这些命令会解析所有依赖，如果需要的话下载 crate，并构建所有内容，包括你的 crate。（注意，它只会重新构建尚未构建的部分，类似于 `make`）。"
+"我们可以在项目目录的任何位置（包括子目录！）执行 `cargo build` 来构建项目。也可以使用 `cargo run` 来构建并运行。请注意，这些命令会解析所有依赖，必要时下载 crate，并构建所有内容，包括你的 crate。（值得一提的是，它只会重新构建尚未构建的部分，类似于 `make`）。"
 
 #: src/cargo/deps.md:92
 msgid "Voila! That's all there is to it!"
@@ -7046,14 +7047,13 @@ msgstr "瞧！就是这么简单！"
 
 #: src/cargo/conventions.md:3
 msgid "In the previous chapter, we saw the following directory hierarchy:"
-msgstr "在上一章中，我们看到了以下目录层次结构："
+msgstr "在上一章中，我们看到了如下目录结构："
 
 #: src/cargo/conventions.md:12
 msgid ""
 "Suppose that we wanted to have two binaries in the same project, though. What "
 "then?"
-msgstr ""
-"假设我们想在同一个项目中有两个二进制文件。那该怎么办呢？"
+msgstr "那么，如果我们想在同一个项目中包含两个二进制文件，该怎么办呢？"
 
 #: src/cargo/conventions.md:15
 msgid ""
@@ -7061,7 +7061,8 @@ msgid ""
 "as we saw before, but you can add additional binaries by placing them in a "
 "`bin/` directory:"
 msgstr ""
-"事实证明，`cargo` 支持这一点。默认的二进制文件名是 `main`，就像我们之前看到的那样，但你可以通过将额外的二进制文件放在 `bin/` 目录中来添加它们："
+"`cargo` 实际上支持这种需求。如我们之前所见，默认的二进制文件名是 `main`，"
+"但你可以通过在 `bin/` 目录中放置额外的文件来添加其他二进制文件："
 
 #: src/cargo/conventions.md:28
 msgid ""
@@ -7069,7 +7070,8 @@ msgid ""
 "`--bin my_other_bin` flag, where `my_other_bin` is the name of the binary we "
 "want to work with."
 msgstr ""
-"要告诉 `cargo` 只编译或运行这个二进制文件，我们只需要给 `cargo` 传递 `--bin my_other_bin` 标志，其中 `my_other_bin` 是我们想要处理的二进制文件的名称。"
+"如果要指示 `cargo` 只编译或运行特定的二进制文件，只需传递 `--bin my_other_bin` 标志，"
+"其中 `my_other_bin` 是我们想要处理的二进制文件的名称。"
 
 #: src/cargo/conventions.md:32
 msgid ""
@@ -7077,11 +7079,12 @@ msgid ""
 "rust-lang.org/cargo/guide/project-layout.html) such as benchmarks, tests, and "
 "examples."
 msgstr ""
-"除了额外的二进制文件，`cargo` 还支持 [更多功能](https://doc.rust-lang.org/cargo/guide/project-layout.html)，如基准测试、测试和示例。"
+"除了额外的二进制文件，`cargo` 还支持[更多功能](https://doc.rust-lang.org/cargo/guide/project-layout.html)，"
+"如基准测试、测试和示例。"
 
 #: src/cargo/conventions.md:35
 msgid "In the next chapter, we will look more closely at tests."
-msgstr "在下一章中，我们将更仔细地看看测试。"
+msgstr "在下一章中，我们将更详细地探讨测试。"
 
 #: src/cargo/test.md:3
 msgid ""
@@ -7089,7 +7092,8 @@ msgid ""
 "support for unit and integration testing ([see this chapter](https://doc.rust-"
 "lang.org/book/ch11-00-testing.html) in TRPL)."
 msgstr ""
-"我们知道测试对于任何软件都是不可或缺的！Rust 对单元测试和集成测试有一流的支持（参见《Rust 程序设计语言》中的[这一章](https://doc.rust-lang.org/book/ch11-00-testing.html)）。"
+"众所周知，测试是任何软件不可或缺的一部分！Rust 为单元测试和集成测试提供了一流的支持"
+"（参见《Rust 程序设计语言》中的[这一章](https://doc.rust-lang.org/book/ch11-00-testing.html)）。"
 
 #: src/cargo/test.md:8
 msgid ""
@@ -7097,7 +7101,8 @@ msgid ""
 "integration tests. Organizationally, we can place unit tests in the modules "
 "they test and integration tests in their own `tests/` directory:"
 msgstr ""
-"从上面链接的测试章节中，我们可以看到如何编写单元测试和集成测试。在组织上，我们可以将单元测试放在它们所测试的模块中，而将集成测试放在它们自己的 `tests/` 目录中："
+"从上面链接的测试章节中，我们了解了如何编写单元测试和集成测试。在组织结构上，"
+"我们可以将单元测试放在它们所测试的模块中，而将集成测试放在专门的 `tests/` 目录中："
 
 #: src/cargo/test.md:23
 msgid ""
@@ -7106,7 +7111,8 @@ msgid ""
 "is meant to test your library as if it were being called from a dependent "
 "crate."
 msgstr ""
-"`tests` 中的每个文件都是一个单独的[集成测试](https://doc.rust-lang.org/book/ch11-03-test-organization.html#integration-tests)，即旨在测试你的库，就像它被依赖的 crate 调用一样。"
+"`tests` 目录中的每个文件都是一个独立的[集成测试](https://doc.rust-lang.org/book/ch11-03-test-organization.html#integration-tests)，"
+"即旨在测试你的库，就像它被依赖的 crate 调用一样。"
 
 #: src/cargo/test.md:28
 msgid ""
@@ -7114,15 +7120,16 @@ msgid ""
 "testing styles: [Unit](../testing/unit_testing.md), [Doc](../testing/"
 "doc_testing.md), and [Integration](../testing/integration_testing.md)."
 msgstr ""
-"[测试](../testing.md)章节详细阐述了三种不同的测试风格：[单元](../testing/unit_testing.md)、[文档](../testing/doc_testing.md)和[集成](../testing/integration_testing.md)。"
+"[测试](../testing.md)章节详细阐述了三种不同的测试风格：[单元测试](../testing/unit_testing.md)、"
+"[文档测试](../testing/doc_testing.md)和[集成测试](../testing/integration_testing.md)。"
 
 #: src/cargo/test.md:31
 msgid "`cargo` naturally provides an easy way to run all of your tests!"
-msgstr "`cargo` 提供了一个简单的方式运行所有测试！"
+msgstr "`cargo` 自然提供了一种简便的方式来运行所有测试！"
 
 #: src/cargo/test.md:37
 msgid "You should see output like this:"
-msgstr "你应该会看到类似这样的输出："
+msgstr "你将看到类似这样的输出："
 
 #: src/cargo/test.md:39
 msgid ""
@@ -7158,7 +7165,7 @@ msgstr ""
 
 #: src/cargo/test.md:54
 msgid "You can also run tests whose name matches a pattern:"
-msgstr "你也可以运行名称匹配某个模式的测试："
+msgstr "你还可以运行名称匹配特定模式的测试："
 
 #: src/cargo/test.md:60
 msgid ""
@@ -7192,15 +7199,13 @@ msgstr ""
 msgid ""
 "One word of caution: Cargo may run multiple tests concurrently, so make sure "
 "that they don't race with each other."
-msgstr ""
-"需要注意的是：Cargo 可能会并发运行多个测试，所以要确保它们之间不会相互竞争。"
+msgstr "需要注意：Cargo 可能会并发运行多个测试，因此请确保它们之间不会产生竞态条件。"
 
 #: src/cargo/test.md:76
 msgid ""
 "One example of this concurrency causing issues is if two tests output to a "
 "file, such as below:"
-msgstr ""
-"这种并发可能导致问题的一个例子是，如果两个测试输出到同一个文件，比如下面这样："
+msgstr "并发可能导致问题的一个例子是，如果两个测试同时输出到同一个文件，如下所示："
 
 #: src/cargo/test.md:82
 msgid "// Import the necessary modules\n"
@@ -7208,11 +7213,11 @@ msgstr "// 导入必要的模块\n"
 
 #: src/cargo/test.md:86
 msgid "// This test writes to a file\n"
-msgstr "// 这个测试写入一个文件\n"
+msgstr "// 这个测试向文件写入内容\n"
 
 #: src/cargo/test.md:89 src/cargo/test.md:106
 msgid "// Opens the file ferris.txt or creates one if it doesn't exist.\n"
-msgstr "// 打开 ferris.txt 文件，如果不存在则创建一个。\n"
+msgstr "// 打开 ferris.txt 文件，如果不存在则创建一个\n"
 
 #: src/cargo/test.md:93 src/cargo/test.md:110
 msgid "\"ferris.txt\""
@@ -7220,11 +7225,11 @@ msgstr "\"ferris.txt\""
 
 #: src/cargo/test.md:94 src/cargo/test.md:111
 msgid "\"Failed to open ferris.txt\""
-msgstr "\"Failed to open ferris.txt\""
+msgstr "\"无法打开 ferris.txt\""
 
 #: src/cargo/test.md:96
 msgid "// Print \"Ferris\" 5 times.\n"
-msgstr "// 打印 \"Ferris\" 5 次。\n"
+msgstr "// 循环打印 \"Ferris\" 5 次\n"
 
 #: src/cargo/test.md:98
 msgid "\"Ferris\\n\""
@@ -7232,7 +7237,7 @@ msgstr "\"Ferris\\n\""
 
 #: src/cargo/test.md:99 src/cargo/test.md:116
 msgid "\"Could not write to ferris.txt\""
-msgstr "\"Could not write to ferris.txt\""
+msgstr "\"无法写入 ferris.txt\""
 
 #: src/cargo/test.md:103
 msgid "// This test tries to write to the same file\n"
@@ -7240,7 +7245,7 @@ msgstr "// 这个测试尝试写入同一个文件\n"
 
 #: src/cargo/test.md:113
 msgid "// Print \"Corro\" 5 times.\n"
-msgstr "// 打印 \"Corro\" 5 次。\n"
+msgstr "// 循环打印 \"Corro\" 5 次\n"
 
 #: src/cargo/test.md:115
 msgid "\"Corro\\n\""
@@ -7248,11 +7253,11 @@ msgstr "\"Corro\\n\""
 
 #: src/cargo/test.md:122
 msgid "Although the intent is to get the following:"
-msgstr "尽管预期的结果是得到以下内容："
+msgstr "尽管预期结果应该是："
 
 #: src/cargo/test.md:136
 msgid "What actually gets put into `ferris.txt` is this:"
-msgstr "实际上 `ferris.txt` 中的内容可能是这样的："
+msgstr "但实际写入 `ferris.txt` 的内容可能是这样的："
 
 #: src/cargo/build_scripts.md:3
 msgid ""
@@ -7261,7 +7266,7 @@ msgid ""
 "code generation, or some native code that needs to be compiled. To solve this "
 "problem we have build scripts that Cargo can run."
 msgstr ""
-"有时候常规的 `cargo` 构建是不够的。也许你的 crate 在 `cargo` 成功编译之前需要一些先决条件，比如代码生成，或者需要编译一些本地代码。为了解决这个问题，我们有 Cargo 可以运行的构建脚本。"
+"有时候，`cargo` 的常规构建可能不足以满足需求。你的 crate 可能在 `cargo` 成功编译之前需要一些先决条件，比如代码生成，或者需要编译一些本地代码。为了解决这个问题，我们可以使用 Cargo 能够运行的构建脚本。"
 
 #: src/cargo/build_scripts.md:8
 msgid ""
@@ -7289,7 +7294,7 @@ msgid ""
 "Otherwise Cargo will look for a `build.rs` file in the project directory by "
 "default."
 msgstr ""
-"否则，Cargo 默认会在项目目录中寻找 `build.rs` 文件。"
+"如果没有指定，Cargo 默认会在项目目录中查找 `build.rs` 文件。"
 
 #: src/cargo/build_scripts.md:20
 msgid "How to use a build script"
@@ -7309,7 +7314,7 @@ msgid ""
 "here](https://doc.rust-lang.org/cargo/reference/environment-variables."
 "html#environment-variables-cargo-sets-for-build-scripts) that can be used."
 msgstr ""
-"Cargo 通过环境变量为脚本提供输入，这些环境变量[在这里指定](https://doc.rust-lang.org/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts)，可以被使用。"
+"Cargo 通过环境变量为脚本提供输入，这些环境变量可以被使用。具体参见[这里的说明](https://doc.rust-lang.org/cargo/reference/environment-variables.html#environment-variables-cargo-sets-for-build-scripts)。"
 
 #: src/cargo/build_scripts.md:29
 msgid ""
@@ -7318,21 +7323,22 @@ msgid ""
 "be interpreted by Cargo directly and hence can be used to define parameters "
 "for the package's compilation."
 msgstr ""
-"脚本通过标准输出提供输出。所有打印的行都被写入 `target/debug/build/<pkg>/output`。此外，以 `cargo:` 为前缀的行将被 Cargo 直接解释，因此可以用来为包的编译定义参数。"
+"脚本通过标准输出提供输出。所有打印的行都会被写入 `target/debug/build/<pkg>/output`。此外，以 `cargo:` 为前缀的行会被 Cargo 直接解释，因此可以用来为包的编译定义参数。"
 
 #: src/cargo/build_scripts.md:34
 msgid ""
 "For further specification and examples have a read of the [Cargo "
 "specification](https://doc.rust-lang.org/cargo/reference/build-scripts.html)."
 msgstr ""
-"有关更多规范和示例，请阅读 [Cargo 规范](https://doc.rust-lang.org/cargo/reference/build-scripts.html)。"
+"如需了解更多详细规范和示例，请参阅 [Cargo 构建脚本规范]"
+"(https://doc.rust-lang.org/cargo/reference/build-scripts.html)。"
 
 #: src/attribute.md:3
 msgid ""
 "An attribute is metadata applied to some module, crate or item. This metadata "
 "can be used to/for:"
 msgstr ""
-"属性是应用于某个模块、crate 或项的元数据。这些元数据可以用于以下目的："
+"属性是应用于模块、crate 或条目的元数据。这些元数据可用于以下目的："
 
 #: src/attribute.md:8
 msgid "[conditional compilation of code](attribute/cfg.md)"
@@ -7341,20 +7347,20 @@ msgstr "[代码的条件编译](attribute/cfg.md)"
 #: src/attribute.md:9
 msgid ""
 "[set crate name, version and type (binary or library)](attribute/crate.md)"
-msgstr "[设置 crate 名称、版本和类型（二进制或库）](attribute/crate.md)"
+msgstr "[设置 crate 的名称、版本和类型（二进制或库）](attribute/crate.md)"
 
 #: src/attribute.md:10
 msgid ""
 "disable [lints](https://en.wikipedia.org/wiki/Lint_%28software%29) (warnings)"
-msgstr "禁用 [lints](https://en.wikipedia.org/wiki/Lint_%28software%29)（警告）"
+msgstr "禁用 [代码检查](https://en.wikipedia.org/wiki/Lint_%28software%29)（警告）"
 
 #: src/attribute.md:11
 msgid "enable compiler features (macros, glob imports, etc.)"
-msgstr "启用编译器特性（宏、全局导入等）"
+msgstr "启用编译器特性（如宏、全局导入等）"
 
 #: src/attribute.md:12
 msgid "link to a foreign library"
-msgstr "链接到外部库"
+msgstr "链接外部库"
 
 #: src/attribute.md:13
 msgid "mark functions as unit tests"
@@ -7362,21 +7368,22 @@ msgstr "将函数标记为单元测试"
 
 #: src/attribute.md:14
 msgid "mark functions that will be part of a benchmark"
-msgstr "将函数标记成为基准测试的一部分"
+msgstr "将函数标记为基准测试的一部分"
 
 #: src/attribute.md:15
 msgid ""
 "[attribute like macros](https://doc.rust-lang.org/book/ch19-06-macros."
 "html#attribute-like-macros)"
 msgstr ""
-"[类似属性的宏](https://doc.rust-lang.org/book/ch19-06-macros.html#attribute-like-macros)"
+"[类属性宏](https://doc.rust-lang.org/book/ch19-06-macros.html#attribute-like-macros)"
 
 #: src/attribute.md:17
 msgid ""
 "Attributes look like `#[outer_attribute]` or `#![inner_attribute]`, with the "
 "difference between them being where they apply."
 msgstr ""
-"属性看起来像 `#[outer_attribute]` 或 `#![inner_attribute]`，它们之间的区别在于应用的位置。"
+"属性的形式为 `#[outer_attribute]`（外部属性）或 `#![inner_attribute]`（内部属性），"
+"它们的区别在于应用的位置。"
 
 #: src/attribute.md:20
 msgid ""
@@ -7385,7 +7392,9 @@ msgid ""
 "function, a module declaration, a constant, a structure, an enum. Here is an "
 "example where attribute `#[derive(Debug)]` applies to the struct `Rectangle`:"
 msgstr ""
-"`#[outer_attribute]` 应用于紧随其后的[项](https://doc.rust-lang.org/stable/reference/items.html)。项的一些例子包括：函数、模块声明、常量、结构体、枚举。这里是一个例子，其中属性 `#[derive(Debug)]` 应用于结构体 `Rectangle`："
+"`#[outer_attribute]` 应用于紧随其后的[条目](https://doc.rust-lang.org/stable/"
+"reference/items.html)。条目的例子包括：函数、模块声明、常量、结构体、枚举等。"
+"以下是一个示例，其中属性 `#[derive(Debug)]` 应用于结构体 `Rectangle`："
 
 #: src/attribute.md:33
 msgid ""
@@ -7395,7 +7404,10 @@ msgid ""
 "it's placed. Here is an example where `#![allow(unused_variables)]` applies "
 "to the whole crate (if placed in `main.rs`):"
 msgstr ""
-"`#![inner_attribute]` 应用于包围它的[项](https://doc.rust-lang.org/stable/reference/items.html)（通常是模块或 crate）。换句话说，这个属性被解释为应用于它所在的整个作用域。这里是一个例子，其中 `#![allow(unused_variables)]` 应用于整个 crate（如果放在 `main.rs` 中）："
+"`#![inner_attribute]` 应用于包含它的[条目](https://doc.rust-lang.org/stable/"
+"reference/items.html)（通常是模块或 crate）。换句话说，这种属性被解释为应用于"
+"它所在的整个作用域。以下是一个示例，其中 `#![allow(unused_variables)]` 应用于"
+"整个 crate（如果放置在 `main.rs` 中）："
 
 #: src/attribute.md:42
 msgid "// This would normally warn about an unused variable.\n"
@@ -7421,7 +7433,7 @@ msgstr "`#[attribute(value)]`"
 msgid ""
 "Attributes can have multiple values and can be separated over multiple lines, "
 "too:"
-msgstr "属性可以有多个值，也可以分成多行："
+msgstr "属性可以有多个值，也可以跨多行分隔："
 
 #: src/attribute/unused.md:3
 msgid ""
@@ -7429,16 +7441,19 @@ msgid ""
 "Lint_%28software%29) that will warn about unused functions. An _attribute_ "
 "can be used to disable the lint."
 msgstr ""
-"编译器提供了一个 `dead_code` [_lint_](https://en.wikipedia.org/wiki/Lint_%28software%29)，它会对未使用的函数发出警告。可以使用**属性**来禁用这个 lint。"
+"编译器提供了一个 `dead_code` [lint](https://en.wikipedia.org/wiki/"
+"Lint_%28software%29)，用于警告未使用的函数。可以使用**属性**来禁用这个 lint。"
 
 #: src/attribute/unused.md:9
 msgid ""
 "// `#[allow(dead_code)]` is an attribute that disables the `dead_code` lint\n"
-msgstr "// `#[allow(dead_code)]` 是一个禁用 `dead_code` lint 的属性\n"
+msgstr ""
+"// `#[allow(dead_code)]` 是一个用于禁用 `dead_code` lint 的属性\n"
 
 #: src/attribute/unused.md:14
 msgid "// FIXME ^ Add an attribute to suppress the warning\n"
-msgstr "// FIXME ^ 添加一个属性来消除警告\n"
+msgstr ""
+"// FIXME ^ 添加一个属性来抑制警告\n"
 
 #: src/attribute/unused.md:22
 msgid ""
@@ -7446,7 +7461,8 @@ msgid ""
 "we'll allow dead code in some places because of the interactive nature of the "
 "examples."
 msgstr ""
-"注意，在实际程序中，你应该消除死代码。在这些例子中，我们会在某些地方允许死代码，这是因为这些例子的交互性质。"
+"注意，在实际程序中，你应该消除无用代码。在这些示例中，我们会在某些地方允许存在"
+"无用代码，这是因为这些示例具有交互性质。"
 
 #: src/attribute/crate.md:3
 msgid ""
@@ -7454,7 +7470,8 @@ msgid ""
 "is a binary or a library (and even which type of library), and the "
 "`crate_name` attribute can be used to set the name of the crate."
 msgstr ""
-"`crate_type` 属性可以用来告诉编译器一个 crate 是二进制文件还是库（甚至是哪种类型的库），而 `crate_name` 属性可以用来设置 crate 的名称。"
+"`crate_type` 属性可用于告诉编译器一个 crate 是二进制文件还是库（甚至是哪种类型"
+"的库），而 `crate_name` 属性可用于设置 crate 的名称。"
 
 #: src/attribute/crate.md:7
 msgid ""
@@ -7463,11 +7480,14 @@ msgid ""
 "manager. Since Cargo is used for the majority of Rust projects, this means "
 "real-world uses of `crate_type` and `crate_name` are relatively limited."
 msgstr ""
-"然而，需要注意的是，当使用 Cargo（Rust 的包管理器）时，`crate_type` 和 `crate_name` 属性**完全没有**效果。由于大多数 Rust 项目都使用 Cargo，这意味着 `crate_type` 和 `crate_name` 在实际使用中相对有限。"
+"然而，需要注意的是，当使用 Rust 的包管理器 Cargo 时，`crate_type` 和 "
+"`crate_name` 属性**完全不起作用**。由于大多数 Rust 项目都使用 Cargo，这意味着 "
+"`crate_type` 和 `crate_name` 在实际使用中的应用相对有限。"
 
 #: src/attribute/crate.md:13
 msgid "// This crate is a library\n"
-msgstr "// 这个 crate 是一个库\n"
+msgstr ""
+"// 这个 crate 是一个库\n"
 
 #: src/attribute/crate.md:14
 msgid "\"lib\""
@@ -7475,7 +7495,8 @@ msgstr "\"lib\""
 
 #: src/attribute/crate.md:14
 msgid "// The library is named \"rary\"\n"
-msgstr "// 这个库的名称是 \"rary\"\n"
+msgstr ""
+"// 这个库的名称是 \"rary\"\n"
 
 #: src/attribute/crate.md:16
 msgid "\"rary\""
@@ -7486,12 +7507,13 @@ msgid ""
 "When the `crate_type` attribute is used, we no longer need to pass the `--"
 "crate-type` flag to `rustc`."
 msgstr ""
-"当使用 `crate_type` 属性时，我们不再需要向 `rustc` 传递 `--crate-type` 标志。"
+"当使用 `crate_type` 属性时，我们就不再需要向 `rustc` 传递 `--crate-type` 标志。"
 
 #: src/attribute/cfg.md:3
 msgid ""
 "Configuration conditional checks are possible through two different operators:"
-msgstr "配置条件检查可以通过两种不同的操作符实现："
+msgstr ""
+"配置条件检查可以通过两种不同的操作符实现："
 
 #: src/attribute/cfg.md:5
 msgid "the `cfg` attribute: `#[cfg(...)]` in attribute position"
@@ -7507,7 +7529,8 @@ msgid ""
 "evaluates to `true` or `false` literals allowing for checks at run-time. Both "
 "utilize identical argument syntax."
 msgstr ""
-"前者启用条件编译，后者在运行时条件性地求值为 `true` 或 `false` 字面量，允许在运行时进行检查。两者使用相同的参数语法。"
+"前者启用条件编译，后者在运行时条件性地求值为 `true` 或 `false` 字面量，允许在"
+"运行时进行检查。两者使用相同的参数语法。"
 
 #: src/attribute/cfg.md:12
 msgid ""
@@ -7516,11 +7539,14 @@ msgid ""
 "when `cfg!` is used for the condition, regardless of what `cfg!` is "
 "evaluating."
 msgstr ""
-"`cfg!` 与 `#[cfg]` 不同，它不会移除任何代码，只会求值为 true 或 false。例如，当 `cfg!` 用于条件时，if/else 表达式中的所有块都需要是有效的，无论 `cfg!` 正在评估什么。"
+"`cfg!` 与 `#[cfg]` 不同，它不会移除任何代码，只会求值为 true 或 false。例如，"
+"当 `cfg!` 用于条件时，if/else 表达式中的所有代码块都需要是有效的，无论 `cfg!` "
+"正在评估什么。"
 
 #: src/attribute/cfg.md:15
 msgid "// This function only gets compiled if the target OS is linux\n"
-msgstr "// 这个函数只有在目标操作系统是 linux 时才会被编译\n"
+msgstr ""
+"// 这个函数只有在目标操作系统是 linux 时才会被编译\n"
 
 #: src/attribute/cfg.md:16 src/attribute/cfg.md:22 src/attribute/cfg.md:31
 msgid "\"linux\""
@@ -7528,16 +7554,16 @@ msgstr "\"linux\""
 
 #: src/attribute/cfg.md:18
 msgid "\"You are running linux!\""
-msgstr "\"你正在运行 linux！\""
+msgstr "\"你正在运行 Linux！\""
 
 #: src/attribute/cfg.md:20
 msgid ""
 "// And this function only gets compiled if the target OS is *not* linux\n"
-msgstr "// 而这个函数只有在目标操作系统*不是* linux 时才会被编译\n"
+msgstr "// 而这个函数只有在目标操作系统**不是** Linux 时才会被编译\n"
 
 #: src/attribute/cfg.md:24
 msgid "\"You are *not* running linux!\""
-msgstr "\"你*不是*在运行 linux！\""
+msgstr "\"你**不是**在运行 Linux！\""
 
 #: src/attribute/cfg.md:30
 msgid "\"Are you sure?\""
@@ -7545,11 +7571,11 @@ msgstr "\"你确定吗？\""
 
 #: src/attribute/cfg.md:32
 msgid "\"Yes. It's definitely linux!\""
-msgstr "\"是的。这绝对是 linux！\""
+msgstr "\"是的，这绝对是 Linux！\""
 
 #: src/attribute/cfg.md:34
 msgid "\"Yes. It's definitely *not* linux!\""
-msgstr "\"是的。这绝对**不是** linux！\""
+msgstr "\"是的，这绝对**不是** Linux！\""
 
 #: src/attribute/cfg.md:41
 msgid ""
@@ -7557,14 +7583,14 @@ msgid ""
 "html#conditional-compilation), [`cfg!`](https://doc.rust-lang.org/std/macro."
 "cfg!.html), and [macros](../macros.md)."
 msgstr ""
-"[参考](https://doc.rust-lang.org/reference/attributes.html#conditional-compilation)、[`cfg!`](https://doc.rust-lang.org/std/macro.cfg!.html) 和 [宏](../macros.md)。"
+"[参考文档](https://doc.rust-lang.org/reference/attributes.html#conditional-compilation)、[`cfg!` 宏](https://doc.rust-lang.org/std/macro.cfg!.html)和[宏](../macros.md)。"
 
 #: src/attribute/cfg/custom.md:3
 msgid ""
 "Some conditionals like `target_os` are implicitly provided by `rustc`, but "
 "custom conditionals must be passed to `rustc` using the `--cfg` flag."
 msgstr ""
-"一些条件如 `target_os` 是由 `rustc` 隐式提供的，但自定义条件必须使用 `--cfg` 标志传递给 `rustc`。"
+"一些条件（如 `target_os`）是由 `rustc` 隐式提供的，但自定义条件必须通过 `--cfg` 标志传递给 `rustc`。"
 
 #: src/attribute/cfg/custom.md:9
 msgid "\"condition met!\""
@@ -7572,7 +7598,7 @@ msgstr "\"条件满足！\""
 
 #: src/attribute/cfg/custom.md:17
 msgid "Try to run this to see what happens without the custom `cfg` flag."
-msgstr "尝试运行这个，看看没有自定义 `cfg` 标志会发生什么。"
+msgstr "尝试运行这段代码，看看没有自定义 `cfg` 标志会发生什么。"
 
 #: src/attribute/cfg/custom.md:19
 msgid "With the custom `cfg` flag:"
@@ -7587,9 +7613,9 @@ msgid ""
 "considered valid. The simplest and most common use of generics is for type "
 "parameters."
 msgstr ""
-"**泛型** 是关于将类型和函数扩展使其更通用的主题。这对于减少代码重复非常有用，"
-"但需要相对复杂的语法。也就是说，使用泛型需要非常小心地指定泛型类型在什么类型上实际有效。"
-"泛型最简单和最常见的用法是类型参数。"
+"**泛型**是一个关于将类型和功能泛化以适用于更广泛情况的主题。这在多方面都非常有用，可以大大减少代码重复，"
+"但可能需要相对复杂的语法。具体来说，使用泛型需要非常谨慎地指定泛型类型在哪些类型上是有效的。"
+"泛型最简单和最常见的用途是类型参数。"
 
 #: src/generics.md:10
 msgid ""
@@ -7600,9 +7626,9 @@ msgid ""
 "parameters `<T>`. Any type specified as a generic type parameter is generic, "
 "and everything else is concrete (non-generic)."
 msgstr ""
-"类型参数通过使用尖括号和大写 [驼峰命名法](https://en.wikipedia.org/wiki/CamelCase) 指定为泛型：`<Aaa, Bbb, ...>`。"
-"“泛型类型参数”通常表示为 `<T>`。在 Rust 中，“泛型”也描述了任何接受一个或多个泛型类型参数 `<T>` 的任何内容。"
-"任何指定为泛型类型参数的类型都是泛型的，其他所有类型都是具体的（非泛型）。"
+"类型参数通过使用尖括号和大写[驼峰命名法](https://en.wikipedia.org/wiki/CamelCase)来指定为泛型：`<Aaa, Bbb, ...>`。"
+""泛型类型参数"通常表示为 `<T>`。在 Rust 中，"泛型"也用来描述任何接受一个或多个泛型类型参数 `<T>` 的东西。"
+"任何被指定为泛型类型参数的类型都是泛型的，而其他所有类型都是具体的（非泛型）。"
 
 #: src/generics.md:16
 msgid ""
@@ -7617,16 +7643,16 @@ msgid ""
 "considered generic when used here as `(arg: T)`. This is the case even if `T` "
 "has previously been defined as a `struct`."
 msgstr ""
-"因为 `T` 已经使用 `<T>` 指定为泛型类型参数，所以在这里用作 `(arg: T)` 时被认为是泛型的。"
-"即使 `T` 之前已被定义为 `struct`，也是如此。"
+"因为 `T` 已经使用 `<T>` 指定为泛型类型参数，所以在这里用作 `(arg: T)` 时被视为泛型。"
+"即使 `T` 之前已被定义为一个 `struct`，这种情况也成立。"
 
 #: src/generics.md:27
 msgid "This example shows some of the syntax in action:"
-msgstr "这个例子展示了泛型语法的使用："
+msgstr "下面的例子展示了一些泛型语法的实际应用："
 
 #: src/generics.md:30
 msgid "// A concrete type `A`.\n"
-msgstr "// 一个具体类型 `A`。\n"
+msgstr "// 具体类型 `A`\n"
 
 #: src/generics.md:32
 msgid ""
@@ -7634,12 +7660,12 @@ msgid ""
 "`<A>`.\n"
 "// Therefore, `Single` is a concrete type, and `A` is defined as above.\n"
 msgstr ""
-"// 在定义类型 `Single` 时，第一次使用 `A` 时没有前置 `<A>`。\n"
-"// 因此，`Single` 是一个具体类型，`A` 如上所述定义。\n"
+"// 定义 `Single` 类型时，首次使用 `A` 前没有 `<A>`\n"
+"// 因此，`Single` 是具体类型，`A` 即上面定义的类型\n"
 
 #: src/generics.md:35
 msgid "//            ^ Here is `Single`s first use of the type `A`.\n"
-msgstr "//            ^ 这里是 `Single` 第一次使用类型 `A`。\n"
+msgstr "//            ^ 这里是 `Single` 首次使用 `A` 类型\n"
 
 #: src/generics.md:37
 msgid ""
@@ -7649,13 +7675,13 @@ msgid ""
 "including\n"
 "// the concrete type `A` defined at the top.\n"
 msgstr ""
-"// 这里，`<T>` 在第一次使用 `T` 之前，因此 `SingleGen` 是一个泛型类型。\n"
-"// 因为类型参数 `T` 是泛型的，它可以是任何东西，包括\n"
-"// 上面定义的具体类型 `A`。\n"
+"// 这里 `<T>` 在首次使用 `T` 之前，所以 `SingleGen` 是泛型\n"
+"// 由于类型参数 `T` 是泛型，它可以是任何类型\n"
+"// 包括上面定义的具体类型 `A`\n"
 
 #: src/generics.md:44
 msgid "// `Single` is concrete and explicitly takes `A`.\n"
-msgstr "// `Single` 是具体的，并且明确地接受 `A`。\n"
+msgstr "// `Single` 是具体类型，明确接受 `A`\n"
 
 #: src/generics.md:47
 msgid ""
@@ -7663,25 +7689,25 @@ msgid ""
 "    // and give it the value `SingleGen('a')`.\n"
 "    // Here, `SingleGen` has a type parameter explicitly specified.\n"
 msgstr ""
-"// 创建一个类型为 `SingleGen<char>` 的变量 `_char`\n"
-"    // 并赋予它值 `SingleGen('a')`。\n"
-"    // 这里，`SingleGen` 有一个明确指定的类型参数。\n"
+"// 创建 `SingleGen<char>` 类型的变量 `_char`\n"
+"    // 并赋值为 `SingleGen('a')`\n"
+"    // 这里 `SingleGen` 明确指定了类型参数\n"
 
 #: src/generics.md:52
 msgid "// `SingleGen` can also have a type parameter implicitly specified:\n"
-msgstr "// `SingleGen` 也可以有一个隐式指定的类型参数：\n"
+msgstr "// `SingleGen` 也可以隐式指定类型参数：\n"
 
 #: src/generics.md:53
 msgid "// Uses `A` defined at the top.\n"
-msgstr "// 使用上面定义的 `A`。\n"
+msgstr "// 使用上面定义的 `A`\n"
 
 #: src/generics.md:54
 msgid "// Uses `i32`.\n"
-msgstr "// 使用 `i32`。\n"
+msgstr "// 使用 `i32`\n"
 
 #: src/generics.md:55
 msgid "// Uses `char`.\n"
-msgstr "// 使用 `char`。\n"
+msgstr "// 使用 `char`\n"
 
 #: src/generics.md:61
 msgid "[`structs`](custom_types/structs.md)"
@@ -7692,7 +7718,7 @@ msgid ""
 "The same set of rules can be applied to functions: a type `T` becomes generic "
 "when preceded by `<T>`."
 msgstr ""
-"同样的规则也适用于函数：当类型 `T` 前置 `<T>` 时，那么它就变成了泛型。"
+"同样的规则也适用于函数：当类型 `T` 前面加上 `<T>` 时，它就变成了泛型。"
 
 #: src/generics/gen_fn.md:6
 msgid ""
@@ -7701,42 +7727,43 @@ msgid ""
 "type is generic, or if the compiler doesn't have enough information to infer "
 "the necessary type parameters."
 msgstr ""
-"使用泛型函数有时需要明确指定类型参数。如果函数调用时返回类型是泛型，"
-"或者编译器没有足够的信息来推断必要的类型参数，可能会出现这种情况。"
+"使用泛型函数有时需要明确指定类型参数。这种情况可能出现在函数返回类型是泛型时，"
+"或者编译器没有足够信息推断必要的类型参数时。"
 
 #: src/generics/gen_fn.md:11
 msgid ""
 "A function call with explicitly specified type parameters looks like: `fun::"
 "<A, B, ...>()`."
 msgstr ""
-"一个明确指定类型参数的函数调用看起来像这样：`fun::<A, B, ...>()`。"
+"明确指定类型参数的函数调用看起来像这样：`fun::<A, B, ...>()`。"
 
 #: src/generics/gen_fn.md:15
 msgid "// Concrete type `A`.\n"
-msgstr "// 具体类型 `A`。\n"
+msgstr "// 具体类型 `A`\n"
 
 #: src/generics/gen_fn.md:16
 msgid "// Concrete type `S`.\n"
-msgstr "// 具体类型 `S`。\n"
+msgstr "// 具体类型 `S`\n"
 
 #: src/generics/gen_fn.md:17
 msgid "// Generic type `SGen`.\n"
-msgstr "// 泛型类型 `SGen`。\n"
+msgstr "// 泛型 `SGen`\n"
 
 #: src/generics/gen_fn.md:18
 msgid ""
 "// The following functions all take ownership of the variable passed into\n"
 "// them and immediately go out of scope, freeing the variable.\n"
 msgstr ""
-"// 以下函数都获取传入的变量的所有权，并立即超出作用域，释放变量。\n"
+"// 以下函数都获取传入变量的所有权\n"
+"// 并立即离开作用域，释放该变量\n"
 
 #: src/generics/gen_fn.md:21
 msgid ""
 "// Define a function `reg_fn` that takes an argument `_s` of type `S`.\n"
 "// This has no `<T>` so this is not a generic function.\n"
 msgstr ""
-"// 定义一个函数 `reg_fn`，它接受一个类型为 `S` 的参数 `_s`。\n"
-"// 这没有 `<T>`，所以这不是一个泛型函数。\n"
+"// 定义函数 `reg_fn`，接受一个 `S` 类型的参数 `_s`\n"
+"// 由于没有 `<T>`，所以这不是泛型函数\n"
 
 #: src/generics/gen_fn.md:25
 msgid ""
@@ -7747,9 +7774,9 @@ msgid ""
 "// been specified as a generic type parameter for `gen_spec_t`, it is not "
 "generic.\n"
 msgstr ""
-"// 定义一个函数 `gen_spec_t`，它接受一个类型为 `SGen<T>` 的参数 `_s`。\n"
-"// 它被明确地赋予了类型参数 `A`，但因为 `A` 没有\n"
-"// 被指定为 `gen_spec_t` 的泛型类型参数，所以它不是泛型的。\n"
+"// 定义函数 `gen_spec_t`，接受一个 `SGen<T>` 类型的参数 `_s`\n"
+"// 虽然明确给定了类型参数 `A`，但因为 `A` 并未被指定为\n"
+"// `gen_spec_t` 的泛型类型参数，所以这个函数不是泛型的\n"
 
 #: src/generics/gen_fn.md:30
 msgid ""
@@ -7759,9 +7786,9 @@ msgid ""
 "type.\n"
 "// Because `i32` is not a generic type, this function is also not generic.\n"
 msgstr ""
-"// 定义一个函数 `gen_spec_i32`，它接受一个类型为 `SGen<i32>` 的参数 `_s`。\n"
-"// 它被明确地赋予了类型参数 `i32`，这是一个具体类型。\n"
-"// 因为 `i32` 不是泛型类型，所以这个函数也不是泛型的。\n"
+"// 定义函数 `gen_spec_i32`，接受一个 `SGen<i32>` 类型的参数 `_s`\n"
+"// 明确指定了类型参数 `i32`，这是一个具体类型\n"
+"// 由于 `i32` 不是泛型类型，所以这个函数也不是泛型的\n"
 
 #: src/generics/gen_fn.md:35
 msgid ""
@@ -7770,8 +7797,8 @@ msgid ""
 "// Because `SGen<T>` is preceded by `<T>`, this function is generic over "
 "`T`.\n"
 msgstr ""
-"// 定义一个函数 `generic`，它接受一个类型为 `SGen<T>` 的参数 `_s`。\n"
-"// 因为 `SGen<T>` 前置 `<T>`，所以这个函数是泛型的。\n"
+"// 定义函数 `generic`，接受一个 `SGen<T>` 类型的参数 `_s`\n"
+"// 由于 `SGen<T>` 前面有 `<T>`，所以这个函数是关于 `T` 的泛型函数\n"
 
 #: src/generics/gen_fn.md:41
 msgid "// Using the non-generic functions\n"
@@ -7779,23 +7806,23 @@ msgstr "// 使用非泛型函数\n"
 
 #: src/generics/gen_fn.md:42
 msgid "// Concrete type.\n"
-msgstr "// 具体类型。\n"
+msgstr "// 具体类型\n"
 
 #: src/generics/gen_fn.md:43
 msgid "// Implicitly specified type parameter `A`.\n"
-msgstr "// 隐式指定的类型参数 `A`。\n"
+msgstr "// 隐式指定类型参数 `A`\n"
 
 #: src/generics/gen_fn.md:44
 msgid "// Implicitly specified type parameter `i32`.\n"
-msgstr "// 隐式指定的类型参数 `i32`。\n"
+msgstr "// 隐式指定类型参数 `i32`\n"
 
 #: src/generics/gen_fn.md:46
 msgid "// Explicitly specified type parameter `char` to `generic()`.\n"
-msgstr "// 明确指定的类型参数 `char` 给 `generic()`。\n"
+msgstr "// 为 `generic()` 显式指定类型参数 `char`\n"
 
 #: src/generics/gen_fn.md:49
 msgid "// Implicitly specified type parameter `char` to `generic()`.\n"
-msgstr "// 隐式指定的类型参数 `char` 给 `generic()`。\n"
+msgstr "// 为 `generic()` 隐式指定类型参数 `char`\n"
 
 #: src/generics/gen_fn.md:50
 msgid "'c'"
@@ -7803,11 +7830,11 @@ msgstr "'c'"
 
 #: src/generics/gen_fn.md:56
 msgid "[functions](../fn.md) and [`struct`s](../custom_types/structs.md)"
-msgstr "[函数](../fn.md) 和 [`结构体`](../custom_types/structs.md)"
+msgstr "[函数](../fn.md)和[`结构体`](../custom_types/structs.md)"
 
 #: src/generics/impl.md:3
 msgid "Similar to functions, implementations require care to remain generic."
-msgstr "与函数类似，`impl` 实现部分使用泛型，也需要很仔细。"
+msgstr "与函数类似，实现（`impl`）在涉及泛型时也需要谨慎处理。"
 
 #: src/generics/impl.md:6
 msgid "// Concrete type `S`\n"
@@ -7819,7 +7846,7 @@ msgstr "// 泛型类型 `GenericVal`\n"
 
 #: src/generics/impl.md:8
 msgid "// impl of GenericVal where we explicitly specify type parameters:\n"
-msgstr "// GenericVal 的实现，我们在这里显式指定类型参数：\n"
+msgstr "// GenericVal 的实现，这里我们显式指定类型参数：\n"
 
 #: src/generics/impl.md:10
 msgid "// Specify `f32`\n"
@@ -7831,7 +7858,7 @@ msgstr "// 指定上面定义的 `S`\n"
 
 #: src/generics/impl.md:12
 msgid "// `<T>` Must precede the type to remain generic\n"
-msgstr "// `<T>` 必须在类型之前以保持泛型\n"
+msgstr "// `<T>` 必须放在类型前面以保持泛型\n"
 
 #: src/generics/impl.md:25
 msgid "// impl of Val\n"
@@ -7846,14 +7873,15 @@ msgid ""
 "[functions returning references](../scope/lifetime/fn.md), [`impl`](../fn/"
 "methods.md), and [`struct`](../custom_types/structs.md)"
 msgstr ""
-"[返回引用的函数](../scope/lifetime/fn.md)、[`impl`](../fn/methods.md) 和 [`结构体`](../custom_types/structs.md)"
+"[返回引用的函数](../scope/lifetime/fn.md)、[`impl`](../fn/methods.md) 和[结构体](../custom_types/structs.md)"
 
 #: src/generics/gen_trait.md:3
 msgid ""
 "Of course `trait`s can also be generic. Here we define one which reimplements "
 "the `Drop` `trait` as a generic method to `drop` itself and an input."
 msgstr ""
-"当然 `trait` 也可以是泛型的。这里我们定义了一个重新实现 `Drop` `trait` 的泛型方法，用于 `drop` 自身和一个输入。"
+"当然，`trait` 也可以是泛型的。这里我们定义了一个泛型 trait，它重新实现了 `Drop` trait，"
+"用于释放自身和一个输入参数。"
 
 #: src/generics/gen_trait.md:7
 msgid "// Non-copyable types.\n"
@@ -7861,7 +7889,7 @@ msgstr "// 不可复制的类型。\n"
 
 #: src/generics/gen_trait.md:10
 msgid "// A trait generic over `T`.\n"
-msgstr "// 一个泛型 `T` 的 trait。\n"
+msgstr "// 一个泛型 trait，使用类型参数 `T`。\n"
 
 #: src/generics/gen_trait.md:13
 msgid ""
@@ -7869,14 +7897,14 @@ msgid ""
 "    // additional single parameter `T` and does nothing with it.\n"
 msgstr ""
 "// 在调用者类型上定义一个方法，该方法接受一个\n"
-"    // 额外的单一参数 `T`，并且不对其做任何操作。\n"
+"    // 额外的类型为 `T` 的参数，但不对其进行任何操作。\n"
 
 #: src/generics/gen_trait.md:17
 msgid ""
 "// Implement `DoubleDrop<T>` for any generic parameter `T` and\n"
 "// caller `U`.\n"
 msgstr ""
-"// 为任何泛型参数 `T` 和调用者 `U` 实现 `DoubleDrop<T>`。\n"
+"// 为任意泛型参数 `T` 和调用者 `U` 实现 `DoubleDrop<T>`。\n"
 
 #: src/generics/gen_trait.md:21
 msgid ""
@@ -7884,11 +7912,11 @@ msgid ""
 "    // deallocating both.\n"
 msgstr ""
 "// 此方法获取两个传入参数的所有权，\n"
-"    // 释放两者的内存。\n"
+"    // 并释放它们的内存。\n"
 
 #: src/generics/gen_trait.md:30
 msgid "// Deallocate `empty` and `null`.\n"
-msgstr "// 释放 `empty` 和 `null`。\n"
+msgstr "// 释放 `empty` 和 `null` 的内存。\n"
 
 #: src/generics/gen_trait.md:33
 msgid ""
@@ -7905,7 +7933,7 @@ msgid ""
 "[`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html), [`struct`](../"
 "custom_types/structs.md), and [`trait`](../trait.md)"
 msgstr ""
-"[`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html)、[`结构体`](../custom_types/structs.md) 和 [`trait`](../trait.md)"
+"[`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html)、[`struct`](../custom_types/structs.md) 和 [`trait`](../trait.md)"
 
 #: src/generics/bounds.md:3
 msgid ""
@@ -7914,7 +7942,9 @@ msgid ""
 "following example uses the trait `Display` to print and so it requires `T` to "
 "be bound by `Display`; that is, `T` _must_ implement `Display`."
 msgstr ""
-"在使用泛型时，类型参数常常必须使用 trait 作为**约束**来规定类型实现了什么功能。例如，下面的例子使用 trait `Display` 来打印，因此它要求 `T` 被 `Display` 约束；也就是说，`T` **必须**实现 `Display`。"
+"在使用泛型时，类型参数通常需要使用 trait 作为**约束**，以规定类型应实现哪些功能。"
+"例如，下面的示例使用 `Display` trait 来打印，因此它要求 `T` 必须受 `Display` 约束；"
+"换句话说，`T` **必须**实现 `Display`。"
 
 #: src/generics/bounds.md:9
 msgid ""
@@ -7927,14 +7957,15 @@ msgstr ""
 #: src/generics/bounds.md:16
 msgid ""
 "Bounding restricts the generic to types that conform to the bounds. That is:"
-msgstr "约束将泛型限制为符合约束的类型。也就是说："
+msgstr "约束将泛型限制为符合约束条件的类型。也就是说："
 
 #: src/generics/bounds.md:20
 msgid ""
 "// Error! `Vec<T>` does not implement `Display`. This\n"
 "// specialization will fail.\n"
 msgstr ""
-"// 错误！`Vec<T>` 没有实现 `Display`。泛型特化失败。\n"
+"// 错误！`Vec<T>` 没有实现 `Display`。\n"
+"// 这个特化将会失败。\n"
 
 #: src/generics/bounds.md:26
 msgid ""
@@ -7942,27 +7973,27 @@ msgid ""
 "the [methods](../fn/methods.md) of traits specified in the bounds. For "
 "example:"
 msgstr ""
-"约束的另一个作用是允许泛型实例访问在约束中指定的 trait 的[方法](../fn/methods.md)。例如："
+"约束的另一个作用是允许泛型实例访问约束中指定的 trait 的[方法](../fn/methods.md)。例如："
 
 #: src/generics/bounds.md:30
 msgid "// A trait which implements the print marker: `{:?}`.\n"
-msgstr "// 这个 trait 用来实现打印标记：`{:?}`。\n"
+msgstr "// 实现打印标记 `{:?}` 的 trait。\n"
 
 #: src/generics/bounds.md:45
 msgid ""
 "// The generic `T` must implement `Debug`. Regardless\n"
 "// of the type, this will work properly.\n"
 msgstr ""
-"// 泛型 `T` 必须实现 `Debug`。这样，无论是什么类型，\n"
-"// 都可以让下面函数正常工作。\n"
+"// 泛型 `T` 必须实现 `Debug`。无论 `T` 是什么类型，\n"
+"// 这个函数都能正常工作。\n"
 
 #: src/generics/bounds.md:51
 msgid ""
 "// `T` must implement `HasArea`. Any type which meets\n"
 "// the bound can access `HasArea`'s function `area`.\n"
 msgstr ""
-"// `T` 必须实现 `HasArea`。任何符合这个约束的类型\n"
-"// 都可以访问 `HasArea` 的函数 `area`。\n"
+"// `T` 必须实现 `HasArea`。任何满足这个约束的类型\n"
+"// 都可以访问 `HasArea` 的 `area` 方法。\n"
 
 #: src/generics/bounds.md:61
 msgid "\"Area: {}\""
@@ -7985,14 +8016,14 @@ msgid ""
 "As an additional note, [`where`](../generics/where.md) clauses can also be "
 "used to apply bounds in some cases to be more expressive."
 msgstr ""
-"另外需要注意的是，在某些情况下可以使用 [`where`](../generics/where.md) 子句来应用约束，以使表达更加清晰。"
+"另外值得注意的是，在某些情况下可以使用 [`where`](../generics/where.md) 子句来应用约束，以使表达更加清晰。"
 
 #: src/generics/bounds.md:75
 msgid ""
 "[`std::fmt`](../hello/print.md), [`struct`s](../custom_types/structs.md), and "
 "[`trait`s](../trait.md)"
 msgstr ""
-"[`std::fmt`](../hello/print.md)、[`结构体`](../custom_types/structs.md) 和 [`trait`](../trait.md)"
+"[`std::fmt`](../hello/print.md)、[`struct`](../custom_types/structs.md)和 [`trait`](../trait.md)"
 
 #: src/generics/bounds/testcase_empty.md:3
 msgid ""
@@ -8000,7 +8031,7 @@ msgid ""
 "any functionality, you can still use it as a bound. `Eq` and `Copy` are "
 "examples of such `trait`s from the `std` library."
 msgstr ""
-"约束的工作机制会产生这样的效果，即使一个 `trait` 不包含任何功能，你仍然可以将其用作约束。`Eq` 和 `Copy` 是 `std` 库中这类 `trait` 的例子。"
+"约束的工作机制导致即使一个 `trait` 不包含任何功能，你仍然可以将其用作约束。`std` 库中的 `Eq` 和 `Copy` 就是这种 `trait` 的例子。"
 
 #: src/generics/bounds/testcase_empty.md:17
 msgid ""
@@ -8008,7 +8039,7 @@ msgid ""
 "// traits. The fact that the traits are empty is irrelevant.\n"
 msgstr ""
 "// 这些函数只对实现了这些 trait 的类型有效。\n"
-"// 事实上这些 trait 内部是空的，但这没有关系。\n"
+"// 这些 trait 是否为空并不重要。\n"
 
 #: src/generics/bounds/testcase_empty.md:20
 msgid "\"red\""
@@ -8027,18 +8058,18 @@ msgstr ""
 
 #: src/generics/bounds/testcase_empty.md:30
 msgid "\"A cardinal is {}\""
-msgstr "\"红雀是 {}\""
+msgstr "\"红雀是{}\""
 
 #: src/generics/bounds/testcase_empty.md:31
 msgid "\"A blue jay is {}\""
-msgstr "\"蓝松鸟是 {}\""
+msgstr "\"蓝松鸟是{}\""
 
 #: src/generics/bounds/testcase_empty.md:32
 msgid ""
 "//println!(\"A turkey is {}\", red(&_turkey));\n"
 "    // ^ TODO: Try uncommenting this line.\n"
 msgstr ""
-"//println!(\"火鸡是 {}\", red(&_turkey));\n"
+"//println!(\"火鸡是{}\", red(&_turkey));\n"
 "    // ^ TODO：尝试取消这行的注释。\n"
 
 #: src/generics/bounds/testcase_empty.md:39
@@ -8054,23 +8085,23 @@ msgid ""
 "Multiple bounds for a single type can be applied with a `+`. Like normal, "
 "different types are separated with `,`."
 msgstr ""
-"可以使用 `+` 来为单个类型指定多个约束。依照惯例，不同的类型用 `,` 分隔。"
+"可以使用 `+` 为单个类型指定多个约束。按照惯例，不同的类型用 `,` 分隔。"
 
 #: src/generics/multi_bounds.md:10
 msgid "\"Debug: `{:?}`\""
-msgstr "\"Debug: `{:?}`\""
+msgstr "\"Debug：`{:?}`\""
 
 #: src/generics/multi_bounds.md:11
 msgid "\"Display: `{}`\""
-msgstr "\"Display: `{}`\""
+msgstr "\"Display：`{}`\""
 
 #: src/generics/multi_bounds.md:15
 msgid "\"t: `{:?}`\""
-msgstr "\"t: `{:?}`\""
+msgstr "\"t：`{:?}`\""
 
 #: src/generics/multi_bounds.md:16
 msgid "\"u: `{:?}`\""
-msgstr "\"u: `{:?}`\""
+msgstr "\"u：`{:?}`\""
 
 #: src/generics/multi_bounds.md:20
 msgid "\"words\""
@@ -8082,7 +8113,7 @@ msgid ""
 "    // TODO ^ Try uncommenting this.\n"
 msgstr ""
 "//compare_prints(&array);\n"
-"    // TODO ^ 尝试取消这行的注释。\n"
+"    // TODO：尝试取消此行注释。\n"
 
 #: src/generics/multi_bounds.md:34
 msgid "[`std::fmt`](../hello/print.md) and [`trait`s](../trait.md)"
@@ -8095,11 +8126,11 @@ msgid ""
 "clauses can apply bounds to arbitrary types, rather than just to type "
 "parameters."
 msgstr ""
-"约束也可以使用 `where` 分句来表达，它紧接在开括号 `{` 之前，而不是在类型首次提及时。此外，`where` 分句可以将约束应用于任意类型，而不仅限于类型参数。"
+"约束也可以使用 `where` 子句来表达，它位于开括号 `{` 之前，而不是在类型首次提及时。此外，`where` 子句可以将约束应用于任意类型，而不仅限于类型参数。"
 
 #: src/generics/where.md:8
 msgid "Some cases that a `where` clause is useful:"
-msgstr "`where` 分句在以下情况下很有用："
+msgstr "`where` 子句在以下情况下特别有用："
 
 #: src/generics/where.md:10
 msgid "When specifying generic types and bounds separately is clearer:"
@@ -8107,21 +8138,21 @@ msgstr "当单独指定泛型类型和约束更清晰时："
 
 #: src/generics/where.md:14
 msgid "// Expressing bounds with a `where` clause\n"
-msgstr "// 使用 `where` 分句表达约束\n"
+msgstr "// 使用 `where` 子句表达约束\n"
 
 #: src/generics/where.md:21
 msgid ""
 "When using a `where` clause is more expressive than using normal syntax. The "
 "`impl` in this example cannot be directly expressed without a `where` clause:"
 msgstr ""
-"当使用 `where` 分句比使用普通语法更具表现力时。这个例子中的 `impl` 如果不使用 `where` 分句就无法直接表达："
+"当使用 `where` 子句比使用普通语法更具表现力时。这个例子中的 `impl` 如果不使用 `where` 子句就无法直接表达："
 
 #: src/generics/where.md:30
 msgid ""
 "// Because we would otherwise have to express this as `T: Debug` or \n"
 "// use another method of indirect approach, this requires a `where` clause:\n"
 msgstr ""
-"// 这里需要一个 `where` 分句：否则就必须将其表达为 `T: Debug` 或\n"
+"// 这里需要一个 `where` 子句：否则就必须将其表达为 `T: Debug` 或\n"
 "// 使用另一种间接方法，\n"
 
 #: src/generics/where.md:35
@@ -8129,7 +8160,7 @@ msgid ""
 "// We want `Option<T>: Debug` as our bound because that is what's\n"
 "    // being printed. Doing otherwise would be using the wrong bound.\n"
 msgstr ""
-"// 我们想要 `Option<T>: Debug` 作为我们的约束，因为这是\n"
+"// 我们需要 `Option<T>: Debug` 作为我们的约束，因为这是\n"
 "    // 正在被打印的内容。否则就会使用错误的约束。\n"
 
 #: src/generics/where.md:51
@@ -8144,14 +8175,14 @@ msgid ""
 "The `newtype` idiom gives compile time guarantees that the right type of "
 "value is supplied to a program."
 msgstr ""
-"`newtype` 惯用法在编译时保证了向程序提供了正确类型的值。"
+"`newtype` 模式在编译时保证了程序接收到正确类型的值。"
 
 #: src/generics/new_types.md:6
 msgid ""
 "For example, an age verification function that checks age in years, _must_ be "
 "given a value of type `Years`."
 msgstr ""
-"例如，一个检查年龄（以年为单位）的年龄验证函数，**必须**给定 `Years` 类型的值。"
+"例如，一个检查年龄（以年为单位）的年龄验证函数，**必须**接收 `Years` 类型的值。"
 
 #: src/generics/new_types.md:22
 msgid "/// truncates partial years\n"
@@ -8159,33 +8190,33 @@ msgstr "/// 截断不足一年的部分\n"
 
 #: src/generics/new_types.md:35 src/generics/new_types.md:36
 msgid "\"Is an adult? {}\""
-msgstr "\"是成年人吗？{}\""
+msgstr "\"是否成年？{}\""
 
 #: src/generics/new_types.md:37
 msgid "// println!(\"Is an adult? {}\", is_adult(&age_days));\n"
-msgstr "// println!(\"是成年人吗？{}\", is_adult(&age_days));\n"
+msgstr "// println!(\"是否成年？{}\", is_adult(&age_days));\n"
 
 #: src/generics/new_types.md:41
 msgid ""
 "Uncomment the last print statement to observe that the type supplied must be "
 "`Years`."
 msgstr ""
-"取消最后一个 print 语句的注释，观察所提供的类型必须是 `Years`。"
+"取消最后一个 print 语句的注释，你会发现所提供的类型必须是 `Years`。"
 
 #: src/generics/new_types.md:43
 msgid ""
 "To obtain the `newtype`'s value as the base type, you may use the tuple or "
 "destructuring syntax like so:"
 msgstr ""
-"要获取 `newtype` 的值作为基本类型，你可以使用元组或解构语法，如下所示："
+"要获取 `newtype` 的基本类型值，你可以使用元组语法或解构语法，如下所示："
 
 #: src/generics/new_types.md:49
 msgid "// Tuple\n"
-msgstr "// 元组\n"
+msgstr "// 元组语法\n"
 
 #: src/generics/new_types.md:50
 msgid "// Destructuring\n"
-msgstr "// 解构\n"
+msgstr "// 解构语法\n"
 
 #: src/generics/new_types.md:56
 msgid "[`structs`](../custom_types/structs.md)"
@@ -8197,14 +8228,14 @@ msgid ""
 "doc.rust-lang.org/reference/items.html)s of various types. It is an extension "
 "to `trait` generics, and allows `trait`s to internally define new items."
 msgstr ""
-"\"关联项\"指的是与各种类型的 [`item`](https://doc.rust-lang.org/reference/items.html) 相关的一组规则。它是 `trait` 泛型的扩展，允许 `trait` 在内部定义新的项。"
+""关联项"是指与各种类型的[`项`](https://doc.rust-lang.org/reference/items.html)相关的一组规则。它是 `trait` 泛型的扩展，允许 `trait` 在内部定义新的项。"
 
 #: src/generics/assoc_items.md:7
 msgid ""
 "One such item is called an _associated type_, providing simpler usage "
 "patterns when the `trait` is generic over its container type."
 msgstr ""
-"其中一种项被称为**关联类型**，当 `trait` 对其容器类型是泛型时，它提供了更简单的使用模式。"
+"其中一种项被称为**关联类型**，当 `trait` 对其容器类型是泛型时，它提供了更简洁的使用模式。"
 
 #: src/generics/assoc_items.md:12
 msgid ""
@@ -8218,7 +8249,7 @@ msgid ""
 "A `trait` that is generic over its container type has type specification "
 "requirements - users of the `trait` _must_ specify all of its generic types."
 msgstr ""
-"对于容器类型是泛型的 `trait`，须遵守类型规范要求 - `trait` 的使用者**必须**指定所有泛型类型。"
+"对于容器类型是泛型的 `trait`，有类型规范要求 —— `trait` 的使用者**必须**指定所有的泛型类型。"
 
 #: src/generics/assoc_items/the_problem.md:6
 msgid ""
@@ -8227,7 +8258,7 @@ msgid ""
 "specifying `i32` for `A` and `B` so that it can be used with `fn "
 "difference()`."
 msgstr ""
-"在下面的例子中，`Contains` `trait` 允许使用泛型类型 `A` 和 `B`。然后为 `Container` 类型实现该 trait，为 `A` 和 `B` 指定 `i32`，以便可以与 `fn difference()` 一起使用。"
+"在下面的例子中，`Contains` trait 允许使用泛型类型 `A` 和 `B`。然后为 `Container` 类型实现该 trait，将 `A` 和 `B` 指定为 `i32`，以便与 `fn difference()` 一起使用。"
 
 #: src/generics/assoc_items/the_problem.md:10
 msgid ""
@@ -8236,7 +8267,7 @@ msgid ""
 "that `A` and `B` are determined by the _input_ `C`. As you will see in the "
 "next section, associated types provide exactly that capability."
 msgstr ""
-"因为 `Contains` 是泛型的，我们必须为 `fn difference()` 显式声明**所有**泛型类型。在实践中，我们希望有一种方法来表达 `A` 和 `B` 是由**输入** `C` 决定的。你将在下一节中看到，关联类型恰好提供了这种能力。"
+"由于 `Contains` 是泛型的，我们不得不为 `fn difference()` 显式声明**所有**泛型类型。实际上，我们希望有一种方法来表达 `A` 和 `B` 是由**输入** `C` 决定的。正如你将在下一节中看到的，关联类型恰好提供了这种能力。"
 
 #: src/generics/assoc_items/the_problem.md:17
 #: src/generics/assoc_items/types.md:36
@@ -8244,38 +8275,39 @@ msgid ""
 "// A trait which checks if 2 items are stored inside of container.\n"
 "// Also retrieves first or last value.\n"
 msgstr ""
-"// 一个检查容器内是否存储了 2 个项的 trait。\n"
-"// 还可以检索第一个或最后一个值。\n"
+"// 一个检查容器内是否存储了两个项的 trait。\n"
+"// 同时可以检索第一个或最后一个值。\n"
 
 #: src/generics/assoc_items/the_problem.md:21
 msgid "// Explicitly requires `A` and `B`.\n"
-msgstr "// 显式要求 `A` 和 `B`。\n"
+msgstr "// 显式要求 `A` 和 `B`\n"
 
 #: src/generics/assoc_items/the_problem.md:22
 #: src/generics/assoc_items/the_problem.md:23
 msgid "// Doesn't explicitly require `A` or `B`.\n"
-msgstr "// 不显式要求 `A` 或 `B`。\n"
+msgstr "// 不需要显式指定 `A` 或 `B`\n"
 
 #: src/generics/assoc_items/the_problem.md:27
 msgid "// True if the numbers stored are equal.\n"
-msgstr "// 如果存储的数字相等则为 true。\n"
+msgstr "// 如果存储的数字相等则返回 true\n"
 
 #: src/generics/assoc_items/the_problem.md:32
 #: src/generics/assoc_items/types.md:60
 msgid "// Grab the first number.\n"
-msgstr "// 获取第一个数字。\n"
+msgstr "// 获取第一个数字\n"
 
 #: src/generics/assoc_items/the_problem.md:35
 #: src/generics/assoc_items/types.md:63
 msgid "// Grab the last number.\n"
-msgstr "// 获取最后一个数字。\n"
+msgstr "// 获取最后一个数字\n"
 
 #: src/generics/assoc_items/the_problem.md:38
 msgid ""
 "// `C` contains `A` and `B`. In light of that, having to express `A` and\n"
 "// `B` again is a nuisance.\n"
 msgstr ""
-"// `C` 包含了 `A` 和 `B`。鉴于此，还要指定 `A` 和 `B` 就显得很麻烦。\n"
+"// `C` 已经包含了 `A` 和 `B`。考虑到这一点，\n"
+"// 再次指定 `A` 和 `B` 就显得多余且麻烦。\n"
 
 #: src/generics/assoc_items/the_problem.md:52
 #: src/generics/assoc_items/types.md:77
@@ -8295,7 +8327,7 @@ msgstr "\"最后一个数字：{}\""
 #: src/generics/assoc_items/the_problem.md:58
 #: src/generics/assoc_items/types.md:83
 msgid "\"The difference is: {}\""
-msgstr "\"差值是：{}\""
+msgstr "\"差值为：{}\""
 
 #: src/generics/assoc_items/the_problem.md:64
 msgid ""
@@ -8309,7 +8341,8 @@ msgid ""
 "moving inner types locally into a trait as _output_ types. Syntax for the "
 "`trait` definition is as follows:"
 msgstr ""
-"通过将内部类型移动到 trait 中作为**输出**类型，使用\"关联类型\"提高了代码的整体可读性。这种 `trait` 定义的语法如下："
+"使用"关联类型"通过将内部类型局部移动到 trait 中作为**输出**类型，提高了代码的整体可读性。"
+"trait 定义的语法如下："
 
 #: src/generics/assoc_items/types.md:8
 msgid ""
@@ -8318,17 +8351,18 @@ msgid ""
 "// aliases).\n"
 msgstr ""
 "// `A` 和 `B` 在 trait 中通过 `type` 关键字定义。\n"
-"// （注意：这里的 `type` 与用于别名的 `type` 不同）。\n"
+"// （注意：这里的 `type` 与用于类型别名的 `type` 不同）\n"
 
 #: src/generics/assoc_items/types.md:15
 msgid "// Updated syntax to refer to these new types generically.\n"
-msgstr "// 这种新语法，能够泛型地表示这些新类型。\n"
+msgstr "// 更新后的语法，用于泛型地引用这些新类型\n"
 
 #: src/generics/assoc_items/types.md:20
 msgid ""
 "Note that functions that use the `trait` `Contains` are no longer required to "
 "express `A` or `B` at all:"
-msgstr "注意，使用 `Contains` 这个 `trait` 的函数不再需要明确表示 `A` 或 `B`："
+msgstr ""
+"注意，使用 `Contains` trait 的函数不再需要显式指定 `A` 或 `B`："
 
 #: src/generics/assoc_items/types.md:24
 msgid "// Without using associated types\n"
@@ -8341,11 +8375,11 @@ msgstr "// 使用关联类型\n"
 #: src/generics/assoc_items/types.md:32
 msgid ""
 "Let's rewrite the example from the previous section using associated types:"
-msgstr "让我们使用关联类型重写上一节的例子："
+msgstr "让我们使用关联类型重写上一节的示例："
 
 #: src/generics/assoc_items/types.md:40
 msgid "// Define generic types here which methods will be able to utilize.\n"
-msgstr "// 在这里定义泛型类型，方法将能够使用这些类型。\n"
+msgstr "// 在此定义泛型类型，方法将能够使用这些类型\n"
 
 #: src/generics/assoc_items/types.md:50
 msgid ""
@@ -8353,49 +8387,54 @@ msgid ""
 "    // is `Container(i32, i32)`, the `output` types are determined\n"
 "    // as `i32` and `i32`.\n"
 msgstr ""
-"// 指定 `A` 和 `B` 的类型。如果 `input` 类型\n"
-"    // 是 `Container(i32, i32)`，那么 `output` 类型就被确定\n"
-"    // 为 `i32` 和 `i32`。\n"
+"// 指定 `A` 和 `B` 的具体类型。如果 `input` 类型\n"
+"    // 是 `Container(i32, i32)`，那么 `output` 类型\n"
+"    // 就被确定为 `i32` 和 `i32`\n"
 
 #: src/generics/assoc_items/types.md:56
 msgid "// `&Self::A` and `&Self::B` are also valid here.\n"
-msgstr "// 这里 `&Self::A` 和 `&Self::B` 也是有效的。\n"
+msgstr "// 在这里使用 `&Self::A` 和 `&Self::B` 也是有效的。\n"
 
 #: src/generics/phantom.md:3
 msgid ""
 "A phantom type parameter is one that doesn't show up at runtime, but is "
 "checked statically (and only) at compile time."
-msgstr "虚类型参数是一种在运行时不会出现，但在（且仅在）编译时会被静态检查编译时检查的类型参数。"
+msgstr ""
+"虚类型参数是一种在运行时不会出现，但在编译时会进行静态检查的类型参数。"
 
 #: src/generics/phantom.md:6
 msgid ""
 "Data types can use extra generic type parameters to act as markers or to "
 "perform type checking at compile time. These extra parameters hold no storage "
 "values, and have no runtime behavior."
-msgstr "数据类型可以使用额外的泛型类型参数作为标记，或在编译时执行类型检查。这些额外的参数不占用存储空间，也没有运行时行为。"
+msgstr ""
+"数据类型可以使用额外的泛型类型参数作为标记，或在编译时进行类型检查。这些额外的参数不占用存储空间，也没有运行时行为。"
 
 #: src/generics/phantom.md:10
 msgid ""
 "In the following example, we combine [std::marker::PhantomData](https://doc."
 "rust-lang.org/std/marker/struct.PhantomData.html) with the phantom type "
 "parameter concept to create tuples containing different data types."
-msgstr "在下面的例子中，我们将 [std::marker::PhantomData](https://doc.rust-lang.org/std/marker/struct.PhantomData.html) 与虚类型参数的概念结合起来，创建包含不同数据类型的元组。"
+msgstr ""
+"在下面的示例中，我们将 [`std::marker::PhantomData`](https://doc.rust-lang.org/std/marker/struct.PhantomData.html) 与虚类型参数的概念结合，创建包含不同数据类型的元组。"
 
 #: src/generics/phantom.md:16
 msgid ""
 "// A phantom tuple struct which is generic over `A` with hidden parameter "
 "`B`.\n"
-msgstr "// 一个虚元组结构体，它在 `A` 上是泛型的，带有隐藏参数 `B`。\n"
+msgstr ""
+"// 一个虚元组结构体，它在 `A` 上是泛型的，带有隐藏参数 `B`。\n"
 
 #: src/generics/phantom.md:18 src/generics/phantom.md:22
 msgid "// Allow equality test for this type.\n"
-msgstr "// 允许对这个类型进行相等性测试。\n"
+msgstr "// 允许对此类型进行相等性测试。\n"
 
 #: src/generics/phantom.md:20
 msgid ""
 "// A phantom type struct which is generic over `A` with hidden parameter "
 "`B`.\n"
-msgstr "// 一个虚类型结构体，它在 `A` 上是泛型的，带有隐藏参数 `B`。\n"
+msgstr ""
+"// 一个虚类型结构体，它在 `A` 上是泛型的，带有隐藏参数 `B`。\n"
 
 #: src/generics/phantom.md:24
 msgid ""
@@ -8403,7 +8442,7 @@ msgid ""
 "//       Therefore, `B` cannot be used in computations.\n"
 msgstr ""
 "// 注意：为泛型类型 `A` 分配了存储空间，但没有为 `B` 分配。\n"
-"//       因此，`B` 不能参与运算。\n"
+"//       因此，`B` 不能用于计算。\n"
 
 #: src/generics/phantom.md:29
 msgid ""
@@ -8437,8 +8476,8 @@ msgid ""
 "    // println!(\"_tuple1 == _tuple2 yields: {}\",\n"
 "    //           _tuple1 == _tuple2);\n"
 msgstr ""
-"// 编译时错误！类型不匹配，所以这些不能比较：\n"
-"    // println!(\"_tuple1 == _tuple2 yields: {}\",\n"
+"// 编译时错误！类型不匹配，无法比较：\n"
+"    // println!(\"_tuple1 == _tuple2 的结果是：{}\",\n"
 "    //           _tuple1 == _tuple2);\n"
 
 #: src/generics/phantom.md:50
@@ -8447,21 +8486,23 @@ msgid ""
 "    // println!(\"_struct1 == _struct2 yields: {}\",\n"
 "    //           _struct1 == _struct2);\n"
 msgstr ""
-"// 编译时错误！类型不匹配，所以这些不能比较：\n"
-"    // println!(\"_struct1 == _struct2 yields: {}\",\n"
+"// 编译时错误！类型不匹配，无法比较：\n"
+"    // println!(\"_struct1 == _struct2 的结果是：{}\",\n"
 "    //           _struct1 == _struct2);\n"
 
 #: src/generics/phantom.md:58
 msgid ""
 "[Derive](../trait/derive.md), [struct](../custom_types/structs.md), and "
 "[TupleStructs](../custom_types/structs.md)"
-msgstr "[Derive](../trait/derive.md)、[struct](../custom_types/structs.md) 和 [TupleStructs](../custom_types/structs.md)"
+msgstr ""
+"[派生（Derive）](../trait/derive.md)、[结构体（struct）](../custom_types/structs.md)和[元组结构体（TupleStructs）](../custom_types/structs.md)"
 
 #: src/generics/phantom/testcase_units.md:3
 msgid ""
 "A useful method of unit conversions can be examined by implementing `Add` "
 "with a phantom type parameter. The `Add` `trait` is examined below:"
-msgstr "通过使用虚类型参数实现 `Add` 可以研究一种有用的单位转换方法。下面我们来看看 `Add` 这个 `trait`："
+msgstr ""
+"通过使用虚类型参数实现 `Add` trait，我们可以探索一种有用的单位转换方法。下面我们来看看 `Add` trait："
 
 #: src/generics/phantom/testcase_units.md:7
 msgid ""
@@ -8469,19 +8510,19 @@ msgid ""
 "// where RHS defaults to Self if not specified in the implementation.\n"
 msgstr ""
 "// 这个结构会强制要求：`Self + RHS = Output`\n"
-"// 其中如果在实现中没有指定 RHS，它会默认为 Self。\n"
+"// 其中，如果在实现中未指定 RHS，它将默认为 Self。\n"
 
 #: src/generics/phantom/testcase_units.md:14
 msgid "// `Output` must be `T<U>` so that `T<U> + T<U> = T<U>`.\n"
-msgstr "// `Output` 必须是 `T<U>`，这样 `T<U> + T<U> = T<U>`。\n"
+msgstr "// `Output` 必须是 `T<U>`，以确保 `T<U> + T<U> = T<U>`。\n"
 
 #: src/generics/phantom/testcase_units.md:22
 msgid "The whole implementation:"
-msgstr "完整的实现："
+msgstr "完整实现如下："
 
 #: src/generics/phantom/testcase_units.md:27
 msgid "/// Create void enumerations to define unit types.\n"
-msgstr "/// 创建空枚举来定义单位类型。\n"
+msgstr "/// 创建空枚举以定义单位类型。\n"
 
 #: src/generics/phantom/testcase_units.md:33
 msgid ""
@@ -8491,7 +8532,7 @@ msgid ""
 "/// `f64` already implements the `Clone` and `Copy` traits.\n"
 msgstr ""
 "/// `Length` 是一个带有虚类型参数 `Unit` 的类型，\n"
-"/// 它对长度类型（即 `f64`）并不是泛型的。\n"
+"/// 它不是长度类型（即 `f64`）的泛型。\n"
 "///\n"
 "/// `f64` 已经实现了 `Clone` 和 `Copy` trait。\n"
 
@@ -8529,7 +8570,7 @@ msgstr ""
 
 #: src/generics/phantom/testcase_units.md:65
 msgid "// Addition works.\n"
-msgstr "// 加法可以正常工作。\n"
+msgstr "// 加法运算正常工作。\n"
 
 #: src/generics/phantom/testcase_units.md:66
 msgid "\"one foot + one_foot = {:?} in\""
@@ -8545,7 +8586,7 @@ msgid ""
 "    // Compile-time Error: type mismatch.\n"
 "    //let one_feter = one_foot + one_meter;\n"
 msgstr ""
-"// 无意义的操作会如预期那样失败：\n"
+"// 无意义的操作会按预期失败：\n"
 "    // 编译时错误：类型不匹配。\n"
 "    //let one_feter = one_foot + one_meter;\n"
 
@@ -8556,7 +8597,8 @@ msgid ""
 "methods.md), [Overloading](../../trait/ops.md), [ref](../../scope/borrow/ref."
 "md), [Traits (`X for Y`)](../../trait.md), and [TupleStructs](../../"
 "custom_types/structs.md)."
-msgstr "[借用 (`&`)](../../scope/borrow.md)、[约束 (`X: Y`)](../../generics/bounds.md)、[enum](../../custom_types/enum.md)、[impl 和 self](../../fn/methods.md)、[重载](../../trait/ops.md)、[ref](../../scope/borrow/ref.md)、[Traits (`X for Y`)](../../trait.md) 和 [元组结构体](../../custom_types/structs.md)。"
+msgstr ""
+"[借用（`&`）](../../scope/borrow.md)、[约束（`X: Y`）](../../generics/bounds.md)、[枚举](../../custom_types/enum.md)、[impl 和 self](../../fn/methods.md)、[运算符重载](../../trait/ops.md)、[ref](../../scope/borrow/ref.md)、[trait（`X for Y`）](../../trait.md)以及[元组结构体](../../custom_types/structs.md)。"
 
 #: src/scope.md:3
 msgid ""
@@ -8564,7 +8606,7 @@ msgid ""
 "is, they indicate to the compiler when borrows are valid, when resources can "
 "be freed, and when variables are created or destroyed."
 msgstr ""
-"作用域在所有权、借用和生命周期中扮演着重要的角色。它们向编译器指示何时借用是有效的，何时资源可以被释放，以及何时变量被创建或销毁。"
+"作用域在所有权、借用和生命周期中扮演着重要角色。它们向编译器指示借用何时有效、资源何时可以被释放，以及变量何时被创建或销毁。"
 
 #: src/scope/raii.md:3
 msgid ""
@@ -8574,7 +8616,9 @@ msgid ""
 "(Resource Acquisition Is Initialization), so whenever an object goes out of "
 "scope, its destructor is called and its owned resources are freed."
 msgstr ""
-"Rust 中的变量不只是在栈上保存数据：它们还**持有**资源，例如 `Box<T>` 持有堆上的内存。Rust 强制执行 [RAII](https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization)（资源获取即初始化），因此每当一个对象离开作用域时，它的析构函数就会被调用，它持有的资源就会被释放。"
+"Rust 中的变量不仅仅是在栈上保存数据：它们还**拥有**资源，例如 `Box<T>` 拥有堆上的内存。Rust 强制执行 [RAII]"
+"(https://en.wikipedia.org/wiki/Resource_Acquisition_Is_Initialization)（资源获取即初始化），因此每当一个对象离开作用域时，"
+"它的析构函数就会被调用，它拥有的资源也会被释放。"
 
 #: src/scope/raii.md:8
 msgid ""
@@ -8582,7 +8626,7 @@ msgid ""
 "manually free memory or worry about memory leaks again! Here's a quick "
 "showcase:"
 msgstr ""
-"这种行为可以防止**资源泄漏**的错误，所以你再也不用手动释放内存或担心内存泄漏了！这是一个简单示例："
+"这种行为可以防止**资源泄漏**错误，因此你再也不用手动释放内存或担心内存泄漏了！以下是一个简单示例："
 
 #: src/scope/raii.md:12
 msgid "// raii.rs\n"
@@ -8594,7 +8638,7 @@ msgstr "// 在堆上分配一个整数\n"
 
 #: src/scope/raii.md:17
 msgid "// `_box1` is destroyed here, and memory gets freed\n"
-msgstr "// `_box1` 在这里被销毁，内存被释放\n"
+msgstr "// `_box1` 在此处被销毁，内存被释放\n"
 
 #: src/scope/raii.md:24
 msgid "// A nested scope:\n"
@@ -8602,19 +8646,19 @@ msgstr "// 一个嵌套的作用域：\n"
 
 #: src/scope/raii.md:29
 msgid "// `_box3` is destroyed here, and memory gets freed\n"
-msgstr "// `_box3` 在这里被销毁，内存被释放\n"
+msgstr "// `_box3` 在此处被销毁，内存被释放\n"
 
 #: src/scope/raii.md:32
 msgid ""
 "// Creating lots of boxes just for fun\n"
 "    // There's no need to manually free memory!\n"
 msgstr ""
-"// 创建很多 box（只是为了好玩）\n"
-"    // 不需要手动释放内存！\n"
+"// 创建大量的 box（仅为演示）\n"
+"    // 无需手动释放内存！\n"
 
 #: src/scope/raii.md:38
 msgid "// `_box2` is destroyed here, and memory gets freed\n"
-msgstr "// `_box2` 在这里被销毁，内存被释放\n"
+msgstr "// `_box2` 在此处被销毁，内存被释放\n"
 
 #: src/scope/raii.md:42
 msgid ""
@@ -8625,7 +8669,7 @@ msgstr ""
 
 #: src/scope/raii.md:65
 msgid "No leaks here!"
-msgstr "没有泄漏！"
+msgstr "这里没有内存泄漏！"
 
 #: src/scope/raii.md:67
 msgid "Destructor"
@@ -8639,7 +8683,8 @@ msgid ""
 "implemented for every type, only implement it for your type if you require "
 "its own destructor logic."
 msgstr ""
-"Rust 中析构函数的概念是通过 [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait 提供的。当资源离开作用域时，析构函数被调用。并不是每种类型都需要实现这个 trait，只有当你需要为自己的类型实现析构函数逻辑时才需要实现它。"
+"Rust 中的析构函数概念是通过 [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait 提供的。"
+"当资源离开作用域时，析构函数会被调用。并非每种类型都需要实现这个 trait，只有当你需要为自己的类型实现特定的析构逻辑时才需要实现它。"
 
 #: src/scope/raii.md:74
 msgid ""
@@ -8647,11 +8692,12 @@ msgid ""
 "ops/trait.Drop.html) trait works. When the variable in the `main` function "
 "goes out of scope the custom destructor will be invoked."
 msgstr ""
-"运行下面的例子来看看 [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait 是如何工作的。当 `main` 函数中的变量离开作用域时，自定义的析构函数将被调用。"
+"运行下面的示例来了解 [`Drop`](https://doc.rust-lang.org/std/ops/trait.Drop.html) trait 是如何工作的。"
+"当 `main` 函数中的变量离开作用域时，自定义的析构函数将被调用。"
 
 #: src/scope/raii.md:82
 msgid "\"ToDrop is being dropped\""
-msgstr "\"ToDrop 被丢弃了\""
+msgstr "\"ToDrop 正在被丢弃\""
 
 #: src/scope/raii.md:88
 msgid "\"Made a ToDrop!\""
@@ -8668,7 +8714,8 @@ msgid ""
 "once. Note that not all variables own resources (e.g. [references](../"
 "flow_control/match/destructuring/destructure_pointers.md))."
 msgstr ""
-"因为变量负责释放它们持有的资源，**资源只能有一个所有者**。这可以防止资源被多次释放。注意并不是所有的变量都持有资源（例如 [引用](../flow_control/match/destructuring/destructure_pointers.md)）。"
+"由于变量负责释放它们自己的资源，**资源只能有一个所有者**。这可以防止资源被多次释放。"
+"请注意，并非所有变量都拥有资源（例如[引用](../flow_control/match/destructuring/destructure_pointers.md)）。"
 
 #: src/scope/move.md:8
 msgid ""
@@ -8683,31 +8730,36 @@ msgid ""
 "After moving resources, the previous owner can no longer be used. This avoids "
 "creating dangling pointers."
 msgstr ""
-"在移动资源之后，之前的所有者就不能再被使用了。这避免了悬垂指针的产生。"
+"资源移动后，原所有者将无法再被使用。这避免了悬垂指针的产生。"
 
 #: src/scope/move.md:16
 msgid "// This function takes ownership of the heap allocated memory\n"
-msgstr "// 这个函数获取堆分配内存的所有权\n"
+msgstr ""
+"// 此函数获取堆分配内存的所有权\n"
 
 #: src/scope/move.md:18
 msgid "\"Destroying a box that contains {}\""
-msgstr "\"销毁一个包含 {} 的 box\""
+msgstr "\"正在销毁一个包含 {} 的 box\""
 
 #: src/scope/move.md:20
 msgid "// `c` is destroyed and the memory freed\n"
-msgstr "// `c` 被销毁并且内存被释放\n"
+msgstr ""
+"// `c` 被销毁，内存被释放\n"
 
 #: src/scope/move.md:24
 msgid "// _Stack_ allocated integer\n"
-msgstr "// 「栈」分配的整数\n"
+msgstr ""
+"// **栈**分配的整数\n"
 
 #: src/scope/move.md:27
 msgid "// *Copy* `x` into `y` - no resources are moved\n"
-msgstr "// 将 `x` *复制*到 `y` - 没有资源被移动\n"
+msgstr ""
+"// 将 `x` **复制**到 `y` - 没有资源被移动\n"
 
 #: src/scope/move.md:30
 msgid "// Both values can be independently used\n"
-msgstr "// 两个值可以独立使用\n"
+msgstr ""
+"// 两个值可以独立使用\n"
 
 #: src/scope/move.md:31
 msgid "\"x is {}, and y is {}\""
@@ -8715,7 +8767,8 @@ msgstr "\"x 是 {}，y 是 {}\""
 
 #: src/scope/move.md:33
 msgid "// `a` is a pointer to a _heap_ allocated integer\n"
-msgstr "// `a` 是一个指向「堆」分配的整数的指针\n"
+msgstr ""
+"// `a` 是指向**堆**分配整数的指针\n"
 
 #: src/scope/move.md:36
 msgid "\"a contains: {}\""
@@ -8723,7 +8776,8 @@ msgstr "\"a 包含：{}\""
 
 #: src/scope/move.md:38
 msgid "// *Move* `a` into `b`\n"
-msgstr "// 将 `a` *移动* 到 `b`\n"
+msgstr ""
+"// 将 `a` **移动**到 `b`\n"
 
 #: src/scope/move.md:40
 msgid ""
@@ -8731,9 +8785,9 @@ msgid ""
 "    // Both are now pointers to the same heap allocated data, but\n"
 "    // `b` now owns it.\n"
 msgstr ""
-"// 把 `a` 的指针地址（而不是数据）复制到 `b`。\n"
-"    // 现在两者都是指向同一个堆分配数据的指针，但是\n"
-"    // `b` 现在持有它。\n"
+"// `a` 的指针地址（而非数据）被复制到 `b`\n"
+"    // 现在两者都指向同一块堆分配的数据\n"
+"    // 但 `b` 现在拥有它\n"
 
 #: src/scope/move.md:44
 msgid ""
@@ -8742,13 +8796,14 @@ msgid ""
 "    //println!(\"a contains: {}\", a);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
-"// 错误！`a` 不能再访问数据，因为它不再持有堆内存\n"
-"    //println!(\"a contains: {}\", a);\n"
-"    // TODO ^ 试着取消注释这一行\n"
+"// 错误！`a` 不再拥有堆内存，因此无法访问数据\n"
+"    //println!(\"a 包含：{}\", a);\n"
+"    // TODO ^ 尝试取消此行注释\n"
 
 #: src/scope/move.md:49
 msgid "// This function takes ownership of the heap allocated memory from `b`\n"
-msgstr "// 这个函数从 `b` 获取堆分配内存的所有权\n"
+msgstr ""
+"// 此函数从 `b` 获取堆分配内存的所有权\n"
 
 #: src/scope/move.md:52
 msgid ""
@@ -8759,15 +8814,15 @@ msgid ""
 "    //println!(\"b contains: {}\", b);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
-"// 由于堆内存在这一点已经被释放，这个操作会导致解引用已释放的内存，\n"
-"    // 但这被编译器禁止\n"
+"// 此时堆内存已被释放，这个操作会导致解引用已释放的内存\n"
+"    // 但编译器禁止这样做\n"
 "    // 错误！原因与前面的错误相同\n"
-"    //println!(\"b contains: {}\", b);\n"
-"    // TODO ^ 试着取消注释这一行\n"
+"    //println!(\"b 包含：{}\", b);\n"
+"    // TODO ^ 尝试取消此行注释\n"
 
 #: src/scope/move/mut.md:3
 msgid "Mutability of data can be changed when ownership is transferred."
-msgstr "当所有权被转移时，数据的可变性可以被改变。"
+msgstr "当所有权转移时，数据的可变性可以改变。"
 
 #: src/scope/move/mut.md:9
 msgid "\"immutable_box contains {}\""
