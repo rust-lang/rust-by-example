@@ -8838,7 +8838,7 @@ msgstr ""
 
 #: src/scope/move/mut.md:14
 msgid "// *Move* the box, changing the ownership (and mutability)\n"
-msgstr "// *移动* box，改变所有权（和可变性）\n"
+msgstr "// *移动*盒子，改变所有权（和可变性）\n"
 
 #: src/scope/move/mut.md:17
 msgid "\"mutable_box contains {}\""
@@ -8846,7 +8846,7 @@ msgstr "\"mutable_box 包含 {}\""
 
 #: src/scope/move/mut.md:19
 msgid "// Modify the contents of the box\n"
-msgstr "// 修改 box 的内容\n"
+msgstr "// 修改盒子的内容\n"
 
 #: src/scope/move/mut.md:22
 msgid "\"mutable_box now contains {}\""
@@ -8874,25 +8874,25 @@ msgstr "\"此人的年龄是 {}\""
 
 #: src/scope/move/partial_move.md:29
 msgid "\"The person's name is {}\""
-msgstr "\"此人的名字是 {}\""
+msgstr "\"此人的姓名是 {}\""
 
 #: src/scope/move/partial_move.md:31
 msgid ""
 "// Error! borrow of partially moved value: `person` partial move occurs\n"
 "    //println!(\"The person struct is {:?}\", person);\n"
 msgstr ""
-"// 错误！借用了部分移动的值：`person` 发生了部分移动\n"
-"    //println!(\"此人的结构体是 {:?}\", person);\n"
+"// 错误！借用部分移动的值：`person` 发生部分移动\n"
+"    //println!(\"person 结构体是 {:?}\", person);\n"
 
 #: src/scope/move/partial_move.md:34
 msgid ""
 "// `person` cannot be used but `person.age` can be used as it is not moved\n"
 msgstr ""
-"// `person` 不能被使用，但 `person.age` 可以使用，因为它没有被移动\n"
+"// `person` 不能使用，但 `person.age` 可以使用，因为它没有被移动\n"
 
 #: src/scope/move/partial_move.md:35
 msgid "\"The person's age from person struct is {}\""
-msgstr "\"从 person 结构体中获取的此人年龄是 {}\""
+msgstr "\"从 person 结构体中获取的年龄是 {}\""
 
 #: src/scope/move/partial_move.md:38
 msgid ""
@@ -8922,19 +8922,19 @@ msgid ""
 "_always_ point to valid objects. That is, while references to an object "
 "exist, the object cannot be destroyed."
 msgstr ""
-"编译器通过其借用检查器静态地保证引用**始终**指向有效的对象。也就是说，当存在引用指向一个对象时，该对象就不能被销毁。"
+"编译器通过其借用检查器静态地保证引用**始终**指向有效的对象。也就是说，当存在指向一个对象的引用时，该对象就不能被销毁。"
 
 #: src/scope/borrow.md:12
 msgid "// This function takes ownership of a box and destroys it\n"
-msgstr "// 这个函数获取一个 box 的所有权并销毁它\n"
+msgstr "// 此函数获取一个盒子的所有权并销毁它\n"
 
 #: src/scope/borrow.md:14
 msgid "\"Destroying box that contains {}\""
-msgstr "\"销毁包含 {} 的 box\""
+msgstr "\"正在销毁包含 {} 的盒子\""
 
 #: src/scope/borrow.md:16
 msgid "// This function borrows an i32\n"
-msgstr "// 这个函数借用一个 i32\n"
+msgstr "// 此函数借用一个 i32\n"
 
 #: src/scope/borrow.md:19
 msgid "\"This int is: {}\""
@@ -8948,7 +8948,7 @@ msgid ""
 "    // 5_i32 is the same as 5i32\n"
 msgstr ""
 "// 在堆上创建一个装箱的 i32，在栈上创建一个 i32\n"
-"    // 注：数字可以添加任意下划线以提高可读性\n"
+"    // 注意：数字可以添加任意下划线以提高可读性\n"
 "    // 5_i32 与 5i32 相同\n"
 
 #: src/scope/borrow.md:29
@@ -8956,12 +8956,12 @@ msgid ""
 "// Borrow the contents of the box. Ownership is not taken,\n"
 "    // so the contents can be borrowed again.\n"
 msgstr ""
-"// 借用 box 的数据。所有权未被获取，\n"
+"// 借用盒子的数据。所有权未被获取，\n"
 "    // 所以数据可以再次被借用。\n"
 
 #: src/scope/borrow.md:35
 msgid "// Take a reference to the data contained inside the box\n"
-msgstr "// 获取 box 内数据的引用\n"
+msgstr "// 获取盒子内数据的引用\n"
 
 #: src/scope/borrow.md:38
 msgid ""
@@ -8993,7 +8993,7 @@ msgid ""
 "`&T` borrows the data via an immutable reference, and the borrower can read "
 "the data but not modify it:"
 msgstr ""
-"可变数据可以使用 `&mut T` 进行可变借用。这被称为**可变引用**，并给予借用者读/写访问权。相比之下，`&T` 通过不可变引用借用数据，借用者可以读取数据但不能修改它："
+"可变数据可以使用 `&mut T` 进行可变借用。这被称为**可变引用**，并给予借用者读写访问权。相比之下，`&T` 通过不可变引用借用数据，借用者可以读取数据但不能修改它："
 
 #: src/scope/borrow/mut.md:12
 msgid ""
@@ -9003,26 +9003,26 @@ msgstr ""
 
 #: src/scope/borrow/mut.md:17
 msgid "// This function takes a reference to a book\n"
-msgstr "// 这个函数接受一个对 Book 类型数据的引用\n"
+msgstr "// 此函数接受一个对 Book 类型的引用\n"
 
 #: src/scope/borrow/mut.md:20
 msgid "\"I immutably borrowed {} - {} edition\""
-msgstr "\"我不可变地借用了 {} - {} 版\""
+msgstr "\"我不可变地借用了《{}》- {} 版\""
 
 #: src/scope/borrow/mut.md:22
 msgid ""
 "// This function takes a reference to a mutable book and changes `year` to "
 "2014\n"
 msgstr ""
-"// 这个函数接受一个对可变书的引用，并将 `year` 改为 2014\n"
+"// 此函数接受一个对可变 Book 的引用，并将 `year` 改为 2014\n"
 
 #: src/scope/borrow/mut.md:26
 msgid "\"I mutably borrowed {} - {} edition\""
-msgstr "\"我可变地借用了 {} - {} 版\""
+msgstr "\"我可变地借用了《{}》- {} 版\""
 
 #: src/scope/borrow/mut.md:30
 msgid "// Create an immutable Book named `immutabook`\n"
-msgstr "// 创建一个名为 `immutabook` 的不可变 Book\n"
+msgstr "// 创建一个名为 `immutabook` 的不可变 Book 实例\n"
 
 #: src/scope/borrow/mut.md:32
 msgid "// string literals have type `&'static str`\n"
@@ -9034,11 +9034,11 @@ msgstr "\"Douglas Hofstadter\""
 
 #: src/scope/borrow/mut.md:34
 msgid "\"Gödel, Escher, Bach\""
-msgstr "\"Gödel, Escher, Bach\""
+msgstr "\"哥德尔、埃舍尔、巴赫\""
 
 #: src/scope/borrow/mut.md:38
 msgid "// Create a mutable copy of `immutabook` and call it `mutabook`\n"
-msgstr "// 创建 `immutabook` 的一个可变副本，并将其命名为 `mutabook`\n"
+msgstr "// 创建 `immutabook` 的可变副本，并命名为 `mutabook`\n"
 
 #: src/scope/borrow/mut.md:41
 msgid "// Immutably borrow an immutable object\n"
@@ -9054,7 +9054,7 @@ msgstr "// 可变地借用一个可变对象\n"
 
 #: src/scope/borrow/mut.md:50
 msgid "// Error! Cannot borrow an immutable object as mutable\n"
-msgstr "// 错误！不能可变地借用一个不可变对象\n"
+msgstr "// 错误！不能将不可变对象作为可变对象借用\n"
 
 #: src/scope/borrow/mut.md:57
 msgid "[`static`](../lifetime/static_lifetime.md)"
@@ -9068,7 +9068,7 @@ msgid ""
 "borrowed again only _after_ the mutable reference has been used for the last "
 "time."
 msgstr ""
-"数据可以被不可变地借用任意次数，但在不可变借用期间，原始数据不能被可变地借用。另一方面，同一时间只允许**一个**可变借用。只有在可变引用最后一次使用之后，原始数据才能再次被借用。"
+"数据可以被不可变借用任意次数，但在不可变借用期间，原始数据不能被可变借用。另一方面，同一时间只允许**一个**可变借用。只有在可变引用最后一次使用之后，原始数据才能再次被借用。"
 
 #: src/scope/borrow/alias.md:17
 msgid "// Data can be accessed via the references and the original owner\n"
@@ -9077,7 +9077,7 @@ msgstr "// 可以通过引用和原始所有者访问数据\n"
 #: src/scope/borrow/alias.md:18 src/scope/borrow/alias.md:27
 #: src/scope/borrow/alias.md:49
 msgid "\"Point has coordinates: ({}, {}, {})\""
-msgstr "\"Point has coordinates: ({}, {}, {})\""
+msgstr "\"点的坐标为：({}, {}, {})\""
 
 #: src/scope/borrow/alias.md:21
 msgid ""
@@ -9100,11 +9100,11 @@ msgid ""
 "    // it is possible to reborrow with a mutable reference.\n"
 msgstr ""
 "// 不可变引用在代码的剩余部分不再使用\n"
-"    // 所以可以用可变引用重新借用。\n"
+"    // 因此可以用可变引用重新借用。\n"
 
 #: src/scope/borrow/alias.md:34
 msgid "// Change data via mutable reference\n"
-msgstr "// 通过可变引用改变数据\n"
+msgstr "// 通过可变引用修改数据\n"
 
 #: src/scope/borrow/alias.md:39
 msgid ""
@@ -9123,13 +9123,13 @@ msgid ""
 "    // println!(\"Point Z coordinate is {}\", point.z);\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
-"// 错误！不能打印，因为 `println!` 用到了一个不可变引用。\n"
-"    // println!(\"Point Z coordinate is {}\", point.z);\n"
+"// 错误！无法打印，因为 `println!` 需要一个不可变引用。\n"
+"    // println!(\"点的 Z 坐标是 {}\", point.z);\n"
 "    // TODO ^ 尝试取消注释此行\n"
 
 #: src/scope/borrow/alias.md:48
 msgid "// Ok! Mutable references can be passed as immutable to `println!`\n"
-msgstr "// 可以！可变引用可以作为不可变引用传递给 `println!`\n"
+msgstr "// 正确！可变引用可以作为不可变引用传递给 `println!`\n"
 
 #: src/scope/borrow/alias.md:52
 msgid ""
@@ -9140,7 +9140,7 @@ msgstr ""
 
 #: src/scope/borrow/alias.md:55
 msgid "\"Point now has coordinates: ({}, {}, {})\""
-msgstr "\"Point now has coordinates: ({}, {}, {})\""
+msgstr "\"点现在的坐标为：({}, {}, {})\""
 
 #: src/scope/borrow/ref.md:3
 msgid ""
@@ -9148,7 +9148,7 @@ msgid ""
 "keyword can be used to take references to the fields of a struct/tuple. The "
 "example below shows a few instances where this can be useful:"
 msgstr ""
-"在通过 `let` 绑定进行模式匹配或解构时，可以使用 `ref` 关键字来获取结构体/元组字段的引用。下面的例子展示了几个这种用法有用的情况："
+"在使用 `let` 绑定进行模式匹配或解构时，可以使用 `ref` 关键字来获取结构体或元组字段的引用。以下示例展示了几个这种用法有用的场景："
 
 #: src/scope/borrow/ref.md:14
 msgid ""
@@ -9159,7 +9159,7 @@ msgstr ""
 
 #: src/scope/borrow/ref.md:19
 msgid "\"ref_c1 equals ref_c2: {}\""
-msgstr "\"ref_c1 equals ref_c2: {}\""
+msgstr "\"ref_c1 等于 ref_c2：{}\""
 
 #: src/scope/borrow/ref.md:23
 msgid "// `ref` is also valid when destructuring a struct.\n"
@@ -9171,15 +9171,15 @@ msgstr "// `ref_to_x` 是 `point` 的 `x` 字段的引用。\n"
 
 #: src/scope/borrow/ref.md:28
 msgid "// Return a copy of the `x` field of `point`.\n"
-msgstr "// 返回 `point` 的 `x` 字段的拷贝。\n"
+msgstr "// 返回 `point` 的 `x` 字段的副本。\n"
 
 #: src/scope/borrow/ref.md:32
 msgid "// A mutable copy of `point`\n"
-msgstr "// `point` 的可变拷贝\n"
+msgstr "// `point` 的可变副本\n"
 
 #: src/scope/borrow/ref.md:36
 msgid "// `ref` can be paired with `mut` to take mutable references.\n"
-msgstr "// `ref` 可以与 `mut` 配对来获取可变引用。\n"
+msgstr "// `ref` 可以与 `mut` 配合使用来获取可变引用。\n"
 
 #: src/scope/borrow/ref.md:39
 msgid "// Mutate the `y` field of `mutable_point` via a mutable reference.\n"
@@ -9187,11 +9187,11 @@ msgstr "// 通过可变引用修改 `mutable_point` 的 `y` 字段。\n"
 
 #: src/scope/borrow/ref.md:43
 msgid "\"point is ({}, {})\""
-msgstr "\"point is ({}, {})\""
+msgstr "\"point 的坐标是 ({}, {})\""
 
 #: src/scope/borrow/ref.md:44
 msgid "\"mutable_point is ({}, {})\""
-msgstr "\"mutable_point is ({}, {})\""
+msgstr "\"mutable_point 的坐标是 ({}, {})\""
 
 #: src/scope/borrow/ref.md:46
 msgid "// A mutable tuple that includes a pointer\n"
@@ -9199,11 +9199,11 @@ msgstr "// 包含指针的可变元组\n"
 
 #: src/scope/borrow/ref.md:50
 msgid "// Destructure `mutable_tuple` to change the value of `last`.\n"
-msgstr "// 解构 `mutable_tuple` 以改变 `last` 的值。\n"
+msgstr "// 解构 `mutable_tuple` 以修改 `last` 的值。\n"
 
 #: src/scope/borrow/ref.md:55
 msgid "\"tuple is {:?}\""
-msgstr "\"tuple is {:?}\""
+msgstr "\"元组是 {:?}\""
 
 #: src/scope/lifetime.md:3
 msgid ""
@@ -9212,7 +9212,7 @@ msgid ""
 "lifetime begins when it is created and ends when it is destroyed. While "
 "lifetimes and scopes are often referred to together, they are not the same."
 msgstr ""
-"**生命周期**是编译器（更具体地说是其**借用检查器**）用来确保所有借用都是有效的一个构造。具体来说，变量的生命周期从创建时开始，到销毁时结束。虽然生命周期和作用域经常被一起提到，但它们并不相同。"
+"**生命周期**是编译器（更具体地说是其**借用检查器**）用来确保所有借用都有效的一种机制。具体来说，变量的生命周期从创建时开始，到销毁时结束。虽然生命周期和作用域经常被一起提到，但它们并不相同。"
 
 #: src/scope/lifetime.md:8
 msgid ""
