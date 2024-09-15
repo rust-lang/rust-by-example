@@ -9212,7 +9212,7 @@ msgid ""
 "lifetime begins when it is created and ends when it is destroyed. While "
 "lifetimes and scopes are often referred to together, they are not the same."
 msgstr ""
-"**生命周期**是编译器（更具体地说是其**借用检查器**）用来确保所有借用都有效的一种机制。具体来说，变量的生命周期从创建时开始，到销毁时结束。虽然生命周期和作用域经常被一起提到，但它们并不相同。"
+"**生命周期**是编译器（更具体地说是其**借用检查器**）用来确保所有借用都有效的一种机制。具体来说，变量的生命周期从创建时开始，到销毁时结束。尽管生命周期和作用域经常被一同提及，但它们并不完全相同。"
 
 #: src/scope/lifetime.md:8
 msgid ""
@@ -9221,14 +9221,14 @@ msgid ""
 "borrow is valid as long as it ends before the lender is destroyed. However, "
 "the scope of the borrow is determined by where the reference is used."
 msgstr ""
-"例如，考虑我们通过 `&` 借用一个变量的情况。借用的生命周期由其声明的位置决定。因此，只要借用在出借者被销毁之前结束，它就是有效的。然而，借用的作用域由引用使用的位置决定。"
+"举个例子，当我们通过 `&` 借用一个变量时，这个借用的生命周期由其声明位置决定。因此，只要借用在出借者被销毁之前结束，它就是有效的。然而，借用的作用域则由引用使用的位置决定。"
 
 #: src/scope/lifetime.md:13
 msgid ""
 "In the following example and in the rest of this section, we will see how "
 "lifetimes relate to scopes, as well as how the two differ."
 msgstr ""
-"在下面的例子和本节的其余部分中，我们将看到生命周期如何与作用域相关，以及两者有何不同。"
+"在接下来的例子和本节的其余部分中，我们将看到生命周期如何与作用域相关联，以及两者之间的区别。"
 
 #: src/scope/lifetime.md:17
 msgid ""
@@ -9310,7 +9310,7 @@ msgid ""
 "Note that no names or types are assigned to label lifetimes. This restricts "
 "how lifetimes will be able to be used as we will see."
 msgstr ""
-"请注意，没有名称或类型被分配给标记生命周期。这限制了生命周期的使用方式，我们将在后面看到。"
+"请注意，生命周期标签没有被赋予名称或类型。这限制了生命周期的使用方式，我们将在后面看到这一点。"
 
 #: src/scope/lifetime/explicit.md:3
 msgid ""
@@ -9320,7 +9320,7 @@ msgid ""
 "should be. The syntax for explicitly annotating a lifetime uses an apostrophe "
 "character as follows:"
 msgstr ""
-"借用检查器使用显式生命周期注解来确定引用应该有效多长时间。在生命周期没有被省略[^1]的情况下，Rust 需要显式注解来确定引用的生命周期应该是怎样的。显式注解生命周期的语法使用撇号字符，如下所示："
+"借用检查器使用显式生命周期注解来确定引用应该有效多长时间。在生命周期没有被省略[^1]的情况下，Rust 需要显式注解来确定引用的生命周期。显式注解生命周期的语法使用撇号字符，如下所示："
 
 #: src/scope/lifetime/explicit.md:10
 msgid "// `foo` has a lifetime parameter `'a`\n"
@@ -9365,16 +9365,18 @@ msgstr ""
 
 #: src/scope/lifetime/explicit.md:35
 msgid "\"x is {} and y is {}\""
-msgstr "\"x is {} and y is {}\""
+msgstr "\"x 是 {}，y 是 {}\""
 
 #: src/scope/lifetime/explicit.md:37
 msgid ""
 "// A function which takes no arguments, but has a lifetime parameter `'a`.\n"
-msgstr "// 一个没有参数但有生命周期参数 `'a` 的函数。\n"
+msgstr ""
+"// 一个没有参数但有生命周期参数 `'a` 的函数。\n"
 
 #: src/scope/lifetime/explicit.md:42
 msgid "// ERROR: `_x` does not live long enough\n"
-msgstr "// 错误：`_x` 的生命周期不够长\n"
+msgstr ""
+"// 错误：`_x` 的生命周期不够长\n"
 
 #: src/scope/lifetime/explicit.md:44
 msgid ""
@@ -9384,17 +9386,19 @@ msgid ""
 "    // than that of `_y`. A short lifetime cannot be coerced into a longer "
 "one.\n"
 msgstr ""
-"// 尝试在函数内部使用生命周期 `'a` 作为显式类型标注\n"
-"    // 会失败，因为 `&_x` 的生命周期比 `_y` 的短。\n"
-"    // 短生命周期不能被强制转换为长生命周期。\n"
+"// 尝试在函数内部使用生命周期 `'a` 作为显式类型标注会失败，\n"
+"    // 因为 `&_x` 的生命周期比 `_y` 的短。\n"
+"    // 短生命周期无法强制转换为长生命周期。\n"
 
 #: src/scope/lifetime/explicit.md:50
 msgid "// Create variables to be borrowed below.\n"
-msgstr "// 创建将要被借用的变量。\n"
+msgstr ""
+"// 创建将要被借用的变量。\n"
 
 #: src/scope/lifetime/explicit.md:53
 msgid "// Borrows (`&`) of both variables are passed into the function.\n"
-msgstr "// 两个变量的借用（`&`）被传递给函数。\n"
+msgstr ""
+"// 将两个变量的借用（`&`）传递给函数。\n"
 
 #: src/scope/lifetime/explicit.md:55
 msgid ""
@@ -9412,34 +9416,39 @@ msgid ""
 "    // longer than the lifetime of the function, but `'a` is longer.\n"
 "    // Because the lifetime is never constrained, it defaults to `'static`.\n"
 msgstr ""
-"// `failed_borrow` 不包含任何引用来强制 `'a` 比\n"
-"    // 函数的生命周期更长，但 `'a` 确实更长。\n"
+"// `failed_borrow` 不包含任何引用来强制 `'a` 比函数的生命周期更长，\n"
+"    // 但 `'a` 实际上更长。\n"
 "    // 因为生命周期从未被约束，它默认为 `'static`。\n"
 
 #: src/scope/lifetime/explicit.md:66
 msgid ""
 "[elision](elision.md) implicitly annotates lifetimes and so is different."
-msgstr "[省略](elision.md)隐式地注解生命周期，因此是不同的。"
+msgstr ""
+"[省略（elision）](elision.md)隐式地注解生命周期，因此与显式注解不同。"
 
 #: src/scope/lifetime/explicit.md:70
 msgid "[generics](../../generics.md) and [closures](../../fn/closures.md)"
-msgstr "[泛型](../../generics.md)和[闭包](../../fn/closures.md)"
+msgstr ""
+"[泛型（generics）](../../generics.md)和[闭包（closures）](../../fn/closures.md)"
 
 #: src/scope/lifetime/fn.md:3
 msgid ""
 "Ignoring [elision](elision.md), function signatures with lifetimes have a few "
 "constraints:"
-msgstr "排除[省略](elision.md)的情况，带有生命周期的函数签名有一些限制："
+msgstr ""
+"排除[省略（elision）](elision.md)的情况，带有生命周期的函数签名有以下几个约束："
 
 #: src/scope/lifetime/fn.md:5
 msgid "any reference _must_ have an annotated lifetime."
-msgstr "任何引用**必须**有一个标注了的生命周期。"
+msgstr ""
+"任何引用**必须**有一个标注的生命周期。"
 
 #: src/scope/lifetime/fn.md:6
 msgid ""
 "any reference being returned _must_ have the same lifetime as an input or be "
 "`static`."
-msgstr "任何被返回的引用**必须**具有与输入相同的生命周期或者是 `static`。"
+msgstr ""
+"任何被返回的引用**必须**具有与输入相同的生命周期或者是 `static`。"
 
 #: src/scope/lifetime/fn.md:9
 msgid ""
@@ -9447,22 +9456,24 @@ msgid ""
 "would result in returning references to invalid data. The following example "
 "shows off some valid forms of functions with lifetimes:"
 msgstr ""
-"此外，请注意，如果返回引用却没有输入，会导致返回无效数据的引用，这是被禁止的。以下示例展示了一些带有生命周期的函数："
+"此外，请注意，如果返回引用而没有输入会导致返回指向无效数据的引用，这是被禁止的。以下示例展示了一些带有生命周期的有效函数形式："
 
 #: src/scope/lifetime/fn.md:14
 msgid ""
 "// One input reference with lifetime `'a` which must live\n"
 "// at least as long as the function.\n"
 msgstr ""
-"// 一个具有生命周期 `'a` 的输入引用，它的存活至少和函数一样长。\n"
+"// 一个具有生命周期 `'a` 的输入引用，它必须至少与函数存活一样长。\n"
 
 #: src/scope/lifetime/fn.md:17
 msgid "\"`print_one`: x is {}\""
-msgstr "\"`print_one`: x is {}\""
+msgstr ""
+"\"`print_one`：x 是 {}\""
 
 #: src/scope/lifetime/fn.md:19
 msgid "// Mutable references are possible with lifetimes as well.\n"
-msgstr "// 可变引用也可以有生命周期。\n"
+msgstr ""
+"// 可变引用也可以有生命周期。\n"
 
 #: src/scope/lifetime/fn.md:24
 msgid ""
@@ -9476,7 +9487,8 @@ msgstr ""
 
 #: src/scope/lifetime/fn.md:29
 msgid "\"`print_multi`: x is {}, y is {}\""
-msgstr "\"`print_multi`: x is {}, y is {}\""
+msgstr ""
+"\"`print_multi`：x 是 {}，y 是 {}\""
 
 #: src/scope/lifetime/fn.md:31
 msgid ""
@@ -9495,79 +9507,94 @@ msgid ""
 "// a reference to invalid data to be returned.\n"
 msgstr ""
 "//fn invalid_output<'a>() -> &'a String { &String::from(\"foo\") }\n"
-"// 上面的代码是无效的：`'a` 的存活时间必须比函数更长。\n"
-"// 这里的 `&String::from(\"foo\")` 会创建一个 `String`，再引用它。 \n"
-"// 然后在退出作用域时数据被丢弃，返回一个指向无效数据的引用"
+"// 上面的代码是无效的：`'a` 必须比函数存活更长。\n"
+"// 这里的 `&String::from(\"foo\")` 会创建一个 `String`，然后创建一个引用。\n"
+"// 接着，在退出作用域时数据被丢弃，导致返回一个指向无效数据的引用。\n"
 
 #: src/scope/lifetime/fn.md:60
 msgid "[Functions](../../fn.md)"
-msgstr "[函数](../../fn.md)"
+msgstr ""
+"[函数](../../fn.md)"
 
 #: src/scope/lifetime/methods.md:3
 msgid "Methods are annotated similarly to functions:"
-msgstr "方法的注解和函数类似："
+msgstr ""
+"方法的生命周期注解与函数类似："
 
 #: src/scope/lifetime/methods.md:9
 msgid "// Annotate lifetimes as in a standalone function.\n"
-msgstr "// 像独立函数一样注解生命周期。\n"
+msgstr ""
+"// 像独立函数一样注解生命周期。\n"
 
 #: src/scope/lifetime/methods.md:12
 msgid "\"`print`: {}\""
-msgstr "\"`print`: {}\""
+msgstr ""
+"\"`print`：{}\""
 
 #: src/scope/lifetime/methods.md:26
 msgid "[methods](../../fn/methods.md)"
-msgstr "[方法](../../fn/methods.md)"
+msgstr ""
+"[方法](../../fn/methods.md)"
 
 #: src/scope/lifetime/struct.md:3
 msgid "Annotation of lifetimes in structures are also similar to functions:"
-msgstr "结构体中生命周期的注解也和函数类似："
+msgstr ""
+"结构体中生命周期的注解也与函数类似："
 
 #: src/scope/lifetime/struct.md:6
 msgid ""
 "// A type `Borrowed` which houses a reference to an\n"
 "// `i32`. The reference to `i32` must outlive `Borrowed`.\n"
 msgstr ""
-"// 一个包含 `i32` 引用的 `Borrowed` 类型。\n"
-"// 对 `i32` 的引用必须比 `Borrowed` 存活更久。\n"
+"// `Borrowed` 类型包含一个 `i32` 的引用。\n"
+"// 这个 `i32` 的引用必须比 `Borrowed` 存活更久。\n"
 
 #: src/scope/lifetime/struct.md:10
 msgid "// Similarly, both references here must outlive this structure.\n"
-msgstr "// 同样，这里的两个引用都必须比这个结构体存活更久。\n"
+msgstr ""
+"// 同样，这里的两个引用都必须比这个结构体存活更久。\n"
 
 #: src/scope/lifetime/struct.md:17
 msgid "// An enum which is either an `i32` or a reference to one.\n"
-msgstr "// 一个枚举，表示 `i32`，或者 `i32` 的引用。\n"
+msgstr ""
+"// 一个枚举，可以是 `i32`，或者是 `i32` 的引用。\n"
 
 #: src/scope/lifetime/struct.md:34 src/scope/lifetime/struct.md:36
 msgid "\"x is borrowed in {:?}\""
-msgstr "\"x 在 {:?} 中被借用\""
+msgstr ""
+"\"x 在 {:?} 中被借用\""
 
 #: src/scope/lifetime/struct.md:35
 msgid "\"x and y are borrowed in {:?}\""
-msgstr "\"x 和 y 在 {:?} 中被借用\""
+msgstr ""
+"\"x 和 y 在 {:?} 中被借用\""
 
 #: src/scope/lifetime/struct.md:37
 msgid "\"y is *not* borrowed in {:?}\""
-msgstr "\"y 在 {:?} 中**没有**被借用\""
+msgstr ""
+"\"y 在 {:?} 中**没有**被借用\""
 
 #: src/scope/lifetime/struct.md:43
 msgid "[`struct`s](../../custom_types/structs.md)"
-msgstr "[`struct`](../../custom_types/structs.md)"
+msgstr ""
+"[`struct`（结构体）](../../custom_types/structs.md)"
 
 #: src/scope/lifetime/trait.md:3
 msgid ""
 "Annotation of lifetimes in trait methods basically are similar to functions. "
 "Note that `impl` may have annotation of lifetimes too."
-msgstr "trait 方法中的生命周期注解基本上与函数类似。注意 `impl` 也可能有生命周期注解。"
+msgstr ""
+"trait 方法中的生命周期注解基本上与函数类似。注意，`impl` 也可能需要生命周期注解。"
 
 #: src/scope/lifetime/trait.md:7
 msgid "// A struct with annotation of lifetimes.\n"
-msgstr "// 一个带有生命周期注解的结构体。\n"
+msgstr ""
+"// 一个带有生命周期注解的结构体。\n"
 
 #: src/scope/lifetime/trait.md:12
 msgid "// Annotate lifetimes to impl.\n"
-msgstr "// 为 impl 注解生命周期。\n"
+msgstr ""
+"// 为 impl 添加生命周期注解。\n"
 
 #: src/scope/lifetime/trait.md:24
 msgid "\"b is {:?}\""
@@ -9582,7 +9609,9 @@ msgid ""
 "Just like generic types can be bounded, lifetimes (themselves generic) use "
 "bounds as well. The `:` character has a slightly different meaning here, but "
 "`+` is the same. Note how the following read:"
-msgstr "就像泛型类型可以被约束一样，生命周期（本身就是泛型）也可以使用约束。这里 `:` 字符的含义略有不同，但 `+` 是相同的。注意下面说明："
+msgstr ""
+"正如泛型类型可以被约束一样，生命周期（本身也是泛型）也可以使用约束。"
+"这里的 `:` 符号含义略有不同，但 `+` 的用法相同。请注意以下表达的含义："
 
 #: src/scope/lifetime/lifetime_bounds.md:7
 msgid "`T: 'a`: _All_ references in `T` must outlive lifetime `'a`."
@@ -9610,9 +9639,9 @@ msgid ""
 "// *references* in `T` must outlive `'a`. Additionally, the lifetime\n"
 "// of `Ref` may not exceed `'a`.\n"
 msgstr ""
-"// `Ref` 包含一个指向泛型类型 `T` 的引用，其中 `T` 拥有一个未知的\n"
-"// 生命周期 `'a`。`T` 被约束，使得 `T` 中的任何*引用*必须\n"
-"// 比 `'a` 存活更久。此外，`Ref` 的生命周期不能超过 `'a`。\n"
+"// `Ref` 包含一个指向泛型类型 `T` 的引用，`T` 具有一个 `Ref` 未知的\n"
+"// 生命周期 `'a`。`T` 受到约束，使得 `T` 中的任何*引用*必须比 `'a` 存活更久。\n"
+"// 此外，`Ref` 的生命周期不能超过 `'a`。\n"
 
 #: src/scope/lifetime/lifetime_bounds.md:22
 msgid "// A generic function which prints using the `Debug` trait.\n"
@@ -9640,7 +9669,8 @@ msgstr "\"`print_ref`: t 是 {:?}\""
 msgid ""
 "[generics](../../generics.md), [bounds in generics](../../generics/bounds."
 "md), and [multiple bounds in generics](../../generics/multi_bounds.md)"
-msgstr "[泛型](../../generics.md)，[泛型中的约束](../../generics/bounds.md)，以及[泛型中的多重约束](../../generics/multi_bounds.md)"
+msgstr ""
+"[泛型](../../generics.md)、[泛型中的约束](../../generics/bounds.md)和[泛型中的多重约束](../../generics/multi_bounds.md)"
 
 #: src/scope/lifetime/lifetime_coercion.md:3
 msgid ""
@@ -9648,7 +9678,9 @@ msgid ""
 "scope it normally wouldn't work in. This comes in the form of inferred "
 "coercion by the Rust compiler, and also in the form of declaring a lifetime "
 "difference:"
-msgstr "一个较长的生命周期可以被强制转换为一个较短的生命周期，以便它在通常不能工作的作用域内工作。强制转换可由编译器隐式地推导并执行，也可以通过声明不同的生命周期的形式实现："
+msgstr ""
+"一个较长的生命周期可以被强制转换为一个较短的生命周期，使其能在通常无法工作的作用域内工作。"
+"这种转换可以通过 Rust 编译器的推断自动完成，也可以通过声明不同的生命周期的形式实现："
 
 #: src/scope/lifetime/lifetime_coercion.md:9
 msgid ""
@@ -9687,15 +9719,16 @@ msgstr "\"{} 是第一个\""
 msgid ""
 "Rust has a few reserved lifetime names. One of those is `'static`. You might "
 "encounter it in two situations:"
-msgstr "Rust 有几个保留的生命周期名称。其中之一是 `'static`。你可能在两种情况下遇到它："
+msgstr ""
+"Rust 有几个保留的生命周期名称。其中之一是 `'static`。你可能在两种情况下遇到它："
 
 #: src/scope/lifetime/static_lifetime.md:7
 msgid "// A reference with 'static lifetime:\n"
-msgstr "// 一个带有 'static 生命周期的引用：\n"
+msgstr "// 具有 'static 生命周期的引用：\n"
 
 #: src/scope/lifetime/static_lifetime.md:8
 msgid "\"hello world\""
-msgstr "\"hello world\""
+msgstr "\"你好，世界\""
 
 #: src/scope/lifetime/static_lifetime.md:9
 msgid "// 'static as part of a trait bound:\n"
@@ -9705,7 +9738,8 @@ msgstr "// 'static 作为 trait 约束的一部分：\n"
 msgid ""
 "Both are related but subtly different and this is a common source for "
 "confusion when learning Rust. Here are some examples for each situation:"
-msgstr "两者相关但有微妙的区别，这是学习 Rust 时常见的困惑来源。以下是每种情况的一些例子："
+msgstr ""
+"这两种情况虽然相关但有微妙的区别，这也是学习 Rust 时常见的困惑来源。以下是每种情况的一些例子："
 
 #: src/scope/lifetime/static_lifetime.md:17
 msgid "Reference lifetime"
@@ -9716,13 +9750,16 @@ msgid ""
 "As a reference lifetime `'static` indicates that the data pointed to by the "
 "reference lives for the remaining lifetime of the running program. It can "
 "still be coerced to a shorter lifetime."
-msgstr "作为引用生命周期，`'static` 表示该引用指向的数据在程序的剩余生命周期内都存在。它仍然可以被强制转换为更短的生命周期。"
+msgstr ""
+"作为引用生命周期，`'static` 表示该引用指向的数据在程序的整个剩余运行期间都有效。"
+"它仍然可以被强制转换为更短的生命周期。"
 
 #: src/scope/lifetime/static_lifetime.md:23
 msgid ""
 "There are two common ways to make a variable with `'static` lifetime, and "
 "both are stored in the read-only memory of the binary:"
-msgstr "有两种常见的方法可以创建具有 `'static` 生命周期的变量，它们都存储在二进制文件的只读内存中："
+msgstr ""
+"有两种常见的方法可以创建具有 `'static` 生命周期的变量，它们都存储在二进制文件的只读内存中："
 
 #: src/scope/lifetime/static_lifetime.md:26
 msgid "Make a constant with the `static` declaration."
@@ -9730,7 +9767,7 @@ msgstr "使用 `static` 声明创建一个常量。"
 
 #: src/scope/lifetime/static_lifetime.md:27
 msgid "Make a `string` literal which has type: `&'static str`."
-msgstr "创建一个 `string` 字面量，类型为：`&'static str`。"
+msgstr "创建一个字符串字面量，其类型为：`&'static str`。"
 
 #: src/scope/lifetime/static_lifetime.md:29
 msgid "See the following example for a display of each method:"
@@ -9745,20 +9782,20 @@ msgid ""
 "// Returns a reference to `NUM` where its `'static`\n"
 "// lifetime is coerced to that of the input argument.\n"
 msgstr ""
-"// 返回一个对 `NUM` 的引用，其中它的 `'static`\n"
-"// 生命周期被强制转换为输入参数的生命周期。\n"
+"// 返回一个指向 `NUM` 的引用，其中 `'static` 生命周期\n"
+"// 被强制转换为输入参数的生命周期。\n"
 
 #: src/scope/lifetime/static_lifetime.md:43
 msgid "// Make a `string` literal and print it:\n"
-msgstr "// 创建一个 `string` 字面量并打印它：\n"
+msgstr "// 创建一个字符串字面量并打印它：\n"
 
 #: src/scope/lifetime/static_lifetime.md:44
 msgid "\"I'm in read-only memory\""
-msgstr "\"我在只读内存中\""
+msgstr "\"我存储在只读内存中\""
 
 #: src/scope/lifetime/static_lifetime.md:45
 msgid "\"static_string: {}\""
-msgstr "\"static_string: {}\""
+msgstr "\"static_string 的值：{}\""
 
 #: src/scope/lifetime/static_lifetime.md:47
 msgid ""
@@ -9770,7 +9807,7 @@ msgstr ""
 
 #: src/scope/lifetime/static_lifetime.md:52
 msgid "// Make an integer to use for `coerce_static`:\n"
-msgstr "// 创建一个整数用于 `coerce_static`：\n"
+msgstr "// 创建一个整数用于 `coerce_static` 函数：\n"
 
 #: src/scope/lifetime/static_lifetime.md:55
 msgid "// Coerce `NUM` to lifetime of `lifetime_num`:\n"
