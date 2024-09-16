@@ -12481,15 +12481,15 @@ msgid ""
 "Here, we rewrite the previous example using `?`. As a result, the `map_err` "
 "will go away when `From::from` is implemented for our error type:"
 msgstr ""
-"在这里，我们使用 `?` 重写了前面的例子。因此，当为我们的错误类型实现 `From::from` 时，`map_err` 将会消失："
+"在这里，我们使用 `?` 重写了前面的例子。当为我们的错误类型实现 `From::from` 后，`map_err` 就不再需要了："
 
 #: src/error/multiple_error_types/reenter_question_mark.md:42
 msgid ""
 "// The same structure as before but rather than chain all `Results`\n"
 "// and `Options` along, we `?` to get the inner value out immediately.\n"
 msgstr ""
-"// 结构与之前相同，但我们不再链接所有的 `Results` 和 `Options`，\n"
-"// 而是使用 `?` 来立即获取内部值。\n"
+"// 结构与之前相同，但不再链式处理所有的 `Result` 和 `Option`，\n"
+"// 而是使用 `?` 立即获取内部值。\n"
 
 #: src/error/multiple_error_types/reenter_question_mark.md:69
 msgid ""
@@ -12497,8 +12497,8 @@ msgid ""
 "very similar to replacing the `unwrap` calls with `?` except that the return "
 "types are `Result`. As a result, they must be destructured at the top level."
 msgstr ""
-"这段代码已经相当清晰了。与原始的 `panic` 相比，它非常类似于用 `?` 替换 `unwrap` 调用，"
-"只是返回类型是 `Result`。因此，它们必须在顶层进行解构。"
+"现在代码变得相当简洁了。与原来使用 `panic` 的版本相比，这种方法非常类似于用 `?` 替换 `unwrap` 调用，"
+"只是返回类型变成了 `Result`。因此，需要在顶层对结果进行解构。"
 
 #: src/error/multiple_error_types/reenter_question_mark.md:76
 msgid ""
@@ -12506,20 +12506,20 @@ msgid ""
 "`](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-"
 "question-mark-operator)"
 msgstr ""
-"[`From::from`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 [`?"
-"`](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-"
-"question-mark-operator)"
+"[`From::from`]（https://doc.rust-lang.org/std/convert/trait.From.html）和"
+"[`?`运算符]（https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-"
+"question-mark-operator）"
 
 #: src/error/multiple_error_types/wrap_error.md:3
 msgid "An alternative to boxing errors is to wrap them in your own error type."
-msgstr "另一种替代装箱错误的方法是将它们包装在你自己的错误类型中。"
+msgstr "除了将错误装箱外，另一种方法是将它们包装在你自定义的错误类型中。"
 
 #: src/error/multiple_error_types/wrap_error.md:16
 msgid ""
 "// We will defer to the parse error implementation for their error.\n"
 "    // Supplying extra info requires adding more data to the type.\n"
 msgstr ""
-"// 我们将延迟到解析错误实现中处理它们的错误。\n"
+"// 我们将使用解析错误的实现来处理它们的错误。\n"
 "    // 提供额外信息需要向类型添加更多数据。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:25
@@ -12531,7 +12531,7 @@ msgid ""
 "// The wrapped error contains additional information and is available\n"
 "            // via the source() method.\n"
 msgstr ""
-"// 包装的错误包含额外信息，可以通过 source() 方法获取。\n"
+"// 包装的错误包含额外信息，可通过 source() 方法获取。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:29
 msgid "\"the provided string could not be parsed as int\""
@@ -12544,7 +12544,7 @@ msgid ""
 "the\n"
 "            // underlying type already implements the `Error` trait.\n"
 msgstr ""
-"// 原因是底层实现的错误类型。它被隐式地\n"
+"// 错误原因是底层实现的错误类型。它被隐式地\n"
 "            // 转换为 trait 对象 `&error::Error`。这是可行的，因为\n"
 "            // 底层类型已经实现了 `Error` trait。\n"
 
@@ -12555,20 +12555,20 @@ msgid ""
 "// needs to be converted into a `DoubleError`.\n"
 msgstr ""
 "// 实现从 `ParseIntError` 到 `DoubleError` 的转换。\n"
-"// 如果需要将 `ParseIntError` 转换为 `DoubleError`，\n"
-"// 这将被 `?` 自动调用。\n"
+"// 当需要将 `ParseIntError` 转换为 `DoubleError` 时，\n"
+"// `?` 运算符会自动调用这个转换。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:57
 msgid ""
 "// Here we implicitly use the `ParseIntError` implementation of `From` (which\n"
 "    // we defined above) in order to create a `DoubleError`.\n"
 msgstr ""
-"// 这里我们隐式使用 `ParseIntError` 的 `From` 实现（我们在上面定义的）\n"
+"// 这里我们隐式使用了 `ParseIntError` 的 `From` 实现（我们在上面定义的）\n"
 "    // 来创建一个 `DoubleError`。\n"
 
 #: src/error/multiple_error_types/wrap_error.md:70
 msgid "\"  Caused by: {}\""
-msgstr "\"  原因：{}\""
+msgstr "\"  错误原因：{}\""
 
 #: src/error/multiple_error_types/wrap_error.md:87
 msgid ""
@@ -12576,21 +12576,22 @@ msgid ""
 "in all applications. There are some libraries that can take care of the "
 "boilerplate for you."
 msgstr ""
-"这增加了一些处理错误的样板代码，可能并不是所有应用程序都需要。有一些库可以为你处理这些样板代码。"
+"这种方法增加了一些处理错误的样板代码，可能并非所有应用程序都需要。"
+"有一些库可以帮你处理这些样板代码。"
 
 #: src/error/multiple_error_types/wrap_error.md:93
 msgid ""
 "[`From::from`](https://doc.rust-lang.org/std/convert/trait.From.html) and "
 "[`Enums`](../../custom_types/enum.md)"
 msgstr ""
-"[`From::from`](https://doc.rust-lang.org/std/convert/trait.From.html) 和 "
+"[`From::from`](https://doc.rust-lang.org/std/convert/trait.From.html) 和"
 "[`枚举`](../../custom_types/enum.md)"
 
 #: src/error/multiple_error_types/wrap_error.md:96
 msgid ""
 "[`Crates for handling errors`](https://crates.io/keywords/error-handling)"
 msgstr ""
-"[`处理错误的 crate`](https://crates.io/keywords/error-handling)"
+"[处理错误的 crate](https://crates.io/keywords/error-handling)"
 
 #: src/error/iter_result.md:3
 msgid "An `Iter::map` operation might fail, for example:"
@@ -12623,8 +12624,8 @@ msgid ""
 "`map_err` calls a function with the error, so by adding that to the previous "
 "`filter_map` solution we can save them off to the side while iterating."
 msgstr ""
-"`map_err` 使用错误调用一个函数，所以通过将其添加到之前的 `filter_map` 解决方案中，"
-"我们可以在迭代时将它们保存到一边。"
+"`map_err` 会对错误调用一个函数，因此将其添加到之前的 `filter_map` 解决方案中，"
+"我们可以在迭代时将错误项保存到一旁。"
 
 #: src/error/iter_result.md:40
 msgid "\"999\""
@@ -12651,16 +12652,17 @@ msgid ""
 "(`Result<Vec<T>, E>`). Once an `Result::Err` is found, the iteration will "
 "terminate."
 msgstr ""
-"`Result` 实现了 `FromIterator`，因此结果的向量（`Vec<Result<T, E>>`）可以转换为包裹着向量的结果"
-"（`Result<Vec<T>, E>`）。一旦找到 `Result::Err`，迭代将终止。"
+"`Result` 实现了 `FromIterator` trait，因此结果的向量（`Vec<Result<T, E>>`）"
+"可以转换为包含向量的结果（`Result<Vec<T>, E>`）。一旦遇到 `Result::Err`，"
+"迭代就会终止。"
 
 #: src/error/iter_result.md:69
 msgid "This same technique can be used with `Option`."
-msgstr "这种方式也可以用于 `Option`。"
+msgstr "这种技巧同样适用于 `Option`。"
 
 #: src/error/iter_result.md:71
 msgid "Collect all valid values and failures with `partition()`"
-msgstr "使用 `partition()` 收集所有有效值和错误"
+msgstr "使用 `partition()` 收集所有有效值和失败项"
 
 #: src/error/iter_result.md:85
 msgid ""
@@ -12674,15 +12676,15 @@ msgid ""
 "The `std` library provides many custom types which expands drastically on the "
 "`primitives`. Some of these include:"
 msgstr ""
-"`std` 库提供了许多自定义类型，这些类型大大扩展了`原生类型`。其中包括："
+"`std` 库提供了许多自定义类型，大大扩展了"原生类型"的功能。其中包括："
 
 #: src/std.md:6
 msgid "growable `String`s like: `\"hello world\"`"
-msgstr "可增长的 `String`，如：`\"hello world\"`"
+msgstr "可增长的 `String`，例如：`\"hello world\"`"
 
 #: src/std.md:7
 msgid "growable vectors: `[1, 2, 3]`"
-msgstr "可增长的向量：`[1, 2, 3]`"
+msgstr "可增长的向量（vector）：`[1, 2, 3]`"
 
 #: src/std.md:8
 msgid "optional types: `Option<i32>`"
@@ -12701,7 +12703,7 @@ msgid ""
 "[primitives](primitives.md) and [the std library](https://doc.rust-lang.org/"
 "std/)"
 msgstr ""
-"[原生类型](primitives.md) 和 [标准库](https://doc.rust-lang.org/std/)"
+"[原生类型](primitives.md)和[标准库](https://doc.rust-lang.org/std/)"
 
 #: src/std/box.md:3
 msgid ""
@@ -12712,7 +12714,7 @@ msgid ""
 "heap is freed."
 msgstr ""
 "在 Rust 中，所有值默认都是栈分配的。通过创建 `Box<T>`，可以将值**装箱**（在堆上分配）。"
-"Box 是指向堆分配的 `T` 类型值的智能指针。当 box 离开作用域时，它的析构函数被调用，"
+"Box 是指向堆分配的 `T` 类型值的智能指针。当 box 离开作用域时，会调用其析构函数，"
 "内部对象被销毁，堆上的内存被释放。"
 
 #: src/std/box.md:8
@@ -12720,14 +12722,14 @@ msgid ""
 "Boxed values can be dereferenced using the `*` operator; this removes one "
 "layer of indirection."
 msgstr ""
-"可以使用 `*` 运算符解引用装箱的值；这会移除一层间接引用。"
+"可以使用 `*` 运算符解引用装箱的值，这会移除一层间接引用。"
 
 #: src/std/box.md:20
 msgid ""
 "// A Rectangle can be specified by where its top left and bottom right \n"
 "// corners are in space\n"
 msgstr ""
-"// 可以通过指定左上角和右下角在空间中的位置来定义一个矩形\n"
+"// 可以通过指定左上角和右下角在空间中的位置来定义矩形\n"
 
 #: src/std/box.md:34
 msgid "// Allocate this point on the heap, and return a pointer to it\n"
@@ -12751,7 +12753,7 @@ msgstr "// 函数的输出可以被装箱\n"
 
 #: src/std/box.md:56
 msgid "// Double indirection\n"
-msgstr "// 两层装箱\n"
+msgstr "// 双重间接引用\n"
 
 #: src/std/box.md:59
 msgid "\"Point occupies {} bytes on the stack\""
@@ -12779,7 +12781,7 @@ msgstr "\"装箱的 box 在栈上占用 {} 字节\""
 
 #: src/std/box.md:72
 msgid "// Copy the data contained in `boxed_point` into `unboxed_point`\n"
-msgstr "// 将 `boxed_point` 中包含的数据复制到 `unboxed_point`\n"
+msgstr "// 将 `boxed_point` 中的数据复制到 `unboxed_point`\n"
 
 #: src/std/box.md:74
 msgid "\"Unboxed point occupies {} bytes on the stack\""
@@ -12791,8 +12793,8 @@ msgid ""
 "compile time, but they can grow or shrink at any time. A vector is "
 "represented using 3 parameters:"
 msgstr ""
-"向量（Vector）是可调整大小的数组。和切片（Slice）类似，它们的大小在编译时是未知的，但可以随时增长或缩小。"
-"向量使用 3 个参数表示："
+"向量（Vector）是可调整大小的数组。与切片（Slice）类似，它们的大小在编译时是未知的，但可以随时增长或缩小。"
+"向量由 3 个参数表示："
 
 #: src/std/vec.md:6
 msgid "pointer to the data"
@@ -12813,7 +12815,7 @@ msgid ""
 "threshold needs to be surpassed, the vector is reallocated with a larger "
 "capacity."
 msgstr ""
-"容量表示为向量保留了多少内存。只要长度小于容量，向量就可以增长。当需要超过这个阈值时，"
+"容量表示为向量预留的内存量。只要长度小于容量，向量就可以增长。当需要超过这个阈值时，"
 "向量会被重新分配更大的容量。"
 
 #: src/std/vec.md:16
@@ -12822,11 +12824,11 @@ msgstr "// 迭代器可以被收集到向量中\n"
 
 #: src/std/vec.md:18
 msgid "\"Collected (0..10) into: {:?}\""
-msgstr "\"收集 (0..10) 到：{:?}\""
+msgstr "\"将 (0..10) 收集到：{:?}\""
 
 #: src/std/vec.md:20
 msgid "// The `vec!` macro can be used to initialize a vector\n"
-msgstr "// `vec!` 宏可以用来初始化一个向量\n"
+msgstr "// 可以使用 `vec!` 宏初始化向量\n"
 
 #: src/std/vec.md:22
 msgid "\"Initial vector: {:?}\""
@@ -12834,7 +12836,7 @@ msgstr "\"初始向量：{:?}\""
 
 #: src/std/vec.md:24
 msgid "// Insert new element at the end of the vector\n"
-msgstr "// 在向量的末尾插入新元素\n"
+msgstr "// 在向量末尾插入新元素\n"
 
 #: src/std/vec.md:25
 msgid "\"Push 4 into the vector\""
@@ -12846,7 +12848,7 @@ msgstr "\"向量：{:?}\""
 
 #: src/std/vec.md:29
 msgid "// Error! Immutable vectors can't grow\n"
-msgstr "// 错误！不可变向量不能增长\n"
+msgstr "// 错误！不可变向量无法增长\n"
 
 #: src/std/vec.md:33
 msgid ""
@@ -12868,7 +12870,7 @@ msgstr "\"第二个元素：{}\""
 
 #: src/std/vec.md:39
 msgid "// `pop` removes the last element from the vector and returns it\n"
-msgstr "// `pop` 移除向量的最后一个元素并返回它\n"
+msgstr "// `pop` 移除并返回向量的最后一个元素\n"
 
 #: src/std/vec.md:40
 msgid "\"Pop last element: {:?}\""
@@ -12884,7 +12886,7 @@ msgstr "\"第四个元素：{}\""
 
 #: src/std/vec.md:46
 msgid "// `Vector`s can be easily iterated over\n"
-msgstr "// `Vector` 可以很容易地被迭代\n"
+msgstr "// 可以轻松地遍历 `Vector`\n"
 
 #: src/std/vec.md:47
 msgid "\"Contents of xs:\""
@@ -12895,20 +12897,20 @@ msgid ""
 "// A `Vector` can also be iterated over while the iteration\n"
 "    // count is enumerated in a separate variable (`i`)\n"
 msgstr ""
-"// `Vector` 也可以被迭代，同时迭代计数\n"
-"    // 被枚举在一个单独的变量中（`i`）\n"
+"// 遍历 `Vector` 时，可以同时用一个单独的变量（`i`）\n"
+"// 来枚举迭代计数\n"
 
 #: src/std/vec.md:55
 msgid "\"In position {} we have value {}\""
-msgstr "\"在位置 {} 我们有值 {}\""
+msgstr "\"在位置 {} 的值是 {}\""
 
 #: src/std/vec.md:58
 msgid ""
 "// Thanks to `iter_mut`, mutable `Vector`s can also be iterated\n"
 "    // over in a way that allows modifying each value\n"
 msgstr ""
-"// 多亏了 `iter_mut`，可变的 `Vector` 也可以被迭代\n"
-"    // 以一种允许修改每个值的方式\n"
+"// 借助 `iter_mut`，可变的 `Vector` 也可以被遍历，\n"
+"// 并且允许修改每个值\n"
 
 #: src/std/vec.md:63
 msgid "\"Updated vector: {:?}\""
@@ -12931,7 +12933,7 @@ msgid ""
 "always be a valid UTF-8 sequence. `String` is heap allocated, growable and "
 "not null terminated."
 msgstr ""
-"`String` 存储为字节向量（`Vec<u8>`），但保证了是有效的 UTF-8 序列。`String` 是堆分配的，可增长的，且不以 null 结尾。"
+"`String` 存储为字节向量（`Vec<u8>`），但保证始终是有效的 UTF-8 序列。`String` 在堆上分配，可增长，且不以 null 结尾。"
 
 #: src/std/str.md:9
 msgid ""
@@ -12945,32 +12947,32 @@ msgid ""
 "// (all the type annotations are superfluous)\n"
 "    // A reference to a string allocated in read only memory\n"
 msgstr ""
-"// （所有的类型标注都是多余的）\n"
+"// （所有的类型注解都不是必须的）\n"
 "    // 一个指向只读内存中分配的字符串的引用\n"
 
 #: src/std/str.md:16
 msgid "\"the quick brown fox jumps over the lazy dog\""
-msgstr "\"the quick brown fox jumps over the lazy dog\""
+msgstr "\"敏捷的棕色狐狸跳过懒惰的狗\""
 
 #: src/std/str.md:17
 msgid "\"Pangram: {}\""
-msgstr "\"Pangram: {}\""
+msgstr "\"全字母句：{}\""
 
 #: src/std/str.md:19
 msgid "// Iterate over words in reverse, no new string is allocated\n"
-msgstr "// 逆序迭代单词，不会分配新的字符串\n"
+msgstr "// 反向遍历单词，不会分配新的字符串\n"
 
 #: src/std/str.md:20
 msgid "\"Words in reverse\""
-msgstr "\"反向的单词\""
+msgstr "\"单词逆序\""
 
 #: src/std/str.md:25
 msgid "// Copy chars into a vector, sort and remove duplicates\n"
-msgstr "// 将字符复制到向量中，排序并移除重复项\n"
+msgstr "// 将字符复制到向量中，排序并去重\n"
 
 #: src/std/str.md:30
 msgid "// Create an empty and growable `String`\n"
-msgstr "// 创建一个空的可增长的 `String`\n"
+msgstr "// 创建一个空的、可增长的 `String`\n"
 
 #: src/std/str.md:33
 msgid "// Insert a char at the end of string\n"
@@ -12978,14 +12980,14 @@ msgstr "// 在字符串末尾插入一个字符\n"
 
 #: src/std/str.md:35
 msgid "// Insert a string at the end of string\n"
-msgstr "// 在字符串末尾插入一个字符串\n"
+msgstr "// 在字符串末尾追加另一个字符串\n"
 
 #: src/std/str.md:39
 msgid ""
 "// The trimmed string is a slice to the original string, hence no new\n"
 "    // allocation is performed\n"
 msgstr ""
-"// 修剪后的字符串是原始字符串的一个切片，因此不会进行新的分配\n"
+"// 修剪后的字符串是原始字符串的一个切片，因此不会进行新的内存分配\n"
 
 #: src/std/str.md:43
 msgid "\"Used characters: {}\""
@@ -12997,27 +12999,27 @@ msgstr "// 在堆上分配一个字符串\n"
 
 #: src/std/str.md:46
 msgid "\"I like dogs\""
-msgstr "\"I like dogs\""
+msgstr "\"我喜欢狗\""
 
 #: src/std/str.md:47
 msgid "// Allocate new memory and store the modified string there\n"
-msgstr "// 分配新的内存并在那里存储修改后的字符串\n"
+msgstr "// 分配新的内存并在其中存储修改后的字符串\n"
 
 #: src/std/str.md:48
 msgid "\"dog\""
-msgstr "\"dog\""
+msgstr "\"狗\""
 
 #: src/std/str.md:48
 msgid "\"cat\""
-msgstr "\"cat\""
+msgstr "\"猫\""
 
 #: src/std/str.md:50
 msgid "\"Alice says: {}\""
-msgstr "\"Alice 说：{}\""
+msgstr "\"爱丽丝说：{}\""
 
 #: src/std/str.md:51
 msgid "\"Bob says: {}\""
-msgstr "\"Bob 说：{}\""
+msgstr "\"鲍勃说：{}\""
 
 #: src/std/str.md:55
 msgid ""
@@ -13025,11 +13027,12 @@ msgid ""
 "rust-lang.org/std/str/) and [std::string](https://doc.rust-lang.org/std/"
 "string/) modules"
 msgstr ""
-"更多 `str`/`String` 方法可以在 [std::str](https://doc.rust-lang.org/std/str/) 和 [std::string](https://doc.rust-lang.org/std/string/) 模块中找到"
+"更多 `str` 和 `String` 的方法可以在 [std::str](https://doc.rust-lang.org/std/str/) "
+"和 [std::string](https://doc.rust-lang.org/std/string/) 模块中找到"
 
 #: src/std/str.md:60
 msgid "Literals and escapes"
-msgstr "字面值和转义"
+msgstr "字面值和转义字符"
 
 #: src/std/str.md:62
 msgid ""
@@ -13038,7 +13041,9 @@ msgid ""
 "most convenient to write. Similarly there are multiple ways to write byte "
 "string literals, which all result in `&[u8; N]`."
 msgstr ""
-"有多种方式可以编写包含特殊字符的字符串字面值。所有方式都会产生类似的 `&str`，所以最好使用最方便编写的形式。同样，也有多种方式可以编写字节字符串字面值，它们都会产生 `&[u8; N]`。"
+"有多种方式可以编写包含特殊字符的字符串字面值。所有方式都会产生类似的 `&str`，"
+"因此最好使用最方便编写的形式。同样，也有多种方式可以编写字节字符串字面值，"
+"它们都会产生 `&[u8; N]` 类型。"
 
 #: src/std/str.md:67
 msgid ""
@@ -13047,26 +13052,28 @@ msgid ""
 "ones that you don't know how to type. If you want a literal backslash, escape "
 "it with another one: `\\\\`"
 msgstr ""
-"通常特殊字符用反斜杠字符转义：`\\`。这样你可以在字符串中添加任何字符，甚至是不可打印的字符和你不知道如何输入的字符。如果你想要一个字面的反斜杠，用另一个反斜杠转义它：`\\\\`"
+"通常，特殊字符用反斜杠（`\\`）进行转义。这样你可以在字符串中添加任何字符，"
+"包括不可打印的字符和你不知道如何输入的字符。如果你想要一个字面的反斜杠，"
+"用另一个反斜杠转义它：`\\\\`"
 
 #: src/std/str.md:72
 msgid ""
 "String or character literal delimiters occurring within a literal must be "
 "escaped: `\"\\\"\"`, `'\\''`."
 msgstr ""
-"出现在字面值内的字符串或字符字面值分隔符必须被转义：`\"\\\"\"`, `'\\''`。"
+"出现在字面值内的字符串或字符字面值分隔符必须被转义：`\"\\\"\"` 和 `'\\''`。"
 
 #: src/std/str.md:76
 msgid "// You can use escapes to write bytes by their hexadecimal values...\n"
-msgstr "// 你可以使用转义来通过它们的十六进制值写入字节...\n"
+msgstr "// 你可以使用转义来通过十六进制值写入字节...\n"
 
 #: src/std/str.md:77
 msgid "\"I'm writing \\x52\\x75\\x73\\x74!\""
-msgstr "\"I'm writing \\x52\\x75\\x73\\x74!\""
+msgstr "\"我正在写 \\x52\\x75\\x73\\x74！\""
 
 #: src/std/str.md:78
 msgid "\"What are you doing\\x3F (\\\\x3F means ?) {}\""
-msgstr "\"What are you doing\\x3F (\\\\x3F 表示 ?) {}\""
+msgstr "\"你在做什么\\x3F（\\\\x3F 表示 ?）{}\""
 
 #: src/std/str.md:80
 msgid "// ...or Unicode code points.\n"
@@ -13078,7 +13085,7 @@ msgstr "\"\\u{211D}\""
 
 #: src/std/str.md:82
 msgid "\"\\\"DOUBLE-STRUCK CAPITAL R\\\"\""
-msgstr "\"\\\"DOUBLE-STRUCK CAPITAL R\\\"\""
+msgstr "\"\\\"双线大写 R\\\"\""
 
 #: src/std/str.md:84
 msgid "\"Unicode character {} (U+211D) is called {}\""
@@ -13102,7 +13109,7 @@ msgid ""
 "just much more convenient to write a string out as-is. This is where raw "
 "string literals come into play."
 msgstr ""
-"有时需要转义的字符太多，或者直接按原样写出字符串会更方便。这就是原始字符串字面值发挥作用的地方。"
+"有时需要转义的字符太多，或者直接按原样写出字符串会更方便。这时就可以使用原始字符串字面值。"
 
 #: src/std/str.md:101
 msgid "r\"Escapes don't work here: \\x3F \\u{211D}\""
@@ -13110,11 +13117,11 @@ msgstr "r\"转义在这里不起作用：\\x3F \\u{211D}\""
 
 #: src/std/str.md:104
 msgid "// If you need quotes in a raw string, add a pair of #s\n"
-msgstr "// 如果你需要在原始字符串中使用引号，添加一对 #\n"
+msgstr "// 如果你需要在原始字符串中使用引号，可以添加一对 #\n"
 
 #: src/std/str.md:105
 msgid "r#\"And then I said: \"There is no escape!\"\"#"
-msgstr "r#\"然后我说：\"没有转义！\"\"#"
+msgstr "r#\"然后我说：\"无处可逃！\"\"#"
 
 #: src/std/str.md:108
 msgid ""
@@ -13122,7 +13129,7 @@ msgid ""
 "    // You can use up to 255 #s.\n"
 msgstr ""
 "// 如果你需要在字符串中使用 \"#，只需在分隔符中使用更多的 #。\n"
-"    // 你可以使用最多 255 个 #。\n"
+"    // 你最多可以使用 255 个 #。\n"
 
 #: src/std/str.md:110
 msgid "r###\"A string with \"# in it. And even \"##!\"###"
@@ -13134,15 +13141,15 @@ msgid ""
 "UTF-8). Or maybe you want an array of bytes that's mostly text? Byte strings "
 "to the rescue!"
 msgstr ""
-"想要一个非 UTF-8 的字符串？（记住，`str` 和 `String` 必须是有效的 UTF-8）。或者你想要一个主要是文本的字节数组？字节字符串来救场！"
+"想要一个非 UTF-8 的字符串吗？（请记住，`str` 和 `String` 必须是有效的 UTF-8）。或者你想要一个主要是文本的字节数组？字节字符串来帮忙！"
 
 #: src/std/str.md:122
 msgid "// Note that this is not actually a `&str`\n"
-msgstr "// 注意这实际上不是一个 `&str`\n"
+msgstr "// 注意，这实际上不是一个 `&str`\n"
 
 #: src/std/str.md:123
 msgid "b\"this is a byte string\""
-msgstr "b\"this is a byte string\""
+msgstr "b\"这是一个字节字符串\""
 
 #: src/std/str.md:125
 msgid ""
@@ -13157,19 +13164,19 @@ msgstr "\"一个字节字符串：{:?}\""
 
 #: src/std/str.md:128
 msgid "// Byte strings can have byte escapes...\n"
-msgstr "// 字节字符串可以有字节转义...\n"
+msgstr "// 字节字符串可以包含字节转义...\n"
 
 #: src/std/str.md:129
 msgid "b\"\\x52\\x75\\x73\\x74 as bytes\""
-msgstr "b\"\\x52\\x75\\x73\\x74 as bytes\""
+msgstr "b\"\\x52\\x75\\x73\\x74 作为字节\""
 
 #: src/std/str.md:130
 msgid ""
 "// ...but no unicode escapes\n"
 "    // let escaped = b\"\\u{211D} is not allowed\";\n"
 msgstr ""
-"// ...但不允许 unicode 转义\n"
-"    // let escaped = b\"\\u{211D} is not allowed\";\n"
+"// ...但不允许 Unicode 转义\n"
+"    // let escaped = b\"\\u{211D} 是不允许的\";\n"
 
 #: src/std/str.md:132
 msgid "\"Some escaped bytes: {:?}\""
@@ -13177,11 +13184,11 @@ msgstr "\"一些转义的字节：{:?}\""
 
 #: src/std/str.md:135
 msgid "// Raw byte strings work just like raw strings\n"
-msgstr "// 原始字节字符串和原始字符串的写法一样\n"
+msgstr "// 原始字节字符串的工作方式与原始字符串相同\n"
 
 #: src/std/str.md:136
 msgid "br\"\\u{211D} is not escaped here\""
-msgstr "br\"\\u{211D} is not escaped here\""
+msgstr "br\"\\u{211D} 在这里不会被转义\""
 
 #: src/std/str.md:139
 msgid "// Converting a byte array to `str` can fail\n"
@@ -13189,20 +13196,19 @@ msgstr "// 将字节数组转换为 `str` 可能会失败\n"
 
 #: src/std/str.md:141
 msgid "\"And the same as text: '{}'\""
-msgstr "\"同样作为文本：'{}'\""
+msgstr "\"作为文本的相同内容：'{}'\""
 
 #: src/std/str.md:144
 msgid ""
 "br#\"You can also use \"fancier\" formatting, \\\n"
 "                    like with normal raw strings\"#"
 msgstr ""
-"br#\"You can also use \"fancier\" formatting, \\\n"
-"                    like with normal raw strings\"#"
-"/*你也可以使用"更花哨的"格式，就像普通的原始字符串一样*/"
+"br#\"你也可以使用"更花哨的"格式，\\\n"
+"                    就像普通的原始字符串一样\"#"
 
 #: src/std/str.md:147
 msgid "// Byte strings don't have to be UTF-8\n"
-msgstr "// 字节字符串不必是 UTF-8\n"
+msgstr "// 字节字符串不必是 UTF-8 编码\n"
 
 #: src/std/str.md:148
 msgid "b\"\\x82\\xe6\\x82\\xa8\\x82\\xb1\\x82\\xbb\""
@@ -13214,7 +13220,7 @@ msgstr "// SHIFT-JIS 编码的 \"ようこそ\"\n"
 
 #: src/std/str.md:150
 msgid "// But then they can't always be converted to `str`\n"
-msgstr "// 但是它们并不总是能被转换为 `str`\n"
+msgstr "// 但它们并不总是能被转换为 `str`\n"
 
 #: src/std/str.md:152
 msgid "\"Conversion successful: '{}'\""
@@ -13237,7 +13243,7 @@ msgid ""
 "characters is given in the ['Tokens' chapter](https://doc.rust-lang.org/"
 "reference/tokens.html) of the Rust Reference."
 msgstr ""
-"关于编写字符串字面量和转义字符的更详细列表，请参阅 Rust 参考手册的 ['Tokens' 章节](https://doc.rust-lang.org/"
+"关于编写字符串字面值和转义字符的更详细说明，请参阅 Rust 参考手册的[「标记」章节](https://doc.rust-lang.org/"
 "reference/tokens.html)。"
 
 #: src/std/option.md:3
@@ -13245,7 +13251,7 @@ msgid ""
 "Sometimes it's desirable to catch the failure of some parts of a program "
 "instead of calling `panic!`; this can be accomplished using the `Option` enum."
 msgstr ""
-"有时我们希望捕获程序某些部分的失败，而不是调用 `panic!`；这可以通过使用 `Option` 枚举来实现。"
+"有时我们希望捕获程序某些部分的失败，而不是调用 `panic!`。这可以通过使用 `Option` 枚举来实现。"
 
 #: src/std/option.md:6
 msgid "The `Option<T>` enum has two variants:"
@@ -13253,19 +13259,19 @@ msgstr "`Option<T>` 枚举有两个变体："
 
 #: src/std/option.md:8
 msgid "`None`, to indicate failure or lack of value, and"
-msgstr "`None`，表示失败或缺少值，以及"
+msgstr "`None`：表示失败或缺少值，以及"
 
 #: src/std/option.md:9
 msgid "`Some(value)`, a tuple struct that wraps a `value` with type `T`."
-msgstr "`Some(value)`，一个包装了类型为 `T` 的 `value` 的元组结构体。"
+msgstr "`Some(value)`：一个元组结构体，包装了类型为 `T` 的 `value`。"
 
 #: src/std/option.md:12
 msgid "// An integer division that doesn't `panic!`\n"
-msgstr "// 一个不会 `panic!` 的整数除法\n"
+msgstr "// 一个不会触发 `panic!` 的整数除法\n"
 
 #: src/std/option.md:15
 msgid "// Failure is represented as the `None` variant\n"
-msgstr "// 失败表示为 `None` 变体\n"
+msgstr "// 失败用 `None` 变体表示\n"
 
 #: src/std/option.md:18
 msgid "// Result is wrapped in a `Some` variant\n"
@@ -13273,11 +13279,11 @@ msgstr "// 结果被包装在 `Some` 变体中\n"
 
 #: src/std/option.md:22
 msgid "// This function handles a division that may not succeed\n"
-msgstr "// 这个函数处理可能不成功的除法\n"
+msgstr "// 这个函数处理可能不成功的除法运算\n"
 
 #: src/std/option.md:25
 msgid "// `Option` values can be pattern matched, just like other enums\n"
-msgstr "// `Option` 值可以被模式匹配，就像其他枚举一样\n"
+msgstr "// `Option` 值可以进行模式匹配，就像其他枚举一样\n"
 
 #: src/std/option.md:27
 msgid "\"{} / {} failed!\""
@@ -13289,19 +13295,19 @@ msgstr "\"{} / {} = {}\""
 
 #: src/std/option.md:38
 msgid "// Binding `None` to a variable needs to be type annotated\n"
-msgstr "// 将 `None` 绑定到变量需要类型标注\n"
+msgstr "// 将 `None` 绑定到变量时需要进行类型注解\n"
 
 #: src/std/option.md:44
 msgid "// Unwrapping a `Some` variant will extract the value wrapped.\n"
-msgstr "// 解包 `Some` 变体将提取被包装的值。\n"
+msgstr "// 解包 `Some` 变体将提取其中包装的值。\n"
 
 #: src/std/option.md:45 src/std/option.md:48
 msgid "\"{:?} unwraps to {:?}\""
-msgstr "\"{:?} 解包为 {:?}\""
+msgstr "\"{:?} 解包后得到 {:?}\""
 
 #: src/std/option.md:47
 msgid "// Unwrapping a `None` variant will `panic!`\n"
-msgstr "// 解包 `None` 变体将会 `panic!`\n"
+msgstr "// 解包 `None` 变体将触发 `panic!`\n"
 
 #: src/std/result.md:3
 msgid ""
@@ -13310,7 +13316,7 @@ msgid ""
 "However, sometimes it is important to express _why_ an operation failed. To "
 "do this we have the `Result` enum."
 msgstr ""
-"我们已经了解到 `Option` 枚举可以作为可能失败的函数的返回值，其中 `None` 用于表示失败。\n"
+"我们已经看到 `Option` 枚举可以用作可能失败的函数的返回值，其中 `None` 用于表示失败。\n"
 "然而，有时表达操作失败的**原因**很重要。为此，我们有 `Result` 枚举。"
 
 #: src/std/result.md:8
@@ -13322,14 +13328,14 @@ msgid ""
 "`Ok(value)` which indicates that the operation succeeded, and wraps the "
 "`value` returned by the operation. (`value` has type `T`)"
 msgstr ""
-"`Ok(value)` 表示操作成功，并包装了操作返回的 `value`。（`value` 的类型为 `T`）"
+"`Ok(value)`：表示操作成功，并包装了操作返回的 `value`。（`value` 的类型为 `T`）"
 
 #: src/std/result.md:12
 msgid ""
 "`Err(why)`, which indicates that the operation failed, and wraps `why`, which "
 "(hopefully) explains the cause of the failure. (`why` has type `E`)"
 msgstr ""
-"`Err(why)`，表示操作失败，并包装了 `why`，它解释了失败的原因（但愿如此）。（`why` 的类型为 `E`）"
+"`Err(why)`：表示操作失败，并包装了 `why`，它（希望）解释了失败的原因。（`why` 的类型为 `E`）"
 
 #: src/std/result.md:17
 msgid "// Mathematical \"errors\" we want to catch\n"
@@ -13340,7 +13346,7 @@ msgid ""
 "// This operation would `fail`, instead let's return the reason of\n"
 "            // the failure wrapped in `Err`\n"
 msgstr ""
-"// 这个操作会"失败"，那么（与其让程序崩溃）不如让我们把失败原因包装在 `Err` 中返回\n"
+"// 这个操作会"失败"，所以我们返回包装在 `Err` 中的失败原因\n"
 
 #: src/std/result.md:33
 msgid "// This operation is valid, return the result wrapped in `Ok`\n"
@@ -13366,10 +13372,9 @@ msgid ""
 "where the `Err(err)` branch expands to an early `return Err(From::"
 "from(err))`, and the `Ok(ok)` branch expands to an `ok` expression."
 msgstr ""
-"嵌套使用 match 处理 result 可能会变得相当混乱；幸运的是，`?` 运算符可以让代码变得整洁。"
-"`?` 用在返回 `Result` 的表达式的末尾，相当于一个 match 表达式，"
-"其中 `Err(err)` 分支展开为提前返回的 `return Err(From::from(err))`，"
-"而 `Ok(ok)` 分支展开为 `ok` 表达式。"
+"使用 match 链式处理结果可能会变得相当混乱；幸运的是，我们可以使用 `?` 运算符来让代码变得整洁。"
+"`?` 运算符用在返回 `Result` 的表达式末尾，等效于一个 match 表达式。在这个表达式中，"
+"`Err(err)` 分支会展开为提前返回的 `return Err(From::from(err))`，而 `Ok(ok)` 分支则展开为 `ok` 表达式。"
 
 #: src/std/result/question_mark.md:44
 msgid "// Intermediate function\n"
@@ -13377,11 +13382,11 @@ msgstr "// 中间函数\n"
 
 #: src/std/result/question_mark.md:46
 msgid "// if `div` \"fails\", then `DivisionByZero` will be `return`ed\n"
-msgstr "// 如果 `div` "失败"，那么 `DivisionByZero` 将被 `return`\n"
+msgstr "// 如果 `div` "失败"，则会 `return` `DivisionByZero`\n"
 
 #: src/std/result/question_mark.md:49
 msgid "// if `ln` \"fails\", then `NonPositiveLogarithm` will be `return`ed\n"
-msgstr "// 如果 `ln` "失败"，那么 `NonPositiveLogarithm` 将被 `return`\n"
+msgstr "// 如果 `ln` "失败"，则会 `return` `NonPositiveLogarithm`\n"
 
 #: src/std/result/question_mark.md:59
 msgid "\"logarithm of non-positive number\""
@@ -13400,8 +13405,8 @@ msgid ""
 "Be sure to check the [documentation](https://doc.rust-lang.org/std/result/"
 "index.html), as there are many methods to map/compose `Result`."
 msgstr ""
-"记得查看[文档](https://doc.rust-lang.org/std/result/index.html)，"
-"因为其中有许多方法可以映射/组合 `Result`。"
+"请务必查阅 [文档](https://doc.rust-lang.org/std/result/index.html)，"
+"其中包含了许多用于映射和组合 `Result` 的方法。"
 
 #: src/std/panic.md:3
 msgid ""
@@ -13409,23 +13414,23 @@ msgid ""
 "stack. While unwinding, the runtime will take care of freeing all the "
 "resources _owned_ by the thread by calling the destructor of all its objects."
 msgstr ""
-"`panic!` 宏可以用来产生一个 panic 并开始展开（unwind）栈。在展开过程中，"
-"运行时将通过调用所有对象的析构函数来释放线程**拥有**的所有资源。"
+"`panic!` 宏可用于生成一个 panic 并开始展开其栈。在展开过程中，"
+"运行时会通过调用该线程所有对象的析构函数来释放线程**拥有**的所有资源。"
 
 #: src/std/panic.md:7
 msgid ""
 "Since we are dealing with programs with only one thread, `panic!` will cause "
 "the program to report the panic message and exit."
 msgstr ""
-"由于我们处理的是只有一个线程的程序，`panic!` 将导致程序报告 panic 消息并退出。"
+"由于我们处理的是只有一个线程的程序，`panic!` 会导致程序报告 panic 消息并退出。"
 
 #: src/std/panic.md:11
 msgid "// Re-implementation of integer division (/)\n"
-msgstr "// 重新实现整数除法 (/)\n"
+msgstr "// 重新实现整数除法（/）\n"
 
 #: src/std/panic.md:14
 msgid "// Division by zero triggers a panic\n"
-msgstr "// 除以零触发 panic\n"
+msgstr "// 除以零会触发 panic\n"
 
 #: src/std/panic.md:20
 msgid "// The `main` task\n"
@@ -13441,15 +13446,15 @@ msgstr "// 这个操作将触发任务失败\n"
 
 #: src/std/panic.md:29
 msgid "\"This point won't be reached!\""
-msgstr "\"这个点不会被达到！\""
+msgstr "\"这个点不会被执行到！\""
 
 #: src/std/panic.md:31
 msgid "// `_x` should get destroyed at this point\n"
-msgstr "// `_x` 应该在这一点被销毁\n"
+msgstr "// `_x` 应该在此处被销毁\n"
 
 #: src/std/panic.md:35
 msgid "Let's check that `panic!` doesn't leak memory."
-msgstr "让我们检查 `panic!` 是否不会泄漏内存。"
+msgstr "让我们验证 `panic!` 不会导致内存泄漏。"
 
 #: src/std/hash.md:3
 msgid ""
@@ -13457,7 +13462,7 @@ msgid ""
 "key. `HashMap` keys can be booleans, integers, strings, or any other type "
 "that implements the `Eq` and `Hash` traits. More on this in the next section."
 msgstr ""
-"动态数组（Vector）通过整数索引存储值，而 `HashMap` 通过键存储值。`HashMap` 的键可以是布尔值、"
+"向量（Vector）通过整数索引存储值，而 `HashMap` 则通过键存储值。`HashMap` 的键可以是布尔值、"
 "整数、字符串，或任何其他实现了 `Eq` 和 `Hash` trait 的类型。下一节将详细介绍这一点。"
 
 #: src/std/hash.md:8
@@ -13468,9 +13473,9 @@ msgid ""
 "`HashMap::new()` to get a HashMap with a default initial capacity "
 "(recommended)."
 msgstr ""
-"与动态数组类似，`HashMap` 也是可增长的，但 HashMap 在有多余空间时也可以自行收缩。"
-"你可以使用 `HashMap::with_capacity(uint)` 创建一个具有特定初始容量的 HashMap，"
-"或者使用 `HashMap::new()` 来获得一个具有默认初始容量的 HashMap（推荐）。"
+"与向量类似，`HashMap` 也可以增长，但当有多余空间时，HashMap 还能自动收缩。"
+"你可以使用 `HashMap::with_capacity(uint)` 创建一个具有指定初始容量的 HashMap，"
+"或使用 `HashMap::new()` 来获得一个具有默认初始容量的 HashMap（推荐）。"
 
 #: src/std/hash.md:19 src/std/hash.md:30
 msgid "\"798-1364\""
@@ -13481,7 +13486,7 @@ msgid ""
 "\"We're sorry, the call cannot be completed as dialed. \n"
 "            Please hang up and try again.\""
 msgstr ""
-"\"很抱歉，无法完成您拨打的电话。\n"
+"\"很抱歉，无法接通您拨打的电话。\n"
 "            请挂机后重试。\""
 
 #: src/std/hash.md:21 src/std/hash.md:31
@@ -13493,8 +13498,8 @@ msgid ""
 "\"Hello, this is Mr. Awesome's Pizza. My name is Fred.\n"
 "            What can I get for you today?\""
 msgstr ""
-"\"你好，这里是 Awesome 先生的披萨店。我是 Fred。\n"
-"            今天您想点些什么？\""
+"\"您好，这里是 Awesome 先生的披萨店。我是 Fred。\n"
+"            请问今天您想点些什么？\""
 
 #: src/std/hash.md:23
 msgid "\"Hi! Who is this again?\""
@@ -13534,14 +13539,14 @@ msgstr "\"正在呼叫 Daniel：{}\""
 
 #: src/std/hash.md:38
 msgid "\"Don't have Daniel's number.\""
-msgstr "\"没有 Daniel 的号码。\""
+msgstr "\"没有 Daniel 的电话号码。\""
 
 #: src/std/hash.md:41
 msgid ""
 "// `HashMap::insert()` returns `None`\n"
 "    // if the inserted value is new, `Some(value)` otherwise\n"
 msgstr ""
-"// `HashMap::insert()` 在插入新值时返回 `None`\n"
+"// 如果插入的值是新的，`HashMap::insert()` 返回 `None`\n"
 "    // 否则返回 `Some(value)`\n"
 
 #: src/std/hash.md:43
@@ -13554,19 +13559,19 @@ msgstr "\"正在呼叫 Ashley：{}\""
 
 #: src/std/hash.md:47
 msgid "\"Don't have Ashley's number.\""
-msgstr "\"没有 Ashley 的号码。\""
+msgstr "\"没有 Ashley 的电话号码。\""
 
 #: src/std/hash.md:52
 msgid ""
 "// `HashMap::iter()` returns an iterator that yields \n"
 "    // (&'a key, &'a value) pairs in arbitrary order.\n"
 msgstr ""
-"// `HashMap::iter()` 返回一个迭代器，该迭代器以任意顺序产生\n"
-"    // (&'a key, &'a value) 对。\n"
+"// `HashMap::iter()` 返回一个迭代器，该迭代器以任意顺序生成\n"
+"    // (&'a key, &'a value) 键值对。\n"
 
 #: src/std/hash.md:55
 msgid "\"Calling {}: {}\""
-msgstr "\"正在呼叫 {}：{}\""
+msgstr "\"正在呼叫{}：{}\""
 
 #: src/std/hash.md:60
 msgid ""
@@ -13574,8 +13579,8 @@ msgid ""
 "tables) work, have a look at [Hash Table Wikipedia](https://en.wikipedia.org/"
 "wiki/Hash_table)"
 msgstr ""
-"要了解更多关于哈希和哈希映射（有时称为哈希表）的工作原理，可以查看 "
-"[哈希表维基百科](https://en.wikipedia.org/wiki/Hash_table)"
+"要了解更多关于哈希和哈希映射（有时称为哈希表）的工作原理，请参阅[哈希表的维基百科页面]"
+"(https://en.wikipedia.org/wiki/Hash_table)"
 
 #: src/std/hash/alt_key_types.md:3
 msgid ""
@@ -13586,7 +13591,7 @@ msgstr ""
 
 #: src/std/hash/alt_key_types.md:6
 msgid "`bool` (though not very useful since there are only two possible keys)"
-msgstr "`bool`（虽然不是很有用，因为只有两个可能的键）"
+msgstr "`bool`（虽然用处不大，因为只有两个可能的键值）"
 
 #: src/std/hash/alt_key_types.md:7
 msgid "`int`, `uint`, and all variations thereof"
@@ -13598,7 +13603,7 @@ msgid ""
 "call `.get()` with an `&str`)"
 msgstr ""
 "`String` 和 `&str`（专业提示：你可以使用 `String` 作为 `HashMap` 的键，"
-"并用 `&str` 调用 `.get()`）"
+"并用 `&str` 调用 `.get()` 方法）"
 
 #: src/std/hash/alt_key_types.md:11
 msgid ""
@@ -13607,9 +13612,8 @@ msgid ""
 "Floating_point#Accuracy_problems) would make using them as hashmap keys "
 "horribly error-prone."
 msgstr ""
-"注意，`f32` 和 `f64` **没有**实现 `Hash`，这很大程度上是由于"
-"[浮点精度误差](https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems)，"
-"因此使用它们作为哈希映射键容易出错。"
+"注意，`f32` 和 `f64` **并未**实现 `Hash` trait，这很可能是因为[浮点数精度误差]"
+"(https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems)会导致将它们用作哈希映射的键时极易出错。"
 
 #: src/std/hash/alt_key_types.md:15
 msgid ""
@@ -13617,8 +13621,8 @@ msgid ""
 "respectively implements `Eq` and `Hash`. For example, `Vec<T>` will implement "
 "`Hash` if `T` implements `Hash`."
 msgstr ""
-"如果集合类中包含的类型分别实现了 `Eq` 和 `Hash`，那么这些集合类也就实现了 `Eq` 和 `Hash`。"
-"例如，如果 `T` 实现了 `Hash`，那么 `Vec<T>` 也实现了 `Hash`。"
+"如果集合类中包含的类型分别实现了 `Eq` 和 `Hash`，那么这些集合类也会实现 `Eq` 和 `Hash`。"
+"例如，如果 `T` 实现了 `Hash`，那么 `Vec<T>` 也会实现 `Hash`。"
 
 #: src/std/hash/alt_key_types.md:19
 msgid ""
@@ -13633,7 +13637,7 @@ msgid ""
 "can implement `Eq` and/or `Hash` yourself. This guide will not cover the "
 "specifics of implementing `Hash`."
 msgstr ""
-"编译器会完成剩下的工作。如果你想对细节有更多控制，可以自己实现 `Eq` 和/或 `Hash`。"
+"编译器会完成剩余的工作。如果你想对细节有更多控制，可以自己实现 `Eq` 和/或 `Hash`。"
 "本指南不会涉及实现 `Hash` 的具体细节。"
 
 #: src/std/hash/alt_key_types.md:26
@@ -13641,7 +13645,7 @@ msgid ""
 "To play around with using a `struct` in `HashMap`, let's try making a very "
 "simple user logon system:"
 msgstr ""
-"为了尝试在 `HashMap` 中使用 `struct`，让我们试着制作一个非常简单的用户登录系统："
+"为了尝试在 `HashMap` 中使用 `struct`，让我们来创建一个非常简单的用户登录系统："
 
 #: src/std/hash/alt_key_types.md:31
 msgid "// Eq requires that you derive PartialEq on the type.\n"
@@ -13657,7 +13661,7 @@ msgstr "\"密码：{}\""
 
 #: src/std/hash/alt_key_types.md:50
 msgid "\"Attempting logon...\""
-msgstr "\"尝试登录...\""
+msgstr "\"正在尝试登录...\""
 
 #: src/std/hash/alt_key_types.md:59
 msgid "\"Successful logon!\""
@@ -13669,7 +13673,7 @@ msgstr "\"姓名：{}\""
 
 #: src/std/hash/alt_key_types.md:61
 msgid "\"Email: {}\""
-msgstr "\"邮箱：{}\""
+msgstr "\"电子邮箱：{}\""
 
 #: src/std/hash/alt_key_types.md:63
 msgid "\"Login failed!\""
@@ -13701,14 +13705,14 @@ msgid ""
 "Consider a `HashSet` as a `HashMap` where we just care about the keys "
 "( `HashSet<T>` is, in actuality, just a wrapper around `HashMap<T, ()>`)."
 msgstr ""
-"可以将 `HashSet` 当作一个只关心键的 `HashMap`（实际上，`HashSet<T>` 只是 `HashMap<T, ()>` 的一个封装）。"
+"可以将 `HashSet` 视为一个只关心键的 `HashMap`（实际上，`HashSet<T>` 只是 `HashMap<T, ()>` 的封装）。"
 
 #: src/std/hash/hashset.md:6
 msgid ""
 "\"What's the point of that?\" you ask. \"I could just store the keys in a "
 "`Vec`.\""
 msgstr ""
-"你可能会问："这有什么意义？我可以直接把键存储在 `Vec` 中。""
+"你可能会问："这有什么意义？我可以直接把键存储在 `Vec` 中啊。""
 
 #: src/std/hash/hashset.md:8
 msgid ""
@@ -13717,7 +13721,8 @@ msgid ""
 "just one implementation. (see also: [`BTreeSet`](https://doc.rust-lang.org/"
 "std/collections/struct.BTreeSet.html))"
 msgstr ""
-"`HashSet` 的独特之处在于它保证不会有重复的元素。这是任何集合（Set）类型都应该满足的契约。`HashSet` 只是其中一种实现。（参见：[`BTreeSet`](https://doc.rust-lang.org/std/collections/struct.BTreeSet.html)）"
+"`HashSet` 的独特之处在于它保证不会有重复元素。这是所有集合类型都应满足的约定。`HashSet` 只是其中一种实现。（另请参阅：[`BTreeSet`]"
+"(https://doc.rust-lang.org/std/collections/struct.BTreeSet.html)）"
 
 #: src/std/hash/hashset.md:13
 msgid ""
@@ -13725,14 +13730,14 @@ msgid ""
 "value is equal to the existing and they both have the same hash), then the "
 "new value will replace the old."
 msgstr ""
-"如果你插入一个已经存在于 `HashSet` 中的值（即新值等于现有值，且它们的哈希值相同），那么新值将替换旧值。"
+"如果你插入一个已存在于 `HashSet` 中的值（即新值等于现有值，且它们的哈希值相同），那么新值将替换旧值。"
 
 #: src/std/hash/hashset.md:17
 msgid ""
 "This is great for when you never want more than one of something, or when you "
 "want to know if you've already got something."
 msgstr ""
-"当你不希望某样东西出现多次，或者想知道是否已经拥有某样东西时，这非常有用。"
+"当你不希望某个元素出现多次，或者想知道是否已经拥有某个元素时，这非常有用。"
 
 #: src/std/hash/hashset.md:20
 msgid "But sets can do more than that."
@@ -13774,11 +13779,11 @@ msgid ""
 "// `HashSet::insert()` returns false if\n"
 "    // there was a value already present.\n"
 msgstr ""
-"// 如果值已经存在，`HashSet::insert()` 返回 false。\n"
+"// 如果集合中已存在该值，`HashSet::insert()` 将返回 false。\n"
 
 #: src/std/hash/hashset.md:47
 msgid "\"Value 4 is already in set B!\""
-msgstr "\"值 4 已经在集合 B 中！\""
+msgstr "\"值 4 已存在于集合 B 中！\""
 
 #: src/std/hash/hashset.md:52
 msgid ""
@@ -13786,17 +13791,17 @@ msgid ""
 "    // then the collection implements `Debug`.\n"
 "    // It usually prints its elements in the format `[elem1, elem2, ...]`\n"
 msgstr ""
-"// 如果集合的元素类型实现了 `Debug`，\n"
-"    // 那么该集合也实现了 `Debug`。\n"
-"    // 它通常以 `[elem1, elem2, ...]` 的格式打印其元素\n"
+"// 如果集合的元素类型实现了 `Debug` 特征，\n"
+"    // 那么该集合也会实现 `Debug` 特征。\n"
+"    // 通常会以 `[elem1, elem2, ...]` 的格式打印其元素\n"
 
 #: src/std/hash/hashset.md:55
 msgid "\"A: {:?}\""
-msgstr "\"A: {:?}\""
+msgstr "\"A：{:?}\""
 
 #: src/std/hash/hashset.md:56
 msgid "\"B: {:?}\""
-msgstr "\"B: {:?}\""
+msgstr "\"B：{:?}\""
 
 #: src/std/hash/hashset.md:58
 msgid "// Print [1, 2, 3, 4, 5] in arbitrary order\n"
@@ -13808,7 +13813,7 @@ msgstr "\"并集：{:?}\""
 
 #: src/std/hash/hashset.md:61
 msgid "// This should print [1]\n"
-msgstr "// 这应该打印 [1]\n"
+msgstr "// 这里应该打印 [1]\n"
 
 #: src/std/hash/hashset.md:62
 msgid "\"Difference: {:?}\""
@@ -13816,7 +13821,7 @@ msgstr "\"差集：{:?}\""
 
 #: src/std/hash/hashset.md:64
 msgid "// Print [2, 3, 4] in arbitrary order.\n"
-msgstr "// 以任意顺序打印 [2, 3, 4]。\n"
+msgstr "// 以任意顺序打印 [2, 3, 4]\n"
 
 #: src/std/hash/hashset.md:65
 msgid "\"Intersection: {:?}\""
@@ -13835,7 +13840,7 @@ msgid ""
 "(Examples are adapted from the [documentation.](https://doc.rust-lang.org/std/"
 "collections/struct.HashSet.html#method.difference))"
 msgstr ""
-"（示例改编自[文档。](https://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference)）"
+"（示例改编自[官方文档](https://doc.rust-lang.org/std/collections/struct.HashSet.html#method.difference)）"
 
 #: src/std/rc.md:3
 msgid ""
@@ -13843,7 +13848,7 @@ msgid ""
 "keeps track of the number of the references which means the number of owners "
 "of the value wrapped inside an `Rc`."
 msgstr ""
-"当需要多个所有权时，可以使用 `Rc`（Reference Counting, 引用计数）。`Rc` 会跟踪引用的数量，也就是包裹在 `Rc` 内部的值的所有者数量。"
+"当需要多重所有权时，可以使用 `Rc`（引用计数，Reference Counting）。`Rc` 会跟踪引用的数量，即包裹在 `Rc` 内部的值的所有者数量。"
 
 #: src/std/rc.md:5
 msgid ""
@@ -13852,14 +13857,14 @@ msgid ""
 "`Rc`'s reference count becomes zero (which means there are no remaining "
 "owners), both the `Rc` and the value are all dropped."
 msgstr ""
-"每当克隆一个 `Rc` 时，引用计数就会增加 1，每当一个克隆的 `Rc` 离开作用域时，引用计数就会减少 1。当 `Rc` 的引用计数变为零（这意味着已经没有所有者了）时，`Rc` 和其中的值都会被丢弃。"
+"每当克隆一个 `Rc` 时，其引用计数就会增加 1；每当一个克隆的 `Rc` 离开作用域时，引用计数就会减少 1。当 `Rc` 的引用计数变为零（意味着没有剩余的所有者）时，`Rc` 及其包含的值都会被丢弃。"
 
 #: src/std/rc.md:7
 msgid ""
 "Cloning an `Rc` never performs a deep copy. Cloning creates just another "
 "pointer to the wrapped value, and increments the count."
 msgstr ""
-"克隆 `Rc` 从不执行深拷贝。克隆只是创建另一个指向包裹值的指针，并增加计数。"
+"克隆 `Rc` 从不执行深拷贝。克隆只是创建另一个指向被包裹值的指针，并增加计数。"
 
 #: src/std/rc.md:13
 msgid "\"Rc examples\""
@@ -13867,7 +13872,7 @@ msgstr "\"Rc 示例\""
 
 #: src/std/rc.md:15
 msgid "\"--- rc_a is created ---\""
-msgstr "\"--- rc_a 被创建 ---\""
+msgstr "\"--- rc_a 已创建 ---\""
 
 #: src/std/rc.md:18 src/std/rc.md:25 src/std/rc.md:37
 msgid "\"Reference Count of rc_a: {}\""
@@ -13875,7 +13880,7 @@ msgstr "\"rc_a 的引用计数：{}\""
 
 #: src/std/rc.md:21
 msgid "\"--- rc_a is cloned to rc_b ---\""
-msgstr "\"--- rc_a 被克隆到 rc_b ---\""
+msgstr "\"--- rc_a 被克隆为 rc_b ---\""
 
 #: src/std/rc.md:24
 msgid "\"Reference Count of rc_b: {}\""
@@ -13883,11 +13888,11 @@ msgstr "\"rc_b 的引用计数：{}\""
 
 #: src/std/rc.md:27
 msgid "// Two `Rc`s are equal if their inner values are equal\n"
-msgstr "// 如果两个 `Rc` 的内部值相等，则它们相等\n"
+msgstr "// 两个 `Rc` 如果内部值相等，则它们相等\n"
 
 #: src/std/rc.md:28
 msgid "\"rc_a and rc_b are equal: {}\""
-msgstr "\"rc_a 和 rc_b 相等：{}\""
+msgstr "\"rc_a 和 rc_b 是否相等：{}\""
 
 #: src/std/rc.md:30
 msgid "// We can use methods of a value directly\n"
@@ -13903,11 +13908,11 @@ msgstr "\"rc_b 的值：{}\""
 
 #: src/std/rc.md:34
 msgid "\"--- rc_b is dropped out of scope ---\""
-msgstr "\"--- rc_b 离开作用域 ---\""
+msgstr "\"--- rc_b 超出作用域被释放 ---\""
 
 #: src/std/rc.md:39
 msgid "\"--- rc_a is dropped out of scope ---\""
-msgstr "\"--- rc_a 离开作用域 ---\""
+msgstr "\"--- rc_a 超出作用域被释放 ---\""
 
 #: src/std/rc.md:42
 msgid ""
@@ -13917,21 +13922,21 @@ msgid ""
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
 "// 错误！`rc_examples` 已经被移动到 `rc_a` 中\n"
-"    // 当 `rc_a` 被丢弃时，`rc_examples` 也会一起被丢弃\n"
+"    // 当 `rc_a` 被释放时，`rc_examples` 也会一同被释放\n"
 "    // println!(\"rc_examples: {}\", rc_examples);\n"
-"    // TODO ^ 尝试取消注释这一行\n"
+"    // TODO：尝试取消注释上面这行\n"
 
 #: src/std/rc.md:51
 msgid ""
 "[std::rc](https://doc.rust-lang.org/std/rc/index.html) and [std::sync::arc]"
 "(https://doc.rust-lang.org/std/sync/struct.Arc.html)."
 msgstr ""
-"[std::rc](https://doc.rust-lang.org/std/rc/index.html) 和 [std::sync::arc]"
+"[`std::rc`](https://doc.rust-lang.org/std/rc/index.html) 和 [`std::sync::arc`]"
 "(https://doc.rust-lang.org/std/sync/struct.Arc.html)。"
 
 #: src/std/arc.md:1
 msgid "Arc"
-msgstr "Arc"
+msgstr "Arc（原子引用计数）"
 
 #: src/std/arc.md:3
 msgid ""
@@ -13942,11 +13947,14 @@ msgid ""
 "when the last reference pointer to a value is out of scope, the variable is "
 "dropped."
 msgstr ""
-"当需要在线程间共享所有权时，可以使用 `Arc`（Atomically Reference Counted，原子引用计数）。这个结构体通过 `Clone` 实现可以为内存堆中值的位置创建一个引用指针，同时增加引用计数。由于它在线程间共享所有权，当最后一个指向某个值的引用指针离开作用域时，该变量就会被释放。"
+"当需要在线程间共享所有权时，可以使用 `Arc`（原子引用计数，Atomically Reference "
+"Counted）。通过 `Clone` 实现，这个结构体可以为堆内存中值的位置创建一个引用指针，"
+"同时增加引用计数。由于它在线程间共享所有权，当指向某个值的最后一个引用指针超出"
+"作用域时，该变量就会被释放。"
 
 #: src/std/arc.md:15
 msgid "// This variable declaration is where its value is specified.\n"
-msgstr "// 这个变量声明指定了它的值。\n"
+msgstr "// 在这个变量声明中指定了它的值。\n"
 
 #: src/std/arc.md:16
 msgid "\"the same apple\""
@@ -13957,7 +13965,7 @@ msgid ""
 "// Here there is no value specification as it is a pointer to a\n"
 "        // reference in the memory heap.\n"
 msgstr ""
-"// 这里没有值的指定，因为它是指向内存堆中引用的指针。\n"
+"// 这里没有指定值，因为它是指向堆内存中引用的指针。\n"
 "        // \n"
 
 #: src/std/arc.md:24
@@ -13965,7 +13973,7 @@ msgid ""
 "// As Arc was used, threads can be spawned using the value allocated\n"
 "            // in the Arc variable pointer's location.\n"
 msgstr ""
-"// 由于使用了 Arc，可以使用 Arc 变量指针位置中分配的值来生成线程。\n"
+"// 由于使用了 Arc，可以使用 Arc 变量指针所指向的值来生成线程。\n"
 "            // \n"
 
 #: src/std/arc.md:30
@@ -13975,49 +13983,49 @@ msgstr "// 确保所有 Arc 实例都从生成的线程中打印出来。\n"
 #: src/std_misc.md:3
 msgid ""
 "Many other types are provided by the std library to support things such as:"
-msgstr "标准库提供了许多其他类型来支持诸如以下功能："
+msgstr "标准库提供了许多其他类型来支持各种功能，例如："
 
 #: src/std_misc.md:10
 msgid "These expand beyond what the [primitives](primitives.md) provide."
-msgstr "这些扩展了[原生类型](primitives.md)所提供的功能。"
+msgstr "这些类型扩展了[基本类型](primitives.md)所提供的功能。"
 
 #: src/std_misc/threads.md:3
 msgid ""
 "Rust provides a mechanism for spawning native OS threads via the `spawn` "
 "function, the argument of this function is a moving closure."
 msgstr ""
-"Rust 通过 `spawn` 函数提供了一种生成原生操作系统线程的机制，这个函数的参数是一个移动（moving）闭包。"
+"Rust 通过 `spawn` 函数提供了一种生成原生操作系统线程的机制，该函数的参数是一个移动闭包。"
 
 #: src/std_misc/threads.md:10 src/std_misc/threads/testcase_mapreduce.md:28
 msgid "// This is the `main` thread\n"
-msgstr "// 这是 `main` 线程\n"
+msgstr "// 这是主线程\n"
 
 #: src/std_misc/threads.md:13
 msgid "// Make a vector to hold the children which are spawned.\n"
-msgstr "// 创建一个动态数组来保存生成的子线程。\n"
+msgstr "// 创建一个向量来存储生成的子线程\n"
 
 #: src/std_misc/threads.md:17
 msgid "// Spin up another thread\n"
-msgstr "// 启动另一个线程\n"
+msgstr "// 启动一个新线程\n"
 
 #: src/std_misc/threads.md:19
 msgid "\"this is thread number {}\""
-msgstr "\"这是线程 {}\""
+msgstr "\"这是第 {} 号线程\""
 
 #: src/std_misc/threads.md:24
 msgid "// Wait for the thread to finish. Returns a result.\n"
-msgstr "// 等待线程结束。返回一个结果。\n"
+msgstr "// 等待线程完成，返回一个结果\n"
 
 #: src/std_misc/threads.md:30
 msgid "These threads will be scheduled by the OS."
-msgstr "这些线程将由操作系统调度。"
+msgstr "这些线程将由操作系统进行调度。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:3
 msgid ""
 "Rust makes it very easy to parallelise data processing, without many of the "
 "headaches traditionally associated with such an attempt."
 msgstr ""
-"Rust 使得并行化数据处理变得非常容易，避免了并行处理的很多传统难题。"
+"Rust 使并行数据处理变得非常简单，避免了传统并行处理中常见的诸多问题。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:5
 msgid ""
@@ -14025,7 +14033,7 @@ msgid ""
 "These, combined with Rust's concept of Ownership and aliasing rules, "
 "automatically prevent data races."
 msgstr ""
-"标准库提供了开箱即用的出色线程原语，它们与 Rust 的所有权概念和别名规则相结合，可以自动防止数据竞争。。"
+"标准库提供了开箱即用的优秀线程原语。这些原语结合 Rust 的所有权概念和别名规则，自动防止了数据竞争。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:9
 msgid ""
@@ -14034,7 +14042,7 @@ msgid ""
 "threads. (Where synchronisation is needed, there are synchronisation "
 "primitives like `Mutex`es or `Channel`s.)"
 msgstr ""
-"别名规则（一个可写引用或多个可读引用）自动防止你操作对其他线程可见的状态。（在需要同步处理时，有像 `Mutex` 或 `Channel` 这样的同步原语。）"
+"别名规则（一个可写引用或多个可读引用）自动防止你操作对其他线程可见的状态。（在需要同步的情况下，可以使用 `Mutex` 或 `Channel` 等同步原语。）"
 
 #: src/std_misc/threads/testcase_mapreduce.md:14
 msgid ""
@@ -14043,7 +14051,7 @@ msgid ""
 "threads. Each thread will sum its tiny block of digits, and subsequently we "
 "will sum the intermediate sums produced by each thread."
 msgstr ""
-"在这个例子中，我们将计算一个数字块中所有数字的总和。我们将通过将块的不同部分分配给不同的线程来完成这个任务。每个线程将计算其小块数字的总和，随后我们将汇总每个线程产生的中间总和。"
+"在这个例子中，我们将计算一个数字块中所有数字的总和。我们通过将数字块分成小块并分配给不同的线程来完成这个任务。每个线程将计算其小块数字的总和，随后我们将汇总每个线程产生的中间结果。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:19
 msgid ""
@@ -14055,7 +14063,7 @@ msgid ""
 "data between threads, you can use a smart pointer like `Arc` to keep the data "
 "alive and avoid non-`static` lifetimes.)"
 msgstr ""
-"注意，尽管我们在线程之间传递引用，但是 Rust 理解我们只是传递只读引用，因此不会造成不安全或数据竞争的情况。此外，因为我们传递的引用具有 `'static` 生命周期，Rust 会确保被引用的数据在这些线程仍在运行时不会被销毁。（当你需要在线程之间共享非 `static` 数据时，你可以使用像 `Arc` 这样的智能指针来确保数据的存活。）"
+"注意，尽管我们在线程间传递引用，但 Rust 理解我们只是传递只读引用，因此不会发生不安全操作或数据竞争。此外，由于我们传递的引用具有 `'static` 生命周期，Rust 确保这些线程运行时数据不会被销毁。（当需要在线程间共享非 `static` 数据时，可以使用 `Arc` 等智能指针来保持数据存活并避免非 `static` 生命周期。）"
 
 #: src/std_misc/threads/testcase_mapreduce.md:32
 msgid ""
@@ -14067,11 +14075,11 @@ msgid ""
 "    //\n"
 "    // TODO: see what happens to the output if you insert spaces!\n"
 msgstr ""
-"// 这是我们要处理的数据。\n"
-"    // 我们将通过一个线程化的 map-reduce 算法计算所有数字的总和。\n"
-"    // 每个由空格分隔的块将在不同的线程中处理。\n"
+"// 这是我们要处理的数据\n"
+"    // 我们将通过一个线程化的 map-reduce 算法计算所有数字的总和\n"
+"    // 每个由空格分隔的块将在不同的线程中处理\n"
 "    //\n"
-"    // TODO：看看如果你插入空格会发生什么！\n"
+"    // TODO：试试插入空格会对输出有什么影响！\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:37
 msgid ""
@@ -14095,7 +14103,7 @@ msgstr ""
 
 #: src/std_misc/threads/testcase_mapreduce.md:46
 msgid "// Make a vector to hold the child-threads which we will spawn.\n"
-msgstr "// 创建一个动态数组来保存我们将要生成的子线程。\n"
+msgstr "// 创建一个向量来存储我们将要生成的子线程。\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:49
 msgid ""
@@ -14106,9 +14114,9 @@ msgid ""
 "     ************************************************************************/"
 msgstr ""
 "/*************************************************************************\n"
-"     * \"Map\" 阶段\n"
+"     * "Map"阶段\n"
 "     *\n"
-"     * 将我们的数据分成段，并进行初始处理\n"
+"     * 将数据分割成多个段，并进行初步处理\n"
 "     ************************************************************************/"
 
 #: src/std_misc/threads/testcase_mapreduce.md:55
@@ -14116,8 +14124,8 @@ msgid ""
 "// split our data into segments for individual calculation\n"
 "    // each chunk will be a reference (&str) into the actual data\n"
 msgstr ""
-"// 将我们的数据分成段以进行单独计算\n"
-"    // 每个块将是对实际数据的引用 (&str)\n"
+"// 将数据分割成多个段以进行单独计算\n"
+"    // 每个数据块都是指向实际数据的引用（&str）\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:59
 msgid ""
@@ -14128,15 +14136,15 @@ msgid ""
 "a\n"
 "    // \"destructuring assignment\"\n"
 msgstr ""
-"// 遍历数据段。\n"
+"// 遍历数据段\n"
 "    // .enumerate() 为迭代的每个元素添加当前循环索引\n"
-"    // 结果元组 \"(index, element)\" 然后立即\n"
-"    // 通过 \"解构赋值\" 被 \"解构\" 为两个变量，\"i\" 和 \"data_segment\"\n"
+"    // 生成的元组"(索引, 元素)"随后立即通过\n"
+"    // "解构赋值"被"解构"为两个变量："i"和"data_segment"\n"
 "    // \n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:65
 msgid "\"data segment {} is \\\"{}\\\"\""
-msgstr "\"数据段 {} 是 \\\"{}\\\"\""
+msgstr "\"数据段 {} 是"{}"\""
 
 #: src/std_misc/threads/testcase_mapreduce.md:67
 msgid ""
@@ -14158,28 +14166,29 @@ msgstr ""
 "// 在单独的线程中处理每个数据段\n"
 "        //\n"
 "        // spawn() 返回新线程的句柄，\n"
-"        // 我们必须保留它以访问返回值\n"
+"        // 我们必须保留该句柄以访问返回值\n"
 "        //\n"
 "        // 'move || -> u32' 是一个闭包的语法，它：\n"
 "        // * 不接受参数（'||'）\n"
-"        // * 获取其捕获变量的所有权（'move'）并\n"
+"        // * 获取其捕获变量的所有权（'move'）\n"
 "        // * 返回一个无符号 32 位整数（'-> u32'）\n"
 "        //\n"
-"        // Rust 足够聪明，能从闭包本身推断出 '-> u32'，\n"
+"        // Rust 足够智能，能从闭包本身推断出 '-> u32'，\n"
 "        // 所以我们可以省略它。\n"
 "        //\n"
+"        // TODO：尝试移除 'move' 并观察结果\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:82
 msgid "// Calculate the intermediate sum of this segment:\n"
-msgstr "// 计算这个段的中间和：\n"
+msgstr "// 计算此段的中间和：\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:84
 msgid "// iterate over the characters of our segment..\n"
-msgstr "// 遍历我们段中的字符..\n"
+msgstr "// 遍历此段中的字符...\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:86
 msgid "// .. convert text-characters to their number value..\n"
-msgstr "// .. 将文本字符转换为它们的数值..\n"
+msgstr "// ...将文本字符转换为对应的数值...\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:87
 msgid "\"should be a digit\""
@@ -14187,15 +14196,15 @@ msgstr "\"应该是一个数字\""
 
 #: src/std_misc/threads/testcase_mapreduce.md:88
 msgid "// .. and sum the resulting iterator of numbers\n"
-msgstr "// .. 并对结果数字迭代器求和\n"
+msgstr "// ...并对结果数字迭代器求和\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:91
 msgid "// println! locks stdout, so no text-interleaving occurs\n"
-msgstr "// println! 锁定 stdout，所以不会发生文本交错\n"
+msgstr "// println! 会锁定标准输出，因此不会出现文本交错\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:92
 msgid "\"processed segment {}, result={}\""
-msgstr "\"处理段 {}，结果={}\""
+msgstr "\"已处理段 {}，结果={}\""
 
 #: src/std_misc/threads/testcase_mapreduce.md:94
 msgid ""
@@ -14203,8 +14212,8 @@ msgid ""
 "            // last evaluated expression in each block is automatically its "
 "value.\n"
 msgstr ""
-"// 不需要 \"return\"，因为 Rust 是一种 \"表达式语言\"，\n"
-"            // 每个块中最后求值的表达式自动成为其值。\n"
+"// 不需要使用 \"return\"，因为 Rust 是一种"表达式语言"，\n"
+"// 每个代码块中最后求值的表达式会自动成为该块的返回值。\n"
 
 #: src/std_misc/threads/testcase_mapreduce.md:102
 msgid ""
@@ -14218,7 +14227,7 @@ msgstr ""
 "/*************************************************************************\n"
 "     * \"归约\"阶段\n"
 "     *\n"
-"     * 收集我们的中间结果，并将它们合并成最终结果\n"
+"     * 收集中间结果，并将它们合并成最终结果\n"
 "     ************************************************************************/"
 
 #: src/std_misc/threads/testcase_mapreduce.md:108
@@ -14253,7 +14262,7 @@ msgid ""
 "into a limited number of chunks, defined by a static constant at the "
 "beginning of the program."
 msgstr ""
-"让线程数量依赖于用户输入的数据并不明智。如果用户决定插入大量空格怎么办？我们真的想要生成 2,000 个线程吗？修改程序，使数据始终被分割成有限数量的块，这个数量由程序开头的静态常量定义。"
+"让线程数量依赖于用户输入的数据并不明智。如果用户决定插入大量空格，我们真的想要创建 2,000 个线程吗？修改程序，使数据始终被分割成固定数量的块，这个数量应由程序开头定义的静态常量来确定。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:129
 msgid "[Threads](../threads.md)"
@@ -14283,11 +14292,11 @@ msgid ""
 "[turbofish notation](https://doc.rust-lang.org/book/appendix-02-operators."
 "html?highlight=turbofish) to help type inference"
 msgstr ""
-"[turbofish 符号](https://doc.rust-lang.org/book/appendix-02-operators.html?highlight=turbofish)以帮助类型推断"
+"[涡轮鱼符号](https://doc.rust-lang.org/book/appendix-02-operators.html?highlight=turbofish)用于辅助类型推断"
 
 #: src/std_misc/threads/testcase_mapreduce.md:134
 msgid "[unwrap vs. expect](../../error/option_unwrap.md)"
-msgstr "[unwrap vs. expect](../../error/option_unwrap.md)"
+msgstr "[unwrap 与 expect](../../error/option_unwrap.md)"
 
 #: src/std_misc/threads/testcase_mapreduce.md:135
 msgid "[enumerate](https://doc.rust-lang.org/book/loops.html#enumerate)"
@@ -14299,7 +14308,7 @@ msgid ""
 "Channels allow a unidirectional flow of information between two end-points: "
 "the `Sender` and the `Receiver`."
 msgstr ""
-"Rust 提供异步 `channels`（信道）用于线程间通信。信道允许信息在两个端点之间单向流动：`Sender`（发送端）和 `Receiver`（接收端）。"
+"Rust 提供异步通道（`channels`）用于线程间通信。通道允许信息在两个端点之间单向流动：发送端（`Sender`）和接收端（`Receiver`）。"
 
 #: src/std_misc/channels.md:15
 msgid ""
@@ -14307,9 +14316,9 @@ msgid ""
 "    // where `T` is the type of the message to be transferred\n"
 "    // (type annotation is superfluous)\n"
 msgstr ""
-"// 信道有两个端点：`Sender<T>` 和 `Receiver<T>`，\n"
-"    // 其中 `T` 是要传输的消息的类型\n"
-"    // （类型标注是多余的）\n"
+"// 通道有两个端点：`Sender<T>` 和 `Receiver<T>`，\n"
+"    // 其中 `T` 是要传输的消息类型\n"
+"    // （此处的类型注解是多余的）\n"
 
 #: src/std_misc/channels.md:22
 msgid "// The sender endpoint can be copied\n"
@@ -14317,7 +14326,7 @@ msgstr "// 发送端可以被复制\n"
 
 #: src/std_misc/channels.md:25
 msgid "// Each thread will send its id via the channel\n"
-msgstr "// 每个线程将通过信道发送其 id\n"
+msgstr "// 每个线程将通过通道发送其 ID\n"
 
 #: src/std_misc/channels.md:27
 msgid ""
@@ -14325,23 +14334,23 @@ msgid ""
 "            // Each thread queues a message in the channel\n"
 msgstr ""
 "// 线程获取 `thread_tx` 的所有权\n"
-"            // 每个线程在信道中排队一条消息\n"
+"            // 每个线程在通道中排队一条消息\n"
 
 #: src/std_misc/channels.md:31
 msgid ""
 "// Sending is a non-blocking operation, the thread will continue\n"
 "            // immediately after sending its message\n"
 msgstr ""
-"// 发送是非阻塞操作，线程将在发送消息后\n"
-"            // 立即继续执行\n"
+"// 发送是非阻塞操作，线程在发送消息后\n"
+"            // 会立即继续执行\n"
 
 #: src/std_misc/channels.md:33
 msgid "\"thread {} finished\""
-msgstr "\"线程 {} 完成\""
+msgstr "\"线程 {} 已完成\""
 
 #: src/std_misc/channels.md:39
 msgid "// Here, all the messages are collected\n"
-msgstr "// 在这里，所有消息都被收集\n"
+msgstr "// 在这里收集所有消息\n"
 
 #: src/std_misc/channels.md:42
 msgid ""
@@ -14349,12 +14358,12 @@ msgid ""
 "        // `recv` will block the current thread if there are no messages "
 "available\n"
 msgstr ""
-"// `recv` 方法从信道中获取一条消息\n"
-"        // 如果没有可用的消息，`recv` 将阻塞当前线程\n"
+"// `recv` 方法从通道中获取一条消息\n"
+"        // 如果没有可用消息，`recv` 将阻塞当前线程\n"
 
 #: src/std_misc/channels.md:47
 msgid "// Wait for the threads to complete any remaining work\n"
-msgstr "// 等待线程完成任何剩余工作\n"
+msgstr "// 等待线程完成所有剩余工作\n"
 
 #: src/std_misc/channels.md:49
 msgid "\"oops! the child thread panicked\""
@@ -14371,14 +14380,14 @@ msgid ""
 "`windows::Path`, for Windows. The prelude exports the appropriate platform-"
 "specific `Path` variant."
 msgstr ""
-"`Path` 结构体表示底层文件系统中的文件路径。`Path` 有两种风格：用于类 UNIX 系统的 `posix::Path` 和用于 Windows 的 `windows::Path`。prelude 导出了适合特定平台的 `Path` 变体。"
+"`Path` 结构体表示底层文件系统中的文件路径。`Path` 有两种变体：用于类 UNIX 系统的 `posix::Path` 和用于 Windows 的 `windows::Path`。prelude 会导出适合特定平台的 `Path` 变体。"
 
 #: src/std_misc/path.md:8
 msgid ""
 "A `Path` can be created from an `OsStr`, and provides several methods to get "
 "information from the file/directory the path points to."
 msgstr ""
-"`Path` 可以从 `OsStr` 创建，并提供几种方法来获取路径指向的文件/目录的信息。"
+"`Path` 可以从 `OsStr` 创建，并提供多种方法来获取路径所指向的文件或目录的信息。"
 
 #: src/std_misc/path.md:11
 msgid ""
@@ -14386,7 +14395,7 @@ msgid ""
 "between `Path` and `PathBuf` is similar to that of `str` and `String`: a "
 "`PathBuf` can be mutated in-place, and can be dereferenced to a `Path`."
 msgstr ""
-"`Path` 是不可变的。`Path` 的所有权版本是 `PathBuf`。`Path` 和 `PathBuf` 之间的关系类似于 `str` 和 `String`：`PathBuf` 可以就地修改，并且可以解引用为 `Path`。"
+"`Path` 是不可变的。`Path` 的所有权版本是 `PathBuf`。`Path` 和 `PathBuf` 之间的关系类似于 `str` 和 `String`：`PathBuf` 可以原地修改，并且可以解引用为 `Path`。"
 
 #: src/std_misc/path.md:15
 msgid ""
@@ -14396,7 +14405,7 @@ msgid ""
 "`Path` can be freely converted to an `OsString` or `&OsStr` using "
 "`into_os_string` and `as_os_str`, respectively."
 msgstr ""
-"注意，`Path` 在内部**不是**表示为 UTF-8 字符串，而是存储为 `OsString`。因此，将 `Path` 转换为 `&str` **不是**零开销的，并且可能失败（返回一个 `Option`）。然而，`Path` 可以自由地转换为 `OsString` 或 `&OsStr`，分别使用 `into_os_string` 和 `as_os_str`。"
+"注意，`Path` 在内部**并非**表示为 UTF-8 字符串，而是存储为 `OsString`。因此，将 `Path` 转换为 `&str` **并非**零开销操作，且可能失败（返回一个 `Option`）。然而，`Path` 可以自由地转换为 `OsString` 或 `&OsStr`，分别使用 `into_os_string` 和 `as_os_str` 方法。"
 
 #: src/std_misc/path.md:25
 msgid "// Create a `Path` from an `&'static str`\n"
@@ -14408,7 +14417,7 @@ msgstr "\".\""
 
 #: src/std_misc/path.md:28
 msgid "// The `display` method returns a `Display`able structure\n"
-msgstr "// `display` 方法返回一个可 `Display` 的结构体\n"
+msgstr "// `display` 方法返回一个可用于显示的结构体\n"
 
 #: src/std_misc/path.md:31
 msgid ""
@@ -14451,7 +14460,7 @@ msgid ""
 "Be sure to check at other `Path` methods (`posix::Path` or `windows::Path`) "
 "and the `Metadata` struct."
 msgstr ""
-"记得看看其他 `Path` 方法（`posix::Path` 或 `windows::Path`）和 `Metadata` 结构体。"
+"请务必查看其他 `Path` 方法（`posix::Path` 或 `windows::Path`）以及 `Metadata` 结构体。"
 
 #: src/std_misc/path.md:56
 msgid ""
@@ -14466,14 +14475,14 @@ msgid ""
 "The `File` struct represents a file that has been opened (it wraps a file "
 "descriptor), and gives read and/or write access to the underlying file."
 msgstr ""
-"`File` 结构体表示一个已打开的文件（它包装了一个文件描述符），并提供对底层文件的读取和/或写入访问。"
+"`File` 结构体表示一个已打开的文件（它封装了一个文件描述符），并提供对底层文件的读取和/或写入访问。"
 
 #: src/std_misc/file.md:6
 msgid ""
 "Since many things can go wrong when doing file I/O, all the `File` methods "
 "return the `io::Result<T>` type, which is an alias for `Result<T, io::Error>`."
 msgstr ""
-"由于在进行文件 I/O 时可能会出现各种错误，因此所有的 `File` 方法都返回 `io::Result<T>` 类型，这是 `Result<T, io::Error>` 的别名。"
+"由于文件 I/O 操作可能会出现多种错误，所有 `File` 方法都返回 `io::Result<T>` 类型，这是 `Result<T, io::Error>` 的别名。"
 
 #: src/std_misc/file.md:9
 msgid ""
@@ -14481,7 +14490,7 @@ msgid ""
 "programmer can see all the failure paths, and is encouraged to handle them in "
 "a proactive manner."
 msgstr ""
-"这让所有 I/O 操作的失败都是**显性的**。得益于此，程序员可以看到所有的失败路径，并被鼓励主动处理它们。"
+"这使得所有 I/O 操作的失败都变得**显式**。得益于此，程序员可以看到所有可能的失败路径，并被鼓励主动处理这些情况。"
 
 #: src/std_misc/file/open.md:3
 msgid "The `open` function can be used to open a file in read-only mode."
@@ -14492,11 +14501,11 @@ msgid ""
 "A `File` owns a resource, the file descriptor and takes care of closing the "
 "file when it is `drop`ed."
 msgstr ""
-"`File` 拥有一个资源，即文件描述符，并在被 `drop` 时负责关闭文件。"
+"`File` 拥有一个资源（即文件描述符），并在被 `drop` 时负责关闭文件。"
 
 #: src/std_misc/file/open.md:14
 msgid "// Create a path to the desired file\n"
-msgstr "// 创建指向所需文件的路径\n"
+msgstr "// 创建指向目标文件的路径\n"
 
 #: src/std_misc/file/open.md:15
 msgid "\"hello.txt\""
@@ -14520,16 +14529,16 @@ msgstr "\"无法读取 {}: {}\""
 
 #: src/std_misc/file/open.md:28
 msgid "\"{} contains:\\n{}\""
-msgstr "\"{} 包含：\\n{}\""
+msgstr "\"{} 的内容：\\n{}\""
 
 #: src/std_misc/file/open.md:31
 msgid "// `file` goes out of scope, and the \"hello.txt\" file gets closed\n"
-msgstr "// `file` 超出作用域，\"hello.txt\" 文件被关闭\n"
+msgstr "// `file` 超出作用域，\"hello.txt\" 文件随之关闭\n"
 
 #: src/std_misc/file/open.md:35 src/std_misc/file/create.md:39
 #: src/std_misc/fs.md:109
 msgid "Here's the expected successful output:"
-msgstr "这是预期的成功输出："
+msgstr "以下是预期的成功输出："
 
 #: src/std_misc/file/open.md:37
 msgid ""
@@ -14543,7 +14552,7 @@ msgstr ""
 "```shell\n"
 "$ echo \"Hello World!\" > hello.txt\n"
 "$ rustc open.rs && ./open\n"
-"hello.txt 包含：\n"
+"hello.txt 的内容：\n"
 "Hello World!\n"
 "```"
 
@@ -14552,14 +14561,14 @@ msgid ""
 "(You are encouraged to test the previous example under different failure "
 "conditions: `hello.txt` doesn't exist, or `hello.txt` is not readable, etc.)"
 msgstr ""
-"（再试试在不同的失败条件下测试前面的例子：`hello.txt` 不存在，或 `hello.txt` 不可读等。）"
+"（建议您在不同的失败情况下测试上述示例：例如 `hello.txt` 不存在，或 `hello.txt` 不可读等。）"
 
 #: src/std_misc/file/create.md:3
 msgid ""
 "The `create` function opens a file in write-only mode. If the file already "
 "existed, the old content is destroyed. Otherwise, a new file is created."
 msgstr ""
-"`create` 函数以只写模式打开文件。如果文件已经存在，旧内容会被销毁。否则，会创建一个新文件。"
+"`create` 函数以只写模式打开文件。如果文件已存在，旧内容会被清除；否则，会创建一个新文件。"
 
 #: src/std_misc/file/create.md:9
 msgid ""
@@ -14591,7 +14600,7 @@ msgstr "// 以只写模式打开文件，返回 `io::Result<File>`\n"
 
 #: src/std_misc/file/create.md:27
 msgid "\"couldn't create {}: {}\""
-msgstr "\"couldn't create {}: {}\""
+msgstr "\"无法创建 {}: {}\""
 
 #: src/std_misc/file/create.md:31
 msgid "// Write the `LOREM_IPSUM` string to `file`, returns `io::Result<()>`\n"
@@ -14599,18 +14608,18 @@ msgstr "// 将 `LOREM_IPSUM` 字符串写入 `file`，返回 `io::Result<()>`\n"
 
 #: src/std_misc/file/create.md:33
 msgid "\"couldn't write to {}: {}\""
-msgstr "\"couldn't write to {}: {}\""
+msgstr "\"无法写入 {}: {}\""
 
 #: src/std_misc/file/create.md:34
 msgid "\"successfully wrote to {}\""
-msgstr "\"successfully wrote to {}\""
+msgstr "\"成功写入 {}\""
 
 #: src/std_misc/file/create.md:53
 msgid ""
 "(As in the previous example, you are encouraged to test this example under "
 "failure conditions.)"
 msgstr ""
-"（和前面的例子一样，再试试在失败条件下测试这个例子。）"
+"（与前面的示例类似，建议您在失败情况下测试此示例。）"
 
 #: src/std_misc/file/create.md:56
 msgid ""
@@ -14618,7 +14627,7 @@ msgid ""
 "struct can be used to configure how a file is opened."
 msgstr ""
 "[`OpenOptions`](https://doc.rust-lang.org/std/fs/struct.OpenOptions.html) "
-"结构体可用于配置如何打开文件。"
+"结构体可用于配置文件的打开方式。"
 
 #: src/std_misc/file/read_lines.md:3
 msgid "A naive approach"
@@ -14629,7 +14638,7 @@ msgid ""
 "This might be a reasonable first attempt for a beginner's first "
 "implementation for reading lines from a file."
 msgstr ""
-"对于初学者来说，这可能是从文件中读取行的第一个尝试。"
+"对于初学者来说，这可能是从文件中读取行的一个合理的初步尝试。"
 
 #: src/std_misc/file/read_lines.md:22
 msgid ""
@@ -14637,11 +14646,11 @@ msgid ""
 "can also perform a map inline and collect the results, yielding a more "
 "concise and fluent expression."
 msgstr ""
-"由于 `lines()` 方法返回文件中各行的迭代器，我们也可以内联执行 map 并收集结果，从而得到一个更简洁流畅的表达式。"
+"由于 `lines()` 方法返回文件中各行的迭代器，我们可以内联执行 map 并收集结果，从而得到一个更简洁流畅的表达式。"
 
 #: src/std_misc/file/read_lines.md:31
 msgid "// panic on possible file-reading errors\n"
-msgstr "// 在可能的文件读取错误时 panic\n"
+msgstr "// 遇到可能的文件读取错误时 panic\n"
 
 #: src/std_misc/file/read_lines.md:32
 msgid "// split the string into an iterator of string slices\n"
@@ -14649,7 +14658,7 @@ msgstr "// 将字符串分割成字符串切片的迭代器\n"
 
 #: src/std_misc/file/read_lines.md:33
 msgid "// make each slice into a string\n"
-msgstr "// 将每个切片转换成字符串\n"
+msgstr "// 将每个切片转换为字符串\n"
 
 #: src/std_misc/file/read_lines.md:34
 msgid "// gather them together into a vector\n"
@@ -14661,7 +14670,7 @@ msgid ""
 "returned from `lines()` to the owned type `String`, using `.to_string()` and "
 "`String::from` respectively."
 msgstr ""
-"注意，在上面的两个例子中，我们都必须将 `lines()` 返回的 `&str` 引用转换为拥有所有权的 `String` 类型，分别使用 `.to_string()` 和 `String::from`。"
+"注意，在上述两个示例中，我们都必须将 `lines()` 返回的 `&str` 引用转换为拥有所有权的 `String` 类型，分别使用 `.to_string()` 和 `String::from`。"
 
 #: src/std_misc/file/read_lines.md:42
 msgid "A more efficient approach"
@@ -14672,18 +14681,18 @@ msgid ""
 "Here we pass ownership of the open `File` to a `BufReader` struct. "
 "`BufReader` uses an internal buffer to reduce intermediate allocations."
 msgstr ""
-"这里我们将打开的 `File` 的所有权传递给 `BufReader` 结构体。`BufReader` 使用内部缓冲区来减少中间分配。"
+"在这里，我们将打开的 `File` 的所有权传递给 `BufReader` 结构体。`BufReader` 使用内部缓冲区来减少中间分配。"
 
 #: src/std_misc/file/read_lines.md:47
 msgid ""
 "We also update `read_lines` to return an iterator instead of allocating new "
 "`String` objects in memory for each line."
 msgstr ""
-"我们还更新了 `read_lines` 函数，使其返回一个迭代器，而不是为每一行在内存中分配新的 `String` 对象。"
+"我们还对 `read_lines` 函数进行了改进，使其返回一个迭代器，而不是为每行内容在内存中分配新的 `String` 对象。"
 
 #: src/std_misc/file/read_lines.md:56
 msgid "// File hosts.txt must exist in the current path\n"
-msgstr "// 文件 hosts.txt 必须存在于当前路径\n"
+msgstr "// 文件 hosts.txt 必须存在于当前路径下\n"
 
 #: src/std_misc/file/read_lines.md:57
 msgid "\"./hosts.txt\""
@@ -14698,12 +14707,12 @@ msgid ""
 "// The output is wrapped in a Result to allow matching on errors.\n"
 "// Returns an Iterator to the Reader of the lines of the file.\n"
 msgstr ""
-"// 输出被包装在一个 Result 中以允许匹配错误。\n"
-"// 返回一个指向文件行的 Reader 的迭代器。\n"
+"// 输出被包装在 Result 中以便于错误匹配。\n"
+"// 返回一个指向文件行读取器的迭代器。\n"
 
 #: src/std_misc/file/read_lines.md:74
 msgid "Running this program simply prints the lines individually."
-msgstr "运行这个程序只是简单地逐行打印。"
+msgstr "运行此程序将逐行打印文件内容。"
 
 #: src/std_misc/file/read_lines.md:75
 msgid ""
@@ -14727,7 +14736,7 @@ msgid ""
 "define our generic `read_lines()` method with the same generic constraint, "
 "using the `where` keyword.)"
 msgstr ""
-"（注意，由于 `File::open` 期望一个泛型 `AsRef<Path>` 作为参数，我们使用 `where` 关键字定义了具有相同泛型约束的 `read_lines()` 方法。）"
+"（注意，由于 `File::open` 需要一个泛型 `AsRef<Path>` 作为参数，我们使用 `where` 关键字为 `read_lines()` 方法定义了相同的泛型约束。）"
 
 #: src/std_misc/file/read_lines.md:85
 msgid ""
@@ -14735,14 +14744,14 @@ msgid ""
 "the file's contents. This can especially cause performance issues when "
 "working with larger files."
 msgstr ""
-"这个过程比在内存中创建包含文件所有内容的 `String` 更高效。特别是在处理较大的文件时，这可以避免性能问题。"
+"这种方法比在内存中创建包含整个文件内容的 `String` 更加高效。特别是在处理大文件时，后者可能会导致性能问题。"
 
 #: src/std_misc/process.md:3
 msgid ""
 "The `process::Output` struct represents the output of a finished child "
 "process, and the `process::Command` struct is a process builder."
 msgstr ""
-"`process::Output` 结构体表示已完成的子进程的输出，而 `process::Command` 结构体是一个进程构建器。"
+"`process::Output` 结构体表示已完成子进程的输出，而 `process::Command` 结构体是一个进程构建器。"
 
 #: src/std_misc/process.md:10
 msgid "\"rustc\""
@@ -14758,18 +14767,18 @@ msgstr "\"执行进程失败：{}\""
 
 #: src/std_misc/process.md:19
 msgid "\"rustc succeeded and stdout was:\\n{}\""
-msgstr "\"rustc 成功执行，stdout 输出为：\\n{}\""
+msgstr "\"rustc 执行成功，标准输出为：\\n{}\""
 
 #: src/std_misc/process.md:23
 msgid "\"rustc failed and stderr was:\\n{}\""
-msgstr "\"rustc 执行失败，stderr 输出为：\\n{}\""
+msgstr "\"rustc 执行失败，标准错误输出为：\\n{}\""
 
 #: src/std_misc/process.md:28
 msgid ""
 "(You are encouraged to try the previous example with an incorrect flag passed "
 "to `rustc`)"
 msgstr ""
-"（试试在这个例子中向 `rustc` 传一个错误的参数）"
+"（建议您尝试在上述示例中向 `rustc` 传递一个错误的标志）"
 
 #: src/std_misc/process/pipe.md:3
 msgid ""
@@ -14777,7 +14786,7 @@ msgid ""
 "`stdin`, `stdout` and `stderr` handles for interaction with the underlying "
 "process via pipes."
 msgstr ""
-"`std::Child` 结构体表示一个正在运行的子进程，并暴露 `stdin`、`stdout` 和 `stderr` 句柄，从而通过管道与底层进程进行交互。"
+"`std::Child` 结构体代表一个正在运行的子进程，它暴露了 `stdin`、`stdout` 和 `stderr` 句柄，允许通过管道与底层进程进行交互。"
 
 #: src/std_misc/process/pipe.md:11
 msgid "\"the quick brown fox jumps over the lazy dog\\n\""
@@ -14785,7 +14794,7 @@ msgstr "\"the quick brown fox jumps over the lazy dog\\n\""
 
 #: src/std_misc/process/pipe.md:15
 msgid "// Spawn the `wc` command\n"
-msgstr "// 生成 `wc` 命令\n"
+msgstr "// 启动 `wc` 命令\n"
 
 #: src/std_misc/process/pipe.md:16 src/std_misc/fs.md:12 src/std_misc/fs.md:73
 #: src/std_misc/ffi.md:11
@@ -14810,7 +14819,7 @@ msgstr "\"wc\""
 
 #: src/std_misc/process/pipe.md:27
 msgid "\"couldn't spawn wc: {}\""
-msgstr "\"无法生成 wc：{}\""
+msgstr "\"无法启动 wc：{}\""
 
 #: src/std_misc/process/pipe.md:31
 msgid ""
@@ -14820,18 +14829,18 @@ msgid ""
 "instance\n"
 "    // must have one, we can directly `unwrap` it.\n"
 msgstr ""
-"// 向 `wc` 的 `stdin` 写入一个字符串。\n"
+"// 向 `wc` 的 `stdin` 写入字符串。\n"
 "    //\n"
-"    // `stdin` 的类型是 `Option<ChildStdin>`，不过我们已经知道这个实例不为空值\n"
-"    // 因此我们可以直接 `unwrap` 它。\n"
+"    // `stdin` 的类型是 `Option<ChildStdin>`，但我们知道这个实例\n"
+"    // 必定存在，所以可以直接 `unwrap` 它。\n"
 
 #: src/std_misc/process/pipe.md:36
 msgid "\"couldn't write to wc stdin: {}\""
-msgstr "\"无法写入 wc 的 stdin：{}\""
+msgstr "\"无法写入 wc 的标准输入：{}\""
 
 #: src/std_misc/process/pipe.md:37
 msgid "\"sent pangram to wc\""
-msgstr "\"已发送 pangram 到 wc\""
+msgstr "\"已将 pangram 发送给 wc\""
 
 #: src/std_misc/process/pipe.md:40
 msgid ""
@@ -14841,31 +14850,33 @@ msgid ""
 "    // This is very important, otherwise `wc` wouldn't start processing the\n"
 "    // input we just sent.\n"
 msgstr ""
-"// 因为 `stdin` 在上述调用后不再存活，被 `drop` 了，管道也被关闭。\n"
+"// 由于 `stdin` 在上述调用后不再存活，它会被 `drop`，\n"
+"    // 管道随之关闭。\n"
 "    //\n"
-"    // 这点非常重要，否则 `wc` 就不会开始处理我们刚刚发送的输入。\n"
+"    // 这一点非常重要，否则 `wc` 不会开始处理\n"
+"    // 我们刚刚发送的输入。\n"
 
 #: src/std_misc/process/pipe.md:46
 msgid ""
 "// The `stdout` field also has type `Option<ChildStdout>` so must be "
 "unwrapped.\n"
 msgstr ""
-"// `stdout` 字段的类型也是 `Option<ChildStdout>`，所以必须被解包。\n"
+"// `stdout` 字段的类型也是 `Option<ChildStdout>`，因此必须解包。\n"
 
 #: src/std_misc/process/pipe.md:49
 msgid "\"couldn't read wc stdout: {}\""
-msgstr "\"无法读取 wc 的 stdout：{}\""
+msgstr "\"无法读取 wc 的标准输出：{}\""
 
 #: src/std_misc/process/pipe.md:50
 msgid "\"wc responded with:\\n{}\""
-msgstr "\"wc 响应为：\\n{}\""
+msgstr "\"wc 的响应为：\\n{}\""
 
 #: src/std_misc/process/wait.md:3
 msgid ""
 "If you'd like to wait for a `process::Child` to finish, you must call `Child::"
 "wait`, which will return a `process::ExitStatus`."
 msgstr ""
-"如果你想等待一个 `process::Child` 完成，你必须调用 `Child::wait`，它将返回一个 `process::ExitStatus`。"
+"如果你想等待一个 `process::Child` 完成，你必须调用 `Child::wait`，它会返回一个 `process::ExitStatus`。"
 
 #: src/std_misc/process/wait.md:10
 msgid "\"sleep\""
@@ -14873,19 +14884,19 @@ msgstr "\"sleep\""
 
 #: src/std_misc/process/wait.md:13
 msgid "\"reached end of main\""
-msgid "\"reached end of main\""
+msgstr "\"到达 main 函数末尾\""
 
 #: src/std_misc/process/wait.md:18
 msgid ""
 "# `wait` keeps running for 5 seconds until the `sleep 5` command finishes\n"
 msgstr ""
-"# `wait` 持续运行 5 秒，直到 `sleep 5` 命令完成\n"
+"# `wait` 会持续运行 5 秒，直到 `sleep 5` 命令执行完毕\n"
 
 #: src/std_misc/fs.md:3
 msgid ""
 "The `std::fs` module contains several functions that deal with the filesystem."
 msgstr ""
-"`std::fs` 模块包含几个处理文件系统的函数。"
+"`std::fs` 模块包含多个用于处理文件系统的函数。"
 
 #: src/std_misc/fs.md:10 src/std_misc/fs.md:68 src/std_misc/ffi.md:20
 msgid "\"unix\""
@@ -14893,15 +14904,15 @@ msgstr "\"unix\""
 
 #: src/std_misc/fs.md:15
 msgid "// A simple implementation of `% cat path`\n"
-msgstr "// `% cat path` 的简单实现\n"
+msgstr "// `% cat path` 命令的简单实现\n"
 
 #: src/std_misc/fs.md:25
 msgid "// A simple implementation of `% echo s > path`\n"
-msgstr "// `% echo s > path` 的简单实现\n"
+msgstr "// `% echo s > path` 命令的简单实现\n"
 
 #: src/std_misc/fs.md:32
 msgid "// A simple implementation of `% touch path` (ignores existing files)\n"
-msgstr "// `% touch path` 的简单实现（忽略已存在的文件）\n"
+msgstr "// `% touch path` 命令的简单实现（忽略已存在的文件）\n"
 
 #: src/std_misc/fs.md:42
 msgid "\"`mkdir a`\""
@@ -14909,7 +14920,7 @@ msgstr "\"`mkdir a`\""
 
 #: src/std_misc/fs.md:43
 msgid "// Create a directory, returns `io::Result<()>`\n"
-msgstr "// 创建一个目录，返回 `io::Result<()>`\n"
+msgstr "// 创建目录，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:45 src/std_misc/fs.md:52 src/std_misc/fs.md:58
 #: src/std_misc/fs.md:63 src/std_misc/fs.md:70 src/std_misc/fs.md:75
@@ -14926,7 +14937,7 @@ msgstr "\"`echo hello > a/b.txt`\""
 msgid ""
 "// The previous match can be simplified using the `unwrap_or_else` method\n"
 msgstr ""
-"// 之前的匹配可以使用 `unwrap_or_else` 方法简化\n"
+"// 可以使用 `unwrap_or_else` 方法简化之前的匹配\n"
 
 #: src/std_misc/fs.md:51
 msgid "\"a/b.txt\""
@@ -14938,7 +14949,7 @@ msgstr "\"`mkdir -p a/c/d`\""
 
 #: src/std_misc/fs.md:56
 msgid "// Recursively create a directory, returns `io::Result<()>`\n"
-msgstr "// 逐层创建目录，返回 `io::Result<()>`\n"
+msgstr "// 递归创建目录，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:57 src/std_misc/fs.md:102
 msgid "\"a/c/d\""
@@ -14958,7 +14969,7 @@ msgstr "\"`ln -s ../b.txt a/c/b.txt`\""
 
 #: src/std_misc/fs.md:67
 msgid "// Create a symbolic link, returns `io::Result<()>`\n"
-msgstr "// 创建一个符号链接，返回 `io::Result<()>`\n"
+msgstr "// 创建符号链接，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:69 src/std_misc/fs.md:74
 msgid "\"../b.txt\""
@@ -14978,7 +14989,7 @@ msgstr "\"`ls a`\""
 
 #: src/std_misc/fs.md:86
 msgid "// Read the contents of a directory, returns `io::Result<Vec<Path>>`\n"
-msgstr "// 读取目录的内容，返回 `io::Result<Vec<Path>>`\n"
+msgstr "// 读取目录内容，返回 `io::Result<Vec<Path>>`\n"
 
 #: src/std_misc/fs.md:94
 msgid "\"`rm a/c/e.txt`\""
@@ -14986,7 +14997,7 @@ msgstr "\"`rm a/c/e.txt`\""
 
 #: src/std_misc/fs.md:95
 msgid "// Remove a file, returns `io::Result<()>`\n"
-msgstr "// 删除一个文件，返回 `io::Result<()>`\n"
+msgstr "// 删除文件，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:100
 msgid "\"`rmdir a/c/d`\""
@@ -14994,7 +15005,7 @@ msgstr "\"`rmdir a/c/d`\""
 
 #: src/std_misc/fs.md:101
 msgid "// Remove an empty directory, returns `io::Result<()>`\n"
-msgstr "// 删除一个空目录，返回 `io::Result<()>`\n"
+msgstr "// 删除空目录，返回 `io::Result<()>`\n"
 
 #: src/std_misc/fs.md:111
 msgid ""
@@ -15032,11 +15043,11 @@ msgstr ""
 
 #: src/std_misc/fs.md:127
 msgid "And the final state of the `a` directory is:"
-msgstr "最终 `a` 目录的状态是："
+msgstr "最终 `a` 目录的状态如下："
 
 #: src/std_misc/fs.md:139
 msgid "An alternative way to define the function `cat` is with `?` notation:"
-msgstr "定义 `cat` 函数的另一种方式是使用 `?` 符号："
+msgstr "另一种定义 `cat` 函数的方法是使用 `?` 运算符："
 
 #: src/std_misc/fs.md:152
 msgid "[`cfg!`](../attribute/cfg.md)"
@@ -15051,11 +15062,11 @@ msgid ""
 "The command line arguments can be accessed using `std::env::args`, which "
 "returns an iterator that yields a `String` for each argument:"
 msgstr ""
-"命令行参数可以使用 `std::env::args` 访问，它返回一个迭代器，为每个参数生成一个 `String`："
+"可以使用 `std::env::args` 访问命令行参数，它返回一个迭代器，为每个参数生成一个 `String`："
 
 #: src/std_misc/arg.md:14
 msgid "// The first argument is the path that was used to call the program.\n"
-msgstr "// 第一个参数是用于调用程序的路径。\n"
+msgstr "// 第一个参数是用于调用程序的路径\n"
 
 #: src/std_misc/arg.md:15
 msgid "\"My path is {}.\""
@@ -15067,13 +15078,13 @@ msgid ""
 "    // Call the program like this:\n"
 "    //   $ ./args arg1 arg2\n"
 msgstr ""
-"// 剩余的参数是传递的命令行参数。\n"
+"// 其余参数是传递的命令行参数\n"
 "    // 像这样调用程序：\n"
 "    //   $ ./args arg1 arg2\n"
 
 #: src/std_misc/arg.md:20
 msgid "\"I got {:?} arguments: {:?}.\""
-msgstr "\"我得到了 {:?} 个参数：{:?}。\""
+msgstr "\"我获得了 {:?} 个参数：{:?}。\""
 
 #: src/std_misc/arg.md:24
 msgid ""
@@ -15085,8 +15096,8 @@ msgid ""
 msgstr ""
 "```shell\n"
 "$ ./args 1 2 3\n"
-"我的路径是 ./args。\n"
-"我得到了 3 个参数：[\"1\", \"2\", \"3\"]。\n"
+"程序路径：./args\n"
+"接收到 3 个参数：[\"1\"、\"2\"、\"3\"]\n"
 "```"
 
 #: src/std_misc/arg.md:32
@@ -15096,11 +15107,11 @@ msgid ""
 "argument crates being [`clap`](https://rust-cli.github.io/book/tutorial/cli-"
 "args.html#parsing-cli-arguments-with-clap)."
 msgstr ""
-"另外，在创建命令行应用程序时，有许多 crate 可以提供额外的功能。其中一个比较流行的命令行参数 crate 是 [`clap`](https://rust-cli.github.io/book/tutorial/cli-args.html#parsing-cli-arguments-with-clap)。"
+"此外，在开发命令行应用程序时，还有许多 crate 可以提供额外的功能。其中，[`clap`](https://rust-cli.github.io/book/tutorial/cli-args.html#parsing-cli-arguments-with-clap) 是一个广受欢迎的命令行参数处理 crate。"
 
 #: src/std_misc/arg/matching.md:3
 msgid "Matching can be used to parse simple arguments:"
-msgstr "可以用匹配来解析简单的参数："
+msgstr "可以使用模式匹配来解析简单的参数："
 
 #: src/std_misc/arg/matching.md:17
 msgid ""
@@ -15110,19 +15121,19 @@ msgid ""
 "match_args {{increase|decrease}} <integer>\n"
 "    Increase or decrease given integer by one.\""
 msgstr ""
-"\"usage:\n"
-"match_args <string>\n"
-"    Check whether given string is the answer.\n"
-"match_args {{increase|decrease}} <integer>\n"
-"    Increase or decrease given integer by one.\""
+"\"用法：\n"
+"match_args <字符串>\n"
+"    检查给定的字符串是否为正确答案。\n"
+"match_args {{increase|decrease}} <整数>\n"
+"    将给定的整数增加或减少 1。\""
 
 #: src/std_misc/arg/matching.md:28
 msgid "// no arguments passed\n"
-msgstr "// 没有传递参数\n"
+msgstr "// 未传递参数\n"
 
 #: src/std_misc/arg/matching.md:30
 msgid "\"My name is 'match_args'. Try passing some arguments!\""
-msgstr "\"My name is 'match_args'. Try passing some arguments!\""
+msgstr "\"我的名字是 'match_args'。试试传递一些参数吧！\""
 
 #: src/std_misc/arg/matching.md:32
 msgid "// one argument passed\n"
@@ -15130,11 +15141,11 @@ msgstr "// 传递了一个参数\n"
 
 #: src/std_misc/arg/matching.md:35
 msgid "\"This is the answer!\""
-msgstr "\"This is the answer!\""
+msgstr "\"这就是正确答案！\""
 
 #: src/std_misc/arg/matching.md:36
 msgid "\"This is not the answer.\""
-msgstr "\"This is not the answer.\""
+msgstr "\"这不是正确答案。\""
 
 #: src/std_misc/arg/matching.md:39
 msgid "// one command and one argument passed\n"
@@ -15146,7 +15157,7 @@ msgstr "// 解析数字\n"
 
 #: src/std_misc/arg/matching.md:49
 msgid "\"error: second argument not an integer\""
-msgstr "\"error: second argument not an integer\""
+msgstr "\"错误：第二个参数不是整数\""
 
 #: src/std_misc/arg/matching.md:54
 msgid "// parse the command\n"
@@ -15162,7 +15173,7 @@ msgstr "\"decrease\""
 
 #: src/std_misc/arg/matching.md:59
 msgid "\"error: invalid command\""
-msgstr "\"error: invalid command\""
+msgstr "\"错误：无效的命令\""
 
 #: src/std_misc/arg/matching.md:64
 msgid "// all the other cases\n"
@@ -15177,7 +15188,7 @@ msgid ""
 "If you named your program `match_args.rs` and compile it like this `rustc "
 "match_args.rs`, you can execute it as follows:"
 msgstr ""
-"如果你将程序命名为 `match_args.rs` 并像这样编译它 `rustc match_args.rs`，你可以按如下方式执行它："
+"如果你将程序命名为 `match_args.rs` 并使用 `rustc match_args.rs` 编译它，你可以按以下方式执行："
 
 #: src/std_misc/ffi.md:3
 msgid ""
@@ -15185,11 +15196,11 @@ msgid ""
 "functions must be declared inside an `extern` block annotated with a "
 "`#[link]` attribute containing the name of the foreign library."
 msgstr ""
-"Rust 为 C 库提供了外部函数接口（FFI）。外部函数必须在 `extern` 块内声明，并使用 `#[link]` 属性标注外部库的名称。"
+"Rust 提供了与 C 库交互的外部函数接口（FFI）。外部函数必须在 `extern` 块内声明，并使用 `#[link]` 属性标注外部库的名称。"
 
 #: src/std_misc/ffi.md:9
 msgid "// this extern block links to the libm library\n"
-msgstr "// 这个 extern 块链接到 libm 库\n"
+msgstr "// 此 extern 块链接到 libm 库\n"
 
 #: src/std_misc/ffi.md:12
 msgid "\"msvcrt\""
@@ -15212,7 +15223,8 @@ msgid ""
 "// Since calling foreign functions is considered unsafe,\n"
 "// it's common to write safe wrappers around them.\n"
 msgstr ""
-"// 由于调用外部函数被认为是不安全的，通常会封装一层安全的包装函数。\n"
+"// 由于调用外部函数被认为是不安全的，\n"
+"// 通常会为它们编写安全的包装函数。\n"
 
 #: src/std_misc/ffi.md:37
 msgid "// z = -1 + 0i\n"
@@ -15228,7 +15240,7 @@ msgstr "\"{:?} 的平方根是 {:?}\""
 
 #: src/std_misc/ffi.md:45
 msgid "// calling safe API wrapped around unsafe operation\n"
-msgstr "// 调用封装了不安全操作的安全 API \n"
+msgstr "// 调用封装了不安全操作的安全 API\n"
 
 #: src/std_misc/ffi.md:46
 msgid "\"cos({:?}) = {:?}\""
@@ -15251,45 +15263,45 @@ msgid ""
 "Rust is a programming language that cares a lot about correctness and it "
 "includes support for writing software tests within the language itself."
 msgstr ""
-"Rust 是一种非常注重正确性的编程语言，它支持在语言本身内编写软件测试。"
+"Rust 是一种非常注重正确性的编程语言，它内置了编写软件测试的支持。"
 
 #: src/testing.md:6
 msgid "Testing comes in three styles:"
-msgstr "测试有三种风格："
+msgstr "测试分为三种类型："
 
 #: src/testing.md:8
 msgid "[Unit](testing/unit_testing.md) testing."
-msgstr "[单元](testing/unit_testing.md)测试。"
+msgstr "[单元测试](testing/unit_testing.md)"
 
 #: src/testing.md:9
 msgid "[Doc](testing/doc_testing.md) testing."
-msgstr "[文档](testing/doc_testing.md)测试。"
+msgstr "[文档测试](testing/doc_testing.md)"
 
 #: src/testing.md:10
 msgid "[Integration](testing/integration_testing.md) testing."
-msgstr "[集成](testing/integration_testing.md)测试。"
+msgstr "[集成测试](testing/integration_testing.md)"
 
 #: src/testing.md:12
 msgid "Also Rust has support for specifying additional dependencies for tests:"
-msgstr "Rust 还支持为测试指定额外的依赖项："
+msgstr "此外，Rust 还支持为测试指定额外的依赖项："
 
 #: src/testing.md:14
 msgid "[Dev-dependencies](testing/dev_dependencies.md)"
-msgstr "[开发依赖（dev-dependencies）](testing/dev_dependencies.md)"
+msgstr "[开发依赖](testing/dev_dependencies.md)"
 
 #: src/testing.md:18
 msgid ""
 "[The Book](https://doc.rust-lang.org/book/ch11-00-testing.html) chapter on "
 "testing"
 msgstr ""
-"[《Rust 程序设计语言》](https://doc.rust-lang.org/book/ch11-00-testing.html)中关于测试的章节"
+"《Rust 程序设计语言》中[关于测试的章节](https://doc.rust-lang.org/book/ch11-00-testing.html)"
 
 #: src/testing.md:19
 msgid ""
 "[API Guidelines](https://rust-lang-nursery.github.io/api-guidelines/"
 "documentation.html) on doc-testing"
 msgstr ""
-"[API 指南](https://rust-lang-nursery.github.io/api-guidelines/documentation.html)中关于文档测试的内容"
+"API 指南中[关于文档测试的内容](https://rust-lang-nursery.github.io/api-guidelines/documentation.html)"
 
 #: src/testing/unit_testing.md:3
 msgid ""
@@ -15298,7 +15310,7 @@ msgid ""
 "setup, run the code we want to test, then assert whether the results are what "
 "we expect."
 msgstr ""
-"测试是用于验证非测试代码是否按预期方式运行的 Rust 函数。测试函数的主体通常执行一些设置，运行我们想要测试的代码，然后断言结果是否符合我们的预期。"
+"测试是 Rust 函数，用于验证非测试代码是否按预期方式运行。测试函数的主体通常包括一些准备工作，运行待测试的代码，然后断言结果是否符合预期。"
 
 #: src/testing/unit_testing.md:8
 msgid ""
@@ -15306,25 +15318,25 @@ msgid ""
 "[attribute](../attribute.md). Test functions are marked with the `#[test]` "
 "attribute."
 msgstr ""
-"大多数单元测试都放在带有 `#[cfg(test)]` [属性](../attribute.md)的 `tests` [mod](../mod.md) 中。测试函数用 `#[test]` 属性标记。"
+"大多数单元测试都放在带有 `#[cfg(test)]` [属性](../attribute.md)的 `tests` [模块](../mod.md)中。测试函数用 `#[test]` 属性标记。"
 
 #: src/testing/unit_testing.md:11
 msgid ""
 "Tests fail when something in the test function [panics](../std/panic.md). "
 "There are some helper [macros](../macros.md):"
 msgstr ""
-"当测试函数中的某些内容[panic](../std/panic.md)时，测试就会失败。这是一些辅助[宏](../macros.md)："
+"当测试函数中出现[恐慌（panic）](../std/panic.md)时，测试就会失败。以下是一些辅助[宏](../macros.md)："
 
 #: src/testing/unit_testing.md:14
 msgid "`assert!(expression)` - panics if expression evaluates to `false`."
-msgstr "`assert!(expression)` - 如果表达式计算结果为 `false`，则会 panic。"
+msgstr "`assert!(expression)` - 如果表达式求值为 `false`，则会触发 panic。"
 
 #: src/testing/unit_testing.md:15
 msgid ""
 "`assert_eq!(left, right)` and `assert_ne!(left, right)` - testing left and "
 "right expressions for equality and inequality respectively."
 msgstr ""
-"`assert_eq!(left, right)` 和 `assert_ne!(left, right)` - 分别测试左右表达式的相等性和不相等性。"
+"`assert_eq!(left, right)` 和 `assert_ne!(left, right)` - 分别用于测试左右表达式的相等性和不相等性。"
 
 #: src/testing/unit_testing.md:22
 msgid ""
@@ -15337,7 +15349,7 @@ msgstr ""
 msgid ""
 "// Note this useful idiom: importing names from outer (for mod tests) scope.\n"
 msgstr ""
-"// 注意这个惯用法：从外部（对于 mod tests 而言）作用域导入所有可用项名称。\n"
+"// 注意这个有用的惯用法：从外部作用域（对于 mod tests 而言）导入名称。\n"
 
 #: src/testing/unit_testing.md:42
 msgid ""
@@ -15349,11 +15361,11 @@ msgstr ""
 
 #: src/testing/unit_testing.md:49
 msgid "Tests can be run with `cargo test`."
-msgstr "可以使用 `cargo test` 运行测试。"
+msgstr "可以使用 `cargo test` 命令运行测试。"
 
 #: src/testing/unit_testing.md:73
 msgid "Tests and `?`"
-msgstr "测试和 `?`"
+msgstr "测试与 `?` 运算符"
 
 #: src/testing/unit_testing.md:74
 msgid ""
@@ -15361,7 +15373,7 @@ msgid ""
 "your unit tests can return `Result<()>`, which lets you use `?` in them! This "
 "can make them much more concise."
 msgstr ""
-"之前的单元测试示例都没有返回类型。但在 Rust 2018 中，单元测试可以返回 `Result<()>`，这让你可以在其中使用 `?`！这可以使它们变得更加简洁。"
+"之前的单元测试示例都没有返回类型。但在 Rust 2018 版本中，你的单元测试可以返回 `Result<()>`，这使得你可以在测试中使用 `?` 运算符！这可以使测试代码更加简洁。"
 
 #: src/testing/unit_testing.md:83
 msgid "\"negative floats don't have square roots\""
@@ -15373,7 +15385,7 @@ msgid ""
 "error-handling-and-panics/question-mark-in-main-and-tests.html) for more "
 "details."
 msgstr ""
-"更多详情可参考[《版本指南》](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/question-mark-in-main-and-tests.html)。"
+"更多详情请参阅[《版本指南》](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/question-mark-in-main-and-tests.html)。"
 
 #: src/testing/unit_testing.md:102
 msgid "Testing panics"
@@ -15386,19 +15398,19 @@ msgid ""
 "`expected = ` with the text of the panic message. If your function can panic "
 "in multiple ways, it helps make sure your test is testing the correct panic."
 msgstr ""
-"要测试在某些情况下应该 panic 的函数，可以使用 `#[should_panic]` 属性。这个属性接受可选参数 `expected = `，其中包含 panic 消息的文本。如果你的函数可能以多种方式 panic，这有助于确保正在测试对应的 panic。"
+"要检查在某些情况下应该触发恐慌的函数，可以使用 `#[should_panic]` 属性。这个属性接受可选参数 `expected = `，用于指定预期的恐慌消息文本。如果你的函数可能以多种方式触发 panic，这有助于确保你的测试正在检查正确的 panic 情况。"
 
 #: src/testing/unit_testing.md:112 src/testing/doc_testing.md:45
 msgid "\"Divide-by-zero error\""
-msgstr "\"Divide-by-zero error\""
+msgstr "\"除以零错误\""
 
 #: src/testing/unit_testing.md:114 src/testing/unit_testing.md:135
 msgid "\"Divide result is zero\""
-msgstr "\"Divide result is zero\""
+msgstr "\"除法结果为零\""
 
 #: src/testing/unit_testing.md:142
 msgid "Running these tests gives us:"
-msgstr "运行这些测试会得到："
+msgstr "运行这些测试会得到以下结果："
 
 #: src/testing/unit_testing.md:161
 msgid "Running specific tests"
@@ -15426,7 +15438,7 @@ msgid ""
 "Tests can be marked with the `#[ignore]` attribute to exclude some tests. Or "
 "to run them with command `cargo test -- --ignored`"
 msgstr ""
-"可以使用 `#[ignore]` 属性标记测试以排除某些测试。或者使用命令 `cargo test -- --ignored` 运行它们"
+"可以使用 `#[ignore]` 属性标记测试以排除某些测试。或者使用命令 `cargo test -- --ignored` 来运行这些被忽略的测试。"
 
 #: src/testing/doc_testing.md:3
 msgid ""
@@ -15436,7 +15448,7 @@ msgid ""
 "takes care about correctness, so these code blocks are compiled and used as "
 "documentation tests."
 msgstr ""
-"为 Rust 项目的编写文档的主要方式是通过在源代码中添加注释。文档注释使用 [CommonMark Markdown 规范](https://commonmark.org/)编写，并支持其中的代码块。Rust 注重正确性，因此这些代码块会被编译并用作文档测试。"
+"Rust 项目的主要文档编写方式是通过在源代码中添加注释。文档注释使用 [CommonMark Markdown 规范](https://commonmark.org/)编写，并支持其中的代码块。Rust 注重正确性，因此这些代码块会被编译并用作文档测试。"
 
 #: src/testing/doc_testing.md:10
 msgid ""
@@ -15452,10 +15464,10 @@ msgid ""
 "/// assert_eq!(result, 5);\n"
 "/// ```\n"
 msgstr ""
-"/// 第一行是描述函数的简短摘要。\n"
+"/// 第一行是函数的简要描述。\n"
 "///\n"
 "/// 接下来的几行是详细文档。代码块以三个反引号开始，\n"
-"/// 并且隐含了 `fn main()` 和 `extern crate <cratename>`。\n"
+"/// 并隐含了 `fn main()` 函数和 `extern crate <cratename>` 声明。\n"
 "/// 假设我们正在测试 `doccomments` crate：\n"
 "///\n"
 "/// ```\n"
@@ -15486,23 +15498,23 @@ msgid ""
 "/// doccomments::div(10, 0);\n"
 "/// ```\n"
 msgstr ""
-"/// 通常文档注释可能包括 \"Examples\"、\"Panics\" 和 \"Failures\" 部分。\n"
+"/// 文档注释通常包含"示例"、"异常"和"错误"等部分。\n"
 "///\n"
-"/// 下面的函数用于除法运算。\n"
+"/// 下面的函数用于两数相除。\n"
 "///\n"
-"/// # Examples\n"
+"/// # 示例\n"
 "///\n"
 "/// ```\n"
 "/// let result = doccomments::div(10, 2);\n"
 "/// assert_eq!(result, 5);\n"
 "/// ```\n"
 "///\n"
-"/// # Panics\n"
+"/// # 异常\n"
 "///\n"
-"/// 如果第二个参数为零，函数会 panic。\n"
+"/// 当第二个参数为零时，函数会触发异常。\n"
 "///\n"
 "/// ```rust,should_panic\n"
-"/// // 除以零会导致 panic\n"
+"/// // 除以零会触发异常\n"
 "/// doccomments::div(10, 0);\n"
 "/// ```\n"
 
@@ -15511,11 +15523,11 @@ msgid ""
 "Code blocks in documentation are automatically tested when running the "
 "regular `cargo test` command:"
 msgstr ""
-"在运行常规的 `cargo test` 命令时，文档中的代码块会自动进行测试："
+"运行常规的 `cargo test` 命令时，文档中的代码块会自动进行测试："
 
 #: src/testing/doc_testing.md:71
 msgid "Motivation behind documentation tests"
-msgstr "文档测试的目的"
+msgstr "文档测试的动机"
 
 #: src/testing/doc_testing.md:73
 msgid ""
@@ -15529,7 +15541,7 @@ msgid ""
 "hide it and `unwrap` it in hidden `main`. Sounds complicated? Here's an "
 "example:"
 msgstr ""
-"文档测试的主要目的是作为如何使用的示例，这是最重要的[指导原则](https://rust-lang-nursery.github.io/api-guidelines/documentation.html#examples-use--not-try-not-unwrap-c-question-mark)之一。它允许将文档中的示例作为完整的代码片段使用。但是使用 `?` 会导致编译失败，因为 `main` 返回 `unit`。隐藏文档中的某些源代码行可以解决这个问题：可以编写 `fn try_main() -> Result<(), ErrorType>`，隐藏并在 `main` 中 `unwrap`。听起来很复杂？这里有一个例子："
+"文档测试的主要目的是提供功能演示的示例，这是最重要的[指导原则](https://rust-lang-nursery.github.io/api-guidelines/documentation.html#examples-use--not-try-not-unwrap-c-question-mark)之一。它允许将文档中的示例作为完整的代码片段使用。但是使用 `?` 会导致编译失败，因为 `main` 函数返回 `unit` 类型。这时，隐藏文档中的某些源代码行就派上用场了：可以编写 `fn try_main() -> Result<(), ErrorType>`，将其隐藏，并在隐藏的 `main` 函数中 `unwrap` 它。听起来很复杂？这里有一个例子："
 
 #: src/testing/doc_testing.md:82
 msgid ""
@@ -15548,23 +15560,23 @@ msgid ""
 "/// # }\n"
 "/// ```\n"
 msgstr ""
-"/// 在文档测试中使用隐藏的 `try_main`。\n"
+"/// 在文档测试中使用隐藏的 `try_main` 函数。\n"
 "///\n"
 "/// ```\n"
-"/// # // 以 `#` 符号开头的行是隐藏的，但它们仍然可以编译！\n"
-"/// # fn try_main() -> Result<(), String> { // 文档中显示的包装函数体的行\n"
+"/// # // 以 `#` 开头的行在文档中是隐藏的，但它们仍然可以编译！\n"
+"/// # fn try_main() -> Result<(), String> { // 这行包装了文档中显示的函数体\n"
 "/// let res = doccomments::try_div(10, 2)?;\n"
 "/// # Ok(()) // 从 try_main 返回\n"
 "/// # }\n"
-"/// # fn main() { // 开始将要 unwrap() 的 main\n"
-"/// #    try_main().unwrap(); // 调用 try_main 并 unwrap\n"
-"/// #                         // 这样在出错时测试会 panic\n"
+"/// # fn main() { // 开始会调用 unwrap() 的 main 函数\n"
+"/// #    try_main().unwrap(); // 调用 try_main 并解包\n"
+"/// #                         // 这样在出错时测试会触发 panic\n"
 "/// # }\n"
 "/// ```\n"
 
 #: src/testing/doc_testing.md:97
 msgid "\"Divide-by-zero\""
-msgstr "\"除以零\""
+msgstr "\"除以零错误\""
 
 #: src/testing/doc_testing.md:106
 msgid ""
@@ -15588,11 +15600,11 @@ msgid ""
 "would. Their purpose is to test that many parts of your library work "
 "correctly together."
 msgstr ""
-"[单元测试](unit_testing.md)一次单独测试一个模块：它们很小，可以测试私有代码。集成测试位于 crate 外部，并且仅使用公开接口，就像其他使用该 crate 的代码一样。集成测试的目的是测试库的各个部分是否能正确地协同工作。"
+"[单元测试](unit_testing.md)每次只隔离测试一个模块：它们规模小，可以测试私有代码。集成测试则位于 crate 外部，仅使用其公共接口，就像其他代码一样。集成测试的目的是验证库的多个部分能否正确协同工作。"
 
 #: src/testing/integration_testing.md:8
 msgid "Cargo looks for integration tests in `tests` directory next to `src`."
-msgstr "Cargo 在 `src` 目录旁边的 `tests` 目录中寻找集成测试。"
+msgstr "Cargo 在 `src` 目录旁的 `tests` 目录中查找集成测试。"
 
 #: src/testing/integration_testing.md:10 src/testing/dev_dependencies.md:17
 msgid "File `src/lib.rs`:"
@@ -15600,7 +15612,7 @@ msgstr "文件 `src/lib.rs`："
 
 #: src/testing/integration_testing.md:13
 msgid "// Define this in a crate called `adder`.\n"
-msgstr "// 在一个名为 `adder` 的 crate 中定义这个。\n"
+msgstr "// 在名为 `adder` 的 crate 中定义此内容。\n"
 
 #: src/testing/integration_testing.md:19
 msgid "File with test: `tests/integration_test.rs`:"
@@ -15616,7 +15628,7 @@ msgid ""
 "crate. In order to share some code between integration tests we can make a "
 "module with public functions, importing and using it within tests."
 msgstr ""
-"`tests` 目录中的每个 Rust 源文件都被编译为一个单独的 crate。为了在集成测试之间共享一些代码，我们可以创建一个带有公共函数的模块，然后在测试中导入和使用它。"
+"`tests` 目录中的每个 Rust 源文件都被编译为独立的 crate。为了在集成测试之间共享代码，我们可以创建一个包含公共函数的模块，然后在测试中导入并使用它。"
 
 #: src/testing/integration_testing.md:54
 msgid "File `tests/common/mod.rs`:"
@@ -15627,7 +15639,7 @@ msgid ""
 "// some setup code, like creating required files/directories, starting\n"
 "    // servers, etc.\n"
 msgstr ""
-"// 一些设置代码，比如创建所需的文件/目录，启动\n"
+"// 一些设置代码，如创建必要的文件/目录，启动\n"
 "    // 服务器等。\n"
 
 #: src/testing/integration_testing.md:63
@@ -15648,7 +15660,7 @@ msgid ""
 "because the test runner will treat the file as a test crate and try to run "
 "tests inside it."
 msgstr ""
-"将模块创建为 `tests/common.rs` 也可以，但不推荐这样做，因为测试执行时会将该文件视为测试 crate 并尝试运行其中的测试。"
+"将模块创建为 `tests/common.rs` 也可行，但不推荐，因为测试运行器会将该文件视为测试 crate 并尝试运行其中的测试。"
 
 #: src/testing/dev_dependencies.md:1
 msgid "Development dependencies"
@@ -15661,7 +15673,7 @@ msgid ""
 "dependencies]` section. These dependencies are not propagated to other "
 "packages which depend on this package."
 msgstr ""
-"有时候我们需要仅用于测试（或示例、基准测试）的依赖项。这些依赖项被添加到 `Cargo.toml` 的 `[dev-dependencies]` 部分。这些依赖项不会被传播到依赖于这个包的其他包。"
+"有时我们需要仅用于测试（或示例、基准测试）的依赖项。这些依赖项添加在 `Cargo.toml` 的 `[dev-dependencies]` 部分。这些依赖项不会传递给依赖于本包的其他包。"
 
 #: src/testing/dev_dependencies.md:8
 msgid ""
@@ -15670,7 +15682,7 @@ msgid ""
 "`assert_eq!` and `assert_ne!` macros, to provide colorful diff.  \n"
 "File `Cargo.toml`:"
 msgstr ""
-"例如 [`pretty_assertions`](https://docs.rs/pretty_assertions/1.0.0/pretty_assertions/index.html)，它扩展了标准的 `assert_eq!` 和 `assert_ne!` 宏，提供彩色差异。  \n"
+"例如 [`pretty_assertions`](https://docs.rs/pretty_assertions/1.0.0/pretty_assertions/index.html)，它扩展了标准的 `assert_eq!` 和 `assert_ne!` 宏，提供彩色差异对比。  \n"
 "文件 `Cargo.toml`："
 
 #: src/testing/dev_dependencies.md:11
@@ -15682,7 +15694,7 @@ msgid ""
 "```"
 msgstr ""
 "```toml\n"
-"# 标准的 crate 数据省略\n"
+"# 省略标准的 crate 数据\n"
 "[dev-dependencies]\n"
 "pretty_assertions = \"1\"\n"
 "```"
@@ -15696,7 +15708,7 @@ msgid ""
 "[Cargo](http://doc.crates.io/specifying-dependencies.html) docs on specifying "
 "dependencies."
 msgstr ""
-"[Cargo](http://doc.crates.io/specifying-dependencies.html) 文档中关于指定依赖项的内容。"
+"[Cargo 文档](http://doc.crates.io/specifying-dependencies.html)中关于指定依赖项的说明。"
 
 #: src/unsafe.md:3
 msgid ""
@@ -15707,7 +15719,7 @@ msgid ""
 "put in place by the compiler; specifically, there are four primary things "
 "that unsafe is used for:"
 msgstr ""
-"作为本节的介绍，借用[官方文档](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html)的话说，\"应该尽量减少代码库中不安全代码的数量。\" 记住这一点，让我们开始吧！Rust 中的不安全标注用于绕过编译器设置的保护；具体来说，不安全主要用于以下四个方面："
+"作为本节的引言，借用[官方文档](https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html)的话说："应该尽量减少代码库中不安全代码的数量。"牢记这一点，让我们开始吧！Rust 中的不安全标注用于绕过编译器设置的保护机制。具体来说，不安全主要用于以下四个方面："
 
 #: src/unsafe.md:9
 msgid "dereferencing raw pointers"
@@ -15718,7 +15730,7 @@ msgid ""
 "calling functions or methods which are `unsafe` (including calling a function "
 "over FFI, see [a previous chapter](std_misc/ffi.md) of the book)"
 msgstr ""
-"调用 `unsafe` 的函数或方法（包括通过 FFI 调用函数，参见本书的[前面的一章](std_misc/ffi.md)）"
+"调用被标记为 `unsafe` 的函数或方法（包括通过 FFI 调用函数，参见本书[前面的章节](std_misc/ffi.md)）"
 
 #: src/unsafe.md:12
 msgid "accessing or modifying static mutable variables"
@@ -15739,7 +15751,7 @@ msgid ""
 "borrow checker. Dereferencing a raw pointer can only be done through an "
 "unsafe block."
 msgstr ""
-"裸指针 `*` 和引用 `&T` 的功能类似，但引用总是安全的，因为借用检查器保证它们指向有效数据。解引用裸指针只能在不安全块中进行。"
+"裸指针 `*` 和引用 `&T` 的功能类似，但引用总是安全的，因为借用检查器保证它们指向有效数据。解引用裸指针只能在 unsafe 块中进行。"
 
 #: src/unsafe.md:31
 msgid "Calling Unsafe Functions"
@@ -15753,7 +15765,7 @@ msgid ""
 "fn.from_raw_parts.html) which will create a slice given a pointer to the "
 "first element and a length."
 msgstr ""
-"一些函数可以被声明为 `unsafe`，这意味着确保正确性是程序员的责任，而不再是编译器的责任。一个例子是 [`std::slice::from_raw_parts`](https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html)，它会根据指向第一个元素的指针和长度创建一个切片。"
+"某些函数可以被声明为 `unsafe`，这意味着确保其正确性是程序员的责任，而不是编译器的责任。一个例子是 [`std::slice::from_raw_parts`](https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html)，它根据指向第一个元素的指针和长度创建一个切片。"
 
 #: src/unsafe.md:54
 msgid ""
@@ -15762,7 +15774,7 @@ msgid ""
 "to is of the correct type. If these invariants aren't upheld then the "
 "program's behaviour is undefined and there is no knowing what will happen."
 msgstr ""
-"对于 `slice::from_raw_parts`，**必须**遵守的假设之一是传入的指针指向有效的内存，并且指向的内存类型正确。如果这些假设没有被遵守，那么程序的行为是未定义的，无法预知会发生什么。"
+"对于 `slice::from_raw_parts`，**必须**遵守的一个假设是：传入的指针指向有效内存，且指向的内存类型正确。如果这些不变量未被遵守，那么程序的行为将是未定义的，无法预知会发生什么。"
 
 #: src/unsafe/asm.md:3
 msgid ""
@@ -15773,18 +15785,18 @@ msgid ""
 "level hardware primitives, e.g. in kernel code, may also demand this "
 "functionality."
 msgstr ""
-"Rust 通过 `asm!` 宏提供了内联汇编支持。它可以用于在编译器生成的汇编输出中嵌入手写的汇编代码。通常这不是必需的，但在需要特定的性能或时序且无法通过其他方式实现时可能会用到。访问低级硬件原语，例如在内核代码中，也可能需要这个功能。"
+"Rust 通过 `asm!` 宏提供了内联汇编支持。它可以用于在编译器生成的汇编输出中嵌入手写的汇编代码。通常这不是必需的，但在无法通过其他方式实现所需性能或时序要求时可能会用到。访问底层硬件原语（例如在内核代码中）也可能需要这个功能。"
 
 #: src/unsafe/asm.md:8
 msgid ""
 "**Note**: the examples here are given in x86/x86-64 assembly, but other "
 "architectures are also supported."
 msgstr ""
-"**注意**：这里的例子使用的是 x86/x86-64 汇编，但也支持其他架构。"
+"**注意**：这里的示例使用 x86/x86-64 汇编，但也支持其他架构。"
 
 #: src/unsafe/asm.md:10
 msgid "Inline assembly is currently supported on the following architectures:"
-msgstr "内联汇编目前支持以下架构："
+msgstr "目前支持内联汇编的架构包括："
 
 #: src/unsafe/asm.md:11
 msgid "x86 and x86-64"
@@ -15831,7 +15843,7 @@ msgid ""
 "invariants. The instructions to be inserted are listed in the first argument "
 "of the `asm!` macro as a string literal."
 msgstr ""
-"这将在编译器生成的汇编中插入一条 NOP（无操作）指令。注意，所有 `asm!` 调用都必须在 `unsafe` 块内，因为它们可能插入任意指令并破坏各种假设。要插入的指令作为字符串字面量列在 `asm!` 宏的第一个参数中。"
+"这将在编译器生成的汇编代码中插入一条 NOP（无操作）指令。请注意，所有 `asm!` 调用都必须放在 `unsafe` 块内，因为它们可能插入任意指令并破坏各种不变量。要插入的指令以字符串字面量的形式列在 `asm!` 宏的第一个参数中。"
 
 #: src/unsafe/asm.md:35
 msgid "Inputs and outputs"
@@ -15842,7 +15854,7 @@ msgid ""
 "Now inserting an instruction that does nothing is rather boring. Let us do "
 "something that actually acts on data:"
 msgstr ""
-"插入一个什么都不做的指令相当无聊。现在让我们做一些实际操作数据的事情："
+"插入一个什么都不做的指令相当无聊。让我们来做些实际操作数据的事情："
 
 #: src/unsafe/asm.md:46
 msgid "\"mov {}, 5\""
@@ -15863,11 +15875,11 @@ msgid ""
 "into the template and will read the variable from there after the inline "
 "assembly finishes executing."
 msgstr ""
-"这将把值 `5` 写入 `u64` 变量 `x`。你可以看到，我们用来指定指令的字符串字面量实际上是一个模板字符串。它遵循与 Rust [格式化字符串](https://doc.rust-lang.org/std/fmt/#syntax)相同的规则。然而，插入到模板中的参数看起来可能与你熟悉的有些不同。首先，我们需要指定变量是内联汇编的输入还是输出。在这种情况下，它是一个输出。我们通过写 `out` 来声明这一点。我们还需要指定汇编期望变量在什么类型的寄存器中。在这种情况下，我们通过指定 `reg` 将其放在任意通用寄存器中。编译器将选择一个适当的寄存器插入到模板中，并在内联汇编执行完成后从那里读取变量。"
+"这将把值 `5` 写入 `u64` 类型的变量 `x`。你可以看到，我们用来指定指令的字符串字面量实际上是一个模板字符串。它遵循与 Rust [格式化字符串](https://doc.rust-lang.org/std/fmt/#syntax)相同的规则。然而，插入到模板中的参数看起来可能与你熟悉的有些不同。首先，我们需要指定变量是内联汇编的输入还是输出。在这个例子中，它是一个输出。我们通过写 `out` 来声明这一点。我们还需要指定汇编期望变量在什么类型的寄存器中。这里我们通过指定 `reg` 将其放在任意通用寄存器中。编译器将选择一个合适的寄存器插入到模板中，并在内联汇编执行完成后从该寄存器读取变量的值。"
 
 #: src/unsafe/asm.md:65
 msgid "Let us see another example that also uses an input:"
-msgstr "让我们看另一个也使用输入的例子："
+msgstr "让我们再看一个使用输入的例子："
 
 #: src/unsafe/asm.md:75
 msgid "\"mov {0}, {1}\""
@@ -15883,11 +15895,11 @@ msgid ""
 "variable `o`. The particular way this assembly does this is first copying the "
 "value from `i` to the output, and then adding `5` to it."
 msgstr ""
-"这将把 `5` 加到变量 `i` 的输入上，并将结果写入变量 `o`。这段汇编的具体做法是先将 `i` 的值复制到输出，然后加上 `5`。"
+"这段代码会将 `5` 加到变量 `i` 的值上，然后将结果写入变量 `o`。具体的汇编实现是先将 `i` 的值复制到输出寄存器，然后再加上 `5`。"
 
 #: src/unsafe/asm.md:89
 msgid "The example shows a few things:"
-msgstr "这个例子展示了几点："
+msgstr "这个例子展示了几个要点："
 
 #: src/unsafe/asm.md:91
 msgid ""
@@ -15896,13 +15908,13 @@ msgid ""
 "joined together with newlines between them. This makes it easy to format "
 "assembly code."
 msgstr ""
-"首先，我们可以看到 `asm!` 允许多个模板字符串参数；每个参数都被视为单独的一行汇编代码，就好像它们都用换行符连接在一起。这使得格式化汇编代码变得容易。"
+"`asm!` 宏支持多个模板字符串参数，每个参数都被视为独立的汇编代码行，就像它们之间用换行符连接一样。这使得格式化汇编代码变得简单。"
 
 #: src/unsafe/asm.md:96
 msgid ""
 "Second, we can see that inputs are declared by writing `in` instead of `out`."
 msgstr ""
-"其次，我们可以看到输入是通过写 `in` 而不是 `out` 来声明的。"
+"其次，我们可以看到输入参数使用 `in` 声明，而不是 `out`。"
 
 #: src/unsafe/asm.md:98
 msgid ""
@@ -15912,11 +15924,11 @@ msgid ""
 "using this facility is generally recommended, as it improves readability, and "
 "allows reordering instructions without changing the argument order."
 msgstr ""
-"第三，我们可以看到我们可以指定参数编号或名称，就像在任何格式字符串中一样。对于内联汇编模板，这特别有用，因为参数经常被多次使用。对于更复杂的内联汇编，通常建议使用这种方式，因为它提高了可读性，并允许在不改变参数顺序的情况下重新排序指令。"
+"第三，我们可以像在任何格式字符串中一样指定参数编号或名称。这在内联汇编模板中特别有用，因为参数通常会被多次使用。对于更复杂的内联汇编，建议使用这种方式，因为它提高了可读性，并且允许在不改变参数顺序的情况下重新排列指令。"
 
 #: src/unsafe/asm.md:103
 msgid "We can further refine the above example to avoid the `mov` instruction:"
-msgstr "我们可以进一步优化上面的例子以避免 `mov` 指令："
+msgstr "我们可以进一步优化上面的例子，避免使用 `mov` 指令："
 
 #: src/unsafe/asm.md:117
 msgid ""
@@ -15924,7 +15936,7 @@ msgid ""
 "output. This is different from specifying an input and output separately in "
 "that it is guaranteed to assign both to the same register."
 msgstr ""
-"我们可以看到 `inout` 用于指定既是输入又是输出的参数。这与分别指定输入和输出不同，它保证将两者分配到同一个寄存器。"
+"我们可以看到 `inout` 用于指定既作为输入又作为输出的参数。这与分别指定输入和输出不同，它保证将两者分配到同一个寄存器。"
 
 #: src/unsafe/asm.md:120
 msgid ""
@@ -15948,14 +15960,14 @@ msgid ""
 "output that is written only after all inputs have been consumed. There is "
 "also an `inlateout` variant of this specifier."
 msgstr ""
-"Rust 编译器在分配操作数时比较保守。它假设 `out` 可以在任何时候被写入，因此不能与任何其他参数共享其位置。然而，为了保证最佳性能，使用尽可能少的寄存器很重要，这样它们就不必在内联汇编块周围保存和重新加载。为了实现这一点，Rust 提供了一个 `lateout` 说明符。这可以用于任何只在所有输入被消耗后才写入的输出。这个说明符还有一个 `inlateout` 变体。"
+"Rust 编译器在分配操作数时采取保守策略。它假设 `out` 可以在任何时候被写入，因此不能与其他参数共享位置。然而，为了保证最佳性能，使用尽可能少的寄存器很重要，这样就不必在内联汇编块前后保存和重新加载寄存器。为此，Rust 提供了 `lateout` 说明符。这可以用于任何在所有输入被消耗后才写入的输出。此外还有一个 `inlateout` 变体。"
 
 #: src/unsafe/asm.md:145
 msgid ""
 "Here is an example where `inlateout` _cannot_ be used in `release` mode or "
 "other optimized cases:"
 msgstr ""
-"这里有一个例子，在 `release` 模式或其他优化情况下 _不能_ 使用 `inlateout`："
+"以下是一个在 `release` 模式或其他优化情况下 _不能_ 使用 `inlateout` 的例子："
 
 #: src/unsafe/asm.md:156 src/unsafe/asm.md:180 src/unsafe/asm.md:463
 msgid "\"add {0}, {1}\""
@@ -15973,7 +15985,7 @@ msgid ""
 "`inlateout(reg) a` can instead lead to the final value `a = 16`, causing the "
 "assertion to fail."
 msgstr ""
-"在未优化的情况下（例如 `Debug` 模式），在上面的例子中将 `inout(reg) a` 替换为 `inlateout(reg) a` 可以继续给出预期的结果。然而，在 `release` 模式或其他优化情况下，使用 `inlateout(reg) a` 可能会导致最终值 `a = 16`，使断言失败。"
+"在未优化的情况下（如 `Debug` 模式），将上述例子中的 `inout(reg) a` 替换为 `inlateout(reg) a` 仍能得到预期结果。但在 `release` 模式或其他优化情况下，使用 `inlateout(reg) a` 可能导致最终值 `a = 16`，使断言失败。"
 
 #: src/unsafe/asm.md:169
 msgid ""
@@ -15984,21 +15996,21 @@ msgid ""
 "initial load from variable `c`. This is in contrast to how using `inout(reg) "
 "a` ensures a separate register is allocated for `a`."
 msgstr ""
-"这是因为在优化情况下，编译器可以自由地为输入 `b` 和 `c` 分配相同的寄存器，因为它知道它们具有相同的值。此外，当使用 `inlateout` 时，`a` 和 `c` 可能被分配到同一个寄存器，在这种情况下，第一条 `add` 指令会覆盖从变量 `c` 初始加载的值。这与使用 `inout(reg) a` 确保为 `a` 分配单独的寄存器形成对比。"
+"这是因为在优化情况下，编译器可以为输入 `b` 和 `c` 分配相同的寄存器，因为它知道它们具有相同的值。此外，当使用 `inlateout` 时，`a` 和 `c` 可能被分配到同一个寄存器，这种情况下，第一条 `add` 指令会覆盖从变量 `c` 初始加载的值。相比之下，使用 `inout(reg) a` 可以确保为 `a` 分配一个单独的寄存器。"
 
 #: src/unsafe/asm.md:171
 msgid ""
 "However, the following example can use `inlateout` since the output is only "
 "modified after all input registers have been read:"
 msgstr ""
-"然而，以下示例可以使用 `inlateout`，因为输出仅在所有输入寄存器被读取后才被修改："
+"然而，以下示例可以使用 `inlateout`，因为输出仅在读取所有输入寄存器后才被修改："
 
 #: src/unsafe/asm.md:186
 msgid ""
 "As you can see, this assembly fragment will still work correctly if `a` and "
 "`b` are assigned to the same register."
 msgstr ""
-"如你所见，即使 `a` 和 `b` 被分配到同一个寄存器，这段汇编代码片段仍然能正确工作。"
+"如你所见，即使 `a` 和 `b` 被分配到同一个寄存器，这段汇编代码片段仍能正确运行。"
 
 #: src/unsafe/asm.md:188
 msgid "Explicit register operands"
@@ -16013,7 +16025,7 @@ msgid ""
 "registers `eax`, `ebx`, `ecx`, `edx`, `ebp`, `esi`, and `edi` among others "
 "can be addressed by their name."
 msgstr ""
-"某些指令要求操作数必须在特定的寄存器中。因此，Rust 内联汇编提供了一些更具体的约束说明符。虽然 `reg` 通常在任何架构上都可用，但显式寄存器是高度特定于架构的。例如，对于 x86，通用寄存器 `eax`、`ebx`、`ecx`、`edx`、`ebp`、`esi` 和 `edi` 等可以通过它们的名称来寻址。"
+"某些指令要求操作数必须位于特定寄存器中。因此，Rust 内联汇编提供了一些更具体的约束说明符。虽然 `reg` 通常适用于任何架构，但显式寄存器高度依赖于特定架构。例如，对于 x86 架构，通用寄存器如 `eax`、`ebx`、`ecx`、`edx`、`ebp`、`esi` 和 `edi` 等可以直接通过名称进行寻址。"
 
 #: src/unsafe/asm.md:200
 msgid "\"out 0x64, eax\""
@@ -16039,11 +16051,11 @@ msgid ""
 "name directly instead. Also, they must appear at the end of the operand list "
 "after all other operand types."
 msgstr ""
-"**注意**：与其他操作数类型不同，显式寄存器操作数不能在模板字符串中使用：你不能使用 `{}`，而应该直接写寄存器名称。此外，它们必须出现在操作数列表的末尾，在所有其他操作数类型之后。"
+"**注意**：与其他操作数类型不同，显式寄存器操作数不能在模板字符串中使用。你不能使用 `{}`，而应直接写入寄存器名称。此外，它们必须出现在操作数列表的末尾，位于所有其他操作数类型之后。"
 
 #: src/unsafe/asm.md:209
 msgid "Consider this example which uses the x86 `mul` instruction:"
-msgstr "考虑这个使用 x86 `mul` 指令的例子："
+msgstr "考虑以下使用 x86 `mul` 指令的例子："
 
 #: src/unsafe/asm.md:221
 msgid ""
@@ -16051,8 +16063,8 @@ msgid ""
 "            // the 128-bit result of the multiplication to rax:rdx.\n"
 "            \"mul {}\""
 msgstr ""
-"// x86 mul 指令将 rax 作为隐式输入，并将\n"
-"            // 乘法的 128 位结果写入 rax:rdx。\n"
+"// x86 的 mul 指令将 rax 作为隐式输入，\n"
+"            // 并将乘法的 128 位结果写入 rax:rdx。\n"
 "            \"mul {}\""
 
 #: src/unsafe/asm.md:225 src/unsafe/asm.md:347
@@ -16072,7 +16084,7 @@ msgid ""
 "stored in `rax` from which we fill the variable `lo`. The higher 64 bits are "
 "stored in `rdx` from which we fill the variable `hi`."
 msgstr ""
-"这里使用 `mul` 指令将两个 64 位输入相乘，得到一个 128 位的结果。唯一的显式操作数是一个寄存器，我们用变量 `a` 填充它。第二个操作数是隐式的，必须是 `rax` 寄存器，我们用变量 `b` 填充它。结果的低 64 位存储在 `rax` 中，我们用它填充变量 `lo`。高 64 位存储在 `rdx` 中，我们用它填充变量 `hi`。"
+"这里使用 `mul` 指令将两个 64 位输入相乘，得到一个 128 位的结果。唯一的显式操作数是一个寄存器，我们用变量 `a` 填充它。第二个操作数是隐式的，必须是 `rax` 寄存器，我们用变量 `b` 填充它。结果的低 64 位存储在 `rax` 中，用于填充变量 `lo`。高 64 位存储在 `rdx` 中，用于填充变量 `hi`。"
 
 #: src/unsafe/asm.md:241
 msgid "Clobbered registers"
@@ -16087,7 +16099,7 @@ msgid ""
 "We need to tell the compiler about this since it may need to save and restore "
 "this state around the inline assembly block."
 msgstr ""
-"在许多情况下，内联汇编会修改不需要作为输出的状态。通常这是因为我们必须在汇编中使用临时寄存器，或者因为指令修改了我们不需要进一步检查的状态。这种状态通常被称为"被破坏"。我们需要告诉编译器这一点，因为它可能需要在内联汇编块周围保存和恢复这种状态。"
+"在许多情况下，内联汇编会修改不需要作为输出的状态。这通常是因为我们必须在汇编中使用临时寄存器，或者因为指令修改了我们不需要进一步检查的状态。这种状态通常被称为"被破坏"。我们需要告知编译器这一点，因为它可能需要在内联汇编块前后保存和恢复这种状态。"
 
 #: src/unsafe/asm.md:253
 msgid "// three entries of four bytes each\n"
@@ -16103,10 +16115,10 @@ msgid ""
 "register instead.\n"
 msgstr ""
 "// 字符串按顺序以 ASCII 格式存储在 ebx、edx、ecx 中\n"
-"    // 因为 ebx 是保留的，汇编需要保留它的值。\n"
-"    // 所以我们在主要汇编代码前后进行 push 和 pop 操作。\n"
-"    // 64 位处理器的 64 位模式不允许推入/弹出 32 位寄存器（如 ebx），\n"
-"    // 所以我们必须使用扩展的 rbx 寄存器。\n"
+"    // 由于 ebx 是保留寄存器，汇编需要保留其值\n"
+"    // 因此我们在主要汇编代码前后执行 push 和 pop 操作\n"
+"    // 64 位处理器的 64 位模式不允许对 32 位寄存器（如 ebx）进行 push/pop 操作\n"
+"    // 所以我们必须使用扩展的 rbx 寄存器\n"
 
 #: src/unsafe/asm.md:263
 msgid "\"push rbx\""
@@ -16142,10 +16154,9 @@ msgid ""
 "            // The *pointer itself* is only an input even though it's written "
 "behind\n"
 msgstr ""
-"// 我们使用指向数组的指针来存储值，以简化\n"
-"            // Rust 代码，代价是多了几条汇编指令\n"
-"            // 然而，这更明确地展示了汇编的工作方式，与\n"
-"            // 显式寄存器输出（如 `out(\"ecx\") val`）相比\n"
+"// 我们使用指向数组的指针来存储值，以简化 Rust 代码\n"
+"            // 虽然这会增加几条汇编指令，但更清晰地展示了汇编的工作方式\n"
+"            // 相比于使用显式寄存器输出（如 `out(\"ecx\") val`）\n"
 "            // *指针本身*只是一个输入，尽管它在背后被写入\n"
 
 #: src/unsafe/asm.md:274 src/unsafe/asm.md:345
@@ -16154,11 +16165,11 @@ msgstr "\"rdi\""
 
 #: src/unsafe/asm.md:275
 msgid "// select cpuid 0, also specify eax as clobbered\n"
-msgstr "// 选择 cpuid 0，同时指定 eax 为被破坏\n"
+msgstr "// 选择 cpuid 0，同时指定 eax 为被修改寄存器\n"
 
 #: src/unsafe/asm.md:277
 msgid "// cpuid clobbers these registers too\n"
-msgstr "// cpuid 也破坏这些寄存器\n"
+msgstr "// cpuid 也会修改这些寄存器\n"
 
 #: src/unsafe/asm.md:278
 msgid "\"ecx\""
@@ -16179,7 +16190,7 @@ msgid ""
 "`cpuid` argument and `ebx`, `edx`, and `ecx` with the CPU manufacturer ID as "
 "ASCII bytes in that order."
 msgstr ""
-"在上面的例子中，我们使用 `cpuid` 指令来读取 CPU 制造商 ID。这条指令将最大支持的 `cpuid` 参数写入 `eax`，并按顺序将 CPU 制造商 ID 作为 ASCII 字节写入 `ebx`、`edx` 和 `ecx`。"
+"在上面的示例中，我们使用 `cpuid` 指令读取 CPU 制造商 ID。该指令将最大支持的 `cpuid` 参数写入 `eax`，并按顺序将 CPU 制造商 ID 的 ASCII 字节写入 `ebx`、`edx` 和 `ecx`。"
 
 #: src/unsafe/asm.md:294
 msgid ""
@@ -16189,7 +16200,7 @@ msgid ""
 "but with `_` instead of a variable name, which indicates that the output "
 "value is to be discarded."
 msgstr ""
-"尽管 `eax` 从未被读取，我们仍然需要告诉编译器该寄存器已被修改，这样编译器就可以保存在汇编之前这些寄存器中的任何值。这是通过将其声明为输出来完成的，但使用 `_` 而不是变量名，这表示输出值将被丢弃。"
+"尽管 `eax` 从未被读取，我们仍需要告知编译器该寄存器已被修改，这样编译器就可以保存汇编前这些寄存器中的任何值。我们通过将其声明为输出来实现这一点，但使用 `_` 而非变量名，表示输出值将被丢弃。"
 
 #: src/unsafe/asm.md:296
 msgid ""
@@ -16201,7 +16212,7 @@ msgid ""
 "`reg` operands dangerous when using reserved registers as we could "
 "unknowingly corrupt our input or output because they share the same register."
 msgstr ""
-"这段代码还解决了 `ebx` 是 LLVM 保留寄存器的限制。这意味着 LLVM 假定它对该寄存器有完全控制权，并且必须在退出汇编块之前将其恢复到原始状态，所以它不能用作输入或输出，**除非**编译器使用它来满足通用寄存器类（例如 `in(reg)`）。这使得在使用保留寄存器时，`reg` 操作数变得危险，因为我们可能会在不知情的情况下破坏我们的输入或输出，因为它们共享同一个寄存器。"
+"这段代码还解决了 LLVM 将 `ebx` 视为保留寄存器的限制。这意味着 LLVM 假定它对该寄存器拥有完全控制权，并且必须在退出汇编块之前将其恢复到原始状态。因此，`ebx` 不能用作输入或输出，**除非**编译器将其用于满足通用寄存器类（如 `in(reg)`）。这使得在使用保留寄存器时，`reg` 操作数变得危险，因为我们可能会在不知情的情况下破坏输入或输出，原因是它们共享同一个寄存器。"
 
 #: src/unsafe/asm.md:298
 msgid ""
@@ -16212,14 +16223,14 @@ msgid ""
 "register is saved. On 32 bit targets the code would instead use `ebx` in the "
 "`push`/`pop`."
 msgstr ""
-"为了解决这个问题，我们使用 `rdi` 来存储输出数组的指针，通过 `push` 保存 `ebx`，在汇编块内从 `ebx` 读取到数组中，然后通过 `pop` 将 `ebx` 恢复到原始状态。`push` 和 `pop` 使用完整的 64 位 `rbx` 版本的寄存器，以确保整个寄存器被保存。在 32 位目标上，代码会在 `push`/`pop` 中使用 `ebx`。"
+"为了解决这个问题，我们采用以下策略：使用 `rdi` 存储输出数组的指针；通过 `push` 保存 `ebx`；在汇编块内从 `ebx` 读取数据到数组中；然后通过 `pop` 将 `ebx` 恢复到原始状态。`push` 和 `pop` 操作使用完整的 64 位 `rbx` 寄存器版本，以确保整个寄存器被保存。在 32 位目标上，代码会在 `push`/`pop` 操作中使用 `ebx`。"
 
 #: src/unsafe/asm.md:300
 msgid ""
 "This can also be used with a general register class to obtain a scratch "
 "register for use inside the asm code:"
 msgstr ""
-"这也可以与通用寄存器类一起使用，以获得一个临时寄存器在汇编代码内使用："
+"这种技术还可以与通用寄存器类一起使用，以获得一个临时寄存器在汇编代码内使用："
 
 #: src/unsafe/asm.md:305
 msgid "// Multiply x by 6 using shifts and adds\n"
@@ -16256,7 +16267,7 @@ msgid ""
 "Multiple `clobber_abi` arguments may be provided and all clobbers from all "
 "specified ABIs will be inserted."
 msgstr ""
-"默认情况下，`asm!` 假定任何未指定为输出的寄存器的内容都将被汇编代码保留。`asm!` 的 [`clobber_abi`](https://doc.rust-lang.org/stable/reference/inline-assembly.html#abi-clobbers) 参数告诉编译器根据给定的调用约定 ABI 自动插入必要的破坏操作数：任何在该 ABI 中未完全保留的寄存器都将被视为被破坏。可以提供多个 `clobber_abi` 参数，所有指定 ABI 的所有破坏都将被插入。"
+"默认情况下，`asm!` 假定汇编代码会保留所有未指定为输出的寄存器的内容。`asm!` 的 [`clobber_abi`](https://doc.rust-lang.org/stable/reference/inline-assembly.html#abi-clobbers) 参数告诉编译器根据给定的调用约定 ABI 自动插入必要的破坏操作数：任何在该 ABI 中未完全保留的寄存器都将被视为被破坏。可以提供多个 `clobber_abi` 参数，所有指定 ABI 的破坏都将被插入。"
 
 #: src/unsafe/asm.md:332 src/unsafe/asm.md:350
 msgid "\"C\""
@@ -16288,7 +16299,7 @@ msgid ""
 "            // convention as clobbered.\n"
 msgstr ""
 "// 将所有不被 \"C\" 调用约定保留的寄存器\n"
-"            // 标记为被破坏。\n"
+"            // 标记为被破坏\n"
 
 #: src/unsafe/asm.md:358
 msgid "Register template modifiers"
@@ -16302,7 +16313,7 @@ msgid ""
 "each typically being a \"view\" over a subset of the register (e.g. the low "
 "32 bits of a 64-bit register)."
 msgstr ""
-"在某些情况下，需要对寄存器名称插入模板字符串时的格式进行精细控制。当一个架构的汇编语言对同一个寄存器有几个名称时，这是必要的，每个名称通常是寄存器子集的一个"视图"（例如，64 位寄存器的低 32 位）。"
+"在某些情况下，需要对寄存器名称插入模板字符串时的格式进行精细控制。当一个架构的汇编语言对同一个寄存器有多个名称时，这种控制尤为必要。每个名称通常代表寄存器的一个子集"视图"（例如，64 位寄存器的低 32 位）。"
 
 #: src/unsafe/asm.md:362
 msgid ""
@@ -16316,7 +16327,7 @@ msgid ""
 "This default can be overridden by using modifiers on the template string "
 "operands, just like you would with format strings:"
 msgstr ""
-"这个默认设置可以通过在模板字符串操作数上使用修饰符来覆盖，就像你在格式字符串中使用的那样："
+"可以通过在模板字符串操作数上使用修饰符来覆盖这个默认设置，类似于格式字符串的用法："
 
 #: src/unsafe/asm.md:373
 msgid "\"mov {0:h}, {0:l}\""
@@ -16328,7 +16339,7 @@ msgid ""
 "register allocator to the 4 legacy x86 registers (`ax`, `bx`, `cx`, `dx`) of "
 "which the first two bytes can be addressed independently."
 msgstr ""
-"在这个例子中，我们使用 `reg_abcd` 寄存器类来限制寄存器分配器使用 4 个传统的 x86 寄存器（`ax`、`bx`、`cx`、`dx`），其中前两个字节可以独立寻址。"
+"在这个例子中，我们使用 `reg_abcd` 寄存器类来限制寄存器分配器只使用 4 个传统的 x86 寄存器（`ax`、`bx`、`cx`、`dx`）。这些寄存器的前两个字节可以独立寻址。"
 
 #: src/unsafe/asm.md:382
 msgid ""
@@ -16338,7 +16349,7 @@ msgid ""
 "byte. The asm code will therefore be expanded as `mov ah, al` which copies "
 "the low byte of the value into the high byte."
 msgstr ""
-"假设寄存器分配器选择将 `x` 分配在 `ax` 寄存器中。`h` 修饰符将发出该寄存器高字节的寄存器名称，而 `l` 修饰符将发出低字节的寄存器名称。因此，汇编代码将被展开为 `mov ah, al`，这将值的低字节复制到高字节。"
+"假设寄存器分配器选择将 `x` 分配到 `ax` 寄存器。`h` 修饰符将生成该寄存器高字节的名称，而 `l` 修饰符将生成低字节的名称。因此，汇编代码将被展开为 `mov ah, al`，这条指令将值的低字节复制到高字节。"
 
 #: src/unsafe/asm.md:385
 msgid ""
@@ -16360,7 +16371,7 @@ msgid ""
 "assembly syntax, you should wrap inputs/outputs in `[]` to indicate they are "
 "memory operands:"
 msgstr ""
-"有时汇编指令需要通过内存地址/内存位置传递操作数。你必须手动使用目标架构指定的内存地址语法。例如，在使用 Intel 汇编语法的 x86/x86_64 上，你应该将输入/输出用 `[]` 包裹，以表明它们是内存操作数："
+"有时汇编指令需要通过内存地址或内存位置传递操作数。你必须手动使用目标架构指定的内存地址语法。例如，在使用 Intel 汇编语法的 x86/x86_64 架构上，你应该用 `[]` 包裹输入/输出，以表明它们是内存操作数："
 
 #: src/unsafe/asm.md:399
 msgid "\"fldcw [{}]\""
@@ -16376,14 +16387,14 @@ msgid ""
 "linker error or may cause other strange behavior. Reuse of a named label can "
 "happen in a variety of ways including:"
 msgstr ""
-"任何命名标签的重用，无论是局部的还是其他的，都可能导致汇编器或链接器错误，或可能引起其他奇怪的行为。命名标签的重用可能以多种方式发生，包括："
+"重复使用命名标签（无论是局部的还是其他类型的）可能导致汇编器或链接器错误，或引起其他异常行为。命名标签的重用可能以多种方式发生，包括："
 
 #: src/unsafe/asm.md:409
 msgid ""
 "explicitly: using a label more than once in one `asm!` block, or multiple "
 "times across blocks."
 msgstr ""
-"显式：在一个 `asm!` 块中多次使用一个标签，或在多个块之间多次使用。"
+"显式重用：在一个 `asm!` 块中多次使用同一标签，或在多个块之间重复使用。"
 
 #: src/unsafe/asm.md:410
 msgid ""
@@ -16391,14 +16402,14 @@ msgid ""
 "copies of an `asm!` block, for example when the function containing it is "
 "inlined in multiple places."
 msgstr ""
-"通过内联隐式：编译器允许实例化 `asm!` 块的多个副本，例如当包含它的函数在多个地方内联时。"
+"通过内联隐式重用：编译器可能会创建 `asm!` 块的多个副本，例如当包含该块的函数在多处被内联时。"
 
 #: src/unsafe/asm.md:411
 msgid ""
 "implicitly via LTO: LTO can cause code from _other crates_ to be placed in "
 "the same codegen unit, and so could bring in arbitrary labels."
 msgstr ""
-"通过 LTO 隐式：LTO 可能导致**其他 crate** 的代码被放置在同一个代码生成单元中，因此可能引入任意标签。"
+"通过 LTO 隐式重用：链接时优化（LTO）可能导致**其他 crate** 的代码被放置在同一代码生成单元中，从而可能引入任意标签。"
 
 #: src/unsafe/asm.md:413
 msgid ""
@@ -16407,7 +16418,9 @@ msgid ""
 "inside inline assembly code. Defining symbols in assembly code may lead to "
 "assembler and/or linker errors due to duplicate symbol definitions."
 msgstr ""
-"因此，你应该只在内联汇编代码中使用 GNU 汇编器的**数字**[局部标签](https://sourceware.org/binutils/docs/as/Symbol-Names.html#Local-Labels)。在汇编代码中定义符号可能会由于重复的符号定义导致汇编器和/或链接器错误。"
+"因此，你应该只在内联汇编代码中使用 GNU 汇编器的**数字**[局部标签]"
+"(https://sourceware.org/binutils/docs/as/Symbol-Names.html#Local-Labels)。"
+"在汇编代码中定义符号可能会由于重复的符号定义而导致汇编器和/或链接器错误。"
 
 #: src/unsafe/asm.md:415
 msgid ""
@@ -16418,7 +16431,11 @@ msgid ""
 "will avoid any ambiguity, but that affects the syntax of the _entire_ `asm!` "
 "block. (See [Options](#options), below, for more on `options`.)"
 msgstr ""
-"此外，在 x86 上使用默认的 Intel 语法时，由于[一个 LLVM 的 bug](https://bugs.llvm.org/show_bug.cgi?id=36144)，你不应该使用仅由 `0` 和 `1` 数字组成的标签，例如 `0`、`11` 或 `101010`，因为它们可能最终被解释为二进制值。使用 `options(att_syntax)` 可以避免任何歧义，但这会影响**整个** `asm!` 块的语法。（有关 `options` 的更多信息，请参见下面的[选项](#options)。）"
+"此外，在 x86 架构上使用默认的 Intel 语法时，由于[一个 LLVM 的 bug]"
+"(https://bugs.llvm.org/show_bug.cgi?id=36144)，你不应使用仅由 `0` 和 `1` 组成的标签，"
+"如 `0`、`11` 或 `101010`，因为它们可能被误解为二进制值。使用 `options(att_syntax)` "
+"可以避免这种歧义，但这会影响*整个* `asm!` 块的语法。（关于 `options` 的更多信息，"
+"请参见下文的[选项](#options)。）"
 
 #: src/unsafe/asm.md:424
 msgid "\"mov {0}, 10\""
@@ -16453,11 +16470,11 @@ msgid ""
 "This will decrement the `{0}` register value from 10 to 3, then add 2 and "
 "store it in `a`."
 msgstr ""
-"这将把 `{0}` 寄存器的值从 10 递减到 3，然后加 2 并存储在 `a` 中。"
+"这段代码会将 `{0}` 寄存器的值从 10 递减到 3，然后加 2 并将结果存储在 `a` 中。"
 
 #: src/unsafe/asm.md:441
 msgid "This example shows a few things:"
-msgstr "这个例子展示了几点："
+msgstr "这个例子展示了几个要点："
 
 #: src/unsafe/asm.md:443
 msgid ""
@@ -16468,12 +16485,12 @@ msgstr "首先，同一个数字可以在同一个内联块中多次用作标签
 #: src/unsafe/asm.md:444
 msgid ""
 "Second, that when a numeric label is used as a reference (as an instruction "
-"operand, for example), the suffixes “b” (“backward”) or ”f” (“forward”) "
+"operand, for example), the suffixes "b" ("backward") or "f" ("forward") "
 "should be added to the numeric label. It will then refer to the nearest label "
 "defined by this number in this direction."
 msgstr ""
-"其次，当数字标签被用作引用（例如作为指令操作数）时，应该在数字标签后添加后缀 "b"（"backward"，向后）或 "f"（"forward"，向前）。"
-"它将引用该方向上由这个数字定义的最近的标签。"
+"其次，当数字标签被用作引用（例如作为指令操作数）时，应在数字标签后添加后缀 "b"（"backward"，向后）"
+"或 "f"（"forward"，向前）。这样它将引用该方向上由这个数字定义的最近的标签。"
 
 #: src/unsafe/asm.md:449
 msgid "Options"
@@ -16487,18 +16504,20 @@ msgid ""
 "give the compiler more information about what the assembly code is actually "
 "doing so that it can optimize better."
 msgstr ""
-"默认情况下，内联汇编块的处理方式与具有自定义调用约定的外部 FFI 函数调用相同：它可能读/写内存，有可观察的副作用等。"
-"然而，在许多情况下，我们希望给编译器提供更多关于汇编代码实际在做什么的信息，以便它可以更好地优化。"
+"默认情况下，内联汇编块的处理方式与具有自定义调用约定的外部 FFI 函数调用相同：它可能读写内存，"
+"产生可观察的副作用等。然而，在许多情况下，我们希望向编译器提供更多关于汇编代码实际行为的信息，"
+"以便编译器能够进行更好的优化。"
 
 #: src/unsafe/asm.md:453
 msgid "Let's take our previous example of an `add` instruction:"
-msgstr "让我们看看之前 `add` 指令的例子："
+msgstr "让我们回顾一下之前 `add` 指令的例子："
 
 #: src/unsafe/asm.md:472
 msgid ""
 "Options can be provided as an optional final argument to the `asm!` macro. We "
 "specified three options here:"
-msgstr "选项可以作为 `asm!` 宏的可选最终参数提供。我们在这里指定了三个选项："
+msgstr ""
+"可以将选项作为可选的最后一个参数传递给 `asm!` 宏。在这个例子中，我们指定了三个选项："
 
 #: src/unsafe/asm.md:473
 msgid ""
@@ -16506,7 +16525,7 @@ msgid ""
 "output depends only on its inputs. This allows the compiler optimizer to call "
 "the inline asm fewer times or even eliminate it entirely."
 msgstr ""
-"`pure` 表示汇编代码没有可观察的副作用，其输出仅依赖于其输入。这允许编译器优化器减少调用内联汇编的次数，甚至完全消除它。"
+"`pure`：表示汇编代码没有可观察的副作用，其输出仅依赖于输入。这使得编译器优化器能够减少内联汇编的调用次数，甚至完全消除它。"
 
 #: src/unsafe/asm.md:474
 msgid ""
@@ -16515,7 +16534,7 @@ msgid ""
 "address that is accessible to it (e.g. through a pointer passed as an "
 "operand, or a global)."
 msgstr ""
-"`nomem` 表示汇编代码不读取或写入内存。默认情况下，编译器会假设内联汇编可以读取或写入任何它可以访问的内存地址（例如，通过作为操作数传递的指针，或全局变量）。"
+"`nomem`：表示汇编代码不读取或写入内存。默认情况下，编译器会假设内联汇编可以读写任何它可访问的内存地址（例如通过作为操作数传递的指针或全局变量）。"
 
 #: src/unsafe/asm.md:475
 msgid ""
@@ -16523,21 +16542,21 @@ msgid ""
 "allows the compiler to use optimizations such as the stack red zone on x86-64 "
 "to avoid stack pointer adjustments."
 msgstr ""
-"`nostack` 表示汇编代码不会将任何数据压入栈中。这允许编译器使用诸如 x86-64 上的栈红区等优化来避免栈指针调整。"
+"`nostack`：表示汇编代码不会向栈中压入任何数据。这允许编译器使用诸如 x86-64 上的栈红区等优化技术，以避免栈指针调整。"
 
 #: src/unsafe/asm.md:477
 msgid ""
 "These allow the compiler to better optimize code using `asm!`, for example by "
 "eliminating pure `asm!` blocks whose outputs are not needed."
 msgstr ""
-"这些选项允许编译器更好地优化使用 `asm!` 的代码，例如通过消除那些输出不被需要的纯 `asm!` 块。"
+"这些选项使编译器能够更好地优化使用 `asm!` 的代码，例如消除那些输出未被使用的纯 `asm!` 块。"
 
 #: src/unsafe/asm.md:479
 msgid ""
 "See the [reference](https://doc.rust-lang.org/stable/reference/inline-"
 "assembly.html) for the full list of available options and their effects."
 msgstr ""
-"查看[参考文档](https://doc.rust-lang.org/stable/reference/inline-assembly.html)以获取可用选项的完整列表及其效果。"
+"有关可用选项的完整列表及其效果，请参阅[参考文档]（https://doc.rust-lang.org/stable/reference/inline-assembly.html）。"
 
 #: src/compatibility.md:3
 msgid ""
@@ -16545,7 +16564,7 @@ msgid ""
 "compatibility issues can arise, despite efforts to ensure forwards-"
 "compatibility wherever possible."
 msgstr ""
-"Rust 语言正在快速发展，因此尽管努力确保尽可能的向前兼容性，某些兼容性问题仍可能出现。"
+"Rust 语言正在快速发展。尽管我们努力确保尽可能的向前兼容，但某些兼容性问题仍可能出现。"
 
 #: src/compatibility.md:7
 msgid "[Raw identifiers](compatibility/raw_identifiers.md)"
@@ -16561,8 +16580,7 @@ msgid ""
 "older edition of Rust has a variable or function with the same name as a "
 "keyword introduced in a newer edition."
 msgstr ""
-"Rust，像许多编程语言一样，有"关键字"的概念。这些标识符对语言来说有特殊含义，因此你不能在变量名、函数名和其他地方使用它们。"
-"原始标识符允许你在通常不允许使用关键字的地方使用它们。这在 Rust 引入新关键字，而使用旧版本 Rust 的库有一个与新版本中引入的关键字同名的变量或函数时特别有用。"
+"Rust 和许多编程语言一样，有"关键字"的概念。这些标识符在语言中具有特殊含义，因此你不能在变量名、函数名等地方使用它们。原始标识符允许你在通常不允许使用关键字的地方使用它们。这在 Rust 引入新关键字，而使用旧版本 Rust 的库中有与新版本引入的关键字同名的变量或函数时特别有用。"
 
 #: src/compatibility/raw_identifiers.md:11
 msgid ""
@@ -16571,16 +16589,15 @@ msgid ""
 "feature in the 2018 edition, so without raw identifiers, we would have no way "
 "to name the function."
 msgstr ""
-"例如，设想一个使用 2015 版 Rust 编译的 crate `foo`，它导出了一个名为 `try` 的函数。这个关键字在 2018 版中被保留用于新特性，"
-"所以如果没有原始标识符，我们就无法命名这个函数。"
+"例如，假设有一个使用 Rust 2015 版编译的 crate `foo`，它导出了一个名为 `try` 的函数。这个关键字在 2018 版中被保留用于新特性，如果没有原始标识符，我们就无法命名这个函数。"
 
 #: src/compatibility/raw_identifiers.md:24
 msgid "You'll get this error:"
-msgstr "得到这个错误："
+msgstr "你会得到这个错误："
 
 #: src/compatibility/raw_identifiers.md:34
 msgid "You can write this with a raw identifier:"
-msgstr "可以使用原始标识符这样写："
+msgstr "你可以使用原始标识符这样写："
 
 #: src/meta.md:3
 msgid ""
@@ -16588,41 +16605,41 @@ msgid ""
 "tooling or infrastructure support which just makes things better for "
 "everyone. These topics include:"
 msgstr ""
-"有些主题与程序本身如何运行并不直接相关，但它们提供了工具或基础设施支持，使得整个软件生态都变得更好。这些主题包括："
+"有些主题虽然与程序如何运行不直接相关，但它们提供了工具或基础设施支持，使得整个开发生态变得更好。这些主题包括："
 
 #: src/meta.md:7
 msgid ""
 "[Documentation](meta/doc.md): Generate library documentation for users via "
 "the included `rustdoc`."
 msgstr ""
-"[文档](meta/doc.md)：通过包含的 `rustdoc` 为用户生成库文档。"
+"[文档](meta/doc.md)：使用内置的 `rustdoc` 为用户生成库文档。"
 
 #: src/meta.md:9
 msgid ""
 "[Playground](meta/playground.md): Integrate the Rust Playground in your "
 "documentation."
 msgstr ""
-"[Playground](meta/playground.md)：在你的文档中集成 Rust Playground。"
+"[Playground](meta/playground.md)：在文档中集成 Rust Playground。"
 
 #: src/meta/doc.md:3
 msgid ""
 "Use `cargo doc` to build documentation in `target/doc`, `cargo doc --open` "
 "will automatically open it in your web browser."
 msgstr ""
-"使用 `cargo doc` 在 `target/doc` 中构建文档，`cargo doc --open` 将在浏览器中自动打开。"
+"使用 `cargo doc` 在 `target/doc` 目录下构建文档。运行 `cargo doc --open` 将自动在浏览器中打开文档。"
 
 #: src/meta/doc.md:6
 msgid ""
 "Use `cargo test` to run all tests (including documentation tests), and `cargo "
 "test --doc` to only run documentation tests."
 msgstr ""
-"使用 `cargo test` 运行所有测试（包括文档测试），使用 `cargo test --doc` 只运行文档测试。"
+"使用 `cargo test` 运行所有测试（包括文档测试）。如果只想运行文档测试，请使用 `cargo test --doc`。"
 
 #: src/meta/doc.md:9
 msgid ""
 "These commands will appropriately invoke `rustdoc` (and `rustc`) as required."
 msgstr ""
-"这些命令将根据需要适当地调用 `rustdoc`（和 `rustc`）。"
+"这些命令会根据需要适当地调用 `rustdoc`（和 `rustc`）。"
 
 #: src/meta/doc.md:11
 msgid "Doc comments"
@@ -16635,7 +16652,7 @@ msgid ""
 "documentation. They are denoted by a `///`, and support [Markdown](https://en."
 "wikipedia.org/wiki/Markdown)."
 msgstr ""
-"文档注释对于需要文档的大型项目非常有用。当运行 `rustdoc` 时，这些注释会被编译成文档。它们由 `///` 表示，并支持 [Markdown](https://en.wikipedia.org/wiki/Markdown)。"
+"文档注释对需要文档的大型项目非常有用。运行 `rustdoc` 时，这些注释会被编译成文档。文档注释以 `///` 开头，并支持 [Markdown](https://zh.wikipedia.org/wiki/Markdown) 语法。"
 
 #: src/meta/doc.md:18
 msgid "\"doc\""
@@ -16647,7 +16664,7 @@ msgstr "/// 这里表示一个人类\n"
 
 #: src/meta/doc.md:22
 msgid "/// A person must have a name, no matter how much Juliet may hate it\n"
-msgstr "/// 一个人必须有一个名字，不管朱丽叶有多讨厌它\n"
+msgstr "/// 一个人必须有名字，不管朱丽叶有多么讨厌这一点\n"
 
 #: src/meta/doc.md:27
 msgid ""
@@ -16667,8 +16684,8 @@ msgstr ""
 "    /// # 示例\n"
 "    ///\n"
 "    /// ```\n"
-"    /// // 你可以在注释中的围栏之间放置 rust 代码\n"
-"    /// // 如果你向 `rustdoc` 传递 --test 参数，它甚至会为你测试这段代码！\n"
+"    /// // 你可以在注释中的代码块里编写 Rust 代码\n"
+"    /// // 如果向 `rustdoc` 传递 --test 参数，它甚至会为你测试这段代码！\n"
 "    /// use doc::Person;\n"
 "    /// let person = Person::new(\"name\");\n"
 "    /// ```\n"
@@ -16680,9 +16697,9 @@ msgid ""
 "    /// Says \"Hello, [name](Person::name)\" to the `Person` it is called "
 "on.\n"
 msgstr ""
-"/// 给出一个友好的问候！\n"
+"/// 给出友好的问候！\n"
 "    ///\n"
-"    /// 对调用它的 `Person` 说 \"Hello, [name](Person::name)\"。\n"
+"    /// 对调用此方法的 `Person` 说 "Hello, [name](Person::name)"。\n"
 
 #: src/meta/doc.md:47
 msgid "\"Hello, {}!\""
@@ -16697,7 +16714,7 @@ msgid ""
 "To run the tests, first build the code as a library, then tell `rustdoc` "
 "where to find the library so it can link it into each doctest program:"
 msgstr ""
-"要运行测试，首先将代码构建为库，然后告诉 `rustdoc` 在哪里找到库，以便它可以将其链接到每个文档测试程序中："
+"要运行测试，首先将代码构建为库，然后告诉 `rustdoc` 库的位置，以便它可以将库链接到每个文档测试程序中："
 
 #: src/meta/doc.md:61
 msgid ""
@@ -16719,7 +16736,7 @@ msgstr "文档属性"
 msgid ""
 "Below are a few examples of the most common `#[doc]` attributes used with "
 "`rustdoc`."
-msgstr "以下是与 `rustdoc` 一起使用的最常见的 `#[doc]` 属性的几个例子。"
+msgstr "以下是几个与 `rustdoc` 配合使用的最常见 `#[doc]` 属性示例。"
 
 #: src/meta/doc.md:71
 msgid "`inline`"
@@ -16727,11 +16744,11 @@ msgstr "`inline`"
 
 #: src/meta/doc.md:73
 msgid "Used to inline docs, instead of linking out to separate page."
-msgstr "用于内联文档，而不是链接到单独的页面。"
+msgstr "用于内联文档，而非链接到单独的页面。"
 
 #: src/meta/doc.md:78
 msgid "/// bar docs\n"
-msgstr "/// bar 文档\n"
+msgstr "/// bar 的文档\n"
 
 #: src/meta/doc.md:81
 msgid "/// the docs for Bar\n"
@@ -16743,7 +16760,7 @@ msgstr "`no_inline`"
 
 #: src/meta/doc.md:88
 msgid "Used to prevent linking out to separate page or anywhere."
-msgstr "用于防止链接到单独的页面或任何地方。"
+msgstr "用于防止链接到单独页面或其他任何地方。"
 
 #: src/meta/doc.md:91
 msgid "// Example from libcore/prelude\n"
@@ -16755,7 +16772,7 @@ msgstr "`hidden`"
 
 #: src/meta/doc.md:98
 msgid "Using this tells `rustdoc` not to include this in documentation:"
-msgstr "使用这个属性告诉 `rustdoc` 不要包含在文档中："
+msgstr "使用此属性告诉 `rustdoc` 不要在文档中包含此内容："
 
 #: src/meta/doc.md:101
 msgid "// Example from the futures-rs library\n"
@@ -16766,7 +16783,7 @@ msgid ""
 "For documentation, `rustdoc` is widely used by the community. It's what is "
 "used to generate the [std library docs](https://doc.rust-lang.org/std/)."
 msgstr ""
-"针对文档，`rustdoc` 被社区广泛使用。[标准库文档](https://doc.rust-lang.org/std/)就是用它来生成的。"
+"在文档生成方面，`rustdoc` 被社区广泛使用。它是用来生成 [标准库文档](https://doc.rust-lang.org/std/) 的工具。"
 
 #: src/meta/doc.md:111
 msgid ""
@@ -16774,7 +16791,7 @@ msgid ""
 "org/book/ch14-02-publishing-to-crates-io.html#making-useful-documentation-"
 "comments)"
 msgstr ""
-"[Rust 程序设计语言: 编写有用的文档注释](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#making-useful-documentation-comments)"
+"[《Rust 程序设计语言》：编写有用的文档注释](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#making-useful-documentation-comments)"
 
 #: src/meta/doc.md:112
 msgid "[The rustdoc Book](https://doc.rust-lang.org/rustdoc/index.html)"
@@ -16785,7 +16802,7 @@ msgid ""
 "[The Reference: Doc comments](https://doc.rust-lang.org/stable/reference/"
 "comments.html#doc-comments)"
 msgstr ""
-"[参考手册: 文档注释](https://doc.rust-lang.org/stable/reference/comments.html#doc-comments)"
+"[Rust 参考手册：文档注释](https://doc.rust-lang.org/stable/reference/comments.html#doc-comments)"
 
 #: src/meta/doc.md:114
 msgid ""
@@ -16793,39 +16810,40 @@ msgid ""
 "rfcs/1574-more-api-documentation-conventions.html#appendix-a-full-conventions-"
 "text)"
 msgstr ""
-"[RFC 1574: API 文档约定](https://rust-lang.github.io/rfcs/1574-more-api-documentation-conventions.html#appendix-a-full-conventions-text)"
+"[RFC 1574：API 文档约定](https://rust-lang.github.io/rfcs/1574-more-api-documentation-conventions.html#appendix-a-full-conventions-text)"
 
 #: src/meta/doc.md:115
 msgid ""
 "[RFC 1946: Relative links to other items from doc comments (intra-rustdoc "
 "links)](https://rust-lang.github.io/rfcs/1946-intra-rustdoc-links.html)"
 msgstr ""
-"[RFC 1946: 从文档注释到其他项目的相对链接（rustdoc 内部链接）](https://rust-lang.github.io/rfcs/1946-intra-rustdoc-links.html)"
+"[RFC 1946：文档注释中的相对链接（rustdoc 内部链接）](https://rust-lang.github.io/rfcs/1946-intra-rustdoc-links.html)"
 
 #: src/meta/doc.md:116
 msgid ""
 "[Is there any documentation style guide for comments? (reddit)](https://www."
 "reddit.com/r/rust/comments/ahb50s/is_there_any_documentation_style_guide_for/)"
 msgstr ""
-"[有没有关于注释的文档风格指南？（reddit）](https://www.reddit.com/r/rust/comments/ahb50s/is_there_any_documentation_style_guide_for/)"
+"[有关注释的文档风格指南？（Reddit 讨论）](https://www."
+"reddit.com/r/rust/comments/ahb50s/is_there_any_documentation_style_guide_for/)"
 
 #: src/meta/playground.md:3
 msgid ""
 "The [Rust Playground](https://play.rust-lang.org/) is a way to experiment "
 "with Rust code through a web interface."
 msgstr ""
-"[Rust Playground](https://play.rust-lang.org/) 是一种在线运行验证 Rust 代码的方式。"
+"[Rust Playground](https://play.rust-lang.org/) 是一个通过网页界面体验 Rust 代码的平台。"
 
 #: src/meta/playground.md:6
 msgid "Using it with `mdbook`"
-msgstr "在 `mdbook` 中使用"
+msgstr "在 `mdbook` 中使用 Playground"
 
 #: src/meta/playground.md:8
 msgid ""
 "In [`mdbook`](https://github.com/rust-lang/mdBook), you can make code "
 "examples playable and editable."
 msgstr ""
-"在 [`mdbook`](https://github.com/rust-lang/mdBook) 中，你可以使代码示例可运行和可编辑。"
+"在 [`mdbook`](https://github.com/rust-lang/mdBook) 中，你可以让代码示例变得可运行和可编辑。"
 
 #: src/meta/playground.md:16
 msgid ""
@@ -16833,18 +16851,18 @@ msgid ""
 "tweak it. The key here is the adding of the word `editable` to your codefence "
 "block separated by a comma."
 msgstr ""
-"这允许读者既可以运行你的代码示例，也可以修改和调整它。这里的关键是在你的代码块标注中添加 `editable` 这个词，用逗号分隔。"
+"这不仅允许读者运行你的代码示例，还能修改和调整它。关键是在代码块标记中添加 `editable` 关键字，用逗号分隔。"
 
 #: src/meta/playground.md:26
 msgid ""
 "Additionally, you can add `ignore` if you want `mdbook` to skip your code "
 "when it builds and tests."
 msgstr ""
-"此外，如果你希望 `mdbook` 在构建和测试时跳过你的代码，你可以添加 `ignore`。"
+"此外，如果你希望 `mdbook` 在构建和测试时跳过某段代码，可以添加 `ignore` 关键字。"
 
 #: src/meta/playground.md:35
 msgid "Using it with docs"
-msgstr "在文档中使用"
+msgstr "在文档中使用 Playground"
 
 #: src/meta/playground.md:37
 msgid ""
@@ -16854,7 +16872,9 @@ msgid ""
 "attribute called [`html_playground_url`](https://doc.rust-lang.org/rustdoc/"
 "write-documentation/the-doc-attribute.html#html_playground_url)."
 msgstr ""
-"你可能已经注意到在一些 [官方 Rust 文档](https://doc.rust-lang.org/core/) 中有一个写着 \"Run\" 的按钮，它会在 Rust Playground 的新标签页中打开代码示例。使用名为 [`html_playground_url`](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html#html_playground_url) 的 `#[doc]` 属性，就可以启用这个功能。"
+"你可能注意到在一些[官方 Rust 文档](https://doc.rust-lang.org/core/)中有一个"运行"按钮，"
+"点击后会在 Rust Playground 的新标签页中打开代码示例。要启用此功能，需要使用 `#[doc]` 属性中的 "
+"[`html_playground_url`](https://doc.rust-lang.org/rustdoc/write-documentation/the-doc-attribute.html#html_playground_url)。"
 
 #: src/meta/playground.md:42
 msgid ""
