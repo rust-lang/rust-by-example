@@ -69,7 +69,7 @@ fn main() {
 }
 ```
 
-## `From` and `Into` are interchangable
+## `From` and `Into` are interchangeable
 
 `From` and `Into` are designed to be complementary.
 We do not need to provide an implementation for both traits.
