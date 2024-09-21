@@ -12506,9 +12506,9 @@ msgid ""
 "`](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-"
 "question-mark-operator)"
 msgstr ""
-"[`From::from`]（https://doc.rust-lang.org/std/convert/trait.From.html）和"
-"[`?`运算符]（https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-"
-"question-mark-operator）"
+"[`From::from`](https://doc.rust-lang.org/std/convert/trait.From.html)和"
+"[`?`运算符](https://doc.rust-lang.org/reference/expressions/operator-expr.html#the-"
+"question-mark-operator)"
 
 #: src/error/multiple_error_types/wrap_error.md:3
 msgid "An alternative to boxing errors is to wrap them in your own error type."
@@ -16556,7 +16556,7 @@ msgid ""
 "See the [reference](https://doc.rust-lang.org/stable/reference/inline-"
 "assembly.html) for the full list of available options and their effects."
 msgstr ""
-"有关可用选项的完整列表及其效果，请参阅[参考文档]（https://doc.rust-lang.org/stable/reference/inline-assembly.html）。"
+"有关可用选项的完整列表及其效果，请参阅[参考文档](https://doc.rust-lang.org/stable/reference/inline-assembly.html)。"
 
 #: src/compatibility.md:3
 msgid ""
