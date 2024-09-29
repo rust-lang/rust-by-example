@@ -8,11 +8,11 @@ Rust allows us to define our own error types. In general, a "good" error type:
 * Represents different errors with the same type
 * Presents nice error messages to the user
 * Is easy to compare with other types
-    - Good: `Err(EmptyVec)`
-    - Bad: `Err("Please use a vector with at least one element".to_owned())`
+  * Good: `Err(EmptyVec)`
+  * Bad: `Err("Please use a vector with at least one element".to_owned())`
 * Can hold information about the error
-    - Good: `Err(BadChar(c, position))`
-    - Bad: `Err("+ cannot be used here".to_owned())`
+  * Good: `Err(BadChar(c, position))`
+  * Bad: `Err("+ cannot be used here".to_owned())`
 * Composes well with other errors
 
 ```rust,editable

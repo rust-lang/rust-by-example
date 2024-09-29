@@ -8,6 +8,7 @@ cannot be otherwise achieved. Accessing low level hardware primitives, e.g. in k
 > **Note**: the examples here are given in x86/x86-64 assembly, but other architectures are also supported.
 
 Inline assembly is currently supported on the following architectures:
+
 - x86 and x86-64
 - ARM
 - AArch64
@@ -139,7 +140,7 @@ can be written at any time, and can therefore not share its location with any ot
 However, to guarantee optimal performance it is important to use as few registers as possible,
 so they won't have to be saved and reloaded around the inline assembly block.
 To achieve this Rust provides a `lateout` specifier. This can be used on any output that is
-written only after all inputs have been consumed. There is also an `inlateout` variant of this 
+written only after all inputs have been consumed. There is also an `inlateout` variant of this
 specifier.
 
 Here is an example where `inlateout` *cannot* be used in `release` mode or other optimized cases:
@@ -164,11 +165,19 @@ assert_eq!(a, 12);
 # }
 ```
 
-In unoptimized cases (e.g. `Debug` mode), replacing `inout(reg) a` with `inlateout(reg) a` in the above example can continue to give the expected result. However, with `release` mode or other optimized cases, using `inlateout(reg) a` can instead lead to the final value `a = 16`, causing the assertion to fail. 
+In unoptimized cases (e.g. `Debug` mode), replacing `inout(reg) a` with `inlateout(reg) a` in the
+above example can continue to give the expected result. However, with `release` mode or other
+optimized cases, using `inlateout(reg) a` can instead lead to the final value `a = 16`, causing the
+assertion to fail.
 
-This is because in optimized cases, the compiler is free to allocate the same register for inputs `b` and `c` since it knows that they have the same value. Furthermore, when `inlateout` is used, `a` and `c` could be allocated to the same register, in which case the first `add` instruction would overwrite the initial load from variable `c`. This is in contrast to how using `inout(reg) a` ensures a separate register is allocated for `a`. 
+This is because in optimized cases, the compiler is free to allocate the same register for inputs
+`b` and `c` since it knows that they have the same value. Furthermore, when `inlateout` is used, `a`
+and `c` could be allocated to the same register, in which case the first `add` instruction would
+overwrite the initial load from variable `c`. This is in contrast to how using `inout(reg) a`
+ensures a separate register is allocated for `a`.
 
-However, the following example can use `inlateout` since the output is only modified after all input registers have been read:
+However, the following example can use `inlateout` since the output is only modified after all input
+registers have been read:
 
 ```rust
 # #[cfg(target_arch = "x86_64")] {
@@ -406,13 +415,13 @@ fn load_fpu_control_word(control: u16) {
 
 Any reuse of a named label, local or otherwise, can result in an assembler or linker error or may cause other strange behavior. Reuse of a named label can happen in a variety of ways including:
 
--   explicitly: using a label more than once in one `asm!` block, or multiple times across blocks.
--   implicitly via inlining: the compiler is allowed to instantiate multiple copies of an `asm!` block, for example when the function containing it is inlined in multiple places.
--   implicitly via LTO: LTO can cause code from *other crates* to be placed in the same codegen unit, and so could bring in arbitrary labels.
+- explicitly: using a label more than once in one `asm!` block, or multiple times across blocks.
+- implicitly via inlining: the compiler is allowed to instantiate multiple copies of an `asm!` block, for example when the function containing it is inlined in multiple places.
+- implicitly via LTO: LTO can cause code from *other crates* to be placed in the same codegen unit, and so could bring in arbitrary labels.
 
 As a consequence, you should only use GNU assembler **numeric** [local labels] inside inline assembly code. Defining symbols in assembly code may lead to assembler and/or linker errors due to duplicate symbol definitions.
 
-Moreover, on x86 when using the default Intel syntax, due to [an LLVM bug], you shouldn't use labels exclusively made of `0` and `1` digits, e.g. `0`, `11` or `101010`, as they may end up being interpreted as binary values. Using `options(att_syntax)` will avoid any ambiguity, but that affects the syntax of the _entire_ `asm!` block. (See [Options](#options), below, for more on `options`.)
+Moreover, on x86 when using the default Intel syntax, due to [an LLVM bug], you shouldn't use labels exclusively made of `0` and `1` digits, e.g. `0`, `11` or `101010`, as they may end up being interpreted as binary values. Using `options(att_syntax)` will avoid any ambiguity, but that affects the syntax of the *entire* `asm!` block. (See [Options](#options), below, for more on `options`.)
 
 ```rust
 # #[cfg(target_arch = "x86_64")] {
@@ -470,6 +479,7 @@ assert_eq!(a, 8);
 ```
 
 Options can be provided as an optional final argument to the `asm!` macro. We specified three options here:
+
 - `pure` means that the asm code has no observable side effects and that its output depends only on its inputs. This allows the compiler optimizer to call the inline asm fewer times or even eliminate it entirely.
 - `nomem` means that the asm code does not read or write to memory. By default the compiler will assume that inline assembly can read or write any memory address that is accessible to it (e.g. through a pointer passed as an operand, or a global).
 - `nostack` means that the asm code does not push any data onto the stack. This allows the compiler to use optimizations such as the stack red zone on x86-64 to avoid stack pointer adjustments.

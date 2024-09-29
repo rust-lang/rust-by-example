@@ -1,10 +1,11 @@
 # Unpacking options and defaults
 
 There is more than one way to unpack an `Option` and fall back on a default if it is `None`. To choose the one that meets our needs, we need to consider the following:
+
 * do we need eager or lazy evaluation?
 * do we need to keep the original empty value intact, or modify it in place?
 
-##  `or()` is chainable, evaluates eagerly, keeps empty value intact
+## `or()` is chainable, evaluates eagerly, keeps empty value intact
 
 `or()`is chainable and eagerly evaluates its argument, as is shown in the following example. Note that because `or`'s arguments are evaluated eagerly, the variable passed to `or` is moved.
 
@@ -29,7 +30,7 @@ fn main() {
  }
 ```
 
-##  `or_else()` is chainable, evaluates lazily, keeps empty value intact
+## `or_else()` is chainable, evaluates lazily, keeps empty value intact
 
 Another alternative is to use `or_else`, which is also chainable, and evaluates lazily, as is shown in the following example:
 
@@ -57,7 +58,7 @@ fn main() {
 }
 ```
 
-##  `get_or_insert()` evaluates eagerly, modifies empty value in place
+## `get_or_insert()` evaluates eagerly, modifies empty value in place
 
 To make sure that an `Option` contains a value, we can use `get_or_insert` to modify it in place with a fallback value, as is shown in the following example. Note that `get_or_insert` eagerly evaluates its parameter, so variable `apple` is moved:
 
@@ -78,9 +79,10 @@ fn main() {
 }
 ```
 
-##  `get_or_insert_with()` evaluates lazily, modifies empty value in place
+## `get_or_insert_with()` evaluates lazily, modifies empty value in place
 
 Instead of explicitly providing a value to fall back on, we can pass a closure to `get_or_insert_with`, as follows:
+
 ```rust,editable
 #[derive(Debug)] 
 enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }

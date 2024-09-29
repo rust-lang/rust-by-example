@@ -1,6 +1,6 @@
 # Associated types
 
-The use of "Associated types" improves the overall readability of code 
+The use of "Associated types" improves the overall readability of code
 by moving inner types locally into a trait as *output* types. Syntax
 for the `trait` definition is as follows:
 

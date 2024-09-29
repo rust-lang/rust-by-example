@@ -72,6 +72,7 @@ where P: AsRef<Path>, {
 ```
 
 Running this program simply prints the lines individually.
+
 ```shell
 $ echo -e "127.0.0.1\n192.168.0.1\n" > hosts.txt
 $ rustc read_lines.rs && ./read_lines
@@ -84,4 +85,3 @@ generic `read_lines()` method with the same generic constraint, using the `where
 
 This process is more efficient than creating a `String` in memory with all of the file's
 contents. This can especially cause performance issues when working with larger files.
-

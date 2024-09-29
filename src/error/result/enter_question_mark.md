@@ -69,7 +69,6 @@ fn main() {
 }
 ```
 
-
 [^†]: See [re-enter ?][re_enter_?] for more details.
 
 [re_enter_?]: ../multiple_error_types/reenter_question_mark.md

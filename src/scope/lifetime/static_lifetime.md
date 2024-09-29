@@ -114,7 +114,9 @@ fn main() {
     print_it(&i);
 }
 ```
+
 The compiler will tell you:
+
 ```ignore
 error[E0597]: `i` does not live long enough
   --> src/lib.rs:15:15

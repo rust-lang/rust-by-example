@@ -1,8 +1,8 @@
 # Mutability
 
-Mutable data can be mutably borrowed using `&mut T`. This is called 
+Mutable data can be mutably borrowed using `&mut T`. This is called
 a *mutable reference* and gives read/write access to the borrower.
-In contrast, `&T` borrows the data via an immutable reference, and 
+In contrast, `&T` borrows the data via an immutable reference, and
 the borrower can read the data but not modify it:
 
 ```rust,editable,ignore,mdbook-runnable
@@ -54,6 +54,7 @@ fn main() {
 ```
 
 ### See also:
+
 [`static`][static]
 
 [static]: ../lifetime/static_lifetime.md

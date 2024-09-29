@@ -17,11 +17,12 @@ can be used to/for:
 Attributes look like `#[outer_attribute]` or `#![inner_attribute]`,
 with the difference between them being where they apply.
 
-- `#[outer_attribute]` applies to the [item][item] immediately
+* `#[outer_attribute]` applies to the [item][item] immediately
   following it. Some examples of items are: a function, a module
   declaration, a constant, a structure, an enum. Here is an example
   where attribute `#[derive(Debug)]` applies to the struct
   `Rectangle`:
+
   ```rust
   #[derive(Debug)]
   struct Rectangle {
@@ -30,11 +31,12 @@ with the difference between them being where they apply.
   }
   ```
 
-- `#![inner_attribute]` applies to the enclosing [item][item] (typically a
+* `#![inner_attribute]` applies to the enclosing [item][item] (typically a
   module or a crate). In other words, this attribute is interpreted as
   applying to the entire scope in which it's placed. Here is an example
   where `#![allow(unused_variables)]` applies to the whole crate (if
   placed in `main.rs`):
+
   ```rust
   #![allow(unused_variables)]
 

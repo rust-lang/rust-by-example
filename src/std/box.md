@@ -6,7 +6,7 @@ heap allocated value of type `T`. When a box goes out of scope, its destructor
 is called, the inner object is destroyed, and the memory on the heap is freed.
 
 Boxed values can be dereferenced using the `*` operator; this removes one layer
-of indirection. 
+of indirection.
 
 ```rust,editable
 use std::mem;
