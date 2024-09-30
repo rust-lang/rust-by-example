@@ -3,7 +3,7 @@ on: [push, pull_request]
 
 env:
   # Update the language picker in index.hbs to link new languages.
-  LANGUAGES: ja
+  LANGUAGES: ja zh
 
 jobs:
   test:
