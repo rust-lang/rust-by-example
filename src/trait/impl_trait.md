@@ -48,7 +48,6 @@ fn parse_csv_document(src: impl std::io::BufRead) -> std::io::Result<Vec<Vec<Str
 
 Note that using `impl Trait` as an argument type means that you cannot explicitly state what form of the function you use, i.e. `parse_csv_document::<std::io::Empty>(std::io::empty())` will not work with the second example.
 
-
 ## As a return type
 
 If your function returns a type that implements `MyTrait`, you can write its

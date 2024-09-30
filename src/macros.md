@@ -1,4 +1,4 @@
-# macro_rules!
+# `macro_rules!`
 
 Rust provides a powerful macro system that allows metaprogramming. As you've
 seen in previous chapters, macros look like functions, except that their name

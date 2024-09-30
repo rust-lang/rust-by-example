@@ -1,7 +1,7 @@
 # Disambiguating overlapping traits
 
 A type can implement many different traits. What if two traits both require
-the same name for a function? For example, many traits might have a method 
+the same name for a function? For example, many traits might have a method
 named `get()`. They might even have different return types!
 
 Good news: because each trait implementation gets its own `impl` block, it's

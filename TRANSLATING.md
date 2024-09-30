@@ -37,7 +37,7 @@ MDBOOK_OUTPUT='{"xgettext": {"pot-file": "messages.pot"}}' \
 msginit -i po/messages.pot -l xx -o po/xx.po
 ```
 
-#### Updating the exising translation resource
+#### Updating the existing translation resource
 
 ```bash
 msgmerge --update po/xx.po po/messages.pot

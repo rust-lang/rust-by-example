@@ -71,6 +71,7 @@ test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
 ## Tests and `?`
+
 None of the previous unit test examples had a return type. But in Rust 2018,
 your unit tests can return `Result<()>`, which lets you use `?` in them! This
 can make them much more concise.

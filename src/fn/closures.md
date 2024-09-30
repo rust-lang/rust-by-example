@@ -13,6 +13,7 @@ However, both input and return types *can* be inferred and input
 variable names *must* be specified.
 
 Other characteristics of closures include:
+
 * using `||` instead of `()` around input variables.
 * optional body delimitation (`{}`) for a single line expression (mandatory otherwise).
 * the ability to capture the outer environment variables.

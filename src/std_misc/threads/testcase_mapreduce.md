@@ -1,14 +1,14 @@
 # Testcase: map-reduce
 
-Rust makes it very easy to parallelise data processing, without many of the headaches traditionally associated with such an attempt.
+Rust makes it very easy to parallelize data processing, without many of the headaches traditionally associated with such an attempt.
 
 The standard library provides great threading primitives out of the box.
 These, combined with Rust's concept of Ownership and aliasing rules, automatically prevent
 data races.
 
 The aliasing rules (one writable reference XOR many readable references) automatically prevent
-you from manipulating state that is visible to other threads. (Where synchronisation is needed,
-there are synchronisation
+you from manipulating state that is visible to other threads. (Where synchronization is needed,
+there are synchronization
 primitives like `Mutex`es or `Channel`s.)
 
 In this example, we will calculate the sum of all digits in a block of numbers.
@@ -120,12 +120,14 @@ fn main() {
 ```
 
 ### Assignments
+
 It is not wise to let our number of threads depend on user inputted data.
 What if the user decides to insert a lot of spaces? Do we _really_ want to spawn 2,000 threads?
 Modify the program so that the data is always chunked into a limited number of chunks,
 defined by a static constant at the beginning of the program.
 
 ### See also:
+
 * [Threads][thread]
 * [vectors][vectors] and [iterators][iterators]
 * [closures][closures], [move][move] semantics and [`move` closures][move_closure]

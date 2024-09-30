@@ -1,7 +1,7 @@
 # Searching through iterators
 
-`Iterator::find` is a function which iterates over an iterator and searches for the 
-first value which satisfies some condition. If none of the values satisfy the 
+`Iterator::find` is a function which iterates over an iterator and searches for the
+first value which satisfies some condition. If none of the values satisfy the
 condition, it returns `None`. Its signature:
 
 ```rust,ignore

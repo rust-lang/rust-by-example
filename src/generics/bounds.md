@@ -23,7 +23,7 @@ struct S<T: Display>(T);
 let s = S(vec![1]);
 ```
 
-Another effect of bounding is that generic instances are allowed to access the 
+Another effect of bounding is that generic instances are allowed to access the
 [methods] of traits specified in the bounds. For example:
 
 ```rust,editable

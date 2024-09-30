@@ -1,10 +1,16 @@
 # `Rc`
 
-When multiple ownership is needed, `Rc`(Reference Counting) can be used. `Rc` keeps track of the number of the references which means the number of owners of the value wrapped inside an `Rc`. 
+When multiple ownership is needed, `Rc`(Reference Counting) can be used. `Rc`
+keeps track of the number of the references which means the number of owners of
+the value wrapped inside an `Rc`.
 
-Reference count of an `Rc` increases by 1 whenever an `Rc` is cloned, and decreases by 1 whenever one cloned `Rc` is dropped out of the scope. When an `Rc`'s reference count becomes zero (which means there are no remaining owners), both the `Rc` and the value are all dropped. 
+Reference count of an `Rc` increases by 1 whenever an `Rc` is cloned, and
+decreases by 1 whenever one cloned `Rc` is dropped out of the scope. When an
+`Rc`'s reference count becomes zero (which means there are no remaining owners),
+both the `Rc` and the value are all dropped.
 
-Cloning an `Rc` never performs a deep copy. Cloning creates just another pointer to the wrapped value, and increments the count.
+Cloning an `Rc` never performs a deep copy. Cloning creates just another pointer
+to the wrapped value, and increments the count.
 
 ```rust,editable
 use std::rc::Rc;

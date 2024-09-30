@@ -26,7 +26,7 @@ read all content offline, however!
 
 **The following warnings can be ignored safely.**
 
-```
+```text
 [WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "gettext" preprocessor installed?
 [WARN] (mdbook::preprocess::cmd):   Command: mdbook-gettext
 ```

@@ -81,4 +81,3 @@ and [`struct`][structs]
 [derive]: ../../trait/derive.md
 [fmt]: https://doc.rust-lang.org/std/fmt/
 [structs]: ../../custom_types/structs.md
-

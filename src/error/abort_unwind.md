@@ -1,7 +1,6 @@
 # `abort` and `unwind`
 
-The previous section illustrates the error handling mechanism `panic`.  Different code paths can be conditionally compiled based on the panic setting. The current values available are `unwind` and `abort`. 
-
+The previous section illustrates the error handling mechanism `panic`.  Different code paths can be conditionally compiled based on the panic setting. The current values available are `unwind` and `abort`.
 
 Building on the prior lemonade example, we explicitly use the panic strategy to exercise different lines of code.  
 
@@ -57,4 +56,3 @@ The panic strategy can be set from the command line by using `abort` or `unwind`
 ```console
 rustc  lemonade.rs -C panic=abort
 ```
-

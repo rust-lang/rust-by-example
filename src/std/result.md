@@ -2,7 +2,7 @@
 
 We've seen that the `Option` enum can be used as a return value from functions
 that may fail, where `None` can be returned to indicate failure. However,
-sometimes it is important to express *why* an operation failed. To do this we 
+sometimes it is important to express *why* an operation failed. To do this we
 have the `Result` enum.
 
 The `Result<T, E>` enum has two variants:

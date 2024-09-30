@@ -91,6 +91,5 @@ rebuilds what it has not already built, similar to `make`).
 
 Voila! That's all there is to it!
 
-
 [manifest]: https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]: https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html

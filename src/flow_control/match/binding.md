@@ -47,6 +47,7 @@ fn main() {
 ```
 
 ### See also:
+
 [`functions`][functions], [`enums`][enums] and [`Option`][option]
 
 [functions]: ../../fn.md

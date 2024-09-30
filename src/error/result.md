@@ -75,7 +75,6 @@ fn main() -> Result<(), ParseIntError> {
 }
 ```
 
-
 [option]: https://doc.rust-lang.org/std/option/enum.Option.html
 [result]: https://doc.rust-lang.org/std/result/enum.Result.html
 [parse]: https://doc.rust-lang.org/std/primitive.str.html#method.parse
