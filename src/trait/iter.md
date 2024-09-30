@@ -17,7 +17,8 @@ struct Fibonacci {
 }
 
 // Implement `Iterator` for `Fibonacci`.
-// The `Iterator` trait only requires a method to be defined for the `next` element.
+// The `Iterator` trait only requires a method to be defined for the `next` element,
+// and an `associated type` to declare the return type of the iterator.
 impl Iterator for Fibonacci {
     // We can refer to this type using Self::Item
     type Item = u32;
