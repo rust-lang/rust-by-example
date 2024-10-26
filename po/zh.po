@@ -12714,7 +12714,7 @@ msgid ""
 "heap is freed."
 msgstr ""
 "在 Rust 中，所有值默认都是栈分配的。通过创建 `Box<T>`，可以将值**装箱**（在堆上分配）。"
-"Box 是指向堆分配的 `T` 类型值的智能指针。当 box 离开作用域时，会调用其析构函数，"
+"Box 是指向堆分配的 `T` 类型值的智能指针。当 Box 离开作用域时，会调用其析构函数，"
 "内部对象被销毁，堆上的内存被释放。"
 
 #: src/std/box.md:8
@@ -12898,7 +12898,7 @@ msgid ""
 "    // count is enumerated in a separate variable (`i`)\n"
 msgstr ""
 "// 遍历 `Vector` 时，可以同时用一个单独的变量（`i`）\n"
-"// 来枚举迭代计数\n"
+"    // 来枚举迭代计数\n"
 
 #: src/std/vec.md:55
 msgid "\"In position {} we have value {}\""
@@ -12910,7 +12910,7 @@ msgid ""
 "    // over in a way that allows modifying each value\n"
 msgstr ""
 "// 借助 `iter_mut`，可变的 `Vector` 也可以被遍历，\n"
-"// 并且允许修改每个值\n"
+"    // 并且允许修改每个值\n"
 
 #: src/std/vec.md:63
 msgid "\"Updated vector: {:?}\""
@@ -13966,7 +13966,6 @@ msgid ""
 "        // reference in the memory heap.\n"
 msgstr ""
 "// 这里没有指定值，因为它是指向堆内存中引用的指针。\n"
-"        // \n"
 
 #: src/std/arc.md:24
 msgid ""
@@ -13974,7 +13973,6 @@ msgid ""
 "            // in the Arc variable pointer's location.\n"
 msgstr ""
 "// 由于使用了 Arc，可以使用 Arc 变量指针所指向的值来生成线程。\n"
-"            // \n"
 
 #: src/std/arc.md:30
 msgid "// Make sure all Arc instances are printed from spawned threads.\n"
