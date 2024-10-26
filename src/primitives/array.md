@@ -63,7 +63,7 @@ fn main() {
         }
     }
 
-    // Out of bound indexing on array causes compile time error.
+    // Out of bound indexing on array with constant value causes compile time error.
     //println!("{}", xs[5]);
     // Out of bound indexing on slice causes runtime error.
     //println!("{}", xs[..][5]);
