@@ -56,7 +56,7 @@ fn main() {
     // File hosts.txt must exist in the current path
     if let Ok(lines) = read_lines("./hosts.txt") {
         // Consumes the iterator, returns an (Optional) String
-        for line in lines.flatten() {
+        for line in lines.map_while(Result::ok) {
             println!("{}", line);
         }
     }
