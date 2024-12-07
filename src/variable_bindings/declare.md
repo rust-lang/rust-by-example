@@ -1,8 +1,10 @@
 # Declare first
 
-It's possible to declare variable bindings first, and initialize them later.
-However, this form is seldom used, as it may lead to the use of uninitialized
-variables.
+It is possible to declare variable bindings first and initialize them later, but all variable bindings must be initialized before they are used: the compiler forbids use of uninitialized variable bindings, as it would lead to undefined behavior. 
+
+It is not common to declare a variable binding and initialize it later in the function.
+It is more difficult for a reader to find the initialization when initialization is separated from declaration.
+It is common to declare and initialize a variable binding near where the variable will be used.
 
 ```rust,editable,ignore,mdbook-runnable
 fn main() {
@@ -30,5 +32,4 @@ fn main() {
 }
 ```
 
-The compiler forbids use of uninitialized variables, as this would lead to
-undefined behavior.
+
