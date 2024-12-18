@@ -6,7 +6,10 @@ this will result in a _partial move_ of the variable, which means
 that parts of the variable will be moved while other parts stay. In
 such a case, the parent variable cannot be used afterwards as a
 whole, however the parts that are only referenced (and not moved)
-can still be used.
+can still be used. Note that types that implement the
+[`Drop` trait][droptrait] cannot be partially moved from, because
+its `drop` method would use it afterwards as a whole.
+
 
 ```rust,editable
 fn main() {
@@ -15,6 +18,14 @@ fn main() {
         name: String,
         age: Box<u8>,
     }
+
+    // Error! cannot move out of a type which implements the `Drop` trait
+    //impl Drop for Person {
+    //    fn drop(&mut self) {
+    //        println!("Dropping the person struct {:?}", self)
+    //    }
+    //}
+    // TODO ^ Try uncommenting these lines
 
     let person = Person {
         name: String::from("Alice"),
@@ -47,4 +58,5 @@ not be required as the definition of `age` would copy the data from
 
 [destructuring][destructuring]
 
+[droptrait]: ../../trait/drop.md
 [destructuring]: ../../flow_control/match/destructuring.md
