@@ -67,7 +67,7 @@ a program's life, they can be created while the program is executed. Just to
 demonstrate, the below example uses
 [`Box::leak`](https://doc.rust-lang.org/std/boxed/struct.Box.html#method.leak)
 to dynamically create `'static` references. In that case it definitely doesn't
-live for the entire duration, but only for the leaking point onward.
+live for the entire duration, but only from the leaking point onward.
 
 ```rust,editable,compile_fail
 extern crate rand;
