@@ -8638,7 +8638,7 @@ msgid ""
 "For example, an age verification function that checks age in years, _must_ "
 "be given a value of type `Years`."
 msgstr ""
-"例えば、年齢を年単位で確認する`old_enough`には「Years」という型の値を *与えな"
+"例えば、年齢を年単位で確認する`is_adult`には「Years」という型の値を *与えな"
 "ければならない* ようにすることが可能です。"
 
 #: src/generics/new_types.md:22
