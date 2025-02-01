@@ -5,10 +5,10 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 21:37-06:00\n"
 "Last-Translator: mrg <miguelraz@gmail.com>\n"
 "Language-Team: Spanish <es@tp.org.es>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/SUMMARY.md:1
@@ -781,9 +781,10 @@ msgid ""
 "focusing on safety, speed, and concurrency. It accomplishes these goals by "
 "being memory safe without using garbage collection."
 msgstr ""
-"[Rust] (https://www.rust-lang.org/) es un lenguaje de programación de sistemas modernos"
-"concentrado en la seguridad, la velocidad y la concurrencia. Logra estos objetivos al"
-"tener seguridad de memoria sin usar la recolección de basura."
+"[Rust] (https://www.rust-lang.org/) es un lenguaje de programación de "
+"sistemas modernosconcentrado en la seguridad, la velocidad y la "
+"concurrencia. Logra estos objetivos altener seguridad de memoria sin usar la "
+"recolección de basura."
 
 #: src/index.md:7
 msgid ""
@@ -794,13 +795,12 @@ msgid ""
 "std/). Additionally for the curious, you can also [check out the source code "
 "for this site](https://github.com/rust-lang/rust-by-example)."
 msgstr ""
-"Rust By Example (RBE) es una colección de ejemplos ejecutables que ilustran"
-"varios conceptos de Rust y sus biblioteca estándar. Para obtener aún más de estos"
-"ejemplos, no olvide [instalar Rust localmente] (https://www.rust-lang.org/"
-"tools/install) y consulte los [documentos oficiales](https://doc.rust-lang.org/"
-"std/). Además, para la gente curiosa, también puede [ver el código fuente"
-"para este sitio](https://github.com/rust-lang/rust-by-example)."
-
+"Rust By Example (RBE) es una colección de ejemplos ejecutables que "
+"ilustranvarios conceptos de Rust y sus biblioteca estándar. Para obtener aún "
+"más de estosejemplos, no olvide [instalar Rust localmente] (https://www.rust-"
+"lang.org/tools/install) y consulte los [documentos oficiales](https://doc."
+"rust-lang.org/std/). Además, para la gente curiosa, también puede [ver el "
+"código fuentepara este sitio](https://github.com/rust-lang/rust-by-example)."
 
 #: src/index.md:12
 msgid "Now let's begin!"
@@ -808,15 +808,16 @@ msgstr "¡Comencemos!"
 
 #: src/index.md:14
 msgid "[Hello World](hello.md) - Start with a traditional Hello World program."
-msgstr "[Hola Mundo](hello.md) - Empieza con el programa tradicional Hola Mundo."
+msgstr ""
+"[Hola Mundo](hello.md) - Empieza con el programa tradicional Hola Mundo."
 
 #: src/index.md:16
 msgid ""
 "[Primitives](primitives.md) - Learn about signed integers, unsigned integers "
 "and other primitives."
 msgstr ""
-"[Primitivas](primitives.md) - Aprende sobre enteros con signo, enteros sin signo"
-" y otras primitivas."
+"[Primitivas](primitives.md) - Aprende sobre enteros con signo, enteros sin "
+"signo y otras primitivas."
 
 #: src/index.md:18
 msgid "[Custom Types](custom_types.md) - `struct` and `enum`."
@@ -869,16 +870,16 @@ msgid ""
 "[Crates](crates.md) - A crate is a compilation unit in Rust. Learn to create "
 "a library."
 msgstr ""
-"[Crates](crates.md) - Una caja es una unidad de compilación en Rust. Aprende a crear "
-"una biblioteca."
+"[Crates](crates.md) - Una caja es una unidad de compilación en Rust. Aprende "
+"a crear una biblioteca."
 
 #: src/index.md:36
 msgid ""
 "[Cargo](cargo.md) - Go through some basic features of the official Rust "
 "package management tool."
 msgstr ""
-"[Cargo](cargo.md) - Realice algunas características básicas de la herramienta de Rust oficial "
-"gestión de paquetes."
+"[Cargo](cargo.md) - Realice algunas características básicas de la "
+"herramienta de Rust oficial gestión de paquetes."
 
 #: src/index.md:38
 msgid ""
@@ -893,16 +894,16 @@ msgid ""
 "[Generics](generics.md) - Learn about writing a function or data type which "
 "can work for multiple types of arguments."
 msgstr ""
-"[Genéricos](generics.md) - Aprenda a escribir una función o tipo de datos que "
-"puede funcionar para múltiples tipos de argumentos."
+"[Genéricos](generics.md) - Aprenda a escribir una función o tipo de datos "
+"que puede funcionar para múltiples tipos de argumentos."
 
 #: src/index.md:42
 msgid ""
 "[Scoping rules](scope.md) - Scopes play an important part in ownership, "
 "borrowing, and lifetimes."
 msgstr ""
-"[Reglas de alcance](scope.md) - Los alcances juegan un papel importante del ownership, "
-"borrowing y lifetimes."
+"[Reglas de alcance](scope.md) - Los alcances juegan un papel importante del "
+"ownership, borrowing y lifetimes."
 
 #: src/index.md:44
 msgid ""
@@ -917,9 +918,8 @@ msgid ""
 "[Macros](macros.md) - Macros are a way of writing code that writes other "
 "code, which is known as metaprogramming."
 msgstr ""
-"[Macros](Macros.md) - Las macros son una forma de escribir código que escribe a otros"
-"códigos, lo cual se conoce como metaprogramación."
-
+"[Macros](macros.md) - Las macros son una forma de escribir código que "
+"escribe a otroscódigos, lo cual se conoce como metaprogramación."
 
 #: src/index.md:48
 msgid "[Error handling](error.md) - Learn Rust way of handling failures."
@@ -930,15 +930,18 @@ msgid ""
 "[Std library types](std.md) - Learn about some custom types provided by "
 "`std` library."
 msgstr ""
-"[Tipos de la librería std](std.md) - Aprenda sobre algunos tipos de la librería"
-"`std`."
+"[Tipos de la librería std](std.md) - Aprenda sobre algunos tipos de la "
+"librería`std`."
 
 #: src/index.md:52
 msgid "[Std misc](std_misc.md) - More custom types for file handling, threads."
-msgstr "[Std misc](std_misc.md) - Más tipos personalizados para el manejo de archivos, hilos."
+msgstr ""
+"[Std misc](std_misc.md) - Más tipos personalizados para el manejo de "
+"archivos, hilos."
 
 #: src/index.md:54
-msgid "[Pruebas](testing.md) - All sorts of testing in Rust."
+#, fuzzy
+msgid "[Testing](testing.md) - All sorts of testing in Rust."
 msgstr "[Pruebas](testing.md) - Todo tipo de pruebas en Rust."
 
 #: src/index.md:56
@@ -946,16 +949,16 @@ msgid ""
 "[Unsafe Operations](unsafe.md) - Learn about entering a block of unsafe "
 "operations."
 msgstr ""
-"[Operaciones Unsafe](unsafe.md) - Aprenda sobre el uso de bloques de operaciones "
-"unsafe."
+"[Operaciones Unsafe](unsafe.md) - Aprenda sobre el uso de bloques de "
+"operaciones unsafe."
 
 #: src/index.md:58
 msgid ""
 "[Compatibility](compatibility.md) - Handling Rust's evolution and potential "
 "compatibility issues."
 msgstr ""
-"[Compatibilidad](compatibility.md) - Manejo de la evolución de Rust y potenciales "
-"problemas de compatibilidad."
+"[Compatibilidad](compatibility.md) - Manejo de la evolución de Rust y "
+"potenciales problemas de compatibilidad."
 
 #: src/index.md:60
 msgid "[Meta](meta.md) - Documentation, Benchmarking."
@@ -983,8 +986,8 @@ msgid ""
 "button ->\n"
 msgstr ""
 "// Este código es editable, ¡siéntete libre de hackearlo!\n"
-"// Siempre puede volver al código original haciendo clic en \"Reset\" "
-"botón -> \n"
+"// Siempre puede volver al código original haciendo clic en \"Reset\" botón -"
+"> \n"
 
 #: src/hello.md:13
 msgid "// This is the main function.\n"
@@ -992,7 +995,8 @@ msgstr "// Esta es la función main"
 
 #: src/hello.md:16
 msgid "// Statements here are executed when the compiled binary is called.\n"
-msgstr "// Las oraciones aquí se ejecutan cuando el binario compilado es llamado.\n"
+msgstr ""
+"// Las oraciones aquí se ejecutan cuando el binario compilado es llamado.\n"
 
 #: src/hello.md:18
 msgid "// Print text to the console.\n"
@@ -1025,14 +1029,16 @@ msgid ""
 "Click 'Run' above to see the expected output. Next, add a new line with a "
 "second `println!` macro so that the output shows:"
 msgstr ""
-"Haga clic en 'Run' arriba para ver la salida esperada. A continuación, agregue una nueva línea con un"
-"segundo `println!` macro para que la salida muestre:"
+"Haga clic en 'Run' arriba para ver la salida esperada. A continuación, "
+"agregue una nueva línea con unsegundo `println!` macro para que la salida "
+"muestre:"
 
 #: src/hello/comment.md:3
 msgid ""
 "Any program requires comments, and Rust supports a few different varieties:"
 msgstr ""
-"Cualquier programa requiere comentarios, y Rust admite algunas variedades diferentes:"
+"Cualquier programa requiere comentarios, y Rust admite algunas variedades "
+"diferentes:"
 
 #: src/hello/comment.md:6
 msgid "_Regular comments_ which are ignored by the compiler:"
@@ -1051,8 +1057,8 @@ msgid ""
 "_Doc comments_ which are parsed into HTML library [documentation](../meta/"
 "doc.md):"
 msgstr ""
-"_Comentarios de Doc_ que se parsean en la librería HTML [documentation](../ meta/"
-"doc.md):"
+"_Comentarios de Doc_ que se parsean en la librería HTML [documentation](../ "
+"meta/doc.md):"
 
 #: src/hello/comment.md:10
 msgid "`/// Generate library docs for the following item.`"
@@ -1078,7 +1084,9 @@ msgstr ""
 
 #: src/hello/comment.md:21
 msgid "// Run it. See? Now try deleting the two slashes, and run it again.\n"
-msgstr "// Ejecútalo. ¿Ves? Ahora intenta eliminar las dos barras y ejecútalo nuevamente.\n"
+msgstr ""
+"// Ejecútalo. ¿Ves? Ahora intenta eliminar las dos barras y ejecútalo "
+"nuevamente.\n"
 
 #: src/hello/comment.md:23
 msgid ""
@@ -1091,11 +1099,15 @@ msgid ""
 "     * /*/*/* Try it yourself! */*/*/\n"
 "     */"
 msgstr ""
-"/*\norte"
-"     * Este es otro tipo de comentario, un comentario en bloque. En general,\n"
-"     * los comentarios de línea son el estilo de comentarios recomendado. Pero los comentarios de bloque\n"
-"     * son extremadamente útiles para deshabilitar temporalmente los segmentos de código.\n"
-"     * /* Los comentarios de bloque pueden ser /* anidados, */ */ por lo que solo se necesitan unos pocos\n"
+"/*\n"
+"orte     * Este es otro tipo de comentario, un comentario en bloque. En "
+"general,\n"
+"     * los comentarios de línea son el estilo de comentarios recomendado. "
+"Pero los comentarios de bloque\n"
+"     * son extremadamente útiles para deshabilitar temporalmente los "
+"segmentos de código.\n"
+"     * /* Los comentarios de bloque pueden ser /* anidados, */ */ por lo que "
+"solo se necesitan unos pocos\n"
 "     * teclazos para comentar todo en esta función main().\n"
 "     * /*/*/*¡Pruébalo! */*/*/\n"
 " */"
@@ -1119,7 +1131,8 @@ msgid ""
 "    // to change the result:\n"
 msgstr ""
 "// Puede manipular expresiones más fácilmente con comentarios de bloque \n"
-"    // que con comentarios de línea. Intente eliminar los delimitadores de comentarios\n"
+"    // que con comentarios de línea. Intente eliminar los delimitadores de "
+"comentarios\n"
 "    // para cambiar el resultado:\n"
 
 #: src/hello/comment.md:40
@@ -1186,8 +1199,9 @@ msgid ""
 "Printing is handled by a series of [`macros`](../macros.md) defined in "
 "[`std::fmt`](https://doc.rust-lang.org/std/fmt/) some of which are:"
 msgstr ""
-"La impresión se maneja por una serie de [`macros`](../macros.md) definida en"
-"[`std::fmt`](https://doc.rust-lang.org/std/fmt/) algunos de los cuales son: "
+"La impresión se maneja por una serie de [`macros`](../macros.md) definida "
+"en[`std::fmt`](https://doc.rust-lang.org/std/fmt/) algunos de los cuales "
+"son: "
 
 #: src/hello/print.md:6
 msgid "`format!`: write formatted text to [`String`](../std/str.md)"
@@ -1218,26 +1232,24 @@ msgid "`eprintln!`: same as `eprint!` but a newline is appended."
 msgstr "`eprintln!`: es igual que `eprint!` pero se agrega un salto de línea"
 
 #: src/hello/print.md:14
+#, fuzzy
 msgid ""
 "All parse text in the same fashion. As a plus, Rust checks formatting "
+"correctness at compile time."
+msgstr ""
+"Parsea todo el texta de la misma manera. Como beneficio, Rust verifica el "
+"formato    // de los argumentos. Serán convertidos en cadenas.\n"
 
-
-
-
-
-
+#: src/hello/print.md:19
+#, fuzzy
+msgid ""
+"// In general, the `{}` will be automatically replaced with any\n"
 "    // arguments. These will be stringified.\n"
 msgstr ""
-"Parsea todo el texta de la misma manera. Como beneficio, Rust verifica el formato"
+"Parsea todo el texta de la misma manera. Como beneficio, Rust verifica el "
+"formato    // de los argumentos. Serán convertidos en cadenas.\n"
 
-
-
-
-
-
-"    // de los argumentos. Serán convertidos en cadenas.\n"
-
-
+#: src/hello/print.md:21
 msgid "\"{} days\""
 msgstr "\"{} días\""
 
@@ -1248,9 +1260,10 @@ msgid ""
 "start\n"
 "    // at 0 immediately after the format string.\n"
 msgstr ""
-"// Se pueden usar argumentos posicionales. Especificar un entero dentro de `{}`\n"
-"   // determina qué argumento adicional será reemplazado. Los argumentos"
-"comienzan \n"
+"// Se pueden usar argumentos posicionales. Especificar un entero dentro de "
+"`{}`\n"
+"   // determina qué argumento adicional será reemplazado. Los "
+"argumentoscomienzan \n"
 "   // en 0 inmediatamente después de la cadena de formato.\n"
 
 #: src/hello/print.md:26
@@ -1291,7 +1304,8 @@ msgid ""
 "// Different formatting can be invoked by specifying the format character\n"
 "    // after a `:`.\n"
 msgstr ""
-"// Se puede invocar diferentes formatos especificando el carácter del formato\n"
+"// Se puede invocar diferentes formatos especificando el carácter del "
+"formato\n"
 "   // después de un `:`.\n"
 
 #: src/hello/print.md:36
@@ -1332,9 +1346,10 @@ msgid ""
 "    // output \"    1\". (Four white spaces and a \"1\", for a total width "
 "of 5.)\n"
 msgstr ""
-"// Puedes justificar el texto a la derecha con un ancho especificado. Esto será\n"
-"// salida \"    1 \". (Cuatro espacios blancos y un \"1\", para un ancho total"
-"de 5.)\n"
+"// Puedes justificar el texto a la derecha con un ancho especificado. Esto "
+"será\n"
+"// salida \"    1 \". (Cuatro espacios blancos y un \"1\", para un ancho "
+"totalde 5.)\n"
 
 #: src/hello/print.md:43
 msgid "\"{number:>5}\""
@@ -1354,7 +1369,8 @@ msgid ""
 "    // and left-adjust by flipping the sign. This will output \"10000\".\n"
 msgstr ""
 "// 00001\n"
-"    // y justificar a la izquierda volteando el signo. Esto imprimirá \"10000\".\n"
+"    // y justificar a la izquierda volteando el signo. Esto imprimirá "
+"\"10000\".\n"
 
 #: src/hello/print.md:48
 msgid "\"{number:0<5}\""
@@ -1368,7 +1384,8 @@ msgstr ""
 msgid ""
 "// You can use named arguments in the format specifier by appending a `$`.\n"
 msgstr ""
-"// Puede usar argumentos con nombre en el formato especificador agregando un `$`.\n"
+"// Puede usar argumentos con nombre en el formato especificador agregando un "
+"`$`.\n"
 
 #: src/hello/print.md:51
 msgid "\"{number:0>width$}\""
@@ -1378,7 +1395,8 @@ msgstr "\"{numero:0>ancho$}\""
 msgid ""
 "// Rust even checks to make sure the correct number of arguments are used.\n"
 msgstr ""
-"// Rust incluso verifica para asegurarse de que se usen el número correcto de argumentos.\n"
+"// Rust incluso verifica para asegurarse de que se usen el número correcto "
+"de argumentos.\n"
 
 #: src/hello/print.md:54
 msgid "\"My name is {0}, {1} {0}\""
@@ -1389,7 +1407,7 @@ msgid "\"Bond\""
 msgstr ""
 
 #: src/hello/print.md:55
-msgid "// ARRÉGLAME ^ Agregue el argumento que falta: \"James\"\n"
+msgid "// FIXME ^ Add the missing argument: \"James\"\n"
 msgstr ""
 
 #: src/hello/print.md:57
@@ -1397,8 +1415,10 @@ msgid ""
 "// Only types that implement fmt::Display can be formatted with `{}`. User-\n"
 "    // defined types do not implement fmt::Display by default.\n"
 msgstr ""
-"// Sólo los tipos que implementan `fmt::Display` pueden formatearse con `{}`.\n"
-"   // Los tipos definidos por usuario no implementan `fmt::Display` de forma predeterminada.\n"
+"// Sólo los tipos que implementan `fmt::Display` pueden formatearse con `{}"
+"`.\n"
+"   // Los tipos definidos por usuario no implementan `fmt::Display` de forma "
+"predeterminada.\n"
 
 #: src/hello/print.md:60
 msgid "// disable `dead_code` which warn against unused module\n"
@@ -1411,9 +1431,10 @@ msgid ""
 "    // println!(\"This struct `{}` won't print...\", Structure(3));\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
-"// Esto no se compilará porque `Structure` no implementa \n "
-"   // `fmt::Display`.\n"
-"   // println!(\"esta estructura `{}` no va a imprimir... \", Structure(3));\n"
+"// Esto no se compilará porque `Structure` no implementa \n"
+"    // `fmt::Display`.\n"
+"   // println!(\"esta estructura `{}` no va a imprimir... \", "
+"Structure(3));\n"
 "   // TAREA ^ intente quitar el comentario de esta línea \n"
 
 #: src/hello/print.md:68
@@ -1422,7 +1443,8 @@ msgid ""
 "    // surrounding variable. Just like the above, this will output\n"
 "    // \"    1\", 4 white spaces and a \"1\".\n"
 msgstr ""
-"// Para Rust 1.58 y superior, puedes capturar directamente el argumento de una\n"
+"// Para Rust 1.58 y superior, puedes capturar directamente el argumento de "
+"una\n"
 "// variable en el entorno. Al igual que lo anterior, esto imprimirá \n"
 "// \"     1\", 4 espacios blancos y a \"1\".\n"
 
@@ -1438,21 +1460,23 @@ msgid ""
 msgstr ""
 "[`std::fmt`](https://doc.rust-lang.org/std/fmt/) contiene muchos [`traits`]"
 "(https://doc.rust-lang.org/std/fmt/#formatting-traits) que rigen la "
-"visualización de texto. La forma básica de dos de ellos se enumera a continuación:"
+"visualización de texto. La forma básica de dos de ellos se enumera a "
+"continuación:"
 
 #: src/hello/print.md:80
 msgid ""
 "`fmt::Debug`: Uses the `{:?}` marker. Format text for debugging purposes."
 msgstr ""
-"`fmt::Debug`: Usa el marcador `{:?}`. Formatea el texto para fines de depuración."
+"`fmt::Debug`: Usa el marcador `{:?}`. Formatea el texto para fines de "
+"depuración."
 
 #: src/hello/print.md:81
 msgid ""
 "`fmt::Display`: Uses the `{}` marker. Format text in a more elegant, user "
 "friendly fashion."
 msgstr ""
-"`fmt::Display`: Usa el marcador `{}`. Formatea texto de una manera más elegante "
-"y amistosa."
+"`fmt::Display`: Usa el marcador `{}`. Formatea texto de una manera más "
+"elegante y amistosa."
 
 #: src/hello/print.md:84
 msgid ""
@@ -1461,8 +1485,8 @@ msgid ""
 "are required."
 msgstr ""
 "Aquí, usamos `fmt::Display` porque la librería std proporciona "
-"implementaciones para estos tipos. Para imprimir tipos personalizados, más pasos"
-"son necesarios"
+"implementaciones para estos tipos. Para imprimir tipos personalizados, más "
+"pasosson necesarios"
 
 #: src/hello/print.md:87
 msgid ""
@@ -1472,17 +1496,17 @@ msgid ""
 "(../std/str.md)."
 msgstr ""
 "Implementar el rasgo `fmt::Display` implementa automáticamente el trait "
-"[`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html) "
-"que nos permite [convertir](../conversion/string.md) el tipo en [`String`]"
-"(../std/str.md)."
+"[`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html) que "
+"nos permite [convertir](../conversion/string.md) el tipo en [`String`](../"
+"std/str.md)."
 
 #: src/hello/print.md:90
 msgid ""
 "In _line 43_, `#[allow(dead_code)]` is an [attribute](../attribute.md) which "
 "only applies to the module after it."
 msgstr ""
-"En la _línea 43_,`#[allow(dead_code)]` es un [atributo](../ attribute.md) que"
-"solo se aplica al módulo después de él."
+"En la _línea 43_,`#[allow(dead_code)]` es un [atributo](../ attribute.md) "
+"quesolo se aplica al módulo después de él."
 
 #: src/hello/print.md:92
 msgid "Activities"
@@ -1492,15 +1516,16 @@ msgstr "Actividades"
 msgid ""
 "Fix the issue in the above code (see FIXME) so that it runs without error."
 msgstr ""
-"Solucione el problema en el código anterior (ver el ARRÉGLAME) para que se ejecute sin error."
+"Solucione el problema en el código anterior (ver el ARRÉGLAME) para que se "
+"ejecute sin error."
 
 #: src/hello/print.md:96
 msgid ""
 "Try uncommenting the line that attempts to format the `Structure` struct "
 "(see TODO)"
 msgstr ""
-"Intente quitar el comentario de la línea que intenta formatear la estructura `Structure`"
-"(ver TAREA)"
+"Intente quitar el comentario de la línea que intenta formatear la estructura "
+"`Structure`(ver TAREA)"
 
 #: src/hello/print.md:98
 msgid ""
@@ -1511,10 +1536,10 @@ msgid ""
 "for setting the number of decimals to display)"
 msgstr ""
 "Agregue un macro `println!` que imprima: ` Pi es aproximadamente 3.142` "
-"controlando el número de decimales mostrados. Para efectos de este"
-"ejercicio, use `let Pi = 3.141592` como una estimación para pi. (Sugerencia: puedes"
-"consultar la documentación de [`std::fmt`](https://doc.rust-lang.org/std/fmt/)"
-"para configurar el número de decimales desplegados)"
+"controlando el número de decimales mostrados. Para efectos de esteejercicio, "
+"use `let Pi = 3.141592` como una estimación para pi. (Sugerencia: "
+"puedesconsultar la documentación de [`std::fmt`](https://doc.rust-lang.org/"
+"std/fmt/)para configurar el número de decimales desplegados)"
 
 #: src/hello/print.md:105
 msgid ""
@@ -1533,10 +1558,10 @@ msgid ""
 "for types such as in the `std` library. All others _must_ be manually "
 "implemented somehow."
 msgstr ""
-"Todos los tipos que quieren usar los traits de `std::fmt` requieren una"
-"implementación para ser imprimible. Las implementaciones automáticas solo se proporcionan"
-"para tipos como en la biblioteca `std`. Todos los demás tipos _deben_ ser manualmente "
-"implementados de alguna manera."
+"Todos los tipos que quieren usar los traits de `std::fmt` requieren "
+"unaimplementación para ser imprimible. Las implementaciones automáticas solo "
+"se proporcionanpara tipos como en la biblioteca `std`. Todos los demás tipos "
+"_deben_ ser manualmente implementados de alguna manera."
 
 #: src/hello/print/print_debug.md:8
 msgid ""
@@ -1544,9 +1569,9 @@ msgid ""
 "`derive` (automatically create) the `fmt::Debug` implementation. This is not "
 "true for `fmt::Display` which must be manually implemented."
 msgstr ""
-"El trait `fmt::Debug` hace que esto sea muy sencillo. Todos Los tipos pueden"
-"`Derive` (crear automáticamente) la implementación `fmt::Debug`. Esto no cierto"
-"para `fmt::Display` el cual debe implementarse manualmente."
+"El trait `fmt::Debug` hace que esto sea muy sencillo. Todos Los tipos "
+"pueden`Derive` (crear automáticamente) la implementación `fmt::Debug`. Esto "
+"no ciertopara `fmt::Display` el cual debe implementarse manualmente."
 
 #: src/hello/print/print_debug.md:13
 msgid ""
@@ -1554,19 +1579,22 @@ msgid ""
 "// with `fmt::Debug`.\n"
 msgstr ""
 "// Esta estructura no se puede imprimir con `fmt::Display` o \n"
-"// con `fmt::Debug`.\n "
+"// con `fmt::Debug`.\n"
+" "
 
 #: src/hello/print/print_debug.md:16
 msgid ""
 "// The `derive` attribute automatically creates the implementation\n"
 "// required to make this `struct` printable with `fmt::Debug`.\n"
 msgstr ""
-"// El atributo `derive` crea automáticamente la implementación \n "
-"// requerida para hacer esta `struct` imprimible con `fmt::Debug`. \n"
+"// El atributo `derive` crea automáticamente la implementación \n"
+" // requerida para hacer esta `struct` imprimible con `fmt::Debug`. \n"
 
 #: src/hello/print/print_debug.md:23
 msgid "All `std` library types are automatically printable with `{:?}` too:"
-msgstr "Todos los tipos de biblioteca `std` se pueden imprimir automáticamente con `{:?}` también:"
+msgstr ""
+"Todos los tipos de biblioteca `std` se pueden imprimir automáticamente con "
+"`{:?}` también:"
 
 #: src/hello/print/print_debug.md:26
 msgid ""
@@ -1574,7 +1602,8 @@ msgid ""
 "// is a structure which contains a single `i32`.\n"
 msgstr ""
 "// Derive la implementación `fmt::Debug` para `Structure`. `Structure`\n"
-"// es una estructura que contiene un solo `i32`.\n "
+"// es una estructura que contiene un solo `i32`.\n"
+" "
 
 #: src/hello/print/print_debug.md:30
 msgid ""
@@ -1622,15 +1651,16 @@ msgid ""
 "    // the results look. What if I want this to just show a `7`?\n"
 msgstr ""
 "// El problema con 'derive` es que no hay control sobre cómo \n"
-"   // los resultados se ven. ¿Qué pasa si quiero que esto solo muestre un `7`?\n"
+"   // los resultados se ven. ¿Qué pasa si quiero que esto solo muestre un "
+"`7`?\n"
 
 #: src/hello/print/print_debug.md:53
 msgid ""
 "So `fmt::Debug` definitely makes this printable but sacrifices some "
 "elegance. Rust also provides \"pretty printing\" with `{:#?}`."
 msgstr ""
-"Entonces `fmt::Debug` definitivamente hace esto imprimible pero sacrifica algo de"
-"elegancia. Rust también proporciona \"Impresión Bonita\" con `{:#?}`."
+"Entonces `fmt::Debug` definitivamente hace esto imprimible pero sacrifica "
+"algo deelegancia. Rust también proporciona \"Impresión Bonita\" con `{:#?}`."
 
 #: src/hello/print/print_debug.md:64 src/custom_types/structs.md:42
 msgid "\"Peter\""
@@ -1646,7 +1676,8 @@ msgstr ""
 
 #: src/hello/print/print_debug.md:73
 msgid "One can manually implement `fmt::Display` to control the display."
-msgstr "Se puede implementar manualmente `fmt::Display` para controlar la impresión."
+msgstr ""
+"Se puede implementar manualmente `fmt::Display` para controlar la impresión."
 
 #: src/hello/print/print_debug.md:77
 msgid ""
@@ -1665,22 +1696,24 @@ msgid ""
 "[`fmt::Display`](https://doc.rust-lang.org/std/fmt/), which uses the `{}` "
 "print marker. Implementing it looks like this:"
 msgstr ""
-"`fmt::Debug` escasamente parece compacto y limpio, por lo que a menudo es ventajoso "
-"personalizar la apariencia de salida. Esto se hace implementando manualmente"
-"[`fmt::Display`](https://doc.rust-lang.org/std/fmt/), que usa el marcador `{}`"
-". Implementarlo se ve así:"
+"`fmt::Debug` escasamente parece compacto y limpio, por lo que a menudo es "
+"ventajoso personalizar la apariencia de salida. Esto se hace implementando "
+"manualmente[`fmt::Display`](https://doc.rust-lang.org/std/fmt/), que usa el "
+"marcador `{}`. Implementarlo se ve así:"
 
 #: src/hello/print/print_display.md:9
 msgid "// Import (via `use`) the `fmt` module to make it available.\n"
-msgstr "// Importar (a través de `use`) el módulo `fmt` para ponerlo a disposición.\n"
+msgstr ""
+"// Importar (a través de `use`) el módulo `fmt` para ponerlo a disposición.\n"
 
 #: src/hello/print/print_display.md:11
 msgid ""
 "// Define a structure for which `fmt::Display` will be implemented. This is\n"
 "// a tuple struct named `Structure` that contains an `i32`.\n"
 msgstr ""
-"// Defina una estructura para la cual se implementará `fmt::Display`. Esto es\n "
-"// una estructura de tupla llamada `Estructura` que contiene un `i32`. \n"
+"// Defina una estructura para la cual se implementará `fmt::Display`. Esto "
+"es\n"
+" // una estructura de tupla llamada `Estructura` que contiene un `i32`. \n"
 
 #: src/hello/print/print_display.md:15
 msgid ""
@@ -1704,8 +1737,8 @@ msgid ""
 msgstr ""
 "// Escribe sólo el primer elemento en la salida suministrada \n"
 "// stream: `f`. Devuelve `fmt::Result` que indica si\n"
-"// la operación tuvo éxito o falló. Tenga en cuenta que 'write!` usa una sintaxis "
-"que \n"
+"// la operación tuvo éxito o falló. Tenga en cuenta que 'write!` usa una "
+"sintaxis que \n"
 "// es muy similar a `println!`. \n"
 
 #: src/hello/print/print_display.md:25
@@ -1733,10 +1766,10 @@ msgid ""
 "if the `std` library implemented a single style for all `Vec<T>`, what style "
 "should it be? Would it be either of these two?"
 msgstr ""
-"`fmt::Display` puede ser más limpio que `fmt::Debug` pero esto presenta un problema"
-"para la biblioteca `std`. ¿Cómo se deben mostrar los tipos ambiguos? Por ejemplo, "
-"si la biblioteca `std` implementó un sólo estilo para todos los `Vec<T>`, ¿qué estilo "
-"debería ser? ¿Sería cualquiera de estos dos?"
+"`fmt::Display` puede ser más limpio que `fmt::Debug` pero esto presenta un "
+"problemapara la biblioteca `std`. ¿Cómo se deben mostrar los tipos ambiguos? "
+"Por ejemplo, si la biblioteca `std` implementó un sólo estilo para todos los "
+"`Vec<T>`, ¿qué estilo debería ser? ¿Sería cualquiera de estos dos?"
 
 #: src/hello/print/print_display.md:35
 msgid "`Vec<path>`: `/:/etc:/home/username:/bin` (split on `:`)"
@@ -1754,17 +1787,17 @@ msgid ""
 "for these generic cases."
 msgstr ""
 "No, porque no hay un estilo ideal para todos los tipos y la biblioteca `std` "
-"no presume dictar uno. `fmt::Display` no se implementa para "
-"`Vec<T>` o para cualquier otro contenedor genérico. `Fmt::Debug` debe usarse "
-"para estos casos genéricos."
+"no presume dictar uno. `fmt::Display` no se implementa para `Vec<T>` o para "
+"cualquier otro contenedor genérico. `Fmt::Debug` debe usarse para estos "
+"casos genéricos."
 
 #: src/hello/print/print_display.md:43
 msgid ""
 "This is not a problem though because for any new _container_ type which is "
 "_not_ generic, `fmt::Display` can be implemented."
 msgstr ""
-"Sin embargo, esto no es un problema porque para cualquier nuevo tipo _contenedor_ que sea"
-"_no_ genérico, se puede implementar `fmt::Display`."
+"Sin embargo, esto no es un problema porque para cualquier nuevo tipo "
+"_contenedor_ que sea_no_ genérico, se puede implementar `fmt::Display`."
 
 #: src/hello/print/print_display.md:47
 msgid "// Import `fmt`\n"
@@ -1776,9 +1809,8 @@ msgid ""
 "can\n"
 "// be contrasted with `Display`.\n"
 msgstr ""
-"// Una estructura que contiene dos números. Se derivará `Debug` para que los resultados"
-"puedan"
-"// ser contrastados con `Display`.\n"
+"// Una estructura que contiene dos números. Se derivará `Debug` para que los "
+"resultadospuedan// ser contrastados con `Display`.\n"
 
 #: src/hello/print/print_display.md:53
 msgid "// Implement `Display` for `MinMax`.\n"
@@ -1794,7 +1826,9 @@ msgstr ""
 
 #: src/hello/print/print_display.md:61
 msgid "// Define a structure where the fields are nameable for comparison.\n"
-msgstr "// Define una estructura donde los campos se puedan nombrar para compararse.\n"
+msgstr ""
+"// Define una estructura donde los campos se puedan nombrar para "
+"compararse.\n"
 
 #: src/hello/print/print_display.md:68
 msgid "// Similarly, implement `Display` for `Point2D`.\n"
@@ -1846,10 +1880,10 @@ msgid ""
 "implementation. This is detailed further in [`std::fmt`](https://doc.rust-"
 "lang.org/std/fmt/)."
 msgstr ""
-"Entonces, `fmt::Display` se ha implementado pero `fmt::Binary` no, y"
-"por lo tanto, no se puede usar. `std::fmt` tiene muchos de estos [`traits`](https://doc."
-"rust-lang.org/std/fmt/#formatting-traits) y cada uno requiere su"
-"implementación. Esto se detalla aún más en [`std::fmt`](https://doc.rust-"
+"Entonces, `fmt::Display` se ha implementado pero `fmt::Binary` no, ypor lo "
+"tanto, no se puede usar. `std::fmt` tiene muchos de estos [`traits`](https://"
+"doc.rust-lang.org/std/fmt/#formatting-traits) y cada uno requiere "
+"suimplementación. Esto se detalla aún más en [`std::fmt`](https://doc.rust-"
 "lang.org/std/fmt/)."
 
 #: src/hello/print/print_display.md:109
@@ -1858,9 +1892,9 @@ msgid ""
 "a guide to add a `Complex` struct to the example. When printed in the same "
 "way, the output should be:"
 msgstr ""
-"Después de verificar la salida del ejemplo anterior, use la estructura `Point2D` como "
-"una guía para agregar una estructura `Complex` al ejemplo. Cuando se imprime de la misma manera"
-", la salida debería ser:"
+"Después de verificar la salida del ejemplo anterior, use la estructura "
+"`Point2D` como una guía para agregar una estructura `Complex` al ejemplo. "
+"Cuando se imprime de la misma manera, la salida debería ser:"
 
 #: src/hello/print/print_display.md:120
 msgid ""
@@ -1881,10 +1915,11 @@ msgid ""
 "a `fmt::Result`. Proper handling of this requires dealing with _all_ the "
 "results. Rust provides the `?` operator for exactly this purpose."
 msgstr ""
-"Implementar `fmt::Display` para una estructura donde los elementos deben ser cada uno "
-"manejados secuencialmente es complicado. El problema es que cada `write!` genera "
-"un `fmt::Result`. El manejo adecuado de esto requiere tratar con _todos_ los"
-"resultados. Rust proporciona el operador `?` para exactamente este propósito."
+"Implementar `fmt::Display` para una estructura donde los elementos deben ser "
+"cada uno manejados secuencialmente es complicado. El problema es que cada "
+"`write!` genera un `fmt::Result`. El manejo adecuado de esto requiere tratar "
+"con _todos_ losresultados. Rust proporciona el operador `?` para exactamente "
+"este propósito."
 
 #: src/hello/print/print_display/testcase_list.md:8
 msgid "Using `?` on `write!` looks like this:"
@@ -1903,8 +1938,7 @@ msgid ""
 "With `?` available, implementing `fmt::Display` for a `Vec` is "
 "straightforward:"
 msgstr ""
-"Si disponemos de `?`, implementar `fmt::Display` para un `Vec` es "
-"directo:"
+"Si disponemos de `?`, implementar `fmt::Display` para un `Vec` es directo:"
 
 #: src/hello/print/print_display/testcase_list.md:20
 msgid "// Import the `fmt` module.\n"
@@ -1959,8 +1993,8 @@ msgid ""
 "Try changing the program so that the index of each element in the vector is "
 "also printed. The new output should look like this:"
 msgstr ""
-"Intente cambiar el programa para que el índice de cada elemento en el vector sea"
-"también impreso. La nueva salida debería verse así:"
+"Intente cambiar el programa para que el índice de cada elemento en el vector "
+"seatambién impreso. La nueva salida debería verse así:"
 
 #: src/hello/print/print_display/testcase_list.md:64
 msgid ""
@@ -1976,7 +2010,8 @@ msgstr ""
 
 #: src/hello/print/fmt.md:3
 msgid "We've seen that formatting is specified via a _format string_:"
-msgstr "Hemos visto que este formato se especifica via una _cadena de formato_:"
+msgstr ""
+"Hemos visto que este formato se especifica via una _cadena de formato_:"
 
 #: src/hello/print/fmt.md:5
 msgid "`format!(\"{}\", foo)` -> `\"3735928559\"`"
@@ -1997,8 +2032,8 @@ msgid ""
 "The same variable (`foo`) can be formatted differently depending on which "
 "_argument type_ is used: `X` vs `o` vs _unspecified_."
 msgstr ""
-"La misma variable (`foo`) puede formatearse de manera diferente dependiendo de cuál sea "
-"_tipo de argumento_ utilizado: `X` vs `o` vs _no especificado_."
+"La misma variable (`foo`) puede formatearse de manera diferente dependiendo "
+"de cuál sea _tipo de argumento_ utilizado: `X` vs `o` vs _no especificado_."
 
 #: src/hello/print/fmt.md:12
 msgid ""
@@ -2007,9 +2042,10 @@ msgid ""
 "which handles cases where the argument type is left unspecified: `{}` for "
 "instance."
 msgstr ""
-"Esta funcionalidad de formato se implementa a través de traits, y hay "
-"trait para cada tipo de argumento. El trait de formato más común es la `Display`, "
-"que maneja casos en los que el tipo de argumento se deja sin especificar: `{}`, por ejemplo."
+"Esta funcionalidad de formato se implementa a través de traits, y hay trait "
+"para cada tipo de argumento. El trait de formato más común es la `Display`, "
+"que maneja casos en los que el tipo de argumento se deja sin especificar: `{}"
+"`, por ejemplo."
 
 #: src/hello/print/fmt.md:21
 msgid "// Latitude\n"
@@ -2023,7 +2059,9 @@ msgstr "// Longitude\n"
 msgid ""
 "// `f` is a buffer, and this method must write the formatted string into "
 "it.\n"
-msgstr "// `f` es un búfer, y este método se usa para formatear y meterle una cadena.\n"
+msgstr ""
+"// `f` es un búfer, y este método se usa para formatear y meterle una "
+"cadena.\n"
 
 #: src/hello/print/fmt.md:30
 msgid "'N'"
@@ -2088,17 +2126,17 @@ msgid ""
 "std/fmt/#formatting-traits) and their argument types in the [`std::fmt`]"
 "(https://doc.rust-lang.org/std/fmt/) documentation."
 msgstr ""
-"Puede ver una [lista completa de traits de formato](https://doc.rust-lang.org/"
-"std/fmt/#formatting-traits) y sus tipos de argumentos en la documentación de [`std::fmt`]"
-"(https://doc.rust-lang.org/std/fmt/)."
+"Puede ver una [lista completa de traits de formato](https://doc.rust-lang."
+"org/std/fmt/#formatting-traits) y sus tipos de argumentos en la "
+"documentación de [`std::fmt`](https://doc.rust-lang.org/std/fmt/)."
 
 #: src/hello/print/fmt.md:72
 msgid ""
 "Add an implementation of the `fmt::Display` trait for the `Color` struct "
 "above so that the output displays as:"
 msgstr ""
-"Agrega una implementación del trait `fmt::Display` para la estructura `Color`"
-"arriba para que la salida se muestre como:"
+"Agrega una implementación del trait `fmt::Display` para la estructura "
+"`Color`arriba para que la salida se muestre como:"
 
 #: src/hello/print/fmt.md:81
 msgid "Three hints if you get stuck:"
