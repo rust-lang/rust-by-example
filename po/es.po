@@ -1,4 +1,4 @@
-msgid ""
+ ""
 msgstr ""
 "Project-Id-Version: Rust By Example\n"
 "POT-Creation-Date: 2025-01-30T21:37:19-06:00\n"
@@ -33,7 +33,7 @@ msgstr "Imprimir con formatos"
 
 #: src/SUMMARY.md:8 src/hello/print/print_debug.md:1
 msgid "Debug"
-msgstr ""
+msgstr "Depuración"
 
 #: src/SUMMARY.md:9 src/hello/print/print_display.md:1
 msgid "Display"
@@ -1203,17 +1203,19 @@ msgstr ""
 
 #: src/hello/print.md:9
 msgid "`println!`: same as `print!` but a newline is appended."
-msgstr ""
+msgstr "`println!`: es igual que `print!` pero se agrega un salto de línea"
 
 #: src/hello/print.md:10
 msgid ""
 "`eprint!`: same as `print!` but the text is printed to the standard error "
 "(io::stderr)."
 msgstr ""
+"`eprint!`: igual que `print!` pero el texto se imprime al error estándar "
+"(io::stderr)."
 
 #: src/hello/print.md:12
 msgid "`eprintln!`: same as `eprint!` but a newline is appended."
-msgstr ""
+msgstr "`eprintln!`: es igual que `eprint!` pero se agrega un salto de línea"
 
 #: src/hello/print.md:14
 msgid ""
@@ -1226,10 +1228,18 @@ msgid ""
 
 "    // arguments. These will be stringified.\n"
 msgstr ""
+"Parsea todo el texta de la misma manera. Como beneficio, Rust verifica el formato"
+
+
+
+
+
+
+"    // de los argumentos. Serán convertidos en cadenas.\n"
 
 
 msgid "\"{} days\""
-msgstr ""
+msgstr "\"{} días\""
 
 #: src/hello/print.md:23
 msgid ""
@@ -1238,27 +1248,31 @@ msgid ""
 "start\n"
 "    // at 0 immediately after the format string.\n"
 msgstr ""
+"// Se pueden usar argumentos posicionales. Especificar un entero dentro de `{}`\n"
+"   // determina qué argumento adicional será reemplazado. Los argumentos"
+"comienzan \n"
+"   // en 0 inmediatamente después de la cadena de formato.\n"
 
 #: src/hello/print.md:26
 msgid "\"{0}, this is {1}. {1}, this is {0}\""
-msgstr ""
+msgstr "\"{0}, esto es {1}. {1}, este es {0}\""
 
 #: src/hello/print.md:26 src/scope/move/partial_move.md:31
 msgid "\"Alice\""
-msgstr ""
+msgstr "\"Alice""
 
 #: src/hello/print.md:26 src/flow_control/for.md:65 src/flow_control/for.md:85
 #: src/flow_control/for.md:104
 msgid "\"Bob\""
-msgstr ""
+msgstr "\"Bob\""
 
 #: src/hello/print.md:28
 msgid "// As can named arguments.\n"
-msgstr ""
+msgstr "// Como los argumentos nombrados.\n"
 
 #: src/hello/print.md:29
 msgid "\"{subject} {verb} {object}\""
-msgstr ""
+msgstr "\"{sujeto} {verbo} {objeto}\""
 
 #: src/hello/print.md:30
 msgid "\"the lazy dog\""
@@ -1277,6 +1291,8 @@ msgid ""
 "// Different formatting can be invoked by specifying the format character\n"
 "    // after a `:`.\n"
 msgstr ""
+"// Se puede invocar diferentes formatos especificando el carácter del formato\n"
+"   // después de un `:`.\n"
 
 #: src/hello/print.md:36
 msgid "\"Base 10:               {}\""
@@ -1288,7 +1304,7 @@ msgstr ""
 
 #: src/hello/print.md:37
 msgid "\"Base 2 (binary):       {:b}\""
-msgstr ""
+msgstr "\"Base 2 (binario):       {:b}\""
 
 #: src/hello/print.md:37
 msgid "// 10000111100101100\n"
@@ -1316,28 +1332,33 @@ msgid ""
 "    // output \"    1\". (Four white spaces and a \"1\", for a total width "
 "of 5.)\n"
 msgstr ""
+"// Puedes justificar el texto a la derecha con un ancho especificado. Esto será\n"
+"// salida \"    1 \". (Cuatro espacios blancos y un \"1\", para un ancho total"
+"de 5.)\n"
 
 #: src/hello/print.md:43
 msgid "\"{number:>5}\""
-msgstr ""
+msgstr "\"{numero:>5}\""
 
 #: src/hello/print.md:45
 msgid "// You can pad numbers with extra zeroes,\n"
-msgstr ""
+msgstr "// Puedes rellenar números con ceros adicionales,\n"
 
 #: src/hello/print.md:46
 msgid "\"{number:0>5}\""
-msgstr ""
+msgstr "\"{numero:0>5}\""
 
 #: src/hello/print.md:46
 msgid ""
 "// 00001\n"
 "    // and left-adjust by flipping the sign. This will output \"10000\".\n"
 msgstr ""
+"// 00001\n"
+"    // y justificar a la izquierda volteando el signo. Esto imprimirá \"10000\".\n"
 
 #: src/hello/print.md:48
 msgid "\"{number:0<5}\""
-msgstr ""
+msgstr ""\"{numero:0<5}\""
 
 #: src/hello/print.md:48
 msgid "// 10000\n"
@@ -1347,26 +1368,28 @@ msgstr ""
 msgid ""
 "// You can use named arguments in the format specifier by appending a `$`.\n"
 msgstr ""
+"// Puede usar argumentos con nombre en el formato especificador agregando un `$`.\n"
 
 #: src/hello/print.md:51
 msgid "\"{number:0>width$}\""
-msgstr ""
+msgstr ""\"{numero:0>ancho$}\""
 
 #: src/hello/print.md:53
 msgid ""
 "// Rust even checks to make sure the correct number of arguments are used.\n"
 msgstr ""
+"// Rust incluso verifica para asegurarse de que se usen el número correcto de argumentos.\n"
 
 #: src/hello/print.md:54
 msgid "\"My name is {0}, {1} {0}\""
-msgstr ""
+msgstr "\"Mi nombre es {0}, {1} {0}\""
 
 #: src/hello/print.md:54
 msgid "\"Bond\""
 msgstr ""
 
 #: src/hello/print.md:55
-msgid "// FIXME ^ Add the missing argument: \"James\"\n"
+msgid "// ARRÉGLAME ^ Agregue el argumento que falta: \"James\"\n"
 msgstr ""
 
 #: src/hello/print.md:57
@@ -1374,10 +1397,12 @@ msgid ""
 "// Only types that implement fmt::Display can be formatted with `{}`. User-\n"
 "    // defined types do not implement fmt::Display by default.\n"
 msgstr ""
+"// Sólo los tipos que implementan `fmt::Display` pueden formatearse con `{}`.\n"
+"   // Los tipos definidos por usuario no implementan `fmt::Display` de forma predeterminada.\n"
 
 #: src/hello/print.md:60
 msgid "// disable `dead_code` which warn against unused module\n"
-msgstr ""
+msgstr "// deshabilita `dead_code` el cual advierte contra módulos no usados\n"
 
 #: src/hello/print.md:63
 msgid ""
@@ -1386,6 +1411,10 @@ msgid ""
 "    // println!(\"This struct `{}` won't print...\", Structure(3));\n"
 "    // TODO ^ Try uncommenting this line\n"
 msgstr ""
+"// Esto no se compilará porque `Structure` no implementa \n "
+"   // `fmt::Display`.\n"
+"   // println!(\"esta estructura `{}` no va a imprimir... \", Structure(3));\n"
+"   // TAREA ^ intente quitar el comentario de esta línea \n"
 
 #: src/hello/print.md:68
 msgid ""
@@ -1393,10 +1422,13 @@ msgid ""
 "    // surrounding variable. Just like the above, this will output\n"
 "    // \"    1\", 4 white spaces and a \"1\".\n"
 msgstr ""
+"// Para Rust 1.58 y superior, puedes capturar directamente el argumento de una\n"
+"// variable en el entorno. Al igual que lo anterior, esto imprimirá \n"
+"// \"     1\", 4 espacios blancos y a \"1\".\n"
 
 #: src/hello/print.md:73
 msgid "\"{number:>width$}\""
-msgstr ""
+msgstr "\"{numero:>ancho$}\""
 
 #: src/hello/print.md:77
 msgid ""
@@ -1404,17 +1436,23 @@ msgid ""
 "(https://doc.rust-lang.org/std/fmt/#formatting-traits) which govern the "
 "display of text. The base form of two important ones are listed below:"
 msgstr ""
+"[`std::fmt`](https://doc.rust-lang.org/std/fmt/) contiene muchos [`traits`]"
+"(https://doc.rust-lang.org/std/fmt/#formatting-traits) que rigen la "
+"visualización de texto. La forma básica de dos de ellos se enumera a continuación:"
 
 #: src/hello/print.md:80
 msgid ""
 "`fmt::Debug`: Uses the `{:?}` marker. Format text for debugging purposes."
 msgstr ""
+"`fmt::Debug`: Usa el marcador `{:?}`. Formatea el texto para fines de depuración."
 
 #: src/hello/print.md:81
 msgid ""
 "`fmt::Display`: Uses the `{}` marker. Format text in a more elegant, user "
 "friendly fashion."
 msgstr ""
+"`fmt::Display`: Usa el marcador `{}`. Formatea texto de una manera más elegante "
+"y amistosa".
 
 #: src/hello/print.md:84
 msgid ""
@@ -1422,6 +1460,9 @@ msgid ""
 "implementations for these types. To print text for custom types, more steps "
 "are required."
 msgstr ""
+"Aquí, usamos `fmt::Display` porque la librería std proporciona "
+"implementaciones para estos tipos. Para imprimir tipos personalizados, más pasos"
+"son necesarios".
 
 #: src/hello/print.md:87
 msgid ""
@@ -1430,27 +1471,36 @@ msgid ""
 "which allows us to [convert](../conversion/string.md) the type to [`String`]"
 "(../std/str.md)."
 msgstr ""
+"Implementar el rasgo `fmt::Display` implementa automáticamente el trait "
+"[`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html) "
+"que nos permite [convertir](../conversion/string.md) el tipo en [`String`]"
+"(../std/str.md)".
 
 #: src/hello/print.md:90
 msgid ""
 "In _line 43_, `#[allow(dead_code)]` is an [attribute](../attribute.md) which "
 "only applies to the module after it."
 msgstr ""
+"En la _línea 43_,`#[allow(dead_code)]` es un [atributo](../ attribute.md) que"
+"solo se aplica al módulo después de él".
 
 #: src/hello/print.md:92
 msgid "Activities"
-msgstr ""
+msgstr "Actividades"
 
 #: src/hello/print.md:94
 msgid ""
 "Fix the issue in the above code (see FIXME) so that it runs without error."
 msgstr ""
+"Solucione el problema en el código anterior (ver el ARRÉGLAME) para que se ejecute sin error".
 
 #: src/hello/print.md:96
 msgid ""
 "Try uncommenting the line that attempts to format the `Structure` struct "
 "(see TODO)"
 msgstr ""
+"Intente quitar el comentario de la línea que intenta formatear la estructura `Structure`"
+"(ver TAREA)"
 
 #: src/hello/print.md:98
 msgid ""
