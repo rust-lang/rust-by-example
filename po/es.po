@@ -1734,14 +1734,18 @@ msgid ""
 "if the `std` library implemented a single style for all `Vec<T>`, what style "
 "should it be? Would it be either of these two?"
 msgstr ""
+"`fmt::Display` puede ser más limpio que `fmt::Debug` pero esto presenta un problema"
+"para la biblioteca `std`. ¿Cómo se deben mostrar los tipos ambiguos? Por ejemplo, ",
+"si la biblioteca `std` implementó un sólo estilo para todos `Vec<T>`, ¿qué estilo "
+"debería ser? ¿Sería cualquiera de estos dos?"
 
 #: src/hello/print/print_display.md:35
 msgid "`Vec<path>`: `/:/etc:/home/username:/bin` (split on `:`)"
-msgstr ""
+msgstr "`Vec<path>`: `/:/etc:/home/usuario:/bin` (split on `:`)"
 
 #: src/hello/print/print_display.md:36
 msgid "`Vec<number>`: `1,2,3` (split on `,`)"
-msgstr ""
+msgstr "`Vec<numero>`: `1,2,3` (partido en `,`)"
 
 #: src/hello/print/print_display.md:38
 msgid ""
@@ -1750,16 +1754,22 @@ msgid ""
 "`Vec<T>` or for any other generic containers. `fmt::Debug` must then be used "
 "for these generic cases."
 msgstr ""
+"No, porque no hay un estilo ideal para todos los tipos y la biblioteca `std` "
+"no presume dictar uno. `fmt::Display` no se implementa para "
+"`Vec<T>` o para cualquier otro contenedor genérico. `Fmt::Debug` debe usarse "
+"para estos casos genéricos".
 
 #: src/hello/print/print_display.md:43
 msgid ""
 "This is not a problem though because for any new _container_ type which is "
 "_not_ generic, `fmt::Display` can be implemented."
 msgstr ""
+"Sin embargo, esto no es un problema porque para cualquier nuevo tipo _contenedor_ que sea"
+"_no_ genérico, se puede implementar `fmt::Display` ".
 
 #: src/hello/print/print_display.md:47
 msgid "// Import `fmt`\n"
-msgstr ""
+msgstr "// Importar `fmt`\n"
 
 #: src/hello/print/print_display.md:48
 msgid ""
@@ -1767,14 +1777,17 @@ msgid ""
 "can\n"
 "// be contrasted with `Display`.\n"
 msgstr ""
+"// Una estructura que contiene dos números. Se derivará `Debug` para que los resultados"
+"puedan"
+"// ser contrastados con `Display`. \ n "
 
 #: src/hello/print/print_display.md:53
 msgid "// Implement `Display` for `MinMax`.\n"
-msgstr ""
+msgstr "// Implementa `Display` para `MinMax`.\n"
 
 #: src/hello/print/print_display.md:57
 msgid "// Use `self.number` to refer to each positional data point.\n"
-msgstr ""
+msgstr "// Usa `self.number` para referirte a cada dato posicional.\n"
 
 #: src/hello/print/print_display.md:58
 msgid "\"({}, {})\""
@@ -1782,15 +1795,15 @@ msgstr ""
 
 #: src/hello/print/print_display.md:61
 msgid "// Define a structure where the fields are nameable for comparison.\n"
-msgstr ""
+msgstr "// Define una estructura donde los campos se puedan nombrar para compararse.\n"
 
 #: src/hello/print/print_display.md:68
 msgid "// Similarly, implement `Display` for `Point2D`.\n"
-msgstr ""
+msgstr "// Similarmente, implementa `Display` para `Point2D`"
 
 #: src/hello/print/print_display.md:72
 msgid "// Customize so only `x` and `y` are denoted.\n"
-msgstr ""
+msgstr "// Personalízalo para que sólo `x` y `y` sean denotados.\n"
 
 #: src/hello/print/print_display.md:73
 msgid "\"x: {}, y: {}\""
@@ -1798,7 +1811,7 @@ msgstr ""
 
 #: src/hello/print/print_display.md:80
 msgid "\"Compare structures:\""
-msgstr ""
+msgstr "\"Compara estructuras:\""
 
 #: src/hello/print/print_display.md:81 src/hello/print/print_display.md:94
 msgid "\"Display: {}\""
@@ -1810,11 +1823,11 @@ msgstr ""
 
 #: src/hello/print/print_display.md:87
 msgid "\"The big range is {big} and the small is {small}\""
-msgstr ""
+msgstr "\"El rango grande es {big} y el pequeño es {small}\""
 
 #: src/hello/print/print_display.md:93
 msgid "\"Compare points:\""
-msgstr ""
+msgstr "\" Compara Puntos:\""
 
 #: src/hello/print/print_display.md:97
 msgid ""
@@ -1822,6 +1835,9 @@ msgid ""
 "    // requires `fmt::Binary` to be implemented. This will not work.\n"
 "    // println!(\"What does Point2D look like in binary: {:b}?\", point);\n"
 msgstr ""
+"// Error. Ambos `Debug` y `Display` fueron implementados, pero `{:b}`\n"
+"   // requiere implementar `fmt::Binary`. Esto no funcionará. \ n "
+"   // println!(\"¿Cómo se ve el Punto2D en binario: {:b}? \", point);\n"
 
 #: src/hello/print/print_display.md:103
 msgid ""
@@ -1831,6 +1847,11 @@ msgid ""
 "implementation. This is detailed further in [`std::fmt`](https://doc.rust-"
 "lang.org/std/fmt/)."
 msgstr ""
+"Entonces, `fmt::Display` se ha implementado pero `fmt::Binary` no, y"
+"por lo tanto, no se puede usar. `std::fmt` tiene muchos de estos [`traits`](https://doc".
+"rust-lang.org/std/fmt/#formatting-traits) y cada uno requiere su"
+"implementación. Esto se detalla aún más en [`std::fmt`](https://doc.rust-"
+"lang.org/std/fmt/)".
 
 #: src/hello/print/print_display.md:109
 msgid ""
@@ -1838,6 +1859,9 @@ msgid ""
 "a guide to add a `Complex` struct to the example. When printed in the same "
 "way, the output should be:"
 msgstr ""
+"Después de verificar la salida del ejemplo anterior, use la estructura `Point2D` como "
+"una guía para agregar una estructura `Complex` al ejemplo. Cuando se imprime de la misma manera"
+", la salida debería ser:"
 
 #: src/hello/print/print_display.md:120
 msgid ""
@@ -1846,6 +1870,10 @@ msgid ""
 "structs.md), [`trait`](https://doc.rust-lang.org/std/fmt/#formatting-"
 "traits), and [`use`](../../mod/use.md)"
 msgstr ""
+"[`derive`](../../trait/derive.md), [`std::fmt`](https://doc.rust-lang.org/"
+"std/fmt/), [`macros`](../../macros.md), [`struct`](../../custom_types/"
+"structs.md), [`trait`](https://doc.rust-lang.org/std/fmt/#formatting-"
+"traits), y [`use`](../../mod/use.md)"
 
 #: src/hello/print/print_display/testcase_list.md:3
 msgid ""
@@ -1854,36 +1882,46 @@ msgid ""
 "a `fmt::Result`. Proper handling of this requires dealing with _all_ the "
 "results. Rust provides the `?` operator for exactly this purpose."
 msgstr ""
+"Implementar `fmt::Display` para una estructura donde los elementos deben ser cada uno "
+"manejados secuencialmente es complicado. El problema es que cada `write!` genera "
+"un `fmt::Result`. El manejo adecuado de esto requiere tratar con _todos_ los"
+"resultados. Rust proporciona el operador `?` para exactamente este propósito".
 
 #: src/hello/print/print_display/testcase_list.md:8
 msgid "Using `?` on `write!` looks like this:"
-msgstr ""
+msgstr "Usar `?` con `write!` se ve así:"
 
 #: src/hello/print/print_display/testcase_list.md:11
 msgid ""
 "// Try `write!` to see if it errors. If it errors, return\n"
 "// the error. Otherwise continue.\n"
 msgstr ""
+"// Usa `write!` para ver si falla. Si hay errores, regresa\n"
+"// el error. En otro caso, continúa.\n"
 
 #: src/hello/print/print_display/testcase_list.md:16
 msgid ""
 "With `?` available, implementing `fmt::Display` for a `Vec` is "
 "straightforward:"
 msgstr ""
+"Si disponemos de `?`, implementar `fmt::Display` para un `Vec` es "
+"directo:"
 
 #: src/hello/print/print_display/testcase_list.md:20
 msgid "// Import the `fmt` module.\n"
-msgstr ""
+msgstr "// Importar el módulo `fmt`.\n"
 
 #: src/hello/print/print_display/testcase_list.md:21
 msgid "// Define a structure named `List` containing a `Vec`.\n"
-msgstr ""
+msgstr "// Define una estructura llamada `List` que contiene un `Vec`.\n"
 
 #: src/hello/print/print_display/testcase_list.md:27
 msgid ""
 "// Extract the value using tuple indexing,\n"
 "        // and create a reference to `vec`.\n"
 msgstr ""
+"// Extrae el valor usando indexación de tuplas,\n"
+"       // y crea una referencia a `vec`.\n"
 
 #: src/hello/print/print_display/testcase_list.md:31
 msgid "\"[\""
@@ -1894,12 +1932,16 @@ msgid ""
 "// Iterate over `v` in `vec` while enumerating the iteration\n"
 "        // count in `count`.\n"
 msgstr ""
+"// Itera sobre `v` en un `vec` mientras enumeras la cuenta\n"
+"       // de la iteración en `count`.\n"
 
 #: src/hello/print/print_display/testcase_list.md:36
 msgid ""
 "// For every element except the first, add a comma.\n"
 "            // Use the ? operator to return on errors.\n"
 msgstr ""
+"// Para cada element excepto el primero, agrega una coma.\n"
+"           // Usa el operador ? para regresar errroes.\n"
 
 #: src/hello/print/print_display/testcase_list.md:38 src/std/str.md:36
 msgid "\", \""
@@ -1907,7 +1949,7 @@ msgstr ""
 
 #: src/hello/print/print_display/testcase_list.md:42
 msgid "// Close the opened bracket and return a fmt::Result value.\n"
-msgstr ""
+msgstr "// Cierra la llave abierta y regresa un valor de `fmt::Result`.\n"
 
 #: src/hello/print/print_display/testcase_list.md:43
 msgid "\"]\""
@@ -1918,6 +1960,8 @@ msgid ""
 "Try changing the program so that the index of each element in the vector is "
 "also printed. The new output should look like this:"
 msgstr ""
+"Intente cambiar el programa para que el índice de cada elemento en el vector sea"
+"también impreso. La nueva salida debería verse así:"
 
 #: src/hello/print/print_display/testcase_list.md:64
 msgid ""
@@ -1926,10 +1970,14 @@ msgid ""
 "structs.md), [`?`](../../../std/result/question_mark.md), and [`vec!`]"
 "(../../../std/vec.md)"
 msgstr ""
+"[`for`](../../../flow_control/for.md), [`ref`](../../../scope/borrow/ref."
+"md), [`Result`](../../../std/result.md), [`struct`](../../../custom_types/"
+"structs.md), [`?`](../../../std/result/question_mark.md), y [`vec!`]"
+"(../../../std/vec.md)"
 
 #: src/hello/print/fmt.md:3
 msgid "We've seen that formatting is specified via a _format string_:"
-msgstr ""
+msgstr "Hemos visto que este formato se especifica via una _cadena de formato_:"
 
 #: src/hello/print/fmt.md:5
 msgid "`format!(\"{}\", foo)` -> `\"3735928559\"`"
@@ -1950,6 +1998,8 @@ msgid ""
 "The same variable (`foo`) can be formatted differently depending on which "
 "_argument type_ is used: `X` vs `o` vs _unspecified_."
 msgstr ""
+"La misma variable (`foo`) puede formatearse de manera diferente dependiendo de cuál sea "
+"_tipo de argumento_ utilizado: `X` vs `o` vs _no especificado_".
 
 #: src/hello/print/fmt.md:12
 msgid ""
@@ -1958,20 +2008,23 @@ msgid ""
 "which handles cases where the argument type is left unspecified: `{}` for "
 "instance."
 msgstr ""
+"Esta funcionalidad de formato se implementa a través de traits, y hay "
+"trait para cada tipo de argumento. El trait de formato más común es la `Display`, ",
+"que maneja casos en los que el tipo de argumento se deja sin especificar: `{}`, por ejemplo."
 
 #: src/hello/print/fmt.md:21
 msgid "// Latitude\n"
-msgstr ""
+msgstr "// Latitude\n"
 
 #: src/hello/print/fmt.md:23
 msgid "// Longitude\n"
-msgstr ""
+msgstr "// Longitude\n"
 
 #: src/hello/print/fmt.md:28
 msgid ""
 "// `f` is a buffer, and this method must write the formatted string into "
 "it.\n"
-msgstr ""
+msgstr "// `f` es un búfer, y este método se usa para formatear y meterle una cadena.\n"
 
 #: src/hello/print/fmt.md:30
 msgid "'N'"
@@ -1994,6 +2047,8 @@ msgid ""
 "// `write!` is like `format!`, but it will write the formatted string\n"
 "        // into a buffer (the first argument).\n"
 msgstr ""
+"// `write!` es como `format!`, pero escribirá la cadena formateada\n"
+"        // al búfer (el primer argumento).\n"
 
 #: src/hello/print/fmt.md:35
 msgid "\"{}: {:.3}°{} {:.3}°{}\""
@@ -2016,6 +2071,8 @@ msgid ""
 "// Switch this to use {} once you've added an implementation\n"
 "        // for fmt::Display.\n"
 msgstr ""
+"// Cambia esto a {} una vez que hayas añadido una implementación\n"
+"        // para fmt::Display.\n"
 
 #: src/hello/print/fmt.md:62 src/primitives/tuples.md:60
 #: src/custom_types/structs.md:47 src/types/inference.md:23
@@ -2032,16 +2089,21 @@ msgid ""
 "std/fmt/#formatting-traits) and their argument types in the [`std::fmt`]"
 "(https://doc.rust-lang.org/std/fmt/) documentation."
 msgstr ""
+"Puede ver una [lista completa de traits de formato](https://doc.rust-lang.org/"
+"std/fmt/#formatting-traits) y sus tipos de argumentos en la documentación de [`std::fmt`]"
+"(https://doc.rust-lang.org/std/fmt/)."
 
 #: src/hello/print/fmt.md:72
 msgid ""
 "Add an implementation of the `fmt::Display` trait for the `Color` struct "
 "above so that the output displays as:"
 msgstr ""
+"Agrega una implementación del trait `fmt::Display` para la estructura `Color`"
+"arriba para que la salida se muestre como:"
 
 #: src/hello/print/fmt.md:81
 msgid "Three hints if you get stuck:"
-msgstr ""
+msgstr "Tres pistas por si te atoras:"
 
 #: src/hello/print/fmt.md:83
 msgid ""
