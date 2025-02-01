@@ -1,8 +1,8 @@
- ""
+msgid ""
 msgstr ""
 "Project-Id-Version: Rust By Example\n"
 "POT-Creation-Date: 2025-01-30T21:37:19-06:00\n"
-"PO-Revision-Date: 2025-01-30 21:37-0600\n"
+"PO-Revision-Date: 2025-01-30 21:37-06:00\n"
 "Last-Translator: mrg <miguelraz@gmail.com>\n"
 "Language-Team: Spanish <es@tp.org.es>\n"
 "MIME-Version: 1.0\n"
@@ -885,7 +885,7 @@ msgid ""
 "[Attributes](attribute.md) - An attribute is metadata applied to some "
 "module, crate or item."
 msgstr ""
-[Atributos](attribute.md) - Un atributo son metadatos aplicados a algún "
+"[Atributos](attribute.md) - Un atributo son metadatos aplicados a algún "
 "módulo, crate o ítem."
 
 #: src/index.md:40
@@ -1109,7 +1109,7 @@ msgid ""
 msgstr ""
 "/*\n"
 "   Nota: la columna anterior a `*` es completamente por estilo. No hay\n"
-"   hay necesidad real para ello. \ N"
+"   hay necesidad real para ello. \n"
 "    */"
 
 #: src/hello/comment.md:37
@@ -1128,7 +1128,7 @@ msgstr ""
 
 #: src/hello/comment.md:41
 msgid "\"Is `x` 10 or 100? x = {}\""
-msgstr "\"¿Es `x` 10 ó 100?" x = {}\""
+msgstr "\"¿Es `x` 10 ó 100? x = {}\""
 
 #: src/hello/comment.md:45 src/hello/print.md:103
 #: src/hello/print/print_debug.md:75 src/hello/print/print_display.md:118
@@ -1259,7 +1259,7 @@ msgstr "\"{0}, esto es {1}. {1}, este es {0}\""
 
 #: src/hello/print.md:26 src/scope/move/partial_move.md:31
 msgid "\"Alice\""
-msgstr "\"Alice""
+msgstr "\"Alice\""
 
 #: src/hello/print.md:26 src/flow_control/for.md:65 src/flow_control/for.md:85
 #: src/flow_control/for.md:104
@@ -1358,7 +1358,7 @@ msgstr ""
 
 #: src/hello/print.md:48
 msgid "\"{number:0<5}\""
-msgstr ""\"{numero:0<5}\""
+msgstr "\"{numero:0<5}\""
 
 #: src/hello/print.md:48
 msgid "// 10000\n"
@@ -1372,7 +1372,7 @@ msgstr ""
 
 #: src/hello/print.md:51
 msgid "\"{number:0>width$}\""
-msgstr ""\"{numero:0>ancho$}\""
+msgstr "\"{numero:0>ancho$}\""
 
 #: src/hello/print.md:53
 msgid ""
@@ -1536,7 +1536,7 @@ msgstr ""
 "Todos los tipos que quieren usar los traits de `std::fmt` requieren una"
 "implementación para ser imprimible. Las implementaciones automáticas solo se proporcionan"
 "para tipos como en la biblioteca `std`. Todos los demás tipos _deben_ ser manualmente "
-"implementados de alguna manera".
+"implementados de alguna manera."
 
 #: src/hello/print/print_debug.md:8
 msgid ""
@@ -1581,13 +1581,12 @@ msgid ""
 "// Put a `Structure` inside of the structure `Deep`. Make it printable\n"
 "// also.\n"
 msgstr ""
-"// Ponga una `Structure` dentro de la estructura `Deep`. Házlo imprimible \ n"
-"// también. \ n"
+"// Ponga una `Structure` dentro de la estructura `Deep`. Házlo imprimible \n"
+"// también.\n"
 
 #: src/hello/print/print_debug.md:37
 msgid "// Printing with `{:?}` is similar to with `{}`.\n"
-msgstr ""
-msgid "// Imprimir con `{:?}` es similar a imprimir con `{}`.\n"
+msgstr "// Imprimir con `{:?}` es similar a imprimir con `{}`.\n"
 
 #: src/hello/print/print_debug.md:38
 msgid "\"{:?} months in a year.\""
@@ -1689,7 +1688,7 @@ msgid ""
 "// manually for the type.\n"
 msgstr ""
 "// Para usar el marcador `{}`, el trait `fmt::Display` debe implementarse\n"
-"// manualmente para el tipo. \ n"
+"// manualmente para el tipo. \n"
 
 #: src/hello/print/print_display.md:19
 msgid "// This trait requires `fmt` with this exact signature.\n"
@@ -1735,8 +1734,8 @@ msgid ""
 "should it be? Would it be either of these two?"
 msgstr ""
 "`fmt::Display` puede ser más limpio que `fmt::Debug` pero esto presenta un problema"
-"para la biblioteca `std`. ¿Cómo se deben mostrar los tipos ambiguos? Por ejemplo, ",
-"si la biblioteca `std` implementó un sólo estilo para todos `Vec<T>`, ¿qué estilo "
+"para la biblioteca `std`. ¿Cómo se deben mostrar los tipos ambiguos? Por ejemplo, "
+"si la biblioteca `std` implementó un sólo estilo para todos los `Vec<T>`, ¿qué estilo "
 "debería ser? ¿Sería cualquiera de estos dos?"
 
 #: src/hello/print/print_display.md:35
@@ -1779,7 +1778,7 @@ msgid ""
 msgstr ""
 "// Una estructura que contiene dos números. Se derivará `Debug` para que los resultados"
 "puedan"
-"// ser contrastados con `Display`. \ n "
+"// ser contrastados con `Display`.\n"
 
 #: src/hello/print/print_display.md:53
 msgid "// Implement `Display` for `MinMax`.\n"
@@ -1799,7 +1798,7 @@ msgstr "// Define una estructura donde los campos se puedan nombrar para compara
 
 #: src/hello/print/print_display.md:68
 msgid "// Similarly, implement `Display` for `Point2D`.\n"
-msgstr "// Similarmente, implementa `Display` para `Point2D`"
+msgstr "// Similarmente, implementa `Display` para `Point2D`.\n"
 
 #: src/hello/print/print_display.md:72
 msgid "// Customize so only `x` and `y` are denoted.\n"
@@ -1836,8 +1835,8 @@ msgid ""
 "    // println!(\"What does Point2D look like in binary: {:b}?\", point);\n"
 msgstr ""
 "// Error. Ambos `Debug` y `Display` fueron implementados, pero `{:b}`\n"
-"   // requiere implementar `fmt::Binary`. Esto no funcionará. \ n "
-"   // println!(\"¿Cómo se ve el Punto2D en binario: {:b}? \", point);\n"
+"   // requiere implementar `fmt::Binary`. Esto no funcionará.\n"
+"   // println!(\"¿Cómo se ve el Punto2D en binario: {:b}?\", point);\n"
 
 #: src/hello/print/print_display.md:103
 msgid ""
@@ -2009,7 +2008,7 @@ msgid ""
 "instance."
 msgstr ""
 "Esta funcionalidad de formato se implementa a través de traits, y hay "
-"trait para cada tipo de argumento. El trait de formato más común es la `Display`, ",
+"trait para cada tipo de argumento. El trait de formato más común es la `Display`, "
 "que maneja casos en los que el tipo de argumento se deja sin especificar: `{}`, por ejemplo."
 
 #: src/hello/print/fmt.md:21
