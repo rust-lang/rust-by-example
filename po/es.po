@@ -901,8 +901,8 @@ msgid ""
 "[Scoping rules](scope.md) - Scopes play an important part in ownership, "
 "borrowing, and lifetimes."
 msgstr ""
-"[Reglas de alcance](scope.md) - Los alcances juegan un papel importante del ownership ",
-"borrowing y lifetimes".
+"[Reglas de alcance](scope.md) - Los alcances juegan un papel importante del ownership, "
+"borrowing y lifetimes."
 
 #: src/index.md:44
 msgid ""
@@ -917,44 +917,53 @@ msgid ""
 "[Macros](macros.md) - Macros are a way of writing code that writes other "
 "code, which is known as metaprogramming."
 msgstr ""
+"[Macros](Macros.md) - Las macros son una forma de escribir código que escribe a otros"
+"códigos, lo cual se conoce como metaprogramación".
+
 
 #: src/index.md:48
 msgid "[Error handling](error.md) - Learn Rust way of handling failures."
-msgstr ""
+msgstr "[Manejo de Errores](error.md) - Aprende a manejar errores con Rust."
 
 #: src/index.md:50
 msgid ""
 "[Std library types](std.md) - Learn about some custom types provided by "
 "`std` library."
 msgstr ""
+"[Tipos de la librería std](std.md) - Aprenda sobre algunos tipos de la librería"
+"`std`".
 
 #: src/index.md:52
 msgid "[Std misc](std_misc.md) - More custom types for file handling, threads."
-msgstr ""
+msgstr "[Std misc](std_misc.md) - Más tipos personalizados para el manejo de archivos, hilos."
 
 #: src/index.md:54
-msgid "[Testing](testing.md) - All sorts of testing in Rust."
-msgstr ""
+msgid "[Pruebas](testing.md) - All sorts of testing in Rust."
+msgstr "[Pruebas](testing.md) - Todo tipo de pruebas en Rust."
 
 #: src/index.md:56
 msgid ""
 "[Unsafe Operations](unsafe.md) - Learn about entering a block of unsafe "
 "operations."
 msgstr ""
+"[Operaciones Unsafe](unsafe.md) - Aprenda sobre el uso de bloques de operaciones "
+"unsafe."
 
 #: src/index.md:58
 msgid ""
 "[Compatibility](compatibility.md) - Handling Rust's evolution and potential "
 "compatibility issues."
 msgstr ""
+"[Compatibilidad](compatibility.md) - Manejo de la evolución de Rust y potenciales "
+"problemas de compatibilidad".
 
 #: src/index.md:60
 msgid "[Meta](meta.md) - Documentation, Benchmarking."
-msgstr ""
+msgstr "[Meta](meta.md) - Documentación, Benchmarking."
 
 #: src/hello.md:3
 msgid "This is the source code of the traditional Hello World program."
-msgstr ""
+msgstr "Este es el código fuente del programa tradicional Hello World."
 
 #: src/hello.md:6
 msgid ""
@@ -963,6 +972,9 @@ msgid ""
 "// or if you prefer to use your keyboard, you can use the \"Ctrl + Enter\"\n"
 "// shortcut.\n"
 msgstr ""
+"// Este es un comentario, y es ignorado por el compilador.\n"
+"// Puede probar este código haciendo clic en el botón \"Run\" allí -> \n"
+"// o si prefiere usar su teclado, puede usar el atajo \"Ctrl + Enter\".\n"
 
 #: src/hello.md:10
 msgid ""
@@ -970,26 +982,29 @@ msgid ""
 "// You can always return to the original code by clicking the \"Reset\" "
 "button ->\n"
 msgstr ""
+"// Este código es editable, ¡siéntete libre de hackearlo!\n"
+"// Siempre puede volver al código original haciendo clic en \"Reset\" "
+"botón -> \n"
 
 #: src/hello.md:13
 msgid "// This is the main function.\n"
-msgstr ""
+msgstr "// Esta es la función main"
 
 #: src/hello.md:16
 msgid "// Statements here are executed when the compiled binary is called.\n"
-msgstr ""
+msgstr "// Las oraciones aquí se ejecutan cuando el binario compilado es llamado.\n"
 
 #: src/hello.md:18
 msgid "// Print text to the console.\n"
-msgstr ""
+msgstr "// Imprime el texto a la consola.\n"
 
 #: src/hello.md:19 src/error/result.md:55 src/meta/playground.md:12
 msgid "\"Hello World!\""
-msgstr ""
+msgstr "\"Hello World!\""
 
 #: src/hello.md:23
 msgid "`println!` is a [_macro_](macros.md) that prints text to the console."
-msgstr ""
+msgstr "`println!` es un [_macro_](macros.md) que imprime text a la consola."
 
 #: src/hello.md:26
 msgid "A binary can be generated using the Rust compiler: `rustc`."
