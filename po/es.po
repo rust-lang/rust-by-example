@@ -1008,54 +1008,59 @@ msgstr "`println!` es un [_macro_](macros.md) que imprime text a la consola."
 
 #: src/hello.md:26
 msgid "A binary can be generated using the Rust compiler: `rustc`."
-msgstr ""
+msgstr "Un binario se puede generar usand el compilador de Rust: `rustc`."
 
 #: src/hello.md:32
 msgid "`rustc` will produce a `hello` binary that can be executed."
-msgstr ""
+msgstr "`rustc` producirá un binario `hello` que puede ser ejecutado."
 
 #: src/hello.md:39 src/hello/print/print_display.md:107
 #: src/hello/print/print_display/testcase_list.md:53 src/hello/print/fmt.md:70
 #: src/primitives/tuples.md:64 src/custom_types/structs.md:89
 msgid "Activity"
-msgstr ""
+msgstr "Actividad"
 
 #: src/hello.md:41
 msgid ""
 "Click 'Run' above to see the expected output. Next, add a new line with a "
 "second `println!` macro so that the output shows:"
 msgstr ""
+"Haga clic en 'Run' arriba para ver la salida esperada. A continuación, agregue una nueva línea con un"
+"segundo `println!` macro para que la salida muestre:"
 
 #: src/hello/comment.md:3
 msgid ""
 "Any program requires comments, and Rust supports a few different varieties:"
 msgstr ""
+"Cualquier programa requiere comentarios, y Rust admite algunas variedades diferentes:"
 
 #: src/hello/comment.md:6
 msgid "_Regular comments_ which are ignored by the compiler:"
-msgstr ""
+msgstr "_Comentarios regulares_ que el compilador ignora:"
 
 #: src/hello/comment.md:7
 msgid "`// Line comments which go to the end of the line.`"
-msgstr ""
+msgstr "`// Comentarios de línea que van al final de la línea.`"
 
 #: src/hello/comment.md:8
 msgid "`/* Block comments which go to the closing delimiter. */`"
-msgstr ""
+msgstr "`/* Comentarios de bloque que van al delimitador de cierre. */`"
 
 #: src/hello/comment.md:9
 msgid ""
 "_Doc comments_ which are parsed into HTML library [documentation](../meta/"
 "doc.md):"
 msgstr ""
+"_Comentarios de Doc_ que se parsean en la librería HTML [documentation](../ meta/"
+"doc.md):"
 
 #: src/hello/comment.md:10
 msgid "`/// Generate library docs for the following item.`"
-msgstr ""
+msgstr "`/// Genera docs de librería para el siguiente elemento.`"
 
 #: src/hello/comment.md:11
 msgid "`//! Generate library docs for the enclosing item.`"
-msgstr ""
+msgstr "`//! Genera docs de librería para el artículo adjunto.`"
 
 #: src/hello/comment.md:15
 msgid ""
@@ -1063,6 +1068,9 @@ msgid ""
 "    // There are two slashes at the beginning of the line.\n"
 "    // And nothing written after these will be read by the compiler.\n"
 msgstr ""
+"// Este es un ejemplo de un comentario de línea.\n"
+"   // Hay dos slashes al comienzo de la línea.\n"
+"   // y nada escrito después de estos será leído por el compilador.\n"
 
 #: src/hello/comment.md:19
 msgid "// println!(\"Hello, world!\");\n"
@@ -1070,7 +1078,7 @@ msgstr ""
 
 #: src/hello/comment.md:21
 msgid "// Run it. See? Now try deleting the two slashes, and run it again.\n"
-msgstr ""
+msgstr "// Ejecútalo. ¿Ves? Ahora intenta eliminar las dos barras y ejecútalo nuevamente.\n"
 
 #: src/hello/comment.md:23
 msgid ""
@@ -1083,6 +1091,14 @@ msgid ""
 "     * /*/*/* Try it yourself! */*/*/\n"
 "     */"
 msgstr ""
+"/*\norte"
+"     * Este es otro tipo de comentario, un comentario en bloque. En general,\n"
+"     * los comentarios de línea son el estilo de comentarios recomendado. Pero los comentarios de bloque\n"
+"     * son extremadamente útiles para deshabilitar temporalmente los segmentos de código.\n"
+"     * /* Los comentarios de bloque pueden ser /* anidados, */ */ por lo que solo se necesitan unos pocos\n"
+"     * teclazos para comentar todo en esta función main().\n"
+"     * /*/*/*¡Pruébalo! */*/*/\n"
+" */"
 
 #: src/hello/comment.md:32
 msgid ""
@@ -1091,6 +1107,10 @@ msgid ""
 "    no actual need for it.\n"
 "    */"
 msgstr ""
+"/*\n"
+"   Nota: la columna anterior a `*` es completamente por estilo. No hay\n"
+"   hay necesidad real para ello. \ N"
+"    */"
 
 #: src/hello/comment.md:37
 msgid ""
@@ -1098,6 +1118,9 @@ msgid ""
 "    // than with line comments. Try deleting the comment delimiters\n"
 "    // to change the result:\n"
 msgstr ""
+"// Puede manipular expresiones más fácilmente con comentarios de bloque \n"
+"    // que con comentarios de línea. Intente eliminar los delimitadores de comentarios\n"
+"    // para cambiar el resultado:\n"
 
 #: src/hello/comment.md:40
 msgid "/* 90 + */"
@@ -1105,7 +1128,7 @@ msgstr ""
 
 #: src/hello/comment.md:41
 msgid "\"Is `x` 10 or 100? x = {}\""
-msgstr ""
+msgstr "\"¿Es `x` 10 ó 100?" x = {}\""
 
 #: src/hello/comment.md:45 src/hello/print.md:103
 #: src/hello/print/print_debug.md:75 src/hello/print/print_display.md:118
@@ -1152,27 +1175,31 @@ msgstr ""
 #: src/std_misc/threads/testcase_mapreduce.md:129 src/std_misc/path.md:54
 #: src/std_misc/fs.md:150 src/meta/doc.md:109 src/meta/playground.md:49
 msgid "See also:"
-msgstr ""
+msgstr "Ver también"
 
 #: src/hello/comment.md:47
 msgid "[Library documentation](../meta/doc.md)"
-msgstr ""
+msgstr "[Documentación de Librerías](../meta/doc.md)"
 
 #: src/hello/print.md:3
 msgid ""
 "Printing is handled by a series of [`macros`](../macros.md) defined in "
 "[`std::fmt`](https://doc.rust-lang.org/std/fmt/) some of which are:"
 msgstr ""
+"La impresión se maneja por una serie de [`macros`](../macros.md) definida en"
+"[`std::fmt`](https://doc.rust-lang.org/std/fmt/) algunos de los cuales son: "
 
 #: src/hello/print.md:6
 msgid "`format!`: write formatted text to [`String`](../std/str.md)"
-msgstr ""
+msgstr "`format!`: escribe el texto formateado a un [`String`](../std/str.md)"
 
 #: src/hello/print.md:7
 msgid ""
 "`print!`: same as `format!` but the text is printed to the console (io::"
 "stdout)."
 msgstr ""
+"`print!`: igual que `format!` pero el texto se imprime a la consola (io::"
+"stdout)".
 
 #: src/hello/print.md:9
 msgid "`println!`: same as `print!` but a newline is appended."
@@ -1191,16 +1218,16 @@ msgstr ""
 #: src/hello/print.md:14
 msgid ""
 "All parse text in the same fashion. As a plus, Rust checks formatting "
-"correctness at compile time."
-msgstr ""
 
-#: src/hello/print.md:19
-msgid ""
-"// In general, the `{}` will be automatically replaced with any\n"
+
+
+
+
+
 "    // arguments. These will be stringified.\n"
 msgstr ""
 
-#: src/hello/print.md:21
+
 msgid "\"{} days\""
 msgstr ""
 
