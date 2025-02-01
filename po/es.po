@@ -783,7 +783,7 @@ msgid ""
 msgstr ""
 "[Rust] (https://www.rust-lang.org/) es un lenguaje de programación de sistemas modernos"
 "concentrado en la seguridad, la velocidad y la concurrencia. Logra estos objetivos al"
-"tener seguridad de memoria sin usar la recolección de basura".
+"tener seguridad de memoria sin usar la recolección de basura."
 
 #: src/index.md:7
 msgid ""
@@ -799,7 +799,7 @@ msgstr ""
 "ejemplos, no olvide [instalar Rust localmente] (https://www.rust-lang.org/"
 "tools/install) y consulte los [documentos oficiales](https://doc.rust-lang.org/"
 "std/). Además, para la gente curiosa, también puede [ver el código fuente"
-"para este sitio](https://github.com/rust-lang/rust-by-example)".
+"para este sitio](https://github.com/rust-lang/rust-by-example)."
 
 
 #: src/index.md:12
@@ -858,7 +858,7 @@ msgid ""
 "Functions."
 msgstr ""
 "[Funciones](fn.md) - Aprender sobre métodos, closures y Funciones de Orden "
-"Superior".
+"Superior."
 
 #: src/index.md:32
 msgid "[Modules](mod.md) - Organize code using modules"
@@ -870,7 +870,7 @@ msgid ""
 "a library."
 msgstr ""
 "[Crates](crates.md) - Una caja es una unidad de compilación en Rust. Aprende a crear "
-"una biblioteca".
+"una biblioteca."
 
 #: src/index.md:36
 msgid ""
@@ -878,7 +878,7 @@ msgid ""
 "package management tool."
 msgstr ""
 "[Cargo](cargo.md) - Realice algunas características básicas de la herramienta de Rust oficial "
-"gestión de paquetes".
+"gestión de paquetes."
 
 #: src/index.md:38
 msgid ""
@@ -886,7 +886,7 @@ msgid ""
 "module, crate or item."
 msgstr ""
 [Atributos](attribute.md) - Un atributo son metadatos aplicados a algún "
-"módulo, crate o ítem".
+"módulo, crate o ítem."
 
 #: src/index.md:40
 msgid ""
@@ -918,7 +918,7 @@ msgid ""
 "code, which is known as metaprogramming."
 msgstr ""
 "[Macros](Macros.md) - Las macros son una forma de escribir código que escribe a otros"
-"códigos, lo cual se conoce como metaprogramación".
+"códigos, lo cual se conoce como metaprogramación."
 
 
 #: src/index.md:48
@@ -931,7 +931,7 @@ msgid ""
 "`std` library."
 msgstr ""
 "[Tipos de la librería std](std.md) - Aprenda sobre algunos tipos de la librería"
-"`std`".
+"`std`."
 
 #: src/index.md:52
 msgid "[Std misc](std_misc.md) - More custom types for file handling, threads."
@@ -955,7 +955,7 @@ msgid ""
 "compatibility issues."
 msgstr ""
 "[Compatibilidad](compatibility.md) - Manejo de la evolución de Rust y potenciales "
-"problemas de compatibilidad".
+"problemas de compatibilidad."
 
 #: src/index.md:60
 msgid "[Meta](meta.md) - Documentation, Benchmarking."
@@ -1199,7 +1199,7 @@ msgid ""
 "stdout)."
 msgstr ""
 "`print!`: igual que `format!` pero el texto se imprime a la consola (io::"
-"stdout)".
+"stdout)."
 
 #: src/hello/print.md:9
 msgid "`println!`: same as `print!` but a newline is appended."
@@ -1452,7 +1452,7 @@ msgid ""
 "friendly fashion."
 msgstr ""
 "`fmt::Display`: Usa el marcador `{}`. Formatea texto de una manera más elegante "
-"y amistosa".
+"y amistosa."
 
 #: src/hello/print.md:84
 msgid ""
@@ -1462,7 +1462,7 @@ msgid ""
 msgstr ""
 "Aquí, usamos `fmt::Display` porque la librería std proporciona "
 "implementaciones para estos tipos. Para imprimir tipos personalizados, más pasos"
-"son necesarios".
+"son necesarios"
 
 #: src/hello/print.md:87
 msgid ""
@@ -1474,7 +1474,7 @@ msgstr ""
 "Implementar el rasgo `fmt::Display` implementa automáticamente el trait "
 "[`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html) "
 "que nos permite [convertir](../conversion/string.md) el tipo en [`String`]"
-"(../std/str.md)".
+"(../std/str.md)."
 
 #: src/hello/print.md:90
 msgid ""
@@ -1482,7 +1482,7 @@ msgid ""
 "only applies to the module after it."
 msgstr ""
 "En la _línea 43_,`#[allow(dead_code)]` es un [atributo](../ attribute.md) que"
-"solo se aplica al módulo después de él".
+"solo se aplica al módulo después de él."
 
 #: src/hello/print.md:92
 msgid "Activities"
@@ -1492,7 +1492,7 @@ msgstr "Actividades"
 msgid ""
 "Fix the issue in the above code (see FIXME) so that it runs without error."
 msgstr ""
-"Solucione el problema en el código anterior (ver el ARRÉGLAME) para que se ejecute sin error".
+"Solucione el problema en el código anterior (ver el ARRÉGLAME) para que se ejecute sin error."
 
 #: src/hello/print.md:96
 msgid ""
@@ -1546,7 +1546,7 @@ msgid ""
 msgstr ""
 "El trait `fmt::Debug` hace que esto sea muy sencillo. Todos Los tipos pueden"
 "`Derive` (crear automáticamente) la implementación `fmt::Debug`. Esto no cierto"
-"para `fmt::Display` el cual debe implementarse manualmente ".
+"para `fmt::Display` el cual debe implementarse manualmente."
 
 #: src/hello/print/print_debug.md:13
 msgid ""
@@ -1757,7 +1757,7 @@ msgstr ""
 "No, porque no hay un estilo ideal para todos los tipos y la biblioteca `std` "
 "no presume dictar uno. `fmt::Display` no se implementa para "
 "`Vec<T>` o para cualquier otro contenedor genérico. `Fmt::Debug` debe usarse "
-"para estos casos genéricos".
+"para estos casos genéricos."
 
 #: src/hello/print/print_display.md:43
 msgid ""
@@ -1765,7 +1765,7 @@ msgid ""
 "_not_ generic, `fmt::Display` can be implemented."
 msgstr ""
 "Sin embargo, esto no es un problema porque para cualquier nuevo tipo _contenedor_ que sea"
-"_no_ genérico, se puede implementar `fmt::Display` ".
+"_no_ genérico, se puede implementar `fmt::Display`."
 
 #: src/hello/print/print_display.md:47
 msgid "// Import `fmt`\n"
@@ -1848,10 +1848,10 @@ msgid ""
 "lang.org/std/fmt/)."
 msgstr ""
 "Entonces, `fmt::Display` se ha implementado pero `fmt::Binary` no, y"
-"por lo tanto, no se puede usar. `std::fmt` tiene muchos de estos [`traits`](https://doc".
+"por lo tanto, no se puede usar. `std::fmt` tiene muchos de estos [`traits`](https://doc."
 "rust-lang.org/std/fmt/#formatting-traits) y cada uno requiere su"
 "implementación. Esto se detalla aún más en [`std::fmt`](https://doc.rust-"
-"lang.org/std/fmt/)".
+"lang.org/std/fmt/)."
 
 #: src/hello/print/print_display.md:109
 msgid ""
@@ -1885,7 +1885,7 @@ msgstr ""
 "Implementar `fmt::Display` para una estructura donde los elementos deben ser cada uno "
 "manejados secuencialmente es complicado. El problema es que cada `write!` genera "
 "un `fmt::Result`. El manejo adecuado de esto requiere tratar con _todos_ los"
-"resultados. Rust proporciona el operador `?` para exactamente este propósito".
+"resultados. Rust proporciona el operador `?` para exactamente este propósito."
 
 #: src/hello/print/print_display/testcase_list.md:8
 msgid "Using `?` on `write!` looks like this:"
@@ -1999,7 +1999,7 @@ msgid ""
 "_argument type_ is used: `X` vs `o` vs _unspecified_."
 msgstr ""
 "La misma variable (`foo`) puede formatearse de manera diferente dependiendo de cuál sea "
-"_tipo de argumento_ utilizado: `X` vs `o` vs _no especificado_".
+"_tipo de argumento_ utilizado: `X` vs `o` vs _no especificado_."
 
 #: src/hello/print/fmt.md:12
 msgid ""
