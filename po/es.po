@@ -2167,6 +2167,8 @@ msgid ""
 "You can [pad with zeros to a width of 2](https://doc.rust-lang.org/std/fmt/"
 "#width) with `:0>2`."
 msgstr ""
+"Puedes [acolchonar con ceros a un ancho de 2](https://doc.rust-lang.org/std/fmt/"
+"#width) usando `:0>2`."
 
 #: src/hello/print/fmt.md:91
 msgid "[`std::fmt`](https://doc.rust-lang.org/std/fmt/)"
@@ -2176,55 +2178,61 @@ msgstr ""
 msgid ""
 "Rust provides access to a wide variety of `primitives`. A sample includes:"
 msgstr ""
+"Rust proporciona acceso a una amplia variedad de `primitivas`. Algunos ejemplos son:"
 
 #: src/primitives.md:5
 msgid "Scalar Types"
-msgstr ""
+msgstr "Tipos Escalares"
 
 #: src/primitives.md:7
 msgid ""
 "Signed integers: `i8`, `i16`, `i32`, `i64`, `i128` and `isize` (pointer size)"
 msgstr ""
+"Enteros con signo: `i8`, `i16`, `i32`, `i64`, `i128` y `isize` (el tamaño del puntero)"
 
 #: src/primitives.md:8
 msgid ""
 "Unsigned integers: `u8`, `u16`, `u32`, `u64`, `u128` and `usize` (pointer "
 "size)"
 msgstr ""
+"Enteros sin signo: `u8`, `u16`, `u32`, `u64`, `u128` y `usize` (el tamaño del puntero"
+")"
 
 #: src/primitives.md:10
 msgid "Floating point: `f32`, `f64`"
-msgstr ""
+msgstr "Punto flotante: `f32`, `f64`"
 
 #: src/primitives.md:11
 msgid "`char` Unicode scalar values like `'a'`, `'α'` and `'∞'` (4 bytes each)"
-msgstr ""
+msgstr "`char` Valores de Unicode escalares como `'a'`, `'α'` y `'∞'` (4 bytes cada uno)"
 
 #: src/primitives.md:12
 msgid "`bool` either `true` or `false`"
-msgstr ""
+msgstr "`bool` puede ser `true` o `falso`"
 
 #: src/primitives.md:13
 msgid "The unit type `()`, whose only possible value is an empty tuple: `()`"
-msgstr ""
+msgstr "El tipo unitario `()`, cuyo único posible valor es la tupla vacía: `()`"
 
 #: src/primitives.md:15
 msgid ""
 "Despite the value of a unit type being a tuple, it is not considered a "
 "compound type because it does not contain multiple values."
 msgstr ""
+"A pesar de que el valor de un tipo de unidad es una tupla, no se considera un"
+"tipo de compuesto porque no contiene múltiples valores."
 
 #: src/primitives.md:18
 msgid "Compound Types"
-msgstr ""
+msgstr "Tipos Compuestos"
 
 #: src/primitives.md:20
 msgid "Arrays like `[1, 2, 3]`"
-msgstr ""
+msgstr "Arreglos como `[1, 2, 3]`"
 
 #: src/primitives.md:21
 msgid "Tuples like `(1, true)`"
-msgstr ""
+msgstr "Tuplas como `(1, true)`"
 
 #: src/primitives.md:23
 msgid ""
@@ -2232,22 +2240,25 @@ msgid ""
 "annotated via a _suffix_ or _by default_. Integers default to `i32` and "
 "floats to `f64`. Note that Rust can also infer types from context."
 msgstr ""
+"Las variables siempre pueden llevar _anotación de tipos_. Los números también pueden ser"
+"anotados a través de un _sufijo_ o _por default_. Los enteros usan como default `i32` y "
+"los flotantes usan a `f64`. Tenga en cuenta que Rust puede también puede inferir tipos."
 
 #: src/primitives.md:29
 msgid "// Variables can be type annotated.\n"
-msgstr ""
+msgstr "// Las variables pueden llevar anotaciónes de tipo.\n"
 
 #: src/primitives.md:32
 msgid "// Regular annotation\n"
-msgstr ""
+msgstr "// Anotación regular\n"
 
 #: src/primitives.md:33
 msgid "// Suffix annotation\n"
-msgstr ""
+msgstr "// Anotación con sufijo"
 
 #: src/primitives.md:35
 msgid "// Or a default will be used.\n"
-msgstr ""
+msgstr "// O se usará un default.\n"
 
 #: src/primitives.md:36
 msgid "// `f64`\n"
@@ -2259,41 +2270,43 @@ msgstr ""
 
 #: src/primitives.md:39
 msgid "// A type can also be inferred from context.\n"
-msgstr ""
+msgstr "// Un tipo también se puede inferir por context.\n"
 
 #: src/primitives.md:40
 msgid "// Type i64 is inferred from another line.\n"
-msgstr ""
+msgstr "// El tipo i64 se puede inferir de otra línea.\n"
 
 #: src/primitives.md:43
 msgid "// A mutable variable's value can be changed.\n"
-msgstr ""
+msgstr "// Una mariable mutable puede cambiar.\n"
 
 #: src/primitives.md:44
 msgid "// Mutable `i32`\n"
-msgstr ""
+msgstr "// `i32` Mutable\n"
 
 #: src/primitives.md:47
 msgid "// Error! The type of a variable can't be changed.\n"
-msgstr ""
+msgstr "// Error! El tipo de la variable no se puede cambiar.\n"
 
 #: src/primitives.md:50
 msgid "// Variables can be overwritten with shadowing.\n"
-msgstr ""
+msgstr "// Las variables se puede sobreescribir con sombreo.\n"
 
 #: src/primitives.md:53
 msgid "/* Compound types - Array and Tuple */"
-msgstr ""
+msgstr "/* Tipos compuestos - Arreglo y Tupla */"
 
 #: src/primitives.md:55
 msgid "// Array signature consists of Type T and length as [T; length].\n"
-msgstr ""
+msgstr "// La declaración del tipo de Arreglo consiste del tipo T y la longitud como [T; longitud].\n"
 
 #: src/primitives.md:58
 msgid ""
 "// Tuple is a collection of values of different types \n"
 "    // and is constructed using parentheses ().\n"
 msgstr ""
+"// Una tupla es una colección de valores de diferentes tipos\n"
+"   // y se construye usando paréntesis ().\n"
 
 #: src/primitives.md:66
 msgid ""
@@ -2301,24 +2314,33 @@ msgid ""
 "(variable_bindings/mut.md), [`inference`](types/inference.md), and "
 "[`shadowing`](variable_bindings/scope.md)"
 msgstr ""
+"[the `std` library](https://doc.rust-lang.org/std/), [`mut`]"
+"(variable_bindings/mut.md), [`inference`](types/inference.md), y "
+"[`shadowing`](variable_bindings/scope.md)"
 
 #: src/primitives/literals.md:3
 msgid ""
 "Integers `1`, floats `1.2`, characters `'a'`, strings `\"abc\"`, booleans "
 "`true` and the unit type `()` can be expressed using literals."
 msgstr ""
+"Enteros `1`, flotantes `1.2`, caractéres `'a'`, cadenas `\"abc\"`, booleanos "
+"`true` y el tipo unitario `()` se puede expresar con literales."
 
 #: src/primitives/literals.md:6
 msgid ""
 "Integers can, alternatively, be expressed using hexadecimal, octal or binary "
 "notation using these prefixes respectively: `0x`, `0o` or `0b`."
 msgstr ""
+"Los enteros pueden, alternativamente, expresarse utilizando notación hexadecimal, octal o binaria"
+"usando estos prefijos respectivamente: `0x`, `0o` o` 0b`."
 
 #: src/primitives/literals.md:9
 msgid ""
 "Underscores can be inserted in numeric literals to improve readability, e.g. "
 "`1_000` is the same as `1000`, and `0.000_001` is the same as `0.000001`."
 msgstr ""
+"Se pueden insertar guíones bajos en literales numéricos para mejorar la legibilidad, por ejemplo,"
+"`1_000` es lo mismo que `1000`, y `0.000_001` es lo mismo que `0.000001`."
 
 #: src/primitives/literals.md:12
 msgid ""
@@ -2326,6 +2348,9 @@ msgid ""
 "Scientific_notation#E_notation), e.g. `1e6`, `7.6e-4`. The associated type "
 "is `f64`."
 msgstr ""
+"Rust también admite [notación E científica](https://en.wikipedia.org/wiki/"
+"Scientific_notation#E_notation), e.g. `1e6`, `7.6e-4`. El tipo asociado es "
+"`f64`."
 
 #: src/primitives/literals.md:15
 msgid ""
@@ -2333,6 +2358,9 @@ msgid ""
 "use the `u32` suffix to indicate that the literal is an unsigned 32-bit "
 "integer, and the `i32` suffix to indicate that it's a signed 32-bit integer."
 msgstr ""
+"Necesitamos decirle al compilador el tipo de literales que usamos. Por ahora, lo haremos"
+"usando el sufijo` u32` para indicar que el literal es un entero sin signo de 32 bits "
+", y el sufijo `i32` para indicar que es un entero con signo de 32 bits ".
 
 #: src/primitives/literals.md:19
 msgid ""
@@ -2341,10 +2369,14 @@ msgid ""
 "[C-like languages](https://en.wikipedia.org/wiki/"
 "Operator_precedence#Programming_languages)."
 msgstr ""
+"Los operadores disponibles y su precedencia [en Rust](https://doc.rust-lang."
+"org/reference/expressions.html#expression-precedence) es similar a otros "
+"[lenguajes como C](https://en.wikipedia.org/wiki/"
+"Operator_precedence#Programming_languages)."
 
 #: src/primitives/literals.md:24
 msgid "// Integer addition\n"
-msgstr ""
+msgstr "// Suma de enteros"
 
 #: src/primitives/literals.md:25
 msgid "\"1 + 2 = {}\""
@@ -2352,7 +2384,7 @@ msgstr ""
 
 #: src/primitives/literals.md:27
 msgid "// Integer subtraction\n"
-msgstr ""
+msgstr "// Resta de enteros"
 
 #: src/primitives/literals.md:28
 msgid "\"1 - 2 = {}\""
@@ -2362,62 +2394,63 @@ msgstr ""
 msgid ""
 "// TODO ^ Try changing `1i32` to `1u32` to see why the type is important\n"
 msgstr ""
+"// TAREA ^ Intenta cambiar `1i32` a `1u32` para ver por qué el tipo es importante\n"
 
 #: src/primitives/literals.md:31
 msgid "// Scientific notation\n"
-msgstr ""
+msgstr "// Notación científica"
 
 #: src/primitives/literals.md:32
 msgid "\"1e4 is {}, -2.5e-3 is {}\""
-msgstr ""
+msgstr "\"1e4 es {}, -2.5e-3 es {}\""
 
 #: src/primitives/literals.md:34
 msgid "// Short-circuiting boolean logic\n"
-msgstr ""
+msgstr "// Lógica booleana de corto circuito"
 
 #: src/primitives/literals.md:35
 msgid "\"true AND false is {}\""
-msgstr ""
+msgstr "\"true Y false es {}\""
 
 #: src/primitives/literals.md:36
 msgid "\"true OR false is {}\""
-msgstr ""
+msgstr "\"true O false es {}\""
 
 #: src/primitives/literals.md:37
 msgid "\"NOT true is {}\""
-msgstr ""
+msgstr "\"NOT true es {}\""
 
 #: src/primitives/literals.md:39
 msgid "// Bitwise operations\n"
-msgstr ""
+msgstr "// Operaciones sobre bits"
 
 #: src/primitives/literals.md:40
 msgid "\"0011 AND 0101 is {:04b}\""
-msgstr ""
+msgstr "\"0011 AND 0101 es {:04b}\""
 
 #: src/primitives/literals.md:41
 msgid "\"0011 OR 0101 is {:04b}\""
-msgstr ""
+msgstr "\"0011 OR 0101 es {:04b}\""
 
 #: src/primitives/literals.md:42
 msgid "\"0011 XOR 0101 is {:04b}\""
-msgstr ""
+msgstr "\"0011 XOR 0101 es {:04b}\""
 
 #: src/primitives/literals.md:43
 msgid "\"1 << 5 is {}\""
-msgstr ""
+msgstr "\"1 << 5 es {}\""
 
 #: src/primitives/literals.md:44
 msgid "\"0x80 >> 2 is 0x{:x}\""
-msgstr ""
+msgstr "\"0x80 >> 2 es 0x{:x}\""
 
 #: src/primitives/literals.md:46
 msgid "// Use underscores to improve readability!\n"
-msgstr ""
+msgstr "// ¡Usa guiones bajos para mejorar la legibilidad!\n"
 
 #: src/primitives/literals.md:47
 msgid "\"One million is written as {}\""
-msgstr ""
+msgstr "\" Un millón se escribe como {}\""
 
 #: src/primitives/tuples.md:3
 msgid ""
@@ -2427,22 +2460,27 @@ msgid ""
 "can use tuples to return multiple values, as tuples can hold any number of "
 "values."
 msgstr ""
+"Una tupla es una colección de valores de diferentes tipos. Se construyen tuplas"
+"usando paréntesis `()`, y cada tupla en sí es un valor con la anotación de tipo"
+"`(T1, t2, ...) `, donde `t1`, `t2` son los tipos de sus miembros. Las funciones"
+"pueden usar tuplas para devolver múltiples valores, ya que las tuplas pueden contener cualquier número de"
+"valores."
 
 #: src/primitives/tuples.md:9
 msgid "// Tuples can be used as function arguments and as return values.\n"
-msgstr ""
+msgstr "// Las tuplas se pueden como argumentos de funciones y como sus valores de retorno.\n"
 
 #: src/primitives/tuples.md:11
 msgid "// `let` can be used to bind the members of a tuple to variables.\n"
-msgstr ""
+msgstr "// `let` se puede usar para ligar los miembros de la tupla a variables.\n"
 
 #: src/primitives/tuples.md:16
 msgid "// The following struct is for the activity.\n"
-msgstr ""
+msgstr "// La siguiente `struct` es para la actividad.\n"
 
 #: src/primitives/tuples.md:22
 msgid "// A tuple with a bunch of different types.\n"
-msgstr ""
+msgstr "// Una tupla es montón de tipos diferentes.\n"
 
 #: src/primitives/tuples.md:26 src/generics.md:50 src/generics.md:55
 #: src/generics/gen_fn.md:47
@@ -2451,27 +2489,27 @@ msgstr ""
 
 #: src/primitives/tuples.md:28
 msgid "// Values can be extracted from the tuple using tuple indexing.\n"
-msgstr ""
+msgstr "// Se pueden extraer valores de la tupla indexando"
 
 #: src/primitives/tuples.md:29
 msgid "\"Long tuple first value: {}\""
-msgstr ""
+msgstr "\"Tupla grande primer valor: {}\""
 
 #: src/primitives/tuples.md:30
 msgid "\"Long tuple second value: {}\""
-msgstr ""
+msgstr "\"Tupla grande segundo valor: {}\""
 
 #: src/primitives/tuples.md:32
 msgid "// Tuples can be tuple members.\n"
-msgstr ""
+msgstr "// Tuplas con tuplas como miembros.\n"
 
 #: src/primitives/tuples.md:35
 msgid "// Tuples are printable.\n"
-msgstr ""
+msgstr "// Las tuples se pueden imprimir.\n"
 
 #: src/primitives/tuples.md:36
 msgid "\"tuple of tuples: {:?}\""
-msgstr ""
+msgstr "\"tupla de tuplas: {:?}\""
 
 #: src/primitives/tuples.md:38
 msgid ""
@@ -2480,32 +2518,38 @@ msgid ""
 "    //println!(\"Too long tuple: {:?}\", too_long_tuple);\n"
 "    // TODO ^ Uncomment the above 2 lines to see the compiler error\n"
 msgstr ""
+"// Pero no se pueden imprimir tuplas demasadio grandes (más de 12 elementos).\n"
+"   // let tupla_demasiado_grande = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);\n"
+"   // println!(\" Tupla demasiado grande: {:?} \ ", tupla_demasiado_grande);\n"
+"   // TAREA ^ Quita el comentario de las 2 líneas anteriores para ver el error del compilador\n"
 
 #: src/primitives/tuples.md:44
 msgid "\"Pair is {:?}\""
-msgstr ""
+msgstr "\"Par es {:?}\""
 
 #: src/primitives/tuples.md:46
 msgid "\"The reversed pair is {:?}\""
-msgstr ""
+msgstr "\"El par invertido es {:?}\""
 
 #: src/primitives/tuples.md:48
 msgid ""
 "// To create one element tuples, the comma is required to tell them apart\n"
 "    // from a literal surrounded by parentheses.\n"
 msgstr ""
+"// Para crear un tuplas de un sólo elemento, se requiere la coma para distinguirlas\n"
+"   // de un literal rodeado de paréntesis.\n"
 
 #: src/primitives/tuples.md:50
 msgid "\"One element tuple: {:?}\""
-msgstr ""
+msgstr "\"Una tupla de 1 elemento: {:?}\""
 
 #: src/primitives/tuples.md:51
 msgid "\"Just an integer: {:?}\""
-msgstr ""
+msgstr "\"Sólo un entero: {:?}\""
 
 #: src/primitives/tuples.md:53
 msgid "// Tuples can be destructured to create bindings.\n"
-msgstr ""
+msgstr "// Las tuplas puede desestructurar para crear variables.\n"
 
 #: src/primitives/tuples.md:54 src/conversion/from_into.md:17
 #: src/fn/closures/input_parameters.md:52 src/std_misc/fs.md:51
@@ -2522,12 +2566,17 @@ msgid ""
 "example, so that if you switch from printing the debug format `{:?}` to the "
 "display format `{}`, you see the following output:"
 msgstr ""
+"_Recapitulando_: Agrega el rasgo `fmt::Display` a `Matrix` en el ejemplo"
+"anterior, de modo que si cambias de imprimir el formato de depuración `{:?}` al"
+"formato de visualización `{}`, ves la siguiente salida:"
 
 #: src/primitives/tuples.md:75
 msgid ""
 "You may want to refer back to the example for [print display](../hello/print/"
 "print_display.md)."
 msgstr ""
+"Es posible que desee consultar el ejemplo de [impresión a pantalla](../hello/print/"
+"print_display.md)."
 
 #: src/primitives/tuples.md:76
 msgid ""
@@ -2535,18 +2584,21 @@ msgid ""
 "accepts a matrix as an argument, and returns a matrix in which two elements "
 "have been swapped. For example:"
 msgstr ""
+"Agrega una función `transpose` usando la función `reverse` como una plantilla, el cual"
+"acepta una matriz como argumento y devuelve una matriz en la que dos elementos"
+"han sido intercambiados. Por ejemplo:"
 
 #: src/primitives/tuples.md:81
 msgid "\"Matrix:\\n{}\""
-msgstr ""
+msgstr "\"Matriz:\\n{}\""
 
 #: src/primitives/tuples.md:82
 msgid "\"Transpose:\\n{}\""
-msgstr ""
+msgstr "\"Transpuesta:\\n{}""
 
 #: src/primitives/tuples.md:85
 msgid "Results in the output:"
-msgstr ""
+msgstr "Resultados en el output:"
 
 #: src/primitives/array.md:3
 msgid ""
