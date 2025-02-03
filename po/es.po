@@ -2254,7 +2254,7 @@ msgstr "// Anotación regular\n"
 
 #: src/primitives.md:33
 msgid "// Suffix annotation\n"
-msgstr "// Anotación con sufijo"
+msgstr "// Anotación con sufijo\n"
 
 #: src/primitives.md:35
 msgid "// Or a default will be used.\n"
@@ -2359,8 +2359,8 @@ msgid ""
 "integer, and the `i32` suffix to indicate that it's a signed 32-bit integer."
 msgstr ""
 "Necesitamos decirle al compilador el tipo de literales que usamos. Por ahora, lo haremos"
-"usando el sufijo` u32` para indicar que el literal es un entero sin signo de 32 bits "
-", y el sufijo `i32` para indicar que es un entero con signo de 32 bits ".
+"usando el sufijo `u32` para indicar que el literal es un entero sin signo de 32 bits "
+", y el sufijo `i32` para indicar que es un entero con signo de 32 bits."
 
 #: src/primitives/literals.md:19
 msgid ""
@@ -2520,7 +2520,7 @@ msgid ""
 msgstr ""
 "// Pero no se pueden imprimir tuplas demasadio grandes (más de 12 elementos).\n"
 "   // let tupla_demasiado_grande = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);\n"
-"   // println!(\" Tupla demasiado grande: {:?} \ ", tupla_demasiado_grande);\n"
+"   // println!(\"Tupla demasiado grande: {:?}\", tupla_demasiado_grande);\n"
 "   // TAREA ^ Quita el comentario de las 2 líneas anteriores para ver el error del compilador\n"
 
 #: src/primitives/tuples.md:44
@@ -2594,7 +2594,7 @@ msgstr "\"Matriz:\\n{}\""
 
 #: src/primitives/tuples.md:82
 msgid "\"Transpose:\\n{}\""
-msgstr "\"Transpuesta:\\n{}""
+msgstr "\"Transpuesta:\\n{}\""
 
 #: src/primitives/tuples.md:85
 msgid "Results in the output:"
