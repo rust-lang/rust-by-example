@@ -188,7 +188,7 @@ msgstr ""
 
 #: src/SUMMARY.md:53 src/flow_control/match/destructuring.md:1
 msgid "Destructuring"
-msgstr "Desesctructurar"
+msgstr "Destructura"
 
 #: src/SUMMARY.md:54
 #: src/flow_control/match/destructuring/destructure_tuple.md:1
@@ -2607,6 +2607,10 @@ msgid ""
 "which is known at compile time, is part of their type signature `[T; "
 "length]`."
 msgstr ""
+"Un arreglo es una colección de objetos del mismo tipo `t`, almacenado en "
+"memoria contigua. Los arreglos se crean usando corchetes cuardrados `[]`, y su longitud, "
+"que se conoce en el momento de la compilación, es parte de su anotación de tipo `[T; "
+"longitud]`."
 
 #: src/primitives/array.md:7
 msgid ""
@@ -2617,62 +2621,68 @@ msgid ""
 "x86-64. Slices can be used to borrow a section of an array and have the type "
 "signature `&[T]`."
 msgstr ""
+"Las slices son similares a los arreglos, pero su longitud no se conoce al momento de compilar."
+"En cambio, un slice es un objeto de dos 'words' del procesador; la primera palabra es un puntero a los"
+"datos, la segunda palabra es la longitud del slice. El tamaño de la palabra es el mismo"
+"que usize, el cual se determina por la arquitectura del procesador, e.g. 64 bits en "
+"x86-64. Los slices se pueden usar para tomar un `borrow` de una sección de un arreglo y tener la anotación"
+"de tipo `&[t]`."
 
 #: src/primitives/array.md:15
 msgid "// This function borrows a slice.\n"
-msgstr ""
+msgstr "// Esta funcion hace borrow a una slice.\n"
 
 #: src/primitives/array.md:18
 msgid "\"First element of the slice: {}\""
-msgstr ""
+msgstr "\" El primer elemento de un slice: {}\""
 
 #: src/primitives/array.md:19
 msgid "\"The slice has {} elements\""
-msgstr ""
+msgstr "\"El slice tiene {} elementos\""
 
 #: src/primitives/array.md:23
 msgid "// Fixed-size array (type signature is superfluous).\n"
-msgstr ""
+msgstr "// Arreglos de tamaño fijo (su anotación de tipo es superflua).\n"
 
 #: src/primitives/array.md:26
 msgid "// All elements can be initialized to the same value.\n"
-msgstr ""
+msgstr "// Todos los elementos pueden ser inicializados al mismo valor.\n"
 
 #: src/primitives/array.md:29
 msgid "// Indexing starts at 0.\n"
-msgstr ""
+msgstr "// Los índices empiezan en 0.\n"
 
 #: src/primitives/array.md:30
 msgid "\"First element of the array: {}\""
-msgstr ""
+msgstr "\"El primer elemento del arreglo: {}\""
 
 #: src/primitives/array.md:31
 msgid "\"Second element of the array: {}\""
-msgstr ""
+msgstr "\"El segundo elemento del arreglo: {}\""
 
 #: src/primitives/array.md:33
 msgid "// `len` returns the count of elements in the array.\n"
-msgstr ""
+msgstr "// `len` regresa cuántos elementos hay en el arreglo.\n"
 
 #: src/primitives/array.md:34
 msgid "\"Number of elements in array: {}\""
-msgstr ""
+msgstr "\"Número de elementos en el arreglo: {} \""
 
 #: src/primitives/array.md:36
 msgid "// Arrays are stack allocated.\n"
-msgstr ""
+msgstr "// Los arreglos se colocan en el stack.\n"
 
 #: src/primitives/array.md:37
 msgid "\"Array occupies {} bytes\""
-msgstr ""
+msgstr "\"Los arreglos ocupan {} bytes\""
 
 #: src/primitives/array.md:39
 msgid "// Arrays can be automatically borrowed as slices.\n"
-msgstr ""
+msgstr "// Los arreglos pueden ser `borrowed` como slices.\n"
 
 #: src/primitives/array.md:40
 msgid "\"Borrow the whole array as a slice.\""
-msgstr ""
+msgstr "\"Hace borrow de todo el arreglo como un slice.\""
 
 #: src/primitives/array.md:43
 msgid ""
@@ -2681,18 +2691,22 @@ msgid ""
 "    // `starting_index` is the first position in the slice.\n"
 "    // `ending_index` is one more than the last position in the slice.\n"
 msgstr ""
+"// Los slices pueden apuntar a una sección de un arreglo.\n"
+"   // Estos son de la forma [índice_inicial..índice_final].\n"
+"   // `índice_inicial` es la primera posición en el slice.\n"
+"   // `índice_final` es uno más que la última posición en la porción.\n"
 
 #: src/primitives/array.md:47
 msgid "\"Borrow a section of the array as a slice.\""
-msgstr ""
+msgstr "\"Hace Borrow de una sección del arreglo como un slice.\""
 
 #: src/primitives/array.md:50
 msgid "// Example of empty slice `&[]`:\n"
-msgstr ""
+msgstr "// Un ejemplo de un slice vacío `&[]`:\n"
 
 #: src/primitives/array.md:53
 msgid "// Same but more verbose\n"
-msgstr ""
+msgstr "// Lo mismo pero menos conciso"
 
 #: src/primitives/array.md:55
 msgid ""
@@ -2701,10 +2715,14 @@ msgid ""
 "    // `.expect()` if you would like the program to exit with a nice\n"
 "    // message instead of happily continue.\n"
 msgstr ""
+"// Se pueden acceder a las arreglos de forma segura usando `.get`, el cual devuelve un \n"
+"    // `Option'. Aquí se puede usar un match como se muestra a continuación, o en su caso con \n"
+"    // `.expect()` si desees que el programa termine con un amable\n"
+"    // mensaje en lugar de continuar felizmente.\n"
 
 #: src/primitives/array.md:59
 msgid "// Oops, one element too far!\n"
-msgstr ""
+msgstr "// ¡Oops!, un elemento de sobra.\n"
 
 #: src/primitives/array.md:61
 msgid "\"{}: {}\""
@@ -2712,7 +2730,7 @@ msgstr ""
 
 #: src/primitives/array.md:62
 msgid "\"Slow down! {} is too far!\""
-msgstr ""
+msgstr "\"¡Para! {} es demasiado lejos\""
 
 #: src/primitives/array.md:66
 msgid ""
@@ -2722,95 +2740,107 @@ msgid ""
 "    // Out of bound indexing on slice causes runtime error.\n"
 "    //println!(\"{}\", xs[..][5]);\n"
 msgstr ""
+"// Usar un índice constante que se encuentra fuera del rango válido causa un error de compilación.\n"
+"    //println!(\"{}\", xs[5]);\n"
+"    // Usar un índice fuera de rango en un slice causa un error de compilación.\n"
+"    //println!(\"{}\", xs[..][5]);\n"
 
 #: src/custom_types.md:3
 msgid "Rust custom data types are formed mainly through the two keywords:"
-msgstr ""
+msgstr "Los tipos de datos personalizados en Rust se logran principalmente con 2 palabras clave:"
 
 #: src/custom_types.md:5
 msgid "`struct`: define a structure"
-msgstr ""
+msgstr "`struct`: define una estructura"
 
 #: src/custom_types.md:6
 msgid "`enum`: define an enumeration"
-msgstr ""
+msgstr "`enum`: define una enumeración"
 
 #: src/custom_types.md:8
 msgid "Constants can also be created via the `const` and `static` keywords."
-msgstr ""
+msgstr "Las constantes se crean con las palabras clave `const` o `static`."
 
 #: src/custom_types/structs.md:3
 msgid ""
 "There are three types of structures (\"structs\") that can be created using "
 "the `struct` keyword:"
 msgstr ""
+"Hay tres tipos de estructuras (\"struct\") que se pueden crear usando"
+"la palabra clave 'struct`:"
 
 #: src/custom_types/structs.md:6
 msgid "Tuple structs, which are, basically, named tuples."
-msgstr ""
+msgstr "Estructuras de tupla, las cuales son básicamente tuplas nombradas."
 
 #: src/custom_types/structs.md:7
 msgid ""
 "The classic [C structs](https://en.wikipedia.org/wiki/"
 "Struct_(C_programming_language))"
 msgstr ""
+"Las clásicas estructuras [struct de C](https://en.wikipedia.org/wiki/"
+"Struct_(C_programming_language))"
 
 #: src/custom_types/structs.md:8
 msgid "Unit structs, which are field-less, are useful for generics."
-msgstr ""
+msgstr "Las structs unitarias, las cuales no tienen campos, y son útiles para los genéricos."
 
 #: src/custom_types/structs.md:11 src/custom_types/enum/enum_use.md:6
 #: src/custom_types/enum/c_like.md:6
 msgid "// An attribute to hide warnings for unused code.\n"
-msgstr ""
+msgstr "// Un atributo para esconder las advertencias del código no utilizado.\n"
 
 #: src/custom_types/structs.md:19
 msgid "// A unit struct\n"
-msgstr ""
+msgstr "// Una struct unitaria"
 
 #: src/custom_types/structs.md:22
 msgid "// A tuple struct\n"
-msgstr ""
+msgstr "// Una struct de tupla"
 
 #: src/custom_types/structs.md:25
 msgid "// A struct with two fields\n"
-msgstr ""
+msgstr "// Una struct de dos campos\n"
 
 #: src/custom_types/structs.md:31
 msgid "// Structs can be reused as fields of another struct\n"
-msgstr ""
+msgstr "// Las Structs pueden reutilizar los campos de otras structs\n"
 
 #: src/custom_types/structs.md:34
 msgid ""
 "// A rectangle can be specified by where the top left and bottom right\n"
 "    // corners are in space.\n"
 msgstr ""
+"// Un rectángulo se puede escpecificar por dónde las esquinas de arriba a la izquierda y abajo a la derecha"
+"    // se encuentran en el espacio.\n"
 
 #: src/custom_types/structs.md:41
 msgid "// Create struct with field init shorthand\n"
-msgstr ""
+msgstr "// Abreviación para crear un struct con un campo ya inicializado\n"
 
 #: src/custom_types/structs.md:46
 msgid "// Print debug struct\n"
-msgstr ""
+msgstr "// Imprime un struct de depuración\n"
 
 #: src/custom_types/structs.md:49
 msgid "// Instantiate a `Point`\n"
-msgstr ""
+msgstr "// Instanciar un `Point`\n"
 
 #: src/custom_types/structs.md:53
 msgid "// Access the fields of the point\n"
-msgstr ""
+msgstr "// Accesa los campos del punto\n"
 
 #: src/custom_types/structs.md:54
 msgid "\"point coordinates: ({}, {})\""
-msgstr ""
+msgstr "\"coordenadas del punto: ({}, {})\""
 
 #: src/custom_types/structs.md:56
 msgid ""
 "// Make a new point by using struct update syntax to use the fields of our\n"
 "    // other one\n"
 msgstr ""
+"// Crea un nuevo punto usando la sintáxis de update de struct para usar los campos\n"
+"    // del otro struct\n"
 
 #: src/custom_types/structs.md:60
 msgid ""
@@ -2818,44 +2848,49 @@ msgid ""
 "that field\n"
 "    // from `another_point`\n"
 msgstr ""
+"// `abajo_derecha.y` va a ser lo mismo que `otro_punto.y` por que usamos ese "
+"campo \n"
+"    // de `otro_punto`\n"
 
 #: src/custom_types/structs.md:62
 msgid "\"second point: ({}, {})\""
-msgstr ""
+msgstr "\"segundo punto: ({}, {})\""
 
 #: src/custom_types/structs.md:64
 msgid "// Destructure the point using a `let` binding\n"
-msgstr ""
+msgstr "// Destructura el punto con un enlace `let`\n"
 
 #: src/custom_types/structs.md:68
 msgid "// struct instantiation is an expression too\n"
-msgstr ""
+msgstr "// también se puede hacer la instanciación de un struct con una expresión"
 
 #: src/custom_types/structs.md:73
 msgid "// Instantiate a unit struct\n"
-msgstr ""
+msgstr "// Instacia una struct unitaria"
 
 #: src/custom_types/structs.md:76
 msgid "// Instantiate a tuple struct\n"
-msgstr ""
+msgstr "// Instancia una estructura de tupla\n"
 
 #: src/custom_types/structs.md:79
 msgid "// Access the fields of a tuple struct\n"
-msgstr ""
+msgstr "// Accesa los campos de una estructura de tupla\n"
 
 #: src/custom_types/structs.md:80 src/custom_types/structs.md:85
 msgid "\"pair contains {:?} and {:?}\""
-msgstr ""
+msgstr "\"un par contiene {:?} y {:?}\""
 
 #: src/custom_types/structs.md:82
 msgid "// Destructure a tuple struct\n"
-msgstr ""
+msgstr "// Destructura una estructura de tupla"
 
 #: src/custom_types/structs.md:91
 msgid ""
 "Add a function `rect_area` which calculates the area of a `Rectangle` (try "
 "using nested destructuring)."
 msgstr ""
+"Agregue una función `rect_area` que calcula el área de un `Rectangle` (intenta"
+"usar de la destructación anidada)."
 
 #: src/custom_types/structs.md:93
 msgid ""
@@ -2863,10 +2898,13 @@ msgid ""
 "returns a `Rectangle` with its top left corner on the point, and a width and "
 "height corresponding to the `f32`."
 msgstr ""
+"Agregue una función `square` que toma un `Punto` y un `f32` como argumentos, y "
+"devuelve un `Rectangle` con su esquina superior izquierda en el punto, y un ancho y"
+"altura correspondiente al `f32`."
 
 #: src/custom_types/structs.md:97
 msgid "See also"
-msgstr ""
+msgstr "Véase también"
 
 #: src/custom_types/structs.md:99
 msgid ""
@@ -2874,6 +2912,9 @@ msgid ""
 "raw_identifiers.md) and [destructuring](../flow_control/match/destructuring."
 "md)"
 msgstr ""
+"[`attributes`](../attribute.md), [raw identifiers](../compatibility/"
+"raw_identifiers.md) y [destructuring](../flow_control/match/destructuring."
+"md)"
 
 #: src/custom_types/enum.md:3
 msgid ""
@@ -2881,6 +2922,9 @@ msgid ""
 "different variants. Any variant which is valid as a `struct` is also valid "
 "in an `enum`."
 msgstr ""
+"La palabra clave `enum` permite la creación de un tipo que puede ser uno de unas pocas"
+"diferentes variantes. Cualquier variante que sea válida como `struct` también es válida"
+"en un `enum`."
 
 #: src/custom_types/enum.md:8
 msgid ""
@@ -2889,52 +2933,60 @@ msgid ""
 "// `PageLoad != PageUnload` and `KeyPress(char) != Paste(String)`.\n"
 "// Each is different and independent.\n"
 msgstr ""
+"// Cree un `enum` para clasificar un evento web. Tenga en cuenta cómo ambos los\n"
+"// nombres y los tipos juntos especifican la variante:\n"
+"// `PageLoad != PageUnload` y `KeyPress(char) != Paste(String)`.\n"
+"// Cada uno es diferente e independiente.\n"
 
 #: src/custom_types/enum.md:13
 msgid "// An `enum` variant may either be `unit-like`,\n"
-msgstr ""
+msgstr "// Una variante `enum` puede ser `cuasi-unitaria`,\n"
 
 #: src/custom_types/enum.md:16
 msgid "// like tuple structs,\n"
-msgstr ""
+msgstr "// como estructuras de tuplas"
 
 #: src/custom_types/enum.md:19
 msgid "// or c-like structures.\n"
-msgstr ""
+msgstr "// o estructuras estilo C.\n"
 
 #: src/custom_types/enum.md:22
 msgid ""
 "// A function which takes a `WebEvent` enum as an argument and\n"
 "// returns nothing.\n"
 msgstr ""
+"// Una función que toma un enum 'WebEvent` como argumento y \n"
+"// no devuelve nada.\n"
 
 #: src/custom_types/enum.md:27
 msgid "\"page loaded\""
-msgstr ""
+msgstr "\"página cargada\""
 
 #: src/custom_types/enum.md:28
 msgid "\"page unloaded\""
-msgstr ""
+msgstr "\"página descargada \""
 
 #: src/custom_types/enum.md:29
 msgid "// Destructure `c` from inside the `enum` variant.\n"
-msgstr ""
+msgstr "// Destructura `c` desde dentro de la variante `enum`.\n"
 
 #: src/custom_types/enum.md:30
 msgid "\"pressed '{}'.\""
-msgstr ""
+msgstr "\"presionaste '{}'.\""
 
 #: src/custom_types/enum.md:31
 msgid "\"pasted \\\"{}\\\".\""
-msgstr ""
+msgstr "\"pegaste \\\"{}\\\".\""
+
 
 #: src/custom_types/enum.md:32
 msgid "// Destructure `Click` into `x` and `y`.\n"
-msgstr ""
+msgstr "// Destructura `Click` en `x` y `y`.\n"
 
 #: src/custom_types/enum.md:34
 msgid "\"clicked at x={}, y={}.\""
-msgstr ""
+msgstr "\"click en x={}, y={}.\""
+
 
 #: src/custom_types/enum.md:40
 msgid "'x'"
@@ -2942,15 +2994,17 @@ msgstr ""
 
 #: src/custom_types/enum.md:41
 msgid "// `to_owned()` creates an owned `String` from a string slice.\n"
-msgstr ""
+msgstr "// `to_owned()` crea un `String` que es owned de slice de cadena.\n"
+
 
 #: src/custom_types/enum.md:42
 msgid "\"my text\""
-msgstr ""
+msgstr "\"mi texto\""
+
 
 #: src/custom_types/enum.md:56
 msgid "Type aliases"
-msgstr ""
+msgstr "Aliases de tipos"
 
 #: src/custom_types/enum.md:58
 msgid ""
@@ -2958,10 +3012,13 @@ msgid ""
 "This might be useful if the enum's name is too long or too generic, and you "
 "want to rename it."
 msgstr ""
+"Si usa un alias de tipo, puedes consultar cada variante de enum a través de su alias."
+"Esto podría ser útil si el nombre del enum es demasiado largo o demasiado genérico, y lo "
+"quieres renombrar."
 
 #: src/custom_types/enum.md:67
 msgid "// Creates a type alias\n"
-msgstr ""
+msgstr "// Crear un alias de tipo\n"
 
 #: src/custom_types/enum.md:72
 msgid ""
@@ -2969,12 +3026,17 @@ msgid ""
 "inconvenient\n"
 "    // name.\n"
 msgstr ""
+"// Podemos referirnos a cada variante a través de su alias, y no su largo e"
+"inconveniente \n"
+"   // nombre. \n"
 
 #: src/custom_types/enum.md:78
 msgid ""
 "The most common place you'll see this is in `impl` blocks using the `Self` "
 "alias."
 msgstr ""
+"El lugar más común que verás esto es en los bloques de `impl` usando el alias `Self` "
+"."
 
 #: src/custom_types/enum.md:96
 msgid ""
@@ -2982,6 +3044,9 @@ msgid ""
 "report](https://github.com/rust-lang/rust/pull/61682/"
 "#issuecomment-502472847) from when this feature was stabilized into Rust."
 msgstr ""
+"Para obtener más información sobre enums y alias de tipo, puedes leer el [informe "
+"estabilización](https://github.com/rust-lang/rust/pull/61682/"
+"#issuecomment-502472847) de cuando este feature se estabilizó en Rust."
 
 #: src/custom_types/enum.md:102
 msgid ""
@@ -2989,48 +3054,53 @@ msgid ""
 "str.md), [\"Type alias enum variants\" RFC](https://rust-lang.github.io/"
 "rfcs/2338-type-alias-enum-variants.html)"
 msgstr ""
+"[`match`](../flow_control/match.md), [`fn`](../fn.md), y [`String`](../std/"
+"str.md), [\"Type alias enum variants\" RFC](https://rust-lang.github.io/"
+"rfcs/2338-type-alias-enum-variants.html)"
 
 #: src/custom_types/enum/enum_use.md:3
 msgid "The `use` declaration can be used so manual scoping isn't needed:"
-msgstr ""
+msgstr "La declaración `use` se puede usar de tal manera que no se necesiten alcances manuales:"
 
 #: src/custom_types/enum/enum_use.md:20
 msgid ""
 "// Explicitly `use` each name so they are available without\n"
 "    // manual scoping.\n"
 msgstr ""
+"// Explícitamente `use` (usa) cada nombre para que estén disponibles sin \n "
+"    // alcance manual. \n"
 
 #: src/custom_types/enum/enum_use.md:23
 msgid "// Automatically `use` each name inside `Role`.\n"
-msgstr ""
+msgstr "// Hace `use` automaticamente para cada nombre dentro de `Role`.\n"
 
 #: src/custom_types/enum/enum_use.md:26
 msgid "// Equivalent to `Stage::Beginner`.\n"
-msgstr ""
+msgstr "// Equivalente a `Stage::Beginner`.\n"
 
 #: src/custom_types/enum/enum_use.md:28
 msgid "// Equivalent to `Role::Student`.\n"
-msgstr ""
+msgstr "// Equivalente a `Role::Student`.\n"
 
 #: src/custom_types/enum/enum_use.md:32
 msgid "// Note the lack of scoping because of the explicit `use` above.\n"
-msgstr ""
+msgstr "// Notamos que la falta de alcances se debe al uso explícito de `use` arriba.\n"
 
 #: src/custom_types/enum/enum_use.md:33
 msgid "\"Beginners are starting their learning journey!\""
-msgstr ""
+msgstr "\"¡Los principiantes están comenzando su aprendizaje!\""
 
 #: src/custom_types/enum/enum_use.md:34
 msgid "\"Advanced learners are mastering their subjects...\""
-msgstr ""
+msgstr "\"Los estudiantes avanzados están dominando sus materias...\""
 
 #: src/custom_types/enum/enum_use.md:38
 msgid "// Note again the lack of scoping.\n"
-msgstr ""
+msgstr "// Notamos otra vez la falta de alcances.\n"
 
 #: src/custom_types/enum/enum_use.md:39
 msgid "\"Students are acquiring knowledge!\""
-msgstr ""
+msgstr "\"¡Los estudiantes están adquiriendo conocimiento!\""
 
 #: src/custom_types/enum/enum_use.md:40
 msgid "\"Teachers are spreading knowledge!\""
