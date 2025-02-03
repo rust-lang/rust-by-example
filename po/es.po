@@ -2149,12 +2149,18 @@ msgid ""
 "see [RGB color format & calculation](https://www.rapidtables.com/web/color/"
 "RGB_Color.html#rgb-format)."
 msgstr ""
+"La fórmula para calcular un color en el espacio de color RGB es: `RGB = "
+"(R*65536)+(G*256)+B, (cuando R es ROJO, G es VERDE y B es AZUL)`. Para más "
+"ver [Formato de color RGB y su cálculo](https://www.rapidtables.com/web/color/"
+"RGB_Color.html#rgb-format)."
 
 #: src/hello/print/fmt.md:86
 msgid ""
 "You [may need to list each color more than once](https://doc.rust-lang.org/"
 "std/fmt/#named-parameters)."
 msgstr ""
+"Puede que [necesites enumerar cada color más de una vez](https://doc.rust-lang.org/"
+"std/fmt/#named-parameters)."
 
 #: src/hello/print/fmt.md:87
 msgid ""
