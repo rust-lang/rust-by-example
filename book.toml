@@ -13,9 +13,11 @@ enable = true
 
 [output.html]
 git-repository-url = "https://github.com/rust-lang/rust-by-example"
+hash-files = true
 additional-css = [
   "theme/css/language-picker.css",
 ]
+additional-js = ["theme/js/language-picker.js"]
 
 [rust]
 edition = "2021"
