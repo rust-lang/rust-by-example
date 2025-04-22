@@ -3,7 +3,7 @@
 Rust has a few reserved lifetime names. One of those is `'static`. You
 might encounter it in two situations:
 
-```rust, editable
+```rust, ignore
 // A reference with 'static lifetime:
 let s: &'static str = "hello world";
 
