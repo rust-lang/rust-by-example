@@ -8867,7 +8867,7 @@ msgstr ""
 
 #: src/generics/assoc_items/types.md:56
 msgid "// `&Self::A` and `&Self::B` are also valid here.\n"
-msgstr "// `&i32`の代わりに`&Self::A`または`&self::B`と書いても構いません\n"
+msgstr "// `&i32`の代わりに`&Self::A`または`&Self::B`と書いても構いません\n"
 
 #: src/generics/phantom.md:3
 msgid ""
