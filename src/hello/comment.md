@@ -34,6 +34,19 @@ fn main() {
     no actual need for it.
     */
 
+    // Here's another powerful use of block comments: you can uncomment
+    // and comment a whole block by simply adding or removing a single
+    // '/' character:
+
+    /* <- add another '/' before the 1st one to uncomment the whole block
+
+    println!("Now");
+    println!("everything");
+    println!("executes!");
+    // line comments inside are not affected by either state
+
+    // */
+
     // You can manipulate expressions more easily with block comments
     // than with line comments. Try deleting the comment delimiters
     // to change the result:
