@@ -236,6 +236,7 @@ html:not(.js) .left-buttons button {
     }
 }
 
+/* wider main content on ultra wide screens */
 @media only screen and (min-width: 1380px) and (min-aspect-ratio: 2) {
     :root {
         --content-max-width: 1200px;
