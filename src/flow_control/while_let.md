@@ -34,7 +34,7 @@ Using `while let` makes this sequence much nicer:
 fn main() {
     // Make `optional` of type `Option<i32>`
     let mut optional = Some(0);
-    
+
     // This reads: "while `let` destructures `optional` into
     // `Some(i)`, evaluate the block (`{}`). Else `break`.
     while let Some(i) = optional {

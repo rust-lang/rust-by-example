@@ -40,7 +40,7 @@ fn main() {
     // The pointer address of `a` is copied (not the data) into `b`.
     // Both are now pointers to the same heap allocated data, but
     // `b` now owns it.
-    
+
     // Error! `a` can no longer access the data, because it no longer owns the
     // heap memory
     //println!("a contains: {}", a);

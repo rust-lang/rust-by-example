@@ -16,7 +16,7 @@ use std::collections::HashMap;
 
 fn call(number: &str) -> &str {
     match number {
-        "798-1364" => "We're sorry, the call cannot be completed as dialed. 
+        "798-1364" => "We're sorry, the call cannot be completed as dialed.
             Please hang up and try again.",
         "645-7689" => "Hello, this is Mr. Awesome's Pizza. My name is Fred.
             What can I get for you today?",
@@ -24,7 +24,7 @@ fn call(number: &str) -> &str {
     }
 }
 
-fn main() { 
+fn main() {
     let mut contacts = HashMap::new();
 
     contacts.insert("Daniel", "798-1364");
@@ -47,12 +47,12 @@ fn main() {
         _ => println!("Don't have Ashley's number."),
     }
 
-    contacts.remove(&"Ashley"); 
+    contacts.remove(&"Ashley");
 
-    // `HashMap::iter()` returns an iterator that yields 
+    // `HashMap::iter()` returns an iterator that yields
     // (&'a key, &'a value) pairs in arbitrary order.
     for (contact, &number) in contacts.iter() {
-        println!("Calling {}: {}", contact, call(number)); 
+        println!("Calling {}: {}", contact, call(number));
     }
 }
 ```

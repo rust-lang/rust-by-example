@@ -18,7 +18,7 @@ struct Point {
     y: f64,
 }
 
-// A Rectangle can be specified by where its top left and bottom right 
+// A Rectangle can be specified by where its top left and bottom right
 // corners are in space
 #[allow(dead_code)]
 struct Rectangle {

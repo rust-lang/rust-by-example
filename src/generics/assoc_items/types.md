@@ -79,7 +79,7 @@ fn main() {
         container.contains(&number_1, &number_2));
     println!("First number: {}", container.first());
     println!("Last number: {}", container.last());
-    
+
     println!("The difference is: {}", difference(&container));
 }
 ```

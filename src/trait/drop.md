@@ -70,7 +70,7 @@ impl TempFile {
     fn new(path: PathBuf) -> std::io::Result<Self> {
         // Note: File::create() will overwrite existing files
         let file = File::create(&path)?;
-        
+
         Ok(Self { file, path })
     }
 }
@@ -101,7 +101,7 @@ fn main() -> std::io::Result<()> {
     let temp2 = TempFile::new("another_test.txt".into())?;
     drop(temp2); // Explicitly drop the file
     println!("Manually dropped file");
-    
+
     Ok(())
 }
 ```

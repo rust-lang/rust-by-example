@@ -34,7 +34,7 @@ patterns with an unfortunate bit of repetition and an outer `let`:
 
 ```rust
 # use std::str::FromStr;
-# 
+#
 # fn get_count_item(s: &str) -> (u64, &str) {
 #     let mut it = s.split(' ');
     let (count_str, item) = match (it.next(), it.next()) {
@@ -48,7 +48,7 @@ patterns with an unfortunate bit of repetition and an outer `let`:
     };
 #     (count, item)
 # }
-# 
+#
 # assert_eq!(get_count_item("3 chairs"), (3, "chairs"));
 ```
 

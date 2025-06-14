@@ -24,7 +24,7 @@ struct SGen<T>(T); // Generic type `SGen`.
 fn reg_fn(_s: S) {}
 
 // Define a function `gen_spec_t` that takes an argument `_s` of type `SGen<T>`.
-// It has been explicitly given the type parameter `A`, but because `A` has not 
+// It has been explicitly given the type parameter `A`, but because `A` has not
 // been specified as a generic type parameter for `gen_spec_t`, it is not generic.
 fn gen_spec_t(_s: SGen<A>) {}
 

@@ -43,7 +43,7 @@ struct SingleGen<T>(T);
 fn main() {
     // `Single` is concrete and explicitly takes `A`.
     let _s = Single(A);
-    
+
     // Create a variable `_char` of type `SingleGen<char>`
     // and give it the value `SingleGen('a')`.
     // Here, `SingleGen` has a type parameter explicitly specified.

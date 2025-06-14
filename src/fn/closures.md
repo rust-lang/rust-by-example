@@ -21,7 +21,7 @@ Other characteristics of closures include:
 ```rust,editable
 fn main() {
     let outer_var = 42;
-    
+
     // A regular function can't refer to variables in the enclosing environment
     //fn function(i: i32) -> i32 { i + outer_var }
     // TODO: uncomment the line above and see the compiler error. The compiler
