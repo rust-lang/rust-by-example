@@ -63,12 +63,12 @@ Please see the [TRANSLATING.md] file for more details.
 
 ## Translations to other languages
 
-* [Bulgarian](https://github.com/kberov/rust-by-example-bg)
-* [Chinese](https://github.com/rust-lang-cn/rust-by-example-cn)
-* [French](https://github.com/Songbird0/FR_RBE)
-* [Russian](https://github.com/ruRust/rust-by-example)
-* [Vietnamese](https://github.com/EyesCrypto-Insights/rust-by-example-vn)
-* [Portuguese](https://github.com/nazarepiedady/rust-com-exemplos)
+* [Български](https://github.com/kberov/rust-by-example-bg)
+* [简体中文](https://github.com/rust-lang-cn/rust-by-example-cn)
+* [Français](https://github.com/Songbird0/FR_RBE)
+* [Русский](https://github.com/ruRust/rust-by-example)
+* [Tiếng Việt​​](https://github.com/EyesCrypto-Insights/rust-by-example-vn)
+* [Português](https://github.com/nazarepiedady/rust-com-exemplos)
 
 ## License
 
