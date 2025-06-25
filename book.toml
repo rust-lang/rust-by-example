@@ -13,6 +13,7 @@ enable = true
 
 [output.html]
 git-repository-url = "https://github.com/rust-lang/rust-by-example"
+edit-url-template = "https://github.com/rust-lang/rust-by-example/edit/master/{path}"
 hash-files = true
 additional-css = [
   "theme/css/language-picker.css",
