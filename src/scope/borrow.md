@@ -20,7 +20,7 @@ fn borrow_i32(borrowed_i32: &i32) {
 }
 
 fn main() {
-    // Create a boxed i32 in the heap, and a i32 on the stack
+    // Create a boxed i32 in the heap, and an i32 on the stack
     // Remember: numbers can have arbitrary underscores added for readability
     // 5_i32 is the same as 5i32
     let boxed_i32 = Box::new(5_i32);
