@@ -27,7 +27,7 @@ fn main() {
     // But the variable named `apple` has been moved regardless, and cannot be used anymore.
     // println!("Variable apple was moved, so this line won't compile: {:?}", apple);
     // TODO: uncomment the line above to see the compiler error
- }
+}
 ```
 
 ## `or_else()` is chainable, evaluates lazily, keeps empty value intact
