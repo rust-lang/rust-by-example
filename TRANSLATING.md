@@ -43,6 +43,12 @@ msginit -i po/messages.pot -l xx -o po/xx.po
 msgmerge --update po/xx.po po/messages.pot
 ```
 
+#### Tracking translation progress
+
+```bash
+msgfmt --statistics po/xx.po
+```
+
 ### Editing translation resources
 
 After generating a translation resource `po/xx.po`, you can write translation messages in `msgstr` entry of `po/xx.po`.
