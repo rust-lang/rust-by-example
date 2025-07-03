@@ -2201,17 +2201,19 @@ msgstr "// 变量可以通过遮蔽（shadowing）来覆盖。\n"
 
 #: src/primitives.md:53
 msgid "/* Compound types - Array and Tuple */"
-msgstr ""
+msgstr "/* 复合类型 - 数组和元组 */"
 
 #: src/primitives.md:55
 msgid "// Array signature consists of Type T and length as [T; length].\n"
-msgstr ""
+msgstr "// 数组的签名由类型 T 和长度组成，表示为 [T; length]。\n"
 
 #: src/primitives.md:58
 msgid ""
 "// Tuple is a collection of values of different types \n"
 "    // and is constructed using parentheses ().\n"
 msgstr ""
+"// 元组是不同类型值的集合，\n"
+"    // 使用圆括号 () 构造。\n"
 
 #: src/primitives.md:66
 msgid ""
@@ -3081,7 +3083,6 @@ msgstr ""
 "and-lifetimes/default-match-bindings.html\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:39
-#, fuzzy
 msgid ""
 "// Can't take ownership of the tail, because `self` is borrowed;\n"
 "            // instead take a reference to the tail\n"
@@ -3090,6 +3091,7 @@ msgid ""
 msgstr ""
 "// 无法获取 tail 的所有权，因为 `self` 是借用的；\n"
 "            // 所以取 tail 的引用\n"
+"            // 这是一个非尾递归调用，对于长列表可能导致栈溢出。\n"
 
 #: src/custom_types/enum/testcase_linked_list.md:43
 msgid "// Base Case: An empty list has zero length\n"
@@ -3365,15 +3367,14 @@ msgid "\"shadowed in outer block: {}\""
 msgstr "\"外部代码块中被遮蔽：{}\""
 
 #: src/variable_bindings/declare.md:3
-#, fuzzy
 msgid ""
 "It is possible to declare variable bindings first and initialize them later, "
 "but all variable bindings must be initialized before they are used: the "
 "compiler forbids use of uninitialized variable bindings, as it would lead to "
 "undefined behavior."
 msgstr ""
-"可以先声明变量绑定，然后再初始化。但这种形式很少使用，因为它可能导致使用未初"
-"始化的变量。"
+"可以先声明变量绑定然后再初始化，但所有变量绑定在使用前必须先初始化：编译器禁"
+"止使用未初始化的变量绑定，因为这会导致未定义行为。"
 
 #: src/variable_bindings/declare.md:5
 msgid ""
@@ -3382,6 +3383,9 @@ msgid ""
 "when initialization is separated from declaration. It is common to declare "
 "and initialize a variable binding near where the variable will be used."
 msgstr ""
+"在函数中先声明变量绑定而稍后再初始化的做法并不常见。当初始化与声明分离时，读"
+"者更难找到初始化的位置。更常见的做法是在变量即将使用的地方附近声明并初始化变"
+"量绑定。"
 
 #: src/variable_bindings/declare.md:11
 msgid "// Declare a variable binding\n"
@@ -3883,7 +3887,6 @@ msgid "// Try removing the type annotation\n"
 msgstr "// 尝试移除类型标注\n"
 
 #: src/conversion/from_into.md:72
-#, fuzzy
 msgid "`From` and `Into` are interchangeable"
 msgstr "`From` 和 `Into` 是可互换的"
 
@@ -3941,7 +3944,6 @@ msgid "Converting to String"
 msgstr "转换为字符串"
 
 #: src/conversion/string.md:5
-#, fuzzy
 msgid ""
 "To convert any type to a `String` is as simple as implementing the "
 "[`ToString`](https://doc.rust-lang.org/std/string/trait.ToString.html) trait "
@@ -3951,13 +3953,12 @@ msgid ""
 "string/trait.ToString.html) and also allows printing the type as discussed "
 "in the section on [`print!`](../hello/print.md)."
 msgstr ""
-"要将任何类型转换为 `String`，只需为该类型实现 [`ToString`] 特质即可。但更好的"
-"做法是实现 [`fmt::Display`] 特质，它不仅会自动提供 [`ToString`]，还允许打印该"
-"类型，就像在 [`print!`] 部分讨论的那样。\n"
-"\n"
-"[`ToString`]: https://doc.rust-lang.org/std/string/trait.ToString.html\n"
-"[`fmt::Display`]: https://doc.rust-lang.org/std/fmt/trait.Display.html\n"
-"[`print!`]: ../hello/print.md"
+"要将任何类型转换为 `String`，只需为该类型实现 [`ToString`](https://doc.rust-"
+"lang.org/std/string/trait.ToString.html) 特质即可。但更好的做法是实现 "
+"[`fmt::Display`](https://doc.rust-lang.org/std/fmt/trait.Display.html) 特质，"
+"它不仅会自动提供 [`ToString`](https://doc.rust-lang.org/std/string/trait."
+"ToString.html)，还允许打印该类型，就像在 [`print!`](../hello/print.md) 部分"
+"讨论的那样。"
 
 #: src/conversion/string.md:19
 msgid "\"Circle of radius {}\""
@@ -9110,7 +9111,6 @@ msgid "\"mutable_box now contains {}\""
 msgstr "\"mutable_box 现在包含 {}\""
 
 #: src/scope/move/partial_move.md:3
-#, fuzzy
 msgid ""
 "Within the [destructuring](../../flow_control/match/destructuring.md) of a "
 "single variable, both `by-move` and `by-reference` pattern bindings can be "
@@ -9125,7 +9125,9 @@ msgstr ""
 "在对单个变量进行[解构](../../flow_control/match/destructuring.md)时，可以同时"
 "使用 `by-move` 和 `by-reference` 模式绑定。这样做会导致变量的**部分移动**，这"
 "意味着变量的一部分会被移动，而其他部分保持不变。在这种情况下，父级变量之后不"
-"能作为一个整体使用，但是仍然可以使用只被引用（而不是被移动）的部分。"
+"能作为一个整体使用，但是仍然可以使用只被引用（而不是被移动）的部分。注意，实"
+"现了 [`Drop` 特质](../../trait/drop.md) 的类型不能被部分移动，因为其 `drop` "
+"方法会在之后将其作为整体使用。"
 
 #: src/scope/move/partial_move.md:22
 msgid ""
@@ -9137,6 +9139,13 @@ msgid ""
 "    //}\n"
 "    // TODO ^ Try uncommenting these lines\n"
 msgstr ""
+"// 错误！无法从实现了 `Drop` 特质的类型中移动\n"
+"    //impl Drop for Person {\n"
+"    //    fn drop(&mut self) {\n"
+"    //        println!(\"Dropping the person struct {:?}\", self)\n"
+"    //    }\n"
+"    //}\n"
+"    // TODO ^ 尝试取消注释这些行\n"
 
 #: src/scope/move/partial_move.md:35
 msgid "// `name` is moved out of person, but `age` is referenced\n"
@@ -10098,7 +10107,6 @@ msgid "\"NUM: {} stays accessible!\""
 msgstr "\"NUM：{} 仍然可以访问！\""
 
 #: src/scope/lifetime/static_lifetime.md:65
-#, fuzzy
 msgid ""
 "Since `'static` references only need to be valid for the _remainder_ of a "
 "program's life, they can be created while the program is executed. Just to "
@@ -10659,10 +10667,12 @@ msgid ""
 "For a more practical example, here's how the `Drop` trait can be used to "
 "automatically clean up temporary files when they're no longer needed:"
 msgstr ""
+"下面是一个更实用的例子，展示如何使用 `Drop` 特质在不再需要临时文件时自动清理"
+"它们："
 
 #: src/trait/drop.md:71
 msgid "// Note: File::create() will overwrite existing files\n"
-msgstr ""
+msgstr "// 注意：File::create() 会覆盖现有文件\n"
 
 #: src/trait/drop.md:77
 msgid ""
@@ -10670,59 +10680,57 @@ msgid ""
 "// 1. First, the File will be automatically closed (Drop for File)\n"
 "// 2. Then our drop implementation will remove the file\n"
 msgstr ""
+"// 当 TempFile 被丢弃时：\n"
+"// 1. 首先，File 会自动关闭（File 的 Drop 实现）\n"
+"// 2. 然后我们的 drop 实现会删除文件\n"
 
 #: src/trait/drop.md:83
-#, fuzzy
 msgid "// Note: File is already closed at this point\n"
-msgstr "// `_x` 应该在此处被销毁\n"
+msgstr "// 注意：文件在此时已经关闭\n"
 
 #: src/trait/drop.md:85
-#, fuzzy
 msgid "\"Failed to remove temporary file: {}\""
-msgstr "\"执行进程失败：{}\""
+msgstr "\"删除临时文件失败：{}\""
 
 #: src/trait/drop.md:87
 msgid "\"> Dropped temporary file: {:?}\""
-msgstr ""
+msgstr "\"> 已丢弃临时文件：{:?}\""
 
 #: src/trait/drop.md:92
 msgid "// Create a new scope to demonstrate drop behavior\n"
-msgstr ""
+msgstr "// 创建新作用域来演示丢弃行为\n"
 
 #: src/trait/drop.md:94
-#, fuzzy
 msgid "\"test.txt\""
-msgstr "\"ferris.txt\""
+msgstr "\"test.txt\""
 
 #: src/trait/drop.md:95
 msgid "\"Temporary file created\""
-msgstr ""
+msgstr "\"已创建临时文件\""
 
 #: src/trait/drop.md:96
 msgid "// File will be automatically cleaned up when temp goes out of scope\n"
-msgstr ""
+msgstr "// 当 temp 超出作用域时，文件会自动清理\n"
 
 #: src/trait/drop.md:98
 msgid "\"End of scope - file should be cleaned up\""
-msgstr ""
+msgstr "\"作用域结束 - 文件应该被清理\""
 
 #: src/trait/drop.md:100
 msgid "// We can also manually drop if needed\n"
-msgstr ""
+msgstr "// 如果需要，我们也可以手动丢弃\n"
 
 #: src/trait/drop.md:101
-#, fuzzy
 msgid "\"another_test.txt\""
-msgstr "\"ferris.txt\""
+msgstr "\"another_test.txt\""
 
 #: src/trait/drop.md:102
-#, fuzzy
 msgid "// Explicitly drop the file\n"
-msgstr "// 显式转换\n"
+msgstr "// 显式丢弃文件\n"
 
 #: src/trait/drop.md:103
 msgid "\"Manually dropped file\""
-msgstr ""
+msgstr "\"手动丢弃的文件\""
 
 #: src/trait/iter.md:3
 msgid ""
@@ -10751,7 +10759,6 @@ msgstr ""
 "lang.org/std/iter/trait.IntoIterator.html) 方法将某些集合转换为迭代器。"
 
 #: src/trait/iter.md:18
-#, fuzzy
 msgid ""
 "// Implement `Iterator` for `Fibonacci`.\n"
 "// The `Iterator` trait only requires a method to be defined for the `next` "
@@ -10759,7 +10766,8 @@ msgid ""
 "// and an `associated type` to declare the return type of the iterator.\n"
 msgstr ""
 "// 为 `Fibonacci` 实现 `Iterator`。\n"
-"// `Iterator` trait 只要求为 `next` 元素定义一个方法。\n"
+"// `Iterator` 特质只要求为 `next` 元素定义一个方法，\n"
+"// 并需要一个`关联类型`来声明迭代器的返回类型。\n"
 
 #: src/trait/iter.md:23
 msgid "// We can refer to this type using Self::Item\n"
@@ -11192,9 +11200,8 @@ msgstr ""
 "calling-methods-with-the-same-name)"
 
 #: src/macros.md:1
-#, fuzzy
 msgid "`macro_rules!`"
-msgstr "macro_rules!"
+msgstr "`macro_rules!`"
 
 #: src/macros.md:3
 msgid ""
@@ -11657,7 +11664,6 @@ msgstr ""
 "栈，并通常会退出程序。在这里，我们在错误条件下显式调用 `panic`："
 
 #: src/error/panic.md:9
-#, fuzzy
 msgid "// You shouldn't drink too many sugary beverages.\n"
 msgstr "// 你不应该喝太多含糖饮料。\n"
 
@@ -11859,14 +11865,13 @@ msgstr ""
 "将终止当前执行的函数并返回 `None`。"
 
 #: src/error/option_unwrap/question_mark.md:10
-#, fuzzy
 msgid ""
 "// If `current_age` is `None`, this returns `None`.\n"
 "    // If `current_age` is `Some`, the inner `u8` value + 1\n"
 "    // gets assigned to `next_age`\n"
 msgstr ""
 "// 如果 `current_age` 是 `None`，这将返回 `None`。\n"
-"\t// 如果 `current_age` 是 `Some`，内部的 `u8` 值加 1\n"
+"    // 如果 `current_age` 是 `Some`，内部的 `u8` 值加 1\n"
 "    // 后被赋值给 `next_age`\n"
 
 #: src/error/option_unwrap/question_mark.md:14
@@ -14497,7 +14502,6 @@ msgid "These threads will be scheduled by the OS."
 msgstr "这些线程将由操作系统进行调度。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:3
-#, fuzzy
 msgid ""
 "Rust makes it very easy to parallelize data processing, without many of the "
 "headaches traditionally associated with such an attempt."
@@ -14513,14 +14517,13 @@ msgstr ""
 "则，自动防止了数据竞争。"
 
 #: src/std_misc/threads/testcase_mapreduce.md:9
-#, fuzzy
 msgid ""
 "The aliasing rules (one writable reference XOR many readable references) "
 "automatically prevent you from manipulating state that is visible to other "
 "threads. (Where synchronization is needed, there are synchronization "
 "primitives like `Mutex`es or `Channel`s.)"
 msgstr ""
-"别名规则（一个可写引用或多个可读引用）自动防止你操作对其他线程可见的状态。"
+"别名规则（一个可写引用异或多个可读引用）自动防止你操作对其他线程可见的状态。"
 "（在需要同步的情况下，可以使用 `Mutex` 或 `Channel` 等同步原语。）"
 
 #: src/std_misc/threads/testcase_mapreduce.md:14
@@ -15294,13 +15297,12 @@ msgid ""
 msgstr "（建议您尝试在上述示例中向 `rustc` 传递一个错误的标志）"
 
 #: src/std_misc/process/pipe.md:3
-#, fuzzy
 msgid ""
 "The `std::process::Child` struct represents a child process, and exposes the "
 "`stdin`, `stdout` and `stderr` handles for interaction with the underlying "
 "process via pipes."
 msgstr ""
-"`std::Child` 结构体代表一个正在运行的子进程，它暴露了 `stdin`、`stdout` 和 "
+"`std::process::Child` 结构体代表一个子进程，它暴露了 `stdin`、`stdout` 和 "
 "`stderr` 句柄，允许通过管道与底层进程进行交互。"
 
 #: src/std_misc/process/pipe.md:11
@@ -15934,6 +15936,9 @@ msgid ""
 "which works exactly like `#[should_panic(expected = \"message\")]`. Both are "
 "valid; the latter is more commonly used and is considered more explicit."
 msgstr ""
+"**注意**：Rust 还允许使用简写形式 `#[should_panic = \"message\"]`，其功能与 "
+"`#[should_panic(expected = \"message\")]` 完全相同。两种形式都有效；后者更常"
+"用，被认为更明确。"
 
 #: src/testing/unit_testing.md:117 src/testing/doc_testing.md:46
 msgid "\"Divide-by-zero error\""
@@ -15945,9 +15950,8 @@ msgid "\"Divide result is zero\""
 msgstr "\"除法结果为零\""
 
 #: src/testing/unit_testing.md:146
-#, fuzzy
 msgid "// This also works\n"
-msgstr "// 加法运算正常工作。\n"
+msgstr "// 这样也可以\n"
 
 #: src/testing/unit_testing.md:153
 msgid "Running these tests gives us:"
@@ -17118,7 +17122,7 @@ msgid ""
 msgstr "首先，同一个数字可以在同一个内联块中多次用作标签。"
 
 #: src/unsafe/asm.md:453
-#, fuzzy
+
 msgid ""
 "Second, that when a numeric label is used as a reference (as an instruction "
 "operand, for example), the suffixes “b” (“backward”) or ”f” (“forward”) "
@@ -17202,14 +17206,13 @@ msgstr ""
 "stable/reference/inline-assembly.html)。"
 
 #: src/compatibility.md:3
-#, fuzzy
 msgid ""
 "The Rust language is evolving rapidly, and because of this certain "
 "compatibility issues can arise, despite efforts to ensure forwards-"
 "compatibility wherever possible."
 msgstr ""
-"Rust 语言正在快速发展。尽管我们努力确保尽可能的向前兼容，但某些兼容性问题仍可"
-"能出现。"
+"Rust 语言正在快速发展，因此某些兼容性问题可能会出现，尽管我们努力确保尽可能"
+"的向前兼容。"
 
 #: src/compatibility.md:7
 msgid "[Raw identifiers](compatibility/raw_identifiers.md)"
@@ -17542,7 +17545,6 @@ msgstr ""
 "attribute.html#html_playground_url)。"
 
 #: src/meta/playground.md:42
-#, fuzzy
 msgid ""
 "````text\n"
 "#![doc(html_playground_url = \"https://play.rust-lang.org/\")]\n"
@@ -17551,7 +17553,7 @@ msgid ""
 "//! ```\n"
 "````"
 msgstr ""
-"````\n"
+"````text\n"
 "#![doc(html_playground_url = \"https://play.rust-lang.org/\")]\n"
 "//! ```\n"
 "//! println!(\"Hello World\");\n"
