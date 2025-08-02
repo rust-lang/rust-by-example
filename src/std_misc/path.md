@@ -45,7 +45,6 @@ fn main() {
         Some(s) => println!("new path is {}", s),
     }
 }
-
 ```
 
 Be sure to check at other `Path` methods (`posix::Path` or `windows::Path`) and

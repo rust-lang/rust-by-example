@@ -9,7 +9,7 @@ known in some languages as flatmap, comes in.
 `and_then()` calls its function input with the wrapped value and returns the result. If the `Option` is `None`, then it returns `None` instead.
 
 In the following example, `cookable_v3()` results in an `Option<Food>`.
-Using `map()` instead of `and_then()` would have given an 
+Using `map()` instead of `and_then()` would have given an
 `Option<Option<Food>>`, which is an invalid type for `eat()`.
 
 ```rust,editable

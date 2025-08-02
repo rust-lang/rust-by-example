@@ -10,7 +10,7 @@ There is more than one way to unpack an `Option` and fall back on a default if i
 `or()`is chainable and eagerly evaluates its argument, as is shown in the following example. Note that because `or`'s arguments are evaluated eagerly, the variable passed to `or` is moved.
 
 ```rust,editable
-#[derive(Debug)] 
+#[derive(Debug)]
 enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
 
 fn main() {
@@ -27,7 +27,7 @@ fn main() {
     // But the variable named `apple` has been moved regardless, and cannot be used anymore.
     // println!("Variable apple was moved, so this line won't compile: {:?}", apple);
     // TODO: uncomment the line above to see the compiler error
- }
+}
 ```
 
 ## `or_else()` is chainable, evaluates lazily, keeps empty value intact
@@ -35,7 +35,7 @@ fn main() {
 Another alternative is to use `or_else`, which is also chainable, and evaluates lazily, as is shown in the following example:
 
 ```rust,editable
-#[derive(Debug)] 
+#[derive(Debug)]
 enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
 
 fn main() {
@@ -84,7 +84,7 @@ fn main() {
 Instead of explicitly providing a value to fall back on, we can pass a closure to `get_or_insert_with`, as follows:
 
 ```rust,editable
-#[derive(Debug)] 
+#[derive(Debug)]
 enum Fruit { Apple, Orange, Banana, Kiwi, Lemon }
 
 fn main() {

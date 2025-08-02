@@ -28,7 +28,7 @@ trait PrintInOption {
     fn print_in_option(self);
 }
 
-// Because we would otherwise have to express this as `T: Debug` or 
+// Because we would otherwise have to express this as `T: Debug` or
 // use another method of indirect approach, this requires a `where` clause:
 impl<T> PrintInOption for T where
     Option<T>: Debug {

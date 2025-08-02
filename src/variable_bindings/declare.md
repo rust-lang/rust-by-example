@@ -1,6 +1,6 @@
 # Declare first
 
-It is possible to declare variable bindings first and initialize them later, but all variable bindings must be initialized before they are used: the compiler forbids use of uninitialized variable bindings, as it would lead to undefined behavior. 
+It is possible to declare variable bindings first and initialize them later, but all variable bindings must be initialized before they are used: the compiler forbids use of uninitialized variable bindings, as it would lead to undefined behavior.
 
 It is not common to declare a variable binding and initialize it later in the function.
 It is more difficult for a reader to find the initialization when initialization is separated from declaration.

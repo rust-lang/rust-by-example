@@ -115,8 +115,6 @@ fn main() {
 
     println!("Final sum result: {}", final_result);
 }
-
-
 ```
 
 ### Assignments

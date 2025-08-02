@@ -593,7 +593,7 @@ msgstr "Sacando `Result`s de `Option`s"
 
 #: src/SUMMARY.md:172 src/error/multiple_error_types/define_error_type.md:1
 msgid "Defining an error type"
-msgstr "Defniniendo un tipo de error"
+msgstr "Definiendo un tipo de error"
 
 #: src/SUMMARY.md:173 src/error/multiple_error_types/boxing_errors.md:1
 msgid "`Box`ing errors"

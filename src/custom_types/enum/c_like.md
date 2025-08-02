@@ -25,8 +25,8 @@ fn main() {
     println!("zero is {}", Number::Zero as i32);
     println!("one is {}", Number::One as i32);
 
-    println!("roses are #{:06x}", Color::Red as i32);
-    println!("violets are #{:06x}", Color::Blue as i32);
+    println!("roses are #{:06x}", Color::Red as u32);
+    println!("violets are #{:06x}", Color::Blue as u32);
 }
 ```
 

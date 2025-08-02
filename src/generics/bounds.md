@@ -63,7 +63,7 @@ fn main() {
     //print_debug(&_triangle);
     //println!("Area: {}", area(&_triangle));
     // ^ TODO: Try uncommenting these.
-    // | Error: Does not implement either `Debug` or `HasArea`. 
+    // | Error: Does not implement either `Debug` or `HasArea`.
 }
 ```
 

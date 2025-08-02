@@ -15,12 +15,12 @@ required.
 ```rust,editable
 fn main() {
     use std::mem;
-    
+
     let color = String::from("green");
 
     // A closure to print `color` which immediately borrows (`&`) `color` and
     // stores the borrow and closure in the `print` variable. It will remain
-    // borrowed until `print` is used the last time. 
+    // borrowed until `print` is used the last time.
     //
     // `println!` only requires arguments by immutable reference so it doesn't
     // impose anything more restrictive.
@@ -30,7 +30,7 @@ fn main() {
     print();
 
     // `color` can be borrowed immutably again, because the closure only holds
-    // an immutable reference to `color`. 
+    // an immutable reference to `color`.
     let _reborrow = &color;
     print();
 
@@ -55,15 +55,15 @@ fn main() {
 
     // The closure still mutably borrows `count` because it is called later.
     // An attempt to reborrow will lead to an error.
-    // let _reborrow = &count; 
+    // let _reborrow = &count;
     // ^ TODO: try uncommenting this line.
     inc();
 
     // The closure no longer needs to borrow `&mut count`. Therefore, it is
     // possible to reborrow without an error
-    let _count_reborrowed = &mut count; 
+    let _count_reborrowed = &mut count;
 
-    
+
     // A non-copy type.
     let movable = Box::new(3);
 
@@ -100,7 +100,7 @@ fn main() {
     // ^ Uncommenting above line will result in compile-time error
     // because borrow checker doesn't allow re-using variable after it
     // has been moved.
-    
+
     // Removing `move` from closure's signature will cause closure
     // to borrow _haystack_ variable immutably, hence _haystack_ is still
     // available and uncommenting above line will not cause an error.
