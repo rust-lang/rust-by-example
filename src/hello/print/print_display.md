@@ -111,9 +111,19 @@ guide to add a `Complex` struct to the example. When printed in the same
 way, the output should be:
 
 ```txt
-Display: 3.3 + 7.2i
+Display: 3.3 +7.2i
 Debug: Complex { real: 3.3, imag: 7.2 }
+
+Display: 4.7 -2.3i
+Debug: Complex { real: 4.7, imag: -2.3 }
 ```
+
+Bonus: Add a space before the `+`/`-` signs.
+
+Hints in case you get stuck:
+
+- Check the documentation for [`Sign/#/0`][fmt_sign0] in `std::fmt`.
+- Bonus: Check [`if`-`else`][if_else] branching and the [`abs`][f64_abs] function.
 
 ### See also:
 
@@ -121,7 +131,10 @@ Debug: Complex { real: 3.3, imag: 7.2 }
 [`trait`][traits], and [`use`][use]
 
 [derive]: ../../trait/derive.md
+[f64_abs]: https://doc.rust-lang.org/std/primitive.f64.html#method.abs
 [fmt]: https://doc.rust-lang.org/std/fmt/
+[fmt_sign0]: https://doc.rust-lang.org/std/fmt/#sign0
+[if_else]: ../../flow_control/if_else.md
 [macros]: ../../macros.md
 [structs]: ../../custom_types/structs.md
 [traits]: https://doc.rust-lang.org/std/fmt/#formatting-traits
