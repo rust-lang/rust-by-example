@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rust By Example\n"
-"POT-Creation-Date: 2025-07-03T23:05:52+08:00\n"
+"POT-Creation-Date: 2025-08-08T08:55:44+08:00\n"
 "PO-Revision-Date: 2024-08-17 22:13+0800\n"
 "Last-Translator: Binlogo <binboy@live.com>\n"
 "Language-Team: Chinese\n"
@@ -1128,7 +1128,7 @@ msgid "\"Is `x` 10 or 100? x = {}\""
 msgstr "\"`x` 是 10 还是 100？x = {}\""
 
 #: src/hello/comment.md:58 src/hello/print.md:103
-#: src/hello/print/print_debug.md:75 src/hello/print/print_display.md:118
+#: src/hello/print/print_debug.md:75 src/hello/print/print_display.md:128
 #: src/hello/print/print_display/testcase_list.md:62 src/hello/print/fmt.md:89
 #: src/primitives.md:64 src/custom_types/enum.md:100
 #: src/custom_types/enum/enum_use.md:45 src/custom_types/enum/c_like.md:33
@@ -1140,7 +1140,7 @@ msgstr "\"`x` 是 10 还是 100？x = {}\""
 #: src/flow_control/match/destructuring/destructure_enum.md:48
 #: src/flow_control/match/destructuring/destructure_pointers.md:63
 #: src/flow_control/match/destructuring/destructure_structures.md:45
-#: src/flow_control/match/guard.md:43 src/flow_control/match/binding.md:49
+#: src/flow_control/match/guard.md:43 src/flow_control/match/binding.md:61
 #: src/flow_control/if_let.md:118 src/flow_control/let_else.md:55
 #: src/flow_control/while_let.md:56 src/fn/closures/capture.md:110
 #: src/fn/closures/input_parameters.md:84 src/fn/closures/anonymity.md:47
@@ -1169,8 +1169,8 @@ msgstr "\"`x` 是 10 还是 100？x = {}\""
 #: src/error/multiple_error_types/reenter_question_mark.md:74
 #: src/error/multiple_error_types/wrap_error.md:91 src/std.md:12
 #: src/std/rc.md:55 src/std_misc.md:12
-#: src/std_misc/threads/testcase_mapreduce.md:129 src/std_misc/path.md:54
-#: src/std_misc/fs.md:150 src/meta/doc.md:109 src/meta/playground.md:49
+#: src/std_misc/threads/testcase_mapreduce.md:127 src/std_misc/path.md:53
+#: src/std_misc/fs.md:149 src/meta/doc.md:109 src/meta/playground.md:49
 msgid "See also:"
 msgstr "另请参阅："
 
@@ -1822,7 +1822,32 @@ msgstr ""
 "查看上述示例的输出后，参考 `Point2D` 结构体，向示例中添加一个 `Complex` 结构"
 "体。以相同方式打印时，输出应为："
 
-#: src/hello/print/print_display.md:120
+#: src/hello/print/print_display.md:121
+msgid "Bonus: Add a space before the `+`/`-` signs."
+msgstr "额外练习：在 `+`/`-` 符号前添加一个空格。"
+
+#: src/hello/print/print_display.md:123
+msgid "Hints in case you get stuck:"
+msgstr "如果你遇到困难，这里有三个提示："
+
+#: src/hello/print/print_display.md:125
+msgid ""
+"Check the documentation for [`Sign/#/0`](https://doc.rust-lang.org/std/fmt/"
+"#sign0) in `std::fmt`."
+msgstr ""
+"你可以使用 `:0>2` [用零填充到宽度为 2](https://doc.rust-lang.org/std/fmt/"
+"#width)。"
+
+#: src/hello/print/print_display.md:126
+msgid ""
+"Bonus: Check [`if`\\-`else`](../../flow_control/if_else.md) branching and "
+"the [`abs`](https://doc.rust-lang.org/std/primitive.f64.html#method.abs) "
+"function."
+msgstr ""
+"额外练习：查看 [`if`\\-`else`](../../flow_control/if_else.md) 分支语句以及 "
+"[`abs`](https://doc.rust-lang.org/std/primitive.f64.html#method.abs) 函数。"
+
+#: src/hello/print/print_display.md:130
 msgid ""
 "[`derive`](../../trait/derive.md), [`std::fmt`](https://doc.rust-lang.org/"
 "std/fmt/), [`macros`](../../macros.md), [`struct`](../../custom_types/"
@@ -1887,8 +1912,7 @@ msgstr "\"[\""
 msgid ""
 "// Iterate over `v` in `vec` while enumerating the iteration\n"
 "        // index in `index`.\n"
-msgstr ""
-"// 遍历 `vec` 中的 `v`，同时用 `index` 枚举迭代索引。\n"
+msgstr "// 遍历 `vec` 中的 `v`，同时用 `index` 枚举迭代索引。\n"
 
 #: src/hello/print/print_display/testcase_list.md:36
 msgid ""
@@ -2209,7 +2233,7 @@ msgstr "// 数组的签名由类型 T 和长度组成，表示为 [T; length]。
 
 #: src/primitives.md:58
 msgid ""
-"// Tuple is a collection of values of different types \n"
+"// Tuple is a collection of values of different types\n"
 "    // and is constructed using parentheses ().\n"
 msgstr ""
 "// 元组是不同类型值的集合，\n"
@@ -3069,7 +3093,7 @@ msgid ""
 "        // concrete type `T` is preferred over a match on a reference `&T`\n"
 "        // after Rust 2018 you can use self here and tail (with no ref) "
 "below as well,\n"
-"        // rust will infer &s and ref tail. \n"
+"        // rust will infer &s and ref tail.\n"
 "        // See https://doc.rust-lang.org/edition-guide/rust-2018/ownership-"
 "and-lifetimes/default-match-bindings.html\n"
 msgstr ""
@@ -3956,9 +3980,9 @@ msgstr ""
 "要将任何类型转换为 `String`，只需为该类型实现 [`ToString`](https://doc.rust-"
 "lang.org/std/string/trait.ToString.html) 特质即可。但更好的做法是实现 "
 "[`fmt::Display`](https://doc.rust-lang.org/std/fmt/trait.Display.html) 特质，"
-"它不仅会自动提供 [`ToString`](https://doc.rust-lang.org/std/string/trait."
-"ToString.html)，还允许打印该类型，就像在 [`print!`](../hello/print.md) 部分"
-"讨论的那样。"
+"它不仅会自动提供 [`ToString`](https://doc.rust-lang.org/std/string/"
+"trait.ToString.html)，还允许打印该类型，就像在 [`print!`](../hello/print.md) "
+"部分讨论的那样。"
 
 #: src/conversion/string.md:19
 msgid "\"Circle of radius {}\""
@@ -4933,58 +4957,84 @@ msgstr "\"我还没有过第一个生日\""
 #: src/flow_control/match/binding.md:18
 msgid ""
 "// Could `match` 1 ..= 12 directly but then what age\n"
-"        // would the child be? Instead, bind to `n` for the\n"
-"        // sequence of 1 ..= 12. Now the age can be reported.\n"
+"        // would the child be?\n"
+"        // Could `match` n and use an `if` guard, but would\n"
+"        // not contribute to exhaustiveness checks.\n"
+"        // (Although in this case that would not matter since\n"
+"        // a \"catch-all\" pattern is present at the bottom)\n"
+"        // Instead, bind to `n` for the sequence of 1 ..= 12.\n"
+"        // Now the age can be reported.\n"
 msgstr ""
-"// 可以直接匹配 1 ..= 12，但那样无法知道具体年龄\n"
-"        // 相反，我们将 1 ..= 12 的序列绑定到 `n`\n"
-"        // 现在就可以报告具体年龄了\n"
+"// 我们可以直接 `match` 1 ..= 12，但那样的话如何确定\n"
+"        // 孩子的确切年龄呢？\n"
+"        // 可以 `match` n 并使用 `if` 守卫，但这并不是\n"
+"        // 穷尽性检查。\n"
+"        // （虽然在这种情况下无关紧要，因为底部有一个\n"
+"        // \"兜底\" 模式）\n"
+"        // 因此，将 1 ..= 12 序列绑定到 `n`。\n"
+"        // 现在可以报告年龄了。\n"
 
-#: src/flow_control/match/binding.md:21
+#: src/flow_control/match/binding.md:26
 msgid "\"I'm a child of age {:?}\""
 msgstr "\"我是 {:?} 岁的儿童\""
 
-#: src/flow_control/match/binding.md:22
+#: src/flow_control/match/binding.md:27
 msgid "\"I'm a teen of age {:?}\""
 msgstr "\"我是 {:?} 岁的青少年\""
 
-#: src/flow_control/match/binding.md:23
+#: src/flow_control/match/binding.md:28
 msgid "// Nothing bound. Return the result.\n"
 msgstr "// 没有绑定。直接返回结果。\n"
 
-#: src/flow_control/match/binding.md:24
-msgid "\"I'm an old person of age {:?}\""
-msgstr "\"我是 {:?} 岁的老年人\""
-
 #: src/flow_control/match/binding.md:29
+msgid "\"I'm an old person of age {:?}\""
+msgstr "\"我是 {:?} 岁的成年人\""
+
+#: src/flow_control/match/binding.md:34
 msgid ""
 "You can also use binding to \"destructure\" `enum` variants, such as "
 "`Option`:"
 msgstr "你也可以使用绑定来\"解构\" `enum` 变体，例如 `Option`："
 
-#: src/flow_control/match/binding.md:38
+#: src/flow_control/match/binding.md:43
 msgid ""
 "// Got `Some` variant, match if its value, bound to `n`,\n"
 "        // is equal to 42.\n"
-msgstr "// 获得 `Some` 变体，检查其值（绑定到 `n`）是否等于 42\n"
+"        // Could also use `Some(42)` and print `\"The Awnser: 42!\"`\n"
+"        // but that would require changing `42` in 2 spots should\n"
+"        // you ever wish to change it.\n"
+"        // Could also use `Some(n) if n == 42` and print `\"The Awnser: {n}!"
+"\"`\n"
+"        // but that would not contribute to exhaustiveness checks.\n"
+"        // (Although in this case that would not matter since\n"
+"        // the next arm is a \"catch-all\" pattern)\n"
+msgstr ""
+"// 匹配到 `Some` 变体，检查其绑定到 `n` 的值\n"
+"        // 是否等于 42。\n"
+"        // 也可以使用 `Some(42)` 并打印 `\"答案是: 42!\"`\n"
+"        // 但如果想要改变这个值，就需要在两个地方修改 `42`。\n"
+"        // 也可以使用 `Some(n) if n == 42` 并打印 `\"答案是: {n}!\"`\n"
+"        // 但这不是穷尽性检查。\n"
+"        // （虽然在这种情况下无关紧要，因为\n"
+"        // 下一个分支是\"兜底\"模式）\n"
 
-#: src/flow_control/match/binding.md:40
+#: src/flow_control/match/binding.md:52
 msgid "\"The Answer: {}!\""
 msgstr "\"答案是：{}！\""
 
-#: src/flow_control/match/binding.md:41
+#: src/flow_control/match/binding.md:53
 msgid "// Match any other number.\n"
 msgstr "// 匹配任何其他数字\n"
 
-#: src/flow_control/match/binding.md:42
+#: src/flow_control/match/binding.md:54
 msgid "\"Not interesting... {}\""
 msgstr "\"不感兴趣... {}\""
 
-#: src/flow_control/match/binding.md:43
+#: src/flow_control/match/binding.md:55
 msgid "// Match anything else (`None` variant).\n"
 msgstr "// 匹配其他任何情况（`None` 变体）\n"
 
-#: src/flow_control/match/binding.md:51
+#: src/flow_control/match/binding.md:63
 msgid ""
 "[`functions`](../../fn.md), [`enums`](../../custom_types/enum.md) and "
 "[`Option`](../../std/option.md)"
@@ -5607,7 +5657,7 @@ msgid ""
 "// A closure to print `color` which immediately borrows (`&`) `color` and\n"
 "    // stores the borrow and closure in the `print` variable. It will "
 "remain\n"
-"    // borrowed until `print` is used the last time. \n"
+"    // borrowed until `print` is used the last time.\n"
 "    //\n"
 "    // `println!` only requires arguments by immutable reference so it "
 "doesn't\n"
@@ -5631,7 +5681,7 @@ msgstr "// 使用借用调用闭包。\n"
 #: src/fn/closures/capture.md:32
 msgid ""
 "// `color` can be borrowed immutably again, because the closure only holds\n"
-"    // an immutable reference to `color`. \n"
+"    // an immutable reference to `color`.\n"
 msgstr ""
 "// `color` 可以再次被不可变借用，因为闭包只持有\n"
 "    // `color` 的不可变引用。\n"
@@ -5669,7 +5719,7 @@ msgstr "// 使用可变借用调用闭包。\n"
 msgid ""
 "// The closure still mutably borrows `count` because it is called later.\n"
 "    // An attempt to reborrow will lead to an error.\n"
-"    // let _reborrow = &count; \n"
+"    // let _reborrow = &count;\n"
 "    // ^ TODO: try uncommenting this line.\n"
 msgstr ""
 "// 闭包仍然可变借用 `count`，因为它稍后会被调用。\n"
@@ -6308,7 +6358,7 @@ msgstr ""
 msgid ""
 "// `into_iter()` for vecs yields `i32` and `position()` does not take a "
 "reference, so\n"
-"    // we do not have to destructure    \n"
+"    // we do not have to destructure\n"
 msgstr ""
 "// 对 vec 使用 `into_iter()` 会产生 `i32`，而 `position()` 不接受引用，所以\n"
 "    // 我们不需要进行解构\n"
@@ -8005,7 +8055,7 @@ msgid ""
 "// Define a function `gen_spec_t` that takes an argument `_s` of type "
 "`SGen<T>`.\n"
 "// It has been explicitly given the type parameter `A`, but because `A` has "
-"not \n"
+"not\n"
 "// been specified as a generic type parameter for `gen_spec_t`, it is not "
 "generic.\n"
 msgstr ""
@@ -8242,7 +8292,7 @@ msgid ""
 "//print_debug(&_triangle);\n"
 "    //println!(\"Area: {}\", area(&_triangle));\n"
 "    // ^ TODO: Try uncommenting these.\n"
-"    // | Error: Does not implement either `Debug` or `HasArea`. \n"
+"    // | Error: Does not implement either `Debug` or `HasArea`.\n"
 msgstr ""
 "//print_debug(&_triangle);\n"
 "    //println!(\"面积：{}\", area(&_triangle));\n"
@@ -8392,7 +8442,7 @@ msgstr ""
 
 #: src/generics/where.md:30
 msgid ""
-"// Because we would otherwise have to express this as `T: Debug` or \n"
+"// Because we would otherwise have to express this as `T: Debug` or\n"
 "// use another method of indirect approach, this requires a `where` clause:\n"
 msgstr ""
 "// 这里需要一个 `where` 子句：否则就必须将其表达为 `T: Debug` 或\n"
@@ -9229,7 +9279,7 @@ msgstr "\"这个整数是：{}\""
 
 #: src/scope/borrow.md:23
 msgid ""
-"// Create a boxed i32 in the heap, and a i32 on the stack\n"
+"// Create a boxed i32 in the heap, and an i32 on the stack\n"
 "    // Remember: numbers can have arbitrary underscores added for "
 "readability\n"
 "    // 5_i32 is the same as 5i32\n"
@@ -9526,8 +9576,8 @@ msgstr ""
 msgid ""
 "// Lifetimes are annotated below with lines denoting the creation\n"
 "// and destruction of each variable.\n"
-"// `i` has the longest lifetime because its scope entirely encloses \n"
-"// both `borrow1` and `borrow2`. The duration of `borrow1` compared \n"
+"// `i` has the longest lifetime because its scope entirely encloses\n"
+"// both `borrow1` and `borrow2`. The duration of `borrow1` compared\n"
 "// to `borrow2` is irrelevant since they are disjoint.\n"
 msgstr ""
 "// 下面用线条标注了每个变量的创建和销毁，以表示生命周期。\n"
@@ -9675,7 +9725,7 @@ msgstr "// 错误：`_x` 的生命周期不够长\n"
 
 #: src/scope/lifetime/explicit.md:44
 msgid ""
-"// Attempting to use the lifetime `'a` as an explicit type annotation \n"
+"// Attempting to use the lifetime `'a` as an explicit type annotation\n"
 "    // inside the function will fail because the lifetime of `&_x` is "
 "shorter\n"
 "    // than that of `_y`. A short lifetime cannot be coerced into a longer "
@@ -9695,8 +9745,8 @@ msgstr "// 将两个变量的借用（`&`）传递给函数。\n"
 
 #: src/scope/lifetime/explicit.md:55
 msgid ""
-"// Any input which is borrowed must outlive the borrower. \n"
-"    // In other words, the lifetime of `four` and `nine` must \n"
+"// Any input which is borrowed must outlive the borrower.\n"
+"    // In other words, the lifetime of `four` and `nine` must\n"
 "    // be longer than that of `print_refs`.\n"
 msgstr ""
 "// 任何被借用的输入必须比借用者存活更久。\n"
@@ -9705,7 +9755,7 @@ msgstr ""
 
 #: src/scope/lifetime/explicit.md:60
 msgid ""
-"// `failed_borrow` contains no references to force `'a` to be \n"
+"// `failed_borrow` contains no references to force `'a` to be\n"
 "    // longer than the lifetime of the function, but `'a` is longer.\n"
 "    // Because the lifetime is never constrained, it defaults to `'static`.\n"
 msgstr ""
@@ -10791,7 +10841,7 @@ msgstr ""
 
 #: src/trait/iter.md:38
 msgid ""
-"// Since there's no endpoint to a Fibonacci sequence, the `Iterator` \n"
+"// Since there's no endpoint to a Fibonacci sequence, the `Iterator`\n"
 "        // will never return `None`, and `Some` is always returned.\n"
 msgstr ""
 "// 由于斐波那契序列没有终点，`Iterator` \n"
@@ -11110,7 +11160,7 @@ msgstr ""
 #: src/trait/supertraits.md:20
 msgid ""
 "// CompSciStudent (computer science student) is a subtrait of both "
-"Programmer \n"
+"Programmer\n"
 "// and Student. Implementing CompSciStudent requires you to impl both "
 "supertraits.\n"
 msgstr ""
@@ -12609,7 +12659,7 @@ msgstr ""
 #: src/error/result/enter_question_mark.md:47
 msgid ""
 "// To compile and run this example without errors, while using Cargo, change "
-"the value \n"
+"the value\n"
 "// of the `edition` field, in the `[package]` section of the `Cargo.toml` "
 "file, to \"2015\".\n"
 msgstr ""
@@ -13189,7 +13239,7 @@ msgstr "可以使用 `*` 运算符解引用装箱的值，这会移除一层间�
 
 #: src/std/box.md:20
 msgid ""
-"// A Rectangle can be specified by where its top left and bottom right \n"
+"// A Rectangle can be specified by where its top left and bottom right\n"
 "// corners are in space\n"
 msgstr "// 可以通过指定左上角和右下角在空间中的位置来定义矩形\n"
 
@@ -13957,7 +14007,7 @@ msgstr "\"798-1364\""
 
 #: src/std/hash.md:19
 msgid ""
-"\"We're sorry, the call cannot be completed as dialed. \n"
+"\"We're sorry, the call cannot be completed as dialed.\n"
 "            Please hang up and try again.\""
 msgstr ""
 "\"很抱歉，无法接通您拨打的电话。\n"
@@ -14037,7 +14087,7 @@ msgstr "\"没有 Ashley 的电话号码。\""
 
 #: src/std/hash.md:52
 msgid ""
-"// `HashMap::iter()` returns an iterator that yields \n"
+"// `HashMap::iter()` returns an iterator that yields\n"
 "    // (&'a key, &'a value) pairs in arbitrary order.\n"
 msgstr ""
 "// `HashMap::iter()` 返回一个迭代器，该迭代器以任意顺序生成\n"
@@ -14737,11 +14787,11 @@ msgstr ""
 msgid "\"Final sum result: {}\""
 msgstr "\"最终求和结果：{}\""
 
-#: src/std_misc/threads/testcase_mapreduce.md:122
+#: src/std_misc/threads/testcase_mapreduce.md:120
 msgid "Assignments"
 msgstr "练习"
 
-#: src/std_misc/threads/testcase_mapreduce.md:124
+#: src/std_misc/threads/testcase_mapreduce.md:122
 msgid ""
 "It is not wise to let our number of threads depend on user inputted data. "
 "What if the user decides to insert a lot of spaces? Do we _really_ want to "
@@ -14753,15 +14803,15 @@ msgstr ""
 "要创建 2,000 个线程吗？修改程序，使数据始终被分割成固定数量的块，这个数量应由"
 "程序开头定义的静态常量来确定。"
 
-#: src/std_misc/threads/testcase_mapreduce.md:131
+#: src/std_misc/threads/testcase_mapreduce.md:129
 msgid "[Threads](../threads.md)"
 msgstr "[线程](../threads.md)"
 
-#: src/std_misc/threads/testcase_mapreduce.md:132
+#: src/std_misc/threads/testcase_mapreduce.md:130
 msgid "[vectors](../../std/vec.md) and [iterators](../../trait/iter.md)"
 msgstr "[向量](../../std/vec.md)和[迭代器](../../trait/iter.md)"
 
-#: src/std_misc/threads/testcase_mapreduce.md:133
+#: src/std_misc/threads/testcase_mapreduce.md:131
 msgid ""
 "[closures](../../fn/closures.md), [move](../../scope/move.md) semantics and "
 "[`move` closures](https://doc.rust-lang.org/book/ch13-01-"
@@ -14771,7 +14821,7 @@ msgstr ""
 "包](https://doc.rust-lang.org/book/ch13-01-closures.html#closures-can-"
 "capture-their-environment)"
 
-#: src/std_misc/threads/testcase_mapreduce.md:134
+#: src/std_misc/threads/testcase_mapreduce.md:132
 msgid ""
 "[destructuring](https://doc.rust-lang.org/book/ch18-03-pattern-"
 "syntax.html#destructuring-to-break-apart-values) assignments"
@@ -14779,7 +14829,7 @@ msgstr ""
 "[解构](https://doc.rust-lang.org/book/ch18-03-pattern-"
 "syntax.html#destructuring-to-break-apart-values)赋值"
 
-#: src/std_misc/threads/testcase_mapreduce.md:135
+#: src/std_misc/threads/testcase_mapreduce.md:133
 msgid ""
 "[turbofish notation](https://doc.rust-lang.org/book/appendix-02-"
 "operators.html?highlight=turbofish) to help type inference"
@@ -14787,11 +14837,11 @@ msgstr ""
 "[涡轮鱼符号](https://doc.rust-lang.org/book/appendix-02-operators.html?"
 "highlight=turbofish)用于辅助类型推断"
 
-#: src/std_misc/threads/testcase_mapreduce.md:136
+#: src/std_misc/threads/testcase_mapreduce.md:134
 msgid "[unwrap vs. expect](../../error/option_unwrap.md)"
 msgstr "[unwrap 与 expect](../../error/option_unwrap.md)"
 
-#: src/std_misc/threads/testcase_mapreduce.md:137
+#: src/std_misc/threads/testcase_mapreduce.md:135
 msgid "[enumerate](https://doc.rust-lang.org/book/loops.html#enumerate)"
 msgstr "[enumerate](https://doc.rust-lang.org/book/loops.html#enumerate)"
 
@@ -14958,7 +15008,7 @@ msgstr "\"新路径不是有效的 UTF-8 序列\""
 msgid "\"new path is {}\""
 msgstr "\"新路径是 {}\""
 
-#: src/std_misc/path.md:51
+#: src/std_misc/path.md:50
 msgid ""
 "Be sure to check at other `Path` methods (`posix::Path` or `windows::Path`) "
 "and the `Metadata` struct."
@@ -14966,7 +15016,7 @@ msgstr ""
 "请务必查看其他 `Path` 方法（`posix::Path` 或 `windows::Path`）以及 "
 "`Metadata` 结构体。"
 
-#: src/std_misc/path.md:56
+#: src/std_misc/path.md:55
 msgid ""
 "[OsStr](https://doc.rust-lang.org/std/ffi/struct.OsStr.html) and [Metadata]"
 "(https://doc.rust-lang.org/std/fs/struct.Metadata.html)."
@@ -15043,7 +15093,7 @@ msgid "// `file` goes out of scope, and the \"hello.txt\" file gets closed\n"
 msgstr "// `file` 超出作用域，\"hello.txt\" 文件随之关闭\n"
 
 #: src/std_misc/file/open.md:35 src/std_misc/file/create.md:39
-#: src/std_misc/fs.md:109
+#: src/std_misc/fs.md:108
 msgid "Here's the expected successful output:"
 msgstr "以下是预期的成功输出："
 
@@ -15522,7 +15572,7 @@ msgstr "\"`rmdir a/c/d`\""
 msgid "// Remove an empty directory, returns `io::Result<()>`\n"
 msgstr "// 删除空目录，返回 `io::Result<()>`\n"
 
-#: src/std_misc/fs.md:111
+#: src/std_misc/fs.md:110
 msgid ""
 "```shell\n"
 "$ rustc fs.rs && ./fs\n"
@@ -15556,15 +15606,15 @@ msgstr ""
 "`rmdir a/c/d`\n"
 "```"
 
-#: src/std_misc/fs.md:127
+#: src/std_misc/fs.md:126
 msgid "And the final state of the `a` directory is:"
 msgstr "最终 `a` 目录的状态如下："
 
-#: src/std_misc/fs.md:139
+#: src/std_misc/fs.md:138
 msgid "An alternative way to define the function `cat` is with `?` notation:"
 msgstr "另一种定义 `cat` 函数的方法是使用 `?` 运算符："
 
-#: src/std_misc/fs.md:152
+#: src/std_misc/fs.md:151
 msgid "[`cfg!`](../attribute/cfg.md)"
 msgstr "[`cfg!`](../attribute/cfg.md)"
 
@@ -16240,8 +16290,7 @@ msgstr ""
 msgid ""
 "One such example is [`pretty_assertions`](https://docs.rs/pretty_assertions/"
 "1.0.0/pretty_assertions/index.html), which extends standard `assert_eq!` and "
-"`assert_ne!` macros, to provide colorful diff.  \n"
-"File `Cargo.toml`:"
+"`assert_ne!` macros, to provide colorful diff. File `Cargo.toml`:"
 msgstr ""
 "例如 [`pretty_assertions`](https://docs.rs/pretty_assertions/1.0.0/"
 "pretty_assertions/index.html)，它扩展了标准的 `assert_eq!` 和 `assert_ne!` "
@@ -17122,7 +17171,6 @@ msgid ""
 msgstr "首先，同一个数字可以在同一个内联块中多次用作标签。"
 
 #: src/unsafe/asm.md:453
-
 msgid ""
 "Second, that when a numeric label is used as a reference (as an instruction "
 "operand, for example), the suffixes “b” (“backward”) or ”f” (“forward”) "
@@ -17211,8 +17259,8 @@ msgid ""
 "compatibility issues can arise, despite efforts to ensure forwards-"
 "compatibility wherever possible."
 msgstr ""
-"Rust 语言正在快速发展，因此某些兼容性问题可能会出现，尽管我们努力确保尽可能"
-"的向前兼容。"
+"Rust 语言正在快速发展，因此某些兼容性问题可能会出现，尽管我们努力确保尽可能的"
+"向前兼容。"
 
 #: src/compatibility.md:7
 msgid "[Raw identifiers](compatibility/raw_identifiers.md)"
@@ -17576,8 +17624,3 @@ msgstr ""
 msgid ""
 "[The rustdoc Book](https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html)"
 msgstr "[rustdoc 手册](https://doc.rust-lang.org/rustdoc/what-is-rustdoc.html)"
-
-#~ msgid ""
-#~ "The compiler forbids use of uninitialized variables, as this would lead "
-#~ "to undefined behavior."
-#~ msgstr "编译器禁止使用未初始化的变量，因为这会导致未定义行为。"
