@@ -78,13 +78,18 @@ RGB (0, 3, 254) 0x0003FE
 RGB (0, 0, 0) 0x000000
 ```
 
-Three hints if you get stuck:
+Two hints if you get stuck:
 
-* The formula for calculating a color in the RGB color space is:
-`RGB = (R*65536)+(G*256)+B , (when R is RED, G is GREEN and B is BLUE)`.
-For more see [RGB color format & calculation][rgb_color].
 * You [may need to list each color more than once][named_parameters].
 * You can [pad with zeros to a width of 2][fmt_width] with `:0>2`.
+For hexadecimals, you can use `:02X`.
+
+Bonus:
+
+* If you would like to experiment with [type casting][type_casting] in advance,
+the formula for [calculating a color in the RGB color space][rgb_color] is
+`RGB = (R * 65_536) + (G * 256) + B`, where `R is RED, G is GREEN, and B is BLUE`.
+An unsigned 8-bit integer (`u8`) can only hold numbers up to 255. To cast `u8` to `u32`, you can write `variable_name as u32`.
 
 ### See also:
 
@@ -96,3 +101,4 @@ For more see [RGB color format & calculation][rgb_color].
 [fmt]: https://doc.rust-lang.org/std/fmt/
 [fmt_traits]: https://doc.rust-lang.org/std/fmt/#formatting-traits
 [fmt_width]: https://doc.rust-lang.org/std/fmt/#width
+[type_casting]: ../../types/cast.md
