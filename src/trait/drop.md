@@ -6,7 +6,7 @@ resources that the implementor instance owns.
 
 `Box`, `Vec`, `String`, `File`, and `Process` are some examples of types that
 implement the `Drop` trait to free resources. The `Drop` trait can also be
-manually implemented for any custom data type.
+manually implemented for any custom data type. 
 
 The following example adds a print to console to the `drop` function to announce
 when it is called.
@@ -76,15 +76,15 @@ impl TempFile {
 }
 
 // When TempFile is dropped:
-// 1. First, the File will be automatically closed (Drop for File)
-// 2. Then our drop implementation will remove the file
+// 1. First, our drop implementation will remove the file's name from the filesystem.
+// 2. Then, File's drop will close the file, removing its underlying content from the disk.
 impl Drop for TempFile {
     fn drop(&mut self) {
-        // Note: File is already closed at this point
         if let Err(e) = std::fs::remove_file(&self.path) {
             eprintln!("Failed to remove temporary file: {}", e);
         }
         println!("> Dropped temporary file: {:?}", self.path);
+        // File's drop is implicitly called here because it is a field of this struct.
     }
 }
 
