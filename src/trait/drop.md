@@ -76,15 +76,15 @@ impl TempFile {
 }
 
 // When TempFile is dropped:
-// 1. First, the File will be automatically closed (Drop for File)
-// 2. Then our drop implementation will remove the file
+// 1. First, our drop implementation will remove the file's name from the filesystem.
+// 2. Then, File's drop will close the file, removing its underlying content from the disk.
 impl Drop for TempFile {
     fn drop(&mut self) {
-        // Note: File is already closed at this point
         if let Err(e) = std::fs::remove_file(&self.path) {
             eprintln!("Failed to remove temporary file: {}", e);
         }
         println!("> Dropped temporary file: {:?}", self.path);
+        // File's drop is implicitly called here because it is a field of this struct.
     }
 }
 
