@@ -155,7 +155,7 @@ Running these tests gives us:
 ```shell
 $ cargo test
 
-running 3 tests
+running 4 tests
 test tests::test_any_panic ... ok
 test tests::test_divide ... ok
 test tests::test_specific_panic ... ok
