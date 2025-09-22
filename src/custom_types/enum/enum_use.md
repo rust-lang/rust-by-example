@@ -19,9 +19,9 @@ enum Role {
 fn main() {
     // Explicitly `use` each name so they are available without
     // manual scoping.
-    use crate::Stage::{Beginner, Advanced};
+    use Stage::{Beginner, Advanced};
     // Automatically `use` each name inside `Role`.
-    use crate::Role::*;
+    use Role::*;
 
     // Equivalent to `Stage::Beginner`.
     let stage = Beginner;
