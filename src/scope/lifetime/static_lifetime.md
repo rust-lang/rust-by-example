@@ -69,21 +69,30 @@ demonstrate, the below example uses
 to dynamically create `'static` references. In that case it definitely doesn't
 live for the entire duration, but only from the leaking point onward.
 
-```rust,editable,compile_fail
-extern crate rand;
-use rand::Fill;
+Note that you can execute the below code on your computer locally using the
+installable [`cargo play`](https://crates.io/crates/cargo-play) command.
 
-fn random_vec() -> &'static [usize; 100] {
-    let mut rng = rand::thread_rng();
-    let mut boxed = Box::new([0; 100]);
-    boxed.try_fill(&mut rng).unwrap();
+```rust,editable,compile_fail
+//# rand = "*"
+
+use rand::Fill as _; // _ to prevent warnings
+
+fn random_vec() -> &'static [u32; 5] {
+    let mut rng = rand::rng();
+    let mut boxed = Box::new([0; 5]);
+    boxed.fill(&mut rng);
     Box::leak(boxed)
 }
 
 fn main() {
-    let first: &'static [usize; 100] = random_vec();
-    let second: &'static [usize; 100] = random_vec();
-    assert_ne!(first, second)
+    let first: &'static [u32; 5] = random_vec();
+    let second: &'static [u32; 5] = random_vec();
+    
+    // Surely they don't all happen to be the same...
+    assert_ne!(first, second);
+    
+    println!("first: {first:?}");
+    println!("second: {second:?}");
 }
 ```
 
