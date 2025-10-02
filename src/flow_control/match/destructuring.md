@@ -13,3 +13,7 @@ A `match` block can destructure items in a variety of ways.
 [struct]: destructuring/destructure_structures.md
 [tuple]: destructuring/destructure_tuple.md
 [slice]: destructuring/destructure_slice.md
+
+### See also:
+
+[The Rust Reference for Destructuring](https://doc.rust-lang.org/reference/patterns.html#r-patterns.destructure)
