@@ -25,6 +25,8 @@ fn main() {
         // Now the age can be reported.
         n @ 1  ..= 12 => println!("I'm a child of age {:?}", n),
         n @ 13 ..= 19 => println!("I'm a teen of age {:?}", n),
+        // A similar binding can be done when matching several values.
+        n @ (1 | 7 | 15 | 13) => println!("I'm a teen of age {:?}", n),
         // Nothing bound. Return the result.
         n             => println!("I'm an old person of age {:?}", n),
     }
