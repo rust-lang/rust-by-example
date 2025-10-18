@@ -38,7 +38,7 @@ impl List {
         match *self {
             // Can't take ownership of the tail, because `self` is borrowed;
             // instead take a reference to the tail
-            // And it'a a non-tail recursive call which may cause stack overflow for long lists.
+            // And it's a non-tail recursive call which may cause stack overflow for long lists.
             Cons(_, ref tail) => 1 + tail.len(),
             // Base Case: An empty list has zero length
             Nil => 0
