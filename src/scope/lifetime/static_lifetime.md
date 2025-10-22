@@ -100,8 +100,8 @@ does not:
 ```rust,editable,compile_fail
 use std::fmt::Debug;
 
-fn print_it( input: impl Debug + 'static ) {
-    println!( "'static value passed in is: {:?}", input );
+fn print_it(input: impl Debug + 'static) {
+    println!("'static value passed in is: {:?}", input);
 }
 
 fn main() {
