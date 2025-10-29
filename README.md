@@ -27,8 +27,7 @@ read all content offline, however!
 **The following warnings can be ignored safely.**
 
 ```text
-[WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "gettext" preprocessor installed?
-[WARN] (mdbook::preprocess::cmd):   Command: mdbook-gettext
+ WARN The command `mdbook-gettext` for preprocessor `gettext` was not found, but is marked as optional.
 ```
 
 ### Using translated version

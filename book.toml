@@ -17,7 +17,6 @@ hash-files = true
 additional-css = [
   "theme/css/language-picker.css",
 ]
-additional-js = ["theme/js/language-picker.js"]
 
 [rust]
 edition = "2021"
