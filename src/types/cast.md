@@ -8,7 +8,7 @@ except in cases where C has undefined behavior. The behavior of all casts
 between integral types is well defined in Rust.
 
 ```rust,editable,ignore,mdbook-runnable
-// Suppress all warnings from casts which overflow.
+// Suppress all errors from casts which overflow.
 #![allow(overflowing_literals)]
 
 fn main() {
@@ -31,7 +31,8 @@ fn main() {
 
     // when casting any value to an unsigned type, T,
     // T::MAX + 1 is added or subtracted until the value
-    // fits into the new type
+    // fits into the new type ONLY when the #![allow(overflowing_literals)]
+    // lint is specified like above. Otherwise there will be a compiler error.
 
     // 1000 already fits in a u16
     println!("1000 as a u16 is: {}", 1000 as u16);
