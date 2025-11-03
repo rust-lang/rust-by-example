@@ -44,10 +44,10 @@ fn main() {
     match some_number() {
         // Got `Some` variant, match if its value, bound to `n`,
         // is equal to 42.
-        // Could also use `Some(42)` and print `"The Awnser: 42!"`
+        // Could also use `Some(42)` and print `"The Answer: 42!"`
         // but that would require changing `42` in 2 spots should
         // you ever wish to change it.
-        // Could also use `Some(n) if n == 42` and print `"The Awnser: {n}!"`
+        // Could also use `Some(n) if n == 42` and print `"The Answer: {n}!"`
         // but that would not contribute to exhaustiveness checks.
         // (Although in this case that would not matter since
         // the next arm is a "catch-all" pattern)
