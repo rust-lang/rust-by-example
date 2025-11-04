@@ -40,11 +40,28 @@
         language == "en" ? `${mdbookPathToRoot}` : `${mdbookPathToRoot}../`;
     // The page path (mdbook only gives us access to the path to the Markdown file).
     let path = mdbookPath.replace(/\.md$/, ".html");
-    for (let lang of langList.querySelectorAll("a")) {
+    const langAnchors = Array.from(langList.querySelectorAll("a"));
+    for (let lang of langAnchors) {
         if (lang.id == "en") {
             lang.href = `${full_path_to_root}${path}`;
         } else {
             lang.href = `${full_path_to_root}${lang.id}/${path}`;
         }
+    }
+
+    // Hide languages whose target page is not available (e.g., not deployed).
+    // This prevents users from hitting 404s on sites that only ship some locales.
+    for (let lang of langAnchors) {
+        const url = lang.href;
+        // Attempt a lightweight HEAD request; fall back to hiding on failure.
+        fetch(url, { method: "HEAD" }).then((resp) => {
+            if (!resp.ok) {
+                const li = lang.parentNode && lang.parentNode.parentNode;
+                if (li) li.style.display = "none";
+            }
+        }).catch(() => {
+            const li = lang.parentNode && lang.parentNode.parentNode;
+            if (li) li.style.display = "none";
+        });
     }
 })();
