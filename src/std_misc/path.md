@@ -1,9 +1,9 @@
 # Path
 
-The `Path` struct represents file paths in the underlying filesystem. There are
-two flavors of `Path`: `posix::Path`, for UNIX-like systems, and
-`windows::Path`, for Windows. The prelude exports the appropriate
-platform-specific `Path` variant.
+The `Path` type represents file paths in the underlying filesystem. Across all
+platforms there is a single `std::path::Path` that abstracts over
+platform-specific path semantics and separators. Bring it into scope with
+`use std::path::Path;` when needed.
 
 A `Path` can be created from an `OsStr`, and provides several methods to get
 information from the file/directory the path points to.
@@ -47,8 +47,7 @@ fn main() {
 }
 ```
 
-Be sure to check at other `Path` methods (`posix::Path` or `windows::Path`) and
-the `Metadata` struct.
+Be sure to check other `Path` methods and the `Metadata` struct.
 
 ### See also:
 
