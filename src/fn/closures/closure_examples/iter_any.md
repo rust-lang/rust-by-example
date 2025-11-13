@@ -13,8 +13,9 @@ pub trait Iterator {
     // and modified, but not consumed.
     fn any<F>(&mut self, f: F) -> bool where
         // `FnMut` meaning any captured variable may at most be
-        // modified, not consumed. `Self::Item` states it takes
-        // arguments to the closure by value.
+        // modified, not consumed. `Self::Item` is the closure parameter type,
+        // which is determined by the iterator (e.g., `&T` for `.iter()`,
+        // `T` for `.into_iter()`).
         F: FnMut(Self::Item) -> bool;
 }
 ```
