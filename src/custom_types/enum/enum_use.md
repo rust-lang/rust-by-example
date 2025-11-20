@@ -1,6 +1,6 @@
 # use
 
-The `use` declaration can be used so manual scoping isn't needed:
+The `use` declaration can be used to avoid typing the full module path to access a name:
 
 ```rust,editable
 // An attribute to hide warnings for unused code.
