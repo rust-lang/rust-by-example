@@ -19,6 +19,9 @@ additional-css = [
 ]
 additional-js = ["theme/js/language-picker.js"]
 
+[output.html.search]
+use-boolean-and = true
+
 [rust]
 edition = "2021"
 
