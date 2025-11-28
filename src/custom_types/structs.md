@@ -37,6 +37,12 @@ struct Rectangle {
     bottom_right: Point,
 }
 
+// Struct with named fields can have default values
+struct Command {
+    command: String,
+    arguments: Vec<String> = Vec::new(),
+}
+
 fn main() {
     // Create struct with field init shorthand
     let name = String::from("Peter");
@@ -69,6 +75,9 @@ fn main() {
         top_left: Point { x: left_edge, y: top_edge },
         bottom_right: bottom_right,
     };
+
+    // Instantiate a `Command` with only required fields specified
+    let command = Command { command: String::from("ls"), .. };
 
     // Instantiate a unit struct
     let _unit = Unit;
