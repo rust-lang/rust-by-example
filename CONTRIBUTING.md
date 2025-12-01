@@ -56,8 +56,7 @@ $ mdbook build
 **The following warnings can be ignored safely.**
 
 ```text
-[WARN] (mdbook::preprocess::cmd): The command wasn't found, is the "gettext" preprocessor installed?
-[WARN] (mdbook::preprocess::cmd):   Command: mdbook-gettext
+ WARN The command `mdbook-gettext` for preprocessor `gettext` was not found, but is marked as optional.
 ```
 
 [install Rust]: http://rust-lang.org/install.html
