@@ -3,53 +3,52 @@
 Any program requires comments, and Rust supports
 a few different varieties:
 
-* *Regular comments* which are ignored by the compiler:
-  * `// Line comments which go to the end of the line.`
-  * `/* Block comments which go to the closing delimiter. */`
-* *Doc comments* which are parsed into HTML library [documentation][docs]:
-  * `/// Generate library docs for the following item.`
-  * `//! Generate library docs for the enclosing item.`
+## Regular Comments
 
+These are ignored by the compiler:
+
+* **Line comments**: Start with `//` and continue to the end of the line
+* **Block comments**: Enclosed in `/* ... */` and can span multiple lines
+
+## Documentation Comments (Doc Comments) which are parsed into HTML library [documentation][docs]:
+
+ - `///` - Generates docs for the item that follows it
+- `//!` - Generates docs for the enclosing item (typically used at the top of a file or module)
 ```rust,editable
-fn main() {
-    // This is an example of a line comment.
-    // There are two slashes at the beginning of the line.
-    // And nothing written after these will be read by the compiler.
 
+fn main() {
+    // Line comments start with two slashes.
+    // Everything after the slashes is ignored by the compiler.
+
+    // Example: This line won't execute
     // println!("Hello, world!");
 
-    // Run it. See? Now try deleting the two slashes, and run it again.
+    // Try removing the slashes above and running the code again.
 
     /*
-     * This is another type of comment, a block comment. In general,
-     * line comments are the recommended comment style. But block comments
-     * are extremely useful for temporarily disabling chunks of code.
-     * /* Block comments can be /* nested, */ */ so it takes only a few
-     * keystrokes to comment out everything in this main() function.
-     * /*/*/* Try it yourself! */*/*/
+     * Block comments are useful for temporarily disabling code.
+     * They can also be nested: /* like this */ which makes it easy
+     * to comment out large sections quickly.
      */
 
     /*
-    Note: The previous column of `*` was entirely for style. There's
-    no actual need for it.
+    Note: The asterisk column on the left is just for style - 
+    it's not required by the language.
     */
 
-    // Here's another powerful use of block comments: you can uncomment
-    // and comment a whole block by simply adding or removing a single
-    // '/' character:
+    // Block comments make it easy to toggle code on/off by adding
+    // or removing just one slash:
 
-    /* <- add another '/' before the 1st one to uncomment the whole block
+    /* <- Add a '/' here to uncomment the entire block below
 
     println!("Now");
     println!("everything");
     println!("executes!");
-    // line comments inside are not affected by either state
+    // Line comments inside remain unaffected
 
     // */
 
-    // You can manipulate expressions more easily with block comments
-    // than with line comments. Try deleting the comment delimiters
-    // to change the result:
+    // Block comments can also be used within expressions:
     let x = 5 + /* 90 + */ 5;
     println!("Is `x` 10 or 100? x = {}", x);
 }
