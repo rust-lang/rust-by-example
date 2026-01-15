@@ -61,7 +61,7 @@ MDBOOK_BOOK__LANGUAGE=xx mdbook serve
 
 ### Add a language entry
 
-Please add a language entry in `.github/workflows/rbe.yml`, `theme/index.hbs`, and `src/bootstrap/src/core/build_steps/doc.rs` in [rust-lang/rust](https://github.com/rust-lang/rust) like below:
+Please add a language entry in `.github/workflows/rbe.yml`, `theme/head.hbs`, and `src/bootstrap/src/core/build_steps/doc.rs` in [rust-lang/rust](https://github.com/rust-lang/rust) like below:
 
 * `rbe.yml`
 
@@ -71,7 +71,7 @@ env:
   LANGUAGES: xx yy zz
 ```
 
-* `index.hbs`
+* `head.hbs`
 
 ```html
 <ul id="language-list" class="theme-popup" aria-label="Languages" role="menu">
