@@ -71,18 +71,18 @@ live for the entire duration, but only from the leaking point onward.
 
 ```rust,editable,compile_fail
 extern crate rand;
-use rand::Fill;
+use rand::Rng;
 
-fn random_vec() -> &'static [usize; 100] {
-    let mut rng = rand::thread_rng();
-    let mut boxed = Box::new([0; 100]);
-    boxed.try_fill(&mut rng).unwrap();
+fn random_vec() -> &'static [u8; 100] {
+    let mut rng = rand::rng();
+    let mut boxed = Box::new([0u8; 100]);
+    rng.fill(&mut boxed[..]);
     Box::leak(boxed)
 }
 
 fn main() {
-    let first: &'static [usize; 100] = random_vec();
-    let second: &'static [usize; 100] = random_vec();
+    let first: &'static [u8; 100] = random_vec();
+    let second: &'static [u8; 100] = random_vec();
     assert_ne!(first, second)
 }
 ```
