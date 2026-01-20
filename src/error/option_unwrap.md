@@ -58,6 +58,7 @@ fn main() {
     let nothing = None;
 
     drink(coffee);
+    drink(lemonade);
     drink(nothing);
 }
 ```
