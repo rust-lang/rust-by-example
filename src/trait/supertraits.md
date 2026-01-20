@@ -34,7 +34,7 @@ fn comp_sci_student_greeting(student: &dyn CompSciStudent) -> String {
     )
 }
 
-truct CSStudent {
+struct CSStudent {
     name: String,
     university: String,
     fav_language: String,
