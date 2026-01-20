@@ -34,7 +34,48 @@ fn comp_sci_student_greeting(student: &dyn CompSciStudent) -> String {
     )
 }
 
-fn main() {}
+truct CSStudent {
+    name: String,
+    university: String,
+    fav_language: String,
+    git_username: String
+}
+
+impl Programmer for CSStudent {
+    fn fav_language(&self) -> String {
+        self.fav_language.clone()
+    }
+}
+
+impl Student for CSStudent {
+    fn university(&self) -> String {
+        self.university.clone()
+    }
+}
+
+impl Person for CSStudent {
+    fn name(&self) -> String {
+        self.name.clone()
+    }
+}
+
+impl CompSciStudent for CSStudent {
+    fn git_username(&self) -> String {
+        self.git_username.clone()
+    }
+}
+
+fn main() {
+    let student = CSStudent {
+        name: String::from("Alice"),
+        university: String::from("MIT"),
+        fav_language: String::from("Rust"),
+        git_username: String::from("alice_codes"),
+    };
+
+    let greeting = comp_sci_student_greeting(&student);
+    println!("{}", greeting);
+}
 ```
 
 ### See also:
