@@ -73,16 +73,16 @@ live for the entire duration, but only from the leaking point onward.
 extern crate rand;
 use rand::Fill;
 
-fn random_vec() -> &'static [usize; 100] {
-    let mut rng = rand::thread_rng();
+fn random_vec() -> &'static [u64; 100] {
+    let mut rng = rand::rng();
     let mut boxed = Box::new([0; 100]);
-    boxed.try_fill(&mut rng).unwrap();
+    boxed.fill(&mut rng);
     Box::leak(boxed)
 }
 
 fn main() {
-    let first: &'static [usize; 100] = random_vec();
-    let second: &'static [usize; 100] = random_vec();
+    let first: &'static [u64; 100] = random_vec();
+    let second: &'static [u64; 100] = random_vec();
     assert_ne!(first, second)
 }
 ```
