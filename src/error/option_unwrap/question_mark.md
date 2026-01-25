@@ -28,6 +28,7 @@ struct Job {
 }
 
 #[derive(Clone, Copy)]
+#[allow(dead_code)]
 struct PhoneNumber {
     area_code: Option<u8>,
     number: u32,
