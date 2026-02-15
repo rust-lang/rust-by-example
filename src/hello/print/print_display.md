@@ -118,7 +118,7 @@ Display: 4.7 -2.3i
 Debug: Complex { real: 4.7, imag: -2.3 }
 ```
 
-Bonus: Add a space before the `+`/`-` signs.
+Bonus: Add a space after the `+`/`-` signs.
 
 Hints in case you get stuck:
 
