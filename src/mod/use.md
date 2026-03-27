@@ -53,3 +53,24 @@ fn main() {
     function();
 }
 ```
+
+You can also use `pub use` to re-export an item from a module, so it can be
+accessed through the module's public interface:
+
+```rust,editable
+mod deeply {
+    pub mod nested {
+        pub fn function() {
+            println!("called `deeply::nested::function()`");
+        }
+    }
+}
+
+mod cool {
+    pub use crate::deeply::nested::function;
+}
+
+fn main() {
+    cool::function();
+}
+```
