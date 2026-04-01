@@ -76,15 +76,19 @@ impl TempFile {
 }
 
 // When TempFile is dropped:
-// 1. First, our drop implementation will remove the file's name from the filesystem.
-// 2. Then, File's drop will close the file, removing its underlying content from the disk.
+// 1. First, our custom drop implementation runs. The file is still open at this point,
+//    but we can remove it from the filesystem by path.
+// 2. Then, after our drop returns, Rust automatically drops each field,
+//    so File's drop runs and closes the file handle.
 impl Drop for TempFile {
     fn drop(&mut self) {
+        // Note: the File is still open here — field destructors run after this method.
         if let Err(e) = std::fs::remove_file(&self.path) {
             eprintln!("Failed to remove temporary file: {}", e);
         }
         println!("> Dropped temporary file: {:?}", self.path);
-        // File's drop is implicitly called here because it is a field of this struct.
+        // After this method returns, Rust will drop each field (including `file`),
+        // which closes the underlying file handle.
     }
 }
 
