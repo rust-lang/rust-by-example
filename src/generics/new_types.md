@@ -3,51 +3,50 @@
 The `newtype` idiom gives compile time guarantees that the right type of value is supplied
 to a program.
 
-For example, an age verification function that checks age in years, *must* be given
-a value of type `Years`.
+For example, a function that measures distance in miles, *must* be given
+a value of type `Miles`.
 
 ```rust, editable
-struct Years(i64);
+struct Miles(f64);
 
-struct Days(i64);
+struct Kilometers(f64);
 
-impl Years {
-    pub fn to_days(&self) -> Days {
-        Days(self.0 * 365)
+impl Miles {
+    pub fn to_kilometers(&self) -> Kilometers {
+        Kilometers(self.0 * 1.609344)
     }
 }
 
-impl Days {
-    /// truncates partial years
-    pub fn to_years(&self) -> Years {
-        Years(self.0 / 365)
+impl Kilometers {
+    pub fn to_miles(&self) -> Miles {
+        Miles(self.0 / 1.609344)
     }
 }
 
-fn is_adult(age: &Years) -> bool {
-    age.0 >= 18
+fn is_a_marathon(distance: &Miles) -> bool {
+    distance.0 >= 26.2
 }
 
 fn main() {
-    let age = Years(25);
-    let age_days = age.to_days();
-    println!("Is an adult? {}", is_adult(&age));
-    println!("Is an adult? {}", is_adult(&age_days.to_years()));
-    // println!("Is an adult? {}", is_adult(&age_days));
+    let distance = Miles(30.0);
+    let distance_km = distance.to_kilometers();
+    println!("Is a marathon? {}", is_a_marathon(&distance));
+    println!("Is a marathon? {}", is_a_marathon(&distance_km.to_miles()));
+    // println!("Is a marathon? {}", is_a_marathon(&distance_km));
 }
 ```
 
-Uncomment the last print statement to observe that the type supplied must be `Years`.
+Uncomment the last print statement to observe that the type supplied must be `Miles`.
 
 To obtain the `newtype`'s value as the base type, you may use the tuple or destructuring syntax like so:
 
 ```rust, editable
-struct Years(i64);
+struct Miles(f64);
 
 fn main() {
-    let years = Years(42);
-    let years_as_primitive_1: i64 = years.0; // Tuple
-    let Years(years_as_primitive_2) = years; // Destructuring
+    let distance = Miles(42.0);
+    let distance_as_primitive_1: f64 = distance.0; // Tuple
+    let Miles(distance_as_primitive_2) = distance; // Destructuring
 }
 ```
 
