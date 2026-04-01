@@ -80,7 +80,7 @@ fn main() {
   data is provided. Once the collection has been consumed it is no longer
   available for reuse as it has been 'moved' within the loop.
 
-```rust,editable,ignore,mdbook-runnable
+```rust,editable
 fn main() {
     let names = vec!["Bob", "Frank", "Ferris"];
 
@@ -91,8 +91,9 @@ fn main() {
         }
     }
 
-    println!("names: {:?}", names);
-    // FIXME ^ Comment out this line
+    // `names` has been 'moved' and can no longer be used.
+    // Try uncommenting the line below to see the compiler error:
+    // println!("names: {:?}", names);
 }
 ```
 
