@@ -42,9 +42,12 @@ fn main() {
     let array1 = [1, 2, 3];
     let array2 = [4, 5, 6];
 
-    // `array1.iter()` yields `&i32`
+    // `array1.iter()` yields `&i32`, and `find` passes `&Item` to the
+    // predicate. Since `Item = &i32`, the closure argument has type `&&i32`.
     println!("Find 2 in array1: {:?}", array1.iter().find(|&&x| x == 2));
-    // `array2.into_iter()` yields `i32`
+    // `array2.into_iter()` yields `i32` (since Rust 2021 edition), and
+    // `find` passes `&Item` to the predicate. Since `Item = i32`, the
+    // closure argument has type `&i32`.
     println!("Find 2 in array2: {:?}", array2.into_iter().find(|&x| x == 2));
 }
 ```
