@@ -46,6 +46,19 @@ fn main() {
 }
 ```
 
+Just remember that even though you can compile the code when a>b, the loop gets 
+never executed.
+```rust,editable
+for i in 10..1{
+println!("fizzbuzz");
+}
+```
+If you want to count down, you need to use .rev() instead
+```rust,editable
+for i in (1..10).rev(){
+println!("fizzbuzz");
+}
+```
 ## for and iterators
 
 The `for in` construct is able to interact with an `Iterator` in several ways.
