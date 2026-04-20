@@ -39,9 +39,9 @@ fn main() {
 In `my.rs`:
 
 ```rust,ignore
-// Similarly `mod inaccessible` and `mod nested` will locate the `nested.rs`
-// and `inaccessible.rs` files and insert them here under their respective
-// modules
+// Similarly `mod inaccessible` and `mod nested` will locate the
+// `inaccessible.rs` and `nested.rs` files and insert them here under their
+// respective modules
 mod inaccessible;
 pub mod nested;
 
