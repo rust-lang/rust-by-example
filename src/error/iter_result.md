@@ -30,7 +30,7 @@ fn main() {
 }
 ```
 
-## Collect the failed items with `map_err()` and `filter_map()`
+## Collect the failed items with `map_err()` and `filter_map()`, as below:
 
 `map_err` calls a function with the error, so by adding that to the previous
 `filter_map` solution we can save them off to the side while iterating.
