@@ -1,68 +1,60 @@
 # Testcase: linked-list
 
-A common way to implement a linked-list is via `enums`:
+A possible way to implement a linked list of `u32` elements is via enums:
 
 ```rust,editable
-use crate::List::*;
-
-enum List {
-    // Cons: Tuple struct that wraps an element and a pointer to the next node
-    Cons(u32, Box<List>),
-    // Nil: A node that signifies the end of the linked list
-    Nil,
+enum LinkedList {
+    // Next: Tuple struct that wraps an element and a boxed link to the next node
+    Next(u32, Box<LinkedList>),
+    // End: A node that signifies the end of the linked list
+    End,
 }
 
+// `use` brings the enum variants into scope, so they can be used without the `LinkedList::` prefix
+use LinkedList::*;
+
 // Methods can be attached to an enum
-impl List {
-    // Create an empty list
-    fn new() -> List {
-        // `Nil` has type `List`
-        Nil
+impl LinkedList {
+    // Create an empty linked list
+    fn new() -> LinkedList {
+        // `End` has type `LinkedList`
+        End
     }
 
-    // Consume a list, and return the same list with a new element at its front
-    fn prepend(self, elem: u32) -> List {
-        // `Cons` also has type List
-        Cons(elem, Box::new(self))
+    // Take ownership of a linked list, and return a new one with a new element at its front
+    fn prepend(self, elem: u32) -> LinkedList {
+        // `Next` also has type `LinkedList`, since it is a variant of the `LinkedList` enum
+        Next(elem, Box::new(self))
     }
 
-    // Return the length of the list
+    // Return the length of the linked list
     fn len(&self) -> u32 {
-        // `self` has to be matched, because the behavior of this method
-        // depends on the variant of `self`
-        // `self` has type `&List`, and `*self` has type `List`, matching on a
-        // concrete type `T` is preferred over a match on a reference `&T`
-        // after Rust 2018 you can use self here and tail (with no ref) below as well,
-        // rust will infer &s and ref tail.
-        // See https://doc.rust-lang.org/edition-guide/rust-2018/ownership-and-lifetimes/default-match-bindings.html
-        match *self {
-            // Can't take ownership of the tail, because `self` is borrowed;
-            // instead take a reference to the tail
-            // And it's a non-tail recursive call which may cause stack overflow for long lists.
-            Cons(_, ref tail) => 1 + tail.len(),
-            // Base Case: An empty list has zero length
-            Nil => 0
+        // `len` depends on which enum variant we have, so we pattern-match on `self`
+        // Since this method only borrows `self`, the `tail` binding is also a borrow
+        // Note: In Rust 2018+, match infers the needed references automatically
+        match self {
+            // Count this node and recursively count the rest of the linked list
+            // Note: this is not tail-recursive and could overflow for very long linked lists
+            Next(_, tail) => 1 + tail.len(),
+            // Base case: the empty linked list has length 0.
+            End => 0,
         }
     }
+}
 
-    // Return representation of the list as a (heap allocated) string
-    fn stringify(&self) -> String {
-        match *self {
-            Cons(head, ref tail) => {
-                // `format!` is similar to `print!`, but returns a heap
-                // allocated string instead of printing to the console
-                format!("{}, {}", head, tail.stringify())
-            },
-            Nil => {
-                format!("Nil")
-            },
+// Implement `Display` for `LinkedList` so it can be printed to the console using `println!`
+impl std::fmt::Display for LinkedList {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Next(head, tail) => write!(f, "({}, {})", head, tail),
+            End => write!(f, "End"),
         }
     }
 }
 
 fn main() {
     // Create an empty linked list
-    let mut list = List::new();
+    let mut list = LinkedList::new();
 
     // Prepend some elements
     list = list.prepend(1);
@@ -71,7 +63,7 @@ fn main() {
 
     // Show the final state of the list
     println!("linked list has length: {}", list.len());
-    println!("{}", list.stringify());
+    println!("{}", list);
 }
 ```
 
