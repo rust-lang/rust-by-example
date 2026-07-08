@@ -33,7 +33,7 @@ fn main() {
 ## Collect the failed items with `map_err()` and `filter_map()`
 
 `map_err` calls a function with the error, so by adding that to the previous
-`filter_map` solution we can save them off to the side while iterating.
+`filter_map` solution we can shave them off to the side while iterating.
 
 ```rust,editable
 fn main() {
