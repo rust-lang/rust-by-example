@@ -22,7 +22,7 @@ The summarized command list is below:
 
 #### Generating a message template
 
-The generated message templete `po/messages.pot` is required to create or update translations.
+The generated message template `po/messages.pot` is required to create or update translations.
 
 ```bash
 MDBOOK_OUTPUT='{"xgettext": {"pot-file": "messages.pot"}}' \
