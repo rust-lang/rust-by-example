@@ -47,15 +47,19 @@ Now let's begin!
 
 - [Error handling](error.md) - Learn Rust way of handling failures.
 
-- [Std library types](std.md) - Learn about some custom types provided by `std` library.
+- [Std library types](std.md) - Learn about some custom types provided by `std` library, including `Cell`, `OnceLock`, `Cow`, more collections, and iterators.
 
-- [Std misc](std_misc.md) - More custom types for file handling, threads.
+- [Std misc](std_misc.md) - More custom types for file handling, threads, and shared state.
+
+- [Async](async.md) - Learn about asynchronous programming with futures, tasks, and message streams.
 
 - [Testing](testing.md) - All sorts of testing in Rust.
 
 - [Unsafe Operations](unsafe.md) - Learn about entering a block of unsafe operations.
 
 - [Compatibility](compatibility.md) - Handling Rust's evolution and potential compatibility issues.
+
+- [Ecosystem](ecosystem.md) - Combine community crates into an applied CLI program.
 
 - [Meta](meta.md) - Documentation, Benchmarking.
 

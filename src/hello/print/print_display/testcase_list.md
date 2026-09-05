@@ -58,6 +58,45 @@ printed. The new output should look like this:
 [0: 1, 1: 2, 2: 3]
 ```
 
+### Exercise: Print each element with its index
+
+Task: Change the `Display` impl so each element prints with its index.
+
+<details><summary>Hint</summary>
+
+The loop already tracks the position, so only the formatting of each element needs to change.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+use std::fmt;
+
+struct List(Vec<i32>);
+
+impl fmt::Display for List {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let vec = &self.0;
+
+        write!(f, "[")?;
+
+        for (index, v) in vec.iter().enumerate() {
+            if index != 0 { write!(f, ", ")?; }
+            write!(f, "{}: {}", index, v)?;
+        }
+
+        write!(f, "]")
+    }
+}
+
+fn main() {
+    let v = List(vec![1, 2, 3]);
+    assert_eq!(v.to_string(), "[0: 1, 1: 2, 2: 3]");
+    println!("{}", v);
+}
+```
+</details>
 ### See also:
 
 [`for`][for], [`ref`][ref], [`Result`][result], [`struct`][struct],

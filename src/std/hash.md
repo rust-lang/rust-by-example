@@ -62,3 +62,35 @@ For more information on how hashing and hash maps
 [Hash Table Wikipedia][wiki-hash]
 
 [wiki-hash]: https://en.wikipedia.org/wiki/Hash_table
+
+### Exercise: Insert only if missing
+
+Task: Add a fallback number for a missing contact with `entry`, without overwriting existing entries.
+
+<details><summary>Hint</summary>
+
+One lookup both checks for the key and inserts the default, leaving present values untouched.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+use std::collections::HashMap;
+
+fn main() {
+    let mut contacts = HashMap::new();
+    contacts.insert("Daniel", "798-1364");
+
+    // Ashley is missing, so the fallback is inserted.
+    contacts.entry("Ashley").or_insert("645-7689");
+    // Daniel is present, so his number is kept as is.
+    contacts.entry("Daniel").or_insert("000-0000");
+
+    assert_eq!(contacts["Daniel"], "798-1364");
+    assert_eq!(contacts["Ashley"], "645-7689");
+    println!("contacts: {:?}", contacts);
+}
+```
+
+</details>
