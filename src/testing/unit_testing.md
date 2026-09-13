@@ -33,12 +33,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_add() {
+    fn add() {
         assert_eq!(add(1, 2), 3);
     }
 
     #[test]
-    fn test_bad_add() {
+    fn bad_add() {
         // This assert would fire and test will fail.
         // Please note, that private functions can be tested too!
         assert_eq!(bad_add(1, 2), 3);
@@ -52,20 +52,20 @@ Tests can be run with `cargo test`.
 $ cargo test
 
 running 2 tests
-test tests::test_bad_add ... FAILED
-test tests::test_add ... ok
+test tests::bad_add ... FAILED
+test tests::add ... ok
 
 failures:
 
----- tests::test_bad_add stdout ----
-        thread 'tests::test_bad_add' panicked at 'assertion failed: `(left == right)`
+---- tests::bad_add stdout ----
+        thread 'tests::bad_add' panicked at 'assertion failed: `(left == right)`
   left: `-1`,
  right: `3`', src/lib.rs:21:8
 note: Run with `RUST_BACKTRACE=1` for a backtrace.
 
 
 failures:
-    tests::test_bad_add
+    tests::bad_add
 
 test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 ```
@@ -90,7 +90,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_sqrt() -> Result<(), String> {
+    fn sqrt() -> Result<(), String> {
         let x = 4.0;
         assert_eq!(sqrt(x)?.powf(2.0), x);
         Ok(())
@@ -126,25 +126,25 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_divide() {
+    fn divide() {
         assert_eq!(divide_non_zero_result(10, 2), 5);
     }
 
     #[test]
     #[should_panic]
-    fn test_any_panic() {
+    fn any_panic() {
         divide_non_zero_result(1, 0);
     }
 
     #[test]
     #[should_panic(expected = "Divide result is zero")]
-    fn test_specific_panic() {
+    fn specific_panic() {
         divide_non_zero_result(1, 10);
     }
 
     #[test]
     #[should_panic = "Divide result is zero"] // This also works
-    fn test_specific_panic_shorthand() {
+    fn specific_panic_shorthand() {
         divide_non_zero_result(1, 10);
     }
 }
@@ -156,10 +156,10 @@ Running these tests gives us:
 $ cargo test
 
 running 4 tests
-test tests::test_any_panic ... ok
-test tests::test_divide ... ok
-test tests::test_specific_panic ... ok
-test tests::test_specific_panic_shorthand ... ok
+test tests::any_panic ... ok
+test tests::divide ... ok
+test tests::specific_panic ... ok
+test tests::specific_panic_shorthand ... ok
 
 test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
@@ -175,9 +175,9 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 To run specific tests one may specify the test name to `cargo test` command.
 
 ```shell
-$ cargo test test_any_panic
+$ cargo test any_panic
 running 1 test
-test tests::test_any_panic ... ok
+test tests::any_panic ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out
 
@@ -194,9 +194,9 @@ tests that should be run.
 ```shell
 $ cargo test panic
 running 3 tests
-test tests::test_any_panic ... ok
-test tests::test_specific_panic ... ok
-test tests::test_specific_panic_shorthand ... ok
+test tests::any_panic ... ok
+test tests::specific_panic ... ok
+test tests::specific_panic_shorthand ... ok
 
 test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out
 
@@ -222,12 +222,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_add() {
+    fn add() {
         assert_eq!(add(2, 2), 4);
     }
 
     #[test]
-    fn test_add_hundred() {
+    fn add_hundred() {
         assert_eq!(add(100, 2), 102);
         assert_eq!(add(2, 100), 102);
     }
@@ -244,8 +244,8 @@ mod tests {
 $ cargo test
 running 3 tests
 test tests::ignored_test ... ignored
-test tests::test_add ... ok
-test tests::test_add_hundred ... ok
+test tests::add ... ok
+test tests::add_hundred ... ok
 
 test result: ok. 2 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out
 
