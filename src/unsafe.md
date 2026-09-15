@@ -11,6 +11,7 @@ things that unsafe is used for:
   over FFI, see [a previous chapter](std_misc/ffi.md) of the book)
 * accessing or modifying static mutable variables
 * implementing unsafe traits
+* accessing elements of a `union`
 
 ### Raw Pointers
 
@@ -60,3 +61,32 @@ behaviour is undefined and there is no knowing what will happen.
 
 [unsafe]: https://doc.rust-lang.org/book/ch19-01-unsafe-rust.html
 [`std::slice::from_raw_parts`]: https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html
+
+### Union Elements
+
+Elements of unions overlap in memory, thus changing the value of one element automatically changes every element's value. They can be used, if you don't
+know which data type you will need at runtime. Since Rust offers *safe* Enums, the
+main purpose of Unions is to allow interacting with C code. Accessing and 
+changing elements of unions is only allowed in unsafe Rust.
+
+```rust,editable
+union MyFirstUnion {
+    float: f32,
+    integer: u32
+}
+
+fn main() {
+    // Creating an object of a union type doesn't require Unsafe Rust.
+    let mut u = MyFirstUnion { float: 123.45 };
+    
+    // Reading and changing u.float or u.integer is only allowed in Unsafe Rust.
+    unsafe {
+        assert_eq!(u.float, 123.45);
+        println!("u.float = 123.45, but u.integer = {}", u.integer);
+
+        u.integer = 42;
+        assert_eq!(u.integer, 42);
+        println!("u.integer = 42, but u.float = {}", u.float);
+    }
+}
+```
