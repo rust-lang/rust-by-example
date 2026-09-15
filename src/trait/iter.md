@@ -87,3 +87,45 @@ fn main() {
 
 [intoiter]: https://doc.rust-lang.org/std/iter/trait.IntoIterator.html
 [iter]: https://doc.rust-lang.org/core/iter/trait.Iterator.html
+
+### Exercise: Predict skipped terms
+
+Task: Predict the four terms `fibonacci().skip(4).take(4)` yields, then verify by running the program.
+
+<details><summary>Hint</summary>
+
+Count positions from zero through the sequence start, then take the next four after skipping.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+struct Fibonacci {
+    curr: u32,
+    next: u32,
+}
+
+impl Iterator for Fibonacci {
+    type Item = u32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        let current = self.curr;
+        self.curr = self.next;
+        self.next = current + self.next;
+        Some(current)
+    }
+}
+
+fn main() {
+    // Positions 0..=7 are 0, 1, 1, 2, 3, 5, 8, 13.
+    let terms: Vec<u32> = Fibonacci { curr: 0, next: 1 }
+        .skip(4)
+        .take(4)
+        .collect();
+    assert_eq!(terms, vec![3, 5, 8, 13]);
+    println!("skipped terms: {:?}", terms);
+}
+```
+
+</details>

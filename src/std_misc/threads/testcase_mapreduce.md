@@ -124,6 +124,53 @@ What if the user decides to insert a lot of spaces? Do we _really_ want to spawn
 Modify the program so that the data is always chunked into a limited number of chunks,
 defined by a static constant at the beginning of the program.
 
+### Exercise: Sum with scoped threads and an atomic
+
+Task: Rewrite the map-reduce above using `thread::scope` and one shared atomic sum.
+
+<details><summary>Hint</summary>
+
+Scoped threads may borrow the data segments directly, so each thread can add its subtotal to a single shared counter.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+use std::sync::atomic::{AtomicU32, Ordering};
+use std::thread;
+
+fn main() {
+    let data = "86967897737416471853297327050364959
+11861322575564723963297542624962850
+70856234701860851907960690014725639
+38397966707106094172783238747669219
+52380795257888236525459303330302837
+58495327135744041048897885734297812
+69920216438980873548808413720956532
+16278424637452589860345374828574668";
+
+    let total = AtomicU32::new(0);
+
+    thread::scope(|s| {
+        for segment in data.split_whitespace() {
+            s.spawn(|| {
+                let subtotal: u32 = segment
+                    .chars()
+                    .map(|c| c.to_digit(10).expect("should be a digit"))
+                    .sum();
+                total.fetch_add(subtotal, Ordering::SeqCst);
+            });
+        }
+    });
+
+    let total = total.load(Ordering::SeqCst);
+    println!("Final sum result: {}", total);
+    assert_eq!(total, 1342);
+}
+```
+</details>
+
 ### See also:
 
 * [Threads][thread]

@@ -49,3 +49,44 @@ fn main() {
     eat_box_i32(boxed_i32);
 }
 ```
+
+### Exercise: Borrow, then destroy
+
+Task: Restructure the example above so the box is borrowed and then destroyed, without deleting any call.
+
+<details><summary>Hint</summary>
+
+A borrow ends at its last use, so destroying the box after that point satisfies the checker.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+fn eat_box_i32(boxed_i32: Box<i32>) {
+    println!("Destroying box that contains {}", boxed_i32);
+}
+
+fn borrow_i32(borrowed_i32: &i32) {
+    println!("This int is: {}", borrowed_i32);
+}
+
+fn main() {
+    let boxed_i32 = Box::new(5_i32);
+    let stacked_i32 = 6_i32;
+
+    borrow_i32(&boxed_i32);
+    borrow_i32(&stacked_i32);
+
+    {
+        let ref_to_i32: &i32 = &boxed_i32;
+        borrow_i32(ref_to_i32);
+        // The borrow ends here, at its last use.
+    }
+
+    // Nothing is borrowed anymore, so destroying is allowed.
+    eat_box_i32(boxed_i32);
+}
+```
+
+</details>

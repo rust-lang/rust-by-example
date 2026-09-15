@@ -75,6 +75,65 @@ fn main() {
 }
 ```
 
+### Exercise: Return the tail and the length
+
+Task: Add a `tail` method returning the list after the head, and verify it with `len`.
+
+<details><summary>Hint</summary>
+
+Borrowing the node lets you match on its shape and hand back a reference to what follows the head.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+use crate::List::*;
+
+enum List {
+    Cons(u32, Box<List>),
+    Nil,
+}
+
+impl List {
+    fn new() -> List {
+        Nil
+    }
+
+    fn prepend(self, elem: u32) -> List {
+        Cons(elem, Box::new(self))
+    }
+
+    fn len(&self) -> u32 {
+        match *self {
+            Cons(_, ref tail) => 1 + tail.len(),
+            Nil => 0
+        }
+    }
+
+    fn tail(&self) -> Option<&List> {
+        match *self {
+            Cons(_, ref tail) => Some(tail),
+            Nil => None,
+        }
+    }
+}
+
+fn main() {
+    let mut list = List::new();
+    list = list.prepend(1);
+    list = list.prepend(2);
+    list = list.prepend(3);
+
+    assert_eq!(list.len(), 3);
+    let tail = list.tail().expect("non-empty list has a tail");
+    assert_eq!(tail.len(), 2);
+    println!("tail length: {}", tail.len());
+}
+```
+
+</details>
+
 ### See also:
 
 [`Box`][box] and [methods][methods]
