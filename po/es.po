@@ -986,12 +986,12 @@ msgid ""
 "button ->\n"
 msgstr ""
 "// Este código es editable, ¡siéntete libre de hackearlo!\n"
-"// Siempre puede volver al código original haciendo clic en \"Reset\" botón -"
+"// Siempre puede volver al código original haciendo clic en el botón \"Reset\" "
 "> \n"
 
 #: src/hello.md:13
 msgid "// This is the main function.\n"
-msgstr "// Esta es la función main"
+msgstr "// Esta es la función main.\n"
 
 #: src/hello.md:16
 msgid "// Statements here are executed when the compiled binary is called.\n"
@@ -1008,7 +1008,7 @@ msgstr "\"Hello World!\""
 
 #: src/hello.md:23
 msgid "`println!` is a [_macro_](macros.md) that prints text to the console."
-msgstr "`println!` es un [_macro_](macros.md) que imprime text a la consola."
+msgstr "`println!` es una [_macro_](macros.md) que imprime texto en la consola."
 
 #: src/hello.md:26
 msgid "A binary can be generated using the Rust compiler: `rustc`."
@@ -1030,7 +1030,7 @@ msgid ""
 "second `println!` macro so that the output shows:"
 msgstr ""
 "Haga clic en 'Run' arriba para ver la salida esperada. A continuación, "
-"agregue una nueva línea con unsegundo `println!` macro para que la salida "
+"agregue una nueva línea con una segunda macro `println!` para que la salida "
 "muestre:"
 
 #: src/hello/comment.md:3
