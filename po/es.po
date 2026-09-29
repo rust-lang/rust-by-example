@@ -1559,7 +1559,7 @@ msgid ""
 "implemented somehow."
 msgstr ""
 "Todos los tipos que quieren usar los traits de `std::fmt` requieren "
-"unaimplementación para ser imprimible. Las implementaciones automáticas solo "
+"una implementación para ser imprimible. Las implementaciones automáticas solo "
 "se proporcionanpara tipos como en la biblioteca `std`. Todos los demás tipos "
 "_deben_ ser manualmente implementados de alguna manera."
 
