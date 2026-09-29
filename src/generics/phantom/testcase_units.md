@@ -72,6 +72,55 @@ fn main() {
 }
 ```
 
+### Exercise: Subtract lengths
+
+Task: Implement `Sub` for `Length<Unit>` mirroring the `Add` implementation.
+
+<details><summary>Hint</summary>
+
+The trait shape matches addition, with the inner operator swapped for its opposite.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+use std::ops::{Add, Sub};
+use std::marker::PhantomData;
+
+#[derive(Debug, Clone, Copy)]
+enum Inch {}
+
+#[derive(Debug, Clone, Copy)]
+struct Length<Unit>(f64, PhantomData<Unit>);
+
+impl<Unit> Add for Length<Unit> {
+    type Output = Length<Unit>;
+
+    fn add(self, rhs: Length<Unit>) -> Length<Unit> {
+        Length(self.0 + rhs.0, PhantomData)
+    }
+}
+
+impl<Unit> Sub for Length<Unit> {
+    type Output = Length<Unit>;
+
+    fn sub(self, rhs: Length<Unit>) -> Length<Unit> {
+        Length(self.0 - rhs.0, PhantomData)
+    }
+}
+
+fn main() {
+    let foot: Length<Inch> = Length(12.0, PhantomData);
+    let three_inches: Length<Inch> = Length(3.0, PhantomData);
+    let nine_inches = foot - three_inches;
+    assert_eq!(nine_inches.0, 9.0);
+    println!("12in - 3in = {:?} in", nine_inches.0);
+}
+```
+
+</details>
+
 ### See also:
 
 [Borrowing (`&`)], [Bounds (`X: Y`)], [enum], [impl & self],

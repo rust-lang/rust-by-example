@@ -58,3 +58,35 @@ fn main() {
 ```
 
 [references]: ../flow_control/match/destructuring/destructure_pointers.md
+
+### Exercise: Lend instead of moving
+
+Task: Change `destroy_box` to borrow its argument so `b` stays usable afterwards.
+
+<details><summary>Hint</summary>
+
+Receiving a reference instead of ownership leaves the owner untouched, and the call site lends with one character.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+// This function borrows the heap allocated memory instead of taking it.
+fn inspect_box(c: &Box<i32>) {
+    println!("Inspecting a box that contains {}", c);
+}
+
+fn main() {
+    let a = Box::new(5i32);
+
+    // *Move* `a` into `b`; `a` can no longer be used.
+    let b = a;
+
+    // Lend `b` instead of moving it, so it stays usable below.
+    inspect_box(&b);
+    println!("b still contains: {}", b);
+}
+```
+
+</details>

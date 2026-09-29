@@ -92,6 +92,8 @@
     - [Conventions](cargo/conventions.md)
     - [Tests](cargo/test.md)
     - [Build Scripts](cargo/build_scripts.md)
+    - [Workspaces, features, and profiles](cargo/workspaces.md)
+    - [Tooling: fmt, clippy, doc, audit](cargo/tooling.md)
 
 - [Attributes](attribute.md)
     - [`dead_code`](attribute/unused.md)
@@ -111,8 +113,10 @@
     - [Associated items](generics/assoc_items.md)
         - [The Problem](generics/assoc_items/the_problem.md)
         - [Associated types](generics/assoc_items/types.md)
+        - [Generic Associated Types](generics/gats.md)
     - [Phantom type parameters](generics/phantom.md)
         - [Testcase: unit clarification](generics/phantom/testcase_units.md)
+    - [Const generics](generics/const_generics.md)
 
 - [Scoping rules](scope.md)
     - [RAII](scope/raii.md)
@@ -141,6 +145,7 @@
     - [Drop](trait/drop.md)
     - [Iterators](trait/iter.md)
     - [`impl Trait`](trait/impl_trait.md)
+    - [`async` in traits](trait/async_traits.md)
     - [Clone](trait/clone.md)
     - [Supertraits](trait/supertraits.md)
     - [Disambiguating overlapping traits](trait/disambiguating.md)
@@ -153,6 +158,7 @@
     - [DRY (Don't Repeat Yourself)](macros/dry.md)
     - [DSL (Domain Specific Languages)](macros/dsl.md)
     - [Variadics](macros/variadics.md)
+    - [Procedural macros](macros/proc.md)
 
 - [Error handling](error.md)
     - [`panic`](error/panic.md)
@@ -174,6 +180,7 @@
         - [Other uses of `?`](error/multiple_error_types/reenter_question_mark.md)
         - [Wrapping errors](error/multiple_error_types/wrap_error.md)
     - [Iterating over `Result`s](error/iter_result.md)
+    - [Error reporting with `anyhow` and `thiserror`](error/reporting.md)
 
 - [Std library types](std.md)
     - [Box, stack and heap](std/box.md)
@@ -188,10 +195,17 @@
         - [HashSet](std/hash/hashset.md)
     - [`Rc`](std/rc.md)
     - [`Arc`](std/arc.md)
+    - [`Cell` and `RefCell`](std/cell.md)
+    - [`OnceLock` and `LazyLock`](std/once.md)
+    - [`Cow`](std/cow.md)
+    - [More collections](std/collections.md)
+    - [Iterators in depth](std/iter.md)
+    - [Capstone: word frequency](std/word_freq.md)
 
 - [Std misc](std_misc.md)
     - [Threads](std_misc/threads.md)
         - [Testcase: map-reduce](std_misc/threads/testcase_mapreduce.md)
+    - [Shared state: `Mutex`, `RwLock`, atomics](std_misc/sync.md)
     - [Channels](std_misc/channels.md)
     - [Path](std_misc/path.md)
     - [File I/O](std_misc/file.md)
@@ -206,17 +220,28 @@
         - [Argument parsing](std_misc/arg/matching.md)
     - [Foreign Function Interface](std_misc/ffi.md)
 
+- [Async](async.md)
+    - [`async` and `.await`](async/await_syntax.md)
+    - [Spawning tasks and channels](async/spawn.md)
+    - [Streams of messages](async/streams.md)
+    - [Capstone: fan-out chat](async/echo.md)
+
 - [Testing](testing.md)
     - [Unit testing](testing/unit_testing.md)
     - [Documentation testing](testing/doc_testing.md)
     - [Integration testing](testing/integration_testing.md)
     - [Dev-dependencies](testing/dev_dependencies.md)
+    - [Property testing](testing/property.md)
 
 - [Unsafe Operations](unsafe.md)
     - [Inline assembly](unsafe/asm.md)
+    - [`MaybeUninit`](unsafe/maybe_uninit.md)
 
 - [Compatibility](compatibility.md)
     - [Raw identifiers](compatibility/raw_identifiers.md)
+
+- [Ecosystem](ecosystem.md)
+    - [CLI + JSON walkthrough](ecosystem/cli_json.md)
 
 - [Meta](meta.md)
     - [Documentation](meta/doc.md)

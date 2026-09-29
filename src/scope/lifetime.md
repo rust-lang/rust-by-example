@@ -40,3 +40,32 @@ fn main() {
 
 Note that no names or types are assigned to label lifetimes.
 This restricts how lifetimes will be able to be used as we will see.
+
+### Exercise: Relate two borrows with one lifetime
+
+Task: Write a `longest` function returning the longer of two string slices.
+
+<details><summary>Hint</summary>
+
+Elided lifetimes give each input its own unrelated lifetime, so name one lifetime explicitly and use it for both inputs and the output.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+// Both inputs and the output share `'a`: the result lives exactly as
+// long as the shorter-lived input, which the compiler checks.
+fn longest<'a>(a: &'a str, b: &'a str) -> &'a str {
+    if a.len() >= b.len() { a } else { b }
+}
+
+fn main() {
+    let short = "hi";
+    let long = "hello, world";
+    assert_eq!(longest(short, long), "hello, world");
+    println!("longest: {}", longest(short, long));
+}
+```
+
+</details>

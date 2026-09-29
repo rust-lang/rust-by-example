@@ -53,3 +53,46 @@ fn main() {
     println!("{:?}", ids);
 }
 ```
+
+### Exercise: Sum the thread ids
+
+Task: Edit the example above to sum the received ids and assert the total.
+
+<details><summary>Hint</summary>
+
+Each thread sends its own number, so the collected values always add up to the same total.
+
+</details>
+
+<details><summary>Solution</summary>
+
+```rust,editable
+use std::sync::mpsc;
+use std::thread;
+
+static NTHREADS: i32 = 3;
+
+fn main() {
+    let (tx, rx) = mpsc::channel();
+
+    for id in 0..NTHREADS {
+        let thread_tx = tx.clone();
+        thread::spawn(move || {
+            thread_tx.send(id).unwrap();
+        });
+    }
+    // The original sender is no longer needed; dropping it lets
+    // the channel close once every thread finishes.
+    drop(tx);
+
+    let mut sum = 0;
+    for _ in 0..NTHREADS {
+        sum += rx.recv().unwrap();
+    }
+
+    assert_eq!(sum, 0 + 1 + 2);
+    println!("sum of ids: {}", sum);
+}
+```
+
+</details>

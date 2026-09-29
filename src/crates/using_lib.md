@@ -5,8 +5,6 @@ of its items will then be imported under a module named the same as the library.
 This module generally behaves the same way as any other module.
 
 ```rust,ignore
-// extern crate rary; // May be required for Rust 2015 edition or earlier
-
 fn main() {
     rary::public_function();
 
