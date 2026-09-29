@@ -453,7 +453,7 @@ This example shows a few things:
 - Second, that when a numeric label is used as a reference (as an instruction operand, for example), the suffixes “b” (“backward”) or ”f” (“forward”) should be added to the numeric label. It will then refer to the nearest label defined by this number in this direction.
 
 [local labels]: https://sourceware.org/binutils/docs/as/Symbol-Names.html#Local-Labels
-[an LLVM bug]: https://bugs.llvm.org/show_bug.cgi?id=36144
+[an LLVM bug]: https://github.com/llvm/llvm-project/issues/99547
 
 ## Options {#options}
 
