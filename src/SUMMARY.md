@@ -136,6 +136,7 @@
 
 - [Traits](trait.md)
     - [Derive](trait/derive.md)
+    - [Default](trait/default.md)
     - [Returning Traits with `dyn`](trait/dyn.md)
     - [Operator Overloading](trait/ops.md)
     - [Drop](trait/drop.md)
