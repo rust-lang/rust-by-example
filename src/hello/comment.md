@@ -20,7 +20,7 @@ fn main() {
     // Line comments start with two slashes.
     // Everything after the slashes is ignored by the compiler.
 
-    // Example: This line won't execute
+    // Example: This line won't execute.
     // println!("Hello, world!");
 
     // Try removing the slashes above and running the code again.
@@ -39,12 +39,12 @@ fn main() {
     // Block comments make it easy to toggle code on/off by adding
     // or removing just one slash:
 
-    /* <- Add a '/' here to uncomment the entire block below
+    /* <- Add another '/' before the first '/' to uncomment the block below.
 
     println!("Now");
     println!("everything");
     println!("executes!");
-    // Line comments inside remain unaffected
+    // Line comments inside remain unaffected.
 
     // */
 
