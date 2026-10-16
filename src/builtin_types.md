@@ -1,6 +1,6 @@
-# Primitives
+# Built-in types
 
-Rust provides access to a wide variety of `primitives`. A sample includes:
+Rust provides access to a wide variety of built-in types. A sample includes:
 
 ### Scalar Types
 

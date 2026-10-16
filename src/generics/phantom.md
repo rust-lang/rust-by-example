@@ -55,7 +55,7 @@ fn main() {
 
 ### See also:
 
-[Derive], [struct], and [tuple](../primitives/tuples.html).
+[Derive], [struct], and [tuple](../builtin_types/tuples.html).
 
 [Derive]: ../trait/derive.md
 [struct]: ../custom_types/structs.md

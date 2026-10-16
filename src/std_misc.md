@@ -7,11 +7,11 @@ things such as:
 * Channels
 * File I/O
 
-These expand beyond what the [primitives] provide.
+These expand beyond what the [built-in types] provide.
 
 ### See also:
 
-[primitives] and [the std library][std]
+[built-in types] and [the std library][std]
 
-[primitives]: primitives.md
+[built-in types]: builtin_types.md
 [std]: https://doc.rust-lang.org/std/
