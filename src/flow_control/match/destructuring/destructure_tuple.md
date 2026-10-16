@@ -24,4 +24,4 @@ fn main() {
 
 ### See also:
 
-[Tuples](../../../primitives/tuples.md)
+[Tuples](../../../builtin_types/tuples.md)

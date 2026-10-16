@@ -42,5 +42,5 @@ fn main() {
 
 ### See also:
 
-[Tuples](../../primitives/tuples.md)
+[Tuples](../../builtin_types/tuples.md)
 [Enums](../../custom_types/enum.md)

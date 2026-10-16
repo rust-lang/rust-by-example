@@ -10,10 +10,10 @@
             - [Testcase: List](hello/print/print_display/testcase_list.md)
         - [Formatting](hello/print/fmt.md)
 
-- [Primitives](primitives.md)
-    - [Literals and operators](primitives/literals.md)
-    - [Tuples](primitives/tuples.md)
-    - [Arrays and Slices](primitives/array.md)
+- [Built-in types](builtin_types.md)
+    - [Literals and operators](builtin_types/literals.md)
+    - [Tuples](builtin_types/tuples.md)
+    - [Arrays and Slices](builtin_types/array.md)
 
 - [Custom Types](custom_types.md)
     - [Structures](custom_types/structs.md)

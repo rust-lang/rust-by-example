@@ -13,7 +13,7 @@ Now let's begin!
 
 - [Hello World](hello.md) - Start with a traditional Hello World program.
 
-- [Primitives](primitives.md) - Learn about signed integers, unsigned integers and other primitives.
+- [Built-in types](builtin_types.md) - Learn about signed integers, unsigned integers and other built-in types.
 
 - [Custom Types](custom_types.md) - `struct` and `enum`.
 
