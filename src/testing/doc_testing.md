@@ -107,7 +107,7 @@ pub fn try_div(a: i32, b: i32) -> Result<i32, String> {
 * [RFC505][RFC505] on documentation style
 * [API Guidelines][doc-nursery] on documentation guidelines
 
-[doc-nursery]: https://rust-lang-nursery.github.io/api-guidelines/documentation.html
+[doc-nursery]: https://rust-lang.github.io/api-guidelines/documentation.html
 [commonmark]: https://commonmark.org/
 [RFC505]: https://github.com/rust-lang/rfcs/blob/master/text/0505-api-comment-conventions.md
-[question-instead-of-unwrap]: https://rust-lang-nursery.github.io/api-guidelines/documentation.html#examples-use--not-try-not-unwrap-c-question-mark
+[question-instead-of-unwrap]: https://rust-lang.github.io/api-guidelines/documentation.html#examples-use--not-try-not-unwrap-c-question-mark
