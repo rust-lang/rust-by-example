@@ -14,7 +14,7 @@ accepts one or more generic type parameters `<T>`. Any type specified as a
 generic type parameter is generic, and everything else is concrete (non-generic).
 
 For example, defining a *generic function* named `foo` that takes an argument
-`T` of any type:
+`T` that can be any type:
 
 ```rust,ignore
 fn foo<T>(arg: T) { ... }
