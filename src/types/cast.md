@@ -77,13 +77,17 @@ fn main() {
 
     // This behavior incurs a small runtime cost and can be avoided
     // with unsafe methods, however the results might overflow and
-    // return **unsound values**. Use these methods wisely:
+    // return **unsound values**. Calling these methods on a value that
+    // does not fit in the target type (including `NaN`) is *undefined
+    // behavior*, so the specific output is not guaranteed and may
+    // differ between compilers, optimization levels, and targets.
+    // Use these methods wisely:
     unsafe {
-        // 300.0 as u8 is 44
+        // 300.0 is out of range for u8, so this is undefined behavior.
         println!(" 300.0 as u8 is : {}", 300.0_f32.to_int_unchecked::<u8>());
-        // -100.0 as u8 is 156
+        // -100.0 is out of range for u8, so this is undefined behavior.
         println!("-100.0 as u8 is : {}", (-100.0_f32).to_int_unchecked::<u8>());
-        // nan as u8 is 0
+        // NaN cannot be represented as an integer, so this is undefined behavior.
         println!("   nan as u8 is : {}", f32::NAN.to_int_unchecked::<u8>());
     }
 }
